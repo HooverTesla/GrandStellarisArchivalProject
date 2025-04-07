@@ -11,6 +11,7 @@ Will be viewable and accessable at stellaris.HooverTesla.com
 Just wanted to make sure you read the README before breaking shit and whining about it. 
 ## **Rosetta -> Scraper/Grabber/Extractor**
   -> Translates PDX nonsense to a nice clean CSV file-Hence Rosetta stone reference
+  -> Also beware that PDX puts @foo = 3 shit at the top of files then calls the var later so this will just apply the variable then export the whole number instead of @ foo for the value.  
 ## **Forge -> Processor**
   -> Processes the Raw input(ores) into workable tools, like variables and modifiers
   -> Will probably[^1] have each major category as it's own file for y'all's sakes when I inevitably do my ASD thing and find a different special interest for an indeterminate amount of time. 
