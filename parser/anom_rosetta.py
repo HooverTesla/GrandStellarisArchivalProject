@@ -1,55 +1,95 @@
 import os
 import re
-import pandas as pd
+import json
 from pathlib import Path
 
 # === CONFIGURATION ===
 BASE_PATH = Path(__file__).resolve().parent.parent
-# LOCALISATION_PATH = BASE_PATH / "input" / "localisation"
+LOCALISATION_PATH = BASE_PATH / "input" / "localisation"
 ANOMALY_PATH = BASE_PATH / "input" / "anomalies"
+#OUTPUT
 OUTPUT_PATH = BASE_PATH / "output"
-SCRIPT_NAME = Path(__file__).stem  # Gets filename without .py
-OUTPUT_FILE = OUTPUT_PATH / f"{SCRIPT_NAME}.csv"
+# Gets filename without .py
+SCRIPT_NAME = Path(__file__).stem
+#CREATE JSON
+OUTPUT_FILE = OUTPUT_PATH / f"{SCRIPT_NAME}.json"
 OUTPUT_PATH.mkdir(exist_ok=True)
 
-anomaly_blocks = []
+def parse_pdx_block(lines):
+    stack = []
+    current = {}
+    key = None
+
+    def finalize(key, value):
+        if isinstance(stack[-1], dict):
+            stack[-1][key] = value
+        elif isinstance(stack[-1], list):
+            stack[-1].append(value)
+
+    stack.append(current)
+
+    for line in lines:
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+
+        # Open new block
+        if "{" in line:
+            if "=" in line:
+                key, _ = line.split("=", 1)
+                key = key.strip()
+                new = {}
+                finalize(key, new)
+                stack.append(new)
+            else:
+                new = {}
+                stack.append(new)
+        elif "}" in line:
+            stack.pop()
+        elif "=" in line:
+            k, v = line.split("=", 1)
+            k = k.strip()
+            v = v.strip().strip('"')
+            if v.isdigit():
+                v = int(v)
+            finalize(k, v)
+
+    return current
+
+# === EXTRACTION ===
+all_data = {}
+total_blocks = 0
+
 for file in ANOMALY_PATH.glob("*.txt"):
     with open(file, "r", encoding="utf-8") as f:
         lines = f.readlines()
 
-    file_variables = {}
-    current_id = None
-    block_lines = []
+    current_key = None
+    current_block = []
     bracket_level = 0
+    file_blocks = {}
 
-    for i, line in enumerate(lines):
-        line_strip = line.strip()
-        if line_strip.startswith("#"):
-            continue  # ⬅️ Skip full-line comments
-        # find  @foo with the assigned value from the beginning of the file replaces later
-        var_match = re.match(r'(@\w+)\s*=\s*(\d+)', line.strip())
-        if var_match:
-          var_name, var_value = var_match.groups()
-          file_variables[var_name] = var_value
+    for line in lines:
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
 
-
-        # Detect block start
-        if bracket_level == 0 and "=" in line_strip and "{" in line_strip:
-            possible_id = line_strip.split("=")[0].strip()
-            if re.match(r"^[\w.]+$", possible_id):
-                current_id = possible_id
-                block_lines = [line]
-                bracket_level += line.count("{") - line.count("}")
-                continue
-
-        elif bracket_level > 0:
-            block_lines.append(line)
+        if bracket_level == 0 and "=" in stripped and "{" in stripped:
+            current_key = stripped.split("=")[0].strip()
+            current_block = [line]
             bracket_level += line.count("{") - line.count("}")
-
-            # Block ends when bracket_level returns to 0
+        elif bracket_level > 0:
+            current_block.append(line)
+            bracket_level += line.count("{") - line.count("}")
             if bracket_level == 0:
-                full_block = "".join(block_lines)
-                if "level" in full_block:  # keep if level= exists in *any* form
-                    anomaly_blocks.append((current_id, full_block, file.name, dict(file_variables)))
-                current_id = None
-                block_lines = []
+                file_blocks[current_key] = parse_pdx_block(current_block)
+                total_blocks += 1
+                current_key = None
+                current_block = []
+
+    all_data[file.name] = file_blocks
+# === OUTPUT ===
+with open(OUTPUT_FILE, "w", encoding="utf-8") as out:
+    json.dump(all_data, out, indent=2)
+
+print(f"Exported {total_blocks} Anomalies to: {OUTPUT_FILE}")

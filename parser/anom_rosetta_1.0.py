@@ -11,7 +11,7 @@ ANOMALY_PATH = BASE_PATH / "input" / "anomalies"
 OUTPUT_PATH = BASE_PATH / "output"
 # Gets filename without .py
 SCRIPT_NAME = Path(__file__).stem
-
+#Create .csv
 OUTPUT_FILE = OUTPUT_PATH / f"{SCRIPT_NAME}.csv"
 OUTPUT_PATH.mkdir(exist_ok=True)
 
