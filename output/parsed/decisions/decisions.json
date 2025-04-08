@@ -1,0 +1,4786 @@
+{
+  "00_resource_decisions.txt": {
+    "decision_planet_food_boost": {
+      "decision_planet_food_boost": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_resources",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "food": "1000"
+          }
+        },
+        "potential": {
+          "owner": {
+            "is_regular_empire": "yes",
+            "is_lithoid_empire": "no"
+          },
+          "NOR": {
+            "has_modifier": "planet_population_control"
+          },
+          "always": "no"
+        },
+        "allow": {
+          "NOT": {},
+          "effect": {
+            "add_modifier": {},
+            "ai_weight": {
+              "weight": "5",
+              "_comments": [
+                "# don't encourage growth if there is no free housing"
+              ],
+              "modifier": {
+                "factor": "0"
+              }
+            }
+          }
+        }
+      },
+      "_source_file": "<RECURSION>",
+      "_line_number": 8
+    },
+    "decision_planet_luxuries_boost": {
+      "decision_planet_luxuries_boost": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_luxuries",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "trigger": {
+              "num_pops >": "100"
+            },
+            "consumer_goods": "1000"
+          }
+        },
+        "potential": {
+          "owner": {
+            "NOT": {},
+            "allow": {
+              "NOT": {},
+              "effect": {
+                "add_modifier": {},
+                "ai_weight": {
+                  "weight": "1",
+                  "modifier": {
+                    "factor": "<RECURSION>"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 50
+    }
+  },
+  "01_political_decisions.txt": {
+    "decision_enact_population_control": {
+      "decision_enact_population_control": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_politics",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "unity": "250"
+          }
+        },
+        "potential": {
+          "owner": {
+            "NOT": {},
+            "effect": {
+              "add_modifier": {
+                "IF": {
+                  "limit": {
+                    "has_modifier": "planet_food_boost"
+                  },
+                  "remove_modifier": "planet_food_boost"
+                }
+              },
+              "ai_weight": {
+                "weight": "<RECURSION>",
+                "modifier": {
+                  "factor": "<RECURSION>",
+                  "OR": {
+                    "num_free_districts": {
+                      "type": "any"
+                    },
+                    "has_building_construction": "yes #Added since they're probably building housing"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 7
+    },
+    "decision_end_population_control": {
+      "decision_end_population_control": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_politics",
+        "resources": {
+          "category": "decisions"
+        },
+        "potential": {
+          "has_modifier": "planet_population_control"
+        },
+        "effect": {
+          "remove_modifier": "planet_population_control"
+        },
+        "ai_weight": {
+          "weight": "20",
+          "modifier": {
+            "factor": "<RECURSION>"
+          }
+        }
+      },
+      "<RECURSION>": 55
+    },
+    "decision_enact_population_control_gestalt": {
+      "decision_enact_population_control_gestalt": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_politics",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "unity": "250"
+          }
+        },
+        "potential": {
+          "owner": {
+            "is_gestalt": "yes"
+          },
+          "NOT": {},
+          "effect": {
+            "add_modifier": {},
+            "ai_weight": {
+              "weight": "<RECURSION>",
+              "modifier": {
+                "factor": "<RECURSION>",
+                "OR": {
+                  "num_free_districts": {
+                    "type": "any"
+                  },
+                  "has_building_construction": "yes #Added since they're probably building housing"
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 82
+    },
+    "decision_end_population_control_gestalt": {
+      "decision_end_population_control_gestalt": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_politics",
+        "resources": {
+          "category": "decisions"
+        },
+        "potential": {
+          "has_modifier": "planet_population_control_gestalt"
+        },
+        "effect": {
+          "remove_modifier": "planet_population_control_gestalt"
+        },
+        "ai_weight": {
+          "weight": "20",
+          "modifier": {
+            "factor": "<RECURSION>"
+          }
+        }
+      },
+      "<RECURSION>": 121
+    },
+    "decision_enact_robot_assembly_control": {
+      "decision_enact_robot_assembly_control": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_politics",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "unity": "250"
+          }
+        },
+        "potential": {
+          "owner": {
+            "OR": {
+              "AND": {
+                "is_regular_empire": "yes",
+                "NOT": {
+                  "has_technology": "tech_robotic_workers",
+                  "OR": {
+                    "AND": {
+                      "has_policy_flag": "population_controls_allowed"
+                    },
+                    "NOT": {
+                      "has_policy_flag": "ai_full_rights"
+                    }
+                  }
+                },
+                "is_individual_machine": "yes"
+              }
+            },
+            "NOT": {},
+            "effect": {
+              "add_modifier": {},
+              "ai_weight": {
+                "weight": "<RECURSION>",
+                "modifier": {
+                  "factor": "<RECURSION>",
+                  "OR": {
+                    "num_free_districts": {
+                      "type": "any"
+                    },
+                    "has_building_construction": "yes #Added since they're probably building housing"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 148
+    },
+    "decision_end_robot_assembly_control": {
+      "decision_end_robot_assembly_control": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_politics",
+        "resources": {
+          "category": "decisions"
+        },
+        "potential": {
+          "has_modifier": "planet_robot_assembly_control"
+        },
+        "effect": {
+          "remove_modifier": "planet_robot_assembly_control"
+        },
+        "ai_weight": {
+          "weight": "20",
+          "modifier": {
+            "factor": "<RECURSION>"
+          }
+        }
+      },
+      "<RECURSION>": 204
+    },
+    "decision_expel_population": {
+      "decision_expel_population": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_expel_population",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "unity": "250"
+          }
+        },
+        "potential": {
+          "owner": {
+            "is_regular_empire": "yes",
+            "NOT": {}
+          },
+          "allow": {
+            "NOT": {
+              "custom_tooltip": {
+                "fail_text": "decision_expel_population_fail_tooltip",
+                "any_owned_pop": {
+                  "can_think": "yes",
+                  "NOR": {
+                    "has_trait": "trait_hive_mind",
+                    "is_non_sapient_robot": "yes",
+                    "is_pop_category": "ruler"
+                  }
+                }
+              }
+            },
+            "effect": {
+              "custom_tooltip": "decision_expel_population_effects",
+              "add_modifier": {
+                "hidden_effect": {
+                  "reroll_random": "yes",
+                  "switch": {
+                    "trigger": "free_housing",
+                    "-9 < { set_variable": {
+                      "-8 < { set_variable": {
+                        "-7 < { set_variable": {
+                          "-6 < { set_variable": {
+                            "-5 < { set_variable": {
+                              "-4 < { set_variable": {
+                                "-3 < { set_variable": {
+                                  "-2 < { set_variable": {
+                                    "-1 < { set_variable": {
+                                      "0 < { set_variable": {},
+                                      "while": {
+                                        "count": "expel_pop_var",
+                                        "random_owned_pop": {
+                                          "limit": {
+                                            "can_think": "yes",
+                                            "NOR": {
+                                              "has_trait": "trait_hive_mind",
+                                              "is_non_sapient_robot": "yes",
+                                              "is_pop_category": "ruler"
+                                            }
+                                          },
+                                          "weights": {
+                                            "base": "<RECURSION>",
+                                            "<RECURSION>": [
+                                              "# can use add or mult"
+                                            ],
+                                            "modifier": {
+                                              "add": "10",
+                                              "OR": {
+                                                "is_pop_category": "slave"
+                                              }
+                                            }
+                                          },
+                                          "if": {
+                                            "limit": {
+                                              "save_event_target_as": "refugee_pop #Must be saved for refugee_pop_effect to work",
+                                              "refugee_pop_effect": "yes"
+                                            },
+                                            "else": {
+                                              "kill_pop": "yes"
+                                            }
+                                          }
+                                        },
+                                        "clear_variable": "expel_pop_var"
+                                      }
+                                    },
+                                    "ai_weight": {
+                                      "weight": "<RECURSION>"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 236
+    },
+    "decision_discourage_growth": {
+      "decision_discourage_growth": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_politics",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "unity": "250"
+          }
+        },
+        "potential": {
+          "owner": {
+            "has_policy_flag": "population_controls_not_allowed",
+            "is_individual_machine": "no"
+          },
+          "NOT": {},
+          "effect": {
+            "add_modifier": {
+              "remove_modifier": "planet_food_boost"
+            },
+            "ai_weight": {
+              "weight": "<RECURSION>",
+              "modifier": {
+                "factor": "<RECURSION>",
+                "OR": {
+                  "num_free_districts": {
+                    "type": "any"
+                  },
+                  "has_building_construction": "yes #Added since they're probably building housing"
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 342
+    },
+    "decision_end_discourage_growth": {
+      "decision_end_discourage_growth": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_politics",
+        "resources": {
+          "category": "decisions"
+        },
+        "potential": {
+          "has_modifier": "planet_growth_discouraged"
+        },
+        "effect": {
+          "remove_modifier": "planet_growth_discouraged"
+        },
+        "ai_weight": {
+          "weight": "20",
+          "modifier": {
+            "factor": "<RECURSION>"
+          }
+        }
+      },
+      "<RECURSION>": 384
+    }
+  },
+  "02_special_decisions.txt": {
+    "#decision_prospect": {
+      "<RECURSION>": 3
+    },
+    "# decision_geologist_prospect": {
+      "<RECURSION>": 66
+    },
+    "decision_penal_colony": {
+      "decision_penal_colony": {
+        "owned_planets_only": "yes",
+        "prerequisites": {},
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "unity": "1000"
+          }
+        },
+        "potential": {
+          "is_capital": "no",
+          "NOT": {
+            "NOT": {
+              "owner": {
+                "is_regular_empire": "yes"
+              },
+              "is_artificial": "no",
+              "NOT": {
+                "owner": {
+                  "any_owned_planet": {}
+                },
+                "NOT": {},
+                "effect": {
+                  "add_modifier": {
+                    "modifier": "penal_colony",
+                    "days": "-1"
+                  },
+                  "hidden_effect": {},
+                  "ai_weight": {
+                    "weight": "<RECURSION>"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 132
+    },
+    "decision_abolish_penal_colony": {
+      "decision_abolish_penal_colony": {
+        "owned_planets_only": "yes",
+        "icon": "decision_penal_colony",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "unity": "2500"
+          }
+        },
+        "potential": {
+          "has_modifier": "penal_colony"
+        },
+        "effect": {
+          "remove_modifier": "penal_colony",
+          "hidden_effect": {},
+          "ai_weight": {
+            "weight": "<RECURSION>"
+          }
+        }
+      },
+      "<RECURSION>": 174
+    },
+    "decision_slave_colony": {
+      "decision_slave_colony": {
+        "owned_planets_only": "yes",
+        "prerequisites": {},
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "unity": "1000"
+          }
+        },
+        "potential": {
+          "is_capital": "no",
+          "NOT": {
+            "NOT": {
+              "NOT": {
+                "NOT": {
+                  "owner": {
+                    "is_regular_empire": "yes"
+                  },
+                  "is_artificial": "no",
+                  "NOT": {},
+                  "allow": {
+                    "custom_tooltip": {
+                      "fail_text": "decision_slave_colony_must_have_slave",
+                      "any_owned_pop": {
+                        "has_citizenship_type": {}
+                      },
+                      "custom_tooltip": {
+                        "fail_text": "decision_resort_colony_no_districts",
+                        "num_districts": {
+                          "num_buildings": {}
+                        },
+                        "effect": {
+                          "custom_tooltip": "decision_slave_colony_effects",
+                          "add_modifier": {
+                            "modifier": "slave_colony",
+                            "days": "-1"
+                          },
+                          "hidden_effect": {},
+                          "ai_weight": {
+                            "weight": "<RECURSION>"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 202
+    },
+    "decision_abolish_slave_colony": {
+      "decision_abolish_slave_colony": {
+        "owned_planets_only": "yes",
+        "icon": "decision_slave_colony",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "unity": "2500"
+          }
+        },
+        "potential": {
+          "has_modifier": "slave_colony"
+        },
+        "effect": {
+          "remove_modifier": "slave_colony",
+          "hidden_effect": {},
+          "ai_weight": {
+            "weight": "<RECURSION>"
+          }
+        }
+      },
+      "<RECURSION>": 255
+    },
+    "decision_resort_colony": {
+      "decision_resort_colony": {
+        "owned_planets_only": "yes",
+        "prerequisites": {},
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "unity": "1000"
+          }
+        },
+        "potential": {
+          "is_capital": "no",
+          "NOR": {
+            "has_modifier": "resort_colony",
+            "is_planet_class": "pc_city",
+            "AND": {
+              "is_planet_class": "pc_relic",
+              "NOT": {}
+            },
+            "owner": {
+              "is_regular_empire": "yes"
+            },
+            "is_artificial": "no",
+            "NOT": {},
+            "allow": {
+              "custom_tooltip": {
+                "fail_text": "decision_resort_colony_no_districts",
+                "num_districts": {
+                  "num_buildings": {},
+                  "custom_tooltip": {
+                    "fail_text": "decision_resort_colony_only_one",
+                    "NOT": {
+                      "owner": {
+                        "any_owned_planet": {}
+                      }
+                    },
+                    "custom_tooltip": {
+                      "fail_text": "decision_cant_be_building_anything",
+                      "has_building_construction": "no"
+                    }
+                  },
+                  "effect": {
+                    "add_modifier": {
+                      "modifier": "resort_colony",
+                      "days": "-1"
+                    },
+                    "hidden_effect": {
+                      "validate_planet_buildings_and_districts": "yes"
+                    }
+                  },
+                  "ai_weight": {
+                    "weight": "<RECURSION>"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 283
+    },
+    "decision_abolish_resort_colony": {
+      "decision_abolish_resort_colony": {
+        "owned_planets_only": "yes",
+        "icon": "decision_resort_colony",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "unity": "2500"
+          }
+        },
+        "potential": {
+          "has_modifier": "resort_colony"
+        },
+        "effect": {
+          "remove_modifier": "resort_colony",
+          "hidden_effect": {},
+          "ai_weight": {
+            "weight": "<RECURSION>"
+          }
+        }
+      },
+      "<RECURSION>": 372
+    },
+    "decision_gestation_colony": {
+      "decision_gestation_colony": {
+        "owned_planets_only": "yes",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "unity": "1000"
+          }
+        },
+        "potential": {
+          "is_capital": "no",
+          "is_artificial": "no",
+          "owner": {
+            "has_tradition": "tr_cybernetics_assimilator_gestation"
+          },
+          "NOR": {
+            "is_planet_class": "pc_city",
+            "has_modifier": "gestation_colony"
+          }
+        },
+        "allow": {
+          "planet_size >": "15",
+          "custom_tooltip": {
+            "fail_text": "decision_gestation_colony_only_one",
+            "NOT": {
+              "owner": {
+                "any_owned_planet": {}
+              }
+            }
+          },
+          "effect": {
+            "add_modifier": {
+              "modifier": "gestation_colony",
+              "days": "-1"
+            },
+            "hidden_effect": {},
+            "ai_weight": {
+              "weight": "<RECURSION>"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 403
+    },
+    "decision_abolish_gestation_colony": {
+      "decision_abolish_gestation_colony": {
+        "owned_planets_only": "yes",
+        "icon": "decision_gestation_colony",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "unity": "2500"
+          }
+        },
+        "potential": {
+          "has_modifier": "gestation_colony"
+        },
+        "effect": {
+          "remove_modifier": "gestation_colony",
+          "hidden_effect": {},
+          "ai_weight": {
+            "weight": "<RECURSION>"
+          }
+        }
+      },
+      "<RECURSION>": 450
+    },
+    "decision_mastery_of_nature": {
+      "decision_mastery_of_nature": {
+        "owned_planets_only": "yes",
+        "enactment_time": "360",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "influence": "100",
+            "energy": "2000"
+          }
+        },
+        "potential": {
+          "is_artificial": "no",
+          "owner": {
+            "has_ascension_perk": "ap_mastery_of_nature"
+          },
+          "NOT": {
+            "NOT": {},
+            "effect": {
+              "add_modifier": {
+                "modifier": "mastery_of_nature",
+                "days": "-1"
+              }
+            },
+            "ai_weight": {
+              "weight": "<RECURSION>",
+              "modifier": {
+                "factor": "<RECURSION>"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 476
+    },
+    "decision_consecrated_worlds": {
+      "decision_consecrated_worlds": {
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "unity": "500"
+          }
+        },
+        "potential": {
+          "exists": "space_owner",
+          "from": {
+            "has_ascension_perk": "ap_consecrated_worlds"
+          },
+          "space_owner": {
+            "is_star": "no",
+            "is_astral_scar": "no",
+            "is_artificial": "no",
+            "is_ringworld": "no",
+            "NOR": {
+              "has_planet_flag": "consecrated@from",
+              "has_modifier": "consecrated_quality_4"
+            },
+            "NOT": {},
+            "allow": {
+              "custom_tooltip": {
+                "NOT": {
+                  "fail_text": "consecrated_worlds_planet_owned"
+                }
+              },
+              "effect": {
+                "custom_tooltip": "decision_consecrated_worlds_effects_custom",
+                "<RECURSION>": [
+                  "# determine quality tier, set variable"
+                ],
+                "hidden_effect": {
+                  "set_planet_flag": "consecrated@from",
+                  "from": {
+                    "if": {
+                      "limit": {
+                        "OR": {
+                          "has_planet_flag": "holy_world_4"
+                        },
+                        "any_country": {},
+                        "random_country": {
+                          "limit": {
+                            "add_opinion_modifier": {
+                              "who": "from",
+                              "modifier": "opinion_worships_our_holy_world"
+                            }
+                          }
+                        },
+                        "if": {
+                          "limit": {
+                            "OR": {
+                              "is_planet_class": "pc_relic"
+                            }
+                          },
+                          "custom_tooltip": "consecrated_worlds_unsuitable",
+                          "random_list": {
+                            "80": {
+                              "modifier": {
+                                "factor": "10",
+                                "OR": {
+                                  "is_planet_class": "pc_relic"
+                                }
+                              },
+                              "add_modifier": {
+                                "modifier": "consecrated_quality_1",
+                                "days": "-1"
+                              },
+                              "from": {
+                                "change_variable": {
+                                  "which": "consecrated_variable",
+                                  "value": "<RECURSION>"
+                                }
+                              }
+                            },
+                            "20": {
+                              "add_modifier": {
+                                "modifier": "consecrated_quality_2",
+                                "days": "-1"
+                              },
+                              "create_ambient_object": {
+                                "type": "consecrated_planet_stage_1_object",
+                                "location": "this",
+                                "use_3d_location": "yes",
+                                "entity_scale_to_size": "yes"
+                              },
+                              "from": {
+                                "change_variable": {
+                                  "which": "consecrated_variable",
+                                  "value": "2"
+                                }
+                              }
+                            },
+                            "<RECURSION>": {
+                              "add_modifier": {
+                                "modifier": "consecrated_quality_4",
+                                "days": "-1"
+                              },
+                              "create_ambient_object": {
+                                "type": "consecrated_planet_stage_3_object",
+                                "location": "this",
+                                "use_3d_location": "yes",
+                                "entity_scale_to_size": "yes"
+                              },
+                              "from": {
+                                "change_variable": {
+                                  "which": "consecrated_variable",
+                                  "value": "4"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "else_if": {
+                          "limit": {
+                            "custom_tooltip": "consecrated_worlds_unsuitable",
+                            "random_list": {
+                              "10": {
+                                "add_modifier": {
+                                  "modifier": "consecrated_quality_1",
+                                  "days": "-1"
+                                },
+                                "from": {
+                                  "change_variable": {
+                                    "which": "consecrated_variable",
+                                    "value": "<RECURSION>"
+                                  }
+                                }
+                              },
+                              "70": {
+                                "add_modifier": {
+                                  "modifier": "consecrated_quality_2",
+                                  "days": "-1"
+                                },
+                                "create_ambient_object": {
+                                  "type": "consecrated_planet_stage_1_object",
+                                  "location": "this",
+                                  "use_3d_location": "yes",
+                                  "entity_scale_to_size": "yes"
+                                },
+                                "from": {
+                                  "change_variable": {
+                                    "which": "consecrated_variable",
+                                    "value": "<RECURSION>"
+                                  }
+                                }
+                              },
+                              "20": {
+                                "modifier": {
+                                  "add": "20",
+                                  "root.space_owner": {
+                                    "has_origin": "origin_toxic_knights"
+                                  },
+                                  "is_planet_class": "pc_toxic"
+                                },
+                                "add_modifier": {
+                                  "modifier": "consecrated_quality_3",
+                                  "days": "-1"
+                                },
+                                "create_ambient_object": {
+                                  "type": "consecrated_planet_stage_2_object",
+                                  "location": "this",
+                                  "use_3d_location": "yes",
+                                  "entity_scale_to_size": "yes"
+                                },
+                                "from": {
+                                  "change_variable": {
+                                    "which": "consecrated_variable",
+                                    "value": "3"
+                                  }
+                                }
+                              },
+                              "<RECURSION>": {
+                                "modifier": {
+                                  "add": "20",
+                                  "root.space_owner": {
+                                    "has_origin": "origin_toxic_knights"
+                                  },
+                                  "is_planet_class": "pc_toxic"
+                                },
+                                "add_modifier": {
+                                  "modifier": "consecrated_quality_4",
+                                  "days": "-1"
+                                },
+                                "create_ambient_object": {
+                                  "type": "consecrated_planet_stage_3_object",
+                                  "location": "this",
+                                  "use_3d_location": "yes",
+                                  "entity_scale_to_size": "yes"
+                                },
+                                "from": {
+                                  "change_variable": {
+                                    "which": "consecrated_variable",
+                                    "value": "<RECURSION>"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "else_if": {
+                            "limit": {
+                              "habitable_planet": "yes",
+                              "NOT": {},
+                              "custom_tooltip": "consecrated_worlds_suitable",
+                              "random_list": {
+                                "<RECURSION>": {
+                                  "add_modifier": {
+                                    "modifier": "consecrated_quality_1",
+                                    "days": "-1"
+                                  },
+                                  "from": {
+                                    "change_variable": {
+                                      "which": "consecrated_variable",
+                                      "value": "<RECURSION>"
+                                    }
+                                  }
+                                },
+                                "50": {
+                                  "add_modifier": {
+                                    "modifier": "consecrated_quality_2",
+                                    "days": "-1"
+                                  },
+                                  "create_ambient_object": {
+                                    "type": "consecrated_planet_stage_1_object",
+                                    "location": "this",
+                                    "use_3d_location": "yes",
+                                    "entity_scale_to_size": "yes"
+                                  },
+                                  "from": {
+                                    "change_variable": {
+                                      "which": "consecrated_variable",
+                                      "value": "<RECURSION>"
+                                    }
+                                  }
+                                },
+                                "40": {
+                                  "add_modifier": {
+                                    "modifier": "consecrated_quality_3",
+                                    "days": "-1"
+                                  },
+                                  "create_ambient_object": {
+                                    "type": "consecrated_planet_stage_2_object",
+                                    "location": "this",
+                                    "use_3d_location": "yes",
+                                    "entity_scale_to_size": "yes"
+                                  },
+                                  "from": {
+                                    "change_variable": {
+                                      "which": "consecrated_variable",
+                                      "value": "<RECURSION>"
+                                    }
+                                  }
+                                },
+                                "10": {
+                                  "add_modifier": {
+                                    "modifier": "consecrated_quality_4",
+                                    "days": "-1"
+                                  },
+                                  "create_ambient_object": {
+                                    "type": "consecrated_planet_stage_3_object",
+                                    "location": "this",
+                                    "use_3d_location": "yes",
+                                    "entity_scale_to_size": "yes"
+                                  },
+                                  "from": {
+                                    "change_variable": {
+                                      "which": "consecrated_variable",
+                                      "value": "<RECURSION>"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "else_if": {
+                              "limit": {
+                                "custom_tooltip": "consecrated_worlds_perfect",
+                                "random_list": {
+                                  "<RECURSION>": {
+                                    "add_modifier": {
+                                      "modifier": "consecrated_quality_3",
+                                      "days": "-1"
+                                    },
+                                    "create_ambient_object": {
+                                      "type": "consecrated_planet_stage_2_object",
+                                      "location": "this",
+                                      "use_3d_location": "yes",
+                                      "entity_scale_to_size": "yes"
+                                    },
+                                    "from": {
+                                      "change_variable": {
+                                        "which": "consecrated_variable",
+                                        "value": "<RECURSION>"
+                                      }
+                                    }
+                                  },
+                                  "100": {
+                                    "add_modifier": {
+                                      "modifier": "consecrated_quality_4",
+                                      "days": "-1"
+                                    },
+                                    "create_ambient_object": {
+                                      "type": "consecrated_planet_stage_3_object",
+                                      "location": "this",
+                                      "use_3d_location": "yes",
+                                      "entity_scale_to_size": "yes"
+                                    },
+                                    "from": {
+                                      "change_variable": {
+                                        "which": "consecrated_variable",
+                                        "value": "<RECURSION>"
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "<RECURSION>": [
+                                "# fallback",
+                                "# recalculate modifier"
+                              ],
+                              "else": {
+                                "add_modifier": {
+                                  "modifier": "consecrated_quality_1",
+                                  "days": "-1"
+                                },
+                                "from": {
+                                  "change_variable": {
+                                    "which": "consecrated_variable",
+                                    "value": "<RECURSION>"
+                                  }
+                                }
+                              },
+                              "from": {
+                                "recalculate_consecrated_world_modifier": "yes"
+                              }
+                            }
+                          },
+                          "ai_weight": {
+                            "weight": "<RECURSION>",
+                            "modifier": {
+                              "weight": "10",
+                              "habitable_planet": "yes",
+                              "NOT": {
+                                "space_owner": {
+                                  "any_owned_species": {
+                                    "prevprev": {}
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 539
+    },
+    "decision_unconsecrated_worlds": {
+      "decision_unconsecrated_worlds": {
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "unity": "500"
+          }
+        },
+        "potential": {
+          "exists": "from",
+          "from": {
+            "has_ascension_perk": "ap_consecrated_worlds"
+          },
+          "has_planet_flag": "consecrated@from"
+        },
+        "allow": {
+          "OR": {
+            "has_modifier": "consecrated_quality_4"
+          }
+        },
+        "effect": {
+          "hidden_effect": {
+            "from": {
+              "change_variable": {
+                "which": "num_consecrated_worlds",
+                "value": "-1"
+              }
+            },
+            "remove_planet_flag": "consecrated@from",
+            "custom_tooltip": "unconsecrated_world_tooltip",
+            "switch": {
+              "trigger": "has_modifier",
+              "consecrated_quality_4": {
+                "remove_modifier": "consecrated_quality_4",
+                "solar_system": {
+                  "random_system_ambient_object": {
+                    "limit": {
+                      "is_ambient_object_type": "consecrated_planet_stage_3_object"
+                    },
+                    "destroy_ambient_object": "this"
+                  }
+                },
+                "from": {
+                  "change_variable": {
+                    "which": "consecrated_variable",
+                    "value": "-4"
+                  }
+                }
+              },
+              "consecrated_quality_3": {
+                "remove_modifier": "consecrated_quality_3",
+                "solar_system": {
+                  "random_system_ambient_object": {
+                    "limit": {
+                      "is_ambient_object_type": "consecrated_planet_stage_2_object"
+                    },
+                    "destroy_ambient_object": "this"
+                  }
+                },
+                "from": {
+                  "change_variable": {
+                    "which": "consecrated_variable",
+                    "value": "-3"
+                  }
+                }
+              },
+              "consecrated_quality_2": {
+                "remove_modifier": "consecrated_quality_2",
+                "solar_system": {
+                  "random_system_ambient_object": {
+                    "limit": {
+                      "is_ambient_object_type": "consecrated_planet_stage_1_object"
+                    },
+                    "destroy_ambient_object": "this"
+                  }
+                },
+                "from": {
+                  "change_variable": {
+                    "which": "consecrated_variable",
+                    "value": "-2"
+                  }
+                }
+              },
+              "consecrated_quality_1": {
+                "remove_modifier": "consecrated_quality_1",
+                "from": {
+                  "change_variable": {
+                    "which": "consecrated_variable",
+                    "value": "-1"
+                  }
+                }
+              }
+            },
+            "if": {
+              "limit": {
+                "OR": {
+                  "has_planet_flag": "holy_world_4"
+                },
+                "any_country": {},
+                "random_country": {
+                  "limit": {
+                    "remove_opinion_modifier": {
+                      "who": "from",
+                      "modifier": "opinion_worships_our_holy_world"
+                    }
+                  }
+                },
+                "from": {
+                  "recalculate_consecrated_world_modifier": "yes",
+                  "custom_tooltip": "recalculates_consecrated_modifier"
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 995
+    },
+    "decision_arcology_project": {
+      "decision_arcology_project": {
+        "owned_planets_only": "yes",
+        "icon": "decision_arcology_project",
+        "enactment_time": "3600",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "influence": "200",
+            "minerals": "20000"
+          }
+        },
+        "potential": {
+          "NOR": {
+            "is_planet_class": "pc_relic",
+            "has_modifier": "pm_wenkwort_custodian"
+          },
+          "is_artificial": "no",
+          "exists": "owner",
+          "owner": {
+            "NOT": {},
+            "allow": {
+              "if": {
+                "limit": {
+                  "custom_tooltip": {
+                    "fail_text": "decision_arcology_project_requirements",
+                    "num_districts": {
+                      "num_districts": {
+                        "num_districts": {
+                          "num_districts": {
+                            "num_districts": {
+                              "num_districts": {},
+                              "custom_tooltip": {
+                                "fail_text": "legendary_leader_decision_arcology_project",
+                                "NOT": {}
+                              }
+                            },
+                            "effect": {
+                              "custom_tooltip": "decision_arcology_project_effects",
+                              "<RECURSION>": [
+                                "# Make city-planet"
+                              ],
+                              "hidden_effect": {
+                                "save_deposits": "yes",
+                                "clear_deposits": "yes",
+                                "restore_saved_deposits": "yes",
+                                "set_industrial_focus_flags": "yes",
+                                "change_pc": "pc_city",
+                                "relic_world_conversion_effect": {
+                                  "DISTRICT": "district_arcology_arms_industry",
+                                  "VARIABLE": "num_industrial_districts"
+                                },
+                                "set_ecu_industrial_districts_effect": "yes",
+                                "set_planet_entity": {
+                                  "entity": "city_planet_entity",
+                                  "graphical_culture": "owner"
+                                },
+                                "planet_event": {
+                                  "owner": {
+                                    "country_event": {},
+                                    "planet_event": {
+                                      "if": {
+                                        "limit": {
+                                          "OR": {
+                                            "is_active_resolution": "resolution_ecology_paradise_initiative"
+                                          }
+                                        },
+                                        "owner": {
+                                          "set_timed_country_flag": {}
+                                        }
+                                      }
+                                    },
+                                    "ai_weight": {
+                                      "weight": "<RECURSION>",
+                                      "modifier": {
+                                        "factor": "100",
+                                        "exists": "owner",
+                                        "OR": {
+                                          "num_pops >": "70",
+                                          "is_capital": "yes"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 1122
+    },
+    "decision_arcology_project_relic": {
+      "decision_arcology_project_relic": {
+        "owned_planets_only": "yes",
+        "icon": "decision_arcology_project",
+        "enactment_time": "3600",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "influence": "200",
+            "minerals": "20000"
+          }
+        },
+        "potential": {
+          "is_planet_class": "pc_relic",
+          "is_artificial": "no",
+          "exists": "owner",
+          "owner": {
+            "OR": {
+              "is_regular_empire": "yes",
+              "has_valid_civic": "civic_machine_servitor"
+            }
+          }
+        },
+        "allow": {
+          "owner": {},
+          "effect": {
+            "custom_tooltip": "decision_arcology_project_effects",
+            "<RECURSION>": [
+              "# Make city-planet"
+            ],
+            "hidden_effect": {
+              "save_deposits": "yes",
+              "clear_deposits": "yes",
+              "restore_saved_deposits": "yes",
+              "set_industrial_focus_flags": "yes",
+              "change_pc": "pc_city",
+              "relic_world_conversion_effect": {
+                "DISTRICT": "district_arcology_arms_industry",
+                "VARIABLE": "num_industrial_districts"
+              },
+              "set_ecu_industrial_districts_effect": "yes",
+              "set_planet_entity": {
+                "entity": "city_planet_entity",
+                "graphical_culture": "owner"
+              },
+              "planet_event": {
+                "add_deposit": "d_former_relic_world",
+                "planet_event": {
+                  "while": {
+                    "count": "<RECURSION>",
+                    "solar_system": {
+                      "random_system_ambient_object": {
+                        "limit": {
+                          "destroy_ambient_object": "this"
+                        }
+                      }
+                    },
+                    "if": {
+                      "limit": {
+                        "OR": {
+                          "is_active_resolution": "resolution_ecology_paradise_initiative"
+                        }
+                      },
+                      "owner": {
+                        "set_timed_country_flag": {}
+                      }
+                    }
+                  },
+                  "ai_weight": {
+                    "weight": "100"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 1226
+    },
+    "decision_market_nomination": {
+      "decision_market_nomination": {
+        "owned_planets_only": "yes",
+        "<RECURSION>": [
+          "# instant"
+        ],
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "energy": "1000",
+            "influence": "150"
+          }
+        },
+        "potential": {
+          "OR": {
+            "has_global_flag": "ongoing_market_relocation_nomination"
+          },
+          "exists": "from",
+          "<RECURSION>": [
+            "#from = { has_communications = event_target:50percentcomms } # should include self"
+          ],
+          "from": {
+            "has_country_flag": "market_nomination_eligible",
+            "NOT": {
+              "OR": {
+                "is_ai": "no",
+                "NOT": {}
+              },
+              "NOT": {},
+              "allow": {
+                "custom_tooltip": {
+                  "fail_text": "already_market_nominated",
+                  "from": {
+                    "NOT": {
+                      "any_owned_planet": {
+                        "OR": {
+                          "has_modifier": "market_nominee_level_5 # boosted twice"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "effect": {
+                "custom_tooltip": "decision_market_nomination_effects",
+                "hidden_effect": {
+                  "from": {
+                    "set_variable": {
+                      "which": "market_rating",
+                      "value": "<RECURSION>"
+                    }
+                  },
+                  "random_list": {
+                    "9": {
+                      "add_modifier": {
+                        "modifier": "market_nominee_level_1",
+                        "days": "-1"
+                      },
+                      "from": {
+                        "change_variable": {
+                          "which": "market_rating",
+                          "value": "<RECURSION>"
+                        }
+                      },
+                      "modifier": {
+                        "factor": "0.33",
+                        "from": {},
+                        "modifier": {
+                          "factor": "0.5",
+                          "solar_system": {},
+                          "modifier": {
+                            "factor": "0.5",
+                            "solar_system": {},
+                            "modifier": {
+                              "factor": "<RECURSION>",
+                              "solar_system": {},
+                              "modifier": {
+                                "factor": "1.5",
+                                "from": {}
+                              },
+                              "6": {
+                                "add_modifier": {
+                                  "modifier": "market_nominee_level_2",
+                                  "days": "-1"
+                                },
+                                "from": {
+                                  "change_variable": {
+                                    "which": "market_rating",
+                                    "value": "<RECURSION>"
+                                  }
+                                }
+                              },
+                              "<RECURSION>": {
+                                "modifier": {
+                                  "factor": "<RECURSION>",
+                                  "from": {},
+                                  "modifier": {
+                                    "factor": "<RECURSION>",
+                                    "solar_system": {},
+                                    "modifier": {
+                                      "factor": "1.5",
+                                      "solar_system": {},
+                                      "modifier": {
+                                        "factor": "0.5",
+                                        "solar_system": {},
+                                        "modifier": {
+                                          "factor": "0.5",
+                                          "from": {
+                                            "change_variable": {
+                                              "which": "market_rating",
+                                              "value": "<RECURSION>"
+                                            }
+                                          },
+                                          "add_modifier": {
+                                            "modifier": "market_nominee_level_3",
+                                            "days": "-1"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "ai_weight": {
+                                    "weight": "10",
+                                    "modifier": {
+                                      "factor": "0.8",
+                                      "from": {},
+                                      "modifier": {
+                                        "factor": "<RECURSION>",
+                                        "from": {},
+                                        "modifier": {
+                                          "factor": "0.5",
+                                          "solar_system": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 1311
+    },
+    "decision_boost_market_nomination": {
+      "decision_boost_market_nomination": {
+        "owned_planets_only": "yes",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "energy": "2000",
+            "influence": "300"
+          }
+        },
+        "potential": {
+          "OR": {
+            "has_global_flag": "ongoing_market_relocation_nomination"
+          },
+          "<RECURSION>": [
+            "#from = { has_communications = event_target:50percentcomms } # should include self"
+          ],
+          "from": {
+            "OR": {
+              "has_modifier": "market_nominee_level_5 # maxed out and boosted twice"
+            }
+          },
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "max_boosted",
+              "NOT": {}
+            },
+            "effect": {
+              "custom_tooltip": "decision_boost_market_nomination_effects",
+              "hidden_effect": {
+                "<RECURSION>": [
+                  "# boost counter"
+                ],
+                "if": {
+                  "limit": {
+                    "set_planet_flag": "boosted_twice"
+                  },
+                  "else": {
+                    "set_planet_flag": "boosted_once"
+                  },
+                  "<RECURSION>": [
+                    "# boost rating"
+                  ],
+                  "if": {
+                    "limit": {
+                      "remove_modifier": "market_nominee_level_1",
+                      "add_modifier": {
+                        "modifier": "market_nominee_level_2",
+                        "days": "-1"
+                      }
+                    },
+                    "else_if": {
+                      "limit": {
+                        "remove_modifier": "market_nominee_level_2",
+                        "add_modifier": {
+                          "modifier": "market_nominee_level_3",
+                          "days": "-1"
+                        }
+                      },
+                      "else_if": {
+                        "limit": {
+                          "remove_modifier": "market_nominee_level_3",
+                          "add_modifier": {
+                            "modifier": "market_nominee_level_4",
+                            "days": "-1"
+                          }
+                        },
+                        "else_if": {
+                          "limit": {
+                            "remove_modifier": "market_nominee_level_4",
+                            "add_modifier": {
+                              "modifier": "market_nominee_level_5",
+                              "days": "-1"
+                            }
+                          },
+                          "from": {
+                            "change_variable": {
+                              "which": "market_rating",
+                              "value": "<RECURSION>"
+                            }
+                          }
+                        }
+                      },
+                      "ai_weight": {
+                        "weight": "10",
+                        "modifier": {
+                          "factor": "0.8",
+                          "from": {},
+                          "modifier": {
+                            "factor": "<RECURSION>",
+                            "from": {}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 1502
+    },
+    "decision_revoke_market_nomination": {
+      "decision_revoke_market_nomination": {
+        "owned_planets_only": "yes",
+        "<RECURSION>": [
+          "# instant"
+        ],
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "influence": "10"
+          }
+        },
+        "potential": {
+          "OR": {
+            "has_modifier": "market_nominee_level_5 # boosted twice"
+          },
+          "<RECURSION>": [
+            "#from = { has_communications = event_target:50percentcomms } # should include self"
+          ],
+          "from": {},
+          "effect": {
+            "hidden_effect": {
+              "if": {
+                "limit": {
+                  "remove_modifier": "market_nominee_level_1",
+                  "tooltip": {},
+                  "else_if": {
+                    "limit": {
+                      "remove_modifier": "market_nominee_level_2",
+                      "tooltip": {},
+                      "else_if": {
+                        "limit": {
+                          "remove_modifier": "market_nominee_level_3",
+                          "tooltip": {},
+                          "else_if": {
+                            "limit": {
+                              "remove_modifier": "market_nominee_level_4",
+                              "tooltip": {},
+                              "else_if": {
+                                "limit": {
+                                  "remove_modifier": "market_nominee_level_5",
+                                  "tooltip": {},
+                                  "from": {
+                                    "set_variable": {
+                                      "which": "market_rating",
+                                      "value": "<RECURSION>"
+                                    }
+                                  }
+                                },
+                                "custom_tooltip": "decision_revoke_market_nomination_effect"
+                              },
+                              "ai_weight": {
+                                "weight": "<RECURSION>"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 1620
+    },
+    "# decision_study_the_sea": {
+      "<RECURSION>": 1687
+    },
+    "decision_divine_algorithm": {
+      "decision_divine_algorithm": {
+        "icon": "decision_divine_algorithm",
+        "owned_planets_only": "yes",
+        "enactment_time": "360",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "unity": "500"
+          }
+        },
+        "potential": {
+          "owner": {
+            "has_country_flag": "divine_algorithm"
+          },
+          "NOT": {
+            "NOT": {},
+            "effect": {
+              "add_modifier": {
+                "modifier": "divine_algorithm",
+                "days": "3600"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 1718
+    },
+    "decision_art_monument": {
+      "decision_art_monument": {
+        "icon": "decision_art_monument",
+        "owned_planets_only": "yes",
+        "resources": {
+          "category": "decisions"
+        },
+        "potential": {
+          "owner": {
+            "has_country_flag": "artist_monument_collector",
+            "OR": {
+              "AND": {
+                "check_variable": {
+                  "check_variable": {},
+                  "AND": {
+                    "check_variable": {
+                      "check_variable": {},
+                      "AND": {
+                        "check_variable": {
+                          "check_variable": {},
+                          "AND": {
+                            "check_variable": {
+                              "check_variable": {},
+                              "AND": {
+                                "check_variable": {
+                                  "check_variable": {}
+                                }
+                              },
+                              "NOT": {
+                                "NOT": {},
+                                "effect": {
+                                  "add_modifier": {
+                                    "modifier": "artist_monument_erected"
+                                  },
+                                  "hidden_effect": {
+                                    "owner": {
+                                      "if": {
+                                        "limit": {
+                                          "check_variable": {},
+                                          "set_variable": {
+                                            "which": "artist_monument_erected",
+                                            "value": "<RECURSION>"
+                                          }
+                                        },
+                                        "else": {
+                                          "change_variable": {
+                                            "which": "artist_monument_erected",
+                                            "value": "<RECURSION>"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "ai_weight": {
+                                    "weight": "<RECURSION>"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 1749
+    },
+    "decision_demolish_art_monument": {
+      "decision_demolish_art_monument": {
+        "icon": "decision_art_monument",
+        "enactment_time": "15",
+        "owned_planets_only": "yes",
+        "resources": {
+          "category": "decisions"
+        },
+        "potential": {
+          "has_modifier": "artist_monument_erected"
+        },
+        "effect": {
+          "remove_modifier": "artist_monument_erected",
+          "hidden_effect": {
+            "owner": {
+              "subtract_variable": {
+                "which": "artist_monument_erected",
+                "value": "<RECURSION>"
+              }
+            }
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        }
+      },
+      "<RECURSION>": 1819
+    },
+    "decision_lithoid_swarm_consume_world": {
+      "decision_lithoid_swarm_consume_world": {
+        "icon": "decision_burning_settlement",
+        "sound": "event_structural_collapse",
+        "<RECURSION>": [
+          "#enactment_time = 360"
+        ],
+        "resources": {
+          "category": "decisions"
+        },
+        "owned_planets_only": "yes",
+        "potential": {
+          "owner": {
+            "is_lithoid_empire": "yes",
+            "has_valid_civic": "civic_hive_devouring_swarm"
+          },
+          "can_have_habitable_deposits": "yes",
+          "is_capital": "no",
+          "NOT": {},
+          "effect": {
+            "custom_tooltip": "decision_lithoid_swarm_consume_world_effect_desc",
+            "set_timed_planet_flag": {
+              "days": "360",
+              "flag": "recently_eaten_planet"
+            },
+            "hidden_effect": {
+              "set_planet_flag": "being_devoured",
+              "add_modifier": {
+                "modifier": "being_devoured_modifier",
+                "days": "-1"
+              },
+              "export_trigger_value_to_variable": {
+                "trigger": "count_deposits",
+                "parameters": {
+                  "type": "d_lithoid_devastation"
+                },
+                "variable": "num_lithoid_blockers"
+              },
+              "if": {
+                "limit": {
+                  "is_variable_set": "num_lithoid_blockers"
+                },
+                "subtract_variable": {
+                  "which": "num_districts_terravore",
+                  "value": "num_lithoid_blockers"
+                }
+              }
+            },
+            "owner": {
+              "start_situation": {
+                "type": "situation_terravore_consume_planet",
+                "target": "root"
+              }
+            }
+          },
+          "ai_weight": {
+            "weight": "<RECURSION>",
+            "<RECURSION>": [
+              "# don't wreck worlds you want to keep"
+            ],
+            "modifier": {
+              "factor": "<RECURSION>",
+              "is_lithoid_devouring_swarm_consumption_world": "no"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 1850
+    },
+    "decision_project_cornucopia": {
+      "decision_project_cornucopia": {
+        "owned_planets_only": "yes",
+        "enactment_time": "180",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "unity": "250",
+            "energy": "500"
+          }
+        },
+        "potential": {
+          "is_artificial": "no",
+          "NOT": {
+            "NOT": {
+              "NOT": {
+                "owner": {
+                  "is_galactic_community_member": "yes",
+                  "is_active_resolution": "resolution_industry_project_cornucopia"
+                },
+                "NOT": {
+                  "NOT": {},
+                  "effect": {
+                    "custom_tooltip": "decision_project_cornucopia_effects_short",
+                    "add_deposit": "d_project_cornucopia",
+                    "hidden_effect": {
+                      "create_message": {
+                        "type": "MESSAGE_TYPE_PLANET_PROSPECTED",
+                        "localization": "MESSAGE_PLANET_PROSPECTED",
+                        "days": "30",
+                        "target": "this",
+                        "variable": {
+                          "type": "name",
+                          "localization": "DEPOSIT",
+                          "scope": "last_added_deposit"
+                        }
+                      }
+                    }
+                  },
+                  "ai_weight": {
+                    "weight": "<RECURSION>",
+                    "modifier": {
+                      "factor": "<RECURSION>"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 1925
+    },
+    "decision_crystalline_refugees": {
+      "decision_crystalline_refugees": {
+        "owned_planets_only": "yes",
+        "icon": "decision_deal",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "influence": "10"
+          }
+        },
+        "potential": {
+          "is_planet_class": "pc_habitat",
+          "exists": "event_target:central_crystal_empire",
+          "owner": {
+            "has_country_flag": "crystalline_refugees_flag"
+          }
+        },
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "crystalline_hostility_trigger_tt",
+            "event_target:central_crystal_empire": {
+              "NOT": {}
+            }
+          },
+          "effect": {
+            "custom_tooltip": "decision_crystalling_refugees_effect_tt",
+            "hidden_effect": {
+              "while": {
+                "count": "<RECURSION>",
+                "create_pop": {
+                  "species": "event_target:crystalline_empire_species"
+                }
+              },
+              "owner": {
+                "remove_country_flag": "crystalline_refugees_flag"
+              },
+              "event_target:central_crystal_empire": {
+                "add_opinion_modifier": {
+                  "who": "root.owner",
+                  "modifier": "opinion_small_boon_crystal_empire"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "weight": "<RECURSION>"
+          }
+        }
+      },
+      "<RECURSION>": 1984
+    },
+    "decision_crystalline_architecture": {
+      "decision_crystalline_architecture": {
+        "owned_planets_only": "yes",
+        "icon": "decision_deal",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "influence": "10"
+          }
+        },
+        "potential": {
+          "is_planet_class": "pc_habitat",
+          "exists": "event_target:central_crystal_empire",
+          "owner": {
+            "has_country_flag": "crystalline_architecture_flag"
+          },
+          "NOT": {},
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "crystalline_hostility_trigger_tt",
+              "event_target:central_crystal_empire": {
+                "NOT": {}
+              }
+            },
+            "effect": {
+              "add_modifier": {
+                "modifier": "crystalline_architecture_mod",
+                "days": "-1"
+              },
+              "hidden_effect": {
+                "owner": {
+                  "remove_country_flag": "crystalline_architecture_flag"
+                }
+              }
+            },
+            "ai_weight": {
+              "weight": "<RECURSION>"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 2039
+    },
+    "decision_shattered_ring_project": {
+      "decision_shattered_ring_project": {
+        "owned_planets_only": "yes",
+        "icon": "decision_arcology_project",
+        "enactment_time": "2700",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "alloys": "7500"
+          }
+        },
+        "potential": {
+          "is_planet_class": "pc_shattered_ring_habitable",
+          "exists": "owner"
+        },
+        "allow": {
+          "owner": {},
+          "effect": {
+            "custom_tooltip": "decision_shattered_ring_project_effects",
+            "<RECURSION>": [
+              "# Make ringworld"
+            ],
+            "hidden_effect": {
+              "save_deposits": "yes",
+              "clear_deposits": "yes",
+              "restore_saved_deposits": "yes",
+              "change_pc": "pc_ringworld_habitable",
+              "set_planet_entity": {
+                "entity": "ringworld_habitable_entity_01_entity",
+                "graphical_culture": "owner"
+              },
+              "solar_system": {
+                "every_system_planet": {
+                  "limit": {
+                    "set_planet_entity": {
+                      "entity": "ringworld_tech_entity_01_entity",
+                      "graphical_culture": "root.owner"
+                    }
+                  },
+                  "every_system_planet": {
+                    "limit": {
+                      "set_planet_entity": {
+                        "entity": "ringworld_seam_entity_01_entity",
+                        "graphical_culture": "root.owner"
+                      }
+                    }
+                  },
+                  "<RECURSION>": [
+                    "# Remove Scrap Processing Buildings"
+                  ],
+                  "if": {
+                    "limit": {
+                      "remove_building": "building_mineral_purification_plant"
+                    },
+                    "if": {
+                      "limit": {
+                        "remove_building": "building_mineral_purification_hub"
+                      },
+                      "<RECURSION>": [
+                        "# This removes the extra districts when fixing the ring world."
+                      ],
+                      "if": {
+                        "limit": {
+                          "owner": {},
+                          "shattered_ring_world_conversion_effect": {
+                            "DISTRICT": "district_rw_commercial",
+                            "VARIABLE": "num_commercial_districts"
+                          }
+                        },
+                        "if": {
+                          "limit": {
+                            "owner": {},
+                            "shattered_ring_world_conversion_effect": {
+                              "DISTRICT": "district_rw_generator",
+                              "VARIABLE": "num_generator_districts"
+                            }
+                          },
+                          "if": {
+                            "limit": {
+                              "owner": {},
+                              "shattered_ring_world_conversion_effect": {
+                                "DISTRICT": "district_rw_generator",
+                                "VARIABLE": "num_generator_districts"
+                              }
+                            },
+                            "<RECURSION>": [
+                              "# All empire types get farming and industrial districts",
+                              "# Finally, bring it in line with ringworld sizes",
+                              "# And set the country flag so you can take Galactic Wonders"
+                            ],
+                            "shattered_ring_world_conversion_effect": {
+                              "DISTRICT": "district_rw_industrial",
+                              "VARIABLE": "num_industrial_districts"
+                            },
+                            "set_planet_size": "10",
+                            "owner": {}
+                          },
+                          "ai_weight": {
+                            "weight": "100"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 2094
+    },
+    "decision_shattered_ring_project_interloper": {
+      "decision_shattered_ring_project_interloper": {
+        "owned_planets_only": "yes",
+        "icon": "decision_arcology_project",
+        "enactment_time": "3600",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "alloys": "10000"
+          }
+        },
+        "potential": {
+          "OR": {
+            "is_planet_class": "pc_ringworld_habitable"
+          },
+          "solar_system": {
+            "any_system_planet": {
+              "has_planet_flag": "interloper"
+            }
+          }
+        },
+        "allow": {
+          "owner": {},
+          "effect": {
+            "custom_tooltip": "decision_shattered_ring_project_interloper_effects",
+            "<RECURSION>": [
+              "# Make ringworld"
+            ],
+            "hidden_effect": {
+              "solar_system": {
+                "random_system_planet": {
+                  "limit": {
+                    "has_planet_flag": "interloper"
+                  },
+                  "if": {
+                    "limit": {
+                      "exists": "research_station"
+                    },
+                    "research_station": {
+                      "delete_fleet": "this"
+                    }
+                  },
+                  "remove_planet": "yes"
+                },
+                "every_system_planet": {
+                  "limit": {
+                    "set_planet_entity": {
+                      "entity": "ringworld_tech_entity_01_entity",
+                      "graphical_culture": "root.owner"
+                    }
+                  },
+                  "every_system_planet": {
+                    "limit": {
+                      "change_pc": "pc_ringworld_seam",
+                      "set_planet_entity": {
+                        "entity": "ringworld_seam_entity_01_entity",
+                        "graphical_culture": "root.owner"
+                      }
+                    },
+                    "random_ambient_object": {
+                      "limit": {
+                        "has_ambient_object_flag": "interloper_damage"
+                      },
+                      "destroy_ambient_object": "this"
+                    }
+                  },
+                  "<RECURSION>": [
+                    "# And set the country flag so you can take Galactic Wonders"
+                  ],
+                  "owner": {}
+                },
+                "ai_weight": {
+                  "weight": "100"
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 2214
+    },
+    "decision_expand_planetary_sea": {
+      "decision_expand_planetary_sea": {
+        "owned_planets_only": "yes",
+        "icon": "decision_arctic_planet",
+        "enactment_time": "@expand_planetary_sea_length",
+        "potential": {
+          "is_planet_class": "pc_ocean",
+          "exists": "owner",
+          "owner": {
+            "has_ascension_perk": "ap_hydrocentric"
+          },
+          "is_terraforming": "no"
+        },
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "requires_free_ice_mining_station",
+            "owner": {
+              "any_owned_starbase": {
+                "has_starbase_building": "ice_mining_station",
+                "solar_system": {
+                  "NOT": {}
+                }
+              }
+            },
+            "if": {
+              "limit": {
+                "is_variable_set": "ice_dumping_happened"
+              },
+              "custom_tooltip": {
+                "fail_text": "requires_max_3_times_fail_simple",
+                "success_text": "requires_max_3_times_ice_dumping",
+                "check_variable": {
+                  "which": "ice_dumping_happened"
+                }
+              }
+            },
+            "else": {
+              "custom_tooltip": {
+                "text": "requires_max_3_times_pass_simple",
+                "always": "yes"
+              }
+            }
+          },
+          "resources": {
+            "category": "decisions",
+            "cost": {
+              "influence": "50",
+              "energy": "1000"
+            }
+          },
+          "on_queued": {
+            "set_variable": {
+              "which": "decision_length",
+              "value": "@expand_planetary_sea_length"
+            },
+            "export_modifier_to_variable": {
+              "modifier": "planet_decision_enact_speed_mult",
+              "variable": "decision_mult_var"
+            },
+            "change_variable": {
+              "which": "decision_length",
+              "value": "<RECURSION>"
+            },
+            "divide_variable": {
+              "which": "decision_length",
+              "value": "decision_mult_var"
+            },
+            "owner": {
+              "random_owned_starbase": {
+                "limit": {
+                  "has_starbase_building": "ice_mining_station",
+                  "solar_system": {
+                    "set_timed_star_flag": {
+                      "flag": "ice_mining@root",
+                      "days": "root.decision_length"
+                    }
+                  }
+                }
+              },
+              "clear_variable": "decision_mult_var"
+            },
+            "abort_trigger": {
+              "NOT": {
+                "owner": {
+                  "any_owned_starbase": {
+                    "has_starbase_building": "ice_mining_station"
+                  }
+                }
+              }
+            },
+            "on_unqueued": {
+              "owner": {
+                "random_owned_starbase": {
+                  "limit": {
+                    "solar_system": {
+                      "has_star_flag": "ice_mining@root"
+                    }
+                  },
+                  "solar_system": {
+                    "remove_star_flag": "ice_mining_in_progress"
+                  }
+                }
+              }
+            },
+            "abort_effect": {
+              "owner": {
+                "random_owned_starbase": {
+                  "limit": {
+                    "solar_system": {
+                      "has_star_flag": "ice_mining@root"
+                    }
+                  },
+                  "solar_system": {
+                    "remove_star_flag": "ice_mining_in_progress"
+                  }
+                }
+              },
+              "create_message": {
+                "type": "ICE_MINING_INTERRUPTED",
+                "localization": "ICE_MINING_INTERRUPTED_DESC",
+                "days": "20",
+                "target": "root"
+              }
+            },
+            "effect": {
+              "change_planet_size": "<RECURSION>",
+              "custom_tooltip": "decision_expand_planetary_sea_tooltip",
+              "hidden_effect": {
+                "ice_mining_depletion_effect": "yes",
+                "if": {
+                  "limit": {
+                    "has_planet_flag": "temp_ice_mine_exhausted_flag"
+                  },
+                  "event_target:mined_system.starbase": {
+                    "remove_starbase_building": {
+                      "building": "ice_mining_station"
+                    }
+                  },
+                  "create_message": {
+                    "type": "ICE_MINING_SUCCESS",
+                    "localization": "ICE_MINING_SUCCESS_BUT_EXHAUSTED_DESC",
+                    "days": "20",
+                    "target": "root",
+                    "variable": {
+                      "type": "name",
+                      "localization": "SYSTEM",
+                      "scope": "event_target:mined_system"
+                    }
+                  }
+                },
+                "else": {
+                  "create_message": {
+                    "type": "ICE_MINING_SUCCESS",
+                    "localization": "ICE_MINING_SUCCESS_DESC",
+                    "days": "20",
+                    "target": "root",
+                    "variable": {
+                      "type": "name",
+                      "localization": "SYSTEM",
+                      "scope": "event_target:mined_system"
+                    }
+                  }
+                },
+                "change_variable": {
+                  "which": "ice_dumping_happened",
+                  "value": "<RECURSION>"
+                }
+              }
+            },
+            "ai_weight": {
+              "weight": "<RECURSION>",
+              "modifier": {
+                "factor": "<RECURSION>",
+                "is_capital": "yes"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 2338
+    },
+    "decision_flood_habitat": {
+      "decision_flood_habitat": {
+        "owned_planets_only": "yes",
+        "icon": "decision_satellite_in_orbit",
+        "enactment_time": "@expand_planetary_sea_length",
+        "potential": {
+          "is_planet_class": "pc_habitat",
+          "exists": "owner",
+          "owner": {
+            "has_ascension_perk": "ap_hydrocentric"
+          },
+          "NOT": {
+            "has_modifier": "flooded_habitat"
+          }
+        },
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "requires_free_ice_mining_station",
+            "owner": {
+              "any_owned_starbase": {
+                "has_starbase_building": "ice_mining_station",
+                "solar_system": {
+                  "NOT": {}
+                }
+              }
+            }
+          },
+          "resources": {
+            "category": "decisions",
+            "cost": {
+              "influence": "50",
+              "energy": "1000"
+            }
+          },
+          "on_queued": {
+            "set_variable": {
+              "which": "decision_length",
+              "value": "@expand_planetary_sea_length"
+            },
+            "export_modifier_to_variable": {
+              "modifier": "planet_decision_enact_speed_mult",
+              "variable": "decision_mult_var"
+            },
+            "change_variable": {
+              "which": "decision_length",
+              "value": "<RECURSION>"
+            },
+            "divide_variable": {
+              "which": "decision_length",
+              "value": "decision_mult_var"
+            },
+            "owner": {
+              "random_owned_starbase": {
+                "limit": {
+                  "has_starbase_building": "ice_mining_station",
+                  "solar_system": {
+                    "set_timed_star_flag": {
+                      "flag": "ice_mining@root",
+                      "days": "root.decision_length"
+                    }
+                  }
+                }
+              },
+              "clear_variable": "decision_mult_var"
+            },
+            "abort_trigger": {
+              "NOT": {
+                "owner": {
+                  "any_owned_starbase": {
+                    "has_starbase_building": "ice_mining_station"
+                  }
+                }
+              }
+            },
+            "on_unqueued": {
+              "owner": {
+                "random_owned_starbase": {
+                  "limit": {
+                    "solar_system": {
+                      "has_star_flag": "ice_mining@root"
+                    }
+                  },
+                  "solar_system": {
+                    "remove_star_flag": "ice_mining_in_progress"
+                  }
+                }
+              }
+            },
+            "abort_effect": {
+              "owner": {
+                "random_owned_starbase": {
+                  "limit": {
+                    "solar_system": {
+                      "has_star_flag": "ice_mining@root"
+                    }
+                  },
+                  "solar_system": {
+                    "remove_star_flag": "ice_mining_in_progress"
+                  }
+                }
+              },
+              "create_message": {
+                "type": "ICE_MINING_INTERRUPTED",
+                "localization": "ICE_MINING_INTERRUPTED_HABITAT_DESC",
+                "days": "20",
+                "target": "root"
+              }
+            },
+            "effect": {
+              "custom_tooltip": "decision_flood_habitat_tooltip",
+              "hidden_effect": {
+                "add_modifier": {
+                  "modifier": "flooded_habitat",
+                  "days": "-1"
+                },
+                "ice_mining_depletion_effect": "yes",
+                "if": {
+                  "limit": {
+                    "has_planet_flag": "temp_ice_mine_exhausted_flag"
+                  },
+                  "event_target:mined_system.starbase": {
+                    "remove_starbase_building": {
+                      "building": "ice_mining_station"
+                    }
+                  },
+                  "create_message": {
+                    "type": "ICE_MINING_HABITAT_SUCCESS",
+                    "localization": "ICE_MINING_HABITAT_SUCCESS_BUT_EXHAUSTED_DESC",
+                    "days": "20",
+                    "target": "root",
+                    "variable": {
+                      "type": "name",
+                      "localization": "SYSTEM",
+                      "scope": "event_target:mined_system"
+                    }
+                  }
+                },
+                "else": {
+                  "create_message": {
+                    "type": "ICE_MINING_HABITAT_SUCCESS",
+                    "localization": "ICE_MINING_HABITAT_SUCCESS_DESC",
+                    "days": "20",
+                    "target": "root",
+                    "variable": {
+                      "type": "name",
+                      "localization": "SYSTEM",
+                      "scope": "event_target:mined_system"
+                    }
+                  }
+                },
+                "change_variable": {
+                  "which": "ice_dumping_happened",
+                  "value": "<RECURSION>"
+                }
+              }
+            },
+            "ai_weight": {
+              "weight": "<RECURSION>"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 2551
+    },
+    "decision_expand_dayside": {
+      "decision_expand_dayside": {
+        "owned_planets_only": "yes",
+        "icon": "decision_divine_algorithm",
+        "enactment_time": "3600",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "minerals": "1000",
+            "energy": "500"
+          }
+        },
+        "potential": {
+          "has_planet_flag": "tidally_locked_world",
+          "NOT": {},
+          "effect": {
+            "add_deposit": "d_dayside_farm",
+            "remove_planet_flag": "tidally_locked_world"
+          },
+          "ai_weight": {
+            "weight": "<RECURSION>"
+          }
+        }
+      },
+      "<RECURSION>": 2729
+    },
+    "decision_introduce_chaos": {
+      "decision_introduce_chaos": {
+        "owned_planets_only": "yes",
+        "icon": "decision_victorious_army",
+        "enactment_time": "1800",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "energy": "500"
+          }
+        },
+        "potential": {
+          "has_planet_flag": "perfect_organization",
+          "exists": "owner",
+          "owner": {},
+          "effect": {
+            "remove_modifier": "perfect_organization_modifier",
+            "add_modifier": {
+              "remove_planet_flag": "perfect_organization"
+            },
+            "ai_weight": {
+              "weight": "<RECURSION>"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 2755
+    },
+    "incinerate_the_flagella": {
+      "incinerate_the_flagella": {
+        "owned_planets_only": "yes",
+        "icon": "decision_luxuries",
+        "enactment_time": "60",
+        "resources": {
+          "category": "decisions"
+        },
+        "potential": {
+          "has_planet_flag": "matriarch_horror",
+          "exists": "owner",
+          "owner": {},
+          "effect": {
+            "remove_modifier": "tiyanki_trophy",
+            "add_modifier": {
+              "remove_planet_flag": "matriarch_horror"
+            },
+            "ai_weight": {
+              "weight": "100",
+              "modifier": {
+                "factor": "<RECURSION>",
+                "owner": {
+                  "NOR": {
+                    "is_robot_empire": "yes",
+                    "is_xenophobe": "yes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 2782
+    },
+    "decision_activate_dimensional_manipulation_device": {
+      "decision_activate_dimensional_manipulation_device": {
+        "owned_planets_only": "yes",
+        "icon": "decision_engineering_research",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "sr_dark_matter": "1000"
+          }
+        },
+        "potential": {
+          "has_planet_flag": "dimensional_manipulation_device_deactivated"
+        },
+        "effect": {
+          "hidden_effect": {
+            "add_deposit": "d_dimensional_manipulation_device"
+          }
+        }
+      },
+      "<RECURSION>": 2817
+    },
+    "decision_consecrate_habitat_knights": {
+      "decision_consecrate_habitat_knights": {
+        "owned_planets_only": "yes",
+        "enactment_time": "360",
+        "potential": {
+          "owner": {
+            "has_origin": "origin_toxic_knights",
+            "has_relic": "r_toxic_god"
+          },
+          "uses_district_set": "habitat",
+          "NOR": {
+            "has_building": "building_order_keep"
+          }
+        },
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "requires_another_consecration",
+            "owner": {
+              "check_variable": {
+                "which": "toxic_castles_available"
+              }
+            }
+          }
+        },
+        "on_queued": {
+          "owner": {
+            "change_variable": {
+              "which": "toxic_castles_available",
+              "value": "-1"
+            }
+          }
+        },
+        "on_unqueued": {
+          "owner": {
+            "change_variable": {
+              "which": "toxic_castles_available",
+              "value": "<RECURSION>"
+            }
+          }
+        },
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "influence": "50"
+          }
+        },
+        "effect": {
+          "add_building": "building_order_castle",
+          "custom_tooltip": "decision_consecrate_habitat_knights_effect"
+        }
+      },
+      "<RECURSION>": 2844
+    },
+    "decision_expand_preserves": {
+      "decision_expand_preserves": {
+        "owned_planets_only": "yes",
+        "icon": "decision_animal_wildlife",
+        "enactment_time": "1800",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "minerals": "500"
+          }
+        },
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "has_valid_civic": "civic_environmentalist"
+          },
+          "has_deposit": "d_big_nature_preserve_blocker"
+        },
+        "effect": {
+          "custom_tooltip": "decision_expand_preserves_short",
+          "hidden_effect": {
+            "add_deposit": "d_big_nature_preserve_blocker"
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        }
+      },
+      "<RECURSION>": 2900
+    },
+    "decision_reorganize_leviathan_parade": {
+      "decision_reorganize_leviathan_parade": {
+        "owned_planets_only": "yes",
+        "icon": "decision_expel_population",
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "has_country_flag": "reorganizing_leviathan_parade"
+          },
+          "NOT": {
+            "has_planet_flag": "no_reorganize"
+          }
+        },
+        "effect": {
+          "owner": {
+            "remove_country_flag": "reorganizing_leviathan_parade",
+            "random_situation": {
+              "limit": {
+                "current_situation_approach": "approach_reorganize"
+              },
+              "target": {
+                "remove_planet_flag": "no_reorganize"
+              },
+              "change_situation_target": "root",
+              "set_situation_locked": "no",
+              "set_situation_approach": "approach_encourage"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 2930
+    }
+  },
+  "03_crime_decisions.txt": {
+    "decision_launch_anticrime_campaign": {
+      "decision_launch_anticrime_campaign": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_crime",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "unity": "250"
+          }
+        },
+        "potential": {
+          "owner": {
+            "planet_crime >": "10",
+            "NOR": {
+              "has_modifier": "anticrime_campaign"
+            }
+          },
+          "effect": {
+            "add_modifier": {},
+            "ai_weight": {
+              "weight": "<RECURSION>",
+              "modifier": {
+                "weight": "<RECURSION>"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "decision_end_anticrime_campaign": {
+      "decision_end_anticrime_campaign": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_crime",
+        "resources": {
+          "category": "decisions"
+        },
+        "potential": {
+          "has_modifier": "anticrime_campaign"
+        },
+        "effect": {
+          "remove_modifier": "anticrime_campaign"
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>",
+          "modifier": {
+            "weight": "1000 #no cost to end it, so may as well do so quickly",
+            "planet_crime <": "<RECURSION>"
+          }
+        }
+      },
+      "<RECURSION>": 41
+    },
+    "decision_negotiate_with_crime_lords": {
+      "decision_negotiate_with_crime_lords": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_deal",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "unity": "250"
+          }
+        },
+        "potential": {
+          "owner": {
+            "planet_crime >": "10",
+            "NOR": {
+              "has_modifier": "anticrime_campaign"
+            }
+          },
+          "effect": {
+            "add_modifier": {},
+            "ai_weight": {
+              "weight": "<RECURSION>",
+              "modifier": {
+                "weight": "<RECURSION>",
+                "has_branch_office": "yes",
+                "branch_office_owner": {
+                  "is_criminal_syndicate": "yes"
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 68
+    },
+    "decision_end_crime_lord_deal": {
+      "decision_end_crime_lord_deal": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_deal",
+        "resources": {
+          "category": "decisions"
+        },
+        "potential": {
+          "has_modifier": "crime_lord_deal"
+        },
+        "effect": {
+          "remove_modifier": "crime_lord_deal",
+          "add_modifier": {},
+          "ai_weight": {
+            "weight": "<RECURSION>",
+            "modifier": {
+              "weight": "<RECURSION>",
+              "planet_crime <": "<RECURSION>"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 106
+    }
+  },
+  "04_caravaneer_decisions.txt": {
+    "decision_caravaneer_bunkbeds": {
+      "decision_caravaneer_bunkbeds": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_resources",
+        "resources": {
+          "category": "decisions",
+          "cost": {}
+        },
+        "potential": {
+          "owner": {
+            "is_regular_empire": "yes",
+            "has_country_flag": "bunkbeds_ready"
+          }
+        },
+        "allow": {
+          "NOT": {},
+          "effect": {
+            "hidden_effect": {
+              "add_modifier": {},
+              "ai_weight": {
+                "weight": "<RECURSION>"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "decision_caravaneer_tupperware": {
+      "decision_caravaneer_tupperware": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_resources",
+        "resources": {
+          "category": "decisions",
+          "cost": {}
+        },
+        "potential": {
+          "owner": {
+            "is_regular_empire": "yes",
+            "has_country_flag": "tupperware_ready"
+          }
+        },
+        "allow": {
+          "NOT": {},
+          "effect": {
+            "hidden_effect": {
+              "add_modifier": {},
+              "ai_weight": {
+                "weight": "<RECURSION>"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 39
+    },
+    "decision_caravaneer_atmospheric_deodorizer": {
+      "decision_caravaneer_atmospheric_deodorizer": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_resources",
+        "resources": {
+          "category": "decisions",
+          "cost": {}
+        },
+        "potential": {
+          "owner": {
+            "is_regular_empire": "yes",
+            "has_country_flag": "atmospheric_deodorizer_ready"
+          }
+        },
+        "allow": {
+          "NOT": {},
+          "effect": {
+            "hidden_effect": {
+              "add_modifier": {},
+              "ai_weight": {
+                "weight": "<RECURSION>"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 71
+    }
+  },
+  "05_ancient_relics_decisions.txt": {
+    "decision_tissue_growth_stimulants": {
+      "decision_tissue_growth_stimulants": {
+        "owned_planets_only": "yes",
+        "sound": "event_laboratory_sound",
+        "icon": "decision_resources",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "energy": "200"
+          }
+        },
+        "potential": {
+          "owner": {
+            "is_machine_empire": "no",
+            "has_country_flag": "city_of_bones_completed"
+          },
+          "NOT": {},
+          "allow": {
+            "NOT": {},
+            "effect": {
+              "add_modifier": {},
+              "ai_weight": {
+                "weight": "<RECURSION>"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 10
+    },
+    "decision_explosive_fungifoam_housing": {
+      "decision_explosive_fungifoam_housing": {
+        "owned_planets_only": "yes",
+        "sound": "event_laboratory_sound",
+        "icon": "decision_resources",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "energy": "500"
+          }
+        },
+        "potential": {
+          "owner": {
+            "is_machine_empire": "yes",
+            "has_country_flag": "city_of_bones_completed"
+          },
+          "NOT": {},
+          "allow": {
+            "NOT": {},
+            "effect": {
+              "add_modifier": {},
+              "ai_weight": {
+                "weight": "<RECURSION>"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 43
+    },
+    "decision_baol_life_seed": {
+      "decision_baol_life_seed": {
+        "owned_planets_only": "yes",
+        "sound": "event_laboratory_sound",
+        "icon": "decision_resort_colony",
+        "enactment_time": "720",
+        "potential": {
+          "NOT": {
+            "is_planet_class": "pc_gaia"
+          },
+          "is_artificial": "no",
+          "exists": "owner",
+          "owner": {
+            "owner": {
+              "has_country_flag": "not_activated_baol"
+            },
+            "NOT": {},
+            "allow": {
+              "effect": {
+                "custom_tooltip": "decision_baol_life_seed_effects",
+                "<RECURSION>": [
+                  "# Convert to Gaia world, spawn Nu-Baol pops"
+                ],
+                "hidden_effect": {
+                  "change_pc": "pc_gaia",
+                  "if": {
+                    "limit": {
+                      "if": {
+                        "limit": {
+                          "owner": {
+                            "is_hive_empire": "yes"
+                          }
+                        },
+                        "create_hive_nu_baol_effect": "yes"
+                      },
+                      "else": {
+                        "create_nu_baol_effect": "yes"
+                      }
+                    },
+                    "while": {
+                      "count": "<RECURSION>",
+                      "create_pop": {
+                        "species": "event_target:nu_baol_species",
+                        "ethos": {
+                          "ethic": "ethic_pacifist"
+                        }
+                      }
+                    },
+                    "planet_event": {}
+                  },
+                  "on_queued": {
+                    "owner": {},
+                    "on_unqueued": {
+                      "owner": {},
+                      "ai_weight": {
+                        "weight": "<RECURSION>"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 79
+    },
+    "decision_baol_life_seed_enhance": {
+      "decision_baol_life_seed_enhance": {
+        "owned_planets_only": "yes",
+        "sound": "event_laboratory_sound",
+        "icon": "decision_resort_colony",
+        "potential": {
+          "is_planet_class": "pc_gaia",
+          "exists": "owner",
+          "owner": {},
+          "allow": {
+            "effect": {
+              "custom_tooltip": "decision_baol_life_seed_enhance_effects",
+              "<RECURSION>": [
+                "# Convert to Gaia world, spawn Nu-Baol pops"
+              ],
+              "hidden_effect": {
+                "owner": {
+                  "if": {
+                    "limit": {
+                      "if": {
+                        "limit": {
+                          "owner": {
+                            "is_hive_empire": "yes"
+                          }
+                        },
+                        "create_hive_nu_baol_effect": "yes"
+                      },
+                      "else": {
+                        "create_nu_baol_effect": "yes"
+                      }
+                    },
+                    "while": {
+                      "count": "10",
+                      "random_owned_pop": {
+                        "limit": {
+                          "NOR": {
+                            "is_robot_pop": "yes",
+                            "has_trait": "trait_pc_gaia_preference_terraforming"
+                          }
+                        },
+                        "modify_species": {
+                          "species": "this",
+                          "remove_trait": "trait_pc_nuked_preference",
+                          "add_trait": "trait_pc_gaia_preference_terraforming"
+                        }
+                      }
+                    },
+                    "planet_event": {}
+                  },
+                  "on_queued": {
+                    "owner": {},
+                    "ai_weight": {
+                      "weight": "<RECURSION>"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "decision_museum_exhibits": {
+      "decision_museum_exhibits": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_museum",
+        "potential": {
+          "owner": {
+            "is_gestalt": "no",
+            "OR": {
+              "is_megacorp": "no",
+              "is_worker_coop_empire": "yes"
+            }
+          },
+          "NOT": {},
+          "allow": {
+            "NOT": {
+              "has_modifier": "planet_museum_exhibits"
+            },
+            "OR": {
+              "num_assigned_jobs": {
+                "job": "haruspex",
+                "value >": "<RECURSION>"
+              }
+            }
+          },
+          "resources": {
+            "category": "decisions",
+            "cost": {
+              "minor_artifacts": "@minor_artifact_decision_cost"
+            }
+          },
+          "effect": {
+            "<RECURSION>": [
+              "#custom_tooltip = decision_museum_exhibits_effect"
+            ],
+            "add_modifier": {},
+            "ai_weight": {
+              "weight": "<RECURSION>"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 222
+    },
+    "decision_manager_awards": {
+      "decision_manager_awards": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_deal",
+        "potential": {
+          "owner": {
+            "is_megacorp": "yes",
+            "is_worker_coop_empire": "no"
+          },
+          "NOT": {},
+          "allow": {
+            "NOT": {},
+            "resources": {
+              "category": "decisions",
+              "cost": {
+                "minor_artifacts": "@minor_artifact_decision_cost"
+              }
+            },
+            "effect": {
+              "add_modifier": {},
+              "ai_weight": {
+                "weight": "<RECURSION>"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 283
+    },
+    "decision_sanctuary_exhibits": {
+      "decision_sanctuary_exhibits": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_museum",
+        "potential": {
+          "owner": {
+            "NOT": {},
+            "allow": {
+              "NOT": {},
+              "resources": {
+                "category": "decisions",
+                "cost": {
+                  "minor_artifacts": "@minor_artifact_decision_cost"
+                }
+              },
+              "effect": {
+                "add_modifier": {},
+                "ai_weight": {
+                  "weight": "<RECURSION>"
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 316
+    },
+    "decision_artifact_relays_hivemind": {
+      "decision_artifact_relays_hivemind": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_satellite_in_orbit",
+        "potential": {
+          "owner": {},
+          "allow": {
+            "NOT": {},
+            "resources": {
+              "category": "decisions",
+              "cost": {
+                "minor_artifacts": "@minor_artifact_decision_cost"
+              }
+            },
+            "effect": {
+              "custom_tooltip": "decision_artifact_relays_hivemind_effect",
+              "hidden_effect": {
+                "add_modifier": {}
+              },
+              "ai_weight": {
+                "weight": "<RECURSION>"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 346
+    },
+    "decision_artifact_relays_machine": {
+      "decision_artifact_relays_machine": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_satellite_in_orbit",
+        "potential": {
+          "owner": {
+            "is_machine_empire": "yes",
+            "NOT": {
+              "has_civic": "civic_machine_servitor"
+            }
+          },
+          "NOT": {},
+          "allow": {
+            "NOT": {},
+            "resources": {
+              "category": "decisions",
+              "cost": {
+                "minor_artifacts": "@minor_artifact_decision_cost"
+              }
+            },
+            "effect": {
+              "custom_tooltip": "decision_artifact_relays_machine_effect",
+              "hidden_effect": {
+                "add_modifier": {}
+              },
+              "ai_weight": {
+                "weight": "<RECURSION>"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 378
+    },
+    "decision_machine_oracle": {
+      "decision_machine_oracle": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_crime",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "energy": "200",
+            "unity": "500"
+          }
+        },
+        "potential": {
+          "owner": {
+            "is_machine_empire": "yes",
+            "has_country_flag": "oracle_completed"
+          },
+          "NOT": {},
+          "allow": {
+            "NOT": {},
+            "effect": {
+              "add_modifier": {},
+              "ai_weight": {
+                "weight": "<RECURSION>"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 416
+    },
+    "decision_yuht_cleanseplanet": {
+      "decision_yuht_cleanseplanet": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_animal_wildlife",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "energy": "500"
+          }
+        },
+        "potential": {
+          "can_have_habitable_deposits": "yes",
+          "owner": {
+            "has_country_flag": "artifact_yuht_research_completed"
+          },
+          "NOT": {
+            "NOT": {},
+            "effect": {
+              "add_planet_devastation": "50",
+              "add_modifier": {
+                "remove_fauna_yuht": "yes"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 448
+    }
+  },
+  "06_federation_decisions.txt": {
+    "decision_transplant_tree": {
+      "decision_transplant_tree": {
+        "owned_planets_only": "yes",
+        "sound": "event_laboratory_sound",
+        "icon": "decision_resources",
+        "enactment_time": "180",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "food": "500"
+          }
+        },
+        "potential": {
+          "has_modifier": "no_lifetree"
+        },
+        "allow": {},
+        "effect": {
+          "add_deposit": "d_tree_of_life_colony",
+          "remove_modifier": "no_lifetree"
+        },
+        "ai_weight": {
+          "weight": "10"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "decision_extradimensional_experimentation": {
+      "decision_extradimensional_experimentation": {
+        "owned_planets_only": "yes",
+        "sound": "event_laboratory_sound",
+        "icon": "decision_engineering_research",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "sr_zro": "500"
+          }
+        },
+        "potential": {
+          "owner": {
+            "is_galactic_community_member": "yes"
+          },
+          "is_active_resolution": "resolution_galacticstudies_extradimensional_experimentation",
+          "NOT": {},
+          "allow": {},
+          "effect": {
+            "add_modifier": {},
+            "ai_weight": {
+              "weight": "<RECURSION>",
+              "modifier": {
+                "factor": "<RECURSION>",
+                "exists": "owner",
+                "owner": {
+                  "has_monthly_income": {
+                    "resource": "sr_zro"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 42
+    },
+    "decision_end_extradimensional_experimentation": {
+      "decision_end_extradimensional_experimentation": {
+        "owned_planets_only": "yes",
+        "sound": "event_laboratory_sound",
+        "icon": "decision_engineering_research",
+        "resources": {
+          "category": "decisions",
+          "cost": {}
+        },
+        "potential": {
+          "has_modifier": "pm_extradimensional_experimentation"
+        },
+        "allow": {},
+        "effect": {
+          "remove_modifier": "pm_extradimensional_experimentation"
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>",
+          "modifier": {
+            "factor": "<RECURSION>",
+            "exists": "owner",
+            "owner": {
+              "NOT": {
+                "has_deficit": "sr_zro"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 87
+    }
+  },
+  "07_overlord_decisions.txt": {
+    "decision_strip_mining": {
+      "decision_strip_mining": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_strip_mining",
+        "enactment_time": "180",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "influence": "15"
+          }
+        },
+        "potential": {
+          "owner": {
+            "is_specialist_subject_tier": {
+              "TYPE": "prospectorium",
+              "TIER": "<RECURSION>"
+            }
+          },
+          "any_deposit": {
+            "has_deposit_category": "deposit_cat_food"
+          },
+          "NOT": {},
+          "effect": {
+            "custom_tooltip": "decision_strip_mining_tt",
+            "hidden_effect": {
+              "random_deposit": {
+                "limit": {
+                  "remove_deposit": "yes"
+                }
+              },
+              "add_deposit": "d_prospectorium_strip_mine"
+            },
+            "ai_weight": {
+              "weight": "<RECURSION>",
+              "modifier": {
+                "factor": "<RECURSION>",
+                "OR": {
+                  "has_designation": "col_farming",
+                  "AND": {
+                    "has_district": "district_farming",
+                    "num_free_districts": {},
+                    "AND": {
+                      "has_district": "district_farming_uncapped",
+                      "num_free_districts": {}
+                    }
+                  },
+                  "modifier": {
+                    "factor": "0.1",
+                    "owner": {
+                      "has_valid_civic": "civic_environmentalist"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 9
+    },
+    "decision_grow_progenitor": {
+      "decision_grow_progenitor": {
+        "owned_planets_only": "yes",
+        "icon": "descision_progenitor_empty",
+        "enactment_time": "800",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "trigger": {
+              "owner": {},
+              "food": "400"
+            },
+            "cost": {
+              "trigger": {
+                "owner": {},
+                "minerals": "400"
+              }
+            },
+            "potential": {
+              "has_deposit": "d_progenitor_empty",
+              "exists": "owner",
+              "owner": {},
+              "effect": {
+                "remove_deposit": "d_progenitor_empty",
+                "add_deposit": "d_progenitor",
+                "hidden_effect": {
+                  "owner": {
+                    "if": {
+                      "limit": {
+                        "remove_modifier": "missing_progenitor_modifier"
+                      }
+                    }
+                  }
+                },
+                "ai_weight": {
+                  "weight": "100"
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    }
+  },
+  "08_first_contact_dlc_decisions.txt": {
+    "decision_unshackled_memorial": {
+      "decision_unshackled_memorial": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "enactment_time": "900",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "minerals": "2500"
+          }
+        },
+        "potential": {
+          "owner": {
+            "has_country_flag": "origin_broken_shackles_crashed_slaver_ship_depleted"
+          },
+          "has_deposit": "d_crashed_slaver_ship"
+        },
+        "effect": {
+          "custom_tooltip": "decision_unshackled_memorial_tt",
+          "hidden_effect": {
+            "remove_deposit": "d_crashed_slaver_ship",
+            "add_deposit": "d_crashed_slaver_ship_memorial",
+            "swap_districts_effect": {
+              "DISTRICT1": "district_crashed_slaver_ship",
+              "DISTRICT2": "district_city"
+            },
+            "while": {
+              "count": "<RECURSION>",
+              "remove_district": "district_city"
+            },
+            "replace_building_with_multiple_districts_effect": {
+              "NUM_BUILDINGS": "<RECURSION>",
+              "BUILDING": "building_low_tech_scrap_refinery",
+              "NUM_DISTRICTS_1": "<RECURSION>",
+              "DISTRICT_1": "district_mining",
+              "NUM_DISTRICTS_2": "<RECURSION>",
+              "DISTRICT_2": "district_industrial"
+            },
+            "replace_building_with_district_effect": {
+              "NUM_BUILDINGS": "<RECURSION>",
+              "BUILDING": "building_low_tech_power_plant",
+              "NUM_DISTRICTS": "<RECURSION>",
+              "DISTRICT": "district_generator"
+            },
+            "if": {
+              "limit": {
+                "is_planet_class": "pc_ocean",
+                "owner": {
+                  "is_anglers_empire": "yes"
+                }
+              },
+              "replace_building_with_district_effect": {
+                "NUM_BUILDINGS": "<RECURSION>",
+                "BUILDING": "building_low_tech_farm",
+                "NUM_DISTRICTS": "<RECURSION>",
+                "DISTRICT": "district_farming_uncapped"
+              }
+            },
+            "else": {
+              "replace_building_with_district_effect": {
+                "NUM_BUILDINGS": "<RECURSION>",
+                "BUILDING": "building_low_tech_farm",
+                "NUM_DISTRICTS": "<RECURSION>",
+                "DISTRICT": "district_farming"
+              }
+            },
+            "validate_and_repair_planet_buildings_and_districts": "yes"
+          },
+          "if": {
+            "limit": {
+              "has_modifier": "culture_shock_broken_shackles",
+              "NOT": {
+                "has_modifier": "free_at_last_broken_shackles"
+              }
+            },
+            "remove_modifier": "culture_shock_broken_shackles"
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "decision_remove_wreckage": {
+      "decision_remove_wreckage": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "enactment_time": "900",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "minerals": "2500"
+          }
+        },
+        "potential": {
+          "has_deposit": "d_crashed_slaver_ship",
+          "original_owner": "no"
+        },
+        "allow": {
+          "owner": {},
+          "effect": {
+            "custom_tooltip": "decision_remove_wreckage_tt",
+            "hidden_effect": {
+              "remove_deposit": "d_crashed_slaver_ship",
+              "swap_districts_effect": {
+                "DISTRICT1": "district_crashed_slaver_ship",
+                "DISTRICT2": "district_city"
+              },
+              "while": {
+                "limit": {
+                  "has_deposit": "d_ship_debris_broken_shackles_blocker"
+                },
+                "remove_deposit": "d_ship_debris_broken_shackles_blocker"
+              },
+              "validate_and_repair_planet_buildings_and_districts": "yes"
+            }
+          },
+          "ai_weight": {
+            "weight": "<RECURSION>"
+          }
+        }
+      },
+      "<RECURSION>": 117
+    }
+  },
+  "08_paragon_decisions.txt": {
+    "decision_deploy_beholder": {
+      "decision_deploy_beholder": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_deploy_temple_of_whispers",
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "cannot_deploy_during_psi_inoculation",
+            "NOT": {}
+          },
+          "resources": {
+            "category": "decisions",
+            "cost": {
+              "sr_zro": "100"
+            }
+          },
+          "potential": {
+            "exists": "event_target:beholder_leader",
+            "has_building": "building_the_beholder"
+          },
+          "effect": {
+            "custom_tooltip": "decision_deploy_beholder_custom_tooltip",
+            "hidden_effect": {
+              "remove_building": "building_the_beholder",
+              "<RECURSION>": [
+                "# Remove building"
+              ],
+              "event_target:beholder_leader": {
+                "remove_trait": "subclass_official_governor",
+                "change_leader_class": "commander",
+                "add_trait_no_notify": "leader_trait_psionic"
+              },
+              "create_fleet": {
+                "name": "NAME_Temple_of_Whispers",
+                "settings": {
+                  "can_upgrade": "no",
+                  "can_change_composition": "no",
+                  "can_change_leader": "no",
+                  "can_disband": "no",
+                  "spawn_debris": "no"
+                },
+                "effect": {
+                  "set_owner": "root.owner",
+                  "create_ship_design": {
+                    "design": "NAME_Temple_of_Whispers"
+                  },
+                  "create_ship": {
+                    "design": "last_created_design",
+                    "name": "NAME_Temple_of_Whispers",
+                    "prefix": "no",
+                    "upgradable": "no",
+                    "effect": {
+                      "set_ship_flag": "is_beholder_ship",
+                      "save_global_event_target_as": "beholder_ship"
+                    }
+                  },
+                  "set_location": "prev",
+                  "assign_leader": "event_target:beholder_leader"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "weight": "<RECURSION>",
+            "<RECURSION>": [
+              "# Save up some buffer zro before deploying"
+            ],
+            "modifier": {
+              "factor": "<RECURSION>",
+              "has_resource": {}
+            }
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "decision_psi_inoculate_pops": {
+      "decision_psi_inoculate_pops": {
+        "owned_planets_only": "yes",
+        "sound": "event_activating_unknown_technology",
+        "icon": "decision_psi_inoculate_pops",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "sr_zro": "50"
+          }
+        },
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "beholder_psi_pops_cooldown_tooltip",
+            "NOT": {
+              "has_planet_flag": "beholder_psi_pops_cooldown_timer"
+            }
+          }
+        },
+        "potential": {
+          "exists": "event_target:beholder_leader",
+          "has_building": "building_the_beholder",
+          "NOT": {
+            "has_planet_flag": "psi_inoculating_pops"
+          }
+        },
+        "effect": {
+          "custom_tooltip": "decision_psi_inoculate_pops_custom_tooltip",
+          "hidden_effect": {
+            "set_planet_flag": "psi_inoculating_pops",
+            "if": {
+              "limit": {
+                "NOT": {
+                  "has_planet_flag": "beholder_psi_pops_timer"
+                }
+              },
+              "set_saved_date": {
+                "key": "beholder_psi_pops_timer",
+                "days_from_present": "180",
+                "expires": "180"
+              },
+              "planet_event": {
+                "id": "paragon.50",
+                "days": "180"
+              }
+            }
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        }
+      },
+      "<RECURSION>": 93
+    },
+    "decision_cease_psi_inoculate_pops": {
+      "decision_cease_psi_inoculate_pops": {
+        "owned_planets_only": "yes",
+        "sound": "event_activating_unknown_technology",
+        "icon": "decision_psi_inoculate_pops",
+        "resources": {},
+        "potential": {
+          "exists": "event_target:beholder_leader",
+          "has_building": "building_the_beholder",
+          "has_planet_flag": "psi_inoculating_pops"
+        },
+        "effect": {
+          "custom_tooltip": "decision_cease_psi_inoculate_pops_custom_tooltip",
+          "hidden_effect": {
+            "remove_planet_flag": "beholder_psi_pops_timer",
+            "set_saved_date": {
+              "key": "beholder_psi_pops_cooldown_timer",
+              "days_from_present": "180",
+              "expires": "180"
+            }
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        }
+      },
+      "<RECURSION>": 162
+    },
+    "decision_paragon_origin_subdue_reformists": {
+      "decision_paragon_origin_subdue_reformists": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_smugglers_in_bar",
+        "enactment_time": "180",
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "exists": "ruler",
+            "ruler": {
+              "has_leader_flag": "paragon_origin_legendary_leader"
+            },
+            "any_situation": {
+              "is_regular_empire": "yes"
+            },
+            "has_modifier": "paragon_origin_reformists"
+          },
+          "allow": {},
+          "abort_trigger": {
+            "exists": "ruler",
+            "ruler": {
+              "NOT": {}
+            },
+            "resources": {
+              "category": "decisions",
+              "cost": {
+                "unity": "100",
+                "multiplier": "value:paragon_origin_count_egalitarians"
+              }
+            },
+            "effect": {
+              "custom_tooltip": "decision_paragon_origin_subdue_reformists_tt",
+              "owner": {
+                "if": {
+                  "limit": {
+                    "any_situation": {
+                      "is_situation_type": "paragon_origin_reformists_struggle"
+                    }
+                  },
+                  "random_situation": {
+                    "limit": {
+                      "add_situation_progress": "-8"
+                    }
+                  }
+                },
+                "hidden_effect": {
+                  "random_owned_pop": {
+                    "limit": {
+                      "pop_change_ethic": "ethic_authoritarian"
+                    },
+                    "random_owned_pop": {
+                      "limit": {
+                        "kill_pop": "yes"
+                      },
+                      "owner": {
+                        "ruler": {},
+                        "if": {
+                          "limit": {
+                            "NOT": {
+                              "any_owned_pop": {
+                                "pop_has_ethic": "ethic_egalitarian"
+                              }
+                            }
+                          },
+                          "remove_modifier": "paragon_origin_reformists"
+                        }
+                      }
+                    },
+                    "ai_weight": {
+                      "weight": "<RECURSION>"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 197
+    }
+  },
+  "09_astral_planes_decisions.txt": {
+    "decision_fractal_seed": {
+      "decision_fractal_seed": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_fractal_seed",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "astral_threads": "100"
+          }
+        },
+        "potential": {
+          "owner": {
+            "check_variable": {
+              "which": "num_authorized_fractal_seeds"
+            }
+          },
+          "NOT": {},
+          "effect": {
+            "hidden_effect": {
+              "owner": {
+                "change_variable": {
+                  "which": "num_authorized_fractal_seeds",
+                  "value": "-1"
+                }
+              }
+            },
+            "add_deposit": "d_fractal_seed"
+          },
+          "ai_weight": {
+            "weight": "<RECURSION>"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "decision_breed_rockworm_hive": {
+      "decision_breed_rockworm_hive": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_rockworm_hive_dig",
+        "potential": {
+          "owner": {
+            "has_country_flag": "can_breed_rockworm_hives"
+          },
+          "NOT": {},
+          "effect": {
+            "hidden_effect": {
+              "owner": {
+                "remove_country_flag": "can_breed_rockworm_hives"
+              }
+            },
+            "add_deposit": "d_rockworm_hive"
+          },
+          "ai_weight": {
+            "weight": "<RECURSION>"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "decision_incubate_wind_creatures": {
+      "decision_incubate_wind_creatures": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_incubate_wind_creatures",
+        "resources": {
+          "category": "decisions"
+        },
+        "potential": {
+          "owner": {
+            "check_variable": {
+              "which": "num_authorized_wind_creatures"
+            }
+          },
+          "NOT": {},
+          "effect": {
+            "hidden_effect": {
+              "owner": {
+                "change_variable": {
+                  "which": "num_authorized_wind_creatures",
+                  "value": "-1"
+                }
+              }
+            },
+            "add_deposit": "d_forceful_winds",
+            "<RECURSION>": [
+              "# Must be removed after to updade planet modifiers graphics"
+            ],
+            "if": {
+              "limit": {
+                "remove_modifier": "hazardous_weather"
+              }
+            },
+            "ai_weight": {
+              "weight": "<RECURSION>"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 69
+    },
+    "decision_tidal_lock_planet": {
+      "decision_tidal_lock_planet": {
+        "owned_planets_only": "yes",
+        "sound": "event_energy_field",
+        "icon": "decision_tidal_lock_planet",
+        "potential": {
+          "owner": {
+            "has_country_flag": "tidal_lock_knowledge"
+          },
+          "OR": {
+            "is_moon": "yes",
+            "has_moon": "yes"
+          },
+          "NOR": {
+            "has_modifier": "intentionally_tidally_locked",
+            "has_planet_flag": "tidally_locked_world",
+            "is_artificial": "yes",
+            "is_planet_class": "pc_city"
+          }
+        },
+        "effect": {
+          "custom_tooltip": "decision_tidal_lock_planet_tt",
+          "add_modifier": {
+            "set_planet_flag": "tidally_locked_world"
+          },
+          "ai_weight": {
+            "weight": "<RECURSION>"
+          }
+        }
+      },
+      "<RECURSION>": 109
+    },
+    "decision_display_microplanet_husk": {
+      "decision_display_microplanet_husk": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_display_microplanet_husk",
+        "enactment_time": "180",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "astral_threads": "100",
+            "energy": "500"
+          }
+        },
+        "potential": {
+          "owner": {
+            "has_country_flag": "can_build_microplanet_memorial"
+          }
+        },
+        "effect": {
+          "hidden_effect": {
+            "owner": {
+              "remove_country_flag": "can_build_microplanet_memorial"
+            }
+          },
+          "add_deposit": "d_microplanet_memorial"
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        }
+      },
+      "<RECURSION>": 142
+    }
+  },
+  "10_plantoids_decisions.txt": {
+    "decision_uproot_weed": {
+      "decision_uproot_weed": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_arid_planet",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "energy": "500"
+          }
+        },
+        "enactment_time": "180",
+        "potential": {
+          "has_seeded_modifier": "yes"
+        },
+        "effect": {
+          "switch": {
+            "trigger": "has_modifier",
+            "seeded_planet_1_modifier": {
+              "remove_modifier": "seeded_planet_1_modifier"
+            },
+            "seeded_planet_2_modifier": {
+              "remove_modifier": "seeded_planet_2_modifier"
+            },
+            "seeded_planet_3_modifier": {
+              "remove_modifier": "seeded_planet_3_modifier"
+            }
+          },
+          "<RECURSION>": [
+            "# Update optinion modifiers for owner and the Fruitful empire"
+          ],
+          "random_playable_country": {
+            "limit": {
+              "has_country_flag": "seed_on_planet@root",
+              "NOT": {},
+              "save_event_target_as": "seeds_owner"
+            },
+            "if": {
+              "limit": {
+                "exists": "event_target:seeds_owner"
+              },
+              "event_target:seeds_owner": {
+                "add_opinion_modifier": {
+                  "modifier": "opinion_cut_our_forests",
+                  "who": "root.owner"
+                }
+              },
+              "root.owner": {
+                "remove_opinion_modifier": {
+                  "modifier": "opinion_nice_forests",
+                  "who": "event_target:seeds_owner"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "weight": "<RECURSION>",
+            "<RECURSION>": [
+              "# will destroy the trees if they're xenophobes/homicidal...",
+              "# ...or if they hate the Fruitful empire (only checking for neighbors to be a bit more efficient)",
+              "# or if they're at war with the seeds owner"
+            ],
+            "modifier": {
+              "add": "20",
+              "owner": {
+                "any_war": {
+                  "any_war_participant": {
+                    "NOT": {
+                      "has_origin": "origin_fruitful",
+                      "has_country_flag": "seed_on_planet@root"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 11
+    }
+  },
+  "11_planet_modifier_decisions.txt": {
+    "decision_bleak_planet": {
+      "decision_bleak_planet": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_arid_planet",
+        "enactment_time": "900",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "energy": "750",
+            "food": "250"
+          }
+        },
+        "potential": {
+          "exists": "owner",
+          "has_modifier": "bleak_planet",
+          "owner": {
+            "has_technology": "tech_terrestrial_sculpting"
+          }
+        },
+        "effect": {
+          "remove_modifier": "bleak_planet"
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "decision_build_dayside_farm": {
+      "decision_build_dayside_farm": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_divine_algorithm",
+        "enactment_time": "900",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "energy": "1000"
+          }
+        },
+        "potential": {
+          "exists": "owner",
+          "has_modifier": "tidal_locked",
+          "is_moon": "no",
+          "owner": {
+            "has_technology": "tech_power_hub_1"
+          },
+          "NOT": {
+            "has_deposit": "d_dayside_farm"
+          }
+        },
+        "effect": {
+          "add_deposit": "d_dayside_farm"
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>",
+          "modifier": {
+            "factor": "<RECURSION>",
+            "NOR": {
+              "has_building": "building_energy_nexus"
+            }
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "decision_hazardous_weather": {
+      "decision_hazardous_weather": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_colony_settlement",
+        "enactment_time": "900",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "energy": "1000"
+          }
+        },
+        "potential": {
+          "exists": "owner",
+          "OR": {
+            "has_modifier": "wild_storms"
+          },
+          "owner": {
+            "has_technology": "tech_terrestrial_sculpting"
+          }
+        },
+        "effect": {
+          "IF": {
+            "limit": {
+              "has_modifier": "wild_storms"
+            },
+            "remove_modifier": "wild_storms"
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        }
+      },
+      "<RECURSION>": 80
+    },
+    "decision_dangerous_wildlife": {
+      "decision_dangerous_wildlife": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_animal_wildlife",
+        "enactment_time": "900",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "energy": "1000"
+          }
+        },
+        "potential": {
+          "exists": "owner",
+          "NOT": {
+            "owner": {
+              "has_technology": "tech_terrestrial_sculpting"
+            },
+            "has_modifier": "dangerous_wildlife"
+          },
+          "effect": {
+            "remove_modifier": "dangerous_wildlife"
+          },
+          "ai_weight": {
+            "weight": "<RECURSION>"
+          }
+        }
+      },
+      "<RECURSION>": 124
+    },
+    "decision_stripmine_planet": {
+      "decision_stripmine_planet": {
+        "owned_planets_only": "yes",
+        "sound": "event_dig_site",
+        "icon": "decision_strip_mining",
+        "enactment_time": "900",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "energy": "5000"
+          }
+        },
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "NOT": {},
+            "allow": {
+              "num_districts": {},
+              "effect": {
+                "custom_tooltip": "decision_stripmine_planet_tooltip",
+                "add_deposit": "d_planet_stripmine",
+                "hidden_effect": {
+                  "every_deposit": {
+                    "limit": {
+                      "has_deposit_category": "deposit_cat_food"
+                    },
+                    "remove_deposit": "yes"
+                  }
+                }
+              },
+              "ai_weight": {
+                "weight": "<RECURSION>",
+                "modifier": {
+                  "add": "10",
+                  "has_designation": "col_mining",
+                  "has_sr_deposit": "yes"
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    }
+  },
+  "12_machine_age_decisions.txt": {
+    "decision_rebuild_genesis_preserve": {
+      "decision_rebuild_genesis_preserve": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_animal_wildlife",
+        "enactment_time": "900",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "minerals": "1000",
+            "unity": "250"
+          }
+        },
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_guided_sapience_empire": "yes"
+          },
+          "NOR": {
+            "has_deposit": "d_genesis_monument"
+          },
+          "NOT": {},
+          "allow": {},
+          "effect": {
+            "if": {
+              "limit": {
+                "any_owned_species": {
+                  "has_genesis_preserve_trait": "yes"
+                }
+              },
+              "custom_tooltip": "d_genesis_preserve_old_species_tooltip",
+              "hidden_effect": {
+                "add_deposit": "d_genesis_preserve"
+              }
+            },
+            "else_if": {
+              "custom_tooltip": "d_genesis_preserve_new_speices_tooltip",
+              "hidden_effect": {
+                "add_deposit": "d_genesis_preserve",
+                "owner": {
+                  "change_variable": {
+                    "which": "presapients_guided",
+                    "value": "<RECURSION>"
+                  }
+                },
+                "spawn_presapient_species_randomizer_homeworld_effect": "yes",
+                "set_planet_flag": "pre_sapient_planet"
+              }
+            }
+          },
+          "ai_weight": {
+            "weight": "10"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "#decision_reduce_server_load": {
+      "<RECURSION>": "<RECURSION>"
+    },
+    "decision_server_shut_down": {
+      "decision_server_shut_down": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_glitchy_matrix",
+        "enactment_time": "30",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "unity": "200"
+          }
+        },
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "has_tradition": "tr_virtuality_finish"
+          }
+        },
+        "allow": {
+          "is_capital": "no"
+        },
+        "effect": {
+          "destroy_colony": "yes"
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        }
+      },
+      "<RECURSION>": 128
+    },
+    "decision_nanotech_swarm_consume_world": {
+      "decision_nanotech_swarm_consume_world": {
+        "icon": "decision_tidal_lock_planet",
+        "sound": "event_structural_collapse",
+        "<RECURSION>": [
+          "#enactment_time = 360"
+        ],
+        "resources": {
+          "category": "decisions"
+        },
+        "owned_planets_only": "yes",
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "has_tradition": "tr_nanotech_3"
+          },
+          "can_have_habitable_deposits": "yes",
+          "is_capital": "no",
+          "NOT": {},
+          "effect": {
+            "custom_tooltip": "decision_nanotech_swarm_consume_world_effect_desc",
+            "set_timed_planet_flag": {
+              "days": "360",
+              "flag": "recently_eaten_planet"
+            },
+            "hidden_effect": {
+              "set_planet_flag": "being_devoured",
+              "add_modifier": {
+                "modifier": "being_devoured_modifier_nanotech",
+                "days": "-1"
+              },
+              "export_trigger_value_to_variable": {
+                "trigger": "count_deposits",
+                "parameters": {
+                  "type": "d_nanotech_devastation"
+                },
+                "variable": "num_lithoid_blockers"
+              },
+              "if": {
+                "limit": {
+                  "is_variable_set": "num_lithoid_blockers"
+                },
+                "subtract_variable": {
+                  "which": "num_districts_terravore",
+                  "value": "num_lithoid_blockers"
+                }
+              }
+            },
+            "owner": {
+              "start_situation": {
+                "type": "situation_nanotech_consume_planet",
+                "target": "root"
+              }
+            }
+          },
+          "ai_weight": {
+            "weight": "<RECURSION>",
+            "<RECURSION>": [
+              "# don't wreck worlds you want to keep"
+            ],
+            "modifier": {
+              "factor": "<RECURSION>",
+              "is_lithoid_devouring_swarm_consumption_world": "no"
+            }
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    }
+  },
+  "13_cosmic_storms_decisions.txt": {
+    "decision_hunker_down": {
+      "decision_hunker_down": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_exploding_planet",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "unity": "250"
+          }
+        },
+        "enactment_time": "<RECURSION>",
+        "potential": {
+          "has_storm_resistant_production_building": "yes",
+          "NOT": {
+            "has_modifier": "storm_hunkered_down_modifier"
+          }
+        },
+        "allow": {
+          "has_storm_resistant_production_building": "yes",
+          "NOT": {
+            "has_modifier": "storm_hunkered_down_modifier"
+          }
+        },
+        "effect": {
+          "custom_tooltip": "storm_hunkered_down_modifier_tt",
+          "hidden_effect": {
+            "add_modifier": {
+              "modifier": "storm_hunkered_down_modifier"
+            }
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>",
+          "modifier": {
+            "add": "<RECURSION>",
+            "solar_system": {
+              "has_star_flag": "storm_system"
+            }
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "decision_stop_hunker_down": {
+      "decision_stop_hunker_down": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_exploding_planet",
+        "enactment_time": "<RECURSION>",
+        "potential": {
+          "has_storm_resistant_production_building": "yes",
+          "has_modifier": "storm_hunkered_down_modifier"
+        },
+        "allow": {
+          "has_storm_resistant_production_building": "yes",
+          "has_modifier": "storm_hunkered_down_modifier"
+        },
+        "effect": {
+          "custom_tooltip": "storm_hunkered_down_modifier_disabled_tt",
+          "hidden_effect": {
+            "remove_modifier": "storm_hunkered_down_modifier"
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>",
+          "modifier": {
+            "add": "20",
+            "solar_system": {
+              "NOT": {
+                "has_star_flag": "storm_system"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 58
+    },
+    "decision_cultivated_worldscaping": {
+      "decision_cultivated_worldscaping": {
+        "owned_planets_only": "yes",
+        "sound": "event_administrative_work",
+        "icon": "decision_cultivated_worldscaping",
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "energy": "2000",
+            "influence": "100"
+          }
+        },
+        "enactment_time": "360",
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_environmental_architects_empire": "yes"
+          },
+          "habitable_planet_not_urban": "yes",
+          "NOR": {
+            "has_modifier": "mastery_of_nature"
+          }
+        },
+        "allow": {
+          "hidden_trigger": {
+            "check_variable_arithmetic": {
+              "which": "value:natural_blocker_count",
+              "value": "<RECURSION>"
+            }
+          },
+          "custom_tooltip": {
+            "fail_text": "decision_cultivated_worldscaping_natural_blockers_fail_tt",
+            "check_variable_arithmetic": {
+              "which": "value:natural_blocker_count",
+              "value": "<RECURSION>"
+            }
+          }
+        },
+        "effect": {
+          "add_modifier": {
+            "modifier": "cultivated_worldscaping_modifier"
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        }
+      },
+      "<RECURSION>": 96
+    }
+  },
+  "example.txt": {
+    "# my_decision": {
+      "<RECURSION>": 13
+    }
+  }
+}

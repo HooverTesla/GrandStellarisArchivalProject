@@ -1,0 +1,3120 @@
+{
+  "00_advanced_logic_budget.txt": {
+    "advanced_logic_expenditure_planets": {
+      "advanced_logic_expenditure_planets": {
+        "resource": "advanced_logic",
+        "type": "expenditure",
+        "category": "planets",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.2"
+        }
+      },
+      "_source_file": "<RECURSION>",
+      "_line_number": 8
+    },
+    "advanced_logic_expenditure_ships": {
+      "advanced_logic_expenditure_ships": {
+        "resource": "advanced_logic",
+        "type": "expenditure",
+        "category": "ships",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.5"
+        }
+      },
+      "<RECURSION>": 22
+    },
+    "advanced_logic_expenditure_upgrade": {
+      "advanced_logic_expenditure_upgrade": {
+        "resource": "advanced_logic",
+        "type": "expenditure",
+        "category": "ship_upgrades",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "base": "0.1"
+        }
+      },
+      "<RECURSION>": 36
+    },
+    "advanced_logic_expenditure_trade": {
+      "advanced_logic_expenditure_trade": {
+        "resource": "advanced_logic",
+        "type": "expenditure",
+        "category": "trade",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": 50
+    }
+  },
+  "00_alloys_budget.txt": {
+    "alloys_expenditure_buffer": {
+      "alloys_expenditure_buffer": {
+        "resource": "alloys",
+        "type": "expenditure",
+        "category": "buffer",
+        "potential": {
+          "always": "no"
+        },
+        "weight": {
+          "weight": "0.0"
+        }
+      },
+      "<RECURSION>": 7
+    },
+    "alloys_expenditure_ships": {
+      "alloys_expenditure_ships": {
+        "resource": "alloys",
+        "type": "expenditure",
+        "category": "ships",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.6",
+          "_comments": [
+            "# spend more alloys building ships while at war",
+            "# If we want to colonize and are at peace then prio that",
+            "# spend less alloys on ships if over capacity"
+          ],
+          "modifier": {
+            "factor": "5",
+            "OR": {
+              "any_neighbor_country": {
+                "has_ascension_perk": "ap_become_the_crisis"
+              },
+              "any_country": {
+                "is_crisis_faction": "yes"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 25
+    },
+    "alloys_expenditure_ship_upgrades": {
+      "alloys_expenditure_ship_upgrades": {
+        "resource": "alloys",
+        "type": "expenditure",
+        "category": "ship_upgrades",
+        "potential": {
+          "is_at_war": "no",
+          "any_owned_fleet": {
+            "controller": {
+              "can_be_upgraded": "yes"
+            }
+          },
+          "weight": {
+            "weight": "0.2",
+            "<RECURSION>": [
+              "# spend more on ship upgrades if at capacity"
+            ],
+            "modifier": {
+              "factor": "2.5",
+              "used_naval_capacity_percent >": "1.0"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 73
+    },
+    "alloys_expenditure_planets": {
+      "alloys_expenditure_planets": {
+        "resource": "alloys",
+        "type": "expenditure",
+        "category": "planets",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1"
+        },
+        "desired_max": {
+          "base": "5000"
+        }
+      },
+      "<RECURSION>": 97
+    },
+    "alloys_expenditure_starbases": {
+      "alloys_expenditure_starbases": {
+        "resource": "alloys",
+        "type": "expenditure",
+        "category": "starbases",
+        "potential": {
+          "NOT": {
+            "is_country_type": "fallen_empire"
+          }
+        },
+        "weight": {
+          "weight": "0.4",
+          "<RECURSION>": [
+            "# spend more on starbase upgrades if at fleet cap",
+            "# Reduce spending on claiming new systems if we have unclaimed planets"
+          ],
+          "modifier": {
+            "is_machine_empire": "yes",
+            "has_country_resource": {
+              "factor": "0.25 # more aggresive saving for robots since their colony ships cost more"
+            },
+            "<RECURSION>": [
+              "# Reduce spending on claiming new systems if we have unclaimed planets"
+            ],
+            "modifier": {
+              "is_machine_empire": "no",
+              "has_country_resource": {
+                "factor": "0.50"
+              },
+              "modifier": {
+                "factor": "1.5",
+                "OR": {
+                  "any_owned_starbase": {
+                    "NOT": {
+                      "can_be_upgraded": "yes"
+                    },
+                    "any_owned_nonprimary_starbase": {
+                      "can_be_upgraded": "yes"
+                    }
+                  }
+                }
+              },
+              "desired_max": {
+                "base": "500",
+                "modifier": {
+                  "add": "5000",
+                  "has_ascension_perk": "ap_cosmogenesis"
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 117
+    },
+    "alloys_expenditure_starbases_fallen_empires": {
+      "alloys_expenditure_starbases_fallen_empires": {
+        "resource": "alloys",
+        "type": "expenditure",
+        "category": "starbases",
+        "potential": {
+          "is_country_type": "fallen_empire"
+        },
+        "weight": {
+          "weight": "0.2"
+        }
+      },
+      "<RECURSION>": 178
+    },
+    "alloys_expenditure_starbases_expand": {
+      "alloys_expenditure_starbases_expand": {
+        "resource": "alloys",
+        "type": "expenditure",
+        "category": "starbases",
+        "potential": {
+          "has_ai_expansion_plan": "yes",
+          "NOT": {
+            "is_country_type": "awakened_fallen_empire"
+          },
+          "has_resource": {},
+          "weight": {
+            "weight": "0.2"
+          },
+          "desired_min": {
+            "base": "150"
+          }
+        }
+      },
+      "<RECURSION>": 193
+    },
+    "alloys_expenditure_colonies_expand": {
+      "alloys_expenditure_colonies_expand": {
+        "resource": "alloys",
+        "type": "expenditure",
+        "category": "colonies",
+        "potential": {
+          "OR": {
+            "AND": {
+              "is_lithoid_empire": "no",
+              "has_resource": {
+                "has_monthly_income": {
+                  "resource": "food"
+                }
+              },
+              "AND": {
+                "is_lithoid_empire": "yes",
+                "has_resource": {
+                  "has_monthly_income": {
+                    "resource": "minerals"
+                  }
+                },
+                "AND": {
+                  "is_robot_empire": "yes",
+                  "has_resource": {
+                    "has_monthly_income": {
+                      "resource": "energy"
+                    }
+                  }
+                }
+              },
+              "weight": {
+                "weight": "0.5"
+              },
+              "desired_min": {
+                "base": "0",
+                "modifier": {
+                  "mult": "0.5",
+                  "has_origin": "origin_tree_of_life"
+                }
+              },
+              "desired_max": {
+                "base": "<RECURSION>",
+                "modifier": {
+                  "mult": "0.5",
+                  "has_origin": "origin_tree_of_life"
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 218
+    },
+    "alloys_expenditure_megastructures": {
+      "alloys_expenditure_megastructures": {
+        "resource": "alloys",
+        "type": "expenditure",
+        "category": "megastructures",
+        "potential": {
+          "is_country_type": "default",
+          "OR": {
+            "is_at_war": "no"
+          },
+          "can_build_megastructures": "yes"
+        },
+        "weight": {
+          "weight": "0.4",
+          "<RECURSION>": [
+            "# increase budget if megastructures are unfinished"
+          ],
+          "modifier": {
+            "factor": "3",
+            "any_owned_megastructure": {
+              "can_be_upgraded": "yes"
+            }
+          }
+        },
+        "desired_max": {
+          "base": "20000 # current max alloy cost for a stage"
+        }
+      },
+      "<RECURSION>": 318
+    },
+    "alloys_expenditure_habitats": {
+      "alloys_expenditure_habitats": {
+        "resource": "alloys",
+        "type": "expenditure",
+        "category": "megastructures_habitat",
+        "potential": {
+          "weight": {
+            "weight": "0.2",
+            "modifier": {
+              "factor": "2",
+              "is_void_dweller_empire": "yes",
+              "count_owned_planet": {
+                "limit": {}
+              },
+              "modifier": {
+                "factor": "<RECURSION>",
+                "is_void_dweller_empire": "yes",
+                "count_owned_planet": {
+                  "limit": {}
+                },
+                "modifier": {
+                  "factor": "0.5",
+                  "is_at_war": "yes"
+                }
+              },
+              "desired_min": {
+                "base": "1000"
+              },
+              "desired_max": {
+                "base": "1500"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 349
+    },
+    "alloys_expenditure_decisions": {
+      "alloys_expenditure_decisions": {
+        "resource": "alloys",
+        "type": "expenditure",
+        "category": "decisions",
+        "potential": {
+          "OR": {
+            "has_technology": "tech_mega_engineering"
+          },
+          "any_owned_planet": {
+            "AND": {
+              "is_planet_class": "pc_shattered_ring_habitable",
+              "root": {}
+            },
+            "<RECURSION>": [
+              "# only consider these kinds of decisions when \"wealthy\""
+            ],
+            "has_resource": {
+              "type": "alloys"
+            }
+          },
+          "weight": {
+            "weight": "0.20"
+          },
+          "<RECURSION>": [
+            "# based on habitat / restore ring"
+          ],
+          "desired_max": {
+            "base": "2000",
+            "modifier": {
+              "add": "8000",
+              "has_technology": "tech_mega_engineering",
+              "any_owned_planet": {
+                "is_planet_class": "pc_shattered_ring_habitable"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 403
+    },
+    "alloys_upkeep_buffer": {
+      "alloys_upkeep_buffer": {
+        "resource": "alloys",
+        "type": "upkeep",
+        "category": "buffer",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.3"
+        }
+      },
+      "<RECURSION>": 447
+    },
+    "alloys_upkeep_ships": {
+      "alloys_upkeep_ships": {
+        "resource": "alloys",
+        "type": "upkeep",
+        "category": "ships",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.5",
+          "modifier": {
+            "factor": "1.5",
+            "OR": {
+              "is_at_war": "yes",
+              "resource_income_compare": {
+                "resource": "alloys"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 461
+    },
+    "alloys_upkeep_planets": {
+      "alloys_upkeep_planets": {
+        "resource": "alloys",
+        "type": "upkeep",
+        "category": "planets",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.2"
+        }
+      },
+      "<RECURSION>": 485
+    }
+  },
+  "00_astral_threads_budget.txt": {
+    "astral_threads_expenditure_buffer": {
+      "astral_threads_expenditure_buffer": {
+        "resource": "astral_threads",
+        "type": "expenditure",
+        "category": "buffer",
+        "potential": {
+          "always": "no"
+        },
+        "weight": {
+          "weight": "0.0"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "astral_threads_expenditure_edicts": {
+      "astral_threads_expenditure_edicts": {
+        "resource": "astral_threads",
+        "type": "expenditure",
+        "category": "edicts",
+        "potential": {
+          "OR": {
+            "has_country_flag": "astral_cloaking_available"
+          }
+        },
+        "weight": {
+          "weight": "0.2"
+        }
+      },
+      "<RECURSION>": 21
+    },
+    "astral_threads_upkeep_edicts": {
+      "astral_threads_upkeep_edicts": {
+        "resource": "astral_threads",
+        "type": "upkeep",
+        "category": "edicts",
+        "potential": {
+          "OR": {
+            "has_country_flag": "astral_cloaking_available"
+          }
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": 37
+    }
+  },
+  "00_dark_matter_budget.txt": {
+    "dark_matter_expenditure_planets": {
+      "dark_matter_expenditure_planets": {
+        "resource": "sr_dark_matter",
+        "type": "expenditure",
+        "category": "planets",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.2"
+        }
+      },
+      "<RECURSION>": 9
+    },
+    "dark_matter_expenditure_ships": {
+      "dark_matter_expenditure_ships": {
+        "resource": "sr_dark_matter",
+        "type": "expenditure",
+        "category": "ships",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1",
+          "modifier": {
+            "factor": "10",
+            "has_ascension_perk": "ap_become_the_crisis",
+            "has_crisis_level": "crisis_level_5",
+            "NOT": {
+              "count_controlled_fleet": {
+                "count >": "1",
+                "limit": {
+                  "is_ship_size": "star_eater"
+                }
+              }
+            }
+          }
+        },
+        "desired_min": {
+          "base": "<RECURSION>",
+          "modifier": {
+            "add": "10000",
+            "has_ascension_perk": "ap_become_the_crisis",
+            "NOT": {
+              "count_controlled_fleet": {
+                "count >": "<RECURSION>",
+                "limit": {
+                  "is_ship_size": "star_eater"
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 23
+    },
+    "dark_matter_expenditure_megastructures": {
+      "dark_matter_expenditure_megastructures": {
+        "resource": "sr_dark_matter",
+        "type": "expenditure",
+        "category": "megastructures",
+        "potential": {
+          "has_ascension_perk": "ap_become_the_crisis",
+          "has_crisis_level": "crisis_level_5"
+        },
+        "weight": {
+          "weight": "0.8"
+        },
+        "desired_min": {
+          "base": "<RECURSION>",
+          "modifier": {
+            "add": "50000",
+            "any_owned_megastructure": {
+              "is_megastructure_type": "crisis_sphere_3",
+              "is_upgrading": "no"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 65
+    },
+    "dark_matter_expenditure_upgrade": {
+      "dark_matter_expenditure_upgrade": {
+        "resource": "sr_dark_matter",
+        "type": "expenditure",
+        "category": "ship_upgrades",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "base": "0.1"
+        }
+      },
+      "<RECURSION>": 111
+    },
+    "dark_matter_expenditure_trade": {
+      "dark_matter_expenditure_trade": {
+        "resource": "sr_dark_matter",
+        "type": "expenditure",
+        "category": "trade",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": 125
+    },
+    "dark_matter_upkeep_planets": {
+      "dark_matter_upkeep_planets": {
+        "resource": "sr_dark_matter",
+        "type": "upkeep",
+        "category": "planets",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.9"
+        }
+      },
+      "<RECURSION>": 141
+    },
+    "dark_matter_upkeep_ships": {
+      "dark_matter_upkeep_ships": {
+        "resource": "sr_dark_matter",
+        "type": "upkeep",
+        "category": "ships",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": 155
+    },
+    "dark_matter_upkeep_edicts": {
+      "dark_matter_upkeep_edicts": {
+        "resource": "sr_dark_matter",
+        "type": "upkeep",
+        "category": "edicts",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "base": "0.25"
+        }
+      },
+      "<RECURSION>": 169
+    }
+  },
+  "00_energy_budget.txt": {
+    "energy_expenditure_buffer": {
+      "energy_expenditure_buffer": {
+        "resource": "energy",
+        "type": "expenditure",
+        "category": "buffer",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "energy_expenditure_planets_gaia_seeder": {
+      "energy_expenditure_planets_gaia_seeder": {
+        "resource": "energy",
+        "type": "expenditure",
+        "category": "planets",
+        "potential": {
+          "is_idyllic_bloom_empire": "yes",
+          "resource_stockpile_compare": {
+            "any_owned_planet": {
+              "NOR": {
+                "is_planet_class": "pc_machine"
+              },
+              "is_artificial": "no"
+            }
+          },
+          "weight": {
+            "weight": "0.2"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "energy_expenditure_trade": {
+      "energy_expenditure_trade": {
+        "resource": "energy",
+        "type": "expenditure",
+        "category": "trade",
+        "potential": {
+          "has_resource": {
+            "type": "energy"
+          }
+        },
+        "weight": {
+          "weight": "0.5"
+        }
+      },
+      "<RECURSION>": 46
+    },
+    "energy_expenditure_trade_deficit": {
+      "energy_expenditure_trade_deficit": {
+        "resource": "energy",
+        "type": "expenditure",
+        "category": "trade",
+        "potential": {
+          "has_resource": {
+            "type": "energy"
+          },
+          "OR": {
+            "AND": {
+              "has_monthly_income": {
+                "resource": "alloys"
+              },
+              "has_resource": {
+                "type": "alloys"
+              }
+            }
+          }
+        },
+        "weight": {
+          "weight": "0.7"
+        }
+      },
+      "<RECURSION>": 63
+    },
+    "energy_expenditure_colonies": {
+      "energy_expenditure_colonies": {
+        "resource": "energy",
+        "type": "expenditure",
+        "category": "colonies",
+        "potential": {
+          "OR": {
+            "has_civic": "civic_private_prospectors"
+          }
+        },
+        "<RECURSION>": [
+          "# if we can colonize with energy, we should"
+        ],
+        "weight": {
+          "weight": "1.5"
+        },
+        "desired_min": {
+          "base": "@colony_cost_high"
+        },
+        "desired_max": {
+          "base": "@colony_cost_high_max"
+        }
+      },
+      "<RECURSION>": 124
+    },
+    "energy_expenditure_colonies_machine": {
+      "energy_expenditure_colonies_machine": {
+        "resource": "energy",
+        "type": "expenditure",
+        "category": "colonies",
+        "potential": {
+          "OR": {
+            "is_robot_empire": "yes",
+            "has_origin": "origin_synthetic_fertility"
+          },
+          "has_resource": {
+            "has_monthly_income": {
+              "resource": "energy"
+            }
+          },
+          "weight": {
+            "weight": "0.5"
+          },
+          "desired_min": {
+            "base": "<RECURSION>",
+            "modifier": {
+              "add": "@colony_cost_very_high",
+              "is_gestalt": "yes",
+              "is_virtual_empire": "yes"
+            }
+          },
+          "desired_max": {
+            "base": "<RECURSION>",
+            "modifier": {
+              "add": "@colony_cost_very_high_max",
+              "is_gestalt": "yes",
+              "is_virtual_empire": "yes"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 151
+    },
+    "energy_expenditure_deposit_blockers": {
+      "energy_expenditure_deposit_blockers": {
+        "resource": "energy",
+        "type": "expenditure",
+        "category": "deposit_blockers",
+        "potential": {
+          "any_owned_planet": {}
+        },
+        "weight": {
+          "weight": "0.3",
+          "modifier": {
+            "factor": "<RECURSION>",
+            "<RECURSION>": [
+              "# if we have any planet that is currently completely blocked"
+            ],
+            "any_owned_planet": {
+              "num_free_districts": {}
+            }
+          },
+          "<RECURSION>": [
+            "# base remove blocker cost"
+          ],
+          "desired_min": {
+            "base": "500"
+          },
+          "desired_max": {
+            "base": "1000"
+          }
+        }
+      },
+      "<RECURSION>": 224
+    },
+    "energy_expenditure_megastructures": {
+      "energy_expenditure_megastructures": {
+        "resource": "energy",
+        "type": "expenditure",
+        "category": "megastructures",
+        "potential": {
+          "is_country_type": "default",
+          "has_technology": "tech_gateway_activation",
+          "is_at_war": "no",
+          "any_owned_megastructure": {
+            "OR": {
+              "is_megastructure_type": "gateway_ruined"
+            }
+          },
+          "has_resource": {
+            "type": "energy"
+          }
+        },
+        "weight": {
+          "weight": "0.5"
+        },
+        "desired_max": {
+          "base": "6000 # currently only used by gateways"
+        }
+      },
+      "<RECURSION>": 256
+    },
+    "energy_expenditure_decisions": {
+      "energy_expenditure_decisions": {
+        "resource": "energy",
+        "type": "expenditure",
+        "category": "decisions",
+        "potential": {
+          "<RECURSION>": [
+            "# only consider these kinds of decisions when \"wealthy\""
+          ],
+          "has_resource": {
+            "type": "energy"
+          }
+        },
+        "weight": {
+          "weight": "0.20"
+        },
+        "<RECURSION>": [
+          "# based on mastery of nature decision"
+        ],
+        "desired_max": {
+          "base": "2000"
+        }
+      },
+      "<RECURSION>": 286
+    },
+    "energy_expenditure_terraforming": {
+      "energy_expenditure_terraforming": {
+        "resource": "energy",
+        "type": "expenditure",
+        "category": "terraforming",
+        "potential": {
+          "has_technology": "tech_terrestrial_sculpting"
+        },
+        "weight": {
+          "weight": "0.3",
+          "modifier": {
+            "factor": "1.5",
+            "OR": {
+              "has_ascension_perk": "ap_hive_worlds",
+              "AND": {
+                "has_technology": "tech_climate_restoration",
+                "any_system_within_border": {
+                  "any_system_planet": {
+                    "OR": {
+                      "has_modifier": "terraforming_candidate",
+                      "AND": {
+                        "is_planet_class": "pc_nuked",
+                        "root": {
+                          "NOT": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "AND": {
+                  "has_ascension_perk": "ap_detox",
+                  "any_system_within_border": {
+                    "any_system_planet": {
+                      "has_modifier": "toxic_terraforming_candidate"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "desired_max": {
+            "base": "20000"
+          }
+        }
+      },
+      "<RECURSION>": 309
+    },
+    "energy_expenditure_exhibit_unlock": {
+      "energy_expenditure_exhibit_unlock": {
+        "resource": "energy",
+        "type": "expenditure",
+        "category": "specimens",
+        "potential": {
+          "has_technology": "tech_galactic_archivism",
+          "has_megastructure": "grand_archive_0",
+          "any_exhibit": {
+            "is_exhibit_active": "no"
+          }
+        },
+        "weight": {
+          "weight": "0.10"
+        }
+      },
+      "<RECURSION>": 361
+    },
+    "energy_upkeep_buffer": {
+      "energy_upkeep_buffer": {
+        "resource": "energy",
+        "type": "upkeep",
+        "category": "buffer",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.01"
+        }
+      },
+      "<RECURSION>": 382
+    },
+    "energy_upkeep_country": {
+      "energy_upkeep_country": {
+        "resource": "energy",
+        "type": "upkeep",
+        "category": "country",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "<RECURSION>",
+          "modifier": {
+            "factor": "1.5",
+            "resource_income_compare": {
+              "resource": "energy"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 396
+    },
+    "energy_upkeep_armies": {
+      "energy_upkeep_armies": {
+        "resource": "energy",
+        "type": "upkeep",
+        "category": "armies",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.05"
+        }
+      },
+      "<RECURSION>": 424
+    }
+  },
+  "00_exotic_gases_budget.txt": {
+    "exotic_gases_expenditure_planets": {
+      "exotic_gases_expenditure_planets": {
+        "resource": "exotic_gases",
+        "type": "expenditure",
+        "category": "planets",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.2"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "exotic_gases_expenditure_ships": {
+      "exotic_gases_expenditure_ships": {
+        "resource": "exotic_gases",
+        "type": "expenditure",
+        "category": "ships",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1",
+          "modifier": {
+            "factor": "<RECURSION>",
+            "is_dragon_breeder_country": "yes"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "exotic_gases_expenditure_upgrade": {
+      "exotic_gases_expenditure_upgrade": {
+        "resource": "exotic_gases",
+        "type": "expenditure",
+        "category": "ship_upgrades",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "base": "0.1"
+        }
+      },
+      "<RECURSION>": 40
+    },
+    "exotic_gases_expenditure_trade": {
+      "exotic_gases_expenditure_trade": {
+        "resource": "exotic_gases",
+        "type": "expenditure",
+        "category": "trade",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": 54
+    },
+    "exotic_gases_expenditure_starbases": {
+      "exotic_gases_expenditure_starbases": {
+        "resource": "exotic_gases",
+        "type": "expenditure",
+        "category": "starbases",
+        "potential": {
+          "any_owned_nonprimary_starbase": {
+            "has_starbase_size >": "orbital_ring_tier_2",
+            "exists": "planet"
+          }
+        },
+        "weight": {
+          "weight": "0.2",
+          "modifier": {
+            "factor": "<RECURSION>",
+            "NOT": {
+              "any_owned_nonprimary_starbase": {
+                "exists": "planet",
+                "OR": {
+                  "AND": {
+                    "has_starbase_size": "orbital_ring_tier_3",
+                    "count_starbase_buildings": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 69
+    },
+    "exotic_gases_upkeep_planets": {
+      "exotic_gases_upkeep_planets": {
+        "resource": "exotic_gases",
+        "type": "upkeep",
+        "category": "planets",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.9"
+        }
+      },
+      "<RECURSION>": 110
+    },
+    "exotic_gases_upkeep_ships": {
+      "exotic_gases_upkeep_ships": {
+        "resource": "exotic_gases",
+        "type": "upkeep",
+        "category": "ships",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "exotic_gases_upkeep_edicts": {
+      "exotic_gases_upkeep_edicts": {
+        "resource": "exotic_gases",
+        "type": "upkeep",
+        "category": "edicts",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "base": "0.25"
+        }
+      },
+      "<RECURSION>": 138
+    },
+    "exotic_gases_upkeep_hyper_relays": {
+      "exotic_gases_upkeep_hyper_relays": {
+        "resource": "exotic_gases",
+        "type": "upkeep",
+        "category": "megastructures_hyper_relay",
+        "potential": {
+          "has_technology": "tech_hyper_relays"
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": 152
+    },
+    "exotic_gases_upkeep_starbases": {
+      "exotic_gases_upkeep_starbases": {
+        "resource": "exotic_gases",
+        "type": "upkeep",
+        "category": "starbases",
+        "potential": {
+          "any_owned_nonprimary_starbase": {
+            "has_starbase_size >": "orbital_ring_tier_2",
+            "exists": "planet"
+          }
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": 166
+    }
+  },
+  "00_food_budget.txt": {
+    "food_expenditure_buffer": {
+      "food_expenditure_buffer": {
+        "resource": "food",
+        "type": "expenditure",
+        "category": "buffer",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.3"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "food_expenditure_colonies_expand": {
+      "food_expenditure_colonies_expand": {
+        "resource": "food",
+        "type": "expenditure",
+        "category": "colonies",
+        "potential": {
+          "OR": {
+            "AND": {
+              "is_robot_empire": "no",
+              "is_lithoid_empire": "no",
+              "NOT": {
+                "has_origin": "origin_synthetic_fertility"
+              }
+            },
+            "has_origin": "origin_tree_of_life"
+          },
+          "has_resource": {
+            "has_monthly_income": {
+              "resource": "food"
+            }
+          },
+          "weight": {
+            "weight": "2.0"
+          },
+          "desired_min": {
+            "base": "<RECURSION>",
+            "modifier": {
+              "add": "@colony_cost_high",
+              "has_origin": "origin_tree_of_life"
+            }
+          },
+          "desired_max": {
+            "base": "<RECURSION>",
+            "modifier": {
+              "add": "@colony_cost_high_max",
+              "has_origin": "origin_tree_of_life"
+            }
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "food_expenditure_colonies_expand_rock_tree": {
+      "food_expenditure_colonies_expand_rock_tree": {
+        "resource": "food",
+        "type": "expenditure",
+        "category": "colonies",
+        "potential": {
+          "is_robot_empire": "no",
+          "is_lithoid_empire": "yes",
+          "has_origin": "origin_tree_of_life",
+          "has_resource": {
+            "has_monthly_income": {
+              "resource": "food"
+            }
+          },
+          "weight": {
+            "weight": "2.0"
+          },
+          "desired_min": {
+            "base": "@colony_cost_high"
+          },
+          "desired_max": {
+            "base": "@colony_cost_high_max"
+          }
+        }
+      },
+      "<RECURSION>": 84
+    },
+    "food_expenditure_decisions": {
+      "food_expenditure_decisions": {
+        "resource": "food",
+        "type": "expenditure",
+        "category": "decisions",
+        "potential": {
+          "has_origin": "origin_tree_of_life",
+          "any_owned_planet": {
+            "has_modifier": "no_lifetree"
+          }
+        },
+        "weight": {
+          "weight": "0.5"
+        },
+        "desired_min": {
+          "base": "550"
+        },
+        "desired_max": {
+          "base": "550"
+        }
+      },
+      "<RECURSION>": 112
+    },
+    "food_expenditure_buildings": {
+      "food_expenditure_buildings": {
+        "resource": "food",
+        "type": "expenditure",
+        "category": "planets",
+        "potential": {
+          "country_uses_food": "yes"
+        },
+        "weight": {
+          "weight": "0.2"
+        },
+        "desired_min": {
+          "base": "<RECURSION>",
+          "modifier": {
+            "add": "450",
+            "has_ascension_perk": "ap_engineered_evolution"
+          }
+        },
+        "desired_max": {
+          "base": "500"
+        }
+      },
+      "<RECURSION>": 137
+    },
+    "food_expenditure_ships": {
+      "food_expenditure_ships": {
+        "resource": "food",
+        "type": "expenditure",
+        "category": "ships",
+        "potential": {
+          "uses_fauna_ship_sizes": "yes"
+        },
+        "weight": {
+          "weight": "0.6",
+          "<RECURSION>": [
+            "# spend more minerals building ships while at war",
+            "# spend less alloys on ships if over capacity"
+          ],
+          "modifier": {
+            "factor": "0.5",
+            "used_naval_capacity_percent >": "1.0"
+          }
+        }
+      },
+      "<RECURSION>": 163
+    },
+    "food_upkeep_ships": {
+      "food_upkeep_ships": {
+        "resource": "food",
+        "type": "upkeep",
+        "category": "ships",
+        "potential": {
+          "OR": {
+            "AND": {
+              "has_origin": "origin_here_be_dragons",
+              "is_dragon_breeder_country": "yes"
+            },
+            "uses_fauna_ship_sizes": "yes"
+          }
+        },
+        "weight": {
+          "weight": "0.5"
+        }
+      },
+      "<RECURSION>": 187
+    },
+    "food_upkeep_country": {
+      "food_upkeep_country": {
+        "resource": "food",
+        "type": "upkeep",
+        "category": "country",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.5"
+        }
+      },
+      "<RECURSION>": 207
+    }
+  },
+  "00_influence_budget.txt": {
+    "influence_expenditure_buffer": {
+      "influence_expenditure_buffer": {
+        "resource": "influence",
+        "type": "expenditure",
+        "category": "buffer",
+        "potential": {
+          "always": "no"
+        },
+        "weight": {
+          "weight": "0.0"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "influence_expenditure_decisions": {
+      "influence_expenditure_decisions": {
+        "resource": "influence",
+        "type": "expenditure",
+        "category": "decisions",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.50",
+          "modifier": {
+            "factor": "<RECURSION>",
+            "OR": {
+              "AND": {
+                "has_ascension_perk": "ap_arcology_project",
+                "any_owned_planet": {
+                  "is_artificial": "no",
+                  "NOR": {
+                    "is_planet_class": "pc_relic",
+                    "has_modifier": "pm_wenkwort_custodian"
+                  },
+                  "OR": {
+                    "num_pops >": "70",
+                    "is_capital": "yes"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "<RECURSION>": [
+          "# this is the cost of the arcology project decision"
+        ],
+        "desired_max": {
+          "base": "200"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "influence_expenditure_resolutions": {
+      "influence_expenditure_resolutions": {
+        "resource": "influence",
+        "type": "expenditure",
+        "category": "resolutions",
+        "potential": {
+          "is_galactic_community_member": "yes",
+          "NOT": {},
+          "weight": {
+            "weight": "0.30"
+          },
+          "<RECURSION>": [
+            "# min/max resolution proposal costs defined in resolutions.txt"
+          ],
+          "desired_min": {
+            "base": "100"
+          },
+          "desired_max": {
+            "base": "300"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "influence_expenditure_agreement_proposals": {
+      "influence_expenditure_agreement_proposals": {
+        "resource": "influence",
+        "type": "expenditure",
+        "category": "agreement_proposals",
+        "potential": {
+          "is_overlord": "yes",
+          "ai_wants_to_negotiate_agreement": "yes"
+        },
+        "weight": {
+          "weight": "1000"
+        }
+      },
+      "<RECURSION>": 95
+    },
+    "influence_expenditure_edicts": {
+      "influence_expenditure_edicts": {
+        "resource": "influence",
+        "type": "expenditure",
+        "category": "edicts",
+        "potential": {
+          "is_sovereign_guardianship_empire": "yes",
+          "NOT": {},
+          "weight": {
+            "weight": "0.25"
+          },
+          "desired_min": {
+            "base": "100"
+          },
+          "desired_max": {
+            "base": "100"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "influence_upkeep_edicts": {
+      "influence_upkeep_edicts": {
+        "resource": "influence",
+        "type": "upkeep",
+        "category": "edicts",
+        "potential": {
+          "has_edict": "inner_focus",
+          "has_resource": {
+            "type": "influence"
+          }
+        },
+        "weight": {
+          "weight": "0.5"
+        },
+        "desired_max": {
+          "base": "<RECURSION>"
+        }
+      },
+      "<RECURSION>": 131
+    },
+    "influence_expenditure_stations": {
+      "influence_expenditure_stations": {
+        "resource": "influence",
+        "type": "expenditure",
+        "category": "stations",
+        "potential": {
+          "has_ai_expansion_plan": "yes"
+        },
+        "weight": {
+          "weight": "0.50"
+        },
+        "<RECURSION>": [
+          "# min is 1 jump away",
+          "# max is 2 jumps away"
+        ],
+        "desired_min": {
+          "base": "75"
+        },
+        "desired_max": {
+          "base": "150"
+        }
+      },
+      "<RECURSION>": 154
+    },
+    "influence_expenditure_claims": {
+      "influence_expenditure_claims": {
+        "resource": "influence",
+        "type": "expenditure",
+        "category": "claims",
+        "potential": {
+          "NOT": {
+            "OR": {
+              "has_ethic": "ethic_pacifist",
+              "has_crisis_level": "crisis_level_2"
+            }
+          },
+          "has_potential_claims": "yes"
+        },
+        "weight": {
+          "weight": "0.15"
+        }
+      },
+      "<RECURSION>": 176
+    },
+    "influence_expenditure_claims_militarist": {
+      "influence_expenditure_claims_militarist": {
+        "resource": "influence",
+        "type": "expenditure",
+        "category": "claims",
+        "potential": {
+          "has_ethic": "ethic_militarist",
+          "has_potential_claims": "yes"
+        },
+        "weight": {
+          "weight": "0.05"
+        }
+      },
+      "<RECURSION>": 197
+    },
+    "influence_expenditure_claims_fanatic_militarist": {
+      "influence_expenditure_claims_fanatic_militarist": {
+        "resource": "influence",
+        "type": "expenditure",
+        "category": "claims",
+        "potential": {
+          "has_ethic": "ethic_fanatic_militarist",
+          "has_potential_claims": "yes"
+        },
+        "weight": {
+          "weight": "0.10"
+        }
+      },
+      "<RECURSION>": 212
+    },
+    "influence_expenditure_megastructures": {
+      "influence_expenditure_megastructures": {
+        "resource": "influence",
+        "type": "expenditure",
+        "category": "megastructures",
+        "potential": {
+          "is_at_war": "no",
+          "has_resource": {
+            "type": "influence"
+          },
+          "can_build_megastructures": "yes"
+        },
+        "weight": {
+          "weight": "0.1"
+        },
+        "<RECURSION>": [
+          "# only used by construction sites, base cost is 300"
+        ],
+        "desired_min": {
+          "base": "75",
+          "modifier": {
+            "add": "225",
+            "has_technology": "tech_ring_world",
+            "NOT": {
+              "any_owned_planet": {}
+            }
+          },
+          "desired_max": {
+            "base": "75",
+            "modifier": {
+              "add": "225",
+              "has_technology": "tech_ring_world"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 228
+    },
+    "influence_expenditure_habitats": {
+      "influence_expenditure_habitats": {
+        "resource": "influence",
+        "type": "expenditure",
+        "category": "megastructures_habitat",
+        "potential": {
+          "weight": {
+            "weight": "0.1",
+            "modifier": {
+              "factor": "10",
+              "is_void_dweller_empire": "yes",
+              "count_owned_planet": {
+                "limit": {}
+              },
+              "modifier": {
+                "factor": "10",
+                "is_void_dweller_empire": "yes",
+                "count_owned_planet": {
+                  "limit": {}
+                },
+                "modifier": {
+                  "factor": "<RECURSION>",
+                  "used_starbase_capacity_percent >": "<RECURSION>"
+                }
+              },
+              "desired_min": {
+                "base": "150"
+              },
+              "desired_max": {
+                "base": "150"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 266
+    },
+    "influence_expenditure_starbases": {
+      "influence_expenditure_starbases": {
+        "resource": "influence",
+        "type": "expenditure",
+        "category": "starbases",
+        "potential": {
+          "count_owned_nonprimary_starbase": {}
+        },
+        "weight": {
+          "base": "<RECURSION>",
+          "modifier": {
+            "add": "0.2",
+            "has_technology": "tech_housing_2",
+            "any_owned_nonprimary_starbase": {
+              "exists": "planet",
+              "OR": {
+                "AND": {
+                  "has_starbase_size": "orbital_ring_tier_1",
+                  "count_starbase_modules": {},
+                  "AND": {
+                    "has_starbase_size": "orbital_ring_tier_2",
+                    "count_starbase_modules": {},
+                    "AND": {
+                      "has_starbase_size": "orbital_ring_tier_3",
+                      "count_starbase_modules": {}
+                    }
+                  }
+                },
+                "modifier": {
+                  "add": "0.3",
+                  "has_technology": "tech_starbase_5",
+                  "any_owned_nonprimary_starbase": {
+                    "has_starbase_size": "orbital_ring_tier_2",
+                    "exists": "planet",
+                    "planet": {
+                      "OR": {
+                        "has_planetary_ascension_tier >": "<RECURSION>",
+                        "has_major_upgraded_capital": "yes"
+                      }
+                    },
+                    "OR": {
+                      "count_starbase_modules": {
+                        "count": "<RECURSION>"
+                      },
+                      "count_starbase_buildings": {
+                        "count": "<RECURSION>"
+                      }
+                    }
+                  }
+                }
+              },
+              "desired_min": {
+                "base": "50"
+              },
+              "desired_max": {
+                "base": "100",
+                "modifier": {
+                  "factor": "1.5",
+                  "has_technology": "tech_starbase_5",
+                  "any_owned_nonprimary_starbase": {
+                    "has_starbase_size": "orbital_ring_tier_2",
+                    "exists": "planet",
+                    "planet": {
+                      "OR": {
+                        "has_planetary_ascension_tier >": "<RECURSION>",
+                        "has_major_upgraded_capital": "yes"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 319
+    },
+    "influence_expenditure_operations": {
+      "influence_expenditure_operations": {
+        "resource": "influence",
+        "type": "expenditure",
+        "category": "operations",
+        "potential": {
+          "<RECURSION>": [
+            "# only allocate influence for operations if we can afford them",
+            "# and if we have a spy network to use them in!"
+          ],
+          "has_resource": {
+            "type": "influence"
+          },
+          "any_spynetwork": {
+            "owner": {
+              "is_spynetwork_level >": "20"
+            }
+          },
+          "weight": {
+            "weight": "0.05",
+            "modifier": {
+              "factor": "<RECURSION>",
+              "any_spynetwork": {
+                "owner": {
+                  "is_spynetwork_level >": "40"
+                }
+              },
+              "modifier": {
+                "factor": "1.5",
+                "any_spynetwork": {
+                  "owner": {
+                    "is_spynetwork_level >": "60"
+                  }
+                },
+                "modifier": {
+                  "factor": "1.5",
+                  "any_spynetwork": {
+                    "owner": {
+                      "is_spynetwork_level >": "80"
+                    }
+                  }
+                },
+                "<RECURSION>": [
+                  "# based on gather information op",
+                  "# based on crisis beacon op"
+                ],
+                "desired_min": {
+                  "base": "20"
+                },
+                "desired_max": {
+                  "base": "320"
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 413
+    }
+  },
+  "00_living_metal_budget.txt": {
+    "living_metal_expenditure_planets": {
+      "living_metal_expenditure_planets": {
+        "resource": "sr_living_metal",
+        "type": "expenditure",
+        "category": "planets",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.2"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "living_metal_expenditure_ships": {
+      "living_metal_expenditure_ships": {
+        "resource": "sr_living_metal",
+        "type": "expenditure",
+        "category": "ships",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1",
+          "modifier": {
+            "factor": "<RECURSION>",
+            "is_dragon_breeder_country": "yes"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "living_metal_expenditure_upgrade": {
+      "living_metal_expenditure_upgrade": {
+        "resource": "sr_living_metal",
+        "type": "expenditure",
+        "category": "ship_upgrades",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "base": "0.1"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "living_metal_expenditure_trade": {
+      "living_metal_expenditure_trade": {
+        "resource": "sr_living_metal",
+        "type": "expenditure",
+        "category": "trade",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "living_metal_upkeep_planets": {
+      "living_metal_upkeep_planets": {
+        "resource": "sr_living_metal",
+        "type": "upkeep",
+        "category": "planets",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.9"
+        }
+      },
+      "<RECURSION>": 70
+    },
+    "living_metal_upkeep_ships": {
+      "living_metal_upkeep_ships": {
+        "resource": "sr_living_metal",
+        "type": "upkeep",
+        "category": "ships",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "living_metal_upkeep_edicts": {
+      "living_metal_upkeep_edicts": {
+        "resource": "sr_living_metal",
+        "type": "upkeep",
+        "category": "edicts",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "base": "0.25"
+        }
+      },
+      "<RECURSION>": 98
+    }
+  },
+  "00_luxury_goods_budget.txt": {
+    "consumer_goods_expenditure_buffer": {
+      "consumer_goods_expenditure_buffer": {
+        "resource": "consumer_goods",
+        "type": "expenditure",
+        "category": "buffer",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.4"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "consumer_goods_expenditure_colonies_expand": {
+      "consumer_goods_expenditure_colonies_expand": {
+        "resource": "consumer_goods",
+        "type": "expenditure",
+        "category": "colonies",
+        "potential": {
+          "is_gestalt": "no",
+          "OR": {
+            "AND": {
+              "is_lithoid_empire": "no",
+              "has_resource": {
+                "has_monthly_income": {
+                  "resource": "food"
+                }
+              },
+              "AND": {
+                "is_lithoid_empire": "yes",
+                "has_resource": {
+                  "has_monthly_income": {
+                    "resource": "minerals"
+                  }
+                },
+                "AND": {
+                  "is_robot_empire": "yes",
+                  "has_resource": {
+                    "has_monthly_income": {
+                      "resource": "energy"
+                    }
+                  }
+                }
+              },
+              "weight": {
+                "weight": "0.5"
+              },
+              "desired_min": {
+                "base": "<RECURSION>",
+                "modifier": {
+                  "add": "@colony_cost_low",
+                  "is_virtual_empire": "yes"
+                }
+              },
+              "desired_max": {
+                "base": "<RECURSION>",
+                "modifier": {
+                  "add": "@colony_cost_low_max",
+                  "is_virtual_empire": "yes"
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "consumer_goods_expenditure_decisions": {
+      "consumer_goods_expenditure_decisions": {
+        "resource": "consumer_goods",
+        "type": "expenditure",
+        "category": "decisions",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.2"
+        }
+      },
+      "<RECURSION>": 86
+    },
+    "consumer_goods_upkeep_buffer": {
+      "consumer_goods_upkeep_buffer": {
+        "resource": "consumer_goods",
+        "type": "upkeep",
+        "category": "buffer",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": 103
+    },
+    "consumer_goods_upkeep_country": {
+      "consumer_goods_upkeep_country": {
+        "resource": "consumer_goods",
+        "type": "upkeep",
+        "category": "country",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.9"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    }
+  },
+  "00_minerals_budget.txt": {
+    "minerals_expenditure_buffer": {
+      "minerals_expenditure_buffer": {
+        "resource": "minerals",
+        "type": "expenditure",
+        "category": "buffer",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.05"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "minerals_expenditure_planets_low": {
+      "minerals_expenditure_planets_low": {
+        "resource": "minerals",
+        "type": "expenditure",
+        "category": "planets",
+        "potential": {
+          "resource_stockpile_compare": {},
+          "weight": {
+            "weight": "1.0"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "minerals_expenditure_planets_med": {
+      "minerals_expenditure_planets_med": {
+        "resource": "minerals",
+        "type": "expenditure",
+        "category": "planets",
+        "potential": {
+          "resource_stockpile_compare": {
+            "resource_stockpile_compare": {},
+            "weight": {
+              "weight": "0.8"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 35
+    },
+    "minerals_expenditure_planets_high": {
+      "minerals_expenditure_planets_high": {
+        "resource": "minerals",
+        "type": "expenditure",
+        "category": "planets",
+        "potential": {
+          "resource_stockpile_compare": {},
+          "weight": {
+            "weight": "0.6"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "minerals_expenditure_stations_low": {
+      "minerals_expenditure_stations_low": {
+        "resource": "minerals",
+        "type": "expenditure",
+        "category": "stations",
+        "potential": {
+          "always": "yes",
+          "resource_stockpile_compare": {},
+          "weight": {
+            "weight": "0.2"
+          }
+        }
+      },
+      "<RECURSION>": 64
+    },
+    "minerals_expenditure_stations_med": {
+      "minerals_expenditure_stations_med": {
+        "resource": "minerals",
+        "type": "expenditure",
+        "category": "stations",
+        "potential": {
+          "always": "yes",
+          "resource_stockpile_compare": {
+            "resource_stockpile_compare": {},
+            "weight": {
+              "weight": "0.1"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 79
+    },
+    "minerals_expenditure_stations_high": {
+      "minerals_expenditure_stations_high": {
+        "resource": "minerals",
+        "type": "expenditure",
+        "category": "stations",
+        "potential": {
+          "always": "yes",
+          "resource_stockpile_compare": {},
+          "weight": {
+            "weight": "0.05"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "minerals_expenditure_armies": {
+      "minerals_expenditure_armies": {
+        "resource": "minerals",
+        "type": "expenditure",
+        "category": "armies",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1",
+          "modifier": {
+            "factor": "<RECURSION>",
+            "OR": {
+              "any_neighbor_country": {
+                "has_ascension_perk": "ap_become_the_crisis"
+              },
+              "any_country": {
+                "is_crisis_faction": "yes"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "minerals_expenditure_armies_threatened": {
+      "minerals_expenditure_armies_threatened": {
+        "resource": "minerals",
+        "type": "expenditure",
+        "category": "armies",
+        "potential": {},
+        "weight": {
+          "weight": "0.10"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "minerals_expenditure_stations_expand": {
+      "minerals_expenditure_stations_expand": {
+        "resource": "minerals",
+        "type": "expenditure",
+        "category": "stations",
+        "potential": {
+          "exploitable_planets >": "<RECURSION>"
+        },
+        "weight": {
+          "weight": "0.05"
+        },
+        "desired_min": {
+          "base": "100"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "minerals_expenditure_colonies_lithoid_expand": {
+      "minerals_expenditure_colonies_lithoid_expand": {
+        "resource": "minerals",
+        "type": "expenditure",
+        "category": "colonies",
+        "potential": {
+          "is_robot_empire": "no",
+          "is_lithoid_empire": "yes",
+          "NOT": {
+            "has_origin": "origin_synthetic_fertility"
+          },
+          "has_resource": {
+            "has_monthly_income": {
+              "resource": "minerals"
+            }
+          },
+          "weight": {
+            "weight": "0.8"
+          },
+          "desired_min": {
+            "base": "<RECURSION>",
+            "modifier": {
+              "add": "@colony_cost_high",
+              "OR": {
+                "is_hive_empire": "yes",
+                "has_origin": "origin_lithoid"
+              }
+            }
+          },
+          "desired_max": {
+            "base": "<RECURSION>",
+            "modifier": {
+              "add": "@colony_cost_high_max",
+              "OR": {
+                "is_hive_empire": "yes",
+                "has_origin": "origin_lithoid"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 171
+    },
+    "minerals_expenditure_ships": {
+      "minerals_expenditure_ships": {
+        "resource": "minerals",
+        "type": "expenditure",
+        "category": "ships",
+        "potential": {
+          "OR": {
+            "uses_fauna_ship_sizes": "yes",
+            "AND": {
+              "has_ascension_perk": "ap_become_the_crisis",
+              "has_crisis_level": "crisis_level_2"
+            }
+          }
+        },
+        "weight": {
+          "weight": "0.4",
+          "<RECURSION>": [
+            "# spend more minerals building ships while at war",
+            "# spend less minerals on ships if over capacity"
+          ],
+          "modifier": {
+            "factor": "0.5",
+            "used_naval_capacity_percent >": "1.0"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "minerals_expenditure_ship_upgrades": {
+      "minerals_expenditure_ship_upgrades": {
+        "resource": "minerals",
+        "type": "expenditure",
+        "category": "ship_upgrades",
+        "potential": {
+          "OR": {
+            "uses_fauna_ship_sizes": "yes",
+            "AND": {
+              "has_ascension_perk": "ap_become_the_crisis",
+              "has_crisis_level": "crisis_level_2"
+            }
+          }
+        },
+        "weight": {
+          "weight": "0.2",
+          "<RECURSION>": [
+            "# spend more on ship upgrades if at capacity"
+          ],
+          "modifier": {
+            "factor": "4",
+            "used_naval_capacity_percent >": "1.0"
+          }
+        }
+      },
+      "<RECURSION>": 255
+    },
+    "minerals_upkeep_buffer": {
+      "minerals_upkeep_buffer": {
+        "resource": "minerals",
+        "type": "upkeep",
+        "category": "buffer",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.30"
+        }
+      },
+      "<RECURSION>": 283
+    },
+    "minerals_upkeep_planets": {
+      "minerals_upkeep_planets": {
+        "resource": "minerals",
+        "type": "upkeep",
+        "category": "planets",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.70"
+        }
+      },
+      "<RECURSION>": 297
+    },
+    "minerals_expenditure_decisions": {
+      "minerals_expenditure_decisions": {
+        "resource": "minerals",
+        "type": "expenditure",
+        "category": "decisions",
+        "potential": {
+          "OR": {
+            "AND": {
+              "has_ascension_perk": "ap_arcology_project",
+              "any_owned_planet": {
+                "is_artificial": "no",
+                "NOR": {
+                  "is_planet_class": "pc_relic",
+                  "has_modifier": "pm_wenkwort_custodian"
+                },
+                "OR": {
+                  "num_pops >": "70",
+                  "is_capital": "yes"
+                }
+              }
+            }
+          },
+          "<RECURSION>": [
+            "# only consider these kinds of decisions when \"wealthy\""
+          ],
+          "has_resource": {
+            "type": "minerals"
+          }
+        },
+        "weight": {
+          "weight": "0.20"
+        },
+        "desired_min": {
+          "base": "20000"
+        },
+        "desired_max": {
+          "base": "20000"
+        }
+      },
+      "<RECURSION>": 312
+    },
+    "minerals_expenditure_deposit_blockers": {
+      "minerals_expenditure_deposit_blockers": {
+        "resource": "minerals",
+        "type": "expenditure",
+        "category": "deposit_blockers",
+        "potential": {
+          "any_owned_planet": {
+            "OR": {
+              "has_deposit": "d_resource_consolidation_1",
+              "AND": {
+                "OR": {
+                  "has_deposit": "d_hibernating_lithoids"
+                },
+                "is_homeworld": "yes"
+              }
+            }
+          }
+        },
+        "weight": {
+          "weight": "0.3",
+          "modifier": {
+            "factor": "<RECURSION>",
+            "<RECURSION>": [
+              "# if we have any planet that is currently completely blocked"
+            ],
+            "any_owned_planet": {
+              "OR": {
+                "has_deposit": "d_ruined_arcology",
+                "AND": {
+                  "OR": {
+                    "has_deposit": "d_hibernating_lithoids"
+                  },
+                  "is_homeworld": "yes"
+                }
+              },
+              "num_free_districts": {}
+            }
+          },
+          "<RECURSION>": [
+            "# base remove blocker cost"
+          ],
+          "desired_min": {
+            "base": "250"
+          },
+          "desired_max": {
+            "base": "1000"
+          }
+        }
+      },
+      "<RECURSION>": 368
+    },
+    "minerals_upkeep_ships": {
+      "minerals_upkeep_ships": {
+        "resource": "minerals",
+        "type": "upkeep",
+        "category": "ships",
+        "potential": {
+          "OR": {
+            "uses_fauna_ship_sizes": "yes",
+            "AND": {
+              "has_ascension_perk": "ap_become_the_crisis",
+              "has_crisis_level": "crisis_level_2"
+            }
+          }
+        },
+        "weight": {
+          "weight": "0.3"
+        }
+      },
+      "<RECURSION>": 418
+    },
+    "minerals_upkeep_country": {
+      "minerals_upkeep_country": {
+        "resource": "minerals",
+        "type": "upkeep",
+        "category": "country",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": 438
+    }
+  },
+  "00_minor_artifacts_budget.txt": {
+    "minor_artifacts_expenditure_planets": {
+      "minor_artifacts_expenditure_planets": {
+        "resource": "minor_artifacts",
+        "type": "expenditure",
+        "category": "planets",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.2"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "minor_artifacts_expenditure_ships": {
+      "minor_artifacts_expenditure_ships": {
+        "resource": "minor_artifacts",
+        "type": "expenditure",
+        "category": "ships",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1",
+          "modifier": {
+            "factor": "<RECURSION>",
+            "has_ascension_perk": "ap_archaeoengineers"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "minor_artifacts_expenditure_upgrade": {
+      "minor_artifacts_expenditure_upgrade": {
+        "resource": "minor_artifacts",
+        "type": "expenditure",
+        "category": "ship_upgrades",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "base": "0.1"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "minor_artifacts_expenditure_starbases": {
+      "minor_artifacts_expenditure_starbases": {
+        "resource": "minor_artifacts",
+        "type": "expenditure",
+        "category": "starbases",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.2"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    }
+  },
+  "00_nanites_budget.txt": {
+    "nanites_expenditure_ships": {
+      "nanites_expenditure_ships": {
+        "resource": "nanites",
+        "type": "expenditure",
+        "category": "ships",
+        "potential": {
+          "has_technology": "tech_nanite_repair_system"
+        },
+        "weight": {
+          "weight": "<RECURSION>"
+        }
+      },
+      "<RECURSION>": 3
+    },
+    "nanites_expenditure_ship_upgrades": {
+      "nanites_expenditure_ship_upgrades": {
+        "resource": "nanites",
+        "type": "expenditure",
+        "category": "ship_upgrades",
+        "potential": {
+          "OR": {
+            "has_technology": "tech_nanite_repair_system",
+            "has_tradition": "tr_nanotech_5"
+          }
+        },
+        "weight": {
+          "weight": "0.5"
+        }
+      },
+      "<RECURSION>": 17
+    },
+    "nanites_expenditure_buildings": {
+      "nanites_expenditure_buildings": {
+        "resource": "nanites",
+        "type": "expenditure",
+        "category": "planets",
+        "potential": {
+          "OR": {
+            "has_technology": "tech_nanite_transmutation",
+            "has_tradition": "tr_nanotech_adopt"
+          }
+        },
+        "weight": {
+          "weight": "0.5"
+        }
+      },
+      "<RECURSION>": 34
+    },
+    "nanites_upkeep_edicts": {
+      "nanites_upkeep_edicts": {
+        "resource": "nanites",
+        "type": "expenditure",
+        "category": "edicts",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.15"
+        }
+      },
+      "<RECURSION>": 52
+    }
+  },
+  "00_rare_crystals_budget.txt": {
+    "rare_crystals_expenditure_planets": {
+      "rare_crystals_expenditure_planets": {
+        "resource": "rare_crystals",
+        "type": "expenditure",
+        "category": "planets",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.2"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "rare_crystals_expenditure_ships": {
+      "rare_crystals_expenditure_ships": {
+        "resource": "rare_crystals",
+        "type": "expenditure",
+        "category": "ships",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1",
+          "modifier": {
+            "factor": "<RECURSION>",
+            "is_dragon_breeder_country": "yes"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "rare_crystals_expenditure_upgrade": {
+      "rare_crystals_expenditure_upgrade": {
+        "resource": "rare_crystals",
+        "type": "expenditure",
+        "category": "ship_upgrades",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "base": "0.1"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "rare_crystals_expenditure_trade": {
+      "rare_crystals_expenditure_trade": {
+        "resource": "rare_crystals",
+        "type": "expenditure",
+        "category": "trade",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "rare_crystals_expenditure_hyper_relays": {
+      "rare_crystals_expenditure_hyper_relays": {
+        "resource": "rare_crystals",
+        "type": "expenditure",
+        "category": "megastructures_hyper_relay",
+        "potential": {
+          "has_technology": "tech_hyper_relays",
+          "any_system_within_border": {
+            "NOR": {
+              "has_megastructure": "hyper_relay_restored"
+            },
+            "OR": {
+              "is_capital_system": "yes",
+              "any_neighbor_system": {
+                "OR": {
+                  "has_megastructure": "hyper_relay_restored"
+                }
+              }
+            }
+          }
+        },
+        "weight": {
+          "weight": "0.5"
+        },
+        "desired_min": {
+          "base": "100"
+        },
+        "desired_max": {
+          "base": "100"
+        }
+      },
+      "<RECURSION>": 68
+    },
+    "rare_crystals_expenditure_starbases": {
+      "rare_crystals_expenditure_starbases": {
+        "resource": "rare_crystals",
+        "type": "expenditure",
+        "category": "starbases",
+        "potential": {
+          "any_owned_nonprimary_starbase": {
+            "has_starbase_size >": "orbital_ring_tier_2",
+            "exists": "planet"
+          }
+        },
+        "weight": {
+          "weight": "0.2",
+          "modifier": {
+            "factor": "<RECURSION>",
+            "NOT": {
+              "any_owned_nonprimary_starbase": {
+                "exists": "planet",
+                "OR": {
+                  "AND": {
+                    "has_starbase_size": "orbital_ring_tier_3",
+                    "count_starbase_buildings": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 104
+    },
+    "rare_crystals_upkeep_planets": {
+      "rare_crystals_upkeep_planets": {
+        "resource": "rare_crystals",
+        "type": "upkeep",
+        "category": "planets",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.9"
+        }
+      },
+      "<RECURSION>": 145
+    },
+    "rare_crystals_upkeep_ships": {
+      "rare_crystals_upkeep_ships": {
+        "resource": "rare_crystals",
+        "type": "upkeep",
+        "category": "ships",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": 159
+    },
+    "rare_crystals_upkeep_edicts": {
+      "rare_crystals_upkeep_edicts": {
+        "resource": "rare_crystals",
+        "type": "upkeep",
+        "category": "edicts",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "base": "0.25"
+        }
+      },
+      "<RECURSION>": 173
+    },
+    "rare_crystals_upkeep_hyper_relays": {
+      "rare_crystals_upkeep_hyper_relays": {
+        "resource": "rare_crystals",
+        "type": "upkeep",
+        "category": "megastructures_hyper_relay",
+        "potential": {
+          "has_technology": "tech_hyper_relays"
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "rare_crystals_upkeep_starbases": {
+      "rare_crystals_upkeep_starbases": {
+        "resource": "rare_crystals",
+        "type": "upkeep",
+        "category": "starbases",
+        "potential": {
+          "any_owned_nonprimary_starbase": {
+            "has_starbase_size >": "orbital_ring_tier_2",
+            "exists": "planet"
+          }
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": 201
+    }
+  },
+  "00_unity_budget.txt": {
+    "unity_expenditure_edicts": {
+      "unity_expenditure_edicts": {
+        "resource": "unity",
+        "type": "expenditure",
+        "category": "edicts",
+        "potential": {
+          "has_resource": {
+            "type": "unity"
+          }
+        },
+        "weight": {
+          "weight": "0.2"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "unity_expenditure_traditions": {
+      "unity_expenditure_traditions": {
+        "resource": "unity",
+        "type": "expenditure",
+        "category": "traditions",
+        "potential": {
+          "has_unlocked_all_traditions": "no"
+        },
+        "weight": {
+          "weight": "0.8"
+        }
+      },
+      "<RECURSION>": 24
+    },
+    "unity_expenditure_megastructures": {
+      "unity_expenditure_megastructures": {
+        "resource": "unity",
+        "type": "expenditure",
+        "category": "megastructures",
+        "potential": {
+          "is_at_war": "no",
+          "can_build_unity_megastructures": "yes",
+          "has_resource": {
+            "type": "unity"
+          }
+        },
+        "weight": {
+          "weight": "0.1"
+        },
+        "desired_max": {
+          "base": "7500"
+        }
+      },
+      "<RECURSION>": 41
+    },
+    "unity_expenditure_decisions": {
+      "unity_expenditure_decisions": {
+        "resource": "unity",
+        "type": "expenditure",
+        "category": "decisions",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.20"
+        },
+        "desired_max": {
+          "base": "1000"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "unity_expenditure_leaders": {
+      "unity_expenditure_leaders": {
+        "resource": "unity",
+        "type": "expenditure",
+        "category": "leaders",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.4"
+        }
+      },
+      "<RECURSION>": 81
+    },
+    "unity_upkeep_country": {
+      "unity_upkeep_country": {
+        "resource": "unity",
+        "type": "upkeep",
+        "category": "country",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.2"
+        },
+        "desired_max": {
+          "base": "200"
+        }
+      },
+      "<RECURSION>": 96
+    },
+    "unity_upkeep_leaders": {
+      "unity_upkeep_leaders": {
+        "resource": "unity",
+        "type": "upkeep",
+        "category": "leaders",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.3"
+        },
+        "desired_max": {
+          "base": "50"
+        }
+      },
+      "<RECURSION>": 114
+    },
+    "unity_upkeep_edicts": {
+      "unity_upkeep_edicts": {
+        "resource": "unity",
+        "type": "upkeep",
+        "category": "edicts",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.07"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    }
+  },
+  "00_volatile_motes_budget.txt": {
+    "volatile_motes_expenditure_planets": {
+      "volatile_motes_expenditure_planets": {
+        "resource": "volatile_motes",
+        "type": "expenditure",
+        "category": "planets",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.2"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "volatile_motes_expenditure_ships": {
+      "volatile_motes_expenditure_ships": {
+        "resource": "volatile_motes",
+        "type": "expenditure",
+        "category": "ships",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "volatile_motes_expenditure_upgrade": {
+      "volatile_motes_expenditure_upgrade": {
+        "resource": "volatile_motes",
+        "type": "expenditure",
+        "category": "ship_upgrades",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "base": "0.1"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "volatile_motes_expenditure_trade": {
+      "volatile_motes_expenditure_trade": {
+        "resource": "volatile_motes",
+        "type": "expenditure",
+        "category": "trade",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "volatile_motes_expenditure_starbases": {
+      "volatile_motes_expenditure_starbases": {
+        "resource": "volatile_motes",
+        "type": "expenditure",
+        "category": "starbases",
+        "potential": {
+          "any_owned_nonprimary_starbase": {
+            "has_starbase_size >": "orbital_ring_tier_2",
+            "exists": "planet"
+          }
+        },
+        "weight": {
+          "weight": "0.2",
+          "modifier": {
+            "factor": "<RECURSION>",
+            "NOT": {
+              "any_owned_nonprimary_starbase": {
+                "exists": "planet",
+                "OR": {
+                  "AND": {
+                    "has_starbase_size": "orbital_ring_tier_3",
+                    "count_starbase_buildings": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "volatile_motes_upkeep_planets": {
+      "volatile_motes_upkeep_planets": {
+        "resource": "volatile_motes",
+        "type": "upkeep",
+        "category": "planets",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.9"
+        }
+      },
+      "<RECURSION>": 106
+    },
+    "volatile_motes_upkeep_ships": {
+      "volatile_motes_upkeep_ships": {
+        "resource": "volatile_motes",
+        "type": "upkeep",
+        "category": "ships",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": 120
+    },
+    "volatile_motes_upkeep_edicts": {
+      "volatile_motes_upkeep_edicts": {
+        "resource": "volatile_motes",
+        "type": "upkeep",
+        "category": "edicts",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "base": "0.25"
+        }
+      },
+      "<RECURSION>": 134
+    },
+    "volatile_motes_upkeep_hyper_relays": {
+      "volatile_motes_upkeep_hyper_relays": {
+        "resource": "volatile_motes",
+        "type": "upkeep",
+        "category": "megastructures_hyper_relay",
+        "potential": {
+          "has_technology": "tech_hyper_relays"
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": 148
+    },
+    "volatile_motes_upkeep_starbases": {
+      "volatile_motes_upkeep_starbases": {
+        "resource": "volatile_motes",
+        "type": "upkeep",
+        "category": "starbases",
+        "potential": {
+          "any_owned_nonprimary_starbase": {
+            "has_starbase_size >": "orbital_ring_tier_2",
+            "exists": "planet"
+          }
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": 162
+    }
+  },
+  "00_zro_budget.txt": {
+    "zro_expenditure_planets": {
+      "zro_expenditure_planets": {
+        "resource": "sr_zro",
+        "type": "expenditure",
+        "category": "planets",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.2"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "zro_expenditure_ships": {
+      "zro_expenditure_ships": {
+        "resource": "sr_zro",
+        "type": "expenditure",
+        "category": "ships",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "zro_expenditure_upgrade": {
+      "zro_expenditure_upgrade": {
+        "resource": "sr_zro",
+        "type": "expenditure",
+        "category": "ship_upgrades",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "base": "0.1"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "zro_expenditure_trade": {
+      "zro_expenditure_trade": {
+        "resource": "sr_zro",
+        "type": "expenditure",
+        "category": "trade",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": 51
+    },
+    "zro_upkeep_planets": {
+      "zro_upkeep_planets": {
+        "resource": "sr_zro",
+        "type": "upkeep",
+        "category": "planets",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.9"
+        }
+      },
+      "<RECURSION>": 67
+    },
+    "zro_upkeep_ships": {
+      "zro_upkeep_ships": {
+        "resource": "sr_zro",
+        "type": "upkeep",
+        "category": "ships",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "weight": "0.1"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "zro_upkeep_edicts": {
+      "zro_upkeep_edicts": {
+        "resource": "sr_zro",
+        "type": "upkeep",
+        "category": "edicts",
+        "potential": {
+          "always": "yes"
+        },
+        "weight": {
+          "base": "0.25"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    }
+  },
+  "documentation.txt": {
+    "# something": {
+      "<RECURSION>": 4
+    }
+  }
+}

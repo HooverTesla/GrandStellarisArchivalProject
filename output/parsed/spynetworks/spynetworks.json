@@ -1,0 +1,156 @@
+{
+  "00_base_strategies.txt": {
+    "default_empire": {
+      "default_empire": {
+        "strategy_weight": {
+          "modifier": {
+            "is_country_type": "default",
+            "weight": "1"
+          }
+        },
+        "network_weight": {
+          "modifier": {
+            "_comments": [
+              "# Proximity is the key - double the score if the target is a neighbor."
+            ],
+            "owner": {
+              "is_neighbor_of": "root.target"
+            },
+            "factor": "2"
+          }
+        },
+        "operation_selector": "weighted_random_available",
+        "operations": {
+          "operation_acquire_asset": {
+            "operation_policy": "until_max_network_cap_policy",
+            "target_value": {
+              "min": "<RECURSION>"
+            }
+          },
+          "operation_steal_technology": {
+            "operation_policy": "fix_chance_10",
+            "target_value": {
+              "min": "<RECURSION>"
+            }
+          },
+          "operation_gather_information": {
+            "operation_policy": "fix_chance_10",
+            "target_value": {
+              "min": "<RECURSION>"
+            }
+          },
+          "operation_kaleidoscope": {
+            "operation_policy": "kaleidoscope_policy",
+            "target_value": {
+              "min": "<RECURSION>"
+            }
+          }
+        }
+      },
+      "_source_file": "<RECURSION>",
+      "_line_number": 7
+    },
+    "pre_ftl_empire": {
+      "pre_ftl_empire": {
+        "strategy_weight": {
+          "modifier": {
+            "is_country_type": "primitive",
+            "weight": "<RECURSION>"
+          }
+        },
+        "network_weight": {
+          "modifier": {
+            "target": {},
+            "weight": "<RECURSION>"
+          }
+        },
+        "operation_selector": "weighted_random_available",
+        "operations": {
+          "operation_increase_awareness": {
+            "operation_policy": "pre_ftl_uplifting_policy",
+            "target_value": {
+              "min": "<RECURSION>"
+            }
+          },
+          "operation_spread_disinformation": {
+            "operation_policy": "pre_ftl_subtlety_policy",
+            "target_value": {
+              "min": "<RECURSION>"
+            }
+          },
+          "operation_plant_advanced_knowledge": {
+            "operation_policy": "pre_ftl_uplifting_policy",
+            "target_value": {
+              "min": "<RECURSION>"
+            }
+          },
+          "operation_indoctrinate_society": {
+            "operation_policy": "pre_ftl_subtlety_policy",
+            "target_value": {
+              "min": "<RECURSION>"
+            }
+          },
+          "operation_infiltrate_government": {
+            "operation_policy": "pre_ftl_infiltrating_policy",
+            "target_value": {
+              "min": "<RECURSION>"
+            }
+          },
+          "operation_infiltrate_hive": {
+            "operation_policy": "pre_ftl_infiltrating_policy",
+            "target_value": {
+              "min": "<RECURSION>"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 73
+    }
+  },
+  "01_federation_members.txt": {
+    "federation_empire": {
+      "federation_empire": {
+        "strategy_weight": {
+          "modifier": {
+            "has_federation": "yes",
+            "weight": "10"
+          }
+        },
+        "network_weight": {
+          "modifier": {
+            "owner": {
+              "OR": {
+                "NOT": {
+                  "is_in_federation_with": "root.target"
+                }
+              },
+              "factor": "-1 # Only spy on neighbours and not own federation members. Conserve envoys for federation duty!"
+            }
+          },
+          "operation_selector": "weighted_random_available",
+          "operations": {
+            "operation_acquire_asset": {
+              "operation_policy": "until_max_network_cap_policy",
+              "target_value": {
+                "min": "<RECURSION>"
+              }
+            },
+            "operation_steal_technology": {
+              "operation_policy": "fix_chance_10",
+              "target_value": {
+                "min": "<RECURSION>"
+              }
+            },
+            "operation_gather_information": {
+              "operation_policy": "fix_chance_10",
+              "target_value": {
+                "min": "<RECURSION>"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 9
+    }
+  }
+}

@@ -58,8 +58,13 @@ def parse_pdx_block(lines, file_variables):
 
 # === PARSE FULL FILE ===
 def parse_pdx_file(filepath):
-    with open(filepath, "r", encoding="utf-8") as f:
-        lines = f.readlines()
+    try:
+        with open(filepath, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+    except UnicodeDecodeError:
+        with open(filepath, "r", encoding="cp1252") as f:
+            lines = f.readlines()
+
 
     file_variables = {}
     current_key = None

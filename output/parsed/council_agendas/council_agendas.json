@@ -1,0 +1,1994 @@
+{
+  "00_council_agendas.txt": {
+    "agenda_infinite_opportunities": {
+      "agenda_infinite_opportunities": {
+        "agenda_cost": "@base_agenda_cost",
+        "potential": {
+          "is_gestalt": "no"
+        },
+        "allow": {
+          "always": "yes"
+        },
+        "modifier": {
+          "pop_citizen_happiness": "0.04"
+        },
+        "finish_modifier": "agenda_infinite_opportunities_finish"
+      },
+      "_source_file": "<RECURSION>",
+      "_line_number": 1
+    },
+    "agenda_infinite_opportunities_gestalt": {
+      "agenda_infinite_opportunities_gestalt": {
+        "agenda_cost": "@base_agenda_cost",
+        "potential": {
+          "is_gestalt": "yes"
+        },
+        "allow": {
+          "always": "yes"
+        },
+        "modifier": {
+          "planet_amenities_no_happiness_add": "4"
+        },
+        "finish_modifier": "agenda_infinite_opportunities_gestalt_finish"
+      },
+      "<RECURSION>": 15
+    },
+    "agenda_unlock_slot": {
+      "agenda_unlock_slot": {
+        "agenda_cost": "@base_agenda_cost",
+        "potential": {
+          "is_gestalt": "no",
+          "has_paragon_dlc": "yes",
+          "OR": {
+            "AND": {
+              "civics_count >": "3"
+            }
+          }
+        },
+        "allow": {
+          "always": "yes"
+        },
+        "effect": {
+          "unlock_council_slots": "1"
+        },
+        "ai_weight": {
+          "base": "9999"
+        }
+      },
+      "<RECURSION>": 29
+    },
+    "agenda_reorganize_council": {
+      "agenda_reorganize_council": {
+        "agenda_cost": "@base_agenda_cost",
+        "potential": {
+          "is_gestalt": "no",
+          "has_paragon_dlc": "yes"
+        },
+        "allow": {
+          "always": "yes"
+        },
+        "effect": {
+          "unlock_council_selection": "yes"
+        },
+        "ai_weight": {
+          "base": "0"
+        }
+      },
+      "<RECURSION>": 53
+    },
+    "agenda_gestalt_purge_traits": {
+      "agenda_gestalt_purge_traits": {
+        "agenda_cost": "@base_agenda_cost",
+        "potential": {
+          "is_gestalt": "yes"
+        },
+        "allow": {
+          "always": "yes"
+        },
+        "finish_modifier": "agenda_gestalt_purge_traits_finish",
+        "effect": {
+          "custom_tooltip": "council_agenda_agenda_gestalt_purge_traits_effect_desc",
+          "every_owned_leader": {
+            "if": {
+              "_comments": [
+                "# Remove Exp per Trait being removed."
+              ],
+              "limit": {
+                "is_councilor": "yes",
+                "num_leader_traits": {
+                  "negative": "yes\t\t\t\t\t\t# Tiers don't matter in this check."
+                }
+              },
+              "hidden_effect": {
+                "add_experience": "value:purge_traits_exp_change_total\t\t\t\t\t# -300 per trait, not counting tiers.",
+                "<RECURSION>": [
+                  "# Restore pending traits and tiers, so they'll come back eventually. But a 10% chance to reduce their numbers."
+                ],
+                "change_variable": {
+                  "which": "leader_pending_negative_traits_unmodified",
+                  "value": "value:leader_num_negative_leader_trait_tiers"
+                },
+                "random": {
+                  "chance": "10",
+                  "subtract_variable": {
+                    "which": "leader_pending_negative_traits_unmodified",
+                    "value": "<RECURSION>"
+                  }
+                }
+              },
+              "remove_trait": "all_negative"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 70
+    },
+    "origin_delusional_tyrant": {
+      "origin_delusional_tyrant": {
+        "agenda_cost": "@base_agenda_cost",
+        "potential": {
+          "any_situation": {
+            "is_situation_type": "paragon_origin_reformists_struggle"
+          }
+        },
+        "allow": {
+          "any_situation": {
+            "is_situation_type": "paragon_origin_reformists_struggle",
+            "current_situation_approach": "situation_paragon_origin_reformists_struggle_harsh"
+          }
+        },
+        "modifier": {
+          "pop_citizen_happiness": "-0.05",
+          "pop_ethic_egalitarian_attraction_mult": "-0.1"
+        },
+        "effect": {
+          "custom_tooltip": "council_agenda_origin_delusional_tyrant_effect",
+          "country_event": {
+            "id": "paragon.5095"
+          }
+        }
+      },
+      "<RECURSION>": 112
+    },
+    "origin_legendary_leader": {
+      "origin_legendary_leader": {
+        "agenda_cost": "@base_agenda_cost",
+        "potential": {
+          "any_situation": {
+            "is_situation_type": "paragon_origin_promise"
+          }
+        },
+        "allow": {
+          "any_situation": {
+            "is_situation_type": "paragon_origin_promise"
+          }
+        },
+        "modifier": {
+          "pop_citizen_happiness": "0.05",
+          "council_agenda_progress_speed": "0.2"
+        },
+        "effect": {
+          "set_country_flag": "origin_upgrade_agendas_situation",
+          "custom_tooltip": "council_agenda_origin_legendary_leader_effect",
+          "hidden_effect": {
+            "random_list": {
+              "<RECURSION>": {
+                "country_event": {
+                  "id": "paragon.5360"
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 137
+    },
+    "agenda_augmentation_product_launch": {
+      "agenda_augmentation_product_launch": {
+        "agenda_cost": "3800 #Shorter completion time to keep the production penalty less intimidating",
+        "allow": {
+          "is_megacorp": "yes",
+          "has_country_flag": "cyber_collectivist"
+        },
+        "potential": {
+          "is_megacorp": "yes",
+          "has_country_flag": "cyber_collectivist"
+        },
+        "modifier": {
+          "planet_jobs_productive_produces_mult": "-0.05",
+          "planet_pops_consumer_goods_upkeep_mult": "0.1"
+        },
+        "finish_modifier": "agenda_augmentation_product_launch_finish"
+      },
+      "<RECURSION>": 184
+    }
+  },
+  "00_council_agendas_ethics.txt": {
+    "agenda_we_come_in_peace": {
+      "agenda_we_come_in_peace": {
+        "agenda_cost": "@base_ethic_agenda_cost",
+        "potential": {
+          "is_gestalt": "no"
+        },
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "requires_pacifist",
+            "is_pacifist": "yes"
+          }
+        },
+        "modifier": {
+          "country_border_friction_mult": "-0.1",
+          "country_trust_cap_add": "25",
+          "country_naval_cap_mult": "-0.25",
+          "pop_ethic_pacifist_attraction_mult": "0.1"
+        },
+        "finish_modifier": "agenda_we_come_in_peace_finish",
+        "effect": {
+          "custom_tooltip": "council_agenda_agenda_we_come_in_peace_effect_per_country",
+          "<RECURSION>": [
+            "# Add X trust to all regular Empires we know."
+          ],
+          "hidden_effect": {
+            "every_country": {
+              "limit": {
+                "is_country_type": "default",
+                "has_communications": "root",
+                "is_homicidal": "no"
+              },
+              "add_trust": {
+                "who": "root",
+                "amount": "@agenda_we_come_in_peace_trust"
+              }
+            }
+          },
+          "if": {
+            "limit": {
+              "any_situation": {
+                "is_situation_type": "paragon_origin_promise"
+              },
+              "has_country_flag": "origin_upgrade_agendas_situation",
+              "has_overlord_dlc": "yes"
+            },
+            "country_event": {
+              "id": "paragon.5370"
+            },
+            "hidden_effect": {
+              "country_event": {
+                "id": "paragon.5014",
+                "days": "180",
+                "random": "360"
+              }
+            }
+          },
+          "else_if": {
+            "limit": {
+              "any_situation": {
+                "is_situation_type": "paragon_origin_promise"
+              },
+              "has_country_flag": "origin_upgrade_agendas_situation",
+              "has_overlord_dlc": "no"
+            },
+            "country_event": {
+              "id": "paragon.5320"
+            },
+            "hidden_effect": {
+              "country_event": {
+                "id": "paragon.5014",
+                "days": "180",
+                "random": "360"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 0
+    },
+    "agenda_display_of_power": {
+      "agenda_display_of_power": {
+        "agenda_cost": "@base_ethic_agenda_cost",
+        "potential": {
+          "is_gestalt": "no"
+        },
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "requires_militarist",
+            "is_militarist": "yes"
+          }
+        },
+        "modifier": {
+          "country_power_projection_influence_produces_add": "0.25",
+          "country_war_exhaustion_mult": "-0.05",
+          "pop_ethic_militarist_attraction_mult": "0.1"
+        },
+        "finish_modifier": "agenda_display_of_power_finish",
+        "effect": {
+          "if": {
+            "limit": {
+              "any_situation": {
+                "is_situation_type": "paragon_origin_promise"
+              },
+              "has_country_flag": "origin_upgrade_agendas_situation"
+            },
+            "country_event": {
+              "id": "paragon.5310"
+            },
+            "hidden_effect": {
+              "country_event": {
+                "id": "paragon.5014",
+                "days": "180",
+                "random": "360"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 75
+    },
+    "agenda_open_arms": {
+      "agenda_open_arms": {
+        "agenda_cost": "@base_ethic_agenda_cost",
+        "potential": {
+          "is_gestalt": "no"
+        },
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "requires_xenophile",
+            "is_xenophile": "yes"
+          }
+        },
+        "modifier": {
+          "pop_growth_from_immigration": "0.05",
+          "trade_value_mult": "0.05",
+          "pop_ethic_xenophile_attraction_mult": "0.1"
+        },
+        "finish_modifier": "agenda_open_arms_finish",
+        "effect": {
+          "if": {
+            "limit": {
+              "any_situation": {
+                "is_situation_type": "paragon_origin_promise"
+              },
+              "has_country_flag": "origin_upgrade_agendas_situation"
+            },
+            "country_event": {
+              "id": "paragon.5345"
+            },
+            "hidden_effect": {
+              "country_event": {
+                "id": "paragon.5014",
+                "days": "180",
+                "random": "360"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 114
+    },
+    "agenda_strong_on_our_own": {
+      "agenda_strong_on_our_own": {
+        "agenda_cost": "@base_ethic_agenda_cost",
+        "potential": {
+          "is_gestalt": "no"
+        },
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "requires_xenophobe",
+            "is_xenophobe": "yes"
+          }
+        },
+        "modifier": {
+          "pop_growth_speed": "0.05",
+          "trade_value_mult": "-0.05",
+          "pop_ethic_xenophobe_attraction_mult": "0.1"
+        },
+        "finish_modifier": "agenda_strong_on_our_own_finish",
+        "effect": {
+          "if": {
+            "limit": {
+              "any_situation": {
+                "is_situation_type": "paragon_origin_promise"
+              },
+              "has_country_flag": "origin_upgrade_agendas_situation"
+            },
+            "country_event": {
+              "id": "paragon.5305"
+            },
+            "hidden_effect": {
+              "country_event": {
+                "id": "paragon.5014",
+                "days": "180",
+                "random": "360"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 153
+    },
+    "agenda_give_and_take": {
+      "agenda_give_and_take": {
+        "agenda_cost": "@base_ethic_agenda_cost",
+        "potential": {
+          "is_gestalt": "no"
+        },
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "requires_egalitarian",
+            "is_egalitarian": "yes"
+          }
+        },
+        "modifier": {
+          "faction_approval": "0.1",
+          "pop_ethic_egalitarian_attraction_mult": "0.1"
+        },
+        "finish_modifier": "agenda_give_and_take_finish"
+      },
+      "<RECURSION>": 192
+    },
+    "agenda_preserve_the_order": {
+      "agenda_preserve_the_order": {
+        "agenda_cost": "@base_ethic_agenda_cost",
+        "potential": {
+          "is_gestalt": "no"
+        },
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "requires_authoritarian",
+            "is_authoritarian": "yes"
+          }
+        },
+        "modifier": {
+          "planet_jobs_worker_produces_mult": "0.05",
+          "planet_jobs_slave_produces_mult": "0.05",
+          "pop_ethic_authoritarian_attraction_mult": "0.1"
+        },
+        "finish_modifier": "agenda_preserve_the_order_finish",
+        "effect": {
+          "if": {
+            "limit": {
+              "any_situation": {
+                "is_situation_type": "paragon_origin_promise"
+              },
+              "has_country_flag": "origin_upgrade_agendas_situation"
+            },
+            "country_event": {
+              "id": "paragon.5320"
+            },
+            "hidden_effect": {
+              "country_event": {
+                "id": "paragon.5014",
+                "days": "180",
+                "random": "360"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 210
+    },
+    "agenda_a_higher_purpose": {
+      "agenda_a_higher_purpose": {
+        "agenda_cost": "@base_ethic_agenda_cost",
+        "potential": {
+          "is_gestalt": "no"
+        },
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "requires_spiritualist",
+            "is_spiritualist": "yes"
+          }
+        },
+        "modifier": {
+          "pop_citizen_happiness": "0.05",
+          "pop_ethic_spiritualist_attraction_mult": "0.1"
+        },
+        "finish_modifier": "agenda_a_higher_purpose_finish",
+        "effect": {
+          "custom_tooltip": "council_agenda_agenda_a_higher_purpose_effect",
+          "<RECURSION>": [
+            "# Reward 50 Unity per Priest."
+          ],
+          "add_resource": {
+            "unity": "@agenda_a_higher_purpose_unity",
+            "mult": "value:country_assigned_priests"
+          },
+          "if": {
+            "limit": {
+              "any_situation": {
+                "is_situation_type": "paragon_origin_promise"
+              },
+              "has_country_flag": "origin_upgrade_agendas_situation"
+            },
+            "country_event": {
+              "id": "paragon.5340"
+            },
+            "hidden_effect": {
+              "country_event": {
+                "id": "paragon.5014",
+                "days": "180",
+                "random": "360"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 249
+    },
+    "agenda_progressive_growth": {
+      "agenda_progressive_growth": {
+        "agenda_cost": "@base_ethic_agenda_cost",
+        "potential": {
+          "is_gestalt": "no"
+        },
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "requires_materialist",
+            "is_materialist": "yes"
+          }
+        },
+        "modifier": {
+          "planet_pop_assembly_mult": "0.1",
+          "pop_ethic_materialist_attraction_mult": "0.1"
+        },
+        "finish_modifier": "agenda_progressive_growth_finish",
+        "effect": {
+          "if": {
+            "limit": {
+              "any_situation": {
+                "is_situation_type": "paragon_origin_promise"
+              },
+              "has_country_flag": "origin_upgrade_agendas_situation"
+            },
+            "country_event": {
+              "id": "paragon.5315"
+            },
+            "hidden_effect": {
+              "country_event": {
+                "id": "paragon.5014",
+                "days": "180",
+                "random": "360"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 293
+    },
+    "agenda_finding_the_voice": {
+      "agenda_finding_the_voice": {
+        "agenda_cost": "@base_ethic_agenda_cost",
+        "potential": {
+          "is_gestalt": "yes"
+        },
+        "allow": {
+          "always": "yes"
+        },
+        "modifier": {
+          "country_agendas_unity_produces_add": "5",
+          "country_unity_produces_mult": "0.1"
+        },
+        "finish_modifier": "agenda_finding_the_voice_finish"
+      },
+      "<RECURSION>": 355
+    }
+  },
+  "01_council_agendas_traditions.txt": {
+    "agenda_conquer_nature": {
+      "agenda_conquer_nature": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_adaptability_adopt"
+        },
+        "potential": {
+          "has_paragon_dlc": "yes",
+          "is_machine_empire": "no"
+        },
+        "modifier": {
+          "pop_environment_tolerance": "0.05",
+          "terraform_speed_mult": "0.1"
+        },
+        "finish_modifier": "agenda_conquer_nature_finish",
+        "effect": {
+          "give_next_terraforming_tech_option_effect": "yes"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "agenda_build_relations": {
+      "agenda_build_relations": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_diplomacy_adopt"
+        },
+        "potential": {
+          "has_paragon_dlc": "yes",
+          "NOR": {
+            "has_valid_civic": "civic_hive_devouring_swarm"
+          }
+        },
+        "modifier": {
+          "country_trust_growth": "0.25",
+          "diplo_weight_mult": "0.05"
+        },
+        "finish_modifier": "agenda_build_relations_finish"
+      },
+      "<RECURSION>": 20
+    },
+    "agenda_chart_the_unknown": {
+      "agenda_chart_the_unknown": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_discovery_adopt"
+        },
+        "potential": {
+          "has_paragon_dlc": "yes"
+        },
+        "modifier": {
+          "science_ship_survey_speed": "0.25",
+          "ship_anomaly_generation_chance_mult": "0.05"
+        },
+        "finish_modifier": "agenda_chart_the_unknown_finish"
+      },
+      "<RECURSION>": 39
+    },
+    "agenda_civil_exclusion": {
+      "agenda_civil_exclusion": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_domination_adopt"
+        },
+        "potential": {
+          "has_paragon_dlc": "yes"
+        },
+        "modifier": {
+          "planet_jobs_worker_produces_mult": "0.05",
+          "planet_jobs_slave_produces_mult": "0.05",
+          "planet_crime_add": "10"
+        },
+        "finish_modifier": "agenda_civil_exclusion_finish"
+      },
+      "<RECURSION>": 54
+    },
+    "agenda_superior_colonies": {
+      "agenda_superior_colonies": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_expansion_adopt"
+        },
+        "potential": {
+          "has_paragon_dlc": "yes"
+        },
+        "modifier": {
+          "planet_colony_development_speed_mult": "0.25"
+        },
+        "finish_modifier": "agenda_superior_colonies_finish",
+        "effect": {
+          "custom_tooltip": "council_agenda_agenda_superior_colonies_effect"
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "agenda_inner_stability": {
+      "agenda_inner_stability": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_harmony_adopt"
+        },
+        "potential": {
+          "has_paragon_dlc": "yes",
+          "is_gestalt": "no"
+        },
+        "modifier": {
+          "planet_stability_add": "<RECURSION>"
+        },
+        "finish_modifier": "agenda_inner_stability_finish"
+      },
+      "<RECURSION>": 87
+    },
+    "agenda_open_markets": {
+      "agenda_open_markets": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_mercantile_adopt",
+          "NOT": {
+            "has_valid_civic": "civic_criminal_heritage"
+          }
+        },
+        "potential": {
+          "has_paragon_dlc": "yes",
+          "is_regular_empire": "yes\t\t# Copied from Tradition potential."
+        },
+        "modifier": {
+          "commercial_pact_mult": "0.2"
+        },
+        "finish_modifier": "agenda_open_markets_finish"
+      },
+      "<RECURSION>": 102
+    },
+    "agenda_open_markets_criminal_heritage": {
+      "agenda_open_markets_criminal_heritage": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_mercantile_adopt",
+          "has_valid_civic": "civic_criminal_heritage"
+        },
+        "potential": {
+          "has_paragon_dlc": "yes",
+          "is_regular_empire": "yes\t\t# Copied from Tradition potential."
+        },
+        "modifier": {
+          "branch_office_holding_crime_mult": "0.2"
+        },
+        "finish_modifier": "agenda_open_markets_criminal_heritage_finish"
+      },
+      "<RECURSION>": 120
+    },
+    "agenda_favored_society": {
+      "agenda_favored_society": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_prosperity_adopt"
+        },
+        "potential": {
+          "has_paragon_dlc": "yes"
+        },
+        "modifier": {
+          "planet_jobs_specialist_produces_mult": "0.05"
+        },
+        "finish_modifier": "agenda_favored_society_finish",
+        "effect": {
+          "capital_scope": {
+            "add_modifier": {
+              "modifier": "agenda_favored_society_finish_planet",
+              "days": "3600"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 136
+    },
+    "agenda_departmental_efficiency": {
+      "agenda_departmental_efficiency": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_statecraft_adopt"
+        },
+        "potential": {
+          "has_paragon_dlc": "yes"
+        },
+        "modifier": {
+          "councilor_exp_gain": "0.2"
+        },
+        "finish_modifier": "agenda_departmental_efficiency_finish"
+      },
+      "<RECURSION>": 158
+    },
+    "agenda_rightful_claims": {
+      "agenda_rightful_claims": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_statecraft_inspiring_agendas"
+        },
+        "potential": {
+          "has_paragon_dlc": "yes"
+        },
+        "modifier": {
+          "rivalries_influence_produces_mult": "0.2"
+        },
+        "finish_modifier": "agenda_rightful_claims_finish"
+      },
+      "<RECURSION>": 172
+    },
+    "agenda_evolving_society": {
+      "agenda_evolving_society": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "always": "yes"
+        },
+        "potential": {
+          "is_gestalt": "no"
+        },
+        "modifier": {
+          "country_unity_produces_mult": "0.1"
+        },
+        "finish_modifier": "agenda_evolving_society_finish"
+      },
+      "<RECURSION>": 186
+    },
+    "agenda_oppose_the_fallen": {
+      "agenda_oppose_the_fallen": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_statecraft_inspiring_agendas"
+        },
+        "potential": {
+          "has_paragon_dlc": "yes"
+        },
+        "modifier": {
+          "damage_vs_country_type_dormant_marauders_mult": "0.05",
+          "damage_vs_country_type_awakened_marauders_mult": "0.05",
+          "damage_vs_country_type_fallen_empire_mult": "0.05",
+          "damage_vs_country_type_awakened_fallen_empire_mult": "0.05"
+        },
+        "finish_modifier": "agenda_oppose_the_fallen_finish"
+      },
+      "<RECURSION>": 200
+    },
+    "agenda_uncover_secrets": {
+      "agenda_uncover_secrets": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_subterfuge_adopt"
+        },
+        "potential": {
+          "has_paragon_dlc": "yes",
+          "has_nemesis": "yes"
+        },
+        "modifier": {
+          "intel_decryption_add": "2",
+          "add_base_country_intel": "<RECURSION>"
+        },
+        "finish_modifier": "agenda_uncover_secrets_finish"
+      },
+      "<RECURSION>": 217
+    },
+    "agenda_military_buildup": {
+      "agenda_military_buildup": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_supremacy_adopt"
+        },
+        "potential": {
+          "has_paragon_dlc": "yes"
+        },
+        "modifier": {
+          "starbase_shipyard_build_speed_mult": "0.10",
+          "country_claim_influence_cost_mult": "-0.10"
+        },
+        "finish_modifier": "agenda_military_buildup_finish"
+      },
+      "<RECURSION>": 233
+    },
+    "agenda_impenetrable_border": {
+      "agenda_impenetrable_border": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_unyielding_adopt"
+        },
+        "potential": {
+          "has_paragon_dlc": "yes",
+          "OR": {
+            "host_has_dlc": "Apocalypse",
+            "has_overlord_dlc": "yes"
+          }
+        },
+        "modifier": {
+          "shipclass_starbase_hull_mult": "0.05",
+          "starbase_upgrade_cost_mult": "-0.05",
+          "country_war_exhaustion_mult": "-0.05"
+        },
+        "finish_modifier": "agenda_impenetrable_border_finish",
+        "effect": {
+          "custom_tooltip": "council_agenda_agenda_impenetrable_border_effect"
+        }
+      },
+      "<RECURSION>": 248
+    },
+    "agenda_second_strike": {
+      "agenda_second_strike": {
+        "agenda_cost": "@short_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_enmity_adopt"
+        },
+        "potential": {
+          "has_humanoids": "yes",
+          "has_paragon_dlc": "yes",
+          "NOR": {
+            "is_homicidal": "yes",
+            "has_valid_civic": "civic_inwards_perfection"
+          }
+        },
+        "modifier": {
+          "ship_speed_mult": "0.1",
+          "fleet_mia_time_mult": "-0.1"
+        },
+        "finish_modifier": "agenda_second_strike_finish",
+        "effect": {
+          "custom_tooltip": "council_agenda_agenda_second_strike_effect",
+          "hidden_effect": {
+            "every_rival_country": {
+              "end_truce": "root"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 272
+    },
+    "agenda_leadership_conditioning": {
+      "agenda_leadership_conditioning": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_aptitude_adopt"
+        },
+        "potential": {
+          "has_paragon_dlc": "yes"
+        },
+        "modifier": {
+          "species_leader_exp_gain": "0.1"
+        },
+        "finish_modifier": "agenda_leadership_conditioning_finish",
+        "effect": {
+          "hidden_effect": {
+            "every_owned_leader": {
+              "limit": {},
+              "add_experience": "owner.value:agenda_leadership_conditioning_reward"
+            }
+          },
+          "custom_tooltip": "council_agenda_agenda_leadership_conditioning_effect"
+        }
+      },
+      "<RECURSION>": 301
+    },
+    "agenda_pioneer_politics": {
+      "agenda_pioneer_politics": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_politics_adopt"
+        },
+        "potential": {
+          "has_paragon_dlc": "yes",
+          "host_has_dlc": "Federations",
+          "is_homicidal": "no"
+        },
+        "modifier": {
+          "resolutions_cost_mult": "-0.05",
+          "veto_cooldown_mult": "-0.05"
+        },
+        "finish_modifier": "agenda_pioneer_politics_finish"
+      },
+      "<RECURSION>": 326
+    },
+    "agenda_self_maintenance": {
+      "agenda_self_maintenance": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_versatility_adopt"
+        },
+        "potential": {
+          "has_paragon_dlc": "yes",
+          "is_machine_empire": "yes"
+        },
+        "modifier": {
+          "planet_pop_assembly_mult": "0.025",
+          "pop_amenities_usage_no_happiness_mult": "-0.05"
+        },
+        "finish_modifier": "agenda_self_maintenance_finish"
+      },
+      "<RECURSION>": 345
+    },
+    "agenda_gestalt_boost_growth": {
+      "agenda_gestalt_boost_growth": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_synchronicity_adopt"
+        },
+        "potential": {
+          "is_gestalt": "yes"
+        },
+        "modifier": {
+          "councilor_gestalt_growth_exp_gain": "0.2"
+        },
+        "finish_modifier": "agenda_gestalt_boost_growth_finish"
+      },
+      "<RECURSION>": 361
+    },
+    "agenda_gestalt_boost_cognitive": {
+      "agenda_gestalt_boost_cognitive": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_synchronicity_adopt"
+        },
+        "potential": {
+          "is_gestalt": "yes"
+        },
+        "modifier": {
+          "councilor_gestalt_cognitive_exp_gain": "0.2"
+        },
+        "finish_modifier": "agenda_gestalt_boost_cognitive_finish"
+      },
+      "<RECURSION>": 375
+    },
+    "agenda_gestalt_boost_regulatory": {
+      "agenda_gestalt_boost_regulatory": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_synchronicity_adopt"
+        },
+        "potential": {
+          "is_gestalt": "yes"
+        },
+        "modifier": {
+          "councilor_gestalt_regulatory_exp_gain": "0.2"
+        },
+        "finish_modifier": "agenda_gestalt_boost_regulatory_finish"
+      },
+      "<RECURSION>": 389
+    },
+    "agenda_gestalt_boost_legion": {
+      "agenda_gestalt_boost_legion": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_synchronicity_adopt"
+        },
+        "potential": {
+          "is_gestalt": "yes"
+        },
+        "modifier": {
+          "councilor_gestalt_legion_exp_gain": "0.2"
+        },
+        "finish_modifier": "agenda_gestalt_boost_legion_finish"
+      },
+      "<RECURSION>": 403
+    }
+  },
+  "02_council_agendas_ascensions.txt": {
+    "agenda_mind_over_matter": {
+      "agenda_mind_over_matter": {
+        "agenda_cost": "value:agenda_mind_over_matter_cost",
+        "agenda_cooldown": "@ascension_agenda_cooldown",
+        "allow": {
+          "OR": {
+            "has_ascension_perk": "ap_mind_over_matter",
+            "has_origin": "origin_shroudwalker_apprentice"
+          }
+        },
+        "potential": {
+          "has_utopia": "yes",
+          "is_gestalt": "no",
+          "NOR": {
+            "has_cybernetic_ascension": "yes",
+            "has_genetic_ascension": "yes",
+            "has_synthetic_ascension": "yes",
+            "is_natural_design_empire": "yes",
+            "is_individual_machine": "yes"
+          },
+          "NAND": {
+            "has_technology": "tech_thought_enforcement"
+          }
+        },
+        "effect": {
+          "inverted_switch": {
+            "trigger": "has_technology",
+            "tech_psionic_theory": {
+              "add_tech_progress": {
+                "tech": "tech_psionic_theory",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "tech_telepathy": {
+              "add_tech_progress": {
+                "tech": "tech_telepathy",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "tech_thought_enforcement": {
+              "add_tech_progress": {
+                "tech": "tech_thought_enforcement",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "default": {
+              "add_monthly_resource_mult": {
+                "resource": "society_research",
+                "value": "@tier3researchreward",
+                "min": "@tier3researchmin",
+                "max": "@tier3researchmax"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 3
+    },
+    "agenda_psionic_supremacy": {
+      "agenda_psionic_supremacy": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_psionics_adopt"
+        },
+        "potential": {
+          "has_utopia": "yes",
+          "is_gestalt": "no",
+          "NOR": {
+            "has_country_flag": "whisperers_covenant_confirmed"
+          }
+        },
+        "modifier": {
+          "planet_psionic_jobs_produces_mult": "0.05",
+          "category_psionics_research_speed_mult": "0.1"
+        },
+        "finish_modifier": "agenda_psionic_supremacy_finish_no_covenant"
+      },
+      "<RECURSION>": 61
+    },
+    "agenda_psionic_supremacy_composer": {
+      "agenda_psionic_supremacy_composer": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_psionics_adopt"
+        },
+        "potential": {
+          "has_utopia": "yes",
+          "has_country_flag": "composer_covenant_confirmed"
+        },
+        "modifier": {
+          "planet_psionic_jobs_produces_mult": "0.05",
+          "category_psionics_research_speed_mult": "0.1"
+        },
+        "finish_modifier": "agenda_psionic_supremacy_finish_composer"
+      },
+      "<RECURSION>": 90
+    },
+    "agenda_psionic_supremacy_instrument": {
+      "agenda_psionic_supremacy_instrument": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_psionics_adopt"
+        },
+        "potential": {
+          "has_utopia": "yes",
+          "has_country_flag": "instrument_covenant_confirmed"
+        },
+        "modifier": {
+          "planet_psionic_jobs_produces_mult": "0.05",
+          "category_psionics_research_speed_mult": "0.1"
+        },
+        "finish_modifier": "agenda_psionic_supremacy_finish_instrument"
+      },
+      "<RECURSION>": 106
+    },
+    "agenda_psionic_supremacy_eater": {
+      "agenda_psionic_supremacy_eater": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_psionics_adopt"
+        },
+        "potential": {
+          "has_utopia": "yes",
+          "has_country_flag": "eater_covenant_confirmed"
+        },
+        "modifier": {
+          "planet_psionic_jobs_produces_mult": "0.05",
+          "category_psionics_research_speed_mult": "0.1"
+        },
+        "finish_modifier": "agenda_psionic_supremacy_finish_eater"
+      },
+      "<RECURSION>": 122
+    },
+    "agenda_psionic_supremacy_whisperers": {
+      "agenda_psionic_supremacy_whisperers": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_psionics_adopt"
+        },
+        "potential": {
+          "has_utopia": "yes",
+          "has_country_flag": "whisperers_covenant_confirmed"
+        },
+        "modifier": {
+          "planet_psionic_jobs_produces_mult": "0.05",
+          "category_psionics_research_speed_mult": "0.1"
+        },
+        "finish_modifier": "agenda_psionic_supremacy_finish_whisperers"
+      },
+      "<RECURSION>": 138
+    },
+    "agenda_engineered_evolution": {
+      "agenda_engineered_evolution": {
+        "agenda_cost": "@ascension_agenda_cost",
+        "agenda_cooldown": "@ascension_agenda_cooldown",
+        "allow": {
+          "has_ascension_perk": "ap_engineered_evolution"
+        },
+        "potential": {
+          "has_utopia": "yes",
+          "is_machine_empire": "no",
+          "NOR": {
+            "has_cybernetic_ascension": "yes",
+            "has_psionic_ascension": "yes",
+            "has_synthetic_ascension": "yes",
+            "is_natural_design_empire": "yes",
+            "is_individual_machine": "yes"
+          },
+          "NAND": {
+            "has_technology": "tech_gene_seed_purification"
+          }
+        },
+        "effect": {
+          "inverted_switch": {
+            "trigger": "has_technology",
+            "tech_genome_mapping": {
+              "add_tech_progress": {
+                "tech": "tech_genome_mapping",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "tech_gene_tailoring": {
+              "add_tech_progress": {
+                "tech": "tech_gene_tailoring",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "tech_glandular_acclimation": {
+              "add_tech_progress": {
+                "tech": "tech_glandular_acclimation",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "tech_gene_expressions": {
+              "add_tech_progress": {
+                "tech": "tech_gene_expressions",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "tech_gene_seed_purification": {
+              "add_tech_progress": {
+                "tech": "tech_gene_seed_purification",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "default": {
+              "add_monthly_resource_mult": {
+                "resource": "society_research",
+                "value": "@tier3researchreward",
+                "min": "@tier3researchmin",
+                "max": "@tier3researchmax"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 154
+    },
+    "agenda_genetic_pursuit": {
+      "agenda_genetic_pursuit": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_genetics_adopt"
+        },
+        "potential": {
+          "has_utopia": "yes",
+          "is_machine_empire": "no",
+          "NOR": {
+            "has_cybernetic_ascension": "yes",
+            "has_psionic_ascension": "yes",
+            "has_synthetic_ascension": "yes",
+            "is_natural_design_empire": "yes",
+            "is_individual_machine": "yes"
+          }
+        },
+        "modifier": {
+          "category_biology_research_speed_mult": "0.05",
+          "pop_growth_speed": "0.025",
+          "planet_pop_assembly_organic_mult": "0.025"
+        },
+        "finish_modifier": "agenda_genetic_pursuit_finish"
+      },
+      "<RECURSION>": 223
+    },
+    "agenda_cybernetic_advantage": {
+      "agenda_cybernetic_advantage": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_cybernetics_adopt"
+        },
+        "potential": {
+          "OR": {
+            "has_utopia": "yes",
+            "has_machine_age_dlc": "yes"
+          },
+          "is_machine_empire": "no",
+          "NOR": {
+            "has_genetic_ascension": "yes",
+            "has_psionic_ascension": "yes",
+            "has_synthetic_ascension": "yes",
+            "is_natural_design_empire": "yes",
+            "is_individual_machine": "yes"
+          }
+        },
+        "modifier": {
+          "planet_pops_cyborgs_upkeep_mult": "-0.05",
+          "pop_growth_speed": "0.025"
+        },
+        "finish_modifier": "agenda_cybernetic_advantage_finish"
+      },
+      "<RECURSION>": 247
+    },
+    "agenda_flesh_is_weak": {
+      "agenda_flesh_is_weak": {
+        "agenda_cost": "@ascension_agenda_cost",
+        "agenda_cooldown": "@ascension_agenda_cooldown",
+        "allow": {
+          "OR": {
+            "has_ascension_perk": "ap_the_flesh_is_weak",
+            "has_origin": "origin_cybernetic_creed"
+          }
+        },
+        "potential": {
+          "OR": {
+            "has_utopia": "yes",
+            "has_machine_age_dlc": "yes"
+          },
+          "is_gestalt": "no",
+          "NOR": {
+            "has_genetic_ascension": "yes",
+            "has_psionic_ascension": "yes",
+            "has_synthetic_ascension": "yes",
+            "is_natural_design_empire": "yes",
+            "is_individual_machine": "yes"
+          },
+          "NAND": {
+            "has_technology": "tech_neuro_quantum_links"
+          }
+        },
+        "effect": {
+          "inverted_switch": {
+            "trigger": "has_technology",
+            "tech_powered_exoskeletons": {
+              "add_tech_progress": {
+                "tech": "tech_powered_exoskeletons",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "tech_integrated_cybernetics": {
+              "add_tech_progress": {
+                "tech": "tech_integrated_cybernetics",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "tech_neuro_quantum_links": {
+              "add_tech_progress": {
+                "tech": "tech_neuro_quantum_links",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "default": {
+              "add_monthly_resource_mult": {
+                "resource": "engineering_research",
+                "value": "@tier3researchreward",
+                "min": "@tier3researchmin",
+                "max": "@tier3researchmax"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 273
+    },
+    "agenda_organo_machine_interfacing": {
+      "agenda_organo_machine_interfacing": {
+        "agenda_cost": "@ascension_agenda_cost",
+        "agenda_cooldown": "@ascension_agenda_cooldown",
+        "allow": {
+          "has_ascension_perk": "ap_organo_machine_interfacing"
+        },
+        "potential": {
+          "OR": {
+            "has_utopia": "yes",
+            "has_machine_age_dlc": "yes"
+          },
+          "is_hive_empire": "yes",
+          "NOR": {
+            "has_genetic_ascension": "yes",
+            "has_psionic_ascension": "yes",
+            "has_synthetic_ascension": "yes",
+            "is_natural_design_empire": "yes",
+            "is_individual_machine": "yes"
+          },
+          "NAND": {
+            "has_technology": "tech_neuro_quantum_links"
+          }
+        },
+        "effect": {
+          "inverted_switch": {
+            "trigger": "has_technology",
+            "tech_powered_exoskeletons": {
+              "add_tech_progress": {
+                "tech": "tech_powered_exoskeletons",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "tech_integrated_cybernetics": {
+              "add_tech_progress": {
+                "tech": "tech_integrated_cybernetics",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "tech_neuro_quantum_links": {
+              "add_tech_progress": {
+                "tech": "tech_neuro_quantum_links",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "default": {
+              "add_monthly_resource_mult": {
+                "resource": "engineering_research",
+                "value": "@tier3researchreward",
+                "min": "@tier3researchmin",
+                "max": "@tier3researchmax"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 334
+    },
+    "agenda_cybernetic_advantage_assimilator": {
+      "agenda_cybernetic_advantage_assimilator": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_cybernetics_assimilator_adopt"
+        },
+        "potential": {
+          "OR": {
+            "has_utopia": "yes",
+            "has_machine_age_dlc": "yes"
+          },
+          "has_civic": "civic_machine_assimilator",
+          "has_synthetic_ascension": "no"
+        },
+        "modifier": {
+          "planet_pops_cyborgs_upkeep_mult": "-0.05",
+          "pop_growth_speed": "0.05"
+        },
+        "finish_modifier": "agenda_cybernetic_advantage_assimilator_finish"
+      },
+      "<RECURSION>": 392
+    },
+    "agenda_organo_machine_interfacing_assimilator": {
+      "agenda_organo_machine_interfacing_assimilator": {
+        "agenda_cost": "@ascension_agenda_cost",
+        "agenda_cooldown": "@ascension_agenda_cooldown",
+        "allow": {
+          "has_ascension_perk": "ap_organo_machine_interfacing_assimilator"
+        },
+        "potential": {
+          "OR": {
+            "has_utopia": "yes",
+            "has_machine_age_dlc": "yes"
+          },
+          "has_civic": "civic_machine_assimilator",
+          "has_synthetic_ascension": "no",
+          "NAND": {
+            "has_technology": "tech_neuro_quantum_links"
+          }
+        },
+        "effect": {
+          "inverted_switch": {
+            "trigger": "has_technology",
+            "tech_powered_exoskeletons": {
+              "add_tech_progress": {
+                "tech": "tech_powered_exoskeletons",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "tech_integrated_cybernetics": {
+              "add_tech_progress": {
+                "tech": "tech_integrated_cybernetics",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "tech_neuro_quantum_links": {
+              "add_tech_progress": {
+                "tech": "tech_neuro_quantum_links",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "default": {
+              "add_monthly_resource_mult": {
+                "resource": "engineering_research",
+                "value": "@tier3researchreward",
+                "min": "@tier3researchmin",
+                "max": "@tier3researchmax"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 412
+    },
+    "agenda_synthetic_evolution": {
+      "agenda_synthetic_evolution": {
+        "agenda_cost": "@ascension_agenda_cost",
+        "agenda_cooldown": "@ascension_agenda_cooldown",
+        "allow": {
+          "OR": {
+            "has_ascension_perk": "ap_synthetic_evolution",
+            "has_origin": "origin_synthetic_fertility"
+          }
+        },
+        "potential": {
+          "is_regular_empire": "yes",
+          "is_individual_machine": "no",
+          "OR": {
+            "has_utopia": "yes",
+            "has_machine_age_dlc": "yes"
+          },
+          "NOR": {
+            "has_cybernetic_ascension": "yes",
+            "has_genetic_ascension": "yes",
+            "has_psionic_ascension": "yes",
+            "is_natural_design_empire": "yes"
+          },
+          "NAND": {
+            "has_technology": "tech_synthetic_workers"
+          }
+        },
+        "effect": {
+          "inverted_switch": {
+            "trigger": "has_technology",
+            "tech_powered_exoskeletons": {
+              "add_tech_progress": {
+                "tech": "tech_powered_exoskeletons",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "tech_robotic_workers": {
+              "add_tech_progress": {
+                "tech": "tech_robotic_workers",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "tech_droid_workers": {
+              "add_tech_progress": {
+                "tech": "tech_droid_workers",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "tech_synthetic_workers": {
+              "add_tech_progress": {
+                "tech": "tech_synthetic_workers",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "default": {
+              "add_monthly_resource_mult": {
+                "resource": "engineering_research",
+                "value": "@tier3researchreward",
+                "min": "@tier3researchmin",
+                "max": "@tier3researchmax"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 464
+    },
+    "agenda_synthetic_yield": {
+      "agenda_synthetic_yield": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_synthetics_adopt"
+        },
+        "potential": {
+          "OR": {
+            "AND": {
+              "is_machine_empire": "yes",
+              "has_synthetic_dawn": "yes",
+              "has_machine_age_dlc": "no"
+            }
+          },
+          "NOR": {
+            "has_cybernetic_ascension": "yes",
+            "has_genetic_ascension": "yes",
+            "has_psionic_ascension": "yes",
+            "is_natural_design_empire": "yes"
+          }
+        },
+        "modifier": {
+          "planet_pop_assembly_add": "0.5"
+        },
+        "finish_modifier": "agenda_synthetic_yield_finish"
+      },
+      "<RECURSION>": 532
+    },
+    "agenda_synthetic_age": {
+      "agenda_synthetic_age": {
+        "agenda_cost": "@ascension_agenda_cost",
+        "agenda_cooldown": "@ascension_agenda_cooldown",
+        "allow": {
+          "has_ascension_perk": "ap_synthetic_age"
+        },
+        "potential": {
+          "OR": {
+            "has_synthetic_dawn": "yes",
+            "has_machine_age_dlc": "yes"
+          },
+          "has_cybernetic_ascension": "no",
+          "NAND": {
+            "has_technology": "tech_mega_assembly"
+          }
+        },
+        "effect": {
+          "inverted_switch": {
+            "trigger": "has_technology",
+            "tech_powered_exoskeletons": {
+              "add_tech_progress": {
+                "tech": "tech_powered_exoskeletons",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "tech_robomodding_m": {
+              "add_tech_progress": {
+                "tech": "tech_robomodding_m",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "tech_binary_motivators": {
+              "add_tech_progress": {
+                "tech": "tech_binary_motivators",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "tech_nanite_assemblers": {
+              "add_tech_progress": {
+                "tech": "tech_nanite_assemblers",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "tech_mega_assembly": {
+              "add_tech_progress": {
+                "tech": "tech_mega_assembly",
+                "progress": "@agenda_award_tech_progress"
+              }
+            },
+            "default": {
+              "add_monthly_resource_mult": {
+                "resource": "engineering_research",
+                "value": "@tier3researchreward",
+                "min": "@tier3researchmin",
+                "max": "@tier3researchmax"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 566
+    },
+    "agenda_virtuality_optimized_network": {
+      "agenda_virtuality_optimized_network": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_virtuality_adopt"
+        },
+        "potential": {
+          "has_machine_age_dlc": "yes",
+          "OR": {
+            "is_individual_machine": "yes",
+            "is_machine_empire": "yes"
+          },
+          "NOR": {
+            "has_cybernetic_ascension": "yes",
+            "has_country_flag": "nanotech_traditions_unlocked"
+          }
+        },
+        "modifier": {
+          "planet_virtual_jobs_produces_mult": "0.05"
+        },
+        "finish_modifier": "agenda_virtuality_optimized_network_finish"
+      },
+      "<RECURSION>": 636
+    },
+    "agenda_nanotech_unstoppable_swarm": {
+      "agenda_nanotech_unstoppable_swarm": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_nanotech_adopt"
+        },
+        "potential": {
+          "has_machine_age_dlc": "yes",
+          "OR": {
+            "is_individual_machine": "yes",
+            "is_machine_empire": "yes"
+          },
+          "NOR": {
+            "has_cybernetic_ascension": "yes",
+            "has_country_flag": "virtuality_traditions_unlocked"
+          }
+        },
+        "modifier": {
+          "shipsize_nanite_swarmer_build_speed_mult": "0.20",
+          "ship_nanite_swarmer_cost_mult": "-0.15"
+        },
+        "finish_modifier": "agenda_nanotech_unstoppable_swarm_finish"
+      },
+      "<RECURSION>": 660
+    },
+    "agenda_modularity_reshape_form": {
+      "agenda_modularity_reshape_form": {
+        "agenda_cost": "@base_tradition_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_modularity_adopt"
+        },
+        "potential": {
+          "has_machine_age_dlc": "yes",
+          "OR": {
+            "is_individual_machine": "yes",
+            "is_machine_empire": "yes"
+          },
+          "NOR": {
+            "has_cybernetic_ascension": "yes",
+            "has_country_flag": "virtuality_traditions_unlocked"
+          }
+        },
+        "modifier": {
+          "planet_pops_robotics_upkeep_mult": "-0.05",
+          "planet_jobs_sr_living_metal_produces_mult": "0.05",
+          "auto_mod_monthly_add": "<RECURSION>"
+        },
+        "finish_modifier": "agenda_modularity_reshape_form_finish"
+      },
+      "<RECURSION>": 685
+    }
+  },
+  "03_council_agendas_astral_planes.txt": {
+    "agenda_dark_matter_breakthrough": {
+      "agenda_dark_matter_breakthrough": {
+        "agenda_cost": "@base_council_agenda_cost",
+        "potential": {
+          "is_dark_consortium_empire": "yes"
+        },
+        "allow": {
+          "num_researched_techs_of_tier": {
+            "tier": "<RECURSION>"
+          },
+          "custom_tooltip": {
+            "fail_text": "agenda_dark_matter_breakthrough_techs_obsolete",
+            "OR": {
+              "NOR": {
+                "has_tech_option": "tech_dark_matter_propulsion",
+                "has_technology": "tech_dark_matter_propulsion"
+              }
+            }
+          }
+        },
+        "init_effect": {
+          "hidden_effect": {
+            "if": {
+              "limit": {
+                "NOT": {},
+                "custom_tooltip": "council_agenda_agenda_dark_matter_breakthrough_init_effect_desc",
+                "set_country_flag": "civic_dark_consortium_locked"
+              }
+            }
+          },
+          "effect": {
+            "custom_tooltip": "council_agenda_agenda_dark_matter_breakthrough_effect_desc",
+            "hidden_effect": {
+              "random_list": {
+                "<RECURSION>": {
+                  "modifier": {
+                    "factor": "<RECURSION>",
+                    "OR": {
+                      "has_tech_option": "tech_dark_matter_propulsion",
+                      "has_technology": "tech_dark_matter_propulsion"
+                    }
+                  },
+                  "add_research_option": "tech_dark_matter_propulsion"
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 6
+    }
+  },
+  "03_council_agendas_grand_archive.txt": {
+    "agenda_galactic_trawling": {
+      "agenda_galactic_trawling": {
+        "agenda_cost": "@base_council_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_domestication_adopt"
+        },
+        "potential": {
+          "has_paragon_dlc": "yes",
+          "has_grand_archive_dlc": "yes"
+        },
+        "modifier": {
+          "gravity_snare_cost_mult": "-0.25",
+          "gravity_snare_cooldown_mult": "-0.10",
+          "space_fauna_culling_reward_mult": "0.20"
+        },
+        "finish_modifier": "agenda_galactic_trawling_launch_finish"
+      },
+      "<RECURSION>": 5
+    },
+    "agenda_astute_observation": {
+      "agenda_astute_observation": {
+        "agenda_cost": "@base_council_agenda_cost",
+        "allow": {
+          "has_tradition": "tr_archivism_adopt"
+        },
+        "potential": {
+          "has_paragon_dlc": "yes",
+          "has_grand_archive_dlc": "yes"
+        },
+        "modifier": {
+          "specimens_produces_mult": "0.05",
+          "find_arc_site_on_survey_chance_mult": "0.25"
+        },
+        "finish_modifier": "agenda_astute_observation_launch_finish"
+      },
+      "<RECURSION>": 26
+    }
+  },
+  "04_council_agendas_gestalt_nodes.txt": {
+    "agenda_hive_restore_growth": {
+      "agenda_hive_restore_growth": {
+        "agenda_cost": "@base_agenda_cost",
+        "potential": {
+          "is_hive_empire": "yes"
+        },
+        "allow": {
+          "has_technology": "tech_node_culling_1"
+        },
+        "finish_modifier": "agenda_hive_restore_growth_finish",
+        "effect": {
+          "restore_gestalt_councilor_effect": {
+            "CLASS": "official",
+            "COUNCIL_POS": "councilor_gestalt_growth",
+            "DESC": "councilor_gestalt_growth_desc"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    },
+    "agenda_hive_restore_cognitive": {
+      "agenda_hive_restore_cognitive": {
+        "agenda_cost": "@base_agenda_cost",
+        "potential": {
+          "is_hive_empire": "yes"
+        },
+        "allow": {
+          "has_technology": "tech_node_culling_1"
+        },
+        "finish_modifier": "agenda_hive_restore_cognitive_finish",
+        "effect": {
+          "restore_gestalt_councilor_effect": {
+            "CLASS": "scientist",
+            "COUNCIL_POS": "councilor_gestalt_cognitive",
+            "DESC": "councilor_gestalt_cognitive_desc"
+          }
+        }
+      },
+      "<RECURSION>": 22
+    },
+    "agenda_hive_restore_legion": {
+      "agenda_hive_restore_legion": {
+        "agenda_cost": "@base_agenda_cost",
+        "potential": {
+          "is_hive_empire": "yes"
+        },
+        "allow": {
+          "has_technology": "tech_node_culling_1"
+        },
+        "finish_modifier": "agenda_hive_restore_legion_finish",
+        "effect": {
+          "restore_gestalt_councilor_effect": {
+            "CLASS": "commander",
+            "COUNCIL_POS": "councilor_gestalt_legion",
+            "DESC": "councilor_gestalt_legion_desc"
+          }
+        }
+      },
+      "<RECURSION>": 41
+    },
+    "agenda_hive_restore_regulatory": {
+      "agenda_hive_restore_regulatory": {
+        "agenda_cost": "@base_agenda_cost",
+        "potential": {
+          "is_hive_empire": "yes"
+        },
+        "allow": {
+          "has_technology": "tech_node_culling_1"
+        },
+        "finish_modifier": "agenda_hive_restore_regulatory_finish",
+        "effect": {
+          "restore_gestalt_councilor_effect": {
+            "CLASS": "official",
+            "COUNCIL_POS": "councilor_gestalt_regulatory",
+            "DESC": "councilor_gestalt_regulatory_desc"
+          }
+        }
+      },
+      "<RECURSION>": 60
+    },
+    "agenda_machine_restore_growth": {
+      "agenda_machine_restore_growth": {
+        "agenda_cost": "@base_agenda_cost",
+        "potential": {
+          "is_machine_empire": "yes"
+        },
+        "allow": {
+          "has_technology": "tech_node_reformatting_1"
+        },
+        "finish_modifier": "agenda_machine_restore_growth_finish",
+        "effect": {
+          "restore_gestalt_councilor_effect": {
+            "CLASS": "official",
+            "COUNCIL_POS": "councilor_gestalt_growth",
+            "DESC": "councilor_gestalt_growth_desc"
+          }
+        }
+      },
+      "<RECURSION>": 79
+    },
+    "agenda_machine_restore_cognitive": {
+      "agenda_machine_restore_cognitive": {
+        "agenda_cost": "@base_agenda_cost",
+        "potential": {
+          "is_machine_empire": "yes"
+        },
+        "allow": {
+          "has_technology": "tech_node_reformatting_1"
+        },
+        "finish_modifier": "agenda_machine_restore_cognitive_finish",
+        "effect": {
+          "restore_gestalt_councilor_effect": {
+            "CLASS": "scientist",
+            "COUNCIL_POS": "councilor_gestalt_cognitive",
+            "DESC": "councilor_gestalt_cognitive_desc"
+          }
+        }
+      },
+      "<RECURSION>": 98
+    },
+    "agenda_machine_restore_legion": {
+      "agenda_machine_restore_legion": {
+        "agenda_cost": "@base_agenda_cost",
+        "potential": {
+          "is_machine_empire": "yes"
+        },
+        "allow": {
+          "has_technology": "tech_node_reformatting_1"
+        },
+        "finish_modifier": "agenda_machine_restore_legion_finish",
+        "effect": {
+          "restore_gestalt_councilor_effect": {
+            "CLASS": "commander",
+            "COUNCIL_POS": "councilor_gestalt_legion",
+            "DESC": "councilor_gestalt_legion_desc"
+          }
+        }
+      },
+      "<RECURSION>": 117
+    },
+    "agenda_machine_restore_regulatory": {
+      "agenda_machine_restore_regulatory": {
+        "agenda_cost": "@base_agenda_cost",
+        "potential": {
+          "is_machine_empire": "yes"
+        },
+        "allow": {
+          "has_technology": "tech_node_reformatting_1"
+        },
+        "finish_modifier": "agenda_machine_restore_regulatory_finish",
+        "effect": {
+          "restore_gestalt_councilor_effect": {
+            "CLASS": "official",
+            "COUNCIL_POS": "councilor_gestalt_regulatory",
+            "DESC": "councilor_gestalt_regulatory_desc"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    }
+  },
+  "99_README_AGENDAS.txt": {
+    "# example_agenda": {
+      "<RECURSION>": 8
+    }
+  }
+}

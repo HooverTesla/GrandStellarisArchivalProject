@@ -1,0 +1,303 @@
+{
+  "00_diplomacy_economy.txt": {
+    "once": {
+      "once": {
+        "_comments": [
+          "# this is applied only once per country"
+        ],
+        "federation": {
+          "trigger": {
+            "has_federation": "yes"
+          },
+          "resources": {
+            "category": "federation",
+            "upkeep": {
+              "influence": "1"
+            }
+          }
+        }
+      },
+      "_source_file": "<RECURSION>",
+      "_line_number": 5
+    },
+    "per_relation": {
+      "per_relation": {
+        "<RECURSION>": [
+          "# this is applied for each such relation with another country",
+          "# scope: this = current country, FROM : other country in the relation"
+        ],
+        "rivalry": {
+          "trigger": {
+            "has_rival": "FROM"
+          },
+          "resources": {
+            "category": "rivalries",
+            "produces": {
+              "influence": "0.5"
+            }
+          }
+        },
+        "non_aggression_pact": {
+          "trigger": {
+            "has_non_aggression_pact": "FROM"
+          },
+          "resources": {
+            "category": "non_aggression_pacts",
+            "upkeep": {
+              "influence": "0.25"
+            }
+          }
+        },
+        "migration_pact": {
+          "trigger": {
+            "has_diplo_migration_treaty": "FROM",
+            "NOT": {
+              "AND": {
+                "has_federation": "yes",
+                "federation": {
+                  "federation": {}
+                },
+                "NOT": {
+                  "AND": {
+                    "has_federation": "yes",
+                    "federation": {
+                      "federation": {}
+                    }
+                  },
+                  "resources": {
+                    "category": "migration_pacts",
+                    "upkeep": {
+                      "influence": "0.25"
+                    }
+                  }
+                },
+                "research_agreement": {
+                  "trigger": {
+                    "has_research_agreement": "FROM",
+                    "NOT": {
+                      "AND": {
+                        "has_federation": "yes",
+                        "federation": {
+                          "federation": {}
+                        }
+                      },
+                      "resources": {
+                        "category": "research_agreements",
+                        "upkeep": {
+                          "influence": "0.25"
+                        }
+                      }
+                    },
+                    "commercial_pact": {
+                      "trigger": {
+                        "has_commercial_pact": "FROM",
+                        "NOT": {},
+                        "resources": {
+                          "category": "commercial_pacts",
+                          "upkeep": {
+                            "influence": "0.25"
+                          }
+                        }
+                      },
+                      "defensive_pact": {
+                        "trigger": {
+                          "has_defensive_pact": "FROM"
+                        },
+                        "resources": {
+                          "category": "defensive_pacts",
+                          "upkeep": {
+                            "influence": "<RECURSION>"
+                          }
+                        }
+                      },
+                      "guarantee": {
+                        "trigger": {
+                          "is_guaranteeing": "FROM"
+                        },
+                        "resources": {
+                          "category": "guarantees",
+                          "upkeep": {
+                            "influence": "0.5"
+                          }
+                        }
+                      },
+                      "improving_relations": {
+                        "trigger": {
+                          "is_improving_relations_with": "FROM",
+                          "OR": {
+                            "has_policy_flag": "diplo_stance_supremacist"
+                          }
+                        },
+                        "resources": {
+                          "category": "envoy_costs",
+                          "upkeep": {
+                            "influence": "0.25"
+                          }
+                        }
+                      },
+                      "harming_relations": {
+                        "trigger": {
+                          "is_harming_relations_with": "FROM",
+                          "OR": {
+                            "has_policy_flag": "diplo_stance_cooperative"
+                          }
+                        },
+                        "resources": {
+                          "category": "envoy_costs",
+                          "upkeep": {
+                            "influence": "0.25"
+                          }
+                        }
+                      },
+                      "diplo_stance_closed_borders": {
+                        "trigger": {
+                          "has_policy_flag": "diplo_stance_mercantile",
+                          "has_closed_borders": "FROM",
+                          "NOT": {
+                            "has_rival": "FROM"
+                          }
+                        },
+                        "resources": {
+                          "category": "diplo_closed_borders",
+                          "upkeep": {
+                            "influence": "0.25"
+                          }
+                        }
+                      },
+                      "embassy": {
+                        "trigger": {
+                          "has_active_tradition": "tr_diplomacy_diplomatic_networking",
+                          "has_embassy": "from"
+                        },
+                        "resources": {
+                          "category": "diplomatic_networking",
+                          "produces": {
+                            "unity": "3"
+                          }
+                        }
+                      },
+                      "migration_pact": {
+                        "trigger": {
+                          "exists": "ruler",
+                          "ruler": {
+                            "has_migration_access": "from"
+                          },
+                          "resources": {
+                            "category": "diplomatic_networking",
+                            "produces": {
+                              "society_research": "@scientific_diplomacy_1_amt",
+                              "engineering_research": "@scientific_diplomacy_1_amt",
+                              "physics_research": "@scientific_diplomacy_1_amt"
+                            }
+                          }
+                        },
+                        "migration_pact": {
+                          "trigger": {
+                            "exists": "ruler",
+                            "ruler": {
+                              "has_migration_access": "from"
+                            },
+                            "resources": {
+                              "category": "diplomatic_networking",
+                              "produces": {
+                                "society_research": "@scientific_diplomacy_2_amt",
+                                "engineering_research": "@scientific_diplomacy_2_amt",
+                                "physics_research": "@scientific_diplomacy_2_amt"
+                              }
+                            }
+                          },
+                          "migration_pact": {
+                            "trigger": {
+                              "exists": "ruler",
+                              "ruler": {
+                                "has_migration_access": "from"
+                              },
+                              "resources": {
+                                "category": "diplomatic_networking",
+                                "produces": {
+                                  "society_research": "@scientific_diplomacy_3_amt",
+                                  "engineering_research": "@scientific_diplomacy_3_amt",
+                                  "physics_research": "@scientific_diplomacy_3_amt"
+                                }
+                              }
+                            },
+                            "societal_enlightenment": {
+                              "trigger": {
+                                "from": {
+                                  "is_under_societal_enlightenment": "root"
+                                }
+                              },
+                              "resources": {
+                                "category": "societal_enlightenment_pacts",
+                                "upkeep": {
+                                  "influence": "0.1",
+                                  "unity": "5"
+                                }
+                              }
+                            },
+                            "open_technological_enlightenment": {
+                              "trigger": {
+                                "from": {
+                                  "is_under_open_technological_enlightenment": "root"
+                                }
+                              },
+                              "resources": {
+                                "category": "open_technological_enlightenment_pacts",
+                                "upkeep": {
+                                  "influence": "0.1",
+                                  "physics_research": "<RECURSION>",
+                                  "society_research": "<RECURSION>",
+                                  "engineering_research": "<RECURSION>"
+                                }
+                              }
+                            },
+                            "stratified_technological_enlightenment": {
+                              "trigger": {
+                                "from": {
+                                  "is_under_stratified_technological_enlightenment": "root"
+                                }
+                              },
+                              "resources": {
+                                "category": "stratified_technological_enlightenment_pacts",
+                                "upkeep": {
+                                  "influence": "0.1",
+                                  "physics_research": "<RECURSION>",
+                                  "society_research": "<RECURSION>",
+                                  "engineering_research": "<RECURSION>"
+                                }
+                              }
+                            },
+                            "pre_ftl_trade": {
+                              "trigger": {
+                                "from": {
+                                  "has_pre_ftl_trade": "root"
+                                }
+                              },
+                              "resources": {
+                                "category": "pre_ftl_trade_pacts",
+                                "upkeep": {
+                                  "trigger": {
+                                    "NOT": {},
+                                    "influence": "0.1"
+                                  },
+                                  "upkeep": {
+                                    "minerals": "<RECURSION>"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 41
+    }
+  }
+}

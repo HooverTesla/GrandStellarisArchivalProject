@@ -1,0 +1,754 @@
+{
+  "00_capital_automation.txt": {
+    "automate_capital_planet": {
+      "automate_capital_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_designation": "col_capital"
+        },
+        "prio_districts": {},
+        "buildings": {
+          "1": {
+            "building": "building_capital"
+          },
+          "2": {
+            "building": "building_factory_1"
+          },
+          "3": {
+            "building": "building_foundry_1"
+          },
+          "4": {
+            "building": "building_embassy"
+          },
+          "5": {
+            "building": "building_institute"
+          },
+          "6": {
+            "building": "building_ministry_production"
+          },
+          "7": {
+            "building": "building_galactic_stock_exchange"
+          },
+          "8": {
+            "building": "building_research_lab_1"
+          }
+        }
+      },
+      "_source_file": "<RECURSION>",
+      "_line_number": 9
+    }
+  },
+  "00_capital_hive_automation.txt": {
+    "automate_capital_hive_planet": {
+      "automate_capital_hive_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_designation": "col_capital_hive"
+        },
+        "prio_districts": {},
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_research_lab_1"
+          }
+        }
+      },
+      "<RECURSION>": 6
+    }
+  },
+  "00_capital_machine_automation.txt": {
+    "automate_capital_machine_planet": {
+      "automate_capital_machine_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_designation": "col_capital_machine"
+        },
+        "prio_districts": {},
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_energy_grid"
+          },
+          "12": {
+            "building": "building_supercomputer"
+          },
+          "10": {
+            "building": "building_research_lab_1"
+          }
+        }
+      },
+      "<RECURSION>": 7
+    }
+  },
+  "00_capital_machine_servitor_automation.txt": {
+    "automate_capital_machine_servitor_planet": {
+      "automate_capital_machine_servitor_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_designation": "col_capital_machine",
+          "exists": "owner",
+          "owner": {},
+          "prio_districts": {},
+          "buildings": {
+            "<RECURSION>": {
+              "building": "building_organic_sanctuary",
+              "available": {
+                "num_buildings": {}
+              },
+              "<RECURSION>": {
+                "building": "building_uplink_node",
+                "available": {
+                  "num_buildings": {}
+                },
+                "<RECURSION>": {
+                  "building": "building_organic_sanctuary",
+                  "available": {
+                    "num_buildings": {}
+                  },
+                  "<RECURSION>": {
+                    "building": "building_supercomputer"
+                  },
+                  "9": {
+                    "building": "building_research_lab_1"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 11
+    }
+  },
+  "00_colony_automation.txt": {
+    "automate_colony_planet": {
+      "automate_colony_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_designation": "col_default",
+          "is_artificial": "no"
+        },
+        "prio_districts": {},
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_capital",
+            "available": {
+              "always": "yes"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 2
+    }
+  },
+  "00_colony_machine_automation.txt": {
+    "automate_colony_machine_planet": {
+      "automate_colony_machine_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_designation": "col_default_machine"
+        },
+        "prio_districts": {},
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_machine_capital",
+            "available": {
+              "always": "yes"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 3
+    }
+  },
+  "00_factory_automation.txt": {
+    "automate_factory_planet": {
+      "automate_factory_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_factory_designation": "yes"
+        },
+        "prio_districts": {},
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_production_center"
+          }
+        }
+      },
+      "<RECURSION>": 5
+    }
+  },
+  "00_farming_automation.txt": {
+    "automate_farming_planet": {
+      "automate_farming_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_farming_designation": "yes"
+        },
+        "prio_districts": {},
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_hydroponics_farm"
+          }
+        }
+      },
+      "<RECURSION>": 4
+    }
+  },
+  "00_fortress_automation.txt": {
+    "automate_fortress_planet": {
+      "automate_fortress_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_fortress_designation": "yes"
+        },
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_dread_encampment",
+            "available": {},
+            "<RECURSION>": {
+              "building": "building_military_academy",
+              "available": {},
+              "<RECURSION>": {
+                "building": "building_stronghold"
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    }
+  },
+  "00_foundry_automation.txt": {
+    "automate_foundry_planet": {
+      "automate_foundry_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_foundry_designation": "yes"
+        },
+        "prio_districts": {},
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_production_center"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    }
+  },
+  "00_generator_automation.txt": {
+    "automate_generator_planet": {
+      "automate_generator_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_generator_designation": "yes"
+        },
+        "prio_districts": {},
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_betharian_power_plant"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    }
+  },
+  "00_industrial_automation.txt": {
+    "automate_industrial_planet": {
+      "automate_industrial_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_industrial_designation": "yes"
+        },
+        "prio_districts": {},
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_production_center"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    }
+  },
+  "00_mining_automation.txt": {
+    "automate_mining_planet": {
+      "automate_mining_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_mining_designation": "yes"
+        },
+        "prio_districts": {},
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_mineral_purification_plant"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    }
+  },
+  "00_penal_automation.txt": {
+    "automate_penal_planet": {
+      "automate_penal_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_designation": "col_penal"
+        },
+        "prio_districts": {},
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_precinct_house",
+            "available": {
+              "owner": {
+                "precinct_house_upkeep_affordable": "yes"
+              },
+              "num_buildings": {}
+            },
+            "<RECURSION>": {
+              "building": "building_precinct_house",
+              "available": {
+                "owner": {
+                  "precinct_house_upkeep_affordable": "yes"
+                },
+                "num_buildings": {}
+              },
+              "10": {
+                "building": "building_sacrificial_temple_1",
+                "available": {
+                  "owner": {
+                    "is_spiritualist": "yes",
+                    "OR": {
+                      "has_valid_civic": "civic_death_cult_corporate"
+                    }
+                  },
+                  "num_buildings": {}
+                },
+                "11": {
+                  "building": "building_galactic_memorial_1",
+                  "available": {
+                    "owner": {
+                      "is_memorialist_empire": "yes"
+                    },
+                    "NOR": {
+                      "has_building": "building_galactic_memorial_3"
+                    }
+                  }
+                },
+                "15": {
+                  "building": "building_commercial_zone",
+                  "available": {
+                    "owner": {
+                      "commercial_zone_upkeep_affordable": "yes"
+                    },
+                    "num_buildings": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 12
+    }
+  },
+  "00_refinery_automation.txt": {
+    "automate_refinery_planet": {
+      "automate_refinery_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_refinery_designation": "yes"
+        },
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_archaeo_refinery",
+            "available": {
+              "num_buildings": {
+                "owner": {}
+              },
+              "<RECURSION>": {
+                "building": "building_chemical_plant",
+                "available": {
+                  "num_buildings": {}
+                },
+                "<RECURSION>": {
+                  "building": "building_refinery",
+                  "available": {
+                    "num_buildings": {}
+                  },
+                  "<RECURSION>": {
+                    "building": "building_crystal_plant",
+                    "available": {
+                      "num_buildings": {}
+                    },
+                    "<RECURSION>": {
+                      "building": "building_chemical_plant",
+                      "available": {
+                        "num_buildings": {}
+                      },
+                      "<RECURSION>": {
+                        "building": "building_refinery",
+                        "available": {
+                          "num_buildings": {}
+                        },
+                        "<RECURSION>": {
+                          "building": "building_crystal_plant",
+                          "available": {
+                            "num_buildings": {}
+                          },
+                          "<RECURSION>": {
+                            "building": "building_chemical_plant",
+                            "available": {
+                              "num_buildings": {}
+                            },
+                            "10": {
+                              "building": "building_refinery",
+                              "available": {
+                                "num_buildings": {}
+                              },
+                              "11": {
+                                "building": "building_crystal_plant",
+                                "available": {
+                                  "num_buildings": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    }
+  },
+  "00_research_automation.txt": {
+    "automate_research_planet": {
+      "automate_research_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_research_designation": "yes"
+        },
+        "prio_districts": {},
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_institute",
+            "available": {
+              "NOR": {
+                "owner": {
+                  "owner": {}
+                }
+              },
+              "<RECURSION>": {
+                "building": "building_supercomputer",
+                "available": {
+                  "OR": {
+                    "owner": {
+                      "owner": {}
+                    }
+                  },
+                  "<RECURSION>": {
+                    "building": "building_research_lab_1"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    }
+  },
+  "00_resort_automation.txt": {
+    "automate_resort_planet": {
+      "automate_resort_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_designation": "col_resort"
+        },
+        "prio_districts": {},
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_luxury_residence",
+            "available": {
+              "owner": {
+                "luxury_residence_upkeep_affordable": "yes"
+              },
+              "num_buildings": {}
+            },
+            "<RECURSION>": {
+              "building": "building_commercial_zone",
+              "available": {
+                "owner": {
+                  "commercial_zone_upkeep_affordable": "yes"
+                },
+                "num_buildings": {}
+              },
+              "<RECURSION>": {
+                "building": "building_luxury_residence",
+                "available": {
+                  "owner": {
+                    "luxury_residence_upkeep_affordable": "yes"
+                  },
+                  "num_buildings": {}
+                },
+                "<RECURSION>": {
+                  "building": "building_commercial_zone",
+                  "available": {
+                    "owner": {
+                      "commercial_zone_upkeep_affordable": "yes"
+                    },
+                    "num_buildings": {}
+                  },
+                  "<RECURSION>": {
+                    "building": "building_luxury_residence",
+                    "available": {
+                      "owner": {
+                        "luxury_residence_upkeep_affordable": "yes"
+                      },
+                      "num_buildings": {}
+                    },
+                    "<RECURSION>": {
+                      "building": "building_commercial_zone",
+                      "available": {
+                        "owner": {
+                          "commercial_zone_upkeep_affordable": "yes"
+                        },
+                        "num_buildings": {}
+                      },
+                      "<RECURSION>": {
+                        "building": "building_luxury_residence",
+                        "available": {
+                          "owner": {
+                            "luxury_residence_upkeep_affordable": "yes"
+                          },
+                          "num_buildings": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 10
+    }
+  },
+  "00_ringworld_automation.txt": {
+    "automate_ringworld_planet": {
+      "automate_ringworld_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "OR": {
+            "has_designation": "col_ring_mix",
+            "AND": {
+              "has_designation": "col_default",
+              "uses_district_set": "ring_world"
+            }
+          },
+          "owner": {
+            "NOR": {
+              "is_machine_empire": "yes",
+              "is_hive_empire": "yes"
+            }
+          }
+        },
+        "prio_districts": {},
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_factory_1"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    }
+  },
+  "00_ringworld_hive_automation.txt": {
+    "automate_ringworld_hive_planet": {
+      "automate_ringworld_hive_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_designation": "col_ring_mix",
+          "owner": {
+            "is_hive_empire": "yes"
+          }
+        },
+        "prio_districts": {},
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_hive_node",
+            "available": {
+              "num_buildings": {}
+            },
+            "<RECURSION>": {
+              "building": "building_hive_node",
+              "available": {
+                "num_buildings": {}
+              },
+              "<RECURSION>": {
+                "building": "building_hive_node",
+                "available": {
+                  "num_buildings": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 8
+    }
+  },
+  "00_ringworld_machine_automation.txt": {
+    "automate_ringworld_machine_planet": {
+      "automate_ringworld_machine_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_designation": "col_ring_mix",
+          "owner": {
+            "is_machine_empire": "yes"
+          }
+        },
+        "prio_districts": {},
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_energy_grid"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    }
+  },
+  "00_rural_automation.txt": {
+    "automate_rural_planet": {
+      "automate_rural_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_rural_designation": "yes"
+        },
+        "prio_districts": {},
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_energy_grid"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    }
+  },
+  "00_slave_automation.txt": {
+    "automate_slave_planet": {
+      "automate_slave_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_designation": "col_slave"
+        },
+        "prio_districts": {},
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_overseer_homes",
+            "available": {
+              "owner": {
+                "overseer_homes_upkeep_affordable": "yes"
+              },
+              "num_buildings": {}
+            },
+            "<RECURSION>": {
+              "building": "building_overseer_homes",
+              "available": {
+                "owner": {
+                  "overseer_homes_upkeep_affordable": "yes"
+                },
+                "num_buildings": {}
+              },
+              "<RECURSION>": {
+                "building": "building_overseer_homes",
+                "available": {
+                  "owner": {
+                    "overseer_homes_upkeep_affordable": "yes"
+                  },
+                  "num_buildings": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    }
+  },
+  "00_trade_automation.txt": {
+    "automate_trade_planet": {
+      "automate_trade_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_trade_designation": "yes"
+        },
+        "prio_districts": {},
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_commercial_zone"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    }
+  },
+  "00_unity_automation.txt": {
+    "automate_bureau_planet": {
+      "automate_bureau_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "has_unity_designation": "yes"
+        },
+        "prio_districts": {},
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_alpha_hub"
+          },
+          "10": {
+            "building": "building_hive_node"
+          },
+          "11": {
+            "building": "building_bureaucratic_1"
+          },
+          "12": {
+            "building": "building_uplink_node"
+          },
+          "13": {
+            "building": "building_sacrificial_temple_1"
+          },
+          "14": {
+            "building": "building_temple"
+          },
+          "15": {
+            "building": "building_organic_sanctuary"
+          }
+        }
+      },
+      "<RECURSION>": 15
+    }
+  },
+  "00_urban_automation.txt": {
+    "automate_urban_hive_planet": {
+      "automate_urban_hive_planet": {
+        "category": "planet_automation_designation_construction",
+        "available": {
+          "OR": {
+            "has_designation": "col_nexus"
+          }
+        },
+        "prio_districts": {},
+        "buildings": {
+          "<RECURSION>": {
+            "building": "building_research_lab_1"
+          }
+        }
+      },
+      "<RECURSION>": "<RECURSION>"
+    }
+  }
+}

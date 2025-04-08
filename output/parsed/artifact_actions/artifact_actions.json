@@ -1,0 +1,853 @@
+{
+  "artifact_actions.txt": {
+    "artifact_arcane_deciphering": {
+      "artifact_arcane_deciphering": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "500"
+          }
+        },
+        "ai_weight": {
+          "weight": "100",
+          "modifier": {
+            "factor": "2",
+            "has_ethic": "ethic_fanatic_materialist"
+          }
+        },
+        "potential": {
+          "has_technology": "tech_arcane_deciphering"
+        },
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "requires_arcane_deciphering_no_cooldown",
+            "NOT": {}
+          },
+          "effect": {
+            "custom_tooltip": "artifact_arcane_deciphering_effect",
+            "hidden_effect": {
+              "if": {
+                "limit": {
+                  "is_ai": "no",
+                  "NOT": {},
+                  "set_country_flag": "arcana_achievement"
+                },
+                "add_modifier": {
+                  "modifier": "arcane_deciphering_cooldown",
+                  "days": "720"
+                },
+                "owner": {
+                  "country_event": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "_source_file": "<RECURSION>",
+      "_line_number": 7
+    },
+    "artifact_lgate_clue": {
+      "artifact_lgate_clue": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "1000"
+          }
+        },
+        "potential": {
+          "has_country_flag": "encountered_first_lgate",
+          "NOT": {
+            "NOT": {
+              "has_distar": "yes"
+            },
+            "allow": {
+              "NOT": {},
+              "effect": {
+                "custom_tooltip": "artifact_lgate_clue_effect",
+                "hidden_effect": {
+                  "generate_lcluster_clue": "yes",
+                  "add_modifier": {
+                    "modifier": "artifact_lgate_insight_cooldown",
+                    "days": "3600"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 60
+    },
+    "artifact_proclaim_religious_finding": {
+      "artifact_proclaim_religious_finding": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "@minor_artifact_decision_cost"
+          }
+        },
+        "ai_weight": {
+          "weight": "100",
+          "modifier": {
+            "factor": "0",
+            "has_resource": {}
+          },
+          "potential": {
+            "is_spiritualist": "yes"
+          },
+          "effect": {
+            "add_monthly_resource_mult": {
+              "resource": "unity",
+              "value": "@tier1unityreward",
+              "min": "@tier1unitymin",
+              "max": "@tier1unitymax"
+            },
+            "add_modifier": {
+              "modifier": "proclaim_religious_finding",
+              "days": "@minor_artifact_decision_duration"
+            }
+          },
+          "allow": {
+            "NOT": {}
+          }
+        }
+      },
+      "<RECURSION>": 92
+    },
+    "artifact_proclaim_superiority": {
+      "artifact_proclaim_superiority": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "@minor_artifact_decision_cost"
+          }
+        },
+        "ai_weight": {
+          "weight": "100",
+          "modifier": {
+            "factor": "<RECURSION>",
+            "has_resource": {},
+            "modifier": {
+              "factor": "<RECURSION>",
+              "resource_stockpile_compare": {
+                "resource": "influence"
+              }
+            }
+          },
+          "potential": {
+            "effect": {
+              "add_monthly_resource_mult": {
+                "resource": "influence",
+                "value": "@tier1influencereward",
+                "min": "@tier1influencemin",
+                "max": "@tier1influencemax"
+              },
+              "add_modifier": {
+                "modifier": "proclaim_superiority",
+                "days": "@minor_artifact_decision_duration"
+              }
+            },
+            "allow": {
+              "NOT": {}
+            }
+          }
+        }
+      },
+      "<RECURSION>": 134
+    },
+    "artifact_celebrate_diversity": {
+      "artifact_celebrate_diversity": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "@minor_artifact_decision_cost"
+          }
+        },
+        "ai_weight": {
+          "weight": "100",
+          "modifier": {
+            "factor": "<RECURSION>",
+            "has_resource": {}
+          },
+          "potential": {
+            "is_gestalt": "no",
+            "is_xenophobe": "no"
+          },
+          "effect": {
+            "add_monthly_resource_mult": {
+              "resource": "unity",
+              "value": "@tier1unityreward",
+              "min": "@tier1unitymin",
+              "max": "@tier1unitymax"
+            },
+            "add_modifier": {
+              "modifier": "celebrate_diversity",
+              "days": "@minor_artifact_decision_duration"
+            }
+          },
+          "allow": {
+            "NOT": {}
+          }
+        }
+      },
+      "<RECURSION>": 184
+    },
+    "artifact_cultural_study": {
+      "artifact_cultural_study": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "@minor_artifact_decision_cost"
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        },
+        "potential": {
+          "is_gestalt": "no",
+          "OR": {
+            "is_megacorp": "no",
+            "is_worker_coop_empire": "yes"
+          }
+        },
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "artifact_cultural_study_effect",
+            "always": "no"
+          }
+        }
+      },
+      "<RECURSION>": 231
+    },
+    "artifact_manager_awards": {
+      "artifact_manager_awards": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "@minor_artifact_decision_cost"
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        },
+        "potential": {
+          "is_megacorp": "yes",
+          "is_worker_coop_empire": "no"
+        },
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "artifact_manager_awards_effect",
+            "always": "no"
+          }
+        }
+      },
+      "<RECURSION>": 259
+    },
+    "artifact_artifact_relays_hivemind": {
+      "artifact_artifact_relays_hivemind": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "@minor_artifact_decision_cost"
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        },
+        "potential": {
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "artifact_artifact_relays_hivemind_effect",
+              "always": "no"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 284
+    },
+    "artifact_artifact_relays_machine": {
+      "artifact_artifact_relays_machine": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "@minor_artifact_decision_cost"
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        },
+        "potential": {
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "artifact_artifact_relays_machine_effect",
+              "always": "no"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 306
+    },
+    "artifact_sanctuary_exhibits": {
+      "artifact_sanctuary_exhibits": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "@minor_artifact_decision_cost"
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        },
+        "potential": {
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "artifact_sanctuary_exhibits_effect",
+              "always": "no"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 328
+    },
+    "artifact_find_military_applications": {
+      "artifact_find_military_applications": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "150"
+          }
+        },
+        "ai_weight": {
+          "weight": "10",
+          "modifier": {
+            "factor": "<RECURSION>",
+            "has_resource": {}
+          },
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "artifact_find_military_applications_no_cooldown",
+              "NOT": {}
+            },
+            "potential": {
+              "effect": {
+                "custom_tooltip": "artifact_find_military_applications_effect",
+                "hidden_effect": {
+                  "add_modifier": {
+                    "modifier": "artifact_find_applications_cooldown",
+                    "days": "900"
+                  },
+                  "owner": {
+                    "country_event": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 352
+    },
+    "artifact_find_peaceful_applications": {
+      "artifact_find_peaceful_applications": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "150"
+          }
+        },
+        "ai_weight": {
+          "weight": "10",
+          "modifier": {
+            "factor": "<RECURSION>",
+            "has_resource": {}
+          },
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "artifact_find_peaceful_applications_no_cooldown",
+              "NOT": {}
+            },
+            "potential": {
+              "has_technology": "tech_arcane_deciphering",
+              "is_homicidal": "no"
+            },
+            "effect": {
+              "custom_tooltip": "artifact_find_peaceful_applications_effect",
+              "hidden_effect": {
+                "add_modifier": {
+                  "modifier": "artifact_find_applications_cooldown",
+                  "days": "900"
+                },
+                "owner": {
+                  "country_event": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 408
+    },
+    "artifact_sell_collector": {
+      "artifact_sell_collector": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "50"
+          }
+        },
+        "ai_weight": {
+          "weight": "100",
+          "modifier": {
+            "factor": "<RECURSION>",
+            "has_resource": {},
+            "modifier": {
+              "factor": "<RECURSION>",
+              "has_resource": {}
+            },
+            "potential": {
+              "NAND": {
+                "is_gestalt": "yes",
+                "is_homicidal": "yes"
+              },
+              "has_grand_archive_dlc": "no"
+            },
+            "effect": {
+              "add_resource": {
+                "hidden_effect": {
+                  "add_modifier": {
+                    "modifier": "artifact_sell_cooldown",
+                    "days": "180"
+                  }
+                }
+              },
+              "allow": {
+                "NOT": {
+                  "if": {
+                    "limit": {
+                      "custom_tooltip": {
+                        "fail_text": "GALACTIC_MARKET_NOT_FOUNDED",
+                        "has_global_flag": "galactic_market_founded"
+                      }
+                    },
+                    "if": {
+                      "limit": {
+                        "custom_tooltip": {
+                          "fail_text": "GALACTIC_MARKET_ACCESS",
+                          "is_galactic_community_member": "yes"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 462
+    },
+    "artifact_arcane_deciphering_locked": {
+      "artifact_arcane_deciphering_locked": {
+        "potential": {
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "artifact_action_locked_failtext",
+              "has_technology": "tech_arcane_deciphering"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 516
+    },
+    "artifact_find_military_applications_locked": {
+      "artifact_find_military_applications_locked": {
+        "potential": {
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "artifact_action_locked_failtext",
+              "has_technology": "tech_arcane_deciphering"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 527
+    },
+    "artifact_find_peaceful_applications_locked": {
+      "artifact_find_peaceful_applications_locked": {
+        "potential": {
+          "NOT": {
+            "is_homicidal": "no"
+          },
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "artifact_action_locked_failtext",
+              "has_technology": "tech_arcane_deciphering"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 538
+    },
+    "artifact_irassian_research": {
+      "artifact_irassian_research": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "750"
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        },
+        "potential": {
+          "has_country_flag": "irassian_world_found",
+          "NOT": {},
+          "effect": {
+            "enable_special_project": {
+              "name": "IRASSIAN_SECRETS",
+              "location": "capital_scope",
+              "owner": "ROOT"
+            },
+            "hidden_effect": {
+              "set_country_flag": "irassian_research_started",
+              "country_event": {}
+            }
+          }
+        }
+      },
+      "<RECURSION>": 555
+    },
+    "artifact_yuht_research": {
+      "artifact_yuht_research": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "750"
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        },
+        "potential": {
+          "has_country_flag": "yuht_world_found",
+          "NOT": {},
+          "effect": {
+            "enable_special_project": {
+              "name": "YUHT_SECRETS",
+              "location": "capital_scope",
+              "owner": "ROOT"
+            },
+            "hidden_effect": {
+              "set_country_flag": "yuht_research_started",
+              "country_event": {}
+            }
+          }
+        }
+      },
+      "<RECURSION>": 586
+    },
+    "artifact_inetian_research": {
+      "artifact_inetian_research": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "750"
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        },
+        "potential": {
+          "has_country_flag": "completed_inetian_traders_precursor",
+          "NOT": {
+            "has_ancrel": "yes"
+          },
+          "effect": {
+            "enable_special_project": {
+              "name": "INETIAN_PROJECTS_04",
+              "location": "event_target:wm_last_storm_shelter",
+              "owner": "root"
+            },
+            "hidden_effect": {
+              "set_country_flag": "inetian_research_started",
+              "country_event": {}
+            }
+          }
+        }
+      },
+      "<RECURSION>": 617
+    },
+    "artifact_adakkaria_research": {
+      "artifact_adakkaria_research": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "750"
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        },
+        "potential": {
+          "has_country_flag": "adakkaria_world_found",
+          "NOT": {
+            "has_ancrel": "yes"
+          },
+          "effect": {
+            "enable_special_project": {
+              "name": "project_adakkaria_secrets_of",
+              "location": "event_target:adSul_capital",
+              "owner": "root"
+            },
+            "hidden_effect": {
+              "set_country_flag": "adakkaria_research_started",
+              "country_event": {}
+            }
+          }
+        }
+      },
+      "<RECURSION>": 649
+    },
+    "artifact_vultaum_research": {
+      "artifact_vultaum_research": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "750"
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        },
+        "potential": {
+          "has_country_flag": "vultaum_world_found",
+          "NOT": {},
+          "effect": {
+            "enable_special_project": {
+              "name": "VULTAUM_SECRETS",
+              "location": "capital_scope",
+              "owner": "ROOT"
+            },
+            "hidden_effect": {
+              "set_country_flag": "vultaum_research_started",
+              "country_event": {}
+            }
+          }
+        }
+      },
+      "<RECURSION>": 681
+    },
+    "artifact_cybrex_research": {
+      "artifact_cybrex_research": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "750"
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        },
+        "potential": {
+          "has_country_flag": "cybrex_world_found",
+          "NOT": {},
+          "effect": {
+            "enable_special_project": {
+              "name": "CYBREX_SECRETS",
+              "location": "capital_scope",
+              "owner": "ROOT"
+            },
+            "hidden_effect": {
+              "set_country_flag": "cybrex_research_started",
+              "country_event": {}
+            }
+          }
+        }
+      },
+      "<RECURSION>": 712
+    },
+    "artifact_league_research": {
+      "artifact_league_research": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "750"
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        },
+        "potential": {
+          "OR": {
+            "has_country_flag": "league_world_found",
+            "any_owned_planet": {
+              "has_modifier": "first_league_homeworld"
+            }
+          },
+          "NOT": {},
+          "effect": {
+            "enable_special_project": {
+              "name": "LEAGUE_SECRETS",
+              "location": "capital_scope",
+              "owner": "ROOT"
+            },
+            "hidden_effect": {
+              "set_country_flag": "league_research_started",
+              "country_event": {}
+            }
+          }
+        }
+      },
+      "<RECURSION>": 744
+    },
+    "artifact_baol_research": {
+      "artifact_baol_research": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "750"
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        },
+        "potential": {
+          "has_country_flag": "last_baol_system",
+          "NOT": {},
+          "effect": {
+            "enable_special_project": {
+              "name": "BAOL_SECRETS",
+              "location": "capital_scope",
+              "owner": "ROOT"
+            },
+            "hidden_effect": {
+              "set_country_flag": "baol_research_started",
+              "country_event": {}
+            }
+          }
+        }
+      },
+      "<RECURSION>": 780
+    },
+    "artifact_zroni_research": {
+      "artifact_zroni_research": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "750"
+          }
+        },
+        "ai_weight": {
+          "weight": "<RECURSION>"
+        },
+        "potential": {
+          "has_country_flag": "last_zroni_system",
+          "NOT": {},
+          "effect": {
+            "enable_special_project": {
+              "name": "ZRONI_SECRETS",
+              "location": "capital_scope",
+              "owner": "ROOT"
+            },
+            "hidden_effect": {
+              "set_country_flag": "zroni_research_started",
+              "country_event": {}
+            }
+          }
+        }
+      },
+      "<RECURSION>": 811
+    },
+    "artifact_precursor_clue": {
+      "artifact_precursor_clue": {
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "500"
+          }
+        },
+        "potential": {
+          "is_ai": "no",
+          "OR": {
+            "AND": {
+              "has_event_chain": "cybrex_chain",
+              "any_system_within_border": {
+                "has_star_flag": "precursor_5"
+              },
+              "NOT": {
+                "has_completed_event_chain_counter": {
+                  "event_chain": "cybrex_chain",
+                  "counter": "cybrex_artifacts"
+                }
+              }
+            }
+          }
+        },
+        "allow": {
+          "NOT": {},
+          "effect": {
+            "custom_tooltip": "artifact_precursor_clue_effect",
+            "hidden_effect": {
+              "owner": {
+                "country_event": {},
+                "add_modifier": {
+                  "modifier": "artifact_precursor_insight_cooldown",
+                  "days": "1800"
+                }
+              }
+            }
+          }
+        }
+      },
+      "<RECURSION>": 843
+    },
+    "artifact_analysis": {
+      "artifact_analysis": {
+        "sound": "ga_artifact_analysis",
+        "resources": {
+          "category": "artifact_actions",
+          "cost": {
+            "minor_artifacts": "1",
+            "multiplier": "value:scaled_artifact_cost|BASE|300|INCREASE|50|INCREASE_VARIABLE|artifact_analysis_usage_count|"
+          }
+        },
+        "potential": {
+          "has_grand_archive_dlc": "yes"
+        },
+        "allow": {
+          "if": {
+            "limit": {
+              "check_variable": {},
+              "custom_tooltip": {
+                "fail_text": "artifact_analysis_max_usages_reached",
+                "always": "no"
+              }
+            },
+            "else": {
+              "custom_tooltip": {
+                "fail_text": "artifact_analysis_cannot_give_artifact",
+                "OR": {
+                  "can_artifact_analysis_give_xeno_geology": "yes",
+                  "can_artifact_analysis_give_aesthetic_wonder": "yes",
+                  "can_artifact_analysis_give_historical_item": "yes"
+                }
+              }
+            }
+          },
+          "effect": {
+            "custom_tooltip": "artifact_analysis_effect_tt",
+            "hidden_effect": {
+              "change_variable": {
+                "which": "artifact_analysis_usage_count",
+                "value": "<RECURSION>"
+              },
+              "artifact_analysis_effect": "yes"
+            }
+          }
+        }
+      },
+      "<RECURSION>": 935
+    }
+  }
+}
