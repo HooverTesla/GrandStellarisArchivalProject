@@ -1,0 +1,28 @@
+{
+  "modifier": {
+    "modifier": {
+      "factor": "0",
+      "owner": {
+        "can_artifact_analysis_give_other_than_$CATEGORY$": "yes",
+        "check_variable": {
+          "which": "last_analysed_artifact_category",
+          "value": "$VALUE$"
+        }
+      }
+    },
+    "_source_file": "artifact_analysis_can_give_category.txt",
+    "_line_number": 3
+  },
+  "hidden_effect": {
+    "hidden_effect": {
+      "owner": {
+        "set_variable": {
+          "which": "last_analysed_artifact_category",
+          "value": "$VALUE$"
+        }
+      }
+    },
+    "_source_file": "artifact_analysis_can_give_category.txt",
+    "_line_number": 13
+  }
+}

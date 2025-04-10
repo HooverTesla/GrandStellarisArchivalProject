@@ -1,0 +1,88 @@
+{
+  "event": {
+    "event": {
+      "id": "central.2",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "fire_only_once": "yes",
+      "trigger": {
+        "has_global_flag": "central_crystal_flag",
+        "any_system": {
+          "has_natural_wormhole": "no"
+        }
+      },
+      "immediate": {
+        "if": {
+          "limit": {
+            "any_system": {
+              "has_star_flag": "central_crystal_flag"
+            }
+          },
+          "random_system": {
+            "limit": {
+              "has_star_flag": "central_crystal_flag"
+            },
+            "random_system_planet": {
+              "limit": {
+                "has_planet_flag": "snow_crystal_planet"
+              },
+              "central_crystal_country_spawn_effect": "yes"
+            }
+          }
+        },
+        "else": {
+          "central_crystal_spawn_effect": {
+            "INITIALIZER": "central_crystal_init_01"
+          },
+          "event_target:the_outer_gate": {
+            "random_system": {
+              "limit": {
+                "has_natural_wormhole": "no"
+              },
+              "prev": {
+                "spawn_natural_wormhole": {
+                  "bypass_type": "wormhole",
+                  "random_pos": "no",
+                  "orbit_angle": "360"
+                }
+              },
+              "spawn_natural_wormhole": {
+                "bypass_type": "wormhole",
+                "random_pos": "no",
+                "orbit_angle": "360"
+              },
+              "link_wormholes": "prev"
+            }
+          }
+        },
+        "every_playable_country": {
+          "country_event": {
+            "id": "central.5"
+          }
+        }
+      }
+    },
+    "_source_file": "central_crystal_events.txt",
+    "_line_number": 34
+  },
+  "country_event": {
+    "country_event": {
+      "id": "central.72",
+      "title": "central.20.name",
+      "desc": "central.72.desc",
+      "is_triggered_only": "yes",
+      "diplomatic": "yes",
+      "picture_event_data": {
+        "portrait": "event_target:crystalline_empire_target",
+        "room": "personality_harmonious_hierarchy_room",
+        "planet_background": "pc_ice_asteroid"
+      },
+      "option": {
+        "name": "central.51.b",
+        "default_hide_option": "yes"
+      }
+    },
+    "_source_file": "central_crystal_events.txt",
+    "_line_number": 694
+  }
+}

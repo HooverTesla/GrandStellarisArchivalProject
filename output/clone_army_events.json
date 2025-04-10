@@ -1,0 +1,168 @@
+{
+  "event": {
+    "event": {
+      "id": "clones.1",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "every_playable_country": {
+          "limit": {
+            "has_origin": "origin_clone_army"
+          },
+          "_comments": [
+            "# Create a backup leader, to remember what Portrait this Species had before we overwrite it."
+          ],
+          "create_saved_leader": {
+            "creator": "this",
+            "name": "Backup Portrait",
+            "key": "clone_army_main_species_generic_portrait",
+            "species": "owner_main_species"
+          },
+          "owner_main_species": {
+            "change_species_characteristics": {
+              "portrait": "prev.ruler",
+              "gender": "prev.ruler",
+              "can_be_modified": "no",
+              "can_change_leader": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "clone_army_events.txt",
+    "_line_number": 9
+  },
+  "country_event": {
+    "country_event": {
+      "id": "clones.24",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from.species": {
+          "OR": {
+            "has_trait": "trait_clone_soldier_infertile"
+          }
+        }
+      },
+      "immediate": {
+        "if": {
+          "limit": {
+            "from.species": {},
+            "from": {
+              "if": {
+                "limit": {
+                  "leader_class": "commander"
+                },
+                "add_trait": "leader_trait_clone_army_fertile_commander"
+              }
+            }
+          },
+          "else_if": {
+            "limit": {
+              "from.species": {},
+              "from": {
+                "if": {
+                  "limit": {
+                    "leader_class": "commander"
+                  },
+                  "add_trait": "leader_trait_clone_army_full_commander"
+                }
+              }
+            },
+            "else_if": {
+              "limit": {
+                "from.species": {},
+                "from": {
+                  "if": {
+                    "limit": {
+                      "leader_class": "commander"
+                    },
+                    "add_trait": "leader_trait_clone_army_commander"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "clone_army_events.txt",
+    "_line_number": 627
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "clones.30",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "is_variable_set": "clone_pops_missing",
+        "OR": {
+          "num_pops": "0",
+          "AND": {
+            "exists": "from",
+            "NOT": {}
+          }
+        },
+        "immediate": {
+          "clear_variable": "clone_pops_missing",
+          "if": {
+            "limit": {
+              "remove_modifier": "modifier_clone_pops_decline"
+            },
+            "if": {
+              "limit": {
+                "clear_variable": "num_clone_pops"
+              },
+              "if": {
+                "limit": {
+                  "clear_variable": "num_clone_vats"
+                },
+                "if": {
+                  "limit": {
+                    "clear_variable": "clone_pops_decline_factor"
+                  },
+                  "if": {
+                    "limit": {
+                      "clear_variable": "clone_pops_missing_per_vat"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "clone_army_events.txt",
+    "_line_number": 684
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "clones.12",
+      "title": "clones.12.name",
+      "desc": "clones.12.desc",
+      "picture": "GFX_evt_archaeology_camp",
+      "show_sound": "event_default",
+      "archaeology": "yes",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "INTERESTING",
+        "custom_tooltip": "clones.12.tooltip",
+        "owner": {
+          "add_resource": {
+            "influence": "200"
+          }
+        },
+        "hidden_effect": {
+          "owner": {
+            "country_event": {
+              "country_event": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "clone_army_events.txt",
+    "_line_number": 237
+  }
+}

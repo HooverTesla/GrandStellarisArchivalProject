@@ -1,0 +1,138 @@
+{
+  "situation_event": {
+    "situation_event": {
+      "id": "observation.1500",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "NOT": {
+            "has_country_flag": "observation_1500_fired"
+          },
+          "_comments": [
+            "#pre_ftl_modern_era = yes"
+          ],
+          "capital_scope": {
+            "has_observation_outpost": "yes",
+            "observation_outpost": {
+              "observation_outpost_owner": {
+                "is_regular_empire": "yes",
+                "AND": {
+                  "NOT": {
+                    "is_ai": "no"
+                  }
+                }
+              }
+            }
+          },
+          "immediate": {
+            "owner": {
+              "set_country_flag": "observation_1500_fired",
+              "save_event_target_as": "pre_ftl_country",
+              "capital_scope": {
+                "save_event_target_as": "pre_ftl_planet",
+                "observation_outpost_owner": {
+                  "set_country_flag": "research_proposal_country",
+                  "country_event": {}
+                }
+              },
+              "set_situation_flag": "has_ongoing_observation_event_chain"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "observation_events.txt",
+    "_line_number": 4060
+  },
+  "country_event": {
+    "country_event": {
+      "id": "observation.3200",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "is_country_type": "primitive"
+      },
+      "immediate": {
+        "clear_relations": {
+          "target": "from",
+          "relations": {}
+        }
+      }
+    },
+    "_source_file": "observation_events.txt",
+    "_line_number": 6110
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "observation.1502",
+      "title": "PROJECT_COMPLETE",
+      "desc": "observation.1502.desc",
+      "picture": "GFX_evt_landing_ship",
+      "location": "event_target:pre_ftl_planet",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "observation.1502.a",
+        "owner": {
+          "add_monthly_resource_mult": {
+            "resource": "society_research",
+            "value": "@tier3researchreward",
+            "min": "@tier3researchmin",
+            "max": "@tier3researchmax"
+          }
+        },
+        "FROMFROMFROM.owner": {
+          "add_awareness": "5"
+        },
+        "hidden_effect": {
+          "FROMFROMFROM.owner": {
+            "random_situation": {
+              "limit": {
+                "is_situation_type": "pre_ftl_tech_progress_situation"
+              },
+              "remove_situation_flag": "has_ongoing_observation_event_chain"
+            },
+            "capital_scope.observation_outpost": {
+              "set_event_locked": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "observation_events.txt",
+    "_line_number": 4152
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "observation.1405",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "if": {
+          "limit": {
+            "has_observation_outpost": "yes"
+          },
+          "observation_outpost_owner": {
+            "country_event": {
+              "id": "observation.1406"
+            }
+          }
+        },
+        "else": {
+          "nuke_pre_ftls_stone_age_effect": "yes",
+          "owner": {
+            "set_awareness": "0",
+            "random_situation": {
+              "limit": {
+                "is_situation_type": "pre_ftl_tech_progress_situation"
+              },
+              "remove_situation_flag": "has_ongoing_observation_event_chain"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "observation_events.txt",
+    "_line_number": 3940
+  }
+}

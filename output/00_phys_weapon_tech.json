@@ -1,0 +1,602 @@
+{
+  "tech_lasers_1": {
+    "tech_lasers_1": {
+      "area": "physics",
+      "tier": "0",
+      "category": {
+        "ai_update_type": "military",
+        "start_tech": "yes"
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 6
+  },
+  "tech_lasers_2": {
+    "tech_lasers_2": {
+      "area": "physics",
+      "cost": "@tier1cost2",
+      "tier": "1",
+      "category": {
+        "ai_update_type": "military",
+        "prerequisites": {
+          "weight": "@tier1weight2",
+          "gateway": "energy_weapons",
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5",
+              "has_ethic": "ethic_fanatic_militarist"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "@disfavored_weapon_ai_tech_factor",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 20
+  },
+  "tech_lasers_3": {
+    "tech_lasers_3": {
+      "area": "physics",
+      "cost": "@tier2cost1",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "military",
+        "prerequisites": {
+          "weight": "@tier2weight1",
+          "gateway": "energy_weapons",
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5",
+              "has_ethic": "ethic_fanatic_militarist"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "@disfavored_weapon_ai_tech_factor",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 65
+  },
+  "tech_lasers_4": {
+    "tech_lasers_4": {
+      "area": "physics",
+      "cost": "@tier3cost1",
+      "tier": "3",
+      "category": {
+        "ai_update_type": "military",
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "gateway": "energy_weapons",
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5",
+              "has_ethic": "ethic_fanatic_militarist"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "@disfavored_weapon_ai_tech_factor",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 110
+  },
+  "tech_lasers_5": {
+    "tech_lasers_5": {
+      "area": "physics",
+      "cost": "@tier4cost1",
+      "tier": "4",
+      "category": {
+        "ai_update_type": "military",
+        "prerequisites": {
+          "weight": "@tier4weight1",
+          "gateway": "energy_weapons",
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5",
+              "has_ethic": "ethic_fanatic_militarist"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "@disfavored_weapon_ai_tech_factor",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 155
+  },
+  "tech_energy_lance_1": {
+    "tech_energy_lance_1": {
+      "area": "physics",
+      "cost": "@tier4cost2",
+      "tier": "4",
+      "category": {
+        "ai_update_type": "military",
+        "prerequisites": {
+          "weight": "@tier4weight2",
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5",
+              "has_ethic": "ethic_fanatic_militarist"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "@disfavored_weapon_ai_tech_factor",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 198
+  },
+  "tech_energy_lance_2": {
+    "tech_energy_lance_2": {
+      "area": "physics",
+      "cost": "@tier4cost3",
+      "tier": "4",
+      "category": {
+        "ai_update_type": "military",
+        "prerequisites": {
+          "weight": "@tier4weight3",
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5",
+              "has_ethic": "ethic_fanatic_militarist"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "@disfavored_weapon_ai_tech_factor",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 240
+  },
+  "tech_plasma_1": {
+    "tech_plasma_1": {
+      "area": "physics",
+      "cost": "@tier2cost2",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "military",
+        "weight": "@tier2weight2",
+        "prerequisites": {
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.5",
+              "NOT": {
+                "has_technology": "tech_lasers_1"
+              }
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "@disfavored_weapon_ai_tech_factor",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 287
+  },
+  "tech_plasma_2": {
+    "tech_plasma_2": {
+      "area": "physics",
+      "cost": "@tier3cost1",
+      "tier": "3",
+      "category": {
+        "ai_update_type": "military",
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5",
+              "has_ethic": "ethic_fanatic_militarist"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "@disfavored_weapon_ai_tech_factor",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 335
+  },
+  "tech_plasma_3": {
+    "tech_plasma_3": {
+      "area": "physics",
+      "cost": "@tier4cost1",
+      "tier": "4",
+      "category": {
+        "ai_update_type": "military",
+        "prerequisites": {
+          "weight": "@tier4weight1",
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5",
+              "has_ethic": "ethic_fanatic_militarist"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "@disfavored_weapon_ai_tech_factor",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 377
+  },
+  "tech_arc_emitter_1": {
+    "tech_arc_emitter_1": {
+      "area": "physics",
+      "cost": "@tier4cost2",
+      "tier": "4",
+      "category": {
+        "ai_update_type": "military",
+        "prerequisites": {
+          "weight": "@tier4weight2",
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5",
+              "has_ethic": "ethic_fanatic_militarist"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "@disfavored_weapon_ai_tech_factor",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 419
+  },
+  "tech_arc_emitter_2": {
+    "tech_arc_emitter_2": {
+      "area": "physics",
+      "cost": "@tier4cost3",
+      "tier": "4",
+      "category": {
+        "ai_update_type": "military",
+        "prerequisites": {
+          "weight": "@tier4weight3",
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5",
+              "has_ethic": "ethic_fanatic_militarist"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "@disfavored_weapon_ai_tech_factor",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 461
+  },
+  "tech_disruptors_1": {
+    "tech_disruptors_1": {
+      "area": "physics",
+      "cost": "@tier2cost2",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "military",
+        "weight": "@tier2weight2",
+        "prerequisites": {
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.5",
+              "NOT": {
+                "has_technology": "tech_lasers_1"
+              }
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "@disfavored_weapon_ai_tech_factor",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 508
+  },
+  "tech_disruptors_2": {
+    "tech_disruptors_2": {
+      "area": "physics",
+      "cost": "@tier3cost1",
+      "tier": "3",
+      "category": {
+        "ai_update_type": "military",
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5",
+              "has_ethic": "ethic_fanatic_militarist"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "@disfavored_weapon_ai_tech_factor",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 556
+  },
+  "tech_disruptors_3": {
+    "tech_disruptors_3": {
+      "area": "physics",
+      "cost": "@tier4cost1",
+      "tier": "4",
+      "category": {
+        "ai_update_type": "military",
+        "prerequisites": {
+          "weight": "@tier4weight1",
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5",
+              "has_ethic": "ethic_fanatic_militarist"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "@disfavored_weapon_ai_tech_factor",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 598
+  },
+  "tech_energy_torpedoes_1": {
+    "tech_energy_torpedoes_1": {
+      "area": "physics",
+      "cost": "@tier3cost3",
+      "tier": "3",
+      "category": {
+        "ai_update_type": "military",
+        "prerequisites": {
+          "weight": "@tier3weight3",
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.5",
+              "NOT": {
+                "has_technology": "tech_lasers_1"
+              }
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "@disfavored_weapon_ai_tech_factor",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 644
+  },
+  "tech_energy_torpedoes_2": {
+    "tech_energy_torpedoes_2": {
+      "area": "physics",
+      "cost": "@tier4cost2",
+      "tier": "4",
+      "category": {
+        "ai_update_type": "military",
+        "prerequisites": {
+          "weight": "@tier4weight2",
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5",
+              "has_ethic": "ethic_fanatic_militarist"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "@disfavored_weapon_ai_tech_factor",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 692
+  },
+  "tech_pd_tracking_1": {
+    "tech_pd_tracking_1": {
+      "area": "physics",
+      "tier": "0",
+      "category": {
+        "ai_update_type": "military",
+        "start_tech": "yes"
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 735
+  },
+  "tech_pd_tracking_2": {
+    "tech_pd_tracking_2": {
+      "area": "physics",
+      "tier": "2",
+      "cost": "@tier2cost3",
+      "category": {
+        "ai_update_type": "military",
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "_comments": [
+            "# unlocks point defence 2"
+          ],
+          "weight_modifier": {},
+          "ai_weight": {
+            "modifier": {
+              "factor": "@disfavored_weapon_ai_tech_factor",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 749
+  },
+  "tech_pd_tracking_3": {
+    "tech_pd_tracking_3": {
+      "area": "physics",
+      "tier": "4",
+      "cost": "@tier4cost1",
+      "category": {
+        "ai_update_type": "military",
+        "prerequisites": {
+          "weight": "@tier4weight1",
+          "_comments": [
+            "# unlocks point defence 3"
+          ],
+          "weight_modifier": {},
+          "ai_weight": {
+            "modifier": {
+              "factor": "@disfavored_weapon_ai_tech_factor",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 778
+  },
+  "tech_extradimensional_weapon_1": {
+    "tech_extradimensional_weapon_1": {
+      "area": "physics",
+      "cost": "@tier5cost3",
+      "tier": "5",
+      "is_rare": "yes",
+      "category": {
+        "ai_update_type": "military",
+        "weight": "0",
+        "weight_modifier": {
+          "factor": "10",
+          "modifier": {
+            "factor": "0",
+            "NOT": {},
+            "inline_script": {
+              "script": "technologies/rare_technologies_weight_modifiers",
+              "TECHNOLOGY": "tech_extradimensional_weapon_1"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "1.5",
+              "has_ethic": "ethic_fanatic_militarist"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 808
+  },
+  "tech_mining_drone_weapon_1": {
+    "tech_mining_drone_weapon_1": {
+      "area": "physics",
+      "cost": "@tier2cost2",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "military",
+        "weight": "0",
+        "ai_weight": {
+          "modifier": {
+            "factor": "1.5",
+            "has_ethic": "ethic_fanatic_militarist"
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 841
+  },
+  "tech_space_cloud_weapon_1": {
+    "tech_space_cloud_weapon_1": {
+      "area": "physics",
+      "cost": "@tier2cost3",
+      "tier": "2",
+      "is_rare": "yes",
+      "category": {
+        "ai_update_type": "military",
+        "weight": "0",
+        "ai_weight": {
+          "modifier": {
+            "factor": "1.5",
+            "has_ethic": "ethic_fanatic_militarist"
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 862
+  },
+  "null_void_beam": {
+    "null_void_beam": {
+      "area": "physics",
+      "cost": "@tier1cost2",
+      "tier": "2",
+      "is_rare": "yes",
+      "category": {
+        "ai_update_type": "military",
+        "weight": "0"
+      }
+    },
+    "_source_file": "00_phys_weapon_tech.txt",
+    "_line_number": 884
+  }
+}

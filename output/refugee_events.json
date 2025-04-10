@@ -1,0 +1,51 @@
+{
+  "pop_event": {
+    "pop_event": {
+      "id": "refugees.4",
+      "title": "OK",
+      "desc": "OK",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "if": {
+          "limit": {
+            "save_event_target_as": "refugee_pop #Must be saved for refugee_pop_effect to work",
+            "refugee_pop_effect": "yes"
+          },
+          "else": {}
+        }
+      }
+    },
+    "_source_file": "refugee_events.txt",
+    "_line_number": 155
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "refugees.6",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "pre_triggers": {
+        "has_owner": "yes"
+      },
+      "trigger": {
+        "has_global_flag": "galactic_crisis_happened",
+        "owner": {
+          "is_controlled_by": "owner",
+          "has_planet_flag": "refugees_escaping_crisis",
+          "is_under_crisis_bombardment": "yes"
+        },
+        "immediate": {
+          "random_owned_pop": {
+            "limit": {
+              "save_event_target_as": "refugee_pop #Must be saved for refugee_pop_effect to work",
+              "refugee_pop_effect": "yes"
+            },
+            "remove_planet_flag": "refugees_escaping_crisis"
+          }
+        }
+      }
+    },
+    "_source_file": "refugee_events.txt",
+    "_line_number": 200
+  }
+}

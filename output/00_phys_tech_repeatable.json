@@ -1,0 +1,148 @@
+{
+  "tech_repeatable_improved_tile_energy_output": {
+    "tech_repeatable_improved_tile_energy_output": {
+      "area": "physics",
+      "cost": "@repeatableTechBaseCost",
+      "cost_per_level": "@repeatableTechLevelCost",
+      "tier": "@repeatableTechTier",
+      "category": {
+        "levels": "-1",
+        "prerequisites": {
+          "weight": "@repeatableTechWeight",
+          "weight_modifier": {
+            "factor": "@repatableTechFactor"
+          },
+          "ai_weight": {
+            "factor": "@technician_ai_factor"
+          },
+          "weight_groups": {},
+          "mod_weight_if_group_picked": {
+            "repeatable": "0.01"
+          },
+          "modifier": {
+            "planet_jobs_energy_produces_mult": "0.05"
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_tech_repeatable.txt",
+    "_line_number": 3
+  },
+  "tech_repeatable_improved_shield_output": {
+    "tech_repeatable_improved_shield_output": {
+      "area": "physics",
+      "cost": "@repeatableTechBaseCost",
+      "cost_per_level": "@repeatableTechLevelCost",
+      "tier": "@repeatableTechTier",
+      "category": {
+        "ai_update_type": "all",
+        "levels": "-1",
+        "prerequisites": {
+          "weight": "@repeatableTechWeight",
+          "weight_modifier": {
+            "factor": "@repatableTechFactor"
+          },
+          "ai_weight": {
+            "factor": "1.0"
+          },
+          "weight_groups": {},
+          "mod_weight_if_group_picked": {
+            "repeatable": "0.01"
+          },
+          "modifier": {
+            "ship_shield_mult": "0.05"
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_tech_repeatable.txt",
+    "_line_number": 33
+  },
+  "tech_repeatable_weapon_type_energy_damage": {
+    "tech_repeatable_weapon_type_energy_damage": {
+      "area": "physics",
+      "cost": "@repeatableTechBaseCost",
+      "cost_per_level": "@repeatableTechLevelCost",
+      "tier": "@repeatableTechTier",
+      "category": {
+        "ai_update_type": "military",
+        "levels": "-1",
+        "prerequisites": {
+          "weight": "@repeatableTechWeight",
+          "weight_modifier": {
+            "factor": "@repatableTechFactor"
+          },
+          "ai_weight": {
+            "factor": "1.0",
+            "modifier": {
+              "weapon_type_energy_weapon_damage_mult": "0.05"
+            },
+            "weight_groups": {},
+            "mod_weight_if_group_picked": {
+              "repeatable": "0.01"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_tech_repeatable.txt",
+    "_line_number": 64
+  },
+  "tech_repeatable_weapon_type_energy_fire_rate": {
+    "tech_repeatable_weapon_type_energy_fire_rate": {
+      "area": "physics",
+      "cost": "@repeatableTechBaseCost",
+      "cost_per_level": "@repeatableTechLevelCost",
+      "tier": "@repeatableTechTier",
+      "category": {
+        "ai_update_type": "military",
+        "levels": "-1",
+        "prerequisites": {
+          "weight": "@repeatableTechWeight",
+          "weight_modifier": {
+            "factor": "@repatableTechFactor"
+          },
+          "ai_weight": {
+            "factor": "1.0",
+            "modifier": {
+              "weapon_type_energy_weapon_fire_rate_mult": "0.05"
+            },
+            "weight_groups": {},
+            "mod_weight_if_group_picked": {
+              "repeatable": "0.01"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_phys_tech_repeatable.txt",
+    "_line_number": 103
+  },
+  "tech_repeatable_reduced_building_cost": {
+    "tech_repeatable_reduced_building_cost": {
+      "area": "physics",
+      "cost": "@repeatableTechBaseCost",
+      "cost_per_level": "@repeatableTechLevelCost",
+      "tier": "@repeatableTechTier",
+      "category": {
+        "levels": "5",
+        "weight": "@repeatableTechWeight",
+        "weight_modifier": {
+          "factor": "@repatableTechFactor"
+        },
+        "ai_weight": {
+          "factor": "1.0"
+        },
+        "weight_groups": {},
+        "mod_weight_if_group_picked": {
+          "repeatable": "0.01"
+        },
+        "modifier": {
+          "planet_buildings_cost_mult": "-0.05"
+        }
+      }
+    },
+    "_source_file": "00_phys_tech_repeatable.txt",
+    "_line_number": 142
+  }
+}

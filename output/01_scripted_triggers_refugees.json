@@ -1,0 +1,192 @@
+{
+  "is_valid_refugee_pop": {
+    "is_valid_refugee_pop": {
+      "is_non_sapient_robot": "no",
+      "NOR": {
+        "has_trait": "trait_hive_mind",
+        "can_think": "no",
+        "AND": {
+          "has_virtual_species_trait": "yes",
+          "exists": "owner",
+          "owner": {
+            "NOT": {
+              "has_active_tradition": "tr_virtuality_finish"
+            }
+          }
+        }
+      },
+      "owner": {
+        "any_relation": {
+          "is_country_type": "default",
+          "has_communications": "prev #relations include countries that have made first contact but not established comms",
+          "NOT": {
+            "prevprev": {
+              "OR": {
+                "has_citizenship_type": {
+                  "has_citizenship_type": {
+                    "AND": {
+                      "has_citizenship_type": {
+                        "prev": {}
+                      }
+                    },
+                    "OR": {
+                      "AND": {
+                        "has_policy_flag": "robots_allowed",
+                        "prevprev": {},
+                        "any_owned_planet": {
+                          "is_under_colonization": "no",
+                          "is_controlled_by": "owner",
+                          "has_orbital_bombardment": "no"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_refugees.txt",
+    "_line_number": -1
+  },
+  "has_good_habitability_and_housing": {
+    "has_good_habitability_and_housing": {
+      "has_country_flag": "valid_refugee_destination_for_@event_target:refugee_pop",
+      "any_owned_planet": {
+        "habitability": {
+          "free_housing >": "1",
+          "is_under_colonization": "no",
+          "is_controlled_by": "owner",
+          "has_orbital_bombardment": "no"
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_refugees.txt",
+    "_line_number": 45
+  },
+  "has_good_habitability": {
+    "has_good_habitability": {
+      "has_country_flag": "valid_refugee_destination_for_@event_target:refugee_pop",
+      "any_owned_planet": {
+        "habitability": {
+          "is_under_colonization": "no",
+          "is_controlled_by": "owner",
+          "has_orbital_bombardment": "no"
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_refugees.txt",
+    "_line_number": 56
+  },
+  "has_decent_habitability_and_housing": {
+    "has_decent_habitability_and_housing": {
+      "has_country_flag": "valid_refugee_destination_for_@event_target:refugee_pop",
+      "any_owned_planet": {
+        "habitability": {
+          "free_housing >": "1",
+          "is_under_colonization": "no",
+          "is_controlled_by": "owner",
+          "has_orbital_bombardment": "no"
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_refugees.txt",
+    "_line_number": 66
+  },
+  "has_decent_habitability": {
+    "has_decent_habitability": {
+      "has_country_flag": "valid_refugee_destination_for_@event_target:refugee_pop",
+      "any_owned_planet": {
+        "habitability": {
+          "is_under_colonization": "no",
+          "is_controlled_by": "owner",
+          "has_orbital_bombardment": "no"
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_refugees.txt",
+    "_line_number": 77
+  },
+  "has_some_habitability_and_housing": {
+    "has_some_habitability_and_housing": {
+      "has_country_flag": "valid_refugee_destination_for_@event_target:refugee_pop",
+      "any_owned_planet": {
+        "habitability": {
+          "free_housing >": "1",
+          "is_under_colonization": "no",
+          "is_controlled_by": "owner",
+          "has_orbital_bombardment": "no"
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_refugees.txt",
+    "_line_number": 87
+  },
+  "has_some_habitability": {
+    "has_some_habitability": {
+      "has_country_flag": "valid_refugee_destination_for_@event_target:refugee_pop",
+      "any_owned_planet": {
+        "habitability": {
+          "is_under_colonization": "no",
+          "is_controlled_by": "owner",
+          "has_orbital_bombardment": "no"
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_refugees.txt",
+    "_line_number": 98
+  },
+  "has_any_habitability_and_housing": {
+    "has_any_habitability_and_housing": {
+      "has_country_flag": "valid_refugee_destination_for_@event_target:refugee_pop",
+      "any_owned_planet": {
+        "free_housing >": "1",
+        "is_under_colonization": "no",
+        "is_controlled_by": "owner",
+        "has_orbital_bombardment": "no",
+        "NOT": {}
+      }
+    },
+    "_source_file": "01_scripted_triggers_refugees.txt",
+    "_line_number": 108
+  },
+  "has_any_habitability": {
+    "has_any_habitability": {
+      "is_country_type": "default",
+      "has_communications": "prev",
+      "NOT": {
+        "event_target:refugee_pop": {
+          "OR": {
+            "has_citizenship_type": {
+              "has_citizenship_type": {
+                "AND": {
+                  "has_citizenship_type": {
+                    "prev": {}
+                  },
+                  "OR": {
+                    "AND": {
+                      "prev": {
+                        "is_robotic_species": "yes"
+                      },
+                      "is_robotic_species": "no"
+                    }
+                  },
+                  "any_owned_planet": {
+                    "is_under_colonization": "no",
+                    "is_controlled_by": "owner",
+                    "has_orbital_bombardment": "no",
+                    "NOT": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_refugees.txt",
+    "_line_number": 119
+  }
+}

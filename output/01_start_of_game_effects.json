@@ -1,0 +1,3198 @@
+{
+  "generate_empire_home_planet": {
+    "generate_empire_home_planet": {},
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 0
+  },
+  "generate_home_system_resources": {
+    "generate_home_system_resources": {
+      "every_system_planet": {
+        "limit": {
+          "colonizable_planet": "no",
+          "NOT": {},
+          "prevent_anomaly": "yes",
+          "clear_deposits": "yes"
+        },
+        "system_star": {
+          "set_planet_flag": "starting_deposit",
+          "set_deposit": "d_energy_5"
+        },
+        "random_system_planet": {
+          "limit": {
+            "NOT": {
+              "NOT": {
+                "OR": {
+                  "is_planet_class": "pc_t_star"
+                }
+              },
+              "set_planet_flag": "starting_deposit",
+              "set_deposit": "d_energy_5"
+            },
+            "while": {
+              "count": "2",
+              "random_system_planet": {
+                "limit": {
+                  "NOT": {
+                    "NOT": {
+                      "OR": {
+                        "is_asteroid": "yes",
+                        "is_planet_class": "pc_frozen"
+                      }
+                    },
+                    "set_planet_flag": "starting_deposit",
+                    "set_deposit": "d_minerals_5"
+                  }
+                },
+                "random_system_planet": {
+                  "limit": {
+                    "NOT": {
+                      "NOT": {
+                        "OR": {
+                          "is_planet_class": "pc_t_star"
+                        }
+                      },
+                      "set_planet_flag": "starting_deposit",
+                      "random_list": {
+                        "50": {
+                          "50": {}
+                        },
+                        "random_system_planet": {
+                          "limit": {
+                            "NOT": {
+                              "NOT": {
+                                "OR": {
+                                  "is_asteroid": "yes",
+                                  "is_planet_class": "pc_frozen"
+                                }
+                              },
+                              "set_planet_flag": "starting_deposit",
+                              "random_list": {
+                                "50": {
+                                  "50": {}
+                                },
+                                "random_system_planet": {
+                                  "limit": {
+                                    "NOT": {
+                                      "NOT": {
+                                        "OR": {
+                                          "is_planet_class": "pc_barren",
+                                          "is_star": "yes"
+                                        }
+                                      },
+                                      "set_planet_flag": "starting_deposit",
+                                      "if": {
+                                        "limit": {
+                                          "is_planet_class": "pc_toxic"
+                                        },
+                                        "set_deposit": "d_society_3"
+                                      },
+                                      "else_if": {
+                                        "limit": {
+                                          "OR": {
+                                            "is_planet_class": "pc_barren",
+                                            "is_star": "yes"
+                                          }
+                                        },
+                                        "set_deposit": "d_physics_3"
+                                      },
+                                      "else": {
+                                        "set_deposit": "d_engineering_3"
+                                      }
+                                    },
+                                    "random_system_planet": {
+                                      "limit": {
+                                        "NOT": {
+                                          "NOT": {
+                                            "OR": {
+                                              "is_planet_class": "pc_barren",
+                                              "is_star": "yes"
+                                            }
+                                          },
+                                          "set_planet_flag": "starting_deposit",
+                                          "if": {
+                                            "limit": {
+                                              "is_planet_class": "pc_toxic"
+                                            },
+                                            "set_deposit": "d_society_2"
+                                          },
+                                          "else_if": {
+                                            "limit": {
+                                              "OR": {
+                                                "is_planet_class": "pc_barren",
+                                                "is_star": "yes"
+                                              }
+                                            },
+                                            "set_deposit": "d_physics_2"
+                                          },
+                                          "else": {
+                                            "set_deposit": "d_engineering_2"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 18
+  },
+  "add_random_natural_blocker_and_give_tech": {
+    "add_random_natural_blocker_and_give_tech": {
+      "if": {
+        "limit": {
+          "is_dry": "yes"
+        },
+        "random_list": {
+          "1": {
+            "add_deposit": "d_dangerous_wildlife_blocker",
+            "owner": {
+              "if": {
+                "limit": {
+                  "NOT": {
+                    "has_technology": "tech_dangerous_wildlife"
+                  }
+                },
+                "give_technology": {
+                  "tech": "tech_dangerous_wildlife",
+                  "message": "no"
+                }
+              }
+            }
+          }
+        }
+      },
+      "else_if": {
+        "limit": {
+          "is_cold": "yes"
+        },
+        "random_list": {
+          "1": {
+            "add_deposit": "d_dangerous_wildlife_blocker",
+            "owner": {
+              "if": {
+                "limit": {
+                  "NOT": {
+                    "has_technology": "tech_dangerous_wildlife"
+                  }
+                },
+                "give_technology": {
+                  "tech": "tech_dangerous_wildlife",
+                  "message": "no"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 182
+  },
+  "add_research_options_for_natural_blockers": {
+    "add_research_options_for_natural_blockers": {
+      "if": {
+        "limit": {
+          "has_deposit": "d_massive_glacier"
+        },
+        "owner": {
+          "add_research_option": "tech_massive_glacier"
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 446
+  },
+  "generate_start_deposits_and_blockers": {
+    "generate_start_deposits_and_blockers": {
+      "clear_deposits": "yes",
+      "_comments": [
+        "# blockers"
+      ],
+      "if": {
+        "limit": {
+          "owner": {
+            "is_apocalyptic_empire": "yes"
+          }
+        },
+        "add_deposit": "d_tomb_world_ruins",
+        "if": {
+          "limit": {
+            "owner": {
+              "is_environmental_architects_empire": "yes"
+            }
+          },
+          "add_random_natural_blocker_and_give_tech": "yes"
+        },
+        "else": {
+          "add_deposit": "d_tomb_world_wasteland"
+        }
+      },
+      "else_if": {
+        "limit": {
+          "owner": {
+            "has_civic": "civic_machine_terminator",
+            "NOT": {}
+          },
+          "add_deposit": "d_former_battlefield"
+        },
+        "else_if": {
+          "limit": {
+            "owner": {
+              "has_civic": "civic_machine_assimilator",
+              "NOT": {}
+            },
+            "add_deposit": "d_assimilators_ruins"
+          },
+          "else_if": {
+            "limit": {
+              "owner": {
+                "is_machine_empire": "yes",
+                "NOT": {}
+              },
+              "add_deposit": "d_machine_empire_ruins"
+            },
+            "else_if": {
+              "limit": {
+                "owner": {
+                  "is_hive_empire": "yes"
+                }
+              },
+              "add_deposit": "d_failing_infrastructure"
+            },
+            "if": {
+              "limit": {
+                "is_planet_class": "pc_continental"
+              },
+              "add_deposit": "d_tempestous_mountain",
+              "_comments": [
+                "# 3 + 3 energy"
+              ],
+              "if": {
+                "limit": {
+                  "add_deposit": "d_rushing_waterfalls"
+                },
+                "if": {
+                  "limit": {
+                    "add_deposit": "d_hot_springs"
+                  },
+                  "add_deposit": "d_fertile_lands",
+                  "_comments": [
+                    "# 3 + 3 mining",
+                    "# 4 + 3 farming (lithoids swap 3 for minerals)"
+                  ],
+                  "if": {
+                    "limit": {
+                      "add_deposit": "d_rugged_woods",
+                      "if": {
+                        "limit": {
+                          "add_deposit": "d_rich_mountain"
+                        },
+                        "else": {
+                          "add_deposit": "d_black_soil"
+                        }
+                      }
+                    },
+                    "if": {
+                      "limit": {
+                        "is_planet_class": "pc_tropical"
+                      },
+                      "add_deposit": "d_tempestous_mountain",
+                      "_comments": [
+                        "# 3 + 3 energy"
+                      ],
+                      "if": {
+                        "limit": {
+                          "add_deposit": "d_rushing_waterfalls"
+                        },
+                        "if": {
+                          "limit": {
+                            "add_deposit": "d_hot_springs"
+                          },
+                          "add_deposit": "d_lush_jungle",
+                          "_comments": [
+                            "# 3 + 3 mining",
+                            "# 4 + 3 farming (lithoids swap 3 for minerals)"
+                          ],
+                          "if": {
+                            "limit": {
+                              "if": {
+                                "limit": {
+                                  "add_deposit": "d_submerged_ore_veins"
+                                },
+                                "else": {
+                                  "add_deposit": "d_tropical_island"
+                                }
+                              }
+                            },
+                            "if": {
+                              "limit": {
+                                "is_planet_class": "pc_ocean"
+                              },
+                              "add_deposit": "d_underwater_vent",
+                              "_comments": [
+                                "# 3 + 3 energy"
+                              ],
+                              "if": {
+                                "limit": {
+                                  "add_deposit": "d_rushing_waterfalls"
+                                },
+                                "if": {
+                                  "limit": {
+                                    "add_deposit": "d_hot_springs"
+                                  },
+                                  "add_deposit": "d_lush_jungle",
+                                  "_comments": [
+                                    "# 3 + 3 mining",
+                                    "# 4 + 3 farming (lithoids swap 3 for minerals)"
+                                  ],
+                                  "if": {
+                                    "limit": {
+                                      "add_deposit": "d_green_hills",
+                                      "if": {
+                                        "limit": {
+                                          "add_deposit": "d_submerged_ore_veins"
+                                        },
+                                        "else": {
+                                          "add_deposit": "d_teeming_reef"
+                                        }
+                                      }
+                                    },
+                                    "if": {
+                                      "limit": {
+                                        "is_planet_class": "pc_arctic"
+                                      },
+                                      "add_deposit": "d_geothermal_vent",
+                                      "_comments": [
+                                        "# 3 + 3 energy"
+                                      ],
+                                      "if": {
+                                        "limit": {
+                                          "add_deposit": "d_frozen_gas_lake"
+                                        },
+                                        "if": {
+                                          "limit": {
+                                            "add_deposit": "d_hot_springs"
+                                          },
+                                          "add_deposit": "d_fungal_caves",
+                                          "_comments": [
+                                            "# 3 + 3 mining",
+                                            "# 4 + 3 farming (lithoids swap 3 for minerals)"
+                                          ],
+                                          "if": {
+                                            "limit": {
+                                              "add_deposit": "d_lichen_fields",
+                                              "if": {
+                                                "limit": {
+                                                  "add_deposit": "d_rich_mountain"
+                                                },
+                                                "else": {
+                                                  "add_deposit": "d_fungal_forest"
+                                                }
+                                              }
+                                            },
+                                            "if": {
+                                              "limit": {
+                                                "is_planet_class": "pc_tundra"
+                                              },
+                                              "add_deposit": "d_geothermal_vent",
+                                              "_comments": [
+                                                "# 3 + 3 energy"
+                                              ],
+                                              "if": {
+                                                "limit": {
+                                                  "add_deposit": "d_frozen_gas_lake"
+                                                },
+                                                "if": {
+                                                  "limit": {
+                                                    "add_deposit": "d_hot_springs"
+                                                  },
+                                                  "add_deposit": "d_fungal_caves",
+                                                  "_comments": [
+                                                    "# 3 + 3 mining",
+                                                    "# 4 + 3 farming (lithoids swap 3 for minerals)"
+                                                  ],
+                                                  "if": {
+                                                    "limit": {
+                                                      "add_deposit": "d_forgiving_tundra",
+                                                      "if": {
+                                                        "limit": {
+                                                          "add_deposit": "d_rich_mountain"
+                                                        },
+                                                        "else": {
+                                                          "add_deposit": "d_fungal_forest"
+                                                        }
+                                                      }
+                                                    },
+                                                    "if": {
+                                                      "limit": {
+                                                        "is_planet_class": "pc_alpine"
+                                                      },
+                                                      "add_deposit": "d_tempestous_mountain",
+                                                      "_comments": [
+                                                        "# 3 + 3 energy"
+                                                      ],
+                                                      "if": {
+                                                        "limit": {
+                                                          "add_deposit": "d_frozen_gas_lake"
+                                                        },
+                                                        "if": {
+                                                          "limit": {
+                                                            "add_deposit": "d_hot_springs"
+                                                          },
+                                                          "add_deposit": "d_fungal_caves",
+                                                          "_comments": [
+                                                            "# 3 + 3 mining",
+                                                            "# 4 + 3 farming (lithoids swap 3 for minerals)"
+                                                          ],
+                                                          "if": {
+                                                            "limit": {
+                                                              "add_deposit": "d_forgiving_tundra",
+                                                              "if": {
+                                                                "limit": {
+                                                                  "add_deposit": "d_rich_mountain"
+                                                                },
+                                                                "else": {
+                                                                  "add_deposit": "d_fungal_forest"
+                                                                }
+                                                              }
+                                                            },
+                                                            "if": {
+                                                              "limit": {
+                                                                "is_planet_class": "pc_desert"
+                                                              },
+                                                              "add_deposit": "d_geothermal_vent",
+                                                              "_comments": [
+                                                                "# 3 + 3 energy"
+                                                              ],
+                                                              "if": {
+                                                                "limit": {
+                                                                  "add_deposit": "d_searing_desert"
+                                                                },
+                                                                "if": {
+                                                                  "limit": {
+                                                                    "add_deposit": "d_arid_highlands"
+                                                                  },
+                                                                  "add_deposit": "d_great_river",
+                                                                  "_comments": [
+                                                                    "# 3 + 3 mining",
+                                                                    "# 4 + 3 farming (lithoids swap 3 for minerals)"
+                                                                  ],
+                                                                  "if": {
+                                                                    "limit": {
+                                                                      "add_deposit": "d_nutritious_mudland",
+                                                                      "if": {
+                                                                        "limit": {
+                                                                          "add_deposit": "d_rich_mountain"
+                                                                        },
+                                                                        "else": {
+                                                                          "add_deposit": "d_marvelous_oasis"
+                                                                        }
+                                                                      },
+                                                                      "set_planet_flag": "tasty_desert"
+                                                                    },
+                                                                    "if": {
+                                                                      "limit": {
+                                                                        "is_planet_class": "pc_arid"
+                                                                      },
+                                                                      "add_deposit": "d_geothermal_vent",
+                                                                      "_comments": [
+                                                                        "# 3 + 3 energy"
+                                                                      ],
+                                                                      "if": {
+                                                                        "limit": {
+                                                                          "add_deposit": "d_searing_desert"
+                                                                        },
+                                                                        "if": {
+                                                                          "limit": {
+                                                                            "add_deposit": "d_arid_highlands"
+                                                                          },
+                                                                          "add_deposit": "d_great_river",
+                                                                          "_comments": [
+                                                                            "# 3 + 3 mining",
+                                                                            "# 4 + 3 farming (lithoids swap 3 for minerals)"
+                                                                          ],
+                                                                          "if": {
+                                                                            "limit": {
+                                                                              "add_deposit": "d_bountiful_plains",
+                                                                              "if": {
+                                                                                "limit": {
+                                                                                  "add_deposit": "d_rich_mountain"
+                                                                                },
+                                                                                "else": {
+                                                                                  "add_deposit": "d_tropical_island"
+                                                                                }
+                                                                              }
+                                                                            },
+                                                                            "if": {
+                                                                              "limit": {
+                                                                                "is_planet_class": "pc_savannah"
+                                                                              },
+                                                                              "add_deposit": "d_geothermal_vent",
+                                                                              "_comments": [
+                                                                                "# 3 + 3 energy"
+                                                                              ],
+                                                                              "if": {
+                                                                                "limit": {
+                                                                                  "add_deposit": "d_searing_desert"
+                                                                                },
+                                                                                "if": {
+                                                                                  "limit": {
+                                                                                    "add_deposit": "d_arid_highlands"
+                                                                                  },
+                                                                                  "add_deposit": "d_fertile_lands",
+                                                                                  "_comments": [
+                                                                                    "# 3 + 3 mining",
+                                                                                    "# 4 + 3 farming (lithoids swap 3 for minerals)"
+                                                                                  ],
+                                                                                  "if": {
+                                                                                    "limit": {
+                                                                                      "add_deposit": "d_bountiful_plains",
+                                                                                      "if": {
+                                                                                        "limit": {
+                                                                                          "add_deposit": "d_rich_mountain"
+                                                                                        },
+                                                                                        "else": {
+                                                                                          "add_deposit": "d_black_soil"
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "if": {
+                                                                                      "limit": {
+                                                                                        "is_planet_class": "pc_relic",
+                                                                                        "owner": {
+                                                                                          "OR": {
+                                                                                            "has_origin": "origin_slavers"
+                                                                                          }
+                                                                                        }
+                                                                                      },
+                                                                                      "set_planet_size": "22",
+                                                                                      "add_deposit": "d_geothermal_vent",
+                                                                                      "_comments": [
+                                                                                        "# 6 blockers",
+                                                                                        "# 3 + 3 energy"
+                                                                                      ],
+                                                                                      "if": {
+                                                                                        "limit": {
+                                                                                          "add_deposit": "d_searing_desert"
+                                                                                        },
+                                                                                        "if": {
+                                                                                          "limit": {
+                                                                                            "add_deposit": "d_arid_highlands"
+                                                                                          },
+                                                                                          "add_deposit": "d_fertile_lands",
+                                                                                          "_comments": [
+                                                                                            "# 3 + 3 mining",
+                                                                                            "# 4 + 3 farming",
+                                                                                            "# Ocean Paradise Origin"
+                                                                                          ],
+                                                                                          "if": {
+                                                                                            "limit": {
+                                                                                              "owner": {
+                                                                                                "OR": {
+                                                                                                  "has_origin": "origin_ocean_machines"
+                                                                                                }
+                                                                                              }
+                                                                                            },
+                                                                                            "create_ocean_paradise_planet": "yes"
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 591
+  },
+  "generate_earth_deposits_and_blockers": {
+    "generate_earth_deposits_and_blockers": {
+      "clear_deposits": "yes",
+      "add_deposit": "d_great_pacific_garbage_patch",
+      "if": {
+        "limit": {
+          "owner": {},
+          "add_deposit": "d_rushing_waterfalls"
+        },
+        "if": {
+          "limit": {
+            "owner": {
+              "is_environmental_architects_empire": "yes"
+            }
+          },
+          "add_random_natural_blocker_and_give_tech": "yes",
+          "if": {
+            "limit": {
+              "owner": {},
+              "add_deposit": "d_unsupervised_settlement"
+            }
+          },
+          "else": {
+            "add_deposit": "d_failing_infrastructure_earth",
+            "if": {
+              "limit": {
+                "owner": {
+                  "is_lithoid_empire": "yes",
+                  "NOT": {}
+                },
+                "while": {
+                  "count": "4",
+                  "add_deposit": "d_hibernating_lithoids"
+                }
+              },
+              "if": {
+                "limit": {
+                  "is_planet_class": "pc_desert # Just in case players cause trouble"
+                },
+                "set_planet_flag": "tasty_desert"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 1141
+  },
+  "generate_start_buildings_and_districts": {
+    "generate_start_buildings_and_districts": {
+      "if": {
+        "limit": {
+          "owner": {
+            "NOR": {
+              "has_origin": "origin_broken_shackles"
+            }
+          }
+        },
+        "if": {
+          "limit": {
+            "owner": {
+              "OR": {
+                "has_valid_civic": "civic_machine_servitor",
+                "has_origin": "origin_necrophage"
+              }
+            }
+          },
+          "if": {
+            "limit": {
+              "owner": {
+                "OR": {
+                  "last_created_species": {
+                    "last_created_species": {}
+                  }
+                },
+                "owner": {
+                  "set_country_flag": "lithoid_subspecies"
+                }
+              },
+              "else": {
+                "owner": {
+                  "set_country_flag": "non_lithoid_subspecies"
+                }
+              }
+            },
+            "if": {
+              "limit": {
+                "_comments": [
+                  "# total - 24 jobs",
+                  "# 3 jobs"
+                ],
+                "if": {
+                  "limit": {
+                    "add_district_and_planet_size_if_needed_effect": {
+                      "district": "district_city"
+                    }
+                  },
+                  "if": {
+                    "limit": {
+                      "owner": {},
+                      "add_district_and_planet_size_if_needed_effect": {
+                        "district": "district_farming"
+                      }
+                    },
+                    "if": {
+                      "limit": {
+                        "owner": {},
+                        "while": {
+                          "count": "2",
+                          "add_district_and_planet_size_if_needed_effect": {
+                            "district": "district_city"
+                          }
+                        }
+                      },
+                      "else": {
+                        "limit": {
+                          "owner": {
+                            "is_individual_machine": "no"
+                          }
+                        },
+                        "while": {
+                          "count": "2",
+                          "add_district_and_planet_size_if_needed_effect": {
+                            "district": "district_farming"
+                          }
+                        }
+                      },
+                      "if": {
+                        "limit": {
+                          "add_district_and_planet_size_if_needed_effect": {
+                            "district": "district_city"
+                          }
+                        },
+                        "_comments": [
+                          "# 4 - 6 jobs"
+                        ],
+                        "if": {
+                          "limit": {
+                            "owner": {
+                              "OR": {
+                                "NOR": {
+                                  "is_lithoid_empire": "yes",
+                                  "is_individual_machine": "yes"
+                                },
+                                "has_country_flag": "non_lithoid_subspecies"
+                              }
+                            }
+                          },
+                          "add_district_and_planet_size_if_needed_effect": {
+                            "district": "district_farming"
+                          },
+                          "if": {
+                            "limit": {
+                              "owner": {
+                                "has_origin": "origin_default",
+                                "is_eager_explorer_empire": "no",
+                                "is_individual_machine": "no"
+                              }
+                            },
+                            "add_district_and_planet_size_if_needed_effect": {
+                              "district": "district_farming"
+                            }
+                          }
+                        },
+                        "else": {
+                          "add_district_and_planet_size_if_needed_effect": {
+                            "district": "district_mining"
+                          },
+                          "if": {
+                            "limit": {
+                              "NOT": {},
+                              "add_district_and_planet_size_if_needed_effect": {
+                                "district": "district_mining"
+                              }
+                            },
+                            "_comments": [
+                              "# 2 jobs",
+                              "# 4 jobs"
+                            ],
+                            "add_district_and_planet_size_if_needed_effect": {
+                              "district": "district_industrial"
+                            },
+                            "if": {
+                              "limit": {
+                                "NOT": {},
+                                "add_district_and_planet_size_if_needed_effect": {
+                                  "district": "district_industrial"
+                                }
+                              },
+                              "_comments": [
+                                "# 2 jobs"
+                              ],
+                              "if": {
+                                "limit": {
+                                  "owner": {
+                                    "is_megacorp": "no",
+                                    "NOT": {}
+                                  },
+                                  "add_district_and_planet_size_if_needed_effect": {
+                                    "district": "district_generator"
+                                  }
+                                },
+                                "_comments": [
+                                  "# 2 jobs",
+                                  "# 3 jobs",
+                                  "# 2 jobs"
+                                ],
+                                "if": {
+                                  "limit": {
+                                    "add_building": "building_bureaucratic_1"
+                                  },
+                                  "_comments": [
+                                    "# 2 jobs",
+                                    "# 2 jobs",
+                                    "# 2 jobs"
+                                  ],
+                                  "if": {
+                                    "limit": {
+                                      "owner": {
+                                        "is_low_tech_start": "no"
+                                      }
+                                    },
+                                    "if": {
+                                      "limit": {
+                                        "owner": {
+                                          "NOT": {}
+                                        },
+                                        "add_building": "building_research_lab_1"
+                                      },
+                                      "else": {
+                                        "add_building": "building_dread_encampment",
+                                        "solar_system": {
+                                          "while": {
+                                            "count": "2",
+                                            "random_system_planet": {
+                                              "limit": {
+                                                "has_deposit_for": "shipclass_research_station",
+                                                "NOT": {},
+                                                "clear_deposits": "yes",
+                                                "add_deposit": "d_engineering_6"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "_comments": [
+                                        "# 1 job",
+                                        "# 2 Jobs"
+                                      ],
+                                      "if": {
+                                        "limit": {
+                                          "owner": {
+                                            "NOT": {
+                                              "has_origin": "origin_payback"
+                                            },
+                                            "has_valid_civic": "civic_environmentalist"
+                                          }
+                                        },
+                                        "add_building": "building_ranger_lodge",
+                                        "add_blocker": {},
+                                        "_comments": [
+                                          "# 4-5 jobs"
+                                        ],
+                                        "if": {
+                                          "limit": {
+                                            "owner": {
+                                              "NOT": {}
+                                            },
+                                            "if": {
+                                              "limit": {
+                                                "owner": {
+                                                  "is_spiritualist": "no",
+                                                  "is_pleasure_seeker": "yes"
+                                                }
+                                              },
+                                              "add_building": "building_holo_theatres",
+                                              "add_district_and_planet_size_if_needed_effect": {
+                                                "district": "district_industrial"
+                                              }
+                                            },
+                                            "else_if": {
+                                              "limit": {
+                                                "owner": {
+                                                  "has_valid_civic": "civic_augmentation_bazaars"
+                                                }
+                                              },
+                                              "add_building": "building_augmentation_bazaars"
+                                            },
+                                            "else": {
+                                              "add_building": "building_commercial_zone"
+                                            }
+                                          },
+                                          "if": {
+                                            "limit": {
+                                              "_comments": [
+                                                "# 9 jobs",
+                                                "# 6-9 jobs",
+                                                "# 6 jobs"
+                                              ],
+                                              "while": {
+                                                "count": "2",
+                                                "add_district_and_planet_size_if_needed_effect": {
+                                                  "district": "district_mining"
+                                                }
+                                              },
+                                              "if": {
+                                                "limit": {
+                                                  "owner": {},
+                                                  "remove_district": "district_mining",
+                                                  "add_district_and_planet_size_if_needed_effect": {
+                                                    "district": "district_farming"
+                                                  }
+                                                },
+                                                "_comments": [
+                                                  "# 6 jobs",
+                                                  "# 3 jobs",
+                                                  "# 2 jobs",
+                                                  "# 5 jobs",
+                                                  "# 2 jobs"
+                                                ],
+                                                "while": {
+                                                  "count": "2",
+                                                  "add_district_and_planet_size_if_needed_effect": {
+                                                    "district": "district_generator"
+                                                  }
+                                                },
+                                                "if": {
+                                                  "limit": {
+                                                    "owner": {
+                                                      "OR": {
+                                                        "AND": {
+                                                          "has_origin": "origin_necrophage",
+                                                          "has_valid_civic": "civic_hive_devouring_swarm"
+                                                        },
+                                                        "NOT": {}
+                                                      }
+                                                    },
+                                                    "add_building": "building_hive_node",
+                                                    "_comments": [
+                                                      "# 2 jobs"
+                                                    ]
+                                                  },
+                                                  "if": {
+                                                    "limit": {
+                                                      "NOT": {
+                                                        "owner": {
+                                                          "has_origin": "origin_necrophage",
+                                                          "has_valid_civic": "civic_hive_devouring_swarm"
+                                                        }
+                                                      }
+                                                    },
+                                                    "_comments": [
+                                                      "# 1 job",
+                                                      "# Replace capital building for machine empires"
+                                                    ],
+                                                    "if": {
+                                                      "limit": {
+                                                        "_comments": [
+                                                          "# total - 27 jobs",
+                                                          "# 3 jobs",
+                                                          "# 2 jobs",
+                                                          "# 6 jobs",
+                                                          "# 1 job",
+                                                          "# 2 job"
+                                                        ],
+                                                        "while": {
+                                                          "count": "2",
+                                                          "add_district_and_planet_size_if_needed_effect": {
+                                                            "district": "district_nexus"
+                                                          }
+                                                        },
+                                                        "add_district_and_planet_size_if_needed_effect": {
+                                                          "district": "district_industrial"
+                                                        },
+                                                        "add_building": "building_machine_assembly_plant",
+                                                        "if": {
+                                                          "limit": {
+                                                            "add_building": "building_uplink_node"
+                                                          },
+                                                          "_comments": [
+                                                            "# 2 jobs",
+                                                            "#Tactical Cogitators",
+                                                            "####Genesis Architects"
+                                                          ],
+                                                          "if": {
+                                                            "limit": {
+                                                              "_comments": [
+                                                                "# 4 jobs",
+                                                                "# 2 jobs",
+                                                                "# 8 jobs",
+                                                                "# 2 jobs",
+                                                                "#Assimilators"
+                                                              ],
+                                                              "add_district_and_planet_size_if_needed_effect": {
+                                                                "district": "district_mining"
+                                                              },
+                                                              "if": {
+                                                                "limit": {
+                                                                  "remove_district": "district_generator",
+                                                                  "if": {
+                                                                    "limit": {
+                                                                      "owner": {
+                                                                        "has_country_flag": "lithoid_subspecies"
+                                                                      }
+                                                                    },
+                                                                    "add_district_and_planet_size_if_needed_effect": {
+                                                                      "district": "district_mining"
+                                                                    }
+                                                                  },
+                                                                  "else": {
+                                                                    "add_district_and_planet_size_if_needed_effect": {
+                                                                      "district": "district_farming"
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "_comments": [
+                                                                  "#Servitors"
+                                                                ],
+                                                                "if": {
+                                                                  "limit": {
+                                                                    "if": {
+                                                                      "limit": {
+                                                                        "add_district_and_planet_size_if_needed_effect": {
+                                                                          "district": "district_mining"
+                                                                        }
+                                                                      },
+                                                                      "else": {
+                                                                        "add_district_and_planet_size_if_needed_effect": {
+                                                                          "district": "district_farming"
+                                                                        }
+                                                                      },
+                                                                      "add_district_and_planet_size_if_needed_effect": {
+                                                                        "district": "district_nexus"
+                                                                      },
+                                                                      "add_building": "building_organic_sanctuary"
+                                                                    }
+                                                                  },
+                                                                  "_comments": [
+                                                                    "# Resource Consolidation",
+                                                                    "# Replace a mining district with a farming district for lithoid empires with an organic secondary species that use food for alloy production",
+                                                                    "# Replace two mining districts with farming district for non-machine empires that use food for alloy production"
+                                                                  ],
+                                                                  "else": {
+                                                                    "while": {
+                                                                      "count": "4",
+                                                                      "add_district_and_planet_size_if_needed_effect": {
+                                                                        "district": "district_generator_uncapped"
+                                                                      }
+                                                                    },
+                                                                    "add_district_and_planet_size_if_needed_effect": {
+                                                                      "district": "district_mining_uncapped"
+                                                                    },
+                                                                    "_comments": [
+                                                                      "#Assimilators"
+                                                                    ],
+                                                                    "if": {
+                                                                      "limit": {
+                                                                        "add_deposit": "d_organic_slurry"
+                                                                      },
+                                                                      "add_deposit": "d_resource_consolidation_1",
+                                                                      "_comments": [
+                                                                        "# Blocker that removes the extra machine world replicator jobs until removed"
+                                                                      ]
+                                                                    }
+                                                                  },
+                                                                  "if": {
+                                                                    "limit": {
+                                                                      "owner": {
+                                                                        "NOT": {
+                                                                          "is_machine_empire": "no",
+                                                                          "is_catalytic_empire": "yes"
+                                                                        }
+                                                                      },
+                                                                      "while": {
+                                                                        "count": "2",
+                                                                        "remove_district": "district_mining",
+                                                                        "add_district_and_planet_size_if_needed_effect": {
+                                                                          "district": "district_farming"
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "_comments": [
+                                                                      "# And machine empires swap a generator district for another farming district",
+                                                                      "# Replace 1 generator district with 1 farming district for anglers civic on wet worlds"
+                                                                    ],
+                                                                    "if": {
+                                                                      "limit": {
+                                                                        "owner": {
+                                                                          "has_climate": "wet"
+                                                                        },
+                                                                        "remove_district": "district_generator",
+                                                                        "add_district": "district_farming"
+                                                                      },
+                                                                      "_comments": [
+                                                                        "# Replace farming districts with uncapped ones for anglers civic on ocean worlds"
+                                                                      ],
+                                                                      "if": {
+                                                                        "limit": {
+                                                                          "owner": {
+                                                                            "is_planet_class": "pc_ocean"
+                                                                          },
+                                                                          "while": {
+                                                                            "limit": {
+                                                                              "remove_district": "district_farming",
+                                                                              "add_district_and_planet_size_if_needed_effect": {
+                                                                                "district": "district_farming_uncapped"
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "_comments": [
+                                                                            "# Replace mining districts with uncapped ones for subterranean origin"
+                                                                          ],
+                                                                          "if": {
+                                                                            "limit": {
+                                                                              "owner": {},
+                                                                              "while": {
+                                                                                "limit": {
+                                                                                  "remove_district": "district_mining",
+                                                                                  "add_district_and_planet_size_if_needed_effect": {
+                                                                                    "district": "district_mining_uncapped"
+                                                                                  }
+                                                                                }
+                                                                              },
+                                                                              "_comments": [
+                                                                                "# Give Idyllic Bloom a Gaiaseeder to start with if they have room"
+                                                                              ],
+                                                                              "if": {
+                                                                                "limit": {
+                                                                                  "owner": {
+                                                                                    "OR": {
+                                                                                      "has_valid_civic": "civic_hive_idyllic_bloom"
+                                                                                    },
+                                                                                    "NOT": {}
+                                                                                  },
+                                                                                  "add_building": "building_gaiaseeders_1"
+                                                                                },
+                                                                                "_comments": [
+                                                                                  "# Swaps Cybernetic Creed Buildings"
+                                                                                ],
+                                                                                "if": {
+                                                                                  "limit": {
+                                                                                    "owner": {},
+                                                                                    "_comments": [
+                                                                                      "# fix for Agrarian Idyll"
+                                                                                    ],
+                                                                                    "if": {
+                                                                                      "limit": {
+                                                                                        "owner": {},
+                                                                                        "add_district": "district_farming"
+                                                                                      },
+                                                                                      "remove_building": "building_temple",
+                                                                                      "remove_district": "district_farming",
+                                                                                      "add_building": "building_sanctuary_of_toil",
+                                                                                      "owner": {
+                                                                                        "set_country_flag": "suppress_vanilla_factions",
+                                                                                        "begin_event_chain": {
+                                                                                          "event_chain": "cybernetic_creed_chain",
+                                                                                          "target": "this"
+                                                                                        },
+                                                                                        "country_event": {
+                                                                                          "id": "machine_age.2150",
+                                                                                          "days": "30"
+                                                                                        },
+                                                                                        "every_owned_leader": {
+                                                                                          "limit": {
+                                                                                            "is_ruler": "yes",
+                                                                                            "NOT": {},
+                                                                                            "add_trait": "leader_trait_ritualistic_implants_cyborg"
+                                                                                          }
+                                                                                        }
+                                                                                      },
+                                                                                      "_comments": [
+                                                                                        "# Swaps Synthetic Fertility Buildings, Tech"
+                                                                                      ],
+                                                                                      "if": {
+                                                                                        "limit": {
+                                                                                          "owner": {
+                                                                                            "set_variable": {
+                                                                                              "which": "num_dead_identities",
+                                                                                              "value": "3"
+                                                                                            },
+                                                                                            "give_technology": {
+                                                                                              "give_technology": {
+                                                                                                "give_technology": {},
+                                                                                                "while": {
+                                                                                                  "count": "4",
+                                                                                                  "remove_deposit": "d_hibernating_lithoids"
+                                                                                                }
+                                                                                              }
+                                                                                            },
+                                                                                            "if": {
+                                                                                              "limit": {
+                                                                                                "owner": {},
+                                                                                                "add_deposit": "d_decrepit_tunnels_1",
+                                                                                                "if": {
+                                                                                                  "limit": {
+                                                                                                    "owner": {
+                                                                                                      "OR": {
+                                                                                                        "has_valid_civic": "civic_machine_servitor"
+                                                                                                      }
+                                                                                                    }
+                                                                                                  },
+                                                                                                  "if": {
+                                                                                                    "limit": {
+                                                                                                      "owner": {},
+                                                                                                      "add_district_and_planet_size_if_needed_effect": {
+                                                                                                        "district": "district_farming_uncapped"
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "_comments": [
+                                                                                                      "#Tactical Cogitators"
+                                                                                                    ],
+                                                                                                    "if": {
+                                                                                                      "limit": {
+                                                                                                        "owner": {},
+                                                                                                        "_comments": [
+                                                                                                          "# total - 24 jobs",
+                                                                                                          "# 3 jobs"
+                                                                                                        ],
+                                                                                                        "add_district_and_planet_size_if_needed_effect": {
+                                                                                                          "district": "district_city"
+                                                                                                        },
+                                                                                                        "if": {
+                                                                                                          "limit": {
+                                                                                                            "owner": {},
+                                                                                                            "while": {
+                                                                                                              "count": "2",
+                                                                                                              "add_district_and_planet_size_if_needed_effect": {
+                                                                                                                "district": "district_city"
+                                                                                                              }
+                                                                                                            }
+                                                                                                          },
+                                                                                                          "else": {
+                                                                                                            "while": {
+                                                                                                              "count": "2",
+                                                                                                              "add_district_and_planet_size_if_needed_effect": {
+                                                                                                                "district": "district_farming_uncapped"
+                                                                                                              }
+                                                                                                            },
+                                                                                                            "if": {
+                                                                                                              "limit": {
+                                                                                                                "add_district_and_planet_size_if_needed_effect": {
+                                                                                                                  "district": "district_city"
+                                                                                                                }
+                                                                                                              },
+                                                                                                              "_comments": [
+                                                                                                                "# 4 - 6 jobs",
+                                                                                                                "# 4 jobs",
+                                                                                                                "# 2 jobs",
+                                                                                                                "# 4 jobs",
+                                                                                                                "# 2 jobs"
+                                                                                                              ],
+                                                                                                              "if": {
+                                                                                                                "limit": {
+                                                                                                                  "add_district_and_planet_size_if_needed_effect": {
+                                                                                                                    "district": "district_srw_commercial"
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                "add_building": "building_capital",
+                                                                                                                "_comments": [
+                                                                                                                  "# 3 jobs",
+                                                                                                                  "# 2 jobs"
+                                                                                                                ],
+                                                                                                                "if": {
+                                                                                                                  "limit": {
+                                                                                                                    "add_building": "building_bureaucratic_1"
+                                                                                                                  },
+                                                                                                                  "_comments": [
+                                                                                                                    "# 2 jobs",
+                                                                                                                    "# 2 jobs"
+                                                                                                                  ],
+                                                                                                                  "if": {
+                                                                                                                    "limit": {
+                                                                                                                      "owner": {
+                                                                                                                        "is_spiritualist": "yes",
+                                                                                                                        "NOT": {}
+                                                                                                                      },
+                                                                                                                      "add_building": "building_temple"
+                                                                                                                    },
+                                                                                                                    "_comments": [
+                                                                                                                      "# 2 jobs",
+                                                                                                                      "# 4-5 jobs"
+                                                                                                                    ],
+                                                                                                                    "if": {
+                                                                                                                      "limit": {
+                                                                                                                        "owner": {
+                                                                                                                          "NOT": {}
+                                                                                                                        },
+                                                                                                                        "if": {
+                                                                                                                          "limit": {
+                                                                                                                            "owner": {
+                                                                                                                              "is_spiritualist": "no",
+                                                                                                                              "is_pleasure_seeker": "yes"
+                                                                                                                            }
+                                                                                                                          },
+                                                                                                                          "add_building": "building_holo_theatres",
+                                                                                                                          "add_district_and_planet_size_if_needed_effect": {
+                                                                                                                            "district": "district_srw_commercial"
+                                                                                                                          }
+                                                                                                                        },
+                                                                                                                        "else_if": {
+                                                                                                                          "limit": {
+                                                                                                                            "owner": {
+                                                                                                                              "has_valid_civic": "civic_augmentation_bazaars"
+                                                                                                                            }
+                                                                                                                          },
+                                                                                                                          "add_building": "building_augmentation_bazaars"
+                                                                                                                        },
+                                                                                                                        "else": {
+                                                                                                                          "add_building": "building_commercial_zone"
+                                                                                                                        }
+                                                                                                                      },
+                                                                                                                      "if": {
+                                                                                                                        "limit": {
+                                                                                                                          "owner": {},
+                                                                                                                          "_comments": [
+                                                                                                                            "# 9 jobs",
+                                                                                                                            "# 6-9 jobs",
+                                                                                                                            "# 6 jobs",
+                                                                                                                            "# 6 jobs",
+                                                                                                                            "# 2 jobs",
+                                                                                                                            "# 5 jobs",
+                                                                                                                            "# 2 jobs",
+                                                                                                                            "# 2 jobs",
+                                                                                                                            "# 1 job",
+                                                                                                                            "# Replace capital building for machine empires"
+                                                                                                                          ],
+                                                                                                                          "while": {
+                                                                                                                            "count": "2",
+                                                                                                                            "add_district_and_planet_size_if_needed_effect": {
+                                                                                                                              "district": "district_generator_uncapped"
+                                                                                                                            }
+                                                                                                                          },
+                                                                                                                          "if": {
+                                                                                                                            "limit": {
+                                                                                                                              "_comments": [
+                                                                                                                                "# total - 27 jobs",
+                                                                                                                                "# 3 jobs",
+                                                                                                                                "# 2 jobs",
+                                                                                                                                "# 6 jobs",
+                                                                                                                                "# 1 job",
+                                                                                                                                "# 2 job"
+                                                                                                                              ],
+                                                                                                                              "while": {
+                                                                                                                                "count": "2",
+                                                                                                                                "add_district_and_planet_size_if_needed_effect": {
+                                                                                                                                  "district": "district_nexus"
+                                                                                                                                }
+                                                                                                                              },
+                                                                                                                              "add_district_and_planet_size_if_needed_effect": {
+                                                                                                                                "district": "district_mining_uncapped"
+                                                                                                                              },
+                                                                                                                              "add_building": "building_machine_assembly_plant",
+                                                                                                                              "if": {
+                                                                                                                                "limit": {
+                                                                                                                                  "add_building": "building_uplink_node"
+                                                                                                                                },
+                                                                                                                                "_comments": [
+                                                                                                                                  "# 2 jobs",
+                                                                                                                                  "# 4 jobs",
+                                                                                                                                  "# 8 jobs",
+                                                                                                                                  "#Assimilators"
+                                                                                                                                ],
+                                                                                                                                "if": {
+                                                                                                                                  "limit": {
+                                                                                                                                    "remove_district": "district_generator_uncapped",
+                                                                                                                                    "if": {
+                                                                                                                                      "limit": {
+                                                                                                                                        "owner": {
+                                                                                                                                          "has_origin": "origin_remnants",
+                                                                                                                                          "has_ancrel": "yes"
+                                                                                                                                        }
+                                                                                                                                      },
+                                                                                                                                      "owner": {
+                                                                                                                                        "give_technology": {
+                                                                                                                                          "tech": "tech_archaeostudies",
+                                                                                                                                          "message": "no"
+                                                                                                                                        }
+                                                                                                                                      },
+                                                                                                                                      "remove_building": "building_research_lab_1",
+                                                                                                                                      "add_building": "building_archaeostudies_faculty"
+                                                                                                                                    },
+                                                                                                                                    "_comments": [
+                                                                                                                                      "#Servitors",
+                                                                                                                                      "# Additional resources based on empire type and possible subspecies"
+                                                                                                                                    ],
+                                                                                                                                    "owner": {
+                                                                                                                                      "give_starting_resources_effect": "yes"
+                                                                                                                                    }
+                                                                                                                                  }
+                                                                                                                                },
+                                                                                                                                "add_district_and_planet_size_if_needed_effect": {
+                                                                                                                                  "district": "district_mining_uncapped"
+                                                                                                                                },
+                                                                                                                                "while": {
+                                                                                                                                  "count": "4",
+                                                                                                                                  "add_district_and_planet_size_if_needed_effect": {
+                                                                                                                                    "district": "district_generator_uncapped"
+                                                                                                                                  }
+                                                                                                                                }
+                                                                                                                              }
+                                                                                                                            }
+                                                                                                                          },
+                                                                                                                          "else": {
+                                                                                                                            "while": {
+                                                                                                                              "count": "2",
+                                                                                                                              "add_district_and_planet_size_if_needed_effect": {
+                                                                                                                                "district": "district_mining_uncapped"
+                                                                                                                              }
+                                                                                                                            }
+                                                                                                                          },
+                                                                                                                          "add_district_and_planet_size_if_needed_effect": {
+                                                                                                                            "district": "district_mining_uncapped"
+                                                                                                                          },
+                                                                                                                          "add_building": "building_hive_node"
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              },
+                                                                                                              "else": {
+                                                                                                                "while": {
+                                                                                                                  "count": "2",
+                                                                                                                  "add_district_and_planet_size_if_needed_effect": {
+                                                                                                                    "district": "district_mining_uncapped"
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              },
+                                                                                                              "while": {
+                                                                                                                "count": "2",
+                                                                                                                "add_district_and_planet_size_if_needed_effect": {
+                                                                                                                  "district": "district_mining_uncapped"
+                                                                                                                }
+                                                                                                              },
+                                                                                                              "add_building": "building_factory_1",
+                                                                                                              "add_district_and_planet_size_if_needed_effect": {
+                                                                                                                "district": "district_srw_commercial"
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  },
+                                                                                                  "_comments": [
+                                                                                                    "#Add Genesis Guides Deposit"
+                                                                                                  ]
+                                                                                                },
+                                                                                                "else_if": {
+                                                                                                  "limit": {
+                                                                                                    "owner": {
+                                                                                                      "is_hive_empire": "yes"
+                                                                                                    }
+                                                                                                  },
+                                                                                                  "add_deposit": "d_collapsed_burrows"
+                                                                                                },
+                                                                                                "else": {
+                                                                                                  "add_deposit": "d_decrepit_dwellings"
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          },
+                                                                                          "set_planet_size": "20",
+                                                                                          "remove_building": "building_research_lab_1",
+                                                                                          "add_building": "building_abandoned_gene_clinic",
+                                                                                          "while": {
+                                                                                            "count": "2",
+                                                                                            "add_deposit": "d_abandoned_cities"
+                                                                                          },
+                                                                                          "if": {
+                                                                                            "limit": {
+                                                                                              "exists": "owner",
+                                                                                              "owner": {
+                                                                                                "is_lithoid_empire": "no"
+                                                                                              }
+                                                                                            },
+                                                                                            "add_district_and_planet_size_if_needed_effect": {
+                                                                                              "district": "district_farming"
+                                                                                            }
+                                                                                          },
+                                                                                          "else": {
+                                                                                            "add_district_and_planet_size_if_needed_effect": {
+                                                                                              "district": "district_mining"
+                                                                                            }
+                                                                                          },
+                                                                                          "add_district_and_planet_size_if_needed_effect": {
+                                                                                            "district": "district_mining"
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              },
+                                                              "while": {
+                                                                "count": "4",
+                                                                "add_district_and_planet_size_if_needed_effect": {
+                                                                  "district": "district_generator"
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "add_district_and_planet_size_if_needed_effect": {
+                                                  "district": "district_industrial"
+                                                },
+                                                "add_building": "building_hive_capital"
+                                              },
+                                              "else": {
+                                                "while": {
+                                                  "count": "2",
+                                                  "add_district_and_planet_size_if_needed_effect": {
+                                                    "district": "district_mining"
+                                                  }
+                                                },
+                                                "if": {
+                                                  "limit": {
+                                                    "owner": {
+                                                      "has_origin": "origin_default",
+                                                      "is_eager_explorer_empire": "no"
+                                                    }
+                                                  },
+                                                  "add_district_and_planet_size_if_needed_effect": {
+                                                    "district": "district_mining"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "add_building": "building_capital"
+                              }
+                            }
+                          },
+                          "_comments": [
+                            "# 4 jobs"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 1336
+  },
+  "generate_start_pops": {
+    "generate_start_pops": {
+      "_comments": [
+        "# SECONDARY SPECIES STARTS: add Traits, set living standards, etc."
+      ],
+      "if": {
+        "limit": {
+          "owner": {
+            "OR": {
+              "has_origin": "origin_necrophage",
+              "has_valid_civic": "civic_machine_assimilator"
+            }
+          }
+        },
+        "if": {
+          "limit": {
+            "owner": {
+              "create_built_robot_species": "yes"
+            },
+            "last_created_species": {
+              "change_species_characteristics": {
+                "add_trait": "trait_auto_mod_robotic"
+              }
+            },
+            "while": {
+              "limit": {
+                "create_pop": {
+                  "species": "owner_main_species",
+                  "ethos": "random"
+                }
+              }
+            },
+            "add_building": "building_robot_assembly_plant",
+            "add_district_and_planet_size_if_needed_effect": {
+              "district": "district_generator"
+            },
+            "_comments": [
+              "# (Non-Purging) Necrophage: add Buildings & Districts"
+            ],
+            "if": {
+              "limit": {
+                "owner": {
+                  "has_origin": "origin_necrophage",
+                  "NOR": {
+                    "has_civic": "civic_hive_devouring_swarm"
+                  }
+                }
+              },
+              "if": {
+                "limit": {
+                  "owner": {
+                    "has_origin": "origin_necrophage",
+                    "has_valid_civic": "civic_hive_devouring_swarm",
+                    "is_lithoid_empire": "yes"
+                  }
+                },
+                "add_district_and_planet_size_if_needed_effect": {},
+                "_comments": [
+                  "# Clone Army: spawn Buildings"
+                ],
+                "if": {
+                  "limit": {
+                    "owner": {
+                      "has_origin": "origin_clone_army"
+                    }
+                  },
+                  "add_building": "building_clone_army_clone_vat",
+                  "planet_event": {},
+                  "_comments": [
+                    "# MISC: spawn Pops"
+                  ],
+                  "if": {
+                    "limit": {
+                      "owner": {},
+                      "while": {
+                        "limit": {
+                          "create_pop": {
+                            "species": "owner_main_species",
+                            "ethos": "random"
+                          }
+                        }
+                      },
+                      "if": {
+                        "limit": {
+                          "owner": {},
+                          "while": {
+                            "limit": {
+                              "create_pop": {
+                                "species": "owner_main_species",
+                                "ethos": "random"
+                              }
+                            }
+                          },
+                          "if": {
+                            "limit": {
+                              "while": {
+                                "limit": {
+                                  "create_pop": {
+                                    "species": "owner_main_species",
+                                    "ethos": "random"
+                                  }
+                                }
+                              },
+                              "if": {
+                                "limit": {
+                                  "owner": {
+                                    "is_megacorp": "yes",
+                                    "has_reduced_pop_origin": "no"
+                                  }
+                                },
+                                "while": {
+                                  "limit": {
+                                    "create_pop": {
+                                      "species": "owner_main_species",
+                                      "ethos": "random"
+                                    }
+                                  }
+                                },
+                                "if": {
+                                  "limit": {
+                                    "owner": {},
+                                    "while": {
+                                      "limit": {
+                                        "create_pop": {
+                                          "species": "owner_main_species",
+                                          "ethos": "random"
+                                        }
+                                      }
+                                    },
+                                    "if": {
+                                      "limit": {
+                                        "owner": {
+                                          "is_regular_empire": "yes",
+                                          "has_reduced_pop_origin": "no"
+                                        }
+                                      },
+                                      "while": {
+                                        "limit": {
+                                          "create_pop": {
+                                            "species": "owner_main_species",
+                                            "ethos": "random"
+                                          }
+                                        }
+                                      },
+                                      "if": {
+                                        "limit": {
+                                          "owner": {},
+                                          "while": {
+                                            "limit": {
+                                              "create_pop": {
+                                                "species": "owner_main_species",
+                                                "ethos": "random"
+                                              }
+                                            }
+                                          },
+                                          "if": {
+                                            "limit": {
+                                              "owner": {},
+                                              "while": {
+                                                "count": "20",
+                                                "create_pop": {
+                                                  "species": "owner_main_species",
+                                                  "ethos": "random"
+                                                }
+                                              }
+                                            },
+                                            "if": {
+                                              "limit": {
+                                                "owner": {},
+                                                "while": {
+                                                  "count": "4",
+                                                  "create_pop": {
+                                                    "species": "owner_main_species",
+                                                    "ethos": "random"
+                                                  }
+                                                }
+                                              },
+                                              "if": {
+                                                "limit": {
+                                                  "owner": {},
+                                                  "while": {
+                                                    "count": "9",
+                                                    "create_pop": {
+                                                      "species": "owner"
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "_comments": [
+                                                "# Permanent Employment: add Zombie Trait",
+                                                "# Cybernetic Creed: add Unique Traits",
+                                                "#Synthetic Fertility"
+                                              ]
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "_comments": [
+                "# Necrophage + Devouring Swarm: spawn Buildings"
+              ]
+            }
+          }
+        },
+        "_comments": [
+          "# Mechanist: spawn robot Pops; add Job-specific Traits; spawn Robot Assembly Plant"
+        ]
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 2830
+  },
+  "generate_servitor_assmiliator_secondary_pops": {
+    "generate_servitor_assmiliator_secondary_pops": {
+      "_comments": [
+        "# Ensuring that this country flag has been set by this point"
+      ],
+      "if": {
+        "limit": {
+          "owner": {
+            "OR": {
+              "last_created_species": {
+                "last_created_species": {}
+              }
+            },
+            "owner": {
+              "set_country_flag": "lithoid_subspecies"
+            }
+          },
+          "else": {
+            "owner": {
+              "set_country_flag": "non_lithoid_subspecies"
+            }
+          },
+          "_comments": [
+            "# Rogue Servitor & Driven Assimilator setting up pop special traits to make sure that their secondary species have all the cool traits. Spawning of the pops happens next.",
+            "# Rogue Servitor: set citizenship, living standard & preference; spawn Pops"
+          ],
+          "if": {
+            "limit": {
+              "owner": {},
+              "last_created_species": {
+                "if": {
+                  "limit": {
+                    "root": {
+                      "OR": {
+                        "is_planet_class": "pc_gaia"
+                      }
+                    }
+                  },
+                  "modify_species": {
+                    "species": "this",
+                    "ideal_planet_class": "home_planet"
+                  }
+                },
+                "set_citizenship_type": {
+                  "country": "root.owner",
+                  "type": "citizenship_limited"
+                },
+                "set_living_standard": {
+                  "country": "root.owner",
+                  "type": "living_standard_organic_trophy"
+                }
+              },
+              "while": {
+                "count": "5",
+                "create_pop": {
+                  "species": "last_created_species",
+                  "ethos": "random"
+                },
+                "last_created_pop": {
+                  "clear_ethos": "yes"
+                }
+              }
+            },
+            "_comments": [
+              "# Driven Assimilator: set citizenship, living standard & preference; spawn Pops"
+            ],
+            "if": {
+              "limit": {
+                "owner": {},
+                "last_created_species": {
+                  "if": {
+                    "limit": {
+                      "root": {
+                        "OR": {
+                          "is_planet_class": "pc_gaia"
+                        }
+                      }
+                    },
+                    "modify_species": {
+                      "species": "this",
+                      "ideal_planet_class": "home_planet"
+                    }
+                  },
+                  "set_citizenship_type": {
+                    "country": "root.owner",
+                    "type": "citizenship_full_machine"
+                  },
+                  "set_living_standard": {
+                    "country": "root.owner",
+                    "type": "living_standard_hive_mind"
+                  }
+                },
+                "while": {
+                  "count": "10",
+                  "create_pop": {
+                    "species": "last_created_species",
+                    "ethos": "random"
+                  },
+                  "last_created_pop": {
+                    "clear_ethos": "yes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 3260
+  },
+  "generate_home_planet_final_pass": {
+    "generate_home_planet_final_pass": {
+      "_comments": [
+        "# Adjust life-seeded colonies"
+      ],
+      "if": {
+        "limit": {
+          "owner": {
+            "has_origin": "origin_life_seeded"
+          }
+        },
+        "owner": {
+          "_comments": [
+            "# Nuke other colonies gained from advanced empire, etc"
+          ],
+          "every_owned_planet": {
+            "limit": {
+              "remove_all_buildings": "yes",
+              "destroy_colony": "yes"
+            },
+            "if": {
+              "limit": {
+                "NOR": {
+                  "has_valid_civic": "civic_machine_assimilator"
+                }
+              },
+              "change_dominant_species": {}
+            }
+          },
+          "if": {
+            "limit": {
+              "owner": {
+                "has_origin": "origin_lost_colony",
+                "is_gestalt": "no"
+              }
+            },
+            "owner": {
+              "capital_scope": {
+                "add_modifier": {}
+              }
+            },
+            "else_if": {
+              "limit": {
+                "owner": {
+                  "has_origin": "origin_lost_colony",
+                  "is_gestalt": "yes"
+                }
+              },
+              "owner": {
+                "capital_scope": {
+                  "add_modifier": {}
+                }
+              },
+              "if": {
+                "limit": {
+                  "owner": {
+                    "has_origin": "origin_broken_shackles"
+                  }
+                },
+                "owner": {
+                  "capital_scope": {
+                    "add_modifier": {
+                      "add_modifier": {}
+                    }
+                  },
+                  "if": {
+                    "limit": {
+                      "owner": {
+                        "has_origin": "origin_default"
+                      }
+                    },
+                    "owner": {
+                      "if": {
+                        "limit": {
+                          "owner": {
+                            "has_origin": "origin_machine"
+                          }
+                        },
+                        "owner": {
+                          "capital_scope": {
+                            "add_deposit": "d_machine_minerals",
+                            "solar_system": {
+                              "every_system_planet": {
+                                "limit": {
+                                  "colonizable_planet": "no",
+                                  "is_star": "no",
+                                  "is_asteroid": "no",
+                                  "NOT": {},
+                                  "change_pc": "pc_broken"
+                                },
+                                "every_system_planet": {
+                                  "limit": {
+                                    "colonizable_planet": "no",
+                                    "is_star": "no",
+                                    "is_planet_class": "pc_gas_giant"
+                                  },
+                                  "change_pc": "pc_molten",
+                                  "add_modifier": {
+                                    "every_moon": {
+                                      "limit": {
+                                        "colonizable_planet": "no"
+                                      },
+                                      "remove_planet": "yes"
+                                    },
+                                    "while": {
+                                      "limit": {
+                                        "planet_size >": "20"
+                                      },
+                                      "change_planet_size": "-6"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "if": {
+                            "limit": {
+                              "owner": {
+                                "any_owned_pop": {
+                                  "has_trait": "trait_exotic_metabolism"
+                                }
+                              }
+                            },
+                            "add_deposit": "d_exotic_mountain"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 3411
+  },
+  "void_dweller_home_planet_setup": {
+    "void_dweller_home_planet_setup": {
+      "set_planet_flag": "habitat_level_2",
+      "owner": {
+        "save_event_target_as": "void_dweller_owner"
+      },
+      "solar_system": {
+        "random_system_planet": {
+          "limit": {
+            "save_event_target_as": "habitat_1_planet"
+          },
+          "spawn_megastructure": {
+            "type": "major_orbital",
+            "planet": "event_target:habitat_1_planet",
+            "coords_from": "event_target:habitat_1_planet",
+            "owner": "event_target:void_dweller_owner",
+            "graphical_culture": "event_target:void_dweller_owner"
+          },
+          "random_system_planet": {
+            "limit": {
+              "save_event_target_as": "habitat_2_planet"
+            },
+            "spawn_megastructure": {
+              "type": "major_orbital",
+              "planet": "event_target:habitat_2_planet",
+              "coords_from": "event_target:habitat_2_planet",
+              "owner": "event_target:void_dweller_owner",
+              "graphical_culture": "event_target:void_dweller_owner"
+            },
+            "random_system_planet": {
+              "limit": {
+                "save_event_target_as": "habitat_3_planet"
+              },
+              "spawn_megastructure": {
+                "type": "major_orbital",
+                "planet": "event_target:habitat_3_planet",
+                "coords_from": "event_target:habitat_3_planet",
+                "owner": "event_target:void_dweller_owner",
+                "graphical_culture": "event_target:void_dweller_owner"
+              },
+              "if": {
+                "limit": {
+                  "event_target:void_dweller_owner": {
+                    "is_lithoid_empire": "yes"
+                  }
+                },
+                "random_system_planet": {
+                  "limit": {
+                    "has_deposit": "no",
+                    "is_colonizable": "no"
+                  },
+                  "add_deposit": "d_minerals_4",
+                  "set_planet_flag": "mining_planet"
+                }
+              },
+              "every_system_planet": {
+                "limit": {
+                  "create_mining_station": {},
+                  "_comments": [
+                    "# Change starting pre-scripted ideal into inhabitable worlds",
+                    "# First pre-sripted is a research system"
+                  ],
+                  "closest_system": {
+                    "limit": {
+                      "set_star_flag": "ideal_habitat_t1",
+                      "max_steps": "3",
+                      "random_system_planet": {
+                        "limit": {
+                          "is_colonizable": "yes",
+                          "is_colony": "no",
+                          "has_planet_flag": "prescripted_ideal"
+                        },
+                        "change_pc": "pc_frozen",
+                        "set_deposit": "d_engineering_3"
+                      },
+                      "while": {
+                        "count": "3",
+                        "random_system_planet": {
+                          "limit": {
+                            "is_star": "no",
+                            "is_colonizable": "no",
+                            "has_deposit": "no",
+                            "has_anomaly": "no"
+                          },
+                          "random_list": {
+                            "5": {
+                              "5": {
+                                "5": {
+                                  "1": {
+                                    "1": {
+                                      "1": {}
+                                    }
+                                  }
+                                },
+                                "_comments": [
+                                  "# Second pre-sripted is a resource system"
+                                ],
+                                "closest_system": {
+                                  "limit": {
+                                    "set_star_flag": "ideal_habitat_t2",
+                                    "max_steps": "6",
+                                    "random_system_planet": {
+                                      "limit": {
+                                        "is_colonizable": "yes",
+                                        "is_colony": "no",
+                                        "has_planet_flag": "prescripted_ideal"
+                                      },
+                                      "remove_planet_flag": "prescripted_ideal",
+                                      "change_pc": "pc_molten",
+                                      "set_deposit": "d_alloys_3",
+                                      "add_deposit": "d_minerals_4"
+                                    },
+                                    "while": {
+                                      "count": "3",
+                                      "random_system_planet": {
+                                        "limit": {
+                                          "is_star": "no",
+                                          "has_deposit": "no",
+                                          "has_anomaly": "no"
+                                        },
+                                        "random_list": {
+                                          "5": {
+                                            "5": {
+                                              "1": {
+                                                "1": {}
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "event_target:habitat_1_planet": {
+                                          "set_planet_flag": "habitat@PREV"
+                                        },
+                                        "owner": {
+                                          "give_starting_resources_effect": "yes",
+                                          "give_technology": {
+                                            "tech": "tech_habitat_1",
+                                            "message": "no"
+                                          },
+                                          "add_research_option": "tech_habitat_2",
+                                          "if": {
+                                            "limit": {
+                                              "owner": {
+                                                "NOR": {
+                                                  "is_eager_explorer_empire": "yes",
+                                                  "has_valid_civic": "civic_machine_assimilator"
+                                                }
+                                              }
+                                            },
+                                            "while": {
+                                              "count": "28",
+                                              "create_pop": {
+                                                "species": "owner_main_species"
+                                              }
+                                            }
+                                          },
+                                          "else": {
+                                            "give_technology": {
+                                              "tech": "tech_space_mining_1",
+                                              "message": "no"
+                                            }
+                                          },
+                                          "else_if": {
+                                            "limit": {
+                                              "owner": {
+                                                "is_eager_explorer_empire": "yes",
+                                                "OR": {
+                                                  "has_valid_civic": "civic_machine_assimilator"
+                                                }
+                                              }
+                                            },
+                                            "generate_servitor_assmiliator_secondary_pops": "yes",
+                                            "while": {
+                                              "limit": {
+                                                "create_pop": {
+                                                  "species": "owner_main_species"
+                                                }
+                                              }
+                                            },
+                                            "else": {
+                                              "generate_servitor_assmiliator_secondary_pops": "yes",
+                                              "while": {
+                                                "count": "2",
+                                                "add_district": {
+                                                  "district_type": "district_hab_mining",
+                                                  "ignore_cap": "yes"
+                                                }
+                                              },
+                                              "if": {
+                                                "limit": {
+                                                  "owner": {
+                                                    "is_gestalt": "no"
+                                                  }
+                                                },
+                                                "_comments": [
+                                                  "# Unity Building - Admin/Sacrificial Temple/Temple",
+                                                  "# Amenity Building - Holo-Theatres/Clinc/Sacrificial Temple/Temple/Commercial Zone",
+                                                  "#Aug Bazaar",
+                                                  "# Pharma State",
+                                                  "# Permanent Employment",
+                                                  "# Relentless Industrialists"
+                                                ],
+                                                "if": {
+                                                  "limit": {
+                                                    "owner": {},
+                                                    "add_building": "building_machine_assembly_plant"
+                                                  }
+                                                },
+                                                "else_if": {
+                                                  "limit": {
+                                                    "owner": {
+                                                      "is_hive_empire": "yes"
+                                                    }
+                                                  },
+                                                  "add_building": "building_spawning_pool"
+                                                },
+                                                "else": {
+                                                  "add_building": "building_machine_assembly_plant",
+                                                  "if": {
+                                                    "limit": {
+                                                      "owner": {
+                                                        "has_valid_civic": "civic_machine_servitor"
+                                                      }
+                                                    },
+                                                    "add_building": "building_organic_sanctuary"
+                                                  },
+                                                  "else": {
+                                                    "add_building": "building_uplink_node"
+                                                  }
+                                                }
+                                              },
+                                              "set_planet_entity": {
+                                                "entity": "habitat_phase_03_entity",
+                                                "graphical_culture": "owner"
+                                              },
+                                              "set_planet_size": "6",
+                                              "add_deposit": "d_arcane_replicator",
+                                              "add_district": {
+                                                "district_type": "district_hab_energy",
+                                                "ignore_cap": "yes"
+                                              },
+                                              "add_building": "building_hab_major_capital",
+                                              "_comments": [
+                                                "#Tactical Cogitators"
+                                              ]
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 3636
+  },
+  "add_district_and_planet_size_if_needed_effect": {
+    "add_district_and_planet_size_if_needed_effect": {
+      "if": {
+        "limit": {
+          "free_district_slots >": "1"
+        },
+        "add_district": {
+          "district_type": "$district$",
+          "ignore_cap": "yes"
+        }
+      },
+      "else_if": {
+        "limit": {
+          "free_district_slots": "0"
+        },
+        "change_planet_size": "1",
+        "add_district": {
+          "district_type": "$district$",
+          "ignore_cap": "yes"
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 4141
+  },
+  "add_district_if_possible_effect": {
+    "add_district_if_possible_effect": {
+      "if": {
+        "limit": {
+          "free_district_slots >": "1"
+        },
+        "add_district": {
+          "district_type": "$district$",
+          "ignore_cap": "yes"
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 4166
+  },
+  "give_starting_resources_effect": {
+    "give_starting_resources_effect": {
+      "if": {
+        "limit": {
+          "is_catalytic_empire": "yes"
+        },
+        "add_resource": {},
+        "if": {
+          "limit": {
+            "is_machine_empire": "yes"
+          },
+          "if": {
+            "limit": {
+              "OR": {
+                "has_valid_civic": "civic_machine_guided_sapience"
+              }
+            },
+            "if": {
+              "limit": {
+                "add_resource": {
+                  "add_resource": {},
+                  "else": {
+                    "add_resource": {
+                      "add_resource": {}
+                    },
+                    "else": {
+                      "if": {
+                        "limit": {
+                          "if": {
+                            "limit": {
+                              "OR": {
+                                "AND": {
+                                  "is_individual_machine": "no",
+                                  "has_country_flag": "lithoid_subspecies"
+                                },
+                                "has_origin": "origin_broken_shackles",
+                                "is_guided_sapience_empire": "yes"
+                              }
+                            },
+                            "add_resource": {
+                              "add_resource": {},
+                              "if": {
+                                "limit": {
+                                  "is_individual_machine": "yes",
+                                  "NOT": {},
+                                  "add_resource": {},
+                                  "else": {
+                                    "if": {
+                                      "limit": {
+                                        "OR": {
+                                          "AND": {
+                                            "is_individual_machine": "yes",
+                                            "has_country_flag": "non_lithoid_subspecies"
+                                          },
+                                          "has_origin": "origin_broken_shackles",
+                                          "is_guided_sapience_empire": "yes"
+                                        }
+                                      },
+                                      "add_resource": {
+                                        "add_resource": {},
+                                        "else": {
+                                          "add_resource": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 4180
+  },
+  "imperial_origin_start_effect": {
+    "imperial_origin_start_effect": {
+      "_comments": [
+        "# Main Backup"
+      ],
+      "if": {
+        "limit": {
+          "NOT": {},
+          "_comments": [
+            "# Find a random system, hopefully close to a player with the origin"
+          ],
+          "random_system": {
+            "limit": {
+              "has_owner": "no",
+              "has_special_star_flag_trigger": "no"
+            },
+            "weights": {
+              "base": "1",
+              "modifier": {
+                "factor": "100",
+                "closest_system": {
+                  "use_bypasses": "no",
+                  "min_steps": "2",
+                  "max_steps": "4",
+                  "limit": {
+                    "has_owner": "yes",
+                    "owner": {
+                      "has_origin": "origin_imperial_vassal"
+                    }
+                  }
+                }
+              }
+            },
+            "set_spawn_system_batch": "begin",
+            "_comments": [
+              "# Start Spawning Systems"
+            ],
+            "origin_spawn_system_effect": {
+              "_comments": [
+                "# Main Empire"
+              ],
+              "event_target:origin_imperial_homeland.solar_system": {
+                "origin_spawn_system_effect": {
+                  "origin_spawn_system_effect": {},
+                  "_comments": [
+                    "# Vassals"
+                  ],
+                  "event_target:imperial_homeland_2.solar_system": {
+                    "if": {
+                      "limit": {
+                        "NOT": {
+                          "galaxy_size": "tiny"
+                        }
+                      },
+                      "event_target:imperial_homeland_2.solar_system": {},
+                      "if": {
+                        "limit": {
+                          "NOR": {
+                            "galaxy_size": "small"
+                          }
+                        },
+                        "event_target:imperial_homeland_3.solar_system": {},
+                        "if": {
+                          "limit": {
+                            "NOR": {
+                              "galaxy_size": "medium"
+                            }
+                          },
+                          "event_target:imperial_homeland_3.solar_system": {},
+                          "set_spawn_system_batch": "end",
+                          "_comments": [
+                            "# Set up hyperlanes if they are missing"
+                          ],
+                          "imperial_origin_start_hyperlane_effect": {
+                            "ORIGINAL_STAR_SYSTEM": "event_target:imperial_homeland_4.solar_system",
+                            "SECOND_STAR_SYSTEM": "event_target:imperial_homeland_2.solar_system"
+                          },
+                          "if": {
+                            "limit": {
+                              "exists": "event_target:imperial_homeland_7"
+                            },
+                            "imperial_origin_start_hyperlane_effect": {
+                              "ORIGINAL_STAR_SYSTEM": "event_target:imperial_homeland_7.solar_system",
+                              "SECOND_STAR_SYSTEM": "event_target:imperial_homeland_3.solar_system"
+                            }
+                          }
+                        }
+                      },
+                      "else_if": {
+                        "limit": {
+                          "OR": {
+                            "NOT": {
+                              "NOT": {}
+                            },
+                            "event_target:origin_imperial_homeland.solar_system": {
+                              "origin_spawn_system_effect": {
+                                "origin_spawn_system_effect": {
+                                  "imperial_origin_start_hyperlane_effect": {
+                                    "ORIGINAL_STAR_SYSTEM": "event_target:imperial_homeland_3.solar_system",
+                                    "SECOND_STAR_SYSTEM": "event_target:origin_imperial_homeland.solar_system"
+                                  }
+                                }
+                              },
+                              "_comments": [
+                                "# Vassal Backup"
+                              ],
+                              "if": {
+                                "limit": {
+                                  "any_system": {
+                                    "NOT": {},
+                                    "imperial_origin_vassal_backup_effect": {
+                                      "SYSTEM_FLAG": "overlord_system_2_flag",
+                                      "INITIALIZER": "overlord_system_4_init",
+                                      "ORIGINAL_STAR_SYSTEM": "event_target:imperial_homeland_4.solar_system"
+                                    }
+                                  },
+                                  "if": {
+                                    "limit": {
+                                      "any_system": {
+                                        "NOR": {
+                                          "galaxy_size": "tiny",
+                                          "any_system": {}
+                                        },
+                                        "imperial_origin_vassal_backup_effect": {
+                                          "SYSTEM_FLAG": "overlord_system_2_flag",
+                                          "INITIALIZER": "overlord_system_5_init",
+                                          "ORIGINAL_STAR_SYSTEM": "event_target:imperial_homeland_5.solar_system"
+                                        }
+                                      },
+                                      "if": {
+                                        "limit": {
+                                          "any_system": {
+                                            "NOR": {
+                                              "galaxy_size": "small",
+                                              "any_system": {}
+                                            },
+                                            "imperial_origin_vassal_backup_effect": {
+                                              "SYSTEM_FLAG": "overlord_system_3_flag",
+                                              "INITIALIZER": "overlord_system_6_init",
+                                              "ORIGINAL_STAR_SYSTEM": "event_target:imperial_homeland_6.solar_system"
+                                            }
+                                          },
+                                          "if": {
+                                            "limit": {
+                                              "any_system": {
+                                                "NOR": {
+                                                  "galaxy_size": "medium",
+                                                  "any_system": {}
+                                                },
+                                                "imperial_origin_vassal_backup_effect": {
+                                                  "SYSTEM_FLAG": "overlord_system_3_flag",
+                                                  "INITIALIZER": "overlord_system_7_init",
+                                                  "ORIGINAL_STAR_SYSTEM": "event_target:imperial_homeland_7.solar_system"
+                                                }
+                                              },
+                                              "_comments": [
+                                                "# Modifier to reduce influence",
+                                                "# Rival Country",
+                                                "# Startup event for vassals"
+                                              ],
+                                              "event_target:origin_imperial_homeland_country": {
+                                                "add_modifier": {
+                                                  "modifier": "imperial_vassal_ai_modifier",
+                                                  "days": "-1"
+                                                }
+                                              },
+                                              "if": {
+                                                "limit": {
+                                                  "OR": {
+                                                    "AND": {
+                                                      "is_multiplayer": "yes",
+                                                      "NOT": {
+                                                        "count_country": {
+                                                          "count >": "2",
+                                                          "limit": {
+                                                            "is_ai": "no",
+                                                            "has_origin": "origin_imperial_vassal"
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "is_multiplayer": "no"
+                                                  }
+                                                },
+                                                "random_country": {
+                                                  "limit": {
+                                                    "is_ai": "yes",
+                                                    "has_origin": "origin_imperial_vassal"
+                                                  },
+                                                  "set_country_flag": "origin_imperial_vassal_rival_country"
+                                                }
+                                              },
+                                              "every_playable_country": {
+                                                "limit": {
+                                                  "country_event": {
+                                                    "if": {
+                                                      "limit": {
+                                                        "is_ai": "no"
+                                                      },
+                                                      "country_event": {
+                                                        "id": "origin.5703",
+                                                        "days": "1"
+                                                      }
+                                                    },
+                                                    "else": {
+                                                      "country_event": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 4269
+  },
+  "imperial_origin_start_hyperlane_effect": {
+    "imperial_origin_start_hyperlane_effect": {
+      "if": {
+        "limit": {
+          "NOT": {
+            "$ORIGINAL_STAR_SYSTEM$": {
+              "has_hyperlane_to": "$SECOND_STAR_SYSTEM$"
+            }
+          }
+        },
+        "add_hyperlane": {
+          "from": "$ORIGINAL_STAR_SYSTEM$",
+          "to": "$SECOND_STAR_SYSTEM$"
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 4508
+  },
+  "origin_spawn_system_effect": {
+    "origin_spawn_system_effect": {
+      "spawn_system": {
+        "min_distance": "10",
+        "max_distance": "30",
+        "max_jumps": "0",
+        "hyperlane": "yes",
+        "initializer": "$INITIALIZER$"
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 4524
+  },
+  "imperial_origin_vassal_backup_effect": {
+    "imperial_origin_vassal_backup_effect": {
+      "random_system": {
+        "limit": {
+          "has_star_flag": "$SYSTEM_FLAG$"
+        },
+        "save_event_target_as": "this_system",
+        "origin_spawn_system_effect": {
+          "imperial_origin_start_hyperlane_effect": {
+            "ORIGINAL_STAR_SYSTEM": "$ORIGINAL_STAR_SYSTEM$",
+            "SECOND_STAR_SYSTEM": "event_target:this_system"
+          }
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 4535
+  },
+  "toxic_knights_order_habitat_setup": {
+    "toxic_knights_order_habitat_setup": {
+      "owner": {
+        "save_event_target_as": "toxic_knights_owner",
+        "add_research_option": "tech_habitat_1",
+        "if": {
+          "limit": {
+            "OR": {
+              "is_lithoid_empire": "no",
+              "is_catalytic_empire": "yes"
+            }
+          },
+          "give_technology": {
+            "tech": "tech_hydroponics",
+            "message": "no"
+          }
+        },
+        "else": {
+          "give_technology": {
+            "tech": "tech_space_mining_1",
+            "message": "no"
+          }
+        }
+      },
+      "while": {
+        "count": "7",
+        "random_owned_pop": {},
+        "remove_district": "district_generator",
+        "remove_building": "building_commercial_zone",
+        "add_deposit": "d_toxic_god_envenomed_seas",
+        "solar_system": {
+          "random_system_planet": {
+            "limit": {
+              "set_owner": "event_target:toxic_knights_owner",
+              "while": {
+                "count": "4",
+                "create_pop": {
+                  "species": "owner_main_species"
+                }
+              },
+              "set_planet_size": "6",
+              "set_planet_flag": "habitat",
+              "set_colony_type": "col_habitat_fortress",
+              "set_planet_entity": {
+                "entity": "habitat_phase_03_entity",
+                "graphical_culture": "owner"
+              },
+              "add_deposit": "d_knights_calibrator",
+              "add_district_and_planet_size_if_needed_effect": {
+                "district": "district_orders_demesne"
+              },
+              "add_building": "building_order_keep",
+              "event_target:toxic_knights_owner.capital_scope": {
+                "set_planet_flag": "habitat@PREV"
+              }
+            },
+            "every_system_planet": {
+              "limit": {
+                "create_mining_station": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 4554
+  },
+  "create_life_seeded_planet": {
+    "create_life_seeded_planet": {
+      "set_planet_size": "30",
+      "add_deposit": "d_teeming_reef",
+      "_comments": [
+        "# 5 + 3 energy",
+        "# 5 + 3 mining",
+        "# 5 + 3 farming (lithoids swap 3 for minerals)",
+        "# In case the owner doesn't exist, as when creating Life-Seeded pre-ftls."
+      ],
+      "if": {
+        "limit": {
+          "exists": "owner",
+          "owner": {
+            "is_lithoid_empire": "yes"
+          }
+        },
+        "add_deposit": "d_rich_mountain"
+      },
+      "else_if": {
+        "limit": {
+          "exists": "owner",
+          "owner": {
+            "is_lithoid_empire": "no"
+          }
+        },
+        "add_deposit": "d_black_soil"
+      },
+      "else": {
+        "random_list": {
+          "50": {
+            "50": {}
+          },
+          "_comments": [
+            "# 1 random medium deposit"
+          ],
+          "random_list": {
+            "33": {
+              "33": {
+                "33": {},
+                "add_deposit": "d_crystalline_caverns"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 4640
+  },
+  "create_ocean_paradise_planet": {
+    "create_ocean_paradise_planet": {
+      "if": {
+        "limit": {
+          "exists": "owner",
+          "owner": {},
+          "add_modifier": {},
+          "else": {
+            "add_modifier": {},
+            "clear_deposits": "yes",
+            "clear_blockers": "yes",
+            "add_deposit": "d_crystal_reef",
+            "_comments": [
+              "# Food",
+              "# Minerals",
+              "# Energy",
+              "# Bonus"
+            ],
+            "random_list": {
+              "50": {
+                "50": {},
+                "_comments": [
+                  "# Planetscapers"
+                ],
+                "if": {
+                  "limit": {
+                    "exists": "owner",
+                    "owner": {
+                      "is_environmental_architects_empire": "yes"
+                    }
+                  },
+                  "add_random_natural_blocker_and_give_tech": "yes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 4693
+  },
+  "fear_of_the_dark_binary_planets": {
+    "fear_of_the_dark_binary_planets": {
+      "save_event_target_as": "fotd_country",
+      "random_planet_within_border": {
+        "limit": {
+          "has_planet_flag": "divider_flag"
+        },
+        "create_mining_station": {
+          "owner": "event_target:fotd_country"
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 4741
+  },
+  "low_tech_start_add_research_options_effect": {
+    "low_tech_start_add_research_options_effect": {
+      "add_research_option": "tech_planetary_government"
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 4780
+  },
+  "fruitful_start_effect": {
+    "fruitful_start_effect": {
+      "set_country_flag": "tiyanki_encountered",
+      "_comments": [
+        "# Establish first contact with the Tyanki",
+        "# Set up the event chain container for the special proects",
+        "# Set up event for getting the Tyanki technologies later"
+      ],
+      "create_tiyanki_country": "yes",
+      "begin_event_chain": {
+        "event_chain": "fruitful_partnership_chain",
+        "target": "this"
+      },
+      "country_event": {
+        "random_owned_starbase": {
+          "set_starbase_building": {
+            "slot": "1",
+            "building": "feeder"
+          }
+        },
+        "capital_scope.solar_system": {
+          "_comments": [
+            "# Spawn critters to a nearby system"
+          ],
+          "random_neighbor_system": {
+            "set_star_flag": "tiyanki_plantoid_system",
+            "random_system_planet": {
+              "limit": {
+                "event_target:tiyanki_country": {
+                  "create_fleet": {
+                    "name": "NAME_Tiyanki_Space_Whale",
+                    "effect": {
+                      "set_owner": "event_target:tiyanki_country",
+                      "create_ship": {
+                        "design": "NAME_Tiyanki_Hatchling"
+                      },
+                      "set_location": "prevprev",
+                      "set_fleet_stance": "passive",
+                      "set_aggro_range_measure_from": "self",
+                      "set_aggro_range": "0",
+                      "set_fleet_flag": "NAME_Tiyanki_Space_Whale",
+                      "queue_actions": {
+                        "wait": {
+                          "duration": "320",
+                          "random": "80"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "_comments": [
+              "# Imprint the space amoeba near your home so they will immediately go to your home system to eat,",
+              "# instead of vanishing into a natural wormhole"
+            ],
+            "closest_system": {
+              "limit": {
+                "has_star_flag": "tiyanki_plantoid_system"
+              },
+              "every_fleet_in_system": {
+                "limit": {
+                  "owner": {
+                    "is_country_type": "tiyanki"
+                  }
+                },
+                "set_fleet_flag": "fruitful_lured_critter",
+                "auto_move_to_planet": {
+                  "target": "prev.star",
+                  "clear_auto_move_on_arrival": "yes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 4791
+  },
+  "lost_colony_generate_parent_effect": {
+    "lost_colony_generate_parent_effect": {
+      "if": {
+        "limit": {
+          "event_target:lost_colony_child": {
+            "is_hive_empire": "yes"
+          }
+        },
+        "if": {
+          "limit": {
+            "has_overlord_dlc": "yes"
+          },
+          "create_country": {
+            "species": "event_target:lost_colony_child",
+            "name_list": "event_target:lost_colony_child",
+            "type": "default",
+            "origin": "origin_progenitor_hive",
+            "authority": "auth_hive_mind",
+            "civics": {
+              "civic": "random"
+            }
+          }
+        },
+        "else": {
+          "create_country": {
+            "species": "event_target:lost_colony_child",
+            "name_list": "event_target:lost_colony_child",
+            "type": "default",
+            "origin": "origin_default",
+            "authority": "auth_hive_mind",
+            "civics": {
+              "civic": "random"
+            }
+          }
+        }
+      },
+      "else_if": {
+        "limit": {
+          "event_target:lost_colony_child": {
+            "is_machine_empire": "yes"
+          }
+        },
+        "create_country": {
+          "species": "event_target:lost_colony_child",
+          "name_list": "event_target:lost_colony_child",
+          "type": "default",
+          "origin": "origin_default",
+          "authority": "auth_machine_intelligence",
+          "civics": {
+            "civic": "random"
+          }
+        }
+      },
+      "else": {
+        "create_country": {
+          "species": "event_target:lost_colony_child",
+          "name_list": "event_target:lost_colony_child",
+          "type": "default",
+          "origin": "origin_default",
+          "government_restrictions": {
+            "authority": {
+              "NOR": {
+                "value": "auth_hive_mind"
+              }
+            }
+          }
+        }
+      },
+      "last_created_country": {
+        "save_event_target_as": "lost_colony_parent",
+        "add_resource": {
+          "minerals": "2400",
+          "energy": "2400",
+          "food": "2400",
+          "alloys": "800",
+          "consumer_goods": "1200",
+          "influence": "600"
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 4869
+  },
+  "lost_colony_generate_parent_human_effect": {
+    "lost_colony_generate_parent_human_effect": {
+      "if": {
+        "limit": {
+          "event_target:human_lost_colony": {
+            "is_hive_empire": "yes"
+          }
+        },
+        "if": {
+          "limit": {
+            "has_overlord_dlc": "yes"
+          },
+          "random_list": {
+            "50": {
+              "create_country": {
+                "species": "event_target:human_species",
+                "name_list": "HUMAN2",
+                "type": "default",
+                "origin": "origin_progenitor_hive",
+                "authority": "auth_hive_mind",
+                "civics": {
+                  "civic": "random"
+                }
+              }
+            }
+          }
+        },
+        "else": {
+          "random_list": {
+            "50": {
+              "create_country": {
+                "species": "event_target:human_species",
+                "name_list": "HUMAN2",
+                "type": "default",
+                "origin": "origin_default",
+                "authority": "auth_hive_mind",
+                "civics": {
+                  "civic": "random"
+                }
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "random_list": {
+          "50": {
+            "create_country": {
+              "species": "event_target:human_species",
+              "name_list": "HUMAN2",
+              "type": "default",
+              "origin": "origin_default",
+              "government_restrictions": {
+                "authority": {
+                  "NOR": {
+                    "value": "auth_hive_mind"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "last_created_country": {
+        "save_event_target_as": "lost_colony_parent",
+        "add_resource": {
+          "minerals": "2400",
+          "energy": "2400",
+          "food": "2400",
+          "alloys": "800",
+          "consumer_goods": "1200",
+          "influence": "600"
+        }
+      }
+    },
+    "_source_file": "01_start_of_game_effects.txt",
+    "_line_number": 4953
+  }
+}

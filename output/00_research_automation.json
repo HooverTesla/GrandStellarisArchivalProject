@@ -1,0 +1,44 @@
+{
+  "automate_research_planet": {
+    "automate_research_planet": {
+      "category": "planet_automation_designation_construction",
+      "available": {
+        "has_research_designation": "yes"
+      },
+      "prio_districts": {},
+      "buildings": {
+        "1": {
+          "building": "building_capital",
+          "available": {
+            "always": "yes"
+          }
+        },
+        "2": {
+          "building": "building_institute",
+          "available": {
+            "NOR": {
+              "owner": {
+                "owner": {}
+              }
+            },
+            "2": {
+              "building": "building_supercomputer",
+              "available": {
+                "OR": {
+                  "owner": {
+                    "owner": {}
+                  }
+                },
+                "3": {
+                  "building": "building_research_lab_1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_research_automation.txt",
+    "_line_number": 5
+  }
+}

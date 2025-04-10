@@ -1,0 +1,125 @@
+{
+  "planet_event": {
+    "planet_event": {
+      "id": "unrest.161",
+      "title": "unrest.161.name",
+      "desc": "unrest.161.desc",
+      "picture": "GFX_evt_announcement",
+      "show_sound": "event_announcement",
+      "location": "event_target:revolt_planet",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "event_target:revolt_planet",
+        "is_same_value": "event_target:revolt_planet"
+      },
+      "immediate": {
+        "save_event_target_as": "revolt_planet",
+        "add_modifier": {
+          "modifier": "revolt_suppressed",
+          "days": "5400"
+        }
+      },
+      "option": {
+        "name": "unrest.161.a",
+        "tooltip": {
+          "add_modifier": {
+            "modifier": "revolt_suppressed",
+            "days": "5400"
+          }
+        },
+        "custom_tooltip": "unrest.161.a.tooltip"
+      }
+    },
+    "_source_file": "unrest_events.txt",
+    "_line_number": 2258
+  },
+  "situation_event": {
+    "situation_event": {
+      "id": "unrest.163",
+      "title": "unrest.163.name",
+      "desc": "unrest.163.desc",
+      "picture": "GFX_evt_announcement",
+      "show_sound": "event_announcement",
+      "location": "target",
+      "situation": "this",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_situation_flag": "slave_revolt",
+        "target": {
+          "count_owned_pop": {
+            "count": "0",
+            "limit": {
+              "is_enslaved": "yes",
+              "is_sapient": "yes",
+              "pop_has_happiness": "yes"
+            }
+          }
+        }
+      },
+      "immediate": {
+        "target": {
+          "save_event_target_as": "revolt_planet"
+        }
+      },
+      "option": {
+        "name": "EXCELLENT",
+        "cleanup_separatism_situation": "yes",
+        "destroy_situation": "this"
+      }
+    },
+    "_source_file": "unrest_events.txt",
+    "_line_number": 2292
+  },
+  "country_event": {
+    "country_event": {
+      "id": "unrest.4220",
+      "title": "unrest.4220.name",
+      "desc": {
+        "text": "unrest.4220.desc.machine",
+        "trigger": {
+          "is_hive_empire": "yes"
+        }
+      },
+      "location": "event_target:rebel_planet",
+      "diplomatic": "yes",
+      "picture_event_data": {
+        "portrait": "event_target:exiled_rebel",
+        "planet_background": "event_target:rebel_planet",
+        "city_level": "event_target:rebel_planet",
+        "room": "event_target:old_owner.ruler"
+      },
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "EXCELLENT",
+        "custom_tooltip": "unrest.4220.tooltip"
+      }
+    },
+    "_source_file": "unrest_events.txt",
+    "_line_number": 2006
+  },
+  "pop_event": {
+    "pop_event": {
+      "id": "unrest.4350",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "trigger": {
+        "from": {
+          "any_targeting_situation": {
+            "is_situation_type": "situation_planetary_revolt"
+          }
+        }
+      },
+      "immediate": {
+        "from": {
+          "random_targeting_situation": {
+            "limit": {
+              "add_situation_progress": "5"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "unrest_events.txt",
+    "_line_number": 2078
+  }
+}

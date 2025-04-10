@@ -1,0 +1,90 @@
+{
+  "special_project": {
+    "special_project": {
+      "key": "LOGISTIC_REMODEL_OFFWORLD",
+      "picture": "GFX_evt_space_hangar",
+      "icon": "gfx/interface/icons/situation_log/situation_log_federation.dds",
+      "days_to_research": "120",
+      "sound": "no",
+      "tech_department": "engineering_technology",
+      "location": "yes",
+      "timelimit": "3600",
+      "event_scope": "ship_event",
+      "requirements": {
+        "shipclass_constructor": "1"
+      },
+      "on_success": {
+        "owner": {
+          "country_event": {
+            "if": {
+              "limit": {
+                "exists": "federation",
+                "count_federation_ally": {
+                  "count": "0",
+                  "limit": {
+                    "NOT": {
+                      "OR": {
+                        "AND": {
+                          "has_special_project": "LOGISTIC_REMODEL_OFFWORLD",
+                          "NOT": {
+                            "NOT": {},
+                            "AND": {
+                              "has_special_project": "LOGISTIC_REMODEL",
+                              "NOT": {
+                                "NOT": {}
+                              }
+                            }
+                          }
+                        },
+                        "federation": {
+                          "every_member": {
+                            "country_event": {}
+                          }
+                        }
+                      }
+                    },
+                    "on_fail": {
+                      "if": {
+                        "limit": {
+                          "exists": "federation",
+                          "count_federation_ally": {
+                            "count": "0",
+                            "limit": {
+                              "NOT": {
+                                "OR": {
+                                  "AND": {
+                                    "has_special_project": "LOGISTIC_REMODEL_OFFWORLD",
+                                    "NOT": {
+                                      "NOT": {},
+                                      "AND": {
+                                        "has_special_project": "LOGISTIC_REMODEL",
+                                        "NOT": {
+                                          "NOT": {}
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "federation": {
+                                    "every_member": {
+                                      "country_event": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_projects_federations.txt",
+    "_line_number": 1148
+  }
+}

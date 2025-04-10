@@ -1,0 +1,164 @@
+{
+  "fleet_event": {
+    "fleet_event": {
+      "id": "origin.1415",
+      "title": "origin.1415.name",
+      "desc": "origin.1415.desc",
+      "picture": "GFX_evt_resource_cache",
+      "show_sound": "event_construction",
+      "archaeology": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "from": {},
+        "after": {
+          "from": {
+            "clear_global_event_target": "relentless_homeworld"
+          },
+          "option": {
+            "name": "OK",
+            "small_artifact_reward": "yes",
+            "owner": {
+              "hidden_effect": {
+                "owner": {
+                  "country_event": {}
+                },
+                "if": {
+                  "limit": {
+                    "NOR": {
+                      "has_technology": "tech_archaeo_pk_devolving_beam",
+                      "has_tech_option": "tech_archaeo_pk_devolving_beam"
+                    }
+                  },
+                  "add_research_option": "tech_archaeo_pk_devolving_beam",
+                  "add_tech_progress": {
+                    "tech": "tech_archaeo_pk_devolving_beam",
+                    "progress": "0.25"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_2.txt",
+    "_line_number": 2999
+  },
+  "country_event": {
+    "country_event": {
+      "id": "origin.1420",
+      "title": "origin.1420.name",
+      "desc": "origin.1420.desc",
+      "picture": "GFX_evt_unity_symbol",
+      "show_sound": "event_default",
+      "event_chain": "relentless_pursuit_chain",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "EXCELLENT",
+        "owner": {
+          "add_modifier": {
+            "modifier": "goes_around_comes_around",
+            "days": "-1"
+          },
+          "hidden_effect": {
+            "end_event_chain": "relentless_pursuit_chain",
+            "remove_modifier": "spurred_by_the_past"
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_2.txt",
+    "_line_number": 2945
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "origin.1011",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "create_archaeological_site": "site_from_gateway_sent",
+        "solar_system": {
+          "random_system_planet": {
+            "limit": {
+              "owner": {
+                "country_event": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_2.txt",
+    "_line_number": 341
+  },
+  "event": {
+    "event": {
+      "id": "origin.1334",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_playable_country": {
+          "OR": {
+            "has_country_flag": "relentless_pursuit"
+          }
+        }
+      },
+      "immediate": {
+        "random_playable_country": {
+          "limit": {
+            "OR": {
+              "has_country_flag": "relentless_pursuit"
+            }
+          },
+          "capital_scope": {
+            "solar_system": {
+              "random_system_planet": {
+                "limit": {
+                  "is_star": "no",
+                  "is_homeworld": "no"
+                },
+                "create_ambient_object": {
+                  "type": "fusion_drive_trail_object",
+                  "entity_offset": {
+                    "entity_offset_height": {
+                      "location": "this"
+                    },
+                    "last_created_ambient_object": {
+                      "save_global_event_target_as": "fusion_drive_trail",
+                      "set_location": {
+                        "target": "prev",
+                        "distance": "30",
+                        "angle": "random"
+                      }
+                    }
+                  }
+                }
+              },
+              "if": {
+                "limit": {
+                  "has_country_flag": "relentless_pursuit"
+                },
+                "country_event": {
+                  "remove_country_flag": "relentless_pursuit"
+                },
+                "else_if": {
+                  "limit": {
+                    "has_country_flag": "intercepting_history"
+                  },
+                  "country_event": {
+                    "remove_country_flag": "intercepting_history"
+                  },
+                  "else": {
+                    "country_event": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_2.txt",
+    "_line_number": 2307
+  }
+}

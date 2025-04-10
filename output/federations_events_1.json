@@ -1,0 +1,159 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "fedev.655",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "federation"
+      },
+      "immediate": {
+        "federation": {
+          "add_modifier": {}
+        }
+      }
+    },
+    "_source_file": "federations_events_1.txt",
+    "_line_number": 3359
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "fedev.9475",
+      "title": "fedev.9475.name",
+      "desc": "fedev.9475.desc",
+      "picture": "GFX_evt_unidentified_ship",
+      "show_sound": "event_energy_field",
+      "archaeology": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "fromfrom": {},
+        "after": {
+          "fromfrom": {},
+          "option": {
+            "name": "SPLENDID",
+            "small_artifact_reward": "yes",
+            "create_lesser_messenger": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "federations_events_1.txt",
+    "_line_number": 2693
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "fedev.9500",
+      "title": "fedev.9500.name",
+      "desc": "fedev.9500.desc",
+      "picture": "GFX_evt_juggernaut",
+      "show_sound": "event_default",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "is_ship_size": "juggernaut",
+        "owner": {
+          "NOT": {}
+        },
+        "immediate": {
+          "owner": {
+            "set_country_flag": "juggernaut_constructed"
+          },
+          "every_playable_country": {
+            "limit": {
+              "has_communications": "root.owner",
+              "NOT": {
+                "has_intel_level": {
+                  "who": "root.owner",
+                  "category": "military",
+                  "level >": "2"
+                }
+              },
+              "country_event": {}
+            },
+            "after": {},
+            "option": {
+              "name": "fedev.9500.a"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_events_1.txt",
+    "_line_number": 2731
+  },
+  "event": {
+    "event": {
+      "id": "fedev.600",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "mid_game_years_passed >": "1",
+        "any_playable_country": {
+          "exists": "federation",
+          "has_federation": "yes",
+          "any_system_within_border": {
+            "has_system_trade_value >": "75"
+          },
+          "is_at_war": "no",
+          "federation": {
+            "has_federation_type": "trade_federation",
+            "NOR": {
+              "has_federation_flag": "logistic_remodel_ongoing"
+            }
+          }
+        }
+      },
+      "immediate": {
+        "every_playable_country": {
+          "limit": {
+            "exists": "federation",
+            "has_federation": "yes",
+            "is_federation_leader": "yes",
+            "federation": {
+              "has_federation_type": "trade_federation",
+              "NOR": {
+                "has_federation_flag": "logistic_remodel_ongoing"
+              },
+              "any_member": {
+                "is_at_war": "no",
+                "any_system_within_border": {
+                  "has_system_trade_value >": "75"
+                }
+              }
+            }
+          },
+          "federation": {
+            "set_federation_flag": "logistic_remodel_ongoing",
+            "save_event_target_as": "logistic_remodelling_federation",
+            "every_member": {
+              "country_event": {}
+            }
+          }
+        },
+        "after": {
+          "every_playable_country": {
+            "limit": {
+              "exists": "federation",
+              "has_federation": "yes",
+              "is_federation_leader": "yes",
+              "federation": {
+                "has_federation_type": "trade_federation",
+                "NOR": {
+                  "has_federation_flag": "logistic_remodel_ongoing"
+                },
+                "any_member": {
+                  "is_at_war": "no",
+                  "any_system_within_border": {
+                    "has_system_trade_value >": "75"
+                  }
+                }
+              }
+            },
+            "country_event": {}
+          }
+        }
+      }
+    },
+    "_source_file": "federations_events_1.txt",
+    "_line_number": 2921
+  }
+}

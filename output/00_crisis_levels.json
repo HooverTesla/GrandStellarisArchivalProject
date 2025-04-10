@@ -1,0 +1,325 @@
+{
+  "crisis_level_1": {
+    "crisis_level_1": {
+      "required_crisis_currency": "0",
+      "_comments": [
+        "# REQUIREMENTS",
+        "# REWARDS"
+      ],
+      "perks": {},
+      "on_unlock": {
+        "hidden_effect": {
+          "owner": {
+            "country_event": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_crisis_levels.txt",
+    "_line_number": 16
+  },
+  "crisis_level_2": {
+    "crisis_level_2": {
+      "_comments": [
+        "# REQUIREMENTS",
+        "# REWARDS"
+      ],
+      "allow": {
+        "custom_tooltip": {
+          "success_text": "crisis_level_2_req_clear_tooltip",
+          "fail_text": "crisis_level_2_req_tooltip",
+          "has_country_flag": "crisis_special_project_1_complete"
+        },
+        "hidden_trigger": {
+          "NOT": {
+            "has_active_event": {}
+          }
+        }
+      },
+      "required_crisis_currency": "1000",
+      "perks": {},
+      "on_unlock": {
+        "hidden_effect": {
+          "owner": {
+            "add_event_chain_counter": {
+              "event_chain": "become_the_crisis_chain",
+              "counter": "crisis_level_reached",
+              "amount": "1"
+            },
+            "country_event": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_crisis_levels.txt",
+    "_line_number": 36
+  },
+  "crisis_level_3": {
+    "crisis_level_3": {
+      "_comments": [
+        "# REQUIREMENTS",
+        "# REWARDS"
+      ],
+      "allow": {
+        "custom_tooltip": {
+          "success_text": "crisis_level_3_req_clear_tooltip",
+          "fail_text": "crisis_level_3_req_tooltip",
+          "has_country_flag": "crisis_special_project_2_complete"
+        },
+        "hidden_trigger": {
+          "NOT": {
+            "has_active_event": {}
+          }
+        }
+      },
+      "required_crisis_currency": "2000",
+      "perks": {},
+      "on_unlock": {
+        "hidden_effect": {
+          "owner": {
+            "add_event_chain_counter": {
+              "event_chain": "become_the_crisis_chain",
+              "counter": "crisis_level_reached",
+              "amount": "1"
+            },
+            "country_event": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_crisis_levels.txt",
+    "_line_number": 75
+  },
+  "crisis_level_4": {
+    "crisis_level_4": {
+      "_comments": [
+        "# REQUIREMENTS",
+        "# REWARDS"
+      ],
+      "allow": {
+        "custom_tooltip": {
+          "success_text": "crisis_level_4_req_clear_tooltip",
+          "fail_text": "crisis_level_4_req_tooltip",
+          "has_country_flag": "crisis_special_project_3_complete"
+        },
+        "hidden_trigger": {
+          "NOT": {
+            "has_active_event": {}
+          }
+        }
+      },
+      "required_crisis_currency": "5000",
+      "perks": {},
+      "on_unlock": {
+        "hidden_effect": {
+          "owner": {
+            "add_event_chain_counter": {
+              "event_chain": "become_the_crisis_chain",
+              "counter": "crisis_level_reached",
+              "amount": "1"
+            },
+            "country_event": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_crisis_levels.txt",
+    "_line_number": 115
+  },
+  "crisis_level_5": {
+    "crisis_level_5": {
+      "_comments": [
+        "# REQUIREMENTS",
+        "# REWARDS"
+      ],
+      "allow": {
+        "custom_tooltip": {
+          "success_text": "crisis_level_5_req_clear_tooltip",
+          "fail_text": "crisis_level_5_req_tooltip",
+          "has_country_flag": "crisis_special_project_4_complete"
+        },
+        "hidden_trigger": {
+          "NOT": {
+            "has_active_event": {}
+          }
+        },
+        "is_subject": "no"
+      },
+      "required_crisis_currency": "10000",
+      "perks": {},
+      "on_unlock": {
+        "owner": {
+          "if": {
+            "limit": {
+              "leave_alliance": {},
+              "tooltip": {
+                "if": {
+                  "limit": {
+                    "is_galactic_community_formed": "yes",
+                    "is_galactic_community_member": "yes"
+                  },
+                  "remove_from_galactic_community": "yes"
+                }
+              }
+            },
+            "hidden_effect": {
+              "declare_crisis_effect": "yes",
+              "_comments": [
+                "# force Declare Crisis resolution through an appropriate party"
+              ],
+              "owner": {
+                "room_name_override": "",
+                "add_event_chain_counter": {
+                  "event_chain": "become_the_crisis_chain",
+                  "counter": "crisis_level_reached",
+                  "amount": "1"
+                },
+                "end_event_chain": "become_the_crisis_chain",
+                "country_event": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_crisis_levels.txt",
+    "_line_number": 155
+  },
+  "crisis_cosmogenesis_level_1": {
+    "crisis_cosmogenesis_level_1": {
+      "required_crisis_currency": "0",
+      "_comments": [
+        "# REQUIREMENTS",
+        "# REWARDS"
+      ],
+      "perks": {},
+      "on_unlock": {
+        "add_cosmogenesis_level_1_perks": "yes",
+        "hidden_effect": {
+          "owner": {
+            "country_event": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_crisis_levels.txt",
+    "_line_number": 215
+  },
+  "crisis_cosmogenesis_level_2": {
+    "crisis_cosmogenesis_level_2": {
+      "_comments": [
+        "# REQUIREMENTS",
+        "# REWARDS"
+      ],
+      "allow": {
+        "custom_tooltip": {
+          "success_text": "cosmogenesis_level_2_req_clear_tooltip",
+          "fail_text": "cosmogenesis_level_2_req_tooltip",
+          "has_technology": "tech_cosmogenesis_crisis_1"
+        }
+      },
+      "required_crisis_currency": "2000",
+      "perks": {},
+      "on_unlock": {
+        "add_cosmogenesis_level_2_perks": "yes",
+        "hidden_effect": {
+          "owner": {
+            "country_event": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_crisis_levels.txt",
+    "_line_number": 237
+  },
+  "crisis_cosmogenesis_level_3": {
+    "crisis_cosmogenesis_level_3": {
+      "_comments": [
+        "# REQUIREMENTS",
+        "# REWARDS"
+      ],
+      "allow": {
+        "custom_tooltip": {
+          "success_text": "cosmogenesis_level_3_req_clear_tooltip",
+          "fail_text": "cosmogenesis_level_3_req_tooltip",
+          "has_technology": "tech_cosmogenesis_crisis_2"
+        }
+      },
+      "required_crisis_currency": "6000",
+      "perks": {},
+      "on_unlock": {
+        "add_cosmogenesis_level_3_perks": "yes",
+        "hidden_effect": {
+          "owner": {
+            "country_event": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_crisis_levels.txt",
+    "_line_number": 266
+  },
+  "crisis_cosmogenesis_level_4": {
+    "crisis_cosmogenesis_level_4": {
+      "_comments": [
+        "# REQUIREMENTS",
+        "# REWARDS"
+      ],
+      "allow": {
+        "custom_tooltip": {
+          "success_text": "cosmogenesis_level_4_req_clear_tooltip",
+          "fail_text": "cosmogenesis_level_4_req_tooltip",
+          "has_technology": "tech_cosmogenesis_crisis_3"
+        }
+      },
+      "required_crisis_currency": "18000",
+      "perks": {},
+      "on_unlock": {
+        "add_cosmogenesis_level_4_perks": "yes",
+        "hidden_effect": {
+          "owner": {
+            "country_event": {
+              "set_variable": {
+                "which": "applied_infinity_thesis",
+                "value": "0"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_crisis_levels.txt",
+    "_line_number": 295
+  },
+  "crisis_cosmogenesis_level_5": {
+    "crisis_cosmogenesis_level_5": {
+      "_comments": [
+        "# REQUIREMENTS",
+        "# REWARDS"
+      ],
+      "allow": {
+        "custom_tooltip": {
+          "success_text": "cosmogenesis_level_5_req_clear_tooltip_2",
+          "fail_text": "cosmogenesis_level_5_req_tooltip_2",
+          "check_variable": {
+            "which": "applied_infinity_thesis",
+            "value >": "2"
+          }
+        },
+        "is_subject": "no"
+      },
+      "required_crisis_currency": "45000",
+      "perks": {},
+      "on_unlock": {
+        "add_cosmogenesis_level_5_perks": "yes",
+        "hidden_effect": {
+          "owner": {
+            "country_event": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_crisis_levels.txt",
+    "_line_number": 328
+  }
+}

@@ -1,0 +1,345 @@
+{
+  "room_selector": {
+    "room_selector": {
+      "default": "default_room",
+      "_comments": [
+        "# Script may point to textures in 'gfx\\portraits\\city_sets\\' that end with \"_room.dds\" while ignoring the file ending, e.g.: \"room = machine_room\" will find 'machine_room(.dds)'."
+      ],
+      "game_setup": {
+        "\"default_room\"": {
+          "\"personality_hegemonic_imperialists_room\"": {
+            "\"personality_federation_builders_room\"": {
+              "\"personality_democratic_crusaders_room\"": {
+                "\"personality_evangelizing_zealots_room\"": {
+                  "\"personality_migrating_flock_room\"": {
+                    "\"personality_spiritual_seekers_room\"": {
+                      "\"personality_decadent_hierarchy_room\"": {
+                        "\"personality_slaving_despots_room\"": {
+                          "\"personality_erudite_explorers_room\"": {
+                            "\"personality_fanatic_purifier_room\"": {
+                              "\"personality_metalheads_room\"": {
+                                "\"personality_harmonious_hierarchy_room\"": {
+                                  "\"personality_peaceful_traders_room\"": {
+                                    "\"personality_xenophobic_isolationists_room\"": {
+                                      "\"personality_ruthless_capitalists_room\"": {
+                                        "\"personality_honorbound_warriors_room\"": {
+                                          "\"personality_fanatic_befrienders_room\"": {
+                                            "\"personality_hive_mind_room\"": {
+                                              "\"runic_room\"": {
+                                                "\"scrappy_room\"": {
+                                                  "\"crystalline_room\"": {
+                                                    "\"organic_room\"": {
+                                                      "\"gilded_room\"": {
+                                                        "\"machine_room\"": {
+                                                          "\"lithoid_room\"": {
+                                                            "\"necroids_room\"": {
+                                                              "\"aquatics_room\"": {
+                                                                "\"toxoids_room\"": {
+                                                                  "\"ethic_ai_room\"": {
+                                                                    "\"cybernetics_room\"": {
+                                                                      "\"synthetics_room\"": {},
+                                                                      "ruler": {
+                                                                        "\"default_room\"": {
+                                                                          "always": "no"
+                                                                        },
+                                                                        "\"personality_fallen_empire_machine_room\"": {
+                                                                          "exists": "owner",
+                                                                          "owner": {},
+                                                                          "\"personality_fallen_empire_blue_room\"": {
+                                                                            "exists": "owner",
+                                                                            "owner": {
+                                                                              "OR": {
+                                                                                "has_ai_personality": "awakened_fallen_empire_xenophile"
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "\"personality_fallen_empire_cyan_room\"": {
+                                                                            "exists": "owner",
+                                                                            "owner": {
+                                                                              "OR": {
+                                                                                "has_ai_personality": "awakened_fallen_empire_materialist"
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "\"personality_fallen_empire_red_room\"": {
+                                                                            "exists": "owner",
+                                                                            "owner": {
+                                                                              "OR": {
+                                                                                "has_ai_personality": "awakened_fallen_empire_xenophobe"
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "\"personality_fallen_empire_teal_room\"": {
+                                                                            "exists": "owner",
+                                                                            "owner": {
+                                                                              "OR": {
+                                                                                "has_ai_personality": "awakened_fallen_empire_spiritualist"
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "\"crisis_room\"": {
+                                                                            "exists": "owner",
+                                                                            "owner": {},
+                                                                            "\"cosmogenesis_room\"": {
+                                                                              "exists": "owner",
+                                                                              "owner": {
+                                                                                "has_country_flag": "cosmogenesis_world_built",
+                                                                                "any_owned_planet": {
+                                                                                  "is_planet_class": "pc_cosmogenesis_world"
+                                                                                }
+                                                                              }
+                                                                            },
+                                                                            "\"galactic_emperor_room\"": {
+                                                                              "exists": "owner",
+                                                                              "owner": {},
+                                                                              "\"galactic_custodian_room\"": {
+                                                                                "exists": "owner",
+                                                                                "owner": {},
+                                                                                "\"specialist_bulwark_room\"": {
+                                                                                  "exists": "owner",
+                                                                                  "owner": {},
+                                                                                  "\"specialist_prospectorium_room\"": {
+                                                                                    "exists": "owner",
+                                                                                    "owner": {},
+                                                                                    "\"specialist_scholarium_room\"": {
+                                                                                      "exists": "owner",
+                                                                                      "owner": {},
+                                                                                      "\"paragon_azaryn_room\"": {
+                                                                                        "always": "no"
+                                                                                      },
+                                                                                      "\"paragon_skrand_room\"": {
+                                                                                        "always": "no"
+                                                                                      },
+                                                                                      "\"paragon_keides_room\"": {
+                                                                                        "always": "no"
+                                                                                      },
+                                                                                      "\"synth_queen_room\"": {
+                                                                                        "always": "no"
+                                                                                      },
+                                                                                      "\"scrappy_room\"": {
+                                                                                        "exists": "owner",
+                                                                                        "owner": {},
+                                                                                        "\"gilded_room\"": {
+                                                                                          "exists": "owner",
+                                                                                          "owner": {},
+                                                                                          "\"solarpunk_room\"": {
+                                                                                            "exists": "owner",
+                                                                                            "owner": {},
+                                                                                            "\"slaver_room\"": {
+                                                                                              "exists": "owner",
+                                                                                              "owner": {},
+                                                                                              "\"organic_room\"": {
+                                                                                                "exists": "owner",
+                                                                                                "owner": {},
+                                                                                                "\"lithoid_room\"": {
+                                                                                                  "exists": "owner",
+                                                                                                  "owner": {
+                                                                                                    "NOT": {
+                                                                                                      "is_fallen_empire": "no",
+                                                                                                      "lithoids_portrait": "yes"
+                                                                                                    }
+                                                                                                  },
+                                                                                                  "\"necroids_room\"": {
+                                                                                                    "exists": "owner",
+                                                                                                    "owner": {
+                                                                                                      "NOT": {
+                                                                                                        "is_fallen_empire": "no",
+                                                                                                        "necroids_portrait": "yes"
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "\"aquatics_room\"": {
+                                                                                                      "exists": "owner",
+                                                                                                      "owner": {
+                                                                                                        "NOT": {
+                                                                                                          "is_fallen_empire": "no",
+                                                                                                          "aquatics_portrait": "yes"
+                                                                                                        }
+                                                                                                      },
+                                                                                                      "\"toxoids_room\"": {
+                                                                                                        "exists": "owner",
+                                                                                                        "owner": {
+                                                                                                          "NOT": {
+                                                                                                            "is_fallen_empire": "no",
+                                                                                                            "toxoids_portrait": "yes"
+                                                                                                          }
+                                                                                                        },
+                                                                                                        "\"cybernetics_room\"": {
+                                                                                                          "exists": "owner",
+                                                                                                          "owner": {
+                                                                                                            "NOT": {
+                                                                                                              "is_fallen_empire": "no",
+                                                                                                              "cybernetic_portrait": "yes"
+                                                                                                            }
+                                                                                                          },
+                                                                                                          "\"synthetics_room\"": {
+                                                                                                            "exists": "owner",
+                                                                                                            "owner": {
+                                                                                                              "NOT": {
+                                                                                                                "is_fallen_empire": "no",
+                                                                                                                "synthetic_portrait": "yes"
+                                                                                                              }
+                                                                                                            },
+                                                                                                            "\"ethic_ai_room\"": {
+                                                                                                              "exists": "owner",
+                                                                                                              "owner": {},
+                                                                                                              "\"personality_hive_mind_room\"": {
+                                                                                                                "exists": "owner",
+                                                                                                                "owner": {},
+                                                                                                                "\"machine_room\"": {
+                                                                                                                  "exists": "owner",
+                                                                                                                  "owner": {},
+                                                                                                                  "\"personality_hegemonic_imperialists_room\"": {
+                                                                                                                    "exists": "owner",
+                                                                                                                    "owner": {},
+                                                                                                                    "\"personality_federation_builders_room\"": {
+                                                                                                                      "exists": "owner",
+                                                                                                                      "owner": {},
+                                                                                                                      "\"personality_democratic_crusaders_room\"": {
+                                                                                                                        "exists": "owner",
+                                                                                                                        "owner": {},
+                                                                                                                        "\"personality_evangelizing_zealots_room\"": {
+                                                                                                                          "exists": "owner",
+                                                                                                                          "owner": {},
+                                                                                                                          "\"personality_migrating_flock_room\"": {
+                                                                                                                            "exists": "owner",
+                                                                                                                            "owner": {},
+                                                                                                                            "\"personality_spiritual_seekers_room\"": {
+                                                                                                                              "exists": "owner",
+                                                                                                                              "owner": {},
+                                                                                                                              "\"personality_decadent_hierarchy_room\"": {
+                                                                                                                                "exists": "owner",
+                                                                                                                                "owner": {},
+                                                                                                                                "\"personality_slaving_despots_room\"": {
+                                                                                                                                  "exists": "owner",
+                                                                                                                                  "owner": {},
+                                                                                                                                  "\"personality_erudite_explorers_room\"": {
+                                                                                                                                    "exists": "owner",
+                                                                                                                                    "owner": {},
+                                                                                                                                    "\"personality_fanatic_purifier_room\"": {
+                                                                                                                                      "exists": "owner",
+                                                                                                                                      "owner": {},
+                                                                                                                                      "\"personality_metalheads_room\"": {
+                                                                                                                                        "exists": "owner",
+                                                                                                                                        "owner": {},
+                                                                                                                                        "\"personality_harmonious_hierarchy_room\"": {
+                                                                                                                                          "exists": "owner",
+                                                                                                                                          "owner": {},
+                                                                                                                                          "\"personality_peaceful_traders_room\"": {
+                                                                                                                                            "exists": "owner",
+                                                                                                                                            "owner": {},
+                                                                                                                                            "\"personality_xenophobic_isolationists_room\"": {
+                                                                                                                                              "exists": "owner",
+                                                                                                                                              "owner": {},
+                                                                                                                                              "\"personality_ruthless_capitalists_room\"": {
+                                                                                                                                                "exists": "owner",
+                                                                                                                                                "owner": {},
+                                                                                                                                                "\"personality_honorbound_warriors_room\"": {
+                                                                                                                                                  "exists": "owner",
+                                                                                                                                                  "owner": {},
+                                                                                                                                                  "\"personality_fanatic_befrienders_room\"": {
+                                                                                                                                                    "exists": "owner",
+                                                                                                                                                    "owner": {},
+                                                                                                                                                    "\"pre_ftl_ancient_room\"": {
+                                                                                                                                                      "exists": "owner",
+                                                                                                                                                      "owner": {
+                                                                                                                                                        "is_country_type": "primitive",
+                                                                                                                                                        "pre_ftl_ancient_era": "yes"
+                                                                                                                                                      }
+                                                                                                                                                    },
+                                                                                                                                                    "\"pre_ftl_medieval_room\"": {
+                                                                                                                                                      "exists": "owner",
+                                                                                                                                                      "owner": {
+                                                                                                                                                        "is_country_type": "primitive",
+                                                                                                                                                        "pre_ftl_medieval_era": "yes"
+                                                                                                                                                      }
+                                                                                                                                                    },
+                                                                                                                                                    "\"pre_ftl_victorian_room\"": {
+                                                                                                                                                      "exists": "owner",
+                                                                                                                                                      "owner": {
+                                                                                                                                                        "is_country_type": "primitive",
+                                                                                                                                                        "pre_ftl_victorian_era": "yes"
+                                                                                                                                                      }
+                                                                                                                                                    },
+                                                                                                                                                    "\"pre_ftl_modern_room\"": {
+                                                                                                                                                      "exists": "owner",
+                                                                                                                                                      "owner": {
+                                                                                                                                                        "is_country_type": "primitive",
+                                                                                                                                                        "pre_ftl_modern_era": "yes"
+                                                                                                                                                      }
+                                                                                                                                                    }
+                                                                                                                                                  }
+                                                                                                                                                }
+                                                                                                                                              }
+                                                                                                                                            }
+                                                                                                                                          }
+                                                                                                                                        }
+                                                                                                                                      }
+                                                                                                                                    }
+                                                                                                                                  }
+                                                                                                                                }
+                                                                                                                              }
+                                                                                                                            }
+                                                                                                                          }
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "room_textures.txt",
+    "_line_number": 3
+  }
+}

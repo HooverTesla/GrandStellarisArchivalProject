@@ -1,0 +1,538 @@
+{
+  "tech_mega_engineering": {
+    "tech_mega_engineering": {
+      "area": "engineering",
+      "cost": "@tier5cost3",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "prerequisites": {
+          "weight": "@tier5weight3",
+          "is_rare": "yes",
+          "feature_flags": {},
+          "modifier": {
+            "country_resource_max_add": "20000",
+            "arc_furnace_limit_add": "2",
+            "dyson_swarm_limit_add": "2"
+          },
+          "weight_modifier": {
+            "factor": "0.25",
+            "modifier": {
+              "factor": "1.5",
+              "OR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {}
+                    },
+                    "inline_script": {
+                      "script": "technologies/rare_technologies_weight_modifiers",
+                      "TECHNOLOGY": "tech_mega_engineering"
+                    },
+                    "modifier": {
+                      "factor": "20",
+                      "OR": {
+                        "has_any_megastructure_in_empire": "yes",
+                        "has_origin": "origin_shattered_ring"
+                      }
+                    }
+                  },
+                  "ai_weight": {
+                    "factor": "@best_megastructure_ai_tech_factor"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_megastructures.txt",
+    "_line_number": 18
+  },
+  "tech_science_nexus": {
+    "tech_science_nexus": {
+      "area": "physics",
+      "cost": "@tier5cost3",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "prerequisites": {
+          "weight": "@tier5weight3",
+          "is_rare": "yes",
+          "potential": {
+            "host_has_dlc": "Utopia"
+          },
+          "weight_modifier": {
+            "factor": "0.25",
+            "modifier": {
+              "factor": "2",
+              "OR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {}
+                  },
+                  "modifier": {
+                    "factor": "2",
+                    "OR": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {}
+                      },
+                      "modifier": {
+                        "factor": "@federation_perk_factor",
+                        "has_federation": "yes",
+                        "federation": {
+                          "has_federation_perk": "rare_tech_boost",
+                          "any_member": {}
+                        },
+                        "modifier": {
+                          "factor": "@dimensional_worship_rare_tech",
+                          "is_dimensional_worship_empire": "yes"
+                        },
+                        "inline_script": {
+                          "script": "technologies/rare_technologies_weight_modifiers",
+                          "TECHNOLOGY": "tech_science_nexus"
+                        }
+                      },
+                      "ai_weight": {
+                        "factor": "@best_megastructure_ai_tech_factor"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_megastructures.txt",
+    "_line_number": 167
+  },
+  "tech_sentry_array": {
+    "tech_sentry_array": {
+      "area": "physics",
+      "cost": "@tier5cost3",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "prerequisites": {
+          "weight": "@tier5weight3",
+          "is_rare": "yes",
+          "potential": {
+            "host_has_dlc": "Utopia"
+          },
+          "weight_modifier": {
+            "factor": "0.25",
+            "modifier": {
+              "factor": "2",
+              "OR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {}
+                  },
+                  "modifier": {
+                    "factor": "2",
+                    "OR": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {}
+                      },
+                      "modifier": {
+                        "factor": "6",
+                        "has_ascension_perk": "ap_enigmatic_engineering"
+                      },
+                      "inline_script": {
+                        "script": "technologies/rare_technologies_weight_modifiers",
+                        "TECHNOLOGY": "tech_sentry_array"
+                      }
+                    },
+                    "ai_weight": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_megastructures.txt",
+    "_line_number": 237
+  },
+  "tech_strategic_coordination": {
+    "tech_strategic_coordination": {
+      "area": "society",
+      "cost": "@tier5cost3",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "prerequisites": {
+          "weight": "@tier5weight3",
+          "is_rare": "yes",
+          "potential": {
+            "host_has_dlc": "Megacorp"
+          },
+          "weight_modifier": {
+            "factor": "0.25",
+            "modifier": {
+              "factor": "2",
+              "OR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {}
+                  },
+                  "modifier": {
+                    "factor": "2",
+                    "OR": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {}
+                      },
+                      "modifier": {
+                        "factor": "6",
+                        "has_ascension_perk": "ap_eternal_vigilance"
+                      },
+                      "inline_script": {
+                        "script": "technologies/rare_technologies_weight_modifiers",
+                        "TECHNOLOGY": "tech_strategic_coordination"
+                      }
+                    },
+                    "ai_weight": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_megastructures.txt",
+    "_line_number": 294
+  },
+  "tech_interstellar_assembly": {
+    "tech_interstellar_assembly": {
+      "area": "society",
+      "cost": "@tier5cost3",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "prerequisites": {
+          "weight": "@tier5weight3",
+          "is_rare": "yes",
+          "potential": {
+            "host_has_dlc": "Megacorp"
+          },
+          "weight_modifier": {
+            "factor": "0.25",
+            "modifier": {
+              "factor": "2",
+              "OR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {}
+                  },
+                  "modifier": {
+                    "factor": "2",
+                    "OR": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {}
+                      },
+                      "modifier": {
+                        "factor": "6",
+                        "has_ascension_perk": "ap_master_builders"
+                      },
+                      "inline_script": {
+                        "script": "technologies/rare_technologies_weight_modifiers",
+                        "TECHNOLOGY": "tech_interstellar_assembly"
+                      }
+                    },
+                    "ai_weight": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_megastructures.txt",
+    "_line_number": 359
+  },
+  "tech_mega_art": {
+    "tech_mega_art": {
+      "area": "society",
+      "cost": "@tier5cost3",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "prerequisites": {
+          "weight": "@tier5weight3",
+          "is_rare": "yes",
+          "potential": {
+            "host_has_dlc": "Megacorp"
+          },
+          "weight_modifier": {
+            "factor": "0.25",
+            "modifier": {
+              "factor": "2",
+              "OR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {}
+                  },
+                  "modifier": {
+                    "factor": "2",
+                    "OR": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {}
+                      },
+                      "modifier": {
+                        "factor": "6",
+                        "has_ascension_perk": "ap_one_vision"
+                      },
+                      "inline_script": {
+                        "script": "technologies/rare_technologies_weight_modifiers",
+                        "TECHNOLOGY": "tech_mega_art"
+                      }
+                    },
+                    "ai_weight": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_megastructures.txt",
+    "_line_number": 420
+  },
+  "tech_gateway_activation": {
+    "tech_gateway_activation": {
+      "cost": "@tier4cost3",
+      "area": "physics",
+      "tier": "4",
+      "category": {
+        "is_rare": "yes",
+        "is_reverse_engineerable": "no",
+        "weight": "@tier4weight3",
+        "prerequisites": {
+          "feature_flags": {
+            "weight_modifier": {
+              "factor": "0.5",
+              "modifier": {
+                "factor": "0.1",
+                "NOR": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {
+                          "has_trait_in_council": {
+                            "has_trait_in_council": {
+                              "has_trait_in_council": {}
+                            },
+                            "modifier": {
+                              "factor": "4",
+                              "OR": {
+                                "owns_any_bypass": "lgate"
+                              }
+                            },
+                            "inline_script": {
+                              "script": "technologies/rare_technologies_weight_modifiers",
+                              "TECHNOLOGY": "tech_gateway_activation"
+                            }
+                          },
+                          "ai_weight": {
+                            "modifier": {
+                              "factor": "2",
+                              "is_ai": "no #auto-research"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_megastructures.txt",
+    "_line_number": 486
+  },
+  "tech_gateway_construction": {
+    "tech_gateway_construction": {
+      "cost": "@tier5cost3",
+      "area": "physics",
+      "tier": "5",
+      "category": {
+        "is_rare": "yes",
+        "is_reverse_engineerable": "no",
+        "weight": "@tier5weight3",
+        "prerequisites": {
+          "feature_flags": {
+            "weight_modifier": {
+              "factor": "0.5",
+              "modifier": {
+                "factor": "0.1",
+                "NOR": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {
+                          "has_trait_in_council": {
+                            "has_trait_in_council": {
+                              "has_trait_in_council": {}
+                            },
+                            "modifier": {
+                              "factor": "4",
+                              "owns_any_bypass": "gateway"
+                            },
+                            "inline_script": {
+                              "script": "technologies/rare_technologies_weight_modifiers",
+                              "TECHNOLOGY": "tech_gateway_construction"
+                            }
+                          },
+                          "ai_weight": {
+                            "modifier": {
+                              "factor": "2",
+                              "is_ai": "no #auto-research"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_megastructures.txt",
+    "_line_number": 560
+  },
+  "tech_dyson_sphere": {
+    "tech_dyson_sphere": {
+      "area": "physics",
+      "cost": "@tier5cost3",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "prerequisites": {
+          "weight": "@tier5weight3",
+          "is_rare": "yes",
+          "potential": {
+            "host_has_dlc": "Utopia"
+          },
+          "weight_modifier": {
+            "factor": "0"
+          },
+          "ai_weight": {
+            "factor": "@best_megastructure_ai_tech_factor"
+          }
+        }
+      }
+    },
+    "_source_file": "00_megastructures.txt",
+    "_line_number": 621
+  },
+  "tech_matter_decompressor": {
+    "tech_matter_decompressor": {
+      "area": "physics",
+      "cost": "@tier5cost3",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "prerequisites": {
+          "weight": "@tier5weight3",
+          "is_rare": "yes",
+          "potential": {
+            "host_has_dlc": "Megacorp"
+          },
+          "weight_modifier": {
+            "factor": "0"
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_megastructures.txt",
+    "_line_number": 645
+  },
+  "tech_ring_world": {
+    "tech_ring_world": {
+      "area": "engineering",
+      "cost": "@tier5cost3",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "prerequisites": {
+          "weight": "@tier5weight3",
+          "is_rare": "yes",
+          "potential": {
+            "host_has_dlc": "Utopia"
+          },
+          "weight_modifier": {
+            "factor": "0"
+          },
+          "ai_weight": {
+            "factor": "@best_megastructure_ai_tech_factor"
+          }
+        }
+      }
+    },
+    "_source_file": "00_megastructures.txt",
+    "_line_number": 668
+  },
+  "tech_mega_shipyard": {
+    "tech_mega_shipyard": {
+      "area": "society",
+      "cost": "@tier5cost3",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "prerequisites": {
+          "weight": "@tier5weight3",
+          "is_rare": "yes",
+          "potential": {
+            "host_has_dlc": "Federations"
+          },
+          "weight_modifier": {
+            "factor": "0.25",
+            "modifier": {
+              "factor": "2",
+              "OR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {}
+                  },
+                  "modifier": {
+                    "factor": "2",
+                    "OR": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {}
+                      },
+                      "modifier": {
+                        "factor": "6",
+                        "has_ascension_perk": "ap_galactic_force_projection"
+                      },
+                      "inline_script": {
+                        "script": "technologies/rare_technologies_weight_modifiers",
+                        "TECHNOLOGY": "tech_mega_shipyard"
+                      }
+                    },
+                    "ai_weight": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_megastructures.txt",
+    "_line_number": 692
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "projectile_gfx_beam": {
+    "projectile_gfx_beam": {
+      "name": "fallen_machine_empire_01_titan_laser",
+      "_comments": [
+        "#common for all types of projectiles"
+      ],
+      "color": {
+        "hit_entity": "fme01_titan_laser_hit_entity",
+        "shield_hit_entity": "fme01_titan_laser_shield_hit_entity",
+        "muzzle_flash_entity": "fme01_titan_laser_muzzle_entity",
+        "windup_entity": "fme01_titan_laser_windup_entity",
+        "width": "10.0",
+        "_comments": [
+          "#beam specific data"
+        ],
+        "texture_scroll_speed": "1.0",
+        "texture_tiling": "5.5",
+        "hit": {
+          "alpha_curve": {},
+          "duration": "3.0"
+        },
+        "miss": {
+          "alpha_curve": {},
+          "duration": "1.5"
+        },
+        "texture": "gfx/models/combat_items/titan_laser_diffuse.dds",
+        "shield_impact": {
+          "size": "large",
+          "loop_duration": "0.5",
+          "delay": "0.2"
+        }
+      }
+    },
+    "_source_file": "xl_weapons.txt",
+    "_line_number": 424
+  },
+  "projectile_gfx_ballistic": {
+    "projectile_gfx_ballistic": {
+      "name": "adv_kinetic_artillery",
+      "_comments": [
+        "#common for all types of projectiles"
+      ],
+      "color": {
+        "hit_entity": "adv_kinetic_artillery_hit_entity",
+        "shield_hit_entity": "adv_kinetic_artillery_shield_hit_entity",
+        "muzzle_flash_entity": "adv_kinetic_artillery_muzzle_entity",
+        "entity": "adv_kinetic_artillery_entity",
+        "_comments": [
+          "#windup_entity = \"adv_kinetic_artillery_windup_entity\"",
+          "#ballistic specific"
+        ],
+        "speed": "450.0\t\t\t#preferred speed of the projectile",
+        "max_duration": "1.0\t\t#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds",
+        "shield_impact": {
+          "size": "large",
+          "delay": "0.0"
+        }
+      }
+    },
+    "_source_file": "xl_weapons.txt",
+    "_line_number": 221
+  }
+}

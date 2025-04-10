@@ -1,0 +1,90 @@
+{
+  "situation_event": {
+    "situation_event": {
+      "id": "astral_situation.65",
+      "title": "astral_situation.65.name",
+      "desc": "astral_situation.65.desc",
+      "picture": "GFX_evt_astral_rift",
+      "is_triggered_only": "yes",
+      "location": "target",
+      "situation": "this",
+      "immediate": {
+        "target.solar_system": {
+          "closest_system": {
+            "limit": {
+              "AND": {
+                "has_owner": "yes",
+                "owner": {},
+                "any_system_planet": {
+                  "habitable_planet": "yes",
+                  "OR": {
+                    "is_colony": "yes",
+                    "is_capital": "yes"
+                  }
+                }
+              },
+              "random_system_planet": {
+                "limit": {
+                  "habitable_planet": "yes",
+                  "OR": {
+                    "is_colony": "yes",
+                    "is_capital": "yes"
+                  }
+                },
+                "add_modifier": {
+                  "modifier": "rift_in_space_time_acceleration_modifier",
+                  "days": "360"
+                },
+                "save_event_target_as": "rift_temporary_planet"
+              }
+            }
+          }
+        },
+        "option": {
+          "name": "FASCINATING"
+        }
+      }
+    },
+    "_source_file": "astral_planes_situation_events.txt",
+    "_line_number": 411
+  },
+  "country_event": {
+    "country_event": {
+      "id": "astral_situation.15",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "fire_only_once": "yes",
+      "immediate": {
+        "event_target:aberrant_country": {
+          "destroy_country": "yes"
+        },
+        "event_target:formless_system": {
+          "spawn_planet": {
+            "class": "pc_gaia",
+            "name": "NAME_FORMLESS_SYSTEM_GAIA",
+            "orbit_angle": "180",
+            "orbit_distance": "110",
+            "size": "40",
+            "init_effect": {
+              "set_planet_flag": "formless_gaia_planet",
+              "save_global_event_target_as": "formless_gaia_planet",
+              "add_modifier": {
+                "modifier": "pm_formless_haven"
+              }
+            }
+          }
+        },
+        "remove_global_flag": "strange_wormholes_locked",
+        "every_playable_country": {
+          "country_event": {
+            "id": "astral_planes.3099",
+            "days": "1"
+          },
+          "set_country_flag": "the_formless_seal_is_set"
+        }
+      }
+    },
+    "_source_file": "astral_planes_situation_events.txt",
+    "_line_number": 132
+  }
+}

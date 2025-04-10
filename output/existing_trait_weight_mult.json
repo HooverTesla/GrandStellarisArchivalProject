@@ -1,0 +1,17 @@
+{
+  "modifier": {
+    "modifier": {
+      "factor": "@existing_trait_weight_mult",
+      "exists": "owner",
+      "owner": {
+        "any_owned_leader": {
+          "has_trait_tier1or2": {
+            "TRAIT": "$TRAIT$"
+          }
+        }
+      }
+    },
+    "_source_file": "existing_trait_weight_mult.txt",
+    "_line_number": -1
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "terraform_link": {
+    "terraform_link": {
+      "from": "pc_nanotech",
+      "to": "pc_hive",
+      "condition": {
+        "resources": {
+          "category": "terraforming",
+          "cost": {
+            "energy": "@hiveCost"
+          }
+        },
+        "duration": "@hiveTime",
+        "potential": {
+          "has_ascension_perk": "ap_hive_worlds",
+          "NOT": {
+            "has_tradition": "tr_nanotech_adopt"
+          }
+        },
+        "ai_weight": {
+          "weight": "10"
+        }
+      }
+    },
+    "_source_file": "02_special_terraform_links.txt",
+    "_line_number": 4100
+  }
+}

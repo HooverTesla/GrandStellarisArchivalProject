@@ -1,0 +1,183 @@
+{
+  "decision_bleak_planet": {
+    "decision_bleak_planet": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_arid_planet",
+      "enactment_time": "900",
+      "resources": {
+        "category": "decisions",
+        "cost": {
+          "energy": "750",
+          "food": "250"
+        }
+      },
+      "potential": {
+        "exists": "owner",
+        "has_modifier": "bleak_planet",
+        "owner": {
+          "has_technology": "tech_terrestrial_sculpting"
+        }
+      },
+      "effect": {
+        "remove_modifier": "bleak_planet"
+      },
+      "ai_weight": {
+        "weight": "5"
+      }
+    },
+    "_source_file": "11_planet_modifier_decisions.txt",
+    "_line_number": 7
+  },
+  "decision_build_dayside_farm": {
+    "decision_build_dayside_farm": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_divine_algorithm",
+      "enactment_time": "900",
+      "resources": {
+        "category": "decisions",
+        "cost": {
+          "energy": "1000"
+        }
+      },
+      "potential": {
+        "exists": "owner",
+        "has_modifier": "tidal_locked",
+        "is_moon": "no",
+        "owner": {
+          "has_technology": "tech_power_hub_1"
+        },
+        "NOT": {
+          "has_deposit": "d_dayside_farm"
+        }
+      },
+      "effect": {
+        "add_deposit": "d_dayside_farm"
+      },
+      "ai_weight": {
+        "weight": "1",
+        "modifier": {
+          "factor": "0",
+          "NOR": {
+            "has_building": "building_energy_nexus"
+          }
+        }
+      }
+    },
+    "_source_file": "11_planet_modifier_decisions.txt",
+    "_line_number": 39
+  },
+  "decision_hazardous_weather": {
+    "decision_hazardous_weather": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_colony_settlement",
+      "enactment_time": "900",
+      "resources": {
+        "category": "decisions",
+        "cost": {
+          "energy": "1000"
+        }
+      },
+      "potential": {
+        "exists": "owner",
+        "OR": {
+          "has_modifier": "wild_storms"
+        },
+        "owner": {
+          "has_technology": "tech_terrestrial_sculpting"
+        }
+      },
+      "effect": {
+        "IF": {
+          "limit": {
+            "has_modifier": "wild_storms"
+          },
+          "remove_modifier": "wild_storms"
+        }
+      },
+      "ai_weight": {
+        "weight": "5"
+      }
+    },
+    "_source_file": "11_planet_modifier_decisions.txt",
+    "_line_number": 80
+  },
+  "decision_dangerous_wildlife": {
+    "decision_dangerous_wildlife": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_animal_wildlife",
+      "enactment_time": "900",
+      "resources": {
+        "category": "decisions",
+        "cost": {
+          "energy": "1000"
+        }
+      },
+      "potential": {
+        "exists": "owner",
+        "NOT": {
+          "owner": {
+            "has_technology": "tech_terrestrial_sculpting"
+          },
+          "has_modifier": "dangerous_wildlife"
+        },
+        "effect": {
+          "remove_modifier": "dangerous_wildlife"
+        },
+        "ai_weight": {
+          "weight": "5"
+        }
+      }
+    },
+    "_source_file": "11_planet_modifier_decisions.txt",
+    "_line_number": 124
+  },
+  "decision_stripmine_planet": {
+    "decision_stripmine_planet": {
+      "owned_planets_only": "yes",
+      "sound": "event_dig_site",
+      "icon": "decision_strip_mining",
+      "enactment_time": "900",
+      "resources": {
+        "category": "decisions",
+        "cost": {
+          "energy": "5000"
+        }
+      },
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "NOT": {},
+          "allow": {
+            "num_districts": {},
+            "effect": {
+              "custom_tooltip": "decision_stripmine_planet_tooltip",
+              "add_deposit": "d_planet_stripmine",
+              "hidden_effect": {
+                "every_deposit": {
+                  "limit": {
+                    "has_deposit_category": "deposit_cat_food"
+                  },
+                  "remove_deposit": "yes"
+                }
+              }
+            },
+            "ai_weight": {
+              "weight": "0",
+              "modifier": {
+                "add": "10",
+                "has_designation": "col_mining",
+                "has_sr_deposit": "yes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "11_planet_modifier_decisions.txt",
+    "_line_number": 162
+  }
+}

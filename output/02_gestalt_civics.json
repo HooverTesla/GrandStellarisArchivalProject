@@ -1,0 +1,1821 @@
+{
+  "civic_hive_subspace_ephapse": {
+    "civic_hive_subspace_ephapse": {
+      "potential": {
+        "random_weight": {
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight"
+          },
+          "modifier": {
+            "councilor_gestalt_legion_exp_gain": "@gestalt_civic_node_xp_rate",
+            "country_naval_cap_mult": "0.15",
+            "ship_speed_mult": "0.20"
+          },
+          "swap_type": {
+            "name": "civic_hive_subspace_ephapse_fircon",
+            "trigger": {
+              "has_first_contact_dlc": "yes"
+            },
+            "description": "civic_tooltip_hive_subspace_ephapse_fircon_effects"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 30
+  },
+  "civic_hive_natural_neural_network": {
+    "civic_hive_natural_neural_network": {
+      "potential": {
+        "description": "civic_tooltip_natural_neural_network_effects",
+        "random_weight": {
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight"
+          },
+          "modifier": {
+            "councilor_gestalt_cognitive_exp_gain": "@gestalt_civic_node_xp_rate",
+            "num_tech_alternatives_add": "1"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 50
+  },
+  "civic_hive_ascetic": {
+    "civic_hive_ascetic": {
+      "potential": {
+        "random_weight": {
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight"
+          },
+          "modifier": {
+            "councilor_gestalt_growth_exp_gain": "@gestalt_civic_node_xp_rate",
+            "pop_environment_tolerance": "0.05",
+            "pop_amenities_usage_no_happiness_mult": "-0.15"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 63
+  },
+  "civic_hive_one_mind": {
+    "civic_hive_one_mind": {
+      "potential": {
+        "random_weight": {
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight",
+            "modifier": {
+              "factor": "@ai_civic_personality_mismatch_factor",
+              "OR": {
+                "has_ai_personality": "devouring_swarm"
+              }
+            }
+          },
+          "modifier": {
+            "councilor_gestalt_regulatory_exp_gain": "@gestalt_civic_node_xp_rate",
+            "country_unity_produces_mult": "0.15",
+            "negative_traits_country": "-1"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 76
+  },
+  "civic_hive_divided_attention": {
+    "civic_hive_divided_attention": {
+      "potential": {
+        "random_weight": {
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight"
+          },
+          "modifier": {
+            "councilor_gestalt_growth_exp_gain": "@gestalt_civic_node_xp_rate",
+            "empire_size_penalty_mult": "-0.25"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 95
+  },
+  "civic_hive_strength_of_legions": {
+    "civic_hive_strength_of_legions": {
+      "potential": {
+        "random_weight": {
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight",
+            "modifier": {
+              "factor": "@ai_civic_personality_match_factor",
+              "OR": {
+                "has_ai_personality": "devouring_swarm"
+              }
+            }
+          },
+          "_comments": [
+            "#\tdescription = \"civic_tooltip_hive_strength_of_legions_effects\""
+          ],
+          "modifier": {
+            "councilor_gestalt_regulatory_exp_gain": "@gestalt_civic_node_xp_rate",
+            "army_starting_experience_add": "100",
+            "army_damage_mult": "0.20",
+            "armies_upkeep_mult": "-0.20",
+            "commander_initial_skill": "2"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 107
+  },
+  "civic_hive_subsumed_will": {
+    "civic_hive_subsumed_will": {
+      "potential": {
+        "random_weight": {
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight"
+          },
+          "description": "civic_hive_subsumed_will_effects",
+          "modifier": {
+            "councilor_gestalt_regulatory_exp_gain": "@gestalt_civic_node_xp_rate",
+            "empire_size_pops_mult": "-0.20",
+            "planet_resettlement_unemployed_mult": "0.5",
+            "country_edict_fund_add": "25"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 130
+  },
+  "civic_hive_pooled_knowledge": {
+    "civic_hive_pooled_knowledge": {
+      "potential": {
+        "random_weight": {
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight",
+            "modifier": {
+              "factor": "@ai_civic_personality_mismatch_factor",
+              "OR": {
+                "has_ai_personality": "devouring_swarm"
+              }
+            }
+          },
+          "modifier": {
+            "councilor_gestalt_cognitive_exp_gain": "@gestalt_civic_node_xp_rate",
+            "country_official_cap_add": "1",
+            "country_commander_cap_add": "1",
+            "country_scientist_cap_add": "1"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 145
+  },
+  "civic_hive_devouring_swarm": {
+    "civic_hive_devouring_swarm": {
+      "modification": "no",
+      "potential": {
+        "authority": {},
+        "possible": {
+          "origin": {
+            "NOR": {
+              "value": "origin_tree_of_life"
+            }
+          },
+          "civics": {
+            "NOR": {
+              "text": "civic_tooltip_not_guided",
+              "value": "civic_machine_guided_sapience"
+            }
+          }
+        },
+        "random_weight": {
+          "base": "@civic_default_random_weight",
+          "modifier": {
+            "factor": "0",
+            "blocks_disruptive_gameplay": "yes"
+          }
+        },
+        "description": "civic_tooltip_devouring_swarm_effects",
+        "modifier": {
+          "councilor_gestalt_legion_exp_gain": "@gestalt_civic_node_xp_rate",
+          "country_starbase_influence_cost_mult": "-0.5",
+          "ship_hull_mult": "0.25",
+          "ship_hull_regen_add_perc": "0.05",
+          "ship_armor_regen_add_perc": "0.05",
+          "army_damage_mult": "0.40",
+          "category_biology_research_speed_mult": "0.20",
+          "starbase_shipyard_build_cost_mult": "-0.25",
+          "country_naval_cap_mult": "0.33"
+        },
+        "swap_type": {
+          "name": "civic_hive_devouring_swarm_lithoid",
+          "description": "civic_tooltip_devouring_swarm_lithoid_effects",
+          "trigger": {
+            "OR": {
+              "AND": {
+                "is_scope_valid": "yes",
+                "is_lithoid_empire": "yes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 168
+  },
+  "civic_hive_empath": {
+    "civic_hive_empath": {
+      "playable": {
+        "potential": {
+          "authority": {},
+          "possible": {
+            "civics": {
+              "NOT": {
+                "value": "civic_hive_devouring_swarm"
+              }
+            },
+            "origin": {
+              "NOT": {
+                "value": "origin_necrophage"
+              }
+            }
+          },
+          "random_weight": {
+            "base": "@civic_default_random_weight"
+          },
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight"
+          },
+          "description": "civic_tooltip_empath_effects",
+          "modifier": {
+            "councilor_gestalt_growth_exp_gain": "@gestalt_civic_node_xp_rate",
+            "envoys_add": "2",
+            "diplo_weight_mult": "0.20",
+            "country_trust_cap_add": "50",
+            "envoy_improve_relations_mult": "0.25"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 229
+  },
+  "civic_hive_memorialist": {
+    "civic_hive_memorialist": {
+      "playable": {
+        "description": "civic_tooltip_memorialist_gestalt_effects",
+        "potential": {
+          "authority": {},
+          "random_weight": {
+            "ai_weight": {
+              "base": "@ai_civic_default_base_weight"
+            },
+            "possible": {
+              "civics": {
+                "NOT": {}
+              },
+              "modifier": {
+                "councilor_gestalt_cognitive_exp_gain": "@gestalt_civic_node_xp_rate"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 262
+  },
+  "civic_hive_catalytic_processing": {
+    "civic_hive_catalytic_processing": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_tooltip_hive_catalytic_processing_effects",
+          "potential": {
+            "authority": {},
+            "possible": {
+              "origin": {
+                "NOT": {
+                  "value": "origin_lithoid"
+                }
+              }
+            },
+            "random_weight": {
+              "ai_weight": {
+                "base": "0\t\t\t# Too dangerous to switch mid-game"
+              },
+              "modifier": {
+                "councilor_gestalt_cognitive_exp_gain": "@gestalt_civic_node_xp_rate"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 282
+  },
+  "civic_hive_idyllic_bloom": {
+    "civic_hive_idyllic_bloom": {
+      "modification": "no",
+      "playable": {
+        "ai_playable": {
+          "description": "civic_tooltip_idyllic_bloom_effects",
+          "potential": {
+            "authority": {},
+            "possible": {
+              "species_class": {
+                "OR": {
+                  "value": "PLANT"
+                }
+              },
+              "origin": {
+                "NOT": {
+                  "value": "origin_void_dwellers"
+                }
+              }
+            },
+            "random_weight": {
+              "base": "@civic_rare_random_weight"
+            },
+            "modifier": {
+              "councilor_gestalt_growth_exp_gain": "@gestalt_civic_node_xp_rate"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 305
+  },
+  "civic_hive_toxic_baths": {
+    "civic_hive_toxic_baths": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_tooltip_hive_toxic_baths_effects",
+          "potential": {
+            "authority": {},
+            "possible": {
+              "origin": {},
+              "random_weight": {
+                "base": "@civic_default_random_weight"
+              },
+              "ai_weight": {
+                "base": "@ai_civic_default_base_weight"
+              },
+              "modifier": {
+                "councilor_gestalt_growth_exp_gain": "@gestalt_civic_node_xp_rate"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 334
+  },
+  "civic_hive_ascensionists": {
+    "civic_hive_ascensionists": {
+      "playable": {
+        "OR": {
+          "host_has_dlc": "Utopia",
+          "has_astral_planes_dlc": "yes"
+        }
+      },
+      "ai_playable": {
+        "OR": {
+          "host_has_dlc": "Utopia",
+          "has_astral_planes_dlc": "yes"
+        }
+      },
+      "potential": {
+        "authority": {},
+        "description": "civic_tooltip_ascensionists_effects",
+        "modifier": {
+          "councilor_gestalt_regulatory_exp_gain": "@gestalt_civic_node_xp_rate",
+          "planetary_ascension_effect_mult": "0.25",
+          "planetary_ascension_cost_mult": "-0.1",
+          "tradition_cost_empire_size_mult": "-0.25"
+        },
+        "random_weight": {
+          "base": "@civic_uncommon_random_weight"
+        },
+        "ai_weight": {
+          "base": "@ai_civic_uncommon_base_weight",
+          "modifier": {
+            "factor": "@ai_civic_personality_mismatch_factor",
+            "OR": {
+              "has_ai_personality": "devouring_swarm"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 355
+  },
+  "civic_hive_cordyceptic_drones": {
+    "civic_hive_cordyceptic_drones": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_tooltip_cordyceptic_drones",
+          "potential": {
+            "authority": {},
+            "random_weight": {
+              "base": "@civic_default_random_weight"
+            },
+            "ai_weight": {
+              "base": "@ai_civic_default_base_weight"
+            },
+            "modifier": {
+              "councilor_gestalt_legion_exp_gain": "@gestalt_civic_node_xp_rate",
+              "attached_space_fauna_component_damage_mult": "0.5",
+              "attached_space_fauna_component_fire_rate_mult": "0.5",
+              "space_fauna_ship_damage_mult": "0.1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 392
+  },
+  "civic_hive_stargazers": {
+    "civic_hive_stargazers": {
+      "playable": {
+        "has_first_contact_dlc": "yes"
+      },
+      "ai_playable": {
+        "has_first_contact_dlc": "yes"
+      },
+      "description": "civic_hive_stargazers_effects",
+      "modification": "no",
+      "potential": {
+        "authority": {},
+        "possible": {
+          "civics": {
+            "NOR": {
+              "value": "civic_hive_guided_sapience"
+            }
+          }
+        },
+        "modifier": {
+          "councilor_gestalt_legion_exp_gain": "@gestalt_civic_node_xp_rate",
+          "ship_sensor_range_add": "1",
+          "ship_hyperlane_range_add": "2",
+          "country_starbase_influence_cost_distance_mult": "-0.2"
+        },
+        "traits": {
+          "trait": "trait_stargazer"
+        },
+        "random_weight": {
+          "base": "0"
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 417
+  },
+  "civic_memory_vault_hive": {
+    "civic_memory_vault_hive": {
+      "playable": {
+        "ai_playable": {
+          "random_weight": {
+            "base": "4"
+          },
+          "description": "civic_tooltip_memory_vault_hive_effects",
+          "potential": {
+            "authority": {},
+            "possible": {},
+            "modifier": {
+              "restored_node_bonus_skill": "1",
+              "councilor_gestalt_cognitive_exp_gain": "@gestalt_civic_node_xp_rate",
+              "councilor_skill_add": "1",
+              "leader_initial_skill": "1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 451
+  },
+  "civic_hive_upkeep_twister": {
+    "civic_hive_upkeep_twister": {
+      "playable": {
+        "ai_playable": {
+          "random_weight": {
+            "base": "@civic_default_random_weight"
+          },
+          "description": "civic_tooltip_hive_upkeep_twister_effects",
+          "potential": {
+            "authority": {},
+            "possible": {},
+            "modifier": {
+              "leader_trait_selection_options_add": "1",
+              "councilor_gestalt_regulatory_exp_gain": "@gestalt_civic_node_xp_rate"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 471
+  },
+  "civic_void_hive": {
+    "civic_void_hive": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_tooltip_void_hive_effects",
+          "potential": {
+            "authority": {},
+            "random_weight": {
+              "base": "@civic_default_random_weight"
+            },
+            "ai_weight": {
+              "base": "@ai_civic_default_base_weight"
+            },
+            "modifier": {
+              "megastructures_cost_mult": "-0.05",
+              "megastructure_build_speed_mult": "0.1",
+              "councilor_gestalt_growth_exp_gain": "@gestalt_civic_node_xp_rate"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 490
+  },
+  "civic_hive_hyperspace_specialty": {
+    "civic_hive_hyperspace_specialty": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_hive_hyperspace_specialty_effects",
+          "potential": {
+            "authority": {},
+            "possible": {
+              "civics": {},
+              "modifier": {
+                "planet_sensor_range_add": "2",
+                "ship_speed_mult": "0.1",
+                "country_physics_tech_research_speed": "0.15",
+                "councilor_gestalt_cognitive_exp_gain": "@gestalt_civic_node_xp_rate"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 510
+  },
+  "civic_hive_sovereign_guardianship": {
+    "civic_hive_sovereign_guardianship": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_hive_sovereign_guardianship_effects",
+          "potential": {
+            "authority": {},
+            "possible": {
+              "civics": {
+                "NOT": {}
+              },
+              "modification": "no",
+              "modifier": {
+                "empire_size_colonies_mult": "1",
+                "empire_size_systems_mult": "1.50",
+                "empire_size_pops_mult": "-0.50",
+                "empire_size_districts_mult": "-0.50",
+                "diplo_weight_mult": "0.2",
+                "councilor_gestalt_regulatory_exp_gain": "@gestalt_civic_node_xp_rate",
+                "planet_soldiers_unity_produces_add": "@sovereign_guardianship_soldier_unity"
+              },
+              "random_weight": {
+                "base": "@civic_rare_random_weight"
+              },
+              "ai_weight": {
+                "base": "@civic_rare_random_weight"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 531
+  },
+  "civic_hive_natural_design": {
+    "civic_hive_natural_design": {
+      "modification": "no",
+      "playable": {
+        "ai_playable": {
+          "random_weight": {
+            "base": "@civic_rare_random_weight"
+          },
+          "potential": {
+            "authority": {
+              "value": "auth_hive_mind"
+            }
+          },
+          "possible": {
+            "origin": {
+              "NOT": {
+                "value": "origin_overtuned"
+              }
+            },
+            "civics": {
+              "NOT": {}
+            },
+            "modifier": {
+              "councilor_gestalt_growth_exp_gain": "@gestalt_civic_node_xp_rate",
+              "BIOLOGICAL_species_trait_picks_add": "2",
+              "BIOLOGICAL_species_trait_points_add": "2",
+              "planet_researchers_society_research_produces_add": "0.5"
+            },
+            "description": "civic_hive_tooltip_natural_design_effects",
+            "negative_description": "civic_hive_tooltip_natural_design_negative_effects"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 562
+  },
+  "civic_hive_guided_sapience": {
+    "civic_hive_guided_sapience": {
+      "modification": "yes",
+      "playable": {
+        "ai_playable": {
+          "random_weight": {
+            "base": "@civic_rare_random_weight"
+          },
+          "potential": {
+            "species_archetype": {
+              "authority": {
+                "value": "auth_hive_mind",
+                "NOR": {
+                  "value": "auth_machine_intelligence"
+                }
+              }
+            },
+            "possible": {
+              "origin": {
+                "NOT": {},
+                "civics": {
+                  "NOR": {
+                    "value": "civic_hive_natural_design"
+                  }
+                }
+              },
+              "modifier": {
+                "councilor_gestalt_cognitive_exp_gain": "@gestalt_civic_node_xp_rate",
+                "terraforming_cost_mult": "-0.25",
+                "terraform_speed_mult": "0.25"
+              },
+              "description": "civic_tooltip_guided_sapience_effects",
+              "negative_description": "civic_tooltip_guided_sapience_gestalt_negative_effects"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 595
+  },
+  "civic_hive_beastmasters": {
+    "civic_hive_beastmasters": {
+      "playable": {
+        "ai_playable": {
+          "flags": {
+            "description": "civic_beastmasters_effects",
+            "possible": {
+              "origin": {
+                "NOT": {
+                  "value": "origin_progenitor_hive"
+                }
+              },
+              "civics": {},
+              "swap_type": {
+                "description": "civic_cordyceptic_beastmasters_effects",
+                "trigger": {
+                  "is_scope_valid": "yes",
+                  "has_civic": "civic_hive_cordyceptic_drones"
+                }
+              },
+              "potential": {
+                "authority": {},
+                "modification": "no",
+                "modifier": {
+                  "artificial_ship_naval_cap_usage_mult": "2.0",
+                  "councilor_gestalt_legion_exp_gain": "0.25",
+                  "space_fauna_ship_cost_mult": "-0.15",
+                  "space_fauna_ship_upkeep_mult": "-0.10"
+                },
+                "random_weight": {
+                  "base": "@civic_rare_random_weight"
+                },
+                "ai_weight": {
+                  "base": "@civic_rare_random_weight"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 636
+  },
+  "civic_astrometeorology_hive": {
+    "civic_astrometeorology_hive": {
+      "playable": {
+        "has_cosmic_storms_dlc": "yes"
+      },
+      "ai_playable": {
+        "has_cosmic_storms_dlc": "yes"
+      },
+      "potential": {
+        "authority": {
+          "value": "auth_hive_mind"
+        }
+      },
+      "description": "civic_astrometeorology_hive_effect_tooltip",
+      "modifier": {
+        "councilor_gestalt_cognitive_exp_gain": "@gestalt_civic_node_xp_rate"
+      },
+      "random_weight": {
+        "base": "@civic_default_random_weight"
+      },
+      "ai_weight": {
+        "base": "@ai_civic_default_base_weight"
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 674
+  },
+  "civic_environmental_architects_hive": {
+    "civic_environmental_architects_hive": {
+      "playable": {
+        "has_cosmic_storms_dlc": "yes"
+      },
+      "ai_playable": {
+        "has_cosmic_storms_dlc": "yes"
+      },
+      "potential": {
+        "authority": {
+          "value": "auth_hive_mind"
+        }
+      },
+      "possible": {
+        "civics": {
+          "NOT": {
+            "value": "civic_hive_toxic_baths"
+          }
+        },
+        "origin": {
+          "NOR": {
+            "value": "origin_machine"
+          }
+        }
+      },
+      "modification": "no",
+      "random_weight": {
+        "base": "@civic_default_random_weight"
+      },
+      "description": "civic_environmental_architects_hive_effect_tooltip",
+      "negative_description": "civic_environmental_architects_negative_effect_tooltip",
+      "modifier": {
+        "councilor_gestalt_growth_exp_gain": "@gestalt_civic_node_xp_rate",
+        "planet_jobs_produces_mult": "0.1",
+        "pop_growth_speed": "0.1",
+        "planet_pops_upkeep_mult": "-0.15",
+        "planet_clear_blocker_speed_mult": "0.25"
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 698
+  },
+  "civic_hive_galactic_curators": {
+    "civic_hive_galactic_curators": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_hive_galactic_curators_effects",
+          "potential": {
+            "authority": {},
+            "modification": "no",
+            "random_weight": {
+              "base": "@civic_rare_random_weight"
+            },
+            "ai_weight": {
+              "base": "@civic_rare_random_weight"
+            },
+            "modifier": {
+              "councilor_gestalt_cognitive_exp_gain": "@gestalt_civic_node_xp_rate",
+              "planet_jobs_unity_produces_mult": "@galactic_curators_civic_unity_jobs_production_mult",
+              "ship_anomaly_generation_chance_mult": "@galactic_curators_civic_anomaly_discovery_mult",
+              "specimens_produces_mult": "@galactic_curators_civic_specimens_produces_mult"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 750
+  },
+  "civic_machine_servitor": {
+    "civic_machine_servitor": {
+      "playable": {
+        "potential": {
+          "possible": {
+            "civics": {
+              "NOR": {
+                "value": "civic_machine_assimilator"
+              }
+            },
+            "origin": {
+              "NOT": {
+                "value": "origin_machine"
+              }
+            }
+          },
+          "modification": "no",
+          "random_weight": {
+            "base": "@civic_default_random_weight",
+            "modifier": {
+              "factor": "0",
+              "_comments": [
+                "# civic has no effect after galaxy generation, disable for random generation"
+              ],
+              "has_global_flag": "game_started"
+            }
+          },
+          "description": "civic_tooltip_machine_servitor_effects",
+          "has_secondary_species": {
+            "title": "civic_machine_servitor_secondary_species"
+          },
+          "modifier": {
+            "councilor_gestalt_regulatory_exp_gain": "@gestalt_civic_node_xp_rate"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 776
+  },
+  "civic_machine_terminator": {
+    "civic_machine_terminator": {
+      "playable": {
+        "potential": {
+          "possible": {
+            "civics": {
+              "NOR": {
+                "text": "civic_tooltip_not_guided",
+                "value": "civic_machine_guided_sapience"
+              }
+            },
+            "origin": {
+              "NOR": {
+                "value": "origin_hegemon"
+              }
+            }
+          },
+          "modification": "no",
+          "random_weight": {
+            "base": "@civic_default_random_weight",
+            "modifier": {
+              "factor": "0",
+              "blocks_disruptive_gameplay": "yes"
+            }
+          },
+          "description": "civic_tooltip_machine_terminator_effects",
+          "modifier": {
+            "councilor_gestalt_legion_exp_gain": "@gestalt_civic_node_xp_rate",
+            "country_starbase_influence_cost_mult": "-0.3",
+            "ship_weapon_damage": "0.25",
+            "starbase_shipyard_build_cost_mult": "-0.15",
+            "country_naval_cap_mult": "0.33"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 814
+  },
+  "civic_machine_assimilator": {
+    "civic_machine_assimilator": {
+      "playable": {
+        "potential": {
+          "possible": {
+            "civics": {
+              "NOR": {
+                "value": "civic_machine_exploration_protocol"
+              }
+            }
+          },
+          "modification": "no",
+          "random_weight": {
+            "base": "@civic_default_random_weight",
+            "modifier": {
+              "factor": "0",
+              "blocks_disruptive_gameplay": "yes"
+            }
+          },
+          "description": "civic_tooltip_machine_assimilator_effects",
+          "has_secondary_species": {
+            "title": "civic_machine_assimilator_secondary_species",
+            "traits": {
+              "trait": "trait_cybernetic"
+            }
+          },
+          "modifier": {
+            "councilor_gestalt_growth_exp_gain": "@gestalt_civic_node_xp_rate"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 863
+  },
+  "civic_machine_builder": {
+    "civic_machine_builder": {
+      "potential": {
+        "authority": {},
+        "random_weight": {
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight"
+          },
+          "modifier": {
+            "councilor_gestalt_growth_exp_gain": "@gestalt_civic_node_xp_rate",
+            "planet_structures_cost_mult": "-0.15",
+            "planet_building_build_speed_mult": "0.15",
+            "planet_max_buildings_add": "1"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 905
+  },
+  "civic_machine_factory_overclock": {
+    "civic_machine_factory_overclock": {
+      "icon": "gfx/interface/icons/governments/civics/civic_machine_factory_overclock.dds",
+      "potential": {
+        "authority": {},
+        "random_weight": {
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight"
+          },
+          "modifier": {
+            "councilor_gestalt_regulatory_exp_gain": "@gestalt_civic_node_xp_rate",
+            "country_official_cap_add": "1",
+            "country_commander_cap_add": "1",
+            "country_scientist_cap_add": "1"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 921
+  },
+  "civic_machine_unitary_cohesion": {
+    "civic_machine_unitary_cohesion": {
+      "potential": {
+        "authority": {},
+        "random_weight": {
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight"
+          },
+          "modifier": {
+            "councilor_gestalt_regulatory_exp_gain": "@gestalt_civic_node_xp_rate",
+            "country_unity_produces_mult": "0.15"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 938
+  },
+  "civic_machine_rockbreakers": {
+    "civic_machine_rockbreakers": {
+      "potential": {
+        "authority": {},
+        "random_weight": {
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight"
+          },
+          "modifier": {
+            "councilor_gestalt_cognitive_exp_gain": "@gestalt_civic_node_xp_rate",
+            "planet_miners_minerals_produces_add": "1"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 952
+  },
+  "civic_machine_zero_waste_protocols": {
+    "civic_machine_zero_waste_protocols": {
+      "potential": {
+        "authority": {},
+        "random_weight": {
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight"
+          },
+          "modifier": {
+            "councilor_gestalt_regulatory_exp_gain": "@gestalt_civic_node_xp_rate",
+            "planet_pops_robotics_upkeep_mult": "-0.10",
+            "planet_structures_upkeep_mult": "-0.1",
+            "ships_upkeep_mult": "-0.05"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 966
+  },
+  "civic_machine_built_to_last": {
+    "civic_machine_built_to_last": {
+      "potential": {
+        "authority": {},
+        "random_weight": {
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight"
+          },
+          "modifier": {
+            "councilor_gestalt_growth_exp_gain": "@gestalt_civic_node_xp_rate",
+            "pop_amenities_usage_no_happiness_mult": "-0.15"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 982
+  },
+  "civic_machine_ota_updates": {
+    "civic_machine_ota_updates": {
+      "potential": {
+        "authority": {},
+        "random_weight": {
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight"
+          },
+          "description": "civic_machine_ota_updates_effect",
+          "modifier": {
+            "councilor_gestalt_legion_exp_gain": "@gestalt_civic_node_xp_rate",
+            "empire_size_pops_mult": "-0.15",
+            "planet_resettlement_unemployed_mult": "0.5",
+            "country_edict_fund_add": "25"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 996
+  },
+  "civic_machine_warbots": {
+    "civic_machine_warbots": {
+      "potential": {
+        "authority": {},
+        "possible": {
+          "civics": {
+            "NOT": {
+              "value": "civic_machine_obsessional_directive"
+            }
+          }
+        },
+        "random_weight": {
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight",
+            "modifier": {
+              "factor": "@ai_civic_personality_mismatch_factor",
+              "OR": {
+                "has_ai_personality": "servitors"
+              }
+            }
+          },
+          "_comments": [
+            "#\tdescription = civic_tooltip_machine_warbots_effects"
+          ],
+          "modifier": {
+            "councilor_gestalt_legion_exp_gain": "@gestalt_civic_node_xp_rate",
+            "army_damage_mult": "0.2",
+            "armies_upkeep_mult": "-0.2",
+            "commander_initial_skill": "2"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1013
+  },
+  "civic_machine_introspective": {
+    "civic_machine_introspective": {
+      "potential": {
+        "authority": {},
+        "random_weight": {
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight",
+            "modifier": {
+              "factor": "@ai_civic_personality_mismatch_factor",
+              "OR": {
+                "has_ai_personality": "exterminators"
+              }
+            }
+          },
+          "modifier": {
+            "councilor_gestalt_cognitive_exp_gain": "@gestalt_civic_node_xp_rate",
+            "country_engineering_tech_research_speed": "0.20",
+            "intel_encryption_add": "1"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1049
+  },
+  "civic_machine_delegated_functions": {
+    "civic_machine_delegated_functions": {
+      "potential": {
+        "authority": {},
+        "random_weight": {
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight",
+            "modifier": {
+              "factor": "@ai_civic_personality_mismatch_factor",
+              "OR": {
+                "has_ai_personality": "exterminators"
+              }
+            }
+          },
+          "modifier": {
+            "councilor_gestalt_regulatory_exp_gain": "@gestalt_civic_node_xp_rate",
+            "country_leader_pool_size": "1",
+            "envoys_add": "1"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1075
+  },
+  "civic_machine_predictive_analysis": {
+    "civic_machine_predictive_analysis": {
+      "description": "civic_tooltip_machine_predictive_analysis_effects",
+      "potential": {
+        "random_weight": {
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight"
+          },
+          "modifier": {
+            "councilor_gestalt_cognitive_exp_gain": "@gestalt_civic_node_xp_rate",
+            "num_tech_alternatives_add": "1",
+            "intel_decryption_add": "1"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1101
+  },
+  "civic_machine_replication": {
+    "civic_machine_replication": {
+      "potential": {
+        "authority": {},
+        "random_weight": {
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight"
+          },
+          "modifier": {
+            "councilor_gestalt_growth_exp_gain": "@gestalt_civic_node_xp_rate",
+            "planet_pop_assembly_mult": "0.20"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1115
+  },
+  "civic_machine_maintenance_protocols": {
+    "civic_machine_maintenance_protocols": {
+      "potential": {
+        "authority": {},
+        "random_weight": {
+          "ai_weight": {
+            "base": "@ai_civic_default_base_weight"
+          },
+          "description": "civic_tooltip_machine_maintenance_protocols_effects",
+          "modifier": {
+            "planet_jobs_simple_drone_produces_mult": "0.05",
+            "councilor_gestalt_growth_exp_gain": "@gestalt_civic_node_xp_rate"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1129
+  },
+  "civic_machine_memorialist": {
+    "civic_machine_memorialist": {
+      "playable": {
+        "description": "civic_tooltip_memorialist_gestalt_effects",
+        "potential": {
+          "random_weight": {
+            "ai_weight": {
+              "base": "@ai_civic_default_base_weight"
+            },
+            "possible": {
+              "civics": {
+                "NOR": {
+                  "value": "civic_machine_assimilator"
+                }
+              }
+            },
+            "modifier": {
+              "councilor_gestalt_cognitive_exp_gain": "@gestalt_civic_node_xp_rate"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1144
+  },
+  "civic_machine_catalytic_processing": {
+    "civic_machine_catalytic_processing": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_tooltip_machine_catalytic_processing_effects",
+          "potential": {
+            "authority": {},
+            "possible": {
+              "origin": {},
+              "random_weight": {
+                "ai_weight": {
+                  "base": "0\t\t# Too dangerous to switch mid-game"
+                },
+                "modifier": {
+                  "councilor_gestalt_cognitive_exp_gain": "@gestalt_civic_node_xp_rate"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1165
+  },
+  "civic_machine_toxic_baths": {
+    "civic_machine_toxic_baths": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_tooltip_machine_toxic_baths_effects",
+          "potential": {
+            "authority": {},
+            "possible": {
+              "origin": {},
+              "random_weight": {
+                "base": "@civic_uncommon_random_weight"
+              },
+              "ai_weight": {
+                "base": "@ai_civic_uncommon_base_weight",
+                "modifier": {
+                  "factor": "@ai_civic_personality_mismatch_factor",
+                  "OR": {
+                    "has_ai_personality": "servitors"
+                  }
+                }
+              },
+              "modifier": {
+                "councilor_gestalt_growth_exp_gain": "@gestalt_civic_node_xp_rate"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1184
+  },
+  "civic_machine_ascensionists": {
+    "civic_machine_ascensionists": {
+      "playable": {
+        "OR": {
+          "host_has_dlc": "Utopia",
+          "has_astral_planes_dlc": "yes"
+        }
+      },
+      "ai_playable": {
+        "OR": {
+          "host_has_dlc": "Utopia",
+          "has_astral_planes_dlc": "yes"
+        }
+      },
+      "potential": {
+        "authority": {},
+        "description": "civic_tooltip_ascensionists_effects",
+        "modifier": {
+          "councilor_gestalt_regulatory_exp_gain": "@gestalt_civic_node_xp_rate",
+          "planetary_ascension_effect_mult": "0.25",
+          "planetary_ascension_cost_mult": "-0.1",
+          "tradition_cost_empire_size_mult": "-0.25"
+        },
+        "random_weight": {
+          "base": "@civic_uncommon_random_weight"
+        },
+        "ai_weight": {
+          "base": "@ai_civic_uncommon_base_weight",
+          "modifier": {
+            "factor": "@ai_civic_personality_mismatch_factor",
+            "OR": {
+              "has_ai_personality": "exterminators"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1211
+  },
+  "civic_machine_exploration_protocol": {
+    "civic_machine_exploration_protocol": {
+      "playable": {
+        "has_first_contact_dlc": "yes"
+      },
+      "ai_playable": {
+        "has_first_contact_dlc": "yes"
+      },
+      "description": "civic_machine_exploration_protocol_effects",
+      "modification": {
+        "add": {
+          "has_technology": "tech_subspace_drive"
+        },
+        "remove": {
+          "has_technology": "tech_jump_drive_1"
+        }
+      },
+      "potential": {
+        "authority": {},
+        "possible": {
+          "civics": {
+            "NOR": {
+              "value": "civic_machine_guided_sapience"
+            }
+          }
+        },
+        "modifier": {
+          "councilor_gestalt_legion_exp_gain": "@gestalt_civic_node_xp_rate",
+          "first_contact_speed_mult": "0.2",
+          "station_observers_unity_produces_add": "3"
+        },
+        "random_weight": {
+          "base": "0"
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1253
+  },
+  "civic_machine_hyperspace_specialty": {
+    "civic_machine_hyperspace_specialty": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_machine_hyperspace_specialty_effects",
+          "potential": {
+            "possible": {
+              "civics": {},
+              "modifier": {
+                "planet_sensor_range_add": "2",
+                "ship_speed_mult": "0.1",
+                "country_physics_tech_research_speed": "0.15",
+                "councilor_gestalt_cognitive_exp_gain": "@gestalt_civic_node_xp_rate"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1292
+  },
+  "civic_memory_vault_machine": {
+    "civic_memory_vault_machine": {
+      "playable": {
+        "ai_playable": {
+          "random_weight": {
+            "base": "4"
+          },
+          "description": "civic_tooltip_memory_vault_machine_effects",
+          "potential": {
+            "possible": {},
+            "modifier": {
+              "restored_node_bonus_skill": "1",
+              "councilor_gestalt_cognitive_exp_gain": "@gestalt_civic_node_xp_rate",
+              "councilor_skill_add": "1",
+              "leader_initial_skill": "1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1308
+  },
+  "civic_machine_upkeep_twister": {
+    "civic_machine_upkeep_twister": {
+      "playable": {
+        "ai_playable": {
+          "random_weight": {
+            "base": "4"
+          },
+          "description": "civic_tooltip_machine_upkeep_twister_effects",
+          "potential": {
+            "authority": {},
+            "possible": {},
+            "modifier": {
+              "leader_trait_selection_options_add": "1",
+              "councilor_gestalt_regulatory_exp_gain": "@gestalt_civic_node_xp_rate"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1326
+  },
+  "civic_machine_sovereign_guardianship": {
+    "civic_machine_sovereign_guardianship": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_machine_sovereign_guardianship_effects",
+          "potential": {
+            "authority": {},
+            "possible": {
+              "civics": {
+                "NOT": {}
+              },
+              "modification": "no",
+              "modifier": {
+                "empire_size_colonies_mult": "1",
+                "empire_size_systems_mult": "1.50",
+                "empire_size_pops_mult": "-0.50",
+                "empire_size_districts_mult": "-0.50",
+                "diplo_weight_mult": "0.2",
+                "councilor_gestalt_regulatory_exp_gain": "@gestalt_civic_node_xp_rate",
+                "planet_soldiers_unity_produces_add": "@sovereign_guardianship_soldier_unity"
+              },
+              "random_weight": {
+                "base": "@civic_rare_random_weight"
+              },
+              "ai_weight": {
+                "base": "@civic_rare_random_weight"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1347
+  },
+  "civic_machine_obsessional_directive": {
+    "civic_machine_obsessional_directive": {
+      "modification": "no",
+      "playable": {
+        "ai_playable": {
+          "description": "civic_machine_obsessional_directive_effects",
+          "potential": {
+            "authority": {},
+            "possible": {
+              "civics": {
+                "NOT": {
+                  "value": "civic_machine_warbots"
+                }
+              }
+            },
+            "modifier": {
+              "councilor_gestalt_growth_exp_gain": "@gestalt_civic_node_xp_rate"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1378
+  },
+  "civic_machine_diplomatic_protocols": {
+    "civic_machine_diplomatic_protocols": {
+      "playable": {
+        "ai_playable": {
+          "random_weight": {
+            "base": "4"
+          },
+          "potential": {
+            "authority": {},
+            "possible": {
+              "civics": {
+                "NOT": {}
+              },
+              "random_weight": {
+                "base": "@civic_rare_random_weight"
+              },
+              "ai_weight": {
+                "base": "@civic_rare_random_weight"
+              },
+              "modifier": {
+                "councilor_gestalt_regulatory_exp_gain": "@gestalt_civic_node_xp_rate",
+                "envoys_add": "2",
+                "diplo_weight_mult": "0.25",
+                "country_trust_cap_add": "35",
+                "envoy_improve_relations_mult": "0.50"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1401
+  },
+  "civic_machine_tactical_algorithms": {
+    "civic_machine_tactical_algorithms": {
+      "modification": "no",
+      "playable": {
+        "ai_playable": {
+          "description": "civic_machine_tactical_algorithms_effects",
+          "potential": {
+            "authority": {},
+            "possible": {
+              "civics": {
+                "NOT": {}
+              },
+              "modifier": {
+                "councilor_gestalt_legion_exp_gain": "@gestalt_civic_node_xp_rate",
+                "add_base_country_intel": "20"
+              },
+              "swap_type": {
+                "description": "civic_machine_tactical_algorithms_effects",
+                "trigger": {
+                  "host_has_dlc": "Overlord"
+                },
+                "modifier": {
+                  "country_enclave_capacity_add": "1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1432
+  },
+  "civic_machine_guided_sapience": {
+    "civic_machine_guided_sapience": {
+      "modification": "yes",
+      "playable": {
+        "ai_playable": {
+          "random_weight": {
+            "base": "@civic_rare_random_weight"
+          },
+          "potential": {
+            "authority": {
+              "value": "auth_machine_intelligence",
+              "NOR": {
+                "value": "auth_hive_mind"
+              }
+            },
+            "ethics": {
+              "value": "ethic_gestalt_consciousness"
+            }
+          },
+          "possible": {
+            "origin": {
+              "NOT": {},
+              "civics": {
+                "NOR": {
+                  "value": "civic_machine_terminator"
+                }
+              }
+            },
+            "modifier": {
+              "councilor_gestalt_cognitive_exp_gain": "@gestalt_civic_node_xp_rate",
+              "terraforming_cost_mult": "-0.25",
+              "terraform_speed_mult": "0.25"
+            },
+            "description": "civic_tooltip_guided_sapience_effects",
+            "negative_description": "civic_tooltip_guided_sapience_gestalt_negative_effects"
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1461
+  },
+  "civic_machine_spybots": {
+    "civic_machine_spybots": {
+      "playable": {
+        "has_nemesis": "yes"
+      },
+      "ai_playable": {
+        "has_nemesis": "yes"
+      },
+      "potential": {
+        "authority": {},
+        "random_weight": {
+          "base": "@civic_rare_random_weight"
+        },
+        "modifier": {
+          "intel_decryption_add": "1",
+          "spy_network_daily_value_mult": "0.25",
+          "envoys_add": "1",
+          "country_trust_cap_add": "-25",
+          "councilor_gestalt_regulatory_exp_gain": "@gestalt_civic_node_xp_rate"
+        },
+        "swap_type": {
+          "trigger": {
+            "has_first_contact_dlc": "yes"
+          },
+          "description": "civic_machine_spybots_effects",
+          "modifier": {
+            "ship_cloaking_strength_add": "2"
+          }
+        },
+        "ai_weight": {
+          "base": "@ai_civic_uncommon_base_weight"
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1503
+  },
+  "civic_machine_astromining_drones": {
+    "civic_machine_astromining_drones": {
+      "playable": {
+        "has_megacorp": "yes"
+      },
+      "ai_playable": {
+        "has_megacorp": "yes"
+      },
+      "potential": {
+        "authority": {},
+        "random_weight": {
+          "base": "@civic_rare_random_weight"
+        },
+        "description": "civic_tooltip_machine_astromining_drones_effects",
+        "modifier": {
+          "planet_miners_minerals_produces_add": "-2",
+          "planet_technician_energy_produces_add": "-1",
+          "station_gatherers_produces_mult": "0.5",
+          "country_starbase_capacity_mult": "0.50",
+          "stations_cost_mult": "-0.50",
+          "planet_jobs_simple_drone_produces_mult": "-0.50",
+          "councilor_gestalt_growth_exp_gain": "@gestalt_civic_node_xp_rate"
+        },
+        "ai_weight": {
+          "base": "@ai_civic_uncommon_base_weight"
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1539
+  },
+  "civic_machine_beastmasters": {
+    "civic_machine_beastmasters": {
+      "playable": {
+        "ai_playable": {
+          "flags": {
+            "description": "civic_beastmasters_effects",
+            "potential": {
+              "authority": {},
+              "possible": {
+                "civics": {
+                  "NOT": {
+                    "NOT": {}
+                  },
+                  "modification": "no",
+                  "modifier": {
+                    "artificial_ship_naval_cap_usage_mult": "2.0",
+                    "councilor_gestalt_legion_exp_gain": "0.25",
+                    "space_fauna_ship_cost_mult": "-0.15",
+                    "space_fauna_ship_upkeep_mult": "-0.10"
+                  },
+                  "random_weight": {
+                    "base": "@civic_rare_random_weight"
+                  },
+                  "ai_weight": {
+                    "base": "@civic_rare_random_weight"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1569
+  },
+  "civic_astrometeorology_machine": {
+    "civic_astrometeorology_machine": {
+      "playable": {
+        "has_cosmic_storms_dlc": "yes"
+      },
+      "ai_playable": {
+        "has_cosmic_storms_dlc": "yes"
+      },
+      "potential": {
+        "authority": {
+          "value": "auth_machine_intelligence"
+        }
+      },
+      "description": "civic_astrometeorology_machine_effect_tooltip",
+      "modifier": {
+        "councilor_gestalt_cognitive_exp_gain": "@gestalt_civic_node_xp_rate"
+      },
+      "random_weight": {
+        "base": "@civic_default_random_weight"
+      },
+      "ai_weight": {
+        "base": "@ai_civic_default_base_weight"
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1598
+  },
+  "civic_environmental_architects_machine": {
+    "civic_environmental_architects_machine": {
+      "playable": {
+        "has_cosmic_storms_dlc": "yes"
+      },
+      "ai_playable": {
+        "has_cosmic_storms_dlc": "yes"
+      },
+      "potential": {
+        "authority": {
+          "value": "auth_machine_intelligence"
+        }
+      },
+      "possible": {
+        "civics": {
+          "NOT": {
+            "value": "civic_machine_toxic_baths"
+          }
+        },
+        "origin": {
+          "NOR": {
+            "value": "origin_machine"
+          }
+        }
+      },
+      "modification": "no",
+      "random_weight": {
+        "base": "@civic_default_random_weight"
+      },
+      "description": "civic_environmental_architects_machine_effect_tooltip",
+      "negative_description": "civic_environmental_architects_negative_effect_tooltip",
+      "modifier": {
+        "councilor_gestalt_growth_exp_gain": "@gestalt_civic_node_xp_rate",
+        "planet_jobs_produces_mult": "0.1",
+        "planet_pop_assembly_mult": "0.1",
+        "planet_pops_upkeep_mult": "-0.15",
+        "planet_clear_blocker_speed_mult": "0.25"
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1622
+  },
+  "civic_machine_galactic_curators": {
+    "civic_machine_galactic_curators": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_machine_galactic_curators_effects",
+          "potential": {
+            "authority": {},
+            "modification": "no",
+            "random_weight": {
+              "base": "@civic_rare_random_weight"
+            },
+            "ai_weight": {
+              "base": "@civic_rare_random_weight"
+            },
+            "modifier": {
+              "councilor_gestalt_cognitive_exp_gain": "@gestalt_civic_node_xp_rate",
+              "planet_jobs_unity_produces_mult": "@galactic_curators_civic_unity_jobs_production_mult",
+              "ship_anomaly_generation_chance_mult": "@galactic_curators_civic_anomaly_discovery_mult",
+              "specimens_produces_mult": "@galactic_curators_civic_specimens_produces_mult"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_gestalt_civics.txt",
+    "_line_number": 1674
+  }
+}

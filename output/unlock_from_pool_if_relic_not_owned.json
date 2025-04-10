@@ -1,0 +1,16 @@
+{
+  "if": {
+    "if": {
+      "limit": {
+        "prev": {
+          "NOT": {
+            "has_relic": "$RELIC$"
+          }
+        }
+      },
+      "remove_global_flag": "astral_rift_with_relic_$RELIC$_being_explored"
+    },
+    "_source_file": "unlock_from_pool_if_relic_not_owned.txt",
+    "_line_number": -1
+  }
+}

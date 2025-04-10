@@ -1,0 +1,57 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "crisis.7000",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "this": {
+          "has_ascension_perk": "ap_cosmogenesis"
+        }
+      },
+      "immediate": {
+        "complete_crisis_objective": "crisobj_research_tech"
+      }
+    },
+    "_source_file": "machine_age_crisis_menace_objective_events.txt",
+    "_line_number": 11
+  },
+  "event": {
+    "event": {
+      "id": "crisis.7020",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_country": {
+          "has_ascension_perk": "ap_cosmogenesis",
+          "any_owned_megastructure": {
+            "OR": {
+              "is_megastructure_type": "think_tank_restored"
+            }
+          }
+        }
+      },
+      "immediate": {
+        "every_playable_country": {
+          "if": {
+            "limit": {
+              "has_ascension_perk": "ap_cosmogenesis"
+            },
+            "every_owned_megastructure": {
+              "limit": {
+                "OR": {
+                  "is_megastructure_type": "think_tank_restored"
+                }
+              },
+              "prev": {
+                "complete_crisis_objective": "crisobj_have_science_nexuses"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "machine_age_crisis_menace_objective_events.txt",
+    "_line_number": 202
+  }
+}

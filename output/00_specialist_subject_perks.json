@@ -1,0 +1,803 @@
+{
+  "bulwark_1_modifier": {
+    "bulwark_1_modifier": {
+      "main_perk": "yes",
+      "subject_modifier": {
+        "shipclass_military_station_damage_mult": "0.5",
+        "shipclass_military_station_hull_mult": "0.5",
+        "starbase_defense_platform_capacity_add": "2",
+        "shipclass_starbase_damage_mult": "0.5",
+        "shipclass_starbase_hull_mult": "0.5",
+        "ship_shield_hardening_add": "0.05",
+        "ship_armor_hardening_add": "0.05"
+      },
+      "_comments": [
+        "# For setting the room background",
+        "# Restore room background back to normal"
+      ],
+      "activate_effect": {
+        "target": {
+          "store_country_backup_data": {
+            "flag": "no",
+            "room": "yes",
+            "name": "no",
+            "ethics": "no",
+            "government": "no"
+          },
+          "room_name_override": ""
+        }
+      },
+      "deactivate_effect": {
+        "target": {
+          "restore_country_backup_data": "yes"
+        }
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 5
+  },
+  "bulwark_1_penalties": {
+    "bulwark_1_penalties": {
+      "main_perk": "yes",
+      "subject_modifier": {
+        "country_energy_produces_mult": "-0.2",
+        "country_minerals_produces_mult": "-0.2",
+        "country_food_produces_mult": "-0.2"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 37
+  },
+  "bulwark_1_overlord_modifier": {
+    "bulwark_1_overlord_modifier": {
+      "icon": "GFX_specialist_perk_bulwark_1_overlord_modifier",
+      "overlord_modifier": {
+        "starbase_upgrade_cost_mult": "-0.2",
+        "starbase_upgrade_speed_mult": "0.2"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 46
+  },
+  "bulwark_1_neighbor_bonuses": {
+    "bulwark_1_neighbor_bonuses": {
+      "icon": "GFX_specialist_perk_bulwark_1_neighbor_bonuses",
+      "overlord_relay_network_modifier": {
+        "specialist_bulwark_neighbor": "1"
+      },
+      "desc": {
+        "description": "bulwark_1_neighbor_bonuses_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 56
+  },
+  "bulwark_1_bulwark_array": {
+    "bulwark_1_bulwark_array": {
+      "icon": "GFX_specialist_perk_bulwark_1_bulwark_array",
+      "activate_effect": {
+        "target": {
+          "every_owned_starbase": {
+            "limit": {
+              "add_bulwark_array": "yes"
+            }
+          }
+        },
+        "deactivate_effect": {
+          "target": {
+            "every_owned_starbase": {
+              "remove_bulwark_array": "yes"
+            }
+          }
+        },
+        "desc": {
+          "description": "bulwark_1_bulwark_array_desc"
+        }
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 68
+  },
+  "bulwark_1_bulwark_insight": {
+    "bulwark_1_bulwark_insight": {
+      "icon": "GFX_specialist_perk_bulwark_1_bulwark_insight",
+      "activate_effect": {
+        "target": {
+          "if": {
+            "limit": {
+              "give_technology": {
+                "tech": "tech_ftl_inhibitor",
+                "message": "yes"
+              }
+            },
+            "append_technology": {
+              "append_technology": {}
+            },
+            "desc": {
+              "description": "bulwark_1_bulwark_insight_desc"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 91
+  },
+  "bulwark_2_modifier": {
+    "bulwark_2_modifier": {
+      "main_perk": "yes",
+      "subject_modifier": {
+        "shipclass_military_station_damage_mult": "0.75",
+        "shipclass_military_station_hull_mult": "0.75",
+        "starbase_defense_platform_capacity_add": "5",
+        "shipclass_starbase_damage_mult": "0.5",
+        "shipclass_starbase_hull_mult": "0.5",
+        "ship_shield_hardening_add": "0.15",
+        "ship_armor_hardening_add": "0.15"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 111
+  },
+  "bulwark_2_penalties": {
+    "bulwark_2_penalties": {
+      "main_perk": "yes",
+      "subject_modifier": {
+        "country_energy_produces_mult": "-0.35",
+        "country_minerals_produces_mult": "-0.35",
+        "country_food_produces_mult": "-0.35"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 124
+  },
+  "bulwark_2_bulwark_insight": {
+    "bulwark_2_bulwark_insight": {
+      "icon": "GFX_specialist_perk_bulwark_2_bulwark_insight",
+      "activate_effect": {
+        "target": {
+          "append_technology": {
+            "append_technology": {}
+          },
+          "desc": {
+            "description": "bulwark_2_bulwark_insight_desc"
+          }
+        }
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 134
+  },
+  "bulwark_2_leaders": {
+    "bulwark_2_leaders": {
+      "icon": "GFX_specialist_perk_bulwark_2_leaders",
+      "subject_modifier": {
+        "country_commander_cap_add": "1",
+        "commander_initial_skill": "1"
+      },
+      "activate_effect": {
+        "target": {
+          "add_specialist_leaders": {
+            "TYPE": "bulwark",
+            "CLASS": "commander"
+          }
+        }
+      },
+      "deactivate_effect": {
+        "target": {
+          "remove_specialist_leaders": {
+            "TYPE": "bulwark",
+            "CLASS": "commander"
+          }
+        }
+      },
+      "desc": {
+        "description": "bulwark_2_leaders_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 150
+  },
+  "bulwark_2_traits": {
+    "bulwark_2_traits": {
+      "icon": "GFX_specialist_perk_bulwark_2_traits",
+      "desc": {
+        "description": "bulwark_2_traits_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 177
+  },
+  "bulwark_3_modifier": {
+    "bulwark_3_modifier": {
+      "main_perk": "yes",
+      "subject_modifier": {
+        "shipclass_military_station_damage_mult": "1",
+        "shipclass_military_station_hull_mult": "1",
+        "starbase_defense_platform_capacity_add": "8",
+        "shipclass_starbase_damage_mult": "0.75",
+        "shipclass_starbase_hull_mult": "0.75",
+        "ship_shield_hardening_add": "0.25",
+        "ship_armor_hardening_add": "0.25"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 184
+  },
+  "bulwark_3_penalties": {
+    "bulwark_3_penalties": {
+      "main_perk": "yes",
+      "subject_modifier": {
+        "country_energy_produces_mult": "-0.5",
+        "country_minerals_produces_mult": "-0.5",
+        "country_food_produces_mult": "-0.5"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 197
+  },
+  "bulwark_3_bulwark_insight": {
+    "bulwark_3_bulwark_insight": {
+      "icon": "GFX_specialist_perk_bulwark_3_bulwark_insight",
+      "activate_effect": {
+        "target": {
+          "append_technology": {}
+        },
+        "desc": {
+          "description": "bulwark_3_bulwark_insight_desc"
+        }
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 207
+  },
+  "bulwark_3_battlewright": {
+    "bulwark_3_battlewright": {
+      "icon": "GFX_specialist_perk_bulwark_3_battlewright",
+      "activate_effect": {
+        "target": {
+          "create_ship_design": {
+            "last_created_design": {
+              "set_design_flag": "bulwark_battlewright"
+            },
+            "add_ship_design": "last_created_design"
+          }
+        },
+        "deactivate_effect": {
+          "target": {
+            "every_owned_design": {
+              "limit": {
+                "save_event_target_as": "remove_this_design"
+              },
+              "remove_ship_design": "event_target:remove_this_design"
+            }
+          },
+          "desc": {
+            "description": "bulwark_3_battlewright_desc"
+          }
+        }
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 221
+  },
+  "bulwark_3_disintegrator_field": {
+    "bulwark_3_disintegrator_field": {
+      "icon": "GFX_specialist_perk_bulwark_3_disintegrator_field",
+      "activate_effect": {
+        "target": {
+          "if": {
+            "limit": {
+              "NOT": {
+                "has_tradition": "tr_unyielding_finish"
+              },
+              "set_country_flag": "finished_unyielding_tree"
+            },
+            "every_owned_starbase": {
+              "limit": {
+                "add_disintegrator_field": "yes"
+              }
+            }
+          },
+          "deactivate_effect": {
+            "target": {
+              "every_owned_starbase": {
+                "remove_disintegrator_field": "yes"
+              }
+            }
+          },
+          "desc": {
+            "description": "bulwark_3_disintegrator_field_desc"
+          }
+        }
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 248
+  },
+  "scholarium_1_modifier": {
+    "scholarium_1_modifier": {
+      "main_perk": "yes",
+      "subject_modifier": {
+        "country_society_research_produces_mult": "0.2",
+        "country_physics_research_produces_mult": "0.2",
+        "country_engineering_research_produces_mult": "0.2",
+        "num_tech_alternatives_add": "1",
+        "description": "scholarium_1_modifier_desc"
+      },
+      "_comments": [
+        "# For setting the room background",
+        "# Restore room background back to normal"
+      ],
+      "activate_effect": {
+        "target": {
+          "store_country_backup_data": {
+            "flag": "no",
+            "room": "yes",
+            "name": "no",
+            "ethics": "no",
+            "government": "no"
+          },
+          "room_name_override": ""
+        }
+      },
+      "deactivate_effect": {
+        "target": {
+          "restore_country_backup_data": "yes"
+        }
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 283
+  },
+  "scholarium_1_penalties": {
+    "scholarium_1_penalties": {
+      "main_perk": "yes",
+      "subject_modifier": {
+        "country_naval_cap_mult": "-0.3",
+        "ship_military_cost_mult": "0.3",
+        "ship_military_upkeep_mult": "0.3"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 313
+  },
+  "scholarium_1_overlord_modifier": {
+    "scholarium_1_overlord_modifier": {
+      "icon": "GFX_specialist_perk_scholarium_1_overlord_modifier",
+      "overlord_modifier": {
+        "country_society_research_produces_mult": "0.1",
+        "country_physics_research_produces_mult": "0.1",
+        "country_engineering_research_produces_mult": "0.1",
+        "description": "scholarium_1_overlord_modifier_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 322
+  },
+  "scholarium_1_neighbor_bonuses": {
+    "scholarium_1_neighbor_bonuses": {
+      "icon": "GFX_specialist_perk_scholarium_1_neighbor_bonuses",
+      "overlord_relay_network_modifier": {
+        "specialist_scholarium_neighbor": "1"
+      },
+      "desc": {
+        "description": "scholarium_1_neighbor_bonuses_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 334
+  },
+  "scholarium_1_planetary_sensors": {
+    "scholarium_1_planetary_sensors": {
+      "icon": "GFX_specialist_perk_scholarium_1_planetary_sensors",
+      "desc": {
+        "description": "scholarium_1_planetary_sensors_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 344
+  },
+  "scholarium_1_discovery": {
+    "scholarium_1_discovery": {
+      "icon": "GFX_specialist_perk_scholarium_1_discovery",
+      "desc": {
+        "description": "scholarium_1_discovery_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 351
+  },
+  "scholarium_2_modifier": {
+    "scholarium_2_modifier": {
+      "main_perk": "yes",
+      "subject_modifier": {
+        "country_society_research_produces_mult": "0.3",
+        "country_physics_research_produces_mult": "0.3",
+        "country_engineering_research_produces_mult": "0.3",
+        "num_tech_alternatives_add": "1",
+        "description": "scholarium_2_modifier_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 358
+  },
+  "scholarium_2_penalties": {
+    "scholarium_2_penalties": {
+      "main_perk": "yes",
+      "subject_modifier": {
+        "country_naval_cap_mult": "-0.4",
+        "ship_military_cost_mult": "0.4",
+        "ship_military_upkeep_mult": "0.4"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 369
+  },
+  "scholarium_2_leaders": {
+    "scholarium_2_leaders": {
+      "icon": "GFX_specialist_perk_scholarium_2_leaders",
+      "subject_modifier": {
+        "country_scientist_cap_add": "1",
+        "scientist_initial_skill": "1"
+      },
+      "activate_effect": {
+        "target": {
+          "add_specialist_leaders": {
+            "TYPE": "scholarium",
+            "CLASS": "scientist"
+          }
+        }
+      },
+      "deactivate_effect": {
+        "target": {
+          "remove_specialist_leaders": {
+            "TYPE": "scholarium",
+            "CLASS": "scientist"
+          }
+        }
+      },
+      "desc": {
+        "description": "scholarium_2_leaders_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 381
+  },
+  "scholarium_2_traits": {
+    "scholarium_2_traits": {
+      "icon": "GFX_specialist_perk_scholarium_2_traits",
+      "desc": {
+        "description": "scholarium_2_traits_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 408
+  },
+  "scholarium_2_discovery": {
+    "scholarium_2_discovery": {
+      "icon": "GFX_specialist_perk_scholarium_2_discovery",
+      "desc": {
+        "description": "scholarium_2_discovery_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 415
+  },
+  "scholarium_3_modifier": {
+    "scholarium_3_modifier": {
+      "main_perk": "yes",
+      "subject_modifier": {
+        "country_society_research_produces_mult": "0.4",
+        "country_physics_research_produces_mult": "0.4",
+        "country_engineering_research_produces_mult": "0.4",
+        "num_tech_alternatives_add": "1",
+        "description": "scholarium_3_modifier_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 422
+  },
+  "scholarium_3_penalties": {
+    "scholarium_3_penalties": {
+      "main_perk": "yes",
+      "subject_modifier": {
+        "country_naval_cap_mult": "-0.5",
+        "ship_military_cost_mult": "0.5",
+        "ship_military_upkeep_mult": "0.5"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 433
+  },
+  "scholarium_3_discovery": {
+    "scholarium_3_discovery": {
+      "icon": "GFX_specialist_perk_scholarium_3_discovery",
+      "desc": {
+        "description": "scholarium_3_discovery_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 442
+  },
+  "scholarium_3_arctrellis": {
+    "scholarium_3_arctrellis": {
+      "icon": "GFX_specialist_perk_scholarium_3_arctrellis",
+      "desc": {
+        "description": "scholarium_3_arctrellis_desc"
+      },
+      "activate_effect": {
+        "target": {
+          "create_ship_design": {
+            "last_created_design": {
+              "set_design_flag": "scholarium_arctrellis"
+            },
+            "add_ship_design": "last_created_design"
+          }
+        },
+        "deactivate_effect": {
+          "target": {
+            "every_owned_design": {
+              "limit": {
+                "save_event_target_as": "remove_this_design"
+              },
+              "remove_ship_design": "event_target:remove_this_design"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 452
+  },
+  "prospectorium_1_modifier": {
+    "prospectorium_1_modifier": {
+      "main_perk": "yes",
+      "subject_modifier": {
+        "station_gatherers_cost_mult": "-0.1",
+        "country_energy_produces_mult": "0.1",
+        "country_minerals_produces_mult": "0.1",
+        "country_alloys_produces_mult": "0.1",
+        "country_exotic_gases_produces_mult": "0.1",
+        "country_rare_crystals_produces_mult": "0.1",
+        "country_volatile_motes_produces_mult": "0.1",
+        "description": "prospectorium_1_modifier_desc"
+      },
+      "_comments": [
+        "# For setting the room background",
+        "# Restore room background back to normal"
+      ],
+      "activate_effect": {
+        "target": {
+          "store_country_backup_data": {
+            "flag": "no",
+            "room": "yes",
+            "name": "no",
+            "ethics": "no",
+            "government": "no"
+          },
+          "room_name_override": ""
+        }
+      },
+      "deactivate_effect": {
+        "target": {
+          "restore_country_backup_data": "yes"
+        }
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 483
+  },
+  "prospectorium_1_penalties": {
+    "prospectorium_1_penalties": {
+      "main_perk": "yes",
+      "subject_modifier": {
+        "country_physics_research_produces_mult": "-0.3",
+        "country_society_research_produces_mult": "-0.3",
+        "country_engineering_research_produces_mult": "-0.3",
+        "description": "prospectorium_1_penalties_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 516
+  },
+  "prospectorium_1_overlord_modifier": {
+    "prospectorium_1_overlord_modifier": {
+      "icon": "GFX_specialist_perk_prospectorium_1_overlord_modifier",
+      "overlord_modifier": {
+        "station_gatherers_cost_mult": "-0.2",
+        "shipclass_mining_station_build_speed_mult": "0.2"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 526
+  },
+  "prospectorium_1_neighbor_bonuses": {
+    "prospectorium_1_neighbor_bonuses": {
+      "icon": "GFX_specialist_perk_prospectorium_1_neighbor_bonuses",
+      "overlord_relay_network_modifier": {
+        "specialist_prospectorium_neighbor": "1"
+      },
+      "desc": {
+        "description": "prospectorium_1_neighbor_bonuses_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 536
+  },
+  "prospectorium_1_deposits": {
+    "prospectorium_1_deposits": {
+      "icon": "GFX_specialist_perk_prospectorium_1_deposits",
+      "desc": {}
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 547
+  },
+  "prospectorium_2_modifier": {
+    "prospectorium_2_modifier": {
+      "main_perk": "yes",
+      "subject_modifier": {
+        "station_gatherers_cost_mult": "-0.25",
+        "country_energy_produces_mult": "0.2",
+        "country_minerals_produces_mult": "0.2",
+        "country_alloys_produces_mult": "0.2",
+        "country_exotic_gases_produces_mult": "0.2",
+        "country_rare_crystals_produces_mult": "0.2",
+        "country_volatile_motes_produces_mult": "0.2",
+        "description": "prospectorium_2_modifier_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 552
+  },
+  "prospectorium_2_penalties": {
+    "prospectorium_2_penalties": {
+      "main_perk": "yes",
+      "subject_modifier": {
+        "country_physics_research_produces_mult": "-0.4",
+        "country_society_research_produces_mult": "-0.4",
+        "country_engineering_research_produces_mult": "-0.4",
+        "description": "prospectorium_2_penalties_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 566
+  },
+  "prospectorium_2_leaders": {
+    "prospectorium_2_leaders": {
+      "icon": "GFX_specialist_perk_prospectorium_2_leaders",
+      "subject_modifier": {
+        "country_official_cap_add": "1",
+        "official_initial_skill": "1"
+      },
+      "activate_effect": {
+        "target": {
+          "add_specialist_leaders": {
+            "TYPE": "prospectorium",
+            "CLASS": "official"
+          }
+        }
+      },
+      "deactivate_effect": {
+        "target": {
+          "remove_specialist_leaders": {
+            "TYPE": "prospectorium",
+            "CLASS": "official"
+          }
+        }
+      },
+      "desc": {
+        "description": "prospectorium_2_leaders_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 579
+  },
+  "prospectorium_2_traits": {
+    "prospectorium_2_traits": {
+      "icon": "GFX_specialist_perk_prospectorium_2_traits",
+      "desc": {
+        "description": "prospectorium_2_traits_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 606
+  },
+  "prospectorium_2_mining_tech": {
+    "prospectorium_2_mining_tech": {
+      "icon": "GFX_specialist_perk_prospectorium_2_mining_tech",
+      "activate_effect": {
+        "target": {
+          "append_technology": {
+            "append_technology": {
+              "append_technology": {}
+            },
+            "desc": {
+              "description": "prospectorium_2_mining_tech_desc"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 614
+  },
+  "prospectorium_2_deposits": {
+    "prospectorium_2_deposits": {
+      "icon": "GFX_specialist_perk_prospectorium_2_deposits",
+      "desc": {}
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 629
+  },
+  "prospectorium_3_modifier": {
+    "prospectorium_3_modifier": {
+      "main_perk": "yes",
+      "subject_modifier": {
+        "station_gatherers_cost_mult": "-0.5",
+        "country_energy_produces_mult": "0.3",
+        "country_minerals_produces_mult": "0.3",
+        "country_alloys_produces_mult": "0.3",
+        "country_exotic_gases_produces_mult": "0.3",
+        "country_rare_crystals_produces_mult": "0.3",
+        "country_volatile_motes_produces_mult": "0.3",
+        "description": "prospectorium_3_modifier_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 634
+  },
+  "prospectorium_3_penalties": {
+    "prospectorium_3_penalties": {
+      "main_perk": "yes",
+      "subject_modifier": {
+        "country_physics_research_produces_mult": "-0.5",
+        "country_society_research_produces_mult": "-0.5",
+        "country_engineering_research_produces_mult": "-0.5",
+        "description": "prospectorium_3_penalties_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 648
+  },
+  "prospectorium_3_mining_tech": {
+    "prospectorium_3_mining_tech": {
+      "icon": "GFX_specialist_perk_prospectorium_3_mining_tech",
+      "activate_effect": {
+        "target": {
+          "append_technology": {
+            "append_technology": {
+              "append_technology": {}
+            },
+            "desc": {
+              "description": "prospectorium_3_mining_tech_desc"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 659
+  },
+  "prospectorium_3_deposits": {
+    "prospectorium_3_deposits": {
+      "icon": "GFX_specialist_perk_prospectorium_3_deposits",
+      "desc": {}
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 674
+  },
+  "prospectorium_3_strip_mining": {
+    "prospectorium_3_strip_mining": {
+      "icon": "GFX_specialist_perk_prospectorium_3_strip_mining",
+      "_comments": [
+        "# Auto unlocks when Tier 3 is reached."
+      ],
+      "desc": {
+        "description": "prospectorium_3_strip_mining_desc"
+      }
+    },
+    "_source_file": "00_specialist_subject_perks.txt",
+    "_line_number": 679
+  }
+}

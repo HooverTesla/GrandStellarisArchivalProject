@@ -1,0 +1,380 @@
+{
+  "succession_type_rotation": {
+    "succession_type_rotation": {
+      "potential": {
+        "NOT": {},
+        "allow": {
+          "custom_tooltip": {
+            "NOT": {
+              "AND": {
+                "NOT": {
+                  "has_modifier": "federation_law_category_succession_type_cooldown",
+                  "has_any_federation_law_in_category": "law_category_succession_type"
+                }
+              }
+            },
+            "custom_tooltip": {
+              "fail_text": "cannot_change_succession_type_during_war",
+              "NAND": {
+                "NOT": {
+                  "any_member": {
+                    "has_any_federation_law_in_category": "law_category_succession_type"
+                  }
+                }
+              },
+              "cohesion_growth": "-0.50",
+              "on_enact": {
+                "set_federation_succession_type": "rotation",
+                "if": {
+                  "limit": {
+                    "if": {
+                      "limit": {
+                        "remove_modifier": "federation_law_category_succession_term_cooldown"
+                      },
+                      "set_federation_succession_term": "years_40",
+                      "if": {
+                        "limit": {
+                          "add_modifier": {
+                            "modifier": "federation_law_category_succession_type_cooldown",
+                            "days": "@cooldown"
+                          }
+                        }
+                      },
+                      "ai_weight": {
+                        "base": "0",
+                        "_comments": [
+                          "#Default support",
+                          "#Attempt to change to rotating when there is bad cohesion",
+                          "#Behaviour-specific"
+                        ],
+                        "modifier": {
+                          "desc": "federation_acceptance_servitors",
+                          "add": "50",
+                          "has_ai_personality": "servitors"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_succession_type.txt",
+    "_line_number": 5
+  },
+  "succession_type_challenge": {
+    "succession_type_challenge": {
+      "potential": {
+        "host_has_dlc": "Federations",
+        "NOT": {},
+        "allow": {
+          "custom_tooltip": {
+            "NOT": {
+              "AND": {
+                "NOT": {
+                  "has_modifier": "federation_law_category_succession_type_cooldown",
+                  "has_any_federation_law_in_category": "law_category_succession_type"
+                }
+              }
+            },
+            "custom_tooltip": {
+              "fail_text": "cannot_change_succession_type_during_war",
+              "NAND": {
+                "NOT": {
+                  "any_member": {
+                    "has_any_federation_law_in_category": "law_category_succession_type"
+                  }
+                }
+              },
+              "required_centralization": {
+                "base": "2"
+              },
+              "on_enact": {
+                "set_federation_succession_type": "challenge",
+                "if": {
+                  "limit": {
+                    "if": {
+                      "limit": {
+                        "remove_modifier": "federation_law_category_succession_term_cooldown"
+                      },
+                      "set_federation_succession_term": "years_40",
+                      "if": {
+                        "limit": {
+                          "add_modifier": {
+                            "modifier": "federation_law_category_succession_type_cooldown",
+                            "days": "@cooldown"
+                          }
+                        },
+                        "add_cohesion": "-5",
+                        "hidden_effect": {
+                          "set_federation_flag": "challenge_type_no_cooldown",
+                          "set_federation_law": "challenge_type_arena_combat"
+                        }
+                      },
+                      "ai_weight": {
+                        "base": "0",
+                        "_comments": [
+                          "#Default support",
+                          "#Behaviour-specific"
+                        ],
+                        "modifier": {
+                          "desc": "federation_acceptance_ruler_cyborg",
+                          "add": "10",
+                          "exists": "ruler",
+                          "ruler": {},
+                          "modifier": {
+                            "desc": "federation_acceptance_ruler_synthetic",
+                            "add": "10",
+                            "exists": "ruler",
+                            "ruler": {},
+                            "modifier": {
+                              "desc": "federation_acceptance_ruler_psionic",
+                              "add": "10",
+                              "exists": "ruler",
+                              "ruler": {},
+                              "modifier": {
+                                "desc": "federation_acceptance_ruler_very_strong",
+                                "add": "10",
+                                "exists": "ruler",
+                                "ruler": {},
+                                "modifier": {
+                                  "desc": "federation_acceptance_ruler_chosen",
+                                  "_comments": [
+                                    "#the chosen believes in both challenges"
+                                  ],
+                                  "add": "100",
+                                  "exists": "ruler",
+                                  "ruler": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_succession_type.txt",
+    "_line_number": 139
+  },
+  "succession_type_random": {
+    "succession_type_random": {
+      "potential": {
+        "host_has_dlc": "Federations",
+        "NOT": {},
+        "allow": {
+          "custom_tooltip": {
+            "NOT": {
+              "AND": {
+                "NOT": {
+                  "has_modifier": "federation_law_category_succession_type_cooldown",
+                  "has_any_federation_law_in_category": "law_category_succession_type"
+                }
+              }
+            },
+            "custom_tooltip": {
+              "fail_text": "cannot_change_succession_type_during_war",
+              "NAND": {
+                "NOT": {
+                  "any_member": {
+                    "has_any_federation_law_in_category": "law_category_succession_type"
+                  }
+                }
+              },
+              "on_enact": {
+                "set_federation_succession_type": "random",
+                "if": {
+                  "limit": {
+                    "if": {
+                      "limit": {
+                        "remove_modifier": "federation_law_category_succession_term_cooldown"
+                      },
+                      "set_federation_succession_term": "years_40",
+                      "if": {
+                        "limit": {
+                          "add_modifier": {
+                            "modifier": "federation_law_category_succession_type_cooldown",
+                            "days": "@cooldown"
+                          }
+                        },
+                        "add_cohesion": "-5"
+                      },
+                      "ai_weight": {
+                        "base": "0",
+                        "_comments": [
+                          "#Default support",
+                          "#Opens up a bit more when cohesion is low, but not high enough that AI will suggest it"
+                        ],
+                        "modifier": {
+                          "desc": "federation_acceptance_poor_cohesion",
+                          "add": "80",
+                          "is_federation_leader": "no",
+                          "federation": {},
+                          "_comments": [
+                            "#Behaviour-specific"
+                          ],
+                          "modifier": {
+                            "desc": "federation_acceptance_president",
+                            "add": "-50",
+                            "is_federation_leader": "yes"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_succession_type.txt",
+    "_line_number": 262
+  },
+  "succession_type_strongest": {
+    "succession_type_strongest": {
+      "potential": {
+        "NOT": {
+          "NOT": {},
+          "allow": {
+            "custom_tooltip": {
+              "NOT": {
+                "AND": {
+                  "NOT": {
+                    "has_modifier": "federation_law_category_succession_type_cooldown",
+                    "has_any_federation_law_in_category": "law_category_succession_type"
+                  }
+                }
+              },
+              "custom_tooltip": {
+                "fail_text": "cannot_change_succession_type_during_war",
+                "NAND": {
+                  "NOT": {
+                    "any_member": {
+                      "has_any_federation_law_in_category": "law_category_succession_type"
+                    }
+                  }
+                },
+                "required_centralization": {
+                  "base": "4"
+                },
+                "cohesion_growth": "-1.00",
+                "on_enact": {
+                  "if": {
+                    "limit": {
+                      "add_modifier": {
+                        "modifier": "federation_law_category_succession_type_cooldown",
+                        "days": "@cooldown"
+                      }
+                    },
+                    "if": {
+                      "limit": {
+                        "set_federation_law": "succession_power_diplomatic_weight"
+                      },
+                      "if": {
+                        "limit": {
+                          "set_federation_law": "succession_power_economy"
+                        },
+                        "if": {
+                          "limit": {
+                            "set_federation_law": "succession_power_tech"
+                          },
+                          "if": {
+                            "limit": {
+                              "set_federation_law": "succession_power_fleet"
+                            },
+                            "add_cohesion": "-5"
+                          },
+                          "ai_weight": {
+                            "base": "0",
+                            "modifier": {
+                              "desc": "federation_acceptance_president",
+                              "add": "100",
+                              "is_federation_leader": "yes",
+                              "federation": {}
+                            },
+                            "_comments": [
+                              "#Behaviour-specific"
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_succession_type.txt",
+    "_line_number": 365
+  },
+  "succession_type_strongest_hegemony": {
+    "succession_type_strongest_hegemony": {
+      "potential": {
+        "has_federation_type": "hegemony_federation",
+        "NOT": {},
+        "allow": {
+          "custom_tooltip": {
+            "NOT": {
+              "AND": {
+                "NOT": {
+                  "has_modifier": "federation_law_category_succession_type_cooldown",
+                  "has_any_federation_law_in_category": "law_category_succession_type"
+                }
+              }
+            },
+            "custom_tooltip": {
+              "fail_text": "cannot_change_succession_type_during_war",
+              "NAND": {
+                "NOT": {
+                  "any_member": {
+                    "has_any_federation_law_in_category": "law_category_succession_type"
+                  }
+                }
+              },
+              "on_enact": {
+                "if": {
+                  "limit": {
+                    "add_modifier": {
+                      "modifier": "federation_law_category_succession_type_cooldown",
+                      "days": "@cooldown"
+                    }
+                  },
+                  "set_federation_law": "succession_power_diplomatic_weight",
+                  "add_cohesion": "-5"
+                },
+                "ai_weight": {
+                  "base": "0",
+                  "modifier": {
+                    "desc": "federation_acceptance_president",
+                    "add": "100",
+                    "is_federation_leader": "yes",
+                    "federation": {}
+                  },
+                  "_comments": [
+                    "#Behaviour-specific"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_succession_type.txt",
+    "_line_number": 449
+  }
+}

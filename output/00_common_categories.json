@@ -1,0 +1,1892 @@
+{
+  "buffer": {
+    "buffer": {
+      "hidden": "yes",
+      "use_for_ai_budget": "yes"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": -1
+  },
+  "country": {
+    "country": {
+      "hidden": "yes",
+      "use_for_ai_budget": "yes",
+      "generate_mult_modifiers": {}
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 4
+  },
+  "country_base": {
+    "country_base": {
+      "parent": "country",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 15
+  },
+  "trade": {
+    "trade": {
+      "parent": "country",
+      "use_for_ai_budget": "yes"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 23
+  },
+  "trade_routes": {
+    "trade_routes": {
+      "parent": "trade"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 28
+  },
+  "situations": {
+    "situations": {
+      "parent": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 32
+  },
+  "resolutions": {
+    "resolutions": {
+      "parent": "country",
+      "use_for_ai_budget": "yes",
+      "generate_mult_modifiers": {}
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 36
+  },
+  "edicts": {
+    "edicts": {
+      "use_for_ai_budget": "yes",
+      "parent": "country",
+      "ai_use_parent_for_resources_upkeep": {},
+      "generate_mult_modifiers": {},
+      "modifier_category": "country",
+      "add_unscaled_value_to_tooltip": "yes",
+      "scaled_value_key": "ECONOMICS_SCALED_RESOURCES_EMPIRE_SIZE_STRING"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 44
+  },
+  "edicts_unscaled": {
+    "edicts_unscaled": {
+      "use_for_ai_budget": "yes",
+      "parent": "edicts",
+      "add_unscaled_value_to_tooltip": "no"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 60
+  },
+  "rare_edicts": {
+    "rare_edicts": {
+      "use_for_ai_budget": "no",
+      "parent": "edicts"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 66
+  },
+  "ship_edicts": {
+    "ship_edicts": {
+      "parent": "rare_edicts",
+      "use_for_ai_budget": "no"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 71
+  },
+  "campaigns": {
+    "campaigns": {
+      "use_for_ai_budget": "no",
+      "parent": "edicts"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 76
+  },
+  "decisions": {
+    "decisions": {
+      "use_for_ai_budget": "yes",
+      "parent": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 81
+  },
+  "megastructures": {
+    "megastructures": {
+      "use_for_ai_budget": "yes",
+      "ai_use_parent_for_resources_upkeep": {},
+      "parent": "country",
+      "generate_mult_modifiers": {},
+      "modifier_category": "megastructure"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 86
+  },
+  "megastructures_habitat": {
+    "megastructures_habitat": {
+      "use_for_ai_budget": "yes",
+      "parent": "megastructures",
+      "generate_mult_modifiers": {},
+      "modifier_category": "megastructure"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 100
+  },
+  "megastructures_gateways": {
+    "megastructures_gateways": {
+      "use_for_ai_budget": "yes",
+      "parent": "megastructures",
+      "generate_mult_modifiers": {},
+      "modifier_category": "megastructure"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 110
+  },
+  "megastructures_hyper_relay": {
+    "megastructures_hyper_relay": {
+      "parent": "megastructures",
+      "use_for_ai_budget": "yes",
+      "ai_use_parent_for_resources_upkeep": {},
+      "generate_add_modifiers": {},
+      "modifier_category": "megastructure"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 119
+  },
+  "ships": {
+    "ships": {
+      "use_for_ai_budget": "yes",
+      "generate_mult_modifiers": {},
+      "ai_use_parent_for_resources_upkeep": {},
+      "parent": "country",
+      "modifier_category": "ship",
+      "triggered_cost_modifier": {
+        "key": "ship_military",
+        "use_parent_icon": "yes",
+        "modifier_types": {},
+        "trigger": {
+          "is_scope_valid": "yes",
+          "OR": {
+            "is_ship_class": "shipclass_military_special"
+          }
+        }
+      },
+      "_comments": [
+        "#triggered_upkeep_modifier = {",
+        "#\tkey = ship_corvette",
+        "#\tuse_parent_icon = yes",
+        "#\tmodifier_types = {",
+        "#\t\tadd",
+        "#\t}",
+        "#",
+        "#\ttrigger = {",
+        "#\t\tis_scope_valid = yes",
+        "#\t\tOR = {",
+        "#\t\t\tis_ship_size = corvette",
+        "#\t\t\tis_ship_size = offspring_corvette",
+        "#\t\t\tis_ship_size = frigate",
+        "#\t\t}",
+        "#\t}",
+        "#}",
+        "#triggered_upkeep_modifier = {",
+        "#\tkey = ship_destroyer",
+        "#\tuse_parent_icon = yes",
+        "#\tmodifier_types = {",
+        "#\t\tadd",
+        "#\t}",
+        "#",
+        "#\ttrigger = {",
+        "#\t\tis_scope_valid = yes",
+        "#\t\tOR = {",
+        "#\t\t\tis_ship_size = destroyer",
+        "#\t\t\tis_ship_size = offspring_destroyer",
+        "#\t\t}",
+        "#\t}",
+        "#}",
+        "#triggered_upkeep_modifier = {",
+        "#\tkey = ship_cruiser",
+        "#\tuse_parent_icon = yes",
+        "#\tmodifier_types = {",
+        "#\t\tadd",
+        "#\t}",
+        "#",
+        "#\ttrigger = {",
+        "#\t\tis_scope_valid = yes",
+        "#\t\tOR = {",
+        "#\t\t\tis_ship_size = cruiser",
+        "#\t\t\tis_ship_size = offspring_cruiser",
+        "#\t\t}",
+        "#\t}",
+        "#}",
+        "#triggered_upkeep_modifier = {",
+        "#\tkey = ship_battleship",
+        "#\tuse_parent_icon = yes",
+        "#\tmodifier_types = {",
+        "#\t\tadd",
+        "#\t}",
+        "#",
+        "#\ttrigger = {",
+        "#\t\tis_scope_valid = yes",
+        "#\t\tOR = {",
+        "#\t\t\tis_ship_size = battleship",
+        "#\t\t\tis_ship_size = offspring_battleship",
+        "#\t\t}",
+        "#\t}",
+        "#}",
+        "#triggered_upkeep_modifier = {",
+        "#\tkey = ship_titan",
+        "#\tuse_parent_icon = yes",
+        "#\tmodifier_types = {",
+        "#\t\tadd",
+        "#\t}",
+        "#",
+        "#\ttrigger = {",
+        "#\t\tis_scope_valid = yes",
+        "#\t\tis_ship_size = titan",
+        "#\t}",
+        "#}"
+      ],
+      "triggered_upkeep_modifier": {
+        "key": "ship_science",
+        "use_parent_icon": "yes",
+        "modifier_types": {},
+        "trigger": {
+          "is_scope_valid": "yes",
+          "is_ship_class": "shipclass_science_ship"
+        }
+      }
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 171
+  },
+  "colonies": {
+    "colonies": {
+      "use_for_ai_budget": "yes",
+      "ai_use_parent_for_resources_upkeep": {},
+      "modifier_category": "ship",
+      "triggered_cost_modifier": {
+        "key": "ship_colonizer",
+        "use_parent_icon": "yes",
+        "modifier_types": {},
+        "trigger": {
+          "is_scope_valid": "yes #When called from ship designer the design is not valid yet.",
+          "is_ship_class": "shipclass_colonizer"
+        }
+      },
+      "parent": "ships"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 431
+  },
+  "ship_components": {
+    "ship_components": {
+      "parent": "ships"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 452
+  },
+  "ship_sections": {
+    "ship_sections": {
+      "parent": "ships"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 456
+  },
+  "ship_upgrades": {
+    "ship_upgrades": {
+      "parent": "ships",
+      "use_for_ai_budget": "yes"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 460
+  },
+  "stations": {
+    "stations": {
+      "use_for_ai_budget": "yes",
+      "ai_use_parent_for_resources_upkeep": {},
+      "generate_mult_modifiers": {},
+      "parent": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 467
+  },
+  "station_gatherers": {
+    "station_gatherers": {
+      "parent": "stations",
+      "generate_mult_modifiers": {},
+      "modifier_category": "deposit #it applies to the planet"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 481
+  },
+  "station_researchers": {
+    "station_researchers": {
+      "parent": "stations",
+      "generate_mult_modifiers": {},
+      "modifier_category": "deposit #it applies to the planet"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 491
+  },
+  "station_observers": {
+    "station_observers": {
+      "parent": "stations",
+      "generate_add_modifiers": {},
+      "generate_mult_modifiers": {}
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 500
+  },
+  "station_observer_missions": {
+    "station_observer_missions": {
+      "parent": "station_observers"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 510
+  },
+  "starbases": {
+    "starbases": {
+      "use_for_ai_budget": "yes",
+      "generate_mult_modifiers": {},
+      "ai_use_parent_for_resources_upkeep": {},
+      "parent": "country",
+      "modifier_category": "starbase"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 516
+  },
+  "starbase_stations": {
+    "starbase_stations": {
+      "parent": "starbases",
+      "modifier_category": "starbase",
+      "triggered_cost_modifier": {
+        "key": "starbase_outpost",
+        "modifier_types": {},
+        "trigger": {
+          "is_scope_valid": "yes #When called from ship designer the design is not valid yet.",
+          "OR": {
+            "is_ship_size": "orbital_ring_tier_1"
+          }
+        }
+      }
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 530
+  },
+  "starbase_constructions": {
+    "starbase_constructions": {
+      "parent": "starbases",
+      "generate_mult_modifiers": {},
+      "modifier_category": "starbase"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 549
+  },
+  "starbase_buildings": {
+    "starbase_buildings": {
+      "parent": "starbase_constructions",
+      "generate_mult_modifiers": {},
+      "modifier_category": "starbase"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 558
+  },
+  "starbase_modules": {
+    "starbase_modules": {
+      "parent": "starbase_constructions",
+      "generate_mult_modifiers": {},
+      "modifier_category": "starbase"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 567
+  },
+  "terraforming": {
+    "terraforming": {
+      "parent": "country",
+      "use_for_ai_budget": "yes",
+      "generate_mult_modifiers": {},
+      "modifier_category": "planet"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 576
+  },
+  "terraforming_ocean": {
+    "terraforming_ocean": {
+      "parent": "terraforming",
+      "generate_mult_modifiers": {},
+      "modifier_category": "planet"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 586
+  },
+  "planets": {
+    "planets": {
+      "parent": "country",
+      "use_for_ai_budget": "yes",
+      "ai_use_parent_for_resources_upkeep": {},
+      "hidden": "yes"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 595
+  },
+  "planet_structures": {
+    "planet_structures": {
+      "parent": "planets",
+      "hidden": "yes",
+      "generate_mult_modifiers": {},
+      "modifier_category": "planet"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 605
+  },
+  "planet_buildings": {
+    "planet_buildings": {
+      "parent": "planet_structures",
+      "generate_mult_modifiers": {},
+      "modifier_category": "planet"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 616
+  },
+  "planet_buildings_strongholds": {
+    "planet_buildings_strongholds": {
+      "parent": "planet_buildings"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 626
+  },
+  "planet_branch_offices": {
+    "planet_branch_offices": {
+      "parent": "planets",
+      "generate_mult_modifiers": {},
+      "generate_add_modifiers": {},
+      "modifier_category": "planet"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 632
+  },
+  "planet_buildings_hab_capital": {
+    "planet_buildings_hab_capital": {
+      "parent": "planet_buildings",
+      "generate_mult_modifiers": {},
+      "modifier_category": "planet"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 644
+  },
+  "planet_buildings_clone_vats": {
+    "planet_buildings_clone_vats": {
+      "parent": "planet_buildings",
+      "generate_mult_modifiers": {},
+      "modifier_category": "planet"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 653
+  },
+  "planet_branch_office_buildings": {
+    "planet_branch_office_buildings": {
+      "parent": "planets"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 661
+  },
+  "planet_holdings": {
+    "planet_holdings": {
+      "parent": "planets"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 665
+  },
+  "planet_districts": {
+    "planet_districts": {
+      "parent": "planet_structures",
+      "generate_mult_modifiers": {},
+      "modifier_category": "planet"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 670
+  },
+  "planet_districts_farming": {
+    "planet_districts_farming": {
+      "parent": "planet_districts",
+      "modifier_category": "planet"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 680
+  },
+  "planet_districts_mining": {
+    "planet_districts_mining": {
+      "parent": "planet_districts",
+      "modifier_category": "planet"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 686
+  },
+  "planet_districts_generator": {
+    "planet_districts_generator": {
+      "parent": "planet_districts",
+      "modifier_category": "planet"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 692
+  },
+  "planet_districts_cities": {
+    "planet_districts_cities": {
+      "generate_mult_modifiers": {},
+      "parent": "planet_districts"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 699
+  },
+  "planet_districts_industrial": {
+    "planet_districts_industrial": {
+      "parent": "planet_districts"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 706
+  },
+  "planet_districts_hab": {
+    "planet_districts_hab": {
+      "parent": "planet_districts",
+      "generate_mult_modifiers": {}
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 710
+  },
+  "planet_districts_hab_energy": {
+    "planet_districts_hab_energy": {
+      "parent": "planet_districts_hab"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 717
+  },
+  "planet_districts_hab_industrial": {
+    "planet_districts_hab_industrial": {
+      "parent": "planet_districts_hab"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 721
+  },
+  "planet_districts_hab_research": {
+    "planet_districts_hab_research": {
+      "parent": "planet_districts_hab"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 725
+  },
+  "planet_districts_hab_mining": {
+    "planet_districts_hab_mining": {
+      "parent": "planet_districts_hab"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 729
+  },
+  "planet_districts_hab_trade": {
+    "planet_districts_hab_trade": {
+      "parent": "planet_districts_hab"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 733
+  },
+  "planet_districts_hab_leisure": {
+    "planet_districts_hab_leisure": {
+      "parent": "planet_districts_hab"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 737
+  },
+  "planet_districts_orders_demesne": {
+    "planet_districts_orders_demesne": {
+      "parent": "planet_districts_hab"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 741
+  },
+  "planet_districts_rw_generator": {
+    "planet_districts_rw_generator": {
+      "parent": "planet_districts"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 745
+  },
+  "planet_districts_rw_farming": {
+    "planet_districts_rw_farming": {
+      "parent": "planet_districts"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 748
+  },
+  "planet_jobs": {
+    "planet_jobs": {
+      "parent": "planets",
+      "generate_mult_modifiers": {},
+      "modifier_category": "pop",
+      "triggered_produces_modifier": {
+        "key": "habitat_jobs",
+        "modifier_types": {},
+        "trigger": {
+          "exists": "planet",
+          "planet": {}
+        },
+        "triggered_produces_modifier": {
+          "key": "non_artificial_planet_jobs",
+          "modifier_types": {},
+          "trigger": {
+            "exists": "planet",
+            "planet": {}
+          },
+          "triggered_produces_modifier": {
+            "key": "planet_jobs_organics",
+            "modifier_types": {},
+            "trigger": {
+              "is_robot_pop": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 772
+  },
+  "planet_jobs_productive": {
+    "planet_jobs_productive": {
+      "parent": "planet_jobs",
+      "generate_mult_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1003
+  },
+  "planet_pop_assemblers": {
+    "planet_pop_assemblers": {
+      "parent": "planet_jobs",
+      "generate_mult_modifiers": {},
+      "modifier_category": "pop",
+      "generate_add_modifiers": {}
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1013
+  },
+  "planet_farmers": {
+    "planet_farmers": {
+      "icon": "job_farmer",
+      "parent": "planet_jobs_productive",
+      "generate_mult_modifiers": {},
+      "generate_add_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1027
+  },
+  "planet_anglers": {
+    "planet_anglers": {
+      "parent": "planet_farmers"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1040
+  },
+  "planet_miners": {
+    "planet_miners": {
+      "icon": "job_miner",
+      "parent": "planet_jobs_productive",
+      "generate_mult_modifiers": {},
+      "generate_add_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1045
+  },
+  "planet_sr_miners": {
+    "planet_sr_miners": {
+      "parent": "planet_miners",
+      "generate_add_modifiers": {},
+      "generate_mult_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1058
+  },
+  "planet_livestock": {
+    "planet_livestock": {
+      "parent": "planet_jobs_productive",
+      "generate_add_modifiers": {},
+      "modifier_category": "pop",
+      "_comments": [
+        "# Inherited Modifiers"
+      ],
+      "triggered_produces_modifier": {
+        "key": "planet_miners",
+        "modifier_types": {},
+        "trigger": {
+          "has_job": "livestock\t# This check is done so that livestock working zoo jobs don't inherit the modifier",
+          "is_organic_species": "yes",
+          "is_lithoid": "yes"
+        },
+        "use_parent_icon": "yes"
+      }
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1069
+  },
+  "planet_technician": {
+    "planet_technician": {
+      "icon": "job_technician",
+      "parent": "planet_jobs_productive",
+      "generate_add_modifiers": {},
+      "generate_mult_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1104
+  },
+  "planet_organic_batteries": {
+    "planet_organic_batteries": {
+      "parent": "planet_jobs_productive",
+      "modifier_category": "pop",
+      "_comments": [
+        "# Inherited Modifiers"
+      ],
+      "triggered_produces_modifier": {
+        "key": "planet_technician",
+        "modifier_types": {},
+        "trigger": {
+          "always": "yes"
+        },
+        "use_parent_icon": "yes"
+      }
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1117
+  },
+  "planet_politicians": {
+    "planet_politicians": {
+      "parent": "planet_jobs_productive"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1134
+  },
+  "planet_administrators": {
+    "planet_administrators": {
+      "icon": "job_bureaucrat",
+      "parent": "planet_jobs_productive",
+      "generate_mult_modifiers": {},
+      "generate_add_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1138
+  },
+  "planet_executives": {
+    "planet_executives": {
+      "parent": "planet_politicians",
+      "generate_mult_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1151
+  },
+  "planet_managers": {
+    "planet_managers": {
+      "parent": "planet_administrators",
+      "modifier_category": "pop",
+      "generate_mult_modifiers": {},
+      "_comments": [
+        "# Inherited Modifiers"
+      ],
+      "triggered_produces_modifier": {
+        "key": "planet_administrators",
+        "modifier_types": {},
+        "trigger": {
+          "always": "yes"
+        },
+        "use_parent_icon": "yes"
+      }
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1159
+  },
+  "planet_researchers": {
+    "planet_researchers": {
+      "icon": "job_researcher",
+      "parent": "planet_jobs_productive",
+      "generate_mult_modifiers": {},
+      "generate_add_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1178
+  },
+  "planet_rangers": {
+    "planet_rangers": {
+      "icon": "job_ranger",
+      "parent": "planet_researchers",
+      "generate_add_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1192
+  },
+  "planet_zoo_keepers": {
+    "planet_zoo_keepers": {
+      "icon": "job_researcher",
+      "parent": "planet_researchers",
+      "generate_mult_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1201
+  },
+  "planet_metallurgists": {
+    "planet_metallurgists": {
+      "icon": "job_foundry",
+      "parent": "planet_jobs_productive",
+      "generate_mult_modifiers": {},
+      "generate_add_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1210
+  },
+  "planet_laborer": {
+    "planet_laborer": {
+      "icon": "low_tech_laborer",
+      "parent": "planet_jobs_productive",
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1224
+  },
+  "planet_culture_workers": {
+    "planet_culture_workers": {
+      "parent": "planet_administrators",
+      "generate_mult_modifiers": {}
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1230
+  },
+  "planet_bio_trophies": {
+    "planet_bio_trophies": {
+      "parent": "planet_culture_workers",
+      "generate_mult_modifiers": {},
+      "generate_add_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1237
+  },
+  "planet_evaluators": {
+    "planet_evaluators": {
+      "parent": "planet_administrators",
+      "generate_add_modifiers": {}
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1248
+  },
+  "planet_synapse_drones": {
+    "planet_synapse_drones": {
+      "parent": "planet_administrators"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1255
+  },
+  "planet_nobles": {
+    "planet_nobles": {
+      "parent": "planet_politicians"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1259
+  },
+  "planet_necro_apprentices": {
+    "planet_necro_apprentices": {
+      "parent": "planet_pop_assemblers"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1263
+  },
+  "planet_merchants": {
+    "planet_merchants": {
+      "parent": "planet_jobs"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1267
+  },
+  "planet_entertainers": {
+    "planet_entertainers": {
+      "parent": "planet_jobs",
+      "generate_add_modifiers": {},
+      "generate_mult_modifiers": {}
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1271
+  },
+  "planet_soldiers": {
+    "planet_soldiers": {
+      "parent": "planet_jobs",
+      "generate_add_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1282
+  },
+  "planet_squires": {
+    "planet_squires": {
+      "parent": "planet_jobs_productive",
+      "generate_add_modifiers": {}
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1291
+  },
+  "planet_knights": {
+    "planet_knights": {
+      "parent": "planet_jobs_productive",
+      "modifier_category": "pop",
+      "generate_mult_modifiers": {},
+      "_comments": [
+        "# Inherited Modifiers"
+      ],
+      "triggered_produces_modifier": {
+        "key": "planet_administrators",
+        "modifier_types": {},
+        "trigger": {
+          "always": "yes"
+        },
+        "use_parent_icon": "yes"
+      },
+      "triggered_upkeep_modifier": {
+        "key": "planet_administrators",
+        "modifier_types": {},
+        "trigger": {
+          "always": "yes"
+        },
+        "use_parent_icon": "yes"
+      }
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1298
+  },
+  "planet_priests": {
+    "planet_priests": {
+      "parent": "planet_administrators",
+      "modifier_category": "pop",
+      "generate_mult_modifiers": {},
+      "generate_add_modifiers": {},
+      "_comments": [
+        "# Inherited Modifiers"
+      ],
+      "triggered_produces_modifier": {
+        "key": "planet_administrators",
+        "modifier_types": {},
+        "trigger": {
+          "always": "yes"
+        },
+        "use_parent_icon": "yes"
+      }
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1350
+  },
+  "planet_enforcers": {
+    "planet_enforcers": {
+      "parent": "planet_jobs",
+      "generate_add_modifiers": {},
+      "generate_mult_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1373
+  },
+  "planet_clerks": {
+    "planet_clerks": {
+      "parent": "planet_jobs",
+      "generate_add_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1385
+  },
+  "planet_traders": {
+    "planet_traders": {
+      "parent": "planet_jobs",
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1393
+  },
+  "planet_telepaths": {
+    "planet_telepaths": {
+      "parent": "planet_administrators",
+      "modifier_category": "pop",
+      "generate_add_modifiers": {},
+      "generate_mult_modifiers": {},
+      "_comments": [
+        "# Inherited Modifiers"
+      ],
+      "triggered_produces_modifier": {
+        "key": "planet_administrators",
+        "modifier_types": {},
+        "trigger": {
+          "always": "yes"
+        },
+        "use_parent_icon": "yes"
+      }
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1398
+  },
+  "planet_doctors": {
+    "planet_doctors": {
+      "parent": "planet_jobs",
+      "generate_add_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1421
+  },
+  "planet_augmentors": {
+    "planet_augmentors": {
+      "parent": "planet_jobs_productive",
+      "generate_mult_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1429
+  },
+  "planet_refiners": {
+    "planet_refiners": {
+      "parent": "planet_jobs_productive",
+      "generate_mult_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1437
+  },
+  "planet_translucers": {
+    "planet_translucers": {
+      "parent": "planet_jobs_productive",
+      "generate_mult_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1446
+  },
+  "planet_chemists": {
+    "planet_chemists": {
+      "parent": "planet_jobs_productive",
+      "generate_mult_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1455
+  },
+  "planet_artisans": {
+    "planet_artisans": {
+      "icon": "job_artisan",
+      "parent": "planet_jobs_productive",
+      "generate_mult_modifiers": {},
+      "generate_add_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1464
+  },
+  "planet_bath_attendants": {
+    "planet_bath_attendants": {
+      "icon": "job_bath_attendant",
+      "parent": "planet_jobs"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1478
+  },
+  "planet_bath_attendants_hive": {
+    "planet_bath_attendants_hive": {
+      "icon": "job_bath_attendant",
+      "parent": "planet_jobs"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1483
+  },
+  "planet_bath_attendants_machine": {
+    "planet_bath_attendants_machine": {
+      "icon": "job_bath_attendant",
+      "parent": "planet_jobs"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1488
+  },
+  "planet_bath_attendants_individual_machine": {
+    "planet_bath_attendants_individual_machine": {
+      "icon": "job_bath_attendant",
+      "parent": "planet_jobs"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1493
+  },
+  "planet_neural_chips": {
+    "planet_neural_chips": {
+      "icon": "job_neural_chip",
+      "parent": "planet_jobs_productive",
+      "generate_add_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1498
+  },
+  "planet_primal_jobs": {
+    "planet_primal_jobs": {
+      "parent": "planet_culture_workers",
+      "generate_mult_modifiers": {}
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1507
+  },
+  "planet_treasure_gatherers": {
+    "planet_treasure_gatherers": {
+      "parent": "planet_culture_workers",
+      "generate_mult_modifiers": {}
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1514
+  },
+  "planet_pops": {
+    "planet_pops": {
+      "parent": "planets",
+      "generate_mult_modifiers": {},
+      "modifier_category": "pop",
+      "triggered_upkeep_modifier": {
+        "key": "planet_pops_unemployed",
+        "modifier_types": {},
+        "trigger": {
+          "is_unemployed": "yes"
+        }
+      }
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1525
+  },
+  "unemployment_resources": {
+    "unemployment_resources": {
+      "parent": "planet_pops",
+      "generate_add_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1569
+  },
+  "pop_category_precursor": {
+    "pop_category_precursor": {
+      "parent": "planet_pops"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1578
+  },
+  "pop_category_xeno_ward": {
+    "pop_category_xeno_ward": {
+      "parent": "planet_pops"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1582
+  },
+  "pop_category_pre_sapients": {
+    "pop_category_pre_sapients": {
+      "parent": "planet_pops"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1586
+  },
+  "pop_category_purge": {
+    "pop_category_purge": {
+      "parent": "planet_pops"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1590
+  },
+  "pop_category_bio_trophy": {
+    "pop_category_bio_trophy": {
+      "parent": "planet_pops",
+      "generate_add_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1594
+  },
+  "pop_category_slave": {
+    "pop_category_slave": {
+      "parent": "planet_pops",
+      "generate_mult_modifiers": {},
+      "generate_add_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1602
+  },
+  "pop_category_robot": {
+    "pop_category_robot": {
+      "parent": "planet_pops"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1613
+  },
+  "pop_category_drones": {
+    "pop_category_drones": {
+      "parent": "planet_pops"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1617
+  },
+  "pop_category_workers": {
+    "pop_category_workers": {
+      "parent": "planet_pops",
+      "generate_add_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1621
+  },
+  "pop_category_specialists": {
+    "pop_category_specialists": {
+      "parent": "planet_pops",
+      "generate_add_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1630
+  },
+  "pop_category_rulers": {
+    "pop_category_rulers": {
+      "parent": "planet_pops",
+      "generate_mult_modifiers": {},
+      "generate_add_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1640
+  },
+  "pop_category_assimilation": {
+    "pop_category_assimilation": {
+      "parent": "planet_pops"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1652
+  },
+  "planet_deposits": {
+    "planet_deposits": {
+      "parent": "planets"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1656
+  },
+  "hab_deposits": {
+    "hab_deposits": {
+      "parent": "planet_deposits"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1660
+  },
+  "orbital_mining_deposits": {
+    "orbital_mining_deposits": {
+      "parent": "station_gatherers"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1664
+  },
+  "orbital_research_deposits": {
+    "orbital_research_deposits": {
+      "parent": "station_researchers"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1668
+  },
+  "hab_mining_deposits": {
+    "hab_mining_deposits": {
+      "parent": "orbital_mining_deposits"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1672
+  },
+  "hab_research_deposits": {
+    "hab_research_deposits": {
+      "parent": "station_researchers"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1676
+  },
+  "deposit_blockers": {
+    "deposit_blockers": {
+      "use_for_ai_budget": "yes",
+      "generate_mult_modifiers": {},
+      "modifier_category": "deposit",
+      "ai_use_parent_for_resources_upkeep": {},
+      "parent": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1682
+  },
+  "deposit_blockers_natural": {
+    "deposit_blockers_natural": {
+      "generate_add_modifiers": {},
+      "modifier_category": "deposit",
+      "parent": "deposit_blockers"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1695
+  },
+  "armies": {
+    "armies": {
+      "use_for_ai_budget": "yes",
+      "generate_mult_modifiers": {},
+      "modifier_category": "army",
+      "parent": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1705
+  },
+  "leaders": {
+    "leaders": {
+      "use_for_ai_budget": "yes",
+      "generate_mult_modifiers": {},
+      "modifier_category": "leader",
+      "parent": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1715
+  },
+  "leader_commanders": {
+    "leader_commanders": {
+      "parent": "leaders",
+      "generate_mult_modifiers": {},
+      "generate_add_modifiers": {}
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1725
+  },
+  "leader_generals": {
+    "leader_generals": {
+      "parent": "leader_commanders"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1736
+  },
+  "leader_admirals": {
+    "leader_admirals": {
+      "parent": "leader_commanders"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1740
+  },
+  "leader_scientists": {
+    "leader_scientists": {
+      "parent": "leaders",
+      "generate_mult_modifiers": {},
+      "generate_add_modifiers": {}
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1744
+  },
+  "leader_officials": {
+    "leader_officials": {
+      "parent": "leaders",
+      "generate_mult_modifiers": {},
+      "generate_add_modifiers": {}
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1755
+  },
+  "leader_governors": {
+    "leader_governors": {
+      "parent": "leader_officials"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1766
+  },
+  "diplomacy": {
+    "diplomacy": {
+      "hidden": "yes",
+      "parent": "country",
+      "generate_mult_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1770
+  },
+  "country_container": {
+    "country_container": {
+      "hidden": "yes",
+      "parent": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1780
+  },
+  "country_monuments": {
+    "country_monuments": {
+      "parent": "country_container",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1785
+  },
+  "country_ambition": {
+    "country_ambition": {
+      "parent": "country_container",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1793
+  },
+  "country_federation_perks": {
+    "country_federation_perks": {
+      "parent": "country_container",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1801
+  },
+  "country_civics": {
+    "country_civics": {
+      "parent": "country_container",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1809
+  },
+  "country_ai_uprising": {
+    "country_ai_uprising": {
+      "parent": "country_container",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1818
+  },
+  "country_covenant": {
+    "country_covenant": {
+      "parent": "country_container",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1826
+  },
+  "country_dessanu": {
+    "country_dessanu": {
+      "parent": "country_container",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1834
+  },
+  "country_extended_payout": {
+    "country_extended_payout": {
+      "parent": "country_container",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1842
+  },
+  "country_shoulders": {
+    "country_shoulders": {
+      "parent": "country_container",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1850
+  },
+  "country_galactic_standard": {
+    "country_galactic_standard": {
+      "parent": "country_container",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1858
+  },
+  "country_concessions": {
+    "country_concessions": {
+      "parent": "country_container",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1866
+  },
+  "country_first_contact": {
+    "country_first_contact": {
+      "parent": "country_container",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1874
+  },
+  "country_custodian": {
+    "country_custodian": {
+      "parent": "country_container",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1882
+  },
+  "country_tech": {
+    "country_tech": {
+      "parent": "country_container",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1890
+  },
+  "country_traditions": {
+    "country_traditions": {
+      "parent": "country_container",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1898
+  },
+  "country_councilor": {
+    "country_councilor": {
+      "parent": "country_container",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1906
+  },
+  "country_ruler": {
+    "country_ruler": {
+      "parent": "country_container",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1914
+  },
+  "country_agendas": {
+    "country_agendas": {
+      "parent": "country_container",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1922
+  },
+  "country_ethic": {
+    "country_ethic": {
+      "parent": "country_container",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1930
+  },
+  "country_first_league_homeworld": {
+    "country_first_league_homeworld": {
+      "parent": "country_container",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1938
+  },
+  "country_power_projection": {
+    "country_power_projection": {
+      "parent": "country_container",
+      "generate_add_modifiers": {},
+      "generate_mult_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1946
+  },
+  "pop_factions": {
+    "pop_factions": {
+      "parent": "country",
+      "generate_mult_modifiers": {},
+      "modifier_category": "country #pop factions category currently unused"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1957
+  },
+  "subjects": {
+    "subjects": {
+      "parent": "diplomacy",
+      "generate_add_modifiers": {}
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1965
+  },
+  "federation": {
+    "federation": {
+      "parent": "diplomacy",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1972
+  },
+  "rivalries": {
+    "rivalries": {
+      "parent": "diplomacy",
+      "generate_add_modifiers": {},
+      "generate_mult_modifiers": {}
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1980
+  },
+  "non_aggression_pacts": {
+    "non_aggression_pacts": {
+      "parent": "diplomacy"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1990
+  },
+  "migration_pacts": {
+    "migration_pacts": {
+      "parent": "diplomacy"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1994
+  },
+  "research_agreements": {
+    "research_agreements": {
+      "parent": "diplomacy"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 1998
+  },
+  "commercial_pacts": {
+    "commercial_pacts": {
+      "parent": "diplomacy"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2002
+  },
+  "defensive_pacts": {
+    "defensive_pacts": {
+      "parent": "diplomacy"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2006
+  },
+  "guarantees": {
+    "guarantees": {
+      "parent": "diplomacy"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2010
+  },
+  "monthly_trades": {
+    "monthly_trades": {
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2014
+  },
+  "claims": {
+    "claims": {
+      "use_for_ai_budget": "yes",
+      "parent": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2021
+  },
+  "agreement_proposals": {
+    "agreement_proposals": {
+      "use_for_ai_budget": "yes",
+      "parent": "diplomacy"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2026
+  },
+  "subject_tax": {
+    "subject_tax": {},
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2031
+  },
+  "envoy_costs": {
+    "envoy_costs": {
+      "parent": "diplomacy"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2034
+  },
+  "diplo_closed_borders": {
+    "diplo_closed_borders": {
+      "parent": "diplomacy"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2038
+  },
+  "diplomatic_networking": {
+    "diplomatic_networking": {
+      "parent": "diplomacy"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2042
+  },
+  "societal_enlightenment_pacts": {
+    "societal_enlightenment_pacts": {
+      "parent": "diplomacy"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2046
+  },
+  "open_technological_enlightenment_pacts": {
+    "open_technological_enlightenment_pacts": {
+      "parent": "diplomacy"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2050
+  },
+  "stratified_technological_enlightenment_pacts": {
+    "stratified_technological_enlightenment_pacts": {
+      "parent": "diplomacy"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2054
+  },
+  "pre_ftl_trade_pacts": {
+    "pre_ftl_trade_pacts": {
+      "parent": "diplomacy"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2058
+  },
+  "subject_integration": {
+    "subject_integration": {},
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2062
+  },
+  "overlord_subsidy": {
+    "overlord_subsidy": {},
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2065
+  },
+  "specialist_subject_conversion": {
+    "specialist_subject_conversion": {},
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2068
+  },
+  "relics": {
+    "relics": {
+      "generate_mult_modifiers": {}
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2071
+  },
+  "artifact_actions": {
+    "artifact_actions": {},
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2077
+  },
+  "specimens": {
+    "specimens": {
+      "parent": "country",
+      "use_for_ai_budget": "yes",
+      "triggered_produces_modifier": {
+        "key": "historical_item_specimens",
+        "modifier_types": {},
+        "trigger": {
+          "is_specimen_category": "historical_item"
+        }
+      },
+      "generate_mult_modifiers": {},
+      "add_unscaled_value_to_tooltip": "yes",
+      "scaled_value_key": "ECONOMICS_SCALED_RESOURCES_EMPIRE_SIZE_STRING"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2084
+  },
+  "vivarium": {
+    "vivarium": {
+      "parent": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2121
+  },
+  "sector": {
+    "sector": {},
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2125
+  },
+  "menace": {
+    "menace": {},
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2128
+  },
+  "traditions": {
+    "traditions": {
+      "use_for_ai_budget": "yes",
+      "parent": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2131
+  },
+  "operations": {
+    "operations": {
+      "use_for_ai_budget": "yes",
+      "ai_use_parent_for_resources_upkeep": {},
+      "generate_mult_modifiers": {},
+      "parent": "country",
+      "modifier_category": "espionage"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2136
+  },
+  "country_situations": {
+    "country_situations": {
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2149
+  },
+  "country_storms": {
+    "country_storms": {
+      "parent": "country",
+      "generate_add_modifiers": {},
+      "modifier_category": "country"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2156
+  },
+  "planet_astrometeorologists": {
+    "planet_astrometeorologists": {
+      "parent": "planet_researchers",
+      "generate_mult_modifiers": {},
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2164
+  },
+  "planet_storm_dancers": {
+    "planet_storm_dancers": {
+      "parent": "planet_entertainers",
+      "modifier_category": "pop"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2172
+  },
+  "planet_buildings_storm_tech": {
+    "planet_buildings_storm_tech": {
+      "parent": "planet_buildings",
+      "generate_mult_modifiers": {},
+      "modifier_category": "planet"
+    },
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2178
+  },
+  "emergency_fund": {
+    "emergency_fund": {},
+    "_source_file": "00_common_categories.txt",
+    "_line_number": 2186
+  }
+}

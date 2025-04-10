@@ -1,0 +1,68 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "advisor.26",
+      "title": "advisor.26.name",
+      "desc": "advisor.26.desc",
+      "show_sound": "event_surverying_advisor",
+      "is_advisor_event": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "is_ai": "no",
+        "NOT": {
+          "NOT": {},
+          "option": {
+            "name": "OK"
+          }
+        }
+      }
+    },
+    "_source_file": "advisor_events.txt",
+    "_line_number": 656
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "advisor.25",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "is_ai": "no",
+          "NOT": {
+            "NOT": {}
+          },
+          "immediate": {
+            "owner": {}
+          }
+        }
+      }
+    },
+    "_source_file": "advisor_events.txt",
+    "_line_number": 636
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "advisor.17",
+      "title": "advisor.17.name",
+      "desc": "advisor.17.desc",
+      "show_sound": "event_first_colony_advisor",
+      "is_advisor_event": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "NOT": {
+            "NOT": {}
+          },
+          "immediate": {
+            "owner": {},
+            "option": {
+              "name": "OK"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "advisor_events.txt",
+    "_line_number": 583
+  }
+}

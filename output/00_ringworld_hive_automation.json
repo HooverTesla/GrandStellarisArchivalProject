@@ -1,0 +1,48 @@
+{
+  "automate_ringworld_hive_planet": {
+    "automate_ringworld_hive_planet": {
+      "category": "planet_automation_designation_construction",
+      "available": {
+        "has_designation": "col_ring_mix",
+        "owner": {
+          "is_hive_empire": "yes"
+        }
+      },
+      "prio_districts": {},
+      "buildings": {
+        "1": {
+          "building": "building_hive_capital",
+          "available": {
+            "always": "yes"
+          }
+        },
+        "2": {
+          "building": "building_hive_node",
+          "available": {
+            "num_buildings": {}
+          },
+          "3": {
+            "building": "building_food_processing_facility"
+          },
+          "4": {
+            "building": "building_energy_grid"
+          },
+          "5": {
+            "building": "building_hive_node",
+            "available": {
+              "num_buildings": {}
+            },
+            "6": {
+              "building": "building_hive_node",
+              "available": {
+                "num_buildings": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_ringworld_hive_automation.txt",
+    "_line_number": 8
+  }
+}

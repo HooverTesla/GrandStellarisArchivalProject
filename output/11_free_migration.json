@@ -1,0 +1,93 @@
+{
+  "free_migration_no": {
+    "free_migration_no": {
+      "potential": {
+        "allow": {
+          "custom_tooltip": {
+            "NOT": {
+              "AND": {
+                "NOT": {
+                  "has_modifier": "federation_law_category_free_migration_cooldown",
+                  "has_any_federation_law_in_category": "law_category_free_migration"
+                }
+              }
+            }
+          },
+          "on_enact": {
+            "set_free_migration": "no",
+            "if": {
+              "limit": {
+                "add_modifier": {
+                  "modifier": "federation_law_category_free_migration_cooldown",
+                  "days": "@cooldown"
+                }
+              },
+              "add_cohesion": "-5"
+            },
+            "ai_weight": {
+              "base": "0",
+              "_comments": [
+                "#Behaviour-specific"
+              ],
+              "modifier": {
+                "desc": "federation_acceptance_xenophile",
+                "add": "-50",
+                "is_xenophile": "yes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "11_free_migration.txt",
+    "_line_number": 4
+  },
+  "free_migration_yes": {
+    "free_migration_yes": {
+      "potential": {
+        "host_has_dlc": "Federations",
+        "NOT": {},
+        "allow": {
+          "custom_tooltip": {
+            "NOT": {
+              "AND": {
+                "NOT": {
+                  "has_modifier": "federation_law_category_free_migration_cooldown",
+                  "has_any_federation_law_in_category": "law_category_free_migration"
+                }
+              }
+            }
+          },
+          "required_centralization": {
+            "base": "3"
+          },
+          "on_enact": {
+            "set_free_migration": "yes",
+            "if": {
+              "limit": {
+                "add_modifier": {
+                  "modifier": "federation_law_category_free_migration_cooldown",
+                  "days": "@cooldown"
+                }
+              },
+              "add_cohesion": "-5"
+            },
+            "ai_weight": {
+              "base": "0",
+              "_comments": [
+                "#Behaviour-specific"
+              ],
+              "modifier": {
+                "desc": "federation_acceptance_xenophobe",
+                "add": "-25",
+                "is_xenophobe": "yes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "11_free_migration.txt",
+    "_line_number": 48
+  }
+}

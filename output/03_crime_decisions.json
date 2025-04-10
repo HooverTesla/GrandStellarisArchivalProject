@@ -1,0 +1,121 @@
+{
+  "decision_launch_anticrime_campaign": {
+    "decision_launch_anticrime_campaign": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_crime",
+      "resources": {
+        "category": "decisions",
+        "cost": {
+          "unity": "250"
+        }
+      },
+      "potential": {
+        "owner": {
+          "planet_crime >": "10",
+          "NOR": {
+            "has_modifier": "anticrime_campaign"
+          }
+        },
+        "effect": {
+          "add_modifier": {},
+          "ai_weight": {
+            "weight": "0",
+            "modifier": {
+              "weight": "2"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_crime_decisions.txt",
+    "_line_number": 7
+  },
+  "decision_end_anticrime_campaign": {
+    "decision_end_anticrime_campaign": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_crime",
+      "resources": {
+        "category": "decisions"
+      },
+      "potential": {
+        "has_modifier": "anticrime_campaign"
+      },
+      "effect": {
+        "remove_modifier": "anticrime_campaign"
+      },
+      "ai_weight": {
+        "weight": "0",
+        "modifier": {
+          "weight": "1000 #no cost to end it, so may as well do so quickly",
+          "planet_crime <": "0"
+        }
+      }
+    },
+    "_source_file": "03_crime_decisions.txt",
+    "_line_number": 41
+  },
+  "decision_negotiate_with_crime_lords": {
+    "decision_negotiate_with_crime_lords": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_deal",
+      "resources": {
+        "category": "decisions",
+        "cost": {
+          "unity": "250"
+        }
+      },
+      "potential": {
+        "owner": {
+          "planet_crime >": "10",
+          "NOR": {
+            "has_modifier": "anticrime_campaign"
+          }
+        },
+        "effect": {
+          "add_modifier": {},
+          "ai_weight": {
+            "weight": "0",
+            "modifier": {
+              "weight": "2",
+              "has_branch_office": "yes",
+              "branch_office_owner": {
+                "is_criminal_syndicate": "yes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_crime_decisions.txt",
+    "_line_number": 68
+  },
+  "decision_end_crime_lord_deal": {
+    "decision_end_crime_lord_deal": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_deal",
+      "resources": {
+        "category": "decisions"
+      },
+      "potential": {
+        "has_modifier": "crime_lord_deal"
+      },
+      "effect": {
+        "remove_modifier": "crime_lord_deal",
+        "add_modifier": {},
+        "ai_weight": {
+          "weight": "0",
+          "modifier": {
+            "weight": "5",
+            "planet_crime <": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "03_crime_decisions.txt",
+    "_line_number": 106
+  }
+}

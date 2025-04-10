@@ -1,0 +1,96 @@
+{
+  "planet_event": {
+    "planet_event": {
+      "id": "terra.115",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "NOT": {
+          "has_planet_flag": "second_home@from",
+          "is_ideal_planet_class": {
+            "who": "from",
+            "status": "yes"
+          }
+        },
+        "immediate": {
+          "add_modifier": {}
+        }
+      }
+    },
+    "_source_file": "terraforming_events.txt",
+    "_line_number": 1362
+  },
+  "country_event": {
+    "country_event": {
+      "id": "terra.90",
+      "title": "terra.90.name",
+      "desc": "terra.90.desc",
+      "picture": "GFX_evt_tomb_world",
+      "show_sound": "event_bad_omen",
+      "is_triggered_only": "yes",
+      "location": "from",
+      "immediate": {
+        "set_country_flag": "tombworld_weapon_cache_spawned"
+      },
+      "option": {
+        "name": "terra.90.a",
+        "From": {}
+      }
+    },
+    "_source_file": "terraforming_events.txt",
+    "_line_number": 1183
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "terra.105",
+      "title": "terra.105.name",
+      "desc": {
+        "trigger": {
+          "from.planet": {
+            "OR": {
+              "has_planet_flag": "nuked_earth"
+            }
+          }
+        },
+        "text": "terra.105.desc.earth"
+      },
+      "picture": "GFX_evt_clocks",
+      "show_sound": "event_dig_site",
+      "location": "from",
+      "archaeology": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "from": {},
+        "after": {
+          "from": {},
+          "option": {
+            "exclusive_trigger": {
+              "owner": {
+                "OR": {
+                  "is_xenophobe": "yes",
+                  "AND": {
+                    "is_gestalt": "yes",
+                    "NOR": {
+                      "has_valid_civic": "civic_machine_servitor"
+                    }
+                  }
+                }
+              }
+            },
+            "name": "terra.105.c",
+            "owner": {
+              "add_monthly_resource_mult": {
+                "resource": "alloys",
+                "value": "5",
+                "min": "@tier2materialmin",
+                "max": "@tier2materialmax"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "terraforming_events.txt",
+    "_line_number": 1256
+  }
+}

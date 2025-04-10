@@ -1,0 +1,103 @@
+{
+  "if": {
+    "if": {
+      "limit": {
+        "exists": "leader"
+      },
+      "random_list": {
+        "33": {
+          "modifier": {
+            "add": "-15",
+            "event_target:archaeologist_leader": {
+              "has_trait": "leader_trait_academic_minor_artifacts_expert_3"
+            }
+          }
+        },
+        "54": {
+          "add_deposit": "d_artifacts_$TYPE$_1",
+          "modifier": {
+            "factor": "0",
+            "from": {
+              "OR": {
+                "is_site_type": "broken_shackles_digsite"
+              }
+            }
+          }
+        },
+        "11": {
+          "add_deposit": "d_artifacts_$TYPE$_2",
+          "modifier": {
+            "factor": "0",
+            "from": {
+              "OR": {
+                "is_site_type": "broken_shackles_digsite"
+              }
+            }
+          }
+        },
+        "3": {
+          "add_deposit": "d_artifacts_$TYPE$_3",
+          "modifier": {
+            "factor": "0",
+            "from": {
+              "OR": {
+                "is_site_type": "broken_shackles_digsite"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "minor_artifacts_randomiser.txt",
+    "_line_number": 2
+  },
+  "else": {
+    "else": {
+      "random_list": {
+        "33": {
+          "modifier": {
+            "add": "125",
+            "from": {
+              "is_baol_or_zroni_site": "yes"
+            }
+          }
+        },
+        "54": {
+          "add_deposit": "d_artifacts_$TYPE$_1",
+          "modifier": {
+            "factor": "0",
+            "from": {
+              "OR": {
+                "is_site_type": "broken_shackles_digsite"
+              }
+            }
+          }
+        },
+        "11": {
+          "add_deposit": "d_artifacts_$TYPE$_2",
+          "modifier": {
+            "factor": "0",
+            "from": {
+              "OR": {
+                "is_site_type": "broken_shackles_digsite"
+              }
+            }
+          }
+        },
+        "3": {
+          "add_deposit": "d_artifacts_$TYPE$_3",
+          "modifier": {
+            "factor": "0",
+            "from": {
+              "OR": {
+                "is_site_type": "broken_shackles_digsite"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "minor_artifacts_randomiser.txt",
+    "_line_number": 128
+  }
+}

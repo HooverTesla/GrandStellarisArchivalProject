@@ -1,0 +1,34 @@
+{
+  "utility_component_template": {
+    "utility_component_template": {
+      "key": "ORBITAL_TRASH_1",
+      "size": "aux",
+      "icon": "GFX_ship_part_orbital_trash_dispersal",
+      "icon_frame": "1",
+      "power": "-10",
+      "resources": {
+        "category": "ship_components",
+        "cost": {
+          "alloys": "10"
+        }
+      },
+      "ship_modifier": {
+        "ship_orbital_bombardment_mult": "0.25"
+      },
+      "class_restriction": {
+        "prerequisites": {
+          "component_set": "ORBITAL_TRASH_1",
+          "ai_weight": {
+            "weight": "1",
+            "modifier": {
+              "factor": "2.0",
+              "has_policy_flag": "orbital_bombardment_indiscriminate"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_utilities_aux_megacorp.txt",
+    "_line_number": 6
+  }
+}

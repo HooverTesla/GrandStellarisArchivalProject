@@ -1,0 +1,807 @@
+{
+  "gov_divine_empire": {
+    "gov_divine_empire": {
+      "ruler_title": "RT_GOD_EMPEROR",
+      "ruler_title_female": "RT_GOD_EMPRESS",
+      "heir_title": "HT_SAINT",
+      "heir_title_female": "HT_SAINT_FEMALE",
+      "use_regnal_names": "yes",
+      "dynastic_last_names": "yes",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_imperial_authority": "yes",
+        "has_valid_civic": "civic_imperial_cult"
+      },
+      "weight": {
+        "base": "@gov_civic_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 37
+  },
+  "gov_holy_tribunal": {
+    "gov_holy_tribunal": {
+      "ruler_title": "RT_HIGH_INQUISITOR",
+      "ruler_title_female": "RT_HIGH_INQUISITOR_FEMALE",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_oligarchic_authority": "yes",
+        "has_valid_civic": "civic_exalted_priesthood"
+      },
+      "weight": {
+        "base": "@gov_civic_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 58
+  },
+  "gov_megachurch": {
+    "gov_megachurch": {
+      "ruler_title": "RT_HALLOWED_COMPTROLLER",
+      "ruler_title_female": "RT_HALLOWED_COMPTROLLER_FEMALE",
+      "should_force_rename": "yes",
+      "possible": {
+        "OR": {
+          "AND": {
+            "is_megacorp": "yes",
+            "has_valid_civic": "civic_gospel_of_the_masses"
+          }
+        }
+      },
+      "weight": {
+        "base": "@gov_civic_weight",
+        "modifier": {
+          "factor": "2",
+          "has_valid_civic": "civic_exalted_priesthood"
+        }
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 75
+  },
+  "gov_martial_empire": {
+    "gov_martial_empire": {
+      "ruler_title": "RT_EMPEROR",
+      "ruler_title_female": "RT_EMPRESS",
+      "heir_title": "HT_CROWN_PRINCE",
+      "heir_title_female": "HT_CROWN_PRINCESS",
+      "use_regnal_names": "yes",
+      "dynastic_last_names": "yes",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_imperial_authority": "yes",
+        "has_valid_civic": "civic_warrior_culture"
+      },
+      "weight": {
+        "base": "@gov_civic_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 108
+  },
+  "gov_martial_dictatorship": {
+    "gov_martial_dictatorship": {
+      "ruler_title": "RT_IMPERATOR",
+      "ruler_title_female": "RT_IMPERATRIX",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_dictatorial_authority": "yes",
+        "has_valid_civic": "civic_warrior_culture"
+      },
+      "weight": {
+        "base": "@gov_civic_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 129
+  },
+  "gov_war_council": {
+    "gov_war_council": {
+      "ruler_title": "RT_WARLORD",
+      "ruler_title_female": "RT_WARLORD_FEMALE",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_oligarchic_authority": "yes",
+        "has_valid_civic": "civic_warrior_culture"
+      },
+      "weight": {
+        "base": "@gov_civic_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 146
+  },
+  "gov_assembly_of_clans": {
+    "gov_assembly_of_clans": {
+      "ruler_title": "RT_CLAN_SPEAKER",
+      "ruler_title_female": "RT_CLAN_SPEAKER_FEMALE",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_democratic_authority": "yes",
+        "has_valid_civic": "civic_warrior_culture"
+      },
+      "weight": {
+        "base": "@gov_civic_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 163
+  },
+  "gov_citizen_stratocracy": {
+    "gov_citizen_stratocracy": {
+      "ruler_title": "RT_STRATEGOS",
+      "ruler_title_female": "RT_STRATEGOS_FEMALE",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_oligarchic_authority": "yes",
+        "has_valid_civic": "civic_citizen_service"
+      },
+      "weight": {
+        "base": "@gov_civic_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 180
+  },
+  "gov_citizen_republic": {
+    "gov_citizen_republic": {
+      "ruler_title": "RT_CONSUL",
+      "ruler_title_female": "RT_CONSUL_FEMALE",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_democratic_authority": "yes",
+        "has_valid_civic": "civic_citizen_service"
+      },
+      "weight": {
+        "base": "@gov_civic_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 197
+  },
+  "gov_celestial_empire": {
+    "gov_celestial_empire": {
+      "ruler_title": "RT_CELESTIAL_EMPEROR",
+      "ruler_title_female": "RT_CELESTIAL_EMPRESS",
+      "heir_title": "HT_CROWN_PRINCE",
+      "heir_title_female": "HT_CROWN_PRINCESS",
+      "use_regnal_names": "yes",
+      "dynastic_last_names": "yes",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_imperial_authority": "yes",
+        "is_pacifist": "yes",
+        "has_valid_civic": "civic_inwards_perfection"
+      },
+      "weight": {
+        "base": "@gov_civic_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 217
+  },
+  "gov_rational_consensus": {
+    "gov_rational_consensus": {
+      "ruler_title": "RT_FIRST_SPEAKER",
+      "ruler_title_female": "RT_FIRST_SPEAKER_FEMALE",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_democratic_authority": "yes",
+        "has_valid_civic": "civic_technocracy"
+      },
+      "weight": {
+        "base": "@gov_civic_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 241
+  },
+  "gov_science_directorate": {
+    "gov_science_directorate": {
+      "ruler_title": "RT_DIRECTOR_GENERAL",
+      "ruler_title_female": "RT_DIRECTOR_GENERAL_FEMALE",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_oligarchic_authority": "yes",
+        "has_valid_civic": "civic_technocracy"
+      },
+      "weight": {
+        "base": "@gov_civic_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 258
+  },
+  "gov_technocratic_dictatorship": {
+    "gov_technocratic_dictatorship": {
+      "ruler_title": "RT_OVERSEER",
+      "ruler_title_female": "RT_OVERSEER_FEMALE",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_dictatorial_authority": "yes",
+        "has_valid_civic": "civic_technocracy"
+      },
+      "weight": {
+        "base": "@gov_civic_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 275
+  },
+  "gov_illuminated_autocracy": {
+    "gov_illuminated_autocracy": {
+      "ruler_title": "RT_PRIMUS",
+      "ruler_title_female": "RT_PRIMUS_FEMALE",
+      "heir_title": "HT_SECUNDUS",
+      "heir_title_female": "HT_SECUNDUS_FEMALE",
+      "use_regnal_names": "yes",
+      "dynastic_last_names": "yes",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_imperial_authority": "yes",
+        "has_valid_civic": "civic_technocracy"
+      },
+      "weight": {
+        "base": "@gov_civic_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 293
+  },
+  "gov_feudal_empire": {
+    "gov_feudal_empire": {
+      "ruler_title": "RT_EMPEROR",
+      "ruler_title_female": "RT_EMPRESS",
+      "heir_title": "HT_CROWN_PRINCE",
+      "heir_title_female": "HT_CROWN_PRINCESS",
+      "use_regnal_names": "yes",
+      "dynastic_last_names": "yes",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_imperial_authority": "yes",
+        "has_valid_civic": "civic_feudal_realm"
+      },
+      "weight": {
+        "base": "@gov_civic_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 315
+  },
+  "gov_enlightened_monarchy": {
+    "gov_enlightened_monarchy": {
+      "ruler_title": "RT_HIGH_KING",
+      "ruler_title_female": "RT_HIGH_QUEEN",
+      "heir_title": "HT_CROWN_PRINCE",
+      "heir_title_female": "HT_CROWN_PRINCESS",
+      "use_regnal_names": "yes",
+      "dynastic_last_names": "yes",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_imperial_authority": "yes",
+        "has_valid_civic": "civic_philosopher_king"
+      },
+      "weight": {
+        "base": "@gov_civic_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 337
+  },
+  "gov_elective_monarchy": {
+    "gov_elective_monarchy": {
+      "ruler_title": "RT_HIGH_KING",
+      "ruler_title_female": "RT_HIGH_QUEEN",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_dictatorial_authority": "yes",
+        "has_valid_civic": "civic_philosopher_king"
+      },
+      "weight": {
+        "base": "@gov_civic_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 358
+  },
+  "gov_machine_research": {
+    "gov_machine_research": {
+      "ruler_title": "RT_LINK",
+      "use_regnal_names": "yes",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_machine_empire": "yes",
+        "OR": {
+          "has_valid_civic": "civic_machine_spybots"
+        },
+        "NOR": {
+          "has_valid_civic": "civic_machine_astromining_drones"
+        }
+      },
+      "weight": {
+        "base": "@gov_civic_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 377
+  },
+  "gov_machine_industrial": {
+    "gov_machine_industrial": {
+      "ruler_title": "RT_HUB",
+      "use_regnal_names": "yes",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_machine_empire": "yes",
+        "OR": {
+          "has_valid_civic": "civic_machine_astromining_drones"
+        },
+        "NOR": {
+          "has_valid_civic": "civic_machine_spybots"
+        }
+      },
+      "weight": {
+        "base": "@gov_civic_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 407
+  },
+  "gov_worker_coop": {
+    "gov_worker_coop": {
+      "ruler_title": "RT_PRESIDING_SPEAKING",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_worker_coop_empire": "yes"
+      },
+      "weight": {
+        "base": "@gov_civic_prio_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 440
+  },
+  "gov_communal_parity": {
+    "gov_communal_parity": {
+      "ruler_title": "RT_PRESIDING_SPEAKING",
+      "should_force_rename": "yes",
+      "possible": {
+        "has_valid_civic": "civic_shared_burden"
+      },
+      "weight": {
+        "base": "@gov_civic_prio_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 455
+  },
+  "gov_bandit_kingdom": {
+    "gov_bandit_kingdom": {
+      "ruler_title": "RT_WARLORD",
+      "heir_title": "HT_RAIDER",
+      "should_force_rename": "yes",
+      "possible": {
+        "OR": {
+          "is_imperial_authority": "yes",
+          "is_dictatorial_authority": "yes"
+        },
+        "has_valid_civic": "civic_barbaric_despoilers"
+      },
+      "weight": {
+        "base": "@gov_civic_prio_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 470
+  },
+  "gov_bandit_commune": {
+    "gov_bandit_commune": {
+      "ruler_title": "RT_WARLORD",
+      "should_force_rename": "yes",
+      "possible": {
+        "OR": {
+          "is_oligarchic_authority": "yes",
+          "is_democratic_authority": "yes"
+        },
+        "has_valid_civic": "civic_barbaric_despoilers"
+      },
+      "weight": {
+        "base": "@gov_civic_prio_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 490
+  },
+  "gov_grim_council": {
+    "gov_grim_council": {
+      "ruler_title": "RT_DREAD_CARDINAL",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_oligarchic_authority": "yes",
+        "has_valid_civic": "civic_death_cult"
+      },
+      "weight": {
+        "base": "@gov_civic_prio_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 509
+  },
+  "gov_mortal_empire": {
+    "gov_mortal_empire": {
+      "ruler_title": "RT_DEATH_MONARCH",
+      "ruler_title_female": "RT_DEATH_MONARCH_FEMALE",
+      "heir_title": "HT_DEATH_PRINCE",
+      "heir_title_female": "HT_DEATH_PRINCESS",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_imperial_authority": "yes",
+        "has_valid_civic": "civic_death_cult"
+      },
+      "weight": {
+        "base": "@gov_civic_prio_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 525
+  },
+  "gov_band_blood": {
+    "gov_band_blood": {
+      "ruler_title": "RT_BLOODLORD",
+      "ruler_title_female": "RT_BLOODLADY",
+      "heir_title": "HT_BLOODPRINCE",
+      "heir_title_female": "HT_BLOODPRINCESS",
+      "should_force_rename": "yes",
+      "possible": {
+        "has_valid_civic": "civic_death_cult"
+      },
+      "weight": {
+        "base": "@gov_civic_prio_weight",
+        "modifier": {
+          "factor": "2",
+          "has_valid_civic": "civic_death_cult"
+        }
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 544
+  },
+  "gov_sacrificial_megachurch": {
+    "gov_sacrificial_megachurch": {
+      "ruler_title": "RT_GRAVE_ADMINISTRATOR",
+      "should_force_rename": "yes",
+      "possible": {
+        "has_valid_civic": "civic_gospel_of_the_masses"
+      },
+      "weight": {
+        "base": "@gov_civic_prio_weight",
+        "modifier": {
+          "factor": "2",
+          "has_valid_civic": "civic_gospel_of_the_masses"
+        }
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 568
+  },
+  "gov_defensive_union": {
+    "gov_defensive_union": {
+      "ruler_title": "RT_DEFENSIVE_UNION",
+      "heir_title": "HT_DEFENSIVE_UNION",
+      "should_force_rename": "yes",
+      "possible": {
+        "has_valid_civic": "civic_sovereign_guardianship"
+      },
+      "weight": {
+        "base": "@gov_civic_prio_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 589
+  },
+  "gov_dimensional_covenant": {
+    "gov_dimensional_covenant": {
+      "ruler_title": "RT_DIMENSIONAL_COVENANT",
+      "heir_title": "HT_DIMENSIONAL_COVENANT",
+      "should_force_rename": "yes",
+      "possible": {
+        "has_valid_civic": "civic_dimensional_worship"
+      },
+      "weight": {
+        "base": "@gov_civic_prio_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 605
+  },
+  "gov_parasitic_overmind": {
+    "gov_parasitic_overmind": {
+      "ruler_title": "RT_PAR",
+      "should_force_rename": "yes",
+      "possible": {
+        "has_origin": "origin_necrophage",
+        "has_valid_civic": "civic_hive_cordyceptic_drones"
+      },
+      "weight": {
+        "base": "@gov_civic_prio_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 621
+  },
+  "gov_trade_league": {
+    "gov_trade_league": {
+      "ruler_title": "RT_CHAIRMAN",
+      "ruler_title_female": "RT_CHAIRWOMAN",
+      "should_force_rename": "yes",
+      "possible": {
+        "OR": {
+          "AND": {
+            "is_megacorp": "yes",
+            "OR": {
+              "has_valid_civic": "civic_trading_posts"
+            }
+          }
+        }
+      },
+      "weight": {
+        "base": "@gov_civic_prio_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 637
+  },
+  "gov_machine_servitor": {
+    "gov_machine_servitor": {
+      "ruler_title": "RT_SUPERVISORY",
+      "use_regnal_names": "yes",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_machine_empire": "yes",
+        "has_civic": "civic_machine_servitor"
+      },
+      "weight": {
+        "base": "@gov_civic_prio_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 670
+  },
+  "gov_machine_assimilator": {
+    "gov_machine_assimilator": {
+      "ruler_title": "RT_CONDUIT",
+      "use_regnal_names": "yes",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_machine_empire": "yes",
+        "has_civic": "civic_machine_assimilator"
+      },
+      "weight": {
+        "base": "@gov_civic_prio_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 688
+  },
+  "gov_purity_assembly": {
+    "gov_purity_assembly": {
+      "ruler_title": "RT_PRIME_JUSTICIAR",
+      "ruler_title_female": "RT_PRIME_JUSTICIAR_FEMALE",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_democratic_authority": "yes",
+        "has_valid_civic": "civic_fanatic_purifiers"
+      },
+      "weight": {
+        "base": "@gov_civic_override_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 711
+  },
+  "gov_purification_committee": {
+    "gov_purification_committee": {
+      "ruler_title": "RT_GRAND_ARBITER",
+      "ruler_title_female": "RT_GRAND_ARBITER_FEMALE",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_oligarchic_authority": "yes",
+        "has_valid_civic": "civic_fanatic_purifiers"
+      },
+      "weight": {
+        "base": "@gov_civic_override_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 728
+  },
+  "gov_purity_order": {
+    "gov_purity_order": {
+      "ruler_title": "RT_LORD_PURIFIER",
+      "ruler_title_female": "RT_LADY_PURIFIER",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_dictatorial_authority": "yes",
+        "has_valid_civic": "civic_fanatic_purifiers"
+      },
+      "weight": {
+        "base": "@gov_civic_override_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 745
+  },
+  "gov_blood_court": {
+    "gov_blood_court": {
+      "ruler_title": "RT_HIGH_EXECUTIONER",
+      "ruler_title_female": "RT_HIGH_EXECUTIONER_FEMALE",
+      "heir_title": "HT_SENIOR_EXECUTIONER",
+      "heir_title_female": "HT_SENIOR_EXECUTIONER_FEMALE",
+      "use_regnal_names": "yes",
+      "dynastic_last_names": "yes",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_imperial_authority": "yes",
+        "has_valid_civic": "civic_fanatic_purifiers"
+      },
+      "weight": {
+        "base": "@gov_civic_override_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 763
+  },
+  "gov_devouring_swarm": {
+    "gov_devouring_swarm": {
+      "ruler_title": "RT_HIVE_MIND",
+      "ruler_title_female": "RT_HIVE_MIND_FEMALE",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_hive_empire": "yes",
+        "has_valid_civic": "civic_hive_devouring_swarm"
+      },
+      "weight": {
+        "base": "@gov_civic_override_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 784
+  },
+  "gov_machine_terminator": {
+    "gov_machine_terminator": {
+      "ruler_title": "RT_CORE",
+      "use_regnal_names": "yes",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_machine_empire": "yes",
+        "has_civic": "civic_machine_terminator"
+      },
+      "weight": {
+        "base": "@gov_civic_override_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 802
+  },
+  "gov_criminal_syndicate": {
+    "gov_criminal_syndicate": {
+      "ruler_title": "RT_OLIGARCH",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_megacorp": "yes",
+        "has_valid_civic": "civic_criminal_heritage"
+      },
+      "weight": {
+        "base": "@gov_civic_override_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 821
+  },
+  "gov_pirate_haven": {
+    "gov_pirate_haven": {
+      "ruler_title": "RT_OLIGARCH",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_megacorp": "yes",
+        "has_valid_civic": "civic_crusader_spirit_corporate"
+      },
+      "weight": {
+        "base": "@gov_civic_override_weight",
+        "modifier": {
+          "factor": "2",
+          "has_valid_civic": "civic_crusader_spirit_corporate"
+        }
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 837
+  },
+  "gov_subversive_cult": {
+    "gov_subversive_cult": {
+      "ruler_title": "RT_ORACLE",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_megacorp": "yes",
+        "has_valid_civic": "civic_gospel_of_the_masses"
+      },
+      "weight": {
+        "base": "@gov_civic_override_weight",
+        "modifier": {
+          "factor": "2",
+          "has_valid_civic": "civic_gospel_of_the_masses"
+        }
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 859
+  },
+  "gov_imperial_domain": {
+    "gov_imperial_domain": {
+      "ruler_title": "RT_GAL_EMPEROR",
+      "ruler_title_female": "RT_GAL_EMPRESS",
+      "heir_title": "HT_CROWN_PRINCE",
+      "heir_title_female": "HT_CROWN_PRINCESS",
+      "use_regnal_names": "yes",
+      "dynastic_last_names": "yes",
+      "should_force_rename": "yes",
+      "possible": {
+        "has_civic": "civic_galactic_sovereign",
+        "is_gestalt": "no"
+      },
+      "weight": {
+        "base": "@gov_galactic_sovereign_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 886
+  },
+  "gov_imperial_domain_hives": {
+    "gov_imperial_domain_hives": {
+      "ruler_title": "RT_GALACTIC_OVERMIND",
+      "should_force_rename": "yes",
+      "possible": {
+        "has_civic": "civic_galactic_sovereign",
+        "is_hive_empire": "yes"
+      },
+      "weight": {
+        "base": "@gov_galactic_sovereign_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 907
+  },
+  "gov_imperial_domain_machines": {
+    "gov_imperial_domain_machines": {
+      "ruler_title": "RT_GALACTIC_INTELLIGENCE",
+      "use_regnal_names": "yes",
+      "should_force_rename": "yes",
+      "possible": {
+        "has_civic": "civic_galactic_sovereign",
+        "is_machine_empire": "yes"
+      },
+      "weight": {
+        "base": "@gov_galactic_sovereign_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 924
+  },
+  "gov_imperial_domain_megacorp": {
+    "gov_imperial_domain_megacorp": {
+      "ruler_title": "RT_IMP_EXECUTIVE",
+      "heir_title": "HT_IMP_VICE_EXECUTIVE",
+      "use_regnal_names": "yes",
+      "dynastic_last_names": "yes",
+      "should_force_rename": "yes",
+      "possible": {
+        "has_civic": "civic_galactic_sovereign_megacorp",
+        "is_gestalt": "no"
+      },
+      "weight": {
+        "base": "@gov_galactic_sovereign_weight"
+      }
+    },
+    "_source_file": "03_civic_governments.txt",
+    "_line_number": 942
+  }
+}

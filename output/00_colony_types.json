@@ -1,0 +1,3117 @@
+{
+  "col_default": {
+    "col_default": {
+      "icon": "GFX_colony_type_normal_colony",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "has_upgraded_capital": "no",
+          "is_special_colony_type": "no",
+          "is_capital": "no",
+          "NOT": {},
+          "planet_modifier": {
+            "planet_stability_add": "5",
+            "planet_amenities_add": "10",
+            "pop_happiness": "0.10",
+            "planet_resettlement_unemployed_destination_mult": "0.25"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "pop_growth_speed": "0.1",
+              "planet_pop_assembly_mult": "0.1",
+              "planet_pop_assembly_organic_mult": "0.1"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {},
+                "modifier": {},
+                "weight_modifier": {
+                  "base": "100"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 11
+  },
+  "col_default_machine": {
+    "col_default_machine": {
+      "icon": "GFX_colony_type_normal_colony",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "has_upgraded_capital": "no",
+          "is_special_colony_type": "no",
+          "is_capital": "no",
+          "NOT": {},
+          "planet_modifier": {
+            "planet_stability_add": "5",
+            "planet_amenities_no_happiness_add": "10",
+            "planet_resettlement_unemployed_destination_mult": "0.25"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "pop_growth_speed": "0.1",
+              "planet_pop_assembly_mult": "0.1",
+              "planet_pop_assembly_organic_mult": "0.1"
+            },
+            "weight_modifier": {
+              "base": "100"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 51
+  },
+  "col_city": {
+    "col_city": {
+      "icon": "GFX_colony_type_urban",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "NOR": {
+            "uses_district_set": "cosmogenesis_world"
+          },
+          "is_special_colony_type": "no",
+          "is_capital": "no",
+          "NOT": {},
+          "planet_modifier": {
+            "planet_structures_upkeep_mult": "-0.10",
+            "planet_district_city_build_speed_mult": "0.25",
+            "trade_value_mult": "0.20"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {},
+              "modifier": {},
+              "weight_modifier": {
+                "modifier": {
+                  "add": "@stickiness",
+                  "has_designation": "col_city"
+                },
+                "complex_trigger_modifier": {
+                  "trigger": "num_assigned_jobs",
+                  "parameters": {
+                    "job": "numistic_priest"
+                  },
+                  "mode": "add"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 83
+  },
+  "col_mining": {
+    "col_mining": {
+      "icon": "GFX_colony_type_mine",
+      "potential": {
+        "exists": "owner",
+        "NOR": {
+          "uses_district_set": "cosmogenesis_world"
+        },
+        "is_special_colony_type": "no",
+        "is_capital": "no",
+        "NOT": {},
+        "planet_modifier": {
+          "planet_district_mining_build_speed_mult": "0.25",
+          "planet_miners_produces_mult": "0.25"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {},
+            "weight_modifier": {
+              "modifier": {
+                "add": "-10",
+                "has_modifier": "mineral_poor"
+              },
+              "complex_trigger_modifier": {
+                "trigger": "num_free_districts",
+                "parameters": {
+                  "type": "district_mining"
+                },
+                "mode": "add"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 151
+  },
+  "col_farming": {
+    "col_farming": {
+      "icon": "GFX_colony_type_farm",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "NOR": {
+            "uses_district_set": "cosmogenesis_world"
+          },
+          "is_special_colony_type": "no",
+          "is_capital": "no",
+          "NOT": {},
+          "planet_modifier": {
+            "planet_district_farming_build_speed_mult": "0.25",
+            "planet_farmers_produces_mult": "0.25"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {},
+              "modifier": {},
+              "weight_modifier": {
+                "modifier": {
+                  "add": "-10",
+                  "OR": {
+                    "has_modifier": "irradiated_planet"
+                  }
+                },
+                "complex_trigger_modifier": {
+                  "trigger": "num_free_districts",
+                  "parameters": {
+                    "type": "district_farming"
+                  },
+                  "mode": "add"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 270
+  },
+  "col_generator": {
+    "col_generator": {
+      "icon": "GFX_colony_type_generator",
+      "potential": {
+        "exists": "owner",
+        "NOR": {
+          "uses_district_set": "cosmogenesis_world",
+          "AND": {
+            "owner": {
+              "is_gestalt": "no"
+            },
+            "uses_district_set": "shattered_ring_world"
+          }
+        },
+        "is_special_colony_type": "no",
+        "is_capital": "no",
+        "NOT": {},
+        "planet_modifier": {
+          "planet_district_generator_build_speed_mult": "0.25",
+          "planet_technician_produces_mult": "0.25"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {},
+            "weight_modifier": {
+              "modifier": {
+                "add": "-10",
+                "has_modifier": "energy_poor"
+              },
+              "complex_trigger_modifier": {
+                "trigger": "num_free_districts",
+                "parameters": {
+                  "type": "district_generator"
+                },
+                "mode": "add"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 400
+  },
+  "col_hive": {
+    "col_hive": {
+      "icon": "GFX_colony_type_urban",
+      "potential": {
+        "NOR": {
+          "uses_district_set": "cosmogenesis_world"
+        },
+        "exists": "owner",
+        "owner": {
+          "is_special_colony_type": "no",
+          "is_capital": "no"
+        },
+        "planet_modifier": {
+          "planet_structures_upkeep_mult": "-0.10",
+          "planet_jobs_complex_drone_produces_mult": "0.05"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {},
+            "weight_modifier": {
+              "modifier": {
+                "add": "@stickiness",
+                "has_designation": "col_hive"
+              },
+              "complex_trigger_modifier": {
+                "trigger": "num_districts",
+                "parameters": {
+                  "type": "district_hive"
+                },
+                "mode": "add",
+                "mult": "2"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 525
+  },
+  "col_nexus": {
+    "col_nexus": {
+      "icon": "GFX_colony_type_urban",
+      "potential": {
+        "NOR": {
+          "uses_district_set": "cosmogenesis_world"
+        },
+        "exists": "owner",
+        "owner": {
+          "is_special_colony_type": "no",
+          "is_capital": "no",
+          "NOT": {},
+          "planet_modifier": {
+            "planet_structures_upkeep_mult": "-0.10",
+            "planet_jobs_complex_drone_produces_mult": "0.05"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "add": "@stickiness",
+              "has_designation": "col_nexus"
+            },
+            "complex_trigger_modifier": {
+              "trigger": "num_districts",
+              "parameters": {
+                "type": "district_nexus"
+              },
+              "mode": "add",
+              "mult": "2"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 569
+  },
+  "col_industrial": {
+    "col_industrial": {
+      "icon": "GFX_colony_type_industrial",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "NOR": {
+            "uses_district_set": "cosmogenesis_world"
+          },
+          "is_special_colony_type": "no",
+          "is_capital": "no",
+          "NOT": {},
+          "planet_modifier": {
+            "planet_district_industrial_build_speed_mult": "0.25",
+            "planet_artisans_upkeep_mult": "-0.10",
+            "planet_metallurgists_upkeep_mult": "-0.10"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "pop_growth_speed": "0.1",
+              "planet_pop_assembly_mult": "0.1",
+              "planet_pop_assembly_organic_mult": "0.1"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {},
+                "modifier": {
+                  "planet_artisans_produces_mult": "0.05",
+                  "planet_metallurgists_produces_mult": "0.05"
+                }
+              },
+              "weight_modifier": {
+                "modifier": {
+                  "add": "15",
+                  "AND": {
+                    "OR": {
+                      "has_building": "building_foundry_3"
+                    }
+                  }
+                },
+                "complex_trigger_modifier": {
+                  "trigger": "num_districts",
+                  "parameters": {
+                    "type": "district_industrial"
+                  },
+                  "mode": "add",
+                  "mult": "3"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 610
+  },
+  "col_foundry": {
+    "col_foundry": {
+      "icon": "GFX_colony_type_foundry",
+      "_comments": [
+        "# used by AI to estimate what will happen when we change the designation"
+      ],
+      "ai_resource_conversion": {
+        "consumer_goods": "0",
+        "alloys": "2",
+        "trigger": {
+          "owner": {
+            "is_gestalt": "no"
+          }
+        }
+      },
+      "ai_resource_current_conversion": {
+        "alloys": "0.5",
+        "consumer_goods": "-2",
+        "trigger": {
+          "owner": {
+            "is_gestalt": "no"
+          }
+        }
+      },
+      "potential": {
+        "exists": "owner",
+        "NOR": {
+          "uses_district_set": "cosmogenesis_world"
+        },
+        "is_special_colony_type": "no",
+        "is_capital": "no",
+        "NOT": {},
+        "custom_tooltip": "col_foundry_custom",
+        "planet_modifier": {
+          "planet_district_industrial_build_speed_mult": "0.25",
+          "planet_metallurgists_upkeep_mult": "-0.20"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "pop_growth_speed": "0.1",
+            "planet_pop_assembly_mult": "0.1",
+            "planet_pop_assembly_organic_mult": "0.1"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {},
+              "modifier": {
+                "planet_metallurgists_produces_mult": "0.05"
+              }
+            },
+            "weight_modifier": {
+              "modifier": {
+                "add": "11",
+                "has_designation": "col_factory",
+                "exists": "owner",
+                "owner": {
+                  "has_monthly_income": {
+                    "has_monthly_income": {}
+                  }
+                }
+              },
+              "complex_trigger_modifier": {
+                "trigger": "num_districts",
+                "parameters": {
+                  "type": "district_industrial"
+                },
+                "mode": "add",
+                "mult": "3"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 703
+  },
+  "col_factory": {
+    "col_factory": {
+      "icon": "GFX_colony_type_factory",
+      "_comments": [
+        "# used by AI to estimate what will happen when we change the designation",
+        "# Used by AI to estimate the current effects of this designation"
+      ],
+      "ai_resource_conversion": {
+        "consumer_goods": "2",
+        "alloys": "0",
+        "trigger": {
+          "owner": {
+            "is_gestalt": "no"
+          }
+        }
+      },
+      "ai_resource_current_conversion": {
+        "consumer_goods": "0.5",
+        "alloys": "-0.5",
+        "trigger": {
+          "owner": {
+            "is_gestalt": "no"
+          }
+        }
+      },
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "NOR": {
+            "uses_district_set": "cosmogenesis_world"
+          },
+          "is_special_colony_type": "no",
+          "is_capital": "no",
+          "NOT": {},
+          "custom_tooltip": "col_factory_custom",
+          "planet_modifier": {
+            "planet_district_industrial_build_speed_mult": "0.25",
+            "planet_artisans_upkeep_mult": "-0.20"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "pop_growth_speed": "0.1",
+              "planet_pop_assembly_mult": "0.1",
+              "planet_pop_assembly_organic_mult": "0.1"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {},
+                "modifier": {
+                  "planet_artisans_produces_mult": "0.05"
+                }
+              },
+              "weight_modifier": {
+                "modifier": {
+                  "add": "11",
+                  "has_designation": "col_foundry",
+                  "exists": "owner",
+                  "owner": {
+                    "has_monthly_income": {
+                      "has_monthly_income": {}
+                    }
+                  }
+                },
+                "complex_trigger_modifier": {
+                  "trigger": "num_districts",
+                  "parameters": {
+                    "type": "district_industrial"
+                  },
+                  "mode": "add",
+                  "mult": "3"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 822
+  },
+  "col_bureau": {
+    "col_bureau": {
+      "icon": "GFX_colony_type_bureaucratic",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_regular_empire": "yes",
+          "is_spiritualist": "no",
+          "has_make_spiritualist_perk": "no"
+        },
+        "NOR": {
+          "uses_district_set": "cosmogenesis_world"
+        },
+        "is_special_colony_type": "no",
+        "is_capital": "no",
+        "NOT": {},
+        "planet_modifier": {
+          "planet_administrators_produces_mult": "0.10",
+          "planet_administrators_upkeep_mult": "-0.10"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "pop_growth_speed": "0.1",
+            "planet_pop_assembly_mult": "0.1",
+            "planet_pop_assembly_organic_mult": "0.1"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner.federation",
+              "owner.federation": {
+                "owner": {},
+                "job_priest_per_pop": "0.04"
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "owner",
+                  "owner": {},
+                  "modifier": {
+                    "planet_administrators_produces_mult": "0.05"
+                  }
+                },
+                "triggered_planet_modifier": {
+                  "potential": {
+                    "exists": "owner.federation",
+                    "owner.federation": {
+                      "owner": {},
+                      "job_haruspex_per_pop": "0.04"
+                    },
+                    "weight_modifier": {
+                      "modifier": {
+                        "add": "@stickiness",
+                        "has_designation": "col_bureau"
+                      },
+                      "inline_script": {
+                        "script": "colony_types/shared_weights_admin"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 941
+  },
+  "col_bureau_spiritualist": {
+    "col_bureau_spiritualist": {
+      "icon": "GFX_colony_type_bureaucratic",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_regular_empire": "yes",
+          "OR": {
+            "is_spiritualist": "yes",
+            "has_make_spiritualist_perk": "yes"
+          }
+        },
+        "NOR": {
+          "uses_district_set": "cosmogenesis_world"
+        },
+        "is_special_colony_type": "no",
+        "is_capital": "no",
+        "NOT": {},
+        "planet_modifier": {
+          "planet_administrators_produces_mult": "0.10",
+          "planet_administrators_upkeep_mult": "-0.10"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "pop_growth_speed": "0.1",
+            "planet_pop_assembly_mult": "0.1",
+            "planet_pop_assembly_organic_mult": "0.1"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner.federation",
+              "owner.federation": {
+                "owner": {},
+                "job_priest_per_pop": "0.04"
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "owner.federation",
+                  "owner.federation": {
+                    "owner": {},
+                    "job_haruspex_per_pop": "0.04"
+                  },
+                  "triggered_planet_modifier": {
+                    "potential": {
+                      "exists": "owner",
+                      "owner": {},
+                      "modifier": {
+                        "planet_administrators_produces_mult": "0.05"
+                      }
+                    },
+                    "weight_modifier": {
+                      "modifier": {
+                        "add": "@stickiness",
+                        "has_designation": "col_bureau_spiritualist"
+                      },
+                      "inline_script": {
+                        "script": "colony_types/shared_weights_priests"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 1011
+  },
+  "col_bureau_hive": {
+    "col_bureau_hive": {
+      "icon": "GFX_colony_type_bureaucratic",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "NOR": {
+            "uses_district_set": "cosmogenesis_world"
+          },
+          "is_special_colony_type": "no",
+          "is_capital": "no"
+        },
+        "planet_modifier": {
+          "planet_administrators_produces_mult": "0.10",
+          "planet_administrators_upkeep_mult": "-0.10"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "pop_growth_speed": "0.1",
+            "planet_pop_assembly_mult": "0.1",
+            "planet_pop_assembly_organic_mult": "0.1"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {},
+              "modifier": {
+                "planet_administrators_produces_mult": "0.05"
+              }
+            },
+            "weight_modifier": {
+              "modifier": {
+                "add": "@stickiness",
+                "has_designation": "col_bureau_hive"
+              },
+              "inline_script": {
+                "script": "colony_types/shared_weights_synaptic"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 1081
+  },
+  "col_bureau_machine": {
+    "col_bureau_machine": {
+      "icon": "GFX_colony_type_bureaucratic",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_machine_empire": "yes",
+          "NOT": {},
+          "NOR": {
+            "uses_district_set": "cosmogenesis_world"
+          },
+          "is_special_colony_type": "no",
+          "is_capital": "no",
+          "planet_modifier": {
+            "planet_administrators_produces_mult": "0.10",
+            "planet_administrators_upkeep_mult": "-0.10"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "pop_growth_speed": "0.1",
+              "planet_pop_assembly_mult": "0.1",
+              "planet_pop_assembly_organic_mult": "0.1"
+            },
+            "weight_modifier": {
+              "modifier": {
+                "add": "@stickiness",
+                "has_designation": "col_bureau_machine"
+              },
+              "inline_script": {
+                "script": "colony_types/shared_weights_network"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 1127
+  },
+  "col_refinery": {
+    "col_refinery": {
+      "icon": "GFX_colony_type_refinery",
+      "potential": {
+        "exists": "owner",
+        "NOR": {
+          "uses_district_set": "cosmogenesis_world"
+        },
+        "is_special_colony_type": "no",
+        "is_capital": "no",
+        "NOT": {},
+        "planet_modifier": {
+          "planet_refiners_produces_mult": "0.15",
+          "planet_translucers_produces_mult": "0.15",
+          "planet_chemists_produces_mult": "0.15",
+          "planet_sr_miners_produces_mult": "0.15"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {
+              "planet_refiners_produces_mult": "0.05",
+              "planet_translucers_produces_mult": "0.05",
+              "planet_chemists_produces_mult": "0.05",
+              "planet_sr_miners_produces_mult": "0.05"
+            }
+          },
+          "weight_modifier": {
+            "modifier": {
+              "add": "@stickiness",
+              "has_designation": "col_refinery"
+            },
+            "complex_trigger_modifier": {
+              "trigger": "count_owned_pop",
+              "parameters": {
+                "limit": {
+                  "has_sr_producing_job": "yes"
+                }
+              },
+              "mode": "add",
+              "mult": "3"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 1170
+  },
+  "col_research": {
+    "col_research": {
+      "icon": "GFX_colony_type_research",
+      "potential": {
+        "exists": "owner",
+        "NOR": {
+          "uses_district_set": "cosmogenesis_world"
+        },
+        "is_special_colony_type": "no",
+        "is_capital": "no",
+        "NOT": {},
+        "planet_modifier": {
+          "planet_building_research_lab_1_build_speed_mult": "0.25",
+          "planet_researchers_upkeep_mult": "-0.2"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {
+              "planet_researchers_produces_mult": "0.05"
+            }
+          },
+          "weight_modifier": {
+            "modifier": {
+              "add": "@stickiness",
+              "has_designation": "col_research"
+            },
+            "inline_script": {
+              "script": "colony_types/shared_weights_research"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 1243
+  },
+  "col_fortress": {
+    "col_fortress": {
+      "icon": "GFX_colony_type_fortress",
+      "potential": {
+        "exists": "owner",
+        "NOR": {
+          "uses_district_set": "cosmogenesis_world"
+        },
+        "is_capital": "no",
+        "is_special_colony_type": "no",
+        "NOT": {},
+        "planet_modifier": {
+          "planet_building_stronghold_build_speed_mult": "0.25",
+          "planet_orbital_bombardment_damage": "-0.10",
+          "army_defense_damage_mult": "0.20"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {
+              "planet_orbital_bombardment_damage": "-0.1"
+            }
+          },
+          "weight_modifier": {
+            "modifier": {
+              "add": "@stickiness",
+              "has_designation": "col_fortress"
+            },
+            "complex_trigger_modifier": {
+              "trigger": "num_buildings",
+              "parameters": {
+                "type": "building_fortress"
+              },
+              "mode": "add",
+              "mult": "4"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 1286
+  },
+  "col_capital": {
+    "col_capital": {
+      "icon": "GFX_colony_type_capital",
+      "potential": {
+        "is_capital": "yes",
+        "NAND": {
+          "exists": "owner",
+          "owner": {
+            "OR": {
+              "NOT": {
+                "is_gestalt": "yes"
+              }
+            }
+          }
+        },
+        "planet_modifier": {
+          "planet_stability_add": "5",
+          "planet_amenities_add": "10",
+          "pop_government_ethic_attraction": "1",
+          "planet_resettlement_unemployed_destination_mult": "0.1",
+          "planet_jobs_produces_mult": "0.1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "pop_growth_speed": "0.1",
+            "planet_pop_assembly_mult": "0.1",
+            "planet_pop_assembly_organic_mult": "0.1"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {},
+              "modifier": {
+                "planet_jobs_produces_mult": "0.05"
+              }
+            },
+            "weight_modifier": {
+              "base": "1000"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 1346
+  },
+  "col_capital_foundry": {
+    "col_capital_foundry": {
+      "icon": "GFX_colony_type_capital_foundry",
+      "potential": {
+        "is_capital": "yes",
+        "exists": "owner",
+        "owner": {
+          "AND": {
+            "is_country_type": "default",
+            "OR": {
+              "is_ai": "no",
+              "AND": {
+                "num_owned_planets >": "5"
+              }
+            }
+          }
+        }
+      },
+      "planet_modifier": {
+        "planet_stability_add": "5",
+        "planet_resettlement_unemployed_destination_mult": "0.1"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "pop_growth_speed": "0.1",
+          "planet_pop_assembly_mult": "0.1",
+          "planet_pop_assembly_organic_mult": "0.1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {
+              "planet_jobs_produces_mult": "0.05"
+            }
+          },
+          "_comments": [
+            "# used by AI to estimate what will happen when we change the designation"
+          ],
+          "ai_resource_conversion": {
+            "consumer_goods": "0",
+            "alloys": "2",
+            "trigger": {
+              "owner": {
+                "country_uses_consumer_goods": "yes"
+              }
+            }
+          },
+          "ai_resource_current_conversion": {
+            "alloys": "0.5",
+            "consumer_goods": "-2",
+            "trigger": {
+              "owner": {
+                "country_uses_consumer_goods": "yes"
+              }
+            }
+          },
+          "custom_tooltip": "col_foundry_custom",
+          "weight_modifier": {
+            "base": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 1403
+  },
+  "col_capital_factory": {
+    "col_capital_factory": {
+      "icon": "GFX_colony_type_capital_factory",
+      "potential": {
+        "is_capital": "yes",
+        "exists": "owner",
+        "owner": {
+          "AND": {
+            "is_country_type": "default",
+            "country_uses_consumer_goods": "yes",
+            "OR": {
+              "is_ai": "no",
+              "AND": {
+                "num_owned_planets >": "5"
+              }
+            }
+          }
+        }
+      },
+      "planet_modifier": {
+        "planet_stability_add": "5",
+        "planet_resettlement_unemployed_destination_mult": "0.1"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "pop_growth_speed": "0.1",
+          "planet_pop_assembly_mult": "0.1",
+          "planet_pop_assembly_organic_mult": "0.1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {
+              "planet_jobs_produces_mult": "0.05"
+            }
+          },
+          "_comments": [
+            "# used by AI to estimate what will happen when we change the designation",
+            "# Used by AI to estimate the current effects of this designation"
+          ],
+          "ai_resource_conversion": {
+            "consumer_goods": "2",
+            "alloys": "0",
+            "trigger": {
+              "owner": {
+                "country_uses_consumer_goods": "yes"
+              }
+            }
+          },
+          "custom_tooltip": "col_factory_custom",
+          "ai_resource_current_conversion": {
+            "consumer_goods": "0.5",
+            "alloys": "-0.5",
+            "trigger": {
+              "owner": {
+                "country_uses_consumer_goods": "yes"
+              }
+            }
+          },
+          "weight_modifier": {
+            "base": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 1519
+  },
+  "col_capital_trade": {
+    "col_capital_trade": {
+      "icon": "GFX_colony_type_capital_trade",
+      "potential": {
+        "is_capital": "yes",
+        "exists": "owner",
+        "owner": {
+          "AND": {
+            "is_country_type": "default",
+            "is_gestalt": "no",
+            "OR": {
+              "is_ai": "no",
+              "AND": {
+                "num_owned_planets >": "5"
+              }
+            }
+          }
+        }
+      },
+      "planet_modifier": {
+        "planet_stability_add": "5",
+        "planet_amenities_add": "10",
+        "pop_government_ethic_attraction": "1",
+        "planet_resettlement_unemployed_destination_mult": "0.1",
+        "trade_value_mult": "0.15"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "pop_growth_speed": "0.1",
+          "planet_pop_assembly_mult": "0.1",
+          "planet_pop_assembly_organic_mult": "0.1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {
+              "planet_jobs_produces_mult": "0.05"
+            }
+          },
+          "weight_modifier": {
+            "base": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 1628
+  },
+  "col_capital_extraction": {
+    "col_capital_extraction": {
+      "icon": "GFX_colony_type_capital_extraction",
+      "potential": {
+        "is_capital": "yes",
+        "exists": "owner",
+        "owner": {
+          "AND": {
+            "is_country_type": "default",
+            "OR": {
+              "is_ai": "no",
+              "AND": {
+                "num_owned_planets >": "5"
+              }
+            }
+          }
+        }
+      },
+      "planet_modifier": {
+        "planet_stability_add": "5",
+        "planet_resettlement_unemployed_destination_mult": "0.1"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "pop_growth_speed": "0.1",
+          "planet_pop_assembly_mult": "0.1",
+          "planet_pop_assembly_organic_mult": "0.1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {
+              "planet_jobs_produces_mult": "0.05"
+            }
+          },
+          "weight_modifier": {
+            "base": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 1684
+  },
+  "col_capital_hive": {
+    "col_capital_hive": {
+      "icon": "GFX_colony_type_capital",
+      "potential": {
+        "is_capital": "yes",
+        "exists": "owner",
+        "owner": {
+          "is_country_type": "default",
+          "is_hive_empire": "yes"
+        }
+      },
+      "planet_modifier": {
+        "planet_stability_add": "5",
+        "planet_amenities_no_happiness_add": "10",
+        "planet_crime_no_happiness_add": "-20",
+        "planet_jobs_produces_mult": "0.1",
+        "planet_resettlement_unemployed_destination_mult": "0.1"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "pop_growth_speed": "0.1",
+          "planet_pop_assembly_mult": "0.1",
+          "planet_pop_assembly_organic_mult": "0.1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {
+              "planet_jobs_produces_mult": "0.05"
+            }
+          },
+          "weight_modifier": {
+            "base": "1000"
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 1770
+  },
+  "col_capital_machine": {
+    "col_capital_machine": {
+      "icon": "GFX_colony_type_capital",
+      "potential": {
+        "is_capital": "yes",
+        "exists": "owner",
+        "owner": {
+          "is_country_type": "default",
+          "is_machine_empire": "yes"
+        }
+      },
+      "planet_modifier": {
+        "planet_stability_add": "5",
+        "planet_amenities_no_happiness_add": "10",
+        "planet_crime_no_happiness_add": "-20",
+        "planet_jobs_produces_mult": "0.15",
+        "planet_resettlement_unemployed_destination_mult": "0.1"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "pop_growth_speed": "0.1",
+          "planet_pop_assembly_mult": "0.1",
+          "planet_pop_assembly_organic_mult": "0.1"
+        },
+        "weight_modifier": {
+          "base": "1000"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 1812
+  },
+  "col_habitat": {
+    "col_habitat": {
+      "icon": "GFX_colony_type_habitat",
+      "potential": {
+        "uses_district_set": "habitat",
+        "is_capital": "no"
+      },
+      "planet_modifier": {
+        "planet_stability_add": "5",
+        "planet_amenities_add": "10"
+      },
+      "weight_modifier": {
+        "base": "4"
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 1849
+  },
+  "col_habitat_energy": {
+    "col_habitat_energy": {
+      "icon": "GFX_colony_type_habitat_energy",
+      "potential": {
+        "uses_district_set": "habitat",
+        "exists": "owner",
+        "check_modifier_value": {
+          "modifier": "district_hab_energy_max"
+        },
+        "is_capital": "no"
+      },
+      "planet_modifier": {
+        "planet_district_hab_energy_build_speed_mult": "0.25",
+        "planet_technician_produces_mult": "0.1"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_galactic_community_member": "yes",
+            "is_gestalt": "yes"
+          },
+          "OR": {
+            "is_active_resolution": "resolution_greatergood_universal_prosperity_mandate"
+          }
+        },
+        "modifier": {
+          "planet_jobs_simple_drone_produces_mult": "0.1"
+        }
+      },
+      "weight_modifier": {
+        "modifier": {
+          "add": "10",
+          "OR": {
+            "has_building": "building_energy_nexus"
+          }
+        },
+        "complex_trigger_modifier": {
+          "trigger": "num_districts",
+          "parameters": {
+            "type": "district_hab_energy"
+          },
+          "mode": "add",
+          "mult": "3"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 1869
+  },
+  "col_habitat_trade": {
+    "col_habitat_trade": {
+      "icon": "GFX_colony_type_habitat_trade",
+      "custom_tooltip": "col_habitat_trade_custom",
+      "potential": {
+        "uses_district_set": "habitat",
+        "exists": "owner",
+        "owner": {
+          "is_capital": "no"
+        },
+        "planet_modifier": {
+          "trade_value_mult": "0.20"
+        },
+        "weight_modifier": {
+          "modifier": {
+            "add": "@stickiness",
+            "has_designation": "col_habitat_trade"
+          },
+          "complex_trigger_modifier": {
+            "trigger": "num_assigned_jobs",
+            "parameters": {
+              "job": "numistic_priest"
+            },
+            "mode": "add"
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 1953
+  },
+  "col_habitat_research": {
+    "col_habitat_research": {
+      "icon": "GFX_colony_type_habitat_research",
+      "potential": {
+        "uses_district_set": "habitat",
+        "exists": "owner",
+        "check_modifier_value": {
+          "modifier": "district_hab_science_max"
+        },
+        "is_capital": "no"
+      },
+      "planet_modifier": {
+        "planet_district_hab_science_build_speed_mult": "0.25",
+        "planet_researchers_produces_mult": "0.1"
+      },
+      "weight_modifier": {
+        "modifier": {
+          "add": "10",
+          "has_deposit": "d_payback_habitat_research"
+        },
+        "complex_trigger_modifier": {
+          "trigger": "num_districts",
+          "parameters": {
+            "type": "district_hab_science"
+          },
+          "mode": "add",
+          "mult": "3"
+        },
+        "inline_script": {
+          "script": "colony_types/shared_weights_research"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 1999
+  },
+  "col_habitat_mining": {
+    "col_habitat_mining": {
+      "icon": "GFX_colony_type_habitat_mining",
+      "potential": {
+        "uses_district_set": "habitat",
+        "check_modifier_value": {
+          "modifier": "district_hab_mining_max"
+        },
+        "is_capital": "no"
+      },
+      "planet_modifier": {
+        "planet_district_hab_mining_build_speed_mult": "0.25",
+        "planet_miners_produces_mult": "0.1"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_galactic_community_member": "yes",
+            "is_gestalt": "yes"
+          },
+          "OR": {
+            "is_active_resolution": "resolution_greatergood_universal_prosperity_mandate"
+          }
+        },
+        "modifier": {
+          "planet_jobs_simple_drone_produces_mult": "0.1"
+        }
+      },
+      "weight_modifier": {
+        "modifier": {
+          "add": "10",
+          "OR": {
+            "has_building": "building_mineral_purification_hub"
+          }
+        },
+        "complex_trigger_modifier": {
+          "trigger": "num_districts",
+          "parameters": {
+            "type": "district_hab_mining"
+          },
+          "mode": "add",
+          "mult": "3"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 2049
+  },
+  "col_habitat_farming": {
+    "col_habitat_farming": {
+      "icon": "GFX_colony_type_habitat_farming",
+      "custom_tooltip": "col_habitat_farming_desc_custom",
+      "potential": {
+        "uses_district_set": "habitat",
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": "no"
+        },
+        "is_capital": "no"
+      },
+      "planet_modifier": {
+        "planet_building_hydroponics_farm_build_speed_mult": "0.25",
+        "planet_farmers_produces_mult": "0.25"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_galactic_community_member": "yes"
+          },
+          "OR": {
+            "is_active_resolution": "resolution_greatergood_universal_prosperity_mandate"
+          }
+        },
+        "modifier": {
+          "planet_jobs_worker_produces_mult": "0.1"
+        }
+      },
+      "weight_modifier": {
+        "modifier": {
+          "add": "5",
+          "has_building": "building_baol_organic_plant"
+        },
+        "complex_trigger_modifier": {
+          "trigger": "num_buildings",
+          "parameters": {
+            "type": "building_hydroponics_farm"
+          },
+          "mode": "add",
+          "mult": "4"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 2133
+  },
+  "col_habitat_gestalt_farming": {
+    "col_habitat_gestalt_farming": {
+      "icon": "GFX_colony_type_habitat_farming",
+      "custom_tooltip": "col_habitat_gestalt_farming_desc_custom",
+      "potential": {
+        "uses_district_set": "habitat",
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": "yes"
+        },
+        "is_capital": "no"
+      },
+      "planet_modifier": {
+        "planet_building_hydroponics_farm_build_speed_mult": "0.25",
+        "planet_farmers_produces_mult": "0.25"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_galactic_community_member": "yes"
+          },
+          "OR": {
+            "is_active_resolution": "resolution_greatergood_universal_prosperity_mandate"
+          }
+        },
+        "modifier": {
+          "planet_jobs_simple_drone_produces_mult": "0.1"
+        }
+      },
+      "weight_modifier": {
+        "modifier": {
+          "add": "5",
+          "has_building": "building_baol_organic_plant"
+        },
+        "complex_trigger_modifier": {
+          "trigger": "num_buildings",
+          "parameters": {
+            "type": "building_hydroponics_farm"
+          },
+          "mode": "add",
+          "mult": "4"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 2194
+  },
+  "col_habitat_fortress": {
+    "col_habitat_fortress": {
+      "icon": "GFX_colony_type_habitat_fortress",
+      "potential": {
+        "uses_district_set": "habitat",
+        "is_capital": "no"
+      },
+      "planet_modifier": {
+        "planet_building_stronghold_build_speed_mult": "0.25",
+        "planet_orbital_bombardment_damage": "-0.10",
+        "army_defense_damage_mult": "0.20"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "OR": {
+            "has_building": "building_order_castle"
+          }
+        },
+        "planet_knights_produces_mult": "0.1"
+      },
+      "weight_modifier": {
+        "modifier": {
+          "add": "100",
+          "OR": {
+            "has_building": "building_order_castle"
+          }
+        },
+        "complex_trigger_modifier": {
+          "trigger": "num_buildings",
+          "parameters": {
+            "type": "building_fortress"
+          },
+          "mode": "add",
+          "mult": "6"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 2258
+  },
+  "col_habitat_industrial": {
+    "col_habitat_industrial": {
+      "icon": "GFX_colony_type_hab_industrial",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "uses_district_set": "habitat",
+          "is_capital": "no"
+        },
+        "planet_modifier": {
+          "planet_district_hab_industrial_build_speed_mult": "0.25",
+          "planet_metallurgists_upkeep_mult": "-0.1",
+          "planet_artisans_upkeep_mult": "-0.1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {
+              "is_galactic_community_member": "yes"
+            },
+            "OR": {
+              "is_active_resolution": "resolution_industry_project_cornucopia"
+            }
+          },
+          "modifier": {
+            "planet_artisans_produces_mult": "0.05",
+            "planet_metallurgists_produces_mult": "0.05"
+          }
+        },
+        "weight_modifier": {
+          "modifier": {
+            "add": "15",
+            "AND": {
+              "OR": {
+                "has_building": "building_foundry_3"
+              }
+            }
+          },
+          "complex_trigger_modifier": {
+            "trigger": "num_districts",
+            "parameters": {
+              "type": "district_hab_industrial"
+            },
+            "mode": "add",
+            "mult": "3"
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 2314
+  },
+  "col_habitat_foundry": {
+    "col_habitat_foundry": {
+      "icon": "GFX_colony_type_habitat_foundry",
+      "_comments": [
+        "# used by AI to estimate what will happen when we change the designation"
+      ],
+      "ai_resource_conversion": {
+        "consumer_goods": "0",
+        "alloys": "2",
+        "trigger": {
+          "owner": {
+            "is_gestalt": "no"
+          }
+        }
+      },
+      "ai_resource_current_conversion": {
+        "alloys": "0.5",
+        "consumer_goods": "-2",
+        "trigger": {
+          "owner": {
+            "is_gestalt": "no"
+          }
+        }
+      },
+      "potential": {
+        "uses_district_set": "habitat",
+        "is_capital": "no"
+      },
+      "custom_tooltip": "col_habitat_foundry_custom",
+      "planet_modifier": {
+        "planet_district_hab_industrial_build_speed_mult": "0.25",
+        "planet_metallurgists_upkeep_mult": "-0.2"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_galactic_community_member": "yes"
+          },
+          "OR": {
+            "is_active_resolution": "resolution_industry_project_cornucopia"
+          }
+        },
+        "modifier": {
+          "planet_metallurgists_produces_mult": "0.05"
+        }
+      },
+      "weight_modifier": {
+        "modifier": {
+          "add": "11",
+          "has_designation": "col_habitat_factory",
+          "exists": "owner",
+          "owner": {
+            "has_monthly_income": {
+              "has_monthly_income": {}
+            }
+          }
+        },
+        "complex_trigger_modifier": {
+          "trigger": "num_districts",
+          "parameters": {
+            "type": "district_hab_industrial"
+          },
+          "mode": "add",
+          "mult": "3"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 2383
+  },
+  "col_habitat_factory": {
+    "col_habitat_factory": {
+      "icon": "GFX_colony_type_habitat_factory",
+      "_comments": [
+        "# used by AI to estimate what will happen when we change the designation",
+        "# Used by AI to estimate the current effects of this designation"
+      ],
+      "ai_resource_conversion": {
+        "consumer_goods": "2",
+        "alloys": "0",
+        "trigger": {
+          "owner": {
+            "is_gestalt": "no"
+          }
+        }
+      },
+      "ai_resource_current_conversion": {
+        "consumer_goods": "0.5",
+        "alloys": "-0.5",
+        "trigger": {
+          "owner": {
+            "is_gestalt": "no"
+          }
+        }
+      },
+      "potential": {
+        "uses_district_set": "habitat",
+        "exists": "owner",
+        "owner": {
+          "is_capital": "no"
+        },
+        "custom_tooltip": "col_habitat_factory_custom",
+        "planet_modifier": {
+          "planet_district_hab_industrial_build_speed_mult": "0.25",
+          "planet_artisans_upkeep_mult": "-0.2"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {
+              "is_galactic_community_member": "yes"
+            },
+            "OR": {
+              "is_active_resolution": "resolution_industry_project_cornucopia"
+            }
+          },
+          "modifier": {
+            "planet_artisans_produces_mult": "0.05"
+          }
+        },
+        "weight_modifier": {
+          "modifier": {
+            "add": "11",
+            "has_designation": "col_habitat_foundry",
+            "exists": "owner",
+            "owner": {
+              "has_monthly_income": {
+                "has_monthly_income": {}
+              }
+            }
+          },
+          "complex_trigger_modifier": {
+            "trigger": "num_districts",
+            "parameters": {
+              "type": "district_hab_industrial"
+            },
+            "mode": "add",
+            "mult": "3"
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 2478
+  },
+  "col_habitat_bureau": {
+    "col_habitat_bureau": {
+      "icon": "GFX_colony_type_hab_bureaucratic",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_regular_empire": "yes",
+          "is_spiritualist": "no",
+          "has_make_spiritualist_perk": "no"
+        },
+        "uses_district_set": "habitat",
+        "is_special_colony_type": "no",
+        "is_capital": "no"
+      },
+      "planet_modifier": {
+        "planet_administrators_produces_mult": "0.10",
+        "planet_administrators_upkeep_mult": "-0.10"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner.federation",
+          "owner.federation": {
+            "owner": {},
+            "job_priest_per_pop": "0.04"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner.federation",
+              "owner.federation": {
+                "owner": {},
+                "job_haruspex_per_pop": "0.04"
+              },
+              "weight_modifier": {
+                "modifier": {
+                  "add": "@stickiness",
+                  "has_designation": "col_habitat_bureau"
+                },
+                "inline_script": {
+                  "script": "colony_types/shared_weights_admin"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 2572
+  },
+  "col_habitat_bureau_spiritualist": {
+    "col_habitat_bureau_spiritualist": {
+      "icon": "GFX_colony_type_hab_bureaucratic",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_regular_empire": "yes",
+          "OR": {
+            "is_spiritualist": "yes",
+            "has_make_spiritualist_perk": "yes"
+          }
+        },
+        "uses_district_set": "habitat",
+        "is_special_colony_type": "no",
+        "is_capital": "no"
+      },
+      "planet_modifier": {
+        "planet_administrators_produces_mult": "0.10",
+        "planet_administrators_upkeep_mult": "-0.10"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner.federation",
+          "owner.federation": {
+            "owner": {},
+            "job_priest_per_pop": "0.04"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner.federation",
+              "owner.federation": {
+                "owner": {},
+                "job_haruspex_per_pop": "0.04"
+              },
+              "weight_modifier": {
+                "modifier": {
+                  "add": "@stickiness",
+                  "has_designation": "col_habitat_bureau_spiritualist"
+                },
+                "inline_script": {
+                  "script": "colony_types/shared_weights_priests"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 2621
+  },
+  "col_habitat_bureau_hive": {
+    "col_habitat_bureau_hive": {
+      "icon": "GFX_colony_type_hab_bureaucratic",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "uses_district_set": "habitat",
+          "is_special_colony_type": "no",
+          "is_capital": "no"
+        },
+        "planet_modifier": {
+          "planet_administrators_produces_mult": "0.10",
+          "planet_administrators_upkeep_mult": "-0.10"
+        },
+        "weight_modifier": {
+          "modifier": {
+            "add": "@stickiness",
+            "has_designation": "col_habitat_bureau_hive"
+          },
+          "inline_script": {
+            "script": "colony_types/shared_weights_synaptic"
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 2670
+  },
+  "col_habitat_bureau_machine": {
+    "col_habitat_bureau_machine": {
+      "icon": "GFX_colony_type_hab_bureaucratic",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "uses_district_set": "habitat",
+          "is_special_colony_type": "no"
+        },
+        "planet_modifier": {
+          "planet_administrators_produces_mult": "0.10",
+          "planet_administrators_upkeep_mult": "-0.10"
+        },
+        "weight_modifier": {
+          "modifier": {
+            "add": "@stickiness",
+            "has_designation": "col_bureau_machine"
+          },
+          "inline_script": {
+            "script": "colony_types/shared_weights_network"
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 2697
+  },
+  "col_habitat_refinery": {
+    "col_habitat_refinery": {
+      "icon": "GFX_colony_type_habitat_refinery",
+      "potential": {
+        "uses_district_set": "habitat",
+        "is_capital": "no"
+      },
+      "planet_modifier": {
+        "planet_refiners_produces_mult": "0.15",
+        "planet_translucers_produces_mult": "0.15",
+        "planet_chemists_produces_mult": "0.15",
+        "planet_sr_miners_produces_mult": "0.15"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_galactic_community_member": "yes"
+          },
+          "OR": {
+            "is_active_resolution": "resolution_industry_project_cornucopia"
+          }
+        },
+        "modifier": {
+          "planet_refiners_produces_mult": "0.1",
+          "planet_translucers_produces_mult": "0.1",
+          "planet_chemists_produces_mult": "0.1",
+          "planet_sr_miners_produces_mult": "0.1"
+        }
+      },
+      "weight_modifier": {
+        "modifier": {
+          "add": "@stickiness",
+          "has_designation": "col_habitat_refinery"
+        },
+        "complex_trigger_modifier": {
+          "trigger": "count_owned_pop",
+          "parameters": {
+            "limit": {
+              "has_sr_producing_job": "yes"
+            }
+          },
+          "mode": "add",
+          "mult": "3"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 2725
+  },
+  "col_rural_gestalt": {
+    "col_rural_gestalt": {
+      "icon": "GFX_colony_type_fringe",
+      "potential": {
+        "NOR": {
+          "uses_district_set": "hive_world"
+        },
+        "exists": "owner",
+        "owner": {
+          "is_special_colony_type": "no",
+          "is_capital": "no",
+          "NOT": {},
+          "planet_modifier": {
+            "planet_district_farming_build_speed_mult": "0.25",
+            "planet_district_mining_build_speed_mult": "0.25",
+            "planet_district_generator_build_speed_mult": "0.25",
+            "planet_jobs_simple_drone_produces_mult": "0.10"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {},
+              "modifier": {
+                "planet_jobs_simple_drone_produces_mult": "0.05"
+              }
+            },
+            "weight_modifier": {
+              "modifier": {
+                "add": "5",
+                "has_building": "building_betharian_power_plant"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 2778
+  },
+  "col_rural": {
+    "col_rural": {
+      "icon": "GFX_colony_type_rural",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "NOR": {
+            "uses_district_set": "cosmogenesis_world"
+          },
+          "is_special_colony_type": "no",
+          "is_capital": "no",
+          "NOT": {},
+          "planet_modifier": {
+            "planet_district_farming_build_speed_mult": "0.25",
+            "planet_district_generator_build_speed_mult": "0.25",
+            "planet_district_mining_build_speed_mult": "0.25",
+            "planet_jobs_worker_produces_mult": "0.10"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {},
+              "modifier": {
+                "planet_jobs_worker_produces_mult": "0.05"
+              }
+            },
+            "weight_modifier": {
+              "modifier": {
+                "add": "5",
+                "has_building": "building_betharian_power_plant"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 2840
+  },
+  "col_ring_mix": {
+    "col_ring_mix": {
+      "icon": "GFX_colony_type_workers",
+      "potential": {
+        "uses_district_set": "ring_world",
+        "is_capital": "no"
+      },
+      "planet_modifier": {
+        "planet_immigration_pull_mult": "0.2",
+        "planet_jobs_produces_mult": "0.05",
+        "pop_growth_speed": "0.15",
+        "planet_pop_assembly_mult": "0.15",
+        "planet_pop_assembly_organic_mult": "0.15"
+      },
+      "weight_modifier": {
+        "modifier": {
+          "add": "10"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 2902
+  },
+  "col_ring_research": {
+    "col_ring_research": {
+      "icon": "GFX_colony_type_research",
+      "potential": {
+        "uses_district_set": "ring_world",
+        "is_capital": "no"
+      },
+      "planet_modifier": {
+        "planet_jobs_engineering_research_produces_mult": "0.15",
+        "planet_jobs_physics_research_produces_mult": "0.15",
+        "planet_jobs_society_research_produces_mult": "0.15",
+        "pop_growth_speed": "0.1",
+        "planet_pop_assembly_mult": "0.1",
+        "planet_pop_assembly_organic_mult": "0.1"
+      },
+      "weight_modifier": {
+        "modifier": {
+          "add": "@stickiness",
+          "has_designation": "col_ring_research"
+        },
+        "complex_trigger_modifier": {
+          "trigger": "num_districts",
+          "parameters": {
+            "type": "district_rw_science"
+          },
+          "mode": "add",
+          "mult": "10"
+        },
+        "inline_script": {
+          "script": "colony_types/shared_weights_research"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 2930
+  },
+  "col_ring_farming": {
+    "col_ring_farming": {
+      "icon": "GFX_colony_type_farm",
+      "potential": {
+        "uses_district_set": "ring_world",
+        "is_capital": "no"
+      },
+      "planet_modifier": {
+        "planet_farmers_food_produces_mult": "0.25",
+        "pop_growth_speed": "0.1",
+        "planet_pop_assembly_mult": "0.1",
+        "planet_pop_assembly_organic_mult": "0.1"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_galactic_community_member": "yes",
+            "is_gestalt": "yes"
+          },
+          "OR": {
+            "is_active_resolution": "resolution_greatergood_universal_prosperity_mandate"
+          }
+        },
+        "modifier": {
+          "planet_jobs_simple_drone_produces_mult": "0.1"
+        }
+      },
+      "weight_modifier": {
+        "modifier": {
+          "add": "5",
+          "has_building": "building_betharian_power_plant"
+        },
+        "complex_trigger_modifier": {
+          "trigger": "num_districts",
+          "parameters": {
+            "type": "district_rw_farming"
+          },
+          "mode": "add",
+          "mult": "10"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 2967
+  },
+  "col_ring_trade": {
+    "col_ring_trade": {
+      "icon": "GFX_colony_type_urban",
+      "potential": {
+        "uses_district_set": "ring_world",
+        "exists": "owner",
+        "owner": {
+          "is_capital": "no"
+        },
+        "planet_modifier": {
+          "trade_value_mult": "0.2",
+          "pop_growth_speed": "0.1",
+          "planet_pop_assembly_mult": "0.1",
+          "planet_pop_assembly_organic_mult": "0.1"
+        },
+        "weight_modifier": {
+          "modifier": {
+            "add": "@stickiness",
+            "has_designation": "col_ring_trade"
+          },
+          "complex_trigger_modifier": {
+            "trigger": "num_districts",
+            "parameters": {
+              "type": "district_rw_commercial"
+            },
+            "mode": "add",
+            "mult": "10"
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 3045
+  },
+  "col_ring_generator": {
+    "col_ring_generator": {
+      "icon": "GFX_colony_type_generator",
+      "potential": {
+        "uses_district_set": "ring_world",
+        "exists": "owner",
+        "owner": {
+          "is_capital": "no"
+        },
+        "planet_modifier": {
+          "planet_technician_energy_produces_mult": "0.25",
+          "pop_growth_speed": "0.1",
+          "planet_pop_assembly_mult": "0.1",
+          "planet_pop_assembly_organic_mult": "0.1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {
+              "is_galactic_community_member": "yes",
+              "is_gestalt": "yes"
+            },
+            "OR": {
+              "is_active_resolution": "resolution_greatergood_universal_prosperity_mandate"
+            }
+          },
+          "modifier": {
+            "planet_jobs_simple_drone_produces_mult": "0.1"
+          }
+        },
+        "weight_modifier": {
+          "modifier": {
+            "add": "@stickiness",
+            "has_designation": "col_ring_generator"
+          },
+          "complex_trigger_modifier": {
+            "trigger": "num_districts",
+            "parameters": {
+              "type": "district_rw_generator"
+            },
+            "mode": "add",
+            "mult": "10"
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 3079
+  },
+  "col_ecu_mix": {
+    "col_ecu_mix": {
+      "icon": "GFX_colony_type_urban",
+      "potential": {
+        "uses_district_set": "city_world",
+        "is_capital": "no"
+      },
+      "planet_modifier": {
+        "planet_structures_upkeep_mult": "-0.25",
+        "trade_value_mult": "0.20"
+      },
+      "weight_modifier": {
+        "modifier": {
+          "add": "@stickiness",
+          "has_designation": "col_ecu_mix"
+        },
+        "complex_trigger_modifier": {
+          "trigger": "num_assigned_jobs",
+          "parameters": {
+            "job": "numistic_priest"
+          },
+          "mode": "add"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 3149
+  },
+  "col_ecu_industrial": {
+    "col_ecu_industrial": {
+      "icon": "GFX_colony_type_industrial",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "uses_district_set": "city_world",
+          "is_capital": "no"
+        },
+        "planet_modifier": {
+          "planet_district_arcology_arms_industry_build_speed_mult": "0.25",
+          "planet_artisans_upkeep_mult": "-0.10",
+          "planet_metallurgists_upkeep_mult": "-0.10"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {
+              "is_galactic_community_member": "yes"
+            },
+            "OR": {
+              "is_active_resolution": "resolution_industry_project_cornucopia"
+            }
+          },
+          "modifier": {
+            "planet_artisans_produces_mult": "0.05",
+            "planet_metallurgists_produces_mult": "0.05"
+          }
+        },
+        "weight_modifier": {
+          "modifier": {
+            "add": "8",
+            "OR": {
+              "has_building": "building_foundry_3"
+            }
+          },
+          "complex_trigger_modifier": {
+            "trigger": "num_districts",
+            "parameters": {
+              "type": "district_arcology_arms_industry"
+            },
+            "mode": "add",
+            "mult": "6"
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 3202
+  },
+  "col_ecu_foundry": {
+    "col_ecu_foundry": {
+      "icon": "GFX_colony_type_foundry",
+      "_comments": [
+        "# used by AI to estimate what will happen when we change the designation"
+      ],
+      "ai_resource_conversion": {
+        "consumer_goods": "0",
+        "alloys": "2",
+        "trigger": {
+          "always": "yes"
+        }
+      },
+      "ai_resource_current_conversion": {
+        "alloys": "0.5",
+        "consumer_goods": "-2",
+        "trigger": {
+          "always": "yes"
+        }
+      },
+      "potential": {
+        "uses_district_set": "city_world",
+        "is_capital": "no"
+      },
+      "planet_modifier": {
+        "planet_building_foundry_1_build_speed_mult": "0.25",
+        "planet_district_arcology_arms_industry_build_speed_mult": "0.25",
+        "planet_metallurgists_upkeep_mult": "-0.2"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_galactic_community_member": "yes"
+          },
+          "OR": {
+            "is_active_resolution": "resolution_industry_project_cornucopia"
+          }
+        },
+        "modifier": {
+          "planet_metallurgists_produces_mult": "0.05"
+        }
+      },
+      "weight_modifier": {
+        "modifier": {
+          "add": "10",
+          "num_districts": {
+            "exists": "owner",
+            "owner": {
+              "OR": {
+                "country_uses_consumer_goods": "no",
+                "has_monthly_income": {},
+                "resource_revenue_compare": {
+                  "resource": "alloys"
+                }
+              }
+            }
+          }
+        },
+        "complex_trigger_modifier": {
+          "trigger": "num_districts",
+          "parameters": {
+            "type": "district_arcology_civilian_industry"
+          },
+          "mode": "add",
+          "mult": "-3"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 3281
+  },
+  "col_ecu_factory": {
+    "col_ecu_factory": {
+      "icon": "GFX_colony_type_factory",
+      "_comments": [
+        "# used by AI to estimate what will happen when we change the designation",
+        "# Used by AI to estimate the current effects of this designation"
+      ],
+      "ai_resource_conversion": {
+        "consumer_goods": "2",
+        "alloys": "0",
+        "trigger": {
+          "owner": {
+            "is_gestalt": "no"
+          }
+        }
+      },
+      "ai_resource_current_conversion": {
+        "consumer_goods": "0.5",
+        "alloys": "-0.5",
+        "trigger": {
+          "owner": {
+            "is_gestalt": "no"
+          }
+        }
+      },
+      "potential": {
+        "uses_district_set": "city_world",
+        "exists": "owner",
+        "owner": {
+          "is_capital": "no"
+        },
+        "planet_modifier": {
+          "planet_building_factory_1_build_speed_mult": "0.25",
+          "planet_district_arcology_civilian_industry_build_speed_mult": "0.25",
+          "planet_artisans_upkeep_mult": "-0.2"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {
+              "is_galactic_community_member": "yes"
+            },
+            "OR": {
+              "is_active_resolution": "resolution_industry_project_cornucopia"
+            }
+          },
+          "modifier": {
+            "planet_artisans_produces_mult": "0.05"
+          }
+        },
+        "weight_modifier": {
+          "modifier": {
+            "add": "-5",
+            "OR": {
+              "has_building": "building_foundry_3"
+            }
+          },
+          "complex_trigger_modifier": {
+            "trigger": "num_districts",
+            "parameters": {
+              "type": "district_arcology_arms_industry"
+            },
+            "mode": "add",
+            "mult": "-3"
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 3386
+  },
+  "col_ecu_research": {
+    "col_ecu_research": {
+      "icon": "GFX_colony_type_research",
+      "potential": {
+        "uses_district_set": "city_world",
+        "is_capital": "no"
+      },
+      "planet_modifier": {
+        "planet_building_research_lab_1_build_speed_mult": "0.25",
+        "planet_researchers_upkeep_mult": "-0.2"
+      },
+      "weight_modifier": {
+        "modifier": {
+          "add": "@stickiness",
+          "has_designation": "col_ecu_research"
+        },
+        "inline_script": {
+          "script": "colony_types/shared_weights_research"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 3479
+  },
+  "col_mac": {
+    "col_mac": {
+      "icon": "GFX_colony_type_urban",
+      "potential": {
+        "uses_district_set": "machine_world",
+        "is_capital": "no"
+      },
+      "planet_modifier": {
+        "planet_district_industrial_build_speed_mult": "0.25"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_machine_empire": "yes",
+            "NOT": {},
+            "is_planet_class": "pc_machine"
+          },
+          "modifier": {
+            "planet_district_machine_coordination_build_speed_mult": "0.25"
+          }
+        },
+        "_comments": [
+          "# Triggered to get the tooltip to display in a sensible way"
+        ],
+        "triggered_planet_modifier": {
+          "potential": {
+            "always": "yes"
+          },
+          "modifier": {
+            "planet_district_mining_uncapped_build_speed_mult": "0.25",
+            "planet_district_generator_uncapped_build_speed_mult": "0.25",
+            "planet_jobs_produces_mult": "0.05"
+          }
+        },
+        "weight_modifier": {
+          "modifier": {
+            "add": "10"
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 3506
+  },
+  "col_mac_foundry": {
+    "col_mac_foundry": {
+      "icon": "GFX_colony_type_foundry",
+      "potential": {
+        "uses_district_set": "machine_world",
+        "is_capital": "no"
+      },
+      "custom_tooltip": "col_foundry_custom",
+      "planet_modifier": {
+        "planet_district_industrial_build_speed_mult": "0.25",
+        "planet_metallurgists_upkeep_mult": "-0.2"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_galactic_community_member": "yes"
+          },
+          "OR": {
+            "is_active_resolution": "resolution_industry_project_cornucopia"
+          }
+        },
+        "modifier": {
+          "planet_metallurgists_produces_mult": "0.05"
+        }
+      },
+      "weight_modifier": {
+        "modifier": {
+          "add": "11",
+          "has_designation": "col_mac_factory",
+          "exists": "owner",
+          "owner": {
+            "has_monthly_income": {
+              "has_monthly_income": {}
+            }
+          }
+        },
+        "complex_trigger_modifier": {
+          "trigger": "num_districts",
+          "parameters": {
+            "type": "district_industrial"
+          },
+          "mode": "add",
+          "mult": "3"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 3556
+  },
+  "col_mac_factory": {
+    "col_mac_factory": {
+      "icon": "GFX_colony_type_factory",
+      "potential": {
+        "uses_district_set": "machine_world",
+        "owner": {
+          "is_capital": "no"
+        },
+        "custom_tooltip": "col_factory_custom",
+        "planet_modifier": {
+          "planet_district_industrial_build_speed_mult": "0.25",
+          "planet_artisans_upkeep_mult": "-0.2"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {
+              "is_galactic_community_member": "yes"
+            },
+            "OR": {
+              "is_active_resolution": "resolution_industry_project_cornucopia"
+            }
+          },
+          "modifier": {
+            "planet_artisans_produces_mult": "0.05"
+          }
+        },
+        "weight_modifier": {
+          "modifier": {
+            "add": "11",
+            "has_designation": "col_mac_foundry",
+            "exists": "owner",
+            "owner": {
+              "has_monthly_income": {
+                "has_monthly_income": {}
+              }
+            }
+          },
+          "complex_trigger_modifier": {
+            "trigger": "num_districts",
+            "parameters": {
+              "type": "district_industrial"
+            },
+            "mode": "add",
+            "mult": "3"
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 3628
+  },
+  "col_hiv": {
+    "col_hiv": {
+      "icon": "GFX_colony_type_urban",
+      "potential": {
+        "uses_district_set": "hive_world",
+        "is_capital": "no"
+      },
+      "planet_modifier": {
+        "planet_district_mining_uncapped_build_speed_mult": "0.25",
+        "planet_district_farming_uncapped_build_speed_mult": "0.25",
+        "planet_district_generator_uncapped_build_speed_mult": "0.25",
+        "planet_jobs_simple_drone_produces_mult": "0.05"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "modifier": {
+            "planet_jobs_simple_drone_produces_mult": "0.05"
+          }
+        },
+        "weight_modifier": {
+          "modifier": {
+            "add": "@stickiness_low",
+            "has_designation": "col_hiv"
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 3701
+  },
+  "col_hiv_foundry": {
+    "col_hiv_foundry": {
+      "icon": "GFX_colony_type_foundry",
+      "potential": {
+        "uses_district_set": "hive_world",
+        "is_capital": "no"
+      },
+      "planet_modifier": {
+        "planet_district_industrial_build_speed_mult": "0.25",
+        "planet_metallurgists_upkeep_mult": "-0.20"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "modifier": {
+            "planet_metallurgists_produces_mult": "0.05"
+          }
+        },
+        "weight_modifier": {
+          "modifier": {
+            "add": "10",
+            "num_districts": {
+              "exists": "owner",
+              "owner": {
+                "resource_revenue_compare": {
+                  "resource": "alloys"
+                }
+              }
+            }
+          },
+          "complex_trigger_modifier": {
+            "trigger": "num_districts",
+            "parameters": {
+              "type": "district_industrial"
+            },
+            "mode": "add",
+            "mult": "3"
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 3736
+  },
+  "col_trophy_machine": {
+    "col_trophy_machine": {
+      "icon": "GFX_colony_type_bureaucratic",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "NOT": {},
+          "is_special_colony_type": "no",
+          "is_capital": "no",
+          "planet_modifier": {
+            "planet_bio_trophies_produces_mult": "0.10",
+            "pop_growth_speed": "0.10"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "pop_growth_speed": "0.1",
+              "planet_pop_assembly_mult": "0.1",
+              "planet_pop_assembly_organic_mult": "0.1"
+            },
+            "weight_modifier": {
+              "modifier": {
+                "add": "@stickiness",
+                "has_designation": "col_trophy_machine"
+              },
+              "inline_script": {
+                "script": "colony_types/shared_weights_trophy"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 3809
+  },
+  "col_fe_capital": {
+    "col_fe_capital": {
+      "icon": "GFX_colony_type_capital",
+      "potential": {
+        "is_capital": "yes",
+        "exists": "owner",
+        "owner": {},
+        "planet_modifier": {
+          "planet_stability_add": "10"
+        },
+        "weight_modifier": {
+          "base": "1000"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 3846
+  },
+  "col_fe_colony": {
+    "col_fe_colony": {
+      "icon": "GFX_colony_type_normal_colony",
+      "potential": {
+        "is_capital": "no",
+        "exists": "owner",
+        "owner": {},
+        "planet_modifier": {
+          "planet_stability_add": "5"
+        },
+        "weight_modifier": {
+          "base": "1000"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 3865
+  },
+  "col_resort": {
+    "col_resort": {
+      "icon": "GFX_colony_type_resort",
+      "potential": {
+        "has_modifier": "resort_colony"
+      },
+      "planet_modifier": {
+        "trade_value_mult": "0.10",
+        "planet_jobs_unity_produces_mult": "0.05"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "modifier": {},
+          "weight_modifier": {
+            "base": "1000"
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 3885
+  },
+  "col_penal": {
+    "col_penal": {
+      "icon": "GFX_colony_type_penal",
+      "potential": {
+        "has_modifier": "penal_colony"
+      },
+      "planet_modifier": {
+        "planet_jobs_worker_produces_mult": "0.10",
+        "job_warden_per_pop": "0.04"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "modifier": {
+            "planet_jobs_worker_produces_mult": "0.05",
+            "job_warden_per_pop": "0.01"
+          }
+        },
+        "weight_modifier": {
+          "base": "1000"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 3911
+  },
+  "col_gestation": {
+    "col_gestation": {
+      "icon": "GFX_colony_type_crucible_world",
+      "potential": {
+        "has_modifier": "gestation_colony",
+        "is_capital": "no"
+      },
+      "planet_modifier": {
+        "pop_growth_speed": "0.10"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "pop_growth_speed": "0.1",
+          "planet_pop_assembly_mult": "0.1",
+          "planet_pop_assembly_organic_mult": "0.1"
+        },
+        "weight_modifier": {
+          "base": "1000"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 3939
+  },
+  "col_pre_ftl_atomic": {
+    "col_pre_ftl_atomic": {
+      "icon": "GFX_colony_type_pre_ftl_atomic",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_country_type": "primitive",
+          "has_pre_ftl_age": "atomic_age"
+        }
+      },
+      "weight_modifier": {
+        "base": "1000"
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 3961
+  },
+  "col_pre_ftl_stone": {
+    "col_pre_ftl_stone": {
+      "icon": "GFX_colony_type_pre_ftl_stone",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_country_type": "primitive",
+          "has_pre_ftl_age": "stone_age"
+        }
+      },
+      "weight_modifier": {
+        "base": "1000"
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 3977
+  },
+  "col_pre_ftl_bronze": {
+    "col_pre_ftl_bronze": {
+      "icon": "GFX_colony_type_pre_ftl_bronze",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_country_type": "primitive",
+          "has_pre_ftl_age": "bronze_age"
+        }
+      },
+      "weight_modifier": {
+        "base": "1000"
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 3993
+  },
+  "col_pre_ftl_early_space": {
+    "col_pre_ftl_early_space": {
+      "icon": "GFX_colony_type_pre_ftl_space",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_country_type": "primitive",
+          "has_pre_ftl_age": "early_space_age"
+        }
+      },
+      "weight_modifier": {
+        "base": "1000"
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 4009
+  },
+  "col_pre_ftl_industrial": {
+    "col_pre_ftl_industrial": {
+      "icon": "GFX_colony_type_pre_ftl_industrial",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_country_type": "primitive",
+          "has_pre_ftl_age": "industrial_age"
+        }
+      },
+      "weight_modifier": {
+        "base": "1000"
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 4025
+  },
+  "col_pre_ftl_iron": {
+    "col_pre_ftl_iron": {
+      "icon": "GFX_colony_type_pre_ftl_iron",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_country_type": "primitive",
+          "has_pre_ftl_age": "iron_age"
+        }
+      },
+      "weight_modifier": {
+        "base": "1000"
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 4041
+  },
+  "col_pre_ftl_machine": {
+    "col_pre_ftl_machine": {
+      "icon": "GFX_colony_type_pre_ftl_machine",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_country_type": "primitive",
+          "has_pre_ftl_age": "machine_age"
+        }
+      },
+      "weight_modifier": {
+        "base": "1000"
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 4057
+  },
+  "col_pre_ftl_medieval": {
+    "col_pre_ftl_medieval": {
+      "icon": "GFX_colony_type_pre_ftl_medieval",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_country_type": "primitive",
+          "has_pre_ftl_age": "late_medieval_age"
+        }
+      },
+      "weight_modifier": {
+        "base": "1000"
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 4073
+  },
+  "col_pre_ftl_renaissance": {
+    "col_pre_ftl_renaissance": {
+      "icon": "GFX_colony_type_pre_ftl_renaissance",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_country_type": "primitive",
+          "has_pre_ftl_age": "renaissance_age"
+        }
+      },
+      "weight_modifier": {
+        "base": "1000"
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 4089
+  },
+  "col_pre_ftl_steam": {
+    "col_pre_ftl_steam": {
+      "icon": "GFX_colony_type_pre_ftl_steam",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_country_type": "primitive",
+          "has_pre_ftl_age": "steam_age"
+        }
+      },
+      "weight_modifier": {
+        "base": "1000"
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 4105
+  },
+  "col_infested": {
+    "col_infested": {
+      "icon": "GFX_colony_type_dying",
+      "potential": {
+        "exists": "owner",
+        "is_capital": "no",
+        "owner": {},
+        "weight_modifier": {
+          "base": "1000"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 4122
+  },
+  "col_contingency": {
+    "col_contingency": {
+      "icon": "GFX_colony_type_dying",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_capital": "no"
+        },
+        "weight_modifier": {
+          "base": "1000"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 4137
+  },
+  "col_slave": {
+    "col_slave": {
+      "icon": "GFX_colony_type_workers",
+      "potential": {
+        "has_modifier": "slave_colony"
+      },
+      "planet_modifier": {
+        "planet_jobs_worker_produces_mult": "0.05",
+        "army_starting_experience_add": "200",
+        "planet_army_build_time_mult": "-0.10"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "modifier": {},
+          "weight_modifier": {
+            "base": "1000"
+          }
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 4154
+  },
+  "col_cosmogenesis_world": {
+    "col_cosmogenesis_world": {
+      "icon": "GFX_colony_type_synaptic_lathe_colony",
+      "potential": {
+        "is_planet_class": "pc_cosmogenesis_world"
+      },
+      "planet_modifier": {
+        "planet_jobs_produces_mult": "0.15",
+        "planet_jobs_upkeep_mult": "-0.05",
+        "pop_purge_speed": "-0.05",
+        "pop_housing_usage_mult": "-0.1"
+      },
+      "weight_modifier": {
+        "base": "1000"
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 4180
+  },
+  "col_nanotech_world": {
+    "col_nanotech_world": {
+      "icon": "GFX_colony_type_fringe",
+      "potential": {
+        "is_planet_class": "pc_nanotech",
+        "exists": "owner",
+        "owner": {},
+        "planet_modifier": {
+          "planet_buildings_produces_mult": "0.15",
+          "planet_buildings_upkeep_mult": "0.1",
+          "planet_farmers_food_produces_mult": "-0.25\t# On the off chance the player builds some hydroponics farms",
+          "planet_farmers_nanites_produces_mult": "0.35",
+          "planet_miners_minerals_produces_mult": "-0.25",
+          "planet_miners_nanites_produces_mult": "0.35",
+          "planet_jobs_worker_produces_mult": "0.05"
+        },
+        "weight_modifier": {
+          "base": "10000"
+        }
+      }
+    },
+    "_source_file": "00_colony_types.txt",
+    "_line_number": 4200
+  }
+}

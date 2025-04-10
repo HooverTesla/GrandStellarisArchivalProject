@@ -1,0 +1,274 @@
+{
+  "has_active_spynetwork": {
+    "has_active_spynetwork": {
+      "any_spynetwork": {
+        "owner": {
+          "target": {
+            "exists": "leader"
+          }
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_espionage.txt",
+    "_line_number": 10
+  },
+  "has_active_preftl_spynetwork": {
+    "has_active_preftl_spynetwork": {
+      "any_spynetwork": {
+        "owner": {
+          "target": {
+            "exists": "leader"
+          }
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_espionage.txt",
+    "_line_number": 20
+  },
+  "has_hostile_espionage_operation_ethics": {
+    "has_hostile_espionage_operation_ethics": {
+      "OR": {
+        "has_ethic": "ethic_fanatic_xenophobe",
+        "is_machine_empire": "yes",
+        "is_hive_empire": "yes"
+      }
+    },
+    "_source_file": "02_scripted_triggers_espionage.txt",
+    "_line_number": 31
+  },
+  "espionage_operation_disguise_disadvantage": {
+    "espionage_operation_disguise_disadvantage": {
+      "OR": {
+        "_comments": [
+          "# Lacking appearance-changing tech"
+        ],
+        "AND": {
+          "species": {
+            "NOT": {},
+            "AND": {
+              "species": {
+                "NOR": {
+                  "has_technology": "tech_robomodding_m"
+                }
+              },
+              "_comments": [
+                "# Profound physiological differences"
+              ],
+              "AND": {
+                "is_gestalt": "no",
+                "root.from.target": {},
+                "AND": {
+                  "is_gestalt": "yes",
+                  "root.from.target": {},
+                  "AND": {
+                    "owner_species": {
+                      "NOT": {},
+                      "root.from.target": {
+                        "owner_species": {}
+                      },
+                      "AND": {
+                        "owner_species": {
+                          "NOT": {},
+                          "root.from.target": {
+                            "owner_species": {}
+                          }
+                        },
+                        "_comments": [
+                          "# Lacking the kinds of Asset which can help cover up the above"
+                        ],
+                        "root.from": {
+                          "target": {
+                            "is_country_type": "default"
+                          },
+                          "NOR": {
+                            "has_espionage_asset": "asset_engagement_protocol"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_espionage.txt",
+    "_line_number": 41
+  },
+  "has_appearance_modding_technology": {
+    "has_appearance_modding_technology": {
+      "OR": {
+        "AND": {
+          "species": {
+            "has_technology": "tech_gene_tailoring"
+          },
+          "AND": {
+            "species": {
+              "OR": {
+                "has_technology": "tech_robomodding_m"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_espionage.txt",
+    "_line_number": 97
+  },
+  "has_sabotage_starbase_valid_target": {
+    "has_sabotage_starbase_valid_target": {
+      "any_owned_starbase": {
+        "OR": {
+          "AND": {
+            "count_starbase_modules": {
+              "type !": "orbital_ring_shipyard"
+            }
+          },
+          "has_nonshipyard_starbase_buildings": "yes",
+          "is_orbital_ring": "yes"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_espionage.txt",
+    "_line_number": 114
+  },
+  "has_nonshipyard_starbase_buildings": {
+    "has_nonshipyard_starbase_buildings": {
+      "OR": {
+        "has_starbase_building": "reloading_bay",
+        "_comments": [
+          "# has_starbase_building = dragon_hatchery #too disruptive",
+          "# has_starbase_building = shroud_beacon #too disruptive"
+        ]
+      }
+    },
+    "_source_file": "02_scripted_triggers_espionage.txt",
+    "_line_number": 133
+  },
+  "is_galactic_community_noncouncil_member": {
+    "is_galactic_community_noncouncil_member": {
+      "is_galactic_community_member": "yes",
+      "is_galactic_custodian": "no",
+      "_comments": [
+        "# is_part_of_galactic_council left intentionally blank"
+      ],
+      "is_galactic_emperor": "no"
+    },
+    "_source_file": "02_scripted_triggers_espionage.txt",
+    "_line_number": 183
+  },
+  "has_espionage_asset_manipulation": {
+    "has_espionage_asset_manipulation": {
+      "OR": {
+        "has_espionage_asset": "asset_subspace_tendril"
+      }
+    },
+    "_source_file": "02_scripted_triggers_espionage.txt",
+    "_line_number": 191
+  },
+  "has_espionage_asset_sabotage": {
+    "has_espionage_asset_sabotage": {
+      "OR": {
+        "has_espionage_asset": "asset_weapons_platform"
+      }
+    },
+    "_source_file": "02_scripted_triggers_espionage.txt",
+    "_line_number": 205
+  },
+  "has_espionage_asset_subterfuge": {
+    "has_espionage_asset_subterfuge": {
+      "OR": {
+        "has_espionage_asset": "asset_war_algorithm"
+      }
+    },
+    "_source_file": "02_scripted_triggers_espionage.txt",
+    "_line_number": 219
+  },
+  "has_espionage_asset_matching_operation_category": {
+    "has_espionage_asset_matching_operation_category": {
+      "OR": {
+        "AND": {
+          "has_espionage_category": "op_cat_sabotage",
+          "has_espionage_asset_sabotage": "yes"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_espionage.txt",
+    "_line_number": 238
+  },
+  "has_espionage_asset_government": {
+    "has_espionage_asset_government": {
+      "OR": {
+        "has_espionage_asset": "asset_command_relay"
+      }
+    },
+    "_source_file": "02_scripted_triggers_espionage.txt",
+    "_line_number": 255
+  },
+  "has_espionage_asset_diplomacy": {
+    "has_espionage_asset_diplomacy": {
+      "OR": {
+        "has_espionage_asset": "asset_dispatch_uplink"
+      }
+    },
+    "_source_file": "02_scripted_triggers_espionage.txt",
+    "_line_number": 266
+  },
+  "has_espionage_asset_economy": {
+    "has_espionage_asset_economy": {
+      "OR": {
+        "has_espionage_asset": "asset_resource_pylon"
+      }
+    },
+    "_source_file": "02_scripted_triggers_espionage.txt",
+    "_line_number": 277
+  },
+  "has_espionage_asset_technology": {
+    "has_espionage_asset_technology": {
+      "OR": {
+        "has_espionage_asset": "asset_memory_cache"
+      }
+    },
+    "_source_file": "02_scripted_triggers_espionage.txt",
+    "_line_number": 288
+  },
+  "has_espionage_asset_military": {
+    "has_espionage_asset_military": {
+      "OR": {
+        "has_espionage_asset": "asset_weapons_platform"
+      }
+    },
+    "_source_file": "02_scripted_triggers_espionage.txt",
+    "_line_number": 299
+  },
+  "has_espionage_asset_matching_operation_theme": {
+    "has_espionage_asset_matching_operation_theme": {
+      "OR": {
+        "AND": {
+          "has_espionage_category": "op_cat_military",
+          "has_espionage_asset_military": "yes"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_espionage.txt",
+    "_line_number": 310
+  },
+  "has_espionage_asset_criminal": {
+    "has_espionage_asset_criminal": {
+      "OR": {
+        "has_espionage_asset": "asset_hacker"
+      }
+    },
+    "_source_file": "02_scripted_triggers_espionage.txt",
+    "_line_number": 335
+  },
+  "is_targeted_espionage_operation": {
+    "is_targeted_espionage_operation": {
+      "has_espionage_type": "operation_sabotage_starbase"
+    },
+    "_source_file": "02_scripted_triggers_espionage.txt",
+    "_line_number": 344
+  }
+}

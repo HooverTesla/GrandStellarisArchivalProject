@@ -1,0 +1,111 @@
+{
+  "default_site_visible_trigger": {
+    "default_site_visible_trigger": {
+      "is_country_type": "default",
+      "OR": {
+        "intel_level": {
+          "level >": "low",
+          "system": "from.solar_system"
+        },
+        "AND": {
+          "exists": "from",
+          "from.planet": {}
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_archaeology.txt",
+    "_line_number": 0
+  },
+  "energy_candidate": {
+    "energy_candidate": {
+      "OR": {
+        "is_planet_class": "pc_ice_asteroid"
+      }
+    },
+    "_source_file": "02_scripted_triggers_archaeology.txt",
+    "_line_number": 16
+  },
+  "mineral_candidate": {
+    "mineral_candidate": {
+      "NOT": {
+        "OR": {
+          "is_planet_class": "pc_shattered"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_archaeology.txt",
+    "_line_number": 32
+  },
+  "research_candidate": {
+    "research_candidate": {
+      "NOT": {
+        "habitable_planet": "no"
+      }
+    },
+    "_source_file": "02_scripted_triggers_archaeology.txt",
+    "_line_number": 46
+  },
+  "alloy_candidate": {
+    "alloy_candidate": {
+      "NOT": {
+        "OR": {
+          "is_planet_class": "pc_shattered"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_archaeology.txt",
+    "_line_number": 51
+  },
+  "exotic_gas_candidate": {
+    "exotic_gas_candidate": {
+      "NOT": {
+        "OR": {
+          "is_planet_class": "pc_toxic"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_archaeology.txt",
+    "_line_number": 65
+  },
+  "rare_crystal_candidate": {
+    "rare_crystal_candidate": {
+      "NOT": {
+        "OR": {
+          "is_planet_class": "pc_ice_asteroid"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_archaeology.txt",
+    "_line_number": 73
+  },
+  "volatile_motes_candidate": {
+    "volatile_motes_candidate": {
+      "NOT": {
+        "OR": {
+          "is_planet_class": "pc_asteroid"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_archaeology.txt",
+    "_line_number": 81
+  },
+  "has_completed_precursor_research": {
+    "has_completed_precursor_research": {
+      "OR": {
+        "has_modifier": "artifact_zroni_research_completed",
+        "has_country_flag": "artifact_yuht_research_completed"
+      }
+    },
+    "_source_file": "02_scripted_triggers_archaeology.txt",
+    "_line_number": 89
+  },
+  "is_baol_or_zroni_site": {
+    "is_baol_or_zroni_site": {
+      "OR": {
+        "is_site_type": "baol_digsite_3"
+      }
+    },
+    "_source_file": "02_scripted_triggers_archaeology.txt",
+    "_line_number": 104
+  }
+}

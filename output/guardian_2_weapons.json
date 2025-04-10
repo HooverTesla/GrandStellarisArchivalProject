@@ -1,0 +1,87 @@
+{
+  "projectile_gfx_ballistic": {
+    "projectile_gfx_ballistic": {
+      "name": "scavenger_bot_main_weapon",
+      "_comments": [
+        "#common for all types of projectiles"
+      ],
+      "color": {
+        "hit_entity": "scavenger_bot_main_weapon_hit_entity",
+        "shield_hit_entity": "scavenger_bot_main_weapon_shield_hit_entity",
+        "muzzle_flash_entity": "scavenger_bot_main_weapon_muzzle_entity",
+        "windup_entity": "scavenger_bot_main_weapon_windup_entity",
+        "entity": "scavenger_bot_main_weapon_entity",
+        "_comments": [
+          "#ballistic specific"
+        ],
+        "speed": "350.0\t\t\t#preferred speed of the projectile",
+        "max_duration": "3.0\t\t#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds",
+        "shield_impact": {
+          "size": "large",
+          "delay": "0.0"
+        }
+      }
+    },
+    "_source_file": "guardian_2_weapons.txt",
+    "_line_number": 2
+  },
+  "projectile_gfx_missile": {
+    "projectile_gfx_missile": {
+      "name": "gatebuilder_torpedo",
+      "_comments": [
+        "#common for all types of projectiles"
+      ],
+      "color": {
+        "hit_entity": "proton_torpedoes_hit_entity",
+        "shield_hit_entity": "proton_torpedoes_shield_hit_entity",
+        "muzzle_flash_entity": "proton_torpedoes_muzzle_entity",
+        "entity": "proton_torpedoes_entity",
+        "_comments": [
+          "#missile specific data"
+        ],
+        "shield_impact": {
+          "size": "large",
+          "delay": "0.0"
+        }
+      }
+    },
+    "_source_file": "guardian_2_weapons.txt",
+    "_line_number": 158
+  },
+  "projectile_gfx_beam": {
+    "projectile_gfx_beam": {
+      "name": "gatebuilder_titan_weapon",
+      "_comments": [
+        "#common for all types of projectiles"
+      ],
+      "color": {
+        "hit_entity": "gatebuilder_titan_weapon_hit_entity",
+        "shield_hit_entity": "gatebuilder_titan_weapon_shield_hit_entity",
+        "muzzle_flash_entity": "gatebuilder_titan_weapon_muzzle_entity",
+        "windup_entity": "gatebuilder_titan_weapon_windup_entity",
+        "width": "10.0",
+        "_comments": [
+          "#beam specific data"
+        ],
+        "texture_scroll_speed": "1.0",
+        "texture_tiling": "5.5",
+        "hit": {
+          "alpha_curve": {},
+          "duration": "3.0"
+        },
+        "miss": {
+          "alpha_curve": {},
+          "duration": "1.5"
+        },
+        "texture": "gfx/models/combat_items/ion_cannon_diffuse.dds",
+        "shield_impact": {
+          "size": "large",
+          "loop_duration": "0.5",
+          "delay": "0.2"
+        }
+      }
+    },
+    "_source_file": "guardian_2_weapons.txt",
+    "_line_number": 176
+  }
+}

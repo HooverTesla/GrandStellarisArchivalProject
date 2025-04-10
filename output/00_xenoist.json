@@ -1,0 +1,549 @@
+{
+  "xenoist": {
+    "xenoist": {
+      "election_header": "GFX_faction_header_yellow",
+      "guiding_ethic": "ethic_xenophile",
+      "visual_ethic": "xenoist_visual_ethic",
+      "unique": "yes",
+      "support_multiplier": "1",
+      "resources": {
+        "category": "pop_factions",
+        "produces": {
+          "unity": "@faction_base_output"
+        }
+      },
+      "extortion_resource": {
+        "category": "pop_factions",
+        "produces": {
+          "energy": "@faction_base_output",
+          "mult": "@faction_extortion_energy_ratio"
+        }
+      },
+      "is_potential": {
+        "is_faction_allowed": "yes"
+      },
+      "parameters": {
+        "empire": {
+          "type": "country",
+          "valid_objects": {
+            "is_same_value": "root"
+          }
+        }
+      },
+      "can_join_pre_triggers": {
+        "is_enslaved": "no",
+        "is_being_purged": "no"
+      },
+      "can_join_faction": {
+        "is_shackled_robot": "no",
+        "can_think": "yes"
+      },
+      "attraction": {
+        "base": "150",
+        "modifier": {
+          "factor": "1.25",
+          "exists": "from",
+          "from": {
+            "exists": "leader",
+            "leader": {}
+          },
+          "modifier": {
+            "factor": "0.75",
+            "exists": "from",
+            "from": {
+              "NOT": {}
+            },
+            "modifier": {
+              "factor": "2.0",
+              "NOT": {}
+            },
+            "leader": {
+              "base": "100",
+              "modifier": {
+                "factor": "2.0",
+                "NOT": {},
+                "modifier": {
+                  "factor": "0.0",
+                  "is_event_leader": "yes"
+                }
+              },
+              "_comments": [
+                "# DEMAND: Faction Outraged (by a GalCom Resolution)",
+                "# DEMAND: Faction Pleased (by a GalCom Resolution)"
+              ],
+              "inline_script": {
+                "script": "pop_faction_types/demand_faction_pleased",
+                "FLAG": "galcom_resolution_passed_pro_xenoist"
+              },
+              "demand": {
+                "title": "XENOIST_NO_SLAVES",
+                "unfulfilled_title": "XENOIST_SLAVES",
+                "desc": "XENOIST_NO_SLAVES_DESC",
+                "unfulfilled_effect": "-25",
+                "fulfilled_effect": "0.001",
+                "potential": {
+                  "exists": "owner",
+                  "owner": {
+                    "any_owned_species": {
+                      "NOR": {
+                        "is_same_species": "prev",
+                        "is_robotic": "yes",
+                        "is_sapient": "no"
+                      }
+                    }
+                  }
+                },
+                "trigger": {
+                  "owner": {
+                    "NOT": {
+                      "_comments": [
+                        "#has_policy_flag = slavery_allowed"
+                      ],
+                      "any_owned_species": {
+                        "has_citizenship_type": {}
+                      }
+                    }
+                  }
+                },
+                "demand": {
+                  "title": "XENOIST_ENCLAVE_BORDERS",
+                  "unfulfilled_title": "XENOIST_NO_ENCLAVE_BORDERS",
+                  "desc": "XENOIST_ENCLAVE_BORDERS_DESC",
+                  "fulfilled_effect": "5",
+                  "unfulfilled_effect": "-0.001",
+                  "potential": {
+                    "exists": "owner",
+                    "owner": {
+                      "any_country": {
+                        "is_country_type": "enclave",
+                        "has_communications": "root.owner"
+                      }
+                    }
+                  },
+                  "trigger": {
+                    "owner": {
+                      "any_system_within_border": {
+                        "has_star_flag": "enclave",
+                        "any_fleet_in_system": {
+                          "exists": "owner",
+                          "owner": {}
+                        }
+                      }
+                    }
+                  },
+                  "demand": {
+                    "title": "XENOIST_RECENT_ENLIGHTENMENT",
+                    "unfulfilled_title": "XENOIST_NO_RECENT_ENLIGHTENMENT",
+                    "desc": "XENOIST_RECENT_ENLIGHTENMENT_DESC",
+                    "fulfilled_effect": "10",
+                    "unfulfilled_effect": "-0.001",
+                    "potential": {
+                      "exists": "owner",
+                      "owner": {
+                        "OR": {
+                          "any_controlled_ship": {
+                            "has_country_flag": "recent_enlightenment_timed"
+                          }
+                        }
+                      },
+                      "_comments": [
+                        "# fixes demand disappearing when fulfilled (station dismantles)"
+                      ],
+                      "trigger": {
+                        "owner": {
+                          "has_country_flag": "recent_enlightenment_timed"
+                        }
+                      }
+                    },
+                    "demand": {
+                      "title": "XENOIST_NO_PRIMITIVE_INVASION\" # Landgrab Opposition",
+                      "unfulfilled_title": "XENOIST_NO_PRIMITIVE_INVASION",
+                      "desc": "XENOIST_NO_PRIMITIVE_INVASION_DESC",
+                      "unfulfilled_effect": "-15",
+                      "fulfilled_effect": "0.001",
+                      "potential": {
+                        "exists": "owner",
+                        "owner": {
+                          "has_country_flag": "encountered_first_primitive",
+                          "NOT": {}
+                        },
+                        "trigger": {
+                          "owner": {
+                            "NOT": {}
+                          }
+                        },
+                        "demand": {
+                          "title": "XENOIST_RECENT_COMMS",
+                          "unfulfilled_title": "XENOIST_NO_RECENT_COMMS",
+                          "desc": "XENOIST_RECENT_COMMS_DESC",
+                          "fulfilled_effect": "5",
+                          "unfulfilled_effect": "-0.001",
+                          "potential": {
+                            "exists": "owner",
+                            "owner": {
+                              "any_country": {
+                                "NOT": {
+                                  "OR": {
+                                    "is_country_type": "enclave"
+                                  }
+                                }
+                              }
+                            },
+                            "trigger": {
+                              "owner": {
+                                "has_country_flag": "recent_comms_timed"
+                              }
+                            }
+                          },
+                          "demand": {
+                            "title": "XENOIST_PROCLAIM_SUPREMACY",
+                            "unfulfilled_title": "XENOIST_NO_PROCLAIM_SUPREMACY",
+                            "desc": "XENOIST_PROCLAIM_SUPREMACY_DESC",
+                            "unfulfilled_effect": "-5",
+                            "fulfilled_effect": "0.001",
+                            "potential": {
+                              "exists": "owner",
+                              "owner": {
+                                "has_modifier": "proclaim_superiority"
+                              }
+                            },
+                            "trigger": {
+                              "owner": {
+                                "NOT": {}
+                              }
+                            },
+                            "demand": {
+                              "title": "XENOIST_PROACTIVE_FIRST_CONTACT_POLICY",
+                              "unfulfilled_title": "XENOIST_ADOPT_PROACTIVE_FIRST_CONTACT_POLICY",
+                              "desc": "XENOIST_PROACTIVE_FIRST_CONTACT_POLICY_DESC",
+                              "fulfilled_effect": "10",
+                              "unfulfilled_effect": "-0.001",
+                              "potential": {
+                                "exists": "owner",
+                                "owner": {
+                                  "NOT": {
+                                    "OR": {
+                                      "years_passed <": "75",
+                                      "has_country_flag": "recent_first_contact_process_started"
+                                    }
+                                  }
+                                },
+                                "trigger": {
+                                  "owner": {
+                                    "has_policy_flag": "first_contact_proactive"
+                                  }
+                                }
+                              },
+                              "demand": {
+                                "title": "XENOIST_AGGRESSIVE_FIRST_CONTACT_POLICY",
+                                "unfulfilled_title": "XENOIST_NO_AGGRESSIVE_FIRST_CONTACT_POLICY",
+                                "desc": "XENOIST_AGGRESSIVE_FIRST_CONTACT_POLICY_DESC",
+                                "unfulfilled_effect": "-10",
+                                "fulfilled_effect": "0.001",
+                                "potential": {
+                                  "exists": "owner",
+                                  "owner": {
+                                    "has_policy_flag": "first_contact_attack_allowed",
+                                    "OR": {
+                                      "years_passed <": "75",
+                                      "has_country_flag": "recent_first_contact_process_started"
+                                    }
+                                  }
+                                },
+                                "trigger": {
+                                  "owner": {
+                                    "NOT": {}
+                                  }
+                                },
+                                "demand": {
+                                  "title": "XENOIST_OPPRESSIVE_SUBJUGATION_POLICY",
+                                  "unfulfilled_title": "XENOIST_NO_OPPRESSIVE_SUBJUGATION_POLICY",
+                                  "desc": "XENOIST_OPPRESSIVE_SUBJUGATION_POLICY_DESC",
+                                  "unfulfilled_effect": "-10",
+                                  "fulfilled_effect": "0.001",
+                                  "potential": {
+                                    "exists": "owner",
+                                    "owner": {
+                                      "is_subject": "no",
+                                      "has_policy_flag": "oppressive_terms"
+                                    }
+                                  },
+                                  "trigger": {
+                                    "owner": {
+                                      "is_subject": "no",
+                                      "NOT": {}
+                                    }
+                                  },
+                                  "demand": {
+                                    "title": "XENOIST_BENEVOLENT_SUBJUGATION_POLICY",
+                                    "unfulfilled_title": "XENOIST_ADOPT_BENEVOLENT_SUBJUGATION_POLICY",
+                                    "desc": "XENOIST_BENEVOLENT_SUBJUGATION_POLICY_DESC",
+                                    "fulfilled_effect": "10",
+                                    "unfulfilled_effect": "-0.001",
+                                    "potential": {
+                                      "exists": "owner",
+                                      "owner": {
+                                        "is_subject": "no",
+                                        "NOT": {}
+                                      },
+                                      "trigger": {
+                                        "owner": {
+                                          "has_policy_flag": "benevolent_terms"
+                                        }
+                                      }
+                                    },
+                                    "_comments": [
+                                      "# Global Faction Demands."
+                                    ],
+                                    "inline_script": {
+                                      "script": "paragon/global_faction_demands",
+                                      "ETHIC": "ethic_xenophile",
+                                      "ETHIC_FANATIC": "ethic_fanatic_xenophile",
+                                      "ETHIC_OPPOSED": "ethic_xenophobe"
+                                    },
+                                    "demand": {
+                                      "title": "XENOIST_XENOLOGICAL_CONSERVATION",
+                                      "unfulfilled_title": "XENOIST_NO_XENOLOGICAL_CONSERVATION",
+                                      "desc": "XENOIST_XENOLOGICAL_CONSERVATION_DESC",
+                                      "fulfilled_effect": "5",
+                                      "unfulfilled_effect": "-0.001",
+                                      "potential": {
+                                        "exists": "owner",
+                                        "owner": {
+                                          "has_technology": "tech_alien_life_studies",
+                                          "NOT": {}
+                                        },
+                                        "trigger": {
+                                          "owner": {
+                                            "count_owned_planet": {
+                                              "limit": {
+                                                "has_building": "building_xeno_zoo"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "on_create": {
+                                        "pop_faction_event": {},
+                                        "on_destroy": {
+                                          "if": {
+                                            "limit": {
+                                              "has_modifier": "suppressed_xenophile"
+                                            },
+                                            "remove_modifier": "suppressed_xenophile"
+                                          }
+                                        },
+                                        "actions": {
+                                          "embrace_faction": {
+                                            "title": "EMBRACE_FACTION",
+                                            "description": "EMBRACE_FACTION_DESC",
+                                            "cost": {
+                                              "unity": "5000"
+                                            },
+                                            "potential": {
+                                              "exists": "owner",
+                                              "owner": {
+                                                "OR": {
+                                                  "is_subject": "no",
+                                                  "NOT": {}
+                                                }
+                                              },
+                                              "valid": {
+                                                "custom_tooltip": {
+                                                  "fail_text": "EMBRACE_FACTION_COOLDOWN",
+                                                  "parameter:empire": {
+                                                    "NOT": {}
+                                                  },
+                                                  "effect": {
+                                                    "add_modifier": {
+                                                      "parameter:empire": {
+                                                        "shift_ethic": "ethic_xenophile",
+                                                        "hidden_effect": {
+                                                          "add_modifier": {
+                                                            "every_pop_faction": {
+                                                              "limit": {
+                                                                "add_modifier": {}
+                                                              }
+                                                            },
+                                                            "hidden_effect": {
+                                                              "save_event_target_as": "TargetFaction",
+                                                              "parameter:empire": {
+                                                                "every_relation": {
+                                                                  "limit": {
+                                                                    "is_ai": "no",
+                                                                    "is_country_type": "default",
+                                                                    "has_communications": "prev",
+                                                                    "has_intel_level": {
+                                                                      "who": "prev",
+                                                                      "category": "government",
+                                                                      "level >": "1"
+                                                                    }
+                                                                  },
+                                                                  "country_event": {}
+                                                                }
+                                                              }
+                                                            },
+                                                            "ai_weight": {
+                                                              "base": "1",
+                                                              "modifier": {
+                                                                "factor": "0",
+                                                                "owner": {},
+                                                                "modifier": {
+                                                                  "factor": "0",
+                                                                  "owner": {
+                                                                    "count_pop_faction": {}
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "promote_faction": {
+                                                              "title": "PROMOTE_FACTION",
+                                                              "description": "PROMOTE_FACTION_DESC",
+                                                              "potential": {
+                                                                "exists": "owner",
+                                                                "parameter:empire": {
+                                                                  "NOR": {
+                                                                    "has_modifier": "promoted_xenophile"
+                                                                  }
+                                                                }
+                                                              },
+                                                              "effect": {
+                                                                "parameter:empire": {
+                                                                  "add_modifier": {}
+                                                                },
+                                                                "ai_weight": {
+                                                                  "base": "0"
+                                                                }
+                                                              },
+                                                              "cancel_promote_faction": {
+                                                                "title": "CANCEL_PROMOTE_FACTION",
+                                                                "description": "CANCEL_PROMOTE_FACTION_DESC",
+                                                                "potential": {
+                                                                  "exists": "owner",
+                                                                  "parameter:empire": {
+                                                                    "has_modifier": "promoted_xenophile"
+                                                                  }
+                                                                },
+                                                                "effect": {
+                                                                  "parameter:empire": {
+                                                                    "remove_modifier": "promoted_xenophile"
+                                                                  }
+                                                                },
+                                                                "ai_weight": {
+                                                                  "base": "0"
+                                                                }
+                                                              },
+                                                              "suppress_faction": {
+                                                                "title": "SUPPRESS_FACTION",
+                                                                "description": "SUPPRESS_FACTION_DESC",
+                                                                "potential": {
+                                                                  "exists": "owner",
+                                                                  "parameter:empire": {
+                                                                    "NOR": {
+                                                                      "has_modifier": "promoted_xenophile"
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "effect": {
+                                                                  "add_modifier": {
+                                                                    "parameter:empire": {
+                                                                      "add_modifier": {}
+                                                                    },
+                                                                    "ai_weight": {
+                                                                      "base": "0"
+                                                                    }
+                                                                  },
+                                                                  "cancel_suppress_faction": {
+                                                                    "title": "CANCEL_SUPPRESS_FACTION",
+                                                                    "description": "CANCEL_SUPPRESS_FACTION_DESC",
+                                                                    "potential": {
+                                                                      "exists": "owner",
+                                                                      "parameter:empire": {
+                                                                        "has_modifier": "suppressed_xenophile"
+                                                                      }
+                                                                    },
+                                                                    "effect": {
+                                                                      "remove_modifier": "suppressed_faction",
+                                                                      "parameter:empire": {
+                                                                        "remove_modifier": "suppressed_xenophile"
+                                                                      }
+                                                                    },
+                                                                    "ai_weight": {
+                                                                      "base": "0"
+                                                                    }
+                                                                  },
+                                                                  "_comments": [
+                                                                    "# Faction Extortion Buttons"
+                                                                  ],
+                                                                  "extort_faction": {
+                                                                    "title": "EXTORT_FACTION",
+                                                                    "description": "EXTORT_FACTION_DESC",
+                                                                    "potential": {
+                                                                      "exists": "owner",
+                                                                      "owner": {
+                                                                        "is_oligarchic_authority": "yes",
+                                                                        "has_country_flag": "cyber_collectivist"
+                                                                      },
+                                                                      "is_faction_extorted": "no"
+                                                                    },
+                                                                    "effect": {
+                                                                      "set_faction_extorted": "yes",
+                                                                      "custom_tooltip": "ONLY_ONE_EXTORTED_FACTION_TT"
+                                                                    },
+                                                                    "ai_weight": {
+                                                                      "base": "0"
+                                                                    }
+                                                                  },
+                                                                  "cancel_extort_faction": {
+                                                                    "title": "CANCEL_EXTORT_FACTION",
+                                                                    "description": "CANCEL_EXTORT_FACTION_DESC",
+                                                                    "potential": {
+                                                                      "exists": "owner",
+                                                                      "owner": {
+                                                                        "is_oligarchic_authority": "yes",
+                                                                        "has_country_flag": "cyber_collectivist"
+                                                                      },
+                                                                      "is_faction_extorted": "yes"
+                                                                    },
+                                                                    "effect": {
+                                                                      "set_faction_extorted": "no"
+                                                                    },
+                                                                    "ai_weight": {
+                                                                      "base": "0"
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_xenoist.txt",
+    "_line_number": 126
+  }
+}

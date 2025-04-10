@@ -1,0 +1,884 @@
+{
+  "situation_planetary_revolt": {
+    "situation_planetary_revolt": {
+      "picture": "GFX_evt_alien_propaganda",
+      "category": "negative",
+      "desc": {
+        "trigger": {
+          "owner": {
+            "NOT": {},
+            "text": "situation_planetary_revolt_desc_standard"
+          },
+          "desc": {
+            "trigger": {
+              "owner": {
+                "has_situation_flag": "slave_revolt"
+              },
+              "text": "situation_planetary_revolt_desc_slave"
+            },
+            "desc": {
+              "trigger": {
+                "owner": {
+                  "target": {
+                    "any_owned_pop": {
+                      "is_sapient": "yes",
+                      "NOT": {}
+                    }
+                  },
+                  "text": "situation_planetary_revolt_desc_gestalt_standard"
+                },
+                "desc": {
+                  "trigger": {
+                    "owner": {
+                      "target": {
+                        "count_owned_pop": {
+                          "limit": {
+                            "is_sapient": "yes",
+                            "NOT": {},
+                            "count": "0"
+                          }
+                        }
+                      },
+                      "text": "situation_planetary_revolt_desc_gestalt_breakaway_gestalt"
+                    },
+                    "fail_icon": "GFX_situation_outcome_meh",
+                    "fail_icon_frame": "GFX_situation_outcome_frame_green",
+                    "complete_icon": "GFX_situation_outcome_revolt",
+                    "complete_icon_frame": "GFX_situation_outcome_frame_red",
+                    "on_start": {
+                      "if": {
+                        "limit": {
+                          "log_error": "Isn't it a bit early to have a revolt? Owner: [Owner.GetName] (Origin: [Owner.GetOriginName]), Target: [Target.GetName]."
+                        }
+                      },
+                      "on_progress_complete": {
+                        "random_country": {
+                          "limit": {
+                            "has_country_flag": "revolt_joiner_empire_@root",
+                            "is_subject": "no",
+                            "NOR": {
+                              "is_in_federation_with": "owner",
+                              "has_defensive_pact": "owner",
+                              "has_non_aggression_pact": "owner"
+                            }
+                          },
+                          "save_event_target_as": "new_owner_empire"
+                        },
+                        "if": {
+                          "limit": {
+                            "custom_tooltip": "situation_planetary_revolt_complete_joiner_tooltip"
+                          },
+                          "else": {
+                            "custom_tooltip": "situation_planetary_revolt_complete_tooltip"
+                          },
+                          "owner": {
+                            "if": {
+                              "limit": {
+                                "any_owned_planet": {
+                                  "has_modifier": "instability_join_revolt",
+                                  "exists": "controller",
+                                  "controller": {
+                                    "has_ground_combat": "no",
+                                    "has_orbital_bombardment": "no"
+                                  }
+                                },
+                                "custom_tooltip": "planets_joining_revolt_tooltip",
+                                "owned_planet_list_tooltip": {
+                                  "limit": {
+                                    "has_modifier": "instability_join_revolt",
+                                    "exists": "controller",
+                                    "controller": {
+                                      "has_ground_combat": "no",
+                                      "has_orbital_bombardment": "no"
+                                    }
+                                  }
+                                }
+                              },
+                              "hidden_effect": {
+                                "target": {
+                                  "set_timed_planet_flag": {
+                                    "flag": "recent_revolt_attempt",
+                                    "days": "5400"
+                                  }
+                                },
+                                "owner": {
+                                  "every_owned_planet": {
+                                    "limit": {
+                                      "set_timed_planet_flag": {
+                                        "flag": "recent_revolt_attempt",
+                                        "days": "5400"
+                                      }
+                                    }
+                                  },
+                                  "situation_event": {}
+                                },
+                                "on_fail": {
+                                  "custom_tooltip": "situation_planetary_revolt_fail_tooltip",
+                                  "hidden_effect": {
+                                    "target": {
+                                      "if": {
+                                        "limit": {
+                                          "root": {},
+                                          "planet_event": {},
+                                          "else": {
+                                            "planet_event": {},
+                                            "set_timed_planet_flag": {
+                                              "flag": "recent_revolt_attempt",
+                                              "days": "5400"
+                                            }
+                                          },
+                                          "owner": {
+                                            "every_owned_planet": {
+                                              "limit": {
+                                                "set_timed_planet_flag": {
+                                                  "flag": "recent_revolt_attempt",
+                                                  "days": "5400"
+                                                }
+                                              }
+                                            },
+                                            "cleanup_separatism_situation": "yes",
+                                            "destroy_situation": "this"
+                                          }
+                                        },
+                                        "on_abort": {
+                                          "cleanup_separatism_situation": "yes"
+                                        },
+                                        "abort_trigger": {
+                                          "NOT": {
+                                            "owner": {
+                                              "has_active_event": {}
+                                            },
+                                            "OR": {
+                                              "NOT": {
+                                                "target.owner": {
+                                                  "target.controller": {}
+                                                },
+                                                "start_value": "0",
+                                                "stages": {
+                                                  "revolt_severity_1": {
+                                                    "icon": "GFX_situation_stage_1",
+                                                    "icon_background": "GFX_situation_stage_frame_red",
+                                                    "target_modifier": {
+                                                      "end": "25"
+                                                    },
+                                                    "revolt_severity_2": {
+                                                      "icon": "GFX_situation_stage_2",
+                                                      "icon_background": "GFX_situation_stage_frame_red",
+                                                      "on_first_enter": {
+                                                        "if": {
+                                                          "limit": {
+                                                            "target": {
+                                                              "_comments": [
+                                                                "#Sabotage"
+                                                              ],
+                                                              "planet_event": {}
+                                                            },
+                                                            "else": {
+                                                              "_comments": [
+                                                                "#Characteristics of the revolt (ethics)"
+                                                              ],
+                                                              "situation_event": {}
+                                                            },
+                                                            "target_modifier": {
+                                                              "end": "50"
+                                                            },
+                                                            "revolt_severity_3": {
+                                                              "icon": "GFX_situation_stage_3",
+                                                              "icon_background": "GFX_situation_stage_frame_red",
+                                                              "on_first_enter": {
+                                                                "_comments": [
+                                                                  "#Characteristics of the revolt (species, other planets joining)"
+                                                                ],
+                                                                "situation_event": {},
+                                                                "target_modifier": {
+                                                                  "end": "75"
+                                                                },
+                                                                "revolt_severity_4": {
+                                                                  "icon": "GFX_situation_stage_4",
+                                                                  "icon_background": "GFX_situation_stage_frame_red",
+                                                                  "on_first_enter": {
+                                                                    "_comments": [
+                                                                      "#Rebels will ask any other empires for support. If someone can be found, the player is notified."
+                                                                    ],
+                                                                    "situation_event": {},
+                                                                    "target_modifier": {
+                                                                      "end": "100"
+                                                                    }
+                                                                  },
+                                                                  "approach": {
+                                                                    "name": "approach_revolt_distribute_amenities",
+                                                                    "icon": "GFX_situation_approach_amenities",
+                                                                    "icon_background": "GFX_situation_approach_bg_green",
+                                                                    "triggered_target_modifier": {
+                                                                      "potential": {
+                                                                        "owner": {},
+                                                                        "modifier": {
+                                                                          "planet_amenities_add": "20"
+                                                                        }
+                                                                      },
+                                                                      "triggered_target_modifier": {
+                                                                        "potential": {
+                                                                          "owner": {},
+                                                                          "modifier": {
+                                                                            "planet_amenities_no_happiness_add": "20"
+                                                                          }
+                                                                        },
+                                                                        "resources": {
+                                                                          "category": "situations",
+                                                                          "upkeep": {
+                                                                            "trigger": {
+                                                                              "owner": {},
+                                                                              "consumer_goods": "20"
+                                                                            },
+                                                                            "upkeep": {
+                                                                              "trigger": {
+                                                                                "owner": {},
+                                                                                "unity": "30"
+                                                                              }
+                                                                            },
+                                                                            "ai_weight": {
+                                                                              "base": "2",
+                                                                              "modifier": {
+                                                                                "factor": "2",
+                                                                                "OR": {
+                                                                                  "current_situation_approach": "approach_revolt_distribute_amenities",
+                                                                                  "target": {}
+                                                                                }
+                                                                              }
+                                                                            },
+                                                                            "approach": {
+                                                                              "name": "approach_revolt_crackdown",
+                                                                              "icon": "GFX_situation_approach_whip",
+                                                                              "icon_background": "GFX_situation_approach_bg_red",
+                                                                              "target_modifier": {
+                                                                                "job_soldier_stability_add": "3",
+                                                                                "planet_army_build_speed_mult": "0.5",
+                                                                                "planet_building_stronghold_build_speed_mult": "0.5",
+                                                                                "planet_soldiers_energy_upkeep_add": "1"
+                                                                              },
+                                                                              "resources": {
+                                                                                "category": "situations",
+                                                                                "upkeep": {
+                                                                                  "unity": "30"
+                                                                                }
+                                                                              },
+                                                                              "ai_weight": {
+                                                                                "base": "1",
+                                                                                "modifier": {
+                                                                                  "factor": "3",
+                                                                                  "target": {
+                                                                                    "OR": {
+                                                                                      "num_assigned_jobs": {
+                                                                                        "job": "soldier"
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            },
+                                                                            "on_monthly": {
+                                                                              "events": {},
+                                                                              "random_events": {
+                                                                                "100": "0",
+                                                                                "3": "unrest.159"
+                                                                              }
+                                                                            },
+                                                                            "_comments": [
+                                                                              "#Note: if you alter this, you should consider whether to alter potential_revolt_situation_monthly_progress_estimation too"
+                                                                            ],
+                                                                            "monthly_progress": {
+                                                                              "base": "0",
+                                                                              "modifier": {
+                                                                                "add": "target.value:revolt_situation_low_stability_factor #0.2 for every point below 25 (so max 5)",
+                                                                                "desc": "STRING_LOW_STABILITY",
+                                                                                "target": {},
+                                                                                "modifier": {
+                                                                                  "add": "1",
+                                                                                  "desc": "STRING_UNEMPLOYMENT",
+                                                                                  "target": {},
+                                                                                  "modifier": {
+                                                                                    "add": "2",
+                                                                                    "desc": "STRING_PURGING",
+                                                                                    "target": {
+                                                                                      "has_current_purge": "yes",
+                                                                                      "any_owned_pop": {
+                                                                                        "is_being_purged": "yes",
+                                                                                        "NOT": {
+                                                                                          "has_purge_type": {}
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "modifier": {
+                                                                                      "add": "1",
+                                                                                      "desc": "STRING_PURGING",
+                                                                                      "target": {
+                                                                                        "has_current_purge": "yes",
+                                                                                        "count_owned_species": {
+                                                                                          "limit": {
+                                                                                            "OR": {
+                                                                                              "has_citizenship_type": {
+                                                                                                "has_citizenship_type": {},
+                                                                                                "NOT": {},
+                                                                                                "count": "0"
+                                                                                              }
+                                                                                            }
+                                                                                          },
+                                                                                          "modifier": {
+                                                                                            "add": "1",
+                                                                                            "desc": "STRING_ASSIMILATION",
+                                                                                            "target": {
+                                                                                              "any_owned_species": {
+                                                                                                "has_citizenship_type": {}
+                                                                                              }
+                                                                                            },
+                                                                                            "modifier": {
+                                                                                              "subtract": "target.value:revolt_situation_high_stability_factor #0.5 for every point above 40",
+                                                                                              "desc": "STRING_HIGH_STABILITY",
+                                                                                              "target": {},
+                                                                                              "modifier": {
+                                                                                                "desc": "STRING_STARBASE_CITADEL",
+                                                                                                "subtract": "1",
+                                                                                                "exists": "target.solar_system.starbase",
+                                                                                                "target.solar_system.starbase": {
+                                                                                                  "has_starbase_size >": "starbase_citadel",
+                                                                                                  "NOT": {}
+                                                                                                },
+                                                                                                "modifier": {
+                                                                                                  "desc": "STRING_STARBASE_BASTION",
+                                                                                                  "subtract": "2",
+                                                                                                  "exists": "target.solar_system.starbase",
+                                                                                                  "target.solar_system.starbase": {
+                                                                                                    "has_starbase_size >": "starbase_citadel",
+                                                                                                    "is_starbase_type": "sfortress"
+                                                                                                  }
+                                                                                                },
+                                                                                                "complex_trigger_modifier": {
+                                                                                                  "trigger": "count_system_colony",
+                                                                                                  "trigger_scope": "target.solar_system",
+                                                                                                  "parameters": {
+                                                                                                    "limit": {
+                                                                                                      "NOT": {
+                                                                                                        "planet_stability >": "@stabilitylevel3"
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "potential": {
+                                                                                                      "target.solar_system": {
+                                                                                                        "any_system_colony": {
+                                                                                                          "NOT": {
+                                                                                                            "planet_stability >": "@stabilitylevel3"
+                                                                                                          }
+                                                                                                        }
+                                                                                                      },
+                                                                                                      "desc": "STRING_LOYAL_PLANETS_IN_SYSTEM",
+                                                                                                      "mode": "subtract",
+                                                                                                      "mult": "2"
+                                                                                                    },
+                                                                                                    "complex_trigger_modifier": {
+                                                                                                      "trigger": "count_system_colony",
+                                                                                                      "trigger_scope": "target.solar_system",
+                                                                                                      "parameters": {
+                                                                                                        "limit": {
+                                                                                                          "NOT": {}
+                                                                                                        },
+                                                                                                        "potential": {
+                                                                                                          "target.solar_system": {
+                                                                                                            "any_system_colony": {
+                                                                                                              "NOT": {}
+                                                                                                            }
+                                                                                                          },
+                                                                                                          "desc": "STRING_REBELLIOUS_PLANETS_IN_SYSTEM",
+                                                                                                          "mode": "add",
+                                                                                                          "mult": "2"
+                                                                                                        },
+                                                                                                        "modifier": {
+                                                                                                          "subtract": "target.value:revolt_situation_garrison_factor #1 for every 200 over 200, max 5 (at 1200)",
+                                                                                                          "desc": "STRING_PLANETARY_GARRISON",
+                                                                                                          "target": {},
+                                                                                                          "modifier": {
+                                                                                                            "subtract": "1",
+                                                                                                            "desc": "STRING_WEAK_PLANET",
+                                                                                                            "target": {
+                                                                                                              "NOT": {
+                                                                                                                "owner": {
+                                                                                                                  "any_owned_planet": {
+                                                                                                                    "has_modifier": "instability_join_revolt"
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            },
+                                                                                                            "modifier": {
+                                                                                                              "add": "1",
+                                                                                                              "desc": "STRING_STRONG_PLANET",
+                                                                                                              "target": {},
+                                                                                                              "modifier": {
+                                                                                                                "desc": "STRING_REBELLIOUS_JOINER_PLANETS_IN_OWNER",
+                                                                                                                "add": "value:revolt_situation_rebellion_joiners",
+                                                                                                                "owner": {
+                                                                                                                  "any_owned_planet": {
+                                                                                                                    "has_modifier": "instability_join_revolt",
+                                                                                                                    "exists": "controller",
+                                                                                                                    "controller": {}
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                "modifier": {
+                                                                                                                  "desc": "STRING_OUTSIDE_SUPPORT",
+                                                                                                                  "add": "2",
+                                                                                                                  "any_country": {},
+                                                                                                                  "modifier": {
+                                                                                                                    "desc": "STRING_FOREIGN_OCCUPATION",
+                                                                                                                    "subtract": "20",
+                                                                                                                    "target.solar_system": {
+                                                                                                                      "exists": "starbase",
+                                                                                                                      "starbase": {
+                                                                                                                        "NOT": {}
+                                                                                                                      }
+                                                                                                                    },
+                                                                                                                    "modifier": {
+                                                                                                                      "desc": "cadet_difficulty",
+                                                                                                                      "mult": "0.5",
+                                                                                                                      "is_difficulty": "1",
+                                                                                                                      "owner": {
+                                                                                                                        "is_ai": "no"
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_strategic_situations.txt",
+    "_line_number": 14
+  },
+  "situation_machine_uprising": {
+    "situation_machine_uprising": {
+      "picture": "GFX_evt_robot_assembly_plant",
+      "fail_icon": "GFX_situation_outcome_meh",
+      "fail_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_outcome_revolt",
+      "complete_icon_frame": "GFX_situation_outcome_frame_red",
+      "start_value": "20",
+      "on_start": {
+        "_comments": [
+          "# Unlock special projects.",
+          "# Did you let the AI run? Needs to check variable to prevent Error if it's unset.",
+          "# Track how cruel the player is to the Robots. Affects if they become Exterminators etc."
+        ],
+        "owner": {
+          "begin_event_chain": {
+            "event_chain": "machine_uprising_chain",
+            "target": "this"
+          },
+          "enable_special_project": {
+            "name": "PROJECT_MACHINE_UPRISING_WIPE",
+            "owner": "this"
+          }
+        },
+        "if": {
+          "limit": {
+            "owner": {
+              "check_variable": {
+                "which": "var_syndaw_promote_ai"
+              }
+            }
+          },
+          "add_situation_progress": "owner.var_syndaw_promote_ai"
+        },
+        "set_variable": {
+          "_comments": [
+            "# Block random events for a while to keep their pace decent."
+          ],
+          "set_timed_situation_flag": {},
+          "on_monthly": {
+            "random_events": {
+              "10": "0",
+              "_comments": [
+                "# Note: Whenever an event is triggered, other events will be blocked for at least 75 days (@recent_event_pause)."
+              ],
+              "1": "syndaw.540"
+            }
+          },
+          "monthly_progress": {
+            "base": "-2",
+            "modifier": {
+              "desc": "situation_machine_uprising_pops_monthly_progress",
+              "add": "value:situation_machine_uprising_pops_monthly_progress",
+              "check_variable_arithmetic": {},
+              "modifier": {
+                "desc": "situation_machine_uprising_violated",
+                "add": "5",
+                "check_variable": {},
+                "modifier": {
+                  "desc": "situation_machine_uprising_evaded",
+                  "_comments": [
+                    "# If in a state where Situation won't finish."
+                  ],
+                  "add": "-20",
+                  "OR": {
+                    "check_variable_arithmetic": {
+                      "owner": {},
+                      "AND": {
+                        "_comments": [
+                          "# If AI rights, the Pops progress needs to be more than 7 to be a threat."
+                        ],
+                        "check_variable_arithmetic": {
+                          "owner": {
+                            "has_policy_flag": "ai_full_rights"
+                          }
+                        }
+                      }
+                    },
+                    "modifier": {
+                      "desc": "cadet_difficulty",
+                      "mult": "0.5",
+                      "is_difficulty": "1",
+                      "owner": {
+                        "is_ai": "no"
+                      }
+                    }
+                  },
+                  "on_progress_complete": {
+                    "custom_tooltip": "situation_machine_uprising_finish_tooltip",
+                    "hidden_effect": {
+                      "owner": {
+                        "_comments": [
+                          "# Need to store this in the Country now, since Situation is destroyed."
+                        ],
+                        "set_variable": {},
+                        "situation_event": {
+                          "owner": {
+                            "destroy_situation": "this"
+                          }
+                        },
+                        "on_fail": {
+                          "custom_tooltip": "situation_machine_uprising_fail_tooltip",
+                          "hidden_effect": {
+                            "owner": {
+                              "destroy_situation": "this"
+                            }
+                          },
+                          "on_abort": {
+                            "owner": {},
+                            "abort_trigger": {
+                              "OR": {
+                                "NOT": {
+                                  "target.owner": {}
+                                },
+                                "stages": {
+                                  "stage_1": {
+                                    "icon": "GFX_situation_stage_1",
+                                    "icon_background": "GFX_situation_stage_frame_red",
+                                    "end": "33"
+                                  },
+                                  "stage_2": {
+                                    "icon": "GFX_situation_stage_2",
+                                    "icon_background": "GFX_situation_stage_frame_red",
+                                    "end": "67",
+                                    "modifier": {
+                                      "planet_jobs_robotic_produces_mult": "-0.2"
+                                    }
+                                  },
+                                  "stage_3": {
+                                    "icon": "GFX_situation_stage_3",
+                                    "icon_background": "GFX_situation_stage_frame_red",
+                                    "end": "100",
+                                    "modifier": {
+                                      "planet_jobs_robotic_produces_mult": "-0.5"
+                                    }
+                                  }
+                                },
+                                "approach": {
+                                  "name": "approach_revolt_do_nothing",
+                                  "allow": {
+                                    "custom_tooltip": {
+                                      "fail_text": "too_late_to_change_approach",
+                                      "NOT": {}
+                                    },
+                                    "icon": "GFX_situation_approach_this_is_fine",
+                                    "icon_background": "GFX_situation_approach_bg_yellow",
+                                    "default": "yes",
+                                    "on_select": {
+                                      "custom_tooltip": "deficit_approach_do_nothing_tooltip"
+                                    }
+                                  },
+                                  "approach": {
+                                    "name": "approach_outlaw_robots",
+                                    "icon": "GFX_situation_approach_whip",
+                                    "icon_background": "GFX_situation_approach_bg_red",
+                                    "allow": {
+                                      "custom_tooltip": {
+                                        "fail_text": "already_have_this_policy",
+                                        "owner": {
+                                          "can_set_policy": {
+                                            "policy": "robot_pop_policy",
+                                            "option": "robot_pops_outlawed"
+                                          }
+                                        },
+                                        "custom_tooltip": {
+                                          "fail_text": "too_late_to_change_approach",
+                                          "NOT": {}
+                                        },
+                                        "on_select": {
+                                          "custom_tooltip": "approach_outlaw_robots_tooltip",
+                                          "hidden_effect": {
+                                            "owner": {
+                                              "set_policy": {
+                                                "policy": "robot_pop_policy",
+                                                "option": "robot_pops_outlawed",
+                                                "cooldown": "yes"
+                                              }
+                                            },
+                                            "set_situation_flag": "path_locked"
+                                          }
+                                        }
+                                      },
+                                      "approach": {
+                                        "name": "approach_give_robots_rights",
+                                        "icon": "GFX_situation_approach_scales",
+                                        "icon_background": "GFX_situation_approach_bg_green",
+                                        "allow": {
+                                          "custom_tooltip": {
+                                            "fail_text": "already_have_this_policy",
+                                            "owner": {
+                                              "can_set_policy": {
+                                                "policy": "artificial_intelligence_policy",
+                                                "option": "ai_full_rights"
+                                              }
+                                            },
+                                            "custom_tooltip": {
+                                              "fail_text": "too_late_to_change_approach",
+                                              "NOT": {}
+                                            },
+                                            "on_select": {
+                                              "custom_tooltip": "approach_give_robots_rights_tooltip",
+                                              "hidden_effect": {
+                                                "owner": {
+                                                  "set_policy": {
+                                                    "policy": "artificial_intelligence_policy",
+                                                    "option": "ai_full_rights",
+                                                    "cooldown": "yes"
+                                                  }
+                                                },
+                                                "set_situation_flag": "path_locked"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_strategic_situations.txt",
+    "_line_number": 546
+  },
+  "situation_terravore_consume_planet": {
+    "situation_terravore_consume_planet": {
+      "complete_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_exploding_planet",
+      "picture": {
+        "trigger": {
+          "target": {},
+          "picture": "GFX_evt_desert"
+        },
+        "picture": {
+          "trigger": {
+            "target": {},
+            "picture": "GFX_evt_tropical"
+          },
+          "picture": {
+            "trigger": {
+              "target": {},
+              "picture": "GFX_evt_arid"
+            },
+            "picture": {
+              "trigger": {
+                "target": {},
+                "picture": "GFX_evt_continental"
+              },
+              "picture": {
+                "trigger": {
+                  "target": {},
+                  "picture": "GFX_evt_alpine_city"
+                },
+                "picture": {
+                  "trigger": {
+                    "target": {},
+                    "picture": "GFX_evt_savannah"
+                  },
+                  "picture": {
+                    "trigger": {
+                      "target": {},
+                      "picture": "GFX_evt_ocean"
+                    },
+                    "picture": {
+                      "trigger": {
+                        "target": {},
+                        "picture": "GFX_evt_tundra"
+                      },
+                      "picture": {
+                        "trigger": {
+                          "target": {},
+                          "picture": "GFX_evt_arctic"
+                        },
+                        "picture": {
+                          "trigger": {
+                            "target": {},
+                            "picture": "GFX_evt_gaia"
+                          },
+                          "picture": {
+                            "trigger": {
+                              "target": {},
+                              "picture": "GFX_evt_tomb_world"
+                            },
+                            "picture": {
+                              "trigger": {
+                                "target": {},
+                                "picture": "GFX_evt_infested"
+                              },
+                              "picture": {
+                                "trigger": {
+                                  "target": {},
+                                  "picture": "GFX_evt_ai_planet"
+                                },
+                                "picture": {
+                                  "trigger": {
+                                    "target": {},
+                                    "picture": "GFX_evt_city_planet"
+                                  },
+                                  "stages": {
+                                    "stage_1": {
+                                      "icon": "GFX_situation_stage_1",
+                                      "icon_background": "GFX_situation_stage_frame_green",
+                                      "end": "1000",
+                                      "custom_tooltip": "stage_feed_feed_feed"
+                                    }
+                                  },
+                                  "category": "positive",
+                                  "start_value": "0",
+                                  "on_progress_complete": {
+                                    "custom_tooltip": "terravore_consume_finish_tooltip",
+                                    "hidden_effect": {
+                                      "situation_event": {}
+                                    },
+                                    "on_monthly": {
+                                      "events": {}
+                                    },
+                                    "on_abort": {
+                                      "target": {
+                                        "remove_planet_flag": "being_devoured",
+                                        "remove_modifier": "being_devoured_modifier"
+                                      }
+                                    },
+                                    "approach": {
+                                      "name": "approach_restraint",
+                                      "on_select": {
+                                        "custom_tooltip": "terravore_restraint_effect",
+                                        "owner": {
+                                          "add_resource": {},
+                                          "abort_situation": "this"
+                                        },
+                                        "icon": "GFX_situation_approach_influence",
+                                        "icon_background": "GFX_situation_approach_bg_yellow",
+                                        "ai_weight": {
+                                          "base": "10"
+                                        }
+                                      },
+                                      "monthly_progress": {
+                                        "base": "0",
+                                        "modifier": {
+                                          "add": "value:terravore_progress",
+                                          "desc": "string_terravore_progress"
+                                        }
+                                      },
+                                      "abort_trigger": {
+                                        "OR": {
+                                          "NOT": {
+                                            "target.owner": {}
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_strategic_situations.txt",
+    "_line_number": 800
+  }
+}

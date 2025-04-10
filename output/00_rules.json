@@ -1,0 +1,3467 @@
+{
+  "is_valid_rival": {
+    "is_valid_rival": {
+      "custom_tooltip": {
+        "fail_text": "INVALID_RIVAL_DESC",
+        "root": {
+          "OR": {
+            "prev": {
+              "AND": {
+                "relative_power": {
+                  "OR": {
+                    "relative_power": {
+                      "prev": {}
+                    },
+                    "is_country_type": "mirrored_country # Mirrored Empire doesn't have relative power but we want to be rivals anyway"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 6
+  },
+  "can_add_claim": {
+    "can_add_claim": {
+      "hidden_trigger": {
+        "if": {
+          "limit": {
+            "root": {},
+            "always": "yes"
+          }
+        },
+        "custom_tooltip": {
+          "fail_text": "CANNOT_ADD_CLAIM_POLICY",
+          "OR": {
+            "root": {
+              "AND": {
+                "exists": "owner",
+                "owner": {},
+                "AND": {
+                  "exists": "owner",
+                  "owner": {
+                    "any_war": {
+                      "any_attacker": {
+                        "any_defender": {}
+                      }
+                    }
+                  }
+                },
+                "custom_tooltip": {
+                  "fail_text": "CANNOT_ADD_CLAIM_DEVOURING_SWARM",
+                  "NAND": {
+                    "root": {
+                      "root": {}
+                    },
+                    "custom_tooltip": {
+                      "fail_text": "CANNOT_ADD_CLAIM_DEVOURING_SWARM_LITHOID",
+                      "NAND": {
+                        "root": {
+                          "root": {}
+                        },
+                        "custom_tooltip": {
+                          "fail_text": "CANNOT_ADD_CLAIM_ASSIMILATOR",
+                          "NOT": {},
+                          "custom_tooltip": {
+                            "fail_text": "CANNOT_ADD_CLAIM_PURIFIERS",
+                            "NAND": {
+                              "exists": "owner",
+                              "root": {
+                                "NOT": {}
+                              },
+                              "custom_tooltip": {
+                                "fail_text": "CANNOT_ADD_CLAIM_EXTERMINATOR",
+                                "NAND": {
+                                  "exists": "owner",
+                                  "root": {
+                                    "owner": {
+                                      "NOR": {
+                                        "is_same_species": "root",
+                                        "has_country_flag": "synthetic_empire",
+                                        "is_machine_empire": "yes",
+                                        "is_individual_machine": "yes"
+                                      }
+                                    }
+                                  }
+                                },
+                                "custom_tooltip": {
+                                  "fail_text": "CANNOT_ADD_CLAIM_THEY_THREAT",
+                                  "NAND": {
+                                    "exists": "owner",
+                                    "owner": {
+                                      "OR": {
+                                        "has_valid_civic": "civic_machine_assimilator"
+                                      }
+                                    },
+                                    "root": {
+                                      "NOR": {
+                                        "has_valid_civic": "civic_machine_assimilator"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 27
+  },
+  "can_get_claim_from_lost_system": {
+    "can_get_claim_from_lost_system": {
+      "custom_tooltip": {
+        "fail_text": "CANNOT_ADD_CLAIM_DEVOURING_SWARM",
+        "NOT": {},
+        "custom_tooltip": {
+          "fail_text": "CANNOT_ADD_CLAIM_ASSIMILATOR",
+          "NOT": {},
+          "custom_tooltip": {
+            "fail_text": "CANNOT_ADD_CLAIM_PURIFIERS",
+            "NAND": {
+              "has_valid_civic": "civic_fanatic_purifiers",
+              "NOT": {}
+            },
+            "custom_tooltip": {
+              "fail_text": "CANNOT_ADD_CLAIM_EXTERMINATOR",
+              "NAND": {
+                "has_valid_civic": "civic_machine_terminator",
+                "NOR": {
+                  "is_same_species": "root",
+                  "has_country_flag": "synthetic_empire",
+                  "is_machine_empire": "yes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 135
+  },
+  "should_surrender_planets_to": {
+    "should_surrender_planets_to": {
+      "is_country_type": "default",
+      "is_gestalt": "no",
+      "is_homicidal": "no",
+      "is_crisis_faction": "no",
+      "is_primitive": "no",
+      "root": {
+        "is_homicidal": "no",
+        "is_crisis_faction": "no",
+        "is_primitive": "no",
+        "is_country_type": "default"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 181
+  },
+  "species_has_citizenship": {
+    "species_has_citizenship": {
+      "has_citizenship_type": {}
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 197
+  },
+  "should_abduct_pop": {
+    "should_abduct_pop": {
+      "planet": {
+        "exists": "owner",
+        "owner": {},
+        "has_virtual_species_trait": "no",
+        "NAND": {
+          "has_citizenship_type": {
+            "NOR": {
+              "has_purge_type": {
+                "has_purge_type": {
+                  "has_purge_type": {
+                    "has_purge_type": {
+                      "has_purge_type": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 203
+  },
+  "species_can_live_on_planet": {
+    "species_can_live_on_planet": {
+      "hidden_trigger": {
+        "exists": "root #somehow this appeared in the error log. No idea how!",
+        "NAND": {
+          "root": {
+            "NOR": {
+              "has_trait": "trait_mechanical",
+              "AND": {
+                "has_trait": "trait_cybernetic",
+                "exists": "root.owner",
+                "root.owner": {
+                  "is_machine_empire": "yes",
+                  "OR": {
+                    "has_civic": "civic_machine_assimilator # Assimilator empire",
+                    "has_ascension_perk": "ap_mechromancy"
+                  }
+                }
+              }
+            }
+          },
+          "if": {
+            "limit": {
+              "root": {},
+              "OR": {
+                "has_trait": "trait_hive_mind",
+                "AND": {
+                  "exists": "root.owner",
+                  "root.owner": {
+                    "is_hive_empire": "yes",
+                    "has_origin": "origin_necrophage",
+                    "prev": {}
+                  }
+                }
+              }
+            },
+            "if": {
+              "limit": {
+                "exists": "root.owner",
+                "root.owner": {
+                  "has_origin": "origin_clone_army"
+                },
+                "OR": {
+                  "has_trait": "trait_clone_soldier_infertile_full_potential"
+                }
+              },
+              "custom_tooltip": {
+                "fail_text": "CLONE_ARMY_FORCE_DECLINE",
+                "root": {
+                  "check_variable": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 223
+  },
+  "can_vote_in_democratic_election": {
+    "can_vote_in_democratic_election": {
+      "has_citizenship_rights": "yes",
+      "is_sapient": "yes",
+      "is_enslaved": "no",
+      "is_being_purged": "no"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 284
+  },
+  "should_pay_for_leader_upkeep": {
+    "should_pay_for_leader_upkeep": {
+      "NOR": {
+        "has_leader_flag": "hired_admiral_merc_leader"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 292
+  },
+  "can_generate_leader_from_pop": {
+    "can_generate_leader_from_pop": {
+      "can_be_leader": "yes"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 313
+  },
+  "can_generate_leader_from_species": {
+    "can_generate_leader_from_species": {
+      "is_sapient": "yes",
+      "OR": {
+        "NAND": {
+          "NOT": {
+            "has_trait": "trait_mechanical"
+          },
+          "has_citizenship_type": {}
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 320
+  },
+  "can_create_espionage_asset_from_species": {
+    "can_create_espionage_asset_from_species": {
+      "OR": {
+        "NOT": {
+          "root": {}
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 334
+  },
+  "can_generate_military_leader_from_pop": {
+    "can_generate_military_leader_from_pop": {
+      "can_be_leader": "yes",
+      "can_be_military_leader": "yes"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 343
+  },
+  "can_generate_army_from_planet": {
+    "can_generate_army_from_planet": {
+      "NOT": {
+        "is_planet_class": "pc_cosmogenesis_world"
+      },
+      "any_owned_species": {
+        "is_same_species": "root",
+        "can_be_soldier": "yes"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 350
+  },
+  "can_release_vassal": {
+    "can_release_vassal": {
+      "custom_tooltip": {
+        "fail_text": "default",
+        "NOT": {},
+        "custom_tooltip": {
+          "fail_text": "default",
+          "NOT": {},
+          "custom_tooltip": {
+            "fail_text": "default",
+            "NOT": {},
+            "custom_tooltip": {
+              "fail_text": "default",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 362
+  },
+  "can_release_vassal_from_species": {
+    "can_release_vassal_from_species": {
+      "root": {
+        "is_sapient": "yes",
+        "NOR": {
+          "AND": {
+            "has_trait": "trait_machine_unit",
+            "prev.this": {},
+            "AND": {
+              "has_trait": "trait_hive_mind",
+              "NOT": {},
+              "AND": {
+                "NOT": {
+                  "prev.this": {},
+                  "has_trait": "trait_clone_soldier_infertile_full_potential",
+                  "can_think": "no"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 383
+  },
+  "can_generate_army_from_species": {
+    "can_generate_army_from_species": {
+      "root": {
+        "OR": {
+          "has_military_service_type": {
+            "has_military_service_type": {
+              "AND": {
+                "exists": "prev",
+                "prev": {
+                  "is_primitive": "yes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 409
+  },
+  "can_modify_species": {
+    "can_modify_species": {
+      "_comments": [
+        "# Can't modify root Species during Ascension Situations",
+        "# Organic Species",
+        "# Robots & Machines",
+        "# Self-Modified"
+      ],
+      "if": {
+        "limit": {
+          "OR": {
+            "is_archetype": "LITHOID"
+          }
+        },
+        "custom_tooltip": {
+          "fail_text": "NEEDS_GENE_TAILORING_OR_INTERGRATED_ANATOMY",
+          "ROOT": {
+            "OR": {
+              "has_technology": "tech_gene_tailoring",
+              "has_active_tradition": "tr_cybernetics_assimilator_integrated_anatomy"
+            }
+          }
+        }
+      },
+      "else_if": {
+        "limit": {
+          "OR": {
+            "is_archetype": "MACHINE"
+          }
+        },
+        "if": {
+          "limit": {
+            "ROOT": {
+              "OR": {
+                "AND": {
+                  "OR": {
+                    "has_origin": "origin_shattered_ring"
+                  }
+                }
+              }
+            }
+          },
+          "custom_tooltip": {
+            "fail_text": "NEEDS_ROBOT_MODDING",
+            "ROOT": {
+              "OR": {
+                "has_technology": "tech_robomodding_m"
+              }
+            }
+          }
+        }
+      },
+      "custom_tooltip": {
+        "fail_text": "CANNOT_MODIFY_SELF_MODIFIED_SPECIES",
+        "AND": {
+          "NOT": {
+            "has_trait": "trait_self_modified"
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 429
+  },
+  "subject_can_expand": {
+    "subject_can_expand": {
+      "root": {
+        "NAND": {
+          "is_ai": "yes",
+          "AND": {
+            "exists": "overlord",
+            "overlord": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 523
+  },
+  "can_take_hostile_actions": {
+    "can_take_hostile_actions": {
+      "if": {
+        "limit": {
+          "ROOT": {
+            "NOT": {
+              "is_hostile": "ROOT",
+              "has_communications": "ROOT"
+            }
+          },
+          "custom_tooltip": {
+            "text": "CAN_TAKE_HOSTILE_ACTION_FIRST_CONTACT_PROTOCOL",
+            "always": "no"
+          }
+        },
+        "else_if": {
+          "limit": {
+            "AND": {
+              "NOT": {
+                "ROOT": {
+                  "is_country_type": "nomad"
+                }
+              }
+            },
+            "custom_tooltip": {
+              "text": "CAN_TAKE_HOSTILE_ACTION_FIRST_CONTACT_PROTOCOL",
+              "always": "no"
+            }
+          },
+          "else_if": {
+            "limit": {
+              "is_primitive": "yes",
+              "ROOT": {
+                "capital_scope": {
+                  "root": {
+                    "NOT": {
+                      "any_planet_within_border": {
+                        "is_same_value": "prevprev"
+                      }
+                    }
+                  }
+                }
+              },
+              "custom_tooltip": {
+                "text": "",
+                "always": "no"
+              }
+            },
+            "else_if": {
+              "limit": {
+                "ROOT": {
+                  "is_country_type": "faction",
+                  "root": {
+                    "any_owned_planet": {
+                      "exists": "controller",
+                      "controller": {
+                        "is_same_value": "prevprevprev"
+                      }
+                    }
+                  }
+                },
+                "custom_tooltip": {
+                  "text": "",
+                  "always": "yes"
+                }
+              },
+              "else_if": {
+                "limit": {
+                  "exists": "overlord",
+                  "ROOT": {},
+                  "custom_tooltip": {
+                    "text": "CAN_TAKE_HOSTILE_ACTION_SATRAPY",
+                    "always": "no"
+                  }
+                },
+                "else_if": {
+                  "limit": {
+                    "exists": "overlord",
+                    "overlord": {
+                      "ROOT": {},
+                      "custom_tooltip": {
+                        "text": "CAN_TAKE_HOSTILE_ACTION_OVERLORD",
+                        "always": "no"
+                      }
+                    },
+                    "else": {
+                      "always": "yes"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 537
+  },
+  "can_declare_war": {
+    "can_declare_war": {
+      "custom_tooltip": {
+        "fail_text": "ACTION_DECLARE_WAR_OVERLORD_ON_SUBJECT",
+        "NOT": {
+          "has_overlord": "ROOT"
+        }
+      },
+      "if": {
+        "limit": {
+          "exists": "root",
+          "ROOT": {
+            "is_ai": "yes"
+          }
+        },
+        "ROOT": {
+          "is_at_war": "no"
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 661
+  },
+  "can_colonize_planet": {
+    "can_colonize_planet": {
+      "hidden_trigger": {
+        "exists": "root"
+      },
+      "custom_tooltip": {
+        "fail_text": "COLONIZATION_IMPOSSIBLE_UNDER_INVESTIGATION",
+        "NOT": {},
+        "custom_tooltip": {
+          "fail_text": "COLONIZATION_IMPOSSIBLE_COSMOGENESIS_EXODUS",
+          "exists": "root",
+          "root": {
+            "NOT": {}
+          },
+          "custom_tooltip": {
+            "fail_text": "COLONIZATION_IMPOSSIBLE_DEFENDED_PLANET",
+            "NOT": {},
+            "custom_tooltip": {
+              "fail_text": "COLONIZATION_IMPOSSIBLE_SMEEGIBB_PLANET",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 707
+  },
+  "can_colonize_outside_borders": {
+    "can_colonize_outside_borders": {
+      "always": "no"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 768
+  },
+  "can_terraform_planet": {
+    "can_terraform_planet": {
+      "custom_tooltip": {
+        "fail_text": "terraform_fail_no_presapient_protection_or_no_presapients",
+        "NAND": {
+          "AND": {
+            "exists": "root",
+            "root": {},
+            "any_owned_species": {}
+          },
+          "custom_tooltip": {
+            "fail_text": "requires_actor_not_devouring_swarm_lithoid",
+            "exists": "root",
+            "root": {},
+            "custom_tooltip": {
+              "fail_text": "legendary_leader_planet_no_terraform",
+              "exists": "root",
+              "this": {
+                "NOT": {}
+              },
+              "custom_tooltip": {
+                "fail_text": "COLONIZATION_IMPOSSIBLE_DEFENDED_PLANET",
+                "NOT": {},
+                "custom_tooltip": {
+                  "fail_text": "COLONIZATION_IMPOSSIBLE_SMEEGIBB_PLANET",
+                  "NOT": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 778
+  },
+  "can_colonize_with_pop": {
+    "can_colonize_with_pop": {
+      "has_colonization_control": {
+        "type": "colonization_control_no",
+        "country": "root"
+      },
+      "OR": {
+        "NOT": {
+          "is_same_species": "root"
+        },
+        "has_cybernetic_creed_trait": "no",
+        "NOR": {
+          "has_trait": "trait_limited_cybernetic"
+        },
+        "if": {
+          "limit": {
+            "OR": {
+              "is_sapient": "no",
+              "has_trait": "trait_zombie"
+            }
+          },
+          "custom_tooltip": {
+            "always": "no"
+          }
+        },
+        "else": {
+          "always": "yes"
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 827
+  },
+  "can_colonize_with_species": {
+    "can_colonize_with_species": {
+      "has_colonization_control": {
+        "type": "colonization_control_no",
+        "country": "root"
+      },
+      "OR": {
+        "NOT": {
+          "is_same_species": "root"
+        },
+        "if": {
+          "limit": {
+            "OR": {
+              "is_sapient": "no",
+              "has_trait": "trait_zombie"
+            }
+          },
+          "custom_tooltip": {
+            "always": "no"
+          }
+        },
+        "else_if": {
+          "limit": {
+            "root": {},
+            "else": {
+              "always": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 859
+  },
+  "pop_has_random_ethics": {
+    "pop_has_random_ethics": {
+      "exists": "from",
+      "NOT": {
+        "has_citizenship_type": {
+          "country": "from",
+          "type": "citizenship_organic_trophy"
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 892
+  },
+  "species_has_happiness": {
+    "species_has_happiness": {
+      "NOR": {
+        "AND": {
+          "has_trait": "trait_hive_mind",
+          "exists": "from",
+          "from": {},
+          "can_think": "no",
+          "AND": {
+            "has_trait": "trait_mechanical",
+            "OR": {
+              "NOT": {
+                "from": {
+                  "from": {
+                    "from": {}
+                  },
+                  "AND": {
+                    "has_trait": "trait_cybernetic",
+                    "exists": "from",
+                    "from": {
+                      "OR": {
+                        "AND": {
+                          "is_democratic_authority": "yes",
+                          "has_country_flag": "cyber_collectivist"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 905
+  },
+  "can_be_hostile_towards": {
+    "can_be_hostile_towards": {
+      "if": {
+        "limit": {
+          "ROOT": {
+            "NOR": {
+              "has_policy_flag": "interference_subtle"
+            }
+          }
+        },
+        "else_if": {
+          "limit": {
+            "NOR": {
+              "has_policy_flag": "interference_subtle"
+            }
+          },
+          "else_if": {
+            "limit": {
+              "always": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 945
+  },
+  "can_species_procreate": {
+    "can_species_procreate": {
+      "is_sapient": "yes",
+      "NOR": {
+        "has_trait": "trait_limited_cybernetic"
+      },
+      "NAND": {
+        "root": {
+          "NOT": {},
+          "if": {
+            "limit": {
+              "has_trait": "trait_necrophage"
+            },
+            "NOT": {
+              "if": {
+                "limit": {
+                  "has_cybernetic_creed_trait": "yes"
+                },
+                "NOT": {
+                  "root": {
+                    "any_owned_species": {
+                      "has_population_control": {
+                        "is_robotic_species": "no",
+                        "has_cybernetic_creed_trait": "no"
+                      }
+                    }
+                  }
+                },
+                "if": {
+                  "limit": {
+                    "has_cybernetic_creed_trait": "no"
+                  },
+                  "root": {
+                    "any_owned_species": {
+                      "has_population_control": {
+                        "is_robotic_species": "no",
+                        "has_cybernetic_creed_trait": "no"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 971
+  },
+  "can_species_be_assembled": {
+    "can_species_be_assembled": {
+      "is_sapient": "yes",
+      "NOT": {
+        "AND": {
+          "has_trait": "trait_mechanical",
+          "root.owner": {}
+        },
+        "NOT": {
+          "AND": {
+            "has_virtual_species_trait": "yes",
+            "root.owner": {
+              "is_fallen_empire": "no",
+              "has_active_tradition": "tr_virtuality_finish"
+            }
+          }
+        },
+        "OR": {
+          "AND": {
+            "is_robotic": "yes",
+            "root": {
+              "check_modifier_value": {
+                "modifier": "planet_pop_assembly_add"
+              },
+              "owner": {
+                "NOT": {}
+              }
+            },
+            "AND": {
+              "is_organic_species": "yes",
+              "if": {
+                "limit": {
+                  "root.owner": {},
+                  "has_trait": "trait_hive_mind"
+                },
+                "else_if": {
+                  "limit": {
+                    "root": {
+                      "any_owned_species": {}
+                    },
+                    "else_if": {
+                      "limit": {
+                        "root": {
+                          "any_owned_species": {}
+                        },
+                        "else_if": {
+                          "limit": {
+                            "OR": {
+                              "has_trait": "trait_clone_soldier_infertile_full_potential"
+                            }
+                          },
+                          "root": {
+                            "has_building": "building_clone_army_clone_vat",
+                            "_comments": [
+                              "# Event 'clones.3' should cover this, but extra safety check."
+                            ],
+                            "NOT": {
+                              "check_variable": {
+                                "which": "clone_pops_missing",
+                                "value": "0"
+                              }
+                            }
+                          }
+                        },
+                        "else": {
+                          "root": {
+                            "OR": {
+                              "has_building": "building_clone_vats",
+                              "has_modifier": "tiyanki_trophy",
+                              "owner": {
+                                "AND": {
+                                  "has_building": "building_posthumous_employment_center",
+                                  "owner": {},
+                                  "has_planet_flag": "can_organic_assemble_flag #for mod compatibility"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "has_population_control": {
+                          "type": "no",
+                          "country": "root.owner"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1027
+  },
+  "founder_species_uses_growth_speed": {
+    "founder_species_uses_growth_speed": {
+      "exists": "from",
+      "from": {
+        "is_robotic_species": "no",
+        "is_infertile": "no"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1122
+  },
+  "founder_species_uses_organic_assembly": {
+    "founder_species_uses_organic_assembly": {
+      "exists": "from",
+      "from": {
+        "is_robotic_species": "no",
+        "is_infertile": "yes"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1130
+  },
+  "founder_species_uses_assembly": {
+    "founder_species_uses_assembly": {
+      "exists": "from",
+      "from": {
+        "is_robotic_species": "yes"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1138
+  },
+  "can_orbital_bombard": {
+    "can_orbital_bombard": {
+      "exists": "FROM.OWNER",
+      "NOT": {
+        "any_controlled_ship": {
+          "is_ship_size": "colossus"
+        }
+      },
+      "OR": {
+        "AND": {
+          "ROOT.CONTROLLER": {
+            "NOT": {},
+            "FROM.OWNER": {
+              "NOT": {}
+            },
+            "AND": {
+              "ROOT.CONTROLLER": {
+                "FROM": {
+                  "FROM.CONTROLLER": {
+                    "OR": {
+                      "is_country_type": "cybrex_empire",
+                      "AND": {
+                        "is_country_type": "awakened_marauders",
+                        "ROOT.CONTROLLER": {}
+                      }
+                    },
+                    "ROOT.CONTROLLER": {
+                      "OR": {
+                        "is_country_type": "vol",
+                        "AND": {
+                          "from.controller": {
+                            "is_country_type": "faction",
+                            "NOT": {},
+                            "from.owner": {
+                              "is_same_value": "ROOT.CONTROLLER"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "FROM.OWNER": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1148
+  },
+  "can_planet_support_orbital_station": {
+    "can_planet_support_orbital_station": {
+      "custom_tooltip": {
+        "fail_text": "ORBITAL_STATION_ALREADY_EXISTS",
+        "has_any_megastructure": "no",
+        "NOT": {}
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1235
+  },
+  "has_full_sensor_range": {
+    "has_full_sensor_range": {
+      "OR": {
+        "has_megastructure": "spy_orb_restored"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1245
+  },
+  "show_notification_for_ground_combat": {
+    "show_notification_for_ground_combat": {
+      "NOT": {}
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1256
+  },
+  "should_apply_neighbor_rival_modifier": {
+    "should_apply_neighbor_rival_modifier": {
+      "has_tradition": "tr_enmity_adopt"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1262
+  },
+  "are_rebels_hostile": {
+    "are_rebels_hostile": {
+      "is_country_type": "rebel\t#Rebels change country type after taking their initial planet (action.30)"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1268
+  },
+  "should_colony_be_destroyed_on_pc_change": {
+    "should_colony_be_destroyed_on_pc_change": {
+      "is_planet_class": "pc_infested"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1273
+  },
+  "is_extradimensional_portal": {
+    "is_extradimensional_portal": {
+      "is_ship_size": "dimensional_portal_ed",
+      "OR": {
+        "owner": {
+          "OR": {
+            "AND": {
+              "root": {
+                "any_controlled_ship": {},
+                "AND": {
+                  "root": {
+                    "any_controlled_ship": {},
+                    "AND": {
+                      "root": {
+                        "any_controlled_ship": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1280
+  },
+  "is_extradimensional_anchor": {
+    "is_extradimensional_anchor": {
+      "root": {
+        "OR": {
+          "is_country_type": "formless"
+        }
+      },
+      "any_controlled_ship": {
+        "owner": {}
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1304
+  },
+  "will_anger_fallen_empire": {
+    "will_anger_fallen_empire": {
+      "OR": {
+        "AND": {
+          "root": {
+            "is_neighbor_of": "root"
+          },
+          "AND": {
+            "root": {
+              "has_modifier": "holy_planet",
+              "space_owner": {
+                "NOT": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1320
+  },
+  "can_have_robot_pops": {
+    "can_have_robot_pops": {
+      "exists": "this",
+      "is_hive_empire": "no",
+      "NOT": {}
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1338
+  },
+  "can_stop_purge_pop_manually": {
+    "can_stop_purge_pop_manually": {
+      "custom_tooltip": {
+        "fail_text": "ENTIRE_SPECIES_BEING_PURGED",
+        "NOT": {}
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1346
+  },
+  "can_purge_pop_manually": {
+    "can_purge_pop_manually": {
+      "custom_tooltip": {
+        "fail_text": "ALREADY_BEING_PURGED",
+        "NOT": {},
+        "custom_tooltip": {
+          "fail_text": "ACTION_CANNOT_PURGE_CITIZEN",
+          "exists": "owner",
+          "OR": {
+            "is_robot_pop": "yes",
+            "is_sapient": "no",
+            "owner": {
+              "has_citizenship_type": {
+                "has_citizenship_type": {}
+              },
+              "custom_tooltip": {
+                "fail_text": "ACTION_CANNOT_PURGE_POLICY",
+                "exists": "owner",
+                "OR": {
+                  "is_robot_pop": "yes",
+                  "AND": {
+                    "is_sapient": "no",
+                    "owner": {
+                      "owner": {}
+                    },
+                    "custom_tooltip": {
+                      "fail_text": "ACTION_DISASSEMBLE_SYNTHETICS",
+                      "exists": "owner",
+                      "OR": {
+                        "is_robot_pop": "no",
+                        "owner": {
+                          "NAND": {
+                            "has_trait": "trait_mechanical",
+                            "owner": {}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1355
+  },
+  "fleet_uses_templates": {
+    "fleet_uses_templates": {
+      "is_ship_class": "shipclass_military",
+      "is_designable": "yes",
+      "is_alliance_fleet": "no"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1399
+  },
+  "can_orbitable_repair_ships": {
+    "can_orbitable_repair_ships": {
+      "OR": {
+        "AND": {
+          "is_scope_type": "megastructure",
+          "OR": {
+            "is_megastructure_type": "mega_shipyard_3"
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1406
+  },
+  "can_spawn_debris": {
+    "can_spawn_debris": {
+      "root": {
+        "exists": "owner",
+        "owner": {}
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1432
+  },
+  "ai_should_restrict_system": {
+    "ai_should_restrict_system": {
+      "OR": {
+        "AND": {
+          "root": {
+            "is_country_type": "fallen_empire"
+          },
+          "exists": "owner",
+          "owner": {},
+          "AND": {
+            "root": {
+              "exists": "owner",
+              "owner": {},
+              "AND": {
+                "root": {
+                  "exists": "owner",
+                  "owner": {
+                    "OR": {
+                      "is_country_type": "awakened_marauders"
+                    }
+                  }
+                },
+                "AND": {
+                  "root": {
+                    "OR": {
+                      "is_crisis_faction": "yes",
+                      "is_country_type": "awakened_fallen_empire"
+                    }
+                  },
+                  "has_star_flag": "guardian",
+                  "any_fleet_in_system": {
+                    "exists": "owner",
+                    "owner": {
+                      "is_country_type": "guardian_fortress"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1442
+  },
+  "can_subjugate_empires": {
+    "can_subjugate_empires": {
+      "always": "yes"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1501
+  },
+  "can_leader_get_council_trait": {
+    "can_leader_get_council_trait": {
+      "can_leader_get_council_trait_trigger": "yes",
+      "_comments": [
+        "# See 03_scripted_triggers_paragon.txt"
+      ]
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1506
+  },
+  "can_leader_get_normal_trait": {
+    "can_leader_get_normal_trait": {
+      "NOR": {
+        "AND": {
+          "exists": "owner",
+          "owner": {
+            "OR": {
+              "is_councilor": "yes",
+              "has_leader_flag": "restored_node"
+            }
+          },
+          "AND": {
+            "has_global_flag": "game_started",
+            "is_ruler": "yes",
+            "exists": "owner",
+            "owner": {
+              "is_autocracy": "yes"
+            },
+            "NOT": {},
+            "is_heir": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1512
+  },
+  "can_leader_get_subclass_trait": {
+    "can_leader_get_subclass_trait": {
+      "NAND": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_councilor": "yes",
+            "has_leader_flag": "restored_node"
+          }
+        },
+        "has_any_subclass": "no"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1536
+  },
+  "can_leader_get_destiny_trait": {
+    "can_leader_get_destiny_trait": {
+      "NAND": {
+        "exists": "owner",
+        "owner": {
+          "is_crisis_faction": "no"
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1549
+  },
+  "has_extra_council_position": {
+    "has_extra_council_position": {
+      "country_has_extra_council_position": "yes"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1561
+  },
+  "can_jump_drive": {
+    "can_jump_drive": {
+      "always": "yes\t# Moved cooldown to code"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1566
+  },
+  "can_spawn_occupation_armies": {
+    "can_spawn_occupation_armies": {
+      "OR": {
+        "is_country_type": "awakened_fallen_empire"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1571
+  },
+  "system_blocks_sensors": {
+    "system_blocks_sensors": {
+      "OR": {
+        "is_inside_nebula": "yes",
+        "has_modifier": "queen_scorn_storm",
+        "has_star_flag": "storm_system"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1581
+  },
+  "can_enter_system_by_jump": {
+    "can_enter_system_by_jump": {
+      "custom_tooltip": {
+        "fail_text": "cannot_jump_to_system",
+        "_comments": [
+          "#\t\tsuccess_text = \"debug: can jump\"",
+          "# Sealed system"
+        ],
+        "OR": {
+          "NOT": {
+            "AND": {
+              "root": {
+                "has_star_flag": "sealed_system"
+              }
+            },
+            "_comments": [
+              "# L-Cluster"
+            ],
+            "NOT": {
+              "_comments": [
+                "# Formless system"
+              ],
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1598
+  },
+  "can_resettle_pop": {
+    "can_resettle_pop": {
+      "_comments": [
+        "# Self-modified Pops won't leave"
+      ],
+      "custom_tooltip": {
+        "fail_text": "self_modified_refuse",
+        "NOT": {},
+        "_comments": [
+          "# Pathogenic Pops Can't Resettle"
+        ],
+        "custom_tooltip": {
+          "fail_text": "pathogenic_genes_warning",
+          "NOT": {},
+          "custom_tooltip": {
+            "fail_text": "origin_egalitarian_refuse",
+            "NAND": {
+              "pop_has_ethic": "ethic_egalitarian",
+              "is_enslaved": "no",
+              "planet": {}
+            },
+            "custom_tooltip": {
+              "fail_text": "no_resettling_apps",
+              "if": {
+                "limit": {
+                  "has_virtual_species_trait": "yes"
+                },
+                "exists": "owner",
+                "owner": {
+                  "is_fallen_empire": "no",
+                  "NOT": {
+                    "has_active_tradition": "tr_virtuality_adopt"
+                  }
+                }
+              }
+            },
+            "if": {
+              "limit": {
+                "always": "yes"
+              },
+              "else_if": {
+                "limit": {
+                  "planet": {
+                    "has_modifier": "planet_culture_shock"
+                  }
+                },
+                "OR": {
+                  "is_same_species": "planet.owner",
+                  "planet": {
+                    "NOT": {}
+                  }
+                },
+                "else_if": {
+                  "limit": {
+                    "planet": {
+                      "has_deposit": "d_genesis_preserve",
+                      "count_owned_pop": {
+                        "limit": {}
+                      },
+                      "owner": {
+                        "is_guided_sapience_empire": "yes"
+                      }
+                    },
+                    "custom_tooltip": {
+                      "fail_text": "no_abandon_genesis_preserve",
+                      "always": "no"
+                    }
+                  },
+                  "else_if": {
+                    "limit": {
+                      "owner": {
+                        "is_gestalt": "yes"
+                      }
+                    },
+                    "always": "yes"
+                  },
+                  "else": {
+                    "custom_tooltip": {
+                      "fail_text": "RESETTLEMENT_POLICY_FAIL",
+                      "owner": {
+                        "has_policy_flag": "resettlement_allowed"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1618
+  },
+  "can_country_resettle": {
+    "can_country_resettle": {
+      "OR": {
+        "has_policy_flag": "resettlement_allowed",
+        "is_gestalt": "yes",
+        "has_ascension_perk": "ap_cosmogenesis",
+        "custom_tooltip": {
+          "text": "owns_non_sapient_robots",
+          "country_has_shackled_robots": "yes"
+        },
+        "hidden_trigger": {
+          "any_owned_planet": {
+            "is_doomsday_planet": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1758
+  },
+  "can_resettle_planet": {
+    "can_resettle_planet": {
+      "owner": {
+        "OR": {
+          "has_policy_flag": "resettlement_allowed",
+          "is_gestalt": "yes",
+          "country_has_shackled_robots": "yes",
+          "has_ascension_perk": "ap_cosmogenesis",
+          "any_owned_planet": {
+            "is_doomsday_planet": "yes"
+          }
+        }
+      },
+      "is_controlled_by": "owner",
+      "has_ground_combat": "no",
+      "has_orbital_bombardment": "no",
+      "custom_tooltip": {
+        "text": "RESETTLE_PLANET_UNDER_COLONIZATION",
+        "exists": "this",
+        "is_under_colonization": "no"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1776
+  },
+  "can_resettle_planet_no_owner_check": {
+    "can_resettle_planet_no_owner_check": {
+      "is_controlled_by": "owner",
+      "has_ground_combat": "no",
+      "has_orbital_bombardment": "no",
+      "custom_tooltip": {
+        "text": "RESETTLE_PLANET_UNDER_COLONIZATION",
+        "exists": "this",
+        "is_under_colonization": "no"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1798
+  },
+  "should_spawn_deposits": {
+    "should_spawn_deposits": {
+      "is_artificial": "no"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1810
+  },
+  "can_get_colony_events": {
+    "can_get_colony_events": {
+      "NOT": {
+        "is_planet_class": "pc_cosmogenesis_world"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1815
+  },
+  "is_new_colony": {
+    "is_new_colony": {
+      "NOT": {
+        "has_planet_flag": "synth_queen_bastille"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1822
+  },
+  "pop_generates_crime": {
+    "pop_generates_crime": {
+      "is_sapient": "yes",
+      "is_non_sapient_robot": "no",
+      "is_being_assimilated": "no"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1831
+  },
+  "can_pops_grow_on_planet": {
+    "can_pops_grow_on_planet": {
+      "NOR": {
+        "has_modifier": "planet_population_control_gestalt",
+        "is_planet_class": "pc_nanotech",
+        "AND": {
+          "exists": "controller",
+          "controller": {
+            "OR": {
+              "is_country_type": "swarm"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1838
+  },
+  "can_pops_assemble_on_planet": {
+    "can_pops_assemble_on_planet": {
+      "NOR": {
+        "has_modifier": "planet_population_control_gestalt",
+        "is_planet_class": "pc_cosmogenesis_world",
+        "AND": {
+          "exists": "controller",
+          "controller": {
+            "OR": {
+              "is_country_type": "swarm"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1857
+  },
+  "can_pops_decline_on_planet": {
+    "can_pops_decline_on_planet": {
+      "always": "yes"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1875
+  },
+  "can_force_grow_on_planet": {
+    "can_force_grow_on_planet": {
+      "custom_tooltip": {
+        "fail_text": "FORCE_GROWTH_NEEDS_POP_CONTROLS",
+        "exists": "owner",
+        "owner": {
+          "NOT": {}
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1881
+  },
+  "can_force_decline_on_planet": {
+    "can_force_decline_on_planet": {
+      "custom_tooltip": {
+        "fail_text": "FORCE_DECLINE_NEEDS_POP_CONTROLS",
+        "exists": "owner",
+        "owner": {},
+        "custom_tooltip": {
+          "fail_text": "FORCED_DECLINE_ALREADY_PURGING",
+          "NOT": {
+            "any_owned_species": {
+              "has_citizenship_type": {
+                "NOT": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1892
+  },
+  "can_force_decline_species": {
+    "can_force_decline_species": {
+      "OR": {
+        "has_citizenship_type": {
+          "has_citizenship_type": {}
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1911
+  },
+  "should_force_decline_species": {
+    "should_force_decline_species": {
+      "OR": {
+        "_comments": [
+          "# Infertile Clone Army pops should decline if in Country that can't have Vats, or there is a Vat shortage."
+        ],
+        "custom_tooltip": {
+          "success_text": "CLONE_ARMY_FORCE_DECLINE",
+          "exists": "this",
+          "OR": {
+            "has_trait": "trait_clone_soldier_infertile_full_potential"
+          },
+          "from": {
+            "OR": {
+              "_comments": [
+                "# Check if country is unable to build Vats for this species.",
+                "# This slowly kills off the Syntheic Fertility Species"
+              ],
+              "AND": {
+                "exists": "owner",
+                "owner": {
+                  "OR": {
+                    "NOT": {
+                      "has_country_flag": "clone_army_fertility_unlocked\t\t\t# Can't have Vats anymore.",
+                      "NOT": {}
+                    }
+                  },
+                  "_comments": [
+                    "# Vats check out, but are there more pops than Vats support?"
+                  ],
+                  "check_variable": {}
+                }
+              },
+              "custom_tooltip": {
+                "success_text": "PATHOGENIC_GENES_FORCE_DECLINE",
+                "exists": "this",
+                "has_trait": "trait_pathogenic_genes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1922
+  },
+  "can_build_branch_offices": {
+    "can_build_branch_offices": {
+      "custom_tooltip": {
+        "fail_text": "BRANCH_OFFICE_NOT_MEGACORP",
+        "OR": {
+          "is_megacorp": "yes",
+          "has_civic": "civic_galactic_sovereign_megacorp"
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1960
+  },
+  "can_support_branch_offices": {
+    "can_support_branch_offices": {
+      "custom_tooltip": {
+        "fail_text": "BRANCH_OFFICE_NOT_ADVANCED_PRE_FTL",
+        "if": {
+          "limit": {
+            "is_primitive": "yes",
+            "is_gestalt": "no"
+          },
+          "OR": {
+            "has_pre_ftl_age": "early_space_age"
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 1971
+  },
+  "can_build_branch_office_on_planet": {
+    "can_build_branch_office_on_planet": {
+      "custom_tooltip": {
+        "fail_text": "requires_recipient_not_fanatic_purifiers",
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_same_species": "root",
+            "NOT": {}
+          }
+        },
+        "custom_tooltip": {
+          "fail_text": "BRANCH_OFFICE_NO_OBSERVATION_OUTPOST",
+          "if": {
+            "limit": {
+              "root": {
+                "owner": {},
+                "has_observation_outpost": "yes",
+                "observation_outpost_owner": {
+                  "is_same_value": "root"
+                }
+              }
+            },
+            "custom_tooltip": {
+              "fail_text": "BRANCH_OFFICE_NOT_COMMERCIAL_PACT",
+              "exists": "owner",
+              "OR": {
+                "root": {
+                  "owner": {
+                    "owner": {
+                      "AND": {
+                        "root": {
+                          "owner": {},
+                          "AND": {
+                            "root": {
+                              "owner": {}
+                            }
+                          },
+                          "custom_tooltip": {
+                            "fail_text": "BRANCH_OFFICE_MEGACORP_OVERLORD",
+                            "exists": "owner",
+                            "_comments": [
+                              "# failure message for having a corporate overlord"
+                            ],
+                            "if": {
+                              "limit": {
+                                "OR": {
+                                  "_comments": [
+                                    "# Not valid if you aren't a subject.",
+                                    "# Or if your overlord isn't a megacorp."
+                                  ],
+                                  "root": {
+                                    "is_subject": "yes",
+                                    "overlord": {
+                                      "NOR": {
+                                        "is_megacorp": "yes",
+                                        "has_civic": "civic_galactic_sovereign_megacorp"
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "always": "yes"
+                            },
+                            "else": {
+                              "AND": {
+                                "root": {
+                                  "is_subject": "yes",
+                                  "overlord": {
+                                    "OR": {
+                                      "is_megacorp": "yes",
+                                      "has_civic": "civic_galactic_sovereign_megacorp"
+                                    }
+                                  }
+                                },
+                                "owner": {
+                                  "OR": {
+                                    "is_subject": "no",
+                                    "AND": {
+                                      "is_subject": "yes",
+                                      "overlord": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "custom_tooltip": {
+                              "fail_text": "BRANCH_OFFICE_CRIMINAL_HERITAGE_HAS_TRUCE",
+                              "exists": "owner",
+                              "OR": {
+                                "root": {
+                                  "owner": {
+                                    "NOR": {
+                                      "has_truce": "root",
+                                      "is_at_war_with": "root"
+                                    }
+                                  }
+                                }
+                              },
+                              "custom_tooltip": {
+                                "fail_text": "BRANCH_OFFICE_CRIMINAL_COOLDOWN",
+                                "exists": "owner",
+                                "OR": {
+                                  "root": {
+                                    "AND": {
+                                      "root": {
+                                        "NOT": {}
+                                      }
+                                    },
+                                    "custom_tooltip": {
+                                      "fail_text": "NO_BRANCH_OFFICE_ON_NANITE_WORLD",
+                                      "NOT": {},
+                                      "custom_tooltip": {
+                                        "fail_text": "NO_BRANCH_OFFICE_ON_SYNAPTIC_LATHE",
+                                        "NOT": {}
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "_comments": [
+                        "# allow branch offices in subsidiaries and vice versa (and fellow subjects)"
+                      ],
+                      "root": {
+                        "is_subject": "yes",
+                        "OR": {
+                          "is_megacorp": "yes",
+                          "has_civic": "civic_galactic_sovereign_megacorp"
+                        },
+                        "overlord": {
+                          "OR": {
+                            "is_same_value": "prevprev.owner.overlord"
+                          }
+                        }
+                      },
+                      "owner": {
+                        "is_subject": "yes",
+                        "overlord": {
+                          "OR": {
+                            "is_megacorp": "yes",
+                            "has_civic": "civic_galactic_sovereign_megacorp"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2009
+  },
+  "is_criminal_syndicate_rule": {
+    "is_criminal_syndicate_rule": {
+      "OR": {
+        "is_megacorp": "yes",
+        "has_valid_civic": "civic_galactic_sovereign_megacorp"
+      },
+      "has_valid_civic": "civic_criminal_heritage"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2167
+  },
+  "can_crossbreed_species_on_planet": {
+    "can_crossbreed_species_on_planet": {
+      "exists": "owner",
+      "owner": {
+        "count_species": {
+          "limit": {
+            "is_crossbreeding_possible": "yes"
+          },
+          "count >": "2"
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2176
+  },
+  "can_crossbreed_species": {
+    "can_crossbreed_species": {
+      "is_crossbreeding_possible": "yes",
+      "root": {
+        "NOR": {
+          "is_subspecies": "root",
+          "root": {}
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2189
+  },
+  "can_win_timed_victory": {
+    "can_win_timed_victory": {
+      "custom_tooltip": {
+        "fail_text": "VICTORY_CONDITION_CRISIS_IN_PROGRESS",
+        "NOT": {
+          "any_country": {
+            "is_crisis_faction": "yes",
+            "NOT": {}
+          }
+        },
+        "custom_tooltip": {
+          "fail_text": "VICTORY_CONDITION_WAR_IN_HEAVEN_IN_PROGRESS",
+          "NOT": {}
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2199
+  },
+  "can_use_galactic_market": {
+    "can_use_galactic_market": {
+      "is_country_type": "default",
+      "NOR": {
+        "has_civic": "civic_machine_terminator"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2216
+  },
+  "can_be_sold_on_slave_market": {
+    "can_be_sold_on_slave_market": {
+      "exists": "owner",
+      "OR": {
+        "ROOT": {
+          "has_citizenship_rights": "no",
+          "is_on_slave_market": "yes\t# pops that were already on the market should stay there",
+          "AND": {
+            "is_unemployed": "yes",
+            "planet": {}
+          }
+        },
+        "if": {
+          "limit": {
+            "has_global_flag": "sentient_slave_trade_banned_flag"
+          },
+          "is_sapient": "no"
+        },
+        "NOR": {
+          "has_trait": "trait_clone_soldier_infertile_full_potential",
+          "_comments": [
+            "# Since they can't reproduce, they die out too fast for anyone to want to buy them."
+          ],
+          "has_virtual_species_trait": "yes"
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2227
+  },
+  "can_be_part_of_galactic_community": {
+    "can_be_part_of_galactic_community": {
+      "custom_tooltip": {
+        "fail_text": "community_declared_crisis_failtext",
+        "_comments": [
+          "#fail_text = \"community_overlord_declared_crisis_failtext\""
+        ],
+        "OR": {
+          "NOT": {
+            "overlord": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2266
+  },
+  "can_be_part_of_galactic_empire": {
+    "can_be_part_of_galactic_empire": {
+      "custom_tooltip": {
+        "fail_text": "community_declared_crisis_failtext",
+        "_comments": [
+          "#fail_text = \"community_overlord_declared_crisis_failtext\""
+        ],
+        "OR": {
+          "NOT": {
+            "overlord": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2294
+  },
+  "can_see_galactic_community": {
+    "can_see_galactic_community": {
+      "OR": {
+        "has_country_flag": "galcom_form_nay",
+        "is_galactic_community_member": "yes"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2322
+  },
+  "can_be_part_of_galactic_council": {
+    "can_be_part_of_galactic_council": {
+      "is_country_type": "default",
+      "NOR": {
+        "has_civic": "civic_machine_terminator"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2331
+  },
+  "must_be_advanced_empire": {
+    "must_be_advanced_empire": {
+      "OR": {
+        "has_country_flag": "MSI"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2342
+  },
+  "is_allowed_to_be_advanced_empire": {
+    "is_allowed_to_be_advanced_empire": {
+      "always": "yes"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2351
+  },
+  "has_enough_pops_for_necrophage_on_planet": {
+    "has_enough_pops_for_necrophage_on_planet": {
+      "owner": {
+        "has_available_jobs": "necro_apprentice",
+        "if": {
+          "limit": {
+            "has_planet_flag": "necrophage_alert_timer"
+          },
+          "count_owned_species": {
+            "count": "0",
+            "limit": {}
+          },
+          "else": {
+            "NOT": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2356
+  },
+  "can_pop_auto_migrate": {
+    "can_pop_auto_migrate": {
+      "hidden_trigger": {
+        "custom_tooltip": {
+          "fail_text": "AUTO_MIGRATE_VIRTUALITY",
+          "OR": {
+            "has_virtual_species_trait": "no",
+            "AND": {
+              "has_virtual_species_trait": "yes",
+              "exists": "owner",
+              "owner": {
+                "OR": {
+                  "is_individual_machine": "no",
+                  "is_machine_empire": "no"
+                }
+              }
+            }
+          }
+        },
+        "if": {
+          "limit": {
+            "OR": {
+              "is_shackled_robot": "yes",
+              "is_enslaved": "yes"
+            }
+          },
+          "custom_tooltip": {
+            "fail_text": "AUTO_MIGRATE_SLAVE_PROCESSING",
+            "OR": {
+              "planet": {
+                "OR": {
+                  "has_building": "building_slave_processing",
+                  "AND": {
+                    "exists": "orbital_defence",
+                    "orbital_defence": {
+                      "exists": "starbase",
+                      "starbase": {
+                        "has_starbase_building": "ring_slave_processing_facility"
+                      }
+                    }
+                  }
+                }
+              },
+              "solar_system": {
+                "count_starbase_buildings": {
+                  "type": "transit_hub",
+                  "count >": "1",
+                  "include_being_constructed": "no"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2376
+  },
+  "can_planet_auto_migrate": {
+    "can_planet_auto_migrate": {
+      "custom_tooltip": {
+        "fail_text": "AUTO_MIGRATE_CULTURE_SHOCK",
+        "NOT": {},
+        "custom_tooltip": {
+          "fail_text": "AUTO_MIGRATE_ONLY_HAS_ONE_POP"
+        },
+        "hidden_trigger": {
+          "exists": "owner",
+          "owner": {
+            "OR": {
+              "is_country_type": "awakened_fallen_empire"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2436
+  },
+  "can_planet_receive_auto_migration": {
+    "can_planet_receive_auto_migration": {
+      "NOR": {
+        "planet_devastation >": "10",
+        "has_modifier": "planet_culture_shock",
+        "is_doomsday_planet": "yes",
+        "is_planet_class": "pc_cosmogenesis_world"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2463
+  },
+  "can_gene_mod_habitability": {
+    "can_gene_mod_habitability": {
+      "always": "yes"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2473
+  },
+  "can_add_advanced_traits": {
+    "can_add_advanced_traits": {
+      "has_utopia": "yes",
+      "has_tradition": "tr_genetics_enhanced_expression"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2479
+  },
+  "can_add_negative_traits_organic": {
+    "can_add_negative_traits_organic": {
+      "has_utopia": "yes",
+      "OR": {
+        "has_tradition": "tr_genetics_resequencing",
+        "has_active_tradition": "tr_cybernetics_assimilator_integrated_anatomy"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2485
+  },
+  "can_remove_positive_traits_organic": {
+    "can_remove_positive_traits_organic": {
+      "OR": {
+        "AND": {
+          "has_toxoids": "yes",
+          "has_origin": "origin_overtuned"
+        },
+        "has_technology": "tech_epigenetic_triggers"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2495
+  },
+  "can_modify_organic_portraits": {
+    "can_modify_organic_portraits": {
+      "has_utopia": "yes",
+      "has_tradition": "tr_genetics_enhanced_expression"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2514
+  },
+  "can_have_first_contact": {
+    "can_have_first_contact": {
+      "if": {
+        "limit": {
+          "NOT": {
+            "any_active_first_contact": {
+              "contact_country": {}
+            }
+          },
+          "else_if": {
+            "limit": {
+              "NOT": {
+                "any_active_first_contact": {
+                  "contact_country": {}
+                }
+              },
+              "else_if": {
+                "limit": {
+                  "NOT": {
+                    "any_active_first_contact": {
+                      "contact_country": {}
+                    }
+                  },
+                  "else_if": {
+                    "limit": {
+                      "NOT": {
+                        "any_active_first_contact": {
+                          "contact_country": {}
+                        }
+                      },
+                      "else_if": {
+                        "limit": {
+                          "NOT": {
+                            "any_active_first_contact": {
+                              "contact_country": {
+                                "is_crystal_country_type": "yes",
+                                "NOT": {}
+                              }
+                            }
+                          },
+                          "else_if": {
+                            "limit": {
+                              "NOT": {
+                                "any_active_first_contact": {
+                                  "contact_country": {
+                                    "is_drone_country_type": "yes",
+                                    "NOT": {}
+                                  }
+                                }
+                              },
+                              "else_if": {
+                                "limit": {
+                                  "NOT": {
+                                    "any_active_first_contact": {
+                                      "contact_country": {}
+                                    }
+                                  },
+                                  "else_if": {
+                                    "limit": {
+                                      "from": {
+                                        "is_country_type": "dragon_dummy"
+                                      }
+                                    },
+                                    "has_origin": "origin_here_be_dragons",
+                                    "from": {},
+                                    "else_if": {
+                                      "limit": {
+                                        "from": {
+                                          "is_country_type": "jaunting_traveler_dummy"
+                                        }
+                                      },
+                                      "from": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2521
+  },
+  "can_use_envoys_to_raise_imperial_authority": {
+    "can_use_envoys_to_raise_imperial_authority": {
+      "always": "yes"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2625
+  },
+  "can_use_envoys_to_lower_imperial_authority": {
+    "can_use_envoys_to_lower_imperial_authority": {
+      "custom_tooltip": {
+        "fail_text": "cannot_lower_authority_emperor",
+        "root": {},
+        "custom_tooltip": {
+          "fail_text": "cannot_lower_authority_espionage_operation",
+          "root": {
+            "NOT": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2631
+  },
+  "can_fill_drone_job": {
+    "can_fill_drone_job": {
+      "custom_tooltip": "DRONE_JOB_TRIGGER",
+      "hidden_trigger": {
+        "exists": "owner",
+        "owner": {
+          "is_being_purged": "no",
+          "is_enslaved": "no",
+          "is_being_assimilated": "no",
+          "NOT": {}
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2646
+  },
+  "can_fill_worker_job": {
+    "can_fill_worker_job": {
+      "custom_tooltip": "WORKER_JOB_TRIGGER",
+      "hidden_trigger": {
+        "if": {
+          "limit": {
+            "planet": {
+              "is_planet_class": "pc_cosmogenesis_world #Everyone can become a chip slave"
+            }
+          },
+          "always": "yes"
+        },
+        "else": {
+          "NOT": {
+            "exists": "owner",
+            "is_being_purged": "no",
+            "is_being_assimilated": "no",
+            "NOT": {
+              "NAND": {
+                "has_citizenship_type": {
+                  "OR": {
+                    "has_slavery_type": {
+                      "has_slavery_type": {}
+                    },
+                    "if": {
+                      "limit": {
+                        "divinity_right_to_work_job_check_trigger_exempt": "no"
+                      },
+                      "divinity_right_to_work_job_check_trigger_worker": "yes"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2660
+  },
+  "can_fill_specialist_job": {
+    "can_fill_specialist_job": {
+      "can_fill_specialist_job_trigger": "yes"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2696
+  },
+  "can_fill_ruler_job": {
+    "can_fill_ruler_job": {
+      "if": {
+        "limit": {
+          "exists": "owner",
+          "owner": {
+            "has_origin": "origin_necrophage",
+            "has_trait": "trait_necrophage"
+          }
+        },
+        "custom_tooltip": {
+          "text": "RULER_JOB_NECROPHAGE_TRIGGER",
+          "has_trait": "trait_necrophage",
+          "is_enslaved": "no",
+          "is_being_purged": "no",
+          "is_being_assimilated": "no"
+        }
+      },
+      "else": {
+        "custom_tooltip": "RULER_JOB_TRIGGER",
+        "hidden_trigger": {
+          "NOT": {
+            "exists": "owner",
+            "is_enslaved": "no",
+            "is_being_purged": "no",
+            "is_being_assimilated": "no",
+            "_comments": [
+              "# Rule out Traits for servitude & lack of free will",
+              "# Rule out Machine Pops, unless they're rendered sapient"
+            ],
+            "NOR": {
+              "has_trait": "trait_syncretic_proles",
+              "can_think": "no"
+            },
+            "OR": {
+              "NOT": {
+                "AND": {
+                  "owner": {
+                    "owner": {}
+                  },
+                  "_comments": [
+                    "# Rule out Organic Trophies",
+                    "# Rule out violations of the 'Right to Work' Resolution (prioritises organic workers)"
+                  ],
+                  "NOT": {
+                    "has_citizenship_type": {
+                      "type": "citizenship_organic_trophy",
+                      "country": "owner"
+                    }
+                  },
+                  "if": {
+                    "limit": {
+                      "divinity_right_to_work_job_check_trigger_exempt": "no"
+                    },
+                    "divinity_right_to_work_job_check_trigger_ruler": "yes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2703
+  },
+  "can_fill_precursor_job": {
+    "can_fill_precursor_job": {
+      "custom_tooltip": "SPECIALIST_JOB_TRIGGER",
+      "hidden_trigger": {
+        "exists": "owner",
+        "owner": {}
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2761
+  },
+  "should_planetary_automate": {
+    "should_planetary_automate": {
+      "always": "yes"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2772
+  },
+  "dismiss_leader_cost": {
+    "dismiss_leader_cost": {
+      "base": "0"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2776
+  },
+  "can_dismiss_leader": {
+    "can_dismiss_leader": {
+      "if": {
+        "limit": {
+          "leader_class": "commander"
+        },
+        "custom_tooltip": {
+          "fail_text": "no_dismissing_tacs",
+          "NOT": {}
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2782
+  },
+  "can_country_change_councilors": {
+    "can_country_change_councilors": {
+      "is_gestalt": "no"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2840
+  },
+  "should_count_towards_leader_cap": {
+    "should_count_towards_leader_cap": {
+      "NOR": {
+        "leader_class": "envoy",
+        "is_hidden": "yes",
+        "has_leader_flag": "legendary_leader",
+        "has_trait": "leader_trait_rift_warped",
+        "AND": {
+          "has_trait_tier1or2": {},
+          "AND": {
+            "is_ruler": "yes",
+            "OR": {
+              "has_trait": "leader_trait_ruler_hive_mind"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2845
+  },
+  "can_country_connect_to_relay_network": {
+    "can_country_connect_to_relay_network": {
+      "AND": {
+        "is_primitive": "no",
+        "OR": {
+          "is_country_type": "default",
+          "is_subject": "yes",
+          "is_overlord": "yes"
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2868
+  },
+  "should_ai_build_stronghold_on_vulnerable_planet": {
+    "should_ai_build_stronghold_on_vulnerable_planet": {
+      "OR": {
+        "AND": {
+          "num_pops <": "5",
+          "num_buildings": {},
+          "AND": {
+            "num_pops <": "10",
+            "num_buildings": {},
+            "AND": {
+              "num_pops <": "15",
+              "num_buildings": {},
+              "AND": {
+                "num_pops <": "25",
+                "num_buildings": {}
+              },
+              "exists": "sector",
+              "sector": {
+                "NOT": {},
+                "IF": {
+                  "LIMIT": {
+                    "exists": "owner",
+                    "owner": {},
+                    "NOT": {
+                      "any_owned_pop": {
+                        "is_unemployed": "yes",
+                        "can_work_specific_job": "warrior_drone"
+                      }
+                    },
+                    "ELSE": {
+                      "NOT": {
+                        "any_owned_pop": {
+                          "is_unemployed": "yes",
+                          "can_work_specific_job": "soldier"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2882
+  },
+  "will_leader_retire": {
+    "will_leader_retire": {
+      "exists": "owner",
+      "not": {
+        "owner": {
+          "not": {},
+          "has_leader_flag": "retirement_is_default # Randomized retirement instead of death in paragon.590"
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2927
+  },
+  "can_get_external_leader_pool_candidate": {
+    "can_get_external_leader_pool_candidate": {
+      "exists": "from",
+      "OR": {
+        "AND": {
+          "ROOT": {
+            "is_hive_empire": "yes"
+          },
+          "FROM": {
+            "is_hive_empire": "yes"
+          }
+        }
+      },
+      "_comments": [
+        "# Both empires must be regular empires, machine intelligences or hive-minds."
+      ]
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2938
+  },
+  "can_trade_leader": {
+    "can_trade_leader": {
+      "_comments": [
+        "# The leader must have a trait from a specialist subject type."
+      ],
+      "this": {
+        "has_specialist_subject_leader_trait": "yes",
+        "is_councilor": "no",
+        "is_heir": "no"
+      },
+      "OR": {
+        "AND": {
+          "ROOT": {
+            "FROM": {
+              "NOT": {
+                "is_fallen_empire": "no",
+                "NOT": {
+                  "any_owned_leader": {
+                    "has_trait": "leader_trait_tactical_algorithms"
+                  }
+                }
+              }
+            }
+          },
+          "_comments": [
+            "# The subject and overlord must both be regular empires, machine intelligences or hive-minds."
+          ],
+          "OR": {
+            "AND": {
+              "ROOT": {
+                "has_valid_civic": "civic_machine_tactical_algorithms"
+              },
+              "FROM": {
+                "OR": {
+                  "is_regular_empire": "yes",
+                  "is_hive_empire": "yes",
+                  "is_machine_empire": "yes"
+                },
+                "NOT": {
+                  "NOT": {
+                    "any_owned_leader": {
+                      "has_trait": "leader_trait_tactical_algorithms"
+                    }
+                  }
+                }
+              }
+            },
+            "is_gestalt_node": "no",
+            "_comments": [
+              "# Can't trade gestalt nodes",
+              "# The overlord can't be a fallen or awakened empire."
+            ],
+            "ROOT": {
+              "NAND": {
+                "is_overlord": "yes",
+                "OR": {
+                  "is_country_type": "awakened_fallen_empire"
+                }
+              }
+            },
+            "NOR": {
+              "has_trait": "leader_trait_fotd_commander"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 2977
+  },
+  "can_trade_fleet": {
+    "can_trade_fleet": {
+      "AND": {
+        "ROOT": {
+          "NAND": {
+            "is_overlord": "yes",
+            "OR": {
+              "is_country_type": "awakened_fallen_empire"
+            }
+          }
+        },
+        "NOT": {}
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3072
+  },
+  "can_leader_be_ruler": {
+    "can_leader_be_ruler": {
+      "NOT": {}
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3089
+  },
+  "can_leader_be_councilor": {
+    "can_leader_be_councilor": {
+      "is_exploring_astral_rift": "no"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3095
+  },
+  "chance_for_external_leader_pool": {
+    "chance_for_external_leader_pool": {
+      "base": "10",
+      "modifier": {
+        "is_xenophobe": "yes",
+        "mult": "0.5"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3099
+  },
+  "council_agenda_early_activation_cost": {
+    "council_agenda_early_activation_cost": {
+      "base": "0",
+      "add": "value:council_agenda_early_activation_cost"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3112
+  },
+  "leader_election_elect_cost": {
+    "leader_election_elect_cost": {
+      "base": "1",
+      "_comments": [
+        "# Cost = (1 + election_cost_mult) * empire_size * 10",
+        "# Rounded to closest 10, by applying x10 last."
+      ],
+      "add": "modifier:country_election_cost_mult",
+      "mult": "10",
+      "round": "yes"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3120
+  },
+  "emergency_election_cost_rule": {
+    "emergency_election_cost_rule": {
+      "base": "1",
+      "_comments": [
+        "# Cost = (1 + election_cost_mult) * empire_size * 5",
+        "# Rounded to closest 50."
+      ],
+      "add": "modifier:country_election_cost_mult",
+      "mult": "50",
+      "divide": "50",
+      "round": "yes"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3132
+  },
+  "leader_election_support_cost": {
+    "leader_election_support_cost": {
+      "base": "1",
+      "_comments": [
+        "# Cost = (1 + election_cost_mult) * empire_size * 4 * (1 + TimesSupported * 0.5)",
+        "# Rounded to closest 10; before applying TimesSupported, so player understands better how it increases.",
+        "# If there's a Valid leader, cost increases if they're already Supported."
+      ],
+      "add": "modifier:country_election_cost_mult",
+      "mult": "10",
+      "divide": "10",
+      "round": "yes",
+      "modifier": {
+        "exists": "this",
+        "mult": "value:leader_election_candidate_supported_mult"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3148
+  },
+  "leader_election_weight": {
+    "leader_election_weight": {
+      "base": "0",
+      "_comments": [
+        "# Multiply by Faction support."
+      ],
+      "modifier": {
+        "custom_tooltip": {
+          "success_text": "election_weight.faction_support",
+          "owner": {},
+          "add": "value:leader_faction_support_election_bonus"
+        },
+        "_comments": [
+          "# If no Factions formed, fake faction support based on if it's an Empire ethic or not."
+        ],
+        "modifier": {
+          "custom_tooltip": {
+            "success_text": "election_weight.no_faction_empire_ethic",
+            "NOT": {
+              "leader_has_empire_ethic": "yes"
+            },
+            "add": "50"
+          },
+          "modifier": {
+            "custom_tooltip": {
+              "success_text": "election_weight.no_faction_not_empire_ethic",
+              "NOT": {
+                "leader_has_empire_ethic": "no"
+              },
+              "add": "25"
+            },
+            "_comments": [
+              "# Not changing Ruler should be slightly preferred.",
+              "# Bonus if Leader was Councilor when election started. Or if no Election, is a Councilor now."
+            ],
+            "modifier": {
+              "custom_tooltip": {
+                "success_text": "election_weight.iswas_councilor",
+                "if": {
+                  "limit": {
+                    "owner": {},
+                    "has_leader_flag": "councilor_at_election_start"
+                  },
+                  "else": {
+                    "is_councilor": "yes",
+                    "is_ruler": "no"
+                  }
+                },
+                "mult": "1.05"
+              },
+              "_comments": [
+                "# Governments (based on Ethics and Civics) might prefer certain Leader classes. Hide if +/- 0%.",
+                "# Extra bonus for Councilor Subclass (which is a Trait).",
+                "# Penalty for Non-Councilor Subclass (which is a Trait).",
+                "# Bonus/penalty from Traits.",
+                "# Bonus from Skill level.",
+                "# Penalty from old Age, unless already ruler or immortal."
+              ],
+              "modifier": {
+                "custom_tooltip": {
+                  "success_text": "election_weight.leader_age",
+                  "is_immortal": "no",
+                  "is_ruler": "no",
+                  "check_variable_arithmetic": {
+                    "which": "value:leader_age_percentage_of_lifespan"
+                  }
+                },
+                "mult": "0.5"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3176
+  },
+  "are_pre_ftls_unaware": {
+    "are_pre_ftls_unaware": {
+      "NOT": {
+        "current_awareness_level": "full"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3291
+  },
+  "is_terraforming_candidate": {
+    "is_terraforming_candidate": {
+      "OR": {
+        "has_modifier": "toxic_terraforming_candidate"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3301
+  },
+  "has_ascension_for_terraforming_candidate": {
+    "has_ascension_for_terraforming_candidate": {
+      "exists": "root",
+      "OR": {
+        "AND": {
+          "root": {
+            "has_modifier": "toxic_terraforming_candidate"
+          },
+          "AND": {
+            "root": {
+              "has_modifier": "frozen_terraforming_candidate"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3312
+  },
+  "can_be_renamed_by": {
+    "can_be_renamed_by": {
+      "FROM": {
+        "exists": "owner",
+        "owner": {
+          "is_same_species": "root"
+        },
+        "has_planet_flag": "haven_flag"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3336
+  },
+  "can_build_station_around": {
+    "can_build_station_around": {
+      "exists": "root",
+      "always": "yes"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3349
+  },
+  "can_build_mining_station_around": {
+    "can_build_mining_station_around": {
+      "exists": "root",
+      "always": "yes"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3357
+  },
+  "can_build_research_station_around": {
+    "can_build_research_station_around": {
+      "exists": "root",
+      "always": "yes"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3365
+  },
+  "can_build_military_station_around": {
+    "can_build_military_station_around": {
+      "exists": "root",
+      "always": "yes"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3373
+  },
+  "can_build_observation_station_around": {
+    "can_build_observation_station_around": {
+      "exists": "root",
+      "FROM": {
+        "is_scope_type": "planet",
+        "NOR": {
+          "has_planet_flag": "no_observation #Solarpunk"
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3381
+  },
+  "can_build_starbase_around": {
+    "can_build_starbase_around": {
+      "exists": "root",
+      "always": "yes"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3395
+  },
+  "has_inworld_capital": {
+    "has_inworld_capital": {
+      "NOT": {}
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3402
+  },
+  "has_relative_economy_power": {
+    "has_relative_economy_power": {
+      "exists": "from",
+      "NOR": {
+        "is_country_type": "mirrored_country",
+        "from": {}
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3409
+  },
+  "can_trade_sensor": {
+    "can_trade_sensor": {
+      "NOR": {
+        "is_country_type": "mirrored_country",
+        "from": {}
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3421
+  },
+  "can_trade_favor": {
+    "can_trade_favor": {
+      "NOR": {
+        "OR": {
+          "is_country_type": "awakened_fallen_empire"
+        },
+        "from": {
+          "OR": {
+            "is_country_type": "awakened_fallen_empire"
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3431
+  },
+  "can_interact_with_astral_rift": {
+    "can_interact_with_astral_rift": {
+      "OR": {
+        "from": {
+          "is_surveyed": {},
+          "intel_level": {
+            "level >": "low",
+            "system": "from.solar_system"
+          },
+          "from": {
+            "exists": "explorer",
+            "explorer": {
+              "is_same_value": "prevprev"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3450
+  },
+  "can_explore_astral_rift": {
+    "can_explore_astral_rift": {
+      "has_technology": "tech_rift_sphere",
+      "hidden_trigger": {
+        "OR": {
+          "is_astral_rift_pool_empty": "no",
+          "AND": {
+            "exists": "from.explorer",
+            "from.explorer": {
+              "is_same_value": "prevprev"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3470
+  },
+  "can_leader_explore_astral_rift": {
+    "can_leader_explore_astral_rift": {
+      "custom_tooltip": {
+        "fail_text": "CANNOT_EXPLORE_WITH_HEIR_LEADER",
+        "is_heir": "no"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3488
+  },
+  "can_ai_assign_governor": {
+    "can_ai_assign_governor": {
+      "OR": {
+        "is_sector_capital": "yes",
+        "is_capital": "yes"
+      },
+      "num_pops >": "1\t# replaces the MINIMUM_POPS_TO_CONSIDER_GOVERNOR define",
+      "NOT": {
+        "exists": "leader"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3502
+  },
+  "should_ai_support_galactic_empire": {
+    "should_ai_support_galactic_empire": {
+      "OR": {
+        "is_galactic_emperor": "yes",
+        "AND": {
+          "_comments": [
+            "# Subjects of the Galactic Emperor that are loyal or cannot vote",
+            "# should support the Imperium"
+          ],
+          "FROM": {
+            "is_overlord_to": "prev"
+          },
+          "OR": {
+            "has_loyalty >": "0",
+            "NOT": {
+              "any_agreement": {
+                "has_term_value": {
+                  "term": "subject_diplomacy",
+                  "value": "subject_can_do_diplomacy"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3519
+  },
+  "should_ai_undermine_galactic_empire": {
+    "should_ai_undermine_galactic_empire": {
+      "is_galactic_emperor": "no",
+      "imperial_authority >": "0.25",
+      "OR": {
+        "AND": {
+          "FROM": {
+            "is_overlord_to": "prev"
+          },
+          "any_agreement": {
+            "has_term_value": {
+              "term": "subject_diplomacy",
+              "value": "subject_can_do_diplomacy"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3577
+  },
+  "can_country_initiate_storm": {
+    "can_country_initiate_storm": {
+      "has_ascension_perk": "ap_weather_control"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3608
+  },
+  "can_initiate_storm_on_planet": {
+    "can_initiate_storm_on_planet": {
+      "custom_tooltip": {
+        "fail_text": "FLEETORDER_INITIATE_COSMIC_STORM_OCCUPIED",
+        "solar_system": {
+          "NOT": {}
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3613
+  },
+  "can_force_see_fleets_in_system": {
+    "can_force_see_fleets_in_system": {
+      "exists": "this",
+      "is_inside_storm": "solar_storm"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3635
+  },
+  "has_breached_shroud_storm": {
+    "has_breached_shroud_storm": {
+      "exists": "from",
+      "has_country_flag": "breached_shroud",
+      "from": {}
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3642
+  },
+  "is_science_fleet_gravity_snare_on_cooldown": {
+    "is_science_fleet_gravity_snare_on_cooldown": {
+      "custom_tooltip": {
+        "success_text": "FLEETORDER_SEND_SNARE_ON_COOLDOWN",
+        "OR": {
+          "has_fleet_flag": "gravity_snare_is_in_cooldown",
+          "controller": {
+            "has_country_flag": "gravity_snare_is_in_cooldown_ai"
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3650
+  },
+  "can_fleet_be_captured_by_snares": {
+    "can_fleet_be_captured_by_snares": {
+      "custom_tooltip": {
+        "fail_text": "FLEETORDER_MUST_BE_SPACE_CRITTER",
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_capturable_space_critter_country_type": "yes",
+            "is_country_type": "lured_fauna_faction"
+          },
+          "is_guardian_country": "no"
+        },
+        "any_owned_ship": {
+          "is_space_fauna": "yes"
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3664
+  },
+  "can_fauna_grow": {
+    "can_fauna_grow": {
+      "NOT": {}
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3691
+  },
+  "can_use_exhibits": {
+    "can_use_exhibits": {
+      "hidden_trigger": {
+        "custom_tooltip": {
+          "fail_text": "GRAND_ARCHIVE_NOT_BUILT",
+          "any_owned_megastructure": {
+            "is_megastructure_type": "grand_archive_0"
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3696
+  },
+  "can_access_vivarium": {
+    "can_access_vivarium": {
+      "custom_tooltip": {
+        "fail_text": "VIVARIUM_NO_ROOM",
+        "check_variable_arithmetic": {
+          "which": "value:get_vivarium_capacity"
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3711
+  },
+  "can_scavenge_and_research_debris": {
+    "can_scavenge_and_research_debris": {
+      "OR": {
+        "AND": {
+          "must_scavenge": "yes",
+          "must_research": "yes"
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3727
+  },
+  "can_scavenge_debris": {
+    "can_scavenge_debris": {
+      "OR": {
+        "AND": {
+          "must_scavenge": "yes",
+          "must_research": "no"
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3744
+  },
+  "can_excavate_outside_borders": {
+    "can_excavate_outside_borders": {
+      "exists": "from",
+      "has_tradition": "tr_archivism_frontier_archaeology",
+      "from": {
+        "solar_system": {}
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3761
+  },
+  "can_voidworms_bombard_country": {
+    "can_voidworms_bombard_country": {
+      "hidden_trigger": {
+        "exists": "this"
+      },
+      "NOR": {
+        "is_tiyanki_country_type": "yes",
+        "is_amoeba_country_type": "yes",
+        "is_crystal_country_type": "yes",
+        "is_country_type": "awakened_marauders",
+        "is_drone_country_type": "yes",
+        "is_voidworms_country_type": "yes",
+        "is_fallen_empire": "yes"
+      },
+      "_comments": [
+        "# During crisis, they should bombard no matter what, otherwise check tech and max voidworms"
+      ],
+      "if": {
+        "limit": {
+          "event_target:voidworms_country": {
+            "is_country_type": "voidworms_crisis"
+          }
+        },
+        "always": "yes"
+      },
+      "else": {
+        "NOT": {
+          "event_target:voidworms_country": {
+            "check_variable_arithmetic": {
+              "which": "value:voidworm_ships_owned"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3771
+  },
+  "can_use_mutations": {
+    "can_use_mutations": {
+      "hidden_trigger": {
+        "has_technology": "tech_controlled_mutations"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3807
+  },
+  "can_use_artificial_breeding": {
+    "can_use_artificial_breeding": {
+      "hidden_trigger": {
+        "has_technology": "tech_alien_cloning"
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3812
+  },
+  "can_trade_specimens": {
+    "can_trade_specimens": {
+      "exists": "from",
+      "count_exhibit": {
+        "limit": {},
+        "NOT": {
+          "from": {
+            "count_exhibit": {
+              "limit": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3819
+  },
+  "force_create_default_ship_design": {
+    "force_create_default_ship_design": {
+      "exists": "from",
+      "is_designable": "yes",
+      "OR": {
+        "AND": {
+          "is_space_fauna": "yes",
+          "from": {
+            "uses_fauna_ship_sizes": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3837
+  },
+  "is_seeded": {
+    "is_seeded": {
+      "has_fleet_flag": "fruitful_seeded_critter"
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3854
+  },
+  "can_capture_ship": {
+    "can_capture_ship": {
+      "exists": "controller",
+      "controller": {
+        "is_country_type": "default"
+      },
+      "OR": {
+        "is_ship_size": "marauder_galleon",
+        "_comments": [
+          "# Civilian Ships",
+          "# Regular Ships",
+          "# Galactic Nemesis Ships",
+          "# Offspring Ships",
+          "# Cosmogenesis Ships",
+          "# Nanotech Ships",
+          "# Fallen Empire Ships",
+          "# Marauder Ships"
+        ],
+        "AND": {
+          "controller": {
+            "has_tradition": "tr_nanotech_finish"
+          },
+          "OR": {
+            "is_ship_size": "nanite_interdictor"
+          }
+        }
+      }
+    },
+    "_source_file": "00_rules.txt",
+    "_line_number": 3860
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "opinion_stole_supplies": {
+    "opinion_stole_supplies": {
+      "opinion": {
+        "base": "-50"
+      },
+      "unique": "yes",
+      "decay": {
+        "base": "2.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_distant_stars.txt",
+    "_line_number": 9
+  },
+  "opinion_returned_supplies": {
+    "opinion_returned_supplies": {
+      "opinion": {
+        "base": "50"
+      },
+      "unique": "yes",
+      "decay": {
+        "base": "2.5",
+        "modifier": {
+          "factor": "value:positive_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_distant_stars.txt",
+    "_line_number": 43
+  },
+  "opinion_gave_space_rum": {
+    "opinion_gave_space_rum": {
+      "opinion": {
+        "base": "50"
+      },
+      "unique": "yes",
+      "decay": {
+        "base": "2.5",
+        "modifier": {
+          "factor": "value:positive_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_distant_stars.txt",
+    "_line_number": 77
+  },
+  "opinion_space_rum_failed": {
+    "opinion_space_rum_failed": {
+      "opinion": {
+        "base": "-50"
+      },
+      "unique": "yes",
+      "decay": {
+        "base": "1.5",
+        "modifier": {
+          "add": "-1",
+          "has_ethic": "ethic_fanatic_xenophobe"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_distant_stars.txt",
+    "_line_number": 110
+  },
+  "opinion_ratling_system_stolen": {
+    "opinion_ratling_system_stolen": {
+      "opinion": {
+        "base": "-50"
+      },
+      "unique": "yes",
+      "decay": {
+        "base": "2.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_distant_stars.txt",
+    "_line_number": 142
+  },
+  "opinion_nurtured": {
+    "opinion_nurtured": {
+      "opinion": {
+        "base": "200"
+      }
+    },
+    "_source_file": "00_opinion_modifiers_distant_stars.txt",
+    "_line_number": 172
+  },
+  "opinion_discarded": {
+    "opinion_discarded": {
+      "opinion": {
+        "base": "-200"
+      }
+    },
+    "_source_file": "00_opinion_modifiers_distant_stars.txt",
+    "_line_number": 177
+  }
+}

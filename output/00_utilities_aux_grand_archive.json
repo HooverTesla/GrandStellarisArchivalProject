@@ -1,0 +1,29 @@
+{
+  "utility_component_template": {
+    "utility_component_template": {
+      "key": "BOARDING_CABLES_MODULES",
+      "size": "aux",
+      "icon": "GFX_ship_part_boarding_cables",
+      "icon_frame": "1",
+      "power": "@power_S1",
+      "resources": {
+        "category": "ship_components",
+        "cost": {
+          "alloys": "15"
+        }
+      },
+      "ship_modifier": {
+        "ship_steal_defeated_ship_chance": "0.05",
+        "fleet_capture_defeated_leader_chance": "0.005"
+      },
+      "custom_tooltip": "BOARDING_CABLES_TOOLTIP",
+      "class_restriction": {
+        "prerequisites": {
+          "component_set": "BOARDING_CABLES"
+        }
+      }
+    },
+    "_source_file": "00_utilities_aux_grand_archive.txt",
+    "_line_number": 39
+  }
+}

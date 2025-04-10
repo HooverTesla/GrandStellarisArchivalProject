@@ -1,0 +1,146 @@
+{
+  "ship_event": {
+    "ship_event": {
+      "id": "anomaly.7200",
+      "title": "anomaly.7200.name",
+      "desc": "anomaly.7200.desc",
+      "picture": "GFX_evt_shrouded_planet",
+      "show_sound": "event_mystic_reveal",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "anomaly.7200.a",
+        "owner": {
+          "add_monthly_resource_mult": {
+            "resource": "physics_research",
+            "value": "@tier2researchreward",
+            "min": "@tier2researchmin",
+            "max": "@tier2researchmax"
+          }
+        },
+        "hidden_effect": {
+          "from.solar_system": {
+            "every_system_planet": {
+              "switch": {
+                "trigger": "has_planet_flag",
+                "planet_Ariph": {
+                  "change_pc": "pc_molten",
+                  "add_deposit": "d_alloys_2"
+                },
+                "planet_Hari_XXIV": {
+                  "change_pc": "pc_molten",
+                  "add_deposit": "d_alloys_2"
+                },
+                "planet_Risasi": {
+                  "change_pc": "pc_asteroid",
+                  "add_deposit": "d_rare_crystals_2"
+                },
+                "planet_Aridder": {
+                  "change_pc": "pc_frozen",
+                  "add_deposit": "d_minerals_2"
+                },
+                "planet_Echo": {
+                  "change_pc": "pc_barren",
+                  "add_deposit": "d_energy_2"
+                },
+                "planet_Rover": {
+                  "change_pc": "pc_toxic",
+                  "add_deposit": "d_exotic_gases_1"
+                },
+                "planet_Jasepe": {
+                  "change_pc": "pc_barren",
+                  "add_deposit": "d_minerals_3"
+                },
+                "planet_Blaxe": {
+                  "change_pc": "pc_gas_giant",
+                  "add_deposit": "d_energy_3"
+                },
+                "planet_Glavi": {
+                  "change_pc": "pc_gas_giant",
+                  "add_deposit": "d_exotic_gases_1"
+                },
+                "planet_Salvold": {
+                  "change_pc": "pc_barren_cold",
+                  "add_deposit": "d_minerals_2"
+                },
+                "planet_Frince": {
+                  "change_pc": "pc_frozen",
+                  "add_deposit": "d_minerals_2"
+                },
+                "star_seddom": {
+                  "set_planet_size": "33",
+                  "add_deposit": "d_energy_5"
+                }
+              }
+            },
+            "random_ambient_object": {
+              "limit": {
+                "has_ambient_object_flag": "breachsealer_breach"
+              },
+              "destroy_ambient_object": "this"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "anomaly_events_4.txt",
+    "_line_number": 4639
+  },
+  "country_event": {
+    "country_event": {
+      "id": "anomaly.7155",
+      "title": "anomaly.7155.name",
+      "desc": "anomaly.7155.desc",
+      "picture": "GFX_evt_zro_5",
+      "show_sound": "event_ground_battle",
+      "location": "event_target:desertling_planet",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "anomaly.7155.a",
+        "owner": {
+          "event_target:desertling_planet": {
+            "remove_modifier": "alien_infestation",
+            "add_deposit": "d_red_desert"
+          }
+        }
+      }
+    },
+    "_source_file": "anomaly_events_4.txt",
+    "_line_number": 4619
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "anomaly.3155",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_planet_flag": "data_diamond_planet"
+      },
+      "immediate": {
+        "from": {
+          "ship_event": {}
+        }
+      }
+    },
+    "_source_file": "anomaly_events_4.txt",
+    "_line_number": 4222
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "anomaly.6775",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from": {},
+        "immediate": {
+          "owner": {
+            "remove_point_of_interest": "fumongus_poi.1",
+            "end_event_chain": "fumongus_chain"
+          }
+        }
+      }
+    },
+    "_source_file": "anomaly_events_4.txt",
+    "_line_number": 1901
+  }
+}

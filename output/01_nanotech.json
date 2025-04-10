@@ -1,0 +1,26 @@
+{
+  "tradition_nanotech": {
+    "tradition_nanotech": {
+      "tree_template": "tree_11_11_21",
+      "adoption_bonus": "tr_nanotech_adopt",
+      "finish_bonus": "tr_nanotech_finish",
+      "potential": {
+        "has_machine_age_dlc": "yes",
+        "OR": {
+          "is_machine_empire": "yes",
+          "is_individual_machine": "yes"
+        },
+        "NOR": {
+          "has_tradition": "tr_modularity_adopt",
+          "has_ascension_perk": "ap_organo_machine_interfacing_assimilator"
+        }
+      },
+      "traditions": {},
+      "ai_weight": {
+        "factor": "1000"
+      }
+    },
+    "_source_file": "01_nanotech.txt",
+    "_line_number": 2
+  }
+}

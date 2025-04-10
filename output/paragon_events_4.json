@@ -1,0 +1,266 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "paragon.41234",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "trigger": {
+        "has_paragon_dlc": "yes"
+      },
+      "immediate": {
+        "random_owned_leader": {
+          "limit": {
+            "switch": {
+              "trigger": "has_leader_flag",
+              "renowned_xenophile1": {
+                "random_list": {
+                  "10": {
+                    "10": {
+                      "80": {}
+                    },
+                    "renowned_xenophile2": {
+                      "random_list": {
+                        "10": {
+                          "10": {
+                            "80": {}
+                          },
+                          "renowned_militarist1": {
+                            "random_list": {
+                              "10": {
+                                "10": {
+                                  "80": {}
+                                },
+                                "renowned_militarist2": {
+                                  "random_list": {
+                                    "10": {
+                                      "10": {
+                                        "80": {}
+                                      },
+                                      "renowned_xenophobe1": {
+                                        "random_list": {
+                                          "10": {
+                                            "10": {
+                                              "80": {}
+                                            },
+                                            "renowned_xenophobe2": {
+                                              "random_list": {
+                                                "10": {
+                                                  "10": {
+                                                    "80": {}
+                                                  },
+                                                  "renowned_egalitarian1": {
+                                                    "random_list": {
+                                                      "10": {
+                                                        "10": {
+                                                          "80": {}
+                                                        },
+                                                        "renowned_egalitarian2": {
+                                                          "random_list": {
+                                                            "10": {
+                                                              "10": {
+                                                                "80": {}
+                                                              },
+                                                              "renowned_materialist1": {
+                                                                "random_list": {
+                                                                  "10": {
+                                                                    "modifier": {
+                                                                      "factor": "0",
+                                                                      "root": {
+                                                                        "is_synthetic_empire": "yes",
+                                                                        "is_individual_machine": "no"
+                                                                      }
+                                                                    },
+                                                                    "leader_event": {},
+                                                                    "10": {
+                                                                      "80": {}
+                                                                    },
+                                                                    "renowned_materialist2": {
+                                                                      "random_list": {
+                                                                        "10": {
+                                                                          "10": {
+                                                                            "80": {}
+                                                                          },
+                                                                          "renowned_pacifist1": {
+                                                                            "random_list": {
+                                                                              "10": {
+                                                                                "10": {
+                                                                                  "80": {}
+                                                                                },
+                                                                                "renowned_pacifist2": {
+                                                                                  "random_list": {
+                                                                                    "10": {
+                                                                                      "10": {
+                                                                                        "80": {}
+                                                                                      },
+                                                                                      "renowned_authoritarian1": {
+                                                                                        "random_list": {
+                                                                                          "10": {
+                                                                                            "10": {
+                                                                                              "80": {}
+                                                                                            },
+                                                                                            "renowned_authoritarian2": {
+                                                                                              "random_list": {
+                                                                                                "10": {
+                                                                                                  "10": {
+                                                                                                    "80": {}
+                                                                                                  },
+                                                                                                  "renowned_spiritualist1": {
+                                                                                                    "random_list": {
+                                                                                                      "10": {
+                                                                                                        "10": {
+                                                                                                          "80": {}
+                                                                                                        },
+                                                                                                        "renowned_spiritualist2": {
+                                                                                                          "random_list": {
+                                                                                                            "10": {
+                                                                                                              "10": {
+                                                                                                                "80": {}
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "paragon_events_4.txt",
+    "_line_number": 1458
+  },
+  "leader_event": {
+    "leader_event": {
+      "id": "paragon.41620",
+      "title": "paragon.41620.name",
+      "desc": "paragon.41620.desc",
+      "picture": "GFX_evt_mysterious_signal",
+      "show_sound": "event_default",
+      "is_triggered_only": "yes",
+      "fire_only_once": "yes",
+      "event_window_type": "leader_story",
+      "event_picture_background": "GFX_leader_recruitment_bg_renowned",
+      "picture_event_data": {
+        "portrait": "root"
+      },
+      "trigger": {
+        "NOT": {
+          "owner": {
+            "any_planet_within_border": {
+              "OR": {
+                "is_planet_class": "pc_frozen",
+                "is_cold": "yes #inhabitable planets"
+              },
+              "NOT": {
+                "NOT": {}
+              }
+            },
+            "immediate": {
+              "owner": {
+                "random_planet_within_border": {
+                  "limit": {
+                    "OR": {
+                      "is_planet_class": "pc_frozen",
+                      "is_cold": "yes #inhabitable planets"
+                    },
+                    "NOT": {
+                      "NOT": {},
+                      "save_event_target_as": "nasuz_arcsite_planet # Used in option tooltip"
+                    }
+                  }
+                },
+                "option": {
+                  "name": "paragon.41620.a",
+                  "owner": {
+                    "add_monthly_resource_mult": {
+                      "resource": "society_research",
+                      "value": "@tier3researchreward",
+                      "min": "@tier3researchmin",
+                      "max": "@tier3researchmax"
+                    },
+                    "custom_tooltip": "paragon.41620.a.custom_tooltip",
+                    "hidden_effect": {
+                      "event_target:nasuz_arcsite_planet": {
+                        "create_archaeological_site": "site_ice_trauma"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "paragon_events_4.txt",
+    "_line_number": 3322
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "paragon.40921",
+      "title": "paragon.40921.name",
+      "desc": "paragon.40921.desc",
+      "picture": "GFX_evt_mining_operations",
+      "show_sound": "event_default",
+      "is_triggered_only": "yes",
+      "location": "event_target:xondar_alloy_planet",
+      "trigger": {
+        "exists": "owner",
+        "owner": {},
+        "option": {
+          "name": "paragon.40921.a",
+          "owner": {
+            "event_target:xondar_alloy_planet": {
+              "add_deposit": "d_alloys_4"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "paragon_events_4.txt",
+    "_line_number": 2660
+  }
+}

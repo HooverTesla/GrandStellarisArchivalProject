@@ -1,0 +1,32 @@
+{
+  "ship_modifier": {
+    "ship_modifier": {
+      "space_fauna_ship_upkeep_mult": "@unique_mutation_starborne_biology_upkeep"
+    },
+    "_source_file": "unique_mutation_starborne_biology.txt",
+    "_line_number": 7
+  },
+  "triggered_ship_modifier": {
+    "triggered_ship_modifier": {
+      "potential": {
+        "is_orbiting_star": "yes"
+      },
+      "modifier": {
+        "space_fauna_growth_rate_mult": "@unique_mutation_starborne_growth_speed"
+      }
+    },
+    "_source_file": "unique_mutation_starborne_biology.txt",
+    "_line_number": 11
+  },
+  "resources": {
+    "resources": {
+      "category": "ship_components",
+      "inline_script": {
+        "script": "grand_archive/mutations/component_dynamic_cost",
+        "COST": "120"
+      }
+    },
+    "_source_file": "unique_mutation_starborne_biology.txt",
+    "_line_number": 20
+  }
+}

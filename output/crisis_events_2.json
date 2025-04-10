@@ -1,0 +1,317 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "crisis.1321",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "event_target:starbase_system": {
+          "solar_system": {
+            "create_starbase": {
+              "size": "starbase_exd_0",
+              "owner": "root"
+            },
+            "every_system_planet": {
+              "limit": {
+                "orbital_station": {}
+              }
+            },
+            "if": {
+              "limit": {
+                "fromfrom": {
+                  "if": {
+                    "limit": {
+                      "exists": "solar_system"
+                    },
+                    "random_controlled_ship": {
+                      "ship_event": {
+                        "ship_event": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "crisis_events_2.txt",
+    "_line_number": 4442
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "crisis.1206",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "event_target:extradimensional_trespassers": {
+          "create_fleet": {
+            "effect": {
+              "set_owner": "PREV",
+              "create_ship": {
+                "name": "random",
+                "design": "NAME_Void_Weaver",
+                "graphical_culture": "extra_dimensional_03"
+              },
+              "set_location": {
+                "target": "ROOT",
+                "distance": "5",
+                "angle": "random"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "crisis_events_2.txt",
+    "_line_number": 2255
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "crisis.1011",
+      "title": "crisis.1011.name",
+      "desc": "crisis.1011.desc",
+      "picture": "GFX_evt_city_ruins",
+      "show_sound": "event_ghost_town",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "planet_devastation >": "100",
+        "FROM": {
+          "OR": {
+            "is_country_type": "extradimensional_3"
+          }
+        }
+      },
+      "immediate": {
+        "add_threat": {
+          "every_owned_pop": {
+            "kill_pop": "yes"
+          },
+          "destroy_colony": "yes",
+          "if": {
+            "limit": {
+              "is_artificial": "no"
+            },
+            "random_list": {
+              "50": {
+                "50": {},
+                "reset_planet": "yes",
+                "add_modifier": {
+                  "modifier": "terraforming_candidate",
+                  "days": "-1"
+                }
+              },
+              "else_if": {
+                "limit": {
+                  "spawn_habitat_cracker_effect": "yes"
+                },
+                "if": {
+                  "limit": {
+                    "every_country": {
+                      "limit": {
+                        "add_event_chain_counter": {
+                          "event_chain": "extradimensional_invasion_chain",
+                          "counter": "extradimensional_planets_1",
+                          "amount": "1"
+                        }
+                      }
+                    },
+                    "else_if": {
+                      "limit": {
+                        "every_country": {
+                          "limit": {
+                            "add_event_chain_counter": {
+                              "event_chain": "extradimensional_invasion_chain_2",
+                              "counter": "extradimensional_planets_2",
+                              "amount": "1"
+                            }
+                          }
+                        },
+                        "else_if": {
+                          "limit": {
+                            "every_country": {
+                              "limit": {
+                                "add_event_chain_counter": {
+                                  "event_chain": "extradimensional_invasion_chain_3",
+                                  "counter": "extradimensional_planets_3",
+                                  "amount": "1"
+                                }
+                              }
+                            },
+                            "solar_system": {
+                              "if": {
+                                "limit": {
+                                  "NOT": {
+                                    "exists": "starbase",
+                                    "any_system_planet": {
+                                      "has_owner": "yes",
+                                      "owner": {
+                                        "NOT": {}
+                                      }
+                                    }
+                                  },
+                                  "create_starbase": {
+                                    "size": "starbase_exd_0",
+                                    "owner": "from"
+                                  },
+                                  "random_ship_in_system": {
+                                    "limit": {
+                                      "owner": {},
+                                      "ship_event": {
+                                        "ship_event": {}
+                                      }
+                                    }
+                                  },
+                                  "option": {
+                                    "name": "crisis.1011.a"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "crisis_events_2.txt",
+    "_line_number": 861
+  },
+  "event": {
+    "event": {
+      "id": "crisis.1254",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_country": {
+          "OR": {
+            "is_country_type": "extradimensional_3"
+          }
+        }
+      },
+      "immediate": {
+        "if": {
+          "limit": {
+            "any_country": {
+              "OR": {
+                "AND": {
+                  "has_global_flag": "extradimensional_first_portal_destroyed",
+                  "NOT": {
+                    "NOT": {},
+                    "AND": {
+                      "has_global_flag": "extradimensional_second_portal_destroyed",
+                      "NOT": {},
+                      "AND": {
+                        "has_global_flag": "extradimensional_third_portal_destroyed"
+                      }
+                    },
+                    "NOR": {
+                      "any_controlled_ship": {
+                        "any_country": {
+                          "AND": {
+                            "is_country_type": "portal_holder",
+                            "any_controlled_ship": {}
+                          }
+                        },
+                        "NOT": {
+                          "any_system": {
+                            "any_system_planet": {
+                              "owner": {
+                                "OR": {
+                                  "is_country_type": "extradimensional_3"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "every_country": {
+                      "limit": {
+                        "OR": {
+                          "is_country_type": "extradimensional_3"
+                        }
+                      },
+                      "destroy_country": "yes"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "crisis_events_2.txt",
+    "_line_number": 2485
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "crisis.1310",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "solar_system": {
+          "if": {
+            "limit": {
+              "NOT": {
+                "any_system_ambient_object": {}
+              },
+              "star": {
+                "create_ambient_object": {
+                  "type": "extradimensional_1",
+                  "location": "this"
+                },
+                "last_created_ambient_object": {
+                  "set_ambient_object_flag": "extradimensional_system_effect",
+                  "set_location": {
+                    "target": "prev",
+                    "distance": "0",
+                    "angle": "random"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "crisis_events_2.txt",
+    "_line_number": 4345
+  },
+  "starbase_event": {
+    "starbase_event": {
+      "id": "crisis.1320",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from.owner": {
+          "OR": {
+            "is_country_type": "extradimensional_3"
+          }
+        },
+        "NOT": {
+          "solar_system": {
+            "any_system_planet": {}
+          }
+        },
+        "immediate": {
+          "solar_system": {
+            "from.owner": {
+              "country_event": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "crisis_events_2.txt",
+    "_line_number": 4413
+  }
+}

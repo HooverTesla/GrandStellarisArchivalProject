@@ -1,0 +1,378 @@
+{
+  "selective": {
+    "selective": {
+      "trigger": {
+        "owner": {
+          "OR": {
+            "NOT": {
+              "has_policy_flag": "orbital_bombardment_armageddon"
+            }
+          }
+        },
+        "default": "yes",
+        "stop_when_armies_dead": "yes",
+        "accept_surrender": "yes",
+        "abduct_pops": "no",
+        "planet_damage": "0.5",
+        "army_damage": "1.0",
+        "kill_pop_chance": {
+          "base": "0.25"
+        },
+        "min_pops_to_kill_pop": "21",
+        "_comments": [
+          "# root = fleet",
+          "# from = planet"
+        ],
+        "ai_weight": {
+          "weight": "1"
+        }
+      }
+    },
+    "_source_file": "00_bombardment_stances.txt",
+    "_line_number": 32
+  },
+  "indiscriminate": {
+    "indiscriminate": {
+      "trigger": {
+        "owner": {
+          "OR": {
+            "NOT": {
+              "has_policy_flag": "orbital_bombardment_armageddon"
+            }
+          }
+        },
+        "default": "no",
+        "stop_when_armies_dead": "no",
+        "accept_surrender": "yes",
+        "abduct_pops": "no",
+        "planet_damage": "1.0",
+        "army_damage": "1.5",
+        "kill_pop_chance": {
+          "base": "0.5"
+        },
+        "min_pops_to_kill_pop": "11",
+        "_comments": [
+          "# root = fleet",
+          "# from = planet"
+        ],
+        "ai_weight": {
+          "weight": "5",
+          "modifier": {
+            "factor": "0.01",
+            "exists": "from",
+            "from": {
+              "owner": {
+                "NAND": {
+                  "controller": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_bombardment_stances.txt",
+    "_line_number": 65
+  },
+  "armageddon": {
+    "armageddon": {
+      "trigger": {
+        "OR": {
+          "owner": {
+            "OR": {
+              "has_policy_flag": "orbital_bombardment_armageddon",
+              "is_crisis_faction": "yes",
+              "has_crisis_perk": "menp_death_from_above\t\t# Menace Perk: Death From Above"
+            }
+          },
+          "AND": {
+            "owner": {
+              "controller": {
+                "OR": {
+                  "has_policy_flag": "orbital_bombardment_armageddon",
+                  "is_crisis_faction": "yes",
+                  "has_menace_perk": "menp_death_from_above\t\t# Menace Perk: Death From Above"
+                }
+              }
+            }
+          }
+        },
+        "default": "no",
+        "stop_when_armies_dead": "no",
+        "abduct_pops": "no",
+        "planet_damage": "1.5",
+        "army_damage": "2.0",
+        "kill_pop_chance": {
+          "base": "1.0"
+        },
+        "min_pops_to_kill_pop": "0",
+        "_comments": [
+          "# root = fleet",
+          "# from = planet"
+        ],
+        "ai_weight": {
+          "weight": "10",
+          "modifier": {
+            "factor": "0.01",
+            "exists": "from",
+            "from": {
+              "owner": {
+                "NAND": {
+                  "controller": {}
+                },
+                "exists": "owner",
+                "owner": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_bombardment_stances.txt",
+    "_line_number": 108
+  },
+  "pox": {
+    "pox": {
+      "trigger": {
+        "owner": {
+          "OR": {
+            "has_relic": "r_pox_sample",
+            "AND": {
+              "owner": {
+                "root.controller": {
+                  "has_relic": "r_pox_sample"
+                }
+              }
+            },
+            "OR": {
+              "NOT": {
+                "has_policy_flag": "orbital_bombardment_armageddon"
+              }
+            }
+          },
+          "default": "no",
+          "stop_when_armies_dead": "no",
+          "abduct_pops": "no",
+          "planet_damage": "0.2",
+          "army_damage": "1.5",
+          "kill_pop_chance": {
+            "base": "1.5",
+            "modifier": {
+              "factor": "0",
+              "OR": {
+                "pop_has_trait": "trait_mechanical"
+              }
+            }
+          },
+          "min_pops_to_kill_pop": "0",
+          "_comments": [
+            "# root = fleet",
+            "# from = planet"
+          ],
+          "ai_weight": {
+            "weight": "10",
+            "modifier": {
+              "factor": "0.01",
+              "exists": "from",
+              "from": {
+                "owner": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_bombardment_stances.txt",
+    "_line_number": 165
+  },
+  "raiding": {
+    "raiding": {
+      "trigger": {
+        "OR": {
+          "owner": {
+            "owner": {
+              "owner": {
+                "owner": {
+                  "owner": {
+                    "AND": {
+                      "owner": {
+                        "controller": {
+                          "OR": {
+                            "has_ascension_perk": "ap_nihilistic_acquisition",
+                            "has_valid_civic": "civic_barbaric_despoilers",
+                            "has_origin": "origin_khan_successor"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "default": "no",
+                  "stop_when_armies_dead": "no",
+                  "abduct_pops": "yes",
+                  "planet_damage": "0.5",
+                  "army_damage": "0.5",
+                  "kill_pop_chance": {
+                    "base": "0.15"
+                  },
+                  "min_pops_to_kill_pop": "2",
+                  "_comments": [
+                    "# root = fleet",
+                    "# from = planet"
+                  ],
+                  "ai_weight": {
+                    "weight": "8",
+                    "modifier": {
+                      "factor": "0",
+                      "exists": "from",
+                      "from": {
+                        "OR": {
+                          "owner": {}
+                        },
+                        "NOT": {
+                          "owner": {}
+                        },
+                        "modifier": {
+                          "factor": "0.01",
+                          "exists": "from",
+                          "from": {
+                            "owner": {},
+                            "NOT": {
+                              "owner": {}
+                            },
+                            "modifier": {
+                              "factor": "100",
+                              "owner": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_bombardment_stances.txt",
+    "_line_number": 219
+  },
+  "seed_bombing": {
+    "seed_bombing": {
+      "trigger": {
+        "AND": {
+          "owner": {
+            "controller": {}
+          },
+          "default": "no",
+          "stop_when_armies_dead": "no",
+          "abduct_pops": "no",
+          "planet_damage": "1.0",
+          "army_damage": "0.5",
+          "kill_pop_chance": {
+            "base": "0"
+          },
+          "min_pops_to_kill_pop": "21",
+          "_comments": [
+            "# root = fleet",
+            "# from = planet"
+          ],
+          "ai_weight": {
+            "weight": "50",
+            "modifier": {
+              "factor": "0.01",
+              "exists": "from",
+              "from": {
+                "owner": {
+                  "NAND": {
+                    "controller": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_bombardment_stances.txt",
+    "_line_number": 288
+  },
+  "voidworm_invasion": {
+    "voidworm_invasion": {
+      "trigger": {
+        "is_ship_size": "voidworms_titan",
+        "owner": {
+          "NOT": {}
+        },
+        "default": "no",
+        "stop_when_armies_dead": "no",
+        "abduct_pops": "no",
+        "planet_damage": {
+          "base": "1.0",
+          "modifier": {
+            "factor": "owner.value:scripted_modifier_mult|MODIFIER|voidworms_planet_orbital_bombardment_damage|",
+            "exists": "owner"
+          }
+        },
+        "army_damage": "1.0",
+        "kill_pop_chance": {
+          "base": "0.5"
+        },
+        "min_pops_to_kill_pop": "10",
+        "ai_weight": {
+          "weight": "1000"
+        }
+      }
+    },
+    "_source_file": "00_bombardment_stances.txt",
+    "_line_number": 328
+  },
+  "voidworm_invasion_crisis": {
+    "voidworm_invasion_crisis": {
+      "trigger": {
+        "owner": {
+          "is_country_type": "voidworms_crisis",
+          "has_country_flag": "voidworm_crisis_active"
+        },
+        "is_ship_size": "voidworms_titan"
+      },
+      "default": "no",
+      "stop_when_armies_dead": "no",
+      "abduct_pops": "no",
+      "planet_damage": {
+        "base": "2.0",
+        "modifier": {
+          "factor": "owner.value:scripted_modifier_mult|MODIFIER|voidworms_planet_orbital_bombardment_damage|",
+          "exists": "owner"
+        }
+      },
+      "army_damage": "1.0",
+      "kill_pop_chance": {
+        "base": "0.5"
+      },
+      "min_pops_to_kill_pop": "0",
+      "ai_weight": {
+        "weight": "1000"
+      }
+    },
+    "_source_file": "00_bombardment_stances.txt",
+    "_line_number": 371
+  },
+  "frenzied_voidworm_invasion": {
+    "frenzied_voidworm_invasion": {
+      "trigger": {
+        "owner": {
+          "is_country_type": "frenzied_voidworms"
+        }
+      },
+      "default": "no",
+      "planet_damage": "1.0",
+      "ai_weight": {
+        "weight": "1000"
+      }
+    },
+    "_source_file": "00_bombardment_stances.txt",
+    "_line_number": 403
+  }
+}

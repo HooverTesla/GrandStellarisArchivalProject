@@ -1,0 +1,34 @@
+{
+  "weapon_component_template": {
+    "weapon_component_template": {
+      "key": "VOIDWORM_BITE_3",
+      "size": "large",
+      "type": "instant",
+      "prio_projectile": "yes",
+      "icon": "GFX_ship_part_voidworm_bite",
+      "icon_frame": "1",
+      "firing_arc": "15.0",
+      "tags": {
+        "size_restriction": {
+          "projectile_gfx": "voidworm_bite",
+          "resources": {
+            "category": "ship_components",
+            "cost": {
+              "food": "120",
+              "minerals": "120",
+              "mult": "@fauna_cost_scaling"
+            },
+            "upkeep": {
+              "energy": "0.4",
+              "food": "0.18",
+              "minerals": "0.18"
+            }
+          },
+          "component_set": "VOIDWORM_BITE"
+        }
+      }
+    },
+    "_source_file": "00_weapons_critters_voidworms.txt",
+    "_line_number": 146
+  }
+}

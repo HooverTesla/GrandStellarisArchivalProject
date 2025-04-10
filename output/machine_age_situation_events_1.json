@@ -1,0 +1,127 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "cyber.2015",
+      "title": "cyber.2015.name",
+      "desc": "cyber.2015.desc",
+      "picture": "GFX_evt_hive_cyberization",
+      "show_sound": "event_the_flesh_is_weak",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "cyber.2015.c",
+        "custom_tooltip": "cyber.2015.c.tt",
+        "trigger": {},
+        "after": {
+          "ruler": {
+            "add_trait": "leader_trait_cyborg"
+          }
+        }
+      }
+    },
+    "_source_file": "machine_age_situation_events_1.txt",
+    "_line_number": 7327
+  },
+  "situation_event": {
+    "situation_event": {
+      "id": "cyber.2004",
+      "title": "cyber.2004.name",
+      "desc": {
+        "trigger": {
+          "success_text": {
+            "text": "cyber.2004.desc.neutral",
+            "check_variable": {
+              "which": "cyber_volitional_hive",
+              "value": "cyber_integrated_hive"
+            }
+          },
+          "text": "cyber.2004.end"
+        }
+      },
+      "picture": "GFX_evt_hive_cyberization",
+      "show_sound": "event_the_flesh_is_weak",
+      "situation": "this",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "cyber.2004.c",
+        "custom_tooltip": "cyber.2004.c.tt",
+        "ai_chance": {
+          "factor": "0"
+        }
+      },
+      "after": {
+        "owner": {
+          "set_country_flag": "cybernetics_traditions_unlocked"
+        },
+        "destroy_situation": "this"
+      }
+    },
+    "_source_file": "machine_age_situation_events_1.txt",
+    "_line_number": 7208
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "cyber.1025",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "OR": {
+          "has_modifier": "sold_sky_2_mega"
+        }
+      },
+      "immediate": {
+        "remove_modifier": "sold_sky_2_mega",
+        "solar_system": {
+          "every_ambient_object": {
+            "limit": {
+              "has_ambient_object_flag": "sold_sky_billboard"
+            },
+            "destroy_ambient_object": "this"
+          }
+        }
+      }
+    },
+    "_source_file": "machine_age_situation_events_1.txt",
+    "_line_number": 5011
+  },
+  "pop_event": {
+    "pop_event": {
+      "id": "cyber.8",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from": {
+          "has_policy_flag": "cyberization_standards_limited"
+        }
+      },
+      "immediate": {
+        "if": {
+          "limit": {
+            "has_ethic": "ethic_spiritualist",
+            "has_trait": "trait_cybernetic"
+          },
+          "modify_species": {
+            "species": "this",
+            "remove_trait": "trait_cybernetic",
+            "add_trait": "trait_limited_cybernetic",
+            "add_traits_at_start_of_list": "yes"
+          }
+        },
+        "else_if": {
+          "limit": {
+            "NOT": {
+              "has_trait": "trait_limited_cybernetic"
+            },
+            "modify_species": {
+              "species": "this",
+              "remove_trait": "trait_limited_cybernetic",
+              "add_trait": "trait_cybernetic",
+              "add_traits_at_start_of_list": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "machine_age_situation_events_1.txt",
+    "_line_number": 2388
+  }
+}

@@ -1,0 +1,680 @@
+{
+  "tech_dark_matter_deflector": {
+    "tech_dark_matter_deflector": {
+      "cost": "@fallentechcost",
+      "area": "physics",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "1",
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0",
+              "NOR": {
+                "is_country_type": "awakened_fallen_empire"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 2
+  },
+  "tech_dark_matter_power_core": {
+    "tech_dark_matter_power_core": {
+      "cost": "@fallentechcost",
+      "area": "physics",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "1",
+        "is_rare": "yes",
+        "prerequisites": {
+          "prereqfor_desc": {
+            "hide_prereq_for_desc": "component",
+            "custom": {
+              "title": "TECH_UNLOCK_DARK_MATTER_POWER_TITLE",
+              "desc": "TECH_UNLOCK_DARK_MATTER_POWER_DESC"
+            }
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0",
+              "NOR": {
+                "is_country_type": "awakened_fallen_empire"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 26
+  },
+  "tech_dark_matter_propulsion": {
+    "tech_dark_matter_propulsion": {
+      "cost": "@fallentechcost",
+      "area": "engineering",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "1",
+        "is_rare": "yes",
+        "prerequisites": {
+          "prereqfor_desc": {
+            "hide_prereq_for_desc": "component",
+            "custom": {
+              "title": "TECH_UNLOCK_DARK_MATTER_PROPULSION_TITLE",
+              "desc": "TECH_UNLOCK_DARK_MATTER_PROPULSION_DESC"
+            }
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0",
+              "NOR": {
+                "is_country_type": "awakened_fallen_empire"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 57
+  },
+  "tech_fe_affluence_1": {
+    "tech_fe_affluence_1": {
+      "area": "engineering",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 85
+  },
+  "tech_fe_affluence_2": {
+    "tech_fe_affluence_2": {
+      "area": "engineering",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "prerequisites": {}
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 115
+  },
+  "tech_fe_nourishment_1": {
+    "tech_fe_nourishment_1": {
+      "area": "society",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 127
+  },
+  "tech_fe_nourishment_2": {
+    "tech_fe_nourishment_2": {
+      "area": "society",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "prerequisites": {}
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 157
+  },
+  "tech_fe_fabricator_1": {
+    "tech_fe_fabricator_1": {
+      "area": "engineering",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 169
+  },
+  "tech_fe_fabricator_2": {
+    "tech_fe_fabricator_2": {
+      "area": "engineering",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "prerequisites": {}
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 199
+  },
+  "tech_fe_singularity_1": {
+    "tech_fe_singularity_1": {
+      "area": "physics",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 211
+  },
+  "tech_fe_singularity_2": {
+    "tech_fe_singularity_2": {
+      "area": "physics",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "prerequisites": {}
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 241
+  },
+  "tech_fe_forge_1": {
+    "tech_fe_forge_1": {
+      "area": "engineering",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 253
+  },
+  "tech_fe_forge_2": {
+    "tech_fe_forge_2": {
+      "area": "engineering",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "prerequisites": {}
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 283
+  },
+  "tech_fe_dome_1": {
+    "tech_fe_dome_1": {
+      "area": "society",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 295
+  },
+  "tech_fe_dome_2": {
+    "tech_fe_dome_2": {
+      "area": "society",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "prerequisites": {}
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 325
+  },
+  "tech_fe_fortress_1": {
+    "tech_fe_fortress_1": {
+      "area": "society",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 337
+  },
+  "tech_fe_fortress_2": {
+    "tech_fe_fortress_2": {
+      "area": "society",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "prerequisites": {}
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 367
+  },
+  "tech_fe_administration_1": {
+    "tech_fe_administration_1": {
+      "area": "society",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 379
+  },
+  "tech_fe_administration_2": {
+    "tech_fe_administration_2": {
+      "area": "society",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "prerequisites": {}
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 409
+  },
+  "tech_fe_assembly_1": {
+    "tech_fe_assembly_1": {
+      "area": "engineering",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 421
+  },
+  "tech_fe_assembly_2": {
+    "tech_fe_assembly_2": {
+      "area": "engineering",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "prerequisites": {}
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 455
+  },
+  "tech_fe_clinic_1": {
+    "tech_fe_clinic_1": {
+      "area": "society",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 467
+  },
+  "tech_fe_clinic_2": {
+    "tech_fe_clinic_2": {
+      "area": "society",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "prerequisites": {}
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 501
+  },
+  "tech_fe_security_1": {
+    "tech_fe_security_1": {
+      "area": "society",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 513
+  },
+  "tech_fe_security_2": {
+    "tech_fe_security_2": {
+      "area": "society",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "prerequisites": {}
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 543
+  },
+  "tech_fe_market_1": {
+    "tech_fe_market_1": {
+      "area": "society",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 555
+  },
+  "tech_fe_market_2": {
+    "tech_fe_market_2": {
+      "area": "society",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "prerequisites": {}
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 589
+  },
+  "tech_fe_silo_1": {
+    "tech_fe_silo_1": {
+      "area": "physics",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 601
+  },
+  "tech_fe_silo_2": {
+    "tech_fe_silo_2": {
+      "area": "physics",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "prerequisites": {}
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 631
+  },
+  "tech_fe_entertainment_1": {
+    "tech_fe_entertainment_1": {
+      "area": "society",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 643
+  },
+  "tech_fe_entertainment_2": {
+    "tech_fe_entertainment_2": {
+      "area": "society",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "prerequisites": {}
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 677
+  },
+  "tech_fe_lab_1": {
+    "tech_fe_lab_1": {
+      "area": "physics",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 689
+  },
+  "tech_fe_lab_2": {
+    "tech_fe_lab_2": {
+      "area": "physics",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "prerequisites": {}
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 719
+  },
+  "tech_fe_mine_1": {
+    "tech_fe_mine_1": {
+      "area": "engineering",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 731
+  },
+  "tech_fe_mine_2": {
+    "tech_fe_mine_2": {
+      "area": "engineering",
+      "cost": "@fallentechcost",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight3",
+        "is_rare": "yes",
+        "prerequisites": {}
+      }
+    },
+    "_source_file": "00_fallen_empire_tech.txt",
+    "_line_number": 761
+  }
+}

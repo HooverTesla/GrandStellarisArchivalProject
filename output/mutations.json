@@ -1,0 +1,67 @@
+{
+  "projectile_gfx_beam": {
+    "projectile_gfx_beam": {
+      "name": "gastric_fountain_l",
+      "color": {
+        "hit_entity": "infrared_laser_large_hit_entity",
+        "shield_hit_entity": "infrared_laser_large_shield_hit_entity",
+        "muzzle_flash_entity": "gastric_fountain_large_muzzle_entity",
+        "width": "2.0",
+        "texture_scroll_speed": "5.5",
+        "texture_tiling": "40.0",
+        "hit": {
+          "alpha_curve": {},
+          "duration": "3.0"
+        },
+        "miss": {
+          "alpha_curve": {},
+          "duration": "0.75"
+        },
+        "texture": "gfx/models/combat_items/laser_diffuse2.dds",
+        "shield_impact": {
+          "size": "large",
+          "loop_duration": "2.5",
+          "delay": "0.1"
+        }
+      }
+    },
+    "_source_file": "mutations.txt",
+    "_line_number": 1655
+  },
+  "projectile_gfx_ballistic": {
+    "projectile_gfx_ballistic": {
+      "name": "neutron_thrower",
+      "color": {
+        "hit_entity": "neutron_torpedoes_hit_entity",
+        "shield_hit_entity": "neutron_torpedoes_shield_hit_entity",
+        "muzzle_flash_entity": "neutron_thrower_muzzle_entity",
+        "entity": "neutron_torpedoes_entity",
+        "speed": "90.0",
+        "max_duration": "3.0",
+        "shield_impact": {
+          "size": "large",
+          "delay": "0.0"
+        }
+      }
+    },
+    "_source_file": "mutations.txt",
+    "_line_number": 1558
+  },
+  "projectile_gfx_missile": {
+    "projectile_gfx_missile": {
+      "name": "spore_launcher_02",
+      "color": {
+        "hit_entity": "swarmer_missiles_02_hit_entity",
+        "shield_hit_entity": "swarmer_missiles_02_shield_hit_entity",
+        "muzzle_flash_entity": "spore_launchers_muzzle_flash_entity",
+        "entity": "swarmer_missiles_02_entity",
+        "shield_impact": {
+          "size": "large",
+          "delay": "0.0"
+        }
+      }
+    },
+    "_source_file": "mutations.txt",
+    "_line_number": 1280
+  }
+}

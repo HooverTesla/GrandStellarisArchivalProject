@@ -1,0 +1,54 @@
+{
+  "planet_automation_biotrophy_management": {
+    "planet_automation_biotrophy_management": {
+      "available": {
+        "exists": "owner",
+        "owner": {
+          "is_machine_empire": "yes",
+          "has_valid_civic": "civic_machine_servitor"
+        }
+      }
+    },
+    "_source_file": "00_categories.txt",
+    "_line_number": 22
+  },
+  "planet_automation_worm": {
+    "planet_automation_worm": {
+      "available": {
+        "exists": "owner",
+        "owner": {
+          "has_technology": "tech_akx_worm_3",
+          "has_event_chain": "WORM_CHAIN_1",
+          "NOT": {}
+        }
+      }
+    },
+    "_source_file": "00_categories.txt",
+    "_line_number": 32
+  },
+  "planet_automation_permanent_employment_center": {
+    "planet_automation_permanent_employment_center": {
+      "available": {
+        "exists": "owner",
+        "owner": {}
+      }
+    },
+    "_source_file": "00_categories.txt",
+    "_line_number": 43
+  },
+  "planet_automation_psi_corps_building": {
+    "planet_automation_psi_corps_building": {
+      "available": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "has_ascension_perk": "ap_mind_over_matter",
+            "has_origin": "origin_shroudwalker_apprentice"
+          }
+        }
+      }
+    },
+    "_source_file": "00_categories.txt",
+    "_line_number": 50
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "preset_prospectorium_nice_01": {
+    "preset_prospectorium_nice_01": {
+      "parent": "preset_prospectorium",
+      "specialist_type": "specialist_prospectorium",
+      "hidden": "yes",
+      "term_data": {
+        "discrete_terms": {}
+      },
+      "overlord_weight": {
+        "base": "75",
+        "modifier": {
+          "factor": "0.5",
+          "has_specialist_subject_type": {
+            "NOT": {},
+            "modifier": {
+              "factor": "1.5",
+              "FROM": {},
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_militarist": "yes"
+              }
+            },
+            "subject_weight": {
+              "base": "50",
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_militarist": "yes"
+              }
+            },
+            "potential": {
+              "has_overlord_dlc": "yes",
+              "NOR": {
+                "has_civic": "civic_inwards_perfection",
+                "FROM": {},
+                "OR": {
+                  "FROM": {
+                    "is_specialist_subject_type": {
+                      "tech_unlocked_ratio": {
+                        "who": "from",
+                        "ratio >": "@protectorate_tech_threshold"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_agreement_presets_ai_prospectorium.txt",
+    "_line_number": 7
+  },
+  "preset_prospectorium_nice_02": {
+    "preset_prospectorium_nice_02": {
+      "parent": "preset_prospectorium",
+      "specialist_type": "specialist_prospectorium",
+      "hidden": "yes",
+      "term_data": {
+        "resource_terms": {},
+        "discrete_terms": {}
+      },
+      "overlord_weight": {
+        "base": "50",
+        "modifier": {
+          "factor": "0.5",
+          "has_specialist_subject_type": {
+            "NOT": {},
+            "modifier": {
+              "factor": "1.5",
+              "FROM": {},
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_militarist": "yes"
+              }
+            },
+            "subject_weight": {
+              "base": "100",
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_militarist": "yes"
+              }
+            },
+            "potential": {
+              "has_overlord_dlc": "yes",
+              "NOR": {
+                "has_civic": "civic_inwards_perfection",
+                "FROM": {},
+                "OR": {
+                  "FROM": {
+                    "is_specialist_subject_type": {
+                      "tech_unlocked_ratio": {
+                        "who": "from",
+                        "ratio >": "@protectorate_tech_threshold"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_agreement_presets_ai_prospectorium.txt",
+    "_line_number": 102
+  },
+  "preset_prospectorium_mean_01": {
+    "preset_prospectorium_mean_01": {
+      "parent": "preset_prospectorium",
+      "specialist_type": "specialist_prospectorium",
+      "hidden": "yes",
+      "term_data": {
+        "resource_terms": {},
+        "discrete_terms": {}
+      },
+      "overlord_weight": {
+        "base": "125",
+        "modifier": {
+          "factor": "0.5",
+          "has_specialist_subject_type": {
+            "NOT": {},
+            "modifier": {
+              "factor": "1.5",
+              "FROM": {},
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_militarist": "yes"
+              }
+            },
+            "subject_weight": {
+              "base": "-100",
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_militarist": "yes"
+              }
+            },
+            "potential": {
+              "has_overlord_dlc": "yes",
+              "NOR": {
+                "has_civic": "civic_inwards_perfection",
+                "FROM": {},
+                "OR": {
+                  "FROM": {
+                    "is_specialist_subject_type": {
+                      "tech_unlocked_ratio": {
+                        "who": "from",
+                        "ratio >": "@protectorate_tech_threshold"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_agreement_presets_ai_prospectorium.txt",
+    "_line_number": 207
+  },
+  "preset_prospectorium_mean_02": {
+    "preset_prospectorium_mean_02": {
+      "parent": "preset_prospectorium",
+      "specialist_type": "specialist_prospectorium",
+      "hidden": "yes",
+      "term_data": {
+        "resource_terms": {},
+        "discrete_terms": {}
+      },
+      "overlord_weight": {
+        "base": "150",
+        "modifier": {
+          "factor": "0.5",
+          "has_specialist_subject_type": {
+            "NOT": {},
+            "modifier": {
+              "factor": "1.5",
+              "FROM": {},
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_militarist": "yes"
+              }
+            },
+            "subject_weight": {
+              "base": "-250",
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_militarist": "yes"
+              }
+            },
+            "potential": {
+              "has_overlord_dlc": "yes",
+              "NOR": {
+                "has_civic": "civic_inwards_perfection",
+                "FROM": {},
+                "OR": {
+                  "FROM": {
+                    "is_specialist_subject_type": {
+                      "tech_unlocked_ratio": {
+                        "who": "from",
+                        "ratio >": "@protectorate_tech_threshold"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_agreement_presets_ai_prospectorium.txt",
+    "_line_number": 312
+  },
+  "preset_prospectorium_mean_03": {
+    "preset_prospectorium_mean_03": {
+      "parent": "preset_prospectorium",
+      "specialist_type": "specialist_prospectorium",
+      "hidden": "yes",
+      "term_data": {
+        "resource_terms": {},
+        "discrete_terms": {}
+      },
+      "overlord_weight": {
+        "base": "175",
+        "modifier": {
+          "factor": "0.5",
+          "has_specialist_subject_type": {
+            "NOT": {},
+            "modifier": {
+              "factor": "1.5",
+              "FROM": {},
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_militarist": "yes"
+              }
+            },
+            "subject_weight": {
+              "base": "-500",
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_militarist": "yes"
+              }
+            },
+            "potential": {
+              "has_overlord_dlc": "yes",
+              "NOR": {
+                "has_civic": "civic_inwards_perfection",
+                "FROM": {},
+                "OR": {
+                  "FROM": {
+                    "is_specialist_subject_type": {
+                      "tech_unlocked_ratio": {
+                        "who": "from",
+                        "ratio >": "@protectorate_tech_threshold"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_agreement_presets_ai_prospectorium.txt",
+    "_line_number": 421
+  }
+}

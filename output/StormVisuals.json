@@ -1,0 +1,20 @@
+{
+  "star": {
+    "star": {
+      "create_ambient_object": {
+        "type": "$STORM_NAME$",
+        "location": "this"
+      },
+      "last_created_ambient_object": {
+        "set_ambient_object_flag": "space_storm_object",
+        "set_location": {
+          "target": "prev",
+          "distance": "0",
+          "angle": "random"
+        }
+      }
+    },
+    "_source_file": "StormVisuals.txt",
+    "_line_number": -1
+  }
+}

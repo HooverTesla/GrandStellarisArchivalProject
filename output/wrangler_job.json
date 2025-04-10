@@ -1,0 +1,49 @@
+{
+  "$JOB_KEY$": {
+    "$JOB_KEY$": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "wildlife_ranch",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible": {
+        "owner": {
+          "has_$JOB_KEY$_job": "yes"
+        }
+      },
+      "inline_script": "grand_archive/wrangler_jobs_produces",
+      "weight": {
+        "weight": "@high_prio_specialist_job_weight",
+        "mult": "value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|",
+        "modifier": {
+          "factor": "0.2",
+          "has_citizenship_rights": "no",
+          "NOT": {},
+          "modifier": {
+            "factor": "0.1",
+            "NOT": {
+              "exists": "planet",
+              "planet": {}
+            },
+            "modifier": {
+              "factor": "2",
+              "NOT": {
+                "exists": "planet",
+                "planet": {
+                  "has_available_jobs": "$JOB_KEY$"
+                }
+              }
+            },
+            "inline_script": "jobs/automodding_priority_research"
+          }
+        }
+      }
+    },
+    "_source_file": "wrangler_job.txt",
+    "_line_number": 4
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "tradition_expansion": {
+    "tradition_expansion": {
+      "desc": {
+        "trigger": {
+          "text": "tradition_expansion_hive_desc"
+        },
+        "desc": {
+          "trigger": {
+            "text": "tradition_expansion_machine_desc"
+          },
+          "desc": {
+            "trigger": {
+              "is_gestalt": "no",
+              "has_void_dweller_origin": "yes"
+            },
+            "text": "tradition_expansion_void_desc"
+          },
+          "tree_template": "tree_12_11",
+          "adoption_bonus": "tr_expansion_adopt",
+          "finish_bonus": "tr_expansion_finish",
+          "traditions": {},
+          "ai_weight": {
+            "factor": "20",
+            "modifier": {
+              "factor": "5",
+              "has_void_dweller_origin": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_expansion.txt",
+    "_line_number": 0
+  }
+}

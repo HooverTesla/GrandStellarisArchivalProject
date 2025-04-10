@@ -1,0 +1,316 @@
+{
+  "spy_orb_0": {
+    "spy_orb_0": {
+      "entity": "construction_platform_entity",
+      "construction_entity": "construction_platform_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "place_entity_on_planet_plane": "no",
+      "entity_offset": {
+        "build_time": "1800",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "5000",
+            "unity": "2500"
+          },
+          "upkeep": {
+            "energy": "20"
+          }
+        },
+        "custom_tooltip_requirements": "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_ONE_PER_COUNTRY",
+        "prerequisites": {
+          "possible": {
+            "hidden_trigger": {
+              "exists": "starbase"
+            },
+            "custom_tooltip": {
+              "fail_text": "requires_no_existing_spyorb",
+              "from": {
+                "OR": {
+                  "has_relic": "r_contingency_core",
+                  "NOT": {}
+                }
+              },
+              "custom_tooltip": {
+                "fail_text": "requires_no_existing_spyorb_two",
+                "from": {}
+              },
+              "placement_rules": {
+                "planet_possible": {
+                  "custom_tooltip": {
+                    "fail_text": "requires_no_anomaly",
+                    "NOT": {},
+                    "custom_tooltip": {
+                      "fail_text": "requires_no_existing_megastructure",
+                      "NOT": {}
+                    }
+                  },
+                  "_comments": [
+                    "# root = system",
+                    "# from = country"
+                  ],
+                  "ai_weight": {
+                    "factor": "10",
+                    "modifier": {
+                      "factor": "0.1",
+                      "starbase": {},
+                      "modifier": {
+                        "factor": "0.1",
+                        "any_neighbor_system": {
+                          "OR": {
+                            "NOT": {
+                              "AND": {
+                                "exists": "owner",
+                                "NOT": {}
+                              }
+                            }
+                          },
+                          "modifier": {
+                            "factor": "2.0",
+                            "from": {
+                              "OR": {
+                                "has_ethic": "ethic_fanatic_militarist"
+                              }
+                            }
+                          }
+                        },
+                        "on_build_start": {
+                          "on_build_cancel": {
+                            "on_build_complete": {
+                              "set_star_flag": "spy_orb_built",
+                              "from": {
+                                "if": {
+                                  "limit": {
+                                    "has_relic": "r_contingency_core",
+                                    "has_country_flag": "built_spyorb"
+                                  },
+                                  "set_country_flag": "built_spyorb_contingency"
+                                },
+                                "set_country_flag": "built_spyorb"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_spy_orb.txt",
+    "_line_number": 12
+  },
+  "spy_orb_1": {
+    "spy_orb_1": {
+      "entity": "spyorb_phase_01_entity",
+      "construction_entity": "spyorb_phase_01_construction_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "place_entity_on_planet_plane": "no",
+      "entity_offset": {
+        "build_time": "1800",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "10000",
+            "unity": "2500"
+          },
+          "upkeep": {
+            "energy": "40"
+          }
+        },
+        "upgrade_from": {},
+        "prerequisites": {
+          "sensor_range": "20",
+          "hyperlane_range": "30",
+          "country_modifier": {
+            "add_base_country_intel": "10"
+          }
+        }
+      }
+    },
+    "_source_file": "02_spy_orb.txt",
+    "_line_number": 164
+  },
+  "spy_orb_2": {
+    "spy_orb_2": {
+      "entity": "spyorb_phase_02_entity",
+      "construction_entity": "spyorb_phase_02_construction_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "place_entity_on_planet_plane": "no",
+      "entity_offset": {
+        "build_time": "1800",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "10000",
+            "unity": "2500"
+          },
+          "upkeep": {
+            "energy": "60"
+          }
+        },
+        "upgrade_from": {},
+        "prerequisites": {
+          "sensor_range": "40",
+          "hyperlane_range": "60",
+          "country_modifier": {
+            "add_base_country_intel": "20"
+          }
+        }
+      }
+    },
+    "_source_file": "02_spy_orb.txt",
+    "_line_number": 197
+  },
+  "spy_orb_3": {
+    "spy_orb_3": {
+      "entity": "spyorb_phase_03_entity",
+      "construction_entity": "spyorb_phase_03_construction_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "place_entity_on_planet_plane": "no",
+      "entity_offset": {
+        "build_time": "1800",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "10000",
+            "unity": "2500"
+          },
+          "upkeep": {
+            "energy": "80"
+          }
+        },
+        "upgrade_from": {},
+        "prerequisites": {
+          "sensor_range": "60",
+          "hyperlane_range": "90",
+          "country_modifier": {
+            "add_base_country_intel": "30"
+          }
+        }
+      }
+    },
+    "_source_file": "02_spy_orb.txt",
+    "_line_number": 230
+  },
+  "spy_orb_4": {
+    "spy_orb_4": {
+      "entity": "spyorb_phase_04_entity",
+      "construction_entity": "spyorb_phase_04_construction_entity",
+      "portrait": "GFX_megastructure_spy_orb_background",
+      "place_entity_on_planet_plane": "no",
+      "entity_offset": {
+        "build_time": "1800",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "10000",
+            "unity": "2500"
+          },
+          "upkeep": {
+            "energy": "100"
+          }
+        },
+        "upgrade_from": {},
+        "on_build_complete": {
+          "from": {
+            "set_country_flag": "has_built_or_repaired_megastructure"
+          }
+        },
+        "prerequisites": {
+          "show_prereqs": "yes",
+          "country_modifier": {
+            "add_base_country_intel": "40"
+          }
+        }
+      }
+    },
+    "_source_file": "02_spy_orb.txt",
+    "_line_number": 263
+  },
+  "spy_orb_permanently_ruined": {
+    "spy_orb_permanently_ruined": {
+      "entity": "spy_orb_destroyed_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "show_galactic_map_icon": "no",
+      "show_in_outliner": "no",
+      "place_entity_on_planet_plane": "no",
+      "entity_offset": {
+        "potential": {
+          "always": "no"
+        }
+      }
+    },
+    "_source_file": "02_spy_orb.txt",
+    "_line_number": 299
+  },
+  "spy_orb_ruined": {
+    "spy_orb_ruined": {
+      "entity": "spy_orb_destroyed_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "place_entity_on_planet_plane": "no",
+      "entity_offset": {
+        "potential": {
+          "always": "no"
+        }
+      }
+    },
+    "_source_file": "02_spy_orb.txt",
+    "_line_number": 314
+  },
+  "spy_orb_restored": {
+    "spy_orb_restored": {
+      "entity": "spyorb_phase_04_entity",
+      "construction_entity": "spyorb_phase_04_construction_entity",
+      "portrait": "GFX_megastructure_spy_orb_background",
+      "place_entity_on_planet_plane": "no",
+      "entity_offset": {
+        "build_time": "4800",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "15000",
+            "unity": "3500"
+          },
+          "upkeep": {
+            "energy": "100"
+          }
+        },
+        "upgrade_from": {},
+        "possible": {
+          "from": {
+            "has_technology": "tech_mega_engineering"
+          }
+        },
+        "on_build_start": {
+          "fromfrom": {
+            "set_graphical_culture": "root.from"
+          }
+        },
+        "on_build_complete": {
+          "every_system_ambient_object": {
+            "limit": {
+              "OR": {
+                "is_ambient_object_type": "small_debris_object"
+              }
+            },
+            "destroy_ambient_object": "this"
+          },
+          "owner": {
+            "set_country_flag": "has_built_or_repaired_megastructure",
+            "country_event": {}
+          },
+          "country_modifier": {
+            "add_base_country_intel": "40"
+          }
+        }
+      }
+    },
+    "_source_file": "02_spy_orb.txt",
+    "_line_number": 331
+  }
+}

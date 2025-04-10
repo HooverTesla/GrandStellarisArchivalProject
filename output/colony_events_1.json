@@ -1,0 +1,145 @@
+{
+  "planet_event": {
+    "planet_event": {
+      "id": "colony.183",
+      "title": "colony.183.name",
+      "desc": {
+        "trigger": {
+          "owner": {},
+          "text": "colony.183.desc"
+        },
+        "desc": {
+          "trigger": {
+            "owner": {},
+            "text": "colony.183.desc.mach"
+          },
+          "picture": "GFX_evt_nuclear_explosion",
+          "show_sound": "event_super_explosion",
+          "location": "ROOT",
+          "is_triggered_only": "yes",
+          "immediate": {
+            "owner": {
+              "country_event": {},
+              "remove_global_flag": "asteroid_sighted_global",
+              "remove_planet_flag": "asteroid_sighted",
+              "set_planet_flag": "asteroid_collision",
+              "add_deposit": "d_crater",
+              "owner": {},
+              "option": {
+                "name": "colony.183.a",
+                "if": {
+                  "limit": {},
+                  "random_owned_pop": {},
+                  "else_if": {
+                    "limit": {},
+                    "random_owned_pop": {
+                      "random_owned_pop": {},
+                      "else_if": {
+                        "limit": {},
+                        "random_owned_pop": {
+                          "random_owned_pop": {
+                            "random_owned_pop": {
+                              "random_owned_pop": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "colony_events_1.txt",
+    "_line_number": 4399
+  },
+  "country_event": {
+    "country_event": {
+      "id": "colony.184",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "random_country": {
+          "limit": {
+            "has_relation_flag": {
+              "who": "root",
+              "flag": "asteroid_enemy"
+            }
+          },
+          "every_controlled_ship": {
+            "fleet": {
+              "destroy_fleet": "this"
+            }
+          },
+          "destroy_country": "yes"
+        }
+      }
+    },
+    "_source_file": "colony_events_1.txt",
+    "_line_number": 4460
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "colony.174",
+      "title": "PROJECT_COMPLETE",
+      "desc": "colony.174.desc",
+      "picture": "GFX_evt_ship_in_orbit",
+      "show_sound": "event_radio_chatter",
+      "location": "ROOT",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "EXCELLENT",
+        "fromfrom": {
+          "remove_modifier": "wasteland_orbital_debris",
+          "owner": {
+            "add_monthly_resource_mult": {
+              "resource": "minerals",
+              "value": "@tier1materialreward",
+              "min": "@tier1materialmin",
+              "max": "@tier1materialmax"
+            },
+            "give_specimen": {}
+          }
+        }
+      }
+    },
+    "_source_file": "colony_events_1.txt",
+    "_line_number": 4147
+  },
+  "situation_event": {
+    "situation_event": {
+      "id": "colony.200",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "target": {
+          "if": {
+            "limit": {
+              "has_planet_flag": "fallen_empire_capital"
+            },
+            "owner": {
+              "set_country_flag": "past_the_expiration_date_achievement"
+            }
+          },
+          "slushify_world": "yes",
+          "remove_modifier": "being_devoured_modifier_nanotech",
+          "change_pc": "pc_nanotech",
+          "planet_event": {
+            "owner": {
+              "change_variable": {
+                "which": "nanotech_worlds_created",
+                "value": "1"
+              }
+            }
+          },
+          "destroy_situation": "this"
+        }
+      }
+    },
+    "_source_file": "colony_events_1.txt",
+    "_line_number": 4583
+  }
+}

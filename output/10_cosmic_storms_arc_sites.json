@@ -1,0 +1,403 @@
+{
+  "site_green_skies": {
+    "site_green_skies": {
+      "desc": "site_green_skies_intro",
+      "picture": "GFX_evt_alien_planet",
+      "stages": "4",
+      "max_instances": "1",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "factor": "0",
+          "exists": "owner",
+          "owner": {},
+          "modifier": {
+            "factor": "0",
+            "has_cosmic_storms_dlc": "no"
+          }
+        },
+        "allow": {
+          "exists": "leader",
+          "leader": {},
+          "visible": {
+            "default_site_visible_trigger": "yes"
+          },
+          "stage": {
+            "difficulty": "5",
+            "icon": "GFX_archaeology_runes_B4",
+            "event": "cstorms.1415"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "10_cosmic_storms_arc_sites.txt",
+    "_line_number": 11
+  },
+  "site_weathermanipulators_the_ancient_storm_shelters": {
+    "site_weathermanipulators_the_ancient_storm_shelters": {
+      "desc": "site_weathermanipulators_the_ancient_storm_shelters_intro",
+      "picture": "GFX_evt_weather_manipulators",
+      "stages": "5",
+      "weight": "0 #set via initialiser",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "5",
+          "icon": "GFX_archaeology_runes_F5",
+          "event": "cstorms.130"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "10_cosmic_storms_arc_sites.txt",
+    "_line_number": 76
+  },
+  "site_weathermanipulators_CoordinatesA_Residential_Planet": {
+    "site_weathermanipulators_CoordinatesA_Residential_Planet": {
+      "desc": "site_weathermanipulators_CoordinatesA_Residential_Planet_intro",
+      "picture": "GFX_evt_weather_manipulators",
+      "stages": "3",
+      "weight": "0 #set via initialiser",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes",
+          "owner": {
+            "has_country_flag": "wm_digsite_coordinates_found"
+          }
+        },
+        "stage": {
+          "difficulty": "5",
+          "icon": "GFX_archaeology_runes_F3",
+          "event": "cstorms.150"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "10_cosmic_storms_arc_sites.txt",
+    "_line_number": 125
+  },
+  "site_weathermanipulators_CoordinatesB_Industrial_Planet": {
+    "site_weathermanipulators_CoordinatesB_Industrial_Planet": {
+      "desc": "site_weathermanipulators_CoordinatesB_Industrial_Planet_intro",
+      "picture": "GFX_evt_weather_manipulators",
+      "stages": "3",
+      "weight": "0 #set via initialiser",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes",
+          "owner": {
+            "has_country_flag": "wm_digsite_coordinates_found"
+          }
+        },
+        "stage": {
+          "difficulty": "5",
+          "icon": "GFX_archaeology_runes_F3",
+          "event": "cstorms.165"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "10_cosmic_storms_arc_sites.txt",
+    "_line_number": 166
+  },
+  "site_weathermanipulators_CoordinatesC_Barren_Planet": {
+    "site_weathermanipulators_CoordinatesC_Barren_Planet": {
+      "desc": "site_weathermanipulators_CoordinatesC_Barren_Planet_intro",
+      "picture": "GFX_evt_weather_manipulators",
+      "stages": "3",
+      "weight": "0 #set via initialiser",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes",
+          "owner": {
+            "has_country_flag": "wm_digsite_coordinates_found"
+          }
+        },
+        "stage": {
+          "difficulty": "5",
+          "icon": "GFX_archaeology_runes_F3",
+          "event": "cstorms.172"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "10_cosmic_storms_arc_sites.txt",
+    "_line_number": 207
+  },
+  "site_weathermanipulators_storm_formation": {
+    "site_weathermanipulators_storm_formation": {
+      "desc": "site_weathermanipulators_storm_formation_intro",
+      "picture": "GFX_evt_weather_manipulators",
+      "stages": "4",
+      "weight": "0 #set via initialiser",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "5",
+          "icon": "GFX_archaeology_runes_F4",
+          "event": "cstorms.184"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "10_cosmic_storms_arc_sites.txt",
+    "_line_number": 249
+  },
+  "site_weathermanipulators_last_shelter": {
+    "site_weathermanipulators_last_shelter": {
+      "desc": "site_weathermanipulators_last_shelter_intro",
+      "picture": "GFX_evt_weather_manipulators",
+      "stages": "4",
+      "weight": "0 #set via initialiser",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "8",
+          "icon": "GFX_archaeology_runes_F4",
+          "event": "cstorms.193"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "10_cosmic_storms_arc_sites.txt",
+    "_line_number": 294
+  },
+  "site_adakkaria_the_propaganda_station": {
+    "site_adakkaria_the_propaganda_station": {
+      "desc": "site_adakkaria_the_propaganda_station_intro",
+      "picture": "GFX_evt_ruined_system",
+      "stages": "5",
+      "weight": "0 #set via initialiser",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "5",
+          "icon": "GFX_archaeology_runes_C5",
+          "event": "cstorms.235"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "10_cosmic_storms_arc_sites.txt",
+    "_line_number": 343
+  },
+  "site_adakarria_windswept_fates": {
+    "site_adakarria_windswept_fates": {
+      "desc": "site_adakarria_windswept_fates_intro",
+      "picture": "GFX_evt_cosmic_storms_windswept_fates",
+      "stages": "6",
+      "weight": "0 #set via initialiser",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "6",
+          "icon": "GFX_archaeology_runes_C6",
+          "event": "cstorms.2130"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "10_cosmic_storms_arc_sites.txt",
+    "_line_number": 395
+  },
+  "site_adakkaria_fleets_of_the_thrice_damned": {
+    "site_adakkaria_fleets_of_the_thrice_damned": {
+      "desc": "site_adakkaria_fleets_of_the_thrice_damned_intro",
+      "picture": "GFX_evt_cosmic_storms_fleets_of_the_thrice_damned",
+      "stages": "5",
+      "weight": "0 #set via initialiser",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "5",
+          "icon": "GFX_archaeology_runes_C5",
+          "event": "cstorms.2170"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "10_cosmic_storms_arc_sites.txt",
+    "_line_number": 447
+  },
+  "site_adakkaria_the_patriotic_institute": {
+    "site_adakkaria_the_patriotic_institute": {
+      "desc": "site_adakkaria_the_patriotic_institute_intro",
+      "picture": "GFX_evt_habitat",
+      "stages": "6",
+      "weight": "0 #set via initialiser",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "has_event_chain": "cs_adAkkaria_chain",
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "6",
+          "icon": "GFX_archaeology_runes_C6",
+          "event": "cstorms.2225"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "10_cosmic_storms_arc_sites.txt",
+    "_line_number": 499
+  },
+  "site_adakkaria_celebration": {
+    "site_adakkaria_celebration": {
+      "desc": "site_adakkaria_celebration_intro",
+      "picture": "GFX_evt_ancient_databank",
+      "stages": "6",
+      "weight": "0 #set via initialiser",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "has_event_chain": "cs_adAkkaria_chain",
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "6",
+          "icon": "GFX_archaeology_runes_C6",
+          "event": "cstorms.2310"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "10_cosmic_storms_arc_sites.txt",
+    "_line_number": 557
+  },
+  "site_hold_the_line": {
+    "site_hold_the_line": {
+      "desc": "site_hold_the_line_intro",
+      "picture": "GFX_evt_habitat",
+      "stages": "6",
+      "weight": "0 #set triggered by storm",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "4",
+          "icon": "GFX_archaeology_runes_F6",
+          "event": "cstorms.1300"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "10_cosmic_storms_arc_sites.txt",
+    "_line_number": 619
+  },
+  "site_repowered_complex": {
+    "site_repowered_complex": {
+      "desc": "site_repowered_complex_intro",
+      "picture": "GFX_evt_generator_powerup",
+      "stages": "3",
+      "weight": "0 #set triggered by storm",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "4",
+          "icon": "GFX_archaeology_runes_D3",
+          "event": "cstorms.1855"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "10_cosmic_storms_arc_sites.txt",
+    "_line_number": 678
+  }
+}

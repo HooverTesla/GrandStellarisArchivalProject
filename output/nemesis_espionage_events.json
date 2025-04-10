@@ -1,0 +1,127 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "espionage.1085",
+      "title": "espionage.1085.name",
+      "desc": {
+        "text": "espionage.1085.desc",
+        "trigger": {
+          "NOT": {}
+        },
+        "desc": {
+          "text": "espionage.1085.desc.neverspied",
+          "trigger": {
+            "exists": "from"
+          },
+          "picture": "GFX_evt_decryption",
+          "show_sound": "event_default",
+          "is_triggered_only": "yes",
+          "immediate": {
+            "option": {
+              "name": "CURIOUS",
+              "trigger": {
+                "NOT": {
+                  "AND": {
+                    "has_federation": "yes",
+                    "from": {
+                      "federation": {}
+                    }
+                  },
+                  "tooltip": {
+                    "from": {
+                      "add_opinion_modifier": {
+                        "who": "root",
+                        "modifier": "opinion_smear_campaign_deceived"
+                      }
+                    }
+                  },
+                  "if": {
+                    "limit": {
+                      "root": {},
+                      "tooltip": {
+                        "random_agreement": {
+                          "limit": {
+                            "owner": {
+                              "target": {},
+                              "add_loyalty": "-15"
+                            }
+                          }
+                        },
+                        "if": {
+                          "limit": {
+                            "from": {},
+                            "tooltip": {
+                              "random_agreement": {
+                                "limit": {
+                                  "owner": {
+                                    "target": {},
+                                    "add_loyalty": "-15"
+                                  }
+                                }
+                              }
+                            },
+                            "option": {
+                              "name": "UNFORTUNATE",
+                              "trigger": {
+                                "has_federation": "yes",
+                                "from": {
+                                  "federation": {},
+                                  "tooltip": {
+                                    "federation": {
+                                      "from": {
+                                        "add_opinion_modifier": {
+                                          "who": "root",
+                                          "modifier": "opinion_smear_campaign_deceived"
+                                        }
+                                      }
+                                    },
+                                    "if": {
+                                      "limit": {
+                                        "root": {},
+                                        "tooltip": {
+                                          "random_agreement": {
+                                            "limit": {
+                                              "owner": {
+                                                "target": {},
+                                                "add_loyalty": "-15"
+                                              }
+                                            }
+                                          },
+                                          "if": {
+                                            "limit": {
+                                              "from": {},
+                                              "tooltip": {
+                                                "random_agreement": {
+                                                  "limit": {
+                                                    "owner": {
+                                                      "target": {},
+                                                      "add_loyalty": "-15"
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "nemesis_espionage_events.txt",
+    "_line_number": 2726
+  }
+}

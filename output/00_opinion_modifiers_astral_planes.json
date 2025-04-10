@@ -1,0 +1,40 @@
+{
+  "opinion_mirrored_empire": {
+    "opinion_mirrored_empire": {
+      "opinion": {
+        "base": "150"
+      },
+      "unique": "yes"
+    },
+    "_source_file": "00_opinion_modifiers_astral_planes.txt",
+    "_line_number": -1
+  },
+  "opinion_formula_pink": {
+    "opinion_formula_pink": {
+      "opinion": {
+        "base": "20"
+      },
+      "unique": "yes"
+    },
+    "_source_file": "00_opinion_modifiers_astral_planes.txt",
+    "_line_number": 6
+  },
+  "triggered_opinion_fractured_ambassadors": {
+    "triggered_opinion_fractured_ambassadors": {
+      "trigger": {
+        "is_country_type": "default",
+        "is_gestalt": "no",
+        "FROM": {
+          "is_country_type": "default",
+          "is_gestalt": "yes",
+          "has_modifier": "fractured_ambassadors_modifier"
+        }
+      },
+      "opinion": {
+        "base": "20"
+      }
+    },
+    "_source_file": "00_opinion_modifiers_astral_planes.txt",
+    "_line_number": 14
+  }
+}

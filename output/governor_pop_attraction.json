@@ -1,0 +1,19 @@
+{
+  "modifier": {
+    "modifier": {
+      "factor": "0.8",
+      "from": {
+        "is_sector_capital": "no",
+        "NOT": {
+          "exists": "sector",
+          "sector.sector_capital": {
+            "exists": "leader",
+            "leader": {}
+          }
+        }
+      }
+    },
+    "_source_file": "governor_pop_attraction.txt",
+    "_line_number": 30
+  }
+}

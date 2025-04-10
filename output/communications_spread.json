@@ -1,0 +1,60 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "communications_spread.5",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "immediate": {
+        "from": {
+          "every_system_planet": {
+            "limit": {
+              "exists": "controller",
+              "controller": {
+                "NOR": {
+                  "is_same_value": "root.fromfrom",
+                  "is_country_type": "primitive"
+                }
+              }
+            },
+            "controller": {
+              "establish_communications_no_message": "root"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "communications_spread.txt",
+    "_line_number": 271
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "communications_spread.6",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "is_ship_size": "observation_station",
+        "exists": "controller",
+        "from": {
+          "exists": "owner",
+          "owner": {
+            "is_country_type": "primitive",
+            "NOT": {
+              "has_country_flag": "was_enlightened"
+            }
+          }
+        }
+      },
+      "immediate": {
+        "from.owner": {
+          "remove_communications": "root.controller",
+          "clear_relations": {
+            "target": "root.controller",
+            "relations": {}
+          }
+        }
+      }
+    },
+    "_source_file": "communications_spread.txt",
+    "_line_number": 301
+  }
+}

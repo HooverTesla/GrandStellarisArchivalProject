@@ -1,0 +1,36 @@
+{
+  "utility_component_template": {
+    "utility_component_template": {
+      "key": "WHISPERERS_BLESSING_EXTRA_LARGE",
+      "size": "extra_large",
+      "icon": "GFX_mutation_orbital_whisperers_blessing",
+      "icon_frame": "1",
+      "prerequisites": {
+        "component_set": "WHISPERERS_BLESSING",
+        "modifier": {
+          "ship_evasion_mult": "0.15"
+        },
+        "resources": {
+          "category": "ship_components",
+          "inline_script": {
+            "script": "grand_archive/mutations/component_dynamic_cost",
+            "COST": "80"
+          },
+          "cost": {
+            "sr_zro": "2",
+            "mult": "@fauna_cost_scaling"
+          }
+        },
+        "ai_weight": {
+          "weight": "1",
+          "modifier": {
+            "factor": "0",
+            "no_resource_for_component": {}
+          }
+        }
+      }
+    },
+    "_source_file": "01_mutation_utilities_components.txt",
+    "_line_number": 3588
+  }
+}

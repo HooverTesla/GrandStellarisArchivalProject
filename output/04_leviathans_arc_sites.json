@@ -1,0 +1,54 @@
+{
+  "broken_world_digsite": {
+    "broken_world_digsite": {
+      "desc": "broken_world_digsite_desc",
+      "picture": "GFX_evt_baol_ruins",
+      "stages": "4",
+      "max_instances": "1",
+      "weight": {
+        "base": "10",
+        "modifier": {
+          "factor": "0",
+          "OR": {
+            "is_star": "yes",
+            "is_planet_class": "pc_gas_giant",
+            "is_asteroid": "yes",
+            "has_leviathans": "no",
+            "solar_system": {
+              "OR": {
+                "starting_system": "yes",
+                "is_capital_system": "yes",
+                "is_star_class": "sc_black_hole"
+              }
+            },
+            "AND": {
+              "exists": "owner",
+              "owner": {}
+            }
+          }
+        },
+        "allow": {
+          "is_ship_class": "shipclass_science_ship",
+          "exists": "leader"
+        },
+        "visible": {
+          "is_gestalt": "no",
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "5",
+            "event": "ancrel.11015",
+            "icon": "GFX_archaeology_runes_D4"
+          },
+          "on_roll_failed": {
+            "from": {}
+          }
+        }
+      }
+    },
+    "_source_file": "04_leviathans_arc_sites.txt",
+    "_line_number": 6
+  }
+}

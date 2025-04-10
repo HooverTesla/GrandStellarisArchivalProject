@@ -1,0 +1,100 @@
+{
+  "ship_event": {
+    "ship_event": {
+      "id": "anomaly.3135",
+      "title": "anomaly.3135.name",
+      "desc": "anomaly.3135.desc",
+      "picture": "GFX_evt_towel",
+      "show_sound": "event_mystic_reveal",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "option": {
+          "name": "anomaly.3135.a",
+          "custom_tooltip": "anomaly.3135.a.tooltip",
+          "hidden_effect": {
+            "leader": {
+              "add_trait": "leader_trait_towel"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "anomaly_events_2.txt",
+    "_line_number": 3702
+  },
+  "country_event": {
+    "country_event": {
+      "id": "anomaly.3121",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "from",
+        "from": {
+          "NOT": {
+            "has_relation_flag": {
+              "who": "root",
+              "flag": "wrecker_relation"
+            }
+          }
+        },
+        "fromfromfrom": {},
+        "immediate": {
+          "from": {}
+        }
+      }
+    },
+    "_source_file": "anomaly_events_2.txt",
+    "_line_number": 3263
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "anomaly.3115",
+      "title": "anomaly.3115.name",
+      "desc": "anomaly.3115.desc",
+      "picture": "GFX_evt_ruined_system",
+      "show_sound": "event_default",
+      "location": "root",
+      "trackable": "yes",
+      "event_chain": "wrecked_fleet_chain",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from": {
+          "has_star_flag": "wrecked_fleet_system"
+        },
+        "owner": {
+          "has_event_chain": "wrecked_fleet_chain",
+          "has_country_flag": "wrecked_fleet"
+        }
+      },
+      "immediate": {
+        "owner": {
+          "remove_point_of_interest": "wrecked_fleet_poi",
+          "save_event_target_as": "owner_species"
+        },
+        "from": {
+          "remove_star_flag": "wrecked_fleet_system",
+          "create_ambient_object": {
+            "type": "ancient_battlefield_object",
+            "location": "this"
+          },
+          "last_created_ambient_object": {
+            "save_event_target_as": "the_battlefield"
+          }
+        }
+      },
+      "option": {
+        "name": "anomaly.3115.a",
+        "event_target:the_battlefield": {
+          "enable_special_project": {
+            "name": "WRECKED_FLEET_2",
+            "location": "this",
+            "owner": "root.owner"
+          }
+        }
+      }
+    },
+    "_source_file": "anomaly_events_2.txt",
+    "_line_number": 3049
+  }
+}

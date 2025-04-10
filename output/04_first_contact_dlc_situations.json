@@ -1,0 +1,740 @@
+{
+  "situation_last_gift": {
+    "situation_last_gift": {
+      "picture": "GFX_evt_atmospheric_entry",
+      "complete_icon_frame": "GFX_situation_outcome_frame_red",
+      "complete_icon": "GFX_situation_exploding_planet",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_exploding_planet_outcome_approach",
+        "hidden_effect": {
+          "situation_event": {}
+        },
+        "on_monthly": {
+          "events": {}
+        },
+        "stages": {
+          "stage_1": {
+            "icon": "GFX_situation_stage_1",
+            "icon_background": "GFX_situation_stage_frame_red",
+            "end": "25",
+            "custom_tooltip": "stage_edge_of_solar_system"
+          },
+          "stage_2": {
+            "icon": "GFX_situation_stage_2",
+            "icon_background": "GFX_situation_stage_frame_red",
+            "end": "80",
+            "custom_tooltip": "stage_edge_of_solar_system",
+            "on_first_enter": {
+              "situation_event": {}
+            },
+            "stage_3": {
+              "icon": "GFX_situation_stage_3",
+              "icon_background": "GFX_situation_stage_frame_red",
+              "end": "100",
+              "custom_tooltip": "stage_entered_solar_system"
+            }
+          },
+          "approach": {
+            "name": "approach_stop_the_bullet",
+            "icon": "GFX_situation_approach_fist",
+            "icon_background": "GFX_situation_approach_bg_red",
+            "default": "yes",
+            "on_select": {
+              "custom_tooltip": "effect_stop_the_bullet"
+            }
+          },
+          "monthly_progress": {
+            "base": "2",
+            "modifier": {
+              "subtract": "0.5",
+              "desc": "controlled_shattering_tt",
+              "has_situation_flag": "controlled_shattering"
+            }
+          },
+          "abort_trigger": {
+            "OR": {
+              "NOT": {
+                "target.owner": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_first_contact_dlc_situations.txt",
+    "_line_number": 1
+  },
+  "situation_fotd_terraforming": {
+    "situation_fotd_terraforming": {
+      "picture": "GFX_evt_atmospheric_entry #Should never be player visible so will just use the same values as above.",
+      "complete_icon_frame": "GFX_situation_outcome_frame_red",
+      "complete_icon": "GFX_situation_exploding_planet",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_exploding_planet_outcome_approach",
+        "situation_event": {},
+        "stages": {
+          "stage_1": {
+            "icon": "GFX_situation_stage_1",
+            "icon_background": "GFX_situation_stage_frame_red",
+            "end": "10",
+            "custom_tooltip": "stage_edge_of_solar_system"
+          },
+          "stage_2": {
+            "icon": "GFX_situation_stage_2",
+            "icon_background": "GFX_situation_stage_frame_red",
+            "end": "50",
+            "on_first_enter": {
+              "situation_event": {}
+            },
+            "stage_3": {
+              "icon": "GFX_situation_stage_3",
+              "icon_background": "GFX_situation_stage_frame_red",
+              "end": "99",
+              "on_first_enter": {
+                "situation_event": {}
+              },
+              "stage_4": {
+                "icon": "GFX_situation_stage_3",
+                "icon_background": "GFX_situation_stage_frame_red",
+                "end": "100"
+              }
+            },
+            "approach": {
+              "name": "approach_stop_the_bullet",
+              "icon": "GFX_situation_approach_fist",
+              "icon_background": "GFX_situation_approach_bg_red",
+              "default": "yes",
+              "on_select": {
+                "custom_tooltip": "effect_stop_the_bullet"
+              }
+            },
+            "monthly_progress": {
+              "base": "0",
+              "modifier": {
+                "add": "0.05",
+                "desc": "deflecting_fields_tt",
+                "target.space_owner": {
+                  "has_ascension_perk": "ap_mastery_of_nature"
+                }
+              }
+            },
+            "abort_trigger": {
+              "OR": {
+                "NOT": {
+                  "target.owner": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_first_contact_dlc_situations.txt",
+    "_line_number": 80
+  },
+  "situation_observation_insight": {
+    "situation_observation_insight": {
+      "picture": "GFX_evt_friendly_enlightenment",
+      "complete_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_outcome_positive",
+      "category": "positive",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_insight_gain",
+        "hidden_effect": {
+          "situation_event": {}
+        },
+        "stages": {
+          "insights": {
+            "icon": "GFX_situation_stage_pre_ftl",
+            "icon_background": "GFX_situation_stage_frame_green",
+            "end": "100",
+            "custom_tooltip": "stage_insight_gathering"
+          }
+        },
+        "monthly_progress": {
+          "base": "0",
+          "modifier": {
+            "factor": "0.75",
+            "current_situation_approach": "approach_favor_mission",
+            "desc": "string_current_approach"
+          }
+        },
+        "approach": {
+          "name": "approach_favor_mission",
+          "icon": "GFX_situation_approach_research",
+          "icon_background": "GFX_situation_approach_bg_red",
+          "on_select": {
+            "custom_tooltip": "favor_mission_tt",
+            "owner": {
+              "remove_country_flag": "favored_insights",
+              "set_country_flag": "favored_mission"
+            }
+          },
+          "modifier": {
+            "station_observers_produces_mult": "0.5"
+          }
+        },
+        "abort_trigger": {
+          "owner": {
+            "count_pre_ftl_within_border": {
+              "limit": {
+                "count": "0"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_first_contact_dlc_situations.txt",
+    "_line_number": 195
+  },
+  "situation_pre_ftl_plague": {
+    "situation_pre_ftl_plague": {
+      "picture": "GFX_evt_disease_outbreak",
+      "complete_icon_frame": "GFX_situation_outcome_frame_blue",
+      "complete_icon": "GFX_situation_outcome_unknown",
+      "on_start": {
+        "set_situation_locked": "yes",
+        "target": {
+          "set_planet_flag": "has_on_going_observation_situation"
+        }
+      },
+      "on_abort": {
+        "set_situation_locked": "yes",
+        "situation_event": {
+          "target": {
+            "remove_planet_flag": "has_on_going_observation_situation"
+          }
+        },
+        "target_modifier": {
+          "biological_pop_happiness": "-0.25",
+          "biological_pop_growth_speed_reduction": "0.75"
+        },
+        "start_value": "0",
+        "stages": {
+          "situation_plague_stage_one": {
+            "icon": "GFX_situation_stage_1",
+            "icon_background": "GFX_situation_stage_frame_red",
+            "end": "35"
+          },
+          "situation_plague_stage_two": {
+            "icon": "GFX_situation_stage_2",
+            "icon_background": "GFX_situation_stage_frame_red",
+            "end": "70",
+            "on_first_enter": {
+              "situation_event": {}
+            },
+            "situation_plague_stage_three": {
+              "icon": "GFX_situation_stage_3",
+              "icon_background": "GFX_situation_stage_frame_red",
+              "end": "100",
+              "on_first_enter": {
+                "situation_event": {}
+              }
+            },
+            "on_progress_complete": {
+              "hidden_effect": {
+                "situation_event": {
+                  "target": {
+                    "remove_planet_flag": "has_on_going_observation_situation"
+                  }
+                },
+                "custom_tooltip": "situation_pre_ftl_plague_outcome_tooltip"
+              },
+              "monthly_progress": {
+                "base": "2",
+                "modifier": {
+                  "desc": "string_current_approach",
+                  "add": "1",
+                  "current_situation_approach": "approach_promote_disease"
+                }
+              },
+              "on_monthly": {
+                "random_events": {
+                  "85": "0",
+                  "15": "preftl.2061 # Random chance of killing a pop"
+                }
+              },
+              "approach": {
+                "name": "approach_promote_disease",
+                "icon": "GFX_situation_approach_this_is_fine",
+                "icon_background": "GFX_situation_approach_bg_red",
+                "on_select": {
+                  "if": {
+                    "limit": {
+                      "owner": {
+                        "has_policy_flag": "interference_not_allowed"
+                      }
+                    },
+                    "owner": {
+                      "set_policy": {
+                        "policy": "interference",
+                        "option": "interference_active",
+                        "cooldown": "yes"
+                      }
+                    }
+                  },
+                  "custom_tooltip": "approach_promote_disease_tooltip",
+                  "set_situation_flag": "promote_disease"
+                },
+                "allow": {
+                  "custom_tooltip": {
+                    "fail_text": "approach_singularity_tooltip_fail",
+                    "NOR": {
+                      "has_situation_flag": "provide_aid"
+                    }
+                  }
+                },
+                "resources": {
+                  "category": "situations",
+                  "upkeep": {
+                    "unity": "50",
+                    "society_research": "50"
+                  }
+                }
+              },
+              "abort_trigger": {
+                "OR": {
+                  "target": {
+                    "OR": {
+                      "has_observation_outpost": "no",
+                      "NOT": {}
+                    },
+                    "target.owner": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_first_contact_dlc_situations.txt",
+    "_line_number": 336
+  },
+  "situation_pre_ftl_singularity": {
+    "situation_pre_ftl_singularity": {
+      "picture": "GFX_evt_microscopic_life",
+      "complete_icon_frame": "GFX_situation_outcome_frame_blue",
+      "complete_icon": "GFX_situation_outcome_unknown",
+      "on_start": {
+        "set_situation_locked": "yes",
+        "target": {
+          "set_planet_flag": "has_on_going_observation_situation"
+        }
+      },
+      "on_abort": {
+        "target": {
+          "save_event_target_as": "singularity_planet",
+          "remove_planet_flag": "has_on_going_observation_situation"
+        },
+        "set_situation_locked": "yes",
+        "situation_event": {},
+        "on_progress_complete": {
+          "hidden_effect": {
+            "situation_event": {
+              "target": {
+                "remove_planet_flag": "has_on_going_observation_situation"
+              }
+            },
+            "set_situation_locked": "yes"
+          },
+          "target_modifier": {
+            "planet_stability_add": "-15"
+          },
+          "start_value": "0",
+          "stages": {
+            "situation_singularity_stage_one": {
+              "icon": "GFX_situation_stage_1",
+              "icon_background": "GFX_situation_stage_frame_red",
+              "end": "100"
+            }
+          },
+          "on_monthly": {
+            "events": {}
+          },
+          "monthly_progress": {
+            "base": "2",
+            "modifier": {
+              "desc": "string_current_approach",
+              "add": "1",
+              "has_situation_flag": "exponential_growth"
+            }
+          },
+          "approach": {
+            "name": "approach_promote_singularity",
+            "icon": "GFX_situation_approach_genetics",
+            "icon_background": "GFX_situation_approach_bg_yellow",
+            "on_select": {
+              "if": {
+                "limit": {
+                  "owner": {
+                    "has_policy_flag": "interference_not_allowed"
+                  }
+                },
+                "owner": {
+                  "set_policy": {
+                    "policy": "interference",
+                    "option": "interference_active",
+                    "cooldown": "yes"
+                  }
+                }
+              },
+              "custom_tooltip": "approach_promote_singularity_tooltip",
+              "set_situation_flag": "promote_singularity"
+            },
+            "allow": {
+              "custom_tooltip": "approach_allow_tooltip",
+              "hidden_trigger": {
+                "NOR": {
+                  "has_situation_flag": "prevent_singularity"
+                }
+              }
+            },
+            "resources": {
+              "category": "situations",
+              "upkeep": {
+                "unity": "50",
+                "physics_research": "50"
+              }
+            }
+          },
+          "abort_trigger": {
+            "OR": {
+              "NOT": {
+                "target.owner": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_first_contact_dlc_situations.txt",
+    "_line_number": 546
+  },
+  "situation_pre_ftl_nwo": {
+    "situation_pre_ftl_nwo": {
+      "picture": "GFX_evt_open_revolt",
+      "complete_icon_frame": "GFX_situation_outcome_frame_blue",
+      "complete_icon": "GFX_situation_outcome_unknown",
+      "on_start": {
+        "set_situation_locked": "yes",
+        "target": {
+          "set_planet_flag": "has_on_going_observation_situation"
+        }
+      },
+      "on_abort": {
+        "target": {
+          "save_event_target_as": "singularity_planet",
+          "remove_planet_flag": "has_on_going_observation_situation"
+        },
+        "situation_event": {},
+        "on_progress_complete": {
+          "hidden_effect": {
+            "target": {
+              "remove_planet_flag": "has_on_going_observation_situation"
+            },
+            "switch": {
+              "trigger": "current_situation_approach",
+              "approach_watch_nwo": {
+                "random_list": {
+                  "50": {
+                    "situation_event": {},
+                    "50": {
+                      "situation_event": {}
+                    }
+                  },
+                  "approach_aid_leader": {
+                    "random_list": {
+                      "75": {
+                        "modifier": {
+                          "add": "15",
+                          "OR": {
+                            "has_situation_flag": "aid_leader_06"
+                          }
+                        },
+                        "situation_event": {},
+                        "25": {
+                          "modifier": {
+                            "add": "-15",
+                            "OR": {
+                              "has_situation_flag": "aid_leader_06"
+                            }
+                          },
+                          "situation_event": {}
+                        }
+                      },
+                      "approach_aid_rebels": {
+                        "random_list": {
+                          "75": {
+                            "modifier": {
+                              "add": "15",
+                              "OR": {
+                                "has_situation_flag": "aid_rebels_06"
+                              }
+                            },
+                            "situation_event": {},
+                            "25": {
+                              "modifier": {
+                                "add": "-15",
+                                "OR": {
+                                  "has_situation_flag": "aid_rebels_06"
+                                }
+                              },
+                              "situation_event": {}
+                            }
+                          }
+                        }
+                      },
+                      "set_situation_locked": "yes"
+                    },
+                    "target_modifier": {
+                      "planet_stability_add": "-15",
+                      "pop_happiness": "-0.10"
+                    },
+                    "start_value": "0",
+                    "stages": {
+                      "situation_nwo_stage_one": {
+                        "icon": "GFX_situation_stage_1",
+                        "icon_background": "GFX_situation_stage_frame_red",
+                        "end": "25",
+                        "target_modifier": {
+                          "planet_stability_add": "-5",
+                          "pop_happiness": "-0.05"
+                        }
+                      },
+                      "situation_nwo_stage_two": {
+                        "icon": "GFX_situation_stage_2",
+                        "icon_background": "GFX_situation_stage_frame_red",
+                        "end": "50",
+                        "target_modifier": {
+                          "planet_stability_add": "-10",
+                          "pop_happiness": "-0.10"
+                        },
+                        "on_first_enter": {
+                          "switch": {
+                            "trigger": "current_situation_approach",
+                            "approach_watch_nwo": {
+                              "random_list": {
+                                "50": {
+                                  "situation_event": {},
+                                  "50": {
+                                    "situation_event": {}
+                                  }
+                                },
+                                "approach_aid_leader": {
+                                  "random_list": {
+                                    "60": {
+                                      "situation_event": {},
+                                      "40": {
+                                        "situation_event": {}
+                                      }
+                                    },
+                                    "approach_aid_rebels": {
+                                      "random_list": {
+                                        "60": {
+                                          "situation_event": {},
+                                          "40": {
+                                            "situation_event": {}
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "situation_nwo_stage_three": {
+                                    "icon": "GFX_situation_stage_3",
+                                    "icon_background": "GFX_situation_stage_frame_red",
+                                    "end": "75",
+                                    "target_modifier": {
+                                      "planet_stability_add": "-15",
+                                      "pop_happiness": "-0.25"
+                                    },
+                                    "on_first_enter": {
+                                      "switch": {
+                                        "trigger": "current_situation_approach",
+                                        "approach_watch_nwo": {
+                                          "random_list": {
+                                            "50": {
+                                              "situation_event": {},
+                                              "50": {
+                                                "situation_event": {}
+                                              }
+                                            },
+                                            "approach_aid_leader": {
+                                              "random_list": {
+                                                "60": {
+                                                  "modifier": {
+                                                    "add": "10",
+                                                    "OR": {
+                                                      "has_situation_flag": "aid_leader_02"
+                                                    }
+                                                  },
+                                                  "situation_event": {},
+                                                  "40": {
+                                                    "modifier": {
+                                                      "add": "-10",
+                                                      "OR": {
+                                                        "has_situation_flag": "aid_leader_02"
+                                                      }
+                                                    },
+                                                    "situation_event": {}
+                                                  }
+                                                },
+                                                "approach_aid_rebels": {
+                                                  "random_list": {
+                                                    "60": {
+                                                      "modifier": {
+                                                        "add": "10",
+                                                        "OR": {
+                                                          "has_situation_flag": "aid_rebels_02"
+                                                        }
+                                                      },
+                                                      "situation_event": {},
+                                                      "40": {
+                                                        "modifier": {
+                                                          "add": "-10",
+                                                          "OR": {
+                                                            "has_situation_flag": "aid_rebels_02"
+                                                          }
+                                                        },
+                                                        "situation_event": {}
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "situation_nwo_stage_four": {
+                                                "icon": "GFX_situation_stage_4",
+                                                "icon_background": "GFX_situation_stage_frame_red",
+                                                "end": "100",
+                                                "target_modifier": {
+                                                  "planet_stability_add": "-20",
+                                                  "pop_happiness": "-0.30"
+                                                },
+                                                "on_first_enter": {
+                                                  "switch": {
+                                                    "trigger": "current_situation_approach",
+                                                    "approach_watch_nwo": {
+                                                      "random_list": {
+                                                        "50": {
+                                                          "situation_event": {},
+                                                          "50": {
+                                                            "situation_event": {}
+                                                          }
+                                                        },
+                                                        "approach_aid_leader": {
+                                                          "random_list": {
+                                                            "60": {
+                                                              "modifier": {
+                                                                "add": "10",
+                                                                "OR": {
+                                                                  "has_situation_flag": "aid_leader_04"
+                                                                }
+                                                              },
+                                                              "situation_event": {},
+                                                              "40": {
+                                                                "modifier": {
+                                                                  "add": "-10",
+                                                                  "OR": {
+                                                                    "has_situation_flag": "aid_leader_04"
+                                                                  }
+                                                                },
+                                                                "situation_event": {}
+                                                              }
+                                                            },
+                                                            "approach_aid_rebels": {
+                                                              "random_list": {
+                                                                "60": {
+                                                                  "modifier": {
+                                                                    "add": "10",
+                                                                    "OR": {
+                                                                      "has_situation_flag": "aid_rebels_04"
+                                                                    }
+                                                                  },
+                                                                  "situation_event": {},
+                                                                  "40": {
+                                                                    "modifier": {
+                                                                      "add": "-10",
+                                                                      "OR": {
+                                                                        "has_situation_flag": "aid_rebels_04"
+                                                                      }
+                                                                    },
+                                                                    "situation_event": {}
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "monthly_progress": {
+                                                          "base": "2"
+                                                        },
+                                                        "approach": {
+                                                          "name": "approach_aid_rebels",
+                                                          "icon": "GFX_situation_approach_suspicious",
+                                                          "icon_background": "GFX_situation_approach_bg_yellow",
+                                                          "on_select": {
+                                                            "if": {
+                                                              "limit": {
+                                                                "owner": {
+                                                                  "has_policy_flag": "interference_not_allowed"
+                                                                }
+                                                              },
+                                                              "owner": {
+                                                                "set_policy": {
+                                                                  "policy": "interference",
+                                                                  "option": "interference_active",
+                                                                  "cooldown": "yes"
+                                                                }
+                                                              }
+                                                            },
+                                                            "custom_tooltip": "approach_aid_rebels_tooltip",
+                                                            "set_situation_flag": "aid_rebels"
+                                                          },
+                                                          "resources": {
+                                                            "category": "situations",
+                                                            "upkeep": {
+                                                              "unity": "25",
+                                                              "energy": "100",
+                                                              "minerals": "100",
+                                                              "alloys": "50"
+                                                            }
+                                                          }
+                                                        },
+                                                        "abort_trigger": {
+                                                          "OR": {
+                                                            "NOT": {
+                                                              "target.owner": {}
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_first_contact_dlc_situations.txt",
+    "_line_number": 726
+  }
+}

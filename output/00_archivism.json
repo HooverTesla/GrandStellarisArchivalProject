@@ -1,0 +1,28 @@
+{
+  "tradition_archivism": {
+    "tradition_archivism": {
+      "tree_template": "tree_11_12",
+      "adoption_bonus": "tr_archivism_adopt",
+      "finish_bonus": "tr_archivism_finish",
+      "potential": {
+        "has_grand_archive_dlc": "yes"
+      },
+      "traditions": {},
+      "ai_weight": {
+        "base": "0",
+        "modifier": {
+          "add": "5",
+          "count_exhibit": {
+            "limit": {}
+          },
+          "modifier": {
+            "factor": "5",
+            "is_galactic_curators_empire": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "00_archivism.txt",
+    "_line_number": 2
+  }
+}

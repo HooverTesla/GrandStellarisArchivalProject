@@ -1,0 +1,481 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "action.740",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "from"
+      },
+      "immediate": {
+        "if": {
+          "limit": {
+            "exists": "this"
+          },
+          "create_message": {
+            "type": "TOAST_TRUCE_IS_OVER",
+            "localization": "TOAST_TRUCE_IS_OVER_DESC",
+            "days": "@toast_important_message_days",
+            "target": "from",
+            "variable": {
+              "type": "name",
+              "localization": "ENEMY",
+              "scope": "from"
+            }
+          },
+          "from": {
+            "create_message": {
+              "type": "TOAST_TRUCE_IS_OVER",
+              "localization": "TOAST_TRUCE_IS_OVER_DESC",
+              "days": "@toast_important_message_days",
+              "target": "root",
+              "variable": {
+                "type": "name",
+                "localization": "ENEMY",
+                "scope": "root"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "on_action_events_2.txt",
+    "_line_number": 3686
+  },
+  "event": {
+    "event": {
+      "id": "action.720",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_lithoids": "yes",
+        "any_playable_country": {
+          "has_valid_civic": "civic_void_hive"
+        }
+      },
+      "immediate": {
+        "every_playable_country": {
+          "limit": {
+            "has_valid_civic": "civic_void_hive",
+            "NOT": {},
+            "random_system_within_border": {
+              "limit": {
+                "any_system_planet": {
+                  "NOT": {
+                    "has_planet_flag": "has_megastructure"
+                  },
+                  "OR": {
+                    "AND": {
+                      "has_deposit_for": "shipclass_research_station",
+                      "has_research_station": "no"
+                    }
+                  }
+                }
+              },
+              "system_event": {},
+              "set_timed_country_flag": {
+                "flag": "void_hive_cooldown",
+                "days": "95"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "on_action_events_2.txt",
+    "_line_number": 3346
+  },
+  "pop_event": {
+    "pop_event": {
+      "id": "action.122",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from": {},
+        "immediate": {
+          "from": {
+            "if": {
+              "limit": {
+                "observation_outpost": {
+                  "owner": {
+                    "save_event_target_as": "obsv_post_owner",
+                    "country_event": {},
+                    "dismantle": "yes"
+                  }
+                }
+              },
+              "owner": {
+                "if": {
+                  "limit": {
+                    "OR": {
+                      "NOT": {
+                        "NOT": {}
+                      },
+                      "save_event_target_as": "abductor",
+                      "country_event": {}
+                    },
+                    "from": {
+                      "solar_system": {
+                        "if": {
+                          "limit": {
+                            "space_owner": {
+                              "if": {
+                                "limit": {
+                                  "NOT": {
+                                    "OR": {
+                                      "NOT": {
+                                        "NOT": {}
+                                      },
+                                      "country_event": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "on_action_events_2.txt",
+    "_line_number": 975
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "action.655",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "is_pre_ftl_colony_type": "yes"
+      },
+      "immediate": {
+        "if": {
+          "limit": {
+            "owner": {
+              "is_machine_empire": "yes"
+            }
+          },
+          "set_colony_type": "col_default_machine"
+        },
+        "else": {
+          "set_colony_type": "col_default"
+        }
+      }
+    },
+    "_source_file": "on_action_events_2.txt",
+    "_line_number": 3322
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "action.223",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "starbase"
+      },
+      "immediate": {
+        "starbase": {
+          "if": {
+            "limit": {
+              "owner": {
+                "is_gestalt": "yes"
+              }
+            },
+            "remove_starbase_building": {
+              "building": "offworld_trading_company"
+            },
+            "remove_starbase_module": {
+              "module": "trading_hub"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "on_action_events_2.txt",
+    "_line_number": 1768
+  },
+  "starbase_event": {
+    "starbase_event": {
+      "id": "action.503",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "trigger": {
+        "is_orbital_ring": "yes"
+      },
+      "immediate": {
+        "from": {
+          "solar_system": {
+            "spawn_megastructure": {
+              "type": "orbital_ring_ruined",
+              "planet": "prev"
+            }
+          },
+          "set_planet_flag": "ruined_orbital_ring_planet"
+        }
+      }
+    },
+    "_source_file": "on_action_events_2.txt",
+    "_line_number": 3097
+  },
+  "system_event": {
+    "system_event": {
+      "id": "action.725",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "random_system_planet": {
+          "limit": {
+            "NOT": {
+              "has_planet_flag": "has_megastructure"
+            },
+            "OR": {
+              "AND": {
+                "has_deposit_for": "shipclass_research_station",
+                "has_research_station": "no"
+              }
+            }
+          },
+          "if": {
+            "limit": {
+              "has_deposit_for": "shipclass_mining_station"
+            },
+            "create_mining_station": {
+              "if": {
+                "limit": {
+                  "has_resource": {
+                    "space_owner": {
+                      "NOR": {
+                        "has_technology": "tech_mine_exotic_gases",
+                        "has_modifier": "reduce_gas_output"
+                      }
+                    }
+                  },
+                  "space_owner": {
+                    "add_modifier": {}
+                  },
+                  "if": {
+                    "limit": {
+                      "has_resource": {
+                        "space_owner": {
+                          "NOR": {
+                            "has_technology": "tech_mine_rare_crystals",
+                            "has_modifier": "reduce_crystal_output"
+                          }
+                        }
+                      },
+                      "space_owner": {
+                        "add_modifier": {}
+                      },
+                      "if": {
+                        "limit": {
+                          "has_resource": {
+                            "space_owner": {
+                              "NOR": {
+                                "has_technology": "tech_mine_volatile_motes",
+                                "has_modifier": "reduce_motes_output"
+                              }
+                            }
+                          },
+                          "space_owner": {
+                            "add_modifier": {}
+                          },
+                          "if": {
+                            "limit": {
+                              "has_resource": {
+                                "space_owner": {
+                                  "NOR": {
+                                    "has_technology": "tech_mine_living_metal",
+                                    "has_modifier": "reduce_living_metal_output"
+                                  }
+                                }
+                              },
+                              "space_owner": {
+                                "add_modifier": {}
+                              }
+                            },
+                            "else": {
+                              "create_research_station": {
+                                "if": {
+                                  "limit": {
+                                    "has_resource": {
+                                      "space_owner": {
+                                        "NOR": {
+                                          "has_technology": "tech_mine_zro",
+                                          "has_modifier": "reduce_zro_output"
+                                        }
+                                      }
+                                    },
+                                    "space_owner": {
+                                      "add_modifier": {}
+                                    },
+                                    "if": {
+                                      "limit": {
+                                        "has_resource": {
+                                          "space_owner": {
+                                            "NOR": {
+                                              "has_technology": "tech_mine_dark_matter",
+                                              "has_modifier": "reduce_dark_matter_output"
+                                            }
+                                          }
+                                        },
+                                        "space_owner": {
+                                          "add_modifier": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "on_action_events_2.txt",
+    "_line_number": 3391
+  },
+  "espionage_operation_event": {
+    "espionage_operation_event": {
+      "id": "action.330",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "trigger": {
+        "exists": "spynetwork.target",
+        "spynetwork.target": {
+          "has_active_tradition": "tr_subterfuge_double_agents"
+        }
+      },
+      "immediate": {
+        "spynetwork.target": {
+          "add_intel": {
+            "who": "root.owner",
+            "amount": "10"
+          },
+          "create_message": {
+            "type": "ESPIONAGE_INTEL_GAINED",
+            "localization": "ESPIONAGE_INTEL_GAINED_DESC",
+            "variable": {
+              "type": "name",
+              "localization": "COUNTRY",
+              "scope": "root.owner"
+            },
+            "days": "30",
+            "target": "root.owner.capital_scope"
+          }
+        }
+      }
+    },
+    "_source_file": "on_action_events_2.txt",
+    "_line_number": 2299
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "action.430",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "any_controlled_ship": {
+            "is_ship_class": "shipclass_science_ship"
+          },
+          "exists": "leader",
+          "solar_system": {
+            "NOT": {
+              "is_surveyed": {
+                "who": "root.owner",
+                "status": "no"
+              }
+            }
+          },
+          "immediate": {
+            "solar_system": {
+              "set_star_flag": "into_the_unknown_flag_@root.owner"
+            },
+            "owner": {
+              "change_variable": {
+                "which": "into_the_unknown_counter",
+                "value": "1"
+              },
+              "if": {
+                "limit": {
+                  "check_variable": {
+                    "which": "into_the_unknown_counter",
+                    "value >": "10"
+                  }
+                },
+                "set_country_flag": "into_the_unknown_achievement"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "on_action_events_2.txt",
+    "_line_number": 2440
+  },
+  "agreement_event": {
+    "agreement_event": {
+      "id": "action.451",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {},
+      "immediate": {
+        "target": {}
+      }
+    },
+    "_source_file": "on_action_events_2.txt",
+    "_line_number": 2683
+  },
+  "first_contact_event": {
+    "first_contact_event": {
+      "id": "action.635",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "is_country_type": "default",
+          "NOT": {},
+          "contact_country": {
+            "NOR": {
+              "has_country_flag": "radical_cult",
+              "is_country_type": "primitive",
+              "is_guardian_country": "yes",
+              "has_relation_flag": {
+                "has_relation_flag": {
+                  "has_relation_flag": {
+                    "has_country_flag": "day_0"
+                  }
+                }
+              },
+              "immediate": {
+                "contact_country": {
+                  "save_event_target_as": "contact_country"
+                },
+                "owner": {
+                  "country_event": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "on_action_events_2.txt",
+    "_line_number": 3235
+  }
+}

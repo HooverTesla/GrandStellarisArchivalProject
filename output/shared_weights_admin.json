@@ -1,0 +1,22 @@
+{
+  "modifier": {
+    "modifier": {
+      "add": "5",
+      "has_building": "building_league_offices"
+    },
+    "_source_file": "shared_weights_admin.txt",
+    "_line_number": 0
+  },
+  "complex_trigger_modifier": {
+    "complex_trigger_modifier": {
+      "trigger": "num_buildings",
+      "parameters": {
+        "type": "building_fe_administration_2"
+      },
+      "mode": "add",
+      "mult": "@fe2_jobs"
+    },
+    "_source_file": "shared_weights_admin.txt",
+    "_line_number": 46
+  }
+}

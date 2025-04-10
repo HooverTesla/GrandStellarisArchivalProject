@@ -1,0 +1,412 @@
+{
+  "ship_event": {
+    "ship_event": {
+      "id": "fircon.5025",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from.owner": {
+          "has_country_flag": "solarpunk_country"
+        },
+        "owner": {
+          "NOT": {}
+        },
+        "immediate": {
+          "from": {
+            "if": {
+              "limit": {
+                "has_observation_outpost": "yes"
+              },
+              "observation_outpost": {
+                "set_event_locked": "yes"
+              }
+            }
+          },
+          "owner": {
+            "set_country_flag": "observed_solarpunk",
+            "country_event": {}
+          }
+        }
+      }
+    },
+    "_source_file": "first_contact_dlc_events.txt",
+    "_line_number": 6281
+  },
+  "event": {
+    "event": {
+      "id": "fircon.10",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_first_contact_dlc": "yes",
+        "any_playable_country": {
+          "has_country_flag": "built_observation_post"
+        }
+      },
+      "immediate": {
+        "every_playable_country": {
+          "limit": {
+            "has_country_flag": "built_observation_post",
+            "NOR": {
+              "has_country_flag": "pending_insight_tech"
+            }
+          },
+          "clear_variable": "observation_post_insight",
+          "if": {
+            "limit": {
+              "NOT": {},
+              "set_variable": {
+                "which": "observation_insight_change_comparator",
+                "value": "0"
+              }
+            },
+            "if": {
+              "limit": {
+                "NOT": {},
+                "set_variable": {
+                  "which": "observation_post_insight",
+                  "value": "0"
+                }
+              },
+              "if": {
+                "limit": {
+                  "NOT": {},
+                  "set_variable": {
+                    "which": "observation_insight_change",
+                    "value": "0"
+                  }
+                },
+                "every_pre_ftl_within_border": {
+                  "limit": {
+                    "capital_scope": {
+                      "NOT": {},
+                      "if": {
+                        "limit": {
+                          "capital_scope": {
+                            "observation_outpost": {
+                              "has_mission": "passive_observation"
+                            }
+                          }
+                        },
+                        "prev": {
+                          "change_variable": {
+                            "which": "observation_post_insight",
+                            "value": "0.5"
+                          }
+                        }
+                      },
+                      "else": {
+                        "prev": {
+                          "change_variable": {
+                            "which": "observation_post_insight",
+                            "value": "1"
+                          }
+                        }
+                      }
+                    },
+                    "if": {
+                      "limit": {
+                        "check_variable": {
+                          "which": "observation_post_insight"
+                        }
+                      },
+                      "if": {
+                        "limit": {
+                          "count_situation": {
+                            "limit": {
+                              "is_situation_type": "situation_observation_insight"
+                            },
+                            "count": "0"
+                          }
+                        },
+                        "start_situation": {
+                          "type": "situation_observation_insight",
+                          "target": "this",
+                          "effect": {
+                            "owner": {
+                              "switch": {
+                                "trigger": "has_country_flag",
+                                "favored_insights": {
+                                  "prev": {},
+                                  "favored_mission": {
+                                    "prev": {},
+                                    "default": {
+                                      "prev": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "first_contact_dlc_events.txt",
+    "_line_number": 35
+  },
+  "situation_event": {
+    "situation_event": {
+      "id": "fircon.2600",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_first_contact_dlc": "yes",
+        "NOT": {
+          "has_global_flag": "inteplanetary_flight_ongoing"
+        },
+        "owner": {
+          "NOT": {
+            "has_country_flag": "fircon_2600_fired"
+          },
+          "OR": {
+            "pre_ftl_is_observed_with": {
+              "MISSION": "specimen_collection"
+            }
+          },
+          "has_pre_ftl_age": "early_space_age",
+          "capital_scope.solar_system": {
+            "any_system_planet": {
+              "is_star": "no",
+              "is_moon": "no",
+              "is_colony": "no #So they don't go to your planet or their homeworld"
+            }
+          }
+        }
+      },
+      "immediate": {
+        "set_global_flag": "inteplanetary_flight_ongoing",
+        "owner": {
+          "set_country_flag": "fircon_1495_fired #So you can't have both ship events on a single nation",
+          "save_event_target_as": "pre_ftl_country",
+          "species": {
+            "save_event_target_as": "pre_ftl_species"
+          },
+          "capital_scope": {
+            "save_event_target_as": "pre_ftl_planet",
+            "observation_outpost_owner": {
+              "save_event_target_as": "observing_empire # AKA the player",
+              "country_event": {
+                "id": "fircon.2605",
+                "days": "5",
+                "random": "25"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "first_contact_dlc_events.txt",
+    "_line_number": 5244
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "fircon.5040",
+      "title": "fircon.5040.name",
+      "desc": "fircon.5040.desc",
+      "diplomatic": "yes",
+      "diplomatic_title": "BLANK_STRING",
+      "show_sound": "event_red_alert",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from": {
+          "has_star_flag": "solarpunk_mad",
+          "NOT": {
+            "has_star_flag": "solarpunk_returned"
+          }
+        },
+        "owner": {
+          "NOT": {
+            "has_country_flag": "solarpunk_country"
+          }
+        }
+      },
+      "picture_event_data": {
+        "portrait": "from.space_owner.ruler",
+        "planet_background": "from.space_owner.capital_scope",
+        "graphical_culture": "from.space_owner",
+        "city_level": "from.space_owner.capital_scope",
+        "room": "from.space_owner"
+      },
+      "immediate": {
+        "from": {
+          "set_star_flag": "solarpunk_returned",
+          "space_owner": {
+            "set_country_flag": "solarpunk_returned"
+          }
+        },
+        "every_country": {
+          "establish_communications_no_message": "from.space_owner"
+        }
+      },
+      "option": {
+        "name": "ACTION_STATIONS",
+        "custom_tooltip": "fircon.5040.a.tt",
+        "hidden_effect": {
+          "from": {
+            "every_neighbor_system_euclidean": {
+              "limit": {
+                "distance": {
+                  "source": "root.from",
+                  "type": "euclidean",
+                  "min_distance >": "1",
+                  "max_distance <": "40"
+                }
+              },
+              "add_hyperlane": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "first_contact_dlc_events.txt",
+    "_line_number": 6520
+  },
+  "country_event": {
+    "country_event": {
+      "id": "fircon.8560",
+      "title": "fircon.8560.name",
+      "desc": "fircon.8560.desc",
+      "picture": "GFX_evt_signing",
+      "show_sound": "event_galactic_community",
+      "is_triggered_only": "yes",
+      "location": "event_target:preftl_different_flavors_planet",
+      "trigger": {
+        "exists": "event_target:preftl_different_flavors_planet"
+      },
+      "option": {
+        "name": "fircon.8560.a",
+        "event_target:preftl_different_flavors_country": {
+          "add_opinion_modifier": {
+            "who": "ROOT",
+            "modifier": "opinion_flavors_up"
+          }
+        }
+      },
+      "after": {
+        "set_observation_events_unlocked": "yes"
+      }
+    },
+    "_source_file": "first_contact_dlc_events.txt",
+    "_line_number": 9827
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "fircon.5035",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_owner": "yes",
+        "owner": {
+          "has_country_flag": "solarpunk_country",
+          "is_primitive": "yes"
+        }
+      },
+      "immediate": {
+        "from": {
+          "every_owned_army": {
+            "limit": {
+              "OR": {
+                "AND": {
+                  "exists": "solar_system",
+                  "solar_system": {
+                    "has_star_flag": "solarpunk_system_02"
+                  }
+                }
+              }
+            },
+            "owner": {
+              "remove_army": "yes"
+            }
+          },
+          "solar_system": {
+            "set_star_flag": "solarpunk_mad",
+            "every_system_planet": {
+              "if": {
+                "limit": {
+                  "has_observation_outpost": "yes"
+                },
+                "observation_outpost": {
+                  "dismantle": "yes"
+                }
+              }
+            },
+            "every_fleet_in_system": {
+              "limit": {
+                "is_mobile": "yes"
+              },
+              "owner": {
+                "set_mia": "mia_return_home"
+              },
+              "if": {
+                "limit": {
+                  "exists": "starbase"
+                },
+                "starbase": {
+                  "set_owner": "root.owner"
+                }
+              }
+            },
+            "random_system": {
+              "limit": {
+                "has_star_flag": "solarpunk_system_01"
+              },
+              "set_star_flag": "solarpunk_mad",
+              "remove_hyperlane": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "first_contact_dlc_events.txt",
+    "_line_number": 6398
+  },
+  "first_contact_event": {
+    "first_contact_event": {
+      "id": "fircon.1221",
+      "title": "fircon.1221.name",
+      "desc": "fircon.1221.desc",
+      "picture": "GFX_evt_worrying_signal",
+      "show_sound": "event_alien_nature",
+      "is_triggered_only": "yes",
+      "first_contact": "yes",
+      "immediate": {
+        "set_site_progress_locked": "yes"
+      },
+      "after": {
+        "set_site_progress_locked": "no"
+      },
+      "option": {
+        "name": "INTERESTING",
+        "add_stage_clues": "-1"
+      }
+    },
+    "_source_file": "first_contact_dlc_events.txt",
+    "_line_number": 618
+  },
+  "system_event": {
+    "system_event": {
+      "id": "fircon.3500",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "immediate": {
+        "spawn_system": {
+          "min_distance >": "30",
+          "max_distance <": "75",
+          "direction": "rimwards",
+          "initializer": "the_chosen_home_initializer",
+          "hyperlane": "no"
+        }
+      }
+    },
+    "_source_file": "first_contact_dlc_events.txt",
+    "_line_number": 5748
+  }
+}

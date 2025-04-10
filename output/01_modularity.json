@@ -1,0 +1,26 @@
+{
+  "tradition_modularity": {
+    "tradition_modularity": {
+      "tree_template": "tree_12_11_11",
+      "adoption_bonus": "tr_modularity_adopt",
+      "finish_bonus": "tr_modularity_finish",
+      "potential": {
+        "has_machine_age_dlc": "yes",
+        "OR": {
+          "is_machine_empire": "yes",
+          "is_individual_machine": "yes"
+        },
+        "NOR": {
+          "has_tradition": "tr_virtuality_adopt",
+          "has_ascension_perk": "ap_organo_machine_interfacing_assimilator"
+        }
+      },
+      "traditions": {},
+      "ai_weight": {
+        "factor": "1000"
+      }
+    },
+    "_source_file": "01_modularity.txt",
+    "_line_number": 2
+  }
+}

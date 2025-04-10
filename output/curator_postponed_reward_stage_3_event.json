@@ -1,0 +1,64 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "$EVENT_ID$",
+      "base": "leviathans.500",
+      "desc_clear": "yes",
+      "option_clear": "yes",
+      "desc": {
+        "trigger": {
+          "if": {
+            "limit": {
+              "event_target:curator_enclave_country": {
+                "has_country_flag": "gave_relic_$RELIC_5$"
+              }
+            },
+            "text": "$LOCALIZATION_ID$.desc.3.no_relic.$CATEGORY$"
+          },
+          "else": {
+            "text": "$EVENT_ID$.desc"
+          }
+        }
+      },
+      "immediate": {
+        "if": {
+          "limit": {
+            "set_country_flag": "rolled_relics_for_$CATEGORY$",
+            "roll_selected_$CATEGORY$_relic": "yes"
+          }
+        },
+        "inline_script": {
+          "script": "grand_archive/collection/stage_3_reward_options_by_category",
+          "EVENT_ID": "$LOCALIZATION_ID$",
+          "CATEGORY": "$CATEGORY$",
+          "TRIGGER": "is_eligible_for_collection_stage_3_reward",
+          "RELIC_1": "$RELIC_1$",
+          "RELIC_2": "$RELIC_2$",
+          "RELIC_3": "$RELIC_3$",
+          "RELIC_4": "$RELIC_4$",
+          "RELIC_5": "$RELIC_5$",
+          "RESOURCE": "$RESOURCE$",
+          "RESOURCE_MULT": "$RESOURCE_MULT$"
+        },
+        "_comments": [
+          "# Back"
+        ],
+        "option": {
+          "name": "leviathans.506.d",
+          "hidden_effect": {
+            "country_event": {}
+          },
+          "_comments": [
+            "# Goodbye"
+          ],
+          "option": {
+            "name": "GOODBYE",
+            "default_hide_option": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "curator_postponed_reward_stage_3_event.txt",
+    "_line_number": 4
+  }
+}

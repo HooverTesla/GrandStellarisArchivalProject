@@ -1,0 +1,196 @@
+{
+  "planet_event": {
+    "planet_event": {
+      "id": "toxoids.8024",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_planet_flag": "toxic_knights_habitat",
+        "original_owner": "yes"
+      },
+      "immediate": {
+        "owner": {}
+      }
+    },
+    "_source_file": "toxoids_events.txt",
+    "_line_number": 3490
+  },
+  "situation_event": {
+    "situation_event": {
+      "id": "toxoids.8010",
+      "title": "toxoids.8010.name",
+      "desc": "toxoids.8010.desc",
+      "picture": "GFX_evt_knights",
+      "show_sound": "evn_tox_knights_of_the_toxic_god",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "NOT": {}
+        },
+        "immediate": {
+          "owner": {
+            "set_country_flag": "hundread_years_quest"
+          }
+        },
+        "option": {
+          "name": "toxoids.8010.a",
+          "allow": {
+            "owner": {
+              "resource_stockpile_compare": {
+                "resource_stockpile_compare": {}
+              },
+              "owner": {
+                "add_resource": {
+                  "add_resource": {
+                    "add_modifier": {
+                      "modifier": "motivated_knights",
+                      "days": "1800"
+                    }
+                  }
+                },
+                "option": {
+                  "name": "toxoids.8010.c",
+                  "owner": {
+                    "add_resource": {
+                      "add_resource": {},
+                      "custom_tooltip": "toxoids.8010.c.tooltip",
+                      "hidden_effect": {
+                        "destroy_situation": "this",
+                        "owner": {
+                          "set_country_flag": "quest_abandoned",
+                          "random_owned_planet": {
+                            "limit": {
+                              "while": {
+                                "limit": {
+                                  "has_district": "district_orders_demesne"
+                                },
+                                "remove_district": "district_orders_demesne"
+                              },
+                              "remove_building": "building_order_keep"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "toxoids_events.txt",
+    "_line_number": 3179
+  },
+  "country_event": {
+    "country_event": {
+      "id": "toxoids.8025",
+      "title": "toxoids.8025.name",
+      "desc": "toxoids.8025.desc",
+      "picture": "GFX_evt_knights",
+      "show_sound": "evn_tox_knights_of_the_toxic_god",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_origin": "origin_toxic_knights",
+        "has_country_flag": "toxic_knights_lost_keep",
+        "NOT": {
+          "has_country_flag": "toxic_knights_destroyed_keep"
+        },
+        "any_owned_planet": {
+          "has_planet_flag": "toxic_knights_habitat"
+        }
+      },
+      "immediate": {
+        "remove_country_flag": "toxic_knights_lost_keep",
+        "random_situation": {
+          "limit": {
+            "is_situation_type": "situation_toxic_knights",
+            "_comments": [
+              "#is_owned_by = root"
+            ]
+          },
+          "set_situation_locked": "no"
+        }
+      },
+      "option": {
+        "name": "toxoids.8025.a"
+      }
+    },
+    "_source_file": "toxoids_events.txt",
+    "_line_number": 3507
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "toxoids.500",
+      "title": "toxoids.500.name",
+      "desc": {
+        "text": "toxoids.500.desc.1",
+        "trigger": {
+          "NOT": {}
+        },
+        "desc": {
+          "text": "toxoids.500.desc.2",
+          "trigger": {
+            "from": {},
+            "option": {
+              "name": "FASCINATING",
+              "custom_tooltip": "TOXIC_TERRAFORMING_CANDIDATE_EFFECT"
+            }
+          },
+          "picture": "GFX_evt_toxic",
+          "location": "FROM",
+          "is_triggered_only": "yes"
+        }
+      }
+    },
+    "_source_file": "toxoids_events.txt",
+    "_line_number": 457
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "toxoids.7312",
+      "title": "toxoids.7312.name",
+      "desc": "toxoids.7312.desc\" # Just open hyperlane",
+      "picture": "GFX_evt_toxic_god",
+      "show_sound": "event_bad_omen",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from": {
+          "has_star_flag": "guardian_toxic_god_system"
+        },
+        "controller": {
+          "has_origin": "origin_toxic_knights",
+          "NOT": {},
+          "OR": {
+            "has_global_flag": "toxic_god_killed",
+            "NOT": {
+              "from": {
+                "any_fleet_in_system": {}
+              }
+            }
+          },
+          "immediate": {
+            "controller": {
+              "set_country_flag": "visited_toxic_god_system",
+              "remove_point_of_interest": "toxoid_knights_finisher.poi"
+            }
+          },
+          "option": {
+            "name": "toxoids.7312.A",
+            "custom_tooltip": "toxoids.7312.tooltip",
+            "add_modifier": {
+              "modifier": "despair_of_the_knightly_order"
+            },
+            "hidden_effect": {
+              "controller": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "toxoids_events.txt",
+    "_line_number": 2717
+  }
+}

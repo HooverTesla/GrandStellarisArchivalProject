@@ -1,0 +1,171 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "ancrel.13130",
+      "title": "ancrel.13130.name",
+      "desc": "ancrel.13130.desc",
+      "picture": "GFX_evt_alien_nature",
+      "show_sound": "event_dig_site",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "ancrel.13130.b",
+        "add_monthly_resource_mult": {
+          "resource": "unity",
+          "value": "@tier3unityreward",
+          "min": "@tier3unitymin",
+          "max": "@tier3unitymax"
+        },
+        "_comments": [
+          "#flag for anomaly hookup"
+        ],
+        "owner": {
+          "set_global_flag": "fumongus_resolved",
+          "set_country_flag": "fumongus_ours"
+        }
+      }
+    },
+    "_source_file": "ancient_relics_arcsite_events_2.txt",
+    "_line_number": 9421
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "ancrel.15025",
+      "title": "ancrel.15025.name",
+      "desc": "ancrel.15025.desc",
+      "picture": "GFX_evt_ancient_databank",
+      "show_sound": "event_metal_fatigue",
+      "archaeology": "yes",
+      "is_triggered_only": "yes",
+      "specimen": "fish_in_the_sea_sheet_music",
+      "immediate": {
+        "from": {},
+        "after": {
+          "from": {},
+          "option": {
+            "name": "ancrel.15025.a",
+            "small_artifact_reward": "no",
+            "owner": {
+              "add_modifier": {
+                "modifier": "harmonious_crew",
+                "days": "-1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "ancient_relics_arcsite_events_2.txt",
+    "_line_number": 10373
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "ancrel.15010",
+      "title": "ancrel.15010.name",
+      "desc": "ancrel.15010.desc",
+      "picture": "GFX_evt_archaeology_camp",
+      "show_sound": "event_dig_site",
+      "pre_triggers": {
+        "has_owner": "yes",
+        "is_homeworld": "no",
+        "original_owner": "yes",
+        "is_ai": "no",
+        "has_ground_combat": "no",
+        "is_capital": "no",
+        "is_occupied_flag": "no"
+      },
+      "trigger": {
+        "OR": {
+          "is_planet_class": "pc_continental"
+        },
+        "NOT": {
+          "NOR": {
+            "has_global_flag": "arc_transformation",
+            "has_planet_flag": "suppress_archaeological_sites"
+          }
+        },
+        "is_triggered_only": "yes",
+        "immediate": {
+          "set_global_flag": "arc_transformation",
+          "set_planet_flag": "colony_event"
+        },
+        "option": {
+          "name": "CURIOUS",
+          "create_archaeological_site": "site_transformation_dig"
+        }
+      }
+    },
+    "_source_file": "ancient_relics_arcsite_events_2.txt",
+    "_line_number": 9994
+  },
+  "event": {
+    "event": {
+      "id": "ancrel.12050",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "immediate": {
+        "random_list": {
+          "2": {
+            "1": {
+              "random_rim_system": {
+                "system_event": {}
+              },
+              "1": {
+                "modifier": {
+                  "factor": "0",
+                  "num_ai_empires_setting": "0"
+                },
+                "random_rim_system": {
+                  "system_event": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "ancient_relics_arcsite_events_2.txt",
+    "_line_number": 8348
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "ancrel.12060",
+      "title": "ancrel.12060.name",
+      "desc": "ancrel.12060.desc",
+      "picture": "GFX_evt_machine_space_battle",
+      "show_sound": "event_red_alert",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from": {
+          "has_star_flag": "surveillance_supercomputer_system",
+          "any_fleet_in_system": {
+            "owner": {}
+          }
+        },
+        "option": {
+          "name": "BATTLESTATIONS"
+        }
+      }
+    },
+    "_source_file": "ancient_relics_arcsite_events_2.txt",
+    "_line_number": 8403
+  },
+  "system_event": {
+    "system_event": {
+      "id": "ancrel.12055",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "immediate": {
+        "spawn_system": {
+          "min_distance >": "50",
+          "max_distance <": "100",
+          "direction": "rimwards",
+          "initializer": "surveillance_supercomputer_system",
+          "hyperlane": "no"
+        }
+      }
+    },
+    "_source_file": "ancient_relics_arcsite_events_2.txt",
+    "_line_number": 8382
+  }
+}

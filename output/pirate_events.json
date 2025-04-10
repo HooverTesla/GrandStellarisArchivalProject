@@ -1,0 +1,174 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "pirate.155",
+      "title": "pirate.155.name",
+      "desc": {
+        "text": "pirate.155.desc.regular",
+        "trigger": {},
+        "desc": {
+          "text": "pirate.155.desc.machine",
+          "trigger": {},
+          "desc": {
+            "text": "pirate.155.desc.hive",
+            "trigger": {
+              "exists": "event_target:thalassocracy_country",
+              "from": {
+                "is_same_value": "event_target:thalassocracy_country",
+                "has_country_flag": "spawned_fleet"
+              },
+              "NOR": {
+                "has_communications": "from",
+                "has_country_flag": "met_thalassocracy"
+              }
+            },
+            "is_triggered_only": "yes",
+            "diplomatic": "yes",
+            "picture_event_data": {
+              "portrait": "event_target:thalassocracy_species",
+              "room": "ethic_spaceship_room"
+            },
+            "show_sound": "event_ship_bridge",
+            "location": "event_target:thalassocracy_target_system",
+            "immediate": {
+              "establish_communications_no_message": "event_target:thalassocracy_country",
+              "set_country_flag": "met_thalassocracy"
+            },
+            "option": {
+              "name": "pirate.155.pacifist",
+              "trigger": {},
+              "option": {
+                "name": "pirate.155.machine",
+                "trigger": {},
+                "option": {
+                  "name": "pirate.155.corp",
+                  "trigger": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "pirate_events.txt",
+    "_line_number": 1961
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "pirate.70",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "is_ship_class": "shipclass_starbase",
+        "exists": "from",
+        "from": {
+          "owner": {
+            "is_country_type": "pirate",
+            "NOT": {}
+          },
+          "solar_system": {
+            "NOT": {
+              "any_fleet_in_system": {}
+            }
+          },
+          "immediate": {
+            "solar_system": {
+              "random_system_planet": {},
+              "create_fleet": {
+                "name": "NAME_Pirate_Station",
+                "effect": {
+                  "set_owner": "from.owner",
+                  "create_ship": {
+                    "name": "random",
+                    "design": "NAME_Pirate_Nest",
+                    "graphical_culture": "pirate_01"
+                  },
+                  "set_location": "event_target:pirate_base_location"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "pirate_events.txt",
+    "_line_number": 1757
+  },
+  "event": {
+    "event": {
+      "id": "pirate.100",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "end_game_years_passed >": "0",
+        "any_system": {
+          "has_system_trade_value >": "180"
+        }
+      },
+      "immediate": {
+        "random_list": {
+          "1": {
+            "event_target:global_event_country": {
+              "country_event": {}
+            },
+            "_comments": [
+              "# More pirate encounters can be added here"
+            ],
+            "6": {}
+          }
+        }
+      }
+    },
+    "_source_file": "pirate_events.txt",
+    "_line_number": 1803
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "pirate.20",
+      "hide_window": "yes",
+      "trigger": {
+        "NOT": {
+          "exists": "solar_system",
+          "is_same_value": "event_target:young_blood",
+          "solar_system": {},
+          "mean_time_to_happen": {
+            "immediate": {
+              "random_country": {
+                "limit": {
+                  "is_country_type": "default"
+                },
+                "capital_scope": {},
+                "if": {
+                  "limit": {
+                    "NOT": {
+                      "exists": "event_target:target_capital"
+                    }
+                  },
+                  "break": "yes"
+                },
+                "queue_actions": {
+                  "repeat": {
+                    "find_closest_system": {
+                      "trigger": {
+                        "id": "pirate.20.c",
+                        "has_star_flag": "pirate_home_system"
+                      },
+                      "found_system": {
+                        "move_to": "this"
+                      }
+                    },
+                    "wait": {
+                      "duration": "10"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "pirate_events.txt",
+    "_line_number": 773
+  }
+}

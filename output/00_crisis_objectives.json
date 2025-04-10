@@ -1,0 +1,267 @@
+{
+  "crisobj_destroy_empires": {
+    "crisobj_destroy_empires": {
+      "reward": {
+        "base": "500",
+        "complex_trigger_modifier": {
+          "trigger": "count_playable_country",
+          "mode": "subtract",
+          "mult": "25"
+        },
+        "round_to": "50 \t#we want a solid number",
+        "min": "100 \t\t#and we don't want less than 100"
+      }
+    },
+    "_source_file": "00_crisis_objectives.txt",
+    "_line_number": 26
+  },
+  "crisobj_destroy_enemy_ships": {
+    "crisobj_destroy_enemy_ships": {
+      "reward": {
+        "base": "3000",
+        "divide": "trigger:num_galaxy_systems \t#on huge, this is 3. On smallest, it is 15",
+        "round": "yes \t\t\t\t\t\t\t#we don't want 3.124 menace",
+        "min": "3\t\t\t\t\t\t\t\t\t#just in case"
+      }
+    },
+    "_source_file": "00_crisis_objectives.txt",
+    "_line_number": 39
+  },
+  "crisobj_destroy_starbases": {
+    "crisobj_destroy_starbases": {
+      "reward": {
+        "base": "3000",
+        "divide": "trigger:num_galaxy_systems \t#on huge, this is 3. On smallest, it is 15",
+        "round": "yes \t\t\t\t\t\t\t#we don't want 3.124 menace",
+        "min": "3\t\t\t\t\t\t\t\t\t#just in case"
+      }
+    },
+    "_source_file": "00_crisis_objectives.txt",
+    "_line_number": 48
+  },
+  "crisobj_purge_pops": {
+    "crisobj_purge_pops": {
+      "reward": {
+        "base": "3000",
+        "divide": "trigger:num_galaxy_systems \t#on huge, this is 3. On smallest, it is 15",
+        "complex_trigger_modifier": {
+          "trigger": "check_galaxy_setup_value",
+          "parameters": {
+            "mode": "divide"
+          },
+          "round": "yes \t\t\t\t\t\t\t#we don't want 3.124 menace",
+          "min": "3\t\t\t\t\t\t\t\t\t#just in case"
+        }
+      }
+    },
+    "_source_file": "00_crisis_objectives.txt",
+    "_line_number": 57
+  },
+  "crisobj_destroy_worlds": {
+    "crisobj_destroy_worlds": {
+      "reward": {
+        "base": "100000",
+        "divide": "trigger:num_galaxy_systems \t#on huge, this is 100. On smallest, it is 500",
+        "complex_trigger_modifier": {
+          "trigger": "check_galaxy_setup_value",
+          "parameters": {
+            "mode": "divide"
+          },
+          "round_to": "50 \t\t\t\t\t\t\t\t#we don't want 127.5 menace",
+          "min": "100\t\t\t\t\t\t\t\t\t#just in case"
+        }
+      }
+    },
+    "_source_file": "00_crisis_objectives.txt",
+    "_line_number": 71
+  },
+  "crisobj_conquer_worlds": {
+    "crisobj_conquer_worlds": {
+      "reward": {
+        "base": "150000",
+        "divide": "trigger:num_galaxy_systems \t#on huge, this is 150. On smallest, it is 750",
+        "complex_trigger_modifier": {
+          "trigger": "check_galaxy_setup_value",
+          "parameters": {
+            "mode": "divide"
+          },
+          "round_to": "50 \t\t\t\t\t\t\t\t#we don't want 127.5 menace",
+          "min": "150\t\t\t\t\t\t\t\t\t#just in case"
+        }
+      }
+    },
+    "_source_file": "00_crisis_objectives.txt",
+    "_line_number": 85
+  },
+  "crisobj_vassalise_empires": {
+    "crisobj_vassalise_empires": {
+      "reward": {
+        "base": "500",
+        "complex_trigger_modifier": {
+          "trigger": "count_playable_country",
+          "mode": "subtract",
+          "mult": "25"
+        },
+        "round_to": "50 \t#we want a solid number",
+        "min": "100 \t\t#and we don't want less than 100"
+      }
+    },
+    "_source_file": "00_crisis_objectives.txt",
+    "_line_number": 99
+  },
+  "crisobj_have_vassals": {
+    "crisobj_have_vassals": {
+      "reward": {
+        "base": "50",
+        "complex_trigger_modifier": {
+          "trigger": "count_playable_country",
+          "mode": "subtract",
+          "mult": "2.5"
+        },
+        "round_to": "5 \t#we want a solid number",
+        "min": "10 \t\t#and we don't want less than 10"
+      },
+      "recurring": "yes"
+    },
+    "_source_file": "00_crisis_objectives.txt",
+    "_line_number": 112
+  },
+  "crisobj_perform_upsetting_operations": {
+    "crisobj_perform_upsetting_operations": {
+      "reward": {
+        "base": "50",
+        "complex_trigger_modifier": {
+          "trigger": "count_playable_country",
+          "mode": "subtract",
+          "mult": "2.5"
+        },
+        "round_to": "5 \t#we want a solid number",
+        "min": "10 \t\t#and we don't want less than 10"
+      }
+    },
+    "_source_file": "00_crisis_objectives.txt",
+    "_line_number": 126
+  },
+  "crisobj_be_in_breach_of_galcom_law": {
+    "crisobj_be_in_breach_of_galcom_law": {
+      "reward": {
+        "base": "250",
+        "complex_trigger_modifier": {
+          "trigger": "count_galcom_member",
+          "mode": "add",
+          "mult": "8"
+        },
+        "round_to": "10 \t#we want a solid number",
+        "min": "50 \t\t#and we don't want less than 50"
+      },
+      "recurring": "yes"
+    },
+    "_source_file": "00_crisis_objectives.txt",
+    "_line_number": 139
+  },
+  "crisobj_neural_chips": {
+    "crisobj_neural_chips": {
+      "reward": {
+        "base": "0",
+        "add": "cosmogenesis_world_advanced_logic_produced",
+        "round": "yes \t\t\t\t\t\t\t#we don't want 3.124 menace",
+        "min": "0\t\t\t\t\t\t\t\t#just in case"
+      },
+      "recurring": "yes"
+    },
+    "_source_file": "00_crisis_objectives.txt",
+    "_line_number": 161
+  },
+  "crisobj_research_tech": {
+    "crisobj_research_tech": {
+      "reward": {
+        "base": "200",
+        "complex_trigger_modifier": {
+          "trigger": "count_playable_country",
+          "mode": "subtract",
+          "mult": "10"
+        },
+        "round_to": "5\t#we want a solid number",
+        "min": "25\t\t#and we don't want less than 50"
+      }
+    },
+    "_source_file": "00_crisis_objectives.txt",
+    "_line_number": 171
+  },
+  "crisobj_research_thesis": {
+    "crisobj_research_thesis": {
+      "reward": {
+        "base": "10000",
+        "complex_trigger_modifier": {
+          "trigger": "count_playable_country",
+          "mode": "subtract",
+          "mult": "200"
+        },
+        "round_to": "500 \t#we want a solid number",
+        "min": "1000 \t\t#and we don't want less than 1000"
+      }
+    },
+    "_source_file": "00_crisis_objectives.txt",
+    "_line_number": 184
+  },
+  "crisobj_have_scholarium_vassals": {
+    "crisobj_have_scholarium_vassals": {
+      "potential": {
+        "has_overlord_dlc": "yes"
+      },
+      "reward": {
+        "base": "250",
+        "complex_trigger_modifier": {
+          "trigger": "count_playable_country",
+          "mode": "subtract",
+          "mult": "10"
+        },
+        "round_to": "50 \t#we want a solid number",
+        "min": "50\t\t#and we don't want less than 50"
+      },
+      "recurring": "yes"
+    },
+    "_source_file": "00_crisis_objectives.txt",
+    "_line_number": 197
+  },
+  "crisobj_have_science_nexuses": {
+    "crisobj_have_science_nexuses": {
+      "potential": {
+        "has_utopia": "yes"
+      },
+      "reward": {
+        "base": "800",
+        "complex_trigger_modifier": {
+          "trigger": "count_playable_country",
+          "mode": "subtract",
+          "mult": "50"
+        },
+        "round_to": "200 \t#we want a solid number",
+        "min": "200\t\t#and we don't want less than 200"
+      },
+      "recurring": "yes"
+    },
+    "_source_file": "00_crisis_objectives.txt",
+    "_line_number": 214
+  },
+  "crisobj_galcom_science_resolution": {
+    "crisobj_galcom_science_resolution": {
+      "potential": {
+        "has_federations_dlc": "yes"
+      },
+      "reward": {
+        "base": "100",
+        "complex_trigger_modifier": {
+          "trigger": "count_playable_country",
+          "mode": "subtract",
+          "mult": "2.5"
+        },
+        "round_to": "10 \t#we want a solid number",
+        "min": "50 \t\t#and we don't want less than 50"
+      },
+      "recurring": "yes"
+    },
+    "_source_file": "00_crisis_objectives.txt",
+    "_line_number": 231
+  }
+}

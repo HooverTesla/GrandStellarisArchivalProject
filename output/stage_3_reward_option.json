@@ -1,0 +1,62 @@
+{
+  "option": {
+    "option": {
+      "name": "grand_archive.4105.3.$SELECTED_RELIC$",
+      "trigger": {
+        "$TRIGGER$_$CATEGORY$": "yes",
+        "has_country_flag": "selected_relic_$SELECTED_RELIC$",
+        "event_target:curator_enclave_country": {
+          "NOT": {}
+        },
+        "allow": {
+          "has_resource": {
+            "custom_tooltip": {
+              "fail_text": "give_relic_edgecase_tt",
+              "event_target:curator_enclave_country": {
+                "NOT": {}
+              }
+            },
+            "add_resource": {
+              "add_relic": {
+                "key": "$SELECTED_RELIC$",
+                "full_description": "yes"
+              },
+              "hidden_effect": {
+                "event_target:curator_enclave_country": {
+                  "set_country_flag": "gave_relic_$SELECTED_RELIC$"
+                },
+                "set_country_flag": "received_collection_stage_3_reward_$CATEGORY$",
+                "remove_country_flag": "selected_relic_$SELECTED_RELIC$",
+                "_comments": [
+                  "# Cleanup"
+                ],
+                "if": {
+                  "limit": {
+                    "remove_country_flag": "selected_relic_$OTHER_RELIC_1$"
+                  },
+                  "else_if": {
+                    "limit": {
+                      "remove_country_flag": "selected_relic_$OTHER_RELIC_2$"
+                    },
+                    "else_if": {
+                      "limit": {
+                        "remove_country_flag": "selected_relic_$OTHER_RELIC_3$"
+                      },
+                      "else_if": {
+                        "limit": {
+                          "remove_country_flag": "selected_relic_$OTHER_RELIC_4$"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "stage_3_reward_option.txt",
+    "_line_number": -1
+  }
+}

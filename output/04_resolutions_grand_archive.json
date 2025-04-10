@@ -1,0 +1,290 @@
+{
+  "resolution_voidworm_eradication": {
+    "resolution_voidworm_eradication": {
+      "icon": "GFX_resolution_voidworm_eradication",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_denounce"
+        }
+      },
+      "target": "no",
+      "effect": {
+        "custom_tooltip": "resolution_voidworm_eradication_tooltip",
+        "hidden_effect": {
+          "set_global_flag": "galactic_community_resolution_passed",
+          "country_event": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_passed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "fail_effects": {
+            "hidden_effect": {
+              "set_timed_country_flag": {
+                "add_modifier": {
+                  "modifier": "resolution_failed_diplomatic_weight",
+                  "days": "2200"
+                }
+              }
+            },
+            "potential": {
+              "has_federations_dlc": "yes",
+              "has_grand_archive_dlc": "yes",
+              "NOT": {},
+              "allow": {
+                "custom_tooltip": {
+                  "fail_text": "resolution_already_active",
+                  "NOT": {}
+                },
+                "active": {
+                  "count_system": {
+                    "limit": {}
+                  },
+                  "breach": {
+                    "has_country_flag": "resolution_breached_voidworms_inside_borders",
+                    "NOT": {},
+                    "ai_weight": {
+                      "base": "@resolution_weight_disliked",
+                      "modifier": {
+                        "factor": "0.5",
+                        "has_origin": "origin_fruitful",
+                        "desc": "gal_com_opposing_origin"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_grand_archive.txt",
+    "_line_number": 14
+  },
+  "resolution_repeal_voidworm_eradication": {
+    "resolution_repeal_voidworm_eradication": {
+      "icon": "GFX_repeal_red",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_denounce"
+        }
+      },
+      "target": "no",
+      "fire_and_forget": "yes",
+      "effect": {
+        "custom_tooltip": "resolution_repeal_voidworm_eradication_effect_success",
+        "hidden_effect": {
+          "cancel_resolution": "resolution_voidworm_eradication",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "is_active_resolution": "resolution_voidworm_eradication"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_disliked",
+            "modifier": {
+              "factor": "10",
+              "in_breach_of": "resolution_voidworm_eradication",
+              "desc": "gal_com_in_breach_of_proposed_resolution"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_grand_archive.txt",
+    "_line_number": 123
+  },
+  "resolution_cutholoid_eradication": {
+    "resolution_cutholoid_eradication": {
+      "icon": "GFX_resolution_cutholoid_eradication",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_denounce"
+        }
+      },
+      "target": "no",
+      "effect": {
+        "custom_tooltip": "resolution_cutholoid_eradication_tooltip",
+        "hidden_effect": {
+          "set_global_flag": "galactic_community_resolution_passed",
+          "country_event": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_passed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "fail_effects": {
+            "hidden_effect": {
+              "set_timed_country_flag": {
+                "add_modifier": {
+                  "modifier": "resolution_failed_diplomatic_weight",
+                  "days": "2200"
+                }
+              }
+            },
+            "potential": {
+              "has_federations_dlc": "yes",
+              "has_grand_archive_dlc": "yes",
+              "exists": "event_target:cutholoids_country",
+              "any_country": {
+                "has_established_contact": "event_target:cutholoids_country"
+              }
+            },
+            "allow": {
+              "custom_tooltip": {
+                "fail_text": "resolution_already_active",
+                "NOT": {}
+              },
+              "active": {
+                "always": "yes"
+              },
+              "breach": {
+                "NOT": {
+                  "has_country_flag": "resolution_breached_cutholoids_inside_borders"
+                },
+                "ai_weight": {
+                  "base": "@resolution_weight_disliked",
+                  "modifier": {
+                    "factor": "0",
+                    "has_origin": "origin_fruitful",
+                    "desc": "gal_com_opposing_origin"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_grand_archive.txt",
+    "_line_number": 219
+  },
+  "resolution_repeal_cutholoid_eradication": {
+    "resolution_repeal_cutholoid_eradication": {
+      "icon": "GFX_repeal_red",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_denounce"
+        }
+      },
+      "target": "no",
+      "fire_and_forget": "yes",
+      "effect": {
+        "custom_tooltip": "resolution_repeal_cutholoid_eradication_effect_success",
+        "hidden_effect": {
+          "cancel_resolution": "resolution_cutholoid_eradication",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "is_active_resolution": "resolution_cutholoid_eradication"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_disliked",
+            "modifier": {
+              "factor": "10",
+              "in_breach_of": "resolution_cutholoid_eradication",
+              "desc": "gal_com_in_breach_of_proposed_resolution"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_grand_archive.txt",
+    "_line_number": 328
+  },
+  "resolution_galactic_focus_crisis_voidworm_plague": {
+    "resolution_galactic_focus_crisis_voidworm_plague": {
+      "icon": "GFX_resolution_emergency_measure",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t1"
+        }
+      },
+      "target": "no",
+      "effect": {
+        "custom_tooltip": "resolution_galactic_focus_crisis_voidworm_plague_effect_success",
+        "hidden_effect": {
+          "repeal_all_galactic_focus_resolutions": "yes",
+          "set_global_flag": "galactic_community_resolution_passed",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_grand_archive_dlc": "yes",
+            "is_voidworms_crisis_active": "yes",
+            "NOT": {},
+            "active": {
+              "is_voidworms_crisis_active": "yes"
+            },
+            "ai_weight": {
+              "base": "@resolution_weight_normal",
+              "modifier": {
+                "factor": "0.5",
+                "is_xenophobe": "yes",
+                "desc": "ethic_xenophobe"
+              },
+              "_comments": [
+                "# ------------------------------------------------------------------",
+                "# All civic version has an entry so the correct name is used",
+                "# ------------------------------------------------------------------"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_grand_archive.txt",
+    "_line_number": 429
+  }
+}

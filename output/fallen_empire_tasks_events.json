@@ -1,0 +1,55 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "fallen_empires_tasks.24",
+      "title": "fallen_empires_tasks.24.name",
+      "desc": "fallen_empires_tasks.24.desc",
+      "is_triggered_only": "yes",
+      "diplomatic": "yes",
+      "picture_event_data": {
+        "portrait": "event_target:FallenEmpireTaskOrigin",
+        "planet_background": "event_target:FallenEmpireTaskOrigin",
+        "graphical_culture": "event_target:FallenEmpireTaskOrigin",
+        "city_level": "event_target:FallenEmpireTaskOrigin",
+        "room": "event_target:FallenEmpireTaskOrigin.ruler"
+      },
+      "option": {
+        "name": "fallen_empires_tasks.24.a",
+        "ai_chance": {
+          "factor": "100"
+        },
+        "custom_tooltip": "fallen_empire_happy_tooltip",
+        "hidden_effect": {
+          "event_target:FallenEmpireTaskOrigin": {
+            "event_target:FallenEmpireTaskOrigin": {
+              "random_owned_planet": {
+                "limit": {
+                  "has_planet_flag": "fe_the_preserve"
+                },
+                "create_pop": {
+                  "species": "event_target:FallenEmpireDeadSpecies",
+                  "ethos": "random"
+                }
+              }
+            },
+            "event_target:FallenEmpireDeadSpecies": {
+              "set_country_flag": "limbo_revived"
+            }
+          },
+          "option": {
+            "name": "fallen_empires_tasks.24.b",
+            "ai_chance": {
+              "factor": "10"
+            },
+            "custom_tooltip": "fallen_empire_unhappy_tooltip",
+            "hidden_effect": {
+              "hidden_effect": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "fallen_empire_tasks_events.txt",
+    "_line_number": 2145
+  }
+}

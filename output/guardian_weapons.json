@@ -1,0 +1,83 @@
+{
+  "projectile_gfx_beam": {
+    "projectile_gfx_beam": {
+      "name": "toxic_god_beam_weapon",
+      "color": {
+        "hit_entity": "toxic_god_perdition_beam_hit_entity",
+        "shield_hit_entity": "toxic_god_perdition_beam_shield_hit_entity",
+        "muzzle_flash_entity": "toxic_god_perdition_beam_muzzle_entity",
+        "windup_entity": "toxic_god_perdition_beam_windup_entity",
+        "width": "10.0",
+        "_comments": [
+          "#beam specific data"
+        ],
+        "texture_scroll_speed": "1.0",
+        "texture_tiling": "5.5",
+        "hit": {
+          "alpha_curve": {},
+          "duration": "3.0"
+        },
+        "miss": {
+          "alpha_curve": {},
+          "duration": "1.5"
+        },
+        "texture": "gfx/models/combat_items/ion_cannon_diffuse.dds",
+        "shield_impact": {
+          "size": "large",
+          "loop_duration": "0.5",
+          "delay": "0.2"
+        }
+      }
+    },
+    "_source_file": "guardian_weapons.txt",
+    "_line_number": 500
+  },
+  "projectile_gfx_ballistic": {
+    "projectile_gfx_ballistic": {
+      "name": "toxic_god_strike_craft_weapon",
+      "_comments": [
+        "#common for all types of projectiles"
+      ],
+      "color": {
+        "hit_entity": "toxic_god_strike_craft_hit_entity",
+        "shield_hit_entity": "toxic_god_strike_craft_shield_hit_entity",
+        "muzzle_flash_entity": "toxic_god_strike_craft_muzzle_entity",
+        "shield_impact": {
+          "size": "small",
+          "delay": "0.0"
+        },
+        "entity": "toxic_god_strike_craft_projectile_entity",
+        "_comments": [
+          "#ballistic specific"
+        ],
+        "speed": "200.0\t\t\t#preferred speed of the projectile",
+        "max_duration": "2.0\t\t#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds"
+      }
+    },
+    "_source_file": "guardian_weapons.txt",
+    "_line_number": 577
+  },
+  "projectile_gfx_missile": {
+    "projectile_gfx_missile": {
+      "name": "stellarite_missile",
+      "_comments": [
+        "#common for all types of projectiles"
+      ],
+      "color": {
+        "hit_entity": "stellarite_plasma_hit_entity",
+        "shield_hit_entity": "stellarite_plasma_shield_hit_entity",
+        "muzzle_flash_entity": "stellarite_plasma_muzzle_entity",
+        "entity": "stellarite_missile_entity",
+        "_comments": [
+          "#missile specific data"
+        ],
+        "shield_impact": {
+          "size": "medium",
+          "delay": "0"
+        }
+      }
+    },
+    "_source_file": "guardian_weapons.txt",
+    "_line_number": 334
+  }
+}

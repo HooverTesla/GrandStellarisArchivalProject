@@ -1,0 +1,199 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "paragon_2.2135",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "last_increased_tech": "tech_galactic_administration"
+      },
+      "immediate": {
+        "set_government_cooldown": "no"
+      }
+    },
+    "_source_file": "paragon_events_2.txt",
+    "_line_number": 913
+  },
+  "leader_event": {
+    "leader_event": {
+      "id": "paragon_2.1021",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "trigger": {
+        "exists": "owner"
+      },
+      "immediate": {
+        "if": {
+          "_comments": [
+            "# Double check that leader still has pending negative traits."
+          ],
+          "limit": {
+            "NOT": {
+              "check_variable_arithmetic": {},
+              "add_trait": "random_negative",
+              "_comments": [
+                "# Add a Negative trait and reduce Pending negative traits counter here, so it matches negative traits actually added."
+              ],
+              "subtract_variable": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "paragon_events_2.txt",
+    "_line_number": 242
+  },
+  "event": {
+    "event": {
+      "id": "paragon_2.1140",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "every_playable_country": {
+          "every_owned_leader": {
+            "limit": {
+              "has_trait": "leader_trait_shroud_preacher",
+              "exists": "planet"
+            },
+            "planet": {
+              "random_owned_pop": {
+                "limit": {
+                  "is_organic_species": "yes",
+                  "is_being_assimilated": "no",
+                  "NOR": {
+                    "has_trait": "trait_psionic"
+                  }
+                },
+                "modify_species": {
+                  "add_trait": "trait_latent_psionic"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "paragon_events_2.txt",
+    "_line_number": 363
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "paragon_2.2003",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "leader",
+        "leader": {
+          "has_trait": "leader_trait_midas_touch"
+        }
+      },
+      "immediate": {
+        "owner": {
+          "every_owned_leader": {
+            "limit": {
+              "leader_class": "scientist"
+            },
+            "add_experience": "300"
+          }
+        }
+      }
+    },
+    "_source_file": "paragon_events_2.txt",
+    "_line_number": 529
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "paragon_2.2085",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_ground_combat_attacker": {
+          "exists": "leader",
+          "leader": {
+            "has_trait": "leader_trait_chainbreaker"
+          }
+        }
+      },
+      "immediate": {
+        "while": {
+          "count": "value:slaves_on_planet",
+          "random_list": {
+            "70": {
+              "random_owned_pop": {
+                "limit": {
+                  "is_enslaved": "yes"
+                },
+                "save_event_target_as": "rebel_army_pop"
+              },
+              "create_army": {
+                "name": "random",
+                "owner": "FROM",
+                "species": "event_target:rebel_army_pop",
+                "type": "rebel_army"
+              }
+            },
+            "30": {}
+          }
+        }
+      }
+    },
+    "_source_file": "paragon_events_2.txt",
+    "_line_number": 615
+  },
+  "first_contact_event": {
+    "first_contact_event": {
+      "id": "paragon_2.2100",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_paragon_dlc": "yes",
+        "owner": {
+          "from": {
+            "OR": {
+              "owner": {
+                "is_homicidal": "no",
+                "is_gestalt": "no",
+                "NOT": {},
+                "from": {
+                  "is_homicidal": "no",
+                  "is_gestalt": "no",
+                  "NOT": {}
+                }
+              },
+              "immediate": {
+                "owner": {
+                  "if": {
+                    "limit": {
+                      "is_homicidal": "no",
+                      "is_gestalt": "no",
+                      "NOT": {},
+                      "add_tech_progress": {
+                        "tech": "tech_xeno_linguistics",
+                        "progress": "0.25"
+                      }
+                    }
+                  },
+                  "from": {
+                    "if": {
+                      "limit": {
+                        "is_homicidal": "no",
+                        "is_gestalt": "no",
+                        "NOT": {},
+                        "add_tech_progress": {
+                          "tech": "tech_xeno_linguistics",
+                          "progress": "0.25"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "paragon_events_2.txt",
+    "_line_number": 674
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "create_marauder_merc_admiral": {
+    "create_marauder_merc_admiral": {
+      "create_leader": {
+        "class": "commander",
+        "species": "event_target:marauder_species",
+        "name": "random",
+        "event_leader": "yes",
+        "can_manually_change_location": "no",
+        "hide_leader": "yes",
+        "can_assign_to_council": "no",
+        "skill": "3",
+        "leader_age_min": "25",
+        "leader_age_max": "45",
+        "traits": {
+          "0": "leader_trait_mercenary_warrior"
+        }
+      },
+      "last_created_leader": {
+        "set_leader_flag": "marauder_merc_leader"
+      }
+    },
+    "_source_file": "mercenary_fleet_effects.txt",
+    "_line_number": 18
+  },
+  "create_armada_of_the_voidborn": {
+    "create_armada_of_the_voidborn": {
+      "while": {
+        "count": "6",
+        "create_ship": {
+          "name": "random",
+          "design": "NAME_Void_Champion",
+          "prefix": "no",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "mercenary_fleet_effects.txt",
+    "_line_number": 40
+  },
+  "create_star_rider_flotilla": {
+    "create_star_rider_flotilla": {
+      "while": {
+        "count": "4",
+        "create_ship": {
+          "name": "random",
+          "prefix": "no",
+          "design": "NAME_Void_Champion",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "mercenary_fleet_effects.txt",
+    "_line_number": 71
+  },
+  "create_first_storm_wing": {
+    "create_first_storm_wing": {
+      "while": {
+        "count": "2",
+        "create_ship": {
+          "name": "random",
+          "prefix": "no",
+          "design": "NAME_Void_Champion",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "mercenary_fleet_effects.txt",
+    "_line_number": 102
+  },
+  "create_dwamak_bashers": {
+    "create_dwamak_bashers": {
+      "while": {
+        "count": "6",
+        "create_ship": {
+          "name": "random",
+          "design": "NAME_Void_Champion",
+          "prefix": "no",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "mercenary_fleet_effects.txt",
+    "_line_number": 133
+  },
+  "create_unhinged_screamer_flotilla": {
+    "create_unhinged_screamer_flotilla": {
+      "while": {
+        "count": "4",
+        "create_ship": {
+          "name": "random",
+          "prefix": "no",
+          "design": "NAME_Void_Champion",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "mercenary_fleet_effects.txt",
+    "_line_number": 164
+  },
+  "create_frenzied_volunteer_squadron": {
+    "create_frenzied_volunteer_squadron": {
+      "while": {
+        "count": "2",
+        "create_ship": {
+          "name": "random",
+          "prefix": "no",
+          "design": "NAME_Void_Champion",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "mercenary_fleet_effects.txt",
+    "_line_number": 195
+  },
+  "create_her_chosen_champions": {
+    "create_her_chosen_champions": {
+      "while": {
+        "count": "6",
+        "create_ship": {
+          "name": "random",
+          "design": "NAME_Void_Champion",
+          "prefix": "no",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "mercenary_fleet_effects.txt",
+    "_line_number": 226
+  },
+  "create_order_of_eternal_night": {
+    "create_order_of_eternal_night": {
+      "while": {
+        "count": "4",
+        "create_ship": {
+          "name": "random",
+          "prefix": "no",
+          "design": "NAME_Void_Champion",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "mercenary_fleet_effects.txt",
+    "_line_number": 257
+  },
+  "create_twilight_congregation": {
+    "create_twilight_congregation": {
+      "while": {
+        "count": "2",
+        "create_ship": {
+          "name": "random",
+          "prefix": "no",
+          "design": "NAME_Void_Champion",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "mercenary_fleet_effects.txt",
+    "_line_number": 288
+  },
+  "create_marauder_raiders": {
+    "create_marauder_raiders": {
+      "_comments": [
+        "# Less than 40 years into game"
+      ],
+      "if": {
+        "limit": {
+          "while": {
+            "count": "1",
+            "create_ship": {
+              "name": "random",
+              "design": "NAME_Void_Champion",
+              "prefix": "no",
+              "graphical_culture": "pirate_01"
+            }
+          },
+          "set_fleet_flag": "marauder_raider_fleet_1"
+        },
+        "_comments": [
+          "# 40 years into game, less than 60",
+          "# 60 years into game, less than 80",
+          "# 80 years into game"
+        ],
+        "else_if": {
+          "limit": {},
+          "while": {
+            "count": "3",
+            "create_ship": {
+              "name": "random",
+              "design": "NAME_Void_Champion",
+              "prefix": "no",
+              "graphical_culture": "pirate_01"
+            }
+          },
+          "set_fleet_flag": "marauder_raider_fleet_3"
+        },
+        "else": {
+          "while": {
+            "count": "4",
+            "create_ship": {
+              "name": "random",
+              "design": "NAME_Void_Champion",
+              "prefix": "no",
+              "graphical_culture": "pirate_01"
+            }
+          },
+          "set_fleet_flag": "marauder_raider_fleet_4"
+        }
+      }
+    },
+    "_source_file": "mercenary_fleet_effects.txt",
+    "_line_number": 322
+  },
+  "remove_loaning_fleet_flag": {
+    "remove_loaning_fleet_flag": {
+      "_comments": [
+        "#Failsafe to catch if fleets are no longer on loan"
+      ],
+      "if": {
+        "limit": {
+          "NOT": {
+            "any_controlled_fleet": {
+              "OR": {
+                "is_leased": "yes",
+                "AND": {
+                  "exists": "controller",
+                  "controller": {}
+                }
+              }
+            }
+          },
+          "remove_country_flag": "loaning_fleet"
+        }
+      }
+    },
+    "_source_file": "mercenary_fleet_effects.txt",
+    "_line_number": 461
+  }
+}

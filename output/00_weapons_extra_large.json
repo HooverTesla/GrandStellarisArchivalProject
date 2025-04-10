@@ -1,0 +1,43 @@
+{
+  "weapon_component_template": {
+    "weapon_component_template": {
+      "key": "TITAN_LASER",
+      "size": "titanic",
+      "type": "instant",
+      "prio_projectile": "yes",
+      "hidden": "yes",
+      "icon": "GFX_ship_part_energy_lance_2",
+      "icon_frame": "1",
+      "firing_arc": "25.0",
+      "use_ship_kill_target": "no",
+      "tags": {
+        "component_set": "TITAN_LASER",
+        "projectile_gfx": "titan_laser",
+        "resources": {
+          "category": "ship_components",
+          "cost": {
+            "alloys": "@titanic_t6_cost",
+            "rare_crystals": "@titanic_t6_rare"
+          },
+          "upkeep": {
+            "energy": "@titanic_t6_upkeep_energy",
+            "alloys": "@titanic_t6_upkeep_alloys"
+          }
+        },
+        "target_weights": {
+          "titan": "3",
+          "battleship": "2"
+        },
+        "ai_weight": {
+          "weight": "1",
+          "modifier": {
+            "factor": "0.0",
+            "no_resource_for_component": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_weapons_extra_large.txt",
+    "_line_number": 401
+  }
+}

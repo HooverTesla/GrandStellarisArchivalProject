@@ -1,0 +1,24 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "fedvote.2",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "federation": {
+          "if": {
+            "limit": {
+              "has_federation_setting": "failed_vote_half_price"
+            },
+            "add_cohesion": "-5"
+          },
+          "else": {
+            "add_cohesion": "-10"
+          }
+        }
+      }
+    },
+    "_source_file": "federations_vote_events.txt",
+    "_line_number": 18
+  }
+}

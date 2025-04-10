@@ -1,0 +1,94 @@
+{
+  "ship_event": {
+    "ship_event": {
+      "id": "precursor.306",
+      "title": "precursor.306.name",
+      "desc": {
+        "trigger": {
+          "NOR": {
+            "owner": {
+              "owner": {}
+            },
+            "text": "precursor.302.a.desc"
+          },
+          "desc": {
+            "trigger": {
+              "owner": {},
+              "text": "precursor.302.b.desc"
+            },
+            "desc": {
+              "trigger": {
+                "owner": {},
+                "text": "precursor.302.c.desc"
+              },
+              "picture": "GFX_evt_archaeological_dig",
+              "location": "event_target:precursor_planet",
+              "event_chain": "cybrex_chain",
+              "is_triggered_only": "yes",
+              "immediate": {
+                "owner": {},
+                "after": {
+                  "hidden_effect": {
+                    "owner": {}
+                  },
+                  "option": {
+                    "name": "INTERESTING",
+                    "owner": {
+                      "add_event_chain_counter": {
+                        "event_chain": "cybrex_chain",
+                        "counter": "cybrex_artifacts",
+                        "amount": "1"
+                      },
+                      "add_monthly_resource_mult": {
+                        "resource": "society_research",
+                        "value": "@tier1researchreward",
+                        "min": "@tier1researchmin",
+                        "max": "@tier1researchmax"
+                      },
+                      "hidden_effect": {
+                        "country_event": {
+                          "remove_country_flag": "ongoing_precursor_artifact"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "precursor_events.txt",
+    "_line_number": 6138
+  },
+  "country_event": {
+    "country_event": {
+      "id": "precursor.320",
+      "title": "precursor.301.name",
+      "desc": "precursor.320.desc",
+      "picture": "GFX_evt_archaeological_dig",
+      "location": "event_target:precursor_planet",
+      "trackable": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "if": {
+          "limit": {
+            "has_event_chain": "cybrex_chain",
+            "any_system_within_border": {
+              "has_star_flag": "precursor_5"
+            }
+          },
+          "spawn_cybrex_anomaly": "yes",
+          "break": "yes"
+        }
+      },
+      "option": {
+        "name": "precursor.301.a",
+        "custom_tooltip": "new_precursor_project"
+      }
+    },
+    "_source_file": "precursor_events.txt",
+    "_line_number": 7119
+  }
+}

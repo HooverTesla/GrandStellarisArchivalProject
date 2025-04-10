@@ -1,0 +1,68 @@
+{
+  "migration_control_yes": {
+    "migration_control_yes": {
+      "can_migrate": "no",
+      "ai_will_do": {
+        "factor": "2",
+        "modifier": {
+          "factor": "0.1",
+          "from": {
+            "OR": {
+              "is_machine_empire": "no",
+              "has_valid_civic": "civic_machine_servitor"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_species_controls_migration.txt",
+    "_line_number": 2
+  },
+  "migration_control_no": {
+    "migration_control_no": {
+      "potential": {
+        "exists": "from",
+        "NAND": {
+          "OR": {
+            "has_trait": "trait_mechanical"
+          },
+          "from": {
+            "NOR": {
+              "is_individual_machine": "yes",
+              "has_country_flag": "synthetic_empire"
+            }
+          }
+        }
+      },
+      "allow": {
+        "hidden_trigger": {
+          "custom_tooltip": {
+            "NOR": {
+              "has_citizenship_type": {
+                "has_citizenship_type": {},
+                "fail_text": "is_undesirables_tooltip"
+              },
+              "custom_tooltip": {
+                "fail_text": "cant_be_livestock_or_matrix",
+                "NAND": {
+                  "has_citizenship_type": {
+                    "OR": {
+                      "has_slavery_type": {
+                        "has_slavery_type": {}
+                      }
+                    }
+                  },
+                  "ai_will_do": {
+                    "factor": "1"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_species_controls_migration.txt",
+    "_line_number": 19
+  }
+}

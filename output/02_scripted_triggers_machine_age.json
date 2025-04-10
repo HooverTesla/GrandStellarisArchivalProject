@@ -1,0 +1,255 @@
+{
+  "has_cybernetic_ascension": {
+    "has_cybernetic_ascension": {
+      "OR": {
+        "has_ascension_perk": "ap_organo_machine_interfacing_assimilator\t# Driven Assimilator",
+        "has_origin": "origin_cybernetic_creed\t\t\t\t\t\t\t# Early Access Origin",
+        "has_valid_civic": "civic_augmentation_bazaars\t\t\t\t\t# Restricted Civic"
+      }
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 3
+  },
+  "has_genetic_ascension": {
+    "has_genetic_ascension": {
+      "has_ascension_perk": "ap_engineered_evolution\t\t\t\t\t\t# Regular & Hive-Mind"
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 13
+  },
+  "has_psionic_ascension": {
+    "has_psionic_ascension": {
+      "OR": {
+        "has_ascension_perk": "ap_mind_over_matter\t\t\t\t\t\t# Regular",
+        "has_origin": "origin_shroudwalker_apprentice\t\t\t\t\t\t# Early Access Origin"
+      }
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 17
+  },
+  "has_synthetic_ascension": {
+    "has_synthetic_ascension": {
+      "OR": {
+        "has_ascension_perk": "ap_synthetic_age\t\t\t\t\t\t\t# Machine Intelligence",
+        "has_origin": "origin_synthetic_fertility\t\t\t\t\t\t\t# Early Access Origin"
+      }
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 24
+  },
+  "has_ascension_path": {
+    "has_ascension_path": {
+      "OR": {
+        "has_cybernetic_ascension": "yes",
+        "has_genetic_ascension": "yes",
+        "has_psionic_ascension": "yes",
+        "has_synthetic_ascension": "yes"
+      }
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 32
+  },
+  "is_natural_design_empire": {
+    "is_natural_design_empire": {
+      "OR": {
+        "has_valid_civic": "civic_hive_natural_design"
+      }
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 41
+  },
+  "has_titan_tech": {
+    "has_titan_tech": {
+      "exists": "owner",
+      "owner": {
+        "has_technology": "tech_titans"
+      }
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 48
+  },
+  "is_individual_machine": {
+    "is_individual_machine": {
+      "founder_species": {
+        "is_archetype": "MACHINE"
+      },
+      "is_gestalt": "no"
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 55
+  },
+  "has_cybernetic_creed_trait": {
+    "has_cybernetic_creed_trait": {
+      "OR": {
+        "has_trait": "trait_cyborg_ritualistic_implants"
+      }
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 62
+  },
+  "is_cyber_creed_advanced_government": {
+    "is_cyber_creed_advanced_government": {
+      "has_origin": "origin_cybernetic_creed",
+      "has_country_flag": "cyber_creed_advanced_government"
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 72
+  },
+  "is_guided_sapience_empire": {
+    "is_guided_sapience_empire": {
+      "OR": {
+        "has_valid_civic": "civic_corporate_guided_sapience"
+      }
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 77
+  },
+  "has_murderous_civic_or_origin": {
+    "has_murderous_civic_or_origin": {
+      "OR": {
+        "has_valid_civic": "civic_death_cult",
+        "has_origin": "origin_overtuned"
+      }
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 87
+  },
+  "has_genesis_preserve_trait": {
+    "has_genesis_preserve_trait": {
+      "OR": {
+        "has_trait": "trait_presapient_unintelligent"
+      }
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 102
+  },
+  "is_synth_queen_country_type": {
+    "is_synth_queen_country_type": {
+      "OR": {
+        "is_country_type": "awakened_synth_queen"
+      }
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 116
+  },
+  "has_made_cyber_creed_faction_choice": {
+    "has_made_cyber_creed_faction_choice": {
+      "OR": {
+        "has_country_flag": "cybernetic_creed_general"
+      }
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 124
+  },
+  "has_synth_queen_dialogue_flag": {
+    "has_synth_queen_dialogue_flag": {
+      "OR": {
+        "has_country_flag": "crisis.8060.war.1.flag",
+        "has_global_flag": "synth_queen_war_started"
+      }
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 134
+  },
+  "system_has_dyson_swarm": {
+    "system_has_dyson_swarm": {
+      "solar_system": {
+        "any_system_megastructure": {
+          "OR": {
+            "is_megastructure_type": "dyson_swarm_3"
+          }
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 155
+  },
+  "system_has_arc_furnace": {
+    "system_has_arc_furnace": {
+      "solar_system": {
+        "any_system_megastructure": {
+          "OR": {
+            "is_megastructure_type": "orbital_arc_furnace_restored"
+          }
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 167
+  },
+  "has_completed_synth_queen_history_chain": {
+    "has_completed_synth_queen_history_chain": {
+      "has_country_flag": "crisis_20500_happened"
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 182
+  },
+  "has_ascension_situation_ongoing": {
+    "has_ascension_situation_ongoing": {
+      "OR": {
+        "is_situation_type": "situation_transformation"
+      }
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 189
+  },
+  "can_create_paperclip_universe": {
+    "can_create_paperclip_universe": {
+      "OR": {
+        "has_country_flag": "can_create_paperclip_universe",
+        "AND": {
+          "has_valid_civic": "civic_machine_obsessional_directive",
+          "NOT": {
+            "has_country_flag": "failed_paperclip_quota"
+          }
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 200
+  },
+  "synth_queen_can_steal_system": {
+    "synth_queen_can_steal_system": {
+      "NOT": {
+        "OR": {
+          "_comments": [
+            "# Free system"
+          ],
+          "NOT": {
+            "_comments": [
+              "# System owned by a non-standard empire (FE, enclave, marauders)"
+            ],
+            "owner": {
+              "NOT": {},
+              "_comments": [
+                "# System owned by a player, but with no planets or megastructures"
+              ],
+              "AND": {
+                "owner": {
+                  "is_country_type": "default"
+                },
+                "has_any_megastructure": "no",
+                "NOT": {
+                  "any_system_planet": {
+                    "is_colony": "yes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 213
+  },
+  "just_researched_fe_tech": {
+    "just_researched_fe_tech": {
+      "OR": {
+        "last_increased_tech": "tech_cosmogenesis_FE_titan"
+      }
+    },
+    "_source_file": "02_scripted_triggers_machine_age.txt",
+    "_line_number": 237
+  }
+}

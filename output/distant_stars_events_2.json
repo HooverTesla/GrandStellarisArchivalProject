@@ -1,0 +1,306 @@
+{
+  "event": {
+    "event": {
+      "id": "distar.5060",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "event_target:enigmatic_cache_country",
+        "_comments": [
+          "### There are no other player empires that are eligible for scanning"
+        ],
+        "NOR": {
+          "has_global_flag": "cache_returned",
+          "any_playable_country": {
+            "any_owned_pop": {
+              "is_same_species": "owner_species",
+              "is_robot_pop": "no",
+              "is_sapient": "yes",
+              "NOT": {},
+              "any_owned_planet": {
+                "is_colony": "yes",
+                "has_planet_flag": "has_been_scanned"
+              },
+              "NOR": {
+                "is_hostile": "event_target:enigmatic_cache_country",
+                "event_target:enigmatic_cache_country": {},
+                "is_at_war": "no",
+                "is_ai": "no"
+              }
+            },
+            "immediate": {
+              "_comments": [
+                "# Attempts to find a player empire with no other technologically inferior empires"
+              ],
+              "if": {
+                "limit": {
+                  "any_playable_country": {
+                    "any_owned_pop": {
+                      "is_same_species": "owner_species",
+                      "is_robot_pop": "no",
+                      "is_sapient": "yes",
+                      "NOT": {
+                        "any_playable_country": {
+                          "is_country_type": "default",
+                          "relative_power": {
+                            "who": "prev",
+                            "category": "technology",
+                            "value <": "inferior"
+                          }
+                        }
+                      },
+                      "any_owned_planet": {
+                        "is_colony": "yes",
+                        "has_planet_flag": "has_been_scanned"
+                      },
+                      "NOR": {
+                        "is_hostile": "event_target:enigmatic_cache_country",
+                        "event_target:enigmatic_cache_country": {},
+                        "is_at_war": "no",
+                        "is_ai": "no"
+                      }
+                    },
+                    "random_playable_country": {
+                      "limit": {
+                        "any_owned_pop": {
+                          "is_same_species": "owner_species",
+                          "is_robot_pop": "no",
+                          "is_sapient": "yes",
+                          "NOT": {
+                            "any_playable_country": {
+                              "is_country_type": "default",
+                              "relative_power": {
+                                "who": "prev",
+                                "category": "technology",
+                                "value <": "inferior"
+                              }
+                            }
+                          },
+                          "any_owned_planet": {
+                            "is_colony": "yes",
+                            "has_planet_flag": "has_been_scanned"
+                          },
+                          "NOR": {
+                            "is_hostile": "event_target:enigmatic_cache_country",
+                            "event_target:enigmatic_cache_country": {},
+                            "is_at_war": "no",
+                            "is_ai": "no"
+                          },
+                          "save_global_event_target_as": "enigmatic_caches_choice",
+                          "set_country_flag": "enigmatic_caches_choice",
+                          "random_owned_planet": {
+                            "limit": {
+                              "is_homeworld": "yes"
+                            },
+                            "save_event_target_as": "new_location"
+                          }
+                        },
+                        "set_global_flag": "cache_returned",
+                        "event_target:enigmatic_cache_fleet": {
+                          "set_fleet_flag": "cache_returning",
+                          "auto_move_to_planet": {
+                            "target": "event_target:new_location",
+                            "clear_auto_move_on_arrival": "no"
+                          }
+                        }
+                      },
+                      "_comments": [
+                        "# Attempts to find a player empire regardless of technology level"
+                      ],
+                      "else_if": {
+                        "limit": {
+                          "any_playable_country": {
+                            "any_owned_pop": {
+                              "is_same_species": "owner_species",
+                              "is_robot_pop": "no",
+                              "is_sapient": "yes",
+                              "NOT": {},
+                              "any_owned_planet": {
+                                "is_colony": "yes",
+                                "has_planet_flag": "has_been_scanned"
+                              },
+                              "NOR": {
+                                "is_hostile": "event_target:enigmatic_cache_country",
+                                "event_target:enigmatic_cache_country": {},
+                                "is_at_war": "no",
+                                "is_ai": "no"
+                              }
+                            },
+                            "random_playable_country": {
+                              "limit": {
+                                "any_owned_pop": {
+                                  "is_same_species": "owner_species",
+                                  "is_robot_pop": "no",
+                                  "is_sapient": "yes",
+                                  "NOT": {},
+                                  "any_owned_planet": {
+                                    "is_colony": "yes",
+                                    "has_planet_flag": "has_been_scanned"
+                                  },
+                                  "NOR": {
+                                    "is_hostile": "event_target:enigmatic_cache_country",
+                                    "event_target:enigmatic_cache_country": {},
+                                    "is_at_war": "no",
+                                    "is_ai": "no"
+                                  },
+                                  "save_global_event_target_as": "enigmatic_caches_choice",
+                                  "set_country_flag": "enigmatic_caches_choice",
+                                  "random_owned_planet": {
+                                    "limit": {
+                                      "is_homeworld": "yes"
+                                    },
+                                    "save_event_target_as": "new_location"
+                                  }
+                                },
+                                "set_global_flag": "cache_returned",
+                                "event_target:enigmatic_cache_fleet": {
+                                  "set_fleet_flag": "cache_returning",
+                                  "auto_move_to_planet": {
+                                    "target": "event_target:new_location",
+                                    "clear_auto_move_on_arrival": "no"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "_comments": [
+            "### There is a player empire that has already been scanned"
+          ]
+        }
+      }
+    },
+    "_source_file": "distant_stars_events_2.txt",
+    "_line_number": 5809
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "distar.5059",
+      "title": "distar.5059.name",
+      "desc": {
+        "trigger": {
+          "owner": {
+            "NOT": {
+              "has_country_flag": "cache_has_changed_location"
+            }
+          }
+        },
+        "picture": "GFX_evt_enigmatic_cache",
+        "show_sound": "event_mystic_reveal",
+        "location": "this",
+        "is_triggered_only": "yes",
+        "immediate": {
+          "owner": {
+            "set_country_flag": "cache_has_changed_location"
+          }
+        },
+        "option": {
+          "name": "distar.5059.b"
+        }
+      }
+    },
+    "_source_file": "distant_stars_events_2.txt",
+    "_line_number": 5418
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "distar.3060",
+      "title": "distar.3060.name",
+      "desc": "distar.3060.desc",
+      "picture": "GFX_evt_wormhole",
+      "show_sound": "event_scanner",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "from": {
+          "save_event_target_as": "breathing_rift_object"
+        }
+      },
+      "option": {
+        "name": "distar.3060.c",
+        "leader": {}
+      }
+    },
+    "_source_file": "distant_stars_events_2.txt",
+    "_line_number": 9160
+  },
+  "country_event": {
+    "country_event": {
+      "id": "distar.3064",
+      "title": "distar.3064.name",
+      "desc": "distar.3064.desc",
+      "picture": "GFX_evt_wormhole",
+      "show_sound": "event_scanner",
+      "location": "event_target:breathing_rift_object",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "distar.3064.a",
+        "custom_tooltip": "distar.3064.a.tooltip",
+        "add_monthly_resource_mult": {
+          "resource": "physics_research",
+          "value": "@tier3researchreward",
+          "min": "@tier3researchmin",
+          "max": "@tier3researchmax"
+        }
+      }
+    },
+    "_source_file": "distant_stars_events_2.txt",
+    "_line_number": 9280
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "distar.1002",
+      "title": "distar.1002.name",
+      "desc": "distar.1002.desc",
+      "picture": "GFX_evt_cold_barren",
+      "show_sound": "event_ship_bridge",
+      "location": "event_target:utopian_planet",
+      "trackable": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "has_event_chain": "generation_ship_chain",
+          "NOT": {
+            "has_country_flag": "discovered_hidden_planet"
+          }
+        },
+        "exists": "event_target:utopian_planet",
+        "event_target:utopian_planet": {
+          "NOT": {},
+          "solar_system": {
+            "any_system_planet": {
+              "is_same_value": "event_target:utopian_planet"
+            }
+          }
+        },
+        "immediate": {
+          "owner": {
+            "set_country_flag": "discovered_hidden_planet",
+            "remove_point_of_interest": "hidden_planet_poi",
+            "add_event_chain_counter": {
+              "event_chain": "generation_ship_chain",
+              "counter": "planet_found",
+              "amount": "1"
+            }
+          }
+        },
+        "option": {
+          "name": "distar.1002.b",
+          "owner": {
+            "end_event_chain": "generation_ship_chain",
+            "add_resource": {}
+          }
+        }
+      }
+    },
+    "_source_file": "distant_stars_events_2.txt",
+    "_line_number": 1093
+  }
+}

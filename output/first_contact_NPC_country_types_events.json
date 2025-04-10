@@ -1,0 +1,47 @@
+{
+  "first_contact_event": {
+    "first_contact_event": {
+      "id": "first_contact_critters.105",
+      "title": "first_contact_critters.105.name",
+      "desc": "first_contact_critters.105.desc",
+      "picture": "GFX_evt_fleet_neutral",
+      "show_sound": "event_worrying_signal",
+      "is_triggered_only": "yes",
+      "first_contact": "yes",
+      "immediate": {
+        "set_site_progress_locked": "yes"
+      },
+      "after": {
+        "set_site_progress_locked": "no"
+      },
+      "option": {
+        "name": "CURIOUS",
+        "finish_first_contact_effect": "yes"
+      }
+    },
+    "_source_file": "first_contact_NPC_country_types_events.txt",
+    "_line_number": 1227
+  },
+  "country_event": {
+    "country_event": {
+      "id": "first_contact_critters.1001",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "trigger": {
+        "exists": "fromfrom",
+        "NOT": {},
+        "immediate": {
+          "if": {
+            "limit": {
+              "fromfrom": {},
+              "establish_communications": "fromfrom"
+            },
+            "else": {}
+          }
+        }
+      }
+    },
+    "_source_file": "first_contact_NPC_country_types_events.txt",
+    "_line_number": 1317
+  }
+}

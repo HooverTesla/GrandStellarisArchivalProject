@@ -1,0 +1,319 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "cstorms.8520",
+      "title": "cstorms.8520.title",
+      "desc": "cstorms.8520.desc",
+      "is_triggered_only": "yes",
+      "picture": "GFX_evt_cosmic_storms_shroud_storm",
+      "location": "from",
+      "option": {
+        "name": "cstorms.8520.a"
+      }
+    },
+    "_source_file": "cosmic_storms_events_1.txt",
+    "_line_number": 4462
+  },
+  "system_event": {
+    "system_event": {
+      "id": "cstorms.1840",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from": {
+          "any_system_planet": {
+            "NOR": {
+              "has_planet_flag": "suppress_archaeological_sites",
+              "exists": "archaeological_site"
+            },
+            "is_a_planet": "yes",
+            "is_a_planet_megastructure": "yes",
+            "is_artificial": "no",
+            "is_astral_scar": "no",
+            "has_anomaly": "no"
+          }
+        },
+        "immediate": {
+          "random_list": {
+            "1": {
+              "1": {
+                "random_system_planet": {
+                  "limit": {
+                    "NOR": {
+                      "has_planet_flag": "suppress_archaeological_sites",
+                      "exists": "archaeological_site"
+                    },
+                    "is_a_planet": "yes",
+                    "is_a_planet_megastructure": "yes",
+                    "is_artificial": "no",
+                    "is_astral_scar": "no",
+                    "has_anomaly": "no"
+                  },
+                  "set_planet_flag": "afflicted_by_storm_event",
+                  "prevent_anomaly": "yes",
+                  "create_archaeological_site": "site_repowered_complex"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "cosmic_storms_events_1.txt",
+    "_line_number": 4480
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "cstorms.8100",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_modifier": "pm_satured_filtration",
+        "from": {
+          "NOT": {
+            "has_special_project": "CLEAR_DUSTY_PIPES_PROJECT"
+          }
+        }
+      },
+      "immediate": {
+        "enable_special_project": {
+          "name": "CLEAR_DUSTY_PIPES_PROJECT",
+          "location": "this",
+          "owner": "this.owner"
+        },
+        "fromfrom": {
+          "abort_special_project": {
+            "type": "CLEAR_DUSTY_PIPES_PROJECT",
+            "location": "root"
+          }
+        }
+      }
+    },
+    "_source_file": "cosmic_storms_events_1.txt",
+    "_line_number": 4770
+  },
+  "event": {
+    "event": {
+      "id": "cstorms.1100",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_cosmic_storms_dlc": "yes",
+        "has_global_flag": "cosmic_storm_has_occurred"
+      },
+      "immediate": {
+        "every_cosmic_storm": {
+          "if": {
+            "limit": {
+              "every_system_within_storm": {
+                "every_ship_in_system": {
+                  "limit": {
+                    "reduce_shield": "value:storm_ship_damage_received|DMG|@storm_monthly_dmg_low|"
+                  }
+                }
+              },
+              "else_if": {
+                "limit": {
+                  "every_system_within_storm": {
+                    "every_ship_in_system": {
+                      "limit": {
+                        "damage_ship": "value:storm_ship_damage_received|DMG|@storm_monthly_dmg_low|"
+                      }
+                    }
+                  },
+                  "else_if": {
+                    "limit": {
+                      "every_system_within_storm": {
+                        "every_ship_in_system": {
+                          "limit": {
+                            "damage_ship": "value:storm_ship_damage_received|DMG|@storm_monthly_dmg_high|"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "cosmic_storms_events_1.txt",
+    "_line_number": 767
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "cstorms.1826",
+      "title": "cstorms.1826.name",
+      "desc": "cstorms.1826.desc",
+      "inline_script": {
+        "script": "cosmic_storms/StormEventPicture",
+        "STORM_SCOPE": "from"
+      },
+      "show_sound": "event_energy_field",
+      "is_triggered_only": "yes",
+      "location": "this",
+      "option": {
+        "name": "REMARKABLE",
+        "custom_tooltip": "cstorms.1826.storm_tt",
+        "controller": {
+          "add_monthly_resource_mult": {
+            "resource": "engineering_research",
+            "value": "@tier2researchreward",
+            "min": "@tier2researchmin",
+            "max": "@tier2researchmax"
+          },
+          "if": {
+            "limit": {
+              "add_research_option": "tech_ship_hull_storm_breaker_1",
+              "add_tech_progress": {
+                "tech": "tech_ship_hull_storm_breaker_1",
+                "progress": "0.1"
+              }
+            },
+            "else_if": {
+              "limit": {
+                "add_research_option": "tech_ship_hull_storm_breaker_2",
+                "add_tech_progress": {
+                  "tech": "tech_ship_hull_storm_breaker_2",
+                  "progress": "0.1"
+                }
+              },
+              "else": {
+                "add_monthly_resource_mult": {
+                  "resource": "physics_research",
+                  "value": "@tier2researchreward",
+                  "min": "@tier2researchmin",
+                  "max": "@tier2researchmax"
+                }
+              },
+              "add_modifier": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "cosmic_storms_events_1.txt",
+    "_line_number": 4037
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "cstorms.1855",
+      "title": "cstorms.1855.name",
+      "desc": {
+        "trigger": {
+          "text": "cstorms.1855.desc",
+          "if": {
+            "limit": {
+              "text": "cstorms.1855.desc.megacorp"
+            }
+          }
+        },
+        "picture": "GFX_evt_physics_research",
+        "show_sound": "event_door_opening",
+        "is_triggered_only": "yes",
+        "archaeology": "yes",
+        "immediate": {
+          "from": {
+            "set_site_progress_locked": "yes"
+          }
+        },
+        "option": {
+          "name": "FASCINATING",
+          "if": {
+            "limit": {
+              "medium_artifact_reward": "yes"
+            },
+            "else": {
+              "controller": {
+                "add_monthly_resource_mult": {
+                  "resource": "unity",
+                  "value": "@tier2unityreward",
+                  "min": "@tier2unitymin",
+                  "max": "@tier2unitymax"
+                }
+              }
+            },
+            "controller": {
+              "inverted_switch": {
+                "trigger": "has_technology",
+                "tech_industrial_storm_protection": {
+                  "add_tech_option_or_research_effect": {
+                    "TECH": "tech_industrial_storm_protection",
+                    "PROGRESS": "0.5",
+                    "CATEGORY": "engineering_research"
+                  }
+                },
+                "tech_storm_manipulation": {
+                  "add_tech_option_or_research_effect": {
+                    "TECH": "tech_storm_manipulation",
+                    "PROGRESS": "0.5",
+                    "CATEGORY": "physics_research"
+                  }
+                },
+                "tech_storm_prediction_1": {
+                  "add_tech_option_or_research_effect": {
+                    "TECH": "tech_storm_prediction_1",
+                    "PROGRESS": "0.5",
+                    "CATEGORY": "physics_research"
+                  }
+                },
+                "tech_advanced_industrial_storm_protection": {
+                  "add_tech_option_or_research_effect": {
+                    "TECH": "tech_advanced_industrial_storm_protection",
+                    "PROGRESS": "0.5",
+                    "CATEGORY": "engineering_research"
+                  }
+                },
+                "tech_advanced_storm_manipulation": {
+                  "add_tech_option_or_research_effect": {
+                    "TECH": "tech_advanced_storm_manipulation",
+                    "PROGRESS": "0.5",
+                    "CATEGORY": "physics_research"
+                  }
+                },
+                "tech_ship_hull_storm_breaker_1": {
+                  "add_tech_option_or_research_effect": {
+                    "TECH": "tech_ship_hull_storm_breaker_1",
+                    "PROGRESS": "0.5",
+                    "CATEGORY": "engineering_research"
+                  }
+                },
+                "tech_ship_storm_weapons_1": {
+                  "add_tech_option_or_research_effect": {
+                    "TECH": "tech_ship_storm_weapons_1",
+                    "PROGRESS": "0.5",
+                    "CATEGORY": "engineering_research"
+                  }
+                },
+                "tech_storm_prediction_2": {
+                  "add_tech_option_or_research_effect": {
+                    "TECH": "tech_storm_prediction_2",
+                    "PROGRESS": "0.5",
+                    "CATEGORY": "physics_research"
+                  }
+                },
+                "default": {
+                  "add_monthly_resource_mult": {
+                    "resource": "engineering_research",
+                    "value": "@tier2researchreward",
+                    "min": "@tier2researchmin",
+                    "max": "@tier2researchmax"
+                  }
+                }
+              }
+            }
+          },
+          "after": {
+            "from": {
+              "set_site_progress_locked": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "cosmic_storms_events_1.txt",
+    "_line_number": 4631
+  }
+}

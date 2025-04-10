@@ -1,0 +1,141 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "country.257",
+      "title": "country.257.name",
+      "desc": "country.257.desc",
+      "picture": "GFX_evt_throne_room",
+      "show_sound": "event_ship_bridge",
+      "event_chain": "hunting_hyacinth",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "country.257.a",
+        "hidden_effect": {
+          "destroy_ambient_object": "event_target:the_hyacinth"
+        },
+        "end_event_chain": "hunting_hyacinth",
+        "add_monthly_resource_mult": {
+          "resource": "society_research",
+          "value": "@tier3researchreward",
+          "min": "@tier3researchmin",
+          "max": "@tier3researchmax"
+        }
+      }
+    },
+    "_source_file": "country_events_1.txt",
+    "_line_number": 4068
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "country.254",
+      "title": "country.254.name",
+      "desc": "country.254.desc",
+      "picture": "GFX_evt_ship_in_orbit",
+      "show_sound": "event_radio_chatter_02",
+      "location": "root",
+      "trackable": "yes",
+      "event_chain": "hunting_hyacinth",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "is_ai": "no",
+          "has_event_chain": "hunting_hyacinth"
+        },
+        "solar_system": {},
+        "immediate": {
+          "owner": {
+            "owner": {
+              "solar_system": {
+                "remove_star_flag": "hyacinth_system",
+                "random_system_planet": {
+                  "limit": {
+                    "save_event_target_as": "hyacinth_planet",
+                    "create_ambient_object": {
+                      "type": "hyacinth_object",
+                      "location": "THIS"
+                    }
+                  }
+                },
+                "last_created_ambient_object": {
+                  "save_event_target_as": "the_hyacinth"
+                }
+              },
+              "option": {
+                "name": "country.254.a",
+                "enable_special_project": {
+                  "name": "BOARD_HYACINTH",
+                  "location": "event_target:the_hyacinth",
+                  "owner": "root"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "country_events_1.txt",
+    "_line_number": 3953
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "country.255",
+      "title": "country.255.name",
+      "desc": "country.255.desc",
+      "picture": "GFX_evt_hangar_bay",
+      "show_sound": "event_airlock",
+      "location": "root",
+      "event_chain": "hunting_hyacinth",
+      "is_triggered_only": "yes",
+      "specimen": "figurehead_hyacinth",
+      "option": {
+        "name": "country.255.a",
+        "hidden_effect": {
+          "owner": {
+            "country_event": {}
+          }
+        }
+      }
+    },
+    "_source_file": "country_events_1.txt",
+    "_line_number": 4002
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "country.259",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "NOT": {
+          "from": {
+            "is_ai": "no",
+            "has_event_chain": "hunting_hyacinth"
+          },
+          "solar_system": {
+            "OR": {
+              "has_star_flag": "hyacinth_system_3"
+            },
+            "NOR": {
+              "has_star_flag": "event_sent",
+              "any_system_planet": {
+                "is_surveyed": {
+                  "who": "from",
+                  "status": "no"
+                }
+              }
+            }
+          }
+        },
+        "immediate": {
+          "solar_system": {
+            "set_star_flag": "event_sent"
+          },
+          "from": {
+            "country_event": {}
+          }
+        }
+      }
+    },
+    "_source_file": "country_events_1.txt",
+    "_line_number": 3689
+  }
+}

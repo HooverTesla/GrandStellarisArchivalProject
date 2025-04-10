@@ -1,0 +1,127 @@
+{
+  "gov_representative_democracy": {
+    "gov_representative_democracy": {
+      "ruler_title": "RT_PRESIDENT",
+      "ruler_title_female": "RT_PRESIDENT_FEMALE",
+      "possible": {
+        "is_democratic_authority": "yes"
+      },
+      "weight": {
+        "base": "@gov_authority_weight"
+      }
+    },
+    "_source_file": "01_authority_governments.txt",
+    "_line_number": 25
+  },
+  "gov_plutocratic_oligarchy": {
+    "gov_plutocratic_oligarchy": {
+      "ruler_title": "RT_HIGH_COMMISSIONER",
+      "ruler_title_female": "RT_HIGH_COMMISSIONER_FEMALE",
+      "possible": {
+        "is_oligarchic_authority": "yes"
+      },
+      "weight": {
+        "base": "@gov_authority_weight"
+      }
+    },
+    "_source_file": "01_authority_governments.txt",
+    "_line_number": 39
+  },
+  "gov_constitutional_dictatorship": {
+    "gov_constitutional_dictatorship": {
+      "ruler_title": "RT_EXECUTOR",
+      "ruler_title_female": "RT_EXECUTOR_FEMALE",
+      "possible": {
+        "is_dictatorial_authority": "yes"
+      },
+      "weight": {
+        "base": "@gov_authority_weight"
+      }
+    },
+    "_source_file": "01_authority_governments.txt",
+    "_line_number": 53
+  },
+  "gov_despotic_empire": {
+    "gov_despotic_empire": {
+      "ruler_title": "RT_EMPEROR",
+      "ruler_title_female": "RT_EMPRESS",
+      "heir_title": "HT_CROWN_PRINCE",
+      "heir_title_female": "HT_CROWN_PRINCESS",
+      "use_regnal_names": "yes",
+      "dynastic_last_names": "yes",
+      "possible": {
+        "is_imperial_authority": "yes"
+      },
+      "weight": {
+        "base": "@gov_authority_weight"
+      }
+    },
+    "_source_file": "01_authority_governments.txt",
+    "_line_number": 68
+  },
+  "gov_hive_mind": {
+    "gov_hive_mind": {
+      "ruler_title": "RT_HIVE_MIND",
+      "ruler_title_female": "RT_HIVE_MIND_FEMALE",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_hive_empire": "yes"
+      },
+      "weight": {
+        "base": "@gov_authority_weight"
+      }
+    },
+    "_source_file": "01_authority_governments.txt",
+    "_line_number": 87
+  },
+  "gov_machine_empire": {
+    "gov_machine_empire": {
+      "ruler_title": "RT_CPU",
+      "use_regnal_names": "yes",
+      "should_force_rename": "yes",
+      "possible": {
+        "is_machine_empire": "yes"
+      },
+      "weight": {
+        "base": "@gov_authority_weight"
+      }
+    },
+    "_source_file": "01_authority_governments.txt",
+    "_line_number": 104
+  },
+  "gov_megacorporation": {
+    "gov_megacorporation": {
+      "ruler_title": "RT_CEO",
+      "ruler_title_female": "RT_CEO_FEMALE",
+      "should_force_rename": "yes",
+      "possible": {
+        "OR": {
+          "is_megacorp": "yes",
+          "AND": {
+            "is_oligarchic_authority": "yes",
+            "has_valid_civic": "civic_corporate_dominion"
+          }
+        }
+      },
+      "weight": {
+        "base": "@gov_authority_weight"
+      }
+    },
+    "_source_file": "01_authority_governments.txt",
+    "_line_number": 120
+  },
+  "gov_fallback": {
+    "gov_fallback": {
+      "ruler_title": "RT_KING",
+      "should_force_rename": "yes",
+      "possible": {
+        "always": "yes"
+      },
+      "weight": {
+        "base": "@gov_fallback_weight"
+      }
+    },
+    "_source_file": "01_authority_governments.txt",
+    "_line_number": 144
+  }
+}

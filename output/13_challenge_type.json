@@ -1,0 +1,232 @@
+{
+  "challenge_type_arena_combat": {
+    "challenge_type_arena_combat": {
+      "potential": {
+        "allow": {
+          "custom_tooltip": {
+            "NOT": {
+              "AND": {
+                "NOT": {
+                  "has_modifier": "federation_law_category_challenge_cooldown",
+                  "has_any_federation_law_in_category": "law_category_challenge"
+                }
+              }
+            }
+          },
+          "on_enact": {
+            "if": {
+              "limit": {
+                "has_federation_flag": "challenge_type_no_cooldown"
+              },
+              "remove_federation_flag": "challenge_type_no_cooldown"
+            },
+            "else_if": {
+              "limit": {
+                "add_modifier": {
+                  "modifier": "federation_law_category_challenge_cooldown",
+                  "days": "@cooldown"
+                }
+              }
+            },
+            "ai_weight": {
+              "base": "0",
+              "_comments": [
+                "#Default support",
+                "#Behaviour-specific"
+              ],
+              "modifier": {
+                "desc": "federation_acceptance_ruler_very_strong",
+                "add": "10",
+                "exists": "ruler",
+                "ruler": {
+                  "species": {}
+                },
+                "modifier": {
+                  "desc": "federation_acceptance_ruler_chosen",
+                  "add": "100",
+                  "exists": "ruler",
+                  "ruler": {
+                    "has_trait": "leader_trait_chosen"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "13_challenge_type.txt",
+    "_line_number": 5
+  },
+  "challenge_type_psionic_battle": {
+    "challenge_type_psionic_battle": {
+      "potential": {
+        "allow": {
+          "custom_tooltip": {
+            "NOT": {
+              "AND": {
+                "NOT": {
+                  "has_modifier": "federation_law_category_challenge_cooldown",
+                  "has_any_federation_law_in_category": "law_category_challenge"
+                }
+              }
+            }
+          },
+          "on_enact": {
+            "if": {
+              "limit": {
+                "add_modifier": {
+                  "modifier": "federation_law_category_challenge_cooldown",
+                  "days": "@cooldown"
+                }
+              }
+            },
+            "ai_weight": {
+              "base": "0",
+              "_comments": [
+                "#Default support",
+                "# Psionic empires should like it",
+                "#Behaviour-specific"
+              ],
+              "modifier": {
+                "desc": "federation_acceptance_gestalt",
+                "add": "-100",
+                "is_gestalt": "yes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "13_challenge_type.txt",
+    "_line_number": 109
+  },
+  "challenge_type_bidding_war": {
+    "challenge_type_bidding_war": {
+      "potential": {
+        "allow": {
+          "custom_tooltip": {
+            "NOT": {
+              "AND": {
+                "NOT": {
+                  "has_modifier": "federation_law_category_challenge_cooldown",
+                  "has_any_federation_law_in_category": "law_category_challenge"
+                }
+              }
+            }
+          },
+          "on_enact": {
+            "if": {
+              "limit": {
+                "add_modifier": {
+                  "modifier": "federation_law_category_challenge_cooldown",
+                  "days": "@cooldown"
+                }
+              }
+            },
+            "ai_weight": {
+              "base": "0",
+              "_comments": [
+                "#Default support",
+                "#Behaviour-specific"
+              ],
+              "modifier": {
+                "desc": "federation_acceptance_president",
+                "add": "25",
+                "OR": {
+                  "has_ai_personality": "ruthless_capitalists"
+                },
+                "is_federation_leader": "yes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "13_challenge_type.txt",
+    "_line_number": 249
+  },
+  "challenge_type_thesis": {
+    "challenge_type_thesis": {
+      "potential": {
+        "allow": {
+          "custom_tooltip": {
+            "NOT": {
+              "AND": {
+                "NOT": {
+                  "has_modifier": "federation_law_category_challenge_cooldown",
+                  "has_any_federation_law_in_category": "law_category_challenge"
+                }
+              }
+            }
+          },
+          "on_enact": {
+            "if": {
+              "limit": {
+                "add_modifier": {
+                  "modifier": "federation_law_category_challenge_cooldown",
+                  "days": "@cooldown"
+                }
+              }
+            },
+            "ai_weight": {
+              "base": "0",
+              "_comments": [
+                "#Default support",
+                "#Technocrats and materialists will relish it"
+              ],
+              "modifier": {
+                "desc": "federation_acceptance_technocracy",
+                "add": "50",
+                "has_civic": "civic_technocracy"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "13_challenge_type.txt",
+    "_line_number": 314
+  },
+  "challenge_type_conclave": {
+    "challenge_type_conclave": {
+      "potential": {
+        "allow": {
+          "custom_tooltip": {
+            "NOT": {
+              "AND": {
+                "NOT": {
+                  "has_modifier": "federation_law_category_challenge_cooldown",
+                  "has_any_federation_law_in_category": "law_category_challenge"
+                }
+              }
+            }
+          },
+          "on_enact": {
+            "if": {
+              "limit": {
+                "add_modifier": {
+                  "modifier": "federation_law_category_challenge_cooldown",
+                  "days": "@cooldown"
+                }
+              }
+            },
+            "ai_weight": {
+              "base": "0",
+              "_comments": [
+                "#Default support"
+              ],
+              "modifier": {
+                "desc": "federation_acceptance_gestalt",
+                "add": "-50",
+                "is_gestalt": "yes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "13_challenge_type.txt",
+    "_line_number": 370
+  }
+}

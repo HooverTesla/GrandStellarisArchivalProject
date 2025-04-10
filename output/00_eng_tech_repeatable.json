@@ -1,0 +1,273 @@
+{
+  "tech_repeatable_improved_tile_mineral_output": {
+    "tech_repeatable_improved_tile_mineral_output": {
+      "area": "engineering",
+      "cost": "@repeatableTechBaseCost",
+      "cost_per_level": "@repeatableTechLevelCost",
+      "tier": "@repeatableTechTier",
+      "category": {
+        "levels": "-1",
+        "prerequisites": {
+          "weight": "@repeatableTechWeight",
+          "weight_modifier": {
+            "factor": "@repatableTechFactor"
+          },
+          "ai_weight": {
+            "factor": "@ai_mining_factor"
+          },
+          "_comments": [
+            "#When a tech is added to the list of tech alternatives it will register each entry in weight_groups to a list. such as economy, or repeatable, or whatever",
+            "#Then all remaining potential techs will multiply their weight with the corresponding mod_weight_if_group_picked.",
+            "#So if the first tech picked has the weight group 'repeatable', all other techs with a mod_weight_if_group_picked 'repeatable = 0.4', for example, will multiply their weight with 0.4"
+          ],
+          "weight_groups": {},
+          "mod_weight_if_group_picked": {
+            "repeatable": "0.01"
+          },
+          "modifier": {
+            "planet_jobs_minerals_produces_mult": "0.05"
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech_repeatable.txt",
+    "_line_number": 3
+  },
+  "tech_repeatable_improved_military_station_damage": {
+    "tech_repeatable_improved_military_station_damage": {
+      "area": "engineering",
+      "cost": "@repeatableTechBaseCost",
+      "cost_per_level": "@repeatableTechLevelCost",
+      "tier": "@repeatableTechTier",
+      "category": {
+        "levels": "-1",
+        "prerequisites": {
+          "weight": "@repeatableTechWeight",
+          "weight_modifier": {
+            "factor": "@repatableTechFactor"
+          },
+          "ai_weight": {
+            "factor": "1.0"
+          },
+          "weight_groups": {},
+          "mod_weight_if_group_picked": {
+            "repeatable": "0.01"
+          },
+          "modifier": {
+            "shipclass_military_station_damage_mult": "0.1"
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech_repeatable.txt",
+    "_line_number": 36
+  },
+  "tech_repeatable_improved_military_station_health": {
+    "tech_repeatable_improved_military_station_health": {
+      "area": "engineering",
+      "cost": "@repeatableTechBaseCost",
+      "cost_per_level": "@repeatableTechLevelCost",
+      "tier": "@repeatableTechTier",
+      "category": {
+        "levels": "-1",
+        "prerequisites": {
+          "weight": "@repeatableTechWeight",
+          "weight_modifier": {
+            "factor": "@repatableTechFactor"
+          },
+          "ai_weight": {
+            "factor": "1.0"
+          },
+          "weight_groups": {},
+          "mod_weight_if_group_picked": {
+            "repeatable": "0.01"
+          },
+          "modifier": {
+            "shipclass_military_station_hull_mult": "0.1"
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech_repeatable.txt",
+    "_line_number": 66
+  },
+  "tech_repeatable_improved_armor_output": {
+    "tech_repeatable_improved_armor_output": {
+      "area": "engineering",
+      "cost": "@repeatableTechBaseCost",
+      "cost_per_level": "@repeatableTechLevelCost",
+      "tier": "@repeatableTechTier",
+      "category": {
+        "ai_update_type": "all",
+        "levels": "-1",
+        "prerequisites": {
+          "weight": "@repeatableTechWeight",
+          "weight_modifier": {
+            "factor": "@repatableTechFactor"
+          },
+          "ai_weight": {
+            "factor": "1.0"
+          },
+          "weight_groups": {},
+          "mod_weight_if_group_picked": {
+            "repeatable": "0.01"
+          },
+          "modifier": {
+            "ship_armor_mult": "0.05"
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech_repeatable.txt",
+    "_line_number": 127
+  },
+  "tech_repeatable_weapon_type_explosive_damage": {
+    "tech_repeatable_weapon_type_explosive_damage": {
+      "area": "engineering",
+      "cost": "@repeatableTechBaseCost",
+      "cost_per_level": "@repeatableTechLevelCost",
+      "tier": "@repeatableTechTier",
+      "category": {
+        "ai_update_type": "military",
+        "levels": "-1",
+        "prerequisites": {
+          "weight": "@repeatableTechWeight",
+          "weight_modifier": {
+            "factor": "@repatableTechFactor"
+          },
+          "ai_weight": {
+            "factor": "1.0",
+            "modifier": {
+              "weapon_type_explosive_weapon_damage_mult": "0.05"
+            },
+            "weight_groups": {},
+            "mod_weight_if_group_picked": {
+              "repeatable": "0.01"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech_repeatable.txt",
+    "_line_number": 158
+  },
+  "tech_repeatable_weapon_type_explosive_fire_rate": {
+    "tech_repeatable_weapon_type_explosive_fire_rate": {
+      "area": "engineering",
+      "cost": "@repeatableTechBaseCost",
+      "cost_per_level": "@repeatableTechLevelCost",
+      "tier": "@repeatableTechTier",
+      "category": {
+        "ai_update_type": "military",
+        "levels": "-1",
+        "prerequisites": {
+          "weight": "@repeatableTechWeight",
+          "weight_modifier": {
+            "factor": "@repatableTechFactor"
+          },
+          "ai_weight": {
+            "factor": "1.0",
+            "modifier": {
+              "weapon_type_explosive_weapon_fire_rate_mult": "0.05"
+            },
+            "weight_groups": {},
+            "mod_weight_if_group_picked": {
+              "repeatable": "0.01"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech_repeatable.txt",
+    "_line_number": 197
+  },
+  "tech_repeatable_weapon_type_kinetic_damage": {
+    "tech_repeatable_weapon_type_kinetic_damage": {
+      "area": "engineering",
+      "cost": "@repeatableTechBaseCost",
+      "cost_per_level": "@repeatableTechLevelCost",
+      "tier": "@repeatableTechTier",
+      "category": {
+        "ai_update_type": "military",
+        "levels": "-1",
+        "prerequisites": {
+          "weight": "@repeatableTechWeight",
+          "weight_modifier": {
+            "factor": "@repatableTechFactor"
+          },
+          "ai_weight": {
+            "factor": "1.0",
+            "modifier": {
+              "weapon_type_kinetic_weapon_damage_mult": "0.05"
+            },
+            "weight_groups": {},
+            "mod_weight_if_group_picked": {
+              "repeatable": "0.01"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech_repeatable.txt",
+    "_line_number": 236
+  },
+  "tech_repeatable_weapon_type_kinetic_fire_rate": {
+    "tech_repeatable_weapon_type_kinetic_fire_rate": {
+      "area": "engineering",
+      "cost": "@repeatableTechBaseCost",
+      "cost_per_level": "@repeatableTechLevelCost",
+      "tier": "@repeatableTechTier",
+      "category": {
+        "ai_update_type": "military",
+        "levels": "-1",
+        "prerequisites": {
+          "weight": "@repeatableTechWeight",
+          "weight_modifier": {
+            "factor": "@repatableTechFactor"
+          },
+          "ai_weight": {
+            "factor": "1.0",
+            "modifier": {
+              "weapon_type_kinetic_weapon_fire_rate_mult": "0.05"
+            },
+            "weight_groups": {},
+            "mod_weight_if_group_picked": {
+              "repeatable": "0.01"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech_repeatable.txt",
+    "_line_number": 275
+  },
+  "tech_repeatable_reduced_building_time": {
+    "tech_repeatable_reduced_building_time": {
+      "area": "engineering",
+      "cost": "@repeatableTechBaseCost",
+      "cost_per_level": "@repeatableTechLevelCost",
+      "tier": "@repeatableTechTier",
+      "category": {
+        "levels": "5",
+        "prerequisites": {
+          "weight": "@repeatableTechWeight",
+          "weight_modifier": {
+            "factor": "@repatableTechFactor"
+          },
+          "ai_weight": {
+            "factor": "1.0"
+          },
+          "weight_groups": {},
+          "mod_weight_if_group_picked": {
+            "repeatable": "0.01"
+          },
+          "modifier": {
+            "planet_building_build_speed_mult": "0.10"
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech_repeatable.txt",
+    "_line_number": 314
+  }
+}

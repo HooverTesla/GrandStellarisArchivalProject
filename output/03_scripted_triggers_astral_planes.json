@@ -1,0 +1,121 @@
+{
+  "can_spawn_astral_rift": {
+    "can_spawn_astral_rift": {
+      "NOR": {
+        "has_astral_rift": "yes",
+        "any_system_planet": {
+          "is_astral_scar": "yes"
+        },
+        "any_neighbor_system": {
+          "OR": {
+            "has_astral_rift": "yes",
+            "any_system_planet": {
+              "is_astral_scar": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_scripted_triggers_astral_planes.txt",
+    "_line_number": 7
+  },
+  "can_spawn_astral_rift_natural_generation": {
+    "can_spawn_astral_rift_natural_generation": {
+      "NOR": {
+        "starting_system": "yes",
+        "is_fe_cluster": "yes",
+        "has_special_star_flag_trigger": "yes"
+      },
+      "can_spawn_astral_rift": "yes"
+    },
+    "_source_file": "03_scripted_triggers_astral_planes.txt",
+    "_line_number": 24
+  },
+  "can_spawn_astral_rift_or_split_astral_scar": {
+    "can_spawn_astral_rift_or_split_astral_scar": {
+      "OR": {
+        "any_system_planet": {
+          "is_astral_scar": "yes",
+          "has_anomaly": "no"
+        },
+        "can_spawn_astral_rift_natural_generation": "yes"
+      }
+    },
+    "_source_file": "03_scripted_triggers_astral_planes.txt",
+    "_line_number": 34
+  },
+  "is_exploring_astral_rift": {
+    "is_exploring_astral_rift": {
+      "exists": "astral_rift"
+    },
+    "_source_file": "03_scripted_triggers_astral_planes.txt",
+    "_line_number": 45
+  },
+  "is_star_affected_by_celestial_tear": {
+    "is_star_affected_by_celestial_tear": {
+      "OR": {
+        "is_planet_class": "pc_g_star"
+      }
+    },
+    "_source_file": "03_scripted_triggers_astral_planes.txt",
+    "_line_number": 49
+  },
+  "is_affected_by_formula_pink_opinion_modifier": {
+    "is_affected_by_formula_pink_opinion_modifier": {
+      "NOR": {
+        "is_robot_empire": "yes",
+        "is_lithoid_empire": "yes",
+        "is_species_class": "TOX"
+      }
+    },
+    "_source_file": "03_scripted_triggers_astral_planes.txt",
+    "_line_number": 58
+  },
+  "has_crystal_sphere_situation_ongoing": {
+    "has_crystal_sphere_situation_ongoing": {
+      "any_situation": {
+        "OR": {
+          "is_situation_type": "situation_study_crystal_sphere"
+        }
+      }
+    },
+    "_source_file": "03_scripted_triggers_astral_planes.txt",
+    "_line_number": 66
+  },
+  "is_hyperspace_specialty_empire": {
+    "is_hyperspace_specialty_empire": {
+      "OR": {
+        "has_valid_civic": "civic_corporate_hyperspace_specialty"
+      }
+    },
+    "_source_file": "03_scripted_triggers_astral_planes.txt",
+    "_line_number": 79
+  },
+  "is_dimensional_worship_empire": {
+    "is_dimensional_worship_empire": {
+      "OR": {
+        "has_civic": "civic_corporate_dimensional_worship"
+      }
+    },
+    "_source_file": "03_scripted_triggers_astral_planes.txt",
+    "_line_number": 88
+  },
+  "is_dark_consortium_empire": {
+    "is_dark_consortium_empire": {
+      "OR": {
+        "has_valid_civic": "civic_corporate_dark_consortium"
+      }
+    },
+    "_source_file": "03_scripted_triggers_astral_planes.txt",
+    "_line_number": 95
+  },
+  "is_sovereign_guardianship_empire": {
+    "is_sovereign_guardianship_empire": {
+      "OR": {
+        "has_valid_civic": "civic_corporate_sovereign_guardianship"
+      }
+    },
+    "_source_file": "03_scripted_triggers_astral_planes.txt",
+    "_line_number": 102
+  }
+}

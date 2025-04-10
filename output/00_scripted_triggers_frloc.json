@@ -1,0 +1,106 @@
+{
+  "frloc_rulers_masc_cons": {
+    "frloc_rulers_masc_cons": {
+      "_comments": [
+        "#Ex. LE roi / DU roi / grand(X) roi"
+      ],
+      "NOT": {
+        "OR": {
+          "has_government": "gov_storm_chasers # Chef des anciens"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_frloc.txt",
+    "_line_number": 7
+  },
+  "frloc_rulers_strange_angloalien_masc_cons": {
+    "frloc_rulers_strange_angloalien_masc_cons": {
+      "_comments": [
+        "#Ex. LE centre de contrôle / DU centre de contrôle / grand(X) centre de contrôle"
+      ],
+      "OR": {
+        "has_government": "gov_machine_terminator # Centre de commandement"
+      }
+    },
+    "_source_file": "00_scripted_triggers_frloc.txt",
+    "_line_number": 67
+  },
+  "frloc_rulers_masc_vow": {
+    "frloc_rulers_masc_vow": {
+      "_comments": [
+        "#Ex. L'empereur / DE L'empereur / grand(X) empereur"
+      ],
+      "NOT": {
+        "OR": {
+          "has_government": "gov_synth_corporate_virtual # Exécuteur"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_frloc.txt",
+    "_line_number": 96
+  },
+  "frloc_rulers_strange_angloalien_masc_vow": {
+    "frloc_rulers_strange_angloalien_masc_vow": {
+      "_comments": [
+        "#Ex. L' / DE L' / grand(X)"
+      ],
+      "OR": {
+        "has_government": "gov_memory_aggregator # Agrégateur central"
+      }
+    },
+    "_source_file": "00_scripted_triggers_frloc.txt",
+    "_line_number": 131
+  },
+  "frloc_rulers_fem_cons": {
+    "frloc_rulers_fem_cons": {
+      "_comments": [
+        "#Ex. LA reine / DE LA reine / grandE reine"
+      ],
+      "leader": {
+        "OR": {
+          "has_government": "gov_storm_chasers # Cheffe des anciens"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_frloc.txt",
+    "_line_number": 148
+  },
+  "frloc_rulers_strange_angloalien_fem_cons": {
+    "frloc_rulers_strange_angloalien_fem_cons": {
+      "_comments": [
+        "#Ex. LA conscience / DE LA conscience / grandE conscience"
+      ],
+      "OR": {
+        "has_government": "gov_cyber_hive_integrated # Conscience collective"
+      }
+    },
+    "_source_file": "00_scripted_triggers_frloc.txt",
+    "_line_number": 210
+  },
+  "frloc_rulers_fem_vow": {
+    "frloc_rulers_fem_vow": {
+      "_comments": [
+        "#Ex. L'impératrice / DE L'impératrice / grandE impératrice"
+      ],
+      "leader": {
+        "OR": {
+          "has_government": "gov_synth_corporate_virtual # Exécutrice"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_frloc.txt",
+    "_line_number": 223
+  },
+  "frloc_rulers_strange_angloalien_fem_vow": {
+    "frloc_rulers_strange_angloalien_fem_vow": {
+      "_comments": [
+        "#Ex. L'unité centrale / DE L'unité centrale / grandE unité centrale"
+      ],
+      "OR": {
+        "has_government": "gov_imperial_domain_machines # Intelligence galactique"
+      }
+    },
+    "_source_file": "00_scripted_triggers_frloc.txt",
+    "_line_number": 256
+  }
+}

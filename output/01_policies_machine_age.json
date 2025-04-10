@@ -1,0 +1,134 @@
+{
+  "synthetic_identities_policy": {
+    "synthetic_identities_policy": {
+      "potential": {
+        "has_technology": "tech_identity_copy"
+      },
+      "_comments": [
+        "#Fires when the policy group first becomes available"
+      ],
+      "on_activate": {},
+      "option": {
+        "name": "identity_initialization",
+        "potential": {
+          "has_country_flag": "advanced_identity_creation"
+        },
+        "valid": {
+          "has_technology": "tech_identity_initialization"
+        },
+        "policy_flags": {},
+        "modifier": {
+          "ROBOT_pop_happiness": "0.05",
+          "planet_jobs_robotic_produces_mult": "0.05"
+        },
+        "AI_weight": {
+          "weight": "1"
+        }
+      }
+    },
+    "_source_file": "01_policies_machine_age.txt",
+    "_line_number": 16
+  },
+  "computation_core_allocation": {
+    "computation_core_allocation": {
+      "potential": {
+        "is_synth_corporate": "yes"
+      },
+      "_comments": [
+        "#Fires when the policy group first becomes available"
+      ],
+      "on_activate": {},
+      "option": {
+        "name": "computation_core_research",
+        "policy_flags": {},
+        "AI_weight": {
+          "weight": "1"
+        }
+      }
+    },
+    "_source_file": "01_policies_machine_age.txt",
+    "_line_number": 83
+  },
+  "cyberization_standards": {
+    "cyberization_standards": {
+      "potential": {
+        "OR": {
+          "has_country_flag": "cyber_allow_objectors"
+        }
+      },
+      "_comments": [
+        "#Fires when the policy group first becomes available"
+      ],
+      "on_activate": {},
+      "option": {
+        "name": "cyberization_standards_limited",
+        "policy_flags": {},
+        "on_enabled": {
+          "hidden_effect": {
+            "every_owned_pop": {
+              "limit": {
+                "has_ethic": "ethic_spiritualist",
+                "has_trait": "trait_cybernetic"
+              },
+              "species": {
+                "save_event_target_as": "cyber_species"
+              },
+              "convert_to_limited_cybernetic_effect": {
+                "CYBER_SPECIES": "event_target:cyber_species"
+              }
+            },
+            "every_owned_leader": {
+              "limit": {
+                "has_ethic": "ethic_spiritualist",
+                "has_trait": "leader_trait_cyborg"
+              },
+              "remove_trait": "leader_trait_cyborg",
+              "add_trait_no_notify": "leader_trait_limited_cyborg"
+            },
+            "every_pool_leader": {
+              "limit": {
+                "has_ethic": "ethic_spiritualist",
+                "has_trait": "leader_trait_cyborg"
+              },
+              "remove_trait": "leader_trait_cyborg",
+              "add_trait_no_notify": "leader_trait_limited_cyborg"
+            }
+          }
+        },
+        "AI_weight": {
+          "weight": "1"
+        }
+      }
+    },
+    "_source_file": "01_policies_machine_age.txt",
+    "_line_number": 131
+  },
+  "virtuality_focus": {
+    "virtuality_focus": {
+      "potential": {
+        "OR": {
+          "has_active_tradition": "tr_virtuality_3",
+          "has_country_flag": "synth_virtual"
+        }
+      },
+      "option": {
+        "name": "virtuality_leader_focus",
+        "policy_flags": {},
+        "modifier": {
+          "species_leader_exp_gain": "0.25",
+          "council_agenda_progress_speed": "0.25",
+          "councilor_skill_add": "2",
+          "planet_jobs_physics_research_produces_mult": "-0.5",
+          "planet_jobs_society_research_produces_mult": "-0.5",
+          "planet_jobs_engineering_research_produces_mult": "-0.5",
+          "planet_jobs_unity_produces_mult": "-0.5"
+        },
+        "AI_weight": {
+          "weight": "1"
+        }
+      }
+    },
+    "_source_file": "01_policies_machine_age.txt",
+    "_line_number": 232
+  }
+}

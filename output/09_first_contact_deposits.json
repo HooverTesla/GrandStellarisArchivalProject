@@ -1,0 +1,202 @@
+{
+  "d_crashed_slaver_ship": {
+    "d_crashed_slaver_ship": {
+      "is_for_colonizable": "yes",
+      "icon": "d_crashed_ship",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "planet_modifier": {
+          "district_crashed_slaver_ship_max": "6"
+        }
+      }
+    },
+    "_source_file": "09_first_contact_deposits.txt",
+    "_line_number": 15
+  },
+  "d_crashed_slaver_ship_memorial": {
+    "d_crashed_slaver_ship_memorial": {
+      "is_for_colonizable": "yes",
+      "icon": "d_crashed_ship",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "job_culture_worker_add": "2"
+          }
+        }
+      }
+    },
+    "_source_file": "09_first_contact_deposits.txt",
+    "_line_number": 28
+  },
+  "d_ship_debris_broken_shackles_blocker": {
+    "d_ship_debris_broken_shackles_blocker": {
+      "icon": "d_crashed_ship",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare_blocker",
+      "potential": {
+        "can_be_cleared": {
+          "custom_tooltip": {
+            "text": "d_ship_debris_broken_shackles_blocker_tooltip",
+            "always": "no"
+          }
+        },
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "drop_weight": {
+          "weight": "0"
+        }
+      }
+    },
+    "_source_file": "09_first_contact_deposits.txt",
+    "_line_number": 46
+  },
+  "d_ship_debris_payback_blocker": {
+    "d_ship_debris_payback_blocker": {
+      "icon": "d_crashed_ship",
+      "time": "360",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare_blocker",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "300"
+          }
+        },
+        "on_cleared": {
+          "custom_tooltip": "ship_debris_payback_blocker_tt",
+          "hidden_effect": {
+            "owner": {
+              "random_list": {
+                "10": {
+                  "10": {}
+                }
+              }
+            },
+            "drop_weight": {
+              "weight": "0"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "09_first_contact_deposits.txt",
+    "_line_number": 72
+  },
+  "d_payback_habitat_research": {
+    "d_payback_habitat_research": {
+      "is_for_colonizable": "yes",
+      "icon": "d_station_reactor",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "planet_modifier": {
+          "planet_jobs_physics_research_produces_mult": "0.1",
+          "planet_jobs_society_research_produces_mult": "0.1",
+          "planet_jobs_engineering_research_produces_mult": "0.1",
+          "district_hab_science_max": "8"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {
+              "job_researcher_add": "2"
+            }
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {},
+              "modifier": {
+                "job_brain_drone_add": "2"
+              }
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {},
+                "modifier": {
+                  "job_calculator_add": "2"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "09_first_contact_deposits.txt",
+    "_line_number": 108
+  },
+  "d_msi_air_freshener": {
+    "d_msi_air_freshener": {
+      "is_for_colonizable": "yes",
+      "icon": "d_glitchy_matrix",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "planet_modifier": {
+          "pop_environment_tolerance": "0.40"
+        }
+      }
+    },
+    "_source_file": "09_first_contact_deposits.txt",
+    "_line_number": 150
+  },
+  "d_freeports": {
+    "d_freeports": {
+      "is_for_colonizable": "yes",
+      "icon": "d_station_cargo",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner"
+          },
+          "job_trader_add": "4"
+        }
+      }
+    },
+    "_source_file": "09_first_contact_deposits.txt",
+    "_line_number": 164
+  },
+  "d_landgrab_blocker": {
+    "d_landgrab_blocker": {
+      "icon": "d_tradestation_interior",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-4"
+        },
+        "drop_weight": {
+          "weight": "0"
+        }
+      }
+    },
+    "_source_file": "09_first_contact_deposits.txt",
+    "_line_number": 181
+  },
+  "d_landgrab_foreign_holdings": {
+    "d_landgrab_foreign_holdings": {
+      "icon": "d_tradestation_interior",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "1"
+        },
+        "drop_weight": {
+          "weight": "0"
+        }
+      }
+    },
+    "_source_file": "09_first_contact_deposits.txt",
+    "_line_number": 198
+  }
+}

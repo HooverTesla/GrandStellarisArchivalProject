@@ -1,0 +1,117 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "paragon.6035",
+      "title": "paragon.6035.name",
+      "desc": "paragon.6035.desc",
+      "picture": "GFX_evt_legendary_leader",
+      "event_window_type": "leader_story",
+      "picture_event_data": {
+        "portrait": "owner.ruler",
+        "room": "owner"
+      },
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "ruler",
+        "ruler": {},
+        "option": {
+          "name": "paragon.6035.b",
+          "trigger": {
+            "NOR": {
+              "has_ethic": "ethic_fanatic_authoritarian",
+              "ruler": {}
+            },
+            "hidden_effect": {
+              "ruler": {
+                "if": {
+                  "limit": {
+                    "remove_leader_flag": "leader_rift_blocks_death_events"
+                  },
+                  "else": {
+                    "remove_leader_flag": "leader_death_events_blocked"
+                  },
+                  "remove_leader_flag": "paragon_origin_legendary_leader"
+                }
+              },
+              "set_origin": "origin_default",
+              "if": {
+                "limit": {
+                  "has_ethic": "ethic_authoritarian"
+                },
+                "change_government": {
+                  "authority": "auth_oligarchic",
+                  "remove_invalid_civics": "yes"
+                }
+              },
+              "else": {
+                "change_government": {
+                  "authority": "auth_democratic",
+                  "remove_invalid_civics": "yes"
+                }
+              },
+              "paragon_origin_gain_modifier": "yes",
+              "custom_tooltip": "paragon.6035.b.tt"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_paragon.txt",
+    "_line_number": 4945
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "paragon.5931",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "OR": {
+          "has_modifier": "paragon_origin_residential_monument"
+        },
+        "from": {
+          "NOR": {
+            "has_origin": "origin_legendary_leader_imperial"
+          }
+        }
+      },
+      "immediate": {
+        "switch": {
+          "trigger": "has_modifier",
+          "paragon_origin_humble_monument": {
+            "remove_modifier": "paragon_origin_humble_monument"
+          },
+          "paragon_origin_rich_monument": {
+            "remove_modifier": "paragon_origin_rich_monument"
+          },
+          "paragon_origin_residential_monument": {
+            "remove_modifier": "paragon_origin_residential_monument"
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_paragon.txt",
+    "_line_number": 4236
+  },
+  "situation_event": {
+    "situation_event": {
+      "id": "paragon.5946",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "current_situation_approach": "situation_paragon_origin_reformists_struggle_accept"
+        },
+        "immediate": {
+          "owner": {
+            "change_variable": {
+              "which": "paragon_origin_reformists_negotiation_value",
+              "value": "-15"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_paragon.txt",
+    "_line_number": 4346
+  }
+}

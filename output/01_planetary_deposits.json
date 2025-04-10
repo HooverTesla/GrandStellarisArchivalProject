@@ -1,0 +1,2311 @@
+{
+  "d_arid_highlands": {
+    "d_arid_highlands": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "category": "deposit_cat_energy",
+      "planet_modifier": {
+        "district_generator_max": "1"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_generator_max": "1",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "is_dry": "yes"
+      },
+      "drop_weight": {
+        "weight": "@high",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_dry": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 33
+  },
+  "d_hot_springs": {
+    "d_hot_springs": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_energy",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_generator_max": "1"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_generator_max": "1",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_cold": "yes",
+          "is_wet": "yes",
+          "is_planet_class": "pc_nuked"
+        }
+      },
+      "drop_weight": {
+        "weight": "@high",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_dry": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 71
+  },
+  "d_rushing_waterfalls": {
+    "d_rushing_waterfalls": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "category": "deposit_cat_energy",
+      "planet_modifier": {
+        "district_generator_max": "2"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_generator_max": "2",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "is_wet": "yes"
+      },
+      "drop_weight": {
+        "weight": "@med",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_dry": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 113
+  },
+  "d_searing_desert": {
+    "d_searing_desert": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_energy",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_generator_max": "2"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_generator_max": "2",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_relic",
+          "is_dry": "yes"
+        }
+      },
+      "drop_weight": {
+        "weight": "@med",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_dry": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 151
+  },
+  "d_frozen_gas_lake": {
+    "d_frozen_gas_lake": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_energy",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_generator_max": "2"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_generator_max": "2",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_relic",
+          "is_cold": "yes"
+        }
+      },
+      "drop_weight": {
+        "weight": "@med",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_dry": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 194
+  },
+  "d_geothermal_vent": {
+    "d_geothermal_vent": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_energy",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_generator_max": "3"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_generator_max": "3",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_arid"
+        }
+      },
+      "drop_weight": {
+        "weight": "@low",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_dry": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 236
+  },
+  "d_underwater_vent": {
+    "d_underwater_vent": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_energy",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_generator_max": "3"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_generator_max": "3",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_nuked"
+        }
+      },
+      "drop_weight": {
+        "weight": "@low",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_dry": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 280
+  },
+  "d_tempestous_mountain": {
+    "d_tempestous_mountain": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_energy",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_generator_max": "3"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_generator_max": "3",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_continental"
+        }
+      },
+      "drop_weight": {
+        "weight": "@low",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_dry": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 323
+  },
+  "d_veiny_cliffs": {
+    "d_veiny_cliffs": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_minerals",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_mining_max": "1"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_mining_max": "1",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_nuked"
+        }
+      },
+      "drop_weight": {
+        "weight": "@high",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_cold": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 371
+  },
+  "d_mineral_fields": {
+    "d_mineral_fields": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_minerals",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_mining_max": "1"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_mining_max": "1",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_tundra"
+        }
+      },
+      "drop_weight": {
+        "weight": "@high",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_cold": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 415
+  },
+  "d_prosperous_mesa": {
+    "d_prosperous_mesa": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_minerals",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_mining_max": "2"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_mining_max": "2",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_relic"
+        }
+      },
+      "drop_weight": {
+        "weight": "@med",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_cold": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 459
+  },
+  "d_ore_rich_caverns": {
+    "d_ore_rich_caverns": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_minerals",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_mining_max": "2"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_subterranean_empire": "yes"
+          }
+        },
+        "modifier": {
+          "district_mining_max": "1"
+        }
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_relic"
+        }
+      },
+      "drop_weight": {
+        "weight": "@med",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_cold": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 504
+  },
+  "d_rich_mountain": {
+    "d_rich_mountain": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_minerals",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_mining_max": "3"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_mining_max": "3",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_relic"
+        }
+      },
+      "drop_weight": {
+        "weight": "@low",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_cold": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 561
+  },
+  "d_submerged_ore_veins": {
+    "d_submerged_ore_veins": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_minerals",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_mining_max": "3"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_mining_max": "3",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_relic"
+        }
+      },
+      "drop_weight": {
+        "weight": "@low",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_cold": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 607
+  },
+  "d_lichen_fields": {
+    "d_lichen_fields": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_food",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_farming_max": "1"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_farming_max": "1",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_arctic"
+        }
+      },
+      "drop_weight": {
+        "weight": "@high",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_wet": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 654
+  },
+  "d_bountiful_plains": {
+    "d_bountiful_plains": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_food",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_farming_max": "1"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_farming_max": "1",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_savannah"
+        }
+      },
+      "drop_weight": {
+        "weight": "@high",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_wet": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 704
+  },
+  "d_rugged_woods": {
+    "d_rugged_woods": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_food",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_farming_max": "1"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_farming_max": "1",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "is_planet_class": "pc_continental"
+      },
+      "drop_weight": {
+        "weight": "@high",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_wet": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 750
+  },
+  "d_green_hills": {
+    "d_green_hills": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_food",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_farming_max": "1"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_farming_max": "1",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_tropical"
+        }
+      },
+      "drop_weight": {
+        "weight": "@high",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_wet": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 791
+  },
+  "d_forgiving_tundra": {
+    "d_forgiving_tundra": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_food",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_farming_max": "1"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_farming_max": "1",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_tundra"
+        }
+      },
+      "drop_weight": {
+        "weight": "@high",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_wet": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 837
+  },
+  "d_boggy_fens": {
+    "d_boggy_fens": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_food",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_farming_max": "1"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_farming_max": "1",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "is_planet_class": "pc_ocean"
+      },
+      "drop_weight": {
+        "weight": "@high",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_wet": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 883
+  },
+  "d_nutritious_mudland": {
+    "d_nutritious_mudland": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_food",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_farming_max": "1"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_farming_max": "1",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "is_planet_class": "pc_desert"
+      },
+      "drop_weight": {
+        "weight": "@high",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_wet": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 926
+  },
+  "d_fungal_caves": {
+    "d_fungal_caves": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_food",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_farming_max": "2"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_farming_max": "2",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_nuked",
+          "is_cold": "yes"
+        }
+      },
+      "drop_weight": {
+        "weight": "@med",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_wet": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 969
+  },
+  "d_lush_jungle": {
+    "d_lush_jungle": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_food",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_farming_max": "2"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_farming_max": "2",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_ocean"
+        }
+      },
+      "drop_weight": {
+        "weight": "@med",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_wet": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1015
+  },
+  "d_fertile_lands": {
+    "d_fertile_lands": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_food",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_farming_max": "2"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_farming_max": "2",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_arid"
+        }
+      },
+      "drop_weight": {
+        "weight": "@med",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_wet": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1058
+  },
+  "d_great_river": {
+    "d_great_river": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_food",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_farming_max": "2"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_farming_max": "2",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_desert"
+        }
+      },
+      "drop_weight": {
+        "weight": "@med",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_wet": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1102
+  },
+  "d_black_soil": {
+    "d_black_soil": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_food",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_farming_max": "3"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_farming_max": "3",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_gaia"
+        }
+      },
+      "drop_weight": {
+        "weight": "@low",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_wet": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1144
+  },
+  "d_teeming_reef": {
+    "d_teeming_reef": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_food",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_farming_max": "3"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "has_modifier": "mastery_of_nature"
+        },
+        "district_farming_max": "0.75"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_ocean"
+        }
+      },
+      "drop_weight": {
+        "weight": "@low",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_wet": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1188
+  },
+  "d_marvelous_oasis": {
+    "d_marvelous_oasis": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_food",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_farming_max": "3"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_farming_max": "3",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_desert"
+        }
+      },
+      "drop_weight": {
+        "weight": "@low",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_wet": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1230
+  },
+  "d_tropical_island": {
+    "d_tropical_island": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_food",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_farming_max": "3"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_farming_max": "3",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_tropical"
+        }
+      },
+      "drop_weight": {
+        "weight": "@low",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_wet": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1273
+  },
+  "d_fungal_forest": {
+    "d_fungal_forest": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "category": "deposit_cat_food",
+      "planet_modifier": {
+        "district_farming_max": "3"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_farming_max": "3",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {
+        "is_cold": "yes"
+      },
+      "drop_weight": {
+        "weight": "@low",
+        "modifier": {
+          "factor": "@planet_type_bonus",
+          "is_wet": "yes"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1317
+  },
+  "d_dust_caverns": {
+    "d_dust_caverns": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare_resource",
+      "potential": {
+        "can_have_habitable_deposits": "yes"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_mining_max": "@DISTRICTS_FROM_SR_DEPOSITS",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "planet_modifier": {
+        "district_mining_max": "@DISTRICTS_FROM_SR_DEPOSITS"
+      },
+      "drop_weight": {
+        "weight": "@high_rare",
+        "modifier": {
+          "factor": "0",
+          "solar_system": {
+            "OR": {
+              "has_star_flag": "deneb_system"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1364
+  },
+  "d_dust_desert": {
+    "d_dust_desert": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare_resource",
+      "potential": {
+        "can_have_habitable_deposits": "yes"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_mining_max": "@DISTRICTS_FROM_SR_DEPOSITS",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "planet_modifier": {
+        "district_mining_max": "@DISTRICTS_FROM_SR_DEPOSITS"
+      },
+      "drop_weight": {
+        "weight": "@high_rare",
+        "modifier": {
+          "factor": "0",
+          "solar_system": {
+            "OR": {
+              "has_star_flag": "deneb_system"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1417
+  },
+  "d_bubbling_swamp": {
+    "d_bubbling_swamp": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare_resource",
+      "potential": {
+        "can_have_habitable_deposits": "yes"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_mining_max": "@DISTRICTS_FROM_SR_DEPOSITS",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "planet_modifier": {
+        "district_mining_max": "@DISTRICTS_FROM_SR_DEPOSITS"
+      },
+      "drop_weight": {
+        "weight": "@high_rare",
+        "modifier": {
+          "factor": "0",
+          "solar_system": {
+            "OR": {
+              "has_star_flag": "deneb_system"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1474
+  },
+  "d_fuming_bog": {
+    "d_fuming_bog": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare_resource",
+      "potential": {
+        "can_have_habitable_deposits": "yes"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_mining_max": "@DISTRICTS_FROM_SR_DEPOSITS",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "planet_modifier": {
+        "district_mining_max": "@DISTRICTS_FROM_SR_DEPOSITS"
+      },
+      "drop_weight": {
+        "weight": "@low_rare",
+        "modifier": {
+          "factor": "0",
+          "solar_system": {
+            "OR": {
+              "has_star_flag": "deneb_system"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1534
+  },
+  "d_crystalline_caverns": {
+    "d_crystalline_caverns": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare_resource",
+      "potential": {
+        "can_have_habitable_deposits": "yes"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_mining_max": "@DISTRICTS_FROM_SR_DEPOSITS",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "planet_modifier": {
+        "district_mining_max": "@DISTRICTS_FROM_SR_DEPOSITS"
+      },
+      "drop_weight": {
+        "weight": "@high_rare",
+        "modifier": {
+          "factor": "0",
+          "solar_system": {
+            "OR": {
+              "has_star_flag": "deneb_system"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1598
+  },
+  "d_crystal_forest": {
+    "d_crystal_forest": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare_resource",
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_mining_max": "@DISTRICTS_FROM_SR_DEPOSITS",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "planet_modifier": {
+        "district_mining_max": "@DISTRICTS_FROM_SR_DEPOSITS"
+      },
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "NOR": {
+          "is_planet_class": "pc_gaia"
+        }
+      },
+      "drop_weight": {
+        "weight": "@low_rare",
+        "modifier": {
+          "factor": "0",
+          "solar_system": {
+            "OR": {
+              "has_star_flag": "deneb_system"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1659
+  },
+  "d_crystal_reef": {
+    "d_crystal_reef": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare_resource",
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_mining_max": "@DISTRICTS_FROM_SR_DEPOSITS",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "planet_modifier": {
+        "district_mining_max": "@DISTRICTS_FROM_SR_DEPOSITS"
+      },
+      "potential": {
+        "OR": {
+          "is_planet_class": "pc_gaia"
+        }
+      },
+      "drop_weight": {
+        "weight": "@low_rare",
+        "modifier": {
+          "factor": "0",
+          "solar_system": {
+            "OR": {
+              "has_star_flag": "deneb_system"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1725
+  },
+  "d_betharian_deposit": {
+    "d_betharian_deposit": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes"
+      },
+      "planet_modifier": {
+        "building_betharian_power_plant_max": "1"
+      },
+      "drop_weight": {
+        "weight": "@mid_rare",
+        "modifier": {
+          "factor": "0",
+          "solar_system": {
+            "OR": {
+              "has_star_flag": "deneb_system"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1792
+  },
+  "d_alien_pets_deposit": {
+    "d_alien_pets_deposit": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_guided_sapience_empire": "yes"
+          }
+        },
+        "modifier": {
+          "planet_jobs_unity_produces_mult": "0.10",
+          "planet_amenities_add": "10"
+        }
+      },
+      "drop_weight": {
+        "weight": "@mid_rare",
+        "modifier": {
+          "factor": "0",
+          "solar_system": {
+            "OR": {
+              "has_star_flag": "deneb_system"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1823
+  },
+  "d_buzzing_plains": {
+    "d_buzzing_plains": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "category": "deposit_cat_energy",
+      "planet_modifier": {
+        "district_generator_max": "1"
+      },
+      "potential": {
+        "is_planet_class": "pc_gaia"
+      },
+      "drop_weight": {
+        "weight": "0.01"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1868
+  },
+  "d_mineral_striations": {
+    "d_mineral_striations": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_minerals",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_mining_max": "1"
+      },
+      "potential": {
+        "is_planet_class": "pc_gaia"
+      },
+      "drop_weight": {
+        "weight": "0.01"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1895
+  },
+  "d_natural_farmland": {
+    "d_natural_farmland": {
+      "is_for_colonizable": "yes",
+      "use_for_min_max_adjustments": "yes",
+      "category": "deposit_cat_food",
+      "use_weights_for_terraforming_swap_types": "yes",
+      "should_swap_deposit_on_terraforming": "yes",
+      "terraforming_swap_types": {},
+      "planet_modifier": {
+        "district_farming_max": "1"
+      },
+      "potential": {
+        "is_planet_class": "pc_gaia"
+      },
+      "drop_weight": {
+        "weight": "0.01"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1922
+  },
+  "d_hab_gas_1": {
+    "d_hab_gas_1": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_gestalt": "yes",
+            "has_technology": "tech_mine_exotic_gases"
+          }
+        },
+        "modifier": {
+          "job_gas_extraction_drone_add": "1"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1954
+  },
+  "d_hab_gas_2": {
+    "d_hab_gas_2": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_gestalt": "yes",
+            "has_technology": "tech_mine_exotic_gases"
+          }
+        },
+        "modifier": {
+          "job_gas_extraction_drone_add": "2"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 1995
+  },
+  "d_hab_gas_3": {
+    "d_hab_gas_3": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_gestalt": "yes",
+            "has_technology": "tech_mine_exotic_gases"
+          }
+        },
+        "modifier": {
+          "job_gas_extraction_drone_add": "3"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2036
+  },
+  "d_hab_gas_4": {
+    "d_hab_gas_4": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_gestalt": "yes",
+            "has_technology": "tech_mine_exotic_gases"
+          }
+        },
+        "modifier": {
+          "job_gas_extraction_drone_add": "4"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2077
+  },
+  "d_hab_gas_5": {
+    "d_hab_gas_5": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_gestalt": "yes",
+            "has_technology": "tech_mine_exotic_gases"
+          }
+        },
+        "modifier": {
+          "job_gas_extraction_drone_add": "5"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2118
+  },
+  "d_hab_crystal_1": {
+    "d_hab_crystal_1": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_gestalt": "yes",
+            "has_technology": "tech_mine_rare_crystals"
+          }
+        },
+        "modifier": {
+          "job_crystal_mining_drone_add": "1"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2159
+  },
+  "d_hab_crystal_2": {
+    "d_hab_crystal_2": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_gestalt": "yes",
+            "has_technology": "tech_mine_rare_crystals"
+          }
+        },
+        "modifier": {
+          "job_crystal_mining_drone_add": "2"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2200
+  },
+  "d_hab_crystal_3": {
+    "d_hab_crystal_3": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_gestalt": "yes",
+            "has_technology": "tech_mine_rare_crystals"
+          }
+        },
+        "modifier": {
+          "job_crystal_mining_drone_add": "3"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2241
+  },
+  "d_hab_crystal_4": {
+    "d_hab_crystal_4": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_gestalt": "yes",
+            "has_technology": "tech_mine_rare_crystals"
+          }
+        },
+        "modifier": {
+          "job_crystal_mining_drone_add": "4"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2282
+  },
+  "d_hab_crystal_5": {
+    "d_hab_crystal_5": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_gestalt": "yes",
+            "has_technology": "tech_mine_rare_crystals"
+          }
+        },
+        "modifier": {
+          "job_crystal_mining_drone_add": "5"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2323
+  },
+  "d_hab_mote_1": {
+    "d_hab_mote_1": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_gestalt": "yes",
+            "has_technology": "tech_mine_volatile_motes"
+          }
+        },
+        "modifier": {
+          "job_mote_harvesting_drone_add": "1"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2364
+  },
+  "d_hab_mote_2": {
+    "d_hab_mote_2": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_gestalt": "yes",
+            "has_technology": "tech_mine_volatile_motes"
+          }
+        },
+        "modifier": {
+          "job_mote_harvesting_drone_add": "2"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2405
+  },
+  "d_hab_mote_3": {
+    "d_hab_mote_3": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_gestalt": "yes",
+            "has_technology": "tech_mine_volatile_motes"
+          }
+        },
+        "modifier": {
+          "job_mote_harvesting_drone_add": "3"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2446
+  },
+  "d_hab_mote_4": {
+    "d_hab_mote_4": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_gestalt": "yes",
+            "has_technology": "tech_mine_volatile_motes"
+          }
+        },
+        "modifier": {
+          "job_mote_harvesting_drone_add": "4"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2487
+  },
+  "d_hab_mote_5": {
+    "d_hab_mote_5": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_gestalt": "yes",
+            "has_technology": "tech_mine_volatile_motes"
+          }
+        },
+        "modifier": {
+          "job_mote_harvesting_drone_add": "5"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2528
+  },
+  "d_hab_zro_1": {
+    "d_hab_zro_1": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_research_deposits",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "sr_zro": "1"
+          }
+        },
+        "drop_weight": {
+          "weight": "0"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2568
+  },
+  "d_hab_zro_2": {
+    "d_hab_zro_2": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_research_deposits",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "sr_zro": "2"
+          }
+        },
+        "drop_weight": {
+          "weight": "0"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2594
+  },
+  "d_hab_zro_3": {
+    "d_hab_zro_3": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_research_deposits",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "sr_zro": "3"
+          }
+        },
+        "drop_weight": {
+          "weight": "0"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2620
+  },
+  "d_hab_zro_4": {
+    "d_hab_zro_4": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_research_deposits",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "sr_zro": "4"
+          }
+        },
+        "drop_weight": {
+          "weight": "0"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2646
+  },
+  "d_hab_zro_5": {
+    "d_hab_zro_5": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_research_deposits",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "sr_zro": "5"
+          }
+        },
+        "drop_weight": {
+          "weight": "0"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2672
+  },
+  "d_hab_dark_matter_1": {
+    "d_hab_dark_matter_1": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_research_deposits",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "sr_dark_matter": "1"
+          }
+        },
+        "drop_weight": {
+          "weight": "0"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2698
+  },
+  "d_hab_dark_matter_2": {
+    "d_hab_dark_matter_2": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_research_deposits",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "sr_dark_matter": "2"
+          }
+        },
+        "drop_weight": {
+          "weight": "0"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2724
+  },
+  "d_hab_dark_matter_3": {
+    "d_hab_dark_matter_3": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_research_deposits",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "sr_dark_matter": "3"
+          }
+        },
+        "drop_weight": {
+          "weight": "0"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2750
+  },
+  "d_hab_dark_matter_10": {
+    "d_hab_dark_matter_10": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_research_deposits",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "sr_dark_matter": "10"
+          }
+        },
+        "drop_weight": {
+          "weight": "0"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2776
+  },
+  "d_hab_living_metal_1": {
+    "d_hab_living_metal_1": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_mining_deposits",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "sr_living_metal": "1"
+          }
+        },
+        "drop_weight": {
+          "weight": "0"
+        }
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2802
+  },
+  "d_hab_alloy_1": {
+    "d_hab_alloy_1": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_mining_deposits",
+        "produces": {
+          "alloys": "1"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2828
+  },
+  "d_hab_alloy_2": {
+    "d_hab_alloy_2": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_mining_deposits",
+        "produces": {
+          "alloys": "2"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2850
+  },
+  "d_hab_alloy_3": {
+    "d_hab_alloy_3": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_mining_deposits",
+        "produces": {
+          "alloys": "3"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2872
+  },
+  "d_hab_alloy_4": {
+    "d_hab_alloy_4": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_mining_deposits",
+        "produces": {
+          "alloys": "4"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2894
+  },
+  "d_hab_alloy_5": {
+    "d_hab_alloy_5": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_mining_deposits",
+        "produces": {
+          "alloys": "5"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2916
+  },
+  "d_hab_alloy_10": {
+    "d_hab_alloy_10": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_mining_deposits",
+        "produces": {
+          "alloys": "10"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2938
+  },
+  "d_hab_alloy_25": {
+    "d_hab_alloy_25": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_mining_deposits",
+        "produces": {
+          "alloys": "25"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2960
+  },
+  "d_hab_consumer_goods_2": {
+    "d_hab_consumer_goods_2": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_mining_deposits",
+        "produces": {
+          "consumer_goods": "2"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 2982
+  },
+  "d_hab_nanites_3": {
+    "d_hab_nanites_3": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_research_deposits",
+        "produces": {
+          "nanites": "3"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 3004
+  },
+  "d_hab_harvester_nanites_1": {
+    "d_hab_harvester_nanites_1": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_research_deposits",
+        "produces": {
+          "nanites": "0.1"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 3026
+  },
+  "d_hab_harvester_nanites_2": {
+    "d_hab_harvester_nanites_2": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_research_deposits",
+        "produces": {
+          "nanites": "1.6"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 3048
+  },
+  "d_hab_harvester_nanites_3": {
+    "d_hab_harvester_nanites_3": {
+      "icon": "unused/d_space_walk",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "is_planet_class": "pc_habitat"
+      },
+      "resources": {
+        "category": "hab_research_deposits",
+        "produces": {
+          "nanites": "25.2"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "01_planetary_deposits.txt",
+    "_line_number": 3070
+  }
+}

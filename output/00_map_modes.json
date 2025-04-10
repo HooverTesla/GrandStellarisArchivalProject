@@ -1,0 +1,802 @@
+{
+  "default_map_mode": {
+    "default_map_mode": {
+      "icon": "GFX_map_mode_default",
+      "enable_terra_incognita": "yes",
+      "can_change_point_of_view": "no",
+      "shortcut": "CTRL+z",
+      "_comments": [
+        "# Color Galactic Empire members red depending on imperial authority",
+        "# See GALACTIC_EMPIRE_BASE_AUTHORITY and GALACTIC_EMPIRE_MAX_AUTHORITY in defines"
+      ],
+      "color": {
+        "type": "country_and_borders",
+        "zoom": "1300",
+        "value": {
+          "condition": {
+            "hardcoded_tooltip": "country"
+          },
+          "color": {
+            "type": "borders",
+            "zoom": "1300",
+            "value": {
+              "condition": {
+                "has_galactic_emperor": "yes",
+                "imperial_authority >": "100",
+                "is_part_of_galactic_council": "yes"
+              },
+              "hardcoded_tooltip": "country"
+            },
+            "color": {
+              "type": "borders",
+              "zoom": "1300",
+              "value": {
+                "condition": {
+                  "has_galactic_emperor": "yes",
+                  "imperial_authority >": "150",
+                  "is_galactic_community_member": "yes"
+                },
+                "hardcoded_tooltip": "country"
+              },
+              "color": {
+                "value": "country",
+                "condition": {
+                  "hardcoded_tooltip": "country"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_map_modes.txt",
+    "_line_number": 35
+  },
+  "union_map_mode": {
+    "union_map_mode": {
+      "icon": "GFX_map_mode_unions",
+      "enable_terra_incognita": "yes",
+      "can_change_point_of_view": "no",
+      "shortcut": "CTRL+m",
+      "_comments": [
+        "# Color Galactic Empire members red depending on imperial authority",
+        "# See GALACTIC_EMPIRE_BASE_AUTHORITY and GALACTIC_EMPIRE_MAX_AUTHORITY in defines"
+      ],
+      "color": {
+        "type": "country_and_borders",
+        "zoom": "1300",
+        "value": {
+          "condition": {
+            "hardcoded_tooltip": "country"
+          },
+          "color": {
+            "type": "country_and_borders",
+            "zoom": "1300",
+            "value": {
+              "condition": {
+                "has_galactic_emperor": "yes",
+                "imperial_authority >": "100",
+                "is_part_of_galactic_council": "yes"
+              },
+              "hardcoded_tooltip": "country"
+            },
+            "color": {
+              "type": "borders",
+              "zoom": "1300",
+              "value": {
+                "condition": {
+                  "has_galactic_emperor": "yes",
+                  "imperial_authority >": "150",
+                  "is_galactic_community_member": "yes"
+                },
+                "hardcoded_tooltip": "country"
+              },
+              "color": {
+                "value": "union",
+                "condition": {
+                  "hardcoded_tooltip": "country"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_map_modes.txt",
+    "_line_number": 84
+  },
+  "diplomatic_map_mode": {
+    "diplomatic_map_mode": {
+      "icon": "GFX_map_mode_diplomatic",
+      "enable_terra_incognita": "yes",
+      "display_claims": "yes",
+      "shortcut": "CTRL+x",
+      "color": {
+        "color": {
+          "value": {
+            "custom_tooltip": "MAP_MODE_NO_CONTACT",
+            "condition": {
+              "NOT": {}
+            },
+            "_comments": [
+              "#always = no"
+            ],
+            "color": {
+              "value": {
+                "custom_tooltip": "DIPLOMATIC_MAP_MODE_SAME_EMPIRE",
+                "condition": {
+                  "is_same_empire": "from"
+                }
+              },
+              "color": {
+                "value": {
+                  "custom_tooltip": "DIPLOMATIC_MAP_MODE_FEDERATION",
+                  "condition": {
+                    "is_in_federation_with": "FROM",
+                    "_comments": [
+                      "# check that we know this"
+                    ],
+                    "OR": {
+                      "_comments": [
+                        "# Observer Mode"
+                      ],
+                      "NOT": {
+                        "FROMFROM": {
+                          "OR": {
+                            "_comments": [
+                              "# it's us",
+                              "# got the intel"
+                            ],
+                            "OR": {
+                              "is_same_empire": "PREV"
+                            },
+                            "has_intel_level": {
+                              "who": "PREV",
+                              "category": "diplomacy",
+                              "level >": "2 # federation_name intel"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "color": {
+                    "value": {
+                      "custom_tooltip": "DIPLOMATIC_MAP_MODE_WAR",
+                      "condition": {
+                        "OR": {
+                          "_comments": [
+                            "# Observer Mode"
+                          ],
+                          "NOT": {
+                            "FROMFROM": {
+                              "OR": {
+                                "_comments": [
+                                  "# it's us",
+                                  "# got the intel"
+                                ],
+                                "OR": {
+                                  "is_same_empire": "PREV"
+                                },
+                                "has_intel_level": {
+                                  "who": "PREV",
+                                  "category": "military",
+                                  "level >": "2 # intel_casus_belli intel"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "_comments": [
+                          "# check that we know this"
+                        ]
+                      },
+                      "color": {
+                        "value": {
+                          "custom_tooltip": "DIPLOMATIC_MAP_MODE_SUBJECT",
+                          "condition": {
+                            "exists": "overlord",
+                            "overlord": {
+                              "is_same_empire": "FROM"
+                            },
+                            "_comments": [
+                              "# check that we know this"
+                            ],
+                            "OR": {
+                              "_comments": [
+                                "# Observer Mode"
+                              ],
+                              "NOT": {
+                                "FROMFROM": {
+                                  "OR": {
+                                    "_comments": [
+                                      "# it's us",
+                                      "# got the intel"
+                                    ],
+                                    "OR": {
+                                      "is_same_empire": "PREV"
+                                    },
+                                    "has_intel_level": {
+                                      "who": "PREV",
+                                      "category": "diplomacy",
+                                      "level >": "3 # diplomatic_pacts intel"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "color": {
+                            "value": {
+                              "custom_tooltip": "DIPLOMATIC_MAP_MODE_OVERLORD",
+                              "condition": {
+                                "exists": "from.overlord",
+                                "from.overlord": {
+                                  "is_same_empire": "PREV"
+                                },
+                                "OR": {
+                                  "_comments": [
+                                    "# Observer Mode"
+                                  ],
+                                  "NOT": {
+                                    "FROMFROM": {
+                                      "OR": {
+                                        "_comments": [
+                                          "# it's us",
+                                          "# got the intel"
+                                        ],
+                                        "OR": {
+                                          "is_same_empire": "PREV"
+                                        },
+                                        "has_intel_level": {
+                                          "who": "PREV",
+                                          "category": "diplomacy",
+                                          "level >": "3 # diplomatic_pacts intel"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "color": {
+                                "value": {
+                                  "custom_tooltip": "DIPLOMATIC_MAP_MODE_DEFENSIVE_PACT",
+                                  "condition": {
+                                    "has_defensive_pact": "FROM",
+                                    "OR": {
+                                      "_comments": [
+                                        "# Observer Mode"
+                                      ],
+                                      "NOT": {
+                                        "FROMFROM": {
+                                          "OR": {
+                                            "_comments": [
+                                              "# it's us",
+                                              "# got the intel"
+                                            ],
+                                            "OR": {
+                                              "is_same_empire": "PREV"
+                                            },
+                                            "has_intel_level": {
+                                              "who": "PREV",
+                                              "category": "diplomacy",
+                                              "level >": "3 # diplomatic_pacts intel"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "color": {
+                                    "value": {
+                                      "custom_tooltip": "DIPLOMATIC_MAP_MODE_NON_AGGRESSION_PACT",
+                                      "condition": {
+                                        "has_non_aggression_pact": "FROM",
+                                        "OR": {
+                                          "_comments": [
+                                            "# Observer Mode"
+                                          ],
+                                          "NOT": {
+                                            "FROMFROM": {
+                                              "OR": {
+                                                "_comments": [
+                                                  "# it's us",
+                                                  "# got the intel"
+                                                ],
+                                                "OR": {
+                                                  "is_same_empire": "PREV"
+                                                },
+                                                "has_intel_level": {
+                                                  "who": "PREV",
+                                                  "category": "diplomacy",
+                                                  "level >": "3 # diplomatic_pacts intel"
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "color": {
+                                        "value": {
+                                          "custom_tooltip": "DIPLOMATIC_MAP_MODE_ASSOCIATION_STATUS",
+                                          "condition": {
+                                            "has_association_status": "FROM",
+                                            "OR": {
+                                              "_comments": [
+                                                "# Observer Mode"
+                                              ],
+                                              "NOT": {
+                                                "FROMFROM": {
+                                                  "OR": {
+                                                    "_comments": [
+                                                      "# it's us",
+                                                      "# got the intel"
+                                                    ],
+                                                    "OR": {
+                                                      "is_same_empire": "PREV"
+                                                    },
+                                                    "has_intel_level": {
+                                                      "who": "PREV",
+                                                      "category": "diplomacy",
+                                                      "level >": "3 # diplomatic_pacts intel"
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "color": {
+                                            "value": {
+                                              "custom_tooltip": "DIPLOMATIC_MAP_MODE_RESEARCH_AGREEMENT",
+                                              "condition": {
+                                                "has_research_agreement": "FROM",
+                                                "OR": {
+                                                  "_comments": [
+                                                    "# Observer Mode"
+                                                  ],
+                                                  "NOT": {
+                                                    "FROMFROM": {
+                                                      "OR": {
+                                                        "_comments": [
+                                                          "# it's us",
+                                                          "# got the intel"
+                                                        ],
+                                                        "OR": {
+                                                          "is_same_empire": "PREV"
+                                                        },
+                                                        "has_intel_level": {
+                                                          "who": "PREV",
+                                                          "category": "diplomacy",
+                                                          "level >": "3 # diplomatic_pacts intel"
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "color": {
+                                                "value": {
+                                                  "custom_tooltip": "DIPLOMATIC_MAP_MODE_COMMERCIAL_PACT",
+                                                  "condition": {
+                                                    "has_commercial_pact": "FROM",
+                                                    "OR": {
+                                                      "_comments": [
+                                                        "# Observer Mode"
+                                                      ],
+                                                      "NOT": {
+                                                        "FROMFROM": {
+                                                          "OR": {
+                                                            "_comments": [
+                                                              "# it's us",
+                                                              "# got the intel"
+                                                            ],
+                                                            "OR": {
+                                                              "is_same_empire": "PREV"
+                                                            },
+                                                            "has_intel_level": {
+                                                              "who": "PREV",
+                                                              "category": "diplomacy",
+                                                              "level >": "3 # diplomatic_pacts intel"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "color": {
+                                                    "value": {
+                                                      "custom_tooltip": "DIPLOMATIC_MAP_MODE_RIVAL",
+                                                      "condition": {
+                                                        "is_rival": "FROM",
+                                                        "OR": {
+                                                          "_comments": [
+                                                            "# Observer Mode"
+                                                          ],
+                                                          "NOT": {
+                                                            "FROMFROM": {
+                                                              "OR": {
+                                                                "_comments": [
+                                                                  "# it's us",
+                                                                  "# got the intel"
+                                                                ],
+                                                                "OR": {
+                                                                  "is_same_empire": "PREV"
+                                                                },
+                                                                "has_intel_level": {
+                                                                  "who": "PREV",
+                                                                  "category": "diplomacy",
+                                                                  "level >": "2 # rivalries intel"
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "color": {
+                                                        "value": {
+                                                          "custom_tooltip": "DIPLOMATIC_MAP_MODE_CLOSED_BORDERS",
+                                                          "condition": {
+                                                            "_comments": [
+                                                              "# This really could use a better trigger"
+                                                            ],
+                                                            "any_system_within_border": {
+                                                              "OR": {
+                                                                "_comments": [
+                                                                  "# Observer Mode"
+                                                                ],
+                                                                "NOT": {
+                                                                  "FROMFROM": {
+                                                                    "OR": {
+                                                                      "_comments": [
+                                                                        "# it's us",
+                                                                        "# got the intel"
+                                                                      ],
+                                                                      "OR": {
+                                                                        "is_same_empire": "PREV"
+                                                                      },
+                                                                      "has_intel_level": {
+                                                                        "who": "PREV",
+                                                                        "category": "diplomacy",
+                                                                        "level >": "3 # diplomatic_pacts intel"
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "color": {
+                                                              "value": {
+                                                                "custom_tooltip": "DIPLOMATIC_MAP_MODE_MIGRATION_PACT",
+                                                                "condition": {
+                                                                  "has_migration_access": "FROM",
+                                                                  "OR": {
+                                                                    "_comments": [
+                                                                      "# Observer Mode"
+                                                                    ],
+                                                                    "NOT": {
+                                                                      "FROMFROM": {
+                                                                        "OR": {
+                                                                          "_comments": [
+                                                                            "# it's us",
+                                                                            "# got the intel"
+                                                                          ],
+                                                                          "OR": {
+                                                                            "is_same_empire": "PREV"
+                                                                          },
+                                                                          "has_intel_level": {
+                                                                            "who": "PREV",
+                                                                            "category": "diplomacy",
+                                                                            "level >": "3 # diplomatic_pacts intel"
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_map_modes.txt",
+    "_line_number": 130
+  },
+  "intel_map_mode": {
+    "intel_map_mode": {
+      "icon": "GFX_map_mode_intel",
+      "enable_terra_incognita": "yes",
+      "shortcut": "CTRL+n",
+      "can_change_point_of_view": "no",
+      "display_espionage_operations": "yes",
+      "color": {
+        "color": {
+          "color": {
+            "color": {
+              "color": {
+                "color": {
+                  "color": {
+                    "color": {
+                      "color": {
+                        "color": {
+                          "color": {
+                            "color": {
+                              "color": {
+                                "color": {
+                                  "color": {
+                                    "color": {
+                                      "color": {
+                                        "color": {
+                                          "color": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_map_modes.txt",
+    "_line_number": 540
+  },
+  "opinion_map_mode": {
+    "opinion_map_mode": {
+      "icon": "GFX_map_mode_opinion",
+      "enable_terra_incognita": "yes",
+      "shortcut": "CTRL+c",
+      "color": {
+        "color": {
+          "color": {
+            "color": {
+              "color": {
+                "color": {
+                  "color": {
+                    "color": {
+                      "color": {
+                        "color": {
+                          "_comments": [
+                            "#color = { value = hsv { 0.165 1.0 0.8 1.0 } condition = { opinion = { who = FROM value > 10 } } hardcoded_tooltip = opinion }"
+                          ],
+                          "color": {
+                            "_comments": [
+                              "#color = { value = hsv { 0.135 1.0 0.8 1.0 } condition = { opinion = { who = FROM value > -020 } } hardcoded_tooltip = opinion }"
+                            ],
+                            "color": {
+                              "color": {
+                                "color": {
+                                  "color": {
+                                    "color": {
+                                      "color": {
+                                        "_comments": [
+                                          "#color = { value = hsv { 0.030 1.0 0.9 1.0 } condition = { opinion = { who = FROM value > -100 } } hardcoded_tooltip = opinion }"
+                                        ],
+                                        "color": {
+                                          "color": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_map_modes.txt",
+    "_line_number": 569
+  },
+  "attitude_map_mode": {
+    "attitude_map_mode": {
+      "icon": "GFX_map_mode_attitude",
+      "_comments": [
+        "#Placeholder icon"
+      ],
+      "enable_terra_incognita": "yes",
+      "shortcut": "CTRL+v",
+      "color": {
+        "color": {
+          "value": {
+            "custom_tooltip": "DIPLOMATIC_MAP_MODE_SAME_EMPIRE",
+            "condition": {
+              "is_same_empire": "from"
+            }
+          },
+          "color": {
+            "value": {
+              "custom_tooltip": "MAP_MODE_NO_CONTACT",
+              "condition": {
+                "NOT": {}
+              },
+              "_comments": [
+                "#always = no",
+                "# Positive attitudes"
+              ],
+              "color": {
+                "value": {
+                  "condition": {},
+                  "color": {
+                    "value": {
+                      "condition": {},
+                      "color": {
+                        "value": {
+                          "condition": {},
+                          "color": {
+                            "value": {
+                              "condition": {},
+                              "color": {
+                                "value": {
+                                  "condition": {},
+                                  "_comments": [
+                                    "# Neutral attitudes"
+                                  ],
+                                  "color": {
+                                    "value": {
+                                      "condition": {},
+                                      "color": {
+                                        "value": {
+                                          "condition": {},
+                                          "_comments": [
+                                            "# Negative attitudes"
+                                          ],
+                                          "color": {
+                                            "value": {
+                                              "condition": {},
+                                              "color": {
+                                                "value": {
+                                                  "condition": {},
+                                                  "color": {
+                                                    "value": {
+                                                      "condition": {},
+                                                      "color": {
+                                                        "value": {
+                                                          "condition": {},
+                                                          "color": {
+                                                            "value": {
+                                                              "condition": {},
+                                                              "color": {
+                                                                "value": {
+                                                                  "condition": {},
+                                                                  "color": {
+                                                                    "value": {
+                                                                      "condition": {}
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_map_modes.txt",
+    "_line_number": 603
+  },
+  "neighbor_map_mode": {
+    "neighbor_map_mode": {
+      "icon": "GFX_map_mode_neighbours",
+      "enable_terra_incognita": "yes",
+      "shortcut": "CTRL+b",
+      "color": {
+        "value": {
+          "custom_tooltip": "DIPLOMATIC_MAP_MODE_SAME_EMPIRE",
+          "condition": {
+            "exists": "from",
+            "is_same_empire": "from"
+          }
+        },
+        "color": {
+          "value": {
+            "custom_tooltip": "MAP_MODE_NOT_NEIGHBOR",
+            "condition": {
+              "NOR": {
+                "exists": "from",
+                "is_neighbor_of": "from"
+              }
+            }
+          },
+          "color": {
+            "value": {
+              "custom_tooltip": "MAP_MODE_NEIGHBOR",
+              "condition": {
+                "exists": "from",
+                "is_neighbor_of": "from"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_map_modes.txt",
+    "_line_number": 686
+  },
+  "storm_map_mode": {
+    "storm_map_mode": {
+      "icon": "GFX_map_mode_storm_forecast",
+      "enable_terra_incognita": "yes",
+      "can_change_point_of_view": "no",
+      "shortcut": "CTRL+COMMA",
+      "display_storms": "yes",
+      "tutorial": "STORM_FORECAST_MAP_MODE",
+      "visible": {
+        "has_cosmic_storms_dlc": "yes"
+      },
+      "color": {
+        "value": {
+          "condition": {
+            "always": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "00_map_modes.txt",
+    "_line_number": 723
+  }
+}

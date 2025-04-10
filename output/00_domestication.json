@@ -1,0 +1,30 @@
+{
+  "tradition_domestication": {
+    "tradition_domestication": {
+      "tree_template": "tree_12_12",
+      "adoption_bonus": "tr_domestication_adopt",
+      "finish_bonus": "tr_domestication_finish",
+      "potential": {
+        "has_grand_archive_dlc": "yes"
+      },
+      "traditions": {},
+      "ai_weight": {
+        "base": "0",
+        "modifier": {
+          "add": "10",
+          "count_used_naval_cap": {
+            "limit": {
+              "count >": "40"
+            }
+          },
+          "modifier": {
+            "factor": "5",
+            "is_beastmasters_empire": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "00_domestication.txt",
+    "_line_number": 2
+  }
+}

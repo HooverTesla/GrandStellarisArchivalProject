@@ -1,0 +1,504 @@
+{
+  "leader_trait_principled": {
+    "leader_trait_principled": {
+      "starting_ruler_trait": "yes",
+      "forbidden_origins": {
+        "cost": "1",
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "official",
+          "ICON": "GFX_leader_trait_principled",
+          "RARITY": "common",
+          "COUNCIL": "yes",
+          "TIER": "1"
+        },
+        "councilor_modifier": {
+          "planet_stability_add": "2"
+        },
+        "leader_class": {
+          "selectable_weight": {
+            "weight": "@class_trait_weight",
+            "inline_script": "paragon/council_weight_mult"
+          }
+        }
+      }
+    },
+    "_source_file": "00_starting_ruler_traits.txt",
+    "_line_number": -1
+  },
+  "leader_trait_principled_2": {
+    "leader_trait_principled_2": {
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "official",
+          "ICON": "GFX_leader_trait_principled",
+          "RARITY": "common",
+          "COUNCIL": "yes",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "planet_stability_add": "4"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_starting_ruler_traits.txt",
+    "_line_number": 21
+  },
+  "leader_trait_fleet_organizer": {
+    "leader_trait_fleet_organizer": {
+      "starting_ruler_trait": "yes",
+      "forbidden_origins": {
+        "cost": "1",
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "commander",
+          "ICON": "GFX_leader_trait_fleet_organizer",
+          "RARITY": "common",
+          "COUNCIL": "yes",
+          "TIER": "1"
+        },
+        "councilor_modifier": {
+          "country_naval_cap_mult": "0.05"
+        },
+        "leader_class": {
+          "opposites": {},
+          "selectable_weight": {
+            "weight": "@class_trait_weight",
+            "inline_script": "paragon/council_weight_mult"
+          }
+        }
+      }
+    },
+    "_source_file": "00_starting_ruler_traits.txt",
+    "_line_number": 37
+  },
+  "leader_trait_fleet_organizer_2": {
+    "leader_trait_fleet_organizer_2": {
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "commander",
+          "ICON": "GFX_leader_trait_fleet_organizer",
+          "RARITY": "common",
+          "COUNCIL": "yes",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "country_naval_cap_mult": "0.15"
+        },
+        "leader_class": {
+          "opposites": {}
+        }
+      }
+    },
+    "_source_file": "00_starting_ruler_traits.txt",
+    "_line_number": 63
+  },
+  "leader_trait_spycraft": {
+    "leader_trait_spycraft": {
+      "starting_ruler_trait": "yes",
+      "forbidden_origins": {
+        "cost": "1",
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "official",
+          "ICON": "GFX_leader_trait_spycraft",
+          "RARITY": "common",
+          "COUNCIL": "yes",
+          "TIER": "1"
+        },
+        "councilor_modifier": {
+          "spy_network_daily_value_mult": "0.15",
+          "operations_cost_mult": "-0.05"
+        },
+        "leader_class": {
+          "selectable_weight": {
+            "weight": "@class_trait_weight",
+            "inline_script": "paragon/council_weight_mult"
+          }
+        }
+      }
+    },
+    "_source_file": "00_starting_ruler_traits.txt",
+    "_line_number": 83
+  },
+  "leader_trait_spycraft_2": {
+    "leader_trait_spycraft_2": {
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "official",
+          "ICON": "GFX_leader_trait_spycraft",
+          "RARITY": "common",
+          "COUNCIL": "yes",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "spy_network_daily_value_mult": "0.25",
+          "operations_cost_mult": "-0.10"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_starting_ruler_traits.txt",
+    "_line_number": 106
+  },
+  "leader_trait_spark_of_genius": {
+    "leader_trait_spark_of_genius": {
+      "starting_ruler_trait": "yes",
+      "forbidden_origins": {
+        "cost": "1",
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_spark_of_genius",
+          "RARITY": "common",
+          "COUNCIL": "yes",
+          "TIER": "1"
+        },
+        "councilor_modifier": {
+          "all_technology_research_speed": "0.03"
+        },
+        "_comments": [
+          "# increased chance to discover rare techs (weighted in tech-script)"
+        ],
+        "leader_class": {
+          "opposites": {},
+          "selectable_weight": {
+            "weight": "@class_trait_weight",
+            "inline_script": "paragon/council_weight_mult"
+          },
+          "ai_weight": "200"
+        }
+      }
+    },
+    "_source_file": "00_starting_ruler_traits.txt",
+    "_line_number": 123
+  },
+  "leader_trait_spark_of_genius_2": {
+    "leader_trait_spark_of_genius_2": {
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_spark_of_genius",
+          "RARITY": "common",
+          "COUNCIL": "yes",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "all_technology_research_speed": "0.06"
+        },
+        "_comments": [
+          "# increased chance to discover rare techs (weighted in tech-script)"
+        ],
+        "leader_class": {
+          "opposites": {},
+          "ai_weight": "200"
+        }
+      }
+    },
+    "_source_file": "00_starting_ruler_traits.txt",
+    "_line_number": 151
+  },
+  "trait_ruler_industrialist": {
+    "trait_ruler_industrialist": {
+      "starting_ruler_trait": "yes",
+      "forbidden_origins": {
+        "cost": "1",
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "leader",
+          "ICON": "GFX_leader_trait_industrialist",
+          "RARITY": "common",
+          "COUNCIL": "yes",
+          "TIER": "1"
+        },
+        "councilor_modifier": {
+          "planet_jobs_minerals_produces_mult": "0.025"
+        },
+        "leader_class": {
+          "selectable_weight": {
+            "weight": "@shared_trait_weight",
+            "inline_script": "paragon/council_weight_mult"
+          }
+        }
+      }
+    },
+    "_source_file": "00_starting_ruler_traits.txt",
+    "_line_number": 174
+  },
+  "trait_ruler_industrialist_2": {
+    "trait_ruler_industrialist_2": {
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "leader",
+          "ICON": "GFX_leader_trait_industrialist",
+          "RARITY": "common",
+          "COUNCIL": "yes",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "planet_jobs_minerals_produces_mult": "0.075"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_starting_ruler_traits.txt",
+    "_line_number": 196
+  },
+  "trait_ruler_warlike": {
+    "trait_ruler_warlike": {
+      "starting_ruler_trait": "yes",
+      "forbidden_origins": {
+        "cost": "1",
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "leader",
+          "ICON": "GFX_leader_trait_warlike",
+          "RARITY": "common",
+          "COUNCIL": "yes",
+          "TIER": "1"
+        },
+        "councilor_modifier": {
+          "ship_weapon_damage": "0.05",
+          "army_damage_mult": "0.05"
+        },
+        "leader_class": {
+          "selectable_weight": {
+            "weight": "@class_trait_weight",
+            "inline_script": "paragon/council_weight_mult"
+          }
+        }
+      }
+    },
+    "_source_file": "00_starting_ruler_traits.txt",
+    "_line_number": 212
+  },
+  "trait_ruler_warlike_2": {
+    "trait_ruler_warlike_2": {
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "leader",
+          "ICON": "GFX_leader_trait_warlike",
+          "RARITY": "common",
+          "COUNCIL": "yes",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "ship_weapon_damage": "0.075",
+          "army_damage_mult": "0.15"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_starting_ruler_traits.txt",
+    "_line_number": 235
+  },
+  "trait_ruler_charismatic": {
+    "trait_ruler_charismatic": {
+      "starting_ruler_trait": "yes",
+      "forbidden_origins": {
+        "cost": "1",
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "leader",
+          "ICON": "GFX_leader_trait_charismatic",
+          "RARITY": "common",
+          "COUNCIL": "yes",
+          "TIER": "1"
+        },
+        "councilor_modifier": {
+          "edicts_upkeep_mult": "-0.075",
+          "country_edict_fund_add": "15"
+        },
+        "leader_class": {
+          "selectable_weight": {
+            "weight": "@shared_trait_weight",
+            "inline_script": "paragon/council_weight_mult"
+          }
+        }
+      }
+    },
+    "_source_file": "00_starting_ruler_traits.txt",
+    "_line_number": 252
+  },
+  "trait_ruler_charismatic_2": {
+    "trait_ruler_charismatic_2": {
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "leader",
+          "ICON": "GFX_leader_trait_charismatic",
+          "RARITY": "common",
+          "COUNCIL": "yes",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "edicts_upkeep_mult": "-0.10",
+          "country_edict_fund_add": "35"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_starting_ruler_traits.txt",
+    "_line_number": 275
+  },
+  "trait_ruler_feedback_loop": {
+    "trait_ruler_feedback_loop": {
+      "starting_ruler_trait": "yes",
+      "forbidden_origins": {
+        "allowed_ethics": {
+          "cost": "1",
+          "inline_script": {
+            "script": "trait/icon",
+            "CLASS": "leader",
+            "ICON": "GFX_leader_trait_magnifying_glass",
+            "RARITY": "common",
+            "COUNCIL": "yes",
+            "TIER": "1"
+          },
+          "councilor_modifier": {
+            "planet_stability_add": "1",
+            "planet_amenities_no_happiness_add": "1"
+          },
+          "leader_potential_add": {
+            "is_gestalt": "yes"
+          },
+          "leader_class": {
+            "opposites": {},
+            "selectable_weight": {
+              "weight": "@shared_trait_weight",
+              "inline_script": "paragon/council_weight_mult"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_starting_ruler_traits.txt",
+    "_line_number": 293
+  },
+  "trait_ruler_feedback_loop_2": {
+    "trait_ruler_feedback_loop_2": {
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "leader",
+          "ICON": "GFX_leader_trait_magnifying_glass",
+          "RARITY": "common",
+          "COUNCIL": "yes",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "planet_stability_add": "2",
+          "planet_amenities_no_happiness_add": "3"
+        },
+        "leader_class": {
+          "opposites": {}
+        }
+      }
+    },
+    "_source_file": "00_starting_ruler_traits.txt",
+    "_line_number": 324
+  },
+  "trait_ruler_logistic_understanding": {
+    "trait_ruler_logistic_understanding": {
+      "starting_ruler_trait": "yes",
+      "forbidden_origins": {
+        "cost": "1",
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "leader",
+          "ICON": "GFX_leader_trait_logistic_understanding",
+          "RARITY": "common",
+          "COUNCIL": "yes",
+          "TIER": "1"
+        },
+        "councilor_modifier": {
+          "ship_orbit_upkeep_mult": "-0.05",
+          "armies_upkeep_mult": "-0.1"
+        },
+        "leader_class": {
+          "selectable_weight": {
+            "weight": "@shared_trait_weight",
+            "inline_script": "paragon/council_weight_mult"
+          }
+        }
+      }
+    },
+    "_source_file": "00_starting_ruler_traits.txt",
+    "_line_number": 345
+  },
+  "trait_ruler_logistic_understanding_2": {
+    "trait_ruler_logistic_understanding_2": {
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "leader",
+          "ICON": "GFX_leader_trait_logistic_understanding",
+          "RARITY": "common",
+          "COUNCIL": "yes",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "ship_orbit_upkeep_mult": "-0.1",
+          "armies_upkeep_mult": "-0.15"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_starting_ruler_traits.txt",
+    "_line_number": 368
+  },
+  "trait_ruler_eye_for_talent": {
+    "trait_ruler_eye_for_talent": {
+      "starting_ruler_trait": "yes",
+      "forbidden_origins": {
+        "cost": "1",
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "leader",
+          "ICON": "GFX_leader_trait_eye_for_talent",
+          "RARITY": "common",
+          "COUNCIL": "yes",
+          "TIER": "1"
+        },
+        "councilor_modifier": {
+          "species_leader_exp_gain": "0.05"
+        },
+        "leader_class": {
+          "selectable_weight": {
+            "weight": "@shared_trait_weight",
+            "inline_script": "paragon/council_weight_mult"
+          }
+        }
+      }
+    },
+    "_source_file": "00_starting_ruler_traits.txt",
+    "_line_number": 385
+  },
+  "trait_ruler_eye_for_talent_2": {
+    "trait_ruler_eye_for_talent_2": {
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "leader",
+          "ICON": "GFX_leader_trait_eye_for_talent",
+          "RARITY": "common",
+          "COUNCIL": "yes",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "species_leader_exp_gain": "0.10"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_starting_ruler_traits.txt",
+    "_line_number": 407
+  }
+}

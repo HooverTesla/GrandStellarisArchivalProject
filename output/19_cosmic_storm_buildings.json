@@ -1,0 +1,761 @@
+{
+  "building_storm_attraction_center": {
+    "building_storm_attraction_center": {
+      "base_buildtime": "@b1_time",
+      "base_cap_amount": "1",
+      "category": "research",
+      "potential": {
+        "NOR": {
+          "has_modifier": "slave_colony"
+        }
+      },
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "storm_attracting_allow",
+          "solar_system": {
+            "system_has_storm_repelling_tech": "no"
+          }
+        }
+      },
+      "resources": {
+        "category": "planet_buildings_storm_tech",
+        "cost": {
+          "trigger": {
+            "exists": "owner",
+            "NOT": {},
+            "minerals": "@b1_minerals",
+            "rare_crystals": "25"
+          },
+          "cost": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {},
+              "minerals": "@b1_minerals"
+            },
+            "upkeep": {
+              "trigger": {
+                "exists": "owner",
+                "NOT": {},
+                "energy": "@b1_upkeep",
+                "rare_crystals": "0.75"
+              },
+              "upkeep": {
+                "trigger": {
+                  "exists": "owner",
+                  "owner": {},
+                  "energy": "@b1_upkeep"
+                }
+              },
+              "prerequisites": {},
+              "custom_tooltip": "building_cosmic_storm_attraction_center_tt",
+              "upgrades": {},
+              "inline_script": {
+                "script": "cosmic_storms/StormBuildingModifiers"
+              },
+              "planet_modifier": {
+                "storm_attraction_field_modifier": "0.4"
+              },
+              "on_built": {
+                "create_influence_field_if_needed": "yes"
+              },
+              "on_enabled": {
+                "create_influence_field_if_needed": "yes"
+              },
+              "custom_storm_ai_weight": {
+                "weight": "10",
+                "modifier": {
+                  "factor": "2",
+                  "AND": {
+                    "exists": "owner",
+                    "owner": {}
+                  },
+                  "modifier": {
+                    "factor": "10",
+                    "AND": {
+                      "exists": "owner",
+                      "owner": {}
+                    },
+                    "modifier": {
+                      "factor": "2",
+                      "AND": {
+                        "exists": "owner",
+                        "owner": {}
+                      },
+                      "modifier": {
+                        "add": "10",
+                        "AND": {
+                          "exists": "owner",
+                          "owner": {}
+                        },
+                        "modifier": {
+                          "set": "0",
+                          "solar_system": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "19_cosmic_storm_buildings.txt",
+    "_line_number": 18
+  },
+  "building_advanced_storm_attraction_center": {
+    "building_advanced_storm_attraction_center": {
+      "base_buildtime": "@b2_time",
+      "can_build": "no",
+      "category": "research",
+      "resources": {
+        "category": "planet_buildings_storm_tech",
+        "cost": {
+          "trigger": {
+            "exists": "owner",
+            "NOT": {},
+            "minerals": "@b2_minerals",
+            "rare_crystals": "50"
+          },
+          "cost": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {},
+              "minerals": "@b2_minerals"
+            },
+            "upkeep": {
+              "trigger": {
+                "exists": "owner",
+                "NOT": {},
+                "energy": "@b1_upkeep",
+                "rare_crystals": "2.25"
+              },
+              "upkeep": {
+                "trigger": {
+                  "exists": "owner",
+                  "owner": {},
+                  "energy": "@b1_upkeep"
+                }
+              },
+              "prerequisites": {},
+              "allow": {
+                "custom_tooltip": {
+                  "fail_text": "storm_attracting_allow",
+                  "solar_system": {
+                    "system_has_storm_repelling_tech": "no"
+                  }
+                }
+              },
+              "planet_modifier": {
+                "storm_attraction_field_modifier": "0.6"
+              },
+              "inline_script": {
+                "script": "cosmic_storms/StormBuildingModifiers"
+              },
+              "custom_storm_ai_weight": {
+                "weight": "2",
+                "modifier": {
+                  "factor": "10",
+                  "AND": {
+                    "exists": "owner",
+                    "owner": {}
+                  }
+                },
+                "custom_tooltip": "building_cosmic_storm_advanced_attraction_center_tt"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "19_cosmic_storm_buildings.txt",
+    "_line_number": 139
+  },
+  "building_storm_repellent_center": {
+    "building_storm_repellent_center": {
+      "base_buildtime": "@b1_time",
+      "base_cap_amount": "1",
+      "category": "research",
+      "prerequisites": {},
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "storm_repellent_allow",
+          "solar_system": {}
+        },
+        "resources": {
+          "category": "planet_buildings_storm_tech",
+          "cost": {
+            "minerals": "@b1_minerals",
+            "rare_crystals": "25"
+          },
+          "upkeep": {
+            "energy": "@b1_upkeep",
+            "rare_crystals": "0.75"
+          }
+        },
+        "upgrades": {},
+        "inline_script": {
+          "script": "cosmic_storms/StormBuildingModifiers"
+        },
+        "planet_modifier": {
+          "storm_repelling_field_modifier": "0.4"
+        },
+        "on_built": {
+          "create_influence_field_if_needed": "yes"
+        },
+        "on_enabled": {
+          "create_influence_field_if_needed": "yes"
+        },
+        "custom_storm_ai_weight": {
+          "weight": "0",
+          "modifier": {
+            "add": "10",
+            "AND": {
+              "solar_system": {
+                "exists": "owner",
+                "owner": {}
+              }
+            },
+            "modifier": {
+              "add": "10",
+              "AND": {
+                "exists": "owner",
+                "owner": {
+                  "solar_system": {
+                    "is_on_border": "yes"
+                  }
+                }
+              },
+              "modifier": {
+                "add": "10",
+                "exists": "owner",
+                "owner": {}
+              },
+              "custom_tooltip": "building_cosmic_storm_repellent_center_tt"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "19_cosmic_storm_buildings.txt",
+    "_line_number": 223
+  },
+  "building_advanced_storm_repellent_center": {
+    "building_advanced_storm_repellent_center": {
+      "base_buildtime": "@b2_time",
+      "can_build": "no",
+      "category": "research",
+      "resources": {
+        "category": "planet_buildings_storm_tech",
+        "cost": {
+          "minerals": "@b2_minerals",
+          "rare_crystals": "50"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep",
+          "rare_crystals": "2.25"
+        }
+      },
+      "prerequisites": {},
+      "inline_script": {
+        "script": "cosmic_storms/StormBuildingModifiers"
+      },
+      "planet_modifier": {
+        "storm_repelling_field_modifier": "0.6"
+      },
+      "custom_tooltip": "building_cosmic_storm_advanced_repellent_center_tt"
+    },
+    "_source_file": "19_cosmic_storm_buildings.txt",
+    "_line_number": 302
+  },
+  "building_storm_resistant_production": {
+    "building_storm_resistant_production": {
+      "base_buildtime": "@b1_time",
+      "base_cap_amount": "1",
+      "category": "resource",
+      "potential": {
+        "if": {
+          "limit": {
+            "solar_system": {
+              "system_has_storm_repelling_tech": "no"
+            }
+          }
+        },
+        "resources": {
+          "category": "planet_buildings_storm_tech",
+          "cost": {
+            "minerals": "@b1_minerals"
+          },
+          "upkeep": {
+            "trigger": {
+              "has_modifier": "storm_hunkered_down_modifier"
+            },
+            "energy": "@b1_upkeep"
+          }
+        },
+        "prerequisites": {},
+        "upgrades": {},
+        "inline_script": {
+          "script": "cosmic_storms/StormBuildingModifiers"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {
+              "job_clerk_add": "@b1_jobs"
+            }
+          },
+          "triggered_desc": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {},
+              "text": "job_clerk_effect_desc"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {},
+                "modifier": {
+                  "job_maintenance_drone_add": "@b1_jobs"
+                }
+              },
+              "triggered_desc": {
+                "trigger": {
+                  "exists": "owner",
+                  "owner": {},
+                  "text": "job_maintenance_drone_effect_desc"
+                },
+                "triggered_planet_modifier": {
+                  "potential": {
+                    "exists": "owner",
+                    "owner": {
+                      "is_galactic_community_member": "yes"
+                    }
+                  },
+                  "modifier": {
+                    "planet_miners_produces_mult": "1",
+                    "planet_farmers_produces_mult": "1",
+                    "planet_technician_produces_mult": "1"
+                  },
+                  "mult": "value:storm_building_production_multiplier"
+                },
+                "custom_tooltip": "building_storm_resistant_production_tt",
+                "custom_storm_ai_weight": {
+                  "weight": "0",
+                  "modifier": {
+                    "add": "30",
+                    "AND": {
+                      "exists": "owner",
+                      "owner": {}
+                    }
+                  },
+                  "destroy_trigger": {
+                    "influence_building_destruction_trigger": "yes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "19_cosmic_storm_buildings.txt",
+    "_line_number": 347
+  },
+  "building_advanced_storm_resistant_production": {
+    "building_advanced_storm_resistant_production": {
+      "base_buildtime": "@b2_time",
+      "can_build": "no",
+      "category": "resource",
+      "potential": {
+        "if": {
+          "limit": {
+            "solar_system": {
+              "system_has_storm_repelling_tech": "no"
+            }
+          }
+        },
+        "resources": {
+          "category": "planet_buildings_storm_tech",
+          "cost": {
+            "minerals": "@b2_minerals",
+            "rare_crystals": "@b2_rare_cost"
+          },
+          "upkeep": {
+            "trigger": {
+              "has_modifier": "storm_hunkered_down_modifier"
+            },
+            "energy": "@b2_upkeep"
+          }
+        },
+        "prerequisites": {},
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {
+              "job_clerk_add": "@b2_jobs"
+            }
+          },
+          "triggered_desc": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {},
+              "text": "job_clerk_effect_desc"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {},
+                "modifier": {
+                  "job_maintenance_drone_add": "@b2_jobs"
+                }
+              },
+              "triggered_desc": {
+                "trigger": {
+                  "exists": "owner",
+                  "owner": {},
+                  "text": "job_maintenance_drone_effect_desc"
+                },
+                "triggered_planet_modifier": {
+                  "potential": {
+                    "exists": "owner",
+                    "owner": {
+                      "is_galactic_community_member": "yes"
+                    }
+                  },
+                  "modifier": {
+                    "planet_miners_produces_mult": "1",
+                    "planet_farmers_produces_mult": "1",
+                    "planet_technician_produces_mult": "1"
+                  },
+                  "mult": "value:storm_building_production_multiplier"
+                },
+                "inline_script": {
+                  "script": "cosmic_storms/StormBuildingModifiers"
+                },
+                "custom_tooltip": "building_advanced_storm_resistant_production_tt",
+                "custom_storm_ai_weight": {
+                  "weight": "0",
+                  "modifier": {
+                    "add": "20",
+                    "AND": {
+                      "exists": "owner",
+                      "owner": {}
+                    }
+                  },
+                  "destroy_trigger": {
+                    "influence_building_destruction_trigger": "yes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "19_cosmic_storm_buildings.txt",
+    "_line_number": 472
+  },
+  "building_adakkaria_patriotic_institute": {
+    "building_adakkaria_patriotic_institute": {
+      "base_buildtime": "@b3_time",
+      "base_cap_amount": "1",
+      "category": "resource",
+      "can_build": "yes",
+      "can_demolish": "no",
+      "can_be_disabled": "yes",
+      "potential": {
+        "owner": {
+          "has_planet_flag": "adSul_capital"
+        },
+        "country_modifier": {
+          "ship_shield_damage_mult": "0.1"
+        },
+        "inline_script": {
+          "script": "jobs/researchers_add",
+          "AMOUNT": "12"
+        },
+        "resources": {
+          "category": "planet_buildings",
+          "cost": {
+            "minerals": "@b2_minerals",
+            "sr_zro": "20"
+          },
+          "upkeep": {
+            "energy": "@b2_upkeep"
+          }
+        },
+        "triggered_desc": {
+          "trigger": {
+            "NAND": {
+              "exists": "owner",
+              "owner": {}
+            },
+            "text": "building_adakkaria_patriotic_institute_effect_desc"
+          },
+          "triggered_desc": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {},
+              "text": "adakkaria_patriotic_institute_desc.supercharged"
+            },
+            "inline_script": {
+              "script": "cosmic_storms/StormBuildingModifiers"
+            },
+            "on_built": {
+              "start_patriotic_institute_spawn_storm_repeated": "yes"
+            },
+            "on_destroy": {
+              "remove_planet_flag": "patriotic_institute_spawning_storms"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "19_cosmic_storm_buildings.txt",
+    "_line_number": 590
+  },
+  "building_astrometeorology_observation_center": {
+    "building_astrometeorology_observation_center": {
+      "base_buildtime": "@b1_time",
+      "base_cap_amount": "1",
+      "category": "research",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_astrometeorologist_empire": "yes"
+        },
+        "NOR": {
+          "has_modifier": "slave_colony"
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "OR": {
+          "owner": {
+            "is_astrometeorologist_empire": "no"
+          },
+          "has_modifier": "slave_colony"
+        }
+      },
+      "resources": {
+        "category": "planet_buildings_storm_tech",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep"
+        }
+      },
+      "inline_script": {
+        "script": "cosmic_storms/StormBuildingModifiers"
+      },
+      "custom_storm_ai_weight": {
+        "weight": "0",
+        "modifier": {
+          "factor": "2",
+          "AND": {
+            "exists": "owner",
+            "solar_system": {
+              "system_has_storm_attraction_tech": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "19_cosmic_storm_buildings.txt",
+    "_line_number": 651
+  },
+  "building_storm_summoning_theater": {
+    "building_storm_summoning_theater": {
+      "base_buildtime": "@b1_time",
+      "base_cap_amount": "1",
+      "category": "amenity",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_storm_callers_empire": "yes"
+        }
+      },
+      "allow": {
+        "solar_system": {
+          "system_has_storm_repelling_tech": "no"
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "is_storm_callers_empire": "no"
+        }
+      },
+      "resources": {
+        "category": "planet_buildings_storm_tech",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep"
+        }
+      },
+      "upgrades": {},
+      "planet_modifier": {
+        "job_storm_dancer_add": "2",
+        "storm_attraction_field_modifier": "@cosmic_storm_minor_storm_attraction"
+      },
+      "inline_script": {
+        "script": "cosmic_storms/StormBuildingModifiers"
+      },
+      "triggered_desc": {
+        "text": "job_storm_dancer_effect_desc"
+      },
+      "on_built": {
+        "create_influence_field_if_needed": "yes"
+      },
+      "on_enabled": {
+        "create_influence_field_if_needed": "yes"
+      },
+      "custom_tooltip": "building_cosmic_storm_storm_summoning_theater_tt"
+    },
+    "_source_file": "19_cosmic_storm_buildings.txt",
+    "_line_number": 723
+  },
+  "building_storm_holo_theater": {
+    "building_storm_holo_theater": {
+      "base_buildtime": "@b2_time",
+      "category": "amenity",
+      "can_build": "no",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_storm_callers_empire": "yes"
+        }
+      },
+      "allow": {
+        "exists": "owner",
+        "has_upgraded_capital": "yes",
+        "owner": {
+          "is_storm_callers_empire": "yes"
+        },
+        "solar_system": {
+          "system_has_storm_repelling_tech": "no"
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "is_storm_callers_empire": "no"
+        }
+      },
+      "resources": {
+        "category": "planet_buildings_storm_tech",
+        "cost": {
+          "minerals": "@b2_minerals",
+          "volatile_motes": "@b2_rare_cost"
+        },
+        "upkeep": {
+          "energy": "@b2_upkeep",
+          "volatile_motes": "@b2_rare_upkeep"
+        }
+      },
+      "upgrades": {},
+      "planet_modifier": {
+        "job_storm_dancer_add": "4",
+        "storm_attraction_field_modifier": "@cosmic_storm_medium_storm_attraction"
+      },
+      "triggered_desc": {
+        "text": "job_storm_dancer_effect_desc"
+      },
+      "inline_script": {
+        "script": "cosmic_storms/StormBuildingModifiers"
+      },
+      "custom_storm_ai_weight": {
+        "weight": "0",
+        "modifier": {
+          "add": "10",
+          "AND": {
+            "exists": "owner",
+            "is_colony": "yes"
+          }
+        }
+      },
+      "on_built": {
+        "create_influence_field_if_needed": "yes"
+      },
+      "on_enabled": {
+        "create_influence_field_if_needed": "yes"
+      },
+      "custom_tooltip": "building_cosmic_storm_storm_holo_theater_tt"
+    },
+    "_source_file": "19_cosmic_storm_buildings.txt",
+    "_line_number": 787
+  },
+  "building_storm_grand_theater": {
+    "building_storm_grand_theater": {
+      "base_buildtime": "@b3_time",
+      "category": "amenity",
+      "can_build": "no",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_storm_callers_empire": "yes"
+        }
+      },
+      "allow": {
+        "exists": "owner",
+        "has_major_upgraded_capital": "yes",
+        "owner": {
+          "is_storm_callers_empire": "yes"
+        },
+        "solar_system": {
+          "system_has_storm_repelling_tech": "no"
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "is_storm_callers_empire": "no"
+        }
+      },
+      "resources": {
+        "category": "planet_buildings_storm_tech",
+        "cost": {
+          "minerals": "@b3_minerals",
+          "volatile_motes": "@b3_rare_cost"
+        },
+        "upkeep": {
+          "energy": "@b3_upkeep",
+          "volatile_motes": "@b3_rare_upkeep"
+        }
+      },
+      "planet_modifier": {
+        "job_storm_dancer_add": "6",
+        "storm_attraction_field_modifier": "@cosmic_storm_severe_storm_attraction"
+      },
+      "inline_script": {
+        "script": "cosmic_storms/StormBuildingModifiers"
+      },
+      "triggered_desc": {
+        "text": "job_storm_dancer_effect_desc"
+      },
+      "custom_storm_ai_weight": {
+        "weight": "0",
+        "modifier": {
+          "add": "10",
+          "exists": "owner"
+        }
+      },
+      "on_built": {
+        "create_influence_field_if_needed": "yes"
+      },
+      "on_enabled": {
+        "create_influence_field_if_needed": "yes"
+      },
+      "custom_tooltip": "building_cosmic_storm_storm_grand_theater_tt"
+    },
+    "_source_file": "19_cosmic_storm_buildings.txt",
+    "_line_number": 866
+  }
+}

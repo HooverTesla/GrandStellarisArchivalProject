@@ -1,0 +1,116 @@
+{
+  "s$TYPE$": {
+    "s$TYPE$": {
+      "potential": {
+        "OR": {
+          "AND": {
+            "is_orbital_ring": "yes",
+            "NOT": {},
+            "AND": {
+              "NAND": {
+                "owner": {
+                  "is_ai": "yes",
+                  "should_ai_focus_on_trade": "yes"
+                },
+                "solar_system": {
+                  "is_same_value": "sector.sector_capital.solar_system"
+                }
+              },
+              "owner": {
+                "OR": {
+                  "is_ai": "no",
+                  "uses_fauna_ship_sizes": "yes"
+                }
+              },
+              "NOT": {}
+            }
+          },
+          "_comments": [
+            "# Types defined here depend on built modules"
+          ],
+          "weight_modifier": {
+            "base": "0",
+            "complex_trigger_modifier": {
+              "trigger": "count_starbase_modules",
+              "parameters": {
+                "type": "$TYPE$"
+              },
+              "mode": "add",
+              "mult": "1000"
+            }
+          },
+          "ai_design": {
+            "min": {
+              "base": "0",
+              "modifier": {
+                "add": "1",
+                "exists": "owner",
+                "owner": {
+                  "uses_fauna_ship_sizes": "yes"
+                }
+              }
+            },
+            "ratio": {
+              "base": "0.20",
+              "modifier": {
+                "factor": "0",
+                "exists": "owner",
+                "owner": {
+                  "uses_fauna_ship_sizes": "no"
+                }
+              }
+            },
+            "_comments": [
+              "# token followed by priority"
+            ],
+            "buildings": {
+              "crew_quarters": {
+                "base": "1.00"
+              },
+              "fleet_academy": {
+                "base": "1.00"
+              },
+              "titan_yards": {
+                "base": "1.00"
+              },
+              "colossus_yards": {
+                "base": "1.00"
+              },
+              "ice_mining_station": {
+                "base": "1.00"
+              },
+              "dragon_hatchery": {
+                "base": "1.00"
+              },
+              "hydroponics_bay": {
+                "base": "1.00"
+              },
+              "dimensional_shrine": {
+                "base": "1.00"
+              },
+              "irassian_naval_yards": {
+                "base": "3.00"
+              },
+              "cordyceptic_reanimation_facility": {
+                "base": "3.00"
+              }
+            },
+            "modules": {
+              "$TYPE$": {
+                "base": "1.0"
+              },
+              "anchorage": {
+                "base": "0.50"
+              },
+              "hangar_bay": {
+                "base": "0.45"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "ship_building_starbase_type.txt",
+    "_line_number": 19
+  }
+}

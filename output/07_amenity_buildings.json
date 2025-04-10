@@ -1,0 +1,1054 @@
+{
+  "building_luxury_residence": {
+    "building_luxury_residence": {
+      "base_buildtime": "@b1_time",
+      "category": "amenity",
+      "potential": {
+        "OR": {
+          "NOT": {
+            "AND": {
+              "exists": "owner",
+              "owner": {
+                "is_void_dweller_empire": "yes"
+              }
+            }
+          },
+          "NOR": {
+            "has_modifier": "penal_colony"
+          },
+          "exists": "owner",
+          "owner": {
+            "is_regular_empire": "yes",
+            "NOT": {},
+            "destroy_trigger": {
+              "exists": "owner",
+              "OR": {
+                "AND": {
+                  "free_building_slots": "0",
+                  "owner": {
+                    "is_ai": "yes"
+                  }
+                },
+                "owner": {
+                  "owner": {
+                    "has_modifier": "slave_colony"
+                  }
+                },
+                "convert_to": {},
+                "planet_modifier": {
+                  "planet_housing_add": "3",
+                  "planet_amenities_add": "5"
+                },
+                "triggered_planet_modifier": {
+                  "potential": {
+                    "exists": "owner",
+                    "owner": {
+                      "has_active_tradition": "tr_domination_imperious_architecture"
+                    }
+                  },
+                  "modifier": {
+                    "planet_housing_add": "1"
+                  }
+                },
+                "resources": {
+                  "category": "planet_buildings",
+                  "cost": {
+                    "minerals": "@b1_minerals"
+                  },
+                  "upkeep": {
+                    "energy": "2"
+                  }
+                },
+                "upgrades": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_amenity_buildings.txt",
+    "_line_number": 10
+  },
+  "building_paradise_dome": {
+    "building_paradise_dome": {
+      "base_buildtime": "@b2_time",
+      "can_build": "no",
+      "category": "amenity",
+      "potential": {
+        "has_building": "building_luxury_residence",
+        "OR": {
+          "NOT": {
+            "AND": {
+              "exists": "owner",
+              "owner": {
+                "is_void_dweller_empire": "yes"
+              }
+            }
+          },
+          "NOR": {
+            "has_modifier": "penal_colony"
+          }
+        },
+        "allow": {
+          "has_upgraded_capital": "yes"
+        },
+        "destroy_trigger": {
+          "exists": "owner",
+          "OR": {
+            "owner": {
+              "owner": {
+                "has_modifier": "slave_colony"
+              }
+            },
+            "convert_to": {},
+            "planet_modifier": {
+              "planet_housing_add": "6",
+              "planet_amenities_add": "10"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {
+                  "has_active_tradition": "tr_domination_imperious_architecture"
+                }
+              },
+              "modifier": {
+                "planet_housing_add": "1"
+              }
+            },
+            "resources": {
+              "category": "planet_buildings",
+              "cost": {
+                "minerals": "@b2_minerals",
+                "rare_crystals": "@b2_rare_cost"
+              },
+              "upkeep": {
+                "energy": "3",
+                "rare_crystals": "@b2_rare_upkeep"
+              }
+            },
+            "prerequisites": {},
+            "show_tech_unlock_if": {
+              "owner": {
+                "is_regular_empire": "yes",
+                "NOT": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_amenity_buildings.txt",
+    "_line_number": 94
+  },
+  "building_communal_housing": {
+    "building_communal_housing": {
+      "base_buildtime": "@b1_time",
+      "icon": "building_residence",
+      "category": "amenity",
+      "potential": {
+        "OR": {
+          "NOT": {
+            "AND": {
+              "exists": "owner",
+              "owner": {
+                "is_void_dweller_empire": "yes"
+              }
+            }
+          },
+          "NOR": {
+            "has_modifier": "penal_colony"
+          },
+          "exists": "owner",
+          "owner": {
+            "is_regular_empire": "yes",
+            "has_valid_civic": "civic_shared_burden"
+          }
+        },
+        "destroy_trigger": {
+          "exists": "owner",
+          "OR": {
+            "AND": {
+              "owner": {
+                "free_building_slots": "0"
+              },
+              "has_modifier": "slave_colony",
+              "NOT": {
+                "owner": {
+                  "is_regular_empire": "yes",
+                  "has_valid_civic": "civic_shared_burden"
+                }
+              }
+            }
+          },
+          "convert_to": {},
+          "planet_modifier": {
+            "planet_housing_add": "5",
+            "planet_amenities_add": "3"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {
+                "has_active_tradition": "tr_domination_imperious_architecture"
+              }
+            },
+            "modifier": {
+              "planet_housing_add": "1"
+            }
+          },
+          "resources": {
+            "category": "planet_buildings",
+            "cost": {
+              "minerals": "@b1_minerals"
+            },
+            "upkeep": {
+              "energy": "2"
+            }
+          },
+          "upgrades": {}
+        }
+      }
+    },
+    "_source_file": "07_amenity_buildings.txt",
+    "_line_number": 176
+  },
+  "building_communal_housing_large": {
+    "building_communal_housing_large": {
+      "base_buildtime": "@b2_time",
+      "can_build": "no",
+      "icon": "building_paradise_dome",
+      "category": "amenity",
+      "potential": {
+        "has_building": "building_communal_housing",
+        "owner": {
+          "is_regular_empire": "yes",
+          "has_valid_civic": "civic_shared_burden"
+        },
+        "OR": {
+          "NOT": {
+            "AND": {
+              "exists": "owner",
+              "owner": {
+                "is_void_dweller_empire": "yes"
+              }
+            }
+          },
+          "NOR": {
+            "has_modifier": "penal_colony"
+          }
+        },
+        "allow": {
+          "has_upgraded_capital": "yes"
+        },
+        "destroy_trigger": {
+          "exists": "owner",
+          "OR": {
+            "has_modifier": "slave_colony",
+            "NOT": {
+              "owner": {
+                "is_regular_empire": "yes",
+                "has_valid_civic": "civic_shared_burden"
+              }
+            }
+          }
+        },
+        "show_tech_unlock_if": {
+          "owner": {
+            "is_regular_empire": "yes",
+            "has_valid_civic": "civic_shared_burden"
+          }
+        },
+        "convert_to": {},
+        "planet_modifier": {
+          "planet_housing_add": "10",
+          "planet_amenities_add": "6"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {
+              "has_active_tradition": "tr_domination_imperious_architecture"
+            }
+          },
+          "modifier": {
+            "planet_housing_add": "1"
+          }
+        },
+        "resources": {
+          "category": "planet_buildings",
+          "cost": {
+            "minerals": "@b2_minerals",
+            "rare_crystals": "@b2_rare_cost"
+          },
+          "upkeep": {
+            "energy": "3",
+            "rare_crystals": "@b2_rare_upkeep"
+          }
+        },
+        "prerequisites": {}
+      }
+    },
+    "_source_file": "07_amenity_buildings.txt",
+    "_line_number": 263
+  },
+  "building_drone_storage": {
+    "building_drone_storage": {
+      "base_buildtime": "@b1_time",
+      "category": "amenity",
+      "potential": {
+        "exists": "owner",
+        "owner": {},
+        "destroy_trigger": {
+          "exists": "owner",
+          "OR": {
+            "AND": {
+              "free_building_slots": "0",
+              "owner": {
+                "is_ai": "yes"
+              }
+            },
+            "NOR": {
+              "owner": {}
+            }
+          },
+          "convert_to": {},
+          "planet_modifier": {
+            "planet_housing_add": "4",
+            "planet_amenities_add": "3"
+          },
+          "resources": {
+            "category": "planet_buildings",
+            "cost": {
+              "minerals": "@b1_minerals"
+            },
+            "upkeep": {
+              "energy": "2"
+            }
+          },
+          "upgrades": {}
+        }
+      }
+    },
+    "_source_file": "07_amenity_buildings.txt",
+    "_line_number": 353
+  },
+  "building_drone_megastorage": {
+    "building_drone_megastorage": {
+      "base_buildtime": "@b2_time",
+      "can_build": "no",
+      "category": "amenity",
+      "allow": {
+        "has_upgraded_capital": "yes"
+      },
+      "potential": {
+        "has_building": "building_drone_storage"
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {},
+        "convert_to": {},
+        "planet_modifier": {
+          "planet_housing_add": "8",
+          "planet_amenities_add": "6"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {
+              "has_active_tradition": "tr_domination_imperious_architecture"
+            }
+          },
+          "modifier": {
+            "planet_housing_add": "1"
+          }
+        },
+        "resources": {
+          "category": "planet_buildings",
+          "cost": {
+            "minerals": "@b2_minerals",
+            "rare_crystals": "@b2_rare_cost"
+          },
+          "upkeep": {
+            "energy": "3",
+            "rare_crystals": "@b2_rare_upkeep"
+          }
+        },
+        "prerequisites": {}
+      }
+    },
+    "_source_file": "07_amenity_buildings.txt",
+    "_line_number": 407
+  },
+  "building_hive_warren": {
+    "building_hive_warren": {
+      "base_buildtime": "@b1_time",
+      "category": "amenity",
+      "potential": {
+        "exists": "owner",
+        "owner": {},
+        "destroy_trigger": {
+          "exists": "owner",
+          "owner": {},
+          "convert_to": {},
+          "planet_modifier": {
+            "planet_housing_add": "3",
+            "planet_amenities_add": "5"
+          },
+          "resources": {
+            "category": "planet_buildings",
+            "cost": {
+              "minerals": "@b1_minerals"
+            },
+            "upkeep": {
+              "energy": "2"
+            }
+          },
+          "upgrades": {}
+        }
+      }
+    },
+    "_source_file": "07_amenity_buildings.txt",
+    "_line_number": 465
+  },
+  "building_expanded_warren": {
+    "building_expanded_warren": {
+      "base_buildtime": "@b2_time",
+      "can_build": "no",
+      "category": "amenity",
+      "potential": {
+        "has_building": "building_hive_warren"
+      },
+      "allow": {
+        "has_upgraded_capital": "yes"
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {},
+        "show_tech_unlock_if": {
+          "owner": {},
+          "convert_to": {},
+          "planet_modifier": {
+            "planet_housing_add": "6",
+            "planet_amenities_add": "10"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {
+                "has_active_tradition": "tr_domination_imperious_architecture"
+              }
+            },
+            "modifier": {
+              "planet_housing_add": "1"
+            }
+          },
+          "resources": {
+            "category": "planet_buildings",
+            "cost": {
+              "minerals": "@b2_minerals",
+              "rare_crystals": "@b2_rare_cost"
+            },
+            "upkeep": {
+              "energy": "3",
+              "rare_crystals": "@b2_rare_upkeep"
+            }
+          },
+          "prerequisites": {}
+        }
+      }
+    },
+    "_source_file": "07_amenity_buildings.txt",
+    "_line_number": 510
+  },
+  "building_holo_theatres": {
+    "building_holo_theatres": {
+      "base_buildtime": "@b1_time",
+      "category": "amenity",
+      "potential": {
+        "NOR": {
+          "has_modifier": "penal_colony"
+        },
+        "owner": {
+          "is_regular_empire": "yes",
+          "NOT": {
+            "has_valid_civic": "civic_dystopian_society"
+          }
+        },
+        "OR": {
+          "owner": {
+            "NOT": {},
+            "AND": {
+              "NOT": {},
+              "destroy_trigger": {
+                "exists": "owner",
+                "OR": {
+                  "owner": {
+                    "owner": {
+                      "has_modifier": "slave_colony"
+                    }
+                  },
+                  "inline_script": {
+                    "script": "jobs/entertainers_add",
+                    "AMOUNT": "@b1_jobs"
+                  },
+                  "resources": {
+                    "category": "planet_buildings",
+                    "cost": {
+                      "minerals": "@b1_minerals"
+                    },
+                    "upkeep": {
+                      "energy": "@b1_upkeep"
+                    }
+                  },
+                  "upgrades": {},
+                  "prerequisites": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_amenity_buildings.txt",
+    "_line_number": 570
+  },
+  "building_hyper_entertainment_forum": {
+    "building_hyper_entertainment_forum": {
+      "base_buildtime": "@b2_time",
+      "can_build": "no",
+      "category": "amenity",
+      "potential": {
+        "has_building": "building_holo_theatres"
+      },
+      "allow": {
+        "has_upgraded_capital": "yes",
+        "owner": {
+          "NOT": {},
+          "OR": {
+            "owner": {
+              "NOT": {},
+              "AND": {
+                "NOT": {
+                  "NOT": {}
+                },
+                "NOR": {
+                  "has_modifier": "penal_colony"
+                }
+              },
+              "destroy_trigger": {
+                "exists": "owner",
+                "owner": {
+                  "OR": {
+                    "owner": {
+                      "has_modifier": "slave_colony"
+                    }
+                  },
+                  "inline_script": {
+                    "script": "jobs/entertainers_add",
+                    "AMOUNT": "@b2_jobs"
+                  },
+                  "resources": {
+                    "category": "planet_buildings",
+                    "cost": {
+                      "minerals": "@b2_minerals",
+                      "exotic_gases": "@b2_rare_cost"
+                    },
+                    "upkeep": {
+                      "energy": "@b2_upkeep",
+                      "exotic_gases": "@b2_rare_upkeep"
+                    }
+                  },
+                  "prerequisites": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_amenity_buildings.txt",
+    "_line_number": 631
+  },
+  "building_clinic": {
+    "building_clinic": {
+      "base_buildtime": "@b1_time",
+      "base_cap_amount": "1",
+      "category": "amenity",
+      "potential": {
+        "exists": "owner",
+        "_comments": [
+          "# check the empire is valid"
+        ],
+        "owner": {
+          "is_individual_machine": "no",
+          "_comments": [
+            "# rule out gestalts and pre-FTL societies",
+            "# rule out AI empires with entirely no access to \"Pharma State\" Civic, unless the planet is unstable"
+          ],
+          "OR": {
+            "is_ai": "no",
+            "has_valid_civic": "civic_private_healthcare_corporate",
+            "prev": {
+              "NOT": {
+                "NOT": {}
+              }
+            }
+          },
+          "destroy_trigger": {
+            "OR": {
+              "_comments": [
+                "# if the planet is owned by a gestalt or pre-FTL society"
+              ],
+              "AND": {
+                "exists": "owner",
+                "owner": {
+                  "OR": {
+                    "is_regular_empire": "no",
+                    "AND": {
+                      "is_country_type": "primitive",
+                      "NOT": {}
+                    }
+                  }
+                },
+                "_comments": [
+                  "# if this is an AI-controlled empire with entirely no access to \"Pharma State\" Civic, assuming the planet is now stable"
+                ],
+                "AND": {
+                  "exists": "owner",
+                  "owner": {
+                    "is_ai": "yes",
+                    "NOT": {
+                      "OR": {
+                        "has_valid_civic": "civic_private_healthcare_corporate",
+                        "prev": {
+                          "has_branch_office": "yes",
+                          "branch_office_owner": {
+                            "has_valid_civic": "civic_private_healthcare_corporate"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "planet_modifier": {
+              "job_healthcare_add": "2"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {
+                  "has_origin": "origin_overtuned"
+                },
+                "any_owned_pop": {
+                  "has_auto_modding_trait": "yes"
+                }
+              },
+              "modifier": {
+                "auto_mod_monthly_add": "1"
+              }
+            },
+            "resources": {
+              "category": "planet_buildings",
+              "cost": {
+                "minerals": "@b1_minerals"
+              },
+              "upkeep": {
+                "energy": "@b1_upkeep"
+              }
+            },
+            "prerequisites": {},
+            "upgrades": {},
+            "triggered_desc": {
+              "text": "job_healthcare_effect_desc"
+            },
+            "on_destroy": {
+              "owner": {
+                "if": {
+                  "limit": {
+                    "has_event_chain": "payback_out_of_warranty_chain"
+                  },
+                  "end_event_chain": "payback_out_of_warranty_chain"
+                }
+              }
+            },
+            "on_repaired": {
+              "if": {
+                "limit": {
+                  "planet.owner": {
+                    "has_event_chain": "payback_out_of_warranty_chain"
+                  }
+                },
+                "random_list": {
+                  "50": {
+                    "planet.owner": {
+                      "country_event": {},
+                      "modifier": {
+                        "factor": "0",
+                        "planet.owner": {}
+                      },
+                      "20": {
+                        "planet.owner": {
+                          "country_event": {},
+                          "modifier": {
+                            "factor": "2",
+                            "planet.owner": {},
+                            "modifier": {
+                              "factor": "3",
+                              "planet.owner": {},
+                              "modifier": {
+                                "factor": "4",
+                                "planet.owner": {}
+                              },
+                              "10": {
+                                "planet": {
+                                  "planet_event": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_amenity_buildings.txt",
+    "_line_number": 697
+  },
+  "building_hospital": {
+    "building_hospital": {
+      "base_buildtime": "@b2_time",
+      "can_build": "no",
+      "category": "amenity",
+      "potential": {
+        "has_building": "building_clinic"
+      },
+      "allow": {
+        "has_upgraded_capital": "yes",
+        "OR": {
+          "owner": {
+            "OR": {
+              "has_valid_civic": "civic_private_healthcare_corporate",
+              "is_ai": "no"
+            }
+          },
+          "AND": {
+            "NOT": {
+              "NOT": {},
+              "AND": {
+                "has_branch_office": "yes",
+                "branch_office_owner": {
+                  "has_valid_civic": "civic_private_healthcare_corporate"
+                }
+              }
+            }
+          },
+          "destroy_trigger": {
+            "exists": "owner",
+            "OR": {
+              "owner": {
+                "AND": {
+                  "buildings_stop_pop": "yes",
+                  "owner": {}
+                }
+              },
+              "planet_modifier": {
+                "job_healthcare_add": "@b2_jobs"
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "owner",
+                  "owner": {
+                    "has_origin": "origin_overtuned"
+                  },
+                  "any_owned_pop": {
+                    "has_auto_modding_trait": "yes"
+                  }
+                },
+                "modifier": {
+                  "auto_mod_monthly_add": "2"
+                }
+              },
+              "resources": {
+                "category": "planet_buildings",
+                "cost": {
+                  "minerals": "@b2_minerals",
+                  "exotic_gases": "@b2_rare_cost"
+                },
+                "upkeep": {
+                  "energy": "@b2_upkeep",
+                  "exotic_gases": "@b2_rare_upkeep"
+                }
+              },
+              "prerequisites": {},
+              "show_tech_unlock_if": {
+                "is_regular_empire": "yes"
+              },
+              "triggered_desc": {
+                "text": "job_healthcare_effect_desc"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_amenity_buildings.txt",
+    "_line_number": 884
+  },
+  "building_maintenance_depot": {
+    "building_maintenance_depot": {
+      "base_buildtime": "240",
+      "can_build": "no",
+      "category": "amenity",
+      "potential": {
+        "owner": {},
+        "destroy_trigger": {
+          "exists": "owner",
+          "OR": {
+            "owner": {
+              "AND": {
+                "owner": {
+                  "free_building_slots": "0"
+                }
+              }
+            },
+            "planet_modifier": {
+              "job_maintenance_drone_add": "5"
+            },
+            "resources": {
+              "category": "planet_buildings",
+              "cost": {
+                "minerals": "@b1_minerals"
+              },
+              "upkeep": {
+                "energy": "2"
+              }
+            },
+            "triggered_desc": {
+              "text": "job_maintenance_drone_effect_desc"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_amenity_buildings.txt",
+    "_line_number": 983
+  },
+  "building_overseer_homes": {
+    "building_overseer_homes": {
+      "base_buildtime": "240",
+      "icon": "building_residence",
+      "category": "amenity",
+      "potential": {
+        "has_modifier": "slave_colony"
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "OR": {
+          "owner": {
+            "NOT": {}
+          },
+          "planet_modifier": {
+            "planet_housing_add": "2",
+            "job_slave_overseer_add": "2"
+          },
+          "resources": {
+            "category": "planet_buildings",
+            "cost": {
+              "minerals": "200"
+            },
+            "upkeep": {
+              "energy": "1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_amenity_buildings.txt",
+    "_line_number": 1023
+  },
+  "building_ranger_lodge": {
+    "building_ranger_lodge": {
+      "base_buildtime": "@b1_time",
+      "base_cap_amount": "1",
+      "category": "amenity",
+      "icon": "holding_park_ranger_lodge",
+      "potential": {
+        "NOT": {
+          "owner": {
+            "is_regular_empire": "yes",
+            "has_valid_civic": "civic_environmentalist"
+          },
+          "NOR": {
+            "is_planet_class": "pc_relic"
+          },
+          "is_artificial": "no"
+        },
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "no_free_district_for_ranger_lodge",
+            "planet": {
+              "num_free_districts": {
+                "type": "any"
+              }
+            }
+          }
+        },
+        "destroy_trigger": {
+          "exists": "owner",
+          "OR": {
+            "owner": {
+              "has_modifier": "slave_colony",
+              "owner": {
+                "is_planet_class": "pc_relic"
+              }
+            },
+            "ai_resource_production": {
+              "unity": "1",
+              "trigger": {
+                "mult": "value:natural_blocker_count"
+              },
+              "ai_resource_production": {
+                "unity": "1",
+                "trigger": {
+                  "mult": "value:natural_blocker_count"
+                },
+                "ai_resource_production": {
+                  "unity": "1",
+                  "trigger": {
+                    "mult": "value:natural_blocker_count"
+                  },
+                  "planet_modifier": {
+                    "job_ranger_add": "1 # 1 Ranger no matter what",
+                    "deposit_blockers_natural_unity_produces_add": "2"
+                  },
+                  "triggered_planet_modifier": {
+                    "potential": {
+                      "owner_has_resolution": {},
+                      "job_ranger_add": "1 # +1 Ranger per natural blocker if GalCom approves",
+                      "mult": "value:natural_blocker_count"
+                    },
+                    "triggered_planet_modifier": {
+                      "potential": {
+                        "deposit_blockers_natural_unity_produces_add": "1"
+                      },
+                      "triggered_planet_modifier": {
+                        "potential": {
+                          "deposit_blockers_natural_unity_produces_add": "2"
+                        },
+                        "triggered_planet_modifier": {
+                          "potential": {
+                            "deposit_blockers_natural_unity_produces_add": "3"
+                          },
+                          "resources": {
+                            "category": "planet_buildings",
+                            "cost": {
+                              "minerals": "@b1_minerals"
+                            },
+                            "upkeep": {
+                              "energy": "@b1_upkeep"
+                            }
+                          },
+                          "triggered_desc": {
+                            "text": "job_ranger_effect_desc"
+                          },
+                          "on_built": {
+                            "planet": {
+                              "add_blocker": {}
+                            },
+                            "on_destroy": {
+                              "planet": {
+                                "if": {
+                                  "limit": {
+                                    "every_deposit": {
+                                      "limit": {
+                                        "is_deposit_type": "d_big_nature_preserve_blocker"
+                                      },
+                                      "remove_deposit": "d_big_nature_preserve_blocker"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_amenity_buildings.txt",
+    "_line_number": 1069
+  },
+  "building_toxic_bath": {
+    "building_toxic_bath": {
+      "base_buildtime": "@b1_time",
+      "base_cap_amount": "1",
+      "category": "amenity",
+      "icon": "building_toxic_bath",
+      "potential": {
+        "NOT": {
+          "owner": {
+            "is_regular_empire": "yes",
+            "OR": {
+              "has_valid_civic": "civic_corporate_toxic_baths"
+            },
+            "is_individual_machine": "no"
+          }
+        },
+        "destroy_trigger": {
+          "exists": "owner",
+          "OR": {
+            "owner": {
+              "OR": {
+                "is_regular_empire": "no",
+                "NOR": {
+                  "has_valid_civic": "civic_corporate_toxic_baths"
+                }
+              }
+            },
+            "has_modifier": "slave_colony"
+          }
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "job_bath_attendant_add": "@b1_jobs"
+          },
+          "triggered_desc": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {},
+              "text": "job_toxic_baths_effect_desc"
+            },
+            "resources": {
+              "category": "planet_buildings",
+              "cost": {
+                "minerals": "@b1_minerals"
+              },
+              "upkeep": {
+                "energy": "@b1_upkeep"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_amenity_buildings.txt",
+    "_line_number": 1195
+  }
+}

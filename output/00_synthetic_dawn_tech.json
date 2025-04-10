@@ -1,0 +1,417 @@
+{
+  "tech_robomodding_m": {
+    "tech_robomodding_m": {
+      "cost": "@tier2cost1",
+      "area": "engineering",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight1",
+          "feature_flags": {},
+          "modifier": {
+            "pop_environment_tolerance": "0.05",
+            "leader_lifespan_add": "20"
+          },
+          "potential": {
+            "OR": {
+              "is_machine_empire": "yes",
+              "is_individual_machine": "yes"
+            }
+          },
+          "weight_modifier": {},
+          "ai_weight": {
+            "factor": "@robots_ai_tech_factor"
+          }
+        }
+      }
+    },
+    "_source_file": "00_synthetic_dawn_tech.txt",
+    "_line_number": 5
+  },
+  "tech_robomodding": {
+    "tech_robomodding": {
+      "cost": "@tier2cost1",
+      "area": "engineering",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight1",
+          "feature_flags": {},
+          "modifier": {
+            "pop_environment_tolerance": "0.05"
+          },
+          "potential": {
+            "NOR": {
+              "has_ethic": "ethic_gestalt_consciousness",
+              "is_individual_machine": "yes"
+            }
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0",
+              "has_policy_flag": "robots_outlawed"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "0",
+              "NOT": {
+                "NOT": {},
+                "modifier": {
+                  "factor": "@robots_ai_tech_factor",
+                  "is_materialist": "yes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_synthetic_dawn_tech.txt",
+    "_line_number": 39
+  },
+  "tech_robomodding_points_1": {
+    "tech_robomodding_points_1": {
+      "cost": "@tier3cost1",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "modifier": {
+            "ROBOT_species_trait_points_add": "3"
+          },
+          "potential": {
+            "NOT": {
+              "has_ethic": "ethic_gestalt_consciousness",
+              "is_individual_machine": "yes"
+            }
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "2",
+              "has_origin": "origin_mechanists"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "0",
+              "NOT": {
+                "NOT": {},
+                "modifier": {
+                  "factor": "@robots_ai_tech_factor",
+                  "is_materialist": "yes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_synthetic_dawn_tech.txt",
+    "_line_number": 91
+  },
+  "tech_robomodding_points_2": {
+    "tech_robomodding_points_2": {
+      "cost": "@tier4cost1",
+      "area": "engineering",
+      "tier": "4",
+      "category": {
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "@tier4weight1",
+          "modifier": {
+            "ROBOT_species_trait_points_add": "1"
+          },
+          "potential": {
+            "NOT": {
+              "has_ethic": "ethic_gestalt_consciousness",
+              "is_individual_machine": "yes"
+            }
+          },
+          "weight_modifier": {
+            "factor": "0.5",
+            "modifier": {
+              "factor": "0.50",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {
+                          "has_trait_in_council": {
+                            "has_trait_in_council": {}
+                          }
+                        },
+                        "ai_weight": {
+                          "modifier": {
+                            "factor": "0",
+                            "NOT": {
+                              "NOT": {},
+                              "modifier": {
+                                "factor": "@robots_ai_tech_factor",
+                                "is_materialist": "yes"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "inline_script": {
+              "script": "technologies/rare_technologies_weight_modifiers",
+              "TECHNOLOGY": "tech_robomodding_points_2"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_synthetic_dawn_tech.txt",
+    "_line_number": 143
+  },
+  "tech_binary_motivators": {
+    "tech_binary_motivators": {
+      "cost": "@tier3cost1",
+      "area": "engineering",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "gateway": "robotics",
+          "modifier": {
+            "MACHINE_species_trait_points_add": "3"
+          },
+          "potential": {
+            "OR": {
+              "is_machine_empire": "yes",
+              "is_individual_machine": "yes"
+            }
+          },
+          "weight_modifier": {},
+          "ai_weight": {
+            "factor": "@robots_ai_tech_factor"
+          }
+        }
+      }
+    },
+    "_source_file": "00_synthetic_dawn_tech.txt",
+    "_line_number": 222
+  },
+  "tech_nanite_assemblers": {
+    "tech_nanite_assemblers": {
+      "cost": "@tier4cost1",
+      "area": "engineering",
+      "tier": "4",
+      "category": {
+        "prerequisites": {
+          "is_rare": "yes",
+          "weight": "@tier4weight1",
+          "modifier": {
+            "MACHINE_species_trait_points_add": "1"
+          },
+          "potential": {
+            "OR": {
+              "is_machine_empire": "yes",
+              "is_individual_machine": "yes"
+            }
+          },
+          "weight_modifier": {
+            "factor": "0.5",
+            "modifier": {
+              "factor": "0.20",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {
+                          "has_trait_in_council": {
+                            "has_trait_in_council": {}
+                          },
+                          "inline_script": {
+                            "script": "technologies/rare_technologies_weight_modifiers",
+                            "TECHNOLOGY": "tech_nanite_assemblers"
+                          }
+                        },
+                        "ai_weight": {
+                          "factor": "@robots_ai_tech_factor"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_synthetic_dawn_tech.txt",
+    "_line_number": 252
+  },
+  "tech_mega_assembly": {
+    "tech_mega_assembly": {
+      "cost": "@tier4cost1",
+      "area": "engineering",
+      "tier": "4",
+      "category": {
+        "prerequisites": {
+          "is_rare": "yes",
+          "weight": "@tier4weight1",
+          "potential": {
+            "OR": {
+              "is_machine_empire": "yes",
+              "is_individual_machine": "yes"
+            }
+          },
+          "weight_modifier": {
+            "factor": "0.5",
+            "modifier": {
+              "factor": "0.20",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {
+                          "has_trait_in_council": {
+                            "has_trait_in_council": {}
+                          },
+                          "inline_script": {
+                            "script": "technologies/rare_technologies_weight_modifiers",
+                            "TECHNOLOGY": "tech_mega_assembly"
+                          }
+                        },
+                        "ai_weight": {
+                          "factor": "@pop_growth_tech_ai_factor"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_synthetic_dawn_tech.txt",
+    "_line_number": 298
+  },
+  "tech_adaptive_combat_algorithms": {
+    "tech_adaptive_combat_algorithms": {
+      "cost": "@tier2cost2",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "weight": "@tier2weight2",
+        "potential": {
+          "OR": {
+            "is_machine_empire": "yes",
+            "is_individual_machine": "yes"
+          }
+        },
+        "weight_modifier": {
+          "factor": "1.5"
+        },
+        "ai_weight": {}
+      }
+    },
+    "_source_file": "00_synthetic_dawn_tech.txt",
+    "_line_number": 342
+  },
+  "tech_biomechanics": {
+    "tech_biomechanics": {
+      "cost": "@tier4cost2",
+      "area": "society",
+      "category": {
+        "tier": "4",
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "@tier4weight2",
+          "potential": {
+            "OR": {
+              "is_machine_empire": "yes",
+              "is_individual_machine": "yes"
+            }
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.10",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {}
+                },
+                "inline_script": {
+                  "script": "technologies/rare_technologies_weight_modifiers",
+                  "TECHNOLOGY": "tech_biomechanics"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_synthetic_dawn_tech.txt",
+    "_line_number": 364
+  },
+  "tech_micro_replicators": {
+    "tech_micro_replicators": {
+      "cost": "@tier2cost2",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "weight": "@tier2weight2",
+        "modifier": {
+          "planet_pop_assembly_mult": "0.10"
+        },
+        "potential": {
+          "OR": {
+            "is_machine_empire": "yes",
+            "is_individual_machine": "yes"
+          }
+        },
+        "weight_modifier": {
+          "factor": "1.5"
+        },
+        "ai_weight": {
+          "factor": "@pop_growth_tech_ai_factor"
+        }
+      }
+    },
+    "_source_file": "00_synthetic_dawn_tech.txt",
+    "_line_number": 401
+  },
+  "tech_self_assembling_components": {
+    "tech_self_assembling_components": {
+      "cost": "@tier3cost3",
+      "area": "engineering",
+      "tier": "3",
+      "category": {
+        "weight": "@tier3weight3",
+        "prerequisites": {
+          "modifier": {
+            "planet_pop_assembly_mult": "0.10"
+          },
+          "potential": {
+            "OR": {
+              "is_machine_empire": "yes",
+              "is_individual_machine": "yes"
+            }
+          },
+          "weight_modifier": {
+            "factor": "1.5"
+          },
+          "ai_weight": {
+            "factor": "@pop_growth_tech_ai_factor"
+          }
+        }
+      }
+    },
+    "_source_file": "00_synthetic_dawn_tech.txt",
+    "_line_number": 431
+  }
+}

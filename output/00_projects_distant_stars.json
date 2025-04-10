@@ -1,0 +1,26 @@
+{
+  "special_project": {
+    "special_project": {
+      "key": "STUDY_LIVING_SEA",
+      "event_chain": "living_planet_chain",
+      "days_to_research": "30",
+      "tech_department": "society_technology",
+      "picture": "GFX_evt_ocean",
+      "icon": "gfx/interface/icons/situation_log/situation_log_planet.dds",
+      "event_scope": "ship_event",
+      "requirements": {
+        "shipclass_science_ship": "1",
+        "leader": "scientist"
+      },
+      "on_success": {
+        "owner": {
+          "country_event": {}
+        },
+        "on_fail": {},
+        "abort_trigger": {}
+      }
+    },
+    "_source_file": "00_projects_distant_stars.txt",
+    "_line_number": 1585
+  }
+}

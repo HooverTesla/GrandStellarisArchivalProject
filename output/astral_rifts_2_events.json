@@ -1,0 +1,128 @@
+{
+  "astral_rift_event": {
+    "astral_rift_event": {
+      "id": "astral_rift.2985",
+      "title": "astral_rift.2985.name",
+      "desc": "astral_rift.2985.desc",
+      "picture": "GFX_evt_astral_rift_interdimensional_circus_2",
+      "show_sound": "ap_rift_event_29_dimensional_circus",
+      "difficulty": "@astral_rift_easy_difficulty",
+      "astral_rift": "yes",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "FASCINATING",
+        "explorer": {
+          "astral_thread_large_reward": "yes",
+          "add_monthly_resource_mult": {
+            "resource": "physics_research",
+            "value": "@tier3researchreward",
+            "min": "@tier3researchmin",
+            "max": "@tier3researchmax"
+          }
+        },
+        "finish_astral_rift": "yes"
+      }
+    },
+    "_source_file": "astral_rifts_2_events.txt",
+    "_line_number": 4942
+  },
+  "country_event": {
+    "country_event": {
+      "id": "astral_rift.2890",
+      "title": "astral_rift.2890.name",
+      "desc": "astral_rift.2890.desc",
+      "picture": "GFX_evt_astral_rift_tiny_planet",
+      "show_sound": "event_default",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "from": {},
+        "option": {
+          "name": "astral_rift.2890.a"
+        }
+      }
+    },
+    "_source_file": "astral_rifts_2_events.txt",
+    "_line_number": 4312
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "astral_rift.2699",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_astral_planes_dlc": "yes",
+        "owner": {
+          "has_modifier": "colonization_drones_modifier"
+        },
+        "FROM": {
+          "OR": {
+            "is_deposit_type": "d_venomous_insects"
+          }
+        }
+      },
+      "immediate": {
+        "owner": {
+          "add_monthly_resource_mult": {
+            "resource": "society_research",
+            "value": "@tier1researchreward",
+            "min": "@tier1researchreward",
+            "max": "2500"
+          }
+        }
+      }
+    },
+    "_source_file": "astral_rifts_2_events.txt",
+    "_line_number": 3128
+  },
+  "leader_event": {
+    "leader_event": {
+      "id": "astral_rift.2790",
+      "title": "astral_rift.2790.name",
+      "desc": "astral_rift.2790.desc",
+      "picture": "GFX_evt_astral_rift_windswept_planet",
+      "show_sound": "event_default",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "astral_rift.2790.a",
+        "custom_tooltip": "astral_rift.2790.a.tt",
+        "hidden_effect": {
+          "unassign_leader": "this",
+          "owner": {},
+          "change_leader_class": "envoy",
+          "ai_chance": {
+            "modifier": {
+              "factor": "0",
+              "owner": {
+                "OR": {
+                  "is_unfriendly": "yes",
+                  "is_militarist": "yes",
+                  "is_xenophobe": "yes"
+                }
+              }
+            }
+          }
+        },
+        "option": {
+          "name": "astral_rift.2790.b",
+          "ai_chance": {
+            "modifier": {
+              "factor": "0",
+              "owner": {},
+              "modifier": {
+                "add": "1",
+                "owner": {
+                  "OR": {
+                    "is_unfriendly": "yes",
+                    "is_militarist": "yes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "astral_rifts_2_events.txt",
+    "_line_number": 3738
+  }
+}

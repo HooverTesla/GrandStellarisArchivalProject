@@ -1,0 +1,92 @@
+{
+  "automate_resort_planet": {
+    "automate_resort_planet": {
+      "category": "planet_automation_designation_construction",
+      "available": {
+        "has_designation": "col_resort"
+      },
+      "prio_districts": {},
+      "buildings": {
+        "1": {
+          "building": "building_capital",
+          "available": {
+            "always": "yes"
+          }
+        },
+        "2": {
+          "building": "building_luxury_residence",
+          "available": {
+            "owner": {
+              "luxury_residence_upkeep_affordable": "yes"
+            },
+            "num_buildings": {}
+          },
+          "3": {
+            "building": "building_commercial_zone",
+            "available": {
+              "owner": {
+                "commercial_zone_upkeep_affordable": "yes"
+              },
+              "num_buildings": {}
+            },
+            "4": {
+              "building": "building_luxury_residence",
+              "available": {
+                "owner": {
+                  "luxury_residence_upkeep_affordable": "yes"
+                },
+                "num_buildings": {}
+              },
+              "5": {
+                "building": "building_precinct_house",
+                "available": {
+                  "owner": {
+                    "precinct_house_upkeep_affordable": "yes"
+                  }
+                }
+              },
+              "6": {
+                "building": "building_commercial_zone",
+                "available": {
+                  "owner": {
+                    "commercial_zone_upkeep_affordable": "yes"
+                  },
+                  "num_buildings": {}
+                },
+                "7": {
+                  "building": "building_luxury_residence",
+                  "available": {
+                    "owner": {
+                      "luxury_residence_upkeep_affordable": "yes"
+                    },
+                    "num_buildings": {}
+                  },
+                  "8": {
+                    "building": "building_commercial_zone",
+                    "available": {
+                      "owner": {
+                        "commercial_zone_upkeep_affordable": "yes"
+                      },
+                      "num_buildings": {}
+                    },
+                    "9": {
+                      "building": "building_luxury_residence",
+                      "available": {
+                        "owner": {
+                          "luxury_residence_upkeep_affordable": "yes"
+                        },
+                        "num_buildings": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_resort_automation.txt",
+    "_line_number": 10
+  }
+}

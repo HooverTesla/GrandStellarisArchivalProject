@@ -1,0 +1,27 @@
+{
+  "weapon_component_template": {
+    "weapon_component_template": {
+      "key": "PLANET_KILLER_DEVOLUTION",
+      "size": "planet_killer",
+      "type": "planet_killer",
+      "use_ship_kill_target": "no",
+      "prerequisites": {
+        "icon": "GFX_ship_part_devolution_beam",
+        "icon_frame": "1",
+        "size_restriction": {
+          "component_set": "PLANET_KILLER_DEVOLVER",
+          "planet_destruction_gfx": "neutron_planet_gfx",
+          "ai_weight": {
+            "factor": "1",
+            "modifier": {
+              "factor": "3",
+              "has_ascension_perk": "ap_archaeoengineers"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_weapons_planet_killer.txt",
+    "_line_number": 199
+  }
+}

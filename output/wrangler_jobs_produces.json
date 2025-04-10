@@ -1,0 +1,41 @@
+{
+  "resources": {
+    "resources": {
+      "category": "planet_primal_jobs",
+      "produces": {
+        "society_research": "4",
+        "unity": "2"
+      },
+      "upkeep": {
+        "trigger": {
+          "exists": "owner",
+          "owner": {
+            "is_machine_empire": "yes"
+          }
+        },
+        "energy": "4"
+      }
+    },
+    "_source_file": "wrangler_jobs_produces.txt",
+    "_line_number": -1
+  },
+  "triggered_planet_modifier": {
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {},
+        "planet_pop_assembly_organic_mult": "0.025"
+      }
+    },
+    "_source_file": "wrangler_jobs_produces.txt",
+    "_line_number": 52
+  },
+  "inline_script": {
+    "inline_script": {
+      "script": "jobs/galactic_curator_council_output",
+      "CATEGORY": "planet_primal_jobs"
+    },
+    "_source_file": "wrangler_jobs_produces.txt",
+    "_line_number": 62
+  }
+}

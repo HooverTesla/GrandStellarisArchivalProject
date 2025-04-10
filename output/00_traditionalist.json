@@ -1,0 +1,400 @@
+{
+  "traditionalist": {
+    "traditionalist": {
+      "election_header": "GFX_faction_header_yellow",
+      "guiding_ethic": "ethic_spiritualist",
+      "visual_ethic": "traditionalist_visual_ethic",
+      "unique": "yes",
+      "support_multiplier": "1",
+      "resources": {
+        "category": "pop_factions",
+        "produces": {
+          "unity": "@faction_base_output"
+        }
+      },
+      "extortion_resource": {
+        "category": "pop_factions",
+        "produces": {
+          "trigger": {
+            "is_lithoid_empire": "yes"
+          },
+          "minerals": "@faction_base_output",
+          "mult": "@faction_extortion_minerals_ratio"
+        }
+      },
+      "is_potential": {
+        "is_faction_allowed": "yes",
+        "NOT": {
+          "has_origin": "origin_cybernetic_creed"
+        }
+      },
+      "parameters": {
+        "empire": {
+          "type": "country",
+          "valid_objects": {
+            "is_same_value": "root"
+          }
+        }
+      },
+      "can_join_pre_triggers": {
+        "is_enslaved": "no",
+        "is_being_purged": "no"
+      },
+      "can_join_faction": {
+        "can_think": "yes"
+      },
+      "attraction": {
+        "base": "150",
+        "modifier": {
+          "factor": "1.25",
+          "exists": "from",
+          "from": {
+            "exists": "leader",
+            "leader": {}
+          },
+          "modifier": {
+            "factor": "0.75",
+            "exists": "from",
+            "from": {
+              "NOT": {}
+            }
+          },
+          "leader": {
+            "base": "100",
+            "modifier": {
+              "factor": "0.0",
+              "is_event_leader": "yes"
+            }
+          },
+          "_comments": [
+            "# DEMAND: Faction Outraged (by a GalCom Resolution)",
+            "# DEMAND: Faction Pleased (by a GalCom Resolution)"
+          ],
+          "inline_script": {
+            "script": "pop_faction_types/demand_faction_pleased",
+            "FLAG": "galcom_resolution_passed_pro_traditionalist"
+          },
+          "demand": {
+            "title": "TRADITIONALIST_NO_ROBOT_RIGHTS",
+            "unfulfilled_title": "TRADITIONALIST_ROBOT_RIGHTS",
+            "desc": "TRADITIONALIST_NO_ROBOT_RIGHTS_DESC",
+            "unfulfilled_effect": "-10",
+            "fulfilled_effect": "0.001",
+            "potential": {
+              "exists": "owner",
+              "owner": {
+                "can_set_ai_policy": "yes",
+                "NOT": {
+                  "is_individual_machine": "no"
+                }
+              },
+              "trigger": {
+                "owner": {
+                  "NOT": {}
+                }
+              },
+              "demand": {
+                "title": "TRADITIONALIST_NO_FULL_ROBOT_RIGHTS",
+                "unfulfilled_title": "TRADITIONALIST_FULL_ROBOT_RIGHTS",
+                "desc": "TRADITIONALIST_NO_FULL_ROBOT_RIGHTS_DESC",
+                "unfulfilled_effect": "-20",
+                "fulfilled_effect": "0.001",
+                "potential": {
+                  "exists": "owner",
+                  "owner": {
+                    "is_individual_machine": "no",
+                    "can_set_ai_policy": "yes",
+                    "has_policy_flag": "ai_full_rights"
+                  }
+                },
+                "trigger": {
+                  "owner": {
+                    "NOT": {}
+                  }
+                },
+                "demand": {
+                  "title": "TRADITIONALIST_FLESH_IS_STRONG",
+                  "unfulfilled_title": "TRADITIONALIST_FLESH_IS_WEAK",
+                  "desc": "TRADITIONALIST_FLESH_IS_STRONG_LIMITED_DESC",
+                  "unfulfilled_effect": "-5",
+                  "fulfilled_effect": "0.001",
+                  "potential": {
+                    "exists": "owner",
+                    "owner": {
+                      "has_ascension_perk": "ap_the_flesh_is_weak",
+                      "has_policy_flag": "cyberization_standards_limited",
+                      "NOT": {}
+                    },
+                    "trigger": {
+                      "owner": {
+                        "is_cyborg_empire": "no"
+                      }
+                    }
+                  },
+                  "demand": {
+                    "title": "TRADITIONALIST_FEDERATION",
+                    "unfulfilled_title": "TRADITIONALIST_FEDERATION_NOT_SPIRITUALIST",
+                    "desc": "TRADITIONALIST_FEDERATION_DESC",
+                    "fulfilled_effect": "5",
+                    "unfulfilled_effect": "-0.001",
+                    "potential": {
+                      "exists": "owner.federation",
+                      "has_federations_dlc": "yes"
+                    },
+                    "trigger": {
+                      "owner.federation": {}
+                    },
+                    "demand": {
+                      "title": "TRADITIONALIST_AUTOMATAS_ASTRAY",
+                      "unfulfilled_title": "TRADITIONALIST_AUTOMATAS_ASTRAY_NO",
+                      "desc": "TRADITIONALIST_AUTOMATAS_ASTRAY_DESC",
+                      "unfulfilled_effect": "-5",
+                      "fulfilled_effect": "+0.001",
+                      "potential": {
+                        "exists": "owner",
+                        "owner": {
+                          "is_individual_machine": "yes",
+                          "any_pop_faction": {
+                            "is_pop_faction_type": "technologist"
+                          }
+                        }
+                      },
+                      "trigger": {
+                        "exists": "owner",
+                        "owner": {
+                          "count_owned_pop": {
+                            "limit": {
+                              "pop_has_ethic": "ethic_materialist"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "_comments": [
+                      "# Faction Demands for Ruler and Council positions."
+                    ],
+                    "inline_script": {
+                      "script": "paragon/global_faction_demands",
+                      "ETHIC": "ethic_spiritualist",
+                      "ETHIC_FANATIC": "ethic_fanatic_spiritualist",
+                      "ETHIC_OPPOSED": "ethic_materialist"
+                    },
+                    "on_create": {
+                      "pop_faction_event": {},
+                      "on_destroy": {
+                        "if": {
+                          "limit": {
+                            "has_modifier": "suppressed_spiritualist"
+                          },
+                          "remove_modifier": "suppressed_spiritualist"
+                        }
+                      },
+                      "actions": {
+                        "embrace_faction": {
+                          "title": "EMBRACE_FACTION",
+                          "description": "EMBRACE_FACTION_DESC",
+                          "cost": {
+                            "unity": "5000"
+                          },
+                          "potential": {
+                            "exists": "owner",
+                            "owner": {
+                              "OR": {
+                                "is_subject": "no",
+                                "NOT": {}
+                              }
+                            },
+                            "valid": {
+                              "custom_tooltip": {
+                                "fail_text": "EMBRACE_FACTION_COOLDOWN",
+                                "parameter:empire": {
+                                  "NOT": {}
+                                },
+                                "effect": {
+                                  "add_modifier": {
+                                    "parameter:empire": {
+                                      "shift_ethic": "ethic_spiritualist",
+                                      "hidden_effect": {
+                                        "add_modifier": {
+                                          "every_pop_faction": {
+                                            "limit": {
+                                              "add_modifier": {}
+                                            }
+                                          },
+                                          "hidden_effect": {
+                                            "save_event_target_as": "TargetFaction",
+                                            "parameter:empire": {
+                                              "every_relation": {
+                                                "limit": {
+                                                  "is_ai": "no",
+                                                  "is_country_type": "default",
+                                                  "has_communications": "prev",
+                                                  "has_intel_level": {
+                                                    "who": "prev",
+                                                    "category": "government",
+                                                    "level >": "1"
+                                                  }
+                                                },
+                                                "country_event": {}
+                                              }
+                                            }
+                                          },
+                                          "ai_weight": {
+                                            "base": "1",
+                                            "modifier": {
+                                              "factor": "0",
+                                              "owner": {},
+                                              "modifier": {
+                                                "factor": "0",
+                                                "owner": {
+                                                  "count_pop_faction": {}
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "promote_faction": {
+                                            "title": "PROMOTE_FACTION",
+                                            "description": "PROMOTE_FACTION_DESC",
+                                            "potential": {
+                                              "exists": "owner",
+                                              "parameter:empire": {
+                                                "NOR": {
+                                                  "has_modifier": "promoted_spiritualist"
+                                                }
+                                              }
+                                            },
+                                            "effect": {
+                                              "parameter:empire": {
+                                                "add_modifier": {}
+                                              },
+                                              "ai_weight": {
+                                                "base": "0"
+                                              }
+                                            },
+                                            "cancel_promote_faction": {
+                                              "title": "CANCEL_PROMOTE_FACTION",
+                                              "description": "CANCEL_PROMOTE_FACTION_DESC",
+                                              "potential": {
+                                                "exists": "owner",
+                                                "parameter:empire": {
+                                                  "has_modifier": "promoted_spiritualist"
+                                                }
+                                              },
+                                              "effect": {
+                                                "parameter:empire": {
+                                                  "remove_modifier": "promoted_spiritualist"
+                                                }
+                                              },
+                                              "ai_weight": {
+                                                "base": "0"
+                                              }
+                                            },
+                                            "suppress_faction": {
+                                              "title": "SUPPRESS_FACTION",
+                                              "description": "SUPPRESS_FACTION_DESC",
+                                              "potential": {
+                                                "exists": "owner",
+                                                "parameter:empire": {
+                                                  "NOR": {
+                                                    "has_modifier": "promoted_spiritualist"
+                                                  }
+                                                }
+                                              },
+                                              "effect": {
+                                                "add_modifier": {
+                                                  "parameter:empire": {
+                                                    "add_modifier": {}
+                                                  },
+                                                  "ai_weight": {
+                                                    "base": "0"
+                                                  }
+                                                },
+                                                "cancel_suppress_faction": {
+                                                  "title": "CANCEL_SUPPRESS_FACTION",
+                                                  "description": "CANCEL_SUPPRESS_FACTION_DESC",
+                                                  "potential": {
+                                                    "exists": "owner",
+                                                    "parameter:empire": {
+                                                      "has_modifier": "suppressed_spiritualist"
+                                                    }
+                                                  },
+                                                  "effect": {
+                                                    "remove_modifier": "suppressed_faction",
+                                                    "parameter:empire": {
+                                                      "remove_modifier": "suppressed_spiritualist"
+                                                    }
+                                                  },
+                                                  "ai_weight": {
+                                                    "base": "0"
+                                                  }
+                                                },
+                                                "_comments": [
+                                                  "# Faction Extortion Buttons"
+                                                ],
+                                                "extort_faction": {
+                                                  "title": "EXTORT_FACTION",
+                                                  "description": "EXTORT_FACTION_DESC",
+                                                  "potential": {
+                                                    "exists": "owner",
+                                                    "owner": {
+                                                      "is_oligarchic_authority": "yes",
+                                                      "has_country_flag": "cyber_collectivist"
+                                                    },
+                                                    "is_faction_extorted": "no"
+                                                  },
+                                                  "effect": {
+                                                    "set_faction_extorted": "yes",
+                                                    "custom_tooltip": "ONLY_ONE_EXTORTED_FACTION_TT"
+                                                  },
+                                                  "ai_weight": {
+                                                    "base": "0"
+                                                  }
+                                                },
+                                                "cancel_extort_faction": {
+                                                  "title": "CANCEL_EXTORT_FACTION",
+                                                  "description": "CANCEL_EXTORT_FACTION_DESC",
+                                                  "potential": {
+                                                    "exists": "owner",
+                                                    "owner": {
+                                                      "is_oligarchic_authority": "yes",
+                                                      "has_country_flag": "cyber_collectivist"
+                                                    },
+                                                    "is_faction_extorted": "yes"
+                                                  },
+                                                  "effect": {
+                                                    "set_faction_extorted": "no"
+                                                  },
+                                                  "ai_weight": {
+                                                    "base": "0"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "_comments": [
+                  "# THE FLESH IS STRONG/WEAK (FULL)",
+                  "# THE FLESH IS STRONG/WEAK (LIMITED)"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_traditionalist.txt",
+    "_line_number": 116
+  }
+}

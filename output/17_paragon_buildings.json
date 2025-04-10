@@ -1,0 +1,213 @@
+{
+  "building_paragon_memory_vaults": {
+    "building_paragon_memory_vaults": {
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "1",
+      "empire_limit": "1",
+      "category": "unity",
+      "can_demolish": "yes",
+      "can_be_ruined": "yes",
+      "can_be_disabled": "yes",
+      "is_essential": "yes",
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "is_memory_vault_empire": "no"
+        }
+      },
+      "desc": {
+        "trigger": {
+          "exists": "owner",
+          "owner": {},
+          "text": "building_paragon_memory_vaults_machine_desc"
+        },
+        "desc": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "text": "building_paragon_memory_vaults_hive_desc"
+          },
+          "allow": {
+            "has_upgraded_capital": "yes",
+            "hidden_trigger": {
+              "owner": {
+                "OR": {
+                  "is_ai": "no",
+                  "resource_stockpile_compare": {}
+                }
+              }
+            },
+            "potential": {
+              "custom_tooltip": {
+                "text": "EMPIRE_UNIQUE_BUILDING",
+                "owner": {},
+                "exists": "planet"
+              },
+              "resources": {
+                "category": "planet_buildings",
+                "cost": {
+                  "minerals": "@b2_minerals"
+                },
+                "produces": {
+                  "trigger": {
+                    "exists": "owner",
+                    "planet": {},
+                    "unity": "5",
+                    "multiplier": "planet.paragon_memory_vault"
+                  },
+                  "upkeep": {
+                    "energy": "@b2_upkeep"
+                  }
+                },
+                "triggered_planet_modifier": {
+                  "potential": {
+                    "exists": "owner",
+                    "owner": {},
+                    "trade_value_add": "10"
+                  },
+                  "triggered_planet_modifier": {
+                    "potential": {
+                      "exists": "owner",
+                      "owner": {
+                        "planet": {},
+                        "trade_value_add": "10",
+                        "mult": "planet.paragon_memory_vault"
+                      },
+                      "triggered_country_modifier": {
+                        "potential": {
+                          "exists": "owner",
+                          "owner": {
+                            "OR": {
+                              "has_civic": "civic_memory_vault_hive"
+                            }
+                          },
+                          "planet": {},
+                          "species_leader_exp_gain": "0.01",
+                          "mult": "planet.paragon_memory_vault"
+                        },
+                        "on_built": {
+                          "set_variable": {
+                            "which": "paragon_memory_vault",
+                            "value": "0"
+                          }
+                        },
+                        "on_destroy": {
+                          "clear_variable": "paragon_memory_vault"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "17_paragon_buildings.txt",
+    "_line_number": 14
+  },
+  "building_the_beholder": {
+    "building_the_beholder": {
+      "icon": "building_temple_of_whispers",
+      "empire_limit": "1",
+      "can_build": "no",
+      "can_demolish": "no",
+      "category": "manufacturing",
+      "destroy_trigger": {
+        "OR": {
+          "NOT": {
+            "AND": {
+              "exists": "event_target:beholder_leader.owner",
+              "owner": {},
+              "AND": {
+                "NOT": {
+                  "owner": {}
+                }
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "planet_psionic_jobs_produces_mult": "0.10"
+                },
+                "resources": {
+                  "category": "planet_buildings",
+                  "upkeep": {
+                    "trigger": {
+                      "energy": "25"
+                    },
+                    "produces": {
+                      "trigger": {
+                        "exists": "event_target:beholder_leader",
+                        "NOT": {
+                          "has_planet_flag": "psi_inoculating_pops"
+                        }
+                      },
+                      "sr_zro": "8"
+                    },
+                    "upkeep": {
+                      "trigger": {
+                        "energy": "3"
+                      },
+                      "produces": {
+                        "trigger": {
+                          "sr_zro": "1"
+                        }
+                      },
+                      "triggered_desc": {
+                        "trigger": {
+                          "text": "building_the_beholder_unknown_desc"
+                        },
+                        "triggered_desc": {
+                          "trigger": {
+                            "text": "building_the_beholder_known_desc"
+                          },
+                          "triggered_desc": {
+                            "text": "beholder_psi_pops_timer_tooltip",
+                            "trigger": {
+                              "has_planet_flag": "beholder_psi_pops_timer"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "17_paragon_buildings.txt",
+    "_line_number": 160
+  },
+  "building_contained_ecosphere": {
+    "building_contained_ecosphere": {
+      "icon": "building_contained_ecosphere",
+      "empire_limit": "1",
+      "can_build": "yes",
+      "can_demolish": "yes",
+      "position_priority": "1",
+      "category": "resource",
+      "potential": {
+        "owner": {},
+        "resources": {
+          "category": "planet_buildings",
+          "cost": {
+            "upkeep": {
+              "produces": {},
+              "on_built": {
+                "planet": {},
+                "on_destroy": {
+                  "planet": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "17_paragon_buildings.txt",
+    "_line_number": 230
+  }
+}

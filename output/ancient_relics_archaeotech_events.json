@@ -1,0 +1,66 @@
+{
+  "system_event": {
+    "system_event": {
+      "id": "ancrel.9905",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_modifier": "zroni_storm"
+      },
+      "immediate": {
+        "remove_modifier": "zroni_storm",
+        "every_ambient_object": {
+          "limit": {
+            "destroy_ambient_object": "this"
+          },
+          "if": {
+            "limit": {
+              "any_ship_in_system": {
+                "is_ship_class": "shipclass_starbase",
+                "has_component": "STARBASE_AURA_ZRONI_STORM"
+              }
+            },
+            "starbase": {
+              "remove_starbase_component": {
+                "component": "STARBASE_AURA_ZRONI_STORM"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "ancient_relics_archaeotech_events.txt",
+    "_line_number": 180
+  },
+  "country_event": {
+    "country_event": {
+      "id": "ancrel.9925",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "is_ai": "yes"
+      },
+      "immediate": {
+        "if": {
+          "limit": {
+            "num_buildings": {
+              "type": "building_archaeo_refinery"
+            }
+          },
+          "random_owned_planet": {
+            "limit": {
+              "OR": {
+                "num_buildings": {
+                  "type": "building_crystal_plant"
+                }
+              }
+            },
+            "add_building": "building_archaeo_refinery"
+          }
+        }
+      }
+    },
+    "_source_file": "ancient_relics_archaeotech_events.txt",
+    "_line_number": 398
+  }
+}

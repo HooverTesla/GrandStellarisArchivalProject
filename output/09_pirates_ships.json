@@ -1,0 +1,214 @@
+{
+  "pirate_corvette": {
+    "pirate_corvette": {
+      "graphical_culture": {
+        "max_speed": "@speed_very_fast",
+        "acceleration": "0.35",
+        "rotation_speed": "0.1",
+        "collision_radius": "@corvette_collision_radius",
+        "modifier": {
+          "ship_armor_add": "3",
+          "ship_evasion_add": "60",
+          "ship_piracy_suppression_add": "10"
+        },
+        "max_hitpoints": "@corvette_hp",
+        "size_multiplier": "1",
+        "fleet_slot_size": "1",
+        "section_slots": {
+          "num_target_locators": "0",
+          "is_space_station": "no",
+          "icon": "ship_size_military_1",
+          "class": "shipclass_military",
+          "is_designable": "no",
+          "required_component_set": "thruster_components"
+        }
+      }
+    },
+    "_source_file": "09_pirates_ships.txt",
+    "_line_number": 30
+  },
+  "pirate_destroyer": {
+    "pirate_destroyer": {
+      "graphical_culture": {
+        "max_speed": "@speed_fast",
+        "acceleration": "0.3",
+        "rotation_speed": "0.2",
+        "collision_radius": "@destroyer_collision_radius",
+        "modifier": {
+          "ship_evasion_add": "25",
+          "ship_armor_add": "15",
+          "ship_piracy_suppression_add": "8"
+        },
+        "max_hitpoints": "@destroyer_hp",
+        "size_multiplier": "2",
+        "fleet_slot_size": "2",
+        "section_slots": {
+          "num_target_locators": "0",
+          "icon": "ship_size_military_2",
+          "is_space_station": "no",
+          "class": "shipclass_military",
+          "is_designable": "no",
+          "required_component_set": "thruster_components"
+        }
+      }
+    },
+    "_source_file": "09_pirates_ships.txt",
+    "_line_number": 58
+  },
+  "pirate_cruiser": {
+    "pirate_cruiser": {
+      "graphical_culture": {
+        "max_speed": "@speed_fast",
+        "acceleration": "0.2",
+        "rotation_speed": "0.2",
+        "collision_radius": "@destroyer_collision_radius",
+        "modifier": {
+          "ship_evasion_add": "10",
+          "ship_armor_add": "34",
+          "ship_piracy_suppression_add": "6"
+        },
+        "max_hitpoints": "@cruiser_hp",
+        "size_multiplier": "4",
+        "fleet_slot_size": "4",
+        "section_slots": {
+          "num_target_locators": "0",
+          "icon": "ship_size_military_4",
+          "is_space_station": "no",
+          "class": "shipclass_military",
+          "is_designable": "no",
+          "required_component_set": "thruster_components"
+        }
+      }
+    },
+    "_source_file": "09_pirates_ships.txt",
+    "_line_number": 86
+  },
+  "pirate_station": {
+    "pirate_station": {
+      "graphical_culture": {
+        "max_speed": "0.0",
+        "acceleration": "0.0",
+        "rotation_speed": "0.0",
+        "modifier": {
+          "ship_evasion_mult": "-1",
+          "ship_armor_add": "35",
+          "ships_upkeep_mult": "-0.25"
+        },
+        "ship_modifier": {
+          "ship_weapon_range_mult": "0.20"
+        },
+        "max_hitpoints": "@station_civilian_hp",
+        "size_multiplier": "4",
+        "fleet_slot_size": "4",
+        "section_slots": {
+          "\"west\"": {},
+          "icon": "ship_size_military_station",
+          "num_target_locators": "0",
+          "is_space_station": "yes",
+          "build_block_radius": "@build_block_radius_civilian",
+          "class": "shipclass_military_station",
+          "is_designable": "no"
+        }
+      }
+    },
+    "_source_file": "09_pirates_ships.txt",
+    "_line_number": 112
+  },
+  "bemat_corvette": {
+    "bemat_corvette": {
+      "graphical_culture": {
+        "max_speed": "@speed_very_fast",
+        "acceleration": "0.35",
+        "rotation_speed": "0.1",
+        "collision_radius": "@corvette_collision_radius",
+        "modifier": {
+          "ship_armor_add": "6",
+          "ship_evasion_add": "50",
+          "ship_piracy_suppression_add": "10"
+        },
+        "max_hitpoints": "@corvette_hp",
+        "size_multiplier": "1",
+        "fleet_slot_size": "1",
+        "section_slots": {
+          "num_target_locators": "0",
+          "is_designable": "no",
+          "is_space_station": "no",
+          "is_space_object": "no",
+          "icon": "ship_size_military_1",
+          "class": "shipclass_military",
+          "required_component_set": "thruster_components"
+        }
+      }
+    },
+    "_source_file": "09_pirates_ships.txt",
+    "_line_number": 148
+  },
+  "bemat_destroyer": {
+    "bemat_destroyer": {
+      "graphical_culture": {
+        "entity": "humanoid_01_destroyer_entity",
+        "max_speed": "@speed_fast",
+        "acceleration": "0.3",
+        "rotation_speed": "0.35",
+        "collision_radius": "@destroyer_collision_radius",
+        "modifier": {
+          "ship_armor_add": "25",
+          "ship_evasion_add": "25",
+          "ship_piracy_suppression_add": "8"
+        },
+        "max_hitpoints": "@destroyer_hp",
+        "size_multiplier": "1",
+        "fleet_slot_size": "2",
+        "section_slots": {
+          "\"bow\"": {
+            "\"stern\"": {},
+            "num_target_locators": "0",
+            "is_designable": "no",
+            "is_space_station": "no",
+            "is_space_object": "no",
+            "icon": "ship_size_military_2",
+            "class": "shipclass_military",
+            "required_component_set": "thruster_components"
+          }
+        }
+      }
+    },
+    "_source_file": "09_pirates_ships.txt",
+    "_line_number": 179
+  },
+  "bemat_cruiser": {
+    "bemat_cruiser": {
+      "graphical_culture": {
+        "entity": "humanoid_01_cruiser_entity",
+        "max_speed": "@speed_fast",
+        "acceleration": "0.25",
+        "rotation_speed": "0.2",
+        "collision_radius": "@cruiser_collision_radius",
+        "modifier": {
+          "ship_armor_add": "25",
+          "ship_evasion_add": "15",
+          "ship_piracy_suppression_add": "3"
+        },
+        "max_hitpoints": "@cruiser_hp",
+        "size_multiplier": "1",
+        "fleet_slot_size": "3",
+        "section_slots": {
+          "\"bow\"": {
+            "\"mid\"": {
+              "\"stern\"": {},
+              "num_target_locators": "0",
+              "is_designable": "no",
+              "is_space_station": "no",
+              "is_space_object": "no",
+              "icon": "ship_size_military_4",
+              "class": "shipclass_military",
+              "required_component_set": "thruster_components"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "09_pirates_ships.txt",
+    "_line_number": 214
+  }
+}

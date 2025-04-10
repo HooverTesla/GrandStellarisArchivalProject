@@ -1,0 +1,1227 @@
+{
+  "unique_system_initializer_01": {
+    "unique_system_initializer_01": {
+      "name": "NAME_Unique_System_1",
+      "class": "sc_black_hole",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "1",
+        "modifier": {
+          "factor": "0",
+          "has_star_flag": "empire_cluster"
+        }
+      },
+      "spawn_chance": "@unique_system_spawn_chance",
+      "primitive_system": "yes # usage odds modified by primitives setup slider",
+      "max_instances": "1",
+      "flags": {
+        "planet": {
+          "class": "star",
+          "orbit_distance": "0",
+          "init_effect": {
+            "clear_deposits": "yes",
+            "add_deposit": "d_dark_matter_deposit_1",
+            "create_ambient_object": {
+              "type": "large_debris_object",
+              "entity_offset_height": {
+                "location": "this"
+              },
+              "last_created_ambient_object": {
+                "set_location": {
+                  "target": "prev",
+                  "distance": "15",
+                  "angle": "random"
+                }
+              },
+              "create_ambient_object": {
+                "type": "large_debris_object",
+                "entity_offset_height": {
+                  "location": "this"
+                },
+                "last_created_ambient_object": {
+                  "set_location": {
+                    "target": "prev",
+                    "distance": "15",
+                    "angle": "random"
+                  }
+                }
+              }
+            },
+            "change_orbit": "55",
+            "planet": {
+              "count": "1",
+              "class": "pc_broken",
+              "size": {
+                "init_effect": {
+                  "prevent_anomaly": "yes",
+                  "clear_deposits": "yes"
+                },
+                "planet": {
+                  "count": "1",
+                  "class": "pc_broken",
+                  "size": {
+                    "init_effect": {
+                      "prevent_anomaly": "yes",
+                      "clear_deposits": "yes"
+                    },
+                    "planet": {
+                      "class": "pc_habitat",
+                      "size": "6",
+                      "flags": {
+                        "init_effect": {
+                          "prevent_anomaly": "yes",
+                          "clear_deposits": "yes",
+                          "if": {
+                            "limit": {
+                              "check_galaxy_setup_value": {
+                                "setting": "primitive_worlds_scale",
+                                "value >": "0.5"
+                              }
+                            },
+                            "generate_late_pre_ftls_on_planet": "yes",
+                            "set_planet_flag": "habitat_level_1",
+                            "add_district": "district_hab_housing",
+                            "add_deposit": "d_arcane_replicator",
+                            "set_planet_entity": {
+                              "entity": "habitat_phase_01_entity",
+                              "graphical_culture": "owner"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "change_orbit": "35"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "unique_system_initializers.txt",
+    "_line_number": 28
+  },
+  "unique_system_initializer_02": {
+    "unique_system_initializer_02": {
+      "name": "NAME_Unique_System_2",
+      "class": "sc_neutron_star",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "1",
+        "modifier": {
+          "factor": "0",
+          "has_star_flag": "empire_cluster"
+        }
+      },
+      "spawn_chance": "@unique_system_spawn_chance",
+      "max_instances": "1",
+      "flags": {
+        "planet": {
+          "count": "2",
+          "class": "pc_asteroid",
+          "orbit_angle": {
+            "init_effect": {
+              "prevent_anomaly": "yes",
+              "clear_deposits": "yes",
+              "add_deposit": "d_alloys_2"
+            }
+          },
+          "change_orbit": "15",
+          "planet": {
+            "name": "NAME_Unique_System_2_Planet",
+            "class": "pc_relic",
+            "size": "20",
+            "flags": {
+              "init_effect": {
+                "prevent_anomaly": "yes",
+                "clear_deposits": "yes",
+                "create_archaeological_site": "larion_digsite",
+                "if": {
+                  "limit": {
+                    "has_ancrel": "no"
+                  },
+                  "change_pc": "pc_tropical",
+                  "add_deposit": "d_lush_jungle"
+                },
+                "else": {
+                  "add_deposit": "d_rich_mountain"
+                },
+                "add_deposit": "d_submerged_ore_veins"
+              },
+              "change_orbit": "@base_moon_distance",
+              "moon": {
+                "class": "pc_barren",
+                "size": "10",
+                "init_effect": {
+                  "prevent_anomaly": "yes",
+                  "clear_deposits": "yes",
+                  "add_deposit": "d_minerals_3"
+                }
+              }
+            }
+          }
+        },
+        "asteroid_belt": {
+          "type": "rocky_asteroid_belt",
+          "radius": "55"
+        },
+        "change_orbit": "15"
+      }
+    },
+    "_source_file": "unique_system_initializers.txt",
+    "_line_number": 181
+  },
+  "unique_system_initializer_03": {
+    "unique_system_initializer_03": {
+      "name": "NAME_Unique_System_3",
+      "class": "sc_m",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "1",
+        "modifier": {
+          "factor": "0",
+          "has_star_flag": "empire_cluster"
+        }
+      },
+      "spawn_chance": "@unique_system_spawn_chance",
+      "max_instances": "1",
+      "flags": {
+        "planet": {
+          "count": "2",
+          "class": "pc_rare_crystal_asteroid",
+          "orbit_angle": {
+            "init_effect": {
+              "prevent_anomaly": "yes",
+              "clear_deposits": "yes",
+              "add_deposit": "d_rare_crystals_1"
+            }
+          },
+          "change_orbit": "5",
+          "planet": {
+            "count": "2",
+            "class": "pc_asteroid",
+            "orbit_angle": {
+              "init_effect": {
+                "prevent_anomaly": "yes",
+                "clear_deposits": "yes",
+                "add_deposit": "d_alloys_2"
+              }
+            },
+            "change_orbit": "25",
+            "planet": {
+              "name": "NAME_Unique_System_3_Planet",
+              "count": "1",
+              "class": "pc_shrouded",
+              "orbit_angle": {
+                "size": "25",
+                "has_ring": "no",
+                "init_effect": {
+                  "clear_deposits": "yes",
+                  "prevent_anomaly": "yes",
+                  "create_ambient_object": {
+                    "type": "shroud_rift_object",
+                    "scale": "0.15",
+                    "entity_offset_height": "-22",
+                    "location": "this"
+                  },
+                  "last_created_ambient_object": {
+                    "save_global_event_target_as": "animator_rift_object",
+                    "set_location": {
+                      "target": "prev"
+                    }
+                  }
+                },
+                "change_orbit": "@base_moon_distance",
+                "moon": {
+                  "name": "NAME_Unique_System_3_Moon",
+                  "class": "pc_barren",
+                  "size": "8",
+                  "init_effect": {
+                    "prevent_anomaly": "yes",
+                    "clear_deposits": "yes",
+                    "add_deposit": "d_minerals_1",
+                    "create_archaeological_site": "zevox_digsite"
+                  }
+                }
+              },
+              "change_orbit": "35",
+              "planet": {
+                "count": "1",
+                "orbit_distance": "60",
+                "class": "pc_gas_giant",
+                "orbit_angle": {
+                  "size": "20",
+                  "has_ring": "yes",
+                  "init_effect": {
+                    "clear_deposits": "yes",
+                    "add_deposit": "d_energy_5"
+                  },
+                  "change_orbit": "@base_moon_distance",
+                  "moon": {
+                    "class": "pc_barren_cold",
+                    "count": "1",
+                    "size": {
+                      "orbit_angle": {
+                        "orbit_distance": "6"
+                      },
+                      "change_orbit": "@base_moon_distance",
+                      "moon": {
+                        "class": "pc_frozen",
+                        "count": "1",
+                        "size": {
+                          "orbit_angle": {
+                            "orbit_distance": "6",
+                            "init_effect": {
+                              "clear_deposits": "yes",
+                              "add_deposit": "d_minerals_2"
+                            }
+                          }
+                        },
+                        "change_orbit": "25",
+                        "planet": {
+                          "count": "1",
+                          "orbit_distance": "60",
+                          "class": "pc_barren_cold",
+                          "orbit_angle": {
+                            "size": "16",
+                            "init_effect": {
+                              "if": {
+                                "limit": {
+                                  "has_overlord_dlc": "yes"
+                                },
+                                "create_ambient_object": {
+                                  "type": "enclave_shroudwalker_starbase_ruined",
+                                  "entity_offset_height": "-15",
+                                  "location": "this"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "asteroid_belt": {
+          "type": "crystal_asteroid_belt",
+          "radius": "130"
+        },
+        "change_orbit": "60"
+      }
+    },
+    "_source_file": "unique_system_initializers.txt",
+    "_line_number": 328
+  },
+  "unique_system_initializer_04": {
+    "unique_system_initializer_04": {
+      "name": "NAME_Unique_System_4",
+      "class": "sc_a",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "1",
+        "modifier": {
+          "factor": "0",
+          "has_star_flag": "empire_cluster"
+        }
+      },
+      "spawn_chance": "@unique_system_spawn_chance",
+      "max_instances": "1",
+      "flags": {
+        "planet": {
+          "count": "1",
+          "class": "pc_asteroid",
+          "orbit_angle": {
+            "init_effect": {
+              "prevent_anomaly": "yes",
+              "clear_deposits": "yes",
+              "add_deposit": "d_alloys_2",
+              "add_anomaly": {
+                "category": "UNIQUE_SYSTEM_BATTLE_CAT"
+              },
+              "create_ambient_object": {
+                "type": "ancient_battlefield_02_object",
+                "location": "solar_system"
+              },
+              "last_created_ambient_object": {
+                "set_location": {
+                  "target": "prev",
+                  "distance": "35",
+                  "angle": "15"
+                }
+              }
+            }
+          },
+          "change_orbit": "10",
+          "planet": {
+            "count": "4",
+            "class": "pc_asteroid",
+            "orbit_angle": {
+              "change_orbit": "10",
+              "init_effect": {
+                "prevent_anomaly": "yes",
+                "clear_deposits": "yes",
+                "add_deposit": "d_alloys_2"
+              }
+            },
+            "init_effect": {
+              "while": {
+                "count": "10",
+                "create_ambient_object": {
+                  "type": "ancient_battlefield_02_object",
+                  "location": "solar_system"
+                }
+              },
+              "create_ambient_object": {
+                "type": "ancient_battlefield_02_object",
+                "location": "solar_system"
+              },
+              "last_created_ambient_object": {
+                "set_location": {
+                  "target": "prev",
+                  "distance": "75",
+                  "angle": "120"
+                }
+              }
+            }
+          }
+        },
+        "asteroid_belt": {
+          "type": "rocky_asteroid_belt",
+          "radius": "145"
+        },
+        "change_orbit": "35"
+      }
+    },
+    "_source_file": "unique_system_initializers.txt",
+    "_line_number": 522
+  },
+  "unique_system_initializer_05": {
+    "unique_system_initializer_05": {
+      "name": "NAME_Unique_System_5",
+      "class": "sc_f",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "1",
+        "modifier": {
+          "factor": "0",
+          "has_star_flag": "empire_cluster"
+        }
+      },
+      "spawn_chance": "@unique_system_spawn_chance",
+      "max_instances": "1",
+      "flags": {
+        "planet": {
+          "count": "1",
+          "class": "pc_asteroid",
+          "orbit_angle": {
+            "init_effect": {
+              "prevent_anomaly": "yes",
+              "clear_deposits": "yes",
+              "add_deposit": "d_alloys_2",
+              "add_anomaly": {
+                "category": "UNIQUE_SYSTEM_BATTLE_CAT"
+              },
+              "create_ambient_object": {
+                "type": "ancient_battlefield_02_object",
+                "location": "solar_system"
+              },
+              "last_created_ambient_object": {
+                "set_location": {
+                  "target": "prev",
+                  "distance": "35",
+                  "angle": "15"
+                }
+              }
+            }
+          },
+          "change_orbit": "35",
+          "planet": {
+            "count": "1",
+            "class": "pc_broken",
+            "size": "16",
+            "orbit_angle": {
+              "init_effect": {
+                "prevent_anomaly": "yes",
+                "clear_deposits": "yes",
+                "create_ambient_object": {
+                  "type": "ancient_battlefield_02_object",
+                  "location": "solar_system"
+                },
+                "last_created_ambient_object": {
+                  "set_location": {
+                    "target": "prev",
+                    "distance": "35",
+                    "angle": "15"
+                  }
+                }
+              },
+              "change_orbit": "25",
+              "planet": {
+                "count": "1",
+                "class": "pc_broken",
+                "size": "18",
+                "orbit_angle": {
+                  "init_effect": {
+                    "prevent_anomaly": "yes",
+                    "clear_deposits": "yes",
+                    "create_ambient_object": {
+                      "type": "ancient_battlefield_02_object",
+                      "location": "solar_system"
+                    },
+                    "last_created_ambient_object": {
+                      "set_location": {
+                        "target": "prev",
+                        "distance": "35",
+                        "angle": "15"
+                      }
+                    }
+                  }
+                },
+                "change_orbit": "45",
+                "planet": {
+                  "count": "1",
+                  "class": "pc_broken",
+                  "size": "12",
+                  "orbit_angle": {
+                    "init_effect": {
+                      "prevent_anomaly": "yes",
+                      "clear_deposits": "yes"
+                    }
+                  },
+                  "init_effect": {
+                    "while": {
+                      "count": "10",
+                      "create_ambient_object": {
+                        "type": "ancient_battlefield_02_object",
+                        "location": "solar_system"
+                      }
+                    },
+                    "create_ambient_object": {
+                      "type": "ancient_battlefield_02_object",
+                      "location": "solar_system"
+                    },
+                    "last_created_ambient_object": {
+                      "set_location": {
+                        "target": "prev",
+                        "distance": "75",
+                        "angle": "220"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "change_orbit": "55"
+      }
+    },
+    "_source_file": "unique_system_initializers.txt",
+    "_line_number": 713
+  },
+  "unique_system_initializer_06": {
+    "unique_system_initializer_06": {
+      "name": "NAME_Unique_System_6",
+      "class": "sc_f",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "1",
+        "modifier": {
+          "factor": "0",
+          "has_star_flag": "empire_cluster"
+        }
+      },
+      "spawn_chance": "@unique_system_spawn_chance",
+      "max_instances": "1",
+      "flags": {
+        "planet": {
+          "count": "1",
+          "class": "pc_broken",
+          "size": "18",
+          "orbit_angle": {
+            "init_effect": {
+              "prevent_anomaly": "yes",
+              "clear_deposits": "yes",
+              "create_ambient_object": {
+                "type": "ancient_battlefield_02_object",
+                "location": "solar_system"
+              },
+              "last_created_ambient_object": {
+                "set_location": {
+                  "target": "prev",
+                  "distance": "35",
+                  "angle": "15"
+                }
+              }
+            }
+          },
+          "change_orbit": "10",
+          "planet": {
+            "count": "1",
+            "class": "pc_asteroid",
+            "orbit_angle": {
+              "init_effect": {
+                "prevent_anomaly": "yes",
+                "clear_deposits": "yes",
+                "add_deposit": "d_alloys_2",
+                "add_anomaly": {
+                  "category": "UNIQUE_SYSTEM_BATTLE_CAT"
+                },
+                "create_ambient_object": {
+                  "type": "ancient_battlefield_02_object",
+                  "location": "solar_system"
+                },
+                "last_created_ambient_object": {
+                  "set_location": {
+                    "target": "prev",
+                    "distance": "35",
+                    "angle": "15"
+                  }
+                }
+              }
+            },
+            "change_orbit": "25",
+            "planet": {
+              "count": "1",
+              "class": "pc_broken",
+              "size": "14",
+              "orbit_angle": {
+                "init_effect": {
+                  "prevent_anomaly": "yes",
+                  "clear_deposits": "yes",
+                  "create_ambient_object": {
+                    "type": "ancient_battlefield_02_object",
+                    "location": "solar_system"
+                  },
+                  "last_created_ambient_object": {
+                    "set_location": {
+                      "target": "prev",
+                      "distance": "5",
+                      "angle": "15"
+                    }
+                  }
+                }
+              },
+              "change_orbit": "15",
+              "planet": {
+                "count": "2",
+                "class": "pc_asteroid",
+                "orbit_angle": {
+                  "change_orbit": "10",
+                  "init_effect": {
+                    "prevent_anomaly": "yes",
+                    "clear_deposits": "yes",
+                    "add_deposit": "d_alloys_2"
+                  }
+                },
+                "init_effect": {
+                  "while": {
+                    "count": "10",
+                    "create_ambient_object": {
+                      "type": "ancient_battlefield_02_object",
+                      "location": "solar_system"
+                    }
+                  },
+                  "create_ambient_object": {
+                    "type": "ancient_battlefield_02_object",
+                    "location": "solar_system"
+                  },
+                  "last_created_ambient_object": {
+                    "set_location": {
+                      "target": "prev",
+                      "distance": "75",
+                      "angle": "120"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "asteroid_belt": {
+          "type": "rocky_asteroid_belt",
+          "radius": "95"
+        },
+        "change_orbit": "25"
+      }
+    },
+    "_source_file": "unique_system_initializers.txt",
+    "_line_number": 960
+  },
+  "unique_system_initializer_07": {
+    "unique_system_initializer_07": {
+      "name": "NAME_Unique_System_7",
+      "class": "sc_k",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "1",
+        "modifier": {
+          "factor": "0",
+          "any_system": {}
+        },
+        "spawn_chance": "@unique_system_spawn_chance",
+        "max_instances": "1",
+        "flags": {
+          "planet": {
+            "count": "2",
+            "class": "pc_asteroid",
+            "orbit_angle": {
+              "change_orbit": "10",
+              "init_effect": {
+                "prevent_anomaly": "yes",
+                "clear_deposits": "yes",
+                "add_deposit": "d_alloys_1"
+              }
+            },
+            "change_orbit": "30",
+            "planet": {
+              "count": "1",
+              "class": "pc_molten",
+              "orbit_angle": {
+                "size": "22",
+                "has_ring": "yes",
+                "init_effect": {
+                  "prevent_anomaly": "yes",
+                  "clear_deposits": "yes",
+                  "add_deposit": "d_volatile_motes_1"
+                }
+              },
+              "change_orbit": "30",
+              "planet": {
+                "count": "1",
+                "class": "pc_gas_giant",
+                "orbit_angle": {
+                  "size": "20",
+                  "has_ring": "yes",
+                  "init_effect": {
+                    "prevent_anomaly": "yes",
+                    "clear_deposits": "yes",
+                    "add_deposit": "d_energy_3"
+                  },
+                  "change_orbit": "@base_moon_distance",
+                  "moon": {
+                    "class": "pc_barren_cold",
+                    "count": "1",
+                    "size": {
+                      "orbit_angle": {
+                        "orbit_distance": "6",
+                        "init_effect": {
+                          "prevent_anomaly": "yes",
+                          "clear_deposits": "yes"
+                        }
+                      },
+                      "change_orbit": "@base_moon_distance",
+                      "moon": {
+                        "class": "pc_frozen",
+                        "count": "1",
+                        "size": {
+                          "orbit_angle": {
+                            "orbit_distance": "6",
+                            "init_effect": {
+                              "clear_deposits": "yes",
+                              "prevent_anomaly": "yes",
+                              "add_deposit": "d_minerals_2"
+                            }
+                          }
+                        },
+                        "change_orbit": "35",
+                        "planet": {
+                          "count": "1",
+                          "class": "pc_arid",
+                          "orbit_angle": {
+                            "size": "16",
+                            "has_ring": "yes",
+                            "init_effect": {
+                              "prevent_anomaly": "yes"
+                            },
+                            "change_orbit": "35",
+                            "moon": {
+                              "class": "pc_barren",
+                              "count": "1",
+                              "size": "8",
+                              "orbit_angle": {
+                                "orbit_distance": "6",
+                                "init_effect": {
+                                  "prevent_anomaly": "yes",
+                                  "clear_deposits": "yes"
+                                }
+                              }
+                            },
+                            "planet": {
+                              "count": "1",
+                              "class": "pc_nuked",
+                              "orbit_angle": {
+                                "size": "19",
+                                "has_ring": "yes",
+                                "init_effect": {
+                                  "prevent_anomaly": "yes"
+                                },
+                                "change_orbit": "@base_moon_distance",
+                                "moon": {
+                                  "class": "pc_barren_cold",
+                                  "count": "1",
+                                  "size": "6",
+                                  "orbit_angle": {
+                                    "init_effect": {
+                                      "prevent_anomaly": "yes",
+                                      "clear_deposits": "yes",
+                                      "add_deposit": "d_minerals_1"
+                                    }
+                                  },
+                                  "change_orbit": "65",
+                                  "moon": {
+                                    "class": "pc_barren_cold",
+                                    "count": "1",
+                                    "size": "7",
+                                    "orbit_angle": {
+                                      "init_effect": {
+                                        "prevent_anomaly": "yes",
+                                        "clear_deposits": "yes",
+                                        "add_deposit": "d_minerals_2"
+                                      }
+                                    }
+                                  },
+                                  "planet": {
+                                    "count": "1",
+                                    "class": "pc_savannah",
+                                    "orbit_angle": {
+                                      "size": "12",
+                                      "has_ring": "yes",
+                                      "init_effect": {
+                                        "prevent_anomaly": "yes"
+                                      }
+                                    },
+                                    "change_orbit": "35",
+                                    "planet": {
+                                      "count": "1",
+                                      "class": "pc_frozen",
+                                      "orbit_angle": {
+                                        "size": "20",
+                                        "has_ring": "yes",
+                                        "init_effect": {
+                                          "prevent_anomaly": "yes",
+                                          "clear_deposits": "yes"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "asteroid_belt": {
+            "type": "rocky_asteroid_belt",
+            "radius": "65"
+          },
+          "change_orbit": "@distance"
+        }
+      }
+    },
+    "_source_file": "unique_system_initializers.txt",
+    "_line_number": 1219
+  },
+  "unique_system_initializer_08": {
+    "unique_system_initializer_08": {
+      "name": "NAME_Unique_System_8",
+      "class": "sc_m_giant",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "1",
+        "modifier": {
+          "factor": "0",
+          "any_system": {}
+        },
+        "spawn_chance": "@unique_system_spawn_chance",
+        "max_instances": "1",
+        "flags": {
+          "planet": {
+            "count": "3",
+            "class": "pc_asteroid",
+            "orbit_angle": {
+              "change_orbit": "10",
+              "init_effect": {
+                "prevent_anomaly": "yes",
+                "clear_deposits": "yes",
+                "add_deposit": "d_alloys_2"
+              }
+            },
+            "change_orbit": "30",
+            "planet": {
+              "count": "1",
+              "class": "pc_gas_giant",
+              "orbit_angle": {
+                "size": "18",
+                "has_ring": "yes",
+                "init_effect": {
+                  "prevent_anomaly": "yes",
+                  "clear_deposits": "yes",
+                  "add_deposit": "d_energy_5"
+                },
+                "change_orbit": "30",
+                "moon": {
+                  "class": "pc_barren_cold",
+                  "count": "1",
+                  "size": "10",
+                  "orbit_angle": {
+                    "orbit_distance": "6",
+                    "init_effect": {
+                      "prevent_anomaly": "yes",
+                      "clear_deposits": "yes"
+                    }
+                  }
+                },
+                "planet": {
+                  "count": "1",
+                  "class": "pc_gas_giant",
+                  "orbit_angle": {
+                    "size": "14",
+                    "has_ring": "yes",
+                    "init_effect": {
+                      "prevent_anomaly": "yes",
+                      "clear_deposits": "yes",
+                      "add_deposit": "d_energy_3"
+                    },
+                    "change_orbit": "55",
+                    "moon": {
+                      "class": "pc_frozen",
+                      "count": "1",
+                      "size": "10",
+                      "orbit_angle": {
+                        "orbit_distance": "6",
+                        "init_effect": {
+                          "prevent_anomaly": "yes",
+                          "clear_deposits": "yes",
+                          "add_deposit": "d_rare_crystals_1"
+                        }
+                      }
+                    },
+                    "planet": {
+                      "count": "1",
+                      "class": "pc_continental",
+                      "orbit_angle": {
+                        "size": "22",
+                        "has_ring": "yes",
+                        "init_effect": {
+                          "prevent_anomaly": "yes"
+                        },
+                        "change_orbit": "45",
+                        "moon": {
+                          "class": "pc_barren",
+                          "count": "1",
+                          "size": "8",
+                          "orbit_angle": {
+                            "orbit_distance": "6",
+                            "init_effect": {
+                              "prevent_anomaly": "yes",
+                              "clear_deposits": "yes"
+                            }
+                          }
+                        },
+                        "planet": {
+                          "count": "1",
+                          "class": "pc_nuked",
+                          "orbit_angle": {
+                            "size": "14",
+                            "has_ring": "yes",
+                            "init_effect": {
+                              "prevent_anomaly": "yes"
+                            }
+                          },
+                          "change_orbit": "35",
+                          "planet": {
+                            "count": "1",
+                            "class": "pc_tropical",
+                            "orbit_angle": {
+                              "size": "18",
+                              "has_ring": "yes",
+                              "init_effect": {
+                                "prevent_anomaly": "yes"
+                              },
+                              "change_orbit": "35",
+                              "moon": {
+                                "class": "pc_frozen",
+                                "count": "1",
+                                "size": "8",
+                                "orbit_angle": {
+                                  "orbit_distance": "6",
+                                  "init_effect": {
+                                    "prevent_anomaly": "yes",
+                                    "clear_deposits": "yes"
+                                  }
+                                }
+                              },
+                              "planet": {
+                                "count": "2",
+                                "class": "pc_asteroid",
+                                "orbit_angle": {
+                                  "change_orbit": "10",
+                                  "init_effect": {
+                                    "prevent_anomaly": "yes",
+                                    "clear_deposits": "yes"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "asteroid_belt": {
+            "type": "rocky_asteroid_belt",
+            "radius": "135"
+          },
+          "change_orbit": "25"
+        }
+      }
+    },
+    "_source_file": "unique_system_initializers.txt",
+    "_line_number": 1440
+  },
+  "unique_system_initializer_09": {
+    "unique_system_initializer_09": {
+      "name": "NAME_Unique_System_9",
+      "class": "sc_a",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "1",
+        "modifier": {
+          "factor": "0",
+          "any_system": {}
+        },
+        "spawn_chance": "@unique_system_spawn_chance",
+        "max_instances": "1",
+        "flags": {
+          "planet": {
+            "count": "3",
+            "class": "pc_asteroid",
+            "orbit_angle": {
+              "change_orbit": "10",
+              "init_effect": {
+                "prevent_anomaly": "yes",
+                "clear_deposits": "yes",
+                "add_deposit": "d_alloys_2"
+              }
+            },
+            "change_orbit": "55",
+            "planet": {
+              "count": "1",
+              "class": "pc_arctic",
+              "orbit_angle": {
+                "size": "16",
+                "has_ring": "yes",
+                "init_effect": {
+                  "prevent_anomaly": "yes"
+                }
+              },
+              "change_orbit": "35",
+              "planet": {
+                "count": "1",
+                "class": "pc_toxic",
+                "orbit_angle": {
+                  "size": "25",
+                  "has_ring": "yes",
+                  "init_effect": {
+                    "prevent_anomaly": "yes",
+                    "clear_deposits": "yes",
+                    "add_deposit": "d_exotic_gases_1"
+                  }
+                },
+                "change_orbit": "35",
+                "planet": {
+                  "count": "1",
+                  "class": "pc_nuked",
+                  "orbit_angle": {
+                    "size": "17",
+                    "has_ring": "yes",
+                    "init_effect": {
+                      "prevent_anomaly": "yes"
+                    },
+                    "change_orbit": "35",
+                    "moon": {
+                      "class": "pc_barren",
+                      "count": "1",
+                      "size": "8",
+                      "orbit_angle": {
+                        "orbit_distance": "6",
+                        "init_effect": {
+                          "prevent_anomaly": "yes",
+                          "clear_deposits": "yes"
+                        }
+                      }
+                    },
+                    "planet": {
+                      "count": "1",
+                      "class": "pc_alpine",
+                      "orbit_angle": {
+                        "size": "21",
+                        "has_ring": "yes",
+                        "init_effect": {
+                          "prevent_anomaly": "yes"
+                        },
+                        "change_orbit": "@base_moon_distance",
+                        "moon": {
+                          "class": "pc_frozen",
+                          "count": "1",
+                          "size": "8",
+                          "orbit_angle": {
+                            "orbit_distance": "6",
+                            "init_effect": {
+                              "prevent_anomaly": "yes",
+                              "clear_deposits": "yes"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "asteroid_belt": {
+            "type": "rocky_asteroid_belt",
+            "radius": "55"
+          },
+          "change_orbit": "55"
+        }
+      }
+    },
+    "_source_file": "unique_system_initializers.txt",
+    "_line_number": 1638
+  },
+  "lone_defender": {
+    "lone_defender": {
+      "name": "NAME_Lone_Defender_system",
+      "class": "sc_g",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "1",
+        "modifier": {
+          "factor": "0",
+          "has_star_flag": "empire_cluster"
+        }
+      },
+      "max_instances": "1",
+      "flags": {
+        "planet": {
+          "class": "star",
+          "orbit_distance": "0",
+          "flags": {},
+          "planet": {
+            "name": "NAME_Lone_Defender_planet",
+            "class": "pc_nuked",
+            "orbit_distance": "90",
+            "orbit_angle": "1",
+            "size": "20",
+            "has_ring": "no",
+            "flags": {
+              "moon": {
+                "class": "pc_broken",
+                "size": "7",
+                "flags": {
+                  "orbit_angle": "0",
+                  "init_effect": {
+                    "create_ambient_object": {
+                      "type": "small_debris_object",
+                      "entity_offset_height": "-16",
+                      "location": "this"
+                    },
+                    "last_created_ambient_object": {
+                      "set_location": {
+                        "target": "prev",
+                        "angle": "0"
+                      }
+                    }
+                  }
+                },
+                "init_effect": {
+                  "save_event_target_as": "lone_defender_planet",
+                  "prevent_anomaly": "yes",
+                  "create_country": {
+                    "name": "NAME_Lone_Defender_country",
+                    "type": "faction"
+                  },
+                  "last_created_country": {
+                    "set_country_flag": "lone_defender_country",
+                    "create_fleet": {
+                      "name": "NAME_Lone_Defender_fleet",
+                      "settings": {
+                        "effect": {
+                          "set_owner": "PREV",
+                          "set_fleet_flag": "lone_defender_fleet",
+                          "create_ship": {
+                            "name": "NAME_Lone_Defender_ship",
+                            "design": "NAME_Lone_Defender_class",
+                            "graphical_culture": "mammalian_01",
+                            "effect": {
+                              "set_ship_flag": "lone_defender_ship"
+                            }
+                          },
+                          "set_location": "event_target:lone_defender_planet",
+                          "set_fleet_stance": "aggressive",
+                          "set_aggro_range_measure_from": "return_point",
+                          "set_aggro_range": "100",
+                          "queue_actions": {
+                            "repeat": {
+                              "find_closest_planet": {
+                                "trigger": {
+                                  "id": "lone_defender.patrol.3",
+                                  "has_planet_flag": "lone_defender_moon"
+                                },
+                                "found_planet": {
+                                  "move_to": "this",
+                                  "orbit_planet": "this",
+                                  "wait": {
+                                    "duration": "30"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "asteroid_belt": {
+                  "type": "rocky_asteroid_belt",
+                  "radius": "140"
+                },
+                "planet": {
+                  "class": "pc_asteroid",
+                  "orbit_distance": "0",
+                  "orbit_angle": "180",
+                  "size": "5",
+                  "has_ring": "no",
+                  "init_effect": {
+                    "set_deposit": "d_minerals_5"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "unique_system_initializers.txt",
+    "_line_number": 1770
+  }
+}

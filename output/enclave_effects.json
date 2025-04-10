@@ -1,0 +1,515 @@
+{
+  "create_mercenary_enclave_country": {
+    "create_mercenary_enclave_country": {
+      "create_country": {
+        "name": "random",
+        "type": "enclave_mercenary",
+        "authority": "auth_oligarchic",
+        "civics": {
+          "civic": "civic_mercenary_enclave"
+        },
+        "origin": "origin_default",
+        "species": "event_target:mercenary_enclave_species",
+        "flag": "random",
+        "ethos": {
+          "ethic": "$INHERITED_ETHIC$"
+        },
+        "ignore_initial_colony_error": "yes",
+        "effect": {
+          "save_event_target_as": "mercenary_enclave_country",
+          "set_country_flag": "mercenary_enclave_country",
+          "set_graphical_culture": "root.owner",
+          "create_fleet": {
+            "settings": {
+              "effect": {
+                "set_owner": "prev",
+                "create_ship": {
+                  "name": "random",
+                  "design": "NAME_Mercenary_Enclave_Station",
+                  "graphical_culture": "reptilian_01"
+                },
+                "set_location": {
+                  "target": "event_target:mercenary_enclave_planet",
+                  "distance": "90"
+                },
+                "save_event_target_as": "mercenary_enclave_station"
+              }
+            },
+            "set_custom_capital_location": "event_target:mercenary_enclave_planet",
+            "set_leader": "event_target:mercenary_enclave_leader",
+            "_comments": [
+              "#Create ruler"
+            ],
+            "establish_communications_no_message": "root.from"
+          }
+        }
+      }
+    },
+    "_source_file": "enclave_effects.txt",
+    "_line_number": 6
+  },
+  "upgrade_mercenary_starbase": {
+    "upgrade_mercenary_starbase": {
+      "random_owned_fleet": {
+        "limit": {
+          "is_ship_size": "enclave_mercenary_station"
+        },
+        "solar_system": {
+          "random_system_planet": {
+            "limit": {
+              "has_planet_flag": "mercenary_enclave_planet"
+            },
+            "save_event_target_as": "mercenary_enclave_planet"
+          }
+        },
+        "create_fleet": {
+          "settings": {
+            "effect": {
+              "save_event_target_as": "upgraded_mercenary_enclave",
+              "set_owner": "prev",
+              "create_ship": {
+                "name": "random",
+                "design": "NAME_Mercenary_Enclave_Station_$TIER$",
+                "graphical_culture": "prev"
+              },
+              "set_location": {
+                "target": "event_target:mercenary_enclave_planet",
+                "distance": "90"
+              }
+            }
+          },
+          "delete_fleet": "this"
+        },
+        "set_timed_country_flag": {
+          "set_saved_date": {
+            "key": "upgraded_station_timer",
+            "days_from_present": "360",
+            "expires": "360"
+          }
+        }
+      }
+    },
+    "_source_file": "enclave_effects.txt",
+    "_line_number": 50
+  },
+  "create_salvager_enclave_country": {
+    "create_salvager_enclave_country": {
+      "create_country": {
+        "name": "random",
+        "type": "enclave",
+        "authority": "auth_oligarchic",
+        "civics": {
+          "civic": "civic_salvager_enclave"
+        },
+        "origin": "origin_default",
+        "species": "event_target:salvager_enclave_species",
+        "flag": {
+          "icon": {
+            "category": "special",
+            "file": "salvagers.dds"
+          },
+          "background": {
+            "category": "backgrounds",
+            "file": "double_triangles.dds"
+          },
+          "colors": {}
+        },
+        "ethos": {
+          "ethic": "ethic_pacifist"
+        },
+        "ignore_initial_colony_error": "yes",
+        "effect": {
+          "save_global_event_target_as": "salvager_enclave_country",
+          "set_country_flag": "salvager_enclave_country",
+          "set_graphical_culture": "mammalian_01",
+          "_comments": [
+            "#Create capital starbase"
+          ],
+          "create_fleet": {
+            "name": "NAME_Asters_Workshop",
+            "settings": {
+              "effect": {
+                "set_owner": "prev",
+                "create_ship": {
+                  "name": "NAME_Asters_Workshop",
+                  "design": "NAME_Salvager_Enclave_Station",
+                  "graphical_culture": "prev"
+                },
+                "set_location": {
+                  "target": "event_target:salvager_enclave_planet",
+                  "distance": "40",
+                  "angle": "70"
+                },
+                "save_global_event_target_as": "salvager_enclave_starbase"
+              }
+            },
+            "create_ambient_object": {
+              "type": "large_debris_object",
+              "location": "event_target:salvager_enclave_planet"
+            },
+            "last_created_ambient_object": {
+              "set_location": {
+                "target": "event_target:salvager_enclave_planet",
+                "distance": "20",
+                "angle": "70"
+              },
+              "set_ambient_object_flag": "salvager_debris_field"
+            },
+            "set_custom_capital_location": "event_target:salvager_enclave_planet",
+            "_comments": [
+              "#Create ruler"
+            ],
+            "create_leader": {
+              "name": "random",
+              "class": "random_ruler",
+              "species": "event_target:salvager_enclave_species",
+              "skill": "5",
+              "traits": {
+                "trait": "leader_trait_expertise_voidcraft"
+              }
+            },
+            "set_leader": "last_created_leader"
+          }
+        }
+      }
+    },
+    "_source_file": "enclave_effects.txt",
+    "_line_number": 89
+  },
+  "create_shroudwalker_enclave_country": {
+    "create_shroudwalker_enclave_country": {
+      "create_country": {
+        "name": "random",
+        "type": "enclave",
+        "authority": "auth_oligarchic",
+        "civics": {
+          "civic": "civic_shroudwalker_enclave"
+        },
+        "origin": "origin_default",
+        "species": "event_target:shroudwalker_enclave_species",
+        "flag": {
+          "icon": {
+            "category": "special",
+            "file": "shroudwalkers.dds"
+          },
+          "background": {
+            "category": "backgrounds",
+            "file": "sinus.dds"
+          },
+          "colors": {}
+        },
+        "ethos": {
+          "ethic": "ethic_egalitarian"
+        },
+        "ignore_initial_colony_error": "yes",
+        "effect": {
+          "save_global_event_target_as": "shroudwalker_enclave_country",
+          "set_country_flag": "shroudwalker_enclave_country",
+          "set_graphical_culture": "mammalian_01",
+          "_comments": [
+            "#Create capital starbase"
+          ],
+          "create_fleet": {
+            "name": "NAME_Shroud_Teachers",
+            "settings": {
+              "effect": {
+                "set_owner": "prev",
+                "create_ship": {
+                  "name": "random",
+                  "design": "NAME_Shroudwalker_Enclave_Station",
+                  "graphical_culture": "prev"
+                },
+                "set_location": {
+                  "target": "event_target:shroudwalker_enclave_planet",
+                  "distance": "20"
+                },
+                "save_event_target_as": "CustomCapital"
+              }
+            },
+            "set_custom_capital_location": "event_target:shroudwalker_enclave_planet",
+            "_comments": [
+              "#Create ruler"
+            ],
+            "create_leader": {
+              "name": "random",
+              "class": "random_ruler",
+              "species": "event_target:shroudwalker_enclave_species",
+              "skill": "5",
+              "traits": {
+                "trait": "leader_trait_expertise_psionics"
+              }
+            },
+            "set_leader": "last_created_leader"
+          }
+        }
+      }
+    },
+    "_source_file": "enclave_effects.txt",
+    "_line_number": 172
+  },
+  "create_shroudwalker_enclave_starbase": {
+    "create_shroudwalker_enclave_starbase": {
+      "create_fleet": {
+        "name": "NAME_Shroud_Teachers",
+        "settings": {
+          "effect": {
+            "set_owner": "prev",
+            "create_ship": {
+              "name": "random",
+              "design": "NAME_Shroudwalker_Enclave_Station",
+              "graphical_culture": "prev"
+            },
+            "set_location": {
+              "target": "event_target:shroudwalker_enclave_planet",
+              "distance": "20"
+            },
+            "save_global_event_target_as": "shroudwalker_starbase"
+          }
+        }
+      }
+    },
+    "_source_file": "enclave_effects.txt",
+    "_line_number": 242
+  },
+  "salvager_enclave_scrap_fleet_estimate": {
+    "salvager_enclave_scrap_fleet_estimate": {
+      "_comments": [
+        "#One-off vessels",
+        "#Military vessels (shipclass_military)",
+        "#Organic vessels"
+      ],
+      "if": {
+        "limit": {
+          "OR": {
+            "has_fleet_flag": "scrap_organic_fleet",
+            "is_organic_controllable_ship": "yes"
+          }
+        },
+        "multiply_variable": {
+          "which": "scrap_value",
+          "value": "@ScrapValueOrganicMult"
+        },
+        "set_fleet_flag": "scrap_organic_fleet",
+        "root": {
+          "set_country_flag": "has_organic_scrappable_fleet"
+        }
+      },
+      "else": {
+        "export_trigger_value_to_variable": {
+          "trigger": "fleet_power",
+          "variable": "scrap_value"
+        },
+        "_comments": [
+          "#If Fleet Power exceeds @ScrapFleetPowerCap, set a ceiling on the scrap value",
+          "#If FLeet Power is so low it would round to 0, set a safe minimum instead",
+          "#Proceed as normal"
+        ],
+        "if": {
+          "limit": {
+            "check_variable": {
+              "which": "scrap_value"
+            }
+          },
+          "set_variable": {
+            "which": "scrap_value",
+            "value": "@ScrapFleetPowerCap"
+          }
+        },
+        "else_if": {
+          "limit": {
+            "check_variable_arithmetic": {
+              "which": "scrap_value",
+              "multiply": "@ScrapValueMultiplier"
+            }
+          },
+          "set_variable": {
+            "which": "scrap_value",
+            "value": "125 #See 'round_variable_to_closest', below. One should be able to multiply this value by @ScrapValueMultiplier and receive a value which won't round to 0."
+          }
+        },
+        "multiply_variable": {
+          "which": "scrap_value",
+          "value": "@ScrapValueMultiplier"
+        },
+        "round_variable_to_closest": {
+          "which": "scrap_value",
+          "value": "10"
+        }
+      }
+    },
+    "_source_file": "enclave_effects.txt",
+    "_line_number": 263
+  },
+  "salvager_enclave_find_reclaimed_corvette_design": {
+    "salvager_enclave_find_reclaimed_corvette_design": {
+      "random_playable_country": {
+        "limit": {
+          "NOR": {
+            "has_ascension_perk": "ap_enigmatic_engineering",
+            "is_same_value": "root"
+          },
+          "any_controlled_ship": {
+            "fleet": {
+              "is_ship_size": "corvette"
+            }
+          },
+          "save_event_target_as": "salvager_reclaimed_corvette_country",
+          "random_controlled_ship": {
+            "limit": {
+              "fleet": {
+                "is_ship_size": "corvette"
+              },
+              "save_event_target_as": "salvager_reclaimed_corvette"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "enclave_effects.txt",
+    "_line_number": 341
+  },
+  "salvager_enclave_find_reclaimed_destroyer_design": {
+    "salvager_enclave_find_reclaimed_destroyer_design": {
+      "random_playable_country": {
+        "limit": {
+          "NOR": {
+            "has_ascension_perk": "ap_enigmatic_engineering",
+            "is_same_value": "root"
+          },
+          "any_controlled_ship": {
+            "fleet": {
+              "is_ship_size": "destroyer"
+            }
+          },
+          "save_event_target_as": "salvager_reclaimed_destroyer_country",
+          "random_controlled_ship": {
+            "limit": {
+              "fleet": {
+                "is_ship_size": "destroyer"
+              },
+              "save_event_target_as": "salvager_reclaimed_destroyer"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "enclave_effects.txt",
+    "_line_number": 363
+  },
+  "salvager_enclave_find_reclaimed_cruiser_design": {
+    "salvager_enclave_find_reclaimed_cruiser_design": {
+      "random_playable_country": {
+        "limit": {
+          "NOR": {
+            "has_ascension_perk": "ap_enigmatic_engineering",
+            "is_same_value": "root"
+          },
+          "any_controlled_ship": {
+            "fleet": {
+              "is_ship_size": "cruiser"
+            }
+          },
+          "save_event_target_as": "salvager_reclaimed_cruiser_country",
+          "random_controlled_ship": {
+            "limit": {
+              "fleet": {
+                "is_ship_size": "cruiser"
+              },
+              "save_event_target_as": "salvager_reclaimed_cruiser"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "enclave_effects.txt",
+    "_line_number": 385
+  },
+  "salvager_enclave_find_reclaimed_battleship_design": {
+    "salvager_enclave_find_reclaimed_battleship_design": {
+      "random_playable_country": {
+        "limit": {
+          "NOR": {
+            "has_ascension_perk": "ap_enigmatic_engineering",
+            "is_same_value": "root"
+          },
+          "any_controlled_ship": {
+            "fleet": {
+              "is_ship_size": "battleship"
+            }
+          },
+          "save_event_target_as": "salvager_reclaimed_battleship_country",
+          "random_controlled_ship": {
+            "limit": {
+              "fleet": {
+                "is_ship_size": "battleship"
+              },
+              "save_event_target_as": "salvager_reclaimed_battleship"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "enclave_effects.txt",
+    "_line_number": 407
+  },
+  "shroudwalker_enclave_starbase_create_shroud_tunnel": {
+    "shroudwalker_enclave_starbase_create_shroud_tunnel": {
+      "solar_system": {
+        "spawn_natural_wormhole": {
+          "bypass_type": "shroud_tunnel",
+          "random_pos": "yes",
+          "orbit_angle": "360"
+        },
+        "save_event_target_as": "shroud_tunnel_node",
+        "set_star_flag": "shroud_tunnel_node"
+      },
+      "owner": {
+        "if": {
+          "limit": {
+            "NAND": {
+              "exists": "event_target:shroud_tunnel_nexus",
+              "event_target:shroud_tunnel_nexus": {
+                "has_star_flag": "shroud_tunnel_nexus"
+              }
+            }
+          },
+          "random_system": {
+            "limit": {
+              "has_star_flag": "shroudwalker_enclave_system"
+            },
+            "link_wormholes": "event_target:shroud_tunnel_node"
+          }
+        }
+      }
+    },
+    "_source_file": "enclave_effects.txt",
+    "_line_number": 432
+  },
+  "shattered_frontier_colony_depart": {
+    "shattered_frontier_colony_depart": {
+      "queue_actions": {
+        "move_to": "event_target:shroudwalker_enclave_system",
+        "find_closest_planet": {
+          "trigger": {
+            "id": "shattered_frontier_colony_trigger@this",
+            "is_planet_class": "pc_shrouded"
+          },
+          "found_planet": {
+            "orbit_planet": "this",
+            "wait": {
+              "effect": {
+                "id": "shattered_frontier_colony_effect@this",
+                "set_planet_flag": "shattered_frontier_colonized_planet #FAO: Shroudwalkers",
+                "prevprev": {
+                  "destroy_fleet": "this"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "enclave_effects.txt",
+    "_line_number": 464
+  }
+}

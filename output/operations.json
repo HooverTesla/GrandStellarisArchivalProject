@@ -1,0 +1,869 @@
+{
+  "operation_gather_information": {
+    "operation_gather_information": {
+      "target": "none",
+      "categories": {
+        "picture": "GFX_evt_spymaster",
+        "desc": {
+          "trigger": {
+            "text": "operation_gather_information_desc"
+          },
+          "desc": {
+            "trigger": {
+              "text": "operation_gather_information_no_dlc_desc"
+            },
+            "stages": "1",
+            "resources": {
+              "category": "operations",
+              "cost": {
+                "influence": "20"
+              },
+              "upkeep": {
+                "energy": "4"
+              }
+            },
+            "spy_power_cost": "10",
+            "potential": {
+              "target": {},
+              "allow": {
+                "custom_tooltip": {
+                  "is_running_espionage_operation": "no",
+                  "fail_text": "operation_one_at_a_time"
+                }
+              },
+              "stage": {
+                "difficulty": "@diff_t0",
+                "icon": "GFX_espionage_chapter_icon_document",
+                "event": "operation.7000"
+              },
+              "on_roll_failed": {
+                "standard_espionage_operation_on_roll_failed": {
+                  "RANDOM_EVENTS": "operation_random_events_low_stakes"
+                }
+              },
+              "on_create": {
+                "target": {
+                  "set_timed_country_flag": {
+                    "flag": "espionage_operation_targeted_by@root.owner #Used in random Spy Network events",
+                    "days": "@operationTargetedByTimer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "operations.txt",
+    "_line_number": 35
+  },
+  "operation_diplomatic_incident": {
+    "operation_diplomatic_incident": {
+      "target": "none",
+      "categories": {
+        "picture": "GFX_evt_tradedeal",
+        "desc": "operation_diplomatic_incident_desc",
+        "stages": "3",
+        "resources": {
+          "category": "operations",
+          "cost": {
+            "influence": "30"
+          },
+          "upkeep": {
+            "energy": "5"
+          }
+        },
+        "spy_power_cost": "25",
+        "potential": {
+          "has_nemesis": "yes",
+          "owner": {
+            "target": {
+              "is_primitive": "no",
+              "is_homicidal": "no"
+            }
+          },
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "saturated_with_scandals",
+              "NOT": {},
+              "target": {
+                "custom_tooltip": {
+                  "fail_text": "gestalts_are_boring",
+                  "is_gestalt": "no"
+                }
+              },
+              "custom_tooltip": {
+                "is_running_espionage_operation": "no",
+                "fail_text": "operation_one_at_a_time"
+              }
+            },
+            "stage": {
+              "difficulty": "@diff_t1",
+              "icon": "GFX_espionage_chapter_icon_target",
+              "event": "operation.8210"
+            },
+            "on_roll_failed": {
+              "standard_espionage_operation_on_roll_failed": {},
+              "on_create": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "operations.txt",
+    "_line_number": 89
+  },
+  "operation_sleeper_cells": {
+    "operation_sleeper_cells": {
+      "target": "none",
+      "categories": {
+        "picture": "GFX_evt_spy_network",
+        "desc": "operation_sleeper_cells_desc",
+        "stages": "2",
+        "spy_power_cost": "30",
+        "resources": {
+          "category": "operations",
+          "cost": {
+            "influence": "45"
+          },
+          "upkeep": {
+            "energy": "6"
+          }
+        },
+        "potential": {
+          "has_nemesis": "yes",
+          "target": {},
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "operation_sleeper_cells_dont_stack_this",
+              "NOT": {},
+              "custom_tooltip": {
+                "is_running_espionage_operation": "no",
+                "fail_text": "operation_one_at_a_time"
+              }
+            },
+            "stage": {
+              "difficulty": "@diff_t2",
+              "icon": "GFX_espionage_chapter_icon_motion",
+              "event": "operation.8001"
+            },
+            "on_roll_failed": {
+              "standard_espionage_operation_on_roll_failed": {},
+              "on_create": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "operations.txt",
+    "_line_number": 154
+  },
+  "operation_acquire_asset": {
+    "operation_acquire_asset": {
+      "target": "none",
+      "categories": {
+        "picture": "GFX_evt_acquire_asset",
+        "desc": "operation_acquire_asset_desc",
+        "stages": "3",
+        "resources": {
+          "category": "operations",
+          "cost": {
+            "influence": "45"
+          },
+          "upkeep": {
+            "energy": "6"
+          }
+        },
+        "spy_power_cost": "30",
+        "potential": {
+          "has_nemesis": "yes",
+          "target": {},
+          "allow": {
+            "custom_tooltip": {
+              "is_running_espionage_operation": "no",
+              "fail_text": "operation_one_at_a_time"
+            }
+          },
+          "stage": {
+            "difficulty": "@diff_t1",
+            "icon": "GFX_espionage_chapter_icon_motion",
+            "event": "operation.1002"
+          },
+          "on_roll_failed": {
+            "standard_espionage_operation_on_roll_failed": {},
+            "on_create": {
+              "target": {
+                "set_timed_country_flag": {
+                  "flag": "espionage_operation_targeted_by@root.owner #Used in random Spy Network events",
+                  "days": "@operationTargetedByTimer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "operations.txt",
+    "_line_number": 203
+  },
+  "operation_extort_favors": {
+    "operation_extort_favors": {
+      "target": "none",
+      "categories": {
+        "picture": "GFX_evt_galactic_senate",
+        "desc": "operation_extort_favors_desc",
+        "stages": "3",
+        "spy_power_cost": "35",
+        "resources": {
+          "category": "operations",
+          "cost": {
+            "influence": "60"
+          },
+          "upkeep": {
+            "energy": "7"
+          }
+        },
+        "potential": {
+          "has_nemesis": "yes",
+          "owner": {
+            "target": {
+              "is_homicidal": "no",
+              "is_primitive": "no"
+            }
+          },
+          "allow": {
+            "custom_tooltip": {
+              "is_running_espionage_operation": "no",
+              "fail_text": "operation_one_at_a_time"
+            }
+          },
+          "stage": {
+            "difficulty": "@diff_t2",
+            "icon": "GFX_espionage_chapter_icon_document",
+            "event": "operation.6252"
+          },
+          "on_roll_failed": {
+            "standard_espionage_operation_on_roll_failed": {},
+            "on_create": {}
+          }
+        }
+      }
+    },
+    "_source_file": "operations.txt",
+    "_line_number": 258
+  },
+  "operation_smear_campaign": {
+    "operation_smear_campaign": {
+      "target": "none",
+      "categories": {
+        "picture": "GFX_evt_smear_campaign",
+        "desc": "operation_smear_campaign_desc",
+        "stages": "3",
+        "resources": {
+          "category": "operations",
+          "cost": {
+            "influence": "60"
+          },
+          "upkeep": {
+            "energy": "7"
+          }
+        },
+        "spy_power_cost": "35",
+        "potential": {
+          "has_nemesis": "yes",
+          "owner": {},
+          "target": {},
+          "allow": {
+            "target": {
+              "is_fallen_empire": "no"
+            },
+            "custom_tooltip": {
+              "is_running_espionage_operation": "no",
+              "fail_text": "operation_one_at_a_time"
+            }
+          },
+          "stage": {
+            "difficulty": "@diff_t3",
+            "icon": "GFX_espionage_chapter_icon_motion",
+            "event": "operation.3002"
+          },
+          "on_roll_failed": {
+            "standard_espionage_operation_on_roll_failed": {},
+            "on_create": {
+              "target": {
+                "set_timed_country_flag": {
+                  "flag": "espionage_operation_targeted_by@root.owner #Used in random Spy Network events",
+                  "days": "@operationTargetedByTimer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "operations.txt",
+    "_line_number": 311
+  },
+  "operation_steal_technology": {
+    "operation_steal_technology": {
+      "target": "none",
+      "categories": {
+        "picture": "GFX_evt_physics_research",
+        "desc": "operation_steal_technology_desc",
+        "stages": "3",
+        "resources": {
+          "category": "operations",
+          "cost": {
+            "influence": "80"
+          },
+          "upkeep": {
+            "energy": "8"
+          }
+        },
+        "spy_power_cost": "40",
+        "potential": {
+          "has_nemesis": "yes",
+          "target": {},
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "operation_steal_technology_enigmatic_engineering",
+              "owner": {
+                "NOT": {}
+              },
+              "custom_tooltip": {
+                "fail_text": "operation_steal_technology_too_recent",
+                "NOT": {},
+                "custom_tooltip": {
+                  "is_running_espionage_operation": "no",
+                  "fail_text": "operation_one_at_a_time"
+                }
+              },
+              "stage": {
+                "difficulty": "@diff_t4",
+                "icon": "GFX_espionage_chapter_icon_security",
+                "event": "operation.1022"
+              },
+              "on_roll_failed": {
+                "standard_espionage_operation_on_roll_failed": {
+                  "RANDOM_EVENTS": "operation_random_events_generic"
+                }
+              },
+              "on_create": {
+                "target": {
+                  "set_timed_country_flag": {
+                    "flag": "espionage_operation_targeted_by@root.owner #Used in random Spy Network events",
+                    "days": "@operationTargetedByTimer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "operations.txt",
+    "_line_number": 374
+  },
+  "operation_sabotage_starbase": {
+    "operation_sabotage_starbase": {
+      "categories": {
+        "picture": "GFX_evt_space_station",
+        "desc": {
+          "trigger": {
+            "text": "operation_sabotage_starbase_desc"
+          },
+          "desc": {
+            "trigger": {
+              "text": "operation_sabotage_starbase_orbring_desc"
+            },
+            "stages": "3",
+            "resources": {
+              "category": "operations",
+              "cost": {
+                "influence": "100"
+              },
+              "upkeep": {
+                "energy": "9"
+              }
+            },
+            "spy_power_cost": "45",
+            "target": "starbase",
+            "potential": {
+              "has_nemesis": "yes",
+              "target": {},
+              "target_potential": {
+                "OR": {
+                  "is_normal_starbase": "yes",
+                  "is_orbital_ring": "yes"
+                }
+              },
+              "allow": {
+                "custom_tooltip": {
+                  "is_running_espionage_operation": "no",
+                  "fail_text": "operation_one_at_a_time"
+                }
+              },
+              "target_allow": {
+                "custom_tooltip": {
+                  "fail_text": "operation_sabotage_starbase_no_targets",
+                  "OR": {
+                    "AND": {
+                      "count_starbase_modules": {
+                        "type !": "orbital_ring_shipyard"
+                      }
+                    },
+                    "has_nonshipyard_starbase_buildings": "yes"
+                  }
+                }
+              },
+              "stage": {
+                "difficulty": "@diff_t5",
+                "icon": "GFX_espionage_chapter_icon_success",
+                "event": "operation.2002"
+              },
+              "on_roll_failed": {
+                "standard_espionage_operation_on_roll_failed": {},
+                "on_create": {
+                  "target.owner": {
+                    "set_timed_country_flag": {
+                      "flag": "espionage_operation_targeted_by@root.owner #Used in random Spy Network events",
+                      "days": "@operationTargetedByTimer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "operations.txt",
+    "_line_number": 443
+  },
+  "operation_arm_privateers": {
+    "operation_arm_privateers": {
+      "categories": {
+        "picture": "GFX_evt_pirate_armada",
+        "desc": "operation_arm_privateers_desc",
+        "stages": "3",
+        "spy_power_cost": "60",
+        "resources": {
+          "category": "operations",
+          "cost": {
+            "influence": "180"
+          },
+          "upkeep": {
+            "energy": "12"
+          }
+        },
+        "potential": {
+          "has_nemesis": "yes",
+          "target": {},
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "operation_arm_privateers_existing_activity",
+              "target": {},
+              "custom_tooltip": {
+                "is_running_espionage_operation": "no",
+                "fail_text": "operation_one_at_a_time"
+              }
+            },
+            "stage": {
+              "difficulty": "@diff_t6",
+              "icon": "GFX_espionage_chapter_icon_motion",
+              "event": "operation.6202"
+            },
+            "on_roll_failed": {
+              "standard_espionage_operation_on_roll_failed": {},
+              "on_create": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "operations.txt",
+    "_line_number": 550
+  },
+  "operation_crisis_beacon": {
+    "operation_crisis_beacon": {
+      "target": "none",
+      "categories": {
+        "picture": "GFX_evt_unidentified_monster",
+        "desc": "operation_crisis_beacon_desc",
+        "stages": "3",
+        "resources": {
+          "category": "operations",
+          "cost": {
+            "influence": "320"
+          },
+          "upkeep": {
+            "energy": "16"
+          }
+        },
+        "spy_power_cost": "80",
+        "potential": {
+          "has_nemesis": "yes",
+          "target": {
+            "OR": {
+              "has_crisis": "yes #Contingency, Extradimensionals or Prethoryn",
+              "has_global_flag": "gray_goo_crisis_active #Gray Tempest"
+            },
+            "NOR": {
+              "crisis_happened_and_defeated": "yes #Contingency, Extradimensionals or Prethoryn",
+              "AND": {
+                "has_global_flag": "graygoo_defeated",
+                "has_crisis": "no"
+              }
+            }
+          },
+          "allow": {
+            "if": {
+              "limit": {
+                "owner": {},
+                "custom_tooltip": {
+                  "NOT": {
+                    "any_country": {},
+                    "fail_text": "operation_crisis_beacon_too_recent_timer"
+                  }
+                },
+                "else": {
+                  "custom_tooltip": {
+                    "is_running_espionage_operation": "no",
+                    "fail_text": "operation_one_at_a_time"
+                  }
+                },
+                "stage": {
+                  "difficulty": "@diff_t8",
+                  "icon": "GFX_espionage_chapter_icon_success",
+                  "event": "operation.4002"
+                },
+                "on_roll_failed": {
+                  "standard_espionage_operation_on_roll_failed": {},
+                  "on_create": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "operations.txt",
+    "_line_number": 605
+  },
+  "operation_weaken_galactic_empire": {
+    "operation_weaken_galactic_empire": {
+      "target": "none",
+      "categories": {
+        "picture": "GFX_evt_galactic_empire",
+        "desc": "operation_weaken_galactic_empire_desc",
+        "stages": "3",
+        "resources": {
+          "category": "operations",
+          "cost": {
+            "influence": "60"
+          },
+          "upkeep": {
+            "energy": "7"
+          }
+        },
+        "spy_power_cost": "35",
+        "potential": {
+          "has_nemesis": "yes",
+          "has_galactic_emperor": "yes",
+          "target": {
+            "root.owner": {
+              "is_galactic_community_member": "yes",
+              "is_galactic_emperor": "no"
+            }
+          },
+          "allow": {
+            "custom_tooltip": {
+              "is_running_espionage_operation": "no",
+              "fail_text": "operation_one_at_a_time"
+            }
+          },
+          "stage": {
+            "difficulty": "@diff_t3",
+            "icon": "GFX_espionage_chapter_icon_target",
+            "event": "operation.6010"
+          },
+          "on_roll_failed": {
+            "standard_espionage_operation_on_roll_failed": {
+              "RANDOM_EVENTS": "operation_random_events_generic"
+            }
+          },
+          "on_create": {}
+        }
+      }
+    },
+    "_source_file": "operations.txt",
+    "_line_number": 690
+  },
+  "operation_target_seditionists": {
+    "operation_target_seditionists": {
+      "target": "none",
+      "categories": {
+        "picture": "GFX_evt_smear_campaign",
+        "desc": "operation_target_seditionists_desc",
+        "stages": "3",
+        "resources": {
+          "category": "operations",
+          "cost": {
+            "influence": "60"
+          },
+          "upkeep": {
+            "energy": "7"
+          }
+        },
+        "spy_power_cost": "35",
+        "potential": {
+          "has_nemesis": "yes",
+          "has_galactic_emperor": "yes",
+          "root.owner": {
+            "target": {},
+            "allow": {
+              "custom_tooltip": {
+                "target": {
+                  "OR": {
+                    "is_rival": "root.owner",
+                    "root.owner": {
+                      "any_owned_leader": {
+                        "is_undermining_imperial_authority": "yes"
+                      }
+                    }
+                  },
+                  "fail_text": "operation_target_seditionists_requires_sedition"
+                }
+              },
+              "abort": {
+                "OR": {
+                  "has_galactic_emperor": "no",
+                  "root.owner": {
+                    "target": {}
+                  },
+                  "stage": {
+                    "difficulty": "@diff_t3",
+                    "icon": "GFX_espionage_chapter_icon_target",
+                    "event": "operation.6310"
+                  },
+                  "on_roll_failed": {
+                    "standard_espionage_operation_on_roll_failed": {
+                      "RANDOM_EVENTS": "operation_random_events_target_seditionists"
+                    }
+                  },
+                  "on_create": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "operations.txt",
+    "_line_number": 747
+  },
+  "operation_spark_rebellion": {
+    "operation_spark_rebellion": {
+      "target": "none",
+      "categories": {
+        "picture": "GFX_evt_open_revolt",
+        "desc": "operation_spark_rebellion_desc",
+        "stages": "5",
+        "resources": {
+          "category": "operations",
+          "cost": {
+            "influence": "250"
+          },
+          "upkeep": {
+            "energy": "14"
+          }
+        },
+        "spy_power_cost": "70",
+        "potential": {
+          "has_nemesis": "yes",
+          "has_galactic_emperor": "yes",
+          "target": {
+            "root.owner": {
+              "is_galactic_community_member": "yes",
+              "is_galactic_emperor": "no"
+            }
+          },
+          "allow": {
+            "imperial_authority <": "50",
+            "_comments": [
+              "# civil war is not currently ongoing"
+            ],
+            "custom_tooltip": {
+              "is_running_espionage_operation": "no",
+              "fail_text": "operation_one_at_a_time"
+            }
+          },
+          "abort": {
+            "has_global_flag": "abort_spark_rebellion # set for 10 days by emperor.101"
+          },
+          "stage": {
+            "difficulty": "@diff_t7",
+            "icon": "GFX_espionage_chapter_icon_success",
+            "event": "operation.6120"
+          },
+          "on_roll_failed": {
+            "standard_espionage_operation_on_roll_failed": {
+              "RANDOM_EVENTS": "operation_random_events_generic"
+            }
+          },
+          "on_create": {}
+        }
+      }
+    },
+    "_source_file": "operations.txt",
+    "_line_number": 819
+  },
+  "operation_consume_star": {
+    "operation_consume_star": {
+      "categories": {
+        "picture": "GFX_evt_stellarites",
+        "desc": "operation_consume_star_desc",
+        "stages": "3",
+        "resources": {
+          "category": "operations",
+          "cost": {
+            "influence": "250"
+          },
+          "upkeep": {
+            "energy": "9"
+          }
+        },
+        "spy_power_cost": "60",
+        "potential": {
+          "owner": {
+            "any_owned_planet": {
+              "has_modifier": "stellar_devourer_trophy"
+            }
+          },
+          "target": {},
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "operation_consume_star_black_hole",
+              "target": {
+                "capital_star": {
+                  "NOT": {}
+                }
+              },
+              "custom_tooltip": {
+                "fail_text": "operation_consume_star_already_know",
+                "target": {
+                  "NOT": {}
+                },
+                "custom_tooltip": {
+                  "fail_text": "operation_consume_star_already_infested",
+                  "target": {
+                    "NOT": {}
+                  },
+                  "custom_tooltip": {
+                    "fail_text": "operation_consume_star_no_dysonsphere",
+                    "target": {
+                      "capital_star": {
+                        "solar_system": {
+                          "NOT": {}
+                        }
+                      }
+                    },
+                    "custom_tooltip": {
+                      "is_running_espionage_operation": "no",
+                      "fail_text": "operation_one_at_a_time"
+                    }
+                  },
+                  "stage": {
+                    "difficulty": "@diff_t7",
+                    "icon": "GFX_espionage_chapter_icon_success",
+                    "event": "situation.1135"
+                  },
+                  "on_roll_failed": {
+                    "standard_espionage_operation_on_roll_failed": {},
+                    "on_create": {
+                      "target": {
+                        "set_timed_country_flag": {
+                          "flag": "espionage_operation_targeted_by@root.owner #Used in random Spy Network events",
+                          "days": "@operationTargetedByTimer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "operations.txt",
+    "_line_number": 905
+  },
+  "operation_kaleidoscope": {
+    "operation_kaleidoscope": {
+      "categories": {
+        "picture": "GFX_evt_vortex",
+        "desc": "operation_kaleidoscope_desc",
+        "stages": "2",
+        "resources": {
+          "category": "operations",
+          "cost": {
+            "influence": "20"
+          },
+          "upkeep": {
+            "energy": "5"
+          }
+        },
+        "spy_power_cost": "10",
+        "potential": {
+          "has_global_flag": "kaleidoscope_started",
+          "owner": {
+            "target": {},
+            "allow": {
+              "custom_tooltip": {
+                "is_running_espionage_operation": "no",
+                "fail_text": "operation_one_at_a_time"
+              },
+              "target": {
+                "custom_tooltip": {
+                  "fail_text": "operation_kaleidoscope_previous_owner",
+                  "capital_scope": {
+                    "NOT": {}
+                  },
+                  "custom_tooltip": {
+                    "fail_text": "operation_kaleidoscope_previous_owner",
+                    "NOT": {}
+                  }
+                },
+                "stage": {
+                  "difficulty": "@diff_t1",
+                  "icon": "GFX_espionage_chapter_icon_success",
+                  "event": "situation.2021"
+                },
+                "on_roll_failed": {
+                  "standard_espionage_operation_on_roll_failed": {},
+                  "on_create": {
+                    "root.owner": {
+                      "set_timed_country_flag": {
+                        "flag": "gave_kaleidoscope_to@root.target",
+                        "days": "@operationTargetedByTimer"
+                      }
+                    },
+                    "target": {
+                      "set_timed_country_flag": {
+                        "flag": "espionage_operation_targeted_by@root.owner #Used in random Spy Network events",
+                        "days": "@operationTargetedByTimer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "operations.txt",
+    "_line_number": 995
+  }
+}

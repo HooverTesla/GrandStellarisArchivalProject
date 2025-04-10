@@ -1,0 +1,78 @@
+{
+  "lith_human_hair": {
+    "lith_human_hair": {
+      "default": "gfx/models/portraits/lithoid/lithoid_human_hair1.dds",
+      "game_setup": {
+        "default": "gfx/models/portraits/lithoid/lithoid_human_hair1.dds"
+      },
+      "_comments": [
+        "#species scope",
+        "#pop scope",
+        "#leader scope"
+      ],
+      "species": {
+        "default": "gfx/models/portraits/lithoid/lithoid_human_hair1.dds"
+      },
+      "pop": {
+        "default": "gfx/models/portraits/lithoid/lithoid_human_hair1.dds",
+        "random": {
+          "list": {}
+        }
+      },
+      "leader": {
+        "random": {
+          "trigger": {
+            "list": {}
+          },
+          "random": {
+            "trigger": {
+              "list": {}
+            },
+            "random": {
+              "trigger": {
+                "list": {}
+              },
+              "random": {
+                "trigger": {
+                  "list": {}
+                }
+              },
+              "_comments": [
+                "#leader scope"
+              ],
+              "ruler": {
+                "random": {
+                  "trigger": {
+                    "owner": {},
+                    "list": {}
+                  },
+                  "random": {
+                    "trigger": {
+                      "owner": {},
+                      "list": {}
+                    },
+                    "random": {
+                      "trigger": {
+                        "owner": {
+                          "OR": {
+                            "has_government": "gov_stagnant_ascendancy",
+                            "has_primitive_government": "yes",
+                            "has_materialist_government": "yes",
+                            "has_pacifist_government": "yes"
+                          }
+                        }
+                      },
+                      "list": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "lith_human_hair.txt",
+    "_line_number": 21
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "ship_section_template": {
+    "ship_section_template": {
+      "key": "CORE_JUGGERNAUT_SECTION",
+      "ship_size": "juggernaut",
+      "fits_on_slot": "core",
+      "entity": "juggernaut_core_section_entity",
+      "icon": "GFX_ship_part_core_mid",
+      "ai_tags": {
+        "component_slot": {
+          "name": "MEDIUM_GUN_05",
+          "template": "medium_turret",
+          "locatorname": "gun_5"
+        },
+        "small_utility_slots": "0",
+        "medium_utility_slots": "0",
+        "large_utility_slots": "21",
+        "aux_utility_slots": "4",
+        "resources": {
+          "category": "ship_sections",
+          "cost": {
+            "alloys": "960"
+          }
+        }
+      }
+    },
+    "_source_file": "juggernaut.txt",
+    "_line_number": 6
+  }
+}

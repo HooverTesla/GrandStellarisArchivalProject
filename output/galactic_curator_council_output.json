@@ -1,0 +1,27 @@
+{
+  "resources": {
+    "resources": {
+      "category": "$CATEGORY$",
+      "produces": {
+        "trigger": {
+          "has_councilor": {},
+          "unity": "@councilor_galactic_curators_unity",
+          "mult": "value:councilor_level|TYPE|councilor_galactic_curators|"
+        }
+      }
+    },
+    "_source_file": "galactic_curator_council_output.txt",
+    "_line_number": 0
+  },
+  "triggered_planet_modifier": {
+    "triggered_planet_modifier": {
+      "potential": {
+        "has_councilor": {},
+        "trade_value_add": "@councilor_corporate_galactic_curators_trade_value",
+        "mult": "value:scripted_modifier_councilor_level_mult|MODIFIER|pop_job_trade_mult|TYPE|councilor_corporate_galactic_curators|"
+      }
+    },
+    "_source_file": "galactic_curator_council_output.txt",
+    "_line_number": 11
+  }
+}

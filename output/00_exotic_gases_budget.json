@@ -1,0 +1,176 @@
+{
+  "exotic_gases_expenditure_planets": {
+    "exotic_gases_expenditure_planets": {
+      "resource": "exotic_gases",
+      "type": "expenditure",
+      "category": "planets",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.2"
+      }
+    },
+    "_source_file": "00_exotic_gases_budget.txt",
+    "_line_number": 8
+  },
+  "exotic_gases_expenditure_ships": {
+    "exotic_gases_expenditure_ships": {
+      "resource": "exotic_gases",
+      "type": "expenditure",
+      "category": "ships",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.1",
+        "modifier": {
+          "factor": "5",
+          "is_dragon_breeder_country": "yes"
+        }
+      }
+    },
+    "_source_file": "00_exotic_gases_budget.txt",
+    "_line_number": 22
+  },
+  "exotic_gases_expenditure_upgrade": {
+    "exotic_gases_expenditure_upgrade": {
+      "resource": "exotic_gases",
+      "type": "expenditure",
+      "category": "ship_upgrades",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "base": "0.1"
+      }
+    },
+    "_source_file": "00_exotic_gases_budget.txt",
+    "_line_number": 40
+  },
+  "exotic_gases_expenditure_trade": {
+    "exotic_gases_expenditure_trade": {
+      "resource": "exotic_gases",
+      "type": "expenditure",
+      "category": "trade",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.1"
+      }
+    },
+    "_source_file": "00_exotic_gases_budget.txt",
+    "_line_number": 54
+  },
+  "exotic_gases_expenditure_starbases": {
+    "exotic_gases_expenditure_starbases": {
+      "resource": "exotic_gases",
+      "type": "expenditure",
+      "category": "starbases",
+      "potential": {
+        "any_owned_nonprimary_starbase": {
+          "has_starbase_size >": "orbital_ring_tier_2",
+          "exists": "planet"
+        }
+      },
+      "weight": {
+        "weight": "0.2",
+        "modifier": {
+          "factor": "0",
+          "NOT": {
+            "any_owned_nonprimary_starbase": {
+              "exists": "planet",
+              "OR": {
+                "AND": {
+                  "has_starbase_size": "orbital_ring_tier_3",
+                  "count_starbase_buildings": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_exotic_gases_budget.txt",
+    "_line_number": 69
+  },
+  "exotic_gases_upkeep_planets": {
+    "exotic_gases_upkeep_planets": {
+      "resource": "exotic_gases",
+      "type": "upkeep",
+      "category": "planets",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.9"
+      }
+    },
+    "_source_file": "00_exotic_gases_budget.txt",
+    "_line_number": 110
+  },
+  "exotic_gases_upkeep_ships": {
+    "exotic_gases_upkeep_ships": {
+      "resource": "exotic_gases",
+      "type": "upkeep",
+      "category": "ships",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.1"
+      }
+    },
+    "_source_file": "00_exotic_gases_budget.txt",
+    "_line_number": 124
+  },
+  "exotic_gases_upkeep_edicts": {
+    "exotic_gases_upkeep_edicts": {
+      "resource": "exotic_gases",
+      "type": "upkeep",
+      "category": "edicts",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "base": "0.25"
+      }
+    },
+    "_source_file": "00_exotic_gases_budget.txt",
+    "_line_number": 138
+  },
+  "exotic_gases_upkeep_hyper_relays": {
+    "exotic_gases_upkeep_hyper_relays": {
+      "resource": "exotic_gases",
+      "type": "upkeep",
+      "category": "megastructures_hyper_relay",
+      "potential": {
+        "has_technology": "tech_hyper_relays"
+      },
+      "weight": {
+        "weight": "0.1"
+      }
+    },
+    "_source_file": "00_exotic_gases_budget.txt",
+    "_line_number": 152
+  },
+  "exotic_gases_upkeep_starbases": {
+    "exotic_gases_upkeep_starbases": {
+      "resource": "exotic_gases",
+      "type": "upkeep",
+      "category": "starbases",
+      "potential": {
+        "any_owned_nonprimary_starbase": {
+          "has_starbase_size >": "orbital_ring_tier_2",
+          "exists": "planet"
+        }
+      },
+      "weight": {
+        "weight": "0.1"
+      }
+    },
+    "_source_file": "00_exotic_gases_budget.txt",
+    "_line_number": 166
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "planet_event": {
+    "planet_event": {
+      "id": "paragon.403",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "if": {
+          "limit": {
+            "owner": {},
+            "add_modifier": {
+              "modifier": "agenda_superior_colonies_planet_boost",
+              "days": "@agenda_finish_modifier_duration"
+            },
+            "remove_planet_flag": "superior_colonies_can_be_boosted"
+          },
+          "else": {
+            "_comments": [
+              "# Set flag, so if Agenda is completed later, it can trigger Boost then (paragon.404)."
+            ],
+            "set_timed_planet_flag": {
+              "flag": "superior_colonies_can_be_boosted",
+              "days": "@agenda_finish_modifier_duration"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "paragon_events.txt",
+    "_line_number": 2576
+  },
+  "country_event": {
+    "country_event": {
+      "id": "paragon.999",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_owned_leader": {
+          "NOT": {
+            "has_skill >": "3",
+            "leader_years_of_service >": "10"
+          }
+        },
+        "immediate": {
+          "random_owned_leader": {
+            "limit": {
+              "NOT": {
+                "has_skill >": "3",
+                "leader_years_of_service >": "10"
+              },
+              "if": {
+                "limit": {
+                  "random_list": {
+                    "10": {
+                      "90": {}
+                    },
+                    "else": {
+                      "random_list": {
+                        "15": {
+                          "5": {
+                            "10": {
+                              "10": {
+                                "5": {
+                                  "5": {
+                                    "10": {
+                                      "10": {
+                                        "20": {
+                                          "10": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "paragon_events.txt",
+    "_line_number": 3961
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "paragon.3",
+      "title": "paragon.3.name",
+      "desc": "paragon.3.desc",
+      "picture": "GFX_evt_alien_cavemen",
+      "show_sound": "event_default",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_paragon_dlc": "yes"
+      },
+      "option": {
+        "name": "paragon.3.a",
+        "hidden_effect": {
+          "from": {
+            "save_global_event_target_as": "beholder_planet"
+          },
+          "owner": {
+            "country_event": {
+              "set_country_flag": "beholder_chain_owner"
+            }
+          }
+        },
+        "option": {
+          "name": "paragon.3.b"
+        }
+      }
+    },
+    "_source_file": "paragon_events.txt",
+    "_line_number": 99
+  },
+  "leader_event": {
+    "leader_event": {
+      "id": "paragon.1050",
+      "title": "paragon.1050.name",
+      "desc": "paragon.1050.desc",
+      "picture": "GFX_evt_board_meeting",
+      "show_sound": "event_default",
+      "is_triggered_only": "yes",
+      "fire_only_once": "yes",
+      "trigger": {
+        "is_ruler": "no",
+        "is_councilor": "yes",
+        "OR": {
+          "has_trait_tier1or2": {
+            "has_trait_tier1or2": {
+              "has_trait_tier1or2": {
+                "has_trait_tier1or2": {
+                  "has_trait_tier1or2": {
+                    "has_trait_tier1or2": {
+                      "has_trait_tier1or2": {
+                        "has_trait_tier1or2": {}
+                      },
+                      "immediate": {
+                        "save_event_target_as": "leader_event_target"
+                      },
+                      "event_window_type": "leader_story",
+                      "event_picture_background": "GFX_leader_recruitment_bg_renowned",
+                      "picture_event_data": {
+                        "portrait": "root"
+                      },
+                      "option": {
+                        "name": "paragon.1050.b",
+                        "custom_tooltip": "paragon_leader_dismissed_tooltip",
+                        "hidden_effect": {
+                          "owner": {
+                            "add_modifier": {
+                              "modifier": "paragon_empire_wide_scandal_averted",
+                              "days": "3600"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "paragon_events.txt",
+    "_line_number": 4522
+  }
+}

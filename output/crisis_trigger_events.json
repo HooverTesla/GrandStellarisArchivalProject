@@ -1,0 +1,120 @@
+{
+  "event": {
+    "event": {
+      "id": "crisis_trigger.1",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "is_crises_allowed": "yes",
+        "OR": {
+          "NOT": {
+            "AND": {
+              "allowed_crisis_type": "all",
+              "NOR": {
+                "has_global_flag": "galactic_crisis_recently_fired #because some might take a while to arrive, we don't want two at once",
+                "any_country": {
+                  "is_crisis_faction": "yes"
+                }
+              }
+            }
+          }
+        },
+        "immediate": {
+          "random_country": {
+            "limit": {
+              "if": {
+                "limit": {
+                  "default_endgame_early_start_triggers": "no"
+                },
+                "set_timed_country_flag": {
+                  "flag": "only_unbidden_this_time",
+                  "days": "5"
+                }
+              },
+              "random_list": {
+                "_comments": [
+                  "### Prethoryn Scourge (Swarm)"
+                ],
+                "10": {
+                  "modifier": {
+                    "factor": "0",
+                    "has_global_flag": "prethoryn_invasion_happened"
+                  },
+                  "country_event": {
+                    "set_global_flag": "galactic_crisis_happened",
+                    "set_timed_global_flag": {
+                      "flag": "galactic_crisis_recently_fired",
+                      "years": "12"
+                    }
+                  },
+                  "_comments": [
+                    "### Unbidden (Extradimensionals)"
+                  ],
+                  "8": {
+                    "modifier": {
+                      "factor": "0",
+                      "has_global_flag": "extradimensional_invasion_happened"
+                    },
+                    "country_event": {
+                      "set_global_flag": "galactic_crisis_happened",
+                      "set_timed_global_flag": {
+                        "flag": "galactic_crisis_recently_fired",
+                        "years": "12"
+                      }
+                    },
+                    "_comments": [
+                      "### Contingency (AI)"
+                    ],
+                    "10": {
+                      "modifier": {
+                        "factor": "0",
+                        "has_global_flag": "ai_invasion_happened"
+                      },
+                      "country_event": {
+                        "set_global_flag": "galactic_crisis_happened",
+                        "set_timed_global_flag": {
+                          "flag": "galactic_crisis_recently_fired",
+                          "years": "12"
+                        }
+                      },
+                      "_comments": [
+                        "### Synth Queen"
+                      ],
+                      "10": {
+                        "modifier": {
+                          "factor": "0",
+                          "OR": {
+                            "has_global_flag": "synth_queen_happened",
+                            "has_machine_age_dlc": "no"
+                          }
+                        },
+                        "country_event": {
+                          "set_global_flag": "galactic_crisis_happened",
+                          "set_timed_global_flag": {
+                            "flag": "galactic_crisis_recently_fired",
+                            "years": "12"
+                          }
+                        },
+                        "_comments": [
+                          "### Nothing"
+                        ],
+                        "120": {
+                          "modifier": {
+                            "subtract": "119",
+                            "has_global_flag": "endgame_crisis_early_start"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "crisis_trigger_events.txt",
+    "_line_number": 16
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "projectile_gfx_ballistic": {
+    "projectile_gfx_ballistic": {
+      "name": "proj_pd",
+      "_comments": [
+        "#common for all types of projectiles"
+      ],
+      "color": {
+        "hit_entity": "proj_pd_hit_entity",
+        "muzzle_flash_entity": "proj_pd_muzzle_entity",
+        "entity": "proj_pd_entity",
+        "_comments": [
+          "#ballistic specific"
+        ],
+        "speed": "100.0\t\t\t#preferred speed of the projectile",
+        "max_duration": "2.0\t\t#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds"
+      }
+    },
+    "_source_file": "pointdefence.txt",
+    "_line_number": 2
+  },
+  "projectile_gfx_beam": {
+    "projectile_gfx_beam": {
+      "name": "flak_pd_3",
+      "_comments": [
+        "#common for all types of projectiles"
+      ],
+      "color": {
+        "hit_entity": "auto_cannons_medium_hit_entity",
+        "shield_hit_entity": "auto_cannons_medium_hit_entity",
+        "muzzle_flash_entity": "auto_cannons_medium_muzzle_entity",
+        "width": "0.5",
+        "_comments": [
+          "#beam specific data"
+        ],
+        "texture_scroll_speed": "15",
+        "texture_tiling": "25.0",
+        "hit": {
+          "alpha_curve": {},
+          "duration": "1.5"
+        },
+        "miss": {
+          "alpha_curve": {},
+          "duration": "0.2"
+        },
+        "texture": "gfx/models/combat_items/auto_cannon_diffuse.dds",
+        "shield_impact": {
+          "size": "small",
+          "loop_duration": "1.5",
+          "delay": "0.0"
+        }
+      }
+    },
+    "_source_file": "pointdefence.txt",
+    "_line_number": 209
+  }
+}

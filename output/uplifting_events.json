@@ -1,0 +1,77 @@
+{
+  "ship_event": {
+    "ship_event": {
+      "id": "uplift.6000",
+      "title": "uplift.6000.name.2",
+      "desc": {
+        "text": "uplift.6000.fallback.desc"
+      },
+      "picture": {
+        "picture": "GFX_evt_ship_in_orbit"
+      },
+      "location": "from",
+      "show_sound": "event_default",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from": {
+          "has_owner": "no",
+          "any_owned_pop": {
+            "is_sapient": "no"
+          }
+        }
+      },
+      "immediate": {
+        "owner": {
+          "set_country_flag": "found_presapients",
+          "country_event": {
+            "country_event": {},
+            "from": {
+              "set_planet_flag": "upl_ongoing_planet",
+              "random_owned_pop": {
+                "limit": {
+                  "is_sapient": "no"
+                },
+                "species": {
+                  "save_event_target_as": "presapient_species"
+                }
+              }
+            }
+          },
+          "option": {
+            "name": "uplift.6000.a",
+            "trigger": {},
+            "option": {
+              "name": "uplift.6000.b",
+              "trigger": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "uplifting_events.txt",
+    "_line_number": 14
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "uplift.7525",
+      "title": "uplift.7525.name",
+      "desc": "uplift.7525.desc",
+      "picture": "GFX_evt_colony_settlement",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "FASCINATING",
+        "owner": {
+          "add_monthly_resource_mult": {
+            "resource": "engineering_research",
+            "value": "@tier1researchreward",
+            "min": "@tier1researchmin",
+            "max": "@tier1researchmax"
+          }
+        }
+      }
+    },
+    "_source_file": "uplifting_events.txt",
+    "_line_number": 765
+  }
+}

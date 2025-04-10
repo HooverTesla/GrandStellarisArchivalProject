@@ -1,0 +1,106 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "subject.3070",
+      "title": "subject.3070.title",
+      "desc": "subject.3070.desc",
+      "picture": "GFX_evt_one_sided_deal",
+      "show_sound": "evn_ove_one_sided_deal",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "overlord_subject_event_trigger": "yes"
+      },
+      "option": {
+        "name": "OK"
+      }
+    },
+    "_source_file": "overlord_subject_events.txt",
+    "_line_number": 3849
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "subject.5010",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "pre_triggers": {
+        "has_owner": "yes"
+      },
+      "trigger": {
+        "has_holding": {
+          "holding": "holding_recruitment_office",
+          "owner": "owner.overlord"
+        },
+        "NOT": {
+          "has_planet_flag": "recruitment_anti_cheese"
+        }
+      },
+      "immediate": {
+        "set_timed_planet_flag": {
+          "flag": "recruitment_anti_cheese",
+          "days": "1700"
+        },
+        "if": {
+          "limit": {
+            "owner": {},
+            "random_list": {
+              "2": {
+                "modifier": {
+                  "factor": "0",
+                  "NOT": {
+                    "any_owned_pop": {
+                      "has_citizenship_type": {
+                        "has_job": "overlord_recruiter"
+                      }
+                    }
+                  },
+                  "random_owned_pop": {
+                    "limit": {
+                      "has_job": "overlord_recruiter",
+                      "has_citizenship_type": {},
+                      "save_event_target_as": "moving_pop",
+                      "resettle_pop": {
+                        "pop": "this",
+                        "planet": "root.owner.overlord.capital_scope"
+                      }
+                    },
+                    "owner": {
+                      "random_agreement": {
+                        "limit": {
+                          "owner": {
+                            "target": {},
+                            "add_loyalty": "-3"
+                          }
+                        },
+                        "owner.overlord": {
+                          "create_message": {
+                            "type": "MESSAGE_OVERLORD_RECRUIT",
+                            "localization": "MESSAGE_OVERLORD_RECRUIT_DESC",
+                            "days": "30",
+                            "target": "capital_scope",
+                            "variable": {
+                              "type": "name",
+                              "localization": "PLANET",
+                              "scope": "capital_scope"
+                            }
+                          }
+                        }
+                      },
+                      "8": {},
+                      "planet_event": {
+                        "id": "subject.5010",
+                        "days": "1800",
+                        "random": "100"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_subject_events.txt",
+    "_line_number": 3932
+  }
+}

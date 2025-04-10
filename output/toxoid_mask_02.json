@@ -1,0 +1,81 @@
+{
+  "toxoid_mask_02": {
+    "toxoid_mask_02": {
+      "default": "gfx/models/portraits/toxoid/toxic_portrait_11_goggles_none.dds",
+      "game_setup": {
+        "default": "gfx/models/portraits/toxoid/toxic_portrait_11_goggles_none.dds"
+      },
+      "_comments": [
+        "#species scope",
+        "#pop scope",
+        "#leader scope"
+      ],
+      "species": {
+        "default": "gfx/models/portraits/toxoid/toxic_portrait_11_goggles_none.dds"
+      },
+      "pop": {
+        "default": "gfx/models/portraits/toxoid/toxic_portrait_11_goggles_none.dds",
+        "random": {
+          "list": {}
+        }
+      },
+      "leader": {
+        "random": {
+          "trigger": {
+            "list": {}
+          },
+          "random": {
+            "trigger": {
+              "list": {}
+            },
+            "random": {
+              "trigger": {
+                "list": {}
+              },
+              "random": {
+                "trigger": {
+                  "list": {}
+                }
+              },
+              "_comments": [
+                "#leader scope"
+              ],
+              "ruler": {
+                "_comments": [
+                  "#default = \"gfx/models/portraits/toxic/toxic_portrait_02_mask_01.dds\""
+                ],
+                "random": {
+                  "trigger": {
+                    "owner": {},
+                    "list": {}
+                  },
+                  "random": {
+                    "trigger": {
+                      "owner": {},
+                      "list": {}
+                    },
+                    "random": {
+                      "trigger": {
+                        "owner": {
+                          "OR": {
+                            "has_government": "gov_stagnant_ascendancy",
+                            "has_primitive_government": "yes",
+                            "has_materialist_government": "yes",
+                            "has_pacifist_government": "yes"
+                          }
+                        }
+                      },
+                      "list": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "toxoid_mask_02.txt",
+    "_line_number": 22
+  }
+}

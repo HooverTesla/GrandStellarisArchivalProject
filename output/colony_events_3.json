@@ -1,0 +1,295 @@
+{
+  "planet_event": {
+    "planet_event": {
+      "id": "colony_mod.34",
+      "title": "colony_mod.32.name",
+      "desc": "colony_mod.34.desc",
+      "picture": "GFX_evt_colony_settlement",
+      "show_sound": "event_default",
+      "location": "ROOT",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "GOOD"
+      }
+    },
+    "_source_file": "colony_events_3.txt",
+    "_line_number": 10402
+  },
+  "event": {
+    "event": {
+      "id": "colony.3029",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_playable_country": {
+          "has_country_flag": "dportal_trader"
+        }
+      },
+      "immediate": {
+        "random_playable_country": {
+          "limit": {
+            "country_event": {}
+          }
+        }
+      }
+    },
+    "_source_file": "colony_events_3.txt",
+    "_line_number": 1933
+  },
+  "country_event": {
+    "country_event": {
+      "id": "colony.7160",
+      "title": "colony.7160.name",
+      "desc": "colony.7160.desc",
+      "picture": "GFX_evt_arena",
+      "show_sound": "event_alien_nature",
+      "location": "ROOT",
+      "trackable": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "NOT": {
+          "any_owned_planet": {
+            "has_planet_flag": "rampant_desertlings"
+          }
+        }
+      },
+      "immediate": {
+        "set_country_flag": "friendly_desertlings"
+      },
+      "option": {
+        "name": "colony.7160.a",
+        "add_modifier": {
+          "modifier": "national_pets",
+          "years": "5"
+        }
+      }
+    },
+    "_source_file": "colony_events_3.txt",
+    "_line_number": 10027
+  },
+  "situation_event": {
+    "situation_event": {
+      "id": "colony.9880",
+      "title": "colony.9880.name",
+      "desc": "colony.9880.desc",
+      "is_triggered_only": "yes",
+      "situation": "this",
+      "picture": {
+        "trigger": {
+          "owner": {},
+          "picture": "GFX_evt_hive_mind"
+        },
+        "picture": {
+          "trigger": {
+            "current_situation_approach": "approach_save_b_world",
+            "owner": {},
+            "immediate": {
+              "owner": {
+                "create_country": {
+                  "name": "NAME_Dominated_Drones",
+                  "type": "faction",
+                  "effect": {
+                    "establish_communications_no_message": "root",
+                    "save_global_event_target_as": "dominated_drones",
+                    "set_relation_flag": {
+                      "who": "root",
+                      "flag": "B_world_relation"
+                    },
+                    "set_faction_hostility": {}
+                  }
+                },
+                "option": {
+                  "trigger": {
+                    "owner": {},
+                    "name": "colony.9880.a.machine",
+                    "custom_tooltip": "colony.9880.a.tt",
+                    "hidden_effect": {
+                      "target": {
+                        "create_army": {
+                          "name": "NAME_controlled_army",
+                          "species": "root.owner.species",
+                          "owner": "event_target:dominated_drones",
+                          "type": "robotic_army"
+                        },
+                        "if": {
+                          "limit": {
+                            "owner": {
+                              "has_modifier": "offloaded_optimization"
+                            }
+                          },
+                          "while": {
+                            "count": "2",
+                            "create_army": {
+                              "name": "NAME_controlled_army",
+                              "species": "root.owner.species",
+                              "owner": "event_target:dominated_drones",
+                              "type": "robotic_army"
+                            }
+                          }
+                        },
+                        "random_owned_pop": {
+                          "kill_pop": "yes"
+                        }
+                      }
+                    },
+                    "add_situation_progress": "20"
+                  },
+                  "option": {
+                    "trigger": {
+                      "owner": {},
+                      "name": "colony.9880.a.hive",
+                      "custom_tooltip": "colony.9880.a.tt",
+                      "hidden_effect": {
+                        "target": {
+                          "create_army": {
+                            "name": "NAME_controlled_army",
+                            "species": "root.owner.species",
+                            "owner": "event_target:dominated_drones",
+                            "type": "assault_army"
+                          },
+                          "if": {
+                            "limit": {
+                              "owner": {
+                                "has_modifier": "offloaded_optimization"
+                              }
+                            },
+                            "while": {
+                              "count": "2",
+                              "create_army": {
+                                "name": "NAME_controlled_army",
+                                "species": "root.owner.species",
+                                "owner": "event_target:dominated_drones",
+                                "type": "assault_army"
+                              }
+                            }
+                          },
+                          "random_owned_pop": {
+                            "kill_pop": "yes"
+                          }
+                        }
+                      },
+                      "add_situation_progress": "20"
+                    },
+                    "option": {
+                      "trigger": {
+                        "owner": {
+                          "hidden_effect": {
+                            "target": {
+                              "create_army": {
+                                "name": "NAME_controlled_army",
+                                "species": "root.owner.species",
+                                "owner": "event_target:dominated_drones",
+                                "type": "assault_army"
+                              },
+                              "if": {
+                                "limit": {
+                                  "owner": {
+                                    "has_modifier": "offloaded_optimization"
+                                  }
+                                },
+                                "while": {
+                                  "count": "2",
+                                  "create_army": {
+                                    "name": "NAME_controlled_army",
+                                    "species": "root.owner.species",
+                                    "owner": "event_target:dominated_drones",
+                                    "type": "assault_army"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "name": "colony.9880.b",
+                        "add_situation_progress": "15",
+                        "option": {
+                          "trigger": {
+                            "owner": {
+                              "hidden_effect": {
+                                "target": {
+                                  "create_army": {
+                                    "name": "NAME_controlled_army",
+                                    "species": "root.owner.species",
+                                    "owner": "event_target:dominated_drones",
+                                    "type": "robotic_army"
+                                  },
+                                  "if": {
+                                    "limit": {
+                                      "owner": {
+                                        "has_modifier": "offloaded_optimization"
+                                      }
+                                    },
+                                    "while": {
+                                      "count": "2",
+                                      "create_army": {
+                                        "name": "NAME_controlled_army",
+                                        "species": "root.owner.species",
+                                        "owner": "event_target:dominated_drones",
+                                        "type": "robotic_army"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "name": "colony.9880.b",
+                            "add_situation_progress": "15",
+                            "after": {
+                              "if": {
+                                "limit": {
+                                  "owner": {
+                                    "is_machine_empire": "yes",
+                                    "NOT": {
+                                      "has_country_flag": "calmed_b_world"
+                                    }
+                                  }
+                                },
+                                "target": {
+                                  "while": {
+                                    "count": "4",
+                                    "create_army": {
+                                      "species": "root.owner.species",
+                                      "owner": "root.owner",
+                                      "type": "robotic_army"
+                                    }
+                                  }
+                                }
+                              },
+                              "else_if": {
+                                "limit": {
+                                  "owner": {
+                                    "is_hive_empire": "yes",
+                                    "NOT": {
+                                      "has_country_flag": "calmed_b_world"
+                                    }
+                                  }
+                                },
+                                "target": {
+                                  "while": {
+                                    "count": "4",
+                                    "create_army": {
+                                      "species": "root.owner.species",
+                                      "owner": "root.owner",
+                                      "type": "assault_army"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "show_sound": "event_administrative_work"
+        }
+      }
+    },
+    "_source_file": "colony_events_3.txt",
+    "_line_number": 8535
+  }
+}

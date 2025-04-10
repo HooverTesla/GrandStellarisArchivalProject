@@ -1,0 +1,2746 @@
+{
+  "add_cosmogenesis_level_1_perks": {
+    "add_cosmogenesis_level_1_perks": {
+      "add_research_option": "tech_cosmogenesis_world"
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 14
+  },
+  "add_cosmogenesis_level_2_perks": {
+    "add_cosmogenesis_level_2_perks": {
+      "add_research_option": "tech_cosmogenesis_escort"
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 21
+  },
+  "add_cosmogenesis_level_3_perks": {
+    "add_cosmogenesis_level_3_perks": {
+      "add_research_option": "tech_cosmogenesis_battlecruiser"
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 29
+  },
+  "add_cosmogenesis_level_4_perks": {
+    "add_cosmogenesis_level_4_perks": {
+      "add_research_option": "tech_cosmogenesis_thesis"
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 37
+  },
+  "add_cosmogenesis_level_5_perks": {
+    "add_cosmogenesis_level_5_perks": {
+      "add_research_option": "tech_nanite_autocannon"
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 46
+  },
+  "remove_all_cybernetic_traits": {
+    "remove_all_cybernetic_traits": {
+      "modify_species": {
+        "species": "this",
+        "inline_script": {
+          "script": "traits/remove_all_cybernetic_traits"
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 53
+  },
+  "add_augmentation_bazaars_cyborg_traits": {
+    "add_augmentation_bazaars_cyborg_traits": {
+      "save_event_target_as": "cyborg_pop",
+      "owner": {
+        "switch": {
+          "trigger": "has_country_flag",
+          "augmentation_bazaars_power_drills": {
+            "event_target:cyborg_pop": {
+              "modify_species": {
+                "add_trait": "trait_cyborg_power_drills"
+              }
+            }
+          },
+          "augmentation_bazaars_harvesters": {
+            "event_target:cyborg_pop": {
+              "modify_species": {
+                "add_trait": "trait_cyborg_harvesters"
+              }
+            }
+          },
+          "augmentation_bazaars_superconductive": {
+            "event_target:cyborg_pop": {
+              "modify_species": {
+                "add_trait": "trait_cyborg_superconductive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 62
+  },
+  "create_cyber_species_effect": {
+    "create_cyber_species_effect": {
+      "species": {
+        "modify_species": {
+          "effect": {
+            "create_species": {
+              "is_mod": "yes",
+              "name": "this",
+              "plural": "this",
+              "class": "this",
+              "portrait": "this",
+              "traits": {
+                "ideal_planet_class": "this"
+              },
+              "can_be_modified": "this",
+              "homeworld": "this",
+              "namelist": "this",
+              "gender": "this"
+            },
+            "last_created_species": {
+              "change_species_characteristics": {
+                "remove_trait": "trait_psionic",
+                "add_trait": "trait_cybernetic"
+              },
+              "save_global_event_target_as": "cyberspecies@prev"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 95
+  },
+  "cyberize_leaders_effect": {
+    "cyberize_leaders_effect": {
+      "every_owned_leader": {
+        "limit": {
+          "exists": "event_target:changing_species",
+          "is_exact_same_species": "event_target:changing_species",
+          "NOR": {
+            "has_trait": "leader_trait_limited_cyborg"
+          },
+          "OR": {
+            "is_spiritualist": "no",
+            "owner": {}
+          },
+          "remove_trait": "leader_trait_psionic",
+          "change_species": "event_target:cyberspecies@species",
+          "add_trait_no_notify": "leader_trait_cyborg"
+        },
+        "every_pool_leader": {
+          "limit": {
+            "exists": "event_target:changing_species",
+            "is_exact_same_species": "event_target:changing_species",
+            "NOR": {
+              "has_trait": "leader_trait_limited_cyborg"
+            },
+            "OR": {
+              "is_spiritualist": "no",
+              "owner": {}
+            },
+            "remove_trait": "leader_trait_psionic",
+            "change_species": "event_target:cyberspecies@species",
+            "add_trait_no_notify": "leader_trait_cyborg"
+          },
+          "if": {
+            "limit": {
+              "is_gestalt": "yes"
+            },
+            "every_owned_leader": {
+              "limit": {
+                "is_councilor": "yes",
+                "is_ruler": "no"
+              },
+              "set_gestalt_node_portrait_effect": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 128
+  },
+  "cyberize_leaders_limited_effect": {
+    "cyberize_leaders_limited_effect": {
+      "every_owned_leader": {
+        "limit": {
+          "exists": "event_target:changing_species",
+          "is_exact_same_species": "event_target:changing_species",
+          "NOR": {
+            "has_trait": "leader_trait_limited_cyborg"
+          },
+          "is_spiritualist": "yes"
+        },
+        "remove_trait": "leader_trait_psionic",
+        "change_species": "event_target:cyberspecies@species",
+        "add_trait_no_notify": "leader_trait_limited_cyborg"
+      },
+      "every_pool_leader": {
+        "limit": {
+          "exists": "event_target:changing_species",
+          "is_exact_same_species": "event_target:changing_species",
+          "NOR": {
+            "has_trait": "leader_trait_limited_cyborg"
+          },
+          "is_spiritualist": "yes"
+        },
+        "remove_trait": "leader_trait_psionic",
+        "change_species": "event_target:cyberspecies@species",
+        "add_trait_no_notify": "leader_trait_limited_cyborg"
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 180
+  },
+  "cyberize_colony_ships_effect": {
+    "cyberize_colony_ships_effect": {
+      "every_controlled_ship": {
+        "limit": {
+          "is_ship_class": "shipclass_colonizer",
+          "exists": "species",
+          "species": {
+            "is_exact_same_species": "event_target:changing_species",
+            "NOR": {
+              "has_trait": "leader_trait_limited_cyborg"
+            }
+          }
+        },
+        "change_species": "event_target:cyberspecies@species"
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 214
+  },
+  "cyberize_armies_effect": {
+    "cyberize_armies_effect": {
+      "every_owned_army": {
+        "limit": {
+          "exists": "planet",
+          "species": {
+            "is_exact_same_species": "event_target:changing_species",
+            "NOR": {
+              "has_trait": "leader_trait_limited_cyborg"
+            }
+          },
+          "army_type": "defense_army"
+        },
+        "modify_army": {
+          "name": "random",
+          "species": "event_target:cyberspecies@species"
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 234
+  },
+  "synth_queen_spawn": {
+    "synth_queen_spawn": {
+      "_comments": [
+        "#Silent Spawn"
+      ],
+      "if": {
+        "limit": {
+          "any_galaxy_planet": {
+            "has_planet_flag": "xenophobe_fe_capital",
+            "NOR": {
+              "is_planet_class": "pc_shielded"
+            },
+            "owner": {
+              "NOT": {}
+            }
+          },
+          "random_galaxy_planet": {
+            "limit": {
+              "has_planet_flag": "xenophobe_fe_capital"
+            },
+            "synth_queen_wipe_planet": "yes",
+            "synth_queen_wipe_system": "yes"
+          }
+        },
+        "else_if": {
+          "limit": {
+            "any_galaxy_planet": {
+              "has_planet_flag": "fallen_empire_world",
+              "is_capital": "yes",
+              "owner": {
+                "is_fallen_empire": "yes",
+                "is_fallen_empire_machine": "no",
+                "NOT": {}
+              }
+            },
+            "random_galaxy_planet": {
+              "limit": {
+                "has_planet_flag": "fallen_empire_world",
+                "is_capital": "yes",
+                "owner": {
+                  "is_fallen_empire": "yes",
+                  "is_fallen_empire_machine": "no",
+                  "NOT": {}
+                },
+                "synth_queen_wipe_planet": "yes",
+                "synth_queen_wipe_system": "yes"
+              }
+            },
+            "else_if": {
+              "limit": {
+                "any_galaxy_planet": {
+                  "is_planet_class": "pc_nuked"
+                }
+              },
+              "random_galaxy_planet": {
+                "limit": {
+                  "is_planet_class": "pc_nuked"
+                },
+                "synth_queen_wipe_planet": "yes",
+                "synth_queen_wipe_system": "yes"
+              }
+            },
+            "else": {
+              "random_galaxy_planet": {
+                "limit": {
+                  "is_colonizable": "yes"
+                },
+                "synth_queen_wipe_planet": "yes",
+                "synth_queen_wipe_system": "yes"
+              }
+            },
+            "random_system": {
+              "limit": {
+                "any_system_planet": {
+                  "has_planet_flag": "synth_queen_bastille"
+                }
+              },
+              "set_star_flag": "synth_queen_capital",
+              "save_global_event_target_as": "synth_queen_capital_system"
+            },
+            "event_target:synth_queen_capital_system": {
+              "save_event_target_as": "synth_queen_system",
+              "random_system_planet": {
+                "limit": {
+                  "has_planet_flag": "synth_queen_bastille"
+                },
+                "create_species": {
+                  "name": "NAME_Cetana",
+                  "class": "ROBOT",
+                  "namelist": "CETANA",
+                  "portrait": "synth_queen",
+                  "traits": {
+                    "trait": "trait_mechanical"
+                  },
+                  "effect": {
+                    "save_event_target_as": "synth_queen_species"
+                  }
+                },
+                "create_country": {
+                  "name": "NAME_The_Tempest\" #\"NAME_Synth_Queen",
+                  "type": "synth_queen_storm",
+                  "species": "event_target:synth_queen_species",
+                  "name_list": "CETANA",
+                  "flag": {
+                    "icon": {
+                      "category": "spherical",
+                      "file": "flag_spherical_15.dds"
+                    },
+                    "background": {
+                      "category": "backgrounds",
+                      "file": "00_solid.dds"
+                    },
+                    "colors": {}
+                  },
+                  "effect": {
+                    "create_ship_design": {
+                      "add_ship_design": "last_created_design",
+                      "create_ship_design": {
+                        "add_ship_design": "last_created_design",
+                        "create_ship_design": {
+                          "add_ship_design": "last_created_design",
+                          "create_ship_design": {
+                            "add_ship_design": "last_created_design",
+                            "create_ship_design": {
+                              "add_ship_design": "last_created_design",
+                              "create_ship_design": {
+                                "add_ship_design": "last_created_design",
+                                "add_modifier": {
+                                  "modifier": "queen_combat_modifier",
+                                  "days": "-1"
+                                },
+                                "save_event_target_as": "synth_queen_country",
+                                "save_global_event_target_as": "synth_queen_country_global",
+                                "set_graphical_culture": "synth_queen_01",
+                                "activate_fog_machine": "synth_queen_nanite",
+                                "fog_machine_auto_tracking": "yes",
+                                "create_leader": {
+                                  "class": "commander",
+                                  "species": "event_target:synth_queen_country",
+                                  "name": "NAME_Cetana",
+                                  "immortal": "yes",
+                                  "skill": "10",
+                                  "event_leader": "yes",
+                                  "skip_background_generation": "yes",
+                                  "set_age": "126872",
+                                  "custom_description": "cetana_desc",
+                                  "traits": {
+                                    "0": "subclass_commander_councilor"
+                                  },
+                                  "effect": {
+                                    "change_leader_portrait": "cetana_empty",
+                                    "save_global_event_target_as": "cetana_empty"
+                                  }
+                                },
+                                "set_leader": "last_created_leader"
+                              }
+                            },
+                            "change_pc": "pc_gray_goo",
+                            "reset_planet": "yes",
+                            "set_name": "NAME_Somnivaya",
+                            "add_modifier": {
+                              "modifier": "terraforming_candidate",
+                              "days": "-1"
+                            }
+                          },
+                          "create_starbase": {
+                            "size": "big_starbase_synth_queen",
+                            "owner": "event_target:synth_queen_country",
+                            "effect": {
+                              "while": {
+                                "count": "12",
+                                "create_synth_queen_platform": "yes"
+                              }
+                            }
+                          },
+                          "event_target:synth_queen_country": {
+                            "create_fleet": {
+                              "name": "synth_queen_titan_fleet_name",
+                              "settings": {
+                                "is_ultra_boss": "yes"
+                              },
+                              "effect": {
+                                "set_fleet_flag": "synth_queen_titan_ship",
+                                "set_owner": "PREV",
+                                "create_ship": {
+                                  "name": "random",
+                                  "design": "NAME_Synth_Queen_Titan"
+                                },
+                                "set_location": {
+                                  "target": "event_target:synth_queen_system",
+                                  "distance": "5",
+                                  "angle": "random"
+                                },
+                                "set_fleet_stance": "aggressive",
+                                "set_aggro_range": "3000",
+                                "set_aggro_range_measure_from": "self",
+                                "set_fleet_bombardment_stance": "armageddon"
+                              }
+                            },
+                            "while": {
+                              "count": "6",
+                              "synth_queen_create_war_fleet": "yes"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 278
+  },
+  "synth_queen_wipe_planet": {
+    "synth_queen_wipe_planet": {
+      "set_planet_flag": "synth_queen_bastille",
+      "save_global_event_target_as": "synth_queen_capital",
+      "if": {
+        "limit": {},
+        "every_owned_pop": {
+          "kill_pop": "yes"
+        },
+        "remove_all_buildings": "yes",
+        "destroy_colony": "yes"
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 777
+  },
+  "synth_queen_wipe_system": {
+    "synth_queen_wipe_system": {
+      "solar_system": {
+        "if": {
+          "limit": {
+            "exists": "owner",
+            "owner": {
+              "country_event": {
+                "id": "crisis.8020",
+                "days": "1",
+                "random": "5"
+              }
+            },
+            "save_event_target_as": "synth_queen_lost_system"
+          },
+          "set_star_flag": "synth_queen_system",
+          "_comments": [
+            "# Kill everyone"
+          ],
+          "every_system_planet": {
+            "limit": {
+              "exists": "owner",
+              "owner": {},
+              "every_owned_pop": {
+                "kill_pop": "yes"
+              },
+              "remove_all_buildings": "yes",
+              "destroy_colony": "yes"
+            },
+            "_comments": [
+              "# Check fleets"
+            ],
+            "every_fleet_in_system": {
+              "_comments": [
+                "# Exclude those owned by the Synth Queen, so she won't accidentally destroy her own battleships",
+                "# Destroy all stations",
+                "# Ships"
+              ],
+              "limit": {
+                "owner": {
+                  "is_synth_queen_country_type": "no"
+                }
+              },
+              "if": {
+                "limit": {
+                  "is_mobile": "no"
+                },
+                "delete_fleet": "this"
+              },
+              "else": {
+                "if": {
+                  "limit": {
+                    "owner": {
+                      "NOR": {
+                        "is_country_type": "fallen_empire"
+                      }
+                    }
+                  },
+                  "destroy_fleet": "this",
+                  "_comments": [
+                    "# If owned by FEs/enclaves, destroy them"
+                  ]
+                },
+                "else": {
+                  "_comments": [
+                    "# If not, damage them and send them home"
+                  ],
+                  "every_owned_ship": {
+                    "random_list": {
+                      "1": {
+                        "1": {
+                          "1": {
+                            "1": {
+                              "1": {
+                                "1": {}
+                              },
+                              "set_mia": "mia_return_home"
+                            }
+                          }
+                        },
+                        "if": {
+                          "limit": {
+                            "NOT": {
+                              "has_global_flag": "synth_queen_revenge_done"
+                            }
+                          },
+                          "_comments": [
+                            "# Turn the planets into nanite worlds"
+                          ],
+                          "every_system_planet": {
+                            "limit": {
+                              "OR": {
+                                "is_planet_class": "pc_habitat",
+                                "is_ringworld": "yes"
+                              },
+                              "NOR": {
+                                "is_planet_class": "pc_ringworld_seam_damaged"
+                              }
+                            },
+                            "if": {
+                              "limit": {
+                                "spawn_habitat_cracker_effect": "yes"
+                              },
+                              "else_if": {
+                                "limit": {
+                                  "spawn_ringworld_cracker_effect": "yes",
+                                  "change_pc": "pc_ringworld_habitable_damaged"
+                                },
+                                "else_if": {
+                                  "limit": {
+                                    "spawn_ringworld_cracker_effect": "yes",
+                                    "change_pc": "pc_ringworld_tech_damaged"
+                                  },
+                                  "else_if": {
+                                    "limit": {
+                                      "spawn_ringworld_cracker_effect": "yes",
+                                      "change_pc": "pc_ringworld_seam_damaged"
+                                    }
+                                  },
+                                  "_comments": [
+                                    "# Spawn Queen starbases"
+                                  ],
+                                  "if": {
+                                    "limit": {
+                                      "has_star_flag": "synth_queen_system",
+                                      "exists": "event_target:synth_queen_country_global",
+                                      "NOT": {
+                                        "any_ship_in_system": {
+                                          "is_ship_size": "big_starbase_synth_queen"
+                                        }
+                                      }
+                                    },
+                                    "create_starbase": {
+                                      "size": "starbase_synth_queen",
+                                      "owner": "event_target:synth_queen_country_global",
+                                      "effect": {
+                                        "while": {
+                                          "count": "2",
+                                          "create_synth_queen_platform": "yes"
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "add_modifier": {
+                                  "modifier": "queen_scorn_storm",
+                                  "days": "-1"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 793
+  },
+  "synth_queen_create_war_fleet": {
+    "synth_queen_create_war_fleet": {
+      "create_fleet": {
+        "settings": {},
+        "effect": {
+          "set_owner": "PREV",
+          "while": {
+            "count": "3",
+            "create_ship": {
+              "name": "random",
+              "design": "NAME_Synth_Queen_Royal_Guard"
+            }
+          },
+          "set_location": {
+            "target": "event_target:synth_queen_capital",
+            "distance": "5",
+            "angle": "random"
+          },
+          "set_fleet_stance": "aggressive",
+          "set_aggro_range": "1000",
+          "set_aggro_range_measure_from": "self",
+          "set_fleet_bombardment_stance": "armageddon"
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 988
+  },
+  "synth_queen_spawn_history_projects": {
+    "synth_queen_spawn_history_projects": {
+      "_comments": [
+        "# Ensure we got the target"
+      ],
+      "if": {
+        "limit": {
+          "NOT": {},
+          "random_system": {
+            "limit": {
+              "has_star_flag": "synth_queen_capital"
+            },
+            "save_global_event_target_as": "synth_queen_capital_system"
+          }
+        },
+        "_comments": [
+          "# Set flags to spawn 5 projects (4 lore + one empty one)"
+        ],
+        "random_system": {
+          "limit": {
+            "OR": {
+              "NOT": {
+                "space_owner": {
+                  "NOR": {
+                    "is_homicidal": "yes",
+                    "is_synth_queen_country_type": "yes",
+                    "is_country_type": "synth_queen_outposts"
+                  }
+                }
+              },
+              "any_system_planet": {
+                "uninhabitable_regular_planet": "yes",
+                "NOT": {}
+              },
+              "set_star_flag": "synth_queen_history_system",
+              "random_system_planet": {
+                "limit": {
+                  "uninhabitable_regular_planet": "yes",
+                  "NOT": {},
+                  "set_planet_flag": "synth_queen_history_site_1"
+                }
+              },
+              "random_system": {
+                "limit": {
+                  "OR": {
+                    "NOT": {
+                      "space_owner": {
+                        "NOR": {
+                          "is_homicidal": "yes",
+                          "is_synth_queen_country_type": "yes",
+                          "is_country_type": "synth_queen_outposts"
+                        }
+                      }
+                    },
+                    "any_system_planet": {
+                      "uninhabitable_regular_planet": "yes",
+                      "NOT": {}
+                    },
+                    "set_star_flag": "synth_queen_history_system",
+                    "random_system_planet": {
+                      "limit": {
+                        "uninhabitable_regular_planet": "yes",
+                        "NOT": {},
+                        "set_planet_flag": "synth_queen_history_site_2"
+                      }
+                    },
+                    "random_system": {
+                      "limit": {
+                        "OR": {
+                          "NOT": {
+                            "space_owner": {
+                              "NOR": {
+                                "is_homicidal": "yes",
+                                "is_synth_queen_country_type": "yes",
+                                "is_country_type": "synth_queen_outposts"
+                              }
+                            }
+                          },
+                          "any_system_planet": {
+                            "uninhabitable_regular_planet": "yes",
+                            "NOT": {}
+                          },
+                          "set_star_flag": "synth_queen_history_system",
+                          "random_system_planet": {
+                            "limit": {
+                              "uninhabitable_regular_planet": "yes",
+                              "NOT": {},
+                              "set_planet_flag": "synth_queen_history_site_3"
+                            }
+                          },
+                          "random_system": {
+                            "limit": {
+                              "OR": {
+                                "NOT": {
+                                  "space_owner": {
+                                    "NOR": {
+                                      "is_homicidal": "yes",
+                                      "is_synth_queen_country_type": "yes",
+                                      "is_country_type": "synth_queen_outposts"
+                                    }
+                                  }
+                                },
+                                "any_system_planet": {
+                                  "uninhabitable_regular_planet": "yes",
+                                  "NOT": {}
+                                },
+                                "set_star_flag": "synth_queen_history_system",
+                                "random_system_planet": {
+                                  "limit": {
+                                    "uninhabitable_regular_planet": "yes",
+                                    "NOT": {},
+                                    "set_planet_flag": "synth_queen_history_site_4"
+                                  }
+                                },
+                                "random_system": {
+                                  "limit": {
+                                    "OR": {
+                                      "NOT": {
+                                        "space_owner": {
+                                          "NOR": {
+                                            "is_homicidal": "yes",
+                                            "is_synth_queen_country_type": "yes",
+                                            "is_country_type": "synth_queen_outposts"
+                                          }
+                                        }
+                                      },
+                                      "any_system_planet": {
+                                        "uninhabitable_regular_planet": "yes",
+                                        "NOT": {}
+                                      },
+                                      "set_star_flag": "synth_queen_history_system",
+                                      "random_system_planet": {
+                                        "limit": {
+                                          "uninhabitable_regular_planet": "yes",
+                                          "NOT": {},
+                                          "set_planet_flag": "synth_queen_history_site_empty"
+                                        }
+                                      },
+                                      "_comments": [
+                                        "# Set flags to spawn additional, \"fake\" projects if playing on bigger galaxy sizes"
+                                      ],
+                                      "while": {
+                                        "count": "$NUM_EXTRA_PROJECTS$",
+                                        "random_system": {
+                                          "limit": {
+                                            "OR": {
+                                              "NOT": {
+                                                "space_owner": {
+                                                  "NOR": {
+                                                    "is_homicidal": "yes",
+                                                    "is_synth_queen_country_type": "yes",
+                                                    "is_country_type": "synth_queen_outposts"
+                                                  }
+                                                }
+                                              },
+                                              "any_system_planet": {
+                                                "uninhabitable_regular_planet": "yes",
+                                                "NOT": {}
+                                              },
+                                              "set_star_flag": "synth_queen_history_system",
+                                              "random_system_planet": {
+                                                "limit": {
+                                                  "uninhabitable_regular_planet": "yes",
+                                                  "NOT": {},
+                                                  "set_planet_flag": "synth_queen_history_site_empty"
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 1022
+  },
+  "synth_queen_spawn_history_projects_for_everyone": {
+    "synth_queen_spawn_history_projects_for_everyone": {
+      "every_system": {
+        "limit": {
+          "has_star_flag": "synth_queen_history_system"
+        },
+        "every_system_planet": {
+          "limit": {
+            "has_planet_flag": "synth_queen_history_site"
+          },
+          "if": {
+            "limit": {
+              "has_planet_flag": "synth_queen_history_site_empty"
+            },
+            "enable_special_project": {
+              "name": "THE_SYNTH_QUEENS_INVESTIGATION_FAKE",
+              "owner": "root",
+              "location": "this"
+            }
+          },
+          "else": {
+            "enable_special_project": {
+              "name": "THE_SYNTH_QUEENS_INVESTIGATION",
+              "owner": "root",
+              "location": "this"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 1207
+  },
+  "synth_queen_create_convoy_fleet": {
+    "synth_queen_create_convoy_fleet": {
+      "create_country": {
+        "name": "NAME_Cetana_Convoys",
+        "type": "synth_queen_convoys",
+        "name_list": "CETANA",
+        "flag": {
+          "icon": {
+            "category": "special",
+            "file": "synth_queen.dds"
+          },
+          "background": {
+            "category": "backgrounds",
+            "file": "00_solid.dds"
+          },
+          "colors": {}
+        },
+        "effect": {
+          "set_graphical_culture": "synth_queen_01",
+          "save_global_event_target_as": "synth_queen_convoy_country",
+          "every_country": {
+            "establish_communications_no_message": "event_target:synth_queen_convoy_country"
+          },
+          "set_country_flag": "protected_from_queen_storm",
+          "add_modifier": {
+            "modifier": "synth_queen_convoy_slowdown",
+            "days": "-1"
+          }
+        }
+      },
+      "create_fleet": {
+        "settings": {},
+        "effect": {
+          "set_owner": "event_target:synth_queen_convoy_country",
+          "set_name": "NAME_Synth_Queen_Convoy",
+          "while": {
+            "count": "1",
+            "create_ship": {
+              "name": "random",
+              "design": "NAME_Synth_Queen_Royal_Guard"
+            }
+          },
+          "set_location": {
+            "target": "event_target:synth_queen_capital",
+            "distance": "5",
+            "angle": "random"
+          },
+          "set_fleet_stance": "passive",
+          "random_system": {
+            "limit": {
+              "exists": "owner",
+              "owner": {
+                "is_country_type": "synth_queen_outposts"
+              },
+              "has_star_flag": "synth_queen_outpost",
+              "NOT": {},
+              "set_timed_star_flag": {
+                "flag": "incoming_convoy",
+                "days": "120"
+              },
+              "star": {
+                "save_event_target_as": "convoy_first_destination"
+              }
+            },
+            "auto_move_to_planet": {
+              "target": "event_target:convoy_first_destination",
+              "clear_auto_move_on_arrival": "yes"
+            },
+            "every_playable_country": {
+              "limit": {
+                "has_event_chain": "the_synth_queen_raids_chain"
+              },
+              "enable_special_project": {
+                "name": "THE_SYNTH_QUEENS_CONVOY_AMBUSH",
+                "owner": "this",
+                "location": "prev"
+              }
+            },
+            "_comments": [
+              "#Failsafe to grab inactive convoys",
+              "#Failsafe if somehow the queen's war fleets end up stranded"
+            ],
+            "every_country": {
+              "limit": {
+                "is_country_type": "synth_queen_convoys",
+                "any_owned_fleet": {
+                  "is_fleet_idle": "yes"
+                }
+              },
+              "random_owned_fleet": {
+                "owner": {
+                  "country_event": {
+                    "id": "crisis.8140",
+                    "scopes": {
+                      "from": "prev"
+                    }
+                  }
+                }
+              }
+            },
+            "if": {
+              "limit": {
+                "NOT": {
+                  "any_country": {
+                    "is_country_type": "awakened_fallen_empire"
+                  }
+                }
+              },
+              "random_country": {
+                "limit": {
+                  "is_country_type": "synth_queen"
+                },
+                "random_system_within_border": {
+                  "limit": {
+                    "has_star_flag": "synth_queen_capital"
+                  },
+                  "save_event_target_as": "synth_queen_capital"
+                },
+                "_comments": [
+                  "#SQ recalls fleets, shores them up, then sends them on patrols"
+                ],
+                "every_owned_fleet": {
+                  "limit": {
+                    "is_mobile": "yes",
+                    "is_fleet_idle": "yes"
+                  },
+                  "auto_move_to_planet": {
+                    "target": "event_target:synth_queen_capital.star",
+                    "clear_auto_move_on_arrival": "yes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 1241
+  },
+  "synth_queen_create_outpost": {
+    "synth_queen_create_outpost": {
+      "create_country": {
+        "name": "NAME_Cetana_Outpost",
+        "type": "synth_queen_outposts",
+        "name_list": "CETANA",
+        "flag": {
+          "icon": {
+            "category": "special",
+            "file": "synth_queen.dds"
+          },
+          "background": {
+            "category": "backgrounds",
+            "file": "flag_BG_13.dds"
+          },
+          "colors": {}
+        },
+        "effect": {
+          "set_graphical_culture": "synth_queen_01",
+          "save_event_target_as": "synth_queen_outpost_country",
+          "every_country": {
+            "establish_communications_no_message": "event_target:synth_queen_outpost_country"
+          },
+          "set_country_flag": "protected_from_queen_storm",
+          "create_ship_design": {
+            "add_ship_design": "last_created_design",
+            "activate_fog_machine": "synth_queen_nanite",
+            "fog_machine_auto_tracking": "yes"
+          }
+        },
+        "create_starbase": {
+          "size": "big_starbase_synth_queen",
+          "owner": "event_target:synth_queen_outpost_country",
+          "effect": {
+            "solar_system": {
+              "star": {
+                "save_event_target_as": "sq_outpost"
+              }
+            }
+          }
+        },
+        "create_fleet": {
+          "settings": {},
+          "effect": {
+            "set_owner": "event_target:synth_queen_outpost_country",
+            "set_name": "NAME_Outpost_Defenders",
+            "while": {
+              "count": "1",
+              "create_ship": {
+                "name": "random",
+                "design": "NAME_Synth_Queen_Royal_Guard"
+              }
+            },
+            "set_fleet_stance": "passive",
+            "set_aggro_range": "1000",
+            "set_aggro_range_measure_from": "self",
+            "set_location": {
+              "target": "event_target:sq_outpost"
+            }
+          }
+        },
+        "set_star_flag": "synth_queen_outpost"
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 1397
+  },
+  "synth_queen_fleet_garrison": {
+    "synth_queen_fleet_garrison": {
+      "set_fleet_settings": {
+        "garrison": "yes"
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 1473
+  },
+  "synth_queen_fleet_patrol": {
+    "synth_queen_fleet_patrol": {
+      "set_fleet_flag": "mobile_defender",
+      "if": {
+        "limit": {
+          "NOT": {},
+          "queue_actions": {
+            "repeat": {
+              "find_random_system": {
+                "trigger": {
+                  "id": "crisis_8156.trigger.1",
+                  "exists": "owner",
+                  "owner": {
+                    "is_same_value": "root"
+                  },
+                  "NOT": {
+                    "has_star_flag": "synth_queen_system"
+                  },
+                  "found_system": {
+                    "move_to": "this"
+                  }
+                },
+                "find_closest_planet": {
+                  "trigger": {
+                    "id": "crisis_8156.trigger.2",
+                    "is_star": "yes"
+                  },
+                  "found_planet": {
+                    "orbit_planet": "THIS",
+                    "wait": {
+                      "duration": "180",
+                      "random": "180"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 1479
+  },
+  "synth_queen_fleet_convoys_patrol": {
+    "synth_queen_fleet_convoys_patrol": {
+      "set_fleet_flag": "mobile_convoy",
+      "queue_actions": {
+        "repeat": {
+          "wait": {
+            "duration": "80",
+            "random": "80"
+          },
+          "find_random_planet": {
+            "found_planet": {
+              "orbit_planet": "this"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 1519
+  },
+  "synth_queen_debuff": {
+    "synth_queen_debuff": {
+      "if": {
+        "limit": {
+          "is_difficulty": "6"
+        },
+        "add_modifier": {
+          "modifier": "synth_queen_regen_debuff",
+          "days": "-1"
+        }
+      },
+      "else_if": {
+        "limit": {
+          "is_difficulty": "0"
+        },
+        "add_modifier": {
+          "modifier": "synth_queen_regen_debuff",
+          "days": "-1",
+          "mult": "7"
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 1536
+  },
+  "synth_queen_create_mini_outpost": {
+    "synth_queen_create_mini_outpost": {
+      "create_country": {
+        "name": "NAME_Cetana_Outpost",
+        "type": "synth_queen_outposts",
+        "name_list": "CETANA",
+        "flag": {
+          "icon": {
+            "category": "special",
+            "file": "synth_queen.dds"
+          },
+          "background": {
+            "category": "backgrounds",
+            "file": "flag_BG_13.dds"
+          },
+          "colors": {}
+        },
+        "effect": {
+          "save_event_target_as": "synth_queen_outpost_country",
+          "every_country": {
+            "establish_communications_no_message": "event_target:synth_queen_outpost_country"
+          },
+          "set_country_flag": "protected_from_queen_storm",
+          "create_ship_design": {
+            "add_ship_design": "last_created_design",
+            "activate_fog_machine": "synth_queen_nanite",
+            "fog_machine_auto_tracking": "yes"
+          }
+        },
+        "create_starbase": {
+          "size": "big_starbase_synth_queen",
+          "owner": "event_target:synth_queen_outpost_country",
+          "effect": {
+            "solar_system": {
+              "star": {
+                "save_event_target_as": "sq_outpost"
+              }
+            }
+          }
+        },
+        "create_fleet": {
+          "settings": {},
+          "effect": {
+            "set_owner": "event_target:synth_queen_outpost_country",
+            "set_name": "NAME_Outpost_Defenders",
+            "while": {
+              "count": "12",
+              "create_ship": {
+                "name": "random",
+                "design": "NAME_Synth_Queen_Harrier"
+              }
+            },
+            "set_fleet_stance": "passive",
+            "set_aggro_range": "1000",
+            "set_aggro_range_measure_from": "self",
+            "set_location": {
+              "target": "event_target:sq_outpost"
+            }
+          }
+        },
+        "set_star_flag": "synth_queen_outpost"
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 1613
+  },
+  "synth_queen_mini_wipe_system": {
+    "synth_queen_mini_wipe_system": {
+      "solar_system": {
+        "set_star_flag": "synth_queen_system",
+        "every_system_planet": {
+          "limit": {
+            "exists": "owner",
+            "owner": {},
+            "every_owned_pop": {
+              "kill_pop": "yes"
+            },
+            "destroy_colony": "yes"
+          },
+          "every_fleet_in_system": {
+            "limit": {
+              "is_mobile": "yes"
+            },
+            "every_owned_ship": {
+              "random_list": {
+                "1": {
+                  "1": {
+                    "1": {
+                      "1": {
+                        "1": {
+                          "1": {}
+                        },
+                        "if": {
+                          "limit": {
+                            "owner": {
+                              "NOR": {
+                                "is_country_type": "fallen_empire"
+                              }
+                            }
+                          },
+                          "destroy_fleet": "this"
+                        },
+                        "else": {},
+                        "every_system_planet": {
+                          "limit": {
+                            "NOR": {
+                              "is_star": "yes",
+                              "is_planet_class": "pc_astral_scar",
+                              "is_asteroid": "yes",
+                              "is_colonizable": "no",
+                              "is_ringworld": "yes"
+                            }
+                          },
+                          "change_pc": "pc_gray_goo",
+                          "if": {
+                            "limit": {
+                              "NOT": {
+                                "has_modifier": "terraforming_candidate"
+                              }
+                            },
+                            "add_modifier": {
+                              "modifier": "terraforming_candidate",
+                              "days": "-1"
+                            }
+                          }
+                        },
+                        "random_system_planet": {
+                          "limit": {
+                            "is_planet_class": "pc_gray_goo"
+                          },
+                          "if": {
+                            "limit": {
+                              "NOT": {
+                                "has_deposit": "d_nanites_deposit"
+                              }
+                            },
+                            "add_deposit": "d_nanites_deposit"
+                          }
+                        },
+                        "add_modifier": {
+                          "modifier": "queen_scorn_storm",
+                          "days": "-1"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 1682
+  },
+  "create_synth_queen_platform": {
+    "create_synth_queen_platform": {
+      "create_ship": {
+        "name": "random",
+        "design": "NAME_Queens_Eye",
+        "graphical_culture": "owner"
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 1787
+  },
+  "make_fallen_empire": {
+    "make_fallen_empire": {
+      "set_country_type": "fallen_empire",
+      "set_country_flag": "cosmogenesis_fe_empire",
+      "if": {
+        "limit": {
+          "is_gestalt": "yes"
+        },
+        "add_global_ship_design": "NAME_FE_Starbase",
+        "set_graphical_culture": "fallen_machine_empire_01"
+      },
+      "else_if": {
+        "limit": {
+          "has_ethic": "ethic_fanatic_spiritualist"
+        },
+        "add_global_ship_design": "NAME_FE_Starbase",
+        "set_graphical_culture": "fallen_empire_01"
+      },
+      "ruler": {
+        "add_skill": "9"
+      },
+      "else": {
+        "add_global_ship_design": "NAME_FE_Starbase",
+        "set_graphical_culture": "fallen_empire_02"
+      },
+      "create_fallen_empire_cosmogenesis_navy": "yes",
+      "add_modifier": {
+        "modifier": "fe_ship_cost_modifier",
+        "days": "-1"
+      },
+      "every_system": {
+        "limit": {
+          "exists": "owner",
+          "owner": {
+            "is_same_value": "root"
+          },
+          "OR": {
+            "NOT": {
+              "sector": {}
+            },
+            "every_fleet_in_system": {
+              "limit": {
+                "is_mobile": "no"
+              },
+              "destroy_fleet": "this"
+            }
+          },
+          "random_owned_planet": {
+            "limit": {
+              "is_capital": "yes"
+            },
+            "create_fallen_empire_planet": "yes",
+            "while": {
+              "count": "50",
+              "random_list": {
+                "1": {
+                  "modifier": {
+                    "add": "4",
+                    "is_planet_class": "pc_machine"
+                  }
+                },
+                "9": {
+                  "create_pop": {
+                    "species": "root.species",
+                    "ethos": "random"
+                  }
+                }
+              }
+            }
+          },
+          "every_planet_within_border": {
+            "limit": {
+              "exists": "sector",
+              "sector": {
+                "is_colonizable": "yes"
+              },
+              "create_colony": {
+                "owner": "root",
+                "species": "root.species"
+              },
+              "create_fallen_empire_planet": "yes",
+              "_comments": [
+                "#\tethos = random"
+              ]
+            },
+            "every_system": {
+              "limit": {
+                "exists": "starbase",
+                "owner": {
+                  "is_same_value": "root"
+                }
+              },
+              "starbase": {
+                "set_starbase_size": "starbase_citadel",
+                "set_starbase_module": {
+                  "set_starbase_module": {
+                    "set_starbase_module": {
+                      "set_starbase_module": {
+                        "set_starbase_module": {
+                          "set_starbase_module": {
+                            "while": {
+                              "count": "10",
+                              "create_fallen_empire_platform": "yes"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 1815
+  },
+  "create_fallen_empire_planet": {
+    "create_fallen_empire_planet": {
+      "set_planet_flag": "fallen_empire_world",
+      "if": {
+        "limit": {
+          "root": {},
+          "add_building": "building_ancient_control_center"
+        },
+        "if": {
+          "limit": {
+            "root": {},
+            "add_building": "building_ancient_hive_capital"
+          },
+          "else": {
+            "add_building": "building_fe_security_2"
+          },
+          "add_building": "building_fe_administration_hive_2",
+          "if": {
+            "limit": {
+              "is_planet_class": "pc_city"
+            },
+            "while": {
+              "limit": {},
+              "random_list": {
+                "3": {
+                  "1": {
+                    "1": {
+                      "1": {
+                        "1": {}
+                      }
+                    },
+                    "else_if": {
+                      "limit": {
+                        "is_planet_class": "pc_ringworld_habitable"
+                      },
+                      "while": {
+                        "limit": {},
+                        "random_list": {
+                          "3": {
+                            "1": {
+                              "1": {
+                                "1": {}
+                              }
+                            },
+                            "else_if": {
+                              "limit": {
+                                "is_planet_class": "pc_hive"
+                              },
+                              "while": {
+                                "limit": {},
+                                "random_list": {
+                                  "3": {
+                                    "1": {
+                                      "1": {
+                                        "1": {}
+                                      }
+                                    },
+                                    "else_if": {
+                                      "limit": {
+                                        "is_planet_class": "pc_machine"
+                                      },
+                                      "while": {
+                                        "limit": {},
+                                        "random_list": {
+                                          "3": {
+                                            "1": {
+                                              "1": {
+                                                "1": {}
+                                              }
+                                            },
+                                            "while": {
+                                              "count": "20",
+                                              "random_list": {
+                                                "1": {
+                                                  "modifier": {
+                                                    "factor": "0",
+                                                    "exists": "owner",
+                                                    "owner": {
+                                                      "NOT": {}
+                                                    },
+                                                    "create_army": {
+                                                      "name": "random",
+                                                      "owner": "root",
+                                                      "species": "root",
+                                                      "type": "psionic_army"
+                                                    }
+                                                  },
+                                                  "1": {
+                                                    "modifier": {
+                                                      "factor": "0",
+                                                      "exists": "owner",
+                                                      "owner": {
+                                                        "NOT": {}
+                                                      },
+                                                      "create_army": {
+                                                        "name": "random",
+                                                        "owner": "root",
+                                                        "species": "root",
+                                                        "type": "gene_warrior_army"
+                                                      }
+                                                    },
+                                                    "1": {
+                                                      "modifier": {
+                                                        "factor": "0",
+                                                        "exists": "owner",
+                                                        "owner": {
+                                                          "OR": {
+                                                            "has_tradition": "tr_psionics_finish",
+                                                            "is_machine_empire": "yes"
+                                                          }
+                                                        }
+                                                      },
+                                                      "create_army": {
+                                                        "name": "random",
+                                                        "owner": "root",
+                                                        "species": "root",
+                                                        "type": "xenomorph_army"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "remove_all_districts": "yes"
+        }
+      },
+      "remove_all_buildings": "yes"
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 2065
+  },
+  "create_fallen_empire_cosmogenesis_fleet": {
+    "create_fallen_empire_cosmogenesis_fleet": {
+      "owner": {
+        "create_leader": {
+          "class": "commander",
+          "species": "owner_main_species",
+          "name": "random",
+          "skill": "10",
+          "leader_age_min": "25",
+          "leader_age_max": "45"
+        }
+      },
+      "create_fleet": {
+        "effect": {
+          "set_owner": "root",
+          "while": {
+            "count": "36",
+            "create_fallen_empire_small_ship": "yes"
+          },
+          "random_list": {
+            "25": {
+              "set_location": {
+                "target": "root.capital_scope",
+                "distance": "75",
+                "angle": "random"
+              }
+            }
+          }
+        }
+      },
+      "last_created_fleet": {}
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 2308
+  },
+  "create_fallen_empire_cosmogenesis_navy": {
+    "create_fallen_empire_cosmogenesis_navy": {
+      "create_fallen_empire_cosmogenesis_fleet": "yes",
+      "random": {
+        "chance": "75",
+        "create_fleet": {
+          "effect": {
+            "set_owner": "root",
+            "create_fallen_empire_titan": "yes",
+            "set_location": {
+              "target": "root.capital_scope",
+              "distance": "20",
+              "angle": "random"
+            }
+          }
+        }
+      },
+      "if": {
+        "limit": {
+          "host_has_dlc": "Apocalypse"
+        },
+        "random": {
+          "chance": "75",
+          "create_fleet": {
+            "effect": {
+              "set_owner": "root",
+              "create_fallen_empire_colossus": "yes",
+              "set_location": {
+                "target": "root.capital_scope",
+                "distance": "30",
+                "angle": "random"
+              }
+            }
+          }
+        }
+      },
+      "create_fleet": {
+        "effect": {
+          "set_owner": "root",
+          "create_fallen_empire_construction_ship": "yes",
+          "set_location": {
+            "target": "root.capital_scope",
+            "distance": "100",
+            "angle": "random"
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 2365
+  },
+  "create_army_on_planet": {
+    "create_army_on_planet": {
+      "$PLANET$": {
+        "create_army": {
+          "owner": "$OWNER$",
+          "type": "$TYPE$",
+          "species": "$SPECIES$"
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 2458
+  },
+  "create_individual_machine_country": {
+    "create_individual_machine_country": {
+      "create_country": {
+        "name": "random",
+        "type": "default",
+        "species": "last_created_species",
+        "ignore_initial_colony_error": "yes",
+        "day_zero_contact": "no",
+        "ethos": {
+          "authority": "auth_dictatorial",
+          "civics": "random",
+          "flag": "random",
+          "origin": "origin_separatists",
+          "effect": {
+            "modify_species": {
+              "species": "this",
+              "add_trait": "trait_machine_unit",
+              "add_traits_at_start_of_list": "yes"
+            },
+            "save_event_target_as": "current_uprising"
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 2468
+  },
+  "set_theses_flags": {
+    "set_theses_flags": {
+      "if": {
+        "limit": {
+          "has_country_flag": "cosmogenesis_has_done_a_thesis_2",
+          "NOT": {},
+          "remove_country_flag": "cosmogenesis_has_done_a_thesis_2",
+          "set_country_flag": "cosmogenesis_has_done_a_thesis_3"
+        },
+        "else_if": {
+          "limit": {
+            "has_country_flag": "cosmogenesis_has_done_a_thesis",
+            "NOT": {},
+            "remove_country_flag": "cosmogenesis_has_done_a_thesis",
+            "set_country_flag": "cosmogenesis_has_done_a_thesis_2"
+          },
+          "else_if": {
+            "limit": {
+              "NOR": {
+                "has_country_flag": "cosmogenesis_has_done_a_thesis_3"
+              }
+            },
+            "set_country_flag": "cosmogenesis_has_done_a_thesis"
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 2491
+  },
+  "technological_gifts_of_the_synth_queen_effect": {
+    "technological_gifts_of_the_synth_queen_effect": {
+      "if": {
+        "limit": {
+          "NAND": {
+            "has_technology": "tech_mega_engineering"
+          }
+        },
+        "locked_random_list": {
+          "1": {
+            "modifier": {
+              "factor": "0",
+              "has_technology": "tech_mega_engineering"
+            },
+            "add_research_option": "tech_mega_engineering",
+            "add_tech_progress": {
+              "tech": "tech_mega_engineering",
+              "progress": "0.50"
+            }
+          }
+        }
+      },
+      "else_if": {
+        "limit": {
+          "NOT": {},
+          "set_country_flag": "synth_queen_knowledge",
+          "add_research_option": "tech_synth_queen_knowledge",
+          "add_tech_progress": {
+            "tech": "tech_synth_queen_knowledge",
+            "progress": "0.50"
+          }
+        },
+        "else_if": {
+          "limit": {
+            "has_technology": "tech_synth_queen_knowledge"
+          },
+          "locked_random_list": {
+            "10": {
+              "add_random_research_option": {
+                "add_progress": "0.50",
+                "area": "society",
+                "ignore_prereqs": "no",
+                "fail_effects": {
+                  "add_monthly_resource_mult": {
+                    "resource": "society_research",
+                    "value": "@tier5researchreward",
+                    "min": "@tier5researchmin",
+                    "max": "@tier5researchmax"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 2520
+  },
+  "defeating_synth_queen_rewards": {
+    "defeating_synth_queen_rewards": {
+      "add_modifier": {
+        "modifier": "cetana_defeated",
+        "days": "3600"
+      },
+      "add_monthly_resource_mult": {
+        "resource": "unity",
+        "value": "@tier5unityreward"
+      },
+      "hidden_effect": {
+        "end_event_chain": "the_synth_queen_history_chain",
+        "if": {
+          "limit": {
+            "has_origin": "origin_cybernetic_creed"
+          },
+          "set_country_flag": "footsteps_of_the_prophet_achievement"
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 2726
+  },
+  "set_random_cybernetic_portrait_effect": {
+    "set_random_cybernetic_portrait_effect": {
+      "random_list": {
+        "1": {
+          "1": {
+            "1": {
+              "1": {
+                "1": {
+                  "1": {
+                    "1": {
+                      "1": {
+                        "1": {
+                          "1": {
+                            "1": {
+                              "1": {
+                                "1": {}
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 2747
+  },
+  "save_nanotech_subsume_target": {
+    "save_nanotech_subsume_target": {
+      "random_system_within_border": {
+        "limit": {
+          "is_capital_system": "yes"
+        },
+        "random_system_planet": {
+          "limit": {
+            "is_star": "no",
+            "is_colonizable": "no",
+            "is_capital": "no",
+            "is_artificial": "no",
+            "is_astral_scar": "no",
+            "is_asteroid": "no"
+          },
+          "set_planet_flag": "nanotech_subsume_target"
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 2765
+  },
+  "create_synth_species_effect": {
+    "create_synth_species_effect": {
+      "if": {
+        "limit": {
+          "NOT": {
+            "exists": "event_target:synthspecies@root.owner"
+          }
+        },
+        "owner_main_species": {
+          "create_species": {
+            "is_mod": "yes",
+            "name": "this",
+            "plural": "this",
+            "class": "ROBOT",
+            "portrait": "default_robot",
+            "traits": {
+              "trait": "trait_mechanical"
+            },
+            "can_be_modified": "this",
+            "homeworld": "this",
+            "namelist": "this",
+            "gender": "this",
+            "effect": {
+              "set_synth_origin_traits_effect": "yes",
+              "set_synth_or_robot_portrait_effect": "yes",
+              "save_global_event_target_as": "synthspecies@root.owner"
+            }
+          }
+        },
+        "owner": {
+          "if": {
+            "limit": {
+              "OR": {
+                "has_policy_flag": "ai_outlawed"
+              }
+            },
+            "set_policy": {
+              "policy": "artificial_intelligence_policy",
+              "option": "ai_full_rights",
+              "cooldown": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 2785
+  },
+  "set_synth_origin_traits_effect": {
+    "set_synth_origin_traits_effect": {
+      "prev": {
+        "switch": {
+          "trigger": "has_trait",
+          "trait_survivor": {
+            "trait_void_dweller_1": {
+              "trait_aquatic": {
+                "trait_cave_dweller": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 2841
+  },
+  "set_synth_or_robot_portrait_effect": {
+    "set_synth_or_robot_portrait_effect": {
+      "if": {
+        "limit": {
+          "prev": {},
+          "change_species_characteristics": {},
+          "else_if": {
+            "limit": {
+              "prev": {},
+              "change_species_characteristics": {},
+              "else_if": {
+                "limit": {
+                  "prev": {},
+                  "change_species_characteristics": {},
+                  "else_if": {
+                    "limit": {
+                      "prev": {},
+                      "change_species_characteristics": {},
+                      "else_if": {
+                        "limit": {
+                          "prev": {},
+                          "change_species_characteristics": {},
+                          "else_if": {
+                            "limit": {
+                              "prev": {},
+                              "change_species_characteristics": {},
+                              "else_if": {
+                                "limit": {
+                                  "prev": {},
+                                  "change_species_characteristics": {},
+                                  "else_if": {
+                                    "limit": {
+                                      "prev": {},
+                                      "change_species_characteristics": {},
+                                      "else_if": {
+                                        "limit": {
+                                          "prev": {},
+                                          "change_species_characteristics": {},
+                                          "else_if": {
+                                            "limit": {
+                                              "prev": {},
+                                              "change_species_characteristics": {},
+                                              "else_if": {
+                                                "limit": {
+                                                  "prev": {},
+                                                  "change_species_characteristics": {},
+                                                  "else_if": {
+                                                    "limit": {
+                                                      "prev": {},
+                                                      "change_species_characteristics": {},
+                                                      "else_if": {
+                                                        "limit": {
+                                                          "prev": {},
+                                                          "change_species_characteristics": {},
+                                                          "else_if": {
+                                                            "limit": {
+                                                              "prev": {},
+                                                              "change_species_characteristics": {},
+                                                              "else_if": {
+                                                                "limit": {
+                                                                  "prev": {},
+                                                                  "change_species_characteristics": {},
+                                                                  "else_if": {
+                                                                    "limit": {
+                                                                      "prev": {},
+                                                                      "change_species_characteristics": {},
+                                                                      "else_if": {
+                                                                        "limit": {
+                                                                          "prev": {},
+                                                                          "change_species_characteristics": {},
+                                                                          "else_if": {
+                                                                            "limit": {
+                                                                              "prev": {},
+                                                                              "change_species_characteristics": {},
+                                                                              "else_if": {
+                                                                                "limit": {
+                                                                                  "prev": {},
+                                                                                  "change_species_characteristics": {},
+                                                                                  "else_if": {
+                                                                                    "limit": {
+                                                                                      "prev": {},
+                                                                                      "change_species_characteristics": {},
+                                                                                      "else_if": {
+                                                                                        "limit": {
+                                                                                          "prev": {},
+                                                                                          "change_species_characteristics": {}
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 2853
+  },
+  "doomclock_increase_small": {
+    "doomclock_increase_small": {
+      "event_target:synth_queen_country_global": {
+        "random_situation": {
+          "limit": {
+            "is_situation_type": "situation_synth_queen_doomclock"
+          },
+          "if": {
+            "limit": {
+              "check_galaxy_setup_value": {},
+              "add_situation_progress": "1.5"
+            },
+            "else_if": {
+              "limit": {
+                "check_galaxy_setup_value": {
+                  "check_galaxy_setup_value": {},
+                  "add_situation_progress": "3"
+                },
+                "else_if": {
+                  "limit": {
+                    "check_galaxy_setup_value": {
+                      "check_galaxy_setup_value": {},
+                      "add_situation_progress": "6"
+                    },
+                    "else_if": {
+                      "limit": {
+                        "check_galaxy_setup_value": {
+                          "check_galaxy_setup_value": {},
+                          "add_situation_progress": "9"
+                        },
+                        "else_if": {
+                          "limit": {
+                            "check_galaxy_setup_value": {},
+                            "add_situation_progress": "12"
+                          },
+                          "else": {
+                            "add_situation_progress": "3"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 2982
+  },
+  "doomclock_increase_large": {
+    "doomclock_increase_large": {
+      "event_target:synth_queen_country_global": {
+        "random_situation": {
+          "limit": {
+            "is_situation_type": "situation_synth_queen_doomclock"
+          },
+          "if": {
+            "limit": {
+              "check_galaxy_setup_value": {},
+              "add_situation_progress": "2.5"
+            },
+            "else_if": {
+              "limit": {
+                "check_galaxy_setup_value": {
+                  "check_galaxy_setup_value": {},
+                  "add_situation_progress": "5"
+                },
+                "else_if": {
+                  "limit": {
+                    "check_galaxy_setup_value": {
+                      "check_galaxy_setup_value": {},
+                      "add_situation_progress": "10"
+                    },
+                    "else_if": {
+                      "limit": {
+                        "check_galaxy_setup_value": {
+                          "check_galaxy_setup_value": {},
+                          "add_situation_progress": "15"
+                        },
+                        "else_if": {
+                          "limit": {
+                            "check_galaxy_setup_value": {},
+                            "add_situation_progress": "20"
+                          },
+                          "else": {
+                            "add_situation_progress": "5"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 3028
+  },
+  "arc_welders_start_effect": {
+    "arc_welders_start_effect": {
+      "save_event_target_as": "arc_welders_empire",
+      "capital_scope.solar_system": {
+        "_comments": [
+          "# Prefer existing molten planets...",
+          "# If none exist, find a toxic or barren planet instead...",
+          "# Failing that, resort to a molten, toxic or barren moon"
+        ],
+        "if": {
+          "limit": {
+            "any_system_planet": {
+              "is_moon": "no",
+              "is_planet_class": "pc_molten",
+              "NOT": {
+                "has_deposit_for": "shipclass_research_station"
+              }
+            }
+          },
+          "random_system_planet": {
+            "limit": {
+              "is_moon": "no",
+              "is_planet_class": "pc_molten",
+              "NOT": {
+                "has_deposit_for": "shipclass_research_station"
+              }
+            },
+            "save_event_target_as": "arc_furnace_site"
+          }
+        },
+        "else_if": {
+          "limit": {
+            "any_system_planet": {
+              "is_moon": "no",
+              "OR": {
+                "is_planet_class": "pc_barren"
+              },
+              "NOT": {
+                "has_deposit_for": "shipclass_research_station"
+              }
+            }
+          },
+          "random_system_planet": {
+            "limit": {
+              "is_moon": "no",
+              "OR": {
+                "is_planet_class": "pc_barren"
+              },
+              "NOT": {
+                "has_deposit_for": "shipclass_research_station"
+              }
+            },
+            "change_pc": "pc_molten",
+            "save_event_target_as": "arc_furnace_site"
+          }
+        },
+        "else": {
+          "random_system_planet": {
+            "limit": {
+              "OR": {
+                "is_planet_class": "pc_barren_cold"
+              },
+              "NOT": {
+                "has_deposit_for": "shipclass_research_station"
+              }
+            },
+            "change_pc": "pc_molten",
+            "save_event_target_as": "arc_furnace_site"
+          }
+        },
+        "spawn_megastructure": {
+          "type": "orbital_arc_furnace_1",
+          "owner": "event_target:arc_welders_empire",
+          "planet": "event_target:arc_furnace_site",
+          "coords_from": "event_target:arc_furnace_site",
+          "graphical_culture": "event_target:arc_welders_empire"
+        },
+        "closest_system": {
+          "limit": {
+            "OR": {
+              "has_star_flag": "neighbor_t2_first_colony"
+            }
+          },
+          "max_steps": "3",
+          "origin_spawn_system_effect": {
+            "add_extra_hyperlane_to_spawned_system_effect": "yes"
+          }
+        },
+        "country_event": {
+          "id": "machine_age.3410\t# Need to set the variable for number of arc furnaces constructed",
+          "days": "1"
+        },
+        "give_technology": {
+          "tech": "tech_orbital_arc_furnace",
+          "message": "no"
+        },
+        "capital_scope": {
+          "set_planet_size": "15",
+          "while": {
+            "limit": {
+              "has_district": "district_mining"
+            },
+            "remove_district": "district_mining",
+            "add_district_and_planet_size_if_needed_effect": {
+              "district": "district_generator"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 3074
+  },
+  "obsessional_directive_start_effect": {
+    "obsessional_directive_start_effect": {
+      "capital_scope.solar_system": {
+        "random_system_planet": {
+          "limit": {
+            "colonizable_planet": "no",
+            "is_star": "no",
+            "NOR": {
+              "is_planet_class": "pc_gas_giant",
+              "is_terraforming_candidate": "yes",
+              "has_deposit_for": "shipclass_research_station"
+            }
+          },
+          "add_deposit": "d_consumer_goods_obsessional_directive",
+          "if": {
+            "limit": {
+              "NOT": {
+                "has_modifier": "obsessional_directive_mod"
+              }
+            },
+            "hidden_effect": {
+              "add_modifier": {
+                "modifier": "obsessional_directive_mod",
+                "days": "-1"
+              }
+            }
+          }
+        }
+      },
+      "capital_scope": {
+        "if": {
+          "limit": {
+            "is_planet_class": "pc_habitat"
+          },
+          "add_district": {
+            "district_type": "district_hab_industrial",
+            "ignore_cap": "yes"
+          }
+        },
+        "else": {
+          "add_district_and_planet_size_if_needed_effect": {
+            "district": "district_industrial"
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 3198
+  },
+  "doomclock_reveal": {
+    "doomclock_reveal": {
+      "if": {
+        "limit": {
+          "NOT": {},
+          "set_country_flag": "synth_queen_player_can_see_doomclock"
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 3244
+  },
+  "synth_queen_progress_situation": {
+    "synth_queen_progress_situation": {
+      "random_situation": {
+        "limit": {
+          "is_situation_type": "situation_synth_queen_player_facing"
+        },
+        "save_event_target_as": "queen_situation"
+      },
+      "_comments": [
+        "# This looks ugly but will make the tooltip look tidy and clean"
+      ],
+      "event_target:queen_situation": {
+        "add_situation_progress": "$SCORE$"
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 3253
+  },
+  "synth_queen_give_storm_project": {
+    "synth_queen_give_storm_project": {
+      "if": {
+        "limit": {
+          "NOT": {},
+          "set_country_flag": "synth_queen_started_storm_project",
+          "enable_special_project": {
+            "name": "THE_SYNTH_QUEENS_STORM",
+            "owner": "ROOT"
+          }
+        },
+        "else_if": {
+          "limit": {
+            "has_country_flag": "synth_queen_researched_first_storm_project"
+          },
+          "enable_special_project": {
+            "name": "THE_SYNTH_QUEENS_STORM_2",
+            "owner": "ROOT"
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 3266
+  },
+  "synth_queen_raid_projects": {
+    "synth_queen_raid_projects": {
+      "every_system": {
+        "limit": {
+          "has_star_flag": "synth_queen_outpost"
+        },
+        "enable_special_project": {
+          "name": "THE_SYNTH_QUEENS_OUTPOST_AMBUSH",
+          "owner": "prev",
+          "location": "this"
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 3290
+  },
+  "synth_queen_fe_war": {
+    "synth_queen_fe_war": {
+      "if": {
+        "limit": {
+          "any_country": {
+            "OR": {
+              "is_country_type": "awakened_fallen_empire"
+            }
+          }
+        },
+        "every_country": {
+          "limit": {
+            "OR": {
+              "is_country_type": "awakened_fallen_empire"
+            }
+          },
+          "declare_war": {
+            "target": "event_target:synth_queen_country_global",
+            "name": "cetana_war",
+            "attacker_war_goal": "wg_end_threat"
+          }
+        },
+        "awaken_guardians_of_the_galaxy": "yes"
+      },
+      "else": {
+        "country_event": {}
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 3303
+  },
+  "synth_queen_scion_warning": {
+    "synth_queen_scion_warning": {
+      "_comments": [
+        "# If playing Scion, FE warn you instead of dragging you into the war"
+      ],
+      "if": {
+        "limit": {
+          "any_playable_country": {
+            "has_origin": "origin_scion",
+            "exists": "overlord",
+            "overlord": {
+              "has_country_flag": "scion_master"
+            }
+          }
+        },
+        "every_playable_country": {
+          "limit": {
+            "has_origin": "origin_scion",
+            "exists": "overlord",
+            "overlord": {
+              "has_country_flag": "scion_master"
+            }
+          },
+          "_comments": [
+            "# Scion receive a message changing their agreement terms"
+          ],
+          "country_event": {}
+        },
+        "else": {
+          "synth_queen_fe_war": "yes"
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 3333
+  },
+  "synth_queen_details_reveal": {
+    "synth_queen_details_reveal": {
+      "if": {
+        "limit": {
+          "NOT": {},
+          "set_country_flag": "synth_queen_player_can_see_name"
+        },
+        "if": {
+          "limit": {
+            "NOT": {},
+            "set_country_flag": "synth_queen_player_can_see_flag"
+          },
+          "if": {
+            "limit": {
+              "NOT": {},
+              "set_country_flag": "synth_queen_player_can_see_opinion"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 3362
+  },
+  "nanotech_deposit_nanite_generation": {
+    "nanotech_deposit_nanite_generation": {
+      "event_target:nanotech_country": {
+        "if": {
+          "limit": {
+            "NOT": {
+              "has_country_flag": "notified_of_nanites_payoff"
+            }
+          },
+          "create_message": {
+            "type": "MESSAGE_NANOTECH_BOON",
+            "localization": "MESSAGE_NANOTECH_BOON_DESC",
+            "days": "30",
+            "target": "prev"
+          },
+          "set_timed_country_flag": {
+            "flag": "notified_of_nanites_payoff",
+            "days": "60"
+          }
+        }
+      },
+      "random_list": {
+        "1": {
+          "modifier": {
+            "factor": "0",
+            "NOT": {},
+            "event_target:nanotech_country": {
+              "add_resource": {
+                "nanites": "1024"
+              }
+            }
+          },
+          "1": {
+            "modifier": {
+              "factor": "0",
+              "NOT": {},
+              "event_target:nanotech_country": {
+                "add_resource": {
+                  "nanites": "2048"
+                }
+              }
+            },
+            "1": {
+              "modifier": {
+                "factor": "0",
+                "NOT": {},
+                "event_target:nanotech_country": {
+                  "add_resource": {
+                    "nanites": "4096"
+                  }
+                }
+              },
+              "1": {
+                "modifier": {
+                  "factor": "0",
+                  "NOT": {},
+                  "event_target:nanotech_country": {
+                    "add_resource": {
+                      "nanites": "8192"
+                    }
+                  }
+                },
+                "1": {
+                  "modifier": {
+                    "factor": "0",
+                    "NOT": {},
+                    "event_target:nanotech_country": {
+                      "add_resource": {
+                        "nanites": "16384"
+                      }
+                    }
+                  },
+                  "1": {
+                    "modifier": {
+                      "factor": "0",
+                      "NOT": {},
+                      "event_target:nanotech_country": {
+                        "add_resource": {
+                          "nanites": "32768"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 3383
+  },
+  "get_cetana_face": {
+    "get_cetana_face": {
+      "species": {
+        "switch": {
+          "trigger": "is_species_class",
+          "MAM": {
+            "event_target:cetana_mammalian": {
+              "save_event_target_as": "cetana_face"
+            }
+          },
+          "HUM": {
+            "event_target:cetana_mammalian": {
+              "save_event_target_as": "cetana_face"
+            }
+          },
+          "REP": {
+            "event_target:cetana_reptilian": {
+              "save_event_target_as": "cetana_face"
+            }
+          },
+          "AVI": {
+            "event_target:cetana_avian": {
+              "save_event_target_as": "cetana_face"
+            }
+          },
+          "ART": {
+            "event_target:cetana_molluscoid": {
+              "save_event_target_as": "cetana_face"
+            }
+          },
+          "MOL": {
+            "event_target:cetana_molluscoid": {
+              "save_event_target_as": "cetana_face"
+            }
+          },
+          "TOX": {
+            "event_target:cetana_molluscoid": {
+              "save_event_target_as": "cetana_face"
+            }
+          },
+          "FUN": {
+            "event_target:cetana_plantoid": {
+              "save_event_target_as": "cetana_face"
+            }
+          },
+          "PLANT": {
+            "event_target:cetana_plantoid": {
+              "save_event_target_as": "cetana_face"
+            }
+          },
+          "LITHOID": {
+            "event_target:cetana_lithoid": {
+              "save_event_target_as": "cetana_face"
+            }
+          },
+          "AQUATIC": {
+            "event_target:cetana_aquatic": {
+              "save_event_target_as": "cetana_face"
+            }
+          },
+          "MACHINE": {
+            "event_target:cetana_robot": {
+              "save_event_target_as": "cetana_face"
+            }
+          },
+          "ROBOT": {
+            "event_target:cetana_robot": {
+              "save_event_target_as": "cetana_face"
+            }
+          },
+          "default": {
+            "event_target:cetana_mammalian": {
+              "save_event_target_as": "cetana_face"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 3473
+  },
+  "save_deposits": {
+    "save_deposits": {
+      "if": {
+        "limit": {
+          "has_deposit": "d_virtual_power_tiny"
+        },
+        "set_planet_flag": "d_virtual_power_tiny"
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 3551
+  },
+  "restore_saved_deposits": {
+    "restore_saved_deposits": {
+      "if": {
+        "limit": {
+          "has_planet_flag": "d_virtual_power_tiny"
+        },
+        "add_deposit": "d_virtual_power_tiny",
+        "remove_planet_flag": "d_virtual_power_tiny"
+      }
+    },
+    "_source_file": "02_machine_age_effects.txt",
+    "_line_number": 3620
+  }
+}

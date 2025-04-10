@@ -1,0 +1,58 @@
+{
+  "central_crystal_init_01": {
+    "central_crystal_init_01": {
+      "class": "sc_pulsar",
+      "name": "NAME_The_Outer_Gate",
+      "usage": "misc_system_init",
+      "usage_odds": "0",
+      "asteroid_belt": {
+        "type": "icy_asteroid_belt",
+        "radius": "240"
+      },
+      "flags": {
+        "planet": {
+          "count": "2",
+          "class": "pc_ice_asteroid",
+          "orbit_distance": {
+            "orbit_angle": {
+              "init_effect": {
+                "clear_deposits": "yes"
+              }
+            },
+            "planet": {
+              "name": "NAME_Snow_Crystal",
+              "class": "pc_frozen",
+              "orbit_distance": "5",
+              "orbit_angle": {
+                "size": "20",
+                "has_ring": "no",
+                "flags": {
+                  "init_effect": {
+                    "clear_deposits": "yes",
+                    "central_crystal_country_spawn_effect": "yes"
+                  }
+                },
+                "init_effect": {
+                  "create_ambient_object": {
+                    "type": "central_crystal_gateway",
+                    "location": "this"
+                  },
+                  "last_created_ambient_object": {
+                    "set_location": {
+                      "target": "prev",
+                      "distance": "360",
+                      "angle": "275"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "change_orbit": "45"
+      }
+    },
+    "_source_file": "central_crystal_initializers.txt",
+    "_line_number": 15
+  }
+}

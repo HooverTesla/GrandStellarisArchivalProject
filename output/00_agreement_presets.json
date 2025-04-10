@@ -1,0 +1,404 @@
+{
+  "preset_vassal": {
+    "preset_vassal": {
+      "icon": "GFX_diplomacy_status_is_vassal",
+      "term_data": {
+        "discrete_terms": {}
+      },
+      "overlord_weight": {
+        "base": "100"
+      },
+      "subject_weight": {
+        "base": "25"
+      },
+      "potential": {
+        "from": {
+          "NOR": {
+            "is_megacorp": "yes",
+            "is_country_type": "awakened_fallen_empire",
+            "has_civic": "civic_inwards_perfection"
+          }
+        },
+        "NOT": {
+          "OR": {
+            "from": {
+              "tech_unlocked_ratio": {
+                "who": "from",
+                "ratio >": "@protectorate_tech_threshold"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_agreement_presets.txt",
+    "_line_number": 38
+  },
+  "preset_subsidiary": {
+    "preset_subsidiary": {
+      "icon": "GFX_diplomacy_status_is_subsidiary",
+      "term_data": {
+        "discrete_terms": {},
+        "resource_terms": {}
+      },
+      "overlord_weight": {
+        "base": "100"
+      },
+      "subject_weight": {
+        "base": "50"
+      },
+      "potential": {
+        "from": {
+          "tech_unlocked_ratio": {
+            "who": "from",
+            "ratio >": "@protectorate_tech_threshold"
+          }
+        }
+      }
+    },
+    "_source_file": "00_agreement_presets.txt",
+    "_line_number": 108
+  },
+  "preset_tributary": {
+    "preset_tributary": {
+      "icon": "GFX_diplomacy_status_is_tributary",
+      "term_data": {
+        "discrete_terms": {},
+        "resource_terms": {}
+      },
+      "overlord_weight": {
+        "base": "90"
+      },
+      "subject_weight": {
+        "base": "50"
+      },
+      "potential": {
+        "from": {
+          "NOR": {
+            "is_megacorp": "yes",
+            "is_country_type": "awakened_fallen_empire"
+          }
+        },
+        "tech_unlocked_ratio": {
+          "who": "from",
+          "ratio >": "@protectorate_tech_threshold"
+        }
+      }
+    },
+    "_source_file": "00_agreement_presets.txt",
+    "_line_number": 173
+  },
+  "preset_bulwark": {
+    "preset_bulwark": {
+      "specialist_type": "specialist_bulwark",
+      "term_data": {
+        "resource_terms": {},
+        "discrete_terms": {}
+      },
+      "overlord_weight": {
+        "base": "@specialist_base_acceptance_value",
+        "modifier": {
+          "factor": "0.5",
+          "has_specialist_subject_type": {
+            "NOT": {},
+            "modifier": {
+              "factor": "1.5",
+              "FROM": {},
+              "modifier": {
+                "factor": "1.2"
+              }
+            },
+            "subject_weight": {
+              "base": "25",
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_pacifist": "yes"
+              }
+            },
+            "potential": {
+              "has_overlord_dlc": "yes",
+              "NOR": {
+                "has_civic": "civic_inwards_perfection",
+                "FROM": {},
+                "OR": {
+                  "FROM": {
+                    "is_specialist_subject_type": {
+                      "has_country_flag": "specialistion_subject_conversion_flag",
+                      "tech_unlocked_ratio": {
+                        "who": "from",
+                        "ratio >": "@protectorate_tech_threshold"
+                      },
+                      "has_origin": "origin_enlightened"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_agreement_presets.txt",
+    "_line_number": 244
+  },
+  "preset_scholarium": {
+    "preset_scholarium": {
+      "specialist_type": "specialist_scholarium",
+      "term_data": {
+        "discrete_terms": {}
+      },
+      "overlord_weight": {
+        "base": "@specialist_base_acceptance_value",
+        "modifier": {
+          "factor": "0.5",
+          "has_specialist_subject_type": {
+            "NOT": {},
+            "modifier": {
+              "factor": "1.5",
+              "FROM": {}
+            },
+            "subject_weight": {
+              "base": "@specialist_subject_base_acceptance_value",
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_spiritualist": "yes"
+              }
+            },
+            "potential": {
+              "has_overlord_dlc": "yes",
+              "NOR": {
+                "has_civic": "civic_inwards_perfection",
+                "FROM": {},
+                "OR": {
+                  "FROM": {
+                    "is_specialist_subject_type": {
+                      "has_country_flag": "specialistion_subject_conversion_flag",
+                      "tech_unlocked_ratio": {
+                        "who": "from",
+                        "ratio >": "@protectorate_tech_threshold"
+                      },
+                      "has_origin": "origin_enlightened"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_agreement_presets.txt",
+    "_line_number": 345
+  },
+  "preset_prospectorium": {
+    "preset_prospectorium": {
+      "specialist_type": "specialist_prospectorium",
+      "term_data": {
+        "resource_terms": {},
+        "discrete_terms": {}
+      },
+      "overlord_weight": {
+        "base": "@specialist_base_acceptance_value",
+        "modifier": {
+          "factor": "0.5",
+          "has_specialist_subject_type": {
+            "NOT": {},
+            "modifier": {
+              "factor": "1.5",
+              "FROM": {}
+            },
+            "subject_weight": {
+              "base": "@specialist_subject_base_acceptance_value",
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_militarist": "yes"
+              }
+            },
+            "potential": {
+              "has_overlord_dlc": "yes",
+              "NOR": {
+                "has_civic": "civic_inwards_perfection",
+                "FROM": {},
+                "OR": {
+                  "FROM": {
+                    "is_specialist_subject_type": {
+                      "has_country_flag": "specialistion_subject_conversion_flag",
+                      "tech_unlocked_ratio": {
+                        "who": "from",
+                        "ratio >": "@protectorate_tech_threshold"
+                      },
+                      "has_origin": "origin_enlightened"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_agreement_presets.txt",
+    "_line_number": 436
+  },
+  "preset_release_sector": {
+    "preset_release_sector": {
+      "term_data": {
+        "has_cooldown_on_first_renegotiation": "no",
+        "forced_initial_loyalty": "50"
+      },
+      "hidden": "yes",
+      "should_ai_use_for_proposals": "no"
+    },
+    "_source_file": "00_agreement_presets.txt",
+    "_line_number": 530
+  },
+  "preset_protectorate": {
+    "preset_protectorate": {
+      "icon": "GFX_diplomacy_status_is_protectorate",
+      "term_data": {
+        "discrete_terms": {}
+      },
+      "potential": {
+        "from": {
+          "NOT": {
+            "has_origin": "origin_imperial_vassal_overlord"
+          },
+          "is_country_type": "default"
+        },
+        "has_been_declared_crisis": "no",
+        "NOT": {
+          "tech_unlocked_ratio": {
+            "who": "from"
+          }
+        },
+        "overlord_weight": {
+          "base": "200"
+        },
+        "subject_weight": {
+          "base": "50"
+        }
+      }
+    },
+    "_source_file": "00_agreement_presets.txt",
+    "_line_number": 545
+  },
+  "preset_scion": {
+    "preset_scion": {
+      "icon": "GFX_diplomacy_status_is_scion",
+      "term_data": {
+        "discrete_terms": {}
+      },
+      "potential": {
+        "any_agreement": {
+          "agreement_preset": "preset_scion"
+        },
+        "from": {
+          "OR": {
+            "is_country_type": "awakened_fallen_empire"
+          }
+        }
+      }
+    },
+    "_source_file": "00_agreement_presets.txt",
+    "_line_number": 605
+  },
+  "preset_dominion": {
+    "preset_dominion": {
+      "icon": "GFX_diplomacy_status_is_dominion",
+      "term_data": {
+        "discrete_terms": {},
+        "resource_terms": {}
+      },
+      "potential": {
+        "from": {
+          "is_country_type": "awakened_fallen_empire",
+          "has_ethic": "ethic_fanatic_spiritualist"
+        }
+      }
+    },
+    "_source_file": "00_agreement_presets.txt",
+    "_line_number": 671
+  },
+  "preset_satellite": {
+    "preset_satellite": {
+      "icon": "GFX_diplomacy_status_is_satellite",
+      "term_data": {
+        "discrete_terms": {},
+        "resource_terms": {}
+      },
+      "potential": {
+        "from": {
+          "is_country_type": "awakened_fallen_empire",
+          "has_ethic": "ethic_fanatic_materialist"
+        }
+      }
+    },
+    "_source_file": "00_agreement_presets.txt",
+    "_line_number": 723
+  },
+  "preset_signatory": {
+    "preset_signatory": {
+      "icon": "GFX_diplomacy_status_is_signatory",
+      "term_data": {
+        "discrete_terms": {}
+      },
+      "potential": {
+        "from": {
+          "is_country_type": "awakened_fallen_empire",
+          "has_ethic": "ethic_fanatic_xenophile"
+        }
+      }
+    },
+    "_source_file": "00_agreement_presets.txt",
+    "_line_number": 775
+  },
+  "preset_thrall": {
+    "preset_thrall": {
+      "icon": "GFX_diplomacy_status_is_thrall",
+      "term_data": {
+        "discrete_terms": {},
+        "resource_terms": {}
+      },
+      "potential": {
+        "from": {
+          "is_country_type": "awakened_fallen_empire",
+          "has_ethic": "ethic_fanatic_xenophobe"
+        }
+      }
+    },
+    "_source_file": "00_agreement_presets.txt",
+    "_line_number": 821
+  },
+  "preset_satrapy": {
+    "preset_satrapy": {
+      "icon": "GFX_diplomacy_status_is_satrapy",
+      "term_data": {
+        "discrete_terms": {},
+        "resource_terms": {}
+      },
+      "potential": {
+        "from": {
+          "is_country_type": "awakened_marauders"
+        }
+      }
+    },
+    "_source_file": "00_agreement_presets.txt",
+    "_line_number": 873
+  },
+  "preset_relic_satrapy": {
+    "preset_relic_satrapy": {
+      "icon": "GFX_diplomacy_status_is_satrapy",
+      "term_data": {
+        "discrete_terms": {},
+        "resource_terms": {}
+      },
+      "potential": {
+        "from": {
+          "has_relic": "r_khans_throne"
+        }
+      }
+    },
+    "_source_file": "00_agreement_presets.txt",
+    "_line_number": 928
+  }
+}

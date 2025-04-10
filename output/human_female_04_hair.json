@@ -1,0 +1,83 @@
+{
+  "human_female_hair_04": {
+    "human_female_hair_04": {
+      "default": "gfx/models/portraits/human/human_female_hair_blonde_style_01.dds",
+      "game_setup": {
+        "default": "gfx/models/portraits/human/human_female_hair_blonde_style_01.dds"
+      },
+      "_comments": [
+        "#species scope",
+        "#pop scope",
+        "#\t\"gfx/models/portraits/human/human_female_hair_blonde_style_02.dds\"",
+        "#\t\"gfx/models/portraits/human/human_female_hair_brown_style_02.dds\"",
+        "#\t\"gfx/models/portraits/human/human_female_hair_cendre_style_02.dds\"",
+        "#\t\"gfx/models/portraits/human/human_female_hair_cendre_style_02.dds\"",
+        "#\t\"gfx/models/portraits/human/human_female_hair_red_style_02.dds\"",
+        "#leader scope"
+      ],
+      "species": {
+        "default": "gfx/models/portraits/human/human_female_hair_blonde_style_01.dds"
+      },
+      "pop": {
+        "default": "gfx/models/portraits/human/human_female_hair_blonde_style_01.dds",
+        "random": {
+          "list": {}
+        }
+      },
+      "leader": {
+        "random": {
+          "trigger": {
+            "list": {}
+          },
+          "random": {
+            "trigger": {
+              "list": {}
+            },
+            "random": {
+              "trigger": {
+                "list": {}
+              },
+              "random": {
+                "trigger": {
+                  "list": {}
+                }
+              },
+              "_comments": [
+                "#leader scope"
+              ],
+              "ruler": {
+                "random": {
+                  "trigger": {
+                    "owner": {},
+                    "list": {}
+                  },
+                  "random": {
+                    "trigger": {
+                      "owner": {},
+                      "list": {}
+                    },
+                    "random": {
+                      "trigger": {
+                        "owner": {
+                          "OR": {
+                            "has_government": "gov_stagnant_ascendancy",
+                            "has_primitive_government": "yes",
+                            "has_materialist_government": "yes",
+                            "has_pacifist_government": "yes"
+                          }
+                        }
+                      },
+                      "list": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "human_female_04_hair.txt",
+    "_line_number": 51
+  }
+}

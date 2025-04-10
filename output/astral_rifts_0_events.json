@@ -1,0 +1,116 @@
+{
+  "astral_rift_event": {
+    "astral_rift_event": {
+      "id": "astral_rift.940",
+      "title": "astral_rift.940.name",
+      "desc": {
+        "trigger": {
+          "explorer": {
+            "is_spiritualist": "yes"
+          }
+        },
+        "text": "astral_rift.940.desc.spiritualist"
+      },
+      "picture": "GFX_evt_astral_rift_vortex_eye",
+      "show_sound": "ap_rift_event_9_cosmic_calm",
+      "difficulty": "@astral_rift_transition_difficulty",
+      "astral_rift": "yes",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "AMAZING",
+        "explorer": {
+          "add_relic": "r_ever_spinning_top"
+        },
+        "finish_astral_rift": "yes"
+      }
+    },
+    "_source_file": "astral_rifts_0_events.txt",
+    "_line_number": 3735
+  },
+  "country_event": {
+    "country_event": {
+      "id": "astral_rift.845",
+      "title": "astral_rift.845.name",
+      "desc": {
+        "trigger": {
+          "NOT": {},
+          "text": "astral_rift.845.desc.enabled"
+        },
+        "show_sound": {
+          "sound": "tut_evil_vir_asistance_shut_down",
+          "trigger": {
+            "NOT": {}
+          },
+          "is_triggered_only": "yes",
+          "is_advisor_event": "yes",
+          "option": {
+            "name": "astral_rift.845.c",
+            "trigger": {
+              "NOT": {}
+            },
+            "option": {
+              "name": "astral_rift.845.shutdown",
+              "trigger": {
+                "NOT": {},
+                "hidden_effect": {
+                  "set_tutorial_level": "0"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "astral_rifts_0_events.txt",
+    "_line_number": 3382
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "astral_rift.840",
+      "title": "astral_rift.840.name",
+      "desc": {
+        "trigger": {
+          "owner": {
+            "is_gestalt": "yes"
+          }
+        },
+        "text": "astral_rift.840.desc.gestalt"
+      },
+      "picture": "GFX_evt_astral_rift",
+      "show_sound": "event_space_cloud",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "FASCINATING",
+        "leader": {
+          "freeze_leader_age": "no",
+          "add_trait": "leader_trait_rift_warped",
+          "locked_random_list": {
+            "1": {
+              "modifier": {
+                "factor": "0",
+                "has_trait": "leader_trait_roamer"
+              },
+              "add_trait": "leader_trait_roamer"
+            }
+          }
+        },
+        "hidden_effect": {
+          "owner": {
+            "country_event": {},
+            "if": {
+              "limit": {
+                "has_fleet_flag": "temporary_fleet"
+              },
+              "delete_fleet": {
+                "target": "this",
+                "kill_leader": "no"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "astral_rifts_0_events.txt",
+    "_line_number": 3308
+  }
+}

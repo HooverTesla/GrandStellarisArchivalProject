@@ -1,0 +1,382 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "action.88",
+      "title": "action.88.name",
+      "desc": "action.88.desc",
+      "picture": "GFX_evt_star_chart",
+      "show_sound": "event_default",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "OK",
+        "tooltip": {
+          "from": {
+            "set_owner": "event_target:new_planet_owner"
+          }
+        }
+      }
+    },
+    "_source_file": "on_action_events_1.txt",
+    "_line_number": 7457
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "action.94",
+      "title": "action.92.name",
+      "desc": {
+        "trigger": {
+          "success_text": {
+            "text": "action.92.rare_crystals",
+            "hidden:from": {},
+            "success_text": {
+              "text": "action.92.exotic_gases",
+              "hidden:from": {},
+              "success_text": {
+                "text": "action.92.volatile_motes",
+                "hidden:from": {},
+                "success_text": {
+                  "text": "action.92.zro",
+                  "hidden:from": {},
+                  "success_text": {
+                    "text": "action.92.dark_matter",
+                    "hidden:from": {},
+                    "success_text": {
+                      "text": "action.92.living_metal",
+                      "hidden:from": {},
+                      "success_text": {
+                        "text": "action.92.astral_threads",
+                        "hidden:from": {},
+                        "success_text": {
+                          "text": "action.92.has_tech",
+                          "OR": {
+                            "hidden:from": {
+                              "AND": {
+                                "hidden:from": {
+                                  "hidden:owner": {},
+                                  "AND": {
+                                    "hidden:from": {
+                                      "hidden:owner": {},
+                                      "AND": {
+                                        "hidden:from": {
+                                          "hidden:owner": {},
+                                          "AND": {
+                                            "hidden:from": {
+                                              "hidden:owner": {},
+                                              "AND": {
+                                                "hidden:from": {
+                                                  "hidden:owner": {},
+                                                  "AND": {
+                                                    "hidden:from": {
+                                                      "hidden:owner": {},
+                                                      "AND": {
+                                                        "hidden:from": {
+                                                          "hidden:owner": {}
+                                                        }
+                                                      },
+                                                      "success_text": {
+                                                        "text": "action.92.no_tech",
+                                                        "_comments": [
+                                                          "# same trigger as above"
+                                                        ],
+                                                        "NOR": {
+                                                          "AND": {
+                                                            "hidden:from": {
+                                                              "hidden:owner": {},
+                                                              "AND": {
+                                                                "hidden:from": {
+                                                                  "hidden:owner": {},
+                                                                  "AND": {
+                                                                    "hidden:from": {
+                                                                      "hidden:owner": {},
+                                                                      "AND": {
+                                                                        "hidden:from": {
+                                                                          "hidden:owner": {},
+                                                                          "AND": {
+                                                                            "hidden:from": {
+                                                                              "hidden:owner": {},
+                                                                              "AND": {
+                                                                                "hidden:from": {
+                                                                                  "hidden:owner": {},
+                                                                                  "AND": {
+                                                                                    "hidden:from": {
+                                                                                      "hidden:owner": {}
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              },
+                                                                              "picture": "GFX_evt_surreal_visions",
+                                                                              "show_sound": "event_default",
+                                                                              "location": "from",
+                                                                              "is_triggered_only": "yes",
+                                                                              "trigger": {
+                                                                                "from": {
+                                                                                  "has_strategic_resource": "yes",
+                                                                                  "if": {
+                                                                                    "limit": {
+                                                                                      "is_scope_type": "planet"
+                                                                                    },
+                                                                                    "has_anomaly": "no"
+                                                                                  }
+                                                                                },
+                                                                                "owner": {
+                                                                                  "OR": {
+                                                                                    "AND": {
+                                                                                      "root.from": {
+                                                                                        "has_resource": {
+                                                                                          "type": "astral_threads"
+                                                                                        }
+                                                                                      },
+                                                                                      "NOT": {
+                                                                                        "has_country_flag": "astral_threads_found"
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              },
+                                                                              "immediate": {
+                                                                                "from": {
+                                                                                  "if": {
+                                                                                    "limit": {
+                                                                                      "root.owner": {},
+                                                                                      "else_if": {
+                                                                                        "limit": {
+                                                                                          "root.owner": {},
+                                                                                          "else_if": {
+                                                                                            "limit": {
+                                                                                              "root.owner": {},
+                                                                                              "else_if": {
+                                                                                                "limit": {
+                                                                                                  "root.owner": {},
+                                                                                                  "else_if": {
+                                                                                                    "limit": {
+                                                                                                      "root.owner": {},
+                                                                                                      "else_if": {
+                                                                                                        "limit": {
+                                                                                                          "root.owner": {},
+                                                                                                          "else_if": {
+                                                                                                            "limit": {
+                                                                                                              "root.owner": {}
+                                                                                                            }
+                                                                                                          },
+                                                                                                          "option": {
+                                                                                                            "name": "OK",
+                                                                                                            "from": {
+                                                                                                              "hidden_effect": {
+                                                                                                                "if": {
+                                                                                                                  "limit": {
+                                                                                                                    "custom_tooltip": "action.92.rare_crystals.tooltip"
+                                                                                                                  },
+                                                                                                                  "else_if": {
+                                                                                                                    "limit": {
+                                                                                                                      "custom_tooltip": "action.92.exotic_gases.tooltip"
+                                                                                                                    },
+                                                                                                                    "else_if": {
+                                                                                                                      "limit": {
+                                                                                                                        "custom_tooltip": "action.92.volatile_motes.tooltip"
+                                                                                                                      },
+                                                                                                                      "else_if": {
+                                                                                                                        "limit": {
+                                                                                                                          "custom_tooltip": "action.92.zro.tooltip"
+                                                                                                                        },
+                                                                                                                        "else_if": {
+                                                                                                                          "limit": {
+                                                                                                                            "custom_tooltip": "action.92.dark_matter.tooltip"
+                                                                                                                          },
+                                                                                                                          "else_if": {
+                                                                                                                            "limit": {
+                                                                                                                              "custom_tooltip": "action.92.living_metal.tooltip"
+                                                                                                                            },
+                                                                                                                            "else_if": {
+                                                                                                                              "limit": {
+                                                                                                                                "custom_tooltip": "action.92.astral_threads.tooltip"
+                                                                                                                              }
+                                                                                                                            }
+                                                                                                                          }
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "on_action_events_1.txt",
+    "_line_number": 7803
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "action.350",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "set_planetary_ascension_tier": "0",
+        "set_timed_planet_flag": {
+          "flag": "3_year_owner_change_flag",
+          "days": "1080"
+        }
+      }
+    },
+    "_source_file": "on_action_events_1.txt",
+    "_line_number": 8145
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "action.40",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "from": {
+            "OR": {
+              "AND": {
+                "exists": "space_owner",
+                "space_owner": {
+                  "OR": {
+                    "is_country_type": "awakened_fallen_empire"
+                  },
+                  "NOT": {}
+                },
+                "any_neighbor_system": {
+                  "exists": "space_owner",
+                  "space_owner": {
+                    "OR": {
+                      "is_country_type": "awakened_fallen_empire"
+                    },
+                    "NOT": {}
+                  }
+                }
+              }
+            },
+            "immediate": {
+              "from": {
+                "if": {
+                  "limit": {
+                    "exists": "space_owner",
+                    "space_owner": {
+                      "save_event_target_as": "contact_empire"
+                    }
+                  },
+                  "else": {
+                    "random_neighbor_system": {
+                      "limit": {
+                        "exists": "space_owner",
+                        "space_owner": {
+                          "save_event_target_as": "contact_empire"
+                        }
+                      }
+                    }
+                  },
+                  "owner": {
+                    "establish_communications_no_message": "event_target:contact_empire",
+                    "country_event": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "on_action_events_1.txt",
+    "_line_number": 5348
+  },
+  "event": {
+    "event": {
+      "id": "action.93",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_country": {
+          "OR": {
+            "is_country_type": "extradimensional_3"
+          }
+        }
+      },
+      "immediate": {
+        "every_galaxy_planet": {
+          "limit": {
+            "exists": "owner",
+            "owner": {
+              "OR": {
+                "is_country_type": "extradimensional_3"
+              }
+            }
+          },
+          "if": {
+            "limit": {
+              "OR": {
+                "is_planet_class": "pc_ringworld_habitable"
+              }
+            },
+            "destroy_colony": "yes"
+          },
+          "else": {
+            "random_list": {
+              "50": {
+                "50": {},
+                "add_modifier": {
+                  "modifier": "terraforming_candidate",
+                  "days": "-1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "on_action_events_1.txt",
+    "_line_number": 7751
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "minor_artifacts_expenditure_planets": {
+    "minor_artifacts_expenditure_planets": {
+      "resource": "minor_artifacts",
+      "type": "expenditure",
+      "category": "planets",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.2"
+      }
+    },
+    "_source_file": "00_minor_artifacts_budget.txt",
+    "_line_number": 8
+  },
+  "minor_artifacts_expenditure_ships": {
+    "minor_artifacts_expenditure_ships": {
+      "resource": "minor_artifacts",
+      "type": "expenditure",
+      "category": "ships",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.1",
+        "modifier": {
+          "factor": "5",
+          "has_ascension_perk": "ap_archaeoengineers"
+        }
+      }
+    },
+    "_source_file": "00_minor_artifacts_budget.txt",
+    "_line_number": 22
+  },
+  "minor_artifacts_expenditure_upgrade": {
+    "minor_artifacts_expenditure_upgrade": {
+      "resource": "minor_artifacts",
+      "type": "expenditure",
+      "category": "ship_upgrades",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "base": "0.1"
+      }
+    },
+    "_source_file": "00_minor_artifacts_budget.txt",
+    "_line_number": 40
+  },
+  "minor_artifacts_expenditure_starbases": {
+    "minor_artifacts_expenditure_starbases": {
+      "resource": "minor_artifacts",
+      "type": "expenditure",
+      "category": "starbases",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.2"
+      }
+    },
+    "_source_file": "00_minor_artifacts_budget.txt",
+    "_line_number": 54
+  }
+}

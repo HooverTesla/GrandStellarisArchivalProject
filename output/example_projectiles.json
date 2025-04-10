@@ -1,0 +1,60 @@
+{
+  "projectile_gfx_missile": {
+    "projectile_gfx_missile": {
+      "name": "default_missile_projectile",
+      "color": {
+        "hit_entity": "test_explosion",
+        "muzzle_flash_entity": "axis_effect_entity",
+        "entity": "molluscoid_01_missle_entity"
+      }
+    },
+    "_source_file": "example_projectiles.txt",
+    "_line_number": 70
+  },
+  "projectile_gfx_beam": {
+    "projectile_gfx_beam": {
+      "name": "default_instant_projectile",
+      "color": {
+        "hit_entity": "test_explosion",
+        "muzzle_flash_entity": "axis_effect_entity",
+        "_comments": [
+          "#beam specific data"
+        ],
+        "hit": {
+          "alpha_curve": {},
+          "duration": "1.0"
+        },
+        "miss": {
+          "alpha_curve": {},
+          "duration": "1.0"
+        },
+        "width": "3.0",
+        "texture_scroll_speed": "1.0",
+        "texture_tiling": "1.0",
+        "texture": "gfx/models/combat_items/laser_diffuse.dds"
+      }
+    },
+    "_source_file": "example_projectiles.txt",
+    "_line_number": 81
+  },
+  "projectile_gfx_ballistic": {
+    "projectile_gfx_ballistic": {
+      "name": "example_ballistic",
+      "_comments": [
+        "#common for all types of projectiles"
+      ],
+      "color": {
+        "hit_entity": "test_explosion",
+        "muzzle_flash_entity": "missile_small_muzzle_flash_entity",
+        "entity": "test_object_entity",
+        "_comments": [
+          "#ballistic specific"
+        ],
+        "speed": "150.0\t\t\t#preferred speed of the projectile",
+        "max_duration": "1.0\t\t#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds"
+      }
+    },
+    "_source_file": "example_projectiles.txt",
+    "_line_number": 56
+  }
+}

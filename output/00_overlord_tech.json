@@ -1,0 +1,154 @@
+{
+  "tech_quantum_catapult": {
+    "tech_quantum_catapult": {
+      "area": "physics",
+      "cost": "@tier4cost1",
+      "tier": "3",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier3weight3",
+        "is_rare": "yes",
+        "potential": {
+          "has_overlord_dlc": "yes",
+          "OR": {
+            "has_technology": "tech_mega_engineering",
+            "has_country_flag": "has_quantum_catapult_insight",
+            "has_origin": "origin_star_slingshot"
+          }
+        },
+        "weight_modifier": {
+          "factor": "0.25",
+          "modifier": {
+            "factor": "2",
+            "OR": {
+              "has_trait_in_council": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {}
+                },
+                "modifier": {
+                  "factor": "2",
+                  "OR": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {}
+                    },
+                    "modifier": {
+                      "factor": "@eager_explorer_effect",
+                      "is_eager_explorer_empire": "yes"
+                    },
+                    "inline_script": {
+                      "script": "technologies/rare_technologies_weight_modifiers",
+                      "TECHNOLOGY": "tech_quantum_catapult"
+                    }
+                  },
+                  "ai_weight": {
+                    "factor": "10"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_overlord_tech.txt",
+    "_line_number": 4
+  },
+  "tech_orbital_ring_tier_1": {
+    "tech_orbital_ring_tier_1": {
+      "cost": "@tier3cost2",
+      "area": "engineering",
+      "category": {
+        "tier": "3",
+        "weight": "@tier3weight2",
+        "prerequisites": {
+          "gateway": "infrastructure",
+          "potential": {
+            "has_overlord_dlc": "yes"
+          },
+          "_comments": [
+            "# unlocks Orbital Ring, basically same weights as Habitats"
+          ],
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.1",
+              "NOT": {},
+              "modifier": {
+                "factor": "1.25",
+                "has_tradition": "tr_expansion_finish"
+              }
+            },
+            "prereqfor_desc": {
+              "ship": {
+                "title": "allow_orbital_rings",
+                "desc": "orbital_ring_tier_1_MEGASTRUCTURE_DETAILS"
+              }
+            },
+            "ai_weight": {
+              "factor": "1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_overlord_tech.txt",
+    "_line_number": 95
+  },
+  "tech_hyper_relays": {
+    "tech_hyper_relays": {
+      "cost": "@tier2cost3",
+      "area": "physics",
+      "tier": "2",
+      "category": {
+        "is_rare": "yes",
+        "is_reverse_engineerable": "no",
+        "weight": "@tier2weight3",
+        "prerequisites": {
+          "potential": {
+            "feature_flags": {
+              "weight_modifier": {
+                "factor": "0.5",
+                "modifier": {
+                  "factor": "0.2",
+                  "NOR": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {
+                          "has_trait_in_council": {
+                            "has_trait_in_council": {
+                              "has_trait_in_council": {
+                                "has_trait_in_council": {
+                                  "has_seen_any_bypass": "relay_bypass"
+                                }
+                              },
+                              "modifier": {
+                                "factor": "@eager_explorer_effect",
+                                "is_eager_explorer_empire": "yes"
+                              },
+                              "inline_script": {
+                                "script": "technologies/rare_technologies_weight_modifiers",
+                                "TECHNOLOGY": "tech_hyper_relays"
+                              }
+                            },
+                            "ai_weight": {
+                              "factor": "4 #FTL techs are good",
+                              "modifier": {
+                                "factor": "5 # Don't pass this up if you're the first to get the opportunity",
+                                "NOT": {}
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_overlord_tech.txt",
+    "_line_number": 163
+  }
+}

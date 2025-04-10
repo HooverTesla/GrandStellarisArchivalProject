@@ -1,0 +1,153 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "necroids.310",
+      "title": "necroids.310.name",
+      "desc": "necroids.310.desc",
+      "picture": "GFX_evt_unspeakable_horror",
+      "show_sound": "event_whispering",
+      "is_triggered_only": "yes",
+      "fire_only_once": "yes",
+      "trigger": {
+        "is_country_type": "default",
+        "has_valid_civic": "civic_hive_cordyceptic_drones",
+        "from": {
+          "is_country_type": "swarm"
+        }
+      },
+      "option": {
+        "name": "necroids.310.a"
+      }
+    },
+    "_source_file": "necroids_events_2.txt",
+    "_line_number": 521
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "necroids.275",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "trigger": {
+        "OR": {
+          "num_assigned_jobs": {
+            "job": "overlord_reassigner_drone",
+            "value >": "1"
+          }
+        }
+      },
+      "immediate": {
+        "set_saved_date": {
+          "key": "reemployment_center_timer",
+          "days_from_present": "1800",
+          "expires": "1800"
+        },
+        "if": {
+          "limit": {
+            "any_owned_pop": {
+              "NOT": {
+                "is_robot_pop": "no"
+              }
+            },
+            "random_owned_pop": {
+              "limit": {
+                "NOT": {
+                  "is_robot_pop": "no"
+                },
+                "root": {
+                  "create_pop": {
+                    "species": "prev"
+                  }
+                }
+              }
+            },
+            "else": {
+              "random_owned_pop": {
+                "root": {
+                  "create_pop": {
+                    "species": "prev"
+                  }
+                }
+              }
+            },
+            "last_created_pop": {
+              "if": {
+                "limit": {
+                  "NOT": {
+                    "has_trait": "trait_zombie"
+                  }
+                },
+                "make_pop_zombie": "yes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "necroids_events_2.txt",
+    "_line_number": 262
+  },
+  "starbase_event": {
+    "starbase_event": {
+      "id": "necroids.305",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_starbase_building": "cordyceptic_reanimation_facility",
+        "owner": {
+          "has_valid_civic": "civic_hive_cordyceptic_drones"
+        }
+      },
+      "immediate": {
+        "starbase_event": {
+          "solar_system": {
+            "save_event_target_as": "cordyceptic_reanimation_system"
+          },
+          "if": {
+            "limit": {
+              "solar_system": {
+                "OR": {
+                  "has_star_flag": "tiyanki_spawn_system"
+                }
+              }
+            },
+            "owner": {
+              "create_message": {
+                "type": "MESSAGE_REANIMATION_COMPLETE",
+                "localization": "MESSAGE_REANIMATION_COMPLETE_TIYANKI_DESC",
+                "days": "30",
+                "target": "root",
+                "variable": {
+                  "type": "name",
+                  "localization": "SYSTEM",
+                  "scope": "event_target:cordyceptic_reanimation_system"
+                }
+              }
+            }
+          },
+          "else_if": {
+            "limit": {
+              "solar_system": {
+                "has_star_flag": "amoeba_home_system"
+              }
+            },
+            "owner": {
+              "create_message": {
+                "type": "MESSAGE_REANIMATION_COMPLETE",
+                "localization": "MESSAGE_REANIMATION_AMOEBA_TIYANKI_DESC",
+                "days": "30",
+                "target": "root",
+                "variable": {
+                  "type": "name",
+                  "localization": "SYSTEM",
+                  "scope": "event_target:cordyceptic_reanimation_system"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "necroids_events_2.txt",
+    "_line_number": 401
+  }
+}

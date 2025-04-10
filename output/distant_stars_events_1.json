@@ -1,0 +1,226 @@
+{
+  "ship_event": {
+    "ship_event": {
+      "id": "distar.285",
+      "title": "distar.285.name",
+      "desc": "distar.285.desc",
+      "picture": "GFX_evt_gas_giant",
+      "show_sound": "event_scanner",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "from": {
+          "owner": {},
+          "option": {
+            "name": "INCREDIBLE",
+            "owner": {
+              "add_monthly_resource_mult": {
+                "resource": "society_research",
+                "value": "@tier2researchreward",
+                "min": "@tier2researchmin",
+                "max": "@tier2researchmax"
+              },
+              "generate_lcluster_clue": "yes"
+            },
+            "from": {
+              "add_deposit": "d_exotic_gases_2"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "distant_stars_events_1.txt",
+    "_line_number": 10000
+  },
+  "country_event": {
+    "country_event": {
+      "id": "distar.255",
+      "title": "distar.255.name",
+      "desc": {
+        "trigger": {
+          "NOT": {
+            "is_at_war_with": "from"
+          }
+        },
+        "picture": "GFX_evt_surreal_visions",
+        "show_sound": "event_mystic_reveal",
+        "location": "event_target:phaseshift_planet",
+        "is_triggered_only": "yes",
+        "option": {
+          "name": "distar.255.b",
+          "add_monthly_resource_mult": {
+            "resource": "influence",
+            "value": "@tier2influencereward",
+            "min": "@tier2influencemin",
+            "max": "@tier2influencemax"
+          }
+        }
+      }
+    },
+    "_source_file": "distant_stars_events_1.txt",
+    "_line_number": 9302
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "distar.262",
+      "title": "distar.262.name",
+      "desc": "distar.262.desc",
+      "picture": "GFX_evt_animal_wildlife",
+      "show_sound": "event_alien_nature",
+      "location": "root",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_planet_flag": "funlent_planet",
+        "any_owned_pop": {
+          "is_same_species": "event_target:livestock_species"
+        },
+        "owner": {
+          "NOT": {
+            "is_machine_empire": "yes"
+          }
+        }
+      },
+      "option": {
+        "allow": {
+          "name": "distar.262.b",
+          "custom_tooltip": "distar.262.b.tooltip.2",
+          "owner": {
+            "add_deposit": "d_processing_pens",
+            "hidden_effect": {
+              "while": {
+                "limit": {
+                  "any_owned_pop": {
+                    "is_same_species": "event_target:livestock_species"
+                  }
+                },
+                "random_owned_pop": {
+                  "limit": {
+                    "is_same_species": "event_target:livestock_species"
+                  },
+                  "kill_pop": "yes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "distant_stars_events_1.txt",
+    "_line_number": 9656
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "distar.242",
+      "title": "distar.242.name",
+      "desc": {
+        "trigger": {
+          "owner": {
+            "owner.species": {
+              "NOR": {}
+            },
+            "text": "distar.242.desc"
+          },
+          "desc": {
+            "trigger": {
+              "owner": {
+                "owner.species": {
+                  "OR": {}
+                },
+                "text": "distar.242.desc.psi"
+              },
+              "desc": {
+                "trigger": {
+                  "owner": {
+                    "NOT": {
+                      "has_country_flag": "encountered_sealed_system"
+                    }
+                  }
+                },
+                "text": "distar.242.desc.jump"
+              },
+              "picture": "GFX_evt_surreal_visions",
+              "show_sound": "event_space_cloud",
+              "location": "root",
+              "is_triggered_only": "yes",
+              "trigger": {
+                "FROM": {
+                  "owner": {
+                    "NOT": {},
+                    "exists": "event_target:sealed_psionic_entity"
+                  },
+                  "immediate": {
+                    "owner": {
+                      "set_country_flag": "entered_sealed_system"
+                    },
+                    "solar_system": {
+                      "random_system_planet": {
+                        "limit": {
+                          "has_anomaly": "yes",
+                          "is_planet_class": "pc_gaia"
+                        },
+                        "save_event_target_as": "tanker_planet"
+                      }
+                    }
+                  },
+                  "option": {
+                    "name": "BATTLESTATIONS"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "distant_stars_events_1.txt",
+    "_line_number": 8555
+  },
+  "starbase_event": {
+    "starbase_event": {
+      "id": "distar.1999 #198 exists. It is below 199 in the file. :(",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "trigger": {
+        "exists": "solar_system",
+        "solar_system": {
+          "has_star_flag": "living_planet_system"
+        }
+      },
+      "_comments": [
+        "#that narrows it down enough, the rest is covered in the trigger of distar.199"
+      ],
+      "immediate": {
+        "fleet": {
+          "random_owned_ship": {
+            "limit": {
+              "is_ship_class": "shipclass_starbase"
+            },
+            "ship_event": {}
+          }
+        }
+      }
+    },
+    "_source_file": "distant_stars_events_1.txt",
+    "_line_number": 6090
+  },
+  "event": {
+    "event": {
+      "id": "distar.252",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "event_target:phaseshift_planet",
+        "event_target:phaseshift_planet": {
+          "has_planet_flag": "phaseshifting_active"
+        }
+      },
+      "immediate": {
+        "event_target:phaseshift_planet": {
+          "planet_event": {}
+        }
+      }
+    },
+    "_source_file": "distant_stars_events_1.txt",
+    "_line_number": 9180
+  }
+}

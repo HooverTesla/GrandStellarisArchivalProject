@@ -20,8 +20,8 @@ def iterate_folders(root_folder: Path):
             if "/localisation/english/" in path.as_posix() and path.suffix == ".yml":
                 folder_map[path.parent].append(path)
             continue  # Skip all other localisation files entirely
-        if "/licenses/" in path.as_posix():
-            continue
+        # if "/licenses/" in path.as_posix():
+        #     continue
         if path.suffix.lower() not in VALID_EXTENSIONS:
             continue
 

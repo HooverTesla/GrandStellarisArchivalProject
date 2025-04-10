@@ -1,0 +1,510 @@
+{
+  "d_abandoned_cities": {
+    "d_abandoned_cities": {
+      "time": "360",
+      "icon": "d_city_ruins",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "750",
+            "minerals": "250"
+          }
+        },
+        "on_cleared": {},
+        "ai_weight": {
+          "weight": "2"
+        }
+      }
+    },
+    "_source_file": "13_machine_age_deposits.txt",
+    "_line_number": 14
+  },
+  "d_old_towns": {
+    "d_old_towns": {
+      "icon": "d_city",
+      "time": "360",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "on_cleared": {
+          "hidden_effect": {
+            "root": {
+              "while": {
+                "count": "value:num_synth_opposition",
+                "create_pop": {
+                  "species": "event_target:synthspecies@root.owner"
+                }
+              }
+            }
+          },
+          "custom_tooltip": "d_old_towns_custom_tooltip"
+        },
+        "inline_script": "deposits/ai_weight_pop_creating_blocker",
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "1000",
+            "mult": "value:num_synth_opposition"
+          }
+        }
+      }
+    },
+    "_source_file": "13_machine_age_deposits.txt",
+    "_line_number": 46
+  },
+  "d_biological_enclaves": {
+    "d_biological_enclaves": {
+      "icon": "d_metal_boneyard",
+      "time": "360",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "triggered_planet_modifier": {
+          "planet_crime_add": "5",
+          "planet_stability_add": "-5",
+          "mult": "value:num_synth_opposition"
+        },
+        "on_cleared": {
+          "hidden_effect": {
+            "root": {
+              "while": {
+                "count": "value:num_synth_opposition",
+                "create_pop": {
+                  "species": "event_target:synthspecies@root.owner"
+                }
+              }
+            }
+          },
+          "custom_tooltip": "d_biological_enclaves_custom_tooltip"
+        },
+        "inline_script": "deposits/ai_weight_pop_creating_blocker",
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "alloys": "1000",
+            "mult": "value:num_synth_opposition"
+          }
+        }
+      }
+    },
+    "_source_file": "13_machine_age_deposits.txt",
+    "_line_number": 88
+  },
+  "d_genesis_preserve": {
+    "d_genesis_preserve": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "icon": "d_quarantine_zone",
+      "triggered_planet_modifier": {
+        "potential": {
+          "drop_weight": {
+            "weight": "0"
+          }
+        },
+        "planet_modifier": {
+          "planet_max_districts_add": "-2"
+        }
+      }
+    },
+    "_source_file": "13_machine_age_deposits.txt",
+    "_line_number": 132
+  },
+  "d_genesis_monument": {
+    "d_genesis_monument": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "icon": "d_monument",
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_guided_sapience_empire": "yes",
+            "is_gestalt": "yes"
+          }
+        },
+        "job_evaluator_add": "2",
+        "planet_jobs_unity_produces_mult": "0.25"
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "13_machine_age_deposits.txt",
+    "_line_number": 166
+  },
+  "d_nanites_medium": {
+    "d_nanites_medium": {
+      "icon": "d_reactor",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "triggered_planet_modifier": {
+        "potential": {
+          "is_capital": "yes"
+        }
+      },
+      "resources": {
+        "category": "hab_mining_deposits",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "nanites": "3.6"
+          },
+          "produces": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {},
+              "nanites": "1.2"
+            }
+          },
+          "drop_weight": {
+            "weight": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "13_machine_age_deposits.txt",
+    "_line_number": 201
+  },
+  "d_nanites_small": {
+    "d_nanites_small": {
+      "icon": "d_reactor",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "triggered_planet_modifier": {
+        "potential": {
+          "is_capital": "yes"
+        }
+      },
+      "resources": {
+        "category": "hab_mining_deposits",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "nanites": "1.8"
+          },
+          "produces": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {},
+              "nanites": "0.6"
+            }
+          },
+          "drop_weight": {
+            "weight": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "13_machine_age_deposits.txt",
+    "_line_number": 234
+  },
+  "d_nanites_tiny": {
+    "d_nanites_tiny": {
+      "icon": "d_reactor",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "triggered_planet_modifier": {
+        "potential": {
+          "is_capital": "yes"
+        }
+      },
+      "resources": {
+        "category": "hab_mining_deposits",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "nanites": "0.9"
+          },
+          "produces": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {},
+              "nanites": "0.3"
+            }
+          },
+          "drop_weight": {
+            "weight": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "13_machine_age_deposits.txt",
+    "_line_number": 267
+  },
+  "d_nanite_harvester_deposit": {
+    "d_nanite_harvester_deposit": {
+      "resources": {
+        "category": "orbital_mining_deposits",
+        "produces": {
+          "nanites": "0.1"
+        }
+      },
+      "station": "shipclass_mining_station",
+      "is_for_colonizable": "no",
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "13_machine_age_deposits.txt",
+    "_line_number": 300
+  },
+  "d_nanite_harvester_deposit_regular": {
+    "d_nanite_harvester_deposit_regular": {
+      "resources": {
+        "category": "orbital_mining_deposits",
+        "produces": {
+          "nanites": "1.6"
+        }
+      },
+      "station": "shipclass_mining_station",
+      "is_for_colonizable": "no",
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "13_machine_age_deposits.txt",
+    "_line_number": 315
+  },
+  "d_nanite_harvester_deposit_large": {
+    "d_nanite_harvester_deposit_large": {
+      "resources": {
+        "category": "orbital_mining_deposits",
+        "produces": {
+          "nanites": "25.6"
+        }
+      },
+      "station": "shipclass_mining_station",
+      "is_for_colonizable": "no",
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "13_machine_age_deposits.txt",
+    "_line_number": 330
+  },
+  "d_living_metal_medium": {
+    "d_living_metal_medium": {
+      "icon": "d_bubbling_swamp",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "triggered_planet_modifier": {
+        "potential": {
+          "is_capital": "yes"
+        }
+      },
+      "resources": {
+        "category": "hab_mining_deposits",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "sr_living_metal": "3.6"
+          },
+          "produces": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {},
+              "sr_living_metal": "1.2"
+            }
+          },
+          "drop_weight": {
+            "weight": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "13_machine_age_deposits.txt",
+    "_line_number": 348
+  },
+  "d_living_metal_small": {
+    "d_living_metal_small": {
+      "icon": "d_bubbling_swamp",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "triggered_planet_modifier": {
+        "potential": {
+          "is_capital": "yes"
+        }
+      },
+      "resources": {
+        "category": "hab_mining_deposits",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "sr_living_metal": "1.8"
+          },
+          "produces": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {},
+              "sr_living_metal": "0.6"
+            }
+          },
+          "drop_weight": {
+            "weight": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "13_machine_age_deposits.txt",
+    "_line_number": 381
+  },
+  "d_living_metal_tiny": {
+    "d_living_metal_tiny": {
+      "icon": "d_bubbling_swamp",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "triggered_planet_modifier": {
+        "potential": {
+          "is_capital": "yes"
+        }
+      },
+      "resources": {
+        "category": "hab_mining_deposits",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "sr_living_metal": "0.9"
+          },
+          "produces": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {},
+              "sr_living_metal": "0.3"
+            }
+          },
+          "drop_weight": {
+            "weight": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "13_machine_age_deposits.txt",
+    "_line_number": 414
+  },
+  "d_virtual_power_medium": {
+    "d_virtual_power_medium": {
+      "icon": "d_station_reactor",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "triggered_planet_modifier": {
+        "potential": {
+          "is_capital": "yes"
+        }
+      },
+      "resources": {
+        "category": "hab_mining_deposits",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "sr_dark_matter": "1.2",
+            "energy": "60"
+          },
+          "produces": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {},
+              "sr_dark_matter": "0.4",
+              "energy": "20"
+            }
+          },
+          "drop_weight": {
+            "weight": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "13_machine_age_deposits.txt",
+    "_line_number": 449
+  },
+  "d_virtual_power_small": {
+    "d_virtual_power_small": {
+      "icon": "d_station_reactor",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "triggered_planet_modifier": {
+        "potential": {
+          "is_capital": "yes"
+        }
+      },
+      "resources": {
+        "category": "hab_mining_deposits",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "sr_dark_matter": "0.6",
+            "energy": "36"
+          },
+          "produces": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {},
+              "sr_dark_matter": "0.2",
+              "energy": "12"
+            }
+          },
+          "drop_weight": {
+            "weight": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "13_machine_age_deposits.txt",
+    "_line_number": 484
+  },
+  "d_virtual_power_tiny": {
+    "d_virtual_power_tiny": {
+      "icon": "d_station_reactor",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "triggered_planet_modifier": {
+        "potential": {
+          "is_capital": "yes"
+        }
+      },
+      "resources": {
+        "category": "hab_mining_deposits",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "sr_dark_matter": "0.3",
+            "energy": "24"
+          },
+          "produces": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {},
+              "sr_dark_matter": "0.1",
+              "energy": "8"
+            }
+          },
+          "drop_weight": {
+            "weight": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "13_machine_age_deposits.txt",
+    "_line_number": 519
+  }
+}

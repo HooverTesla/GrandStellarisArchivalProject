@@ -1,0 +1,2331 @@
+{
+  "salvager_enclave_init_01": {
+    "salvager_enclave_init_01": {
+      "class": "rl_standard_stars",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "0",
+        "modifier": {
+          "factor": "0",
+          "has_star_flag": "empire_cluster"
+        }
+      },
+      "max_instances": "1",
+      "spawn_chance": "100 #Guaranteed, assuming usage_odds passes",
+      "flags": {},
+      "asteroid_belt": {
+        "type": "rocky_asteroid_belt",
+        "radius": "195"
+      },
+      "planet": {
+        "count": "1",
+        "class": "star",
+        "orbit_distance": "0",
+        "orbit_angle": "1",
+        "size": {
+          "has_ring": "no",
+          "init_effect": {
+            "prevent_anomaly": "yes"
+          }
+        },
+        "change_orbit": "40",
+        "planet": {
+          "count": "1",
+          "class": "rl_unhabitable_planets",
+          "orbit_angle": "80",
+          "size": "20",
+          "init_effect": {
+            "prevent_anomaly": "yes",
+            "set_planet_flag": "salvager_enclave_planet",
+            "clear_deposits": "yes",
+            "add_deposit": "d_minerals_4",
+            "if": {
+              "limit": {
+                "NOT": {},
+                "save_global_event_target_as": "salvager_enclave_planet",
+                "create_species": {
+                  "homeworld": "this",
+                  "name": "random",
+                  "class": "SALVAGER",
+                  "namelist": "MAM4",
+                  "portrait": "random",
+                  "traits": {
+                    "ideal_planet_class": "pc_habitat",
+                    "trait": "random_traits"
+                  }
+                },
+                "last_created_species": {
+                  "save_event_target_as": "salvager_enclave_species"
+                },
+                "create_salvager_enclave_country": "yes",
+                "solar_system": {
+                  "save_global_event_target_as": "salvager_enclave_system"
+                }
+              }
+            }
+          },
+          "change_orbit": "35",
+          "planet": {
+            "count": "2",
+            "class": "pc_asteroid",
+            "orbit_angle": {
+              "init_effect": {
+                "clear_deposits": "yes",
+                "add_deposit": "d_alloys_1",
+                "create_ambient_object": {
+                  "type": "small_debris_object"
+                }
+              }
+            },
+            "init_effect": {
+              "if": {
+                "limit": {
+                  "create_nebula": {
+                    "radius": "25",
+                    "effect": {
+                      "set_star_flag": "salvager_nebula",
+                      "nebula_cloaking_effect": "yes"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_initializers.txt",
+    "_line_number": 22
+  },
+  "salvager_enclave_init_02": {
+    "salvager_enclave_init_02": {
+      "class": "rl_standard_stars",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "0",
+        "modifier": {
+          "has_overlord_dlc": "yes",
+          "any_neighbor_system": {
+            "add": "50"
+          },
+          "modifier": {
+            "factor": "0",
+            "has_star_flag": "empire_cluster"
+          }
+        },
+        "_comments": [
+          "#Should ideally be near the primary system"
+        ],
+        "max_instances": "1",
+        "scaled_spawn_chance": "16 # scales by galaxy size (1000 stars = 10x base)",
+        "flags": {},
+        "asteroid_belt": {
+          "type": "rocky_asteroid_belt",
+          "radius": "125"
+        },
+        "planet": {
+          "count": "1",
+          "class": "star",
+          "orbit_distance": "0",
+          "orbit_angle": "1",
+          "size": {
+            "has_ring": "no",
+            "init_effect": {
+              "prevent_anomaly": "yes"
+            }
+          },
+          "change_orbit": "45",
+          "planet": {
+            "count": "1",
+            "class": "rl_unhabitable_planets",
+            "size": "14",
+            "orbit_angle": {},
+            "change_orbit": "20",
+            "planet": {
+              "count": "3",
+              "class": "pc_asteroid",
+              "orbit_angle": {},
+              "change_orbit": "15",
+              "planet": {
+                "count": "1",
+                "class": "pc_barren",
+                "orbit_angle": "80",
+                "size": "20",
+                "init_effect": {
+                  "prevent_anomaly": "yes",
+                  "set_planet_flag": "salvager_enclave_planet",
+                  "clear_deposits": "yes",
+                  "add_deposit": "d_minerals_4",
+                  "if": {
+                    "limit": {
+                      "NOT": {},
+                      "save_global_event_target_as": "salvager_enclave_planet",
+                      "create_species": {
+                        "homeworld": "this",
+                        "name": "random",
+                        "class": "SALVAGER",
+                        "namelist": "MAM1",
+                        "portrait": "random",
+                        "traits": {
+                          "ideal_planet_class": "pc_habitat",
+                          "trait": "random_traits"
+                        }
+                      },
+                      "last_created_species": {
+                        "save_event_target_as": "salvager_enclave_species"
+                      },
+                      "create_salvager_enclave_country": "yes",
+                      "solar_system": {
+                        "save_global_event_target_as": "salvager_enclave_system"
+                      }
+                    }
+                  }
+                },
+                "change_orbit": "90",
+                "planet": {
+                  "count": "1",
+                  "class": "pc_gas_giant",
+                  "size": "25",
+                  "orbit_angle": {
+                    "has_ring": "yes",
+                    "moon": {
+                      "count": "2",
+                      "class": "rl_unhabitable_planets",
+                      "orbit_distance": {
+                        "orbit_angle": "44",
+                        "size": {},
+                        "moon": {
+                          "class": "pc_nuked",
+                          "orbit_distance": "28",
+                          "orbit_angle": "30",
+                          "size": "14",
+                          "init_effect": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_initializers.txt",
+    "_line_number": 155
+  },
+  "salvager_enclave_init_03": {
+    "salvager_enclave_init_03": {
+      "class": "sc_black_hole",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "0",
+        "modifier": {
+          "has_overlord_dlc": "yes",
+          "any_neighbor_system": {
+            "add": "50"
+          },
+          "modifier": {
+            "factor": "0",
+            "has_star_flag": "empire_cluster"
+          }
+        },
+        "_comments": [
+          "#Should ideally be near the primary system"
+        ],
+        "max_instances": "1",
+        "scaled_spawn_chance": "12 # scales by galaxy size (1000 stars = 10x base)",
+        "flags": {},
+        "planet": {
+          "class": "star",
+          "orbit_distance": "0",
+          "orbit_angle": "1",
+          "size": {
+            "has_ring": "no",
+            "init_effect": {
+              "prevent_anomaly": "yes",
+              "create_ambient_object": {
+                "type": "large_debris_object",
+                "location": "this"
+              },
+              "last_created_ambient_object": {
+                "set_location": {
+                  "target": "prev",
+                  "distance": "35",
+                  "angle": "205"
+                }
+              }
+            }
+          },
+          "asteroid_belt": {
+            "type": "rocky_asteroid_belt",
+            "radius": "155"
+          },
+          "change_orbit": "65",
+          "planet": {
+            "class": "pc_broken",
+            "size": "14",
+            "init_effect": {
+              "prevent_anomaly": "yes",
+              "set_planet_flag": "salvager_enclave_planet",
+              "clear_deposits": "yes",
+              "if": {
+                "limit": {
+                  "NOT": {},
+                  "save_global_event_target_as": "salvager_enclave_planet",
+                  "create_species": {
+                    "homeworld": "this",
+                    "name": "random",
+                    "class": "SALVAGER",
+                    "namelist": "MAM1",
+                    "portrait": "random",
+                    "traits": {
+                      "ideal_planet_class": "pc_habitat",
+                      "trait": "random_traits"
+                    }
+                  },
+                  "last_created_species": {
+                    "save_event_target_as": "salvager_enclave_species"
+                  },
+                  "create_salvager_enclave_country": "yes",
+                  "solar_system": {
+                    "save_global_event_target_as": "salvager_enclave_system"
+                  }
+                }
+              }
+            },
+            "change_orbit": "35",
+            "planet": {
+              "count": "3",
+              "class": "pc_asteroid",
+              "orbit_angle": {
+                "init_effect": {
+                  "prevent_anomaly": "yes"
+                }
+              },
+              "change_orbit": "15",
+              "planet": {
+                "class": "pc_broken",
+                "size": "14",
+                "init_effect": {
+                  "prevent_anomaly": "yes",
+                  "create_ambient_object": {
+                    "type": "enclave_salvager_starbase_ruined",
+                    "entity_offset": {
+                      "entity_offset_height": {
+                        "location": "this"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_initializers.txt",
+    "_line_number": 304
+  },
+  "shroudwalker_enclave_init_01": {
+    "shroudwalker_enclave_init_01": {
+      "class": "rl_standard_stars",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "0",
+        "modifier": {
+          "factor": "0",
+          "has_star_flag": "empire_cluster"
+        }
+      },
+      "max_instances": "1",
+      "spawn_chance": "100 #Guaranteed, assuming usage_odds passes",
+      "flags": {},
+      "planet": {
+        "count": "1",
+        "class": "star",
+        "orbit_distance": "0",
+        "orbit_angle": "1",
+        "size": {
+          "has_ring": "no",
+          "init_effect": {
+            "prevent_anomaly": "yes",
+            "clear_deposits": "yes",
+            "create_ambient_object": {
+              "type": "nebula_L10_entity",
+              "location": "this"
+            },
+            "last_created_ambient_object": {
+              "set_location": {
+                "target": "prev",
+                "distance": "0",
+                "angle": "random"
+              }
+            }
+          }
+        },
+        "change_orbit": "45",
+        "planet": {
+          "count": "1",
+          "orbit_distance": "100",
+          "class": "pc_shrouded",
+          "orbit_angle": {
+            "size": "25",
+            "has_ring": "yes",
+            "init_effect": {
+              "set_planet_flag": "shroudwalker_enclave_planet",
+              "save_event_target_as": "shroudwalker_enclave_planet",
+              "clear_deposits": "yes",
+              "prevent_anomaly": "yes",
+              "if": {
+                "limit": {
+                  "NOT": {
+                    "exists": "event_target:shroudwalker_enclave_country"
+                  }
+                },
+                "create_species": {
+                  "homeworld": "this",
+                  "name": "random",
+                  "class": "SHROUDWALKER",
+                  "namelist": "NECROID1",
+                  "portrait": "random",
+                  "traits": {
+                    "ideal_planet_class": "pc_habitat",
+                    "trait": "random_traits"
+                  }
+                },
+                "last_created_species": {
+                  "save_event_target_as": "shroudwalker_enclave_species"
+                },
+                "create_shroudwalker_enclave_country": "yes",
+                "solar_system": {
+                  "save_global_event_target_as": "shroudwalker_enclave_system"
+                }
+              },
+              "else": {
+                "event_target:shroudwalker_enclave_country": {
+                  "create_shroudwalker_enclave_starbase": "yes"
+                }
+              },
+              "add_deposit": "d_zro_deposit_5"
+            }
+          },
+          "init_effect": {
+            "if": {
+              "limit": {
+                "exists": "event_target:shroudwalker_enclave_country"
+              },
+              "spawn_natural_wormhole": {
+                "bypass_type": "shroud_tunnel",
+                "random_pos": "no",
+                "orbit_angle": "360",
+                "orbit_distance": "15"
+              },
+              "set_star_flag": "shroud_tunnel_nexus",
+              "save_global_event_target_as": "shroud_tunnel_nexus"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_initializers.txt",
+    "_line_number": 488
+  },
+  "shroudwalker_enclave_init_02": {
+    "shroudwalker_enclave_init_02": {
+      "class": "rl_standard_stars",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "0",
+        "modifier": {
+          "factor": "0",
+          "has_star_flag": "empire_cluster"
+        }
+      },
+      "max_instances": "1",
+      "scaled_spawn_chance": "16\t# scales by galaxy size (1000 stars = 10x base)",
+      "flags": {},
+      "asteroid_belt": {
+        "type": "crystal_asteroid_belt",
+        "radius": "125"
+      },
+      "planet": {
+        "count": "1",
+        "class": "star",
+        "orbit_distance": "0",
+        "orbit_angle": "1",
+        "size": {
+          "has_ring": "no"
+        },
+        "change_orbit": "30",
+        "planet": {
+          "count": "1",
+          "orbit_distance": "50",
+          "class": "pc_shrouded",
+          "orbit_angle": {
+            "size": "30",
+            "has_ring": "no",
+            "init_effect": {
+              "set_planet_flag": "shroudwalker_enclave_planet",
+              "save_event_target_as": "shroudwalker_enclave_planet",
+              "clear_deposits": "yes",
+              "prevent_anomaly": "yes",
+              "create_ambient_object": {
+                "type": "nebula_L8_entity",
+                "location": "this"
+              },
+              "last_created_ambient_object": {
+                "set_location": {
+                  "target": "prev",
+                  "distance": "0",
+                  "angle": "random"
+                }
+              },
+              "if": {
+                "limit": {
+                  "NOT": {
+                    "exists": "event_target:shroudwalker_enclave_country"
+                  }
+                },
+                "create_species": {
+                  "homeworld": "this",
+                  "name": "random",
+                  "class": "SHROUDWALKER",
+                  "namelist": "LITHOID1",
+                  "portrait": "random",
+                  "traits": {
+                    "ideal_planet_class": "pc_habitat",
+                    "trait": "random_traits"
+                  }
+                },
+                "last_created_species": {
+                  "save_event_target_as": "shroudwalker_enclave_species"
+                },
+                "create_shroudwalker_enclave_country": "yes",
+                "solar_system": {
+                  "save_global_event_target_as": "shroudwalker_enclave_system",
+                  "set_star_flag": "shroudwalker_enclave_system"
+                }
+              },
+              "else": {
+                "event_target:shroudwalker_enclave_country": {
+                  "create_shroudwalker_enclave_starbase": "yes"
+                }
+              },
+              "add_deposit": "d_zro_deposit_5"
+            }
+          },
+          "init_effect": {
+            "if": {
+              "limit": {
+                "exists": "event_target:shroudwalker_enclave_country",
+                "NOT": {
+                  "any_system": {
+                    "OR": {
+                      "has_star_flag": "shroud_tunnel_nexus"
+                    }
+                  }
+                }
+              },
+              "spawn_natural_wormhole": {
+                "bypass_type": "shroud_tunnel",
+                "random_pos": "no",
+                "orbit_angle": "360",
+                "orbit_distance": "15"
+              },
+              "set_star_flag": "shroud_tunnel_nexus",
+              "save_global_event_target_as": "shroud_tunnel_nexus"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_initializers.txt",
+    "_line_number": 607
+  },
+  "shroudwalker_enclave_init_03": {
+    "shroudwalker_enclave_init_03": {
+      "class": "sc_a",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "0",
+        "modifier": {
+          "factor": "0",
+          "has_star_flag": "empire_cluster"
+        }
+      },
+      "max_instances": "1",
+      "scaled_spawn_chance": "12\t# scales by galaxy size (1000 stars = 10x base)",
+      "flags": {},
+      "asteroid_belt": {
+        "type": "crystal_asteroid_belt",
+        "radius": "155"
+      },
+      "planet": {
+        "count": "1",
+        "class": "star",
+        "orbit_distance": "0",
+        "orbit_angle": "1",
+        "size": {
+          "has_ring": "no"
+        },
+        "change_orbit": "70",
+        "planet": {
+          "count": "5",
+          "class": "pc_rare_crystal_asteroid",
+          "size": "3",
+          "orbit_distance": {
+            "orbit_angle": {},
+            "change_orbit": "20",
+            "planet": {
+              "class": "pc_shrouded",
+              "orbit_angle": {
+                "size": "30",
+                "has_ring": "no",
+                "init_effect": {
+                  "set_planet_flag": "shroudwalker_enclave_planet",
+                  "save_event_target_as": "shroudwalker_enclave_planet",
+                  "clear_deposits": "yes",
+                  "prevent_anomaly": "yes",
+                  "create_ambient_object": {
+                    "type": "nebula_L8_entity",
+                    "location": "this"
+                  },
+                  "last_created_ambient_object": {
+                    "set_location": {
+                      "target": "prev",
+                      "distance": "0",
+                      "angle": "random"
+                    }
+                  },
+                  "if": {
+                    "limit": {
+                      "NOT": {
+                        "exists": "event_target:shroudwalker_enclave_country"
+                      }
+                    },
+                    "create_species": {
+                      "homeworld": "this",
+                      "name": "random",
+                      "class": "SHROUDWALKER",
+                      "namelist": "LITHOID1",
+                      "portrait": "random",
+                      "traits": {
+                        "ideal_planet_class": "pc_habitat",
+                        "trait": "random_traits"
+                      }
+                    },
+                    "last_created_species": {
+                      "save_event_target_as": "shroudwalker_enclave_species"
+                    },
+                    "create_shroudwalker_enclave_country": "yes",
+                    "solar_system": {
+                      "save_global_event_target_as": "shroudwalker_enclave_system",
+                      "set_star_flag": "shroudwalker_enclave_system"
+                    }
+                  },
+                  "else": {
+                    "event_target:shroudwalker_enclave_country": {
+                      "create_shroudwalker_enclave_starbase": "yes"
+                    }
+                  },
+                  "add_deposit": "d_zro_deposit_5"
+                }
+              },
+              "init_effect": {
+                "if": {
+                  "limit": {
+                    "exists": "event_target:shroudwalker_enclave_country",
+                    "NOT": {
+                      "any_system": {
+                        "OR": {
+                          "has_star_flag": "shroud_tunnel_nexus"
+                        }
+                      }
+                    }
+                  },
+                  "spawn_natural_wormhole": {
+                    "bypass_type": "shroud_tunnel",
+                    "random_pos": "no",
+                    "orbit_angle": "360",
+                    "orbit_distance": "15"
+                  },
+                  "set_star_flag": "shroud_tunnel_nexus",
+                  "save_global_event_target_as": "shroud_tunnel_nexus"
+                },
+                "event_target:shroudwalker_enclave_country": {
+                  "create_fleet": {
+                    "name": "NAME_Psionic_Avatar",
+                    "settings": {
+                      "can_upgrade": "no",
+                      "can_change_composition": "no",
+                      "can_change_leader": "no",
+                      "uses_naval_capacity": "no",
+                      "spawn_debris": "no",
+                      "is_boss": "yes"
+                    },
+                    "effect": {
+                      "set_owner": "PREV",
+                      "set_fleet_flag": "avatar_fleet",
+                      "create_ship": {
+                        "name": "NAME_Avatar",
+                        "design": "NAME_Shroud_Avatar",
+                        "prefix": "no",
+                        "upgradable": "no"
+                      },
+                      "set_location": "last_created_ambient_object"
+                    }
+                  },
+                  "last_created_fleet": {
+                    "clear_fleet_actions": "this",
+                    "queue_actions": {
+                      "repeat": {
+                        "find_random_planet": {
+                          "found_planet": {
+                            "move_to": "this",
+                            "orbit_planet": "THIS"
+                          }
+                        },
+                        "wait": {
+                          "duration": "15"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_initializers.txt",
+    "_line_number": 740
+  },
+  "broken_shroudwalker_init_01": {
+    "broken_shroudwalker_init_01": {
+      "class": "sc_trinary_2",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "0",
+        "modifier": {
+          "factor": "0",
+          "has_star_flag": "empire_cluster"
+        }
+      },
+      "max_instances": "1",
+      "spawn_chance": "33",
+      "flags": {},
+      "planet": {
+        "name": "NAME_Dysis",
+        "count": "1",
+        "class": "star",
+        "orbit_distance": "0",
+        "orbit_angle": "145",
+        "size": "20",
+        "has_ring": "no",
+        "planet": {
+          "name": "NAME_Arktos",
+          "class": "pc_shrouded",
+          "orbit_angle": "255",
+          "orbit_distance": "15",
+          "size": "12",
+          "init_effect": {
+            "clear_deposits": "yes",
+            "prevent_anomaly": "yes",
+            "add_deposit": "d_zro_deposit_2",
+            "create_ambient_object": {
+              "type": "enclave_shroudwalker_starbase_ruined",
+              "entity_offset_height": "-15",
+              "location": "this"
+            }
+          }
+        },
+        "init_effect": {
+          "clear_deposits": "yes",
+          "prevent_anomaly": "yes"
+        }
+      },
+      "asteroid_belt": {
+        "type": "crystal_asteroid_belt",
+        "radius": "65"
+      }
+    },
+    "_source_file": "overlord_initializers.txt",
+    "_line_number": 942
+  },
+  "quantum_catapult_init_01": {
+    "quantum_catapult_init_01": {
+      "class": "sc_pulsar",
+      "usage": "misc_system_init",
+      "flags": {
+        "usage_odds": {
+          "base": "100",
+          "modifier": {
+            "factor": "0",
+            "has_overlord_dlc": "no"
+          }
+        },
+        "max_instances": "1",
+        "scaled_spawn_chance": "4",
+        "planet": {
+          "count": {
+            "orbit_distance": "20",
+            "orbit_angle": {
+              "change_orbit": "@base_moon_distance",
+              "moon": {
+                "count": {
+                  "orbit_angle": {
+                    "orbit_distance": "5"
+                  }
+                },
+                "init_effect": {
+                  "spawn_megastructure": {
+                    "type": "quantum_catapult_ruined",
+                    "planet": "event_target:quantum_catapult_star",
+                    "init_effect": {
+                      "create_ambient_object": {
+                        "type": "medium_debris_02_object",
+                        "location": "this"
+                      },
+                      "last_created_ambient_object": {
+                        "set_location": {
+                          "target": "prev",
+                          "distance": "3",
+                          "angle": "270"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "change_orbit": "45"
+      }
+    },
+    "_source_file": "overlord_initializers.txt",
+    "_line_number": 1119
+  },
+  "orbital_ring_init_01": {
+    "orbital_ring_init_01": {
+      "class": "rl_binary_stars",
+      "asteroid_belt": {
+        "type": "icy_asteroid_belt",
+        "radius": "145"
+      },
+      "flags": {
+        "usage": "misc_system_init",
+        "usage_odds": {
+          "base": "100",
+          "modifier": {
+            "factor": "0.2",
+            "closest_system": {
+              "has_megastructure": "ring_world_ruined",
+              "distance": {
+                "source": "prev",
+                "max_distance <": "200"
+              }
+            }
+          }
+        },
+        "max_instances": "1",
+        "scaled_spawn_chance": "8\t#by galaxy size",
+        "planet": {
+          "count": "1",
+          "class": "star",
+          "orbit_distance": "30",
+          "orbit_angle": "0",
+          "size": {
+            "has_ring": "no"
+          },
+          "planet": {
+            "count": "1",
+            "class": "star",
+            "orbit_distance": "0",
+            "size": {
+              "has_ring": "no"
+            },
+            "planet": {
+              "count": "1",
+              "class": "random_non_colonizable",
+              "orbit_distance": "45",
+              "orbit_angle": {
+                "size": {
+                  "has_ring": "no"
+                },
+                "planet": {
+                  "count": {
+                    "class": "pc_asteroid",
+                    "orbit_distance": "15",
+                    "orbit_angle": {},
+                    "planet": {
+                      "count": "1",
+                      "class": "random_colonizable",
+                      "orbit_distance": "20",
+                      "orbit_angle": {
+                        "size": {
+                          "has_ring": "no",
+                          "flags": {
+                            "init_effect": {
+                              "prevent_anomaly": "yes",
+                              "save_event_target_as": "ruined_orbital_ring_planet"
+                            }
+                          },
+                          "planet": {
+                            "count": {
+                              "class": "pc_ice_asteroid",
+                              "orbit_distance": "20",
+                              "orbit_angle": {},
+                              "init_effect": {
+                                "spawn_megastructure": {
+                                  "type": "orbital_ring_ruined",
+                                  "planet": "event_target:ruined_orbital_ring_planet",
+                                  "init_effect": {
+                                    "create_ambient_object": {
+                                      "type": "medium_debris_02_object",
+                                      "location": "this"
+                                    },
+                                    "last_created_ambient_object": {
+                                      "set_location": {
+                                        "target": "prev",
+                                        "distance": "3",
+                                        "angle": "270"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_initializers.txt",
+    "_line_number": 1216
+  },
+  "overlord_system_init": {
+    "overlord_system_init": {
+      "class": "sc_pulsar",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "0 # Spawned via imperial_origin_start_effect in 01_start_of_game_effects.txt"
+      },
+      "max_instances": "1",
+      "flags": {
+        "planet": {
+          "count": {
+            "class": "pc_asteroid",
+            "orbit_distance": "30",
+            "orbit_angle": {},
+            "planet": {
+              "count": {
+                "orbit_distance": "30",
+                "class": "random_non_colonizable",
+                "orbit_angle": {
+                  "change_orbit": "10",
+                  "moon": {
+                    "count": {
+                      "class": "random_non_colonizable",
+                      "orbit_angle": {
+                        "orbit_distance": "5"
+                      }
+                    },
+                    "planet": {
+                      "count": {
+                        "orbit_distance": "30",
+                        "class": "pc_gas_giant",
+                        "orbit_angle": {
+                          "change_orbit": "10",
+                          "moon": {
+                            "count": {
+                              "class": "random_non_colonizable",
+                              "orbit_angle": {
+                                "orbit_distance": "5"
+                              }
+                            },
+                            "planet": {
+                              "name": "NAME_Aix",
+                              "class": "pc_gaia",
+                              "orbit_distance": "20",
+                              "orbit_angle": "150",
+                              "size": "30",
+                              "has_ring": "no",
+                              "deposit_blockers": "none",
+                              "modifiers": "none",
+                              "init_effect": {
+                                "save_global_event_target_as": "origin_imperial_homeland",
+                                "create_species": {
+                                  "name": "random",
+                                  "class": "random_non_machine",
+                                  "portrait": "random",
+                                  "traits": "random",
+                                  "homeworld": "this"
+                                },
+                                "last_created_species": {
+                                  "save_global_event_target_as": "origin_imperial_species"
+                                },
+                                "create_country": {
+                                  "name": {
+                                    "key": "NAME_Imperial_Origin_Empire",
+                                    "variable_string": "[origin_imperial_species.GetAdj]"
+                                  },
+                                  "authority": "auth_imperial",
+                                  "species": "last_created_species",
+                                  "civics": {
+                                    "civic": "civic_feudal_realm"
+                                  },
+                                  "ethos": {
+                                    "ethic": "ethic_materialist"
+                                  },
+                                  "origin": "origin_imperial_vassal_overlord",
+                                  "effect": {
+                                    "save_global_event_target_as": "origin_imperial_homeland_country",
+                                    "every_playable_country": {
+                                      "limit": {
+                                        "has_origin": "origin_imperial_vassal"
+                                      },
+                                      "establish_communications_no_message": "event_target:origin_imperial_homeland_country"
+                                    },
+                                    "_comments": [
+                                      "# Fleets",
+                                      "# Resources"
+                                    ],
+                                    "create_fleet": {
+                                      "effect": {
+                                        "set_owner": "event_target:origin_imperial_homeland_country",
+                                        "create_ship": {
+                                          "name": "random",
+                                          "random_existing_design": "science"
+                                        },
+                                        "set_location": "event_target:origin_imperial_homeland_country.capital_star",
+                                        "save_event_target_as": "new_science_ship_target"
+                                      }
+                                    },
+                                    "create_leader": {
+                                      "name": "random",
+                                      "species": "event_target:origin_imperial_homeland_country.species",
+                                      "class": "scientist",
+                                      "skill": "1"
+                                    },
+                                    "event_target:new_science_ship_target": {
+                                      "assign_leader": "last_created_leader"
+                                    },
+                                    "while": {
+                                      "count": "4",
+                                      "create_fleet": {
+                                        "effect": {
+                                          "set_owner": "event_target:origin_imperial_homeland_country",
+                                          "while": {
+                                            "count": "10",
+                                            "create_ship": {
+                                              "name": "random",
+                                              "design": "NAME_Ravager"
+                                            }
+                                          },
+                                          "set_location": "event_target:origin_imperial_homeland_country.capital_star"
+                                        }
+                                      }
+                                    },
+                                    "add_basic_resources_effect": {
+                                      "add_manufactured_resources_effect": {
+                                        "add_advanced_resources_effect": {
+                                          "give_physics_tech_tier_1_effect": "yes",
+                                          "_comments": [
+                                            "# Tech"
+                                          ],
+                                          "give_physics_tech_tier_2_effect": "yes",
+                                          "give_engineering_tech_tier_1_effect": "yes",
+                                          "give_engineering_tech_tier_2_effect": "yes",
+                                          "give_society_tech_tier_1_effect": "yes",
+                                          "give_society_tech_tier_2_effect": "yes",
+                                          "give_technology": {
+                                            "give_technology": {
+                                              "create_built_robot_species": "yes",
+                                              "_comments": [
+                                                "# Robots"
+                                              ],
+                                              "last_created_species": {
+                                                "_comments": [
+                                                  "# Policies"
+                                                ],
+                                                "set_policy": {
+                                                  "policy": "population_controls",
+                                                  "option": "population_controls_not_allowed",
+                                                  "cooldown": "yes"
+                                                }
+                                              }
+                                            },
+                                            "set_owner": "event_target:origin_imperial_homeland_country",
+                                            "set_controller": "event_target:origin_imperial_homeland_country",
+                                            "set_capital": "yes",
+                                            "while": {
+                                              "count": "6",
+                                              "add_district_and_planet_size_if_needed_effect": {
+                                                "district": "district_industrial"
+                                              }
+                                            },
+                                            "remove_all_buildings": "yes",
+                                            "add_building": "building_holo_theatres",
+                                            "validate_planet_buildings_and_districts": "yes"
+                                          }
+                                        },
+                                        "planet": {
+                                          "count": {
+                                            "orbit_distance": "30",
+                                            "class": "random_non_colonizable",
+                                            "orbit_angle": {
+                                              "change_orbit": "10",
+                                              "moon": {
+                                                "count": {
+                                                  "class": "random_non_colonizable",
+                                                  "orbit_angle": {
+                                                    "orbit_distance": "5"
+                                                  }
+                                                },
+                                                "planet": {
+                                                  "count": {
+                                                    "class": "pc_asteroid",
+                                                    "orbit_distance": "25",
+                                                    "orbit_angle": {},
+                                                    "init_effect": {
+                                                      "create_starbase": {
+                                                        "size": "starbase_starhold",
+                                                        "owner": "event_target:origin_imperial_homeland_country",
+                                                        "module": "anchorage",
+                                                        "building": "naval_logistics_office"
+                                                      },
+                                                      "generate_home_system_resources": "yes",
+                                                      "every_system_planet": {
+                                                        "limit": {
+                                                          "has_deposit_for": "shipclass_research_station",
+                                                          "has_research_station": "no"
+                                                        },
+                                                        "create_research_station": {
+                                                          "owner": "event_target:origin_imperial_homeland_country"
+                                                        }
+                                                      },
+                                                      "spawn_megastructure": {
+                                                        "type": "gateway_derelict",
+                                                        "random_pos": "yes",
+                                                        "graphical_culture": "event_target:origin_imperial_homeland_country",
+                                                        "owner": "event_target:origin_imperial_homeland_country",
+                                                        "orbit_angle": "360\t\t# range of the randomization"
+                                                      }
+                                                    },
+                                                    "neighbor_system": {
+                                                      "hyperlane_jumps": {
+                                                        "initializer": "overlord_system_2_init"
+                                                      },
+                                                      "neighbor_system": {
+                                                        "hyperlane_jumps": {
+                                                          "initializer": "overlord_system_3_init"
+                                                        },
+                                                        "neighbor_system": {
+                                                          "trigger": {
+                                                            "NOR": {
+                                                              "galaxy_size": "medium",
+                                                              "any_neighbor_system": {
+                                                                "has_star_flag": "empire_home_system"
+                                                              }
+                                                            }
+                                                          },
+                                                          "initializer": "overlord_system_7_init"
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_initializers.txt",
+    "_line_number": 1370
+  },
+  "overlord_system_2_init": {
+    "overlord_system_2_init": {
+      "class": "rl_standard_stars",
+      "flags": {
+        "asteroid_belt": {
+          "type": "rocky_asteroid_belt",
+          "radius": "175"
+        },
+        "planet": {
+          "count": "1",
+          "class": "star",
+          "orbit_distance": "0",
+          "orbit_angle": "1",
+          "size": {
+            "has_ring": "no"
+          },
+          "change_orbit": "40",
+          "_comments": [
+            "# Innermost asteroid belt"
+          ],
+          "planet": {
+            "count": {
+              "class": "pc_asteroid",
+              "orbit_distance": "0",
+              "orbit_angle": {},
+              "planet": {
+                "count": {
+                  "orbit_distance": "30",
+                  "class": "random_non_colonizable",
+                  "orbit_angle": {
+                    "change_orbit": "10",
+                    "moon": {
+                      "count": {
+                        "class": "random_non_colonizable",
+                        "orbit_angle": {
+                          "orbit_distance": "5"
+                        }
+                      },
+                      "planet": {
+                        "count": "1",
+                        "orbit_distance": "30",
+                        "class": "pc_gas_giant",
+                        "orbit_angle": {
+                          "change_orbit": "10",
+                          "moon": {
+                            "count": {
+                              "class": "random_non_colonizable",
+                              "orbit_angle": {
+                                "orbit_distance": "5"
+                              }
+                            },
+                            "planet": {
+                              "count": {
+                                "orbit_distance": "30",
+                                "class": "random_non_colonizable",
+                                "orbit_angle": {
+                                  "change_orbit": "10",
+                                  "moon": {
+                                    "count": {
+                                      "class": "random_non_colonizable",
+                                      "orbit_angle": {
+                                        "orbit_distance": "5"
+                                      }
+                                    },
+                                    "_comments": [
+                                      "# Outermost asteroid belt"
+                                    ],
+                                    "planet": {
+                                      "count": {
+                                        "class": "pc_asteroid",
+                                        "orbit_distance": "25",
+                                        "orbit_angle": {},
+                                        "init_effect": {
+                                          "create_starbase": {
+                                            "size": "starbase_starhold",
+                                            "owner": "event_target:origin_imperial_homeland_country",
+                                            "module": "anchorage",
+                                            "building": "naval_logistics_office"
+                                          },
+                                          "generate_home_system_resources": "yes",
+                                          "every_system_planet": {
+                                            "limit": {
+                                              "has_deposit_for": "shipclass_research_station",
+                                              "has_research_station": "no"
+                                            },
+                                            "create_research_station": {
+                                              "owner": "event_target:origin_imperial_homeland_country"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_initializers.txt",
+    "_line_number": 1758
+  },
+  "overlord_system_3_init": {
+    "overlord_system_3_init": {
+      "class": "rl_standard_stars",
+      "flags": {
+        "asteroid_belt": {
+          "type": "rocky_asteroid_belt",
+          "radius": "35"
+        },
+        "planet": {
+          "count": "1",
+          "class": "star",
+          "orbit_distance": "0",
+          "orbit_angle": "1",
+          "size": {
+            "has_ring": "no"
+          },
+          "change_orbit": "30",
+          "planet": {
+            "count": "2",
+            "class": "pc_asteroid",
+            "orbit_distance": {
+              "orbit_angle": {
+                "size": "2"
+              },
+              "planet": {
+                "count": {
+                  "orbit_distance": "30",
+                  "class": "random_non_colonizable",
+                  "orbit_angle": {
+                    "change_orbit": "10",
+                    "moon": {
+                      "count": {
+                        "class": "random_non_colonizable",
+                        "orbit_angle": {
+                          "orbit_distance": "5"
+                        }
+                      },
+                      "planet": {
+                        "count": {
+                          "orbit_distance": "30",
+                          "class": "random_non_colonizable",
+                          "orbit_angle": {
+                            "change_orbit": "10",
+                            "moon": {
+                              "count": {
+                                "class": "random_non_colonizable",
+                                "orbit_angle": {
+                                  "orbit_distance": "5"
+                                }
+                              },
+                              "planet": {
+                                "count": {
+                                  "class": "pc_asteroid",
+                                  "orbit_distance": "25",
+                                  "orbit_angle": {},
+                                  "init_effect": {
+                                    "create_starbase": {
+                                      "size": "starbase_starhold",
+                                      "owner": "event_target:origin_imperial_homeland_country",
+                                      "module": "anchorage",
+                                      "building": "naval_logistics_office"
+                                    },
+                                    "generate_home_system_resources": "yes",
+                                    "every_system_planet": {
+                                      "limit": {
+                                        "has_deposit_for": "shipclass_research_station",
+                                        "has_research_station": "no"
+                                      },
+                                      "create_research_station": {
+                                        "owner": "event_target:origin_imperial_homeland_country"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_initializers.txt",
+    "_line_number": 1959
+  },
+  "overlord_system_4_init": {
+    "overlord_system_4_init": {
+      "class": "rl_standard_stars",
+      "flags": {
+        "planet": {
+          "count": "1",
+          "class": "star",
+          "orbit_distance": "0",
+          "orbit_angle": "1",
+          "size": {
+            "has_ring": "no"
+          },
+          "planet": {
+            "count": "1",
+            "orbit_distance": "30",
+            "class": "random_non_colonizable",
+            "orbit_angle": {
+              "change_orbit": "10",
+              "moon": {
+                "count": {
+                  "class": "random_non_colonizable",
+                  "orbit_angle": {
+                    "orbit_distance": "5"
+                  }
+                },
+                "planet": {
+                  "count": {
+                    "class": "pc_asteroid",
+                    "orbit_distance": "30",
+                    "orbit_angle": {},
+                    "planet": {
+                      "class": "pc_arid",
+                      "orbit_distance": {
+                        "orbit_angle": {
+                          "size": {
+                            "has_ring": "no",
+                            "deposit_blockers": "none",
+                            "modifiers": "none",
+                            "init_effect": {
+                              "save_event_target_as": "imperial_homeland_4",
+                              "create_species": {
+                                "name": "random",
+                                "class": "random_non_machine",
+                                "portrait": "random",
+                                "traits": "random",
+                                "homeworld": "this"
+                              },
+                              "last_created_species": {
+                                "save_event_target_as": "origin_imperial_species_2"
+                              },
+                              "create_country": {
+                                "name": {
+                                  "key": "NAME_Imperial_Origin_Empire_2",
+                                  "variable_string": "[origin_imperial_species_2.GetNamePlural]"
+                                },
+                                "authority": "auth_dictatorial",
+                                "species": "last_created_species",
+                                "civics": {
+                                  "civic": "civic_slaver_guilds"
+                                },
+                                "ethos": {
+                                  "ethic": "ethic_authoritarian"
+                                },
+                                "origin": "origin_imperial_vassal",
+                                "effect": {
+                                  "set_country_flag": "origin_imperial_vassal_technocrat_country",
+                                  "save_global_event_target_as": "origin_imperial_homeland_country_2",
+                                  "give_physics_tech_tier_1_effect": "yes",
+                                  "_comments": [
+                                    "# Tech",
+                                    "# Subjugation",
+                                    "# Communication",
+                                    "# Fleets",
+                                    "# Resources"
+                                  ],
+                                  "give_engineering_tech_tier_1_effect": "yes",
+                                  "give_society_tech_tier_1_effect": "yes",
+                                  "set_subject_of": {
+                                    "who": "event_target:origin_imperial_homeland_country"
+                                  },
+                                  "every_playable_country": {
+                                    "limit": {
+                                      "has_origin": "origin_imperial_vassal"
+                                    },
+                                    "establish_communications_no_message": "event_target:origin_imperial_homeland_country_2"
+                                  },
+                                  "while": {
+                                    "count": "2",
+                                    "create_fleet": {
+                                      "effect": {
+                                        "set_owner": "event_target:origin_imperial_homeland_country_2",
+                                        "create_ship": {
+                                          "name": "random",
+                                          "random_existing_design": "science"
+                                        },
+                                        "set_location": "event_target:origin_imperial_homeland_country_2.capital_star",
+                                        "save_event_target_as": "new_science_ship_target"
+                                      }
+                                    },
+                                    "create_leader": {
+                                      "name": "random",
+                                      "species": "event_target:origin_imperial_homeland_country_2.species",
+                                      "class": "scientist",
+                                      "skill": "1"
+                                    },
+                                    "event_target:new_science_ship_target": {
+                                      "assign_leader": "last_created_leader"
+                                    }
+                                  },
+                                  "add_basic_resources_effect": {
+                                    "add_manufactured_resources_effect": {
+                                      "add_advanced_resources_effect": {
+                                        "_comments": [
+                                          "# Policies"
+                                        ],
+                                        "set_policy": {
+                                          "policy": "purge",
+                                          "option": "purge_displacement_only",
+                                          "cooldown": "yes"
+                                        }
+                                      }
+                                    },
+                                    "set_owner": "event_target:origin_imperial_homeland_country_2",
+                                    "set_controller": "event_target:origin_imperial_homeland_country_2",
+                                    "set_capital": "yes",
+                                    "while": {
+                                      "count": "25",
+                                      "create_pop": {
+                                        "species": "owner_main_species"
+                                      }
+                                    },
+                                    "generate_start_buildings_and_districts": "yes"
+                                  }
+                                },
+                                "planet": {
+                                  "count": {
+                                    "orbit_distance": "30",
+                                    "class": "pc_gas_giant",
+                                    "orbit_angle": {
+                                      "change_orbit": "10",
+                                      "moon": {
+                                        "count": {
+                                          "class": "random_non_colonizable",
+                                          "orbit_angle": {
+                                            "orbit_distance": "5"
+                                          }
+                                        },
+                                        "planet": {
+                                          "count": {
+                                            "orbit_distance": "30",
+                                            "class": "random_non_colonizable",
+                                            "orbit_angle": {
+                                              "change_orbit": "10",
+                                              "moon": {
+                                                "count": {
+                                                  "class": "random_non_colonizable",
+                                                  "orbit_angle": {
+                                                    "orbit_distance": "5"
+                                                  }
+                                                },
+                                                "planet": {
+                                                  "count": {
+                                                    "class": "pc_asteroid",
+                                                    "orbit_distance": "25",
+                                                    "orbit_angle": {},
+                                                    "planet": {
+                                                      "orbit_distance": "30",
+                                                      "class": "random_non_colonizable",
+                                                      "orbit_angle": {
+                                                        "moon": {
+                                                          "count": {
+                                                            "class": "random_non_colonizable",
+                                                            "orbit_angle": {
+                                                              "orbit_distance": "5"
+                                                            }
+                                                          },
+                                                          "init_effect": {
+                                                            "create_starbase": {
+                                                              "size": "starbase_starport",
+                                                              "owner": "event_target:origin_imperial_homeland_country_2",
+                                                              "module": "anchorage",
+                                                              "building": "crew_quarters"
+                                                            },
+                                                            "generate_home_system_resources": "yes",
+                                                            "every_system_planet": {
+                                                              "limit": {
+                                                                "has_deposit_for": "shipclass_research_station",
+                                                                "has_research_station": "no"
+                                                              },
+                                                              "create_research_station": {
+                                                                "owner": "event_target:origin_imperial_homeland_country_2"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_initializers.txt",
+    "_line_number": 2147
+  },
+  "overlord_system_5_init": {
+    "overlord_system_5_init": {
+      "class": "rl_standard_stars",
+      "flags": {
+        "planet": {
+          "count": "1",
+          "class": "star",
+          "orbit_distance": "0",
+          "orbit_angle": "1",
+          "size": {
+            "has_ring": "no"
+          },
+          "planet": {
+            "count": {
+              "class": "pc_asteroid",
+              "orbit_distance": "15",
+              "orbit_angle": {},
+              "planet": {
+                "count": {
+                  "orbit_distance": "20",
+                  "class": "random_non_colonizable",
+                  "orbit_angle": {
+                    "change_orbit": "10",
+                    "moon": {
+                      "count": {
+                        "class": "random_non_colonizable",
+                        "orbit_angle": {
+                          "orbit_distance": "5"
+                        }
+                      },
+                      "planet": {
+                        "class": "pc_continental",
+                        "orbit_distance": {
+                          "orbit_angle": {
+                            "size": {
+                              "has_ring": "no",
+                              "deposit_blockers": "none",
+                              "modifiers": "none",
+                              "init_effect": {
+                                "save_event_target_as": "imperial_homeland_5",
+                                "create_species": {
+                                  "name": "random",
+                                  "class": "random_non_machine",
+                                  "portrait": "random",
+                                  "traits": "random",
+                                  "homeworld": "this"
+                                },
+                                "last_created_species": {
+                                  "save_event_target_as": "origin_imperial_species_3"
+                                },
+                                "create_country": {
+                                  "name": {
+                                    "key": "NAME_Imperial_Origin_Empire_3",
+                                    "variable_string": "[origin_imperial_species_3.GetNamePlural]"
+                                  },
+                                  "authority": "auth_dictatorial",
+                                  "species": "last_created_species",
+                                  "civics": {
+                                    "civic": "civic_distinguished_admiralty"
+                                  },
+                                  "ethos": {
+                                    "ethic": "ethic_spiritualist"
+                                  },
+                                  "origin": "origin_imperial_vassal",
+                                  "effect": {
+                                    "save_global_event_target_as": "origin_imperial_homeland_country_3",
+                                    "set_country_flag": "origin_imperial_vassal_prince_electorate_country",
+                                    "_comments": [
+                                      "# Subjugation",
+                                      "# Communication",
+                                      "# Fleets",
+                                      "# Resources"
+                                    ],
+                                    "set_subject_of": {
+                                      "who": "event_target:origin_imperial_homeland_country"
+                                    },
+                                    "every_playable_country": {
+                                      "limit": {
+                                        "has_origin": "origin_imperial_vassal"
+                                      },
+                                      "establish_communications_no_message": "event_target:origin_imperial_homeland_country_3"
+                                    },
+                                    "create_fleet": {
+                                      "effect": {
+                                        "set_owner": "event_target:origin_imperial_homeland_country_3",
+                                        "while": {
+                                          "count": "5",
+                                          "create_ship": {
+                                            "name": "random",
+                                            "design": "NAME_Ravager"
+                                          }
+                                        },
+                                        "set_location": "event_target:origin_imperial_homeland_country_3.capital_star"
+                                      }
+                                    },
+                                    "create_leader": {
+                                      "name": "random",
+                                      "species": "event_target:origin_imperial_homeland_country_3.species",
+                                      "class": "scientist",
+                                      "skill": "1"
+                                    },
+                                    "event_target:new_science_ship_target": {
+                                      "assign_leader": "last_created_leader"
+                                    },
+                                    "add_basic_resources_effect": {
+                                      "add_manufactured_resources_effect": {
+                                        "add_advanced_resources_effect": {
+                                          "_comments": [
+                                            "# Policies"
+                                          ],
+                                          "set_policy": {
+                                            "policy": "purge",
+                                            "option": "purge_not_allowed",
+                                            "cooldown": "yes"
+                                          }
+                                        }
+                                      },
+                                      "set_owner": "event_target:origin_imperial_homeland_country_3",
+                                      "set_controller": "event_target:origin_imperial_homeland_country_3",
+                                      "set_capital": "yes",
+                                      "while": {
+                                        "count": "25",
+                                        "create_pop": {
+                                          "species": "owner_main_species"
+                                        }
+                                      },
+                                      "generate_start_buildings_and_districts": "yes"
+                                    }
+                                  },
+                                  "planet": {
+                                    "class": "pc_gas_giant",
+                                    "orbit_distance": "20",
+                                    "orbit_angle": {
+                                      "moon": {
+                                        "count": {
+                                          "class": "random_non_colonizable",
+                                          "orbit_angle": {
+                                            "orbit_distance": "5"
+                                          }
+                                        },
+                                        "planet": {
+                                          "count": {
+                                            "class": "pc_asteroid",
+                                            "orbit_distance": "15",
+                                            "orbit_angle": {},
+                                            "init_effect": {
+                                              "create_starbase": {
+                                                "size": "starbase_starport",
+                                                "owner": "event_target:origin_imperial_homeland_country_3",
+                                                "module": "anchorage",
+                                                "building": "crew_quarters"
+                                              },
+                                              "generate_home_system_resources": "yes",
+                                              "every_system_planet": {
+                                                "limit": {
+                                                  "has_deposit_for": "shipclass_research_station",
+                                                  "has_research_station": "no"
+                                                },
+                                                "create_research_station": {
+                                                  "owner": "event_target:origin_imperial_homeland_country_3"
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_initializers.txt",
+    "_line_number": 2416
+  },
+  "overlord_system_6_init": {
+    "overlord_system_6_init": {
+      "class": "rl_standard_stars",
+      "flags": {
+        "asteroid_belt": {
+          "type": "rocky_asteroid_belt",
+          "radius": "200"
+        },
+        "planet": {
+          "count": "1",
+          "class": "star",
+          "orbit_distance": "0",
+          "orbit_angle": "1",
+          "size": {
+            "has_ring": "no"
+          },
+          "planet": {
+            "orbit_distance": "40",
+            "class": "random_non_colonizable",
+            "orbit_angle": {
+              "moon": {
+                "count": {
+                  "class": "random_non_colonizable",
+                  "orbit_angle": {
+                    "orbit_distance": "5"
+                  }
+                },
+                "planet": {
+                  "class": "pc_arctic",
+                  "orbit_distance": "40",
+                  "orbit_angle": {
+                    "size": {
+                      "has_ring": "no",
+                      "deposit_blockers": "none",
+                      "modifiers": "none",
+                      "init_effect": {
+                        "save_event_target_as": "imperial_homeland_6",
+                        "create_species": {
+                          "name": "random",
+                          "class": "random_non_machine",
+                          "portrait": "random",
+                          "traits": "random",
+                          "homeworld": "this"
+                        },
+                        "last_created_species": {
+                          "save_event_target_as": "origin_imperial_species_4"
+                        },
+                        "create_country": {
+                          "name": {
+                            "key": "NAME_Imperial_Origin_Empire_4",
+                            "variable_string": "[origin_imperial_species_4.GetNamePlural]"
+                          },
+                          "authority": "auth_dictatorial",
+                          "species": "last_created_species",
+                          "civics": {
+                            "civic": "civic_exalted_priesthood"
+                          },
+                          "ethos": {
+                            "ethic": "ethic_xenophobe"
+                          },
+                          "origin": "origin_imperial_vassal",
+                          "effect": {
+                            "save_global_event_target_as": "origin_imperial_homeland_country_4",
+                            "set_country_flag": "origin_imperial_vassal_palatinate_country",
+                            "_comments": [
+                              "# Subjugation",
+                              "# Communication",
+                              "# Fleets",
+                              "# Resources"
+                            ],
+                            "set_subject_of": {
+                              "who": "event_target:origin_imperial_homeland_country"
+                            },
+                            "every_playable_country": {
+                              "limit": {
+                                "has_origin": "origin_imperial_vassal"
+                              },
+                              "establish_communications_no_message": "event_target:origin_imperial_homeland_country_4"
+                            },
+                            "create_fleet": {
+                              "effect": {
+                                "set_owner": "event_target:origin_imperial_homeland_country_4",
+                                "create_ship": {
+                                  "name": "random",
+                                  "random_existing_design": "science"
+                                },
+                                "set_location": "event_target:origin_imperial_homeland_country_4.capital_star",
+                                "save_event_target_as": "new_science_ship_target"
+                              }
+                            },
+                            "create_leader": {
+                              "name": "random",
+                              "species": "event_target:origin_imperial_homeland_country_4.species",
+                              "class": "scientist",
+                              "skill": "1"
+                            },
+                            "event_target:new_science_ship_target": {
+                              "assign_leader": "last_created_leader"
+                            },
+                            "add_basic_resources_effect": {
+                              "add_manufactured_resources_effect": {
+                                "add_advanced_resources_effect": {
+                                  "_comments": [
+                                    "# Policies"
+                                  ],
+                                  "set_policy": {
+                                    "policy": "purge",
+                                    "option": "purge_allowed",
+                                    "cooldown": "yes"
+                                  }
+                                }
+                              },
+                              "set_owner": "event_target:origin_imperial_homeland_country_4",
+                              "set_controller": "event_target:origin_imperial_homeland_country_4",
+                              "set_capital": "yes",
+                              "while": {
+                                "count": "25",
+                                "create_pop": {
+                                  "species": "owner_main_species"
+                                }
+                              },
+                              "generate_start_buildings_and_districts": "yes"
+                            }
+                          },
+                          "change_orbit": "40",
+                          "_comments": [
+                            "# Innermost asteroid belt (r=125)"
+                          ],
+                          "planet": {
+                            "count": {
+                              "class": "pc_asteroid",
+                              "orbit_distance": "2",
+                              "orbit_angle": {},
+                              "planet": {
+                                "count": "2",
+                                "class": "pc_gas_giant",
+                                "orbit_distance": "25",
+                                "orbit_angle": {
+                                  "moon": {
+                                    "count": {
+                                      "class": "random_non_colonizable",
+                                      "orbit_angle": {
+                                        "orbit_distance": "8"
+                                      }
+                                    },
+                                    "change_orbit": "15",
+                                    "_comments": [
+                                      "# Outermost asteroid belt (r=200)"
+                                    ],
+                                    "planet": {
+                                      "count": {
+                                        "class": "pc_asteroid",
+                                        "orbit_distance": {
+                                          "orbit_angle": {},
+                                          "init_effect": {
+                                            "create_starbase": {
+                                              "size": "starbase_starport",
+                                              "owner": "event_target:origin_imperial_homeland_country_4",
+                                              "module": "anchorage",
+                                              "building": "crew_quarters"
+                                            },
+                                            "generate_home_system_resources": "yes",
+                                            "every_system_planet": {
+                                              "limit": {
+                                                "has_deposit_for": "shipclass_research_station",
+                                                "has_research_station": "no"
+                                              },
+                                              "create_research_station": {
+                                                "owner": "event_target:origin_imperial_homeland_country_4"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_initializers.txt",
+    "_line_number": 2673
+  },
+  "overlord_system_7_init": {
+    "overlord_system_7_init": {
+      "class": "rl_standard_stars",
+      "flags": {
+        "planet": {
+          "count": "1",
+          "class": "star",
+          "orbit_distance": "0",
+          "orbit_angle": "1",
+          "size": {
+            "has_ring": "no"
+          },
+          "asteroid_belt": {
+            "type": "icy_asteroid_belt",
+            "radius": "150"
+          },
+          "planet": {
+            "count": {
+              "orbit_distance": "35",
+              "class": "random_non_colonizable",
+              "orbit_angle": {
+                "moon": {
+                  "count": {
+                    "class": "random_non_colonizable",
+                    "orbit_angle": {
+                      "orbit_distance": "5"
+                    }
+                  },
+                  "change_orbit": "10",
+                  "planet": {
+                    "count": {
+                      "class": "pc_asteroid",
+                      "orbit_distance": "0",
+                      "orbit_angle": {},
+                      "planet": {
+                        "class": "pc_ocean",
+                        "orbit_distance": {
+                          "orbit_angle": {
+                            "size": {
+                              "has_ring": "no",
+                              "deposit_blockers": "none",
+                              "modifiers": "none",
+                              "init_effect": {
+                                "save_event_target_as": "imperial_homeland_7",
+                                "create_species": {
+                                  "name": "random",
+                                  "class": "random_non_machine",
+                                  "portrait": "random",
+                                  "traits": "random",
+                                  "homeworld": "this"
+                                },
+                                "last_created_species": {
+                                  "save_event_target_as": "origin_imperial_species_5"
+                                },
+                                "if": {
+                                  "limit": {
+                                    "host_has_dlc": "Megacorp"
+                                  },
+                                  "create_country": {
+                                    "name": {
+                                      "key": "NAME_Imperial_Origin_Empire_5",
+                                      "variable_string": "[origin_imperial_species_5.GetAdj]"
+                                    },
+                                    "authority": "auth_corporate",
+                                    "species": "last_created_species",
+                                    "civics": {
+                                      "civic": "civic_ruthless_competition"
+                                    },
+                                    "ethos": {
+                                      "ethic": "ethic_xenophile"
+                                    },
+                                    "origin": "origin_imperial_vassal",
+                                    "effect": {
+                                      "save_global_event_target_as": "origin_imperial_homeland_country_5"
+                                    }
+                                  }
+                                },
+                                "else": {
+                                  "create_country": {
+                                    "name": {
+                                      "key": "NAME_Imperial_Origin_Empire_5",
+                                      "variable_string": "[origin_imperial_species_5.GetAdj]"
+                                    },
+                                    "authority": "auth_oligarchic",
+                                    "species": "last_created_species",
+                                    "civics": {
+                                      "civic": "civic_corporate_dominion"
+                                    },
+                                    "ethos": {
+                                      "ethic": "ethic_xenophile"
+                                    },
+                                    "origin": "origin_imperial_vassal",
+                                    "effect": {
+                                      "save_global_event_target_as": "origin_imperial_homeland_country_5"
+                                    }
+                                  }
+                                },
+                                "event_target:origin_imperial_homeland_country_5": {
+                                  "set_country_flag": "origin_imperial_vassal_league_country",
+                                  "_comments": [
+                                    "# Subjugation",
+                                    "# Communication",
+                                    "# Fleets",
+                                    "# Resources"
+                                  ],
+                                  "set_subject_of": {
+                                    "who": "event_target:origin_imperial_homeland_country"
+                                  },
+                                  "every_playable_country": {
+                                    "limit": {
+                                      "has_origin": "origin_imperial_vassal"
+                                    },
+                                    "establish_communications_no_message": "event_target:origin_imperial_homeland_country_5"
+                                  },
+                                  "create_fleet": {
+                                    "effect": {
+                                      "set_owner": "event_target:origin_imperial_homeland_country_5",
+                                      "while": {
+                                        "count": "5",
+                                        "create_ship": {
+                                          "name": "random",
+                                          "design": "NAME_Dagger"
+                                        }
+                                      },
+                                      "set_location": "event_target:origin_imperial_homeland_country_5.capital_star"
+                                    }
+                                  },
+                                  "create_leader": {
+                                    "name": "random",
+                                    "species": "event_target:origin_imperial_homeland_country_5.species",
+                                    "class": "scientist",
+                                    "skill": "1"
+                                  },
+                                  "event_target:new_science_ship_target": {
+                                    "assign_leader": "last_created_leader"
+                                  },
+                                  "add_basic_resources_effect": {
+                                    "add_manufactured_resources_effect": {
+                                      "add_advanced_resources_effect": {
+                                        "_comments": [
+                                          "# Policies"
+                                        ],
+                                        "set_policy": {
+                                          "policy": "population_controls",
+                                          "option": "population_controls_not_allowed",
+                                          "cooldown": "yes"
+                                        }
+                                      },
+                                      "set_owner": "event_target:origin_imperial_homeland_country_5",
+                                      "set_controller": "event_target:origin_imperial_homeland_country_5",
+                                      "set_capital": "yes",
+                                      "while": {
+                                        "count": "25",
+                                        "create_pop": {
+                                          "species": "owner_main_species"
+                                        }
+                                      },
+                                      "generate_start_buildings_and_districts": "yes"
+                                    }
+                                  },
+                                  "planet": {
+                                    "count": {
+                                      "orbit_distance": "30",
+                                      "class": "pc_gas_giant",
+                                      "orbit_angle": {
+                                        "moon": {
+                                          "count": {
+                                            "class": "random_non_colonizable",
+                                            "orbit_angle": {
+                                              "orbit_distance": "5"
+                                            }
+                                          },
+                                          "planet": {
+                                            "count": {
+                                              "orbit_distance": "20",
+                                              "class": "random_non_colonizable",
+                                              "orbit_angle": {
+                                                "moon": {
+                                                  "count": {
+                                                    "class": "random_non_colonizable",
+                                                    "orbit_angle": {
+                                                      "orbit_distance": "5"
+                                                    }
+                                                  },
+                                                  "init_effect": {
+                                                    "create_starbase": {
+                                                      "size": "starbase_starport",
+                                                      "owner": "event_target:origin_imperial_homeland_country_5",
+                                                      "module": "anchorage",
+                                                      "building": "crew_quarters"
+                                                    },
+                                                    "generate_home_system_resources": "yes",
+                                                    "every_system_planet": {
+                                                      "limit": {
+                                                        "has_deposit_for": "shipclass_research_station",
+                                                        "has_research_station": "no"
+                                                      },
+                                                      "create_research_station": {
+                                                        "owner": "event_target:origin_imperial_homeland_country_5"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_initializers.txt",
+    "_line_number": 2943
+  },
+  "overlord_system_8_init": {
+    "overlord_system_8_init": {
+      "class": "rl_standard_stars",
+      "flags": {
+        "planet": {
+          "count": "1",
+          "class": "star",
+          "orbit_distance": "0",
+          "orbit_angle": "1",
+          "size": {
+            "has_ring": "no"
+          },
+          "asteroid_belt": {
+            "type": "rocky_asteroid_belt",
+            "radius": {},
+            "asteroid_belt": {
+              "type": "rocky_asteroid_belt",
+              "radius": {},
+              "change_orbit": "45",
+              "_comments": [
+                "# Innermost asteroid belt"
+              ],
+              "planet": {
+                "count": {
+                  "class": "pc_asteroid",
+                  "orbit_distance": "0",
+                  "orbit_angle": {},
+                  "change_orbit": "45",
+                  "planet": {
+                    "count": "1",
+                    "orbit_distance": "25",
+                    "class": "pc_gas_giant",
+                    "orbit_angle": {
+                      "size": "25",
+                      "change_orbit": "@base_moon_distance",
+                      "moon": {
+                        "count": "1",
+                        "class": "random_non_colonizable",
+                        "orbit_angle": {
+                          "orbit_distance": "4"
+                        },
+                        "moon": {
+                          "count": "1",
+                          "home_planet": "yes",
+                          "class": "random_colonizable",
+                          "orbit_distance": "10",
+                          "orbit_angle": {
+                            "size": {
+                              "deposit_blockers": "none",
+                              "modifiers": "none",
+                              "init_effect": {
+                                "save_event_target_as": "imperial_colony",
+                                "event_target:origin_imperial_species": {
+                                  "create_species": {
+                                    "is_mod": "yes",
+                                    "name": "this",
+                                    "plural": "this",
+                                    "class": "this",
+                                    "portrait": "this",
+                                    "traits": {
+                                      "ideal_planet_class": "event_target:imperial_colony"
+                                    },
+                                    "can_be_modified": "this",
+                                    "homeworld": "this",
+                                    "namelist": "this"
+                                  }
+                                },
+                                "last_created_species": {
+                                  "save_event_target_as": "local_imperial_species"
+                                },
+                                "set_owner": "event_target:origin_imperial_homeland_country",
+                                "set_controller": "event_target:origin_imperial_homeland_country",
+                                "while": {
+                                  "count": "10",
+                                  "create_pop": {
+                                    "species": "event_target:origin_imperial_species_robot"
+                                  }
+                                },
+                                "add_district_and_planet_size_if_needed_effect": {
+                                  "district": "district_industrial"
+                                },
+                                "remove_all_buildings": "yes",
+                                "add_building": "building_commercial_zone",
+                                "validate_planet_buildings_and_districts": "yes"
+                              }
+                            }
+                          },
+                          "change_orbit": "45",
+                          "planet": {
+                            "count": {
+                              "orbit_distance": "25",
+                              "class": "random_non_colonizable",
+                              "orbit_angle": {},
+                              "init_effect": {
+                                "create_starbase": {
+                                  "size": "starbase_starhold",
+                                  "owner": "event_target:origin_imperial_homeland_country",
+                                  "module": "anchorage",
+                                  "building": "naval_logistics_office"
+                                },
+                                "spawn_megastructure": {
+                                  "type": "gateway_derelict",
+                                  "random_pos": "yes",
+                                  "graphical_culture": "event_target:origin_imperial_homeland_country",
+                                  "owner": "event_target:origin_imperial_homeland_country",
+                                  "orbit_angle": "360\t\t# range of the randomization"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_initializers.txt",
+    "_line_number": 3223
+  }
+}

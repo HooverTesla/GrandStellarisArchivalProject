@@ -1,0 +1,1119 @@
+{
+  "resolution_cosmic_storms_shared_knowledge": {
+    "resolution_cosmic_storms_shared_knowledge": {
+      "icon": "GFX_resolution_cosmic_storms_stances",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t1"
+        }
+      },
+      "target": "no",
+      "level": "1",
+      "modifier": {
+        "diplo_weight_pops_mult": "0.1"
+      },
+      "effect": {
+        "custom_tooltip": "resolution_cosmic_storms_shared_knowledge_tooltip",
+        "hidden_effect": {
+          "set_global_flag": "galactic_community_resolution_passed",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_cosmic_storms_dlc": "yes",
+            "has_global_flag": "cosmic_storm_has_occurred"
+          },
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "resolution_already_active",
+              "NOR": {
+                "is_active_resolution": "resolution_cosmic_storms_manipulation_mandate"
+              }
+            }
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_loved",
+            "modifier": {
+              "factor": "0.5",
+              "is_authoritarian": "yes",
+              "desc": "ethic_authoritarian"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_cosmic_storms_dlc.txt",
+    "_line_number": 32
+  },
+  "resolution_cosmic_storms_shared_knowledge_repeal": {
+    "resolution_cosmic_storms_shared_knowledge_repeal": {
+      "icon": "GFX_resolution_repeal_red",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t1"
+        }
+      },
+      "target": "no",
+      "fire_and_forget": "yes",
+      "effect": {
+        "custom_tooltip": "resolution_cosmic_storms_shared_knowledge_repeal_effect_success",
+        "hidden_effect": {
+          "cancel_resolution": "resolution_cosmic_storms_shared_knowledge",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_cosmic_storms_dlc": "yes",
+            "has_global_flag": "cosmic_storm_has_occurred",
+            "is_active_resolution": "resolution_cosmic_storms_shared_knowledge"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_unpopular",
+            "modifier": {
+              "factor": "2",
+              "is_authoritarian": "yes",
+              "desc": "ethic_authoritarian"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_cosmic_storms_dlc.txt",
+    "_line_number": 133
+  },
+  "resolution_cosmic_storms_protection_initiative": {
+    "resolution_cosmic_storms_protection_initiative": {
+      "icon": "GFX_resolution_cosmic_storms_stances",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t2"
+        }
+      },
+      "target": "no",
+      "level": "2",
+      "modifier": {
+        "diplo_weight_pops_mult": "0.2"
+      },
+      "effect": {
+        "custom_tooltip": "resolution_cosmic_storms_protection_initiative_tooltip",
+        "hidden_effect": {
+          "set_global_flag": "galactic_community_resolution_passed",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_cosmic_storms_dlc": "yes",
+            "has_global_flag": "cosmic_storm_has_occurred"
+          },
+          "allow": {
+            "is_active_resolution": "resolution_cosmic_storms_shared_knowledge"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_popular",
+            "modifier": {
+              "factor": "0.5",
+              "is_authoritarian": "yes",
+              "desc": "ethic_authoritarian"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_cosmic_storms_dlc.txt",
+    "_line_number": 222
+  },
+  "resolution_cosmic_storms_protection_initiative_repeal": {
+    "resolution_cosmic_storms_protection_initiative_repeal": {
+      "icon": "GFX_resolution_repeal_red",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t2"
+        }
+      },
+      "target": "no",
+      "fire_and_forget": "yes",
+      "effect": {
+        "custom_tooltip": "resolution_cosmic_storms_protection_initiative_repeal_effect_success",
+        "hidden_effect": {
+          "cancel_resolution": "resolution_cosmic_storms_protection_initiative",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_cosmic_storms_dlc": "yes",
+            "has_global_flag": "cosmic_storm_has_occurred",
+            "is_active_resolution": "resolution_cosmic_storms_protection_initiative"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_unpopular",
+            "modifier": {
+              "factor": "2",
+              "is_authoritarian": "yes",
+              "desc": "ethic_authoritarian"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_cosmic_storms_dlc.txt",
+    "_line_number": 314
+  },
+  "resolution_cosmic_storms_galactic_management": {
+    "resolution_cosmic_storms_galactic_management": {
+      "icon": "GFX_resolution_cosmic_storms_stances",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "level": "3",
+      "modifier": {
+        "diplo_weight_pops_mult": "0.3"
+      },
+      "effect": {
+        "custom_tooltip": "resolution_cosmic_storms_galactic_management_tooltip",
+        "hidden_effect": {
+          "set_global_flag": "galactic_community_resolution_passed",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_cosmic_storms_dlc": "yes",
+            "has_global_flag": "cosmic_storm_has_occurred"
+          },
+          "allow": {
+            "is_active_resolution": "resolution_cosmic_storms_protection_initiative"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_normal",
+            "modifier": {
+              "factor": "0.5",
+              "is_authoritarian": "yes",
+              "desc": "ethic_authoritarian"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_cosmic_storms_dlc.txt",
+    "_line_number": 404
+  },
+  "resolution_cosmic_storms_galactic_management_repeal": {
+    "resolution_cosmic_storms_galactic_management_repeal": {
+      "icon": "GFX_resolution_repeal_red",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "fire_and_forget": "yes",
+      "effect": {
+        "custom_tooltip": "resolution_cosmic_storms_galactic_management_repeal_effect_success",
+        "hidden_effect": {
+          "cancel_resolution": "resolution_cosmic_storms_galactic_management",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_cosmic_storms_dlc": "yes",
+            "has_global_flag": "cosmic_storm_has_occurred",
+            "is_active_resolution": "resolution_cosmic_storms_galactic_management"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_unpopular",
+            "modifier": {
+              "factor": "2",
+              "is_authoritarian": "yes",
+              "desc": "ethic_authoritarian"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_cosmic_storms_dlc.txt",
+    "_line_number": 496
+  },
+  "resolution_cosmic_storms_utilization_protocols": {
+    "resolution_cosmic_storms_utilization_protocols": {
+      "icon": "GFX_resolution_cosmic_storms_stances",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t4"
+        }
+      },
+      "target": "no",
+      "level": "4",
+      "modifier": {
+        "diplo_weight_pops_mult": "0.4"
+      },
+      "effect": {
+        "custom_tooltip": "resolution_cosmic_storms_utilization_protocols_tooltip",
+        "hidden_effect": {
+          "set_global_flag": "resolution_with_breach_effect_passed",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_cosmic_storms_dlc": "yes",
+            "has_global_flag": "cosmic_storm_has_occurred"
+          },
+          "allow": {
+            "is_active_resolution": "resolution_cosmic_storms_galactic_management"
+          },
+          "breach": {
+            "NOT": {
+              "has_technology": "tech_ship_hull_storm_breaker_1"
+            }
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_unpopular",
+            "modifier": {
+              "factor": "0.5",
+              "has_civic": "civic_environmentalist",
+              "desc": "civic_environmentalist"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_cosmic_storms_dlc.txt",
+    "_line_number": 587
+  },
+  "resolution_cosmic_storms_utilization_protocols_repeal": {
+    "resolution_cosmic_storms_utilization_protocols_repeal": {
+      "icon": "GFX_resolution_repeal_red",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t4"
+        }
+      },
+      "target": "no",
+      "fire_and_forget": "yes",
+      "effect": {
+        "custom_tooltip": "resolution_cosmic_storms_utilization_protocols_repeal_effect_success",
+        "hidden_effect": {
+          "cancel_resolution": "resolution_cosmic_storms_utilization_protocols",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_cosmic_storms_dlc": "yes",
+            "has_global_flag": "cosmic_storm_has_occurred",
+            "is_active_resolution": "resolution_cosmic_storms_utilization_protocols"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_unpopular",
+            "modifier": {
+              "factor": "2",
+              "has_civic": "civic_environmentalist",
+              "desc": "civic_environmentalist"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_cosmic_storms_dlc.txt",
+    "_line_number": 685
+  },
+  "resolution_cosmic_storms_manipulation_mandate": {
+    "resolution_cosmic_storms_manipulation_mandate": {
+      "icon": "GFX_resolution_cosmic_storms_stances",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t5"
+        }
+      },
+      "target": "no",
+      "level": "5",
+      "modifier": {
+        "diplo_weight_pops_mult": "0.5"
+      },
+      "effect": {
+        "custom_tooltip": "resolution_cosmic_storms_manipulation_mandate_tooltip",
+        "hidden_effect": {
+          "set_global_flag": "resolution_with_breach_effect_passed",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_cosmic_storms_dlc": "yes",
+            "has_global_flag": "cosmic_storm_has_occurred"
+          },
+          "allow": {
+            "is_active_resolution": "resolution_cosmic_storms_utilization_protocols"
+          },
+          "breach": {
+            "OR": {
+              "NOT": {
+                "has_technology": "tech_ship_hull_storm_breaker_1"
+              },
+              "any_owned_planet": {
+                "NOT": {
+                  "has_any_storm_building": "yes"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_disliked",
+            "modifier": {
+              "factor": "0.5",
+              "has_civic": "civic_environmentalist",
+              "desc": "civic_environmentalist"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_cosmic_storms_dlc.txt",
+    "_line_number": 776
+  },
+  "resolution_cosmic_storms_manipulation_mandate_repeal": {
+    "resolution_cosmic_storms_manipulation_mandate_repeal": {
+      "icon": "GFX_resolution_repeal_red",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t5"
+        }
+      },
+      "target": "no",
+      "fire_and_forget": "yes",
+      "effect": {
+        "custom_tooltip": "resolution_cosmic_storms_manipulation_mandate_repeal_effect_success",
+        "hidden_effect": {
+          "cancel_resolution": "resolution_cosmic_storms_manipulation_mandate",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_cosmic_storms_dlc": "yes",
+            "has_global_flag": "cosmic_storm_has_occurred",
+            "is_active_resolution": "resolution_cosmic_storms_manipulation_mandate"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_unpopular",
+            "modifier": {
+              "factor": "2",
+              "has_civic": "civic_environmentalist",
+              "desc": "civic_environmentalist"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_cosmic_storms_dlc.txt",
+    "_line_number": 881
+  },
+  "resolution_cosmic_storms_advanced_storm_studies": {
+    "resolution_cosmic_storms_advanced_storm_studies": {
+      "icon": "GFX_resolution_cosmic_storms_stances",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t1"
+        }
+      },
+      "target": "no",
+      "level": "1",
+      "modifier": {
+        "diplo_weight_pops_mult": "-0.1",
+        "station_researchers_produces_mult": "0.1"
+      },
+      "effect": {
+        "custom_tooltip": "resolution_cosmic_storms_advanced_storm_studies_tooltip",
+        "hidden_effect": {
+          "set_global_flag": "galactic_community_resolution_passed",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_cosmic_storms_dlc": "yes",
+            "has_global_flag": "cosmic_storm_has_occurred"
+          },
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "resolution_already_active",
+              "NOR": {
+                "is_active_resolution": "resolution_cosmic_storms_preservation_initiative"
+              }
+            }
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_loved",
+            "modifier": {
+              "factor": "0.5",
+              "is_astrometeorologist_empire": "yes",
+              "desc": "civic_astrometeorology"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_cosmic_storms_dlc.txt",
+    "_line_number": 972
+  },
+  "resolution_cosmic_storms_advanced_storm_studies_repeal": {
+    "resolution_cosmic_storms_advanced_storm_studies_repeal": {
+      "icon": "GFX_resolution_repeal_red",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t1"
+        }
+      },
+      "target": "no",
+      "fire_and_forget": "yes",
+      "effect": {
+        "custom_tooltip": "resolution_cosmic_storms_advanced_storm_studies_repeal_effect_success",
+        "hidden_effect": {
+          "cancel_resolution": "resolution_cosmic_storms_advanced_storm_studies",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_cosmic_storms_dlc": "yes",
+            "has_global_flag": "cosmic_storm_has_occurred",
+            "is_active_resolution": "resolution_cosmic_storms_advanced_storm_studies"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_unpopular",
+            "modifier": {
+              "factor": "2",
+              "is_astrometeorologist_empire": "yes",
+              "desc": "civic_astrometeorology"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_cosmic_storms_dlc.txt",
+    "_line_number": 1062
+  },
+  "resolution_cosmic_storms_galactic_emergency_relief": {
+    "resolution_cosmic_storms_galactic_emergency_relief": {
+      "icon": "GFX_resolution_cosmic_storms_stances",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t2"
+        }
+      },
+      "target": "no",
+      "level": "2",
+      "modifier": {
+        "diplo_weight_pops_mult": "-0.2",
+        "station_researchers_produces_mult": "0.2",
+        "ships_upkeep_mult": "0.1"
+      },
+      "effect": {
+        "custom_tooltip": "resolution_cosmic_storms_galactic_emergency_relief_tooltip",
+        "hidden_effect": {
+          "set_emergency_fund_contribution_rate": "0.05",
+          "set_emergency_fund_active": "yes",
+          "set_global_flag": "galactic_community_resolution_passed",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_cosmic_storms_dlc": "yes",
+            "has_global_flag": "cosmic_storm_has_occurred"
+          },
+          "allow": {
+            "is_active_resolution": "resolution_cosmic_storms_advanced_storm_studies"
+          },
+          "breach": {
+            "has_country_flag": "failed_fund_contribution"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_popular",
+            "modifier": {
+              "factor": "0.5",
+              "is_astrometeorologist_empire": "yes",
+              "desc": "civic_astrometeorology"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_cosmic_storms_dlc.txt",
+    "_line_number": 1144
+  },
+  "resolution_cosmic_storms_galactic_emergency_relief_repeal": {
+    "resolution_cosmic_storms_galactic_emergency_relief_repeal": {
+      "icon": "GFX_resolution_repeal_red",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t2"
+        }
+      },
+      "target": "no",
+      "fire_and_forget": "yes",
+      "effect": {
+        "custom_tooltip": "resolution_cosmic_storms_galactic_emergency_relief_repeal_effect_success",
+        "hidden_effect": {
+          "cancel_resolution": "resolution_cosmic_storms_galactic_emergency_relief",
+          "set_timed_country_flag": {
+            "set_emergency_fund_active": "no",
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_cosmic_storms_dlc": "yes",
+            "has_global_flag": "cosmic_storm_has_occurred",
+            "is_active_resolution": "resolution_cosmic_storms_galactic_emergency_relief"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_unpopular",
+            "modifier": {
+              "factor": "2",
+              "is_astrometeorologist_empire": "yes",
+              "desc": "civic_astrometeorology"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_cosmic_storms_dlc.txt",
+    "_line_number": 1249
+  },
+  "resolution_cosmic_storms_storm_encouragement_mandate": {
+    "resolution_cosmic_storms_storm_encouragement_mandate": {
+      "icon": "GFX_resolution_cosmic_storms_stances",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "level": "3",
+      "modifier": {
+        "diplo_weight_pops_mult": "-0.3",
+        "station_researchers_produces_mult": "0.3",
+        "ships_upkeep_mult": "0.15"
+      },
+      "effect": {
+        "custom_tooltip": "resolution_cosmic_storms_storm_encouragement_mandate_tooltip",
+        "hidden_effect": {
+          "set_emergency_fund_contribution_rate": "0.1",
+          "set_global_flag": "galactic_community_resolution_passed",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_cosmic_storms_dlc": "yes",
+            "has_global_flag": "cosmic_storm_has_occurred"
+          },
+          "allow": {
+            "is_active_resolution": "resolution_cosmic_storms_galactic_emergency_relief"
+          },
+          "breach": {
+            "OR": {
+              "has_any_storm_repellent_building": "yes",
+              "has_country_flag": "failed_fund_contribution"
+            }
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_normal",
+            "modifier": {
+              "factor": "0.5",
+              "is_idyllic_bloom_empire": "yes",
+              "desc": "civic_idyllic_bloom"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_cosmic_storms_dlc.txt",
+    "_line_number": 1347
+  },
+  "resolution_cosmic_storms_storm_encouragement_mandate_repeal": {
+    "resolution_cosmic_storms_storm_encouragement_mandate_repeal": {
+      "icon": "GFX_resolution_repeal_red",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "fire_and_forget": "yes",
+      "effect": {
+        "custom_tooltip": "resolution_cosmic_storms_storm_encouragement_mandate_repeal_effect_success",
+        "hidden_effect": {
+          "set_emergency_fund_contribution_rate": "0.05",
+          "cancel_resolution": "resolution_cosmic_storms_storm_encouragement_mandate",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_cosmic_storms_dlc": "yes",
+            "has_global_flag": "cosmic_storm_has_occurred",
+            "is_active_resolution": "resolution_cosmic_storms_storm_encouragement_mandate"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_unpopular",
+            "modifier": {
+              "factor": "2",
+              "is_idyllic_bloom_empire": "yes",
+              "desc": "civic_idyllic_bloom"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_cosmic_storms_dlc.txt",
+    "_line_number": 1454
+  },
+  "resolution_cosmic_storms_control_restrictions": {
+    "resolution_cosmic_storms_control_restrictions": {
+      "icon": "GFX_resolution_cosmic_storms_stances",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t4"
+        }
+      },
+      "target": "no",
+      "level": "4",
+      "modifier": {
+        "diplo_weight_pops_mult": "-0.4",
+        "station_researchers_produces_mult": "0.4",
+        "ships_upkeep_mult": "0.2"
+      },
+      "effect": {
+        "custom_tooltip": "resolution_cosmic_storms_control_restrictions_tooltip",
+        "hidden_effect": {
+          "set_global_flag": "resolution_with_breach_effect_passed",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_cosmic_storms_dlc": "yes",
+            "has_global_flag": "cosmic_storm_has_occurred"
+          },
+          "allow": {
+            "is_active_resolution": "resolution_cosmic_storms_storm_encouragement_mandate"
+          },
+          "breach": {
+            "OR": {
+              "has_any_storm_repellent_building": "yes",
+              "has_any_storm_attracting_building": "yes",
+              "has_country_flag": "failed_fund_contribution"
+            }
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_unpopular",
+            "modifier": {
+              "factor": "0.5",
+              "is_astrometeorologist_empire": "yes",
+              "desc": "civic_astrometeorology"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_cosmic_storms_dlc.txt",
+    "_line_number": 1551
+  },
+  "resolution_cosmic_storms_control_restrictions_repeal": {
+    "resolution_cosmic_storms_control_restrictions_repeal": {
+      "icon": "GFX_resolution_repeal_red",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t4"
+        }
+      },
+      "target": "no",
+      "fire_and_forget": "yes",
+      "effect": {
+        "custom_tooltip": "resolution_cosmic_storms_control_restrictions_repeal_effect_success",
+        "hidden_effect": {
+          "cancel_resolution": "resolution_cosmic_storms_control_restrictions",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_cosmic_storms_dlc": "yes",
+            "has_global_flag": "cosmic_storm_has_occurred",
+            "is_active_resolution": "resolution_cosmic_storms_control_restrictions"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_unpopular",
+            "modifier": {
+              "factor": "2",
+              "is_astrometeorologist_empire": "yes",
+              "desc": "civic_astrometeorology"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_cosmic_storms_dlc.txt",
+    "_line_number": 1653
+  },
+  "resolution_cosmic_storms_preservation_initiative": {
+    "resolution_cosmic_storms_preservation_initiative": {
+      "icon": "GFX_resolution_cosmic_storms_stances",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t5"
+        }
+      },
+      "target": "no",
+      "level": "5",
+      "modifier": {
+        "diplo_weight_pops_mult": "-0.5",
+        "station_researchers_produces_mult": "0.5",
+        "ships_upkeep_mult": "0.25"
+      },
+      "effect": {
+        "custom_tooltip": "resolution_cosmic_storms_preservation_initiative_tooltip",
+        "hidden_effect": {
+          "set_emergency_fund_contribution_rate": "0.15",
+          "set_global_flag": "resolution_with_breach_effect_passed",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_cosmic_storms_dlc": "yes",
+            "has_global_flag": "cosmic_storm_has_occurred"
+          },
+          "allow": {
+            "is_active_resolution": "resolution_cosmic_storms_control_restrictions"
+          },
+          "breach": {
+            "OR": {
+              "has_any_storm_repellent_building": "yes",
+              "has_any_storm_attracting_building": "yes",
+              "has_edict": "storm_repel_field",
+              "has_country_flag": "failed_fund_contribution"
+            }
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_disliked",
+            "modifier": {
+              "factor": "0.5",
+              "is_astrometeorologist_empire": "yes",
+              "desc": "civic_astrometeorology"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_cosmic_storms_dlc.txt",
+    "_line_number": 1744
+  },
+  "resolution_cosmic_storms_preservation_initiative_repeal": {
+    "resolution_cosmic_storms_preservation_initiative_repeal": {
+      "icon": "GFX_resolution_repeal_red",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t5"
+        }
+      },
+      "target": "no",
+      "fire_and_forget": "yes",
+      "effect": {
+        "custom_tooltip": "resolution_cosmic_storms_preservation_initiative_repeal_effect_success",
+        "hidden_effect": {
+          "set_emergency_fund_contribution_rate": "0.1",
+          "cancel_resolution": "resolution_cosmic_storms_preservation_initiative",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_cosmic_storms_dlc": "yes",
+            "has_global_flag": "cosmic_storm_has_occurred",
+            "is_active_resolution": "resolution_cosmic_storms_preservation_initiative"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_unpopular",
+            "modifier": {
+              "factor": "2",
+              "is_astrometeorologist_empire": "yes",
+              "desc": "civic_astrometeorology"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_resolutions_cosmic_storms_dlc.txt",
+    "_line_number": 1849
+  }
+}

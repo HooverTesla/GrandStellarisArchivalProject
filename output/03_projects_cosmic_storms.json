@@ -1,0 +1,70 @@
+{
+  "special_project": {
+    "special_project": {
+      "key": "REUNITE_POD_PROJECT",
+      "days_to_research": "180",
+      "timelimit": "720",
+      "picture": "GFX_evt_tiyanki_family",
+      "icon": "gfx/interface/icons/situation_log/situation_log_quest.dds",
+      "event_scope": "ship_event",
+      "requirements": {
+        "shipclass_science_ship": "1",
+        "leader": "scientist"
+      },
+      "on_success": {
+        "ship_event": {},
+        "on_fail": {
+          "if": {
+            "limit": {
+              "exists": "event_target:tiyanki_garrison_country",
+              "event_target:tiyanki_garrison_country": {
+                "is_hostile": "prev"
+              }
+            },
+            "_comments": [
+              "# Reset hostility so this particular action doesn't affect the rest of the tiyankis"
+            ],
+            "set_faction_hostility": {
+              "target": "event_target:tiyanki_garrison_country",
+              "set_hostile": "no",
+              "set_neutral": "yes",
+              "set_friendly": "no"
+            }
+          },
+          "fromfrom.solar_system": {
+            "every_ship_in_system": {
+              "limit": {
+                "is_ship_size": "space_whale_3",
+                "has_ship_flag": "displaced_tiyanki_hatchling"
+              },
+              "create_ambient_object": {
+                "type": "small_dead_tiyanki_object",
+                "location": "this"
+              },
+              "delete_ship": "this"
+            }
+          }
+        },
+        "fail_trigger": {
+          "OR": {
+            "NOT": {
+              "event_target:tiyanki_garrison_country": {
+                "is_hostile": "prev"
+              },
+              "solar_system": {
+                "count_ship_in_system": {
+                  "limit": {
+                    "is_ship_size": "space_whale_3",
+                    "has_ship_flag": "displaced_tiyanki_hatchling"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_projects_cosmic_storms.txt",
+    "_line_number": 654
+  }
+}

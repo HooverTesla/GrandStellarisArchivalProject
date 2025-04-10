@@ -1,0 +1,83 @@
+{
+  "trigger": {
+    "trigger": {
+      "solar_system": {
+        "NOT": {
+          "has_star_flag": "$PRECURSOR_FLAG$",
+          "_comments": [
+            "# Precursors get allocated a chunk of the galaxy, in which all systems have the associated flag set by the engine."
+          ]
+        },
+        "owner": {
+          "is_ai": "no",
+          "has_precursor_intro": "no",
+          "_comments": [
+            "# No other precursor should be active."
+          ]
+        },
+        "FROM": {
+          "has_anomaly": "no",
+          "is_star": "no"
+        }
+      }
+    },
+    "_source_file": "precursor_intro_event.txt",
+    "_line_number": 6
+  },
+  "weight_multiplier": {
+    "weight_multiplier": {
+      "factor": "1",
+      "modifier": {
+        "factor": "@origin_shoulders_multiplier",
+        "owner": {
+          "has_origin": "origin_shoulders_of_giants",
+          "has_country_flag": "origin_shoulders_closure"
+        }
+      }
+    },
+    "_source_file": "precursor_intro_event.txt",
+    "_line_number": 24
+  },
+  "immediate": {
+    "immediate": {
+      "owner": {
+        "_comments": [
+          "# Immediately begin the chain, so this event can also be a part of it.",
+          "# This disables other precursor event-chains from starting"
+        ],
+        "begin_event_chain": {
+          "event_chain": "$EVENT_CHAIN$",
+          "target": "THIS"
+        },
+        "set_country_flag": "$INTRO_FLAG$"
+      }
+    },
+    "_source_file": "precursor_intro_event.txt",
+    "_line_number": 36
+  },
+  "option": {
+    "option": {
+      "name": "INTERESTING",
+      "_comments": [
+        "# This might be the first time the player encounters another species, so queue the discovery event."
+      ],
+      "hidden_effect": {
+        "owner": {
+          "tooltip": {
+            "begin_event_chain": {
+              "event_chain": "$EVENT_CHAIN$",
+              "target": "THIS"
+            }
+          },
+          "if": {
+            "limit": {
+              "small_artifact_reward": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "precursor_intro_event.txt",
+    "_line_number": 50
+  }
+}

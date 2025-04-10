@@ -1,0 +1,531 @@
+{
+  "has_paragon_dlc": {
+    "has_paragon_dlc": {
+      "host_has_dlc": "Galactic Paragons"
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": -1
+  },
+  "is_hive_species": {
+    "is_hive_species": {
+      "species": {
+        "has_trait": "trait_hive_mind"
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 3
+  },
+  "has_any_subclass": {
+    "has_any_subclass": {
+      "OR": {
+        "has_council_subclass": "yes",
+        "has_non_council_subclass": "yes"
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 9
+  },
+  "has_council_subclass": {
+    "has_council_subclass": {
+      "OR": {
+        "has_trait": "subclass_scientist_councilor"
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 16
+  },
+  "has_governor_subclass": {
+    "has_governor_subclass": {
+      "OR": {
+        "has_trait": "subclass_scientist_governor"
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 25
+  },
+  "has_non_council_subclass": {
+    "has_non_council_subclass": {
+      "OR": {
+        "has_trait": "subclass_scientist_governor"
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 33
+  },
+  "has_any_ethic": {
+    "has_any_ethic": {
+      "OR": {
+        "has_ethic": "ethic_pacifist"
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 46
+  },
+  "has_any_admiral_speciality": {
+    "has_any_admiral_speciality": {
+      "OR": {
+        "has_trait": "leader_trait_gunship_specialization_3"
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 59
+  },
+  "has_any_governor_focus": {
+    "has_any_governor_focus": {
+      "OR": {
+        "has_trait": "leader_trait_refinement_focus_3"
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 76
+  },
+  "has_scientist_focus": {
+    "has_scientist_focus": {
+      "OR": {
+        "has_trait": "leader_trait_society_focus_3"
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 99
+  },
+  "is_specialist_researcher_physics": {
+    "is_specialist_researcher_physics": {
+      "OR": {
+        "has_trait_tier1or2or3": {
+          "has_trait_tier1or2or3": {
+            "has_trait_tier1or2or3": {}
+          }
+        }
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 113
+  },
+  "is_specialist_researcher_society": {
+    "is_specialist_researcher_society": {
+      "OR": {
+        "has_trait_tier1or2or3": {
+          "has_trait_tier1or2or3": {
+            "has_trait_tier1or2or3": {
+              "has_trait_tier1or2or3": {
+                "has_trait_tier1or2or3": {
+                  "has_trait_tier1or2or3": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 121
+  },
+  "is_specialist_researcher_engineering": {
+    "is_specialist_researcher_engineering": {
+      "OR": {
+        "has_trait_tier1or2or3": {
+          "has_trait_tier1or2or3": {
+            "has_trait_tier1or2or3": {
+              "has_trait_tier1or2or3": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 132
+  },
+  "is_specialist_researcher": {
+    "is_specialist_researcher": {
+      "OR": {
+        "is_specialist_researcher_physics": "yes",
+        "is_specialist_researcher_society": "yes",
+        "is_specialist_researcher_engineering": "yes"
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 141
+  },
+  "is_head_of_research": {
+    "is_head_of_research": {
+      "OR": {
+        "is_councilor_type": "councilor_gestalt_cognitive"
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 149
+  },
+  "is_pool_leader": {
+    "is_pool_leader": {
+      "exists": "owner",
+      "owner": {
+        "any_pool_leader": {
+          "is_same_value": "PREVPREV"
+        }
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 156
+  },
+  "leader_has_empire_ethic": {
+    "leader_has_empire_ethic": {
+      "OR": {
+        "AND": {
+          "has_ethic": "ethic_pacifist",
+          "owner": {},
+          "AND": {
+            "has_ethic": "ethic_militarist",
+            "owner": {},
+            "AND": {
+              "has_ethic": "ethic_xenophile",
+              "owner": {},
+              "AND": {
+                "has_ethic": "ethic_xenophobe",
+                "owner": {},
+                "AND": {
+                  "has_ethic": "ethic_egalitarian",
+                  "owner": {},
+                  "AND": {
+                    "has_ethic": "ethic_authoritarian",
+                    "owner": {},
+                    "AND": {
+                      "has_ethic": "ethic_spiritualist",
+                      "owner": {},
+                      "AND": {
+                        "has_ethic": "ethic_materialist",
+                        "owner": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 165
+  },
+  "suitable_for_chosen": {
+    "suitable_for_chosen": {
+      "has_psionic_leader_trait": "yes",
+      "OR": {
+        "owner": {
+          "owner": {
+            "owner": {
+              "owner": {},
+              "is_exploring_astral_rift": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 202
+  },
+  "has_trait_in_council": {
+    "has_trait_in_council": {
+      "any_owned_leader": {
+        "is_councilor": "yes",
+        "has_trait": "$TRAIT$"
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 213
+  },
+  "has_tier1or2or3_in_council": {
+    "has_tier1or2or3_in_council": {
+      "any_owned_leader": {
+        "is_councilor": "yes",
+        "has_trait_tier1or2or3": {
+          "TRAIT": "$TRAIT$"
+        }
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 220
+  },
+  "has_trait_tier1or2": {
+    "has_trait_tier1or2": {
+      "OR": {
+        "has_trait": "$TRAIT$_2"
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 229
+  },
+  "has_trait_tier1or2or3": {
+    "has_trait_tier1or2or3": {
+      "OR": {
+        "has_trait": "$TRAIT$_3"
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 236
+  },
+  "can_have_health_issues": {
+    "can_have_health_issues": {
+      "NOR": {
+        "has_trait": "leader_trait_synthetic",
+        "species": {
+          "OR": {
+            "has_trait": "trait_mechanical",
+            "is_species_class": "MACHINE"
+          }
+        }
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 245
+  },
+  "country_has_extra_council_position": {
+    "country_has_extra_council_position": {
+      "civics_count >": "3",
+      "is_gestalt": "no"
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 259
+  },
+  "has_azaryn_in_orbit": {
+    "has_azaryn_in_orbit": {
+      "exists": "event_target:azaryn_ship",
+      "any_fleet_in_orbit": {
+        "any_owned_ship": {
+          "is_same_value": "event_target:azaryn_ship"
+        }
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 265
+  },
+  "is_azaryn_terraformable_pc": {
+    "is_azaryn_terraformable_pc": {
+      "OR": {
+        "habitable_planet_not_urban": "yes",
+        "is_azaryn_preferred_terraform_pc": "yes"
+      },
+      "planet_size >": "10",
+      "NOT": {}
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 274
+  },
+  "is_azaryn_preferred_terraform_pc": {
+    "is_azaryn_preferred_terraform_pc": {
+      "OR": {
+        "is_planet_class": "pc_barren_cold"
+      },
+      "planet_size >": "10",
+      "NOT": {}
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 283
+  },
+  "has_miltary_background_job": {
+    "has_miltary_background_job": {
+      "OR": {
+        "has_background_job": "squire"
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 292
+  },
+  "trait_is_gestalt_check": {
+    "trait_is_gestalt_check": {
+      "OR": {
+        "AND": {
+          "exists": "owner",
+          "owner": {},
+          "AND": {
+            "exists": "from",
+            "from": {
+              "is_scope_type": "country",
+              "is_gestalt": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 304
+  },
+  "trait_is_hive_check": {
+    "trait_is_hive_check": {
+      "OR": {
+        "AND": {
+          "exists": "owner",
+          "owner": {},
+          "AND": {
+            "exists": "from",
+            "from": {
+              "is_scope_type": "country",
+              "is_hive_empire": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 320
+  },
+  "trait_is_machine_check": {
+    "trait_is_machine_check": {
+      "OR": {
+        "AND": {
+          "exists": "owner",
+          "owner": {},
+          "AND": {
+            "exists": "from",
+            "from": {
+              "is_scope_type": "country",
+              "is_machine_empire": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 336
+  },
+  "trait_is_individual_machine_check": {
+    "trait_is_individual_machine_check": {
+      "OR": {
+        "AND": {
+          "exists": "owner",
+          "owner": {},
+          "AND": {
+            "exists": "from",
+            "from": {
+              "is_scope_type": "country",
+              "is_individual_machine": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 352
+  },
+  "trait_is_crisis_faction_check": {
+    "trait_is_crisis_faction_check": {
+      "OR": {
+        "AND": {
+          "exists": "owner",
+          "owner": {},
+          "AND": {
+            "exists": "from",
+            "from": {
+              "is_scope_type": "country",
+              "is_crisis_faction": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 368
+  },
+  "has_psionic_leader_trait": {
+    "has_psionic_leader_trait": {
+      "OR": {
+        "has_trait": "leader_trait_admiral_warform"
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 384
+  },
+  "has_chosen_one_leader_trait": {
+    "has_chosen_one_leader_trait": {
+      "OR": {
+        "has_trait": "leader_trait_whisperers_chosen"
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 396
+  },
+  "has_narratively_great_councilor_trait": {
+    "has_narratively_great_councilor_trait": {
+      "OR": {
+        "has_trait": "leader_trait_spymaster",
+        "_comments": [
+          "# Any class",
+          "# Scientist",
+          "# Official",
+          "# Admiral",
+          "# General"
+        ]
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 410
+  },
+  "has_narratively_great_speaker_trait": {
+    "has_narratively_great_speaker_trait": {
+      "OR": {
+        "has_trait": "leader_trait_honored_warmaster",
+        "_comments": [
+          "# Any class",
+          "# Scientist",
+          "# Official",
+          "# Admiral",
+          "# General"
+        ]
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 479
+  },
+  "ruler_or_councilor_has_ethic": {
+    "ruler_or_councilor_has_ethic": {
+      "OR": {
+        "any_owned_leader": {
+          "is_ruler": "yes",
+          "has_ethic": "ethic_$ETHIC$"
+        },
+        "is_ethic_represented_on_council": "ethic_$ETHIC$"
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 533
+  },
+  "is_currently_excavating_site": {
+    "is_currently_excavating_site": {
+      "any_archaeological_site": {
+        "is_site_locked": "no",
+        "exists": "excavator_fleet",
+        "excavator_fleet": {
+          "exists": "leader",
+          "leader": {
+            "is_same_value": "root"
+          }
+        }
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 543
+  },
+  "can_leader_get_council_trait_trigger": {
+    "can_leader_get_council_trait_trigger": {
+      "OR": {
+        "NAND": {
+          "exists": "owner",
+          "owner": {
+            "is_councilor": "no"
+          },
+          "has_leader_flag": "renowned_leader"
+        },
+        "if": {
+          "limit": {
+            "exists": "owner"
+          },
+          "owner": {
+            "is_crisis_faction": "no"
+          }
+        }
+      }
+    },
+    "_source_file": "03_scripted_triggers_paragon.txt",
+    "_line_number": 556
+  }
+}

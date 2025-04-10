@@ -1,0 +1,164 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "marauder.712",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "NOT": {},
+        "immediate": {
+          "set_global_flag": "great_khan_dead",
+          "set_country_flag": "khan_dead_age",
+          "observer_event": {
+            "every_country": {
+              "limit": {
+                "country_event": {
+                  "if": {
+                    "limit": {
+                      "exists": "event_target:great_khan_ruler"
+                    },
+                    "event_target:great_khan_ruler": {
+                      "kill_leader": {}
+                    },
+                    "if": {
+                      "limit": {
+                        "exists": "event_target:great_khan"
+                      },
+                      "event_target:great_khan": {
+                        "kill_leader": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "marauder_events.txt",
+    "_line_number": 10008
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "marauder.701",
+      "title": "marauder.701.name",
+      "desc": "marauder.701.desc",
+      "picture": "GFX_evt_colony_settlement",
+      "show_sound": "event_radio_chatter",
+      "location": "root",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "NOT": {}
+        },
+        "immediate": {
+          "owner": {
+            "set_country_flag": "marauder_neighbor_event_1"
+          }
+        },
+        "option": {
+          "name": "marauder.701.a"
+        }
+      }
+    },
+    "_source_file": "marauder_events.txt",
+    "_line_number": 9677
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "marauder.560",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_global_flag": "marauder_crisis_started",
+        "NOT": {
+          "owner": {},
+          "immediate": {
+            "fleet_event": {
+              "event_target:satrapy_empire": {
+                "owner_species": {},
+                "if": {
+                  "limit": {
+                    "event_target:satrapy_empire": {}
+                  },
+                  "event_target:raider_khanate": {
+                    "break": "yes"
+                  },
+                  "if": {
+                    "limit": {
+                      "event_target:satrapy_empire": {}
+                    },
+                    "event_target:raider_khanate": {
+                      "break": "yes"
+                    },
+                    "if": {
+                      "limit": {
+                        "event_target:satrapy_empire": {}
+                      },
+                      "event_target:raider_khanate": {
+                        "break": "yes"
+                      },
+                      "if": {
+                        "limit": {
+                          "event_target:satrapy_empire": {}
+                        },
+                        "event_target:raider_khanate": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "marauder_events.txt",
+    "_line_number": 8767
+  },
+  "event": {
+    "event": {
+      "id": "marauder.699",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_country": {
+          "is_country_type": "default",
+          "any_system_within_border": {
+            "any_neighbor_system": {
+              "exists": "space_owner",
+              "space_owner": {
+                "is_country_type": "dormant_marauders",
+                "has_communications": "prevprevprev"
+              }
+            }
+          }
+        }
+      },
+      "immediate": {
+        "random_playable_country": {
+          "limit": {
+            "any_system_within_border": {
+              "any_neighbor_system": {
+                "exists": "space_owner",
+                "space_owner": {
+                  "is_country_type": "dormant_marauders",
+                  "has_communications": "prevprevprev"
+                }
+              }
+            }
+          },
+          "random_list": {
+            "20": {
+              "country_event": {},
+              "80": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "marauder_events.txt",
+    "_line_number": 9535
+  }
+}

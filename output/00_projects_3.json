@@ -1,0 +1,31 @@
+{
+  "special_project": {
+    "special_project": {
+      "key": "POPULATION_CONTROL_PROJECT",
+      "days_to_research": "180",
+      "tech_department": "society_technology",
+      "timelimit": "-1",
+      "picture": "GFX_evt_genetic_modification",
+      "icon": "gfx/interface/icons/situation_log/situation_log_planet.dds",
+      "event_scope": "country_event",
+      "requirements": {
+        "shipclass_science_ship": "1",
+        "leader": "scientist"
+      },
+      "abort_trigger": {
+        "event_target:desertling_planet": {
+          "NOT": {
+            "OR": {
+              "is_planet_class": "pc_broken"
+            }
+          }
+        },
+        "on_success": {
+          "country_event": {}
+        }
+      }
+    },
+    "_source_file": "00_projects_3.txt",
+    "_line_number": 1908
+  }
+}

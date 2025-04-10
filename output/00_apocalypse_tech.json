@@ -1,0 +1,349 @@
+{
+  "tech_colossus": {
+    "tech_colossus": {
+      "cost": "@tier5cost3",
+      "area": "engineering",
+      "tier": "5",
+      "is_rare": "yes",
+      "is_reverse_engineerable": "no",
+      "category": {
+        "prerequisites": {
+          "weight": "0",
+          "potential": {
+            "host_has_dlc": "Apocalypse"
+          },
+          "prereqfor_desc": {
+            "ship": {
+              "title": "TECH_UNLOCK_COLOSSUS_CONSTRUCTION_TITLE",
+              "desc": "TECH_UNLOCK_COLOSSUS_CONSTRUCTION_DESC"
+            }
+          },
+          "_comments": [
+            "## unlock colossi"
+          ],
+          "ai_weight": {
+            "modifier": {
+              "factor": "2",
+              "is_ai": "no #auto-research"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_apocalypse_tech.txt",
+    "_line_number": 11
+  },
+  "tech_pk_cracker": {
+    "tech_pk_cracker": {
+      "area": "engineering",
+      "cost": "@tier5cost3",
+      "tier": "5",
+      "is_rare": "yes",
+      "is_reverse_engineerable": "no",
+      "category": {
+        "prerequisites": {
+          "ai_update_type": "military",
+          "weight": "@tier5weight3",
+          "potential": {
+            "host_has_dlc": "Apocalypse",
+            "has_country_flag": "colossus_project",
+            "is_pacifist": "no"
+          },
+          "weight_modifier": {
+            "factor": "0.50",
+            "inline_script": {
+              "script": "technologies/rare_technologies_weight_modifiers",
+              "TECHNOLOGY": "tech_pk_cracker"
+            },
+            "modifier": {
+              "factor": "0.20",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {}
+                      }
+                    },
+                    "ai_weight": {
+                      "factor": "0.5"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_apocalypse_tech.txt",
+    "_line_number": 48
+  },
+  "tech_pk_shielder": {
+    "tech_pk_shielder": {
+      "area": "physics",
+      "cost": "@tier5cost3",
+      "tier": "5",
+      "is_rare": "yes",
+      "is_reverse_engineerable": "no",
+      "category": {
+        "prerequisites": {
+          "ai_update_type": "military",
+          "weight": "@tier5weight3",
+          "potential": {
+            "host_has_dlc": "Apocalypse",
+            "has_country_flag": "colossus_project"
+          },
+          "weight_modifier": {
+            "factor": "0.50",
+            "inline_script": {
+              "script": "technologies/rare_technologies_weight_modifiers",
+              "TECHNOLOGY": "tech_pk_shielder"
+            },
+            "modifier": {
+              "factor": "0.20",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {}
+                      },
+                      "modifier": {
+                        "factor": "2",
+                        "is_pacifist": "yes"
+                      }
+                    },
+                    "ai_weight": {
+                      "factor": "0.5",
+                      "modifier": {
+                        "factor": "5",
+                        "has_ethic": "ethic_fanatic_pacifist"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_apocalypse_tech.txt",
+    "_line_number": 89
+  },
+  "tech_pk_neutron": {
+    "tech_pk_neutron": {
+      "area": "physics",
+      "cost": "@tier5cost3",
+      "tier": "5",
+      "is_rare": "yes",
+      "is_reverse_engineerable": "no",
+      "category": {
+        "prerequisites": {
+          "ai_update_type": "military",
+          "weight": "@tier5weight3",
+          "potential": {
+            "host_has_dlc": "Apocalypse",
+            "has_country_flag": "colossus_project",
+            "OR": {
+              "is_spiritualist": "no",
+              "NOR": {
+                "AND": {
+                  "NOT": {
+                    "has_technology": "tech_telepathy"
+                  },
+                  "AND": {
+                    "host_has_dlc": "Utopia",
+                    "OR": {
+                      "has_ascension_perk": "ap_mind_over_matter",
+                      "has_origin": "origin_shroudwalker_apprentice"
+                    }
+                  }
+                }
+              },
+              "is_pacifist": "no"
+            },
+            "weight_modifier": {
+              "factor": "0.50",
+              "inline_script": {
+                "script": "technologies/rare_technologies_weight_modifiers",
+                "TECHNOLOGY": "tech_pk_neutron"
+              },
+              "modifier": {
+                "factor": "0.20",
+                "NOR": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {
+                          "has_trait_in_council": {}
+                        },
+                        "modifier": {
+                          "factor": "2",
+                          "is_materialist": "yes"
+                        }
+                      },
+                      "ai_weight": {
+                        "factor": "0.5",
+                        "modifier": {
+                          "factor": "5",
+                          "has_ethic": "ethic_fanatic_materialist"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_apocalypse_tech.txt",
+    "_line_number": 141
+  },
+  "tech_pk_godray": {
+    "tech_pk_godray": {
+      "area": "society",
+      "cost": "@tier5cost3",
+      "tier": "5",
+      "is_rare": "yes",
+      "is_reverse_engineerable": "no",
+      "category": {
+        "prerequisites": {
+          "ai_update_type": "military",
+          "weight": "@tier5weight3",
+          "potential": {
+            "host_has_dlc": "Apocalypse",
+            "has_country_flag": "colossus_project",
+            "is_spiritualist": "yes",
+            "OR": {
+              "AND": {
+                "NOT": {
+                  "has_technology": "tech_telepathy"
+                },
+                "AND": {
+                  "host_has_dlc": "Utopia",
+                  "OR": {
+                    "has_ascension_perk": "ap_mind_over_matter",
+                    "has_origin": "origin_shroudwalker_apprentice"
+                  }
+                }
+              }
+            },
+            "weight_modifier": {
+              "factor": "0.50",
+              "inline_script": {
+                "script": "technologies/rare_technologies_weight_modifiers",
+                "TECHNOLOGY": "tech_pk_godray"
+              },
+              "modifier": {
+                "factor": "0.20",
+                "NOR": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {
+                          "has_trait_in_council": {}
+                        }
+                      },
+                      "ai_weight": {
+                        "factor": "0.5",
+                        "modifier": {
+                          "factor": "5",
+                          "has_ethic": "ethic_fanatic_spiritualist"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_apocalypse_tech.txt",
+    "_line_number": 210
+  },
+  "tech_pk_nanobots": {
+    "tech_pk_nanobots": {
+      "area": "engineering",
+      "cost": "@tier5cost3",
+      "tier": "5",
+      "is_rare": "yes",
+      "is_reverse_engineerable": "no",
+      "category": {
+        "prerequisites": {
+          "ai_update_type": "military",
+          "weight": "@tier5weight3",
+          "potential": {
+            "host_has_dlc": "Apocalypse",
+            "has_country_flag": "colossus_project",
+            "has_valid_civic": "civic_machine_assimilator"
+          },
+          "weight_modifier": {
+            "factor": "0.50",
+            "inline_script": {
+              "script": "technologies/rare_technologies_weight_modifiers",
+              "TECHNOLOGY": "tech_pk_nanobots"
+            },
+            "modifier": {
+              "factor": "0.20",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {}
+                      }
+                    },
+                    "ai_weight": {
+                      "factor": "0.5",
+                      "modifier": {
+                        "factor": "5",
+                        "has_ethic": "ethic_gestalt_consciousness",
+                        "has_valid_civic": "civic_machine_assimilator"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_apocalypse_tech.txt",
+    "_line_number": 272
+  },
+  "tech_btc_1": {
+    "tech_btc_1": {
+      "area": "engineering",
+      "cost": "@tier5cost3",
+      "tier": "5",
+      "is_rare": "yes",
+      "is_reverse_engineerable": "no",
+      "category": {
+        "prerequisites": {
+          "ai_update_type": "military",
+          "weight": "@tier5weight3",
+          "potential": {
+            "has_nemesis": "yes",
+            "has_ascension_perk": "ap_become_the_crisis",
+            "has_country_flag": "can_build_star_eaters"
+          },
+          "weight_modifier": {
+            "factor": "0.00"
+          },
+          "ai_weight": {
+            "factor": "0.0"
+          }
+        }
+      }
+    },
+    "_source_file": "00_apocalypse_tech.txt",
+    "_line_number": 318
+  }
+}

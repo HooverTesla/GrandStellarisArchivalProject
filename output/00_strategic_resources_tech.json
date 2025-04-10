@@ -1,0 +1,391 @@
+{
+  "tech_mine_living_metal": {
+    "tech_mine_living_metal": {
+      "cost": "@tier5cost1",
+      "area": "engineering",
+      "tier": "5",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier5weight1",
+          "weight_modifier": {
+            "factor": "0.5",
+            "modifier": {
+              "factor": "0",
+              "NOT": {
+                "any_planet_within_border": {
+                  "has_deposit": "d_living_metal_deposit"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "20",
+              "has_country_flag": "dragon_breeders #so they can recruit Fledgeling Dragons"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources_tech.txt",
+    "_line_number": 10
+  },
+  "tech_mine_betharian": {
+    "tech_mine_betharian": {
+      "cost": "@tier1cost2",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight2",
+          "weight_modifier": {
+            "factor": "2",
+            "modifier": {
+              "factor": "0",
+              "NOT": {
+                "any_owned_planet": {
+                  "has_deposit": "d_betharian_deposit"
+                }
+              }
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources_tech.txt",
+    "_line_number": 42
+  },
+  "tech_mine_volatile_motes": {
+    "tech_mine_volatile_motes": {
+      "icon": "tech_volatile_motes",
+      "cost": "@tier2cost1",
+      "area": "physics",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight1",
+          "weight_modifier": {
+            "factor": "2",
+            "modifier": {
+              "factor": "0",
+              "NOT": {
+                "any_owned_planet": {
+                  "OR": {
+                    "has_deposit": "d_industrial_sector"
+                  }
+                },
+                "any_planet_within_border": {
+                  "OR": {
+                    "has_deposit": "d_volatile_motes_5"
+                  }
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "factor": "@strategic_resource_ai_tech_factor #important resource"
+          }
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources_tech.txt",
+    "_line_number": 75
+  },
+  "tech_volatile_motes": {
+    "tech_volatile_motes": {
+      "cost": "@tier2cost1",
+      "area": "physics",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight1",
+          "weight_modifier": {
+            "factor": "2",
+            "modifier": {
+              "factor": "0.5",
+              "OR": {
+                "any_owned_planet": {
+                  "OR": {
+                    "has_deposit": "d_industrial_sector"
+                  }
+                },
+                "any_planet_within_border": {
+                  "OR": {
+                    "has_deposit": "d_volatile_motes_5"
+                  }
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "factor": "@strategic_resource_ai_tech_factor #important resource"
+          }
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources_tech.txt",
+    "_line_number": 117
+  },
+  "tech_mine_exotic_gases": {
+    "tech_mine_exotic_gases": {
+      "icon": "tech_exotic_gases",
+      "cost": "@tier2cost1",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight1",
+          "weight_modifier": {
+            "factor": "2",
+            "modifier": {
+              "factor": "0",
+              "NOT": {
+                "any_owned_planet": {
+                  "OR": {
+                    "has_deposit": "d_exotic_mountain"
+                  }
+                },
+                "any_planet_within_border": {
+                  "OR": {
+                    "has_deposit": "d_exotic_gases_5"
+                  }
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "factor": "@strategic_resource_ai_tech_factor #important resource"
+          }
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources_tech.txt",
+    "_line_number": 158
+  },
+  "tech_exotic_gases": {
+    "tech_exotic_gases": {
+      "cost": "@tier2cost1",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight1",
+          "weight_modifier": {
+            "factor": "2",
+            "modifier": {
+              "factor": "0.5",
+              "OR": {
+                "any_owned_planet": {
+                  "OR": {
+                    "has_deposit": "d_exotic_mountain"
+                  }
+                },
+                "any_planet_within_border": {
+                  "OR": {
+                    "has_deposit": "d_exotic_gases_5"
+                  }
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "factor": "@strategic_resource_ai_tech_factor #important resource"
+          }
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources_tech.txt",
+    "_line_number": 201
+  },
+  "tech_mine_rare_crystals": {
+    "tech_mine_rare_crystals": {
+      "cost": "@tier2cost1",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight1",
+          "weight_modifier": {
+            "factor": "2",
+            "modifier": {
+              "add": "1",
+              "has_country_flag": "tech_mine_rare_crystals_culling_boost"
+            }
+          },
+          "ai_weight": {
+            "factor": "@strategic_resource_ai_tech_factor #strategic resource"
+          }
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources_tech.txt",
+    "_line_number": 245
+  },
+  "tech_rare_crystals": {
+    "tech_rare_crystals": {
+      "cost": "@tier2cost1",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight1",
+          "weight_modifier": {
+            "factor": "2",
+            "modifier": {
+              "factor": "0.5",
+              "OR": {
+                "any_owned_planet": {
+                  "OR": {
+                    "has_deposit": "d_industrial_sector"
+                  }
+                },
+                "any_planet_within_border": {
+                  "OR": {
+                    "has_deposit": "d_rare_crystals_5"
+                  }
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "factor": "@strategic_resource_ai_tech_factor"
+          }
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources_tech.txt",
+    "_line_number": 293
+  },
+  "tech_mine_zro": {
+    "tech_mine_zro": {
+      "cost": "@tier3cost2",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "is_rare": "yes",
+        "prerequisites": {
+          "is_reverse_engineerable": "no",
+          "weight": "@tier3weight2",
+          "_comments": [
+            "## unlock see zro ore"
+          ],
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.10",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {}
+                },
+                "modifier": {
+                  "factor": "2\t# On top of regular bonus from trait.",
+                  "has_trait_in_council": {}
+                },
+                "inline_script": {
+                  "script": "technologies/rare_technologies_weight_modifiers",
+                  "TECHNOLOGY": "tech_mine_zro"
+                },
+                "ai_weight": {
+                  "factor": "2.5 # extremely rare tech (especially if you don't have psionic theory)",
+                  "modifier": {
+                    "factor": "1.25",
+                    "has_trait_in_council": {},
+                    "modifier": {
+                      "factor": "5",
+                      "has_tradition": "tr_psionics_finish"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources_tech.txt",
+    "_line_number": 334
+  },
+  "tech_mine_dark_matter": {
+    "tech_mine_dark_matter": {
+      "cost": "@tier3cost3",
+      "area": "physics",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight3",
+          "_comments": [
+            "## unlock see dark matter"
+          ],
+          "technology_swap": {
+            "name": "tech_mine_dark_matter",
+            "inherit_icon": "yes",
+            "inherit_effects": "yes",
+            "trigger": {
+              "has_ascension_perk": "ap_weather_control"
+            },
+            "prereqfor_desc": {
+              "custom": {
+                "title": "tech_generate_gravity_storm_tt"
+              }
+            },
+            "weight": {
+              "factor": "1"
+            }
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0",
+              "NOR": {
+                "has_country_flag": "dark_matter_found",
+                "any_system_within_border": {
+                  "any_relation": {
+                    "AND": {
+                      "is_country_type": "default",
+                      "has_communications": "ROOT",
+                      "has_technology": "tech_mine_dark_matter"
+                    }
+                  }
+                }
+              }
+            },
+            "ai_weight": {
+              "factor": "2 #strategic resource"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources_tech.txt",
+    "_line_number": 409
+  },
+  "tech_nanite_transmutation": {
+    "tech_nanite_transmutation": {
+      "cost": "@tier2cost3",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "weight": "@tier2weight3",
+        "is_rare": "yes",
+        "potential": {
+          "host_has_dlc": "Distant Stars Story Pack"
+        },
+        "weight_modifier": {
+          "factor": "0.50",
+          "modifier": {
+            "factor": "0",
+            "NOT": {},
+            "inline_script": {
+              "script": "technologies/rare_technologies_weight_modifiers",
+              "TECHNOLOGY": "tech_nanite_transmutation"
+            }
+          },
+          "ai_weight": {
+            "factor": "@strategic_resource_ai_tech_factor #important resource"
+          }
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources_tech.txt",
+    "_line_number": 459
+  }
+}

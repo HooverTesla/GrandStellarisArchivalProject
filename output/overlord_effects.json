@@ -1,0 +1,1500 @@
+{
+  "admirals_bickering_event_effect": {
+    "admirals_bickering_event_effect": {
+      "hidden_effect": {
+        "change_variable": {
+          "which": "overlord_admirals_bickering_value",
+          "value": "1"
+        },
+        "if": {
+          "limit": {
+            "check_variable": {
+              "which": "overlord_admirals_bickering_value",
+              "value <": "3"
+            }
+          },
+          "country_event": {
+            "id": "subject.1117",
+            "days": "150"
+          }
+        },
+        "else": {
+          "country_event": {
+            "id": "subject.1142",
+            "days": "150"
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1
+  },
+  "admirals_bickering_replacement_effect": {
+    "admirals_bickering_replacement_effect": {
+      "hidden_effect": {
+        "if": {
+          "limit": {
+            "OR": {
+              "NOT": {
+                "NOT": {
+                  "any_owned_leader": {
+                    "has_leader_flag": "admiral_democracy",
+                    "leader_class": "commander"
+                  }
+                }
+              }
+            },
+            "if": {
+              "limit": {
+                "any_owned_leader": {
+                  "NOT": {
+                    "leader_class": "commander"
+                  }
+                },
+                "random_owned_leader": {
+                  "limit": {
+                    "NOT": {
+                      "leader_class": "commander"
+                    },
+                    "set_leader_flag": "admiral_democracy",
+                    "save_event_target_as": "admiral_democracy"
+                  }
+                },
+                "else": {
+                  "create_leader": {
+                    "class": "commander",
+                    "species": "root.species",
+                    "name": "random",
+                    "skill": "1"
+                  },
+                  "last_created_leader": {
+                    "set_leader_flag": "admiral_democracy",
+                    "save_event_target_as": "admiral_democracy"
+                  }
+                }
+              },
+              "if": {
+                "limit": {
+                  "OR": {
+                    "NOT": {
+                      "NOT": {
+                        "any_owned_leader": {
+                          "has_leader_flag": "admiral_oligarchy",
+                          "leader_class": "commander"
+                        }
+                      }
+                    }
+                  },
+                  "if": {
+                    "limit": {
+                      "any_owned_leader": {
+                        "NOT": {
+                          "leader_class": "commander"
+                        }
+                      },
+                      "random_owned_leader": {
+                        "limit": {
+                          "NOT": {
+                            "leader_class": "commander"
+                          },
+                          "set_leader_flag": "admiral_oligarchy",
+                          "save_event_target_as": "admiral_oligarchy"
+                        }
+                      },
+                      "else": {
+                        "create_leader": {
+                          "class": "commander",
+                          "species": "root.species",
+                          "name": "random",
+                          "skill": "1"
+                        },
+                        "last_created_leader": {
+                          "set_leader_flag": "admiral_oligarchy",
+                          "save_event_target_as": "admiral_oligarchy"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 28
+  },
+  "admirals_bickering_increase_democratic_influence_effect": {
+    "admirals_bickering_increase_democratic_influence_effect": {
+      "change_variable": {
+        "which": "overlord_admirals_bickering_democratic_side",
+        "value": "5"
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 115
+  },
+  "admirals_bickering_decrease_democratic_influence_effect": {
+    "admirals_bickering_decrease_democratic_influence_effect": {
+      "subtract_variable": {
+        "which": "overlord_admirals_bickering_democratic_side",
+        "value": "5"
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 122
+  },
+  "admirals_bickering_increase_oligarchic_influence_effect": {
+    "admirals_bickering_increase_oligarchic_influence_effect": {
+      "change_variable": {
+        "which": "overlord_admirals_bickering_oligarchic_side",
+        "value": "5"
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 129
+  },
+  "admirals_bickering_decrease_oligarchic_influence_effect": {
+    "admirals_bickering_decrease_oligarchic_influence_effect": {
+      "subtract_variable": {
+        "which": "overlord_admirals_bickering_oligarchic_side",
+        "value": "5"
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 136
+  },
+  "experiments_scientist_replacement_effect": {
+    "experiments_scientist_replacement_effect": {
+      "hidden_effect": {
+        "if": {
+          "limit": {
+            "is_gestalt": "no",
+            "OR": {
+              "NOT": {
+                "NOT": {
+                  "any_owned_leader": {
+                    "has_leader_flag": "experiments_scientist",
+                    "leader_class": "scientist"
+                  }
+                }
+              }
+            },
+            "if": {
+              "limit": {
+                "count_owned_leader": {
+                  "count >": "1",
+                  "limit": {
+                    "leader_class": "scientist"
+                  }
+                }
+              },
+              "random_owned_leader": {
+                "limit": {
+                  "leader_class": "scientist"
+                },
+                "set_leader_flag": "experiments_scientist",
+                "save_event_target_as": "targeted_scientist"
+              }
+            },
+            "else": {
+              "create_leader": {
+                "class": "scientist",
+                "species": "root.species",
+                "name": "random",
+                "skill": "1"
+              },
+              "last_created_leader": {
+                "set_leader_flag": "experiments_scientist",
+                "save_event_target_as": "targeted_scientist"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 143
+  },
+  "experiments_kill_pop_effect": {
+    "experiments_kill_pop_effect": {
+      "capital_scope": {
+        "if": {
+          "limit": {
+            "count_owned_pop": {
+              "limit": {
+                "is_same_species": "root.species"
+              }
+            }
+          },
+          "random_owned_pop": {
+            "limit": {
+              "is_same_species": "root.species"
+            },
+            "kill_pop": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 191
+  },
+  "experiments_scientist_skill_effect": {
+    "experiments_scientist_skill_effect": {
+      "if": {
+        "limit": {
+          "is_gestalt": "no"
+        },
+        "event_target:targeted_scientist": {
+          "add_skill": "1"
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 212
+  },
+  "add_specialist_leaders": {
+    "add_specialist_leaders": {
+      "every_pool_leader": {
+        "add_specialist_trait_to_leader_in_pool": {
+          "TYPE": "$TYPE$",
+          "CLASS": "$CLASS$"
+        }
+      },
+      "every_owned_leader": {
+        "add_specialist_trait_to_leader": {
+          "TYPE": "$TYPE$",
+          "CLASS": "$CLASS$"
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 227
+  },
+  "add_specialist_trait_to_leader_in_pool": {
+    "add_specialist_trait_to_leader_in_pool": {
+      "if": {
+        "limit": {
+          "leader_class": "$CLASS$",
+          "NOT": {},
+          "add_$TYPE$_leader_trait": "yes",
+          "set_leader_flag": "$TYPE$_$CLASS$"
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 242
+  },
+  "add_specialist_trait_to_leader": {
+    "add_specialist_trait_to_leader": {
+      "if": {
+        "limit": {
+          "leader_class": "$CLASS$",
+          "NOT": {},
+          "add_$TYPE$_leader_trait": "yes",
+          "set_leader_flag": "$TYPE$_$CLASS$"
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 253
+  },
+  "remove_specialist_leaders": {
+    "remove_specialist_leaders": {
+      "every_pool_leader": {
+        "limit": {
+          "leader_class": "$CLASS$",
+          "has_leader_flag": "$TYPE$_$CLASS$"
+        },
+        "remove_$TYPE$_leader_trait": "yes",
+        "remove_leader_flag": "$TYPE$_$CLASS$"
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 264
+  },
+  "append_technology": {
+    "append_technology": {
+      "if": {
+        "limit": {
+          "NOR": {
+            "has_technology": "tech_$TECH$",
+            "has_tech_option": "tech_$TECH$"
+          }
+        },
+        "add_research_option": "tech_$TECH$"
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 275
+  },
+  "refresh_subject_count_loyalty_penalty": {
+    "refresh_subject_count_loyalty_penalty": {
+      "every_subject": {
+        "erase_modifier": {},
+        "if": {
+          "limit": {},
+          "every_subject": {
+            "add_modifier": {
+              "modifier": "divided_patronage",
+              "multiplier": "PREV.value:divided_patronage_mult"
+            }
+          },
+          "clear_variable": "subjects_minus_one"
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 287
+  },
+  "add_ethics_compatibility_modifier": {
+    "add_ethics_compatibility_modifier": {
+      "set_variable": {
+        "which": "ethics_compatibility_factor",
+        "value": "0"
+      },
+      "if": {
+        "if": {
+          "if": {
+            "if": {
+              "if": {
+                "if": {
+                  "if": {
+                    "if": {
+                      "if": {
+                        "limit": {
+                          "add_modifier": {
+                            "modifier": "overlord_ethics_compatibility",
+                            "multiplier": "ethics_compatibility_factor"
+                          }
+                        },
+                        "clear_variable": "ethics_compatibility_factor"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 305
+  },
+  "compare_and_modify_ethics_factor": {
+    "compare_and_modify_ethics_factor": {
+      "ROOT.owner": {
+        "switch": {
+          "trigger": "has_ethic",
+          "ethic_fanatic_$SAME$": {
+            "ethic_$SAME$": {
+              "ethic_fanatic_$OPP$": {
+                "ethic_$OPP$": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 328
+  },
+  "erase_modifier": {
+    "erase_modifier": {
+      "if": {
+        "limit": {
+          "remove_modifier": "$MOD$"
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 340
+  },
+  "add_bulwark_array": {
+    "add_bulwark_array": {
+      "fleet": {
+        "every_controlled_ship": {
+          "limit": {
+            "is_ship_class": "shipclass_starbase",
+            "NOT": {},
+            "starbase": {
+              "add_starbase_component": {
+                "component": "STARBASE_AURA_BULWARK_ARRAY"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 351
+  },
+  "remove_bulwark_array": {
+    "remove_bulwark_array": {
+      "fleet": {
+        "every_controlled_ship": {
+          "limit": {
+            "is_ship_class": "shipclass_starbase",
+            "has_component": "STARBASE_AURA_BULWARK_ARRAY"
+          },
+          "starbase": {
+            "remove_starbase_component": {
+              "component": "STARBASE_AURA_BULWARK_ARRAY"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 367
+  },
+  "add_disintegrator_field": {
+    "add_disintegrator_field": {
+      "fleet": {
+        "every_controlled_ship": {
+          "limit": {
+            "is_ship_class": "shipclass_starbase"
+          },
+          "if": {
+            "limit": {
+              "if": {
+                "limit": {
+                  "starbase": {
+                    "add_starbase_component": {
+                      "component": "STARBASE_AURA_MEGA_DISINTEGRATOR_FIELD"
+                    }
+                  }
+                }
+              },
+              "else_if": {
+                "limit": {
+                  "starbase": {
+                    "add_starbase_component": {
+                      "component": "STARBASE_AURA_DISINTEGRATOR_FIELD"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 383
+  },
+  "remove_disintegrator_field": {
+    "remove_disintegrator_field": {
+      "fleet": {
+        "every_controlled_ship": {
+          "limit": {
+            "if": {
+              "limit": {
+                "starbase": {
+                  "remove_starbase_component": {
+                    "component": "STARBASE_AURA_DISINTEGRATOR_FIELD"
+                  }
+                }
+              },
+              "else_if": {
+                "limit": {
+                  "starbase": {
+                    "remove_starbase_component": {
+                      "component": "STARBASE_AURA_MEGA_DISINTEGRATOR_FIELD"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 412
+  },
+  "add_bulwark_leader_trait": {
+    "add_bulwark_leader_trait": {
+      "random_list": {
+        "1": {
+          "1": {
+            "1": {}
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 436
+  },
+  "remove_bulwark_leader_trait": {
+    "remove_bulwark_leader_trait": {
+      "if": {
+        "limit": {
+          "remove_trait": "leader_trait_bulwark_watcher"
+        },
+        "else_if": {
+          "limit": {
+            "remove_trait": "leader_trait_bulwark_retaliator"
+          },
+          "else": {
+            "remove_trait": "leader_trait_bulwark_sentinel"
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 444
+  },
+  "add_scholarium_leader_trait": {
+    "add_scholarium_leader_trait": {
+      "random_list": {
+        "1": {
+          "1": {
+            "1": {}
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 462
+  },
+  "remove_scholarium_leader_trait": {
+    "remove_scholarium_leader_trait": {
+      "if": {
+        "limit": {
+          "remove_trait": "leader_trait_scholarium_investigator"
+        },
+        "else_if": {
+          "limit": {
+            "remove_trait": "leader_trait_scholarium_explorer"
+          },
+          "else": {
+            "remove_trait": "leader_trait_scholarium_observer"
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 470
+  },
+  "reset_scholarium_timer": {
+    "reset_scholarium_timer": {
+      "if": {
+        "limit": {
+          "clear_variable": "planetary_sensor_timer"
+        },
+        "random_list": {
+          "1": {
+            "1": {
+              "1": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 484
+  },
+  "trigger_scholarium_project_event": {
+    "trigger_scholarium_project_event": {
+      "random_planet_within_border": {
+        "limit": {
+          "valid_for_scholarium_sensors": "yes"
+        },
+        "save_event_target_as": "planetary_sensor_target"
+      },
+      "country_event": {
+        "id": "specialist.900",
+        "scopes": {}
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 496
+  },
+  "add_scholarium_research": {
+    "add_scholarium_research": {
+      "if": {
+        "limit": {
+          "is_specialist_subject_tier": {
+            "TYPE": "scholarium",
+            "TIER": "3"
+          },
+          "has_tradition": "tr_discovery_finish",
+          "is_galactic_community_member": "yes",
+          "is_active_resolution": "resolution_intergalacticdirective_a_voice_for_all"
+        },
+        "add_resource": {
+          "$TYPE$_research": "6000"
+        }
+      },
+      "else_if": {
+        "limit": {
+          "is_specialist_subject_tier": {
+            "TYPE": "scholarium",
+            "TIER": "1"
+          },
+          "is_galactic_community_member": "yes",
+          "is_active_resolution": "resolution_intergalacticdirective_a_voice_for_all"
+        },
+        "add_resource": {
+          "$TYPE$_research": "3000"
+        }
+      },
+      "else": {
+        "add_resource": {
+          "$TYPE$_research": "2000"
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 509
+  },
+  "add_prospectorium_leader_trait": {
+    "add_prospectorium_leader_trait": {
+      "random_list": {
+        "1": {
+          "1": {
+            "1": {}
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 584
+  },
+  "remove_prospectorium_leader_trait": {
+    "remove_prospectorium_leader_trait": {
+      "if": {
+        "limit": {
+          "remove_trait": "leader_trait_prospectorium_extractor"
+        },
+        "else_if": {
+          "limit": {
+            "remove_trait": "leader_trait_prospectorium_optimizer"
+          },
+          "else": {
+            "remove_trait": "leader_trait_prospectorium_refiner"
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 592
+  },
+  "prospectorium_resource_discovery_flag_tier_2_effect": {
+    "prospectorium_resource_discovery_flag_tier_2_effect": {
+      "random_list": {
+        "1": {
+          "modifier": {
+            "factor": "0",
+            "has_country_flag": "prospectorium_resource_discovery_exotic_gases"
+          },
+          "set_country_flag": "prospectorium_resource_discovery_exotic_gases"
+        }
+      },
+      "set_country_flag": "prospectorium_resource_discovery_alloys"
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 606
+  },
+  "prospectorium_resource_discovery_flag_tier_3_effect": {
+    "prospectorium_resource_discovery_flag_tier_3_effect": {
+      "random_list": {
+        "1": {
+          "modifier": {
+            "factor": "0",
+            "has_country_flag": "prospectorium_resource_discovery_living_metal"
+          },
+          "set_country_flag": "prospectorium_resource_discovery_living_metal"
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 649
+  },
+  "prospectorium_resource_discovery_remove_flag_effect": {
+    "prospectorium_resource_discovery_remove_flag_effect": {
+      "if": {
+        "limit": {
+          "has_country_flag": "prospectorium_resource_discovery_living_metal"
+        },
+        "remove_country_flag": "prospectorium_resource_discovery_living_metal"
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 722
+  },
+  "prospectorium_resource_discovery_reward_effect": {
+    "prospectorium_resource_discovery_reward_effect": {
+      "if": {
+        "limit": {
+          "has_deposit": "yes",
+          "root": {
+            "is_active_resolution": "resolution_intergalacticdirective_a_voice_for_all"
+          },
+          "locked_random_list": {
+            "1": {
+              "1": {
+                "1": {}
+              },
+              "else_if": {
+                "limit": {
+                  "has_deposit": "yes"
+                },
+                "locked_random_list": {
+                  "1": {
+                    "1": {
+                      "1": {}
+                    },
+                    "else_if": {
+                      "limit": {
+                        "root": {
+                          "is_active_resolution": "resolution_intergalacticdirective_a_voice_for_all"
+                        },
+                        "locked_random_list": {
+                          "3": {
+                            "add_deposit": "$DEPOSIT1$",
+                            "root": {},
+                            "2": {
+                              "add_deposit": "$DEPOSIT2$",
+                              "root": {},
+                              "1": {
+                                "add_deposit": "$DEPOSIT3$",
+                                "root": {}
+                              }
+                            },
+                            "else": {
+                              "locked_random_list": {
+                                "3": {
+                                  "add_deposit": "$DEPOSIT1$",
+                                  "root": {},
+                                  "2": {
+                                    "add_deposit": "$DEPOSIT2$",
+                                    "root": {},
+                                    "1": {
+                                      "add_deposit": "$DEPOSIT3$",
+                                      "root": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 779
+  },
+  "append_symbiotic_link": {
+    "append_symbiotic_link": {
+      "if": {
+        "limit": {
+          "change_variable": {
+            "which": "symbiotic_links",
+            "value": "1"
+          },
+          "else": {
+            "set_variable": {
+              "which": "symbiotic_links",
+              "value": "1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 844
+  },
+  "remove_symbiotic_link": {
+    "remove_symbiotic_link": {
+      "if": {
+        "limit": {
+          "subtract_variable": {
+            "which": "symbiotic_links",
+            "value": "1"
+          },
+          "if": {
+            "limit": {
+              "check_variable": {
+                "which": "symbiotic_links",
+                "value": "0"
+              }
+            },
+            "clear_variable": "symbiotic_links"
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 860
+  },
+  "refresh_splinter_hive_modifier": {
+    "refresh_splinter_hive_modifier": {
+      "if": {
+        "limit": {
+          "remove_modifier": "holding_splinter_hive_modifier"
+        },
+        "if": {
+          "limit": {
+            "add_modifier": {
+              "modifier": "holding_splinter_hive_modifier",
+              "multiplier": "symbiotic_links"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 879
+  },
+  "append_noble_vacation_home": {
+    "append_noble_vacation_home": {
+      "if": {
+        "limit": {
+          "change_variable": {
+            "which": "noble_vacation_home",
+            "value": "1"
+          },
+          "else": {
+            "set_variable": {
+              "which": "noble_vacation_home",
+              "value": "1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 893
+  },
+  "remove_noble_vacation_home": {
+    "remove_noble_vacation_home": {
+      "if": {
+        "limit": {
+          "subtract_variable": {
+            "which": "noble_vacation_home",
+            "value": "1"
+          },
+          "if": {
+            "limit": {
+              "check_variable": {
+                "which": "noble_vacation_home",
+                "value": "0"
+              }
+            },
+            "clear_variable": "noble_vacation_home"
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 909
+  },
+  "refresh_noble_vacation_home_modifier": {
+    "refresh_noble_vacation_home_modifier": {
+      "if": {
+        "limit": {
+          "remove_modifier": "holding_noble_vacation_home_modifier"
+        },
+        "if": {
+          "limit": {
+            "add_modifier": {
+              "modifier": "holding_noble_vacation_home_modifier",
+              "multiplier": "noble_vacation_home"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 928
+  },
+  "origin_imperial_vassal_new_overlord_eventchain_1": {
+    "origin_imperial_vassal_new_overlord_eventchain_1": {
+      "event_target:new_subject_target": {
+        "set_subject_of": {
+          "who": "root"
+        },
+        "hidden_effect": {
+          "add_opinion_modifier": {
+            "who": "root",
+            "modifier": "opinion_imperial_vassal_new_overlord"
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 946
+  },
+  "origin_imperial_vassal_new_overlord_eventchain_2": {
+    "origin_imperial_vassal_new_overlord_eventchain_2": {
+      "event_target:new_subject_target": {
+        "add_opinion_modifier": {
+          "who": "root",
+          "modifier": "opinion_imperial_vassal_refused_overlordship"
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 960
+  },
+  "origin_imperial_fiefdom_bulwark_specialization_effect": {
+    "origin_imperial_fiefdom_bulwark_specialization_effect": {
+      "custom_tooltip": "origin.5705.a.tt",
+      "hidden_effect": {
+        "random_agreement": {
+          "limit": {
+            "owner": {
+              "target": {},
+              "set_agreement_preset": {
+                "set_agreement_terms": {},
+                "create_fleet": {
+                  "effect": {
+                    "set_owner": "root",
+                    "while": {
+                      "count": "5",
+                      "create_ship": {
+                        "name": "random",
+                        "design": "NAME_Ravager"
+                      }
+                    },
+                    "set_location": "root.capital_star"
+                  }
+                },
+                "give_technology": {
+                  "tech": "tech_destroyers",
+                  "message": "yes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 972
+  },
+  "origin_imperial_fiefdom_scholarium_specialization_effect": {
+    "origin_imperial_fiefdom_scholarium_specialization_effect": {
+      "custom_tooltip": "origin.5705.c.tt",
+      "hidden_effect": {
+        "random_agreement": {
+          "limit": {
+            "owner": {
+              "target": {},
+              "set_agreement_preset": {
+                "set_agreement_terms": {},
+                "create_fleet": {
+                  "effect": {
+                    "set_owner": "root",
+                    "create_ship": {
+                      "name": "random",
+                      "design": "NAME_Scholarium_Science"
+                    },
+                    "set_location": "root.capital_star",
+                    "save_event_target_as": "new_science_ship_target"
+                  }
+                },
+                "create_leader": {
+                  "name": "random",
+                  "species": "root.overlord.species",
+                  "class": "scientist",
+                  "skill": "3"
+                },
+                "event_target:new_science_ship_target": {
+                  "assign_leader": "last_created_leader"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1005
+  },
+  "origin_imperial_fiefdom_prospectorium_specialization_effect": {
+    "origin_imperial_fiefdom_prospectorium_specialization_effect": {
+      "custom_tooltip": "origin.5705.e.tt",
+      "hidden_effect": {
+        "random_agreement": {
+          "limit": {
+            "owner": {
+              "target": {},
+              "set_agreement_preset": {
+                "set_agreement_terms": {},
+                "while": {
+                  "count": "2",
+                  "create_fleet": {
+                    "effect": {
+                      "set_owner": "root",
+                      "create_ship": {
+                        "name": "random",
+                        "design": "NAME_Prospectorium_Constructor"
+                      },
+                      "set_location": "root.capital_star"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1041
+  },
+  "origin_grateful_vassal_effect": {
+    "origin_grateful_vassal_effect": {
+      "if": {
+        "limit": {
+          "has_modifier": "overlord_ungrateful_vassal_modifier"
+        },
+        "remove_modifier": "overlord_ungrateful_vassal_modifier"
+      },
+      "add_modifier": {
+        "modifier": "overlord_grateful_vassal_modifier",
+        "years": "5"
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1069
+  },
+  "origin_ungrateful_vassal_effect": {
+    "origin_ungrateful_vassal_effect": {
+      "if": {
+        "limit": {
+          "has_modifier": "overlord_grateful_vassal_modifier"
+        },
+        "remove_modifier": "overlord_grateful_vassal_modifier"
+      },
+      "add_modifier": {
+        "modifier": "overlord_ungrateful_vassal_modifier",
+        "years": "5"
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1083
+  },
+  "save_spynetwork_country": {
+    "save_spynetwork_country": {
+      "if": {
+        "limit": {
+          "shroudwalker_insight_save_spynetwork_trigger": {},
+          "target": {},
+          "else_if": {
+            "limit": {
+              "shroudwalker_insight_save_spynetwork_trigger": {},
+              "target": {},
+              "else_if": {
+                "limit": {
+                  "shroudwalker_insight_save_spynetwork_trigger": {},
+                  "target": {},
+                  "else_if": {
+                    "limit": {
+                      "shroudwalker_insight_save_spynetwork_trigger": {},
+                      "target": {},
+                      "else_if": {
+                        "limit": {
+                          "shroudwalker_insight_save_spynetwork_trigger": {},
+                          "target": {},
+                          "else_if": {
+                            "limit": {
+                              "shroudwalker_insight_save_spynetwork_trigger": {},
+                              "target": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1099
+  },
+  "shroudwalker_insight_purchasing_effect": {
+    "shroudwalker_insight_purchasing_effect": {
+      "add_resource": {
+        "add_resource": {
+          "energy": "-10",
+          "mult": "$TARGET$.trigger:empire_size"
+        },
+        "custom_tooltip": "opinion10",
+        "hidden_effect": {
+          "event_target:shroudwalker_enclave_country": {
+            "add_trust": {
+              "who": "root",
+              "amount": "10"
+            }
+          },
+          "set_timed_country_flag": {
+            "flag": "shroudwalker_insight_cooldown",
+            "days": "360"
+          },
+          "set_saved_date": {
+            "key": "shroudwalker_insight_timer",
+            "days_from_present": "360",
+            "expires": "360"
+          },
+          "start_situation": {
+            "type": "shroudwalker_spy_network",
+            "target": "$TARGET$"
+          },
+          "country_event": {}
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1138
+  },
+  "rogue_shaman_modifier_removal": {
+    "rogue_shaman_modifier_removal": {
+      "hidden_effect": {
+        "remove_modifier": "rogue_shaman_04"
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1169
+  },
+  "galcom_change_agreement_term_resolution_effect": {
+    "galcom_change_agreement_term_resolution_effect": {
+      "every_galcom_member": {
+        "limit": {
+          "is_overlord": "yes"
+        },
+        "every_agreement": {
+          "limit": {
+            "target": {
+              "is_galactic_community_member": "yes"
+            },
+            "has_term_value": {
+              "term": "$TERM$",
+              "value": "$CURRENT_VALUE$"
+            }
+          },
+          "set_agreement_terms": {
+            "$TERM$": "$NEW_VALUE$"
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1182
+  },
+  "galcom_success_effect_repeal": {
+    "galcom_success_effect_repeal": {
+      "hidden_effect": {
+        "cancel_resolution": "$RESOLUTION$",
+        "set_timed_country_flag": {
+          "add_modifier": {
+            "modifier": "resolution_passed_diplomatic_weight",
+            "days": "2200"
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1204
+  },
+  "galcom_success_effect": {
+    "galcom_success_effect": {
+      "hidden_effect": {
+        "set_global_flag": "galactic_community_resolution_passed",
+        "set_timed_country_flag": {
+          "add_modifier": {
+            "modifier": "resolution_passed_diplomatic_weight",
+            "days": "2200"
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1215
+  },
+  "galcom_fail_effects": {
+    "galcom_fail_effects": {
+      "hidden_effect": {
+        "set_timed_country_flag": {
+          "add_modifier": {
+            "modifier": "resolution_failed_diplomatic_weight",
+            "days": "2200"
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1226
+  },
+  "galcom_subject_ethic_modifier_effect": {
+    "galcom_subject_ethic_modifier_effect": {
+      "add_galcom_modifier_effect": {
+        "add_galcom_modifier_effect": {
+          "add_galcom_modifier_effect": {
+            "add_galcom_modifier_effect": {
+              "add_galcom_modifier_effect": {
+                "add_galcom_modifier_effect": {
+                  "add_galcom_modifier_effect": {
+                    "add_galcom_modifier_effect": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1236
+  },
+  "add_galcom_modifier_effect": {
+    "add_galcom_modifier_effect": {
+      "if": {
+        "limit": {
+          "overlord": {
+            "NOR": {
+              "is_active_resolution": "resolution_bureaucraticsurveillance_personal_oversight",
+              "has_modifier": "resolution_galcom_$ETHIC$_ethic_modifier_tier_1"
+            }
+          },
+          "add_modifier": {
+            "modifier": "resolution_galcom_$ETHIC$_ethic_modifier_tier_1",
+            "days": "-1"
+          }
+        },
+        "else_if": {
+          "limit": {
+            "overlord": {
+              "NOR": {
+                "is_active_resolution": "resolution_bureaucraticsurveillance_personal_oversight",
+                "has_modifier": "resolution_galcom_$ETHIC$_ethic_modifier_tier_2"
+              }
+            },
+            "add_modifier": {
+              "modifier": "resolution_galcom_$ETHIC$_ethic_modifier_tier_2",
+              "days": "-1"
+            }
+          },
+          "else_if": {
+            "limit": {
+              "overlord": {
+                "NOT": {},
+                "add_modifier": {
+                  "modifier": "resolution_galcom_$ETHIC$_ethic_modifier_tier_3",
+                  "days": "-1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1247
+  },
+  "galcom_subject_remove_ethic_modifier_effect": {
+    "galcom_subject_remove_ethic_modifier_effect": {
+      "remove_galcom_modifier_effect": {
+        "remove_galcom_modifier_effect": {
+          "remove_galcom_modifier_effect": {
+            "remove_galcom_modifier_effect": {
+              "remove_galcom_modifier_effect": {
+                "remove_galcom_modifier_effect": {
+                  "remove_galcom_modifier_effect": {
+                    "remove_galcom_modifier_effect": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1287
+  },
+  "remove_galcom_modifier_effect": {
+    "remove_galcom_modifier_effect": {
+      "if": {
+        "limit": {
+          "has_modifier": "resolution_galcom_$ETHIC$_ethic_modifier_tier_3"
+        },
+        "remove_modifier": "resolution_galcom_$ETHIC$_ethic_modifier_tier_3"
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1298
+  },
+  "galcom_upgrade_ethic_modifier_effect": {
+    "galcom_upgrade_ethic_modifier_effect": {
+      "upgrade_galcom_modifier_effect": {
+        "upgrade_galcom_modifier_effect": {
+          "upgrade_galcom_modifier_effect": {
+            "upgrade_galcom_modifier_effect": {
+              "upgrade_galcom_modifier_effect": {
+                "upgrade_galcom_modifier_effect": {
+                  "upgrade_galcom_modifier_effect": {
+                    "upgrade_galcom_modifier_effect": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1319
+  },
+  "upgrade_galcom_modifier_effect": {
+    "upgrade_galcom_modifier_effect": {
+      "if": {
+        "limit": {
+          "has_modifier": "resolution_galcom_$ETHIC$_ethic_modifier_tier_1"
+        },
+        "remove_modifier": "resolution_galcom_$ETHIC$_ethic_modifier_tier_1",
+        "add_modifier": {
+          "modifier": "resolution_galcom_$ETHIC$_ethic_modifier_tier_2",
+          "days": "-1"
+        }
+      },
+      "else_if": {
+        "limit": {
+          "has_modifier": "resolution_galcom_$ETHIC$_ethic_modifier_tier_2"
+        },
+        "remove_modifier": "resolution_galcom_$ETHIC$_ethic_modifier_tier_2",
+        "add_modifier": {
+          "modifier": "resolution_galcom_$ETHIC$_ethic_modifier_tier_3",
+          "days": "-1"
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1330
+  },
+  "galcom_downgrade_ethic_modifier_effect": {
+    "galcom_downgrade_ethic_modifier_effect": {
+      "downgrade_galcom_modifier_effect": {
+        "downgrade_galcom_modifier_effect": {
+          "downgrade_galcom_modifier_effect": {
+            "downgrade_galcom_modifier_effect": {
+              "downgrade_galcom_modifier_effect": {
+                "downgrade_galcom_modifier_effect": {
+                  "downgrade_galcom_modifier_effect": {
+                    "downgrade_galcom_modifier_effect": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1353
+  },
+  "downgrade_galcom_modifier_effect": {
+    "downgrade_galcom_modifier_effect": {
+      "if": {
+        "limit": {
+          "has_modifier": "resolution_galcom_$ETHIC$_ethic_modifier_tier_3"
+        },
+        "remove_modifier": "resolution_galcom_$ETHIC$_ethic_modifier_tier_3",
+        "add_modifier": {
+          "modifier": "resolution_galcom_$ETHIC$_ethic_modifier_tier_2",
+          "days": "-1"
+        }
+      },
+      "else_if": {
+        "limit": {
+          "has_modifier": "resolution_galcom_$ETHIC$_ethic_modifier_tier_1"
+        },
+        "remove_modifier": "resolution_galcom_$ETHIC$_ethic_modifier_tier_1"
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1364
+  },
+  "create_shroudwalker_teacher_effect": {
+    "create_shroudwalker_teacher_effect": {
+      "create_leader": {
+        "class": "official",
+        "species": "event_target:shroudwalker_species",
+        "name": "random",
+        "event_leader": "yes",
+        "background_ethic": "ethic_spiritualist",
+        "skip_background_generation": "yes",
+        "custom_description": "shroudwalker_teacher_desc",
+        "custom_catch_phrase": "shroudwalker_teacher_catch_phrase",
+        "skill": "5",
+        "leader_age_min": "25",
+        "leader_age_max": "45",
+        "randomize_traits": "no",
+        "traits": {
+          "0": "subclass_official_governor",
+          "1": "leader_trait_shroudwalker",
+          "2": "leader_trait_psionic",
+          "3": "leader_trait_bureaucrat_2",
+          "4": "leader_trait_righteous"
+        },
+        "effect": {
+          "set_leader_flag": "renowned_leader",
+          "fire_on_action": {
+            "on_action": "on_leader_hired"
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1393
+  },
+  "create_master_salvager_effect": {
+    "create_master_salvager_effect": {
+      "create_leader": {
+        "class": "scientist",
+        "species": "event_target:salvager_species",
+        "name": "random",
+        "event_leader": "yes",
+        "background_ethic": "ethic_pacifist",
+        "skip_background_generation": "yes",
+        "custom_description": "master_salvager_desc",
+        "custom_catch_phrase": "master_salvager_catch_phrase",
+        "skill": "5",
+        "leader_age_min": "25",
+        "leader_age_max": "45",
+        "randomize_traits": "no",
+        "traits": {
+          "0": "subclass_scientist_governor",
+          "1": "leader_trait_master_salvager",
+          "2": "leader_trait_salvager_3",
+          "3": "leader_trait_manufacturer"
+        },
+        "effect": {
+          "set_leader_flag": "renowned_leader",
+          "fire_on_action": {
+            "on_action": "on_leader_hired"
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_effects.txt",
+    "_line_number": 1424
+  }
+}

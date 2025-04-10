@@ -1,0 +1,2779 @@
+{
+  "researcher": {
+    "researcher": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_research_lab_1",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "possible": {
+        "complex_specialist_job_check_trigger": "yes"
+      },
+      "triggered_country_modifier": {
+        "modifier": {
+          "country_naval_cap_add": "1"
+        },
+        "mult": "planet.modifier:job_researcher_naval_cap_add"
+      },
+      "resources": {
+        "category": "planet_researchers",
+        "produces": {
+          "physics_research": "3",
+          "engineering_research": "3",
+          "society_research": "3"
+        },
+        "upkeep": {
+          "trigger": {
+            "planet": {
+              "has_planet_flag": "has_science_ministry"
+            }
+          },
+          "consumer_goods": "1"
+        }
+      },
+      "overlord_resources": {
+        "category": "planet_requisitioned_research",
+        "produces": {
+          "trigger": {
+            "planet": {
+              "has_planet_flag": "has_science_ministry"
+            }
+          },
+          "physics_research": "1",
+          "engineering_research": "1",
+          "society_research": "1"
+        }
+      },
+      "weight": {
+        "weight": "@specialist_job_weight",
+        "mult": "value:job_weights_research_modifier|JOB|researcher|",
+        "modifier": {
+          "factor": "0.2",
+          "has_citizenship_rights": "no",
+          "NOT": {},
+          "modifier": {
+            "factor": "2",
+            "has_living_standard": {},
+            "modifier": {
+              "factor": "0.8",
+              "is_enslaved": "yes",
+              "has_slavery_type": {},
+              "modifier": {
+                "factor": "5",
+                "has_trait": "trait_cyborg_creed_of_research"
+              }
+            },
+            "inline_script": "jobs/automodding_priority_research"
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 9
+  },
+  "xeno_zoo_keeper": {
+    "xeno_zoo_keeper": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_xeno_zoo",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "possible": {
+        "complex_specialist_job_check_trigger": "yes"
+      },
+      "resources": {
+        "category": "planet_zoo_keepers",
+        "produces": {
+          "society_research": "10"
+        },
+        "upkeep": {
+          "consumer_goods": "1"
+        }
+      },
+      "triggered_country_modifier": {
+        "modifier": {
+          "country_naval_cap_add": "1"
+        },
+        "mult": "planet.modifier:job_researcher_naval_cap_add"
+      },
+      "triggered_planet_modifier": {
+        "planet_amenities_add": "1",
+        "mult": "value:zoo_keeper_amenity_output"
+      },
+      "weight": {
+        "weight": "@specialist_job_weight",
+        "mult": "value:job_weights_research_modifier|JOB|xeno_zoo_keeper|",
+        "modifier": {
+          "factor": "0.2",
+          "has_citizenship_rights": "no",
+          "NOT": {},
+          "modifier": {
+            "factor": "2",
+            "has_living_standard": {},
+            "modifier": {
+              "factor": "0.8",
+              "is_enslaved": "yes",
+              "has_slavery_type": {}
+            },
+            "inline_script": "jobs/automodding_priority_research"
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 102
+  },
+  "priest": {
+    "priest": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_temple",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "possible": {
+        "complex_specialist_job_check_trigger": "yes"
+      },
+      "resources": {
+        "category": "planet_priests",
+        "produces": {
+          "unity": "4"
+        },
+        "upkeep": {
+          "consumer_goods": "2"
+        }
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "planet": {
+            "has_active_building": "building_league_offices"
+          }
+        },
+        "planet_amenities_add": "1",
+        "mult": "value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|"
+      },
+      "triggered_country_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "country_edict_fund_add": "2",
+          "mult": "value:job_total_output_modifier|JOB|priest|RESOURCE|unity|"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "trade_value_add": "@councilor_dimensional_worship_priest_trade_value",
+            "mult": "value:scripted_modifier_councilor_level_mult|MODIFIER|pop_job_trade_mult|TYPE|councilor_dimensional_worship_corporate|"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "planet": {
+                "exists": "owner",
+                "owner": {
+                  "has_tradition": "tr_modularity_4"
+                }
+              }
+            },
+            "planet_jobs_worker_produces_mult": "0.02"
+          },
+          "weight": {
+            "weight": "@specialist_job_weight",
+            "mult": "value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|",
+            "modifier": {
+              "factor": "0.2",
+              "has_citizenship_rights": "no",
+              "NOT": {},
+              "modifier": {
+                "factor": "2",
+                "exists": "owner",
+                "owner": {},
+                "modifier": {
+                  "factor": "0.1",
+                  "is_enslaved": "yes",
+                  "has_slavery_type": {}
+                },
+                "inline_script": "jobs/automodding_priority_unity"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 175
+  },
+  "death_priest": {
+    "death_priest": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_sacrificial_temple_1",
+      "clothes_texture_index": "3",
+      "icon": "death_priest",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_sapient": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "possible": {
+        "resources": {
+          "category": "planet_priests",
+          "produces": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {},
+              "unity": "3"
+            },
+            "upkeep": {
+              "consumer_goods": "2"
+            }
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "planet": {
+                "has_active_building": "building_league_offices"
+              }
+            },
+            "planet_amenities_add": "1",
+            "mult": "value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|"
+          },
+          "triggered_country_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {},
+              "country_edict_fund_add": "2",
+              "mult": "value:job_total_output_modifier|JOB|death_priest|RESOURCE|unity|"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {},
+                "trade_value_add": "@councilor_dimensional_worship_priest_trade_value",
+                "mult": "value:scripted_modifier_councilor_level_mult|MODIFIER|pop_job_trade_mult|TYPE|councilor_dimensional_worship_corporate|"
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "planet": {
+                    "exists": "owner",
+                    "owner": {
+                      "has_tradition": "tr_modularity_4"
+                    }
+                  }
+                },
+                "planet_jobs_worker_produces_mult": "0.02"
+              },
+              "weight": {
+                "weight": "@specialist_job_weight",
+                "mult": "value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|",
+                "modifier": {
+                  "factor": "0.2",
+                  "has_citizenship_rights": "no",
+                  "NOT": {},
+                  "modifier": {
+                    "factor": "2",
+                    "exists": "owner",
+                    "owner": {},
+                    "modifier": {
+                      "factor": "0.1",
+                      "is_enslaved": "yes",
+                      "has_slavery_type": {}
+                    },
+                    "inline_script": "jobs/automodding_priority_unity"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 283
+  },
+  "enforcer": {
+    "enforcer": {
+      "category": "specialist",
+      "condition_string": "BATTLE_THRALL_JOB_TRIGGER",
+      "building_icon": "building_precinct_house",
+      "clothes_texture_index": "5",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible": {
+        "battle_thrall_job_check_trigger": "yes"
+      },
+      "resources": {
+        "category": "planet_enforcers",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "unity": "1"
+          },
+          "upkeep": {
+            "trigger": {
+              "exists": "planet",
+              "planet": {},
+              "energy": "2"
+            }
+          },
+          "pop_modifier": {
+            "pop_defense_armies_add": "2"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "planet",
+              "planet": {},
+              "modifier": {
+                "planet_crime_add": "-10"
+              }
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {
+                  "is_oligarchic_authority": "yes",
+                  "OR": {
+                    "has_country_flag": "synth_virtual"
+                  }
+                }
+              },
+              "planet_jobs_ruler_produces_mult": "0.10"
+            },
+            "_comments": [
+              "# Cyber Dictatorial Individualist",
+              "# Cyber Oligarchic Physical / Virtual"
+            ],
+            "weight": {
+              "weight": "@specialist_job_weight",
+              "modifier": {
+                "mult": "value:job_weights_modifier|JOB|enforcer|RESOURCE|unity|FACTOR|0.25|",
+                "owner": {},
+                "modifier": {
+                  "factor": "10",
+                  "planet": {
+                    "NOT": {},
+                    "modifier": {
+                      "factor": "0.01",
+                      "planet": {
+                        "NOT": {},
+                        "modifier": {
+                          "factor": "0.2",
+                          "has_citizenship_rights": "no",
+                          "NOT": {},
+                          "modifier": {
+                            "factor": "10",
+                            "is_enslaved": "yes",
+                            "has_slavery_type": {},
+                            "modifier": {
+                              "factor": "0.8",
+                              "is_enslaved": "yes",
+                              "has_slavery_type": {},
+                              "modifier": {
+                                "factor": "2",
+                                "has_trait": "trait_lithoid"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "planet_modifier": {
+            "planet_crime_add": "-25",
+            "planet_stability_add": "1"
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 404
+  },
+  "telepath": {
+    "telepath": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_psi_corps",
+      "clothes_texture_index": "5",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "possible": {
+        "OR": {
+          "has_trait": "trait_psionic"
+        }
+      },
+      "resources": {
+        "category": "planet_telepaths",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {},
+            "unity": "1"
+          },
+          "produces": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {},
+              "physics_research": "3",
+              "engineering_research": "3",
+              "society_research": "3"
+            },
+            "produces": {
+              "trigger": {
+                "exists": "owner",
+                "owner": {},
+                "physics_research": "3",
+                "engineering_research": "3",
+                "society_research": "3"
+              },
+              "upkeep": {
+                "trigger": {
+                  "exists": "planet",
+                  "planet": {},
+                  "energy": "2"
+                }
+              },
+              "planet_modifier": {
+                "planet_crime_add": "-10",
+                "planet_psionic_jobs_produces_mult": "0.05"
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "owner",
+                  "owner": {},
+                  "planet_amenities_add": "7"
+                },
+                "triggered_planet_modifier": {
+                  "potential": {
+                    "exists": "owner",
+                    "owner": {},
+                    "planet_amenities_add": "8"
+                  },
+                  "triggered_planet_modifier": {
+                    "potential": {
+                      "exists": "owner",
+                      "owner": {},
+                      "modifier": {
+                        "planet_psionic_jobs_produces_mult": "0.05"
+                      }
+                    },
+                    "triggered_planet_modifier": {
+                      "potential": {
+                        "exists": "planet",
+                        "planet": {},
+                        "modifier": {
+                          "planet_crime_add": "-10"
+                        }
+                      },
+                      "triggered_planet_modifier": {
+                        "potential": {
+                          "exists": "owner",
+                          "owner": {},
+                          "modifier": {
+                            "planet_crime_add": "-30"
+                          }
+                        },
+                        "triggered_planet_modifier": {
+                          "potential": {
+                            "has_councilor": {},
+                            "planet_psionic_jobs_produces_mult": "0.01",
+                            "mult": "value:councilor_level|TYPE|councilor_psionic_sovereign|"
+                          },
+                          "triggered_planet_modifier": {
+                            "potential": {
+                              "exists": "owner",
+                              "owner": {},
+                              "modifier": {
+                                "pop_growth_speed": "0.02"
+                              }
+                            },
+                            "triggered_planet_modifier": {
+                              "potential": {
+                                "exists": "owner",
+                                "owner": {},
+                                "modifier": {
+                                  "pop_growth_speed": "0.03"
+                                }
+                              },
+                              "triggered_country_modifier": {
+                                "potential": {
+                                  "exists": "owner",
+                                  "owner": {},
+                                  "country_naval_cap_add": "5"
+                                },
+                                "triggered_country_modifier": {
+                                  "potential": {
+                                    "exists": "owner",
+                                    "owner": {},
+                                    "country_naval_cap_add": "7"
+                                  },
+                                  "weight": {
+                                    "weight": "@specialist_job_weight",
+                                    "mult": "value:job_weights_modifier|JOB|telepath|RESOURCE|unity|",
+                                    "modifier": {
+                                      "factor": "0.1",
+                                      "is_enslaved": "yes",
+                                      "has_slavery_type": {}
+                                    },
+                                    "inline_script": "jobs/automodding_priority_unity"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 596
+  },
+  "entertainer": {
+    "entertainer": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_holo_theatres",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible": {
+        "entertainer_job_check_trigger": "yes"
+      },
+      "resources": {
+        "category": "planet_entertainers",
+        "produces": {
+          "unity": "1"
+        },
+        "upkeep": {
+          "consumer_goods": "1"
+        }
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "has_councilor": {},
+          "trade_value_add": "@councilor_corporate_hedonism_entertainer_trade_value",
+          "mult": "value:scripted_modifier_councilor_level_mult|MODIFIER|pop_job_trade_mult|TYPE|councilor_corporate_hedonism|"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {
+              "is_pleasure_seeker": "yes",
+              "OR": {
+                "is_individual_machine": "yes",
+                "is_synthetic_empire": "yes"
+              }
+            }
+          },
+          "modifier": {
+            "planet_pop_assembly_mult": "0.01"
+          }
+        },
+        "weight": {
+          "weight": "@high_prio_specialist_job_weight",
+          "mult": "value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|",
+          "modifier": {
+            "factor": "0.2",
+            "has_citizenship_rights": "no",
+            "NOT": {},
+            "modifier": {
+              "factor": "0.1",
+              "NOT": {
+                "exists": "planet",
+                "planet": {}
+              },
+              "modifier": {
+                "factor": "2",
+                "NOT": {
+                  "exists": "planet",
+                  "planet": {
+                    "has_available_jobs": "entertainer"
+                  }
+                },
+                "modifier": {
+                  "add": "500",
+                  "exists": "planet",
+                  "planet": {
+                    "has_modifier": "artistic_boom"
+                  }
+                }
+              },
+              "inline_script": "jobs/automodding_priority_amenities"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 789
+  },
+  "duelist": {
+    "duelist": {
+      "category": "specialist",
+      "condition_string": "BATTLE_THRALL_JOB_TRIGGER",
+      "building_icon": "building_holo_theatres",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible": {
+        "battle_thrall_job_check_trigger": "yes"
+      },
+      "resources": {
+        "category": "planet_entertainers",
+        "produces": {
+          "unity": "2"
+        },
+        "upkeep": {
+          "alloys": "1"
+        }
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "has_councilor": {},
+          "planet_amenities_add": "1",
+          "mult": "value:scripted_modifier_councilor_level_mult|MODIFIER|pop_job_amenities_mult|TYPE|councilor_warrior_culture|"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "always": "yes"
+          },
+          "planet_amenities_add": "10",
+          "mult": "value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|"
+        },
+        "triggered_country_modifier": {
+          "potential": {
+            "has_councilor": {},
+            "country_naval_cap_add": "0.2",
+            "mult": "value:councilor_level|TYPE|councilor_warrior_culture|"
+          },
+          "country_modifier": {
+            "country_naval_cap_add": "2"
+          },
+          "weight": {
+            "weight": "@specialist_job_weight",
+            "mult": "value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|",
+            "modifier": {
+              "factor": "0.2",
+              "has_citizenship_rights": "no",
+              "NOT": {},
+              "modifier": {
+                "factor": "10",
+                "is_enslaved": "yes",
+                "has_slavery_type": {},
+                "modifier": {
+                  "factor": "0.5",
+                  "NOT": {
+                    "exists": "planet",
+                    "planet": {}
+                  }
+                },
+                "inline_script": "jobs/automodding_priority_amenities"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 917
+  },
+  "culture_worker": {
+    "culture_worker": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_autochthon_monument",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "possible": {
+        "complex_specialist_job_check_trigger": "yes"
+      },
+      "resources": {
+        "category": "planet_culture_workers",
+        "produces": {
+          "unity": "4"
+        },
+        "upkeep": {
+          "consumer_goods": "3"
+        }
+      },
+      "inline_script": {
+        "script": "jobs/galactic_curator_council_output",
+        "CATEGORY": "planet_culture_workers"
+      },
+      "planet_modifier": {
+        "pop_government_ethic_attraction": "0.10"
+      },
+      "weight": {
+        "weight": "@specialist_job_weight",
+        "mult": "value:job_weights_modifier|JOB|culture_worker|RESOURCE|unity|",
+        "_comments": [
+          "# We deliberately don't weight the ethics-based modifiers"
+        ],
+        "modifier": {
+          "factor": "0.2",
+          "has_citizenship_rights": "no",
+          "NOT": {},
+          "modifier": {
+            "factor": "1.5",
+            "has_job": "culture_worker"
+          }
+        },
+        "inline_script": "jobs/automodding_priority_unity"
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 1002
+  },
+  "bureaucrat": {
+    "bureaucrat": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_capital",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "possible": {
+        "complex_specialist_job_check_trigger": "yes"
+      },
+      "resources": {
+        "category": "planet_administrators",
+        "produces": {
+          "unity": "4"
+        },
+        "upkeep": {
+          "consumer_goods": "2"
+        }
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "modifier": {
+            "planet_stability_add": "1"
+          }
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "planet": {
+              "has_active_building": "building_league_offices"
+            }
+          },
+          "planet_amenities_add": "1",
+          "mult": "value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|"
+        },
+        "triggered_country_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "country_edict_fund_add": "2",
+            "mult": "value:job_total_output_modifier|JOB|bureaucrat|RESOURCE|unity|"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "planet": {
+                "exists": "owner",
+                "owner": {
+                  "has_tradition": "tr_modularity_4"
+                }
+              }
+            },
+            "planet_jobs_worker_produces_mult": "0.02"
+          },
+          "weight": {
+            "weight": "@specialist_job_weight",
+            "mult": "value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|",
+            "modifier": {
+              "factor": "0.2",
+              "has_citizenship_rights": "no",
+              "NOT": {},
+              "modifier": {
+                "factor": "1.5",
+                "has_job": "bureaucrat"
+              }
+            },
+            "inline_script": "jobs/automodding_priority_unity"
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 1064
+  },
+  "unifier": {
+    "unifier": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_capital",
+      "clothes_texture_index": "3",
+      "icon": "overlord_propagandist",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "possible": {
+        "complex_specialist_job_check_trigger": "yes"
+      },
+      "resources": {
+        "category": "planet_administrators",
+        "produces": {
+          "unity": "4"
+        },
+        "upkeep": {
+          "trigger": {
+            "is_lithoid_empire": "yes"
+          },
+          "minerals": "2"
+        }
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "modifier": {
+            "planet_stability_add": "1"
+          }
+        },
+        "triggered_country_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "country_edict_fund_add": "2",
+            "mult": "value:job_total_output_modifier|JOB|unifier|RESOURCE|unity|"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "planet": {
+                "exists": "owner",
+                "owner": {
+                  "has_tradition": "tr_modularity_4"
+                }
+              }
+            },
+            "planet_jobs_worker_produces_mult": "0.02"
+          },
+          "weight": {
+            "weight": "@specialist_job_weight",
+            "mult": "value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|",
+            "modifier": {
+              "factor": "0.2",
+              "has_citizenship_rights": "no",
+              "NOT": {},
+              "modifier": {
+                "factor": "2",
+                "exists": "planet",
+                "planet": {
+                  "any_owned_pop": {
+                    "NOT": {}
+                  }
+                }
+              },
+              "inline_script": "jobs/automodding_priority_unity"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 1154
+  },
+  "chemist": {
+    "chemist": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_chemical_plant",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "resources": {
+        "category": "planet_chemists",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {
+              "is_catalytic_empire": "yes"
+            }
+          },
+          "volatile_motes": "2.5"
+        },
+        "upkeep": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {
+              "is_catalytic_empire": "yes"
+            }
+          },
+          "food": "15"
+        }
+      },
+      "weight": {
+        "weight": "@specialist_job_weight",
+        "mult": "value:job_weights_modifier|JOB|chemist|RESOURCE|volatile_motes|",
+        "modifier": {
+          "factor": "0.2",
+          "has_citizenship_rights": "no",
+          "NOT": {},
+          "modifier": {
+            "factor": "7",
+            "has_job": "chemist"
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 1260
+  },
+  "translucer": {
+    "translucer": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_crystal_plant",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "resources": {
+        "category": "planet_translucers",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {
+              "is_catalytic_empire": "yes"
+            }
+          },
+          "rare_crystals": "2.5"
+        },
+        "upkeep": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {
+              "is_catalytic_empire": "yes"
+            }
+          },
+          "food": "15"
+        }
+      },
+      "weight": {
+        "weight": "@specialist_job_weight",
+        "mult": "value:job_weights_modifier|JOB|translucer|RESOURCE|rare_crystals|",
+        "modifier": {
+          "factor": "0.2",
+          "has_citizenship_rights": "no",
+          "NOT": {},
+          "modifier": {
+            "factor": "1.2",
+            "is_enslaved": "yes",
+            "has_slavery_type": {}
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 1334
+  },
+  "gas_refiner": {
+    "gas_refiner": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_refinery",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "resources": {
+        "category": "planet_refiners",
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {
+              "is_catalytic_empire": "yes"
+            }
+          },
+          "exotic_gases": "2.5"
+        },
+        "upkeep": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {
+              "is_catalytic_empire": "yes"
+            }
+          },
+          "food": "15"
+        }
+      },
+      "weight": {
+        "weight": "@specialist_job_weight",
+        "mult": "value:job_weights_modifier|JOB|gas_refiner|RESOURCE|exotic_gases|",
+        "modifier": {
+          "factor": "0.2",
+          "has_citizenship_rights": "no",
+          "NOT": {},
+          "modifier": {
+            "factor": "1.2",
+            "is_enslaved": "yes",
+            "has_slavery_type": {}
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 1413
+  },
+  "roboticist": {
+    "roboticist": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_robot_assembly_plant",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "branch_office_value_mult": "1",
+        "_comments": [
+          "# Actual value determined in the script value below"
+        ],
+        "mult": "value:roboticist_branch_office_value_mult"
+      },
+      "resources": {
+        "category": "planet_pop_assemblers",
+        "upkeep": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {
+              "has_country_flag": "synth_unscheduled_updates"
+            }
+          },
+          "alloys": "1"
+        }
+      },
+      "weight": {
+        "weight": "500",
+        "modifier": {
+          "factor": "10",
+          "owner": {}
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 1496
+  },
+  "healthcare": {
+    "healthcare": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_clinic",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "planet_modifier": {
+        "pop_growth_speed": "0.05",
+        "planet_pop_assembly_organic_mult": "0.05",
+        "pop_environment_tolerance": "0.025"
+      },
+      "resources": {
+        "category": "planet_doctors",
+        "upkeep": {
+          "consumer_goods": "1"
+        }
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "NOT": {}
+          },
+          "planet_amenities_add": "5",
+          "mult": "value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "planet_amenities_add": "2",
+            "mult": "value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {},
+              "trade_value_add": "4",
+              "mult": "value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "planet",
+                "planet": {},
+                "planet_amenities_add": "1",
+                "mult": "value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|"
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "planet",
+                  "planet": {},
+                  "trade_value_add": "2",
+                  "mult": "value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|"
+                },
+                "triggered_planet_modifier": {
+                  "potential": {
+                    "exists": "owner",
+                    "owner": {},
+                    "pop_growth_speed": "0.025",
+                    "planet_pop_assembly_organic_mult": "0.025",
+                    "pop_environment_tolerance": "0.0125"
+                  },
+                  "triggered_planet_modifier": {
+                    "potential": {
+                      "exists": "owner",
+                      "owner": {
+                        "has_modifier": "revolutionary_medigel_modifier",
+                        "has_valid_civic": "civic_private_healthcare_corporate"
+                      }
+                    },
+                    "planet_amenities_add": "1",
+                    "trade_value_add": "2"
+                  },
+                  "weight": {
+                    "weight": "@high_prio_specialist_job_weight",
+                    "mult": "value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|",
+                    "modifier": {
+                      "factor": "0.2",
+                      "has_citizenship_rights": "no",
+                      "NOT": {},
+                      "modifier": {
+                        "factor": "2",
+                        "owner": {},
+                        "modifier": {
+                          "factor": "0.5",
+                          "is_enslaved": "yes",
+                          "has_slavery_type": {},
+                          "modifier": {
+                            "factor": "10",
+                            "NOT": {
+                              "planet": {
+                                "has_available_jobs": "healthcare"
+                              }
+                            }
+                          },
+                          "inline_script": "jobs/automodding_priority_amenities"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 1611
+  },
+  "trader": {
+    "trader": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_galactic_stock_exchange",
+      "clothes_texture_index": "3",
+      "icon": "overlord_trader",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "resources": {
+        "category": "planet_traders",
+        "upkeep": {
+          "consumer_goods": "1"
+        }
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "planet_amenities_add": "2",
+          "mult": "value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "has_councilor": {},
+            "trade_value_add": "0.4",
+            "mult": "value:scripted_modifier_councilor_level_mult|MODIFIER|pop_job_trade_mult|TYPE|councilor_merchant_guilds|"
+          },
+          "weight": {
+            "weight": "@specialist_job_weight",
+            "mult": "value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_trade_mult|",
+            "modifier": {
+              "factor": "0.01",
+              "exists": "planet.controller",
+              "planet.controller": {
+                "OR": {
+                  "is_country_type": "ai_empire"
+                }
+              },
+              "OR": {
+                "NOT": {
+                  "AND": {
+                    "exists": "event_target:custodian_bot",
+                    "NOT": {}
+                  }
+                }
+              },
+              "inline_script": "jobs/automodding_priority_trade"
+            },
+            "_comments": [
+              "# crisis purge"
+            ]
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 1751
+  },
+  "numistic_priest": {
+    "numistic_priest": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_nuumismatic_shrine",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "resources": {
+        "category": "planet_priests",
+        "produces": {
+          "unity": "2"
+        },
+        "upkeep": {
+          "consumer_goods": "2"
+        }
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "planet": {
+            "has_active_building": "building_league_offices"
+          }
+        },
+        "planet_amenities_add": "1",
+        "mult": "value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|"
+      },
+      "triggered_country_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "country_edict_fund_add": "1",
+          "mult": "value:job_total_output_modifier|JOB|priest|RESOURCE|unity|"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "trade_value_add": "@councilor_dimensional_worship_priest_trade_value",
+            "mult": "value:scripted_modifier_councilor_level_mult|MODIFIER|pop_job_trade_mult|TYPE|councilor_dimensional_worship_corporate|"
+          },
+          "_comments": [
+            "# Numistic Priests count as Traders for other modifiers as well!"
+          ],
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {},
+              "planet_amenities_add": "2",
+              "mult": "value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "has_councilor": {},
+                "trade_value_add": "0.4",
+                "mult": "value:scripted_modifier_councilor_level_mult|MODIFIER|pop_job_trade_mult|TYPE|councilor_merchant_guilds|"
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "planet": {
+                    "exists": "owner",
+                    "owner": {
+                      "has_tradition": "tr_modularity_4"
+                    }
+                  }
+                },
+                "planet_jobs_worker_produces_mult": "0.02"
+              },
+              "weight": {
+                "weight": "@specialist_job_weight",
+                "mult": "value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_trade_mult|",
+                "modifier": {
+                  "factor": "0.01",
+                  "exists": "planet.controller",
+                  "planet.controller": {
+                    "OR": {
+                      "is_country_type": "ai_empire"
+                    }
+                  },
+                  "OR": {
+                    "NOT": {
+                      "AND": {
+                        "exists": "event_target:custodian_bot",
+                        "NOT": {}
+                      }
+                    }
+                  },
+                  "inline_script": "jobs/automodding_priority_trade"
+                },
+                "_comments": [
+                  "# crisis purge"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 1837
+  },
+  "preacher": {
+    "preacher": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_temple_of_prosperity",
+      "clothes_texture_index": "3",
+      "icon": "numistic_priest",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "possible": {
+        "complex_specialist_job_check_trigger": "yes"
+      },
+      "resources": {
+        "category": "planet_priests",
+        "produces": {
+          "unity": "3"
+        },
+        "upkeep": {
+          "consumer_goods": "2"
+        }
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "planet": {
+            "has_active_building": "building_league_offices"
+          }
+        },
+        "planet_amenities_add": "1",
+        "mult": "value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|"
+      },
+      "triggered_country_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "country_edict_fund_add": "2",
+          "mult": "value:job_total_output_modifier|JOB|preacher|RESOURCE|unity|"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "trade_value_add": "@councilor_dimensional_worship_priest_trade_value",
+            "mult": "value:scripted_modifier_councilor_level_mult|MODIFIER|pop_job_trade_mult|TYPE|councilor_dimensional_worship_corporate|"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "planet": {
+                "exists": "owner",
+                "owner": {
+                  "has_tradition": "tr_modularity_4"
+                }
+              }
+            },
+            "planet_jobs_worker_produces_mult": "0.02"
+          },
+          "weight": {
+            "weight": "@specialist_job_weight",
+            "mult": "value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_trade_mult|",
+            "modifier": {
+              "factor": "0.2",
+              "has_citizenship_rights": "no",
+              "NOT": {},
+              "modifier": {
+                "factor": "2",
+                "exists": "owner",
+                "owner": {},
+                "modifier": {
+                  "factor": "0.1",
+                  "is_enslaved": "yes",
+                  "has_slavery_type": {}
+                },
+                "inline_script": "jobs/automodding_priority_unity"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 1967
+  },
+  "manager": {
+    "manager": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_capital",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "trade_value_add": "2",
+        "mult": "value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|"
+      },
+      "resources": {
+        "category": "planet_managers",
+        "produces": {
+          "unity": "4"
+        },
+        "upkeep": {
+          "consumer_goods": "2"
+        }
+      },
+      "triggered_country_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "country_edict_fund_add": "2",
+          "mult": "value:job_total_output_modifier|JOB|manager|RESOURCE|unity|"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "planet": {
+              "exists": "owner",
+              "owner": {
+                "has_tradition": "tr_modularity_4"
+              }
+            }
+          },
+          "planet_jobs_worker_produces_mult": "0.02"
+        },
+        "weight": {
+          "weight": "@specialist_job_weight",
+          "mult": "value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_trade_mult|",
+          "modifier": {
+            "factor": "0.2",
+            "has_citizenship_rights": "no",
+            "NOT": {},
+            "modifier": {
+              "factor": "0.1",
+              "is_enslaved": "yes",
+              "has_slavery_type": {}
+            },
+            "inline_script": "jobs/automodding_priority_unity"
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 2084
+  },
+  "steward": {
+    "steward": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_capital",
+      "clothes_texture_index": "3",
+      "icon": "manager",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "planet_amenities_add": "0.25",
+        "mult": "value:scripted_modifier_councilor_level_mult|MODIFIER|pop_job_amenities_mult|TYPE|councilor_worker_coop|"
+      },
+      "resources": {
+        "category": "planet_administrators",
+        "produces": {
+          "unity": "4"
+        },
+        "upkeep": {
+          "consumer_goods": "2"
+        }
+      },
+      "triggered_country_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "country_edict_fund_add": "2",
+          "mult": "value:job_total_output_modifier|JOB|manager|RESOURCE|unity|"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "planet": {
+              "exists": "owner",
+              "owner": {
+                "has_tradition": "tr_modularity_4"
+              }
+            }
+          },
+          "planet_jobs_worker_produces_mult": "0.02"
+        },
+        "weight": {
+          "weight": "@specialist_job_weight",
+          "mult": "value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_trade_mult|",
+          "modifier": {
+            "factor": "0.2",
+            "has_citizenship_rights": "no",
+            "NOT": {},
+            "modifier": {
+              "factor": "0.1",
+              "is_enslaved": "yes",
+              "has_slavery_type": {}
+            },
+            "inline_script": "jobs/automodding_priority_unity"
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 2178
+  },
+  "necromancer": {
+    "necromancer": {
+      "category": "specialist",
+      "condition_string": "BATTLE_THRALL_JOB_TRIGGER",
+      "building_icon": "building_dread_encampment",
+      "clothes_texture_index": "3",
+      "country_modifier": {
+        "country_naval_cap_add": "2"
+      },
+      "triggered_country_modifier": {
+        "potential": {
+          "exists": "planet",
+          "planet": {
+            "exists": "owner",
+            "owner": {}
+          },
+          "modifier": {
+            "country_naval_cap_add": "2"
+          }
+        },
+        "pop_modifier": {
+          "pop_defense_armies_add": "3"
+        },
+        "triggered_pop_modifier": {
+          "potential": {
+            "exists": "planet",
+            "planet": {
+              "exists": "leader",
+              "leader": {
+                "leader_class": "commander"
+              }
+            }
+          },
+          "modifier": {
+            "pop_defense_armies_add": "2"
+          }
+        },
+        "resources": {
+          "category": "planet_researchers",
+          "produces": {
+            "trigger": {
+              "exists": "planet",
+              "planet": {
+                "has_councilor": {}
+              },
+              "unity": "@councilor_reanimated_armies_necromancer_unity",
+              "mult": "value:councilor_level|TYPE|councilor_reanimated_armies|"
+            },
+            "upkeep": {
+              "consumer_goods": "2"
+            }
+          },
+          "triggered_country_modifier": {
+            "modifier": {
+              "country_naval_cap_add": "1"
+            },
+            "mult": "planet.modifier:job_researcher_naval_cap_add"
+          },
+          "possible_pre_triggers": {
+            "has_owner": "yes",
+            "is_being_purged": "no",
+            "is_being_assimilated": "no",
+            "is_sapient": "yes"
+          },
+          "possible": {
+            "battle_thrall_job_check_trigger": "yes"
+          },
+          "weight": {
+            "weight": "@specialist_job_weight",
+            "mult": "value:job_weights_multiple_resources_modifier|JOB|necromancer|RESOURCE1|physics_research|WEIGHT1|0.5|RESOURCE2|society_research|WEIGHT2|0.5|",
+            "modifier": {
+              "factor": "0",
+              "species": {},
+              "modifier": {
+                "factor": "2",
+                "has_trait": "trait_lithoid"
+              }
+            },
+            "inline_script": "jobs/automodding_priority_research"
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 2292
+  },
+  "bluelotus_technician": {
+    "bluelotus_technician": {
+      "category": "specialist",
+      "is_capped_by_modifier": "yes",
+      "condition_string": "WORKER_JOB_TRIGGER",
+      "building_icon": "building_illicit_research_labs",
+      "icon": "foundry",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_worker_job",
+      "resources": {
+        "category": "planet_metallurgists",
+        "produces": {
+          "alloys": "4"
+        },
+        "upkeep": {
+          "trigger": {
+            "is_robotic_or_voidspawn_species": "yes"
+          },
+          "energy": "@living_standard_energy_normal"
+        }
+      },
+      "weight": {
+        "weight": "@specialist_job_weight",
+        "mult": "value:job_weights_modifier|JOB|bluelotus_technician|RESOURCE|alloys|",
+        "modifier": {
+          "factor": "0.2",
+          "has_citizenship_rights": "no",
+          "NOT": {},
+          "modifier": {
+            "factor": "1.2",
+            "is_enslaved": "yes",
+            "has_slavery_type": {}
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 2422
+  },
+  "death_chronicler": {
+    "death_chronicler": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_galactic_memorial_1",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "possible": {
+        "resources": {
+          "category": "planet_culture_workers",
+          "produces": {
+            "unity": "4"
+          },
+          "upkeep": {
+            "consumer_goods": "3"
+          }
+        },
+        "inline_script": "jobs/automodding_priority_unity",
+        "planet_modifier": {
+          "planet_stability_add": "2.5"
+        },
+        "weight": {
+          "weight": "@specialist_job_weight",
+          "mult": "value:job_weights_modifier|JOB|death_chronicler|RESOURCE|unity|",
+          "_comments": [
+            "# We deliberately don't weight the ethics-based modifiers"
+          ],
+          "modifier": {
+            "factor": "1.5",
+            "has_job": "death_chronicler"
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 2513
+  },
+  "necro_apprentice": {
+    "necro_apprentice": {
+      "category": "specialist",
+      "exempt_from_ai_amenity_prioritization": "yes",
+      "condition_string": "NECRO_APPRENTICE_JOB_TRIGGER",
+      "building_icon": "building_chamber_of_elevation_1",
+      "clothes_texture_index": "3",
+      "icon": "apprentice",
+      "desc": {
+        "trigger": {
+          "OR": {
+            "NOT": {
+              "owner": {}
+            },
+            "text": "job_necro_apprentice_desc"
+          },
+          "desc": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {},
+              "text": "job_necro_apprentice_desc_hive"
+            },
+            "possible_pre_triggers": {
+              "has_owner": "yes",
+              "is_being_purged": "no",
+              "is_being_assimilated": "no",
+              "is_sapient": "yes"
+            },
+            "possible": {
+              "species": {
+                "owner": {
+                  "has_trait": "trait_necrophage",
+                  "has_origin": "origin_necrophage"
+                }
+              },
+              "resources": {
+                "category": "planet_necro_apprentices",
+                "produces": {
+                  "unity": "1.5"
+                },
+                "_comments": [
+                  "#Note: Hive Empires don't need to pay consumer goods, they pay double the food instead"
+                ],
+                "upkeep": {
+                  "trigger": {
+                    "exists": "owner",
+                    "owner": {},
+                    "consumer_goods": "1"
+                  },
+                  "upkeep": {
+                    "trigger": {
+                      "exists": "owner",
+                      "owner": {
+                        "has_food_upkeep": "yes",
+                        "is_phototrophic": "no"
+                      },
+                      "food": "@living_standard_food_normal"
+                    },
+                    "upkeep": {
+                      "trigger": {
+                        "exists": "owner",
+                        "owner": {
+                          "has_phototrophic_energy_upkeep": "yes"
+                        },
+                        "energy": "@living_standard_phototrophic_normal"
+                      },
+                      "upkeep": {
+                        "trigger": {
+                          "exists": "owner",
+                          "owner": {
+                            "has_food_upkeep": "yes",
+                            "is_phototrophic": "yes"
+                          },
+                          "food": "@living_standard_phototrophic_normal"
+                        },
+                        "upkeep": {
+                          "trigger": {
+                            "exists": "owner",
+                            "owner": {
+                              "has_mineral_upkeep": "yes",
+                              "is_phototrophic": "no"
+                            },
+                            "minerals": "@living_standard_food_normal"
+                          },
+                          "upkeep": {
+                            "trigger": {
+                              "exists": "owner",
+                              "owner": {
+                                "has_mineral_upkeep": "yes",
+                                "is_phototrophic": "yes"
+                              },
+                              "minerals": "@living_standard_phototrophic_normal"
+                            },
+                            "upkeep": {
+                              "trigger": {
+                                "is_robotic_or_voidspawn_species": "yes"
+                              },
+                              "energy": "@living_standard_energy_normal"
+                            }
+                          },
+                          "triggered_planet_modifier": {
+                            "potential": {
+                              "always": "yes"
+                            },
+                            "planet_amenities_add": "5",
+                            "mult": "value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|"
+                          },
+                          "weight": {
+                            "weight": "@ruler_job_weight #deliberate",
+                            "mult": "value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|",
+                            "modifier": {
+                              "factor": "0.1",
+                              "exists": "owner",
+                              "owner": {
+                                "exists": "planet",
+                                "planet": {
+                                  "NOT": {
+                                    "any_owned_pop": {
+                                      "NOT": {
+                                        "NOT": {
+                                          "species": {}
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "inline_script": "jobs/automodding_priority_unity"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 2571
+  },
+  "foundry": {
+    "foundry": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_foundry_1",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "possible": {
+        "hidden_trigger": {
+          "owner": {
+            "is_gestalt": "no"
+          }
+        },
+        "resources": {
+          "category": "planet_metallurgists",
+          "produces": {
+            "trigger": {
+              "planet": {
+                "has_planet_flag": "has_material_requisitorium"
+              }
+            },
+            "alloys": "@requisitorium_alloys_reduction"
+          },
+          "upkeep": {
+            "trigger": {
+              "planet": {
+                "has_planet_flag": "has_material_requisitorium"
+              }
+            },
+            "minerals": "2"
+          }
+        },
+        "overlord_resources": {
+          "category": "planet_requisitioned_alloys",
+          "produces": {
+            "trigger": {
+              "planet": {
+                "has_planet_flag": "has_material_requisitorium"
+              }
+            },
+            "alloys": "@requisitorium_alloys_overlord"
+          }
+        },
+        "weight": {
+          "weight": "@specialist_job_weight # Fairly important job",
+          "mult": "value:job_weights_modifier|JOB|foundry|RESOURCE|alloys|",
+          "modifier": {
+            "factor": "5",
+            "has_trait": "trait_cyborg_creed_of_construction"
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 2748
+  },
+  "catalytic_technician": {
+    "catalytic_technician": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_foundry_1",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "possible": {
+        "hidden_trigger": {
+          "owner": {
+            "is_gestalt": "no"
+          }
+        },
+        "resources": {
+          "category": "planet_metallurgists",
+          "produces": {
+            "trigger": {
+              "planet": {
+                "has_planet_flag": "has_material_requisitorium"
+              }
+            },
+            "alloys": "@requisitorium_alloys_reduction"
+          },
+          "upkeep": {
+            "trigger": {
+              "planet": {
+                "has_planet_flag": "has_material_requisitorium"
+              }
+            },
+            "food": "3"
+          }
+        },
+        "overlord_resources": {
+          "category": "planet_requisitioned_alloys",
+          "produces": {
+            "trigger": {
+              "planet": {
+                "has_planet_flag": "has_material_requisitorium"
+              }
+            },
+            "alloys": "@requisitorium_alloys_overlord"
+          }
+        },
+        "weight": {
+          "weight": "@specialist_job_weight # Fairly important job",
+          "mult": "value:job_weights_modifier|JOB|catalytic_technician|RESOURCE|alloys|",
+          "modifier": {
+            "factor": "5",
+            "has_trait": "trait_cyborg_creed_of_construction"
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 2828
+  },
+  "artisan": {
+    "artisan": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_factory_1",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "possible": {
+        "hidden_trigger": {
+          "owner": {
+            "is_gestalt": "no"
+          }
+        },
+        "resources": {
+          "category": "planet_artisans",
+          "produces": {
+            "trigger": {
+              "planet": {
+                "has_planet_flag": "has_produce_requisitorium",
+                "exists": "owner.overlord",
+                "owner.overlord": {}
+              },
+              "consumer_goods": "@requisitorium_consumer_goods_reduction"
+            },
+            "upkeep": {
+              "trigger": {
+                "planet": {
+                  "has_planet_flag": "has_produce_requisitorium",
+                  "exists": "owner.overlord",
+                  "owner.overlord": {}
+                },
+                "minerals": "1"
+              }
+            },
+            "overlord_resources": {
+              "category": "planet_requisitioned_consumer_goods",
+              "produces": {
+                "trigger": {
+                  "planet": {
+                    "has_planet_flag": "has_produce_requisitorium",
+                    "exists": "owner.overlord",
+                    "owner.overlord": {}
+                  },
+                  "consumer_goods": "@requisitorium_consumer_goods_overlord"
+                }
+              },
+              "weight": {
+                "weight": "@specialist_job_weight",
+                "mult": "value:job_weights_modifier|JOB|artisan|RESOURCE|consumer_goods|",
+                "modifier": {
+                  "factor": "1.2",
+                  "exists": "owner",
+                  "planet": {
+                    "has_available_jobs": "artisan"
+                  },
+                  "owner": {
+                    "is_ai": "yes",
+                    "has_monthly_income": {
+                      "resource": "consumer_goods"
+                    }
+                  }
+                },
+                "_comments": [
+                  "# low income modifier"
+                ]
+              }
+            }
+          },
+          "upkeep": {
+            "minerals": "6"
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 2906
+  },
+  "artificer": {
+    "artificer": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_factory_1",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "possible": {
+        "hidden_trigger": {
+          "owner": {
+            "is_gestalt": "no"
+          }
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "always": "yes"
+          },
+          "trade_value_add": "2",
+          "mult": "value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|"
+        },
+        "resources": {
+          "category": "planet_artisans",
+          "produces": {
+            "trigger": {
+              "planet": {
+                "has_planet_flag": "has_produce_requisitorium",
+                "exists": "owner.overlord",
+                "owner.overlord": {}
+              },
+              "consumer_goods": "@requisitorium_consumer_goods_reduction"
+            },
+            "upkeep": {
+              "trigger": {
+                "planet": {
+                  "has_planet_flag": "has_produce_requisitorium",
+                  "exists": "owner.overlord",
+                  "owner.overlord": {}
+                },
+                "minerals": "1"
+              }
+            },
+            "overlord_resources": {
+              "category": "planet_requisitioned_consumer_goods",
+              "produces": {
+                "trigger": {
+                  "planet": {
+                    "has_planet_flag": "has_produce_requisitorium",
+                    "exists": "owner.overlord",
+                    "owner.overlord": {}
+                  },
+                  "consumer_goods": "@requisitorium_consumer_goods_overlord"
+                }
+              },
+              "weight": {
+                "weight": "@specialist_job_weight",
+                "mult": "value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_trade_mult|",
+                "modifier": {
+                  "factor": "5",
+                  "has_job": "artificer"
+                }
+              },
+              "inline_script": "jobs/automodding_priority_trade"
+            }
+          },
+          "upkeep": {
+            "minerals": "6"
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 3004
+  },
+  "pearl_diver": {
+    "pearl_diver": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_food_processing_facility",
+      "clothes_texture_index": "2",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "possible": {
+        "hidden_trigger": {
+          "owner": {
+            "is_gestalt": "no",
+            "is_anglers_empire": "yes"
+          }
+        },
+        "resources": {
+          "category": "planet_artisans",
+          "produces": {
+            "trigger": {
+              "has_councilor": {},
+              "consumer_goods": "@councilor_anglers_pearl_diver_consumer_goods_bonus",
+              "mult": "value:councilor_level|TYPE|councilor_anglers|"
+            },
+            "produces": {
+              "trigger": {
+                "has_councilor": {},
+                "consumer_goods": "@councilor_machine_anglers_pearl_diver_consumer_goods_bonus",
+                "mult": "value:councilor_level|TYPE|councilor_machine_anglers|"
+              },
+              "produces": {
+                "trigger": {
+                  "has_councilor": {},
+                  "consumer_goods": "@councilor_machine_anglers_pearl_diver_consumer_goods_bonus",
+                  "mult": "value:councilor_level|TYPE|councilor_machine_anglers|"
+                },
+                "upkeep": {
+                  "trigger": {
+                    "exists": "owner",
+                    "owner": {},
+                    "food": "3",
+                    "minerals": "4"
+                  },
+                  "upkeep": {
+                    "trigger": {
+                      "exists": "owner",
+                      "owner": {},
+                      "energy": "1",
+                      "minerals": "4"
+                    },
+                    "produces": {
+                      "trigger": {
+                        "planet": {
+                          "has_planet_flag": "has_produce_requisitorium",
+                          "exists": "owner.overlord",
+                          "owner.overlord": {}
+                        },
+                        "consumer_goods": "@requisitorium_consumer_goods_reduction"
+                      },
+                      "upkeep": {
+                        "trigger": {
+                          "planet": {
+                            "has_planet_flag": "has_produce_requisitorium",
+                            "exists": "owner.overlord",
+                            "owner.overlord": {}
+                          },
+                          "minerals": "1"
+                        }
+                      },
+                      "triggered_planet_modifier": {
+                        "potential": {
+                          "has_councilor": {},
+                          "trade_value_add": "@councilor_corporate_anglers_pearl_diver_trade_value_bonus",
+                          "mult": "value:scripted_modifier_councilor_level_mult|MODIFIER|pop_job_trade_mult|TYPE|councilor_corporate_anglers|"
+                        },
+                        "overlord_resources": {
+                          "category": "planet_requisitioned_consumer_goods",
+                          "produces": {
+                            "trigger": {
+                              "planet": {
+                                "has_planet_flag": "has_produce_requisitorium",
+                                "exists": "owner.overlord",
+                                "owner.overlord": {}
+                              },
+                              "consumer_goods": "@requisitorium_consumer_goods_overlord"
+                            }
+                          },
+                          "triggered_planet_modifier": {
+                            "potential": {
+                              "exists": "owner",
+                              "owner": {},
+                              "planet_amenities_add": "2",
+                              "mult": "value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|"
+                            },
+                            "weight": {
+                              "weight": "@specialist_job_weight #deliberate",
+                              "mult": "value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_trade_mult|",
+                              "modifier": {
+                                "factor": "2",
+                                "is_enslaved": "yes",
+                                "has_slavery_type": {},
+                                "modifier": {
+                                  "factor": "1.1",
+                                  "owner": {},
+                                  "modifier": {
+                                    "factor": "value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|",
+                                    "owner": {},
+                                    "modifier": {
+                                      "factor": "0.1",
+                                      "NOT": {
+                                        "exists": "owner",
+                                        "owner": {
+                                          "resource_income_compare": {
+                                            "resource": "food"
+                                          }
+                                        }
+                                      },
+                                      "modifier": {
+                                        "factor": "5",
+                                        "has_job": "pearl_diver"
+                                      }
+                                    },
+                                    "inline_script": "jobs/automodding_priority_trade"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 3101
+  },
+  "reassigner": {
+    "reassigner": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_posthumous_employment_center",
+      "clothes_texture_index": "3",
+      "icon": "necromancer",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "planet_modifier": {
+        "planet_pop_assembly_organic_add": "2"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "modifier": {
+            "planet_pop_assembly_organic_add": "1"
+          }
+        },
+        "resources": {
+          "category": "planet_jobs",
+          "upkeep": {
+            "trigger": {
+              "is_lithoid": "yes"
+            },
+            "consumer_goods": "1",
+            "minerals": "2"
+          }
+        },
+        "weight": {
+          "weight": "500"
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 3263
+  },
+  "bath_attendant": {
+    "bath_attendant": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_toxic_bath",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "possible": {
+        "hidden_trigger": {
+          "owner": {
+            "is_gestalt": "no"
+          }
+        },
+        "triggered_planet_modifier": {
+          "pop_growth_speed": "0.015",
+          "pop_environment_tolerance": "-0.0025",
+          "pop_happiness": "-0.0075",
+          "mult": "planet.value:toxic_attendant_growth"
+        },
+        "resources": {
+          "category": "planet_bath_attendants",
+          "upkeep": {
+            "consumer_goods": "1"
+          },
+          "produces": {
+            "trigger": {
+              "exists": "planet",
+              "planet": {
+                "OR": {
+                  "has_councilor": {
+                    "has_councilor": {}
+                  }
+                },
+                "unity": "@councilor_toxic_baths_attendant_unity",
+                "mult": "value:councilor_level_combo|COUNCILOR_1|councilor_toxic_baths|COUNCILOR_2|councilor_corporate_toxic_baths|"
+              }
+            },
+            "weight": {
+              "weight": "@specialist_job_weight",
+              "mult": "value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_trade_mult|",
+              "modifier": {
+                "factor": "5",
+                "has_job": "bath_attendant"
+              }
+            },
+            "inline_script": "jobs/automodding_priority_trade"
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 3317
+  },
+  "bath_attendant_individual_machine": {
+    "bath_attendant_individual_machine": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_toxic_bath",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "possible": {
+        "hidden_trigger": {
+          "owner": {
+            "is_gestalt": "no"
+          }
+        },
+        "triggered_planet_modifier": {
+          "planet_pop_assembly_mult": "0.015",
+          "pop_amenities_usage_mult": "0.01",
+          "mult": "planet.value:toxic_attendant_growth"
+        },
+        "resources": {
+          "category": "planet_bath_attendants_individual_machine",
+          "upkeep": {
+            "consumer_goods": "1"
+          },
+          "produces": {
+            "trigger": {
+              "exists": "planet",
+              "planet": {
+                "OR": {
+                  "has_councilor": {
+                    "has_councilor": {}
+                  }
+                },
+                "unity": "@councilor_toxic_baths_attendant_unity",
+                "mult": "value:councilor_level_combo|COUNCILOR_1|councilor_toxic_baths_individual_machine|COUNCILOR_2|councilor_corporate_toxic_baths_individual_machine|"
+              }
+            },
+            "weight": {
+              "weight": "@specialist_job_weight",
+              "mult": "value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_trade_mult|",
+              "modifier": {
+                "factor": "5",
+                "has_job": "bath_attendant"
+              }
+            },
+            "inline_script": "jobs/automodding_priority_trade"
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 3383
+  },
+  "knight": {
+    "knight": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_order_keep",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_enslaved": "no"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "possible": {
+        "hidden_trigger": {
+          "owner": {
+            "is_gestalt": "no"
+          }
+        },
+        "resources": {
+          "category": "planet_knights",
+          "produces": {
+            "trigger": {
+              "unity": "3",
+              "mult": "value:knights_unity_output_modifier"
+            },
+            "produces": {
+              "trigger": {
+                "physics_research": "2",
+                "engineering_research": "2",
+                "society_research": "2",
+                "mult": "value:knights_research_output_modifier"
+              },
+              "produces": {
+                "trigger": {
+                  "exists": "owner",
+                  "owner": {
+                    "has_country_flag": "cosmogenesis_knights"
+                  }
+                },
+                "advanced_logic": "1",
+                "mult": "value:knights_research_output_modifier"
+              },
+              "upkeep": {
+                "alloys": "1",
+                "trigger": {
+                  "exists": "owner",
+                  "owner": {
+                    "NOT": {
+                      "has_modifier": "luminous_blades"
+                    }
+                  }
+                }
+              }
+            },
+            "pop_modifier": {
+              "pop_defense_armies_add": "2"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "owner": {},
+                "planet_amenities_add": "5",
+                "mult": "value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|"
+              },
+              "country_modifier": {
+                "country_naval_cap_add": "4"
+              },
+              "weight": {
+                "weight": "@high_prio_specialist_job_weight",
+                "factor": "1.2",
+                "add": "5 #Somehow pops preferred to work as squires than as knights. No more.",
+                "mult": "value:job_weights_research_modifier|JOB|researcher|"
+              },
+              "inline_script": "jobs/automodding_priority_unity"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 3449
+  },
+  "archaeoengineers": {
+    "archaeoengineers": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_archaeostudies_faculty",
+      "clothes_texture_index": "3",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "possible": {
+        "complex_specialist_job_check_trigger": "yes"
+      },
+      "resources": {
+        "category": "planet_researchers",
+        "produces": {
+          "trigger": {
+            "minor_artifacts": "0.3"
+          },
+          "upkeep": {
+            "trigger": {
+              "planet": {
+                "has_planet_flag": "has_science_ministry"
+              }
+            },
+            "consumer_goods": "1"
+          }
+        },
+        "overlord_resources": {
+          "category": "planet_requisitioned_research",
+          "produces": {
+            "trigger": {
+              "planet": {
+                "has_planet_flag": "has_science_ministry"
+              }
+            },
+            "physics_research": "1",
+            "engineering_research": "1",
+            "society_research": "1"
+          }
+        },
+        "triggered_country_modifier": {
+          "modifier": {
+            "country_naval_cap_add": "1"
+          },
+          "mult": "planet.modifier:job_researcher_naval_cap_add"
+        },
+        "weight": {
+          "weight": "@specialist_job_weight",
+          "mult": "value:job_weights_research_modifier|JOB|archaeoengineers|",
+          "modifier": {
+            "factor": "0.2",
+            "has_citizenship_rights": "no",
+            "NOT": {},
+            "modifier": {
+              "factor": "2",
+              "has_living_standard": {},
+              "modifier": {
+                "factor": "0.8",
+                "is_enslaved": "yes",
+                "has_slavery_type": {}
+              },
+              "inline_script": "jobs/automodding_priority_research"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 3533
+  },
+  "resort_worker": {
+    "resort_worker": {
+      "category": "specialist",
+      "condition_string": "SPECIALIST_JOB_TRIGGER",
+      "building_icon": "building_amusement_megaplex",
+      "clothes_texture_index": "3",
+      "icon": "servant",
+      "possible_pre_triggers": {
+        "has_owner": "yes",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "is_sapient": "yes"
+      },
+      "possible_precalc": "can_fill_specialist_job",
+      "possible": {
+        "entertainer_job_check_trigger": "yes"
+      },
+      "resources": {
+        "category": "planet_entertainers",
+        "produces": {
+          "unity": "2"
+        },
+        "upkeep": {
+          "consumer_goods": "2"
+        }
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "planet_amenities_add": "2",
+          "mult": "value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "has_councilor": {},
+            "trade_value_add": "@councilor_corporate_hedonism_entertainer_trade_value",
+            "mult": "value:scripted_modifier_councilor_level_mult|MODIFIER|pop_job_trade_mult|TYPE|councilor_corporate_hedonism|"
+          },
+          "country_modifier": {
+            "pop_amenities_usage_mult": "-0.01",
+            "pop_lifestyle_trade_value_mult": "0.02"
+          },
+          "weight": {
+            "weight": "@specialist_job_weight",
+            "mult": "value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_trade_mult|",
+            "modifier": {
+              "factor": "0.01",
+              "exists": "planet.controller",
+              "planet.controller": {
+                "OR": {
+                  "is_country_type": "ai_empire"
+                }
+              },
+              "OR": {
+                "NOT": {
+                  "AND": {
+                    "exists": "event_target:custodian_bot",
+                    "NOT": {}
+                  }
+                }
+              }
+            },
+            "_comments": [
+              "# crisis purge"
+            ]
+          }
+        }
+      }
+    },
+    "_source_file": "02_specialist_jobs.txt",
+    "_line_number": 3628
+  }
+}

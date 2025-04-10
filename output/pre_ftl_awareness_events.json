@@ -1,0 +1,241 @@
+{
+  "fleet_event": {
+    "fleet_event": {
+      "id": "awareness.130",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_first_contact_dlc": "yes",
+        "is_cloaked": "no",
+        "from": {
+          "any_system_colony": {
+            "exists": "owner",
+            "owner": {
+              "is_primitive": "yes"
+            }
+          }
+        }
+      },
+      "immediate": {
+        "from": {
+          "every_system_colony": {
+            "limit": {
+              "exists": "owner",
+              "owner": {
+                "is_primitive": "yes"
+              }
+            },
+            "owner": {
+              "add_age_based_awareness_effect": {
+                "AWARENESS": "2"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "pre_ftl_awareness_events.txt",
+    "_line_number": 272
+  },
+  "country_event": {
+    "country_event": {
+      "id": "awareness.920",
+      "title": "awareness.920.name",
+      "desc": "awareness.920.desc",
+      "picture": "GFX_evt_observation",
+      "show_sound": "evn_fc_observation",
+      "is_triggered_only": "yes",
+      "location": "fromfrom",
+      "trigger": {
+        "NOT": {
+          "has_country_flag": "first_contact_completed@event_target:contact_empire"
+        },
+        "OR": {
+          "is_country_type": "awakened_fallen_empire"
+        }
+      },
+      "immediate": {
+        "set_country_flag": "first_contact_completed@event_target:contact_empire",
+        "event_target:contact_empire": {
+          "set_country_flag": "pre_ftl_initiating_contact"
+        }
+      },
+      "option": {
+        "name": "ACKNOWLEDGED",
+        "hidden_effect": {
+          "country_event": {}
+        }
+      }
+    },
+    "_source_file": "pre_ftl_awareness_events.txt",
+    "_line_number": 718
+  },
+  "event": {
+    "event": {
+      "id": "awareness.175",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_first_contact_dlc": "yes",
+        "any_country": {
+          "is_primitive": "yes",
+          "capital_scope": {
+            "has_branch_office": "yes"
+          }
+        }
+      },
+      "immediate": {
+        "every_country": {
+          "limit": {
+            "is_primitive": "yes",
+            "capital_scope": {
+              "has_branch_office": "yes"
+            }
+          },
+          "add_age_based_awareness_effect": {
+            "AWARENESS": "2"
+          }
+        }
+      }
+    },
+    "_source_file": "pre_ftl_awareness_events.txt",
+    "_line_number": 582
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "awareness.120",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from": {
+          "solar_system": {
+            "any_system_colony": {
+              "exists": "owner",
+              "owner": {
+                "is_primitive": "yes"
+              }
+            }
+          }
+        }
+      },
+      "immediate": {
+        "from": {
+          "solar_system": {
+            "every_system_colony": {
+              "limit": {
+                "exists": "owner",
+                "owner": {
+                  "is_primitive": "yes"
+                }
+              },
+              "owner": {
+                "add_age_based_awareness_effect": {
+                  "AWARENESS": "1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "pre_ftl_awareness_events.txt",
+    "_line_number": 194
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "awareness.150",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "solar_system": {
+          "any_system_colony": {
+            "exists": "owner",
+            "owner": {
+              "is_primitive": "yes"
+            }
+          }
+        }
+      },
+      "immediate": {
+        "solar_system": {
+          "every_system_colony": {
+            "limit": {
+              "exists": "owner",
+              "owner": {
+                "is_primitive": "yes"
+              }
+            },
+            "owner": {
+              "add_age_based_awareness_effect": {
+                "AWARENESS": "20"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "pre_ftl_awareness_events.txt",
+    "_line_number": 430
+  },
+  "system_event": {
+    "system_event": {
+      "id": "awareness.155",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "from",
+        "any_neighbor_system": {
+          "any_system_colony": {
+            "exists": "owner",
+            "owner": {
+              "is_primitive": "yes"
+            }
+          }
+        }
+      },
+      "immediate": {
+        "every_neighbor_system": {
+          "every_system_colony": {
+            "limit": {
+              "exists": "owner",
+              "owner": {
+                "is_primitive": "yes"
+              }
+            },
+            "owner": {
+              "add_age_based_awareness_effect": {
+                "AWARENESS": "20"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "pre_ftl_awareness_events.txt",
+    "_line_number": 468
+  },
+  "situation_event": {
+    "situation_event": {
+      "id": "awareness.200",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "NOT": {
+            "has_country_flag": "freeze_awareness_decay"
+          },
+          "is_primitive": "yes"
+        }
+      },
+      "immediate": {
+        "owner": {
+          "subtract_age_based_awareness_effect": {
+            "AWARENESS": "1"
+          }
+        }
+      }
+    },
+    "_source_file": "pre_ftl_awareness_events.txt",
+    "_line_number": 615
+  }
+}

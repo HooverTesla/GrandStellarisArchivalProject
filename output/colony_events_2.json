@@ -1,0 +1,52 @@
+{
+  "planet_event": {
+    "planet_event": {
+      "id": "colony.2095",
+      "title": "colony.2095.name",
+      "desc": "colony.2095.desc",
+      "picture": "GFX_evt_alien_nature",
+      "show_sound": "event_alien_nature",
+      "location": "ROOT",
+      "is_triggered_only": "yes",
+      "_comments": [
+        "#Eat them",
+        "#Study them"
+      ],
+      "option": {
+        "name": "colony.2095.b",
+        "add_deposit": "d_fungal_study_zone"
+      }
+    },
+    "_source_file": "colony_events_2.txt",
+    "_line_number": 4969
+  },
+  "country_event": {
+    "country_event": {
+      "id": "colony.1533",
+      "title": "colony.1533.name",
+      "desc": "colony.1533.desc",
+      "picture": "GFX_evt_landing_ship",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_global_flag": "pheromonefrenzy_global",
+        "from": {
+          "is_planet_class": "pc_toxic"
+        }
+      },
+      "immediate": {
+        "from": {
+          "remove_planet_flag": "pheromone_planet",
+          "change_pc": "pc_desert"
+        },
+        "set_global_flag": "pheromonefrenzy_done_global"
+      },
+      "option": {
+        "name": "colony.1533.a",
+        "custom_tooltip": "pheromonefrenzy.revived.tooltip"
+      }
+    },
+    "_source_file": "colony_events_2.txt",
+    "_line_number": 1175
+  }
+}

@@ -1,0 +1,255 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "over.100",
+      "title": "over.100.title",
+      "desc": {
+        "trigger": {
+          "OR": {
+            "is_gestalt": "yes",
+            "is_xenophobe": "yes"
+          }
+        },
+        "text": "over.100.c.desc"
+      },
+      "picture": {
+        "trigger": {
+          "is_machine_empire": "no",
+          "NAND": {
+            "is_gestalt": "yes",
+            "from": {}
+          },
+          "picture": "GFX_evt_hyper_relay_conjunction"
+        },
+        "picture": {
+          "trigger": {
+            "is_country_type": "default",
+            "FROM": {
+              "NOR": {
+                "has_country_flag": "hyper_relay_flag",
+                "has_origin": "origin_separatists",
+                "from": {
+                  "has_origin": "origin_separatists"
+                }
+              }
+            },
+            "immediate": {
+              "set_country_flag": "hyper_relay_flag"
+            },
+            "option": {
+              "name": "over.100.c",
+              "trigger": {
+                "OR": {
+                  "is_xenophobe": "yes",
+                  "is_gestalt": "yes"
+                }
+              }
+            }
+          },
+          "show_sound": "evn_ove_relay_conjunction",
+          "is_triggered_only": "yes"
+        }
+      }
+    },
+    "_source_file": "megastructure_events_1.txt",
+    "_line_number": 4897
+  },
+  "event": {
+    "event": {
+      "id": "utopia.50",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_country": {
+          "is_country_type": "default",
+          "any_owned_megastructure": {
+            "OR": {
+              "is_megastructure_type": "think_tank_restored"
+            }
+          },
+          "NOR": {
+            "has_country_flag": "think_tank_event",
+            "has_ethic": "ethic_gestalt_consciousness",
+            "owner_species": {}
+          }
+        },
+        "immediate": {
+          "random_country": {
+            "limit": {
+              "is_country_type": "default",
+              "any_owned_megastructure": {
+                "OR": {
+                  "is_megastructure_type": "think_tank_restored"
+                }
+              },
+              "NOR": {
+                "has_country_flag": "think_tank_event",
+                "has_ethic": "ethic_gestalt_consciousness",
+                "owner_species": {}
+              },
+              "random_owned_megastructure": {
+                "limit": {
+                  "OR": {
+                    "is_megastructure_type": "think_tank_restored"
+                  }
+                },
+                "save_event_target_as": "think_tank_2"
+              },
+              "random_list": {
+                "_comments": [
+                  "# Nothing"
+                ],
+                "90": {
+                  "_comments": [
+                    "# Fountain of Youth"
+                  ],
+                  "30": {
+                    "country_event": {},
+                    "_comments": [
+                      "# Abducted Leader"
+                    ],
+                    "30": {
+                      "country_event": {
+                        "modifier": {
+                          "factor": "0",
+                          "any_owned_leader": {
+                            "leader_class": "scientist",
+                            "is_councilor": "yes",
+                            "is_ruler": "no",
+                            "NOR": {
+                              "has_leader_flag": "renowned_leader"
+                            }
+                          }
+                        }
+                      },
+                      "_comments": [
+                        "# Neural Bank"
+                      ],
+                      "30": {
+                        "country_event": {
+                          "modifier": {
+                            "factor": "0",
+                            "NOT": {
+                              "any_owned_leader": {
+                                "leader_class": "scientist",
+                                "NOR": {
+                                  "has_leader_flag": "renowned_leader"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "megastructure_events_1.txt",
+    "_line_number": 1466
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "over.20",
+      "title": "over.20.name",
+      "desc": {
+        "trigger": {
+          "NOT": {},
+          "text": "over.20.a.desc"
+        },
+        "desc": {
+          "trigger": {
+            "FROM": {
+              "has_star_flag": "ruined_catapult_system",
+              "any_system_megastructure": {}
+            },
+            "immediate": {
+              "FROM": {},
+              "option": {
+                "name": "FASCINATING",
+                "trigger": {
+                  "NOT": {
+                    "owner": {
+                      "any_owned_megastructure": {
+                        "OR": {
+                          "is_megastructure_type": "quantum_catapult_3"
+                        }
+                      }
+                    }
+                  }
+                },
+                "hidden_effect": {
+                  "owner": {}
+                }
+              }
+            }
+          },
+          "picture": "GFX_evt_space_debris",
+          "show_sound": "event_radio_chatter",
+          "location": "FROM",
+          "is_triggered_only": "yes"
+        }
+      }
+    },
+    "_source_file": "megastructure_events_1.txt",
+    "_line_number": 4618
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "over.30",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "if": {
+          "limit": {
+            "owner": {
+              "has_origin": "origin_star_slingshot"
+            }
+          },
+          "if": {
+            "limit": {
+              "owner": {
+                "has_modifier": "quantum_catapult_insight_2_modifier"
+              }
+            },
+            "add_modifier": {
+              "modifier": "quantic_ambush_specialists_astral",
+              "days": "240"
+            }
+          },
+          "else": {
+            "add_modifier": {
+              "modifier": "quantic_ambush_specialists",
+              "days": "120"
+            }
+          }
+        },
+        "else": {
+          "if": {
+            "limit": {
+              "owner": {
+                "has_modifier": "quantum_catapult_insight_2_modifier"
+              }
+            },
+            "add_modifier": {
+              "modifier": "quantic_ambush_astral",
+              "days": "240"
+            }
+          },
+          "else": {
+            "add_modifier": {
+              "modifier": "quantic_ambush",
+              "days": "120"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "megastructure_events_1.txt",
+    "_line_number": 4732
+  }
+}

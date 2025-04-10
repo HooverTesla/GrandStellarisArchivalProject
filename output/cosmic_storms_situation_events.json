@@ -1,0 +1,24 @@
+{
+  "situation_event": {
+    "situation_event": {
+      "id": "cstorms.2045",
+      "title": "cstorms.2045.name",
+      "desc": "cstorms.2045.desc",
+      "picture": "GFX_evt_cosmic_storms_celestial_storm",
+      "show_sound": "event_energy_field",
+      "is_triggered_only": "yes",
+      "location": "target",
+      "option": {
+        "name": "cstorms.storm_gathered.a",
+        "spawn_random_storm": {
+          "type": "celestial_storm",
+          "immediate": "yes",
+          "cosmic_storm_start_position": "target.solar_system"
+        }
+      },
+      "after": {}
+    },
+    "_source_file": "cosmic_storms_situation_events.txt",
+    "_line_number": 424
+  }
+}

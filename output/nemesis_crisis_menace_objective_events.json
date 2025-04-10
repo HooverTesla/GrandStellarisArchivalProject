@@ -1,0 +1,121 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "crisis.5020",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "_comments": [
+        "# This = subject",
+        "# From = subject's overlord"
+      ],
+      "trigger": {
+        "is_subject": "yes",
+        "NOT": {
+          "from": {
+            "has_ascension_perk": "ap_become_the_crisis"
+          }
+        },
+        "immediate": {
+          "from": {
+            "complete_crisis_objective": "crisobj_vassalise_empires"
+          },
+          "set_country_flag": "has_become_crisis_vassal"
+        }
+      }
+    },
+    "_source_file": "nemesis_crisis_menace_objective_events.txt",
+    "_line_number": 205
+  },
+  "starbase_event": {
+    "starbase_event": {
+      "id": "crisis.4010",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "_comments": [
+        "# This = Starbase",
+        "# From = fleet that destroyed it"
+      ],
+      "trigger": {
+        "from": {
+          "owner": {
+            "has_ascension_perk": "ap_become_the_crisis"
+          }
+        }
+      },
+      "immediate": {
+        "from": {
+          "owner": {
+            "complete_crisis_objective": "crisobj_destroy_starbases",
+            "_comments": [
+              "# Note: crisobj_destroy_enemy_ships would do the same thing, disabled for starbases in crisis.4025"
+            ]
+          }
+        }
+      }
+    },
+    "_source_file": "nemesis_crisis_menace_objective_events.txt",
+    "_line_number": 75
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "crisis.5010",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "_comments": [
+        "# From = Country scope (new owner)",
+        "# This = Planet scope"
+      ],
+      "trigger": {
+        "from": {
+          "has_ascension_perk": "ap_become_the_crisis"
+        },
+        "OR": {
+          "is_colony": "yes",
+          "AND": {
+            "exists": "owner",
+            "owner": {
+              "is_primitive": "yes"
+            }
+          }
+        }
+      },
+      "immediate": {
+        "from": {
+          "complete_crisis_objective": "crisobj_conquer_worlds"
+        }
+      }
+    },
+    "_source_file": "nemesis_crisis_menace_objective_events.txt",
+    "_line_number": 173
+  },
+  "event": {
+    "event": {
+      "id": "crisis.5005",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_country": {
+          "has_ascension_perk": "ap_become_the_crisis",
+          "OR": {
+            "is_in_breach_of_any": "yes",
+            "has_country_flag": "declared_crisis"
+          }
+        }
+      },
+      "immediate": {
+        "every_playable_country": {
+          "limit": {
+            "has_ascension_perk": "ap_become_the_crisis",
+            "OR": {
+              "is_in_breach_of_any": "yes",
+              "has_country_flag": "declared_crisis"
+            }
+          },
+          "complete_crisis_objective": "crisobj_be_in_breach_of_galcom_law"
+        }
+      }
+    },
+    "_source_file": "nemesis_crisis_menace_objective_events.txt",
+    "_line_number": 262
+  }
+}

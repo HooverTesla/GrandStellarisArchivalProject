@@ -1,0 +1,178 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "machine_age.3410",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "trigger": {
+        "has_origin": "origin_arc_welders"
+      },
+      "immediate": {
+        "change_variable": {
+          "which": "arc_furnace_counter",
+          "value": "1"
+        }
+      }
+    },
+    "_source_file": "origin_events_machine_age.txt",
+    "_line_number": 2726
+  },
+  "situation_event": {
+    "situation_event": {
+      "id": "machine_age.3325",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "owner": {
+          "export_trigger_value_to_variable": {
+            "trigger": "count_owned_pop",
+            "parameters": {
+              "limit": {
+                "has_trait": "trait_pathogenic_genes"
+              }
+            },
+            "variable": "remaining_synth_fert_pops_month_check"
+          }
+        },
+        "if": {
+          "limit": {
+            "owner": {
+              "check_variable_arithmetic": {
+                "which": "remaining_synth_fert_pops",
+                "subtract": "remaining_synth_fert_pops_month_check",
+                "value !": "0"
+              }
+            }
+          },
+          "add_situation_progress": "owner.value:num_synth_fert_check_the_dead",
+          "owner": {
+            "set_variable": {
+              "which": "remaining_synth_fert_pops",
+              "value": "remaining_synth_fert_pops_month_check"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_machine_age.txt",
+    "_line_number": 2590
+  },
+  "pop_event": {
+    "pop_event": {
+      "id": "machine_age.2101",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_cybernetic_creed_trait": "yes",
+        "NOT": {},
+        "immediate": {
+          "_comments": [
+            "# Remove only special Cybercreed traits"
+          ],
+          "modify_species": {
+            "species": "this",
+            "remove_trait": "trait_cyborg_ritualistic_implants"
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_machine_age.txt",
+    "_line_number": 1334
+  },
+  "event": {
+    "event": {
+      "id": "machine_age.2200",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_country": {
+          "has_origin": "origin_cybernetic_creed",
+          "NOT": {
+            "has_country_flag": "cyber_creed_stop_intro_events"
+          }
+        }
+      },
+      "immediate": {
+        "every_country": {
+          "limit": {
+            "has_origin": "origin_cybernetic_creed",
+            "NOT": {
+              "has_country_flag": "cyber_creed_stop_intro_events"
+            }
+          },
+          "country_event": {}
+        }
+      }
+    },
+    "_source_file": "origin_events_machine_age.txt",
+    "_line_number": 1494
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "machine_age.3000",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from": {
+          "has_origin": "origin_synthetic_fertility"
+        },
+        "fromfrom": {
+          "has_trait": "trait_pathogenic_genes"
+        }
+      },
+      "immediate": {
+        "from": {
+          "change_variable": {
+            "which": "remaining_synth_fert_pops",
+            "value": "-1"
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_machine_age.txt",
+    "_line_number": 1934
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "machine_age.3400",
+      "title": "machine_age.3400.name",
+      "desc": "machine_age.3400.desc",
+      "picture": "GFX_evt_arc_crucible",
+      "show_sound": "event_ship_bridge",
+      "location": "from",
+      "event_chain": "ideal_furnace_chain",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from": {
+          "has_star_flag": "arc_welders_construction_system"
+        },
+        "NOT": {
+          "owner": {
+            "has_country_flag": "surveyed_welders_system"
+          }
+        }
+      },
+      "immediate": {
+        "owner": {
+          "set_country_flag": "surveyed_welders_system",
+          "begin_event_chain": {
+            "event_chain": "ideal_furnace_chain",
+            "target": "this"
+          },
+          "create_point_of_interest": {
+            "id": "ideal_furnace_system",
+            "name": "ideal_furnace_system_poi",
+            "desc": "ideal_furnace_system_desc",
+            "event_chain": "ideal_furnace_chain",
+            "location": "from"
+          }
+        }
+      },
+      "option": {
+        "name": "EXCELLENT"
+      }
+    },
+    "_source_file": "origin_events_machine_age.txt",
+    "_line_number": 2633
+  }
+}

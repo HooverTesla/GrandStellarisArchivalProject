@@ -1,0 +1,39 @@
+{
+  "weapon_component_template": {
+    "weapon_component_template": {
+      "key": "ANCIENT_WEB_SLINGER_EXTRA_LARGE",
+      "size": "extra_large",
+      "type": "point_defence",
+      "icon": "GFX_mutation_ancient_web_slinger",
+      "icon_frame": "1",
+      "prerequisites": {
+        "component_set": "ANCIENT_WEB_SLINGER",
+        "projectile_gfx": "white_laser_pd",
+        "tags": {
+          "ai_tags": {
+            "resources": {
+              "category": "ship_components",
+              "inline_script": {
+                "script": "grand_archive/mutations/component_dynamic_cost",
+                "COST": "@cost52"
+              },
+              "cost": {
+                "minor_artifacts": "16",
+                "mult": "@fauna_cost_scaling"
+              }
+            },
+            "ai_weight": {
+              "weight": "1",
+              "modifier": {
+                "factor": "0",
+                "no_resource_for_component": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_mutation_weapon_components.txt",
+    "_line_number": 6456
+  }
+}

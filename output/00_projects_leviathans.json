@@ -1,0 +1,31 @@
+{
+  "special_project": {
+    "special_project": {
+      "key": "STELLARITE_INFESTED_STAR_PROJECT",
+      "cost": "0",
+      "days_to_research": "450",
+      "picture": "GFX_evt_stellarites",
+      "event_scope": "ship_event",
+      "requirements": {
+        "shipclass_science_ship": "1",
+        "leader": "scientist"
+      },
+      "on_success": {
+        "owner": {
+          "country_event": {}
+        },
+        "abort_trigger": {
+          "owner": {
+            "NOT": {
+              "any_situation": {
+                "is_situation_type": "situation_stellarite_infested_star"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_projects_leviathans.txt",
+    "_line_number": 499
+  }
+}

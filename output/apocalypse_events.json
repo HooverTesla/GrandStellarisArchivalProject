@@ -1,0 +1,78 @@
+{
+  "ship_event": {
+    "ship_event": {
+      "id": "apoc.5",
+      "title": "apoc.5.name",
+      "desc": "apoc.5.desc",
+      "picture": "GFX_evt_wormhole",
+      "show_sound": "event_radio_chatter",
+      "location": "FROM",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "NOT": {
+            "has_country_flag": "encountered_first_wormhole"
+          }
+        },
+        "FROM": {
+          "has_natural_wormhole": "yes",
+          "NOR": {
+            "has_star_flag": "crystal_sphere_system"
+          }
+        }
+      },
+      "immediate": {
+        "FROM": {
+          "owner": {
+            "set_country_flag": "encountered_first_wormhole",
+            "add_seen_bypass_type": "wormhole"
+          }
+        },
+        "option": {
+          "name": "apoc.5.a"
+        }
+      }
+    },
+    "_source_file": "apocalypse_events.txt",
+    "_line_number": 107
+  },
+  "country_event": {
+    "country_event": {
+      "id": "apoc.300",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "last_increased_tech": "tech_gateway_activation"
+      },
+      "immediate": {
+        "set_country_flag": "encountered_first_gateway"
+      }
+    },
+    "_source_file": "apocalypse_events.txt",
+    "_line_number": 714
+  },
+  "event": {
+    "event": {
+      "id": "apoc.301",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_playable_country": {
+          "has_technology": "tech_gateway_activation",
+          "NOT": {}
+        },
+        "immediate": {
+          "random_playable_country": {
+            "limit": {
+              "has_technology": "tech_gateway_activation",
+              "NOT": {},
+              "set_country_flag": "encountered_first_gateway"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "apocalypse_events.txt",
+    "_line_number": 730
+  }
+}

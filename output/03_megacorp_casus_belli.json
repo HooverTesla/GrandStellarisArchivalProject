@@ -1,0 +1,153 @@
+{
+  "cb_galatron": {
+    "cb_galatron": {
+      "show_in_diplomacy": "yes",
+      "show_notification": "yes",
+      "potential": {
+        "has_global_flag": "galatron_activated_first_time",
+        "is_country_type": "default",
+        "NOR": {
+          "is_fallen_empire_berserk_machine": "yes",
+          "has_valid_civic": "civic_machine_assimilator"
+        }
+      },
+      "is_valid": {
+        "from": {
+          "OR": {
+            "has_modifier": "galatron_modifier",
+            "has_relic": "r_galatron"
+          },
+          "has_closed_borders": "prev"
+        },
+        "has_total_war_cb": "no",
+        "NOR": {
+          "is_overlord_to": "from",
+          "from": {}
+        }
+      }
+    },
+    "_source_file": "03_megacorp_casus_belli.txt",
+    "_line_number": 9
+  },
+  "cb_megacorp_subjugate": {
+    "cb_megacorp_subjugate": {
+      "show_in_diplomacy": "yes",
+      "show_notification": "no",
+      "potential": {
+        "is_country_type": "default",
+        "is_megacorp": "yes",
+        "is_subject": "no"
+      },
+      "is_valid": {
+        "NOT": {
+          "from": {
+            "relative_power": {
+              "who": "FROM",
+              "category": "all"
+            }
+          },
+          "destroy_if": {
+            "relative_power": {
+              "who": "FROM",
+              "category": "all"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_megacorp_casus_belli.txt",
+    "_line_number": 39
+  },
+  "cb_hostile_takeover": {
+    "cb_hostile_takeover": {
+      "show_in_diplomacy": "yes",
+      "show_notification": "yes",
+      "potential": {
+        "is_country_type": "default",
+        "is_megacorp": "yes",
+        "NOT": {},
+        "is_valid": {
+          "from": {
+            "NOT": {
+              "NOT": {
+                "any_country": {
+                  "OR": {
+                    "has_commercial_pact": "root",
+                    "is_in_federation_with": "root"
+                  },
+                  "any_owned_planet": {
+                    "has_branch_office": "from"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_megacorp_casus_belli.txt",
+    "_line_number": 65
+  },
+  "cb_expel_corp": {
+    "cb_expel_corp": {
+      "show_in_diplomacy": "yes",
+      "show_notification": "yes",
+      "potential": {
+        "is_country_type": "default",
+        "from": {
+          "is_megacorp": "no"
+        },
+        "is_valid": {
+          "NOT": {
+            "NOT": {
+              "NOT": {
+                "NOT": {
+                  "if": {
+                    "limit": {
+                      "exists": "from.overlord"
+                    },
+                    "NOT": {},
+                    "any_owned_planet": {
+                      "has_branch_office": "from"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_megacorp_casus_belli.txt",
+    "_line_number": 89
+  },
+  "cb_steal_galatron": {
+    "cb_steal_galatron": {
+      "show_in_diplomacy": "yes",
+      "show_notification": "yes",
+      "potential": {
+        "is_country_type": "default",
+        "NOT": {
+          "has_policy_flag": "unrestricted_wars",
+          "has_global_flag": "galatron_activated_first_time"
+        },
+        "is_valid": {
+          "from": {
+            "OR": {
+              "has_modifier": "galatron_modifier",
+              "has_relic": "r_galatron"
+            },
+            "NOT": {},
+            "has_total_war_cb": "no",
+            "NOR": {
+              "is_overlord_to": "from",
+              "from": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_megacorp_casus_belli.txt",
+    "_line_number": 114
+  }
+}

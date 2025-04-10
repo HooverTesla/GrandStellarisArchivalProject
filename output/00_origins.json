@@ -1,0 +1,1883 @@
+{
+  "origin_default": {
+    "origin_default": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_default.dds",
+      "picture": "GFX_evt_metropolis",
+      "potential": {
+        "always": "yes"
+      },
+      "possible": {},
+      "random_weight": {
+        "base": "100"
+      },
+      "description": "origin_tooltip_default_effects",
+      "swap_type": {
+        "description": "origin_tooltip_default_effects_lithoid",
+        "trigger": {
+          "OR": {
+            "AND": {
+              "is_scope_valid": "yes",
+              "is_lithoid_empire": "yes"
+            }
+          }
+        }
+      },
+      "advanced_start": "yes"
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 5
+  },
+  "origin_fallen_empire": {
+    "origin_fallen_empire": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_elder_race.dds",
+      "playable": {
+        "always": "no # Non-player origin"
+      },
+      "possible": {},
+      "description": "origin_no_effect",
+      "random_weight": {
+        "base": "0"
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 40
+  },
+  "origin_enlightened": {
+    "origin_enlightened": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_enlightened.dds",
+      "playable": {
+        "always": "no # Non-player origin"
+      },
+      "possible": {},
+      "modifier": {
+        "all_technology_research_speed": "0.10",
+        "monthly_loyalty": "0.5"
+      },
+      "random_weight": {
+        "base": "0"
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 58
+  },
+  "origin_default_pre_ftl": {
+    "origin_default_pre_ftl": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origin_default_pre_ftl.dds",
+      "playable": {
+        "always": "no # Non-player origin"
+      },
+      "possible": {},
+      "description": "origin_no_effect",
+      "random_weight": {
+        "base": "0"
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 79
+  },
+  "origin_separatists": {
+    "origin_separatists": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_separatists.dds",
+      "playable": {
+        "always": "no # Non-player origin"
+      },
+      "possible": {},
+      "modifier": {
+        "planet_stability_add": "10",
+        "pop_government_ethic_attraction": "0.25",
+        "starbase_shipyard_build_speed_mult": "0.2"
+      },
+      "random_weight": {
+        "base": "0"
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 97
+  },
+  "origin_liberated": {
+    "origin_liberated": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_separatists.dds",
+      "playable": {
+        "always": "no # Non-player origin"
+      },
+      "possible": {},
+      "modifier": {
+        "planet_stability_add": "10",
+        "pop_government_ethic_attraction": "0.25",
+        "starbase_shipyard_build_speed_mult": "0.2"
+      },
+      "random_weight": {
+        "base": "0"
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 119
+  },
+  "origin_demonic_incursion": {
+    "origin_demonic_incursion": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_separatists.dds",
+      "potential": {
+        "always": "no # Non-starting origin"
+      },
+      "possible": {},
+      "modifier": {
+        "country_naval_cap_mult": "1",
+        "ships_upkeep_mult": "-0.50"
+      },
+      "random_weight": {
+        "base": "0"
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 141
+  },
+  "origin_khan_successor": {
+    "origin_khan_successor": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_khan_successor.dds",
+      "playable": {
+        "always": "no # Non-player origin"
+      },
+      "modifier": {
+        "commander_initial_skill": "2"
+      },
+      "description": "allow_raiding",
+      "random_weight": {
+        "base": "0"
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 162
+  },
+  "origin_mechanists": {
+    "origin_mechanists": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_mechanist.dds",
+      "picture": "GFX_origin_mechanist",
+      "playable": {
+        "host_has_dlc": "Utopia"
+      },
+      "possible": {
+        "ethics": {
+          "NOT": {
+            "OR": {
+              "text": "civic_tooltip_materialist",
+              "value": "ethic_fanatic_materialist"
+            }
+          },
+          "civics": {
+            "species_archetype": {},
+            "modifier": {
+              "planet_pop_assembly_mult": "0.15",
+              "ROBOT_species_trait_picks_add": "1",
+              "ROBOT_species_trait_points_add": "2"
+            },
+            "description": "origin_tooltip_mechanists_effects",
+            "advanced_start": "yes",
+            "blocks_random_machine_empire_generation": "yes",
+            "random_weight": {
+              "base": "10"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 183
+  },
+  "origin_syncretic_evolution": {
+    "origin_syncretic_evolution": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_syncretic_evolution.dds",
+      "picture": "GFX_origin_syncretic_evolution",
+      "playable": {
+        "host_has_dlc": "Utopia"
+      },
+      "possible": {
+        "ethics": {
+          "civics": {
+            "NOT": {
+              "value": "civic_fanatic_purifiers"
+            },
+            "NOR": {
+              "text": "civic_tooltip_not_guided",
+              "value": "civic_machine_guided_sapience"
+            }
+          }
+        },
+        "description": "origin_tooltip_syncretic_evolution_effects",
+        "has_secondary_species": {
+          "title": "civic_syncretic_evolution_secondary_species",
+          "traits": {
+            "trait": "trait_syncretic_proles"
+          }
+        },
+        "advanced_start": "yes",
+        "random_weight": {
+          "base": "10"
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 221
+  },
+  "origin_life_seeded": {
+    "origin_life_seeded": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_life_seeded.dds",
+      "picture": "GFX_origin_life_seeded",
+      "starting_colony": "pc_gaia",
+      "habitability_preference": "pc_gaia",
+      "preferred_planet_class_neighbor": "no",
+      "playable": {
+        "host_has_dlc": "Apocalypse"
+      },
+      "possible": {
+        "civics": {
+          "NOR": {
+            "text": "civic_tooltip_not_guided",
+            "value": "civic_machine_guided_sapience"
+          }
+        }
+      },
+      "description": "origin_tooltip_life_seeded_effects",
+      "negative_description": "origin_tooltip_life_seeded_negative_effects",
+      "random_weight": {
+        "base": "5"
+      },
+      "swap_type": {
+        "description": "origin_tooltip_life_seeded_effects",
+        "negative_description": "origin_tooltip_life_seeded_machine_negative_effects",
+        "trigger": {
+          "OR": {
+            "AND": {
+              "is_scope_valid": "yes",
+              "OR": {
+                "is_individual_machine": "yes",
+                "is_machine_empire": "yes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 262
+  },
+  "origin_life_seeded_ai_only": {
+    "origin_life_seeded_ai_only": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_life_seeded.dds",
+      "picture": "GFX_origin_life_seeded",
+      "starting_colony": "pc_gaia",
+      "habitability_preference": "pc_gaia",
+      "preferred_planet_class_neighbor": "no",
+      "playable": {
+        "always": "no # Non-player origin"
+      },
+      "description": "origin_tooltip_life_seeded_effects",
+      "negative_description": "origin_tooltip_life_seeded_negative_effects",
+      "random_weight": {
+        "base": "0"
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 326
+  },
+  "origin_post_apocalyptic": {
+    "origin_post_apocalyptic": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_post_apocalyptic.dds",
+      "picture": "GFX_origin_post_apocalyptic",
+      "starting_colony": "pc_nuked",
+      "playable": {
+        "host_has_dlc": "Apocalypse"
+      },
+      "potential": {
+        "species_archetype": {},
+        "possible": {
+          "species_archetype": {
+            "civics": {
+              "NOT": {
+                "value": "civic_agrarian_idyll"
+              },
+              "NOR": {
+                "text": "civic_tooltip_not_anglers",
+                "value": "civic_corporate_machine_anglers"
+              }
+            }
+          },
+          "description": "origin_tooltip_post_apocalyptic_effects",
+          "traits": {
+            "trait": "trait_survivor"
+          },
+          "advanced_start": "yes",
+          "blocks_random_machine_empire_generation": "yes",
+          "random_weight": {
+            "base": "5"
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 351
+  },
+  "origin_post_apocalyptic_machines": {
+    "origin_post_apocalyptic_machines": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_post_apocalyptic.dds",
+      "picture": "GFX_origin_post_apocalyptic",
+      "starting_colony": "pc_nuked",
+      "playable": {
+        "host_has_dlc": "Apocalypse"
+      },
+      "potential": {
+        "species_archetype": {},
+        "possible": {
+          "species_archetype": {
+            "civics": {
+              "NOR": {
+                "text": "civic_tooltip_not_anglers",
+                "value": "civic_corporate_machine_anglers"
+              }
+            }
+          },
+          "description": "origin_tooltip_post_apocalyptic_machines_effects",
+          "traits": {
+            "trait": "trait_robot_survivor"
+          },
+          "flags": {
+            "advanced_start": "yes",
+            "random_weight": {
+              "base": "5"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 397
+  },
+  "origin_remnants": {
+    "origin_remnants": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_remnant.dds",
+      "picture": "GFX_origin_remnants",
+      "starting_colony": "pc_relic #Changes homeworld class regardless of what is picked for empire",
+      "max_once_global": "yes",
+      "playable": {
+        "OR": {
+          "has_ancrel": "yes",
+          "host_has_dlc": "Federations"
+        }
+      },
+      "possible": {
+        "civics": {
+          "NOT": {}
+        },
+        "description": "origin_tooltip_remnants_effects",
+        "flags": {
+          "traits": {},
+          "advanced_start": "yes",
+          "random_weight": {
+            "base": "5"
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 443
+  },
+  "origin_shattered_ring": {
+    "origin_shattered_ring": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_shattered_ring.dds",
+      "picture": "GFX_origin_shattered_ring",
+      "starting_colony": "pc_shattered_ring_habitable",
+      "habitability_preference": "pc_shattered_ring_habitable",
+      "initializers": {
+        "max_once_global": "yes",
+        "non_colonizable_planet_class_neighbor": "yes",
+        "playable": {
+          "host_has_dlc": "Federations"
+        },
+        "possible": {
+          "civics": {
+            "NOT": {
+              "NOR": {
+                "text": "civic_tooltip_not_anglers",
+                "value": "civic_corporate_machine_anglers"
+              }
+            }
+          },
+          "description": "origin_tooltip_shattered_ring_effects",
+          "flags": {
+            "traits": {},
+            "advanced_start": "yes",
+            "random_weight": {
+              "base": "2"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 480
+  },
+  "origin_void_dwellers": {
+    "origin_void_dwellers": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origin_void_dwellers.dds",
+      "picture": "GFX_origin_void_dwellers",
+      "starting_colony": "pc_habitat",
+      "initializers": {
+        "habitability_preference": "pc_habitat",
+        "preferred_planet_class_neighbor": "no",
+        "playable": {
+          "host_has_dlc": "Federations"
+        },
+        "possible": {
+          "species_archetype": {
+            "civics": {
+              "NOR": {
+                "text": "civic_tooltip_not_idyllic_bloom",
+                "value": "civic_hive_idyllic_bloom"
+              },
+              "NOT": {
+                "NOR": {
+                  "text": "civic_tooltip_not_anglers",
+                  "value": "civic_corporate_machine_anglers"
+                }
+              }
+            },
+            "description": "origin_tooltip_void_dwellers_effects",
+            "potential": {
+              "species_archetype": {},
+              "modifier": {
+                "megastructures_habitat_cost_mult": "-0.25",
+                "habitat_districts_building_slots_add": "0.25",
+                "habitat_max_districts_add": "2",
+                "habitat_district_jobs_add": "1"
+              },
+              "flags": {
+                "traits": {
+                  "trait": "trait_void_dweller_1"
+                },
+                "blocks_random_machine_empire_generation": "yes",
+                "random_weight": {
+                  "base": "3"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 531
+  },
+  "origin_void_machines": {
+    "origin_void_machines": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origin_void_dwellers.dds",
+      "picture": "GFX_origin_void_dwellers",
+      "starting_colony": "pc_habitat",
+      "initializers": {
+        "habitability_preference": "pc_habitat",
+        "preferred_planet_class_neighbor": "no",
+        "playable": {
+          "host_has_dlc": "Federations"
+        },
+        "possible": {
+          "species_archetype": {
+            "civics": {
+              "NOT": {
+                "NOR": {
+                  "text": "civic_tooltip_not_anglers",
+                  "value": "civic_corporate_machine_anglers"
+                }
+              }
+            },
+            "description": "origin_tooltip_void_machines_effects",
+            "potential": {
+              "species_archetype": {},
+              "modifier": {
+                "megastructures_habitat_cost_mult": "-0.25",
+                "habitat_districts_building_slots_add": "0.25",
+                "habitat_max_districts_add": "2",
+                "habitat_district_jobs_add": "1"
+              },
+              "flags": {
+                "traits": {
+                  "trait": "trait_void_dweller_2"
+                },
+                "negative_description": "ORIGIN_REQUIRES_ROBO_MODDING",
+                "random_weight": {
+                  "base": "3"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 590
+  },
+  "origin_scion": {
+    "origin_scion": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_scion_1.dds",
+      "picture": "GFX_origin_scion",
+      "max_once_global": "yes",
+      "playable": {
+        "host_has_dlc": "Federations"
+      },
+      "possible": {
+        "ethics": {
+          "NOR": {
+            "value": "ethic_fanatic_xenophobe",
+            "_comments": [
+              "#value = ethic_xenophobe"
+            ]
+          }
+        },
+        "civics": {
+          "NOT": {},
+          "species_archetype": {},
+          "description": "origin_tooltip_scion_effects",
+          "flags": {
+            "blocks_random_machine_empire_generation": "yes",
+            "random_weight": {
+              "base": "0",
+              "modifier": {
+                "add": "2",
+                "num_fallen_empires_setting >": "1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 639
+  },
+  "origin_galactic_doorstep": {
+    "origin_galactic_doorstep": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_gateway.dds",
+      "picture": "GFX_origin_galactic_doorstep",
+      "max_once_global": "yes",
+      "playable": {
+        "always": "yes"
+      },
+      "possible": {},
+      "description": "origin_tooltip_galactic_doorstep_effects",
+      "flags": {
+        "modifier": {
+          "megastructures_gateways_cost_mult": "-0.25",
+          "megastructure_build_speed_mult": "0.05"
+        },
+        "random_weight": {
+          "base": "1"
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 679
+  },
+  "origin_tree_of_life": {
+    "origin_tree_of_life": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_tree_of_life.dds",
+      "picture": "GFX_origin_tree",
+      "max_once_global": "yes",
+      "playable": {
+        "host_has_dlc": "Utopia"
+      },
+      "possible": {
+        "authority": {
+          "civics": {
+            "NOT": {}
+          },
+          "description": "origin_tooltip_tree_effects",
+          "negative_description": "origin_tooltip_tree_negative_effects",
+          "modifier": {
+            "ship_colonizer_food_cost_add": "500",
+            "ship_colonizer_alloys_cost_mult": "-0.50"
+          },
+          "flags": {
+            "advanced_start": "yes",
+            "random_weight": {
+              "base": "5"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 707
+  },
+  "origin_shoulders_of_giants": {
+    "origin_shoulders_of_giants": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_one_the_shoulders_of_giant.dds",
+      "picture": "GFX_origin_shoulders",
+      "max_once_global": "yes",
+      "playable": {
+        "host_has_dlc": "Federations"
+      },
+      "possible": {
+        "ethics": {
+          "NOT": {
+            "value": "ethic_gestalt_consciousness"
+          }
+        },
+        "species_archetype": {},
+        "description": "origin_tooltips_shoulders_of_giants_effects",
+        "negative_description": "origin_tooltips_shoulders_of_giants_negative_effects",
+        "flags": {
+          "traits": {},
+          "blocks_random_machine_empire_generation": "yes",
+          "random_weight": {
+            "base": "5"
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 740
+  },
+  "origin_lithoid": {
+    "origin_lithoid": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_lithoid.dds",
+      "picture": "GFX_origin_calamitous",
+      "max_once_global": "yes",
+      "playable": {
+        "host_has_dlc": "Lithoids Species Pack"
+      },
+      "possible": {
+        "species_archetype": {
+          "value": "LITHOID"
+        },
+        "civics": {
+          "NOR": {
+            "text": "civic_tooltip_not_guided",
+            "value": "civic_machine_guided_sapience"
+          }
+        }
+      },
+      "description": "origin_tooltip_lithoid_effects",
+      "flags": {
+        "traits": {},
+        "random_weight": {
+          "base": "5"
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 772
+  },
+  "origin_machine": {
+    "origin_machine": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_resource_consolidation.dds",
+      "picture": "GFX_origin_resource_consolidation",
+      "starting_colony": "pc_machine",
+      "preferred_planet_class_neighbor": "no",
+      "max_once_global": "yes",
+      "playable": {
+        "host_has_dlc": "Synthetic Dawn Story Pack"
+      },
+      "possible": {
+        "authority": {
+          "civics": {
+            "NOR": {
+              "value": "civic_machine_guided_sapience"
+            }
+          }
+        },
+        "description": "origin_tooltip_machine_effects",
+        "negative_description": "origin_tooltip_machine_negative_effects",
+        "_comments": [
+          "#flags = { custom_start_screen }"
+        ],
+        "traits": {},
+        "advanced_start": "yes",
+        "random_weight": {
+          "base": "2"
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 816
+  },
+  "origin_common_ground": {
+    "origin_common_ground": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_common_ground.dds",
+      "picture": "GFX_origin_common_ground",
+      "max_once_global": "yes",
+      "playable": {
+        "host_has_dlc": "Federations"
+      },
+      "possible": {
+        "ethics": {
+          "NOR": {
+            "text": "civic_tooltip_not_xenophobe",
+            "value": "ethic_fanatic_xenophobe"
+          }
+        },
+        "civics": {
+          "NOR": {
+            "text": "civic_tooltip_not_genocidal",
+            "value": "civic_machine_terminator"
+          }
+        }
+      },
+      "description": "origin_tooltip_common_ground_effects",
+      "flags": {
+        "traits": {},
+        "random_weight": {
+          "base": "5"
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 852
+  },
+  "origin_common_ground_npc": {
+    "origin_common_ground_npc": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_common_ground.dds",
+      "picture": "GFX_origin_common_ground",
+      "playable": {
+        "always": "no # Non-player origin"
+      },
+      "possible": {
+        "civics": {
+          "NOT": {
+            "value": "civic_barbaric_despoilers"
+          },
+          "NOR": {
+            "text": "civic_tooltip_not_genocidal",
+            "value": "civic_machine_terminator"
+          }
+        }
+      },
+      "description": "origin_tooltip_common_ground_npc_effects",
+      "random_weight": {
+        "base": "0"
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 894
+  },
+  "origin_hegemon": {
+    "origin_hegemon": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_hegemon.dds",
+      "picture": "GFX_origin_hegemon",
+      "max_once_global": "yes",
+      "playable": {
+        "host_has_dlc": "Federations"
+      },
+      "possible": {
+        "ethics": {
+          "NOR": {
+            "text": "civic_tooltip_not_egalitarian",
+            "value": "ethic_fanatic_xenophobe"
+          }
+        },
+        "civics": {
+          "NOT": {
+            "value": "civic_inwards_perfection"
+          },
+          "NOR": {
+            "text": "civic_tooltip_not_genocidal",
+            "value": "civic_machine_terminator"
+          }
+        }
+      },
+      "description": "origin_tooltip_hegemon_effects",
+      "flags": {
+        "traits": {},
+        "random_weight": {
+          "base": "5"
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 925
+  },
+  "origin_hegemon_npc": {
+    "origin_hegemon_npc": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_hegemon.dds",
+      "picture": "GFX_origin_hegemon",
+      "playable": {
+        "always": "no # Non-player origin"
+      },
+      "possible": {
+        "civics": {
+          "NOT": {
+            "value": "civic_inwards_perfection"
+          },
+          "NOR": {
+            "text": "civic_tooltip_not_genocidal",
+            "value": "civic_machine_terminator"
+          }
+        }
+      },
+      "description": "origin_tooltip_hegemon_npc_effects",
+      "random_weight": {
+        "base": "0"
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 971
+  },
+  "origin_doomsday": {
+    "origin_doomsday": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_doomsday.dds",
+      "picture": "GFX_origin_doomsday",
+      "max_once_global": "yes",
+      "non_colonizable_planet_class_neighbor": "yes",
+      "playable": {
+        "host_has_dlc": "Federations"
+      },
+      "possible": {},
+      "negative_description": "origin_tooltip_doomsday_negative_effects",
+      "_comments": [
+        "#\tdescription = \"origin_tooltip_doomsday_effects\""
+      ],
+      "flags": {
+        "traits": {},
+        "random_weight": {
+          "base": "5"
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1003
+  },
+  "origin_lost_colony": {
+    "origin_lost_colony": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_lost_colony.dds",
+      "picture": "GFX_origin_lost_colony",
+      "max_once_global": "yes",
+      "playable": {
+        "always": "yes"
+      },
+      "possible": {},
+      "description": "origin_tooltip_lost_colony_effects",
+      "negative_description": "origin_tooltip_lost_colony_negative_effects",
+      "flags": {
+        "traits": {},
+        "random_weight": {
+          "base": "5"
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1029
+  },
+  "origin_necrophage": {
+    "origin_necrophage": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_necrophage.dds",
+      "picture": "GFX_origin_necrophage",
+      "flags": {
+        "playable": {
+          "host_has_dlc": "Necroids Species Pack"
+        },
+        "possible": {
+          "authority": {
+            "NOT": {},
+            "ethics": {
+              "NOR": {
+                "value": "ethic_fanatic_egalitarian"
+              }
+            },
+            "civics": {
+              "NOR": {
+                "value": "civic_permanent_employment"
+              }
+            },
+            "species_archetype": {},
+            "description": "origin_tooltip_necrophage_effects",
+            "negative_description": "origin_tooltip_necrophage_negative_effects",
+            "traits": {
+              "trait": "trait_necrophage"
+            },
+            "has_secondary_species": {
+              "title": "civic_necrophage_secondary_species"
+            },
+            "advanced_start": "yes",
+            "blocks_random_machine_empire_generation": "yes",
+            "random_weight": {
+              "base": "5"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1056
+  },
+  "origin_clone_army": {
+    "origin_clone_army": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_clones.dds",
+      "picture": "GFX_origin_clone_army",
+      "flags": {
+        "playable": {
+          "host_has_dlc": "Humanoids Species Pack"
+        },
+        "possible": {
+          "ethics": {
+            "NOT": {},
+            "civics": {
+              "NOR": {
+                "value": "civic_natural_design"
+              }
+            },
+            "species_archetype": {},
+            "description": "origin_tooltip_clone_army_effects",
+            "traits": {
+              "trait": "trait_clone_soldier_infertile"
+            },
+            "advanced_start": "no",
+            "blocks_random_machine_empire_generation": "yes",
+            "random_weight": {
+              "base": "2"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1112
+  },
+  "origin_here_be_dragons": {
+    "origin_here_be_dragons": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origin_here_be_dragons.dds",
+      "picture": "GFX_origin_here_be_dragons",
+      "flags": {
+        "playable": {
+          "has_aquatics": "yes"
+        },
+        "possible": {
+          "civics": {
+            "NOR": {
+              "text": "civic_tooltip_not_genocidal",
+              "value": "civic_machine_terminator"
+            }
+          }
+        },
+        "description": "civic_tooltip_aquatics_effects",
+        "advanced_start": "yes",
+        "max_once_global": "yes",
+        "random_weight": {
+          "base": "5"
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1148
+  },
+  "origin_ocean_paradise": {
+    "origin_ocean_paradise": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_ocean_paradise.dds",
+      "picture": "GFX_origin_ocean_paradise",
+      "flags": {
+        "starting_colony": "pc_ocean",
+        "habitability_preference": "pc_ocean",
+        "initializers": {
+          "playable": {
+            "has_aquatics": "yes"
+          },
+          "description": "origin_ocean_paradise_effects",
+          "potential": {
+            "species_archetype": {},
+            "possible": {
+              "species_archetype": {},
+              "traits": {
+                "trait": "trait_aquatic"
+              },
+              "advanced_start": "yes",
+              "blocks_random_machine_empire_generation": "yes",
+              "random_weight": {
+                "base": "5"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1182
+  },
+  "origin_ocean_machines": {
+    "origin_ocean_machines": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_ocean_paradise.dds",
+      "picture": "GFX_origin_ocean_paradise",
+      "flags": {
+        "starting_colony": "pc_ocean",
+        "habitability_preference": "pc_ocean",
+        "initializers": {
+          "playable": {
+            "has_aquatics": "yes"
+          },
+          "description": "origin_ocean_machines_effects",
+          "potential": {
+            "species_archetype": {},
+            "possible": {
+              "species_archetype": {},
+              "traits": {
+                "trait": "trait_robot_aquatic"
+              },
+              "negative_description": "ORIGIN_REQUIRES_ROBO_MODDING",
+              "advanced_start": "yes",
+              "random_weight": {
+                "base": "5"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1219
+  },
+  "origin_progenitor_hive": {
+    "origin_progenitor_hive": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_progenitor_hive.dds",
+      "picture": "GFX_origin_progenitor_hive",
+      "playable": {
+        "has_overlord_dlc": "yes"
+      },
+      "advanced_start": "yes",
+      "possible": {
+        "authority": {
+          "civics": {
+            "NOT": {
+              "value": "civic_hive_beastmasters"
+            }
+          }
+        },
+        "description": "origin_tooltip_progenitor_hive_effects",
+        "negative_description": "origin_tooltip_progenitor_hive_negative_effects",
+        "modifier": {
+          "ship_military_speed_mult": "-0.5",
+          "owned_ship_evasion_mult": "-0.5",
+          "owned_ship_fire_rate_mult": "-0.5",
+          "owned_ship_accuracy_mult": "-0.5"
+        },
+        "hide_modifiers": "yes",
+        "flags": {
+          "random_weight": {
+            "base": "2"
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1252
+  },
+  "origin_subterranean": {
+    "origin_subterranean": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_subterranean.dds",
+      "picture": "GFX_origin_subterranean",
+      "flags": {
+        "playable": {
+          "has_overlord_dlc": "yes"
+        },
+        "description": "origin_tooltip_subterranean_effects",
+        "advanced_start": "yes",
+        "potential": {
+          "species_archetype": {},
+          "possible": {
+            "species_archetype": {},
+            "traits": {
+              "trait": "trait_cave_dweller"
+            },
+            "modifier": {
+              "mining_district_housing_add": "2",
+              "mining_district_buildings_add": "0.34",
+              "planet_orbital_bombardment_damage": "-0.75",
+              "planet_structures_cost_mult": "0.10",
+              "planet_structures_upkeep_mult": "0.10",
+              "planet_building_build_speed_mult": "-0.10",
+              "planet_storm_devastation_mult": "-0.25"
+            },
+            "blocks_random_machine_empire_generation": "yes",
+            "random_weight": {
+              "base": "5"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1291
+  },
+  "origin_subterranean_machines": {
+    "origin_subterranean_machines": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_subterranean.dds",
+      "picture": "GFX_origin_subterranean",
+      "flags": {
+        "playable": {
+          "has_overlord_dlc": "yes"
+        },
+        "description": "origin_tooltip_robot_subterranean_effects",
+        "advanced_start": "yes",
+        "potential": {
+          "species_archetype": {},
+          "possible": {
+            "species_archetype": {},
+            "traits": {
+              "trait": "trait_robot_cave_dweller"
+            },
+            "modifier": {
+              "mining_district_housing_add": "2",
+              "mining_district_buildings_add": "0.34",
+              "planet_orbital_bombardment_damage": "-0.75",
+              "planet_structures_cost_mult": "0.10",
+              "planet_structures_upkeep_mult": "0.10",
+              "planet_building_build_speed_mult": "-0.10",
+              "planet_storm_devastation_mult": "-0.25"
+            },
+            "random_weight": {
+              "base": "5"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1332
+  },
+  "origin_star_slingshot": {
+    "origin_star_slingshot": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_star_slingshot.dds",
+      "picture": "GFX_origin_star_slingshot",
+      "playable": {
+        "has_overlord_dlc": "yes"
+      },
+      "possible": {},
+      "description": "origin_tooltip_star_slingshot_effects",
+      "flags": {
+        "modifier": {
+          "country_starbase_influence_cost_distance_mult": "-0.75",
+          "catapult_spread_mult": "0.5"
+        },
+        "random_weight": {
+          "base": "0"
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1371
+  },
+  "origin_shroudwalker_apprentice": {
+    "origin_shroudwalker_apprentice": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_shroudwalker_apprentice.dds",
+      "picture": "GFX_origin_shroudwalker_apprentice",
+      "max_once_global": "yes",
+      "playable": {
+        "has_overlord_dlc": "yes"
+      },
+      "possible": {
+        "ethics": {
+          "OR": {
+            "text": "civic_tooltip_spiritualist",
+            "value": "ethic_fanatic_spiritualist"
+          }
+        },
+        "civics": {
+          "NOR": {
+            "value": "civic_augmentation_bazaars"
+          }
+        },
+        "species_archetype": {},
+        "description": "origin_tooltip_shroudwalker_apprentice_effects",
+        "flags": {
+          "traits": {
+            "trait": "trait_latent_psionic"
+          },
+          "blocks_random_machine_empire_generation": "yes",
+          "random_weight": {
+            "base": "5"
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1397
+  },
+  "origin_imperial_vassal": {
+    "origin_imperial_vassal": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_imperial_vassal.dds",
+      "picture": "GFX_origin_imperial_vassal",
+      "playable": {
+        "has_overlord_dlc": "yes"
+      },
+      "possible": {
+        "civics": {
+          "NOR": {
+            "text": "civic_tooltip_not_genocidal",
+            "value": "civic_machine_terminator"
+          }
+        }
+      },
+      "description": "origin_tooltip_imperial_vassal_effects",
+      "flags": {
+        "traits": {
+          "random_weight": {
+            "base": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1438
+  },
+  "origin_imperial_vassal_overlord": {
+    "origin_imperial_vassal_overlord": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_imperial_vassal.dds",
+      "picture": "GFX_origin_imperial_vassal",
+      "playable": {
+        "always": "no # Non-player origin"
+      },
+      "possible": {
+        "description": "origin_tooltip_imperial_vassal_overlord_effects",
+        "traits": {
+          "random_weight": {
+            "base": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1472
+  },
+  "origin_overtuned": {
+    "origin_overtuned": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_overtuned.dds",
+      "picture": "GFX_origin_overtuned",
+      "playable": {
+        "has_toxoids": "yes"
+      },
+      "possible": {
+        "authority": {
+          "NOT": {},
+          "civics": {
+            "NOR": {
+              "text": "civic_tooltip_not_natural_design",
+              "value": "civic_hive_natural_design"
+            }
+          },
+          "species_archetype": {},
+          "description": "origin_tooltip_overtuned_effects",
+          "flags": {
+            "blocks_random_machine_empire_generation": "yes",
+            "_comments": [
+              "#\tfeature_flags = {",
+              "#\t\tadvanced_gene_modding",
+              "#\t\tadd_advanced_traits",
+              "#\t}"
+            ],
+            "random_weight": {
+              "base": "0"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1493
+  },
+  "origin_toxic_knights": {
+    "origin_toxic_knights": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_toxic_knights.dds",
+      "picture": "GFX_origin_toxic_knights",
+      "flags": {
+        "initializers": {
+          "playable": {
+            "has_toxoids": "yes"
+          },
+          "possible": {
+            "ethics": {
+              "NOT": {},
+              "civics": {
+                "NOR": {
+                  "value": "civic_dystopian_society"
+                }
+              },
+              "species_archetype": {},
+              "description": "origin_toxic_knights_effects",
+              "negative_description": "origin_toxic_knights_negative_effects",
+              "advanced_start": "yes",
+              "max_once_global": "yes",
+              "blocks_random_machine_empire_generation": "yes",
+              "random_weight": {
+                "base": "2"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1531
+  },
+  "origin_payback": {
+    "origin_payback": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_payback.dds",
+      "picture": "GFX_origin_payback",
+      "max_once_global": "yes",
+      "playable": {
+        "has_first_contact_dlc": "yes"
+      },
+      "possible": {
+        "ethics": {
+          "NOT": {
+            "value": "ethic_gestalt_consciousness"
+          }
+        },
+        "civics": {
+          "NOR": {
+            "text": "civic_tooltip_not_eager_explorers",
+            "_comments": [
+              "# Or low tech starts"
+            ],
+            "value": "civic_machine_exploration_protocol"
+          }
+        },
+        "species_archetype": {},
+        "modifier": {
+          "damage_vs_superior_empires_mult": "0.15"
+        },
+        "description": "origin_tooltip_payback_effects",
+        "negative_description": "origin_tooltip_payback_negative_effects",
+        "flags": {
+          "advanced_start": "no",
+          "blocks_random_machine_empire_generation": "yes",
+          "random_weight": {
+            "base": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1568
+  },
+  "origin_broken_shackles": {
+    "origin_broken_shackles": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_broken_shackles.dds",
+      "picture": "GFX_origin_broken_shackles",
+      "max_once_global": "yes",
+      "initializers": {
+        "preferred_planet_class_neighbor": "no",
+        "playable": {
+          "has_first_contact_dlc": "yes"
+        },
+        "possible": {
+          "ethics": {
+            "NOT": {
+              "NOR": {
+                "text": "civic_tooltip_not_xenophobe",
+                "value": "ethic_fanatic_xenophobe"
+              }
+            },
+            "civics": {
+              "NOR": {
+                "text": "civic_tooltip_not_eager_explorers",
+                "_comments": [
+                  "# Or low tech starts"
+                ],
+                "value": "civic_machine_exploration_protocol"
+              }
+            },
+            "species_archetype": {},
+            "description": "origin_tooltip_broken_shackles_effects",
+            "negative_description": "origin_tooltip_broken_shackles_negative_effects",
+            "flags": {
+              "modifier": {
+                "envoys_add": "1",
+                "first_contact_speed_mult": "0.20",
+                "spy_network_daily_value_mult": "0.20"
+              },
+              "blocks_random_machine_empire_generation": "yes",
+              "random_weight": {
+                "base": "0"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1624
+  },
+  "origin_fear_of_the_dark": {
+    "origin_fear_of_the_dark": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_fear_of_the_dark.dds",
+      "picture": "GFX_origin_fear_of_the_dark",
+      "initializers": {
+        "playable": {
+          "has_first_contact_dlc": "yes"
+        },
+        "possible": {
+          "ethics": {
+            "NOT": {
+              "value": "ethic_gestalt_consciousness"
+            }
+          },
+          "civics": {
+            "NOR": {
+              "text": "civic_tooltip_not_eager_explorers",
+              "_comments": [
+                "# Or low tech starts"
+              ],
+              "value": "civic_machine_exploration_protocol"
+            }
+          },
+          "species_archetype": {},
+          "description": "origin_tooltip_fear_of_the_dark_effects",
+          "negative_description": "origin_tooltip_fear_of_the_dark_negative_effects",
+          "flags": {
+            "modifier": {
+              "ship_anomaly_generation_chance_mult": "0.1",
+              "ship_anomaly_research_speed_mult": "0.2",
+              "num_tech_alternatives_add": "-1",
+              "country_leader_pool_size": "-1"
+            },
+            "traits": {},
+            "blocks_random_machine_empire_generation": "yes",
+            "random_weight": {
+              "base": "5"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1688
+  },
+  "origin_slavers": {
+    "origin_slavers": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_slavers.dds",
+      "picture": "GFX_origin_remnants",
+      "playable": {
+        "always": "no # Non-player origin"
+      },
+      "advanced_start": "yes",
+      "description": "origin_tooltip_slavers_effects",
+      "modifier": {
+        "country_naval_cap_add": "50"
+      },
+      "random_weight": {
+        "base": "0"
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1740
+  },
+  "origin_legendary_leader": {
+    "origin_legendary_leader": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_under_one_rule.dds",
+      "picture": "GFX_origin_legendary_leader",
+      "max_once_global": "yes",
+      "playable": {
+        "host_has_dlc": "Galactic Paragons"
+      },
+      "possible": {
+        "authority": {
+          "species_archetype": {},
+          "description": "origin_tooltip_legendary_leader_effects",
+          "flags": {
+            "advanced_start": "yes",
+            "traits": {
+              "trait": "trait_perfected_genes"
+            },
+            "blocks_random_machine_empire_generation": "yes",
+            "random_weight": {
+              "base": "5"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1764
+  },
+  "origin_legendary_leader_death": {
+    "origin_legendary_leader_death": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_under_one_rule.dds",
+      "picture": "GFX_origin_legendary_leader",
+      "potential": {
+        "origin": {
+          "OR": {
+            "value": "origin_legendary_leader_imperial"
+          }
+        }
+      },
+      "description": "origin_tooltip_legendary_leader_effects",
+      "advanced_start": "yes",
+      "traits": {
+        "trait": "trait_perfected_genes"
+      },
+      "random_weight": {
+        "base": "0"
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1793
+  },
+  "origin_legendary_leader_imperial": {
+    "origin_legendary_leader_imperial": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_under_one_rule.dds",
+      "picture": "GFX_origin_legendary_leader",
+      "potential": {
+        "origin": {
+          "OR": {
+            "value": "origin_legendary_leader_imperial"
+          }
+        }
+      },
+      "description": "origin_tooltip_legendary_leader_effects",
+      "advanced_start": "yes",
+      "traits": {
+        "trait": "trait_perfected_genes"
+      },
+      "random_weight": {
+        "base": "0"
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1821
+  },
+  "origin_legendary_leader_dictatorial": {
+    "origin_legendary_leader_dictatorial": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_under_one_rule.dds",
+      "picture": "GFX_origin_legendary_leader",
+      "potential": {
+        "origin": {
+          "OR": {
+            "value": "origin_legendary_leader_imperial"
+          }
+        }
+      },
+      "description": "origin_tooltip_legendary_leader_effects",
+      "advanced_start": "yes",
+      "traits": {
+        "trait": "trait_perfected_genes"
+      },
+      "random_weight": {
+        "base": "0"
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1849
+  },
+  "origin_fruitful": {
+    "origin_fruitful": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_gardeners.dds",
+      "picture": "GFX_origin_fruitful",
+      "playable": {
+        "has_plantoids": "yes"
+      },
+      "possible": {
+        "authority": {
+          "ethics": {
+            "OR": {
+              "text": "civic_tooltip_hive_xenophile_or_pacifist",
+              "value": "ethic_gestalt_consciousness"
+            }
+          },
+          "species_class": {
+            "OR": {
+              "value": "PLANT"
+            }
+          },
+          "civics": {
+            "NOT": {}
+          },
+          "description": "origin_tooltip_fruitful_effects",
+          "flags": {
+            "random_weight": {
+              "base": "5"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1876
+  },
+  "origin_riftworld": {
+    "origin_riftworld": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_riftworld.dds",
+      "picture": "GFX_origin_riftworld",
+      "flags": {
+        "initializers": {
+          "playable": {
+            "has_astral_planes_dlc": "yes"
+          },
+          "possible": {},
+          "description": "origin_tooltip_riftworld_effects",
+          "modifier": {
+            "country_astral_rift_speed_mult": "0.25",
+            "country_astral_rift_fail_mult": "-0.5"
+          },
+          "max_once_global": "yes",
+          "random_weight": {
+            "base": "2"
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1919
+  },
+  "origin_cybernetic_creed": {
+    "origin_cybernetic_creed": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_cybernetic_creed.dds",
+      "picture": "GFX_origin_cybernetic_creed",
+      "flags": {
+        "playable": {
+          "has_machine_age_dlc": "yes"
+        },
+        "possible": {
+          "ethics": {
+            "OR": {
+              "text": "civic_tooltip_spiritualist",
+              "value": "ethic_fanatic_spiritualist"
+            },
+            "NOR": {
+              "text": "civic_tooltip_not_egalitarian",
+              "value": "ethic_fanatic_egalitarian"
+            }
+          },
+          "civics": {
+            "NOR": {
+              "value": "civic_natural_design"
+            }
+          },
+          "species_archetype": {},
+          "description": "origin_tooltip_cybernetic_creed_effects",
+          "advanced_start": "yes",
+          "max_once_global": "yes",
+          "blocks_random_machine_empire_generation": "yes",
+          "random_weight": {
+            "base": "5"
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1946
+  },
+  "origin_synthetic_fertility": {
+    "origin_synthetic_fertility": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origin_synthetic_fertility.dds",
+      "picture": "GFX_origin_synthetic_fertility",
+      "flags": {
+        "playable": {
+          "has_machine_age_dlc": "yes"
+        },
+        "possible": {
+          "ethics": {
+            "NOT": {
+              "NOR": {
+                "text": "civic_tooltip_not_spiritualist",
+                "value": "ethic_fanatic_spiritualist"
+              }
+            },
+            "civics": {
+              "NOR": {
+                "text": "civic_tooltip_not_eager_explorers",
+                "_comments": [
+                  "# Or low tech starts"
+                ],
+                "value": "civic_machine_exploration_protocol"
+              }
+            },
+            "species_archetype": {},
+            "traits": {
+              "trait": "trait_pathogenic_genes"
+            },
+            "description": "origin_tooltip_synthetic_fertility_effects",
+            "negative_description": "origin_tooltip_synthetic_fertility_negative_effects",
+            "advanced_start": "no",
+            "max_once_global": "yes",
+            "blocks_random_machine_empire_generation": "yes",
+            "random_weight": {
+              "base": "5"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 1994
+  },
+  "origin_arc_welders": {
+    "origin_arc_welders": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origin_arc_welders.dds",
+      "picture": "GFX_origin_arc_welders",
+      "max_once_global": "yes",
+      "flags": {
+        "initializers": {
+          "playable": {
+            "has_machine_age_dlc": "yes"
+          },
+          "possible": {
+            "species_archetype": {},
+            "description": "origin_tooltip_arc_builders_effects",
+            "negative_description": "origin_tooltip_arc_builders_negative_effects",
+            "modifier": {
+              "country_megastructure_build_cap_add": "1",
+              "arc_furnace_limit_add": "1"
+            },
+            "advanced_start": "yes",
+            "random_weight": {
+              "base": "2"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 2058
+  },
+  "origin_storm_chasers": {
+    "origin_storm_chasers": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origin_storm_chasers.dds",
+      "picture": "GFX_origin_storm_chasers",
+      "max_once_global": "yes",
+      "flags": {
+        "description": "origin_tooltip_storm_chasers_effects",
+        "playable": {
+          "has_cosmic_storms_dlc": "yes"
+        },
+        "possible": {
+          "civics": {
+            "NOR": {
+              "text": "civic_tooltip_not_genocidal",
+              "value": "civic_machine_terminator"
+            }
+          }
+        },
+        "modifier": {
+          "planet_storm_devastation_mult": "-0.33"
+        },
+        "random_weight": {
+          "base": "1"
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 2087
+  },
+  "origin_treasure_hunters": {
+    "origin_treasure_hunters": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origin_treasure_hunters.dds",
+      "picture": "GFX_origin_treasure_hunters",
+      "max_once_global": "yes",
+      "flags": {
+        "description": "origin_tooltip_treasure_hunters_effects",
+        "playable": {
+          "has_grand_archive_dlc": "yes"
+        },
+        "possible": {
+          "civics": {
+            "NOR": {
+              "text": "civic_tooltip_not_genocidal",
+              "value": "civic_machine_terminator"
+            }
+          }
+        },
+        "random_weight": {
+          "base": "1"
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 2118
+  },
+  "origin_primal_calling": {
+    "origin_primal_calling": {
+      "is_origin": "yes",
+      "icon": "gfx/interface/icons/origins/origins_primal_calling.dds",
+      "picture": "GFX_origin_primal_calling",
+      "flags": {
+        "playable": {
+          "has_grand_archive_dlc": "yes"
+        },
+        "possible": {
+          "species_archetype": {},
+          "description": "origin_tooltip_primal_calling_effects",
+          "modifier": {
+            "ship_damage_against_space_fauna_mult": "0.15",
+            "space_fauna_ship_armor_mult": "0.15",
+            "space_fauna_ship_speed_mult": "0.1",
+            "country_capture_chance_add": "0.15",
+            "gravity_snare_cooldown_mult": "-0.25",
+            "country_vivarium_max_capacity_mult": "0.25"
+          },
+          "max_once_global": "yes",
+          "random_weight": {
+            "base": "0",
+            "modifier": {
+              "add": "1",
+              "is_scope_valid": "yes",
+              "is_ai": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_origins.txt",
+    "_line_number": 2149
+  }
+}

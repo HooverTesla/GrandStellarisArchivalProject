@@ -1,0 +1,198 @@
+{
+  "ship_event": {
+    "ship_event": {
+      "id": "cstorms.205",
+      "title": "cstorms.205.name",
+      "desc": "cstorms.205.desc",
+      "event_chain": "cs_adAkkaria_chain",
+      "picture": "GFX_evt_ruined_system",
+      "show_sound": "event_scanner",
+      "location": "FROM",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "begin_event_chain": {
+          "event_chain": "cs_adAkkaria_chain"
+        }
+      },
+      "option": {
+        "name": "FASCINATING",
+        "tooltip": {
+          "begin_event_chain": {
+            "event_chain": "cs_adAkkaria_chain"
+          }
+        },
+        "owner": {
+          "add_monthly_resource_mult": {
+            "resource": "society_research",
+            "value": "@tier2researchreward",
+            "min": "@tier2researchmin",
+            "max": "@tier2researchmax"
+          }
+        },
+        "from": {
+          "create_archaeological_site": "site_adakkaria_the_propaganda_station"
+        }
+      }
+    },
+    "_source_file": "precursor_events_cosmic_storms.txt",
+    "_line_number": 1811
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "cstorms.2310",
+      "title": "cstorms.2310.name",
+      "desc": {
+        "trigger": {
+          "owner": {
+            "has_psionic_leader": "no"
+          },
+          "text": "cstorms.2310.desc.default"
+        },
+        "desc": {
+          "trigger": {
+            "owner": {
+              "has_psionic_leader": "no"
+            },
+            "text": "cstorms.2310.desc.authgen"
+          },
+          "picture": "GFX_evt_cosmic_storms_celebration",
+          "show_sound": "event_mystic_reveal",
+          "is_triggered_only": "yes",
+          "archaeology": "yes",
+          "immediate": {
+            "from": {},
+            "option": {
+              "name": "cstorms.2310.a",
+              "owner": {
+                "if": {
+                  "limit": {
+                    "large_artifact_reward": "yes"
+                  },
+                  "else": {
+                    "add_monthly_resource_mult": {
+                      "resource": "society_research",
+                      "value": "@tier5researchreward",
+                      "min": "@tier5researchmin",
+                      "max": "@tier5researchmax"
+                    }
+                  },
+                  "hidden_effect": {
+                    "country_event": {
+                      "id": "cstorms.2320",
+                      "days": "15"
+                    }
+                  }
+                }
+              },
+              "after": {
+                "from": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "precursor_events_cosmic_storms.txt",
+    "_line_number": 3846
+  },
+  "country_event": {
+    "country_event": {
+      "id": "cstorms.2365",
+      "title": "cstorms.2365.name",
+      "desc": {
+        "trigger": {
+          "is_gestalt": "yes"
+        },
+        "text": "cstorms.2365.desc.gestalt"
+      },
+      "picture": "GFX_evt_cosmic_storms_celebration",
+      "show_sound": "event_mystic_reveal",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "cstorms.2365.b",
+        "add_monthly_resource_mult": {
+          "resource": "unity",
+          "value": "@tier5unityreward",
+          "min": "@tier5unitymin",
+          "max": "@tier5unitymax"
+        }
+      }
+    },
+    "_source_file": "precursor_events_cosmic_storms.txt",
+    "_line_number": 4179
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "cstorms.2351",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_modifier": "has_patriotic_institute"
+      },
+      "immediate": {
+        "remove_modifier": "has_patriotic_institute",
+        "add_building": "building_adakkaria_patriotic_institute",
+        "start_patriotic_institute_spawn_storm_repeated": "yes",
+        "_comments": [
+          "# This is duplicated from the patriotic institute's 'on_built', because that doesn't trigger when using 'add_building'."
+        ]
+      }
+    },
+    "_source_file": "precursor_events_cosmic_storms.txt",
+    "_line_number": 4137
+  },
+  "system_event": {
+    "system_event": {
+      "id": "cstorms.2370",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "trigger": {
+        "has_star_flag": "adSul_system",
+        "exists": "from",
+        "_comments": [
+          "# A given storm can only trigger this once",
+          "# Requires colonized patriotic institute."
+        ],
+        "NOT": {
+          "from": {
+            "OR": {
+              "has_storm_flag": "storm_stormfall"
+            }
+          }
+        },
+        "any_system_planet": {
+          "has_building": "building_adakkaria_patriotic_institute",
+          "is_colony": "yes"
+        }
+      },
+      "immediate": {
+        "from": {
+          "set_storm_flag": "passed_patriotic_institute"
+        },
+        "random_system_planet": {
+          "limit": {
+            "has_building": "building_adakkaria_patriotic_institute",
+            "is_colony": "yes"
+          },
+          "if": {
+            "limit": {
+              "owner": {
+                "has_country_flag": "patriotic_institute_supercharged"
+              }
+            },
+            "make_pops_storm_fused_with_chance": {
+              "CHANCE": "@storm_fused_supercharged_chance"
+            }
+          },
+          "else": {
+            "make_pops_storm_fused_with_chance": {
+              "CHANCE": "@storm_fused_chance"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "precursor_events_cosmic_storms.txt",
+    "_line_number": 4244
+  }
+}

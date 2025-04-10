@@ -1,0 +1,62 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "diplomatic.1026",
+      "title": "diplomatic.1026.name",
+      "desc": "diplomatic.1026.desc",
+      "picture": "GFX_evt_unknown_ships",
+      "show_sound": "event_sensor_ping",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "diplomatic.1026.a"
+      }
+    },
+    "_source_file": "diplomatic_events_2.txt",
+    "_line_number": 992
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "diplomatic.1025",
+      "title": "diplomatic.1025.name",
+      "desc": "diplomatic.1025.desc",
+      "picture": "GFX_evt_unknown_ships",
+      "show_sound": "event_sensor_ping",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "any_controlled_fleet": {
+            "exists": "leader",
+            "orbit": {}
+          }
+        },
+        "immediate": {
+          "owner": {
+            "random_controlled_fleet": {
+              "limit": {
+                "exists": "leader",
+                "orbit": {},
+                "leader": {
+                  "save_event_target_as": "exercise_fleet"
+                }
+              },
+              "event_target:exercise_neighbor": {
+                "country_event": {}
+              },
+              "option": {
+                "name": "diplomatic.1025.a",
+                "owner": {
+                  "add_modifier": {
+                    "modifier": "fleet_maneuvers",
+                    "days": "3600"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "diplomatic_events_2.txt",
+    "_line_number": 946
+  }
+}

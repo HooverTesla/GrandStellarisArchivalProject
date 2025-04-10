@@ -1,0 +1,257 @@
+{
+  "MAM": {
+    "MAM": {
+      "archetype": "BIOLOGICAL",
+      "possible": {
+        "authority": {
+          "NOT": {
+            "value": "auth_machine_intelligence",
+            "text": "SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE"
+          }
+        }
+      },
+      "graphical_culture": "mammalian_01",
+      "move_pop_sound_effect": "moving_pop_confirmation",
+      "resources": {}
+    },
+    "_source_file": "01_base_species_classes.txt",
+    "_line_number": 15
+  },
+  "REP": {
+    "REP": {
+      "archetype": "BIOLOGICAL",
+      "possible": {
+        "authority": {
+          "NOT": {
+            "value": "auth_machine_intelligence",
+            "text": "SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE"
+          }
+        }
+      },
+      "graphical_culture": "reptilian_01",
+      "move_pop_sound_effect": "reptilian_pops_move",
+      "resources": {}
+    },
+    "_source_file": "01_base_species_classes.txt",
+    "_line_number": 33
+  },
+  "AVI": {
+    "AVI": {
+      "archetype": "BIOLOGICAL",
+      "possible": {
+        "authority": {
+          "NOT": {
+            "value": "auth_machine_intelligence",
+            "text": "SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE"
+          }
+        }
+      },
+      "graphical_culture": "avian_01",
+      "move_pop_sound_effect": "avian_pops_move",
+      "resources": {}
+    },
+    "_source_file": "01_base_species_classes.txt",
+    "_line_number": 51
+  },
+  "ART": {
+    "ART": {
+      "archetype": "BIOLOGICAL",
+      "possible": {
+        "authority": {
+          "NOT": {
+            "value": "auth_machine_intelligence",
+            "text": "SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE"
+          }
+        }
+      },
+      "graphical_culture": "arthropoid_01",
+      "move_pop_sound_effect": "arthopoid_pops_move",
+      "resources": {}
+    },
+    "_source_file": "01_base_species_classes.txt",
+    "_line_number": 69
+  },
+  "MOL": {
+    "MOL": {
+      "archetype": "BIOLOGICAL",
+      "possible": {
+        "authority": {
+          "NOT": {
+            "value": "auth_machine_intelligence",
+            "text": "SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE"
+          }
+        }
+      },
+      "graphical_culture": "molluscoid_01",
+      "move_pop_sound_effect": "molluscoid_pops_move"
+    },
+    "_source_file": "01_base_species_classes.txt",
+    "_line_number": 86
+  },
+  "FUN": {
+    "FUN": {
+      "archetype": "BIOLOGICAL",
+      "possible": {
+        "authority": {
+          "NOT": {
+            "value": "auth_machine_intelligence",
+            "text": "SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE"
+          }
+        }
+      },
+      "graphical_culture": "fungoid_01",
+      "move_pop_sound_effect": "fungoid_pops_move",
+      "resources": {}
+    },
+    "_source_file": "01_base_species_classes.txt",
+    "_line_number": 103
+  },
+  "PLANT": {
+    "PLANT": {
+      "archetype": "BIOLOGICAL",
+      "possible": {
+        "authority": {
+          "NOT": {
+            "value": "auth_machine_intelligence",
+            "text": "SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE"
+          }
+        }
+      },
+      "playable": {
+        "OR": {
+          "host_has_dlc": "Plantoids Species Pack",
+          "local_has_dlc": "Ancient Relics Story Pack"
+        }
+      },
+      "gender": "yes",
+      "graphical_culture": "plantoid_01",
+      "resources": {}
+    },
+    "_source_file": "01_base_species_classes.txt",
+    "_line_number": 120
+  },
+  "LITHOID": {
+    "LITHOID": {
+      "archetype": "LITHOID",
+      "playable": {
+        "has_lithoids": "yes"
+      },
+      "possible": {
+        "authority": {
+          "NOT": {
+            "value": "auth_machine_intelligence",
+            "text": "SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE"
+          }
+        }
+      },
+      "randomized": {
+        "has_lithoids": "yes"
+      },
+      "graphical_culture": "lithoid_01",
+      "move_pop_sound_effect": "reptilian_pops_move",
+      "resources": {
+        "trait": "trait_lithoid"
+      }
+    },
+    "_source_file": "01_base_species_classes.txt",
+    "_line_number": 143
+  },
+  "NECROID": {
+    "NECROID": {
+      "archetype": "BIOLOGICAL",
+      "playable": {
+        "has_necroids": "yes"
+      },
+      "possible": {
+        "authority": {
+          "NOT": {
+            "value": "auth_machine_intelligence",
+            "text": "SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE"
+          }
+        }
+      },
+      "randomized": {
+        "has_necroids": "yes"
+      },
+      "gender": "yes",
+      "graphical_culture": "necroid_01",
+      "move_pop_sound_effect": "molluscoid_pops_move",
+      "resources": {}
+    },
+    "_source_file": "01_base_species_classes.txt",
+    "_line_number": 167
+  },
+  "IMPERIAL": {
+    "IMPERIAL": {
+      "playable": {
+        "has_nemesis": "yes"
+      },
+      "randomized": {
+        "always": "no"
+      },
+      "graphical_culture": "nemesis_01"
+    },
+    "_source_file": "01_base_species_classes.txt",
+    "_line_number": 190
+  },
+  "AQUATIC": {
+    "AQUATIC": {
+      "archetype": "BIOLOGICAL",
+      "playable": {
+        "has_aquatics": "yes"
+      },
+      "possible": {
+        "authority": {
+          "NOT": {
+            "value": "auth_machine_intelligence",
+            "text": "SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE"
+          }
+        }
+      },
+      "randomized": {
+        "has_aquatics": "yes"
+      },
+      "gender": "yes",
+      "graphical_culture": "aquatic_01",
+      "move_pop_sound_effect": "molluscoid_pops_move",
+      "resources": {}
+    },
+    "_source_file": "01_base_species_classes.txt",
+    "_line_number": 202
+  },
+  "TOX": {
+    "TOX": {
+      "archetype": "BIOLOGICAL",
+      "playable": {
+        "has_toxoids": "yes"
+      },
+      "possible": {
+        "authority": {
+          "NOT": {
+            "value": "auth_machine_intelligence",
+            "text": "SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE"
+          }
+        }
+      },
+      "randomized": {
+        "has_toxoids": "yes"
+      },
+      "gender": "yes",
+      "graphical_culture": "toxoid_01",
+      "move_pop_sound_effect": "molluscoid_pops_move",
+      "resources": {}
+    },
+    "_source_file": "01_base_species_classes.txt",
+    "_line_number": 226
+  },
+  "CYBERNETIC": {
+    "CYBERNETIC": {
+      "randomized": {
+        "always": "no"
+      },
+      "graphical_culture": "cybernetics_01"
+    },
+    "_source_file": "01_base_species_classes.txt",
+    "_line_number": 248
+  }
+}

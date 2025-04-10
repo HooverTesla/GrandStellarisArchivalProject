@@ -1,0 +1,66 @@
+{
+  "starbase_level_orbital_ring_tier_1": {
+    "starbase_level_orbital_ring_tier_1": {
+      "ship_size": "orbital_ring_tier_1",
+      "next_level": "starbase_level_orbital_ring_tier_2",
+      "level_weight": "0",
+      "ai_weight": {
+        "potential_home_base": "yes",
+        "portrait": "GFX_orbital_ring_background",
+        "special_construction": "yes",
+        "downgrade_potential": {
+          "always": "no"
+        }
+      }
+    },
+    "_source_file": "02_orbital_ring_levels.txt",
+    "_line_number": 11
+  },
+  "starbase_level_orbital_ring_tier_2": {
+    "starbase_level_orbital_ring_tier_2": {
+      "ship_size": "orbital_ring_tier_2",
+      "next_level": "starbase_level_orbital_ring_tier_3",
+      "level_weight": "1",
+      "ai_weight": {
+        "potential_home_base": "yes",
+        "upgrade_possible": {
+          "planet": {
+            "OR": {
+              "has_planetary_ascension_tier >": "3",
+              "has_major_upgraded_capital": "yes"
+            }
+          }
+        },
+        "portrait": "GFX_orbital_ring_background",
+        "downgrade_potential": {
+          "always": "no"
+        }
+      }
+    },
+    "_source_file": "02_orbital_ring_levels.txt",
+    "_line_number": 24
+  },
+  "starbase_level_orbital_ring_tier_3": {
+    "starbase_level_orbital_ring_tier_3": {
+      "ship_size": "orbital_ring_tier_3",
+      "level_weight": "2",
+      "ai_weight": {
+        "potential_home_base": "yes",
+        "upgrade_possible": {
+          "planet": {
+            "OR": {
+              "has_planetary_ascension_tier >": "5",
+              "has_fully_upgraded_capital": "yes"
+            }
+          }
+        },
+        "portrait": "GFX_orbital_ring_background",
+        "downgrade_potential": {
+          "always": "no"
+        }
+      }
+    },
+    "_source_file": "02_orbital_ring_levels.txt",
+    "_line_number": 44
+  }
+}

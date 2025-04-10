@@ -1,0 +1,65 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "story.405",
+      "title": "story.405.name",
+      "desc": {
+        "trigger": {
+          "NOR": {
+            "has_ethic": "ethic_gestalt_consciousness"
+          }
+        },
+        "text": "story.405.desc"
+      },
+      "_comments": [
+        "# Spiri"
+      ],
+      "picture": "GFX_evt_fleet_evil",
+      "show_sound": "event_space_cloud",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "story.405.a.spiri",
+        "add_modifier": {
+          "modifier": "void_loops",
+          "days": "-1"
+        }
+      }
+    },
+    "_source_file": "story_events.txt",
+    "_line_number": 1708
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "story.330",
+      "title": "story.330.name",
+      "desc": {
+        "text": "story.330.desc",
+        "trigger": {
+          "exists": "event_target:drone_country",
+          "owner": {
+            "has_communications": "event_target:drone_country",
+            "NOT": {},
+            "from": {
+              "has_star_flag": "drone_home_system"
+            }
+          },
+          "immediate": {
+            "owner": {
+              "set_country_flag": "seen_drone_home"
+            }
+          },
+          "option": {
+            "name": "story.330.a"
+          }
+        },
+        "picture": "GFX_evt_mining_station",
+        "show_sound": "event_ancient_drone",
+        "location": "root",
+        "is_triggered_only": "yes"
+      }
+    },
+    "_source_file": "story_events.txt",
+    "_line_number": 1315
+  }
+}

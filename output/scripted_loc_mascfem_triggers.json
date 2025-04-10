@@ -1,0 +1,32 @@
+{
+  "loc_leader_masc": {
+    "loc_leader_masc": {
+      "NOT": {}
+    },
+    "_source_file": "scripted_loc_mascfem_triggers.txt",
+    "_line_number": -1
+  },
+  "loc_leader_fem": {
+    "loc_leader_fem": {
+      "gender": "female"
+    },
+    "_source_file": "scripted_loc_mascfem_triggers.txt",
+    "_line_number": 3
+  },
+  "loc_leader_genders": {
+    "loc_leader_genders": {
+      "OR": {
+        "gender": "male"
+      }
+    },
+    "_source_file": "scripted_loc_mascfem_triggers.txt",
+    "_line_number": 7
+  },
+  "loc_leader_nogenders": {
+    "loc_leader_nogenders": {
+      "loc_leader_genders": "no"
+    },
+    "_source_file": "scripted_loc_mascfem_triggers.txt",
+    "_line_number": 14
+  }
+}

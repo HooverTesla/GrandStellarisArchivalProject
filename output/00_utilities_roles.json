@@ -1,0 +1,31 @@
+{
+  "utility_component_template": {
+    "utility_component_template": {
+      "key": "STELLARITE_COMBAT_COMPUTER",
+      "size": "small",
+      "icon": "GFX_ship_part_computer_default",
+      "icon_frame": "1",
+      "power": "-20",
+      "resources": {
+        "category": "ship_components",
+        "cost": {
+          "alloys": "20"
+        }
+      },
+      "class_restriction": {
+        "size_restriction": {
+          "ship_behavior": "stellarite_default",
+          "ship_modifier": {
+            "ship_accuracy_add": "4",
+            "ship_fire_rate_mult": "0.10"
+          },
+          "ai_weight": {
+            "weight": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "00_utilities_roles.txt",
+    "_line_number": 1510
+  }
+}

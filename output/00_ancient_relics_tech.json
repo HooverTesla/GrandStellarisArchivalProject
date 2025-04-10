@@ -1,0 +1,598 @@
+{
+  "tech_arcane_deciphering": {
+    "tech_arcane_deciphering": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "weight": "@tier2weight3",
+        "is_rare": "yes",
+        "feature_flags": {},
+        "weight_modifier": {
+          "factor": "0.50",
+          "modifier": {
+            "factor": "0",
+            "NOT": {
+              "has_resource": {}
+            },
+            "modifier": {
+              "factor": "3",
+              "has_trait_in_council": {}
+            },
+            "inline_script": {
+              "script": "technologies/rare_technologies_weight_modifiers",
+              "TECHNOLOGY": "tech_arcane_deciphering"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 2
+  },
+  "tech_archeology_lab_ancrel": {
+    "tech_archeology_lab_ancrel": {
+      "area": "society",
+      "category": {
+        "tier": "2",
+        "cost": "@tier2cost1",
+        "is_reverse_engineerable": "no",
+        "is_rare": "yes",
+        "weight": "@tier2weight1",
+        "icon": "tech_archeology_lab",
+        "modifier": {
+          "ship_archaeological_site_clues_add": "2"
+        },
+        "weight_modifier": {
+          "modifier": {
+            "factor": "3",
+            "has_trait_in_council": {},
+            "modifier": {
+              "factor": "0",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_modifier": "curator_insight"
+                }
+              }
+            },
+            "prereqfor_desc": {
+              "component": {
+                "title": "TECH_UNLOCK_CURATOR_LAB_2_TITLE",
+                "desc": "TECH_UNLOCK_CURATOR_LAB_2_DESC"
+              }
+            },
+            "potential": {
+              "has_ancrel": "yes"
+            }
+          },
+          "inline_script": {
+            "script": "technologies/rare_technologies_weight_modifiers",
+            "TECHNOLOGY": "tech_archeology_lab_ancrel"
+          }
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 43
+  },
+  "tech_archaeostudies": {
+    "tech_archaeostudies": {
+      "cost": "@tier2cost1",
+      "area": "society",
+      "category": {
+        "tier": "2",
+        "is_rare": "yes",
+        "weight": "@tier2weight3",
+        "potential": {
+          "has_ancrel": "yes"
+        },
+        "weight_modifier": {
+          "inline_script": {
+            "script": "technologies/rare_technologies_weight_modifiers",
+            "TECHNOLOGY": "tech_archaeostudies"
+          },
+          "modifier": {
+            "factor": "3",
+            "OR": {
+              "has_country_flag": "origin_shoulders_closure",
+              "has_completed_precursor_research": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 93
+  },
+  "tech_secrets_cybrex": {
+    "tech_secrets_cybrex": {
+      "cost": "@tier4cost3",
+      "area": "society",
+      "category": {
+        "tier": "4",
+        "is_rare": "yes",
+        "ai_update_type": "all",
+        "weight": "0",
+        "potential": {
+          "has_ancrel": "yes"
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 136
+  },
+  "tech_secrets_league": {
+    "tech_secrets_league": {
+      "cost": "@tier4cost3",
+      "area": "society",
+      "category": {
+        "tier": "4",
+        "is_rare": "yes",
+        "ai_update_type": "all",
+        "weight": "0",
+        "potential": {
+          "has_ancrel": "yes"
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 150
+  },
+  "tech_secrets_irassian": {
+    "tech_secrets_irassian": {
+      "cost": "@tier4cost3",
+      "area": "society",
+      "category": {
+        "tier": "4",
+        "is_rare": "yes",
+        "ai_update_type": "all",
+        "weight": "0",
+        "potential": {
+          "has_ancrel": "yes"
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 164
+  },
+  "tech_secrets_vultaum": {
+    "tech_secrets_vultaum": {
+      "cost": "@tier4cost3",
+      "area": "society",
+      "category": {
+        "tier": "4",
+        "is_rare": "yes",
+        "ai_update_type": "all",
+        "weight": "0",
+        "potential": {
+          "has_ancrel": "yes"
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 178
+  },
+  "tech_secrets_yuht": {
+    "tech_secrets_yuht": {
+      "cost": "@tier4cost3",
+      "area": "society",
+      "category": {
+        "tier": "4",
+        "is_rare": "yes",
+        "ai_update_type": "all",
+        "weight": "0",
+        "potential": {
+          "has_ancrel": "yes"
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 192
+  },
+  "tech_secrets_baol": {
+    "tech_secrets_baol": {
+      "cost": "@tier4cost3",
+      "area": "society",
+      "category": {
+        "tier": "4",
+        "is_rare": "yes",
+        "ai_update_type": "all",
+        "weight": "0",
+        "potential": {
+          "has_ancrel": "yes"
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 206
+  },
+  "tech_secrets_zroni": {
+    "tech_secrets_zroni": {
+      "cost": "@tier4cost3",
+      "area": "society",
+      "category": {
+        "tier": "4",
+        "is_rare": "yes",
+        "ai_update_type": "all",
+        "weight": "0",
+        "potential": {
+          "has_ancrel": "yes"
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 220
+  },
+  "tech_archaeoshield": {
+    "tech_archaeoshield": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "category": {
+        "tier": "3",
+        "prerequisites": {
+          "is_rare": "yes",
+          "ai_update_type": "all",
+          "weight": "@tier4weight3",
+          "potential": {
+            "has_ancrel": "yes"
+          },
+          "weight_modifier": {
+            "inline_script": "technology/archaeotech_weight",
+            "modifier": {
+              "factor": "0",
+              "has_ancrel": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 239
+  },
+  "tech_archaeoarmor": {
+    "tech_archaeoarmor": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "category": {
+        "tier": "3",
+        "prerequisites": {
+          "is_rare": "yes",
+          "ai_update_type": "all",
+          "weight": "@tier4weight3",
+          "potential": {
+            "has_ancrel": "yes"
+          },
+          "weight_modifier": {
+            "inline_script": "technology/archaeotech_weight",
+            "modifier": {
+              "factor": "0",
+              "has_ancrel": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 281
+  },
+  "tech_archaeo_detection_scrambler": {
+    "tech_archaeo_detection_scrambler": {
+      "cost": "@tier4cost2",
+      "area": "society",
+      "category": {
+        "tier": "4",
+        "prerequisites": {
+          "is_rare": "yes",
+          "ai_update_type": "all",
+          "weight": "@tier5weight3",
+          "potential": {
+            "has_ancrel": "yes"
+          },
+          "prereqfor_desc": {
+            "hide_prereq_for_desc": "component",
+            "custom": {
+              "title": "TECH_UNLOCK_SCRAMBLER_TITLE",
+              "desc": "TECH_UNLOCK_SCRAMBLER_DESC"
+            }
+          },
+          "weight_modifier": {
+            "inline_script": "technology/archaeotech_weight",
+            "modifier": {
+              "factor": "0",
+              "has_ancrel": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 324
+  },
+  "tech_archaeo_titan_beam": {
+    "tech_archaeo_titan_beam": {
+      "cost": "@tier4cost2",
+      "area": "society",
+      "category": {
+        "tier": "4",
+        "prerequisites": {
+          "is_rare": "yes",
+          "ai_update_type": "all",
+          "weight": "@tier4weight3",
+          "potential": {
+            "has_ancrel": "yes"
+          },
+          "weight_modifier": {
+            "inline_script": "technology/archaeotech_weight",
+            "modifier": {
+              "factor": "0",
+              "has_ancrel": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 373
+  },
+  "tech_archaeo_pk_devolving_beam": {
+    "tech_archaeo_pk_devolving_beam": {
+      "area": "society",
+      "cost": "@tier5cost3",
+      "tier": "5",
+      "is_rare": "yes",
+      "is_reverse_engineerable": "no",
+      "category": {
+        "ai_update_type": "military",
+        "weight": "@tier5weight3",
+        "potential": {
+          "host_has_dlc": "Apocalypse",
+          "has_ancrel": "yes"
+        },
+        "weight_modifier": {
+          "factor": "0.50",
+          "inline_script": "technology/archaeotech_weight",
+          "modifier": {
+            "factor": "0",
+            "has_ancrel": "no"
+          }
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 415
+  },
+  "tech_archaeo_mass_drivers": {
+    "tech_archaeo_mass_drivers": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "category": {
+        "tier": "3",
+        "prerequisites": {
+          "is_rare": "yes",
+          "ai_update_type": "all",
+          "weight": "@tier4weight3",
+          "potential": {
+            "has_ancrel": "yes"
+          },
+          "weight_modifier": {
+            "inline_script": "technology/archaeotech_weight",
+            "modifier": {
+              "factor": "0",
+              "has_ancrel": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 459
+  },
+  "tech_archaeo_lasers": {
+    "tech_archaeo_lasers": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "category": {
+        "tier": "3",
+        "prerequisites": {
+          "is_rare": "yes",
+          "ai_update_type": "all",
+          "weight": "@tier4weight3",
+          "potential": {
+            "has_ancrel": "yes"
+          },
+          "weight_modifier": {
+            "inline_script": "technology/archaeotech_weight",
+            "modifier": {
+              "factor": "0",
+              "has_ancrel": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 501
+  },
+  "tech_archaeo_point_defence": {
+    "tech_archaeo_point_defence": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "category": {
+        "tier": "3",
+        "prerequisites": {
+          "is_rare": "yes",
+          "ai_update_type": "all",
+          "weight": "@tier4weight3",
+          "potential": {
+            "has_ancrel": "yes"
+          },
+          "weight_modifier": {
+            "inline_script": "technology/archaeotech_weight",
+            "modifier": {
+              "factor": "0",
+              "has_ancrel": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 543
+  },
+  "tech_archaeo_missiles": {
+    "tech_archaeo_missiles": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "category": {
+        "tier": "3",
+        "prerequisites": {
+          "is_rare": "yes",
+          "ai_update_type": "all",
+          "weight": "@tier4weight3",
+          "potential": {
+            "has_ancrel": "yes"
+          },
+          "weight_modifier": {
+            "inline_script": "technology/archaeotech_weight",
+            "modifier": {
+              "factor": "0",
+              "has_ancrel": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 585
+  },
+  "tech_archaeo_mass_accelerator": {
+    "tech_archaeo_mass_accelerator": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "category": {
+        "tier": "3",
+        "prerequisites": {
+          "is_rare": "yes",
+          "ai_update_type": "all",
+          "weight": "@tier4weight3",
+          "potential": {
+            "has_ancrel": "yes"
+          },
+          "weight_modifier": {
+            "inline_script": "technology/archaeotech_weight",
+            "modifier": {
+              "factor": "0",
+              "has_ancrel": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 627
+  },
+  "tech_archaeo_strike_crafts": {
+    "tech_archaeo_strike_crafts": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "category": {
+        "tier": "3",
+        "prerequisites": {
+          "is_rare": "yes",
+          "ai_update_type": "all",
+          "weight": "@tier4weight3",
+          "potential": {
+            "has_ancrel": "yes"
+          },
+          "weight_modifier": {
+            "inline_script": "technology/archaeotech_weight",
+            "modifier": {
+              "factor": "0",
+              "has_ancrel": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 669
+  },
+  "tech_archaeo_rampart": {
+    "tech_archaeo_rampart": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "category": {
+        "tier": "3",
+        "prerequisites": {
+          "is_rare": "yes",
+          "ai_update_type": "all",
+          "weight": "@tier4weight3",
+          "potential": {
+            "has_ancrel": "yes"
+          },
+          "weight_modifier": {
+            "inline_script": "technology/archaeotech_weight",
+            "modifier": {
+              "factor": "0",
+              "has_ancrel": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 715
+  },
+  "tech_archaeo_overcharger": {
+    "tech_archaeo_overcharger": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "category": {
+        "tier": "3",
+        "prerequisites": {
+          "is_rare": "yes",
+          "ai_update_type": "all",
+          "weight": "@tier4weight3",
+          "potential": {
+            "has_ancrel": "yes"
+          },
+          "weight_modifier": {
+            "inline_script": "technology/archaeotech_weight",
+            "modifier": {
+              "factor": "0",
+              "has_ancrel": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 757
+  },
+  "tech_archaeo_refinery": {
+    "tech_archaeo_refinery": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "category": {
+        "tier": "3",
+        "prerequisites": {
+          "is_rare": "yes",
+          "ai_update_type": "all",
+          "weight": "@tier4weight3",
+          "potential": {
+            "has_ancrel": "yes"
+          },
+          "weight_modifier": {
+            "inline_script": "technology/archaeotech_weight",
+            "modifier": {
+              "factor": "0",
+              "has_ancrel": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_ancient_relics_tech.txt",
+    "_line_number": 799
+  }
+}

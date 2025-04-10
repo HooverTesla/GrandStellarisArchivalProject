@@ -1,0 +1,235 @@
+{
+  "hyper_relay": {
+    "hyper_relay": {
+      "entity": "hyper_relay_entity",
+      "construction_entity": "hyper_relay_entity",
+      "portrait": "GFX_megastructure_hyper_relay_background",
+      "place_entity_on_planet_plane": "no",
+      "build_outside_gravity_well": "yes",
+      "show_galactic_map_icon": "no",
+      "show_in_outliner": "no",
+      "build_time": "360",
+      "resources": {
+        "category": "megastructures_hyper_relay",
+        "cost": {
+          "trigger": {
+            "NOT": {},
+            "alloys": "500",
+            "rare_crystals": "100",
+            "influence": "25"
+          },
+          "upkeep": {
+            "energy": "2"
+          }
+        },
+        "construction_blocks_and_blocked_by": "self_type",
+        "build_megastructure_no_cost_localization_key": "FLASH_FORGE_MEGASTRUCTURE",
+        "custom_tooltip_requirements": "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_OUTSIDE_GRAVITY_WELL",
+        "dismantle_cost": {
+          "category": "megastructures_hyper_relay",
+          "cost": {
+            "energy": "500"
+          }
+        },
+        "dismantle_time": "360",
+        "dismantle_potential": {
+          "always": "yes"
+        },
+        "dismantle_possible": {
+          "can_dismantle_megastructure": {
+            "TECH": "tech_hyper_relays"
+          }
+        },
+        "on_dismantle_complete": {
+          "from": {
+            "add_resource": {
+              "alloys": "500",
+              "rare_crystals": "100",
+              "mult": "modifier:megastructure_dismantle_refund_mult"
+            }
+          }
+        },
+        "potential": {
+          "has_technology": "tech_hyper_relays"
+        },
+        "possible": {
+          "hidden_trigger": {
+            "exists": "starbase"
+          },
+          "custom_tooltip": {
+            "fail_text": "requires_inside_border_or_subject",
+            "OR": {
+              "is_inside_border": "from",
+              "AND": {
+                "exists": "owner",
+                "owner": {
+                  "is_subject": "yes",
+                  "overlord": {}
+                }
+              }
+            },
+            "custom_tooltip": {
+              "fail_text": "requires_surveyed_system\" # or is in my subject's territory",
+              "OR": {
+                "NOT": {
+                  "any_system_planet": {
+                    "is_surveyed": {
+                      "who": "prev.from",
+                      "status": "no"
+                    }
+                  }
+                },
+                "AND": {
+                  "exists": "owner",
+                  "owner": {
+                    "is_subject": "yes",
+                    "overlord": {}
+                  }
+                }
+              },
+              "custom_tooltip": {
+                "fail_text": "requires_technology_hyper_relays",
+                "from": {},
+                "custom_tooltip": {
+                  "fail_text": "requires_hyperlane",
+                  "count_neighbor_system": {}
+                }
+              },
+              "placement_rules": {},
+              "_comments": [
+                "# root = system",
+                "# from = country"
+              ],
+              "ai_weight": {
+                "factor": "5",
+                "modifier": {
+                  "factor": "0.2",
+                  "from": {
+                    "is_gestalt": "no"
+                  },
+                  "is_capital_system": "no",
+                  "has_trade_route": "no"
+                },
+                "_comments": [
+                  "# non-gestalt empires will prefer building along trade routes, since those connect colonies to the capital",
+                  "# this may occasionally catch other empire's trade routes that clip our territory, but pirates will eventually appear there so it's fine"
+                ]
+              },
+              "bypass_type": "relay_bypass",
+              "on_build_queued": {
+                "fromfrom": {
+                  "fleet_event": {}
+                },
+                "on_build_unqueued": {
+                  "fromfrom": {
+                    "fleet_event": {}
+                  },
+                  "on_build_complete": {
+                    "fromfromfrom": {
+                      "fleet_event": {},
+                      "from": {
+                        "country_event": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "14_hyper_relay.txt",
+    "_line_number": 15
+  },
+  "hyper_relay_ruined": {
+    "hyper_relay_ruined": {
+      "entity": "hyper_relay_01_destroyed_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "place_entity_on_planet_plane": "no",
+      "build_outside_gravity_well": "yes",
+      "show_galactic_map_icon": "no",
+      "_comments": [
+        "# not a valid bypass. bypass_type = relay_bypass"
+      ],
+      "show_in_outliner": "no",
+      "construction_blocks_and_blocked_by": "self_type",
+      "potential": {
+        "always": "no"
+      }
+    },
+    "_source_file": "14_hyper_relay.txt",
+    "_line_number": 182
+  },
+  "hyper_relay_restored": {
+    "hyper_relay_restored": {
+      "entity": "hyper_relay_entity",
+      "construction_entity": "hyper_relay_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "place_entity_on_planet_plane": "no",
+      "show_galactic_map_icon": "no",
+      "_comments": [
+        "# build_outside_gravity_well = yes"
+      ],
+      "show_in_outliner": "no",
+      "bypass_type": "relay_bypass",
+      "potential": {
+        "has_technology": "tech_hyper_relays"
+      },
+      "possible": {
+        "custom_tooltip": {
+          "fail_text": "requires_tech_hyper_drive_2",
+          "from": {}
+        },
+        "upgrade_from": {},
+        "build_time": "180",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "500",
+            "rare_crystals": "100",
+            "energy": "500"
+          },
+          "upkeep": {
+            "energy": "2"
+          }
+        },
+        "dismantle_time": "360",
+        "dismantle_potential": {
+          "always": "yes"
+        },
+        "dismantle_possible": {
+          "can_dismantle_megastructure": {
+            "TECH": "tech_hyper_relays"
+          }
+        },
+        "on_dismantle_complete": {
+          "from": {
+            "add_resource": {
+              "alloys": "500",
+              "rare_crystals": "100",
+              "mult": "modifier:megastructure_dismantle_refund_mult"
+            }
+          }
+        },
+        "construction_blocks_and_blocked_by": "self_type",
+        "on_build_start": {
+          "fromfrom": {
+            "set_graphical_culture": "root.from"
+          }
+        },
+        "on_build_complete": {
+          "if": {
+            "limit": {
+              "from": {
+                "country_event": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "14_hyper_relay.txt",
+    "_line_number": 205
+  }
+}

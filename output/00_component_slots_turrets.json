@@ -1,0 +1,133 @@
+{
+  "point_defence_turret": {
+    "point_defence_turret": {
+      "size": "point_defence",
+      "component": "weapon",
+      "entities": {
+        "weapon_type_kinetic": "turret_point_defence_entity",
+        "weapon_type_energy": "turret_point_defence_entity"
+      }
+    },
+    "_source_file": "00_component_slots_turrets.txt",
+    "_line_number": 0
+  },
+  "invisible_point_defence_turret": {
+    "invisible_point_defence_turret": {
+      "size": "point_defence",
+      "component": "weapon"
+    },
+    "_source_file": "00_component_slots_turrets.txt",
+    "_line_number": 9
+  },
+  "small_turret": {
+    "small_turret": {
+      "size": "small",
+      "component": "weapon",
+      "entities": {
+        "weapon_type_kinetic": "small_kinetic_gun_entity",
+        "weapon_type_energy": "small_laser_gun_entity",
+        "weapon_type_explosive": "turret_missile_small_entity"
+      }
+    },
+    "_source_file": "00_component_slots_turrets.txt",
+    "_line_number": 14
+  },
+  "invisible_small_turret": {
+    "invisible_small_turret": {
+      "size": "small",
+      "component": "weapon"
+    },
+    "_source_file": "00_component_slots_turrets.txt",
+    "_line_number": 24
+  },
+  "medium_turret": {
+    "medium_turret": {
+      "size": "medium",
+      "component": "weapon",
+      "entities": {
+        "weapon_type_kinetic": "medium_kinetic_gun_entity",
+        "weapon_type_energy": "medium_laser_gun_entity",
+        "weapon_type_explosive": "turret_missile_medium_entity"
+      }
+    },
+    "_source_file": "00_component_slots_turrets.txt",
+    "_line_number": 29
+  },
+  "invisible_medium_turret": {
+    "invisible_medium_turret": {
+      "size": "medium",
+      "component": "weapon"
+    },
+    "_source_file": "00_component_slots_turrets.txt",
+    "_line_number": 39
+  },
+  "large_turret": {
+    "large_turret": {
+      "size": "large",
+      "component": "weapon",
+      "entities": {
+        "weapon_type_kinetic": "large_kinetic_gun_entity",
+        "weapon_type_energy": "large_laser_gun_entity"
+      }
+    },
+    "_source_file": "00_component_slots_turrets.txt",
+    "_line_number": 44
+  },
+  "invisible_large_turret": {
+    "invisible_large_turret": {
+      "size": "large",
+      "component": "weapon"
+    },
+    "_source_file": "00_component_slots_turrets.txt",
+    "_line_number": 53
+  },
+  "extra_large_turret": {
+    "extra_large_turret": {
+      "size": "extra_large",
+      "component": "weapon",
+      "entities": {
+        "weapon_type_kinetic": "turret_xl_entity",
+        "weapon_type_energy": "turret_xl_entity"
+      }
+    },
+    "_source_file": "00_component_slots_turrets.txt",
+    "_line_number": 58
+  },
+  "invisible_titanic_turret": {
+    "invisible_titanic_turret": {
+      "size": "titanic",
+      "component": "weapon"
+    },
+    "_source_file": "00_component_slots_turrets.txt",
+    "_line_number": 67
+  },
+  "invisible_missile_turret": {
+    "invisible_missile_turret": {
+      "size": "torpedo",
+      "component": "weapon"
+    },
+    "_source_file": "00_component_slots_turrets.txt",
+    "_line_number": 72
+  },
+  "medium_missile_turret": {
+    "medium_missile_turret": {
+      "size": "torpedo",
+      "component": "weapon",
+      "entities": {
+        "weapon_type_explosive": "turret_missile_medium_entity",
+        "weapon_type_kinetic": "medium_kinetic_gun_entity\" # Failsafe for saved \"invalid designs",
+        "weapon_type_energy": "medium_laser_gun_entity\" # Failsafe for saved \"invalid designs"
+      }
+    },
+    "_source_file": "00_component_slots_turrets.txt",
+    "_line_number": 77
+  },
+  "invisible_any": {
+    "invisible_any": {
+      "size": "any",
+      "component": "any"
+    },
+    "_source_file": "00_component_slots_turrets.txt",
+    "_line_number": 87
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "abandoned_gateways_01": {
+    "abandoned_gateways_01": {
+      "class": "rl_standard_stars",
+      "flags": {
+        "usage": "misc_system_init",
+        "usage_odds": {
+          "base": "100",
+          "modifier": {
+            "factor": "0\t\t\t\t\t\t\t\t\t\t# we don't want gateways too close to each other",
+            "any_neighbor_system": {
+              "has_megastructure": "gateway_ruined"
+            }
+          }
+        },
+        "max_instances": "15",
+        "scaled_spawn_chance": "5",
+        "scaled_spawn_settings": "num_gateways\t\t\t\t\t# scales both the spawn_chance and the max_instances based on the settings value",
+        "planet": {
+          "count": "1",
+          "class": "star",
+          "orbit_distance": "0",
+          "orbit_angle": "1",
+          "size": {
+            "has_ring": "no"
+          },
+          "change_orbit": "45",
+          "planet": {
+            "count": {
+              "orbit_distance": "20",
+              "orbit_angle": {
+                "change_orbit": "@base_moon_distance",
+                "moon": {
+                  "count": {
+                    "orbit_angle": {
+                      "orbit_distance": "5"
+                    }
+                  },
+                  "init_effect": {
+                    "spawn_megastructure": {
+                      "type": "gateway_ruined",
+                      "random_pos": "yes",
+                      "orbit_angle": "360\t\t# range of the randomization"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "apocalypse_initializers.txt",
+    "_line_number": 11
+  }
+}

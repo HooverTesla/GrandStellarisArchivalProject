@@ -1,0 +1,262 @@
+{
+  "succession_power_economy": {
+    "succession_power_economy": {
+      "potential": {
+        "OR": {
+          "has_federation_law": "succession_type_strongest_hegemony"
+        }
+      },
+      "allow": {
+        "custom_tooltip": {
+          "NOT": {
+            "AND": {
+              "NOT": {
+                "has_modifier": "federation_law_category_succession_power_cooldown",
+                "has_any_federation_law_in_category": "law_category_succession_power"
+              }
+            }
+          }
+        },
+        "on_enact": {
+          "set_federation_succession_type": "strongest",
+          "if": {
+            "limit": {
+              "add_modifier": {
+                "modifier": "federation_law_category_succession_power_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-5"
+          },
+          "ai_weight": {
+            "base": "26",
+            "_comments": [
+              "#Behaviour-specific"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_current_president_under_this_law",
+              "add": "100",
+              "is_federation_leader": "yes",
+              "federation": {},
+              "modifier": {
+                "desc": "federation_acceptance_leader_would_lose",
+                "add": "-100",
+                "is_federation_leader": "yes",
+                "federation": {
+                  "any_member": {
+                    "relative_power": {
+                      "who": "from",
+                      "category": "economy"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "14_succession_power.txt",
+    "_line_number": 3
+  },
+  "succession_power_diplomatic_weight": {
+    "succession_power_diplomatic_weight": {
+      "potential": {
+        "OR": {
+          "has_federation_law": "succession_type_strongest_hegemony"
+        }
+      },
+      "allow": {
+        "custom_tooltip": {
+          "NOT": {
+            "AND": {
+              "NOT": {
+                "has_modifier": "federation_law_category_succession_power_cooldown",
+                "has_any_federation_law_in_category": "law_category_succession_power"
+              }
+            }
+          }
+        },
+        "on_enact": {
+          "set_federation_succession_type": "diplomatic_weight",
+          "if": {
+            "limit": {
+              "add_modifier": {
+                "modifier": "federation_law_category_succession_power_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-5"
+          },
+          "ai_weight": {
+            "base": "26",
+            "_comments": [
+              "#Behaviour-specific"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_trade_league",
+              "add": "25",
+              "federation": {
+                "has_federation_type": "trade_federation",
+                "NOT": {}
+              },
+              "modifier": {
+                "desc": "federation_acceptance_current_president_under_this_law",
+                "add": "100",
+                "is_federation_leader": "yes",
+                "federation": {},
+                "modifier": {
+                  "desc": "federation_acceptance_leader_would_lose",
+                  "add": "-100",
+                  "is_federation_leader": "yes",
+                  "federation": {
+                    "any_member": {
+                      "relative_power": {
+                        "who": "from",
+                        "category": "all"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "14_succession_power.txt",
+    "_line_number": 80
+  },
+  "succession_power_tech": {
+    "succession_power_tech": {
+      "potential": {
+        "OR": {
+          "has_federation_law": "succession_type_strongest_hegemony"
+        },
+        "host_has_dlc": "Federations"
+      },
+      "allow": {
+        "custom_tooltip": {
+          "NOT": {
+            "AND": {
+              "NOT": {
+                "has_modifier": "federation_law_category_succession_power_cooldown",
+                "has_any_federation_law_in_category": "law_category_succession_power"
+              }
+            }
+          }
+        },
+        "on_enact": {
+          "set_federation_succession_type": "tech",
+          "if": {
+            "limit": {
+              "add_modifier": {
+                "modifier": "federation_law_category_succession_power_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-5"
+          },
+          "ai_weight": {
+            "base": "26",
+            "_comments": [
+              "#Behaviour-specific"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_research_federation",
+              "add": "50",
+              "federation": {},
+              "modifier": {
+                "desc": "federation_acceptance_current_president_under_this_law",
+                "add": "100",
+                "is_federation_leader": "yes",
+                "federation": {},
+                "modifier": {
+                  "add": "-100",
+                  "desc": "federation_acceptance_leader_would_lose",
+                  "is_federation_leader": "yes",
+                  "federation": {
+                    "any_member": {
+                      "relative_power": {
+                        "who": "from",
+                        "category": "technology"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "14_succession_power.txt",
+    "_line_number": 175
+  },
+  "succession_power_fleet": {
+    "succession_power_fleet": {
+      "potential": {
+        "OR": {
+          "has_federation_law": "succession_type_strongest_hegemony"
+        },
+        "host_has_dlc": "Federations"
+      },
+      "allow": {
+        "custom_tooltip": {
+          "NOT": {
+            "AND": {
+              "NOT": {
+                "has_modifier": "federation_law_category_succession_power_cooldown",
+                "has_any_federation_law_in_category": "law_category_succession_power"
+              }
+            }
+          }
+        },
+        "on_enact": {
+          "set_federation_succession_type": "fleet",
+          "if": {
+            "limit": {
+              "add_modifier": {
+                "modifier": "federation_law_category_succession_power_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-5"
+          },
+          "ai_weight": {
+            "base": "26",
+            "_comments": [
+              "#Behaviour-specific"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_military_federation",
+              "add": "50",
+              "federation": {},
+              "modifier": {
+                "desc": "federation_acceptance_current_president_under_this_law",
+                "add": "100",
+                "is_federation_leader": "yes",
+                "federation": {},
+                "modifier": {
+                  "desc": "federation_acceptance_leader_would_lose",
+                  "add": "-100",
+                  "is_federation_leader": "yes",
+                  "federation": {
+                    "any_member": {
+                      "relative_power": {
+                        "who": "from",
+                        "category": "fleet"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "14_succession_power.txt",
+    "_line_number": 258
+  }
+}

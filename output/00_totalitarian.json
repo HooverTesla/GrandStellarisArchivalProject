@@ -1,0 +1,384 @@
+{
+  "totalitarian": {
+    "totalitarian": {
+      "election_header": "GFX_faction_header_yellow",
+      "guiding_ethic": "ethic_authoritarian",
+      "visual_ethic": "totalitarian_visual_ethic",
+      "unique": "yes",
+      "support_multiplier": "1",
+      "resources": {
+        "category": "pop_factions",
+        "produces": {
+          "unity": "@faction_base_output"
+        }
+      },
+      "extortion_resource": {
+        "category": "pop_factions",
+        "produces": {
+          "engineering_research": "@faction_base_output",
+          "mult": "@faction_extortion_research_ratio"
+        }
+      },
+      "is_potential": {
+        "is_faction_allowed": "yes"
+      },
+      "parameters": {
+        "empire": {
+          "type": "country",
+          "valid_objects": {
+            "is_same_value": "root"
+          }
+        }
+      },
+      "can_join_pre_triggers": {
+        "is_enslaved": "no",
+        "is_being_purged": "no"
+      },
+      "can_join_faction": {
+        "is_shackled_robot": "no",
+        "can_think": "yes"
+      },
+      "attraction": {
+        "base": "150",
+        "modifier": {
+          "factor": "1.25",
+          "exists": "from",
+          "from": {
+            "exists": "leader",
+            "leader": {}
+          },
+          "modifier": {
+            "factor": "0.75",
+            "exists": "from",
+            "from": {
+              "NOT": {}
+            },
+            "_comments": [
+              "# Should really check for citizenship instead",
+              "# DEMAND: Faction Outraged (by a GalCom Resolution)",
+              "# DEMAND: Faction Pleased (by a GalCom Resolution)"
+            ],
+            "modifier": {
+              "factor": "0.25",
+              "NOT": {}
+            },
+            "leader": {
+              "base": "100",
+              "modifier": {
+                "factor": "0.0",
+                "is_event_leader": "yes"
+              }
+            },
+            "inline_script": {
+              "script": "pop_faction_types/demand_faction_pleased",
+              "FLAG": "galcom_resolution_passed_pro_totalitarian"
+            },
+            "demand": {
+              "title": "TOTALITARIAN_STRATIFICATION",
+              "unfulfilled_title": "TOTALITARIAN_NO_STRATIFICATION",
+              "desc": "TOTALITARIAN_STRATIFICATION_DESC",
+              "fulfilled_effect": "10",
+              "unfulfilled_effect": "-20",
+              "potential": {
+                "exists": "owner"
+              },
+              "trigger": {
+                "owner": {
+                  "OR": {
+                    "NOT": {
+                      "any_owned_species": {
+                        "NOR": {
+                          "has_living_standard": {
+                            "has_living_standard": {
+                              "has_living_standard": {}
+                            }
+                          },
+                          "any_owned_species": {
+                            "OR": {
+                              "has_citizenship_type": {
+                                "has_citizenship_type": {
+                                  "has_citizenship_type": {}
+                                },
+                                "has_civic": "civic_slaver_guilds"
+                              }
+                            }
+                          }
+                        },
+                        "demand": {
+                          "title": "TOTALITARIAN_BENEVOLENT_SUBJUGATION_POLICY",
+                          "unfulfilled_title": "TOTALITARIAN_NO_BENEVOLENT_SUBJUGATION_POLICY",
+                          "desc": "TOTALITARIAN_BENEVOLENT_SUBJUGATION_POLICY_DESC",
+                          "unfulfilled_effect": "-10",
+                          "fulfilled_effect": "0.001",
+                          "potential": {
+                            "exists": "owner",
+                            "owner": {
+                              "is_subject": "no",
+                              "has_policy_flag": "benevolent_terms"
+                            }
+                          },
+                          "trigger": {
+                            "owner": {
+                              "NOT": {}
+                            }
+                          },
+                          "demand": {
+                            "title": "TOTALITARIAN_OPPRESSIVE_SUBJUGATION_POLICY",
+                            "unfulfilled_title": "TOTALITARIAN_ADOPT_OPPRESSIVE_SUBJUGATION_POLICY",
+                            "desc": "TOTALITARIAN_OPPRESSIVE_SUBJUGATION_POLICY_DESC",
+                            "fulfilled_effect": "10",
+                            "unfulfilled_effect": "-0.001",
+                            "potential": {
+                              "exists": "owner",
+                              "owner": {
+                                "is_subject": "no",
+                                "NOT": {}
+                              },
+                              "trigger": {
+                                "owner": {
+                                  "has_policy_flag": "oppressive_terms"
+                                }
+                              }
+                            },
+                            "demand": {
+                              "title": "TOTALITARIAN_FEDERATION",
+                              "unfulfilled_title": "TOTALITARIAN_FEDERATION_NOT_HEGEMONY",
+                              "desc": "TOTALITARIAN_FEDERATION_DESC",
+                              "fulfilled_effect": "5",
+                              "unfulfilled_effect": "-0.001",
+                              "potential": {
+                                "exists": "owner.federation",
+                                "has_federations_dlc": "yes"
+                              },
+                              "trigger": {
+                                "owner.federation": {}
+                              },
+                              "_comments": [
+                                "# Faction Demands for Ruler and Council positions."
+                              ],
+                              "inline_script": {
+                                "script": "paragon/global_faction_demands",
+                                "ETHIC": "ethic_authoritarian",
+                                "ETHIC_FANATIC": "ethic_fanatic_authoritarian",
+                                "ETHIC_OPPOSED": "ethic_egalitarian"
+                              },
+                              "on_create": {
+                                "pop_faction_event": {},
+                                "on_destroy": {
+                                  "if": {
+                                    "limit": {
+                                      "has_modifier": "suppressed_authoritarian"
+                                    },
+                                    "remove_modifier": "suppressed_authoritarian"
+                                  }
+                                },
+                                "actions": {
+                                  "embrace_faction": {
+                                    "title": "EMBRACE_FACTION",
+                                    "description": "EMBRACE_FACTION_DESC",
+                                    "cost": {
+                                      "unity": "5000"
+                                    },
+                                    "potential": {
+                                      "exists": "owner",
+                                      "owner": {
+                                        "OR": {
+                                          "is_subject": "no",
+                                          "NOT": {}
+                                        }
+                                      },
+                                      "valid": {
+                                        "custom_tooltip": {
+                                          "fail_text": "EMBRACE_FACTION_COOLDOWN",
+                                          "parameter:empire": {
+                                            "NOT": {}
+                                          },
+                                          "effect": {
+                                            "add_modifier": {
+                                              "parameter:empire": {
+                                                "shift_ethic": "ethic_authoritarian",
+                                                "hidden_effect": {
+                                                  "add_modifier": {
+                                                    "every_pop_faction": {
+                                                      "limit": {
+                                                        "add_modifier": {}
+                                                      }
+                                                    },
+                                                    "hidden_effect": {
+                                                      "save_event_target_as": "TargetFaction",
+                                                      "parameter:empire": {
+                                                        "every_relation": {
+                                                          "limit": {
+                                                            "is_ai": "no",
+                                                            "is_country_type": "default",
+                                                            "has_communications": "prev",
+                                                            "has_intel_level": {
+                                                              "who": "prev",
+                                                              "category": "government",
+                                                              "level >": "1"
+                                                            }
+                                                          },
+                                                          "country_event": {}
+                                                        }
+                                                      }
+                                                    },
+                                                    "ai_weight": {
+                                                      "base": "1",
+                                                      "modifier": {
+                                                        "factor": "0",
+                                                        "owner": {},
+                                                        "modifier": {
+                                                          "factor": "0",
+                                                          "owner": {
+                                                            "count_pop_faction": {}
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "promote_faction": {
+                                                      "title": "PROMOTE_FACTION",
+                                                      "description": "PROMOTE_FACTION_DESC",
+                                                      "potential": {
+                                                        "exists": "owner",
+                                                        "parameter:empire": {
+                                                          "NOR": {
+                                                            "has_modifier": "promoted_authoritarian"
+                                                          }
+                                                        }
+                                                      },
+                                                      "effect": {
+                                                        "parameter:empire": {
+                                                          "add_modifier": {}
+                                                        },
+                                                        "ai_weight": {
+                                                          "base": "0"
+                                                        }
+                                                      },
+                                                      "cancel_promote_faction": {
+                                                        "title": "CANCEL_PROMOTE_FACTION",
+                                                        "description": "CANCEL_PROMOTE_FACTION_DESC",
+                                                        "potential": {
+                                                          "exists": "owner",
+                                                          "parameter:empire": {
+                                                            "has_modifier": "promoted_authoritarian"
+                                                          }
+                                                        },
+                                                        "effect": {
+                                                          "parameter:empire": {
+                                                            "remove_modifier": "promoted_authoritarian"
+                                                          }
+                                                        },
+                                                        "ai_weight": {
+                                                          "base": "0"
+                                                        }
+                                                      },
+                                                      "suppress_faction": {
+                                                        "title": "SUPPRESS_FACTION",
+                                                        "description": "SUPPRESS_FACTION_DESC",
+                                                        "potential": {
+                                                          "exists": "owner",
+                                                          "parameter:empire": {
+                                                            "NOR": {
+                                                              "has_modifier": "promoted_authoritarian"
+                                                            }
+                                                          }
+                                                        },
+                                                        "effect": {
+                                                          "add_modifier": {
+                                                            "parameter:empire": {
+                                                              "add_modifier": {}
+                                                            },
+                                                            "ai_weight": {
+                                                              "base": "0"
+                                                            }
+                                                          },
+                                                          "cancel_suppress_faction": {
+                                                            "title": "CANCEL_SUPPRESS_FACTION",
+                                                            "description": "CANCEL_SUPPRESS_FACTION_DESC",
+                                                            "potential": {
+                                                              "exists": "owner",
+                                                              "parameter:empire": {
+                                                                "has_modifier": "suppressed_authoritarian"
+                                                              }
+                                                            },
+                                                            "effect": {
+                                                              "remove_modifier": "suppressed_faction",
+                                                              "parameter:empire": {
+                                                                "remove_modifier": "suppressed_authoritarian"
+                                                              }
+                                                            },
+                                                            "ai_weight": {
+                                                              "base": "0"
+                                                            }
+                                                          },
+                                                          "_comments": [
+                                                            "# Faction Extortion Buttons"
+                                                          ],
+                                                          "extort_faction": {
+                                                            "title": "EXTORT_FACTION",
+                                                            "description": "EXTORT_FACTION_DESC",
+                                                            "potential": {
+                                                              "exists": "owner",
+                                                              "owner": {
+                                                                "is_oligarchic_authority": "yes",
+                                                                "has_country_flag": "cyber_collectivist"
+                                                              },
+                                                              "is_faction_extorted": "no"
+                                                            },
+                                                            "effect": {
+                                                              "set_faction_extorted": "yes",
+                                                              "custom_tooltip": "ONLY_ONE_EXTORTED_FACTION_TT"
+                                                            },
+                                                            "ai_weight": {
+                                                              "base": "0"
+                                                            }
+                                                          },
+                                                          "cancel_extort_faction": {
+                                                            "title": "CANCEL_EXTORT_FACTION",
+                                                            "description": "CANCEL_EXTORT_FACTION_DESC",
+                                                            "potential": {
+                                                              "exists": "owner",
+                                                              "owner": {
+                                                                "is_oligarchic_authority": "yes",
+                                                                "has_country_flag": "cyber_collectivist"
+                                                              },
+                                                              "is_faction_extorted": "yes"
+                                                            },
+                                                            "effect": {
+                                                              "set_faction_extorted": "no"
+                                                            },
+                                                            "ai_weight": {
+                                                              "base": "0"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_totalitarian.txt",
+    "_line_number": 81
+  }
+}

@@ -1,0 +1,1900 @@
+{
+  "diplomatic_stance": {
+    "diplomatic_stance": {
+      "potential": {
+        "OR": {
+          "is_country_type": "mirrored_country"
+        }
+      },
+      "allow": {
+        "is_at_war": "no # Not allowed to change policies in this group while at war"
+      },
+      "option": {
+        "name": "diplo_stance_belligerent",
+        "icon": "GFX_diplomatic_stance_belligerent",
+        "potential": {
+          "OR": {
+            "is_country_type": "awakened_fallen_empire"
+          }
+        },
+        "valid": {
+          "NOT": {
+            "is_homicidal": "no # They have their own variants of this"
+          },
+          "policy_flags": {},
+          "modifier": {
+            "country_war_exhaustion_mult": "-0.1",
+            "country_naval_cap_mult": "0.1",
+            "country_claim_influence_cost_mult": "-0.1",
+            "external_leader_pool_add": "-1"
+          },
+          "ai_weight": {
+            "weight": "10",
+            "modifier": {
+              "factor": "0",
+              "NOT": {},
+              "_comments": [
+                "# Pacifists",
+                "# Angry people like to be belligerent"
+              ],
+              "modifier": {
+                "factor": "3.0 # Blocked in propagators get ANGRY",
+                "has_ai_expansion_plan": "no",
+                "has_ai_personality_behaviour": "propagator"
+              }
+            }
+          },
+          "option": {
+            "name": "diplo_stance_cooperative",
+            "icon": "GFX_diplomatic_stance_cooperative",
+            "potential": {
+              "OR": {
+                "is_country_type": "mirrored_country"
+              }
+            },
+            "valid": {
+              "NOT": {
+                "is_unfriendly": "no # Not homicidal or barbaric despoilers"
+              },
+              "policy_flags": {},
+              "modifier": {
+                "diplo_weight_mult": "0.25",
+                "envoy_improve_relations_mult": "0.5",
+                "country_border_friction_mult": "-0.5",
+                "operations_cost_mult": "0.25",
+                "operations_upkeep_mult": "0.25",
+                "external_leader_pool_add": "1"
+              },
+              "ai_weight": {
+                "weight": "10",
+                "modifier": {
+                  "factor": "0",
+                  "NOT": {},
+                  "_comments": [
+                    "# Tons of Ethics modifiers!",
+                    "# Cranky people:",
+                    "# Nice people:"
+                  ],
+                  "modifier": {
+                    "factor": "3.0",
+                    "has_ai_personality": "federation_builders"
+                  }
+                }
+              },
+              "option": {
+                "name": "diplo_stance_isolationist",
+                "icon": "GFX_diplomatic_stance_isolationist",
+                "potential": {
+                  "OR": {
+                    "is_country_type": "awakened_fallen_empire"
+                  }
+                },
+                "valid": {
+                  "is_megacorp": "no # \"NO! YOU CAN'T BUY OUR STUFF!\" makes the shareholders sad",
+                  "is_homicidal": "no # Homicidal variants below"
+                },
+                "policy_flags": {},
+                "modifier": {
+                  "country_unity_produces_mult": "0.10",
+                  "diplo_weight_mult": "-0.25",
+                  "diplomacy_upkeep_mult": "1",
+                  "pop_government_ethic_attraction": "0.25",
+                  "country_border_friction_mult": "2.0",
+                  "external_leader_pool_add": "-2"
+                },
+                "on_enabled": {},
+                "ai_weight": {
+                  "weight": "10",
+                  "modifier": {
+                    "factor": "0.25 # Let the isolationists start in this if they want",
+                    "NOT": {},
+                    "modifier": {
+                      "factor": "2.0",
+                      "is_xenophobe": "yes",
+                      "is_militarist": "no",
+                      "is_authoritarian": "no"
+                    }
+                  }
+                },
+                "option": {
+                  "name": "diplo_stance_expansionist",
+                  "icon": "GFX_diplomatic_stance_expansionist",
+                  "potential": {
+                    "OR": {
+                      "is_country_type": "awakened_fallen_empire"
+                    }
+                  },
+                  "valid": {
+                    "is_homicidal": "no"
+                  },
+                  "policy_flags": {},
+                  "modifier": {
+                    "starbase_outpost_cost_mult": "-0.10",
+                    "planet_colony_development_speed_mult": "0.15",
+                    "country_border_friction_mult": "1.0"
+                  },
+                  "ai_weight": {
+                    "weight": "10",
+                    "modifier": {
+                      "factor": "2",
+                      "NOT": {},
+                      "modifier": {
+                        "factor": "0.01",
+                        "has_ascension_perk": "ap_become_the_crisis"
+                      }
+                    }
+                  },
+                  "option": {
+                    "name": "diplo_stance_mercantile",
+                    "icon": "GFX_diplomatic_stance_mercantile",
+                    "potential": {
+                      "OR": {
+                        "is_country_type": "mirrored_country"
+                      },
+                      "is_gestalt": "no"
+                    },
+                    "valid": {
+                      "NOT": {
+                        "is_homicidal": "no",
+                        "_comments": [
+                          "# some ugliness to preserve the",
+                          "# auth/civic - potential/valid divide for tooltip"
+                        ],
+                        "if": {
+                          "limit": {
+                            "has_megacorp": "yes",
+                            "is_megacorp": "yes"
+                          },
+                          "is_megacorp": "yes"
+                        },
+                        "else_if": {
+                          "limit": {
+                            "has_civic": "civic_merchant_guilds"
+                          },
+                          "else": {},
+                          "policy_flags": {},
+                          "modifier": {
+                            "diplo_weight_economy_mult": "0.25",
+                            "trade_value_mult": "0.1",
+                            "local_trade_protection_add": "5",
+                            "external_leader_pool_add": "1"
+                          },
+                          "ai_weight": {
+                            "weight": "10",
+                            "modifier": {
+                              "factor": "0.65",
+                              "OR": {
+                                "has_valid_civic": "civic_private_military_companies"
+                              }
+                            }
+                          }
+                        },
+                        "option": {
+                          "name": "diplo_stance_supremacist",
+                          "icon": "GFX_diplomatic_stance_supremacy",
+                          "potential": {
+                            "OR": {
+                              "is_country_type": "mirrored_country"
+                            }
+                          },
+                          "valid": {
+                            "NOR": {
+                              "has_valid_civic": "civic_inwards_perfection",
+                              "has_modifier": "humiliated"
+                            },
+                            "is_homicidal": "no",
+                            "custom_tooltip": {
+                              "fail_text": "requires_supremacy_traditions",
+                              "OR": {
+                                "has_tradition": "tr_supremacy_finish",
+                                "NOT": {}
+                              },
+                              "is_subject": "no"
+                            },
+                            "policy_flags": {},
+                            "modifier": {
+                              "diplo_weight_naval_mult": "1.00",
+                              "diplo_weight_economy_mult": "-0.5",
+                              "diplo_weight_technology_mult": "-0.5",
+                              "country_war_exhaustion_mult": "-0.20",
+                              "country_naval_cap_mult": "0.20",
+                              "country_claim_influence_cost_mult": "-0.1"
+                            },
+                            "on_enabled": {},
+                            "ai_weight": {
+                              "weight": "10",
+                              "modifier": {
+                                "factor": "0",
+                                "NOT": {},
+                                "modifier": {
+                                  "factor": "0.25",
+                                  "any_neighbor_country": {
+                                    "has_communications": "root",
+                                    "is_country_type": "default",
+                                    "is_subject": "no",
+                                    "relative_power": {
+                                      "who": "root",
+                                      "category": "fleet"
+                                    }
+                                  }
+                                },
+                                "_comments": [
+                                  "# Angry people want to be Supreme"
+                                ]
+                              }
+                            },
+                            "option": {
+                              "name": "diplo_stance_animosity",
+                              "icon": "GFX_diplomatic_stance_animosity",
+                              "potential": {
+                                "is_country_type": "default"
+                              },
+                              "valid": {
+                                "is_homicidal": "no",
+                                "custom_tooltip": {
+                                  "fail_text": "requires_enmity_traditions",
+                                  "OR": {
+                                    "has_tradition": "tr_enmity_finish",
+                                    "NOT": {}
+                                  },
+                                  "is_subject": "no"
+                                },
+                                "policy_flags": {},
+                                "modifier": {
+                                  "max_rivalries": "2",
+                                  "rivalries_unity_produces_add": "10",
+                                  "country_border_friction_mult": "1",
+                                  "diplo_weight_rivals_mult": "0.05"
+                                },
+                                "ai_weight": {
+                                  "weight": "10",
+                                  "modifier": {
+                                    "factor": "0",
+                                    "NOT": {},
+                                    "modifier": {
+                                      "factor": "20",
+                                      "has_ai_personality": "metalhead"
+                                    },
+                                    "_comments": [
+                                      "# Ambitious people who want to be rivals"
+                                    ]
+                                  }
+                                },
+                                "option": {
+                                  "name": "diplo_stance_ignorant",
+                                  "icon": "GFX_diplomatic_stance_isolationist",
+                                  "potential": {
+                                    "is_country_type": "primitive",
+                                    "capital_scope": {
+                                      "NOT": {}
+                                    },
+                                    "policy_flags": {},
+                                    "modifier": {},
+                                    "ai_weight": {
+                                      "weight": "1"
+                                    }
+                                  },
+                                  "option": {
+                                    "name": "diplo_stance_questioning",
+                                    "icon": "GFX_diplomatic_stance_expansionist",
+                                    "potential": {
+                                      "is_country_type": "primitive",
+                                      "current_awareness_level": "medium",
+                                      "capital_scope": {
+                                        "NOT": {}
+                                      },
+                                      "policy_flags": {},
+                                      "modifier": {},
+                                      "ai_weight": {
+                                        "weight": "1"
+                                      }
+                                    },
+                                    "option": {
+                                      "name": "diplo_stance_eager",
+                                      "icon": "GFX_diplomatic_stance_cooperative",
+                                      "potential": {
+                                        "is_country_type": "primitive",
+                                        "current_awareness_level >": "high",
+                                        "is_xenophile": "yes",
+                                        "capital_scope": {
+                                          "NOT": {}
+                                        },
+                                        "policy_flags": {},
+                                        "modifier": {},
+                                        "ai_weight": {
+                                          "weight": "1"
+                                        }
+                                      },
+                                      "option": {
+                                        "name": "diplo_stance_fearful",
+                                        "icon": "GFX_diplomatic_stance_withdrawn",
+                                        "potential": {
+                                          "is_country_type": "primitive",
+                                          "current_awareness_level >": "high",
+                                          "is_xenophobe": "yes",
+                                          "capital_scope": {
+                                            "NOT": {}
+                                          },
+                                          "policy_flags": {},
+                                          "modifier": {},
+                                          "ai_weight": {
+                                            "weight": "1"
+                                          }
+                                        },
+                                        "option": {
+                                          "name": "diplo_stance_uncertain",
+                                          "icon": "GFX_diplomatic_stance_isolationist",
+                                          "potential": {
+                                            "is_country_type": "primitive",
+                                            "current_awareness_level >": "high",
+                                            "is_xenophile": "no",
+                                            "is_xenophobe": "no",
+                                            "capital_scope": {
+                                              "NOT": {}
+                                            },
+                                            "policy_flags": {},
+                                            "modifier": {},
+                                            "ai_weight": {
+                                              "weight": "1"
+                                            }
+                                          },
+                                          "option": {
+                                            "name": "diplo_stance_culture_shock",
+                                            "icon": "GFX_diplomatic_stance_belligerent",
+                                            "potential": {
+                                              "is_country_type": "primitive",
+                                              "capital_scope": {
+                                                "has_modifier": "culture_shock_diplomacy"
+                                              }
+                                            },
+                                            "policy_flags": {},
+                                            "modifier": {
+                                              "diplo_action_acceptance_add": "-100"
+                                            },
+                                            "ai_weight": {
+                                              "weight": "100"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 138
+  },
+  "war_philosophy": {
+    "war_philosophy": {
+      "potential": {
+        "OR": {
+          "is_country_type": "awakened_fallen_empire"
+        }
+      },
+      "allow": {
+        "is_at_war": "no # Not allowed to change policies in this group while at war"
+      },
+      "option": {
+        "name": "liberation_wars",
+        "policy_flags": {},
+        "potential": {
+          "NOT": {},
+          "valid": {
+            "NOR": {
+              "has_ethic": "ethic_fanatic_pacifist",
+              "has_valid_civic": "civic_fanatic_purifiers"
+            }
+          },
+          "on_enabled": {
+            "hidden_effect": {
+              "check_casus_belli_valid": {
+                "type": "cb_ideology"
+              }
+            }
+          },
+          "on_disabled": {
+            "hidden_effect": {
+              "check_casus_belli_valid": {
+                "type": "cb_ideology"
+              }
+            }
+          },
+          "AI_weight": {
+            "modifier": {
+              "factor": "2",
+              "has_valid_ai_personality": "yes",
+              "is_ai": "yes",
+              "OR": {
+                "has_ai_personality_behaviour": "liberator"
+              }
+            }
+          }
+        },
+        "option": {
+          "name": "no_wars",
+          "policy_flags": {},
+          "valid": {
+            "NOR": {
+              "has_ethic": "ethic_fanatic_militarist",
+              "has_valid_civic": "civic_machine_terminator",
+              "has_civic": "civic_crusader_spirit"
+            }
+          },
+          "AI_weight": {
+            "modifier": {
+              "factor": "0",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 929
+  },
+  "war_doctrine": {
+    "war_doctrine": {
+      "potential": {
+        "OR": {
+          "AND": {
+            "is_country_type": "default",
+            "has_tradition": "tr_supremacy_finish"
+          },
+          "is_country_type": "enclave_mercenary"
+        }
+      },
+      "option": {
+        "name": "defense_in_depth_doctrine",
+        "policy_flags": {
+          "modifier": {
+            "ship_home_territory_fire_rate_mult": "0.10"
+          },
+          "AI_weight": {
+            "factor": "1"
+          }
+        },
+        "option": {
+          "name": "hit_and_run_doctrine",
+          "policy_flags": {
+            "modifier": {
+              "ship_disengage_opportunities_add": "2",
+              "ship_disengage_chance_mult": "0.33",
+              "ship_emergency_ftl_mult": "-0.25"
+            },
+            "AI_weight": {
+              "factor": "10",
+              "modifier": {
+                "factor": "0",
+                "NOR": {
+                  "has_ethic": "ethic_fanatic_pacifist"
+                }
+              }
+            }
+          },
+          "option": {
+            "name": "rapid_deployment_doctrine",
+            "policy_flags": {
+              "modifier": {
+                "ship_speed_mult": "0.25",
+                "ship_weapon_range_mult": "0.10"
+              },
+              "AI_weight": {
+                "factor": "10",
+                "modifier": {
+                  "factor": "100",
+                  "is_country_type": "enclave_mercenary"
+                }
+              }
+            },
+            "option": {
+              "name": "no_retreat_doctrine",
+              "valid": {
+                "OR": {
+                  "has_ethic": "ethic_gestalt_consciousness",
+                  "has_civic": "civic_fanatic_purifiers"
+                }
+              },
+              "policy_flags": {
+                "modifier": {
+                  "ship_disengage_chance_reduction": "1",
+                  "ship_emergency_ftl_min_days_mult": "0.5",
+                  "ship_fire_rate_mult": "0.33"
+                },
+                "AI_weight": {
+                  "factor": "100",
+                  "modifier": {
+                    "factor": "0",
+                    "NOR": {
+                      "has_ai_personality": "devouring_swarm"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 1095
+  },
+  "subjugation_war_terms": {
+    "subjugation_war_terms": {
+      "potential": {
+        "is_subject": "no",
+        "OR": {
+          "is_country_type": "awakened_fallen_empire"
+        }
+      },
+      "option": {
+        "name": "oppressive_terms",
+        "policy_flags": {},
+        "potential": {
+          "is_megacorp": "no"
+        },
+        "on_enabled": {
+          "hidden_effect": {
+            "if": {
+              "limit": {
+                "set_country_flag": "oppressive_terms_preference",
+                "remove_country_flag": "balanced_terms_preference"
+              }
+            }
+          },
+          "ai_weight": {
+            "weight": "10",
+            "_comments": [
+              "# Nice people who would never pick this.",
+              "# Bad people who likely would."
+            ],
+            "modifier": {
+              "factor": "10",
+              "has_country_flag": "oppressive_terms_preference"
+            }
+          }
+        },
+        "option": {
+          "name": "balanced_terms",
+          "policy_flags": {},
+          "potential": {
+            "is_megacorp": "no"
+          },
+          "on_enabled": {
+            "hidden_effect": {
+              "if": {
+                "limit": {
+                  "set_country_flag": "balanced_terms_preference",
+                  "remove_country_flag": "oppressive_terms_preference"
+                }
+              }
+            },
+            "ai_weight": {
+              "weight": "10",
+              "_comments": [
+                "# Rational people who would like this."
+              ],
+              "modifier": {
+                "factor": "10",
+                "has_country_flag": "balanced_terms_preference"
+              }
+            }
+          },
+          "option": {
+            "name": "benevolent_terms",
+            "policy_flags": {},
+            "potential": {
+              "is_megacorp": "no"
+            },
+            "on_enabled": {
+              "hidden_effect": {
+                "if": {
+                  "limit": {
+                    "set_country_flag": "benevolent_terms_preference",
+                    "remove_country_flag": "oppressive_terms_preference"
+                  }
+                }
+              },
+              "ai_weight": {
+                "weight": "10",
+                "_comments": [
+                  "# Bad people who probably not pick this.",
+                  "# Nice people who probably would."
+                ],
+                "modifier": {
+                  "factor": "10",
+                  "has_country_flag": "benevolent_terms_preference"
+                }
+              }
+            },
+            "option": {
+              "name": "oppressive_corporate_terms",
+              "policy_flags": {},
+              "potential": {
+                "is_megacorp": "yes"
+              },
+              "on_enabled": {
+                "hidden_effect": {
+                  "if": {
+                    "limit": {
+                      "set_country_flag": "oppressive_terms_preference",
+                      "remove_country_flag": "balanced_terms_preference"
+                    }
+                  }
+                },
+                "ai_weight": {
+                  "weight": "10",
+                  "_comments": [
+                    "# Nice people who would never pick this.",
+                    "# Bad people who likely would."
+                  ],
+                  "modifier": {
+                    "factor": "10",
+                    "has_country_flag": "oppressive_terms_preference"
+                  }
+                }
+              },
+              "option": {
+                "name": "balanced_corporate_terms",
+                "policy_flags": {},
+                "on_enabled": {
+                  "hidden_effect": {
+                    "if": {
+                      "limit": {
+                        "set_country_flag": "balanced_terms_preference",
+                        "remove_country_flag": "oppressive_terms_preference"
+                      }
+                    }
+                  },
+                  "potential": {
+                    "is_megacorp": "yes"
+                  },
+                  "ai_weight": {
+                    "weight": "10",
+                    "_comments": [
+                      "# Rational people who would like this."
+                    ],
+                    "modifier": {
+                      "factor": "10",
+                      "has_country_flag": "balanced_terms_preference"
+                    }
+                  }
+                },
+                "option": {
+                  "name": "benevolent_corporate_terms",
+                  "policy_flags": {},
+                  "potential": {
+                    "is_megacorp": "yes"
+                  },
+                  "on_enabled": {
+                    "hidden_effect": {
+                      "if": {
+                        "limit": {
+                          "set_country_flag": "benevolent_terms_preference",
+                          "remove_country_flag": "oppressive_terms_preference"
+                        }
+                      }
+                    },
+                    "ai_weight": {
+                      "weight": "10",
+                      "_comments": [
+                        "# Bad people who probably not pick this.",
+                        "# Nice people who probably would."
+                      ],
+                      "modifier": {
+                        "factor": "10",
+                        "has_country_flag": "benevolent_terms_preference"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 1218
+  },
+  "orbital_bombardment": {
+    "orbital_bombardment": {
+      "potential": {
+        "OR": {
+          "is_country_type": "vol"
+        }
+      },
+      "option": {
+        "name": "orbital_bombardment_indiscriminate",
+        "in_breach_of": {},
+        "policy_flags": {},
+        "modifier": {
+          "valid": {
+            "NOR": {
+              "has_ethic": "ethic_fanatic_pacifist"
+            }
+          },
+          "AI_weight": {
+            "modifier": {
+              "factor": "0.1",
+              "is_galactic_community_member": "yes",
+              "OR": {
+                "is_active_resolution": "resolution_rulesofwar_demobilization_initiative"
+              }
+            }
+          }
+        },
+        "option": {
+          "name": "orbital_bombardment_armageddon",
+          "in_breach_of": {},
+          "potential": {
+            "OR": {
+              "has_valid_civic": "civic_machine_terminator"
+            }
+          },
+          "policy_flags": {},
+          "modifier": {
+            "AI_weight": {
+              "modifier": {
+                "factor": "10",
+                "has_ascension_perk": "ap_become_the_crisis"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 1565
+  },
+  "orbital_bombardment_accept_surrender": {
+    "orbital_bombardment_accept_surrender": {
+      "potential": {
+        "is_homicidal": "no"
+      },
+      "option": {
+        "name": "orbital_bombardment_surrender_forbidden",
+        "policy_flags": {},
+        "modifier": {
+          "AI_weight": {
+            "base": "0"
+          }
+        },
+        "option": {
+          "name": "orbital_bombardment_surrender_allowed",
+          "potential": {
+            "is_homicidal": "no #locked to \"forbidden"
+          },
+          "policy_flags": {}
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 1676
+  },
+  "interference": {
+    "interference": {
+      "potential": {
+        "has_met_primitives": "yes"
+      },
+      "option": {
+        "name": "interference_not_allowed",
+        "policy_flags": {},
+        "on_enabled": {
+          "hidden_effect": {
+            "set_country_flag": "encountered_first_primitive"
+          }
+        },
+        "in_breach_of": {},
+        "valid": {
+          "OR": {
+            "custom_tooltip": {
+              "text": "is_a_signatory_vassal",
+              "any_agreement": {},
+              "is_active_resolution": "resolution_pre_ftl_stances_non_interference",
+              "NOR": {
+                "has_ethic": "ethic_fanatic_xenophobe",
+                "has_valid_civic": "civic_machine_terminator"
+              }
+            }
+          },
+          "AI_weight": {
+            "modifier": {
+              "factor": "0.1",
+              "is_galactic_community_member": "yes",
+              "OR": {
+                "is_active_resolution": "resolution_pre_ftl_stances_exploitation"
+              }
+            }
+          }
+        },
+        "option": {
+          "name": "interference_subtle",
+          "policy_flags": {},
+          "on_enabled": {
+            "hidden_effect": {},
+            "valid": {
+              "OR": {
+                "custom_tooltip": {
+                  "text": "is_a_signatory_vassal",
+                  "any_agreement": {},
+                  "NOR": {
+                    "has_ethic": "ethic_fanatic_xenophobe",
+                    "has_valid_civic": "civic_machine_terminator"
+                  }
+                }
+              },
+              "AI_weight": {
+                "modifier": {
+                  "factor": "0",
+                  "has_valid_ai_personality": "yes",
+                  "NOT": {
+                    "has_ai_personality_behaviour": "infiltrator"
+                  }
+                }
+              }
+            },
+            "option": {
+              "name": "interference_active",
+              "policy_flags": {},
+              "in_breach_of": {},
+              "on_enabled": {
+                "hidden_effect": {},
+                "valid": {
+                  "NOR": {
+                    "custom_tooltip": {
+                      "text": "is_a_signatory_vassal",
+                      "any_agreement": {},
+                      "has_valid_civic": "civic_hive_devouring_swarm"
+                    }
+                  },
+                  "AI_weight": {
+                    "modifier": {
+                      "factor": "0.1",
+                      "is_galactic_community_member": "yes",
+                      "OR": {
+                        "is_active_resolution": "resolution_pre_ftl_stances_non_interference"
+                      }
+                    }
+                  }
+                },
+                "option": {
+                  "name": "interference_aggressive",
+                  "in_breach_of": {},
+                  "valid": {
+                    "custom_tooltip": {
+                      "success_text": "is_not_a_signatory_vassal_success",
+                      "fail_text": "is_not_a_signatory_vassal_fail",
+                      "NOT": {},
+                      "NOR": {
+                        "has_ethic": "ethic_fanatic_xenophile",
+                        "has_valid_civic": "civic_machine_exploration_protocol"
+                      }
+                    },
+                    "on_enabled": {
+                      "hidden_effect": {},
+                      "policy_flags": {},
+                      "modifier": {
+                        "AI_weight": {
+                          "modifier": {
+                            "factor": "0.1",
+                            "is_galactic_community_member": "yes",
+                            "OR": {
+                              "is_active_resolution": "resolution_pre_ftl_stances_equal_standing"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 1721
+  },
+  "enlightenment": {
+    "enlightenment": {
+      "potential": {
+        "has_met_primitives": "yes"
+      },
+      "option": {
+        "name": "enlightenment_covert_only",
+        "policy_flags": {},
+        "valid": {
+          "NOT": {
+            "NOR": {
+              "has_ethic": "ethic_fanatic_xenophobe",
+              "has_valid_civic": "civic_machine_terminator"
+            }
+          },
+          "AI_weight": {
+            "weight": "1"
+          }
+        },
+        "option": {
+          "name": "enlightenment_allowed",
+          "policy_flags": {},
+          "modifier": {
+            "valid": {
+              "NOT": {
+                "NOR": {
+                  "has_ethic": "ethic_fanatic_xenophobe",
+                  "has_valid_civic": "civic_machine_terminator"
+                }
+              },
+              "AI_weight": {
+                "modifier": {
+                  "factor": "0",
+                  "has_valid_ai_personality": "yes",
+                  "NOT": {},
+                  "modifier": {
+                    "factor": "0",
+                    "OR": {
+                      "has_ethic": "ethic_fanatic_xenophobe"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 1945
+  },
+  "resettlement": {
+    "resettlement": {
+      "potential": {
+        "NOT": {},
+        "option": {
+          "name": "resettlement_allowed",
+          "policy_flags": {},
+          "modifier": {
+            "AI_weight": {
+              "factor": "10",
+              "modifier": {
+                "factor": "0",
+                "OR": {
+                  "has_ethic": "ethic_fanatic_egalitarian"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 2018
+  },
+  "appropriation": {
+    "appropriation": {
+      "potential": {
+        "has_comms_with_alien_empire": "yes"
+      },
+      "option": {
+        "name": "appropriation_allowed",
+        "policy_flags": {},
+        "modifier": {
+          "AI_weight": {
+            "modifier": {
+              "factor": "10",
+              "NOT": {},
+              "modifier": {
+                "factor": "10",
+                "is_gestalt": "yes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 2053
+  },
+  "leader_enhancement": {
+    "leader_enhancement": {
+      "potential": {
+        "has_technology": "tech_selected_lineages"
+      },
+      "option": {
+        "name": "leader_enhancement_natural_selection",
+        "policy_flags": {},
+        "in_breach_of": {},
+        "on_enabled": {},
+        "_comments": [
+          "# custom_tooltip = \"policy_allow_slavery_effect_disable\""
+        ],
+        "modifier": {},
+        "option": {
+          "name": "leader_enhancement_selected_lineages",
+          "policy_flags": {},
+          "modifier": {
+            "leader_initial_skill": "1",
+            "leader_lifespan_add": "10",
+            "leaders_cost_mult": "1",
+            "leaders_upkeep_mult": "0.5"
+          },
+          "in_breach_of": {},
+          "valid": {
+            "NOT": {},
+            "AI_weight": {
+              "factor": "2",
+              "modifier": {
+                "factor": "0",
+                "OR": {
+                  "has_ethic": "ethic_fanatic_egalitarian"
+                },
+                "NOT": {
+                  "has_valid_ai_personality": "yes",
+                  "is_ai": "yes",
+                  "is_galactic_community_member": "yes",
+                  "OR": {
+                    "is_active_resolution": "resolution_galacticstudies_extradimensional_experimentation"
+                  }
+                }
+              }
+            },
+            "prerequisites": {},
+            "option": {
+              "name": "leader_enhancement_capacity_boosters",
+              "policy_flags": {},
+              "modifier": {
+                "leader_initial_skill": "2",
+                "leader_lifespan_add": "20",
+                "leaders_cost_mult": "2",
+                "leaders_upkeep_mult": "1"
+              },
+              "valid": {
+                "NOR": {
+                  "has_ethic": "ethic_fanatic_egalitarian"
+                }
+              },
+              "prerequisites": {
+                "AI_weight": {
+                  "factor": "3"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 2106
+  },
+  "first_contact_protocol": {
+    "first_contact_protocol": {
+      "potential": {
+        "always": "yes"
+      },
+      "option": {
+        "name": "first_contact_proactive",
+        "policy_flags": {},
+        "modifier": {
+          "first_contact_speed_mult": "0.1"
+        },
+        "on_enabled": {},
+        "valid": {
+          "is_homicidal": "no",
+          "is_xenophobe": "no",
+          "NOT": {},
+          "AI_weight": {
+            "modifier": {
+              "factor": "2",
+              "has_valid_civic": "civic_machine_servitor"
+            }
+          }
+        },
+        "option": {
+          "name": "first_contact_attack_allowed",
+          "policy_flags": {},
+          "modifier": {
+            "valid": {
+              "is_pacifist": "no",
+              "is_xenophile": "no"
+            },
+            "AI_weight": {
+              "modifier": {
+                "factor": "2",
+                "is_gestalt": "yes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 2231
+  },
+  "border_policy": {
+    "border_policy": {
+      "potential": {
+        "always": "yes"
+      },
+      "option": {
+        "name": "border_policy_closed",
+        "policy_flags": {},
+        "modifier": {
+          "valid": {
+            "is_primitive": "no"
+          },
+          "AI_weight": {
+            "factor": "10",
+            "modifier": {
+              "factor": "10",
+              "has_crisis_level": "crisis_level_5"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 2325
+  },
+  "food_policy": {
+    "food_policy": {
+      "potential": {
+        "always": "no"
+      },
+      "option": {
+        "name": "food_policy_normal",
+        "modifier": {
+          "AI_weight": {
+            "factor": "1"
+          }
+        },
+        "option": {
+          "name": "food_policy_generous",
+          "modifier": {
+            "planet_pops_organics_food_upkeep_mult": "0.25",
+            "planet_pops_organics_minerals_upkeep_mult": "0.25",
+            "biological_pop_happiness": "0.05",
+            "lithoid_pop_happiness": "0.05",
+            "pop_growth_speed": "0.10"
+          },
+          "AI_weight": {
+            "factor": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 2400
+  },
+  "food_policy_gestalt": {
+    "food_policy_gestalt": {
+      "potential": {
+        "always": "no"
+      },
+      "option": {
+        "name": "food_policy_gestalt_normal",
+        "modifier": {
+          "AI_weight": {
+            "factor": "1"
+          }
+        },
+        "option": {
+          "name": "food_policy_gestalt_generous",
+          "modifier": {
+            "planet_pops_organics_food_upkeep_mult": "0.5",
+            "pop_growth_speed": "0.33"
+          },
+          "AI_weight": {
+            "factor": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 2448
+  },
+  "research_policy": {
+    "research_policy": {
+      "potential": {
+        "always": "no"
+      },
+      "option": {
+        "name": "research_policy_industry",
+        "modifier": {
+          "category_industry_research_speed_mult": "0.10",
+          "category_industry_draw_chance_mult": "0.25"
+        },
+        "AI_weight": {
+          "factor": "0"
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 2517
+  },
+  "economic_policy": {
+    "economic_policy": {
+      "potential": {
+        "NOT": {},
+        "option": {
+          "name": "economic_policy_balanced",
+          "modifier": {
+            "AI_weight": {
+              "factor": "1",
+              "modifier": {
+                "factor": "10",
+                "has_valid_ai_personality": "yes",
+                "is_ai": "yes",
+                "is_galactic_community_member": "yes",
+                "is_active_resolution": "resolution_rulesofwar_demobilization_initiative"
+              }
+            }
+          },
+          "option": {
+            "name": "economic_policy_military",
+            "in_breach_of": {},
+            "modifier": {
+              "planet_jobs_consumer_goods_produces_mult": "-0.25",
+              "planet_jobs_alloys_produces_mult": "0.25"
+            },
+            "policy_flags": {},
+            "AI_weight": {
+              "factor": "2",
+              "modifier": {
+                "factor": "0",
+                "is_authoritarian": "no",
+                "NOT": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 2653
+  },
+  "trade_policy": {
+    "trade_policy": {
+      "potential": {
+        "NOT": {},
+        "option": {
+          "name": "trade_policy_consumer_goods",
+          "potential": {
+            "OR": {
+              "has_federation": "no",
+              "AND": {
+                "has_federation": "yes",
+                "federation": {}
+              },
+              "has_tradition": "tr_mercantile_adaptive_economic_policies",
+              "is_worker_coop_empire": "no"
+            },
+            "policy_flags": {},
+            "modifier": {
+              "AI_weight": {
+                "factor": "1"
+              }
+            },
+            "option": {
+              "name": "trade_policy_trade_league",
+              "potential": {
+                "has_federation": "yes",
+                "federation": {},
+                "policy_flags": {},
+                "modifier": {},
+                "AI_weight": {
+                  "factor": "1000"
+                }
+              },
+              "option": {
+                "name": "trade_policy_holy_covenant",
+                "potential": {
+                  "has_federation": "yes",
+                  "federation": {},
+                  "policy_flags": {},
+                  "modifier": {},
+                  "AI_weight": {
+                    "factor": "1000"
+                  }
+                },
+                "option": {
+                  "name": "trade_policy_mutual_aid",
+                  "potential": {
+                    "is_worker_coop_empire": "yes"
+                  },
+                  "policy_flags": {},
+                  "modifier": {},
+                  "AI_weight": {
+                    "factor": "1000"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 2729
+  },
+  "drone_policy": {
+    "drone_policy": {
+      "potential": {
+        "has_ethic": "ethic_gestalt_consciousness"
+      },
+      "option": {
+        "name": "drone_policy_balanced",
+        "modifier": {
+          "AI_weight": {
+            "factor": "1"
+          }
+        },
+        "option": {
+          "name": "drone_policy_thinker",
+          "modifier": {
+            "planet_jobs_simple_drone_produces_mult": "-0.2",
+            "planet_jobs_complex_drone_produces_mult": "0.2"
+          },
+          "AI_weight": {
+            "factor": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 2845
+  },
+  "artificial_intelligence_policy": {
+    "artificial_intelligence_policy": {
+      "potential": {
+        "NOT": {
+          "OR": {
+            "has_origin": "origin_synthetic_fertility",
+            "can_set_ai_policy": "yes",
+            "has_country_flag": "synthetic_empire",
+            "is_individual_machine": "yes"
+          }
+        },
+        "option": {
+          "name": "ai_servitude",
+          "potential": {
+            "is_individual_machine": "no"
+          },
+          "valid": {
+            "NOT": {
+              "custom_tooltip": {
+                "fail_text": "is_a_synthetic_empire_fail",
+                "NOT": {},
+                "is_individual_machine": "no"
+              },
+              "policy_flags": {},
+              "AI_weight": {
+                "modifier": {
+                  "factor": "0",
+                  "is_spiritualist": "yes",
+                  "NOT": {
+                    "has_valid_ai_personality": "yes",
+                    "is_ai": "yes",
+                    "is_galactic_community_member": "yes",
+                    "OR": {
+                      "is_active_resolution": "resolution_galacticstudies_extradimensional_experimentation"
+                    }
+                  }
+                }
+              }
+            },
+            "option": {
+              "name": "ai_full_rights",
+              "valid": {
+                "OR": {
+                  "custom_tooltip": {
+                    "fail_text": "is_a_synthetic_empire",
+                    "has_country_flag": "synthetic_empire"
+                  },
+                  "is_spiritualist": "no",
+                  "is_individual_machine": "yes"
+                },
+                "NOT": {},
+                "policy_flags": {},
+                "in_breach_of": {},
+                "modifier": {
+                  "AI_weight": {
+                    "modifier": {
+                      "factor": "0",
+                      "is_spiritualist": "yes"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 2894
+  },
+  "robot_pop_policy": {
+    "robot_pop_policy": {
+      "potential": {
+        "NOR": {
+          "has_ethic": "ethic_gestalt_consciousness",
+          "is_individual_machine": "yes"
+        }
+      },
+      "option": {
+        "name": "robot_pops_outlawed",
+        "valid": {
+          "is_materialist": "no",
+          "NOR": {
+            "has_origin": "origin_synthetic_fertility",
+            "has_policy_flag": "ai_full_rights"
+          },
+          "is_individual_machine": "no"
+        },
+        "policy_flags": {},
+        "on_enabled": {
+          "hidden_effect": {
+            "every_owned_species": {
+              "limit": {
+                "set_citizenship_type": {
+                  "type": "citizenship_purge",
+                  "country": "root"
+                }
+              }
+            }
+          },
+          "AI_weight": {
+            "factor": "1",
+            "modifier": {
+              "factor": "10",
+              "has_ethic": "ethic_fanatic_spiritualist"
+            }
+          }
+        },
+        "option": {
+          "name": "robot_pops_allowed",
+          "policy_flags": {},
+          "on_enabled": {
+            "hidden_effect": {
+              "country_event": {
+                "id": "action.56 # Failsafe if you don't have a robot species to assemble."
+              }
+            }
+          },
+          "AI_weight": {
+            "factor": "2",
+            "modifier": {
+              "factor": "0",
+              "has_ethic": "ethic_fanatic_spiritualist"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 3052
+  },
+  "pre_sapients": {
+    "pre_sapients": {
+      "potential": {
+        "OR": {
+          "has_country_flag": "found_presapients",
+          "any_planet_within_border": {
+            "any_owned_pop": {
+              "is_sapient": "no"
+            }
+          },
+          "is_guided_sapience_empire": "yes"
+        }
+      },
+      "option": {
+        "name": "pre_sapients_eat",
+        "potential": {
+          "host_has_dlc": "Utopia",
+          "is_synthetic_empire": "no",
+          "NOR": {
+            "has_valid_civic": "civic_fanatic_purifiers",
+            "is_guided_sapience_empire": "yes"
+          }
+        },
+        "on_enabled": {
+          "hidden_effect": {
+            "set_country_flag": "found_presapients"
+          }
+        },
+        "valid": {
+          "NOR": {
+            "has_ethic": "ethic_fanatic_xenophile"
+          }
+        },
+        "policy_flags": {},
+        "modifier": {
+          "AI_weight": {
+            "factor": "10",
+            "modifier": {
+              "factor": "0",
+              "NOT": {}
+            }
+          },
+          "option": {
+            "name": "pre_sapients_purge",
+            "valid": {
+              "NOR": {
+                "has_ethic": "ethic_fanatic_xenophile",
+                "is_guided_sapience_empire": "yes"
+              }
+            },
+            "on_enabled": {
+              "hidden_effect": {
+                "set_country_flag": "found_presapients"
+              }
+            },
+            "policy_flags": {},
+            "modifier": {
+              "AI_weight": {
+                "factor": "10",
+                "modifier": {
+                  "factor": "0",
+                  "is_country_type": "default",
+                  "NOR": {
+                    "has_valid_civic": "civic_fanatic_purifiers"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 3144
+  },
+  "debris": {
+    "debris": {
+      "potential": {
+        "has_encountered_other_species": "yes",
+        "OR": {
+          "is_country_type": "awakened_fallen_empire"
+        }
+      },
+      "option": {
+        "name": "scavenge_and_research_debris",
+        "potential": {
+          "is_scavenger": "yes"
+        },
+        "policy_flags": {}
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 3276
+  },
+  "refugees": {
+    "refugees": {
+      "potential": {
+        "has_encountered_other_species": "yes",
+        "is_country_type": "default",
+        "OR": {
+          "NOT": {
+            "has_valid_civic": "civic_machine_servitor"
+          }
+        },
+        "option": {
+          "name": "refugees_only_citizens",
+          "potential": {
+            "NOT": {},
+            "policy_flags": {},
+            "valid": {
+              "NOT": {
+                "is_hive_empire": "yes"
+              }
+            },
+            "AI_weight": {
+              "factor": "5"
+            }
+          },
+          "option": {
+            "name": "refugees_allowed",
+            "policy_flags": {},
+            "valid": {
+              "NOR": {
+                "has_ethic": "ethic_fanatic_xenophobe"
+              }
+            },
+            "AI_weight": {
+              "factor": "10",
+              "modifier": {
+                "factor": "0",
+                "NOR": {
+                  "has_ethic": "ethic_fanatic_xenophile",
+                  "has_valid_civic": "civic_machine_servitor",
+                  "AND": {
+                    "has_valid_ai_personality": "yes",
+                    "NOT": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 3326
+  },
+  "population_controls": {
+    "population_controls": {
+      "potential": {
+        "NOT": {},
+        "option": {
+          "name": "population_controls_not_allowed",
+          "on_enabled": {
+            "hidden_effect": {},
+            "policy_flags": {}
+          },
+          "option": {
+            "name": "population_controls_allowed",
+            "on_enabled": {
+              "hidden_effect": {},
+              "policy_flags": {},
+              "modifier": {
+                "AI_weight": {
+                  "factor": "10",
+                  "modifier": {
+                    "factor": "0",
+                    "OR": {
+                      "has_ethic": "ethic_fanatic_xenophile"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 3400
+  },
+  "slavery": {
+    "slavery": {
+      "potential": {
+        "NOT": {},
+        "option": {
+          "name": "slavery_not_allowed",
+          "valid": {
+            "NOR": {
+              "has_valid_civic": "civic_indentured_assets"
+            }
+          },
+          "policy_flags": {},
+          "on_enabled": {
+            "hidden_effect": {},
+            "modifier": {
+              "slave_market_cost_mult": "1"
+            }
+          },
+          "option": {
+            "name": "slavery_allowed",
+            "valid": {
+              "custom_tooltip": {
+                "success_text": "is_not_a_signatory_vassal_success",
+                "fail_text": "is_not_a_signatory_vassal_fail",
+                "NOT": {},
+                "custom_tooltip": {
+                  "fail_text": "is_broken_shackles_origin",
+                  "NOT": {},
+                  "OR": {
+                    "has_ethic": "ethic_fanatic_xenophobe"
+                  }
+                },
+                "policy_flags": {},
+                "modifier": {
+                  "AI_weight": {
+                    "factor": "10",
+                    "modifier": {
+                      "factor": "0",
+                      "has_valid_ai_personality": "yes",
+                      "NOT": {},
+                      "modifier": {
+                        "factor": "0",
+                        "has_valid_ai_personality": "no",
+                        "is_ai": "yes",
+                        "NOR": {
+                          "has_valid_civic": "civic_slaver_guilds",
+                          "has_trait": "trait_robot_decadent"
+                        },
+                        "OR": {
+                          "has_ethic": "ethic_fanatic_authoritarian"
+                        }
+                      },
+                      "_comments": [
+                        "# special case for harmonious collectives"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 3446
+  },
+  "purge": {
+    "purge": {
+      "option": {
+        "name": "purge_not_allowed",
+        "valid": {
+          "NOT": {
+            "NOT": {},
+            "policy_flags": {}
+          },
+          "option": {
+            "name": "purge_displacement_only",
+            "policy_flags": {},
+            "modifier": {
+              "valid": {
+                "NOR": {
+                  "has_ethic": "ethic_fanatic_xenophile"
+                },
+                "is_homicidal": "no"
+              },
+              "AI_weight": {
+                "factor": "5",
+                "modifier": {
+                  "factor": "0",
+                  "has_valid_ai_personality": "yes",
+                  "has_ai_personality_behaviour": "multispecies"
+                }
+              }
+            },
+            "option": {
+              "name": "purge_allowed",
+              "in_breach_of": {},
+              "policy_flags": {},
+              "modifier": {
+                "valid": {
+                  "custom_tooltip": {
+                    "success_text": "is_not_a_signatory_vassal_success",
+                    "fail_text": "is_not_a_signatory_vassal_fail",
+                    "NOT": {},
+                    "custom_tooltip": {
+                      "fail_text": "is_broken_shackles_origin",
+                      "NOT": {},
+                      "OR": {
+                        "has_ethic": "ethic_fanatic_xenophobe",
+                        "has_crisis_perk": "menp_undertaker\t# Unlocked with Crisis Level 1"
+                      }
+                    },
+                    "AI_weight": {
+                      "factor": "10",
+                      "modifier": {
+                        "factor": "40",
+                        "has_ethic": "ethic_gestalt_consciousness",
+                        "NOT": {},
+                        "modifier": {
+                          "factor": "1000",
+                          "has_origin": "origin_necrophage",
+                          "is_xenophobe": "yes"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 3551
+  },
+  "knightly_duties": {
+    "knightly_duties": {
+      "potential": {
+        "is_country_type": "default",
+        "has_origin": "origin_toxic_knights",
+        "NOT": {},
+        "option": {
+          "name": "herald_knights",
+          "potential": {
+            "owner": {},
+            "policy_flags": {},
+            "modifier": {
+              "edicts_cost_mult": "-0.15",
+              "edicts_upkeep_mult": "-0.15"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 3686
+  },
+  "relentless_industrialists_policy": {
+    "relentless_industrialists_policy": {
+      "potential": {
+        "is_country_type": "default",
+        "is_relentless_industrialist_empire": "yes",
+        "has_country_flag": "relentless_industrialists_situation_finished"
+      },
+      "_comments": [
+        "#Fires when the policy group first becomes available"
+      ],
+      "on_activate": {
+        "set_policy_cooldown": "relentless_industrialists_policy"
+      },
+      "option": {
+        "name": "relentless_industrialists_study",
+        "policy_flags": {},
+        "on_enabled": {
+          "if": {
+            "limit": {
+              "NOT": {},
+              "enable_special_project": {
+                "name": "RELENTLESS_INDUSTRIALISTS_STUDY_PROJECT"
+              }
+            }
+          },
+          "AI_weight": {
+            "weight": "1",
+            "modifier": {
+              "factor": "5",
+              "has_country_flag": "relentless_industrialists_study_completed"
+            }
+          }
+        },
+        "option": {
+          "name": "relentless_industrialists_cleanup",
+          "policy_flags": {},
+          "AI_weight": {
+            "weight": "1",
+            "modifier": {
+              "factor": "5",
+              "has_country_flag": "relentless_industrialists_cleanup"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_policies.txt",
+    "_line_number": 3749
+  }
+}

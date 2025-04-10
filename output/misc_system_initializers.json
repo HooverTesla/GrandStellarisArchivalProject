@@ -1,0 +1,657 @@
+{
+  "basic_init_01": {
+    "basic_init_01": {
+      "class": "rl_standard_stars",
+      "usage": "misc_system_init",
+      "usage_odds": "20",
+      "planet": {
+        "count": "1",
+        "class": "star",
+        "orbit_distance": "0",
+        "orbit_angle": "1",
+        "size": {
+          "has_ring": "no"
+        },
+        "change_orbit": "45",
+        "planet": {
+          "count": {
+            "orbit_distance": "20",
+            "orbit_angle": {
+              "change_orbit": "@base_moon_distance",
+              "moon": {
+                "count": {
+                  "orbit_angle": {
+                    "orbit_distance": "5"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "misc_system_initializers.txt",
+    "_line_number": 9
+  },
+  "basic_init_02": {
+    "basic_init_02": {
+      "class": "rl_standard_stars",
+      "asteroid_belt": {
+        "type": "rocky_asteroid_belt",
+        "radius": "95"
+      },
+      "usage": "misc_system_init",
+      "usage_odds": "20",
+      "planet": {
+        "count": "1",
+        "class": "star",
+        "orbit_distance": "0",
+        "orbit_angle": "1",
+        "size": {
+          "has_ring": "no"
+        },
+        "change_orbit": "30",
+        "planet": {
+          "count": "2",
+          "orbit_distance": "20",
+          "orbit_angle": {},
+          "change_orbit": "25",
+          "planet": {
+            "count": {
+              "class": "pc_asteroid",
+              "orbit_distance": "0",
+              "orbit_angle": {},
+              "planet": {
+                "count": {
+                  "orbit_distance": "25",
+                  "orbit_angle": {
+                    "change_orbit": "@base_moon_distance",
+                    "moon": {
+                      "count": {
+                        "orbit_angle": {
+                          "orbit_distance": "5"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "misc_system_initializers.txt",
+    "_line_number": 45
+  },
+  "basic_init_03": {
+    "basic_init_03": {
+      "class": "rl_standard_stars",
+      "usage": "misc_system_init",
+      "usage_odds": "10",
+      "planet": {
+        "count": "1",
+        "class": "star",
+        "orbit_distance": "0",
+        "orbit_angle": "1",
+        "size": {
+          "has_ring": "no"
+        },
+        "change_orbit": "45",
+        "planet": {
+          "count": {
+            "orbit_distance": "10",
+            "orbit_angle": {},
+            "planet": {
+              "count": {
+                "orbit_distance": "60",
+                "class": "pc_gas_giant",
+                "orbit_angle": {
+                  "size": "25",
+                  "change_orbit": "@base_moon_distance",
+                  "moon": {
+                    "count": {
+                      "size": {
+                        "orbit_angle": {
+                          "orbit_distance": "6"
+                        }
+                      },
+                      "change_orbit": "20",
+                      "planet": {
+                        "count": {
+                          "orbit_distance": "20",
+                          "orbit_angle": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "misc_system_initializers.txt",
+    "_line_number": 97
+  },
+  "basic_init_04": {
+    "basic_init_04": {
+      "class": "rl_standard_stars",
+      "asteroid_belt": {
+        "type": "icy_asteroid_belt",
+        "radius": "120"
+      },
+      "usage": "misc_system_init",
+      "usage_odds": "10",
+      "planet": {
+        "count": "1",
+        "class": "star",
+        "orbit_distance": "0",
+        "orbit_angle": "1",
+        "size": {
+          "has_ring": "no"
+        },
+        "change_orbit": "120",
+        "planet": {
+          "count": {
+            "class": "pc_ice_asteroid",
+            "orbit_distance": "0",
+            "orbit_angle": {},
+            "change_orbit": "-80",
+            "planet": {
+              "count": {
+                "orbit_distance": "20",
+                "orbit_angle": {},
+                "change_orbit": "80",
+                "planet": {
+                  "count": {
+                    "orbit_distance": "40",
+                    "orbit_angle": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "misc_system_initializers.txt",
+    "_line_number": 146
+  },
+  "basic_init_05": {
+    "basic_init_05": {
+      "class": "rl_standard_stars",
+      "asteroid_belt": {
+        "type": "icy_asteroid_belt",
+        "radius": "240"
+      },
+      "usage": "misc_system_init",
+      "usage_odds": "6",
+      "planet": {
+        "count": "1",
+        "class": "star",
+        "orbit_distance": "0",
+        "orbit_angle": "1",
+        "size": {
+          "has_ring": "no"
+        },
+        "change_orbit": "130",
+        "planet": {
+          "count": {
+            "class": "pc_asteroid",
+            "orbit_distance": "0",
+            "orbit_angle": {},
+            "change_orbit": "110",
+            "planet": {
+              "count": {
+                "class": "pc_ice_asteroid",
+                "orbit_distance": "0",
+                "orbit_angle": {},
+                "change_orbit": "-210",
+                "planet": {
+                  "count": {
+                    "orbit_distance": "30",
+                    "orbit_angle": {
+                      "change_orbit": "@base_moon_distance",
+                      "moon": {
+                        "count": {
+                          "orbit_angle": {
+                            "orbit_distance": "5"
+                          }
+                        },
+                        "change_orbit": "35",
+                        "planet": {
+                          "count": {
+                            "orbit_distance": "40",
+                            "orbit_angle": {
+                              "change_orbit": "@base_moon_distance",
+                              "moon": {
+                                "count": {
+                                  "orbit_angle": {
+                                    "orbit_distance": "5"
+                                  }
+                                },
+                                "change_orbit": "35",
+                                "planet": {
+                                  "count": {
+                                    "orbit_distance": "40",
+                                    "orbit_angle": {
+                                      "change_orbit": "@base_moon_distance",
+                                      "moon": {
+                                        "count": {
+                                          "orbit_angle": {
+                                            "orbit_distance": "5"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "misc_system_initializers.txt",
+    "_line_number": 202
+  },
+  "basic_init_06": {
+    "basic_init_06": {
+      "class": "rl_standard_stars",
+      "asteroid_belt": {
+        "type": "rocky_asteroid_belt",
+        "radius": "240"
+      },
+      "usage": "misc_system_init",
+      "usage_odds": "4",
+      "planet": {
+        "count": "1",
+        "class": "star",
+        "orbit_distance": "0",
+        "orbit_angle": "1",
+        "size": {
+          "has_ring": "no"
+        },
+        "change_orbit": "130",
+        "planet": {
+          "count": {
+            "class": "pc_asteroid",
+            "orbit_distance": "0",
+            "orbit_angle": {},
+            "change_orbit": "110",
+            "planet": {
+              "count": {
+                "class": "pc_asteroid",
+                "orbit_distance": "0",
+                "orbit_angle": {},
+                "change_orbit": "-210",
+                "planet": {
+                  "count": {
+                    "orbit_distance": "30",
+                    "orbit_angle": {
+                      "change_orbit": "@base_moon_distance",
+                      "moon": {
+                        "count": {
+                          "orbit_angle": {
+                            "orbit_distance": "5"
+                          }
+                        },
+                        "change_orbit": "35",
+                        "planet": {
+                          "count": {
+                            "orbit_distance": "40",
+                            "orbit_angle": {
+                              "change_orbit": "@base_moon_distance",
+                              "moon": {
+                                "count": {
+                                  "orbit_angle": {
+                                    "orbit_distance": "5"
+                                  }
+                                },
+                                "change_orbit": "35",
+                                "planet": {
+                                  "count": {
+                                    "orbit_distance": "40",
+                                    "orbit_angle": {
+                                      "change_orbit": "@base_moon_distance",
+                                      "moon": {
+                                        "count": {
+                                          "orbit_angle": {
+                                            "orbit_distance": "5"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "misc_system_initializers.txt",
+    "_line_number": 293
+  },
+  "asteroid_init_01": {
+    "asteroid_init_01": {
+      "class": "rl_standard_stars",
+      "asteroid_belt": {
+        "type": "icy_asteroid_belt",
+        "radius": "240"
+      },
+      "usage": "misc_system_init",
+      "usage_odds": "2",
+      "planet": {
+        "count": "1",
+        "class": "star",
+        "orbit_distance": "0",
+        "orbit_angle": "1",
+        "size": {
+          "has_ring": "no"
+        },
+        "change_orbit": "60",
+        "planet": {
+          "count": {
+            "class": "pc_asteroid",
+            "orbit_distance": "0",
+            "orbit_angle": {},
+            "change_orbit": "60",
+            "planet": {
+              "count": {
+                "class": "pc_ice_asteroid",
+                "orbit_distance": "0",
+                "orbit_angle": {},
+                "change_orbit": "60",
+                "planet": {
+                  "count": {
+                    "class": "pc_asteroid",
+                    "orbit_distance": "0",
+                    "orbit_angle": {},
+                    "change_orbit": "60",
+                    "planet": {
+                      "count": {
+                        "class": "pc_ice_asteroid",
+                        "orbit_distance": "0",
+                        "orbit_angle": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "misc_system_initializers.txt",
+    "_line_number": 376
+  },
+  "binary_init_01": {
+    "binary_init_01": {
+      "class": "rl_binary_stars",
+      "usage": "misc_system_init",
+      "usage_odds": "6",
+      "planet": {
+        "count": "1",
+        "class": "star",
+        "orbit_distance": "25",
+        "orbit_angle": "0",
+        "size": {
+          "has_ring": "no"
+        },
+        "planet": {
+          "count": "1",
+          "class": "star",
+          "orbit_distance": "0",
+          "size": {
+            "has_ring": "no"
+          },
+          "change_orbit": "45",
+          "planet": {
+            "count": {
+              "orbit_distance": "20",
+              "orbit_angle": {
+                "change_orbit": "@base_moon_distance",
+                "moon": {
+                  "count": {
+                    "orbit_angle": {
+                      "orbit_distance": "5"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "misc_system_initializers.txt",
+    "_line_number": 442
+  },
+  "binary_init_02": {
+    "binary_init_02": {
+      "class": "rl_binary_stars",
+      "usage": "misc_system_init",
+      "usage_odds": "4",
+      "planet": {
+        "count": "1",
+        "class": "star",
+        "orbit_distance": "0",
+        "orbit_angle": "0",
+        "size": {
+          "has_ring": "no"
+        },
+        "planet": {
+          "count": "1",
+          "class": "star",
+          "orbit_distance": "240",
+          "orbit_angle": {
+            "size": {
+              "has_ring": "no",
+              "satellite_naming_policy": "upper_case_roman_numerals",
+              "change_orbit": "25",
+              "planet": {
+                "count": {
+                  "class": "rl_unhabitable_planets",
+                  "size": {
+                    "orbit_angle": {
+                      "orbit_distance": "25",
+                      "satellite_naming_policy": "lower_case_latin_letters",
+                      "change_orbit": "-210",
+                      "moon": {
+                        "count": {
+                          "orbit_angle": {
+                            "orbit_distance": "3"
+                          }
+                        }
+                      },
+                      "planet": {
+                        "count": {
+                          "orbit_distance": "20",
+                          "orbit_angle": {
+                            "change_orbit": "@base_moon_distance",
+                            "moon": {
+                              "count": {
+                                "orbit_angle": {
+                                  "orbit_distance": "3"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "misc_system_initializers.txt",
+    "_line_number": 487
+  },
+  "trinary_init_01": {
+    "trinary_init_01": {
+      "class": "rl_trinary_stars",
+      "usage": "misc_system_init",
+      "usage_odds": "3",
+      "planet": {
+        "count": "1",
+        "class": "star",
+        "orbit_distance": "25",
+        "orbit_angle": "0",
+        "size": {
+          "has_ring": "no"
+        },
+        "planet": {
+          "count": "1",
+          "class": "star",
+          "orbit_distance": {
+            "orbit_angle": "120",
+            "size": {
+              "has_ring": "no"
+            },
+            "planet": {
+              "count": "1",
+              "class": "star",
+              "orbit_distance": {
+                "orbit_angle": "120",
+                "size": {
+                  "has_ring": "no"
+                },
+                "change_orbit": "45",
+                "planet": {
+                  "count": {
+                    "orbit_distance": "20",
+                    "orbit_angle": {
+                      "change_orbit": "@base_moon_distance",
+                      "moon": {
+                        "count": {
+                          "orbit_angle": {
+                            "orbit_distance": "5"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "misc_system_initializers.txt",
+    "_line_number": 546
+  },
+  "trinary_init_02": {
+    "trinary_init_02": {
+      "class": "rl_trinary_stars",
+      "usage": "misc_system_init",
+      "usage_odds": "3",
+      "planet": {
+        "count": "1",
+        "class": "star",
+        "orbit_distance": "0",
+        "orbit_angle": "0",
+        "size": {
+          "has_ring": "no"
+        },
+        "planet": {
+          "count": "1",
+          "class": "star",
+          "orbit_distance": "220",
+          "orbit_angle": {
+            "size": {
+              "has_ring": "no",
+              "satellite_naming_policy": "upper_case_roman_numerals",
+              "change_orbit": "30",
+              "planet": {
+                "count": {
+                  "orbit_angle": {
+                    "orbit_distance": "25",
+                    "satellite_naming_policy": "lower_case_latin_letters",
+                    "change_orbit": "@base_moon_distance",
+                    "moon": {
+                      "count": {
+                        "orbit_angle": {
+                          "orbit_distance": "3"
+                        }
+                      }
+                    },
+                    "planet": {
+                      "count": "1",
+                      "class": "star",
+                      "orbit_distance": "0",
+                      "orbit_angle": {
+                        "size": {
+                          "has_ring": "no",
+                          "satellite_naming_policy": "upper_case_roman_numerals",
+                          "change_orbit": "25",
+                          "planet": {
+                            "count": {
+                              "orbit_angle": {
+                                "orbit_distance": "25",
+                                "satellite_naming_policy": "lower_case_latin_letters",
+                                "change_orbit": "-200",
+                                "moon": {
+                                  "count": {
+                                    "orbit_angle": {
+                                      "orbit_distance": "3"
+                                    }
+                                  }
+                                },
+                                "planet": {
+                                  "count": {
+                                    "orbit_distance": "15",
+                                    "orbit_angle": {
+                                      "change_orbit": "@base_moon_distance",
+                                      "moon": {
+                                        "count": {
+                                          "orbit_angle": {
+                                            "orbit_distance": "3"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "misc_system_initializers.txt",
+    "_line_number": 605
+  }
+}

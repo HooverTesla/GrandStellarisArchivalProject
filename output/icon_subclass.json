@@ -1,0 +1,30 @@
+{
+  "icon": {
+    "icon": {
+      "layer": {
+        "icon": "GFX_leader_subclass_$SUBCLASS$_small",
+        "visible": {
+          "OR": {
+            "NOT": {
+              "check_variable": {
+                "which": "local_size_option",
+                "value": "0"
+              }
+            }
+          }
+        },
+        "layer": {
+          "icon": "GFX_leader_subclass_$SUBCLASS$_large",
+          "visible": {
+            "check_variable": {
+              "which": "local_size_option",
+              "value": "2"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "icon_subclass.txt",
+    "_line_number": 0
+  }
+}

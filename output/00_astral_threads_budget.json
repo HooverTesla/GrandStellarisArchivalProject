@@ -1,0 +1,51 @@
+{
+  "astral_threads_expenditure_buffer": {
+    "astral_threads_expenditure_buffer": {
+      "resource": "astral_threads",
+      "type": "expenditure",
+      "category": "buffer",
+      "potential": {
+        "always": "no"
+      },
+      "weight": {
+        "weight": "0.0"
+      }
+    },
+    "_source_file": "00_astral_threads_budget.txt",
+    "_line_number": 7
+  },
+  "astral_threads_expenditure_edicts": {
+    "astral_threads_expenditure_edicts": {
+      "resource": "astral_threads",
+      "type": "expenditure",
+      "category": "edicts",
+      "potential": {
+        "OR": {
+          "has_country_flag": "astral_cloaking_available"
+        }
+      },
+      "weight": {
+        "weight": "0.2"
+      }
+    },
+    "_source_file": "00_astral_threads_budget.txt",
+    "_line_number": 21
+  },
+  "astral_threads_upkeep_edicts": {
+    "astral_threads_upkeep_edicts": {
+      "resource": "astral_threads",
+      "type": "upkeep",
+      "category": "edicts",
+      "potential": {
+        "OR": {
+          "has_country_flag": "astral_cloaking_available"
+        }
+      },
+      "weight": {
+        "weight": "0.1"
+      }
+    },
+    "_source_file": "00_astral_threads_budget.txt",
+    "_line_number": 37
+  }
+}

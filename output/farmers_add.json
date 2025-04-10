@@ -1,0 +1,35 @@
+{
+  "triggered_planet_modifier": {
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_regular_empire": "yes",
+          "is_fallen_empire_spiritualist": "no",
+          "is_anglers_empire": "yes",
+          "PREV": {}
+        },
+        "modifier": {
+          "job_angler_add": "$ANGLER_AMOUNT$"
+        }
+      }
+    },
+    "_source_file": "farmers_add.txt",
+    "_line_number": 39
+  },
+  "triggered_desc": {
+    "triggered_desc": {
+      "trigger": {
+        "exists": "owner",
+        "owner": {
+          "is_fallen_empire_spiritualist": "no",
+          "is_anglers_empire": "yes",
+          "PREV": {}
+        },
+        "text": "job_aqu_angler_effect_desc"
+      }
+    },
+    "_source_file": "farmers_add.txt",
+    "_line_number": 85
+  }
+}

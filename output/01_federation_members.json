@@ -1,0 +1,47 @@
+{
+  "federation_empire": {
+    "federation_empire": {
+      "strategy_weight": {
+        "modifier": {
+          "has_federation": "yes",
+          "weight": "10"
+        }
+      },
+      "network_weight": {
+        "modifier": {
+          "owner": {
+            "OR": {
+              "NOT": {
+                "is_in_federation_with": "root.target"
+              }
+            },
+            "factor": "-1 # Only spy on neighbours and not own federation members. Conserve envoys for federation duty!"
+          }
+        },
+        "operation_selector": "weighted_random_available",
+        "operations": {
+          "operation_acquire_asset": {
+            "operation_policy": "until_max_network_cap_policy",
+            "target_value": {
+              "min": "1"
+            }
+          },
+          "operation_steal_technology": {
+            "operation_policy": "fix_chance_10",
+            "target_value": {
+              "min": "1"
+            }
+          },
+          "operation_gather_information": {
+            "operation_policy": "fix_chance_10",
+            "target_value": {
+              "min": "1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_federation_members.txt",
+    "_line_number": 9
+  }
+}

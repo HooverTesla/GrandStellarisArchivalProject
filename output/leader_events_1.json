@@ -1,0 +1,140 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "leader.30",
+      "title": "leader.30.name",
+      "desc": "leader.30.desc",
+      "picture": "GFX_evt_throne_room",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "last_changed_policy": "artificial_intelligence_policy",
+        "has_policy_flag": "ai_outlawed",
+        "any_owned_leader": {
+          "has_trait": "leader_trait_sapient_AI_assistant"
+        }
+      },
+      "option": {
+        "name": "GOOD",
+        "every_owned_leader": {
+          "if": {
+            "limit": {
+              "remove_trait": "leader_trait_sapient_AI_assistant"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "leader_events_1.txt",
+    "_line_number": 949
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "leader.15",
+      "title": "admiral_trait_gain",
+      "desc": {
+        "trigger": {
+          "text": "leader.optimizations.desc.hive"
+        },
+        "desc": {
+          "trigger": {
+            "owner": {
+              "is_country_type": "default",
+              "has_technology": "tech_doctrine_fleet_size_3",
+              "NOT": {},
+              "is_being_repaired": "yes",
+              "exists": "leader",
+              "leader": {
+                "leader_class": "commander",
+                "NOR": {
+                  "has_trait": "leader_trait_engineer_2"
+                }
+              }
+            },
+            "mean_time_to_happen": {
+              "months": "240"
+            },
+            "immediate": {
+              "leader": {},
+              "option": {
+                "name": "GOOD",
+                "leader": {}
+              }
+            }
+          },
+          "desc": {
+            "trigger": {
+              "owner": {
+                "NOR": {
+                  "is_hive_empire": "yes",
+                  "is_machine_empire": "yes"
+                }
+              }
+            },
+            "text": "leader.15.desc"
+          },
+          "picture": "GFX_evt_federation_fleet",
+          "location": "ROOT"
+        }
+      }
+    },
+    "_source_file": "leader_events_1.txt",
+    "_line_number": 679
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "leader.19",
+      "title": "admiral_trait_gain",
+      "desc": {
+        "trigger": {
+          "text": "leader.optimizations.desc.hive"
+        },
+        "desc": {
+          "trigger": {
+            "owner": {
+              "is_country_type": "default",
+              "NOT": {},
+              "fleet": {
+                "exists": "leader",
+                "leader": {
+                  "leader_class": "commander",
+                  "NOR": {
+                    "has_trait": "leader_trait_scout_3"
+                  }
+                }
+              }
+            },
+            "immediate": {
+              "fleet": {
+                "leader": {
+                  "solar_system": {}
+                },
+                "option": {
+                  "name": "GOOD",
+                  "fleet": {
+                    "leader": {}
+                  }
+                }
+              }
+            }
+          },
+          "desc": {
+            "trigger": {
+              "owner": {
+                "NOR": {
+                  "is_hive_empire": "yes",
+                  "is_machine_empire": "yes"
+                }
+              }
+            },
+            "text": "leader.19.desc"
+          },
+          "picture": "GFX_evt_federation_fleet",
+          "location": "ROOT",
+          "is_triggered_only": "yes"
+        }
+      }
+    },
+    "_source_file": "leader_events_1.txt",
+    "_line_number": 887
+  }
+}

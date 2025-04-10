@@ -1,0 +1,176 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "country.1155",
+      "title": "country.1155.name",
+      "desc": "country.1155.desc",
+      "show_sound": "event_cityscape",
+      "picture": "GFX_evt_metropolis",
+      "event_chain": "mass_extinction_chain",
+      "is_triggered_only": "yes",
+      "auto_opens": "yes",
+      "immediate": {
+        "remove_country_flag": "massex_5_found",
+        "random_galaxy_planet": {
+          "limit": {
+            "remove_planet_flag": "massex_1_planet"
+          },
+          "random_galaxy_planet": {
+            "limit": {
+              "remove_planet_flag": "massex_2_planet"
+            },
+            "random_galaxy_planet": {
+              "limit": {
+                "remove_planet_flag": "massex_3_planet"
+              },
+              "random_galaxy_planet": {
+                "limit": {
+                  "remove_planet_flag": "massex_4_planet"
+                },
+                "random_galaxy_planet": {
+                  "limit": {
+                    "remove_planet_flag": "massex_5_planet"
+                  }
+                },
+                "option": {
+                  "name": "country.1155.b",
+                  "end_event_chain": "mass_extinction_chain",
+                  "add_monthly_resource_mult": {
+                    "resource": "unity",
+                    "value": "@tier3unityreward"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "country_events_2.txt",
+    "_line_number": 2921
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "country.1102",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "is_ai": "no",
+          "has_event_chain": "mass_extinction_chain"
+        },
+        "from": {
+          "any_system_planet": {
+            "OR": {
+              "has_planet_flag": "massex_5_planet"
+            }
+          }
+        }
+      },
+      "immediate": {
+        "if": {
+          "limit": {
+            "from": {
+              "any_system_planet": {}
+            },
+            "owner": {},
+            "if": {
+              "limit": {
+                "from": {
+                  "any_system_planet": {}
+                },
+                "owner": {},
+                "if": {
+                  "limit": {
+                    "from": {
+                      "any_system_planet": {}
+                    },
+                    "owner": {},
+                    "if": {
+                      "limit": {
+                        "from": {
+                          "any_system_planet": {}
+                        },
+                        "owner": {},
+                        "if": {
+                          "limit": {
+                            "from": {
+                              "any_system_planet": {}
+                            },
+                            "owner": {}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "country_events_2.txt",
+    "_line_number": 1995
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "country.1150",
+      "title": "country.1150.name",
+      "desc": {
+        "text": "country.1150.desc",
+        "trigger": {
+          "controller": {}
+        },
+        "desc": {
+          "text": "country.1150.desc.industrialist",
+          "trigger": {
+            "controller": {}
+          },
+          "show_sound": "event_scanner",
+          "picture": "GFX_evt_outpost",
+          "location": "root",
+          "event_chain": "mass_extinction_chain",
+          "is_triggered_only": "yes",
+          "auto_opens": "yes",
+          "immediate": {
+            "owner": {
+              "add_event_chain_counter": {
+                "event_chain": "mass_extinction_chain",
+                "counter": "massex_analyzed",
+                "amount": "1"
+              }
+            }
+          },
+          "option": {
+            "trigger": {
+              "owner": {
+                "has_completed_event_chain_counter": {
+                  "event_chain": "mass_extinction_chain",
+                  "counter": "massex_analyzed"
+                }
+              }
+            },
+            "name": "OK",
+            "hidden_effect": {},
+            "option": {
+              "trigger": {
+                "owner": {
+                  "NOT": {
+                    "has_completed_event_chain_counter": {
+                      "event_chain": "mass_extinction_chain",
+                      "counter": "massex_analyzed"
+                    }
+                  }
+                }
+              },
+              "name": "OK"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "country_events_2.txt",
+    "_line_number": 2859
+  }
+}

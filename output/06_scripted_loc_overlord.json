@@ -1,0 +1,38 @@
+{
+  "defined_text": {
+    "defined_text": {
+      "name": "GetQuanticAmbushBonus",
+      "text": {
+        "trigger": {
+          "owner": {
+            "has_origin": "origin_star_slingshot",
+            "NOT": {}
+          },
+          "localization_key": "quantic_ambush_bonus_slingshot"
+        },
+        "text": {
+          "trigger": {
+            "owner": {
+              "NOT": {
+                "NOT": {}
+              },
+              "localization_key": "quantic_ambush_bonus"
+            },
+            "text": {
+              "trigger": {
+                "owner": {
+                  "NOT": {
+                    "has_modifier": "quantum_catapult_insight_2_modifier"
+                  }
+                },
+                "localization_key": "quantic_ambush_bonus_astral"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "06_scripted_loc_overlord.txt",
+    "_line_number": 897
+  }
+}

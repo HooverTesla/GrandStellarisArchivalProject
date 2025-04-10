@@ -1,0 +1,338 @@
+{
+  "planet_event": {
+    "planet_event": {
+      "id": "planet_destruction.900",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "if": {
+          "limit": {
+            "NOT": {
+              "exists": "owner",
+              "owner": {},
+              "from.owner": {
+                "country_event": {}
+              },
+              "_comments": [
+                "# Contingency Machine World ### Maybe block these if no AP"
+              ],
+              "if": {
+                "limit": {
+                  "is_planet_class": "pc_ai",
+                  "NOT": {
+                    "from.owner": {
+                      "has_ascension_perk": "ap_archaeoengineers"
+                    }
+                  },
+                  "set_planet_flag": "planet_devolved",
+                  "planet_event": {
+                    "create_ambient_object": {
+                      "location": "this",
+                      "type": "habitat_cracker_object",
+                      "play_animation_once": "yes",
+                      "duration": "5",
+                      "use_3d_location": "yes",
+                      "base_angle_towards": "star",
+                      "entity_face_object": "star",
+                      "entity_offset": {
+                        "entity_scale_to_size": "yes",
+                        "scale": "0.5"
+                      }
+                    },
+                    "_comments": [
+                      "# Contingency Final Machine World"
+                    ],
+                    "if": {
+                      "limit": {
+                        "is_planet_class": "pc_ai",
+                        "has_planet_flag": "machine_lair",
+                        "from.owner": {
+                          "has_ascension_perk": "ap_archaeoengineers"
+                        }
+                      },
+                      "set_planet_flag": "planet_devolved",
+                      "from.owner": {
+                        "stop_crisis_sound": "yes",
+                        "planet_event": {
+                          "create_ambient_object": {
+                            "location": "this",
+                            "type": "habitat_cracker_object",
+                            "play_animation_once": "yes",
+                            "duration": "5",
+                            "use_3d_location": "yes",
+                            "base_angle_towards": "star",
+                            "entity_face_object": "star",
+                            "entity_offset": {
+                              "entity_scale_to_size": "yes",
+                              "scale": "0.5"
+                            }
+                          },
+                          "if": {
+                            "limit": {
+                              "OR": {
+                                "is_active_resolution": "resolution_rulesofwar_demobilization_initiative"
+                              }
+                            },
+                            "from.owner": {
+                              "set_timed_country_flag": {}
+                            },
+                            "if": {
+                              "limit": {
+                                "NOT": {
+                                  "exists": "owner",
+                                  "owner": {
+                                    "NOT": {
+                                      "OR": {
+                                        "is_country_type": "awakened_fallen_empire"
+                                      }
+                                    }
+                                  },
+                                  "_comments": [
+                                    "# Generate threat"
+                                  ],
+                                  "add_threat": {
+                                    "_comments": [
+                                      "# modifier for allies + those upset by conversion",
+                                      "# modifiers for victim"
+                                    ],
+                                    "every_country": {
+                                      "limit": {
+                                        "NOR": {
+                                          "is_same_value": "root.owner",
+                                          "AND": {
+                                            "has_federation": "yes",
+                                            "is_in_federation_with": "from.owner"
+                                          }
+                                        },
+                                        "OR": {
+                                          "AND": {
+                                            "is_country_type": "default",
+                                            "OR": {
+                                              "is_spiritualist": "yes",
+                                              "is_xenophile": "yes",
+                                              "is_hive_empire": "yes"
+                                            }
+                                          },
+                                          "has_ai_personality": "awakened_fallen_empire_spiritualist"
+                                        }
+                                      },
+                                      "add_opinion_modifier": {
+                                        "modifier": "opinion_devolved_a_world",
+                                        "who": "from.owner"
+                                      }
+                                    },
+                                    "owner": {
+                                      "add_opinion_modifier": {
+                                        "modifier": "opinion_devolved_my_world",
+                                        "who": "from.owner"
+                                      },
+                                      "if": {
+                                        "limit": {
+                                          "NOT": {},
+                                          "add_modifier": {
+                                            "modifier": "colossus_victim",
+                                            "days": "10800 # 30 years"
+                                          }
+                                        }
+                                      },
+                                      "_comments": [
+                                        "# Add war exhaustion to planet owner"
+                                      ],
+                                      "owner": {
+                                        "if": {
+                                          "limit": {
+                                            "is_at_war_with": "from.fleet.owner"
+                                          },
+                                          "add_static_war_exhaustion": {
+                                            "attacker": "from.fleet.owner",
+                                            "location": "root",
+                                            "value_for_planet_destruction": "1.0"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "every_owned_pop": {
+                                      "limit": {
+                                        "from.owner": {
+                                          "has_ascension_perk": "ap_archaeoengineers"
+                                        },
+                                        "OR": {
+                                          "has_trait": "trait_machine_unit"
+                                        }
+                                      },
+                                      "kill_pop": "yes",
+                                      "from.owner": {
+                                        "if": {
+                                          "limit": {
+                                            "complete_crisis_objective": "crisobj_purge_pops"
+                                          }
+                                        }
+                                      },
+                                      "if": {
+                                        "limit": {
+                                          "from.owner": {
+                                            "has_ascension_perk": "ap_archaeoengineers"
+                                          }
+                                        },
+                                        "planet": {
+                                          "every_planet_army": {
+                                            "limit": {
+                                              "OR": {
+                                                "army_type": "machine_occupation_army"
+                                              }
+                                            },
+                                            "remove_army": "yes"
+                                          }
+                                        }
+                                      },
+                                      "while": {
+                                        "limit": {
+                                          "any_owned_pop": {
+                                            "NOR": {
+                                              "has_trait": "trait_machine_unit"
+                                            },
+                                            "is_sapient": "yes"
+                                          }
+                                        },
+                                        "random_owned_pop": {
+                                          "change_species": "event_target:species_target"
+                                        },
+                                        "random_list": {
+                                          "33": {
+                                            "33": {
+                                              "random_owned_pop": {
+                                                "change_species": "event_target:species_target"
+                                              }
+                                            }
+                                          },
+                                          "planet": {
+                                            "every_planet_army": {
+                                              "limit": {
+                                                "OR": {
+                                                  "army_type": "flamestorm_troopers_army"
+                                                }
+                                              },
+                                              "remove_army": "yes"
+                                            },
+                                            "check_planet_employment": "yes"
+                                          },
+                                          "_comments": [
+                                            "# Special graphics for Habitats and Ring Worlds",
+                                            "# nothing"
+                                          ],
+                                          "if": {
+                                            "limit": {
+                                              "OR": {
+                                                "is_planet_class": "pc_cosmogenesis_world"
+                                              }
+                                            }
+                                          },
+                                          "else_if": {
+                                            "limit": {
+                                              "is_planet_class": "pc_ringworld_habitable"
+                                            },
+                                            "spawn_ringworld_neutron_effect": "yes"
+                                          },
+                                          "else": {
+                                            "change_pc": "this"
+                                          },
+                                          "set_timed_planet_flag": {
+                                            "flag": "devolved_planet",
+                                            "days": "360"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "planet_destruction_events.txt",
+    "_line_number": 2634
+  },
+  "country_event": {
+    "country_event": {
+      "id": "planet_destruction.1000",
+      "title": "planet_destruction.1000.name",
+      "desc": {
+        "trigger": {
+          "NOT": {
+            "from": {
+              "OR": {
+                "is_planet_class": "pc_shattered_2"
+              }
+            }
+          },
+          "text": "planet_destruction.1000.desc.shatter"
+        },
+        "desc": {
+          "trigger": {
+            "NOT": {
+              "from": {
+                "OR": {
+                  "is_planet_class": "pc_habitat_shielded"
+                }
+              }
+            },
+            "text": "planet_destruction.1000.desc.shield"
+          },
+          "desc": {
+            "trigger": {
+              "from": {
+                "has_observation_outpost": "yes"
+              }
+            },
+            "picture": {
+              "trigger": {
+                "from": {
+                  "NOR": {
+                    "is_planet_class": "pc_habitat_shielded"
+                  }
+                }
+              },
+              "picture": "GFX_evt_exploding_planet"
+            },
+            "is_triggered_only": "yes",
+            "option": {
+              "name": "planet_destruction.1000.B",
+              "trigger": {
+                "OR": {
+                  "is_homicidal": "yes",
+                  "has_ethic": "ethic_fanatic_xenophobe"
+                },
+                "from": {
+                  "OR": {
+                    "is_planet_class": "pc_shattered_2"
+                  }
+                }
+              },
+              "from": {
+                "observation_outpost": {
+                  "dismantle": "yes"
+                }
+              },
+              "add_monthly_resource_mult": {
+                "resource": "unity",
+                "value": "2"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "planet_destruction_events.txt",
+    "_line_number": 3006
+  }
+}

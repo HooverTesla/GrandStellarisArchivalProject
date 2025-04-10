@@ -1,0 +1,24 @@
+{
+  "special_project": {
+    "special_project": {
+      "key": "SPONTANEOUS_EXPLOSIONS",
+      "days_to_research": "60",
+      "timelimit": "1080",
+      "picture": "GFX_evt_nuclear_explosion",
+      "icon": "gfx/interface/icons/situation_log/situation_log_astral_rift.dds",
+      "event_scope": "ship_event",
+      "requirements": {
+        "shipclass_science_ship": "1",
+        "leader": "scientist"
+      },
+      "on_success": {
+        "ship_event": {
+          "id": "astral_planes.6065",
+          "scopes": {}
+        }
+      }
+    },
+    "_source_file": "02_projects_astral_planes.txt",
+    "_line_number": 54
+  }
+}

@@ -1,0 +1,425 @@
+{
+  "event": {
+    "event": {
+      "id": "game_start.50",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "every_system": {
+          "limit": {
+            "nebula_cloaking_effect": "yes",
+            "_comments": [
+              "# Class B"
+            ],
+            "if": {
+              "limit": {
+                "OR": {
+                  "is_star_class": "sc_trinary_4"
+                }
+              },
+              "random_list": {
+                "20": {
+                  "20": {
+                    "10": {
+                      "4": {
+                        "modifier": {
+                          "factor": "0",
+                          "has_star_flag": "empire_home_system"
+                        },
+                        "create_turbulent_nebula_1": "yes"
+                      }
+                    }
+                  },
+                  "_comments": [
+                    "# Class A"
+                  ],
+                  "else_if": {
+                    "limit": {
+                      "OR": {
+                        "is_star_class": "sc_binary_10"
+                      }
+                    },
+                    "if": {
+                      "limit": {
+                        "create_rare_nebula_1": "yes"
+                      },
+                      "else": {
+                        "random_list": {
+                          "20": {
+                            "20": {
+                              "10": {
+                                "10": {
+                                  "4": {
+                                    "modifier": {
+                                      "factor": "0",
+                                      "has_star_flag": "empire_home_system"
+                                    },
+                                    "create_turbulent_nebula_2": "yes"
+                                  }
+                                }
+                              }
+                            },
+                            "_comments": [
+                              "# Class F"
+                            ],
+                            "else_if": {
+                              "limit": {
+                                "random_list": {
+                                  "20": {
+                                    "20": {
+                                      "10": {
+                                        "4": {
+                                          "modifier": {
+                                            "factor": "0",
+                                            "has_star_flag": "empire_home_system"
+                                          },
+                                          "create_turbulent_nebula_1": "yes"
+                                        }
+                                      }
+                                    },
+                                    "_comments": [
+                                      "# Class G"
+                                    ],
+                                    "else_if": {
+                                      "limit": {
+                                        "OR": {
+                                          "is_star_class": "sc_trinary_1"
+                                        }
+                                      },
+                                      "random_list": {
+                                        "20": {
+                                          "10": {
+                                            "4": {
+                                              "modifier": {
+                                                "factor": "0",
+                                                "has_star_flag": "empire_home_system"
+                                              },
+                                              "create_turbulent_nebula_2": "yes"
+                                            }
+                                          }
+                                        },
+                                        "_comments": [
+                                          "# Class K"
+                                        ],
+                                        "else_if": {
+                                          "limit": {
+                                            "OR": {
+                                              "is_star_class": "sc_trinary_3"
+                                            }
+                                          },
+                                          "random_list": {
+                                            "20": {
+                                              "20": {
+                                                "10": {
+                                                  "4": {
+                                                    "modifier": {
+                                                      "factor": "0",
+                                                      "has_star_flag": "empire_home_system"
+                                                    },
+                                                    "create_turbulent_nebula_2": "yes"
+                                                  }
+                                                }
+                                              },
+                                              "_comments": [
+                                                "# Class M"
+                                              ],
+                                              "else_if": {
+                                                "limit": {
+                                                  "OR": {
+                                                    "is_star_class": "sc_binary_6"
+                                                  }
+                                                },
+                                                "random_list": {
+                                                  "20": {
+                                                    "20": {
+                                                      "10": {
+                                                        "4": {
+                                                          "modifier": {
+                                                            "factor": "0",
+                                                            "has_star_flag": "empire_home_system"
+                                                          },
+                                                          "create_turbulent_nebula_2": "yes"
+                                                        }
+                                                      }
+                                                    },
+                                                    "_comments": [
+                                                      "# Class T"
+                                                    ],
+                                                    "else_if": {
+                                                      "limit": {
+                                                        "random_list": {
+                                                          "20": {
+                                                            "10": {
+                                                              "4": {
+                                                                "modifier": {
+                                                                  "factor": "0",
+                                                                  "has_star_flag": "empire_home_system"
+                                                                },
+                                                                "create_turbulent_nebula_1": "yes"
+                                                              }
+                                                            }
+                                                          },
+                                                          "_comments": [
+                                                            "# Black Hole"
+                                                          ],
+                                                          "else_if": {
+                                                            "limit": {
+                                                              "random_list": {
+                                                                "20": {
+                                                                  "20": {
+                                                                    "20": {
+                                                                      "20": {
+                                                                        "10": {
+                                                                          "10": {
+                                                                            "4": {
+                                                                              "modifier": {
+                                                                                "factor": "0",
+                                                                                "has_star_flag": "empire_home_system"
+                                                                              },
+                                                                              "create_turbulent_nebula_2": "yes"
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "_comments": [
+                                                                          "# Neutron Star"
+                                                                        ],
+                                                                        "else_if": {
+                                                                          "limit": {
+                                                                            "random_list": {
+                                                                              "20": {
+                                                                                "20": {
+                                                                                  "10": {
+                                                                                    "10": {
+                                                                                      "4": {
+                                                                                        "modifier": {
+                                                                                          "factor": "0",
+                                                                                          "has_star_flag": "empire_home_system"
+                                                                                        },
+                                                                                        "create_turbulent_nebula_2": "yes"
+                                                                                      }
+                                                                                    }
+                                                                                  },
+                                                                                  "_comments": [
+                                                                                    "# Pulsar"
+                                                                                  ],
+                                                                                  "else_if": {
+                                                                                    "limit": {
+                                                                                      "random_list": {
+                                                                                        "20": {
+                                                                                          "20": {
+                                                                                            "10": {
+                                                                                              "10": {
+                                                                                                "4": {
+                                                                                                  "modifier": {
+                                                                                                    "factor": "0",
+                                                                                                    "has_star_flag": "empire_home_system"
+                                                                                                  },
+                                                                                                  "create_turbulent_nebula_2": "yes"
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "game_start.txt",
+    "_line_number": 2375
+  },
+  "country_event": {
+    "country_event": {
+      "id": "game_start.73",
+      "hide_window": "yes",
+      "trigger": {
+        "has_machine_age_dlc": "yes",
+        "has_valid_civic": "civic_augmentation_bazaars"
+      },
+      "is_triggered_only": "yes",
+      "immediate": {
+        "random_list": {
+          "30": {
+            "every_owned_species": {
+              "limit": {
+                "is_robotic": "no"
+              },
+              "change_species_characteristics": {
+                "add_trait": "trait_cyborg_superconductive"
+              }
+            },
+            "set_country_flag": "augmentation_bazaars_superconductive"
+          }
+        }
+      }
+    },
+    "_source_file": "game_start.txt",
+    "_line_number": 3233
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "game_start.23",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "if": {
+          "limit": {
+            "if": {
+              "limit": {
+                "while": {
+                  "count": "13",
+                  "create_pop": {}
+                },
+                "else_if": {
+                  "limit": {
+                    "while": {
+                      "count": "16",
+                      "create_pop": {}
+                    },
+                    "else_if": {
+                      "limit": {
+                        "random_galaxy_species": {
+                          "limit": {
+                            "has_species_flag": "mechanical_species@root.owner"
+                          },
+                          "save_event_target_as": "mechanical_species"
+                        },
+                        "while": {
+                          "count": "12",
+                          "create_pop": {}
+                        },
+                        "else_if": {
+                          "limit": {
+                            "owner": {
+                              "OR": {
+                                "has_origin": "origin_necrophage"
+                              }
+                            }
+                          },
+                          "random_galaxy_species": {
+                            "limit": {
+                              "has_species_flag": "syncretic_species@root.owner"
+                            },
+                            "save_event_target_as": "syncretic_species"
+                          },
+                          "while": {
+                            "count": "8",
+                            "create_pop": {},
+                            "while": {
+                              "count": "10",
+                              "create_pop": {}
+                            },
+                            "else": {
+                              "if": {
+                                "limit": {
+                                  "while": {
+                                    "count": "15",
+                                    "create_pop": {}
+                                  },
+                                  "else_if": {
+                                    "limit": {
+                                      "while": {
+                                        "count": "18",
+                                        "create_pop": {}
+                                      },
+                                      "else_if": {
+                                        "limit": {
+                                          "random_galaxy_species": {
+                                            "limit": {
+                                              "has_species_flag": "mechanical_species@root.owner"
+                                            },
+                                            "save_event_target_as": "mechanical_species"
+                                          },
+                                          "while": {
+                                            "count": "7",
+                                            "create_pop": {}
+                                          },
+                                          "else_if": {
+                                            "limit": {
+                                              "owner": {
+                                                "OR": {
+                                                  "has_origin": "origin_necrophage"
+                                                }
+                                              }
+                                            },
+                                            "random_galaxy_species": {
+                                              "limit": {
+                                                "has_species_flag": "syncretic_species@root.owner"
+                                              },
+                                              "save_event_target_as": "syncretic_species"
+                                            },
+                                            "while": {
+                                              "count": "4",
+                                              "create_pop": {},
+                                              "while": {
+                                                "count": "6",
+                                                "create_pop": {}
+                                              },
+                                              "else": {
+                                                "while": {
+                                                  "count": "10",
+                                                  "create_pop": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "game_start.txt",
+    "_line_number": 1833
+  }
+}

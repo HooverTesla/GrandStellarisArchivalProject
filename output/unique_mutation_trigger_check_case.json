@@ -1,0 +1,28 @@
+{
+  "$SHIP_SIZE$": {
+    "$SHIP_SIZE$": {
+      "owner": {
+        "change_variable": {
+          "which": "$SHIP_CATEGORY$_total_built",
+          "value": "root.trigger:ship_size_multiplier"
+        },
+        "if": {
+          "limit": {
+            "NOR": {
+              "has_special_project": "$SHIP_CATEGORY$_UNIQUE_MUTATION_PROJECT",
+              "has_country_flag": "$SHIP_CATEGORY$_clone_threshold_reached"
+            },
+            "check_variable": {
+              "which": "$SHIP_CATEGORY$_total_built",
+              "value >": "@unique_mutation_space_fauna_special_project_clone_threshold"
+            }
+          },
+          "set_country_flag": "$SHIP_CATEGORY$_clone_threshold_reached",
+          "country_event": {}
+        }
+      }
+    },
+    "_source_file": "unique_mutation_trigger_check_case.txt",
+    "_line_number": -1
+  }
+}

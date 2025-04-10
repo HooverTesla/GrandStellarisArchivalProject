@@ -1,0 +1,40 @@
+{
+  "fleet_event": {
+    "fleet_event": {
+      "id": "ancrel.8215",
+      "title": "ancrel.8215.name",
+      "desc": "ancrel.8215.desc",
+      "picture": "GFX_evt_synth_sabotage",
+      "show_sound": "event_power_down",
+      "archaeology": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "fromfrom": {},
+        "after": {
+          "fromfrom": {},
+          "option": {
+            "name": "UNFORTUNATE",
+            "fromfrom": {},
+            "option": {
+              "name": "ancrel.kick_it",
+              "trigger": {
+                "fromfrom": {
+                  "random_list": {
+                    "1": {
+                      "1": {}
+                    },
+                    "ai_chance": {
+                      "factor": "5"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "ancient_relics_random_site_events.txt",
+    "_line_number": 1613
+  }
+}

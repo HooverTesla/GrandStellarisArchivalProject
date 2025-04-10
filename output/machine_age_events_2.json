@@ -1,0 +1,224 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "cybernetics.5095",
+      "hide_window": "yes",
+      "location": "FROM",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "NOT": {
+          "from": {
+            "has_trait": "leader_trait_tactical_algorithms"
+          }
+        },
+        "immediate": {
+          "set_timed_country_flag": {
+            "flag": "no_murdering_tactical_leaders",
+            "days": "3600"
+          }
+        }
+      }
+    },
+    "_source_file": "machine_age_events_2.txt",
+    "_line_number": 1718
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "cybernetics.1017",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from": {
+          "OR": {
+            "has_modifier": "orbital_arc_furnace_4_mod"
+          }
+        }
+      },
+      "immediate": {
+        "from": {
+          "if": {
+            "limit": {
+              "NOT": {
+                "is_star": "no",
+                "is_astral_scar": "no",
+                "colonizable_planet": "no"
+              },
+              "remove_trade_deposits": "yes",
+              "switch": {
+                "trigger": "has_modifier",
+                "orbital_arc_furnace_1_mod": {
+                  "add_deposit": "d_minerals_1",
+                  "arc_furnace_update_orbital_effect": "yes"
+                },
+                "orbital_arc_furnace_2_mod": {
+                  "add_deposit": "d_minerals_1",
+                  "arc_furnace_update_orbital_effect": "yes"
+                },
+                "orbital_arc_furnace_3_mod": {
+                  "add_deposit": "d_alloys_1",
+                  "arc_furnace_update_orbital_effect": "yes"
+                },
+                "orbital_arc_furnace_4_mod": {
+                  "add_deposit": "d_alloys_1",
+                  "arc_furnace_update_orbital_effect": "yes"
+                }
+              }
+            },
+            "else": {
+              "remove_modifier": "orbital_arc_furnace_4_mod"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "machine_age_events_2.txt",
+    "_line_number": 184
+  },
+  "situation_event": {
+    "situation_event": {
+      "id": "cyber.5016",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "owner": {
+          "export_resource_stockpile_to_variable": {
+            "resource": "consumer_goods",
+            "variable": "paperclips_current_amount"
+          },
+          "floor_variable": "paperclips_current_amount",
+          "export_trigger_value_to_variable": {
+            "trigger": "resource_income_compare",
+            "parameters": {
+              "variable": "paperclips_current_income"
+            },
+            "set_variable": {
+              "which": "paperclips_max_capacity",
+              "value": "value:max_paperclip_capacity"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "machine_age_events_2.txt",
+    "_line_number": 693
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "cybernetics.5049",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "owner",
+        "owner": {
+          "any_owned_pop": {
+            "is_same_species": "owner_main_species",
+            "has_virtual_species_trait": "no"
+          }
+        },
+        "immediate": {
+          "if": {
+            "limit": {
+              "owner": {
+                "has_tradition": "tr_virtuality_1"
+              }
+            },
+            "every_owned_pop": {
+              "limit": {
+                "is_same_species": "owner_main_species",
+                "has_virtual_species_trait": "no"
+              },
+              "modify_species": {
+                "species": "this",
+                "add_trait": "trait_robot_digital_2"
+              }
+            }
+          },
+          "else": {
+            "every_owned_pop": {
+              "limit": {
+                "is_same_species": "owner_main_species",
+                "has_virtual_species_trait": "no"
+              },
+              "modify_species": {
+                "species": "this",
+                "add_trait": "trait_robot_digital_1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "machine_age_events_2.txt",
+    "_line_number": 1671
+  },
+  "system_event": {
+    "system_event": {
+      "id": "cybernetics.5054",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "owner",
+        "owner": {
+          "has_tradition": "tr_nanotech_finish"
+        },
+        "starbase": {
+          "has_starbase_building": "nanite_harvester"
+        }
+      },
+      "immediate": {
+        "owner": {
+          "save_event_target_as": "nanotech_country"
+        },
+        "every_system_planet": {
+          "limit": {
+            "OR": {
+              "has_deposit": "d_nanite_harvester_deposit",
+              "has_planet_flag": "nanites_doubled_9"
+            },
+            "has_mining_station": "yes"
+          },
+          "if": {
+            "limit": {
+              "NOR": {
+                "has_planet_flag": "nanites_doubled_9"
+              }
+            },
+            "add_deposit": "d_nanite_harvester_deposit",
+            "set_planet_flag": "nanites_doubled_1"
+          },
+          "else_if": {
+            "limit": {
+              "has_planet_flag": "nanites_doubled_9"
+            },
+            "nanotech_deposit_nanite_generation": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "machine_age_events_2.txt",
+    "_line_number": 1218
+  },
+  "event": {
+    "event": {
+      "id": "cybernetics.5053",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "every_system": {
+          "limit": {
+            "exists": "starbase",
+            "owner": {
+              "has_tradition": "tr_nanotech_finish"
+            },
+            "starbase": {
+              "has_starbase_building": "nanite_harvester"
+            }
+          },
+          "system_event": {}
+        }
+      }
+    },
+    "_source_file": "machine_age_events_2.txt",
+    "_line_number": 1194
+  }
+}

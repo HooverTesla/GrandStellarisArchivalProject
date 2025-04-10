@@ -1,0 +1,747 @@
+{
+  "TROP_BIOLOGY_CAT": {
+    "TROP_BIOLOGY_CAT": {
+      "desc": "TROP_BIOLOGY_DESC",
+      "picture": "GFX_evt_alien_nature",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_tropical"
+        }
+      },
+      "on_success": "anomaly.4000"
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 1
+  },
+  "AST_MINING_CAT": {
+    "AST_MINING_CAT": {
+      "desc": "AST_MINING_DESC",
+      "picture": "GFX_evt_mining_station",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_asteroid": "yes",
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "on_success": "anomaly.4005"
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 16
+  },
+  "GEN_DERELICT_SHIP_CAT": {
+    "GEN_DERELICT_SHIP_CAT": {
+      "desc": "GEN_DERELICT_SHIP_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "from.owner": {
+            "is_machine_empire": "yes"
+          }
+        }
+      },
+      "on_success": "anomaly.4010"
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 32
+  },
+  "GEN_LOST_CARGO_CAT": {
+    "GEN_LOST_CARGO_CAT": {
+      "desc": "GEN_LOST_CARGO_DESC",
+      "picture": "GFX_evt_unidentified_ship",
+      "level": "6",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "OR": {
+            "is_asteroid": "yes"
+          }
+        }
+      },
+      "on_success": {
+        "1": "anomaly.4085"
+      }
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 56
+  },
+  "GEN_OLD_WAR_CAT": {
+    "GEN_OLD_WAR_CAT": {
+      "desc": "GEN_OLD_WAR_DESC",
+      "picture": "GFX_evt_ship_in_orbit_2",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "OR": {
+            "is_planet_class": "pc_toxic"
+          },
+          "NOT": {}
+        },
+        "on_success": {
+          "1": {
+            "modifier": {
+              "factor": "0",
+              "owner": {
+                "OR": {
+                  "is_gestalt": "yes",
+                  "has_country_flag": "masters_writings_war_found"
+                }
+              }
+            },
+            "anomaly_event": "anomaly.4165"
+          }
+        }
+      }
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 76
+  },
+  "DES_BURIED_CAT": {
+    "DES_BURIED_CAT": {
+      "desc": "DES_BURIED_DESC",
+      "picture": "GFX_evt_desert",
+      "level": "4",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_desert"
+        }
+      },
+      "max_once": "yes",
+      "on_success": {
+        "1": {
+          "modifier": {
+            "factor": "0",
+            "owner": {
+              "OR": {
+                "is_gestalt": "yes",
+                "has_country_flag": "masters_writings_politics_found"
+              }
+            }
+          },
+          "anomaly_event": "anomaly.4135"
+        }
+      }
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 130
+  },
+  "SUN_RAYS_CAT": {
+    "SUN_RAYS_CAT": {
+      "desc": "SUN_RAYS_DESC",
+      "picture": "GFX_evt_physics_research",
+      "level": "5",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "OR": {
+            "is_planet_class": "pc_arid"
+          }
+        }
+      },
+      "max_once": "yes",
+      "on_success": {
+        "1": "anomaly.4040"
+      }
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 169
+  },
+  "WAT_PLANET_CAT": {
+    "WAT_PLANET_CAT": {
+      "desc": "WAT_PLANET_DESC",
+      "picture": "GFX_evt_ocean",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "OR": {
+            "is_planet_class": "pc_ocean"
+          },
+          "from.owner": {
+            "NOR": {
+              "has_policy_flag": "interference_not_allowed",
+              "is_gestalt": "yes"
+            }
+          }
+        }
+      },
+      "on_success": "anomaly.4045"
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 199
+  },
+  "COLD_RESEARCH_CAT": {
+    "COLD_RESEARCH_CAT": {
+      "desc": "COLD_RESEARCH_DESC",
+      "picture": "GFX_evt_tundra",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "OR": {
+            "is_planet_class": "pc_barren_cold"
+          }
+        }
+      },
+      "on_success": {
+        "1": {
+          "modifier": {
+            "factor": "0",
+            "owner": {},
+            "modifier": {
+              "factor": "0",
+              "from": {},
+              "anomaly_event": "anomaly.4055"
+            },
+            "1": {
+              "modifier": {
+                "factor": "0",
+                "owner": {},
+                "anomaly_event": "anomaly.4075"
+              },
+              "1": {
+                "modifier": {
+                  "factor": "0",
+                  "owner": {},
+                  "anomaly_event": "anomaly.4120"
+                },
+                "1": {
+                  "modifier": {
+                    "factor": "0",
+                    "owner": {
+                      "OR": {
+                        "is_gestalt": "yes",
+                        "has_country_flag": "anomaly_140_triggered"
+                      }
+                    }
+                  },
+                  "anomaly_event": "anomaly.4140"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 222
+  },
+  "SUN_TEAPOT_CAT": {
+    "SUN_TEAPOT_CAT": {
+      "desc": "SUN_TEAPOT_DESC",
+      "picture": "GFX_evt_star_yellow",
+      "level": "5",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "OR": {
+            "is_planet_class": "pc_m_star"
+          }
+        }
+      },
+      "null_spawn_chance": "0.80 # 20% chance to spawn",
+      "on_success": "anomaly.4060"
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 280
+  },
+  "AST_GEAR_CAT": {
+    "AST_GEAR_CAT": {
+      "desc": "AST_GEAR_DESC",
+      "picture": "GFX_evt_mining_station",
+      "level": "6",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_asteroid": "yes"
+        }
+      },
+      "on_success": "anomaly.4065"
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 299
+  },
+  "TROP_CONDITIONS_CAT": {
+    "TROP_CONDITIONS_CAT": {
+      "desc": "TROP_CONDITIONS_DESC",
+      "picture": "GFX_evt_alien_nature",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "from.owner": {
+            "is_machine_empire": "yes",
+            "NOT": {
+              "has_civic": "civic_machine_servitor"
+            }
+          }
+        }
+      },
+      "on_success": "anomaly.4070"
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 314
+  },
+  "ARID_SENSOR_CAT": {
+    "ARID_SENSOR_CAT": {
+      "desc": "ARID_SENSOR_DESC",
+      "picture": "GFX_evt_arid",
+      "level": "6",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_arid"
+        }
+      },
+      "on_success": "anomaly.4080"
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 338
+  },
+  "CON_BIOLOGY_CAT": {
+    "CON_BIOLOGY_CAT": {
+      "desc": "CON_BIOLOGY_DESC",
+      "picture": "GFX_evt_continental",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_continental"
+        }
+      },
+      "on_success": {
+        "1": {
+          "modifier": {
+            "factor": "0",
+            "owner": {},
+            "anomaly_event": "anomaly.4095"
+          },
+          "1": {
+            "modifier": {
+              "factor": "0",
+              "owner": {},
+              "anomaly_event": "anomaly.4100"
+            },
+            "1": {
+              "modifier": {
+                "factor": "0",
+                "owner": {},
+                "anomaly_event": "anomaly.4150"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 353
+  },
+  "TOX_PLANET_CAT": {
+    "TOX_PLANET_CAT": {
+      "desc": "TOX_PLANET_DESC",
+      "picture": "GFX_evt_toxic",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_toxic"
+        }
+      },
+      "on_success": "anomaly.4105"
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 391
+  },
+  "DES_PLANET_CAT": {
+    "DES_PLANET_CAT": {
+      "desc": "DES_PLANET_DESC",
+      "picture": "GFX_evt_desert",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_desert"
+        }
+      },
+      "on_success": "anomaly.4110"
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 406
+  },
+  "GEN_MYSTICAL_CAT": {
+    "GEN_MYSTICAL_CAT": {
+      "desc": "GEN_MYSTICAL_DESC",
+      "picture": "GFX_evt_asteroid_field",
+      "level": "7",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "from.owner": {
+            "is_gestalt": "yes"
+          }
+        }
+      },
+      "on_success": "anomaly.4130"
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 435
+  },
+  "NUKE_PLANET_CAT": {
+    "NUKE_PLANET_CAT": {
+      "desc": "NUKE_PLANET_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "5",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_nuked",
+          "NOT": {},
+          "modifier": {
+            "factor": "0",
+            "from.owner": {
+              "OR": {
+                "is_gestalt": "yes",
+                "has_valid_civic": "civic_memorialist"
+              }
+            }
+          }
+        },
+        "on_success": "anomaly.4155"
+      }
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 456
+  },
+  "RADIOACTIVE_PLANET_CAT": {
+    "RADIOACTIVE_PLANET_CAT": {
+      "desc": "RADIOACTIVE_PLANET_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_nuked",
+          "NOT": {}
+        },
+        "on_success": "anomaly.680"
+      }
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 481
+  },
+  "ARID_PLANET_CAT": {
+    "ARID_PLANET_CAT": {
+      "desc": "ARID_PLANET_DESC",
+      "picture": "GFX_evt_arid",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_arid"
+        }
+      },
+      "on_success": "anomaly.4170"
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 497
+  },
+  "NANO_SWARM_CAT": {
+    "NANO_SWARM_CAT": {
+      "desc": "NANO_SWARM_CAT_DESC",
+      "picture": "GFX_evt_desert",
+      "level": "6",
+      "spawn_chance": {
+        "modifier": {
+          "add": "0 #Added by system initializer"
+        }
+      },
+      "on_success": "anomaly.6700"
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 513
+  },
+  "STAR_RESONANCE_CAT": {
+    "STAR_RESONANCE_CAT": {
+      "desc": "STAR_RESONANCE_DESC",
+      "picture": "GFX_evt_star_yellow",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "OR": {
+            "is_planet_class": "pc_m_star"
+          },
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "null_spawn_chance": "0.60 # 40% chance to spawn",
+      "on_success": {
+        "1": "anomaly.6740"
+      }
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 528
+  },
+  "ALPHA_CENTAURI_CAT": {
+    "ALPHA_CENTAURI_CAT": {
+      "desc": "ALPHA_CENTAURI_CAT_DESC",
+      "picture": "GFX_evt_cold_barren",
+      "level": "1",
+      "_comments": [
+        "#Spawn set via initialisers"
+      ],
+      "on_success": {
+        "1": {
+          "modifier": {
+            "factor": "0",
+            "owner": {
+              "capital_scope": {}
+            },
+            "anomaly_event": "anomaly.6745"
+          },
+          "1": {
+            "modifier": {
+              "factor": "0",
+              "owner": {
+                "capital_scope": {}
+              },
+              "anomaly_event": "anomaly.6750"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 551
+  },
+  "TEMPORAL_PRISM_CAT": {
+    "TEMPORAL_PRISM_CAT": {
+      "desc": "TEMPORAL_PRISM_CAT_DESC",
+      "picture": "GFX_evt_clocks",
+      "level": "5",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_asteroid": "yes"
+        }
+      },
+      "on_success": "anomaly.6788"
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 580
+  },
+  "VENDING_MACHINE_CAT": {
+    "VENDING_MACHINE_CAT": {
+      "desc": "VENDING_MACHINE_CAT_DESC",
+      "picture": "GFX_evt_asteroid_field",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "from.owner": {
+            "num_communications": "0"
+          }
+        }
+      },
+      "max_once": "yes",
+      "on_success": "anomaly.7000"
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 596
+  },
+  "TIYANKI_ASTEROID_CAT": {
+    "TIYANKI_ASTEROID_CAT": {
+      "desc": "TIYANKI_ASTEROID_CAT_DESC",
+      "picture": "GFX_evt_ice_asteroids",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "add": "0 # Called in initializer"
+        }
+      },
+      "max_once": "yes",
+      "on_success": "anomaly.7100"
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 619
+  },
+  "UBUME_BABY_CAT": {
+    "UBUME_BABY_CAT": {
+      "desc": "UBUME_BABY_CAT_DESC",
+      "picture": "GFX_evt_asteroid_field",
+      "level": "3",
+      "on_success": "anomaly.6791",
+      "_comments": [
+        "#Spawn set via initialisers"
+      ]
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 634
+  },
+  "UNIQUE_SYSTEM_BATTLE_CAT": {
+    "UNIQUE_SYSTEM_BATTLE_CAT": {
+      "desc": "UNIQUE_SYSTEM_BATTLE_CAT_DESC",
+      "picture": "GFX_evt_space_debris",
+      "level": "5",
+      "on_success": "unique.125",
+      "_comments": [
+        "# Spawn set via initializers"
+      ]
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 644
+  },
+  "SINGING_PLANET_CAT": {
+    "SINGING_PLANET_CAT": {
+      "desc": "SINGING_PLANET_CAT_DESC",
+      "picture": "GFX_evt_decryption",
+      "level": "7",
+      "spawn_chance": {
+        "modifier": {
+          "add": "2",
+          "OR": {
+            "is_planet_class": "pc_molten"
+          }
+        }
+      },
+      "max_once": "yes",
+      "on_spawn": {
+        "clear_deposits": "yes"
+      },
+      "on_success": "anomaly.7101"
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 655
+  },
+  "FROZEN_SPRINGS_CAT": {
+    "FROZEN_SPRINGS_CAT": {
+      "desc": "FROZEN_SPRINGS_CAT_desc",
+      "picture": "GFX_evt_microscopic_life",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_frozen"
+        }
+      },
+      "on_success": {
+        "1": "anomaly.3140"
+      }
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 680
+  },
+  "SOLARPUNK_CAT": {
+    "SOLARPUNK_CAT": {
+      "desc": "SOLARPUNK_CAT_DESC",
+      "picture": "GFX_evt_vortex",
+      "level": "7",
+      "spawn_chance": {
+        "modifier": {
+          "add": "0 # Called in an event"
+        }
+      },
+      "on_success": {
+        "1": "fircon.5010"
+      }
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 695
+  },
+  "DATA_DIAMOND_CAT": {
+    "DATA_DIAMOND_CAT": {
+      "desc": "DATA_DIAMOND_CAT_DESC",
+      "picture": "GFX_evt_frozen",
+      "level": "4",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "from.owner": {
+            "is_gestalt": "no"
+          }
+        }
+      },
+      "max_once_global": "yes",
+      "on_spawn": {
+        "clear_deposits": "yes"
+      },
+      "on_success": "anomaly.3145"
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 711
+  },
+  "INTEMPORAL_ORB_CAT": {
+    "INTEMPORAL_ORB_CAT": {
+      "desc": "INTEMPORAL_ORB_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "2",
+      "max_once_global": "yes",
+      "null_spawn_chance": "0.50 # 50% chance to spawn",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "is_star": "no",
+          "NOT": {
+            "is_planet_class": "pc_gas_giant"
+          },
+          "from.owner": {
+            "is_robot_empire": "no # No machine intelligence or robot empire because they are already immortal"
+          }
+        }
+      },
+      "on_success": {
+        "1": "anomaly.7105"
+      }
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 735
+  },
+  "RAPID_DESERTIFICATION_CAT": {
+    "RAPID_DESERTIFICATION_CAT": {
+      "desc": "RAPID_DESERTIFICATION_CAT_DESC",
+      "picture": "GFX_evt_unidentified_monster",
+      "level": "1",
+      "max_once_global": "yes",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "OR": {
+            "is_planet_class": "pc_arid"
+          },
+          "from.owner": {
+            "is_mechanical_empire": "no",
+            "is_hive_empire": "no"
+          }
+        }
+      },
+      "null_spawn_chance": "0.70 # 30% chance to spawn",
+      "on_success": {
+        "1": "anomaly.7135"
+      }
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 760
+  },
+  "BREACHSEALER_CAT": {
+    "BREACHSEALER_CAT": {
+      "desc": "BREACHSEALER_CAT_DESC",
+      "picture": "GFX_evt_shrouded_planet",
+      "level": "1",
+      "_comments": [
+        "#Spawn set via initialisers"
+      ],
+      "on_success": {
+        "1": "anomaly.7200"
+      }
+    },
+    "_source_file": "02_anomaly_categories.txt",
+    "_line_number": 786
+  }
+}

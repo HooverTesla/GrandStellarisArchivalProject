@@ -1,0 +1,287 @@
+{
+  "strategic_coordination_center_0": {
+    "strategic_coordination_center_0": {
+      "entity": "construction_platform_entity",
+      "construction_entity": "construction_platform_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "place_entity_on_planet_plane": "no",
+      "entity_offset": {
+        "build_time": "1800",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "5000",
+            "unity": "2500"
+          },
+          "upkeep": {
+            "energy": "5"
+          }
+        },
+        "custom_tooltip_requirements": "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_ONE_PER_COUNTRY",
+        "prerequisites": {
+          "possible": {
+            "hidden_trigger": {
+              "exists": "starbase"
+            },
+            "custom_tooltip": {
+              "fail_text": "requires_no_existing_strategic_coordination_center",
+              "from": {
+                "OR": {
+                  "has_relic": "r_contingency_core",
+                  "NOT": {}
+                }
+              },
+              "custom_tooltip": {
+                "fail_text": "requires_no_existing_strategic_coordination_center_two",
+                "from": {}
+              },
+              "placement_rules": {
+                "planet_possible": {
+                  "custom_tooltip": {
+                    "fail_text": "requires_no_anomaly",
+                    "NOT": {},
+                    "custom_tooltip": {
+                      "fail_text": "requires_no_existing_megastructure",
+                      "NOT": {}
+                    }
+                  },
+                  "_comments": [
+                    "# root = system",
+                    "# from = country"
+                  ],
+                  "ai_weight": {
+                    "factor": "15",
+                    "modifier": {
+                      "factor": "0.1",
+                      "starbase": {},
+                      "modifier": {
+                        "factor": "0.1",
+                        "any_neighbor_system": {
+                          "exists": "owner",
+                          "NOT": {
+                            "owner": {}
+                          }
+                        }
+                      },
+                      "on_build_start": {
+                        "on_build_cancel": {
+                          "on_build_complete": {
+                            "from": {
+                              "if": {
+                                "limit": {
+                                  "has_relic": "r_contingency_core",
+                                  "has_country_flag": "built_strategic_coordination_center_site"
+                                },
+                                "set_country_flag": "built_strategic_coordination_center_site_contingency"
+                              },
+                              "set_country_flag": "built_strategic_coordination_center_site"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_strategic_coordination_center.txt",
+    "_line_number": 9
+  },
+  "strategic_coordination_center_1": {
+    "strategic_coordination_center_1": {
+      "entity": "strategic_coordination_center_stage_1_entity",
+      "construction_entity": "strategic_coordination_center_stage_1_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "place_entity_on_planet_plane": "no",
+      "entity_offset": {
+        "build_time": "3600",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "15000",
+            "unity": "2500"
+          },
+          "upkeep": {
+            "energy": "25"
+          }
+        },
+        "upgrade_from": {},
+        "prerequisites": {
+          "country_modifier": {
+            "country_naval_cap_add": "50",
+            "country_starbase_capacity_add": "2",
+            "starbase_defense_platform_capacity_add": "4",
+            "ship_speed_mult": "0.05"
+          },
+          "on_build_complete": {
+            "set_star_flag": "strategic_coordination_center_built",
+            "from": {}
+          }
+        }
+      }
+    },
+    "_source_file": "07_strategic_coordination_center.txt",
+    "_line_number": 148
+  },
+  "strategic_coordination_center_2": {
+    "strategic_coordination_center_2": {
+      "entity": "strategic_coordination_center_stage_2_entity",
+      "construction_entity": "strategic_coordination_center_stage_2_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "place_entity_on_planet_plane": "no",
+      "entity_offset": {
+        "build_time": "3600",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "15000",
+            "unity": "2500"
+          },
+          "upkeep": {
+            "energy": "50"
+          }
+        },
+        "upgrade_from": {},
+        "prerequisites": {
+          "country_modifier": {
+            "country_naval_cap_add": "100",
+            "country_starbase_capacity_add": "4",
+            "starbase_defense_platform_capacity_add": "8",
+            "ship_speed_mult": "0.10"
+          },
+          "on_build_complete": {
+            "set_star_flag": "strategic_coordination_center_built",
+            "from": {}
+          }
+        }
+      }
+    },
+    "_source_file": "07_strategic_coordination_center.txt",
+    "_line_number": 188
+  },
+  "strategic_coordination_center_3": {
+    "strategic_coordination_center_3": {
+      "entity": "strategic_coordination_center_stage_3_entity",
+      "construction_entity": "strategic_coordination_center_stage_3_entity",
+      "portrait": "GFX_megastructure_strategic_coordination_center_background",
+      "place_entity_on_planet_plane": "no",
+      "entity_offset": {
+        "build_time": "3600",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "15000",
+            "unity": "2500"
+          },
+          "upkeep": {
+            "energy": "75"
+          }
+        },
+        "upgrade_from": {},
+        "prerequisites": {
+          "show_prereqs": "yes",
+          "country_modifier": {
+            "country_naval_cap_add": "150",
+            "country_starbase_capacity_add": "6",
+            "starbase_defense_platform_capacity_add": "12",
+            "ship_speed_mult": "0.15"
+          },
+          "on_build_complete": {
+            "set_star_flag": "strategic_coordination_center_built",
+            "from": {
+              "set_country_flag": "has_built_or_repaired_megastructure",
+              "country_event": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_strategic_coordination_center.txt",
+    "_line_number": 227
+  },
+  "strategic_coordination_center_permanently_ruined": {
+    "strategic_coordination_center_permanently_ruined": {
+      "entity": "strategic_coordination_center_01_destroyed_entity",
+      "construction_entity": "strategic_coordination_center_01_destroyed_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "place_entity_on_planet_plane": "no",
+      "entity_offset": {
+        "show_galactic_map_icon": "no",
+        "show_in_outliner": "no",
+        "potential": {}
+      }
+    },
+    "_source_file": "07_strategic_coordination_center.txt",
+    "_line_number": 266
+  },
+  "strategic_coordination_center_ruined": {
+    "strategic_coordination_center_ruined": {
+      "entity": "strategic_coordination_center_01_destroyed_entity",
+      "construction_entity": "strategic_coordination_center_01_destroyed_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "place_entity_on_planet_plane": "no",
+      "entity_offset": {
+        "potential": {}
+      }
+    },
+    "_source_file": "07_strategic_coordination_center.txt",
+    "_line_number": 279
+  },
+  "strategic_coordination_center_restored": {
+    "strategic_coordination_center_restored": {
+      "entity": "strategic_coordination_center_stage_3_entity",
+      "construction_entity": "strategic_coordination_center_stage_3_entity",
+      "portrait": "GFX_megastructure_strategic_coordination_center_background",
+      "place_entity_on_planet_plane": "no",
+      "entity_offset": {
+        "build_time": "4800",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "15000",
+            "unity": "3200"
+          },
+          "upkeep": {
+            "energy": "75"
+          }
+        },
+        "upgrade_from": {},
+        "possible": {
+          "from": {},
+          "country_modifier": {
+            "country_naval_cap_add": "150",
+            "country_starbase_capacity_add": "6",
+            "starbase_defense_platform_capacity_add": "12",
+            "ship_speed_mult": "0.15"
+          },
+          "on_build_start": {
+            "fromfrom": {
+              "set_graphical_culture": "root.from"
+            }
+          },
+          "on_build_complete": {
+            "set_star_flag": "strategic_coordination_center_built",
+            "every_system_ambient_object": {
+              "limit": {
+                "OR": {
+                  "is_ambient_object_type": "small_debris_object"
+                }
+              },
+              "destroy_ambient_object": "this"
+            },
+            "from": {
+              "set_country_flag": "has_built_or_repaired_megastructure",
+              "country_event": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_strategic_coordination_center.txt",
+    "_line_number": 295
+  }
+}

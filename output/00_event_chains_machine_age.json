@@ -1,0 +1,70 @@
+{
+  "synthetic_fertility_chain": {
+    "synthetic_fertility_chain": {
+      "picture": "GFX_evt_genetic_modification",
+      "icon": "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+    },
+    "_source_file": "00_event_chains_machine_age.txt",
+    "_line_number": 0
+  },
+  "the_synth_queen_war_chain": {
+    "the_synth_queen_war_chain": {
+      "icon": "gfx/interface/icons/situation_log/situation_log_synth_queen.dds",
+      "picture": "GFX_evt_synth_queen",
+      "counter": {
+        "synth_queen_base_1": {},
+        "synth_queen_fleet_1": {},
+        "synth_queen_kills_us_1": {},
+        "synth_queen_kills_others_1": {},
+        "synth_queen_victims_1": {},
+        "synth_queen_planets_1": {}
+      }
+    },
+    "_source_file": "00_event_chains_machine_age.txt",
+    "_line_number": 6
+  },
+  "the_synth_queen_history_chain": {
+    "the_synth_queen_history_chain": {
+      "icon": "gfx/interface/icons/situation_log/situation_log_synth_queen.dds",
+      "picture": "GFX_evt_synth_queen",
+      "abort_trigger": {
+        "OR": {
+          "any_country": {
+            "is_country_type": "awakened_synth_queen"
+          },
+          "has_global_flag": "synth_queen_war_started"
+        }
+      }
+    },
+    "_source_file": "00_event_chains_machine_age.txt",
+    "_line_number": 26
+  },
+  "the_synth_queen_raids_chain": {
+    "the_synth_queen_raids_chain": {
+      "icon": "gfx/interface/icons/situation_log/situation_log_synth_queen.dds",
+      "picture": "GFX_evt_synth_queen",
+      "counter": {
+        "synth_queen_raids_outpost": {},
+        "synth_queen_raids_convoy": {}
+      },
+      "abort_trigger": {
+        "OR": {
+          "any_country": {
+            "is_country_type": "awakened_synth_queen"
+          },
+          "has_global_flag": "synth_queen_war_started"
+        }
+      }
+    },
+    "_source_file": "00_event_chains_machine_age.txt",
+    "_line_number": 41
+  },
+  "cybernetic_creed_chain": {
+    "cybernetic_creed_chain": {
+      "icon": "gfx/interface/icons/situation_log/situation_log_main_quest.dds",
+      "picture": "GFX_evt_cybernetics"
+    },
+    "_source_file": "00_event_chains_machine_age.txt",
+    "_line_number": 60
+  }
+}

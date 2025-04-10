@@ -1,0 +1,79 @@
+{
+  "pop_event": {
+    "pop_event": {
+      "id": "utopia.90",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_living_standard": {
+          "country": "owner",
+          "type": "living_standard_chemical_bliss"
+        }
+      },
+      "immediate": {
+        "if": {
+          "limit": {
+            "remove_modifier": "withdrawal_symptoms"
+          }
+        }
+      }
+    },
+    "_source_file": "utopia_on_action_events.txt",
+    "_line_number": 159
+  },
+  "country_event": {
+    "country_event": {
+      "id": "utopia.2686",
+      "title": "utopia.2686.name",
+      "desc": "utopia.2686.desc",
+      "picture": "GFX_evt_shroudwalker_enclave",
+      "show_sound": "event_psionic",
+      "trackable": "yes",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "utopia.2686.d",
+        "trigger": {
+          "has_country_flag": "whisperers_covenant_rank_4"
+        },
+        "give_technology": {
+          "tech": "tech_covenant_whisperers",
+          "message": "yes"
+        }
+      }
+    },
+    "_source_file": "utopia_on_action_events.txt",
+    "_line_number": 3210
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "utopia.181",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "FROM": {
+          "has_valid_civic": "civic_hive_devouring_swarm"
+        },
+        "exists": "fromfrom #crisis.202 can remove the last pop",
+        "FROMFROM": {
+          "is_robot_pop": "no",
+          "NOT": {
+            "is_same_species": "owner_species"
+          }
+        },
+        "is_controlled_by": "FROM"
+      },
+      "immediate": {
+        "FROM": {
+          "add_monthly_resource_mult": {
+            "resource": "society_research",
+            "value": "1",
+            "min": "1",
+            "max": "100"
+          }
+        }
+      }
+    },
+    "_source_file": "utopia_on_action_events.txt",
+    "_line_number": 127
+  }
+}

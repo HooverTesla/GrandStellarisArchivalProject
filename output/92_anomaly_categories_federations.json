@@ -1,0 +1,64 @@
+{
+  "strange_signal_category": {
+    "strange_signal_category": {
+      "desc": "strange_signal_category_desc",
+      "picture": "GFX_evt_cold_barren",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "2",
+          "OR": {
+            "is_planet_class": "pc_barren_cold"
+          },
+          "has_any_strategic_resource": "no",
+          "from.owner": {
+            "NOR": {
+              "has_ethic": "ethic_gestalt_consciousness",
+              "has_origin": "origin_remnants"
+            }
+          },
+          "NOT": {}
+        },
+        "on_success": "federations2.1"
+      }
+    },
+    "_source_file": "92_anomaly_categories_federations.txt",
+    "_line_number": 2
+  },
+  "SEA_CRYSTAL_CAT": {
+    "SEA_CRYSTAL_CAT": {
+      "desc": "SEA_CRYSTAL_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "3",
+      "max_once_global": "yes",
+      "spawn_chance": {
+        "modifier": {
+          "add": "2",
+          "is_planet_class": "pc_ocean",
+          "from.owner": {
+            "NOT": {
+              "has_ethic": "ethic_gestalt_consciousness"
+            }
+          }
+        }
+      },
+      "on_success": "federations3.100"
+    },
+    "_source_file": "92_anomaly_categories_federations.txt",
+    "_line_number": 29
+  },
+  "WENKWORT_CAT": {
+    "WENKWORT_CAT": {
+      "desc": "WENKWORT_CAT_DESC",
+      "picture": "GFX_evt_continental",
+      "level": "4",
+      "max_once_global": "yes",
+      "on_success": "federations3.115",
+      "_comments": [
+        "#Spawn set via initialisers"
+      ]
+    },
+    "_source_file": "92_anomaly_categories_federations.txt",
+    "_line_number": 51
+  }
+}

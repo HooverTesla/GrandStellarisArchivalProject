@@ -1,0 +1,50 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "emperor.450",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from": {},
+        "immediate": {
+          "change_variable": {
+            "which": "imperial_legion_soldier_count",
+            "value": "-1"
+          }
+        }
+      }
+    },
+    "_source_file": "nemesis_emperor_events.txt",
+    "_line_number": 2324
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "emperor.62",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_planet_flag": "imp_concession_port",
+        "NOT": {
+          "has_holding": {
+            "holding": "building_imperial_concession_port",
+            "owner": "galactic_emperor"
+          }
+        }
+      },
+      "immediate": {
+        "remove_planet_flag": "imp_concession_port",
+        "random_playable_country": {
+          "limit": {
+            "change_variable": {
+              "which": "imp_concession_ports",
+              "value": "-1"
+            },
+            "country_event": {}
+          }
+        }
+      }
+    },
+    "_source_file": "nemesis_emperor_events.txt",
+    "_line_number": 692
+  }
+}

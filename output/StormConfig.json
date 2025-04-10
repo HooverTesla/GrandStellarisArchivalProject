@@ -1,0 +1,57 @@
+{
+  "storm_min_radius": {
+    "storm_min_radius": {
+      "base": "$MIN_RADIUS$",
+      "modifier": {
+        "mult": "value:storm_size_multiplier"
+      }
+    },
+    "_source_file": "StormConfig.txt",
+    "_line_number": -1
+  },
+  "storm_max_radius": {
+    "storm_max_radius": {
+      "base": "$MAX_RADIUS$",
+      "modifier": {
+        "mult": "value:storm_size_multiplier"
+      }
+    },
+    "_source_file": "StormConfig.txt",
+    "_line_number": 6
+  },
+  "storm_min_steps": {
+    "storm_min_steps": {
+      "set": "$MIN_RANGE$"
+    },
+    "_source_file": "StormConfig.txt",
+    "_line_number": 13
+  },
+  "storm_max_steps": {
+    "storm_max_steps": {
+      "set": "$MAX_RANGE$"
+    },
+    "_source_file": "StormConfig.txt",
+    "_line_number": 17
+  },
+  "storm_speed": {
+    "storm_speed": {
+      "base": "$STORM_SPEED$"
+    },
+    "_source_file": "StormConfig.txt",
+    "_line_number": 21
+  },
+  "storm_activation_period_in_months": {
+    "storm_activation_period_in_months": {
+      "base": "$ACTIVATION_PERIOD_IN_MONTHS$"
+    },
+    "_source_file": "StormConfig.txt",
+    "_line_number": 25
+  },
+  "storm_monthly_added_devastation": {
+    "storm_monthly_added_devastation": {
+      "base": "$MONTHLY_ADDED_DEVASTATION$"
+    },
+    "_source_file": "StormConfig.txt",
+    "_line_number": 29
+  }
+}

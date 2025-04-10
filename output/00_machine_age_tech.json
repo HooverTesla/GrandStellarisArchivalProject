@@ -1,0 +1,657 @@
+{
+  "tech_identity_copy": {
+    "tech_identity_copy": {
+      "cost": "@tier4cost1",
+      "area": "engineering",
+      "tier": "4",
+      "category": {
+        "weight": "0 # Made available in script, not by research",
+        "potential": {
+          "has_machine_age_dlc": "yes"
+        },
+        "_comments": [
+          "# Grants the Synthetic Identities: Identity Copy policy"
+        ],
+        "prereqfor_desc": {
+          "custom": {
+            "title": "TECH_UNLOCK_IDENTITY_COPY_TITLE",
+            "desc": "TECH_UNLOCK_IDENTITY_COPY_DESC"
+          }
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 2
+  },
+  "tech_identity_fusion": {
+    "tech_identity_fusion": {
+      "cost": "@tier4cost2",
+      "area": "engineering",
+      "tier": "4",
+      "category": {
+        "weight": "@tier4weight2",
+        "potential": {
+          "has_machine_age_dlc": "yes",
+          "has_country_flag": "advanced_identity_creation"
+        },
+        "_comments": [
+          "# Grants the Synthetic Identities: Identity Fusion policy"
+        ],
+        "prereqfor_desc": {
+          "custom": {
+            "title": "TECH_UNLOCK_IDENTITY_FUSION_TITLE",
+            "desc": "TECH_UNLOCK_IDENTITY_FUSION_DESC"
+          }
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 23
+  },
+  "tech_identity_initialization": {
+    "tech_identity_initialization": {
+      "cost": "@tier4cost2",
+      "area": "engineering",
+      "tier": "4",
+      "category": {
+        "weight": "@tier4weight2",
+        "potential": {
+          "has_machine_age_dlc": "yes",
+          "has_country_flag": "advanced_identity_creation"
+        },
+        "_comments": [
+          "# Grants the Synthetic Identities: Identity Initialization policy"
+        ],
+        "prereqfor_desc": {
+          "custom": {
+            "title": "TECH_UNLOCK_IDENTITY_INITIALIZATION_TITLE",
+            "desc": "TECH_UNLOCK_IDENTITY_INITIALIZATION_DESC"
+          }
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 45
+  },
+  "tech_synth_queen_knowledge": {
+    "tech_synth_queen_knowledge": {
+      "area": "physics",
+      "tier": "5",
+      "cost": "@tier5cost1",
+      "category": {
+        "is_rare": "yes",
+        "weight": "@tier5weight1",
+        "potential": {
+          "has_machine_age_dlc": "yes",
+          "has_country_flag": "synth_queen_knowledge"
+        },
+        "modifier": {
+          "all_technology_research_speed": "0.2"
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 67
+  },
+  "tech_cosmogenesis_crisis_1": {
+    "tech_cosmogenesis_crisis_1": {
+      "area": "physics",
+      "cost": "10000",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "weight": "0",
+        "potential": {
+          "has_machine_age_dlc": "yes",
+          "has_ascension_perk": "ap_cosmogenesis"
+        },
+        "prereqfor_desc": {
+          "custom": {
+            "title": "cosmogenesis_level_1_tech_title",
+            "desc": "cosmogenesis_level_1_tech_desc"
+          }
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 85
+  },
+  "tech_cosmogenesis_crisis_2": {
+    "tech_cosmogenesis_crisis_2": {
+      "area": "physics",
+      "cost": "50000",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "weight": "0",
+        "potential": {
+          "has_machine_age_dlc": "yes",
+          "has_ascension_perk": "ap_cosmogenesis"
+        },
+        "prereqfor_desc": {
+          "custom": {
+            "title": "cosmogenesis_level_2_tech_title",
+            "desc": "cosmogenesis_level_2_tech_desc"
+          }
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 107
+  },
+  "tech_cosmogenesis_crisis_3": {
+    "tech_cosmogenesis_crisis_3": {
+      "area": "physics",
+      "cost": "100000",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "weight": "0",
+        "potential": {
+          "has_machine_age_dlc": "yes",
+          "has_ascension_perk": "ap_cosmogenesis"
+        },
+        "prereqfor_desc": {
+          "custom": {
+            "title": "cosmogenesis_level_3_tech_title",
+            "desc": "cosmogenesis_level_3_tech_desc"
+          }
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 129
+  },
+  "tech_cosmogenesis_crisis_4": {
+    "tech_cosmogenesis_crisis_4": {
+      "area": "physics",
+      "cost": "200000",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "weight": "0",
+        "potential": {
+          "has_machine_age_dlc": "yes",
+          "has_ascension_perk": "ap_cosmogenesis"
+        },
+        "prereqfor_desc": {
+          "custom": {
+            "title": "cosmogenesis_level_4_tech_title",
+            "desc": "cosmogenesis_level_4_tech_desc"
+          }
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 151
+  },
+  "tech_cosmogenesis_crisis_5": {
+    "tech_cosmogenesis_crisis_5": {
+      "area": "physics",
+      "cost": "300000",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "weight": "0",
+        "potential": {
+          "has_machine_age_dlc": "yes",
+          "has_ascension_perk": "ap_cosmogenesis"
+        },
+        "prereqfor_desc": {
+          "custom": {
+            "title": "cosmogenesis_level_5_tech_title",
+            "desc": "cosmogenesis_level_5_tech_desc"
+          }
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 173
+  },
+  "tech_cosmogenesis_escort": {
+    "tech_cosmogenesis_escort": {
+      "area": "engineering",
+      "cost": "@fallentechcost",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "weight": "0",
+        "potential": {
+          "has_machine_age_dlc": "yes"
+        },
+        "prereqfor_desc": {
+          "ship": {
+            "title": "TECH_UNLOCK_ESCORT_CONSTRUCTION_TITLE",
+            "desc": "TECH_UNLOCK_ESCORT_CONSTRUCTION_DESC"
+          }
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 195
+  },
+  "tech_cosmogenesis_battlecruiser": {
+    "tech_cosmogenesis_battlecruiser": {
+      "area": "engineering",
+      "cost": "@fallentechcost",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "weight": "0",
+        "potential": {
+          "has_machine_age_dlc": "yes"
+        },
+        "prereqfor_desc": {
+          "ship": {
+            "title": "TECH_UNLOCK_BATTLECRUISER_CONSTRUCTION_TITLE",
+            "desc": "TECH_UNLOCK_BATTLECRUISER_CONSTRUCTION_DESC"
+          }
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 216
+  },
+  "tech_cosmogenesis_FE_titan": {
+    "tech_cosmogenesis_FE_titan": {
+      "area": "engineering",
+      "cost": "@fallentechcost",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "weight": "0",
+        "potential": {
+          "has_machine_age_dlc": "yes"
+        },
+        "prereqfor_desc": {
+          "ship": {
+            "title": "TECH_UNLOCK_FETITAN_CONSTRUCTION_TITLE",
+            "desc": "TECH_UNLOCK_FETITAN_CONSTRUCTION_DESC"
+          }
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 237
+  },
+  "tech_cosmogenesis_world": {
+    "tech_cosmogenesis_world": {
+      "area": "engineering",
+      "cost": "@tier5cost1",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "weight": "0",
+        "potential": {
+          "has_machine_age_dlc": "yes",
+          "has_ascension_perk": "ap_cosmogenesis"
+        },
+        "prereqfor_desc": {
+          "custom": {
+            "title": "TECH_UNLOCK_COSMOWORLD_CONSTRUCTION_TITLE",
+            "desc": "TECH_UNLOCK_COSMOWORLD_CONSTRUCTION_DESC"
+          }
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 258
+  },
+  "tech_cosmogenesis_thesis": {
+    "tech_cosmogenesis_thesis": {
+      "area": "physics",
+      "cost": "75000",
+      "cost_per_level": "@fallentechcost",
+      "tier": "4",
+      "category": {
+        "levels": "-1",
+        "is_dangerous": "yes",
+        "weight": "@repeatableTechWeight",
+        "potential": {
+          "has_machine_age_dlc": "yes",
+          "has_ascension_perk": "ap_cosmogenesis"
+        },
+        "weight_modifier": {
+          "modifier": {
+            "factor": "0",
+            "NOT": {}
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "5",
+              "has_technology": "tech_cosmogenesis_crisis_3"
+            }
+          },
+          "prereqfor_desc": {
+            "custom": {
+              "title": "cosmogenesis_thesis_tech_title",
+              "desc": "cosmogenesis_thesis_tech_desc"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 282
+  },
+  "tech_lathe_resonator": {
+    "tech_lathe_resonator": {
+      "area": "physics",
+      "cost": "30000",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "weight": "@tier5weight1",
+        "potential": {
+          "has_machine_age_dlc": "yes",
+          "has_ascension_perk": "ap_cosmogenesis",
+          "has_technology": "tech_cosmogenesis_world"
+        },
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world",
+              "num_pops >": "100"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 319
+  },
+  "tech_lathe_overclocker": {
+    "tech_lathe_overclocker": {
+      "area": "physics",
+      "cost": "30000",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "weight": "@tier5weight1",
+        "potential": {
+          "has_machine_age_dlc": "yes",
+          "has_ascension_perk": "ap_cosmogenesis",
+          "has_technology": "tech_cosmogenesis_world"
+        },
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world",
+              "num_pops >": "100"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 361
+  },
+  "tech_lathe_preserver": {
+    "tech_lathe_preserver": {
+      "area": "society",
+      "cost": "30000",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "weight": "@tier5weight1",
+        "potential": {
+          "has_machine_age_dlc": "yes",
+          "has_ascension_perk": "ap_cosmogenesis",
+          "has_technology": "tech_cosmogenesis_world"
+        },
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world",
+              "num_pops >": "100"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 403
+  },
+  "tech_lathe_life_support": {
+    "tech_lathe_life_support": {
+      "area": "society",
+      "cost": "30000",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "weight": "@tier5weight1",
+        "potential": {
+          "has_machine_age_dlc": "yes",
+          "has_ascension_perk": "ap_cosmogenesis",
+          "has_technology": "tech_cosmogenesis_world"
+        },
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world",
+              "num_pops >": "100"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 445
+  },
+  "tech_lathe_cogitator": {
+    "tech_lathe_cogitator": {
+      "area": "society",
+      "cost": "30000",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "weight": "@tier5weight1",
+        "potential": {
+          "has_machine_age_dlc": "yes",
+          "has_ascension_perk": "ap_cosmogenesis",
+          "has_technology": "tech_cosmogenesis_world"
+        },
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world",
+              "num_pops >": "100"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 487
+  },
+  "tech_lathe_validator": {
+    "tech_lathe_validator": {
+      "area": "physics",
+      "cost": "30000",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "weight": "@tier5weight1",
+        "potential": {
+          "has_machine_age_dlc": "yes",
+          "has_ascension_perk": "ap_cosmogenesis",
+          "has_technology": "tech_cosmogenesis_world"
+        },
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "is_planet_class": "pc_cosmogenesis_world",
+              "num_pops >": "100"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 529
+  },
+  "tech_orbital_arc_furnace": {
+    "tech_orbital_arc_furnace": {
+      "area": "engineering",
+      "cost": "@tier2cost3",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier2weight3",
+        "is_rare": "yes",
+        "is_reverse_engineerable": "no",
+        "potential": {
+          "has_machine_age_dlc": "yes"
+        },
+        "modifier": {
+          "arc_furnace_limit_add": "3"
+        },
+        "weight_modifier": {
+          "factor": "0.5",
+          "modifier": {
+            "factor": "0.2",
+            "NOR": {
+              "has_trait_in_council": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {
+                          "has_trait_in_council": {}
+                        },
+                        "modifier": {
+                          "factor": "@federation_perk_factor",
+                          "has_federation": "yes",
+                          "federation": {
+                            "has_federation_perk": "rare_tech_boost",
+                            "any_member": {}
+                          }
+                        },
+                        "prereqfor_desc": {
+                          "ship": {
+                            "title": "allow_arc_furnace",
+                            "desc": "orbital_arc_furnace_1_MEGASTRUCTURE_DETAILS"
+                          }
+                        },
+                        "ai_weight": {
+                          "factor": "4 #Please boost your economy AI",
+                          "modifier": {
+                            "factor": "2",
+                            "is_ai": "no #auto-research"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 578
+  },
+  "tech_dyson_swarm": {
+    "tech_dyson_swarm": {
+      "area": "physics",
+      "cost": "@tier2cost3",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier2weight3",
+        "is_rare": "yes",
+        "is_reverse_engineerable": "no",
+        "potential": {
+          "has_machine_age_dlc": "yes"
+        },
+        "modifier": {
+          "dyson_swarm_limit_add": "3"
+        },
+        "weight_modifier": {
+          "factor": "0.5",
+          "modifier": {
+            "factor": "0.2",
+            "NOR": {
+              "has_trait_in_council": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {
+                          "has_trait_in_council": {}
+                        },
+                        "modifier": {
+                          "factor": "@federation_perk_factor",
+                          "has_federation": "yes",
+                          "federation": {
+                            "has_federation_perk": "rare_tech_boost",
+                            "any_member": {}
+                          }
+                        },
+                        "prereqfor_desc": {
+                          "ship": {
+                            "title": "allow_dyson_swarm",
+                            "desc": "dyson_swarm_1_MEGASTRUCTURE_DETAILS"
+                          }
+                        },
+                        "ai_weight": {
+                          "factor": "1 #AI will have a harder time making use of this",
+                          "modifier": {
+                            "factor": "2",
+                            "is_ai": "no #auto-research"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 650
+  },
+  "tech_nanite_repair_system_synth_queen": {
+    "tech_nanite_repair_system_synth_queen": {
+      "area": "engineering",
+      "cost": "@tier5cost3",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "weight": "0",
+        "potential": {
+          "has_machine_age_dlc": "yes"
+        }
+      }
+    },
+    "_source_file": "00_machine_age_tech.txt",
+    "_line_number": 719
+  }
+}

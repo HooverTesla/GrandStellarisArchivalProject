@@ -1,0 +1,111 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "paragon.3906",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from": {},
+        "immediate": {
+          "end_event_chain": "paragon_legendary_leader_chain",
+          "abort_special_project": {
+            "abort_special_project": {
+              "abort_special_project": {
+                "abort_special_project": {
+                  "abort_special_project": {
+                    "every_archaeological_site": {
+                      "limit": {
+                        "destroy_archaeological_site": "this"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "paragon_events_3.txt",
+    "_line_number": 3419
+  },
+  "situation_event": {
+    "situation_event": {
+      "id": "paragon.3094",
+      "title": "paragon.3094.name",
+      "desc": "paragon.3094.desc",
+      "picture": "GFX_evt_l-gateway",
+      "show_sound": "event_finding_loot",
+      "is_triggered_only": "yes",
+      "immediate": {},
+      "option": {
+        "name": "FASCINATING",
+        "owner": {
+          "add_modifier": {
+            "modifier": "skrand_story",
+            "days": "-1"
+          }
+        },
+        "destroy_situation": "this"
+      }
+    },
+    "_source_file": "paragon_events_3.txt",
+    "_line_number": 1668
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "paragon.3144",
+      "title": "paragon.3144.name",
+      "desc": "paragon.3144.desc",
+      "picture": "GFX_evt_ruined_system",
+      "show_sound": "par_event_keides",
+      "fire_only_once": "yes",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "FROMFROM": {
+          "any_owned_leader": {},
+          "FROM": {},
+          "option": {
+            "name": "paragon.3144.a",
+            "hidden_effect": {
+              "owner": {
+                "country_event": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "paragon_events_3.txt",
+    "_line_number": 2784
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "paragon.3901",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "OR": {
+            "is_ai": "no",
+            "is_gestalt": "no"
+          }
+        },
+        "solar_system": {
+          "has_global_flag": "sharpbeak_recruit_phase"
+        },
+        "immediate": {
+          "owner": {
+            "set_country_flag": "sharpbeak_known",
+            "country_event": {
+              "id": "paragon.3902 days = 15 random = 15"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "paragon_events_3.txt",
+    "_line_number": 3286
+  }
+}

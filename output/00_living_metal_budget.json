@@ -1,0 +1,111 @@
+{
+  "living_metal_expenditure_planets": {
+    "living_metal_expenditure_planets": {
+      "resource": "sr_living_metal",
+      "type": "expenditure",
+      "category": "planets",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.2"
+      }
+    },
+    "_source_file": "00_living_metal_budget.txt",
+    "_line_number": 8
+  },
+  "living_metal_expenditure_ships": {
+    "living_metal_expenditure_ships": {
+      "resource": "sr_living_metal",
+      "type": "expenditure",
+      "category": "ships",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.1",
+        "modifier": {
+          "factor": "5",
+          "is_dragon_breeder_country": "yes"
+        }
+      }
+    },
+    "_source_file": "00_living_metal_budget.txt",
+    "_line_number": 22
+  },
+  "living_metal_expenditure_upgrade": {
+    "living_metal_expenditure_upgrade": {
+      "resource": "sr_living_metal",
+      "type": "expenditure",
+      "category": "ship_upgrades",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "base": "0.1"
+      }
+    },
+    "_source_file": "00_living_metal_budget.txt",
+    "_line_number": 40
+  },
+  "living_metal_expenditure_trade": {
+    "living_metal_expenditure_trade": {
+      "resource": "sr_living_metal",
+      "type": "expenditure",
+      "category": "trade",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.1"
+      }
+    },
+    "_source_file": "00_living_metal_budget.txt",
+    "_line_number": 54
+  },
+  "living_metal_upkeep_planets": {
+    "living_metal_upkeep_planets": {
+      "resource": "sr_living_metal",
+      "type": "upkeep",
+      "category": "planets",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.9"
+      }
+    },
+    "_source_file": "00_living_metal_budget.txt",
+    "_line_number": 70
+  },
+  "living_metal_upkeep_ships": {
+    "living_metal_upkeep_ships": {
+      "resource": "sr_living_metal",
+      "type": "upkeep",
+      "category": "ships",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.1"
+      }
+    },
+    "_source_file": "00_living_metal_budget.txt",
+    "_line_number": 84
+  },
+  "living_metal_upkeep_edicts": {
+    "living_metal_upkeep_edicts": {
+      "resource": "sr_living_metal",
+      "type": "upkeep",
+      "category": "edicts",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "base": "0.25"
+      }
+    },
+    "_source_file": "00_living_metal_budget.txt",
+    "_line_number": 98
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "tech_rift_sphere": {
+    "tech_rift_sphere": {
+      "cost": "@tier3cost2",
+      "area": "physics",
+      "tier": "2",
+      "category": {
+        "is_rare": "yes",
+        "weight": "0",
+        "feature_flags": {},
+        "potential": {
+          "has_astral_planes_dlc": "yes"
+        }
+      }
+    },
+    "_source_file": "00_astral_planes_tech.txt",
+    "_line_number": 6
+  },
+  "tech_astral_harvesting": {
+    "tech_astral_harvesting": {
+      "cost": "@tier2cost1",
+      "area": "physics",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "no",
+        "weight": "@tier2weight1",
+        "feature_flags": {},
+        "potential": {
+          "has_astral_planes_dlc": "yes"
+        },
+        "weight_modifier": {
+          "modifier": {
+            "factor": "0",
+            "NOR": {
+              "has_country_flag": "astral_threads_found",
+              "any_system_within_border": {
+                "OR": {
+                  "exists": "astral_rift",
+                  "any_system_planet": {}
+                },
+                "any_relation": {
+                  "AND": {
+                    "is_country_type": "default",
+                    "has_communications": "ROOT",
+                    "has_technology": "tech_astral_harvesting"
+                  }
+                }
+              }
+            },
+            "modifier": {
+              "factor": "2",
+              "any_system_within_border": {
+                "OR": {
+                  "exists": "astral_rift",
+                  "any_system_planet": {
+                    "is_astral_scar": "yes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_astral_planes_tech.txt",
+    "_line_number": 25
+  }
+}

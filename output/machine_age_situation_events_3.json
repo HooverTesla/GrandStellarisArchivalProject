@@ -1,0 +1,111 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "machine_age.4000",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "start_situation": {
+          "type": "situation_transformation",
+          "target": "root"
+        }
+      }
+    },
+    "_source_file": "machine_age_situation_events_3.txt",
+    "_line_number": 11
+  },
+  "situation_event": {
+    "situation_event": {
+      "id": "machine_age.4005",
+      "title": "machine_age.4005.name",
+      "desc": {
+        "trigger": {
+          "owner": {},
+          "text": "machine_age.4005.desc.nanotech"
+        },
+        "desc": {
+          "trigger": {
+            "owner": {},
+            "text": "machine_age.4005.desc.modularity"
+          },
+          "desc": {
+            "trigger": {
+              "owner": {},
+              "text": "machine_age.4005.desc.virtuality"
+            },
+            "picture": "GFX_evt_machine_sapience",
+            "show_sound": "event_laboratory_sound",
+            "situation": "this",
+            "is_triggered_only": "yes",
+            "immediate": {
+              "if": {
+                "limit": {
+                  "owner": {
+                    "set_variable": {
+                      "which": "nanotech_worlds_created",
+                      "value": "0"
+                    }
+                  }
+                }
+              },
+              "option": {
+                "name": "machine_age.4005.a.nanotech",
+                "trigger": {
+                  "owner": {
+                    "if": {
+                      "limit": {},
+                      "set_country_flag": "nanotech_traditions_unlocked",
+                      "add_tradition": "tr_nanotech_adopt",
+                      "custom_tooltip": "machine_age.4005.a.nanotech.tt"
+                    }
+                  },
+                  "ai_chance": {
+                    "factor": "1"
+                  }
+                },
+                "option": {
+                  "name": "machine_age.4005.a.modularity",
+                  "trigger": {
+                    "owner": {
+                      "if": {
+                        "limit": {},
+                        "custom_tooltip": "machine_age.4005.a.modularity.tt",
+                        "set_country_flag": "modularity_traditions_unlocked",
+                        "add_tradition": "tr_modularity_adopt"
+                      }
+                    },
+                    "ai_chance": {
+                      "factor": "1"
+                    }
+                  },
+                  "option": {
+                    "name": "machine_age.4005.a.virtuality",
+                    "trigger": {
+                      "owner": {
+                        "if": {
+                          "limit": {},
+                          "custom_tooltip": "machine_age.4005.a.virtuality.tt",
+                          "set_country_flag": "virtuality_traditions_unlocked",
+                          "add_tradition": "tr_virtuality_adopt",
+                          "refresh_portraits": "character"
+                        }
+                      },
+                      "ai_chance": {
+                        "factor": "1"
+                      }
+                    },
+                    "after": {
+                      "destroy_situation": "this"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "machine_age_situation_events_3.txt",
+    "_line_number": 837
+  }
+}

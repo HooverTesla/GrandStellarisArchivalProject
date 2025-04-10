@@ -1,0 +1,128 @@
+{
+  "colonization_control_yes": {
+    "colonization_control_yes": {
+      "can_colonize": "no",
+      "potential": {
+        "NAND": {
+          "from": {
+            "OR": {
+              "has_trait": "trait_mechanical"
+            }
+          }
+        },
+        "allow": {
+          "hidden_trigger": {
+            "if": {
+              "limit": {
+                "OR": {
+                  "has_citizenship_type": {
+                    "has_citizenship_type": {
+                      "has_citizenship_type": {
+                        "has_citizenship_type": {}
+                      },
+                      "hidden_trigger": {},
+                      "else": {
+                        "custom_tooltip": {
+                          "fail_text": "same_species_disallowed",
+                          "NOT": {}
+                        }
+                      },
+                      "ai_will_do": {
+                        "factor": "2",
+                        "modifier": {
+                          "factor": "0",
+                          "has_trait": "trait_cybernetic",
+                          "from": {},
+                          "modifier": {
+                            "factor": "0",
+                            "has_slavery_type": {}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_species_controls_colonization.txt",
+    "_line_number": 4
+  },
+  "colonization_control_no": {
+    "colonization_control_no": {
+      "potential": {
+        "exists": "from",
+        "NAND": {
+          "from": {
+            "NOR": {
+              "has_trait": "trait_mechanical",
+              "AND": {
+                "has_trait": "trait_cybernetic",
+                "from": {}
+              }
+            },
+            "allow": {
+              "hidden_trigger": {
+                "custom_tooltip": {
+                  "NOR": {
+                    "has_citizenship_type": {
+                      "has_citizenship_type": {},
+                      "fail_text": "is_undesirables_tooltip"
+                    },
+                    "custom_tooltip": {
+                      "fail_text": "HIVE_MIND_SPECIES_CITIZENS_ONLY",
+                      "OR": {
+                        "NOT": {
+                          "has_trait": "trait_hive_mind"
+                        }
+                      },
+                      "custom_tooltip": {
+                        "fail_text": "ROBOTS_CANNOT_COLONIZE",
+                        "OR": {
+                          "NOT": {
+                            "from": {
+                              "from": {}
+                            },
+                            "custom_tooltip": {
+                              "fail_text": "is_slaves_not_battle_thralls_or_indentured_fail",
+                              "if": {
+                                "limit": {
+                                  "has_citizenship_type": {},
+                                  "OR": {
+                                    "has_slavery_type": {
+                                      "has_slavery_type": {}
+                                    }
+                                  }
+                                },
+                                "ai_will_do": {
+                                  "factor": "1",
+                                  "modifier": {
+                                    "factor": "0",
+                                    "from": {
+                                      "NOR": {
+                                        "has_trait": "trait_mechanical"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_species_controls_colonization.txt",
+    "_line_number": 60
+  }
+}

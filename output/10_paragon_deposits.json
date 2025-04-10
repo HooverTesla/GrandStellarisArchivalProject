@@ -1,0 +1,243 @@
+{
+  "d_arcane_device": {
+    "d_arcane_device": {
+      "is_for_colonizable": "yes",
+      "icon": "d_station_reactor",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "resources": {
+          "category": "planet_deposits",
+          "produces": {
+            "alloys": "8"
+          },
+          "upkeep": {
+            "energy": "4"
+          }
+        }
+      }
+    },
+    "_source_file": "10_paragon_deposits.txt",
+    "_line_number": 10
+  },
+  "d_volcanic_active_planet": {
+    "d_volcanic_active_planet": {
+      "is_for_colonizable": "yes",
+      "icon": "d_mineral_striations",
+      "category": "deposit_cat_rare",
+      "planet_modifier": {
+        "district_mining_max": "3",
+        "planet_miners_volatile_motes_produces_add": "0.1"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_mining_max": "3",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "potential": {}
+    },
+    "_source_file": "10_paragon_deposits.txt",
+    "_line_number": 30
+  },
+  "d_hostile_fauna": {
+    "d_hostile_fauna": {
+      "is_for_colonizable": "yes",
+      "icon": "d_dangerous_wildlife_blocker",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "planet_modifier": {
+          "district_farming_max": "1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {
+              "job_soldier_per_pop": "0.1"
+            }
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {},
+              "modifier": {
+                "job_warrior_drone_per_pop": "0.1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "10_paragon_deposits.txt",
+    "_line_number": 52
+  },
+  "d_hostile_flora": {
+    "d_hostile_flora": {
+      "is_for_colonizable": "yes",
+      "icon": "d_lush_jungle",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "planet_modifier": {
+          "district_farming_max": "1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {
+              "NOT": {},
+              "modifier": {
+                "job_soldier_add": "1"
+              }
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {
+                  "has_modifier": "slave_colony"
+                },
+                "modifier": {
+                  "job_battle_thrall_add": "1"
+                }
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "owner",
+                  "owner": {},
+                  "modifier": {
+                    "job_warrior_drone_add": "1"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "10_paragon_deposits.txt",
+    "_line_number": 92
+  },
+  "d_space_ship_graveyard": {
+    "d_space_ship_graveyard": {
+      "is_for_colonizable": "yes",
+      "icon": "d_crashed_ship",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "planet_modifier": {
+          "planet_housing_add": "1",
+          "planet_max_districts_add": "-1",
+          "planet_jobs_minerals_produces_mult": "-0.05"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {
+              "job_scrap_miner_add": "1"
+            }
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {},
+              "modifier": {
+                "job_scrap_miner_drone_add": "1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "10_paragon_deposits.txt",
+    "_line_number": 141
+  },
+  "d_fallen_orbital_shipyard": {
+    "d_fallen_orbital_shipyard": {
+      "is_for_colonizable": "yes",
+      "icon": "d_station_junk",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "planet_modifier": {
+          "planet_housing_add": "8",
+          "district_generator_max": "3",
+          "district_mining_max": "3"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {
+              "job_scrap_miner_per_pop": "0.25"
+            }
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {},
+              "modifier": {
+                "job_scrap_miner_drone_per_pop": "0.25"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "10_paragon_deposits.txt",
+    "_line_number": 176
+  },
+  "d_pulsar_scarred": {
+    "d_pulsar_scarred": {
+      "is_for_colonizable": "yes",
+      "icon": "d_nanite_corpses",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "planet_modifier": {
+          "planet_technician_energy_produces_add": "2"
+        }
+      }
+    },
+    "_source_file": "10_paragon_deposits.txt",
+    "_line_number": 221
+  },
+  "d_ancient_facilities": {
+    "d_ancient_facilities": {
+      "is_for_colonizable": "yes",
+      "icon": "d_nanite_corpses",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "planet_modifier": {
+          "district_generator_max": "3"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {
+              "job_researcher_add": "2"
+            }
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {},
+              "modifier": {
+                "job_brain_drone_add": "2"
+              }
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {},
+                "modifier": {
+                  "job_calculator_add": "2"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "10_paragon_deposits.txt",
+    "_line_number": 236
+  }
+}

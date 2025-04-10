@@ -1,0 +1,37 @@
+{
+  "tradition_aptitude": {
+    "tradition_aptitude": {
+      "desc": {
+        "trigger": {
+          "text": "tradition_aptitude_desc"
+        },
+        "desc": {
+          "trigger": {
+            "text": "tradition_aptitude_hive_desc"
+          },
+          "desc": {
+            "trigger": {
+              "text": "tradition_aptitude_machine_desc"
+            },
+            "tree_template": "tree_12_11",
+            "adoption_bonus": "tr_aptitude_adopt",
+            "finish_bonus": "tr_aptitude_finish",
+            "traditions": {},
+            "potential": {
+              "has_paragon_dlc": "yes"
+            },
+            "ai_weight": {
+              "factor": "5",
+              "modifier": {
+                "factor": "0.5",
+                "is_gestalt": "yes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_aptitude.txt",
+    "_line_number": 1
+  }
+}

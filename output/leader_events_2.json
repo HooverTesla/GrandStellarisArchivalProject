@@ -1,0 +1,172 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "leader.320",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "every_galcom_member": {
+          "limit": {
+            "NOT": {
+              "is_same_value": "root"
+            },
+            "position_on_last_resolution": "support",
+            "any_owned_leader": {
+              "is_assigned_to_galcom": "yes",
+              "has_matching_resolution_category_focus_trait_tier1or2or3": "yes"
+            }
+          },
+          "random_owned_leader": {
+            "limit": {
+              "is_assigned_to_galcom": "yes",
+              "has_matching_resolution_category_focus_trait_tier1or2or3": "yes"
+            },
+            "save_event_target_as": "galcom_delegate",
+            "if": {
+              "limit": {
+                "has_matching_resolution_category_focus_trait_tier_1": "yes"
+              },
+              "delegate_focus_effect": {
+                "CHANCE": "@resolution_focus_amt_1"
+              }
+            },
+            "else_if": {
+              "limit": {
+                "has_matching_resolution_category_focus_trait_tier_2": "yes"
+              },
+              "delegate_focus_effect": {
+                "CHANCE": "@resolution_focus_amt_2"
+              }
+            },
+            "else": {
+              "delegate_focus_effect": {
+                "CHANCE": "@resolution_focus_amt_3"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "leader_events_2.txt",
+    "_line_number": 704
+  },
+  "leader_event": {
+    "leader_event": {
+      "id": "leader.200",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "owner"
+      },
+      "immediate": {
+        "_comments": [
+          "# Set age to be younger than normal.",
+          "####################",
+          "# CLASS RANDOMISER #",
+          "####################",
+          "# Set skill level to 1",
+          "# Add generic level modifiers",
+          "##########",
+          "# TRAITS #",
+          "##########",
+          "# Initial Traits, set after determining class.",
+          "# Chance for a negative trait."
+        ],
+        "set_variable_to_random_value": {
+          "which": "heir_age_mod",
+          "min": "-10",
+          "max": "0",
+          "rounded": "yes"
+        },
+        "add_age": "heir_age_mod",
+        "set_skill": "1",
+        "add_skill_without_trait_selection": "owner.modifier:leader_initial_skill",
+        "if": {
+          "limit": {
+            "owner": {
+              "OR": {
+                "has_valid_civic": "civic_philosopher_king",
+                "_comments": [
+                  "# Commander",
+                  "# Official",
+                  "# Scientist",
+                  "# Current Ruler's Class"
+                ],
+                "has_tradition": "tr_discovery_science_division"
+              }
+            }
+          },
+          "_comments": [
+            "# All classes have a base weight of 10.",
+            "# Civics that boost only one class add 40.",
+            "# Civics that boost two classes add 20 to each class.",
+            "# Traditions that boost a class add 20."
+          ],
+          "random_list": {
+            "_comments": [
+              "# Commander",
+              "# Official",
+              "# Scientist"
+            ],
+            "0": {
+              "modifier": {
+                "add": "value:heir_class_weight_scientist"
+              },
+              "change_leader_class": "scientist",
+              "add_skill_without_trait_selection": "owner.modifier:scientist_initial_skill"
+            }
+          }
+        },
+        "add_trait_no_notify": "random_common",
+        "random_list": {
+          "95": {
+            "5": {
+              "add_trait_no_notify": "random_negative",
+              "_comments": [
+                "# Variable \"leader_pending_negative_traits_unmodified\" doesn't exist yet, can't reduce it yet. Checked now made in paragon_2.2200."
+              ],
+              "modifier": {
+                "factor": "0",
+                "owner": {}
+              }
+            },
+            "_comments": [
+              "# Under One Rule"
+            ],
+            "if": {
+              "limit": {
+                "owner": {
+                  "OR": {
+                    "has_origin": "origin_legendary_leader_imperial",
+                    "ruler": {}
+                  }
+                },
+                "add_trait_no_notify": "leader_trait_legendary_offspring"
+              },
+              "_comments": [
+                "# Technocracy",
+                "# Crusader Spirit",
+                "# Letters of Marque",
+                "# Storm Chasers",
+                "# Adds the Storm Rider trait",
+                "# Treasure Hunters"
+              ],
+              "if": {
+                "limit": {
+                  "owner": {
+                    "has_origin": "origin_treasure_hunters"
+                  }
+                },
+                "set_leader_flag": "ignore_autocracy_ruler_trait_restriction",
+                "add_trait_no_notify": "leader_trait_adventurous_spirit_3",
+                "remove_leader_flag": "ignore_autocracy_ruler_trait_restriction"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "leader_events_2.txt",
+    "_line_number": 310
+  }
+}

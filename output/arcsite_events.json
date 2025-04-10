@@ -1,0 +1,65 @@
+{
+  "fleet_event": {
+    "fleet_event": {
+      "id": "arcsite.3060",
+      "title": "arcsite.3060.name",
+      "desc": "arcsite.3060.desc",
+      "picture": "GFX_evt_alien_planet",
+      "location": "from",
+      "show_sound": "event_ghost_town",
+      "archaeology": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "fromfrom": {},
+        "option": {
+          "trigger": {
+            "owner": {
+              "NOT": {
+                "is_species_class": "AVI"
+              }
+            }
+          },
+          "name": "arcsite.3060.b",
+          "owner": {
+            "add_monthly_resource_mult": {
+              "resource": "society_research",
+              "value": "@tier1materialreward",
+              "min": "@tier1materialmin",
+              "max": "@tier1materialmax"
+            }
+          }
+        },
+        "after": {
+          "fromfrom": {}
+        }
+      }
+    },
+    "_source_file": "arcsite_events.txt",
+    "_line_number": 1736
+  },
+  "country_event": {
+    "country_event": {
+      "id": "arcsite.3031",
+      "title": "arcsite.3031.name",
+      "desc": "arcsite.3031.desc",
+      "picture": "GFX_evt_animal_wildlife",
+      "event_window_type": "leader_story",
+      "picture_event_data": {
+        "portrait": "event_target:admiral_sharpbeak",
+        "room": "owner"
+      },
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "arcsite.3031.a",
+        "every_owned_leader": {
+          "limit": {
+            "has_leader_flag": "skrand"
+          },
+          "add_experience": "800"
+        }
+      }
+    },
+    "_source_file": "arcsite_events.txt",
+    "_line_number": 1504
+  }
+}

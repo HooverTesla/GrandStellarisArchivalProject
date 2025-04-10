@@ -1,0 +1,1340 @@
+{
+  "situation_cybernetic_creed_cyberization": {
+    "situation_cybernetic_creed_cyberization": {
+      "picture": "GFX_evt_cyber_creed_2",
+      "category": "positive",
+      "complete_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_outcome_ascension",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_cybernetic_creed_cyberization_complete",
+        "hidden_effect": {
+          "if": {
+            "limit": {
+              "owner": {
+                "NOT": {}
+              },
+              "situation_event": {
+                "id": "machine_age.1090"
+              }
+            },
+            "if": {
+              "limit": {
+                "owner": {
+                  "has_country_flag": "cybernetic_creed_general"
+                }
+              },
+              "situation_event": {
+                "id": "machine_age.1100"
+              }
+            },
+            "owner": {
+              "set_country_flag": "cyber_creed_advanced_government",
+              "advanced_authority_refresh": "yes"
+            }
+          }
+        },
+        "stages": {
+          "stage_1": {
+            "icon": "GFX_situation_stage_1",
+            "icon_background": "GFX_situation_stage_frame_blue",
+            "end": "100",
+            "custom_tooltip": "stage_cybernetic_creed_the_conclave_effects"
+          },
+          "stage_2": {
+            "icon": "GFX_situation_stage_2",
+            "icon_background": "GFX_situation_stage_frame_blue",
+            "end": "300",
+            "on_first_enter": {
+              "situation_event": {},
+              "custom_tooltip": "stage_cybernetic_creed_cyberization_effects"
+            },
+            "stage_3": {
+              "icon": "GFX_situation_stage_3",
+              "icon_background": "GFX_situation_stage_frame_blue",
+              "end": "500",
+              "on_first_enter": {
+                "situation_event": {},
+                "custom_tooltip": "stage_cybernetic_creed_cyberization_effects"
+              },
+              "stage_4": {
+                "icon": "GFX_situation_stage_4",
+                "icon_background": "GFX_situation_stage_frame_blue",
+                "end": "700",
+                "on_first_enter": {
+                  "situation_event": {},
+                  "custom_tooltip": "stage_cybernetic_creed_cyberization_effects"
+                },
+                "stage_5": {
+                  "icon": "GFX_situation_stage_5",
+                  "icon_background": "GFX_situation_stage_frame_blue",
+                  "end": "900",
+                  "on_first_enter": {
+                    "situation_event": {},
+                    "custom_tooltip": "stage_cybernetic_creed_cyberization_effects"
+                  },
+                  "stage_6": {
+                    "icon": "GFX_situation_stage_6",
+                    "icon_background": "GFX_situation_stage_frame_blue",
+                    "end": "1000",
+                    "on_first_enter": {
+                      "situation_event": {},
+                      "custom_tooltip": "stage_cybernetic_creed_cyberization_effects"
+                    }
+                  },
+                  "approach": {
+                    "name": "situation_cybernetic_creed_cyberization_funding",
+                    "icon": "GFX_situation_approach_energy_credits",
+                    "icon_background": "GFX_situation_approach_bg_green",
+                    "potential": {
+                      "NOT": {},
+                      "allow": {
+                        "custom_tooltip": {
+                          "fail_text": "cybernetic_creed_cyberization_funding_approach",
+                          "has_situation_flag": "cybernetic_creed_cyberization_funding"
+                        }
+                      },
+                      "on_select": {
+                        "custom_tooltip": "cybernetic_creed_cyberization_funding"
+                      },
+                      "ai_weight": {
+                        "base": "10"
+                      },
+                      "modifier": {
+                        "country_engineering_tech_research_speed": "-0.2",
+                        "country_energy_produces_mult": "-0.2"
+                      }
+                    },
+                    "approach": {
+                      "name": "situation_cybernetic_creed_cyberization_people_power",
+                      "icon": "GFX_situation_approach_pop",
+                      "icon_background": "GFX_situation_approach_bg_green",
+                      "potential": {
+                        "NOT": {},
+                        "allow": {
+                          "custom_tooltip": {
+                            "fail_text": "cybernetic_creed_cyberization_people_power",
+                            "has_situation_flag": "cybernetic_creed_cyberization_funding"
+                          }
+                        },
+                        "on_select": {
+                          "custom_tooltip": "cybernetic_creed_cyberization_people_power"
+                        },
+                        "ai_weight": {
+                          "base": "0"
+                        },
+                        "modifier": {
+                          "country_engineering_tech_research_speed": "-0.2",
+                          "planet_jobs_produces_mult": "-0.1"
+                        }
+                      },
+                      "on_monthly": {
+                        "events": {}
+                      },
+                      "monthly_progress": {
+                        "base": "1",
+                        "modifier": {
+                          "mult": "1.1",
+                          "desc": "civic_augmentation_bazaars",
+                          "owner": {},
+                          "modifier": {
+                            "mult": "1.05",
+                            "desc": "tr_cybernetics_transubstantiation_synthesis",
+                            "owner": {},
+                            "modifier": {
+                              "mult": "1.05",
+                              "desc": "tr_cybernetics_organ_harvesting",
+                              "owner": {},
+                              "modifier": {
+                                "mult": "1.05",
+                                "desc": "tr_cybernetics_metabolic_reprocessing",
+                                "owner": {},
+                                "modifier": {
+                                  "mult": "1.05",
+                                  "desc": "tr_cybernetics_integrated_anatomy",
+                                  "owner": {},
+                                  "modifier": {
+                                    "mult": "1.05",
+                                    "desc": "tr_cybernetics_augmentation_overload",
+                                    "owner": {},
+                                    "modifier": {
+                                      "mult": "1.05",
+                                      "desc": "tr_cybernetics_modular_cybernetics",
+                                      "owner": {},
+                                      "modifier": {
+                                        "mult": "1.25",
+                                        "desc": "tr_cybernetics_finish",
+                                        "owner": {},
+                                        "modifier": {
+                                          "mult": "0",
+                                          "desc": "situation_cyberization_pause_desc",
+                                          "has_situation_flag": "situation_cyberization_pause"
+                                        }
+                                      },
+                                      "triggered_blocked_desc": {
+                                        "trigger": {
+                                          "situation_progress >": "900",
+                                          "owner": {
+                                            "NOT": {
+                                              "any_owned_planet": {
+                                                "has_active_building": "building_augmentation_center"
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "text": "situation_augmentation_center_needed_desc"
+                                      },
+                                      "abort_trigger": {
+                                        "OR": {
+                                          "NOT": {
+                                            "target.owner": {}
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "08_machine_age_situations.txt",
+    "_line_number": 0
+  },
+  "situation_synthetic_fertility_digitization": {
+    "situation_synthetic_fertility_digitization": {
+      "picture": "GFX_evt_synth_fertility",
+      "category": "negative",
+      "fail_icon_frame": "GFX_situation_outcome_frame_red",
+      "fail_icon": "GFX_situation_outcome_unknown",
+      "on_fail": {
+        "custom_tooltip": "situation_synthetic_fertility_complete",
+        "hidden_effect": {
+          "situation_event": {
+            "id": "machine_age.3200"
+          }
+        }
+      },
+      "start_value": "37",
+      "stages": {
+        "stage_1": {
+          "icon": "GFX_situation_stage_1",
+          "icon_background": "GFX_situation_stage_frame_red",
+          "end": "40",
+          "custom_tooltip": "stage_synthetic_fertility_problem_effects",
+          "on_first_enter": {
+            "situation_event": {}
+          }
+        },
+        "approach": {
+          "name": "situation_synthetic_fertility_approach_tech_low",
+          "icon": "GFX_situation_approach_balance_sheet",
+          "icon_background": "GFX_situation_approach_bg_yellow",
+          "potential": {
+            "owner": {
+              "NOT": {}
+            },
+            "ai_weight": {
+              "base": "1"
+            },
+            "modifier": {
+              "country_engineering_tech_research_speed": "0.1",
+              "country_energy_produces_mult": "-0.2"
+            }
+          },
+          "approach": {
+            "name": "situation_synthetic_fertility_approach_tech_high",
+            "icon": "GFX_situation_approach_balance_sheet",
+            "icon_background": "GFX_situation_approach_bg_red",
+            "potential": {
+              "owner": {
+                "NOT": {}
+              },
+              "ai_weight": {
+                "base": "2"
+              },
+              "modifier": {
+                "country_engineering_tech_research_speed": "0.2",
+                "country_energy_produces_mult": "-0.4"
+              }
+            },
+            "approach": {
+              "name": "situation_synthetic_fertility_approach_unity_high",
+              "icon": "GFX_situation_approach_balance_sheet",
+              "icon_background": "GFX_situation_approach_bg_red",
+              "potential": {
+                "owner": {
+                  "has_country_flag": "origin_synthetic_fertility_synths"
+                }
+              },
+              "ai_weight": {
+                "base": "10"
+              },
+              "modifier": {
+                "country_unity_produces_mult": "0.2",
+                "country_energy_produces_mult": "-0.4"
+              }
+            },
+            "on_monthly": {
+              "events": {}
+            },
+            "monthly_progress": {
+              "base": "-0.1"
+            },
+            "triggered_blocked_desc": {
+              "trigger": {
+                "owner": {
+                  "has_technology": "tech_synthetic_workers",
+                  "NOT": {}
+                },
+                "text": "situation_no_synthetics_adopt"
+              },
+              "abort_trigger": {
+                "OR": {
+                  "NOT": {
+                    "target.owner": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "08_machine_age_situations.txt",
+    "_line_number": 284
+  },
+  "situation_synthetic_fertility_synthesization": {
+    "situation_synthetic_fertility_synthesization": {
+      "picture": "GFX_evt_robot_assembly_plant",
+      "complete_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_outcome_ascension",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_synthetic_fertility_synthesization_outcome",
+        "hidden_effect": {
+          "situation_event": {
+            "owner": {
+              "set_country_flag": "identity_complex_available"
+            }
+          },
+          "set_situation_locked": "yes"
+        },
+        "stages": {
+          "stage_2": {
+            "icon": "GFX_situation_stage_2",
+            "icon_background": "GFX_situation_stage_frame_blue",
+            "end": "20",
+            "on_first_enter": {
+              "situation_event": {},
+              "custom_tooltip": "stage_2_synthetic_fertility_synthesization_effects"
+            }
+          },
+          "approach": {
+            "name": "situation_synthetic_fertility_synthesization_full_speed",
+            "icon": "GFX_situation_approach_pop",
+            "icon_background": "GFX_situation_approach_bg_yellow",
+            "on_select": {
+              "custom_tooltip": "situation_synthetic_fertility_synthesization_full_speed_tooltip"
+            },
+            "ai_weight": {
+              "base": "0"
+            },
+            "modifier": {
+              "country_engineering_tech_research_speed": "-1.0",
+              "country_alloys_produces_mult": "-1.0"
+            }
+          },
+          "on_monthly": {
+            "events": {},
+            "_comments": [
+              "#synth.3 is triggered by setting the digitization_ongoing flag"
+            ],
+            "random_events": {}
+          },
+          "monthly_progress": {
+            "base": "10",
+            "modifier": {
+              "mult": "0",
+              "desc": "situation_digitization_pause_desc",
+              "has_situation_flag": "situation_digitization_pause"
+            }
+          },
+          "abort_trigger": {
+            "OR": {
+              "NOT": {
+                "target.owner": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "08_machine_age_situations.txt",
+    "_line_number": 437
+  },
+  "situation_synth_queen_doomclock": {
+    "situation_synth_queen_doomclock": {
+      "picture": "GFX_evt_synth_queen",
+      "complete_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_outcome_unknown",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_synth_queen_doomclock_complete",
+        "situation_event": {},
+        "abort_trigger": {
+          "NOT": {},
+          "stages": {
+            "stage_1": {
+              "icon": "GFX_situation_stage_1",
+              "icon_background": "GFX_situation_stage_frame_blue",
+              "end": "500",
+              "on_first_enter": {
+                "set_global_flag": "synth_queen_crisis_1"
+              }
+            },
+            "stage_2": {
+              "icon": "GFX_situation_stage_2",
+              "icon_background": "GFX_situation_stage_frame_blue",
+              "end": "800",
+              "on_first_enter": {
+                "situation_event": {
+                  "remove_global_flag": "synth_queen_crisis_1",
+                  "set_global_flag": "synth_queen_crisis_2",
+                  "owner": {}
+                }
+              },
+              "stage_3": {
+                "icon": "GFX_situation_stage_3",
+                "icon_background": "GFX_situation_stage_frame_blue",
+                "end": "900",
+                "on_first_enter": {
+                  "situation_event": {
+                    "remove_global_flag": "synth_queen_crisis_2",
+                    "set_global_flag": "synth_queen_crisis_3"
+                  }
+                },
+                "stage_4": {
+                  "icon": "GFX_situation_stage_4",
+                  "icon_background": "GFX_situation_stage_frame_blue",
+                  "end": "1000",
+                  "on_first_enter": {
+                    "situation_event": {
+                      "remove_global_flag": "synth_queen_crisis_3",
+                      "set_global_flag": "synth_queen_crisis_4"
+                    }
+                  }
+                },
+                "monthly_progress": {
+                  "base": "3",
+                  "modifier": {
+                    "mult": "1.2",
+                    "desc": "situation_doomclock_eleventh_hour",
+                    "any_country": {
+                      "is_country_type": "awakened_synth_queen"
+                    },
+                    "any_system": {
+                      "has_star_flag": "synth_queen_system",
+                      "OR": {
+                        "AND": {
+                          "exists": "owner",
+                          "owner": {
+                            "NOT": {
+                              "is_country_type": "awakened_synth_queen"
+                            }
+                          }
+                        },
+                        "NOT": {},
+                        "any_neighbor_system": {
+                          "has_star_flag": "synth_queen_capital"
+                        }
+                      }
+                    },
+                    "modifier": {
+                      "divide": "value:number_human_players_crisis_strength",
+                      "desc": "situation_doomclock_player_amount_modifier"
+                    }
+                  },
+                  "approach": {
+                    "name": "situation_doomclock_approach",
+                    "icon": "GFX_situation_approach_this_is_fine",
+                    "icon_background": "GFX_situation_approach_bg_yellow",
+                    "default": "yes",
+                    "on_select": {
+                      "custom_tooltip": "deficit_approach_do_nothing_tooltip"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "08_machine_age_situations.txt",
+    "_line_number": 547
+  },
+  "situation_synth_queen_player_facing": {
+    "situation_synth_queen_player_facing": {
+      "picture": "GFX_evt_synth_queen",
+      "complete_icon_frame": "GFX_situation_outcome_frame_blue",
+      "complete_icon": "GFX_situation_outcome_unknown",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_synth_queen_player_facing_complete",
+        "hidden_effect": {
+          "situation_event": {},
+          "set_situation_locked": "yes"
+        },
+        "abort_trigger": {
+          "NOT": {},
+          "stages": {
+            "stage_1": {
+              "icon": "GFX_situation_stage_1",
+              "icon_background": "GFX_situation_stage_frame_red",
+              "end": "6"
+            },
+            "stage_2": {
+              "icon": "GFX_situation_stage_2",
+              "icon_background": "GFX_situation_stage_frame_red",
+              "end": "10",
+              "on_first_enter": {
+                "situation_event": {}
+              }
+            },
+            "monthly_progress": {
+              "base": "0",
+              "_comments": [
+                "#Only Progressed Via Events"
+              ]
+            },
+            "_comments": [
+              "#Approaches",
+              "#Events"
+            ],
+            "approach": {
+              "name": "situation_synth_queen_military_approach",
+              "icon": "GFX_situation_approach_fleet",
+              "icon_background": "GFX_situation_approach_bg_green",
+              "on_select": {
+                "custom_tooltip": "situation_synth_queen_military_approach_tooltip"
+              },
+              "modifier": {
+                "starbase_shipyard_build_speed_mult": "0.25",
+                "country_unity_produces_mult": "-0.25"
+              }
+            },
+            "on_monthly": {
+              "events": {},
+              "random_events": {
+                "10": "crisis.8270 # Synth Queen Random Demands",
+                "90": "0"
+              }
+            },
+            "triggered_blocked_desc": {
+              "trigger": {
+                "owner": {
+                  "NOT": {},
+                  "text": "situation_synth_queen_player_facing_declare_war"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "08_machine_age_situations.txt",
+    "_line_number": 649
+  },
+  "situation_cyberization": {
+    "situation_cyberization": {
+      "category": "neutral",
+      "picture": "GFX_evt_cyberization_1",
+      "complete_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_outcome_ascension",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_cyberization_outcome",
+        "hidden_effect": {
+          "situation_event": {},
+          "set_situation_locked": "yes"
+        },
+        "stages": {
+          "stage_1": {
+            "icon": "GFX_situation_stage_1",
+            "icon_background": "GFX_situation_stage_frame_blue",
+            "end": "250",
+            "on_first_enter": {
+              "situation_event": {},
+              "custom_tooltip": "stage_cyberization_effects"
+            },
+            "stage_2": {
+              "icon": "GFX_situation_stage_2",
+              "icon_background": "GFX_situation_stage_frame_blue",
+              "end": "500",
+              "on_first_enter": {
+                "situation_event": {},
+                "custom_tooltip": "stage_cyberization_effects"
+              },
+              "stage_3": {
+                "icon": "GFX_situation_stage_3",
+                "icon_background": "GFX_situation_stage_frame_blue",
+                "end": "750",
+                "on_first_enter": {
+                  "situation_event": {},
+                  "custom_tooltip": "stage_cyberization_effects"
+                },
+                "stage_4": {
+                  "icon": "GFX_situation_stage_4",
+                  "icon_background": "GFX_situation_stage_frame_blue",
+                  "end": "1000",
+                  "on_first_enter": {
+                    "situation_event": {
+                      "situation_event": {
+                        "situation_event": {},
+                        "custom_tooltip": "stage_cyberization_effects"
+                      }
+                    },
+                    "approach": {
+                      "name": "situation_cyberization_overdrive",
+                      "icon": "GFX_situation_approach_this_is_fine",
+                      "icon_background": "GFX_situation_approach_bg_yellow",
+                      "on_select": {
+                        "custom_tooltip": "approach_cyberization_overdrive_tt"
+                      },
+                      "ai_weight": {
+                        "base": "0"
+                      },
+                      "modifier": {
+                        "country_engineering_tech_research_speed": "-0.15"
+                      }
+                    },
+                    "on_monthly": {
+                      "events": {}
+                    },
+                    "_comments": [
+                      "# cyber.3 is triggered by setting the cyberization_ongoing flag",
+                      "# cyber.4 is triggered by setting the cyberization_ongoing_limited flag",
+                      "# cyber.6 is triggered by setting the cyberization_ongoing_forced flag"
+                    ],
+                    "monthly_progress": {
+                      "base": "10",
+                      "_comments": [
+                        "# Modifiers are defined in tooltip order, most important first"
+                      ],
+                      "modifier": {
+                        "mult": "1.1",
+                        "desc": "civic_augmentation_bazaars",
+                        "owner": {},
+                        "modifier": {
+                          "mult": "1.05",
+                          "desc": "tr_cybernetics_transubstantiation_synthesis",
+                          "owner": {},
+                          "modifier": {
+                            "mult": "1.05",
+                            "desc": "tr_cybernetics_organ_harvesting",
+                            "owner": {},
+                            "modifier": {
+                              "mult": "1.05",
+                              "desc": "tr_cybernetics_metabolic_reprocessing",
+                              "owner": {},
+                              "modifier": {
+                                "mult": "1.05",
+                                "desc": "tr_cybernetics_integrated_anatomy",
+                                "owner": {},
+                                "modifier": {
+                                  "mult": "1.05",
+                                  "desc": "tr_cybernetics_augmentation_overload",
+                                  "owner": {},
+                                  "modifier": {
+                                    "mult": "1.05",
+                                    "desc": "tr_cybernetics_modular_cybernetics",
+                                    "owner": {},
+                                    "modifier": {
+                                      "mult": "1.25",
+                                      "desc": "tr_cybernetics_finish",
+                                      "owner": {},
+                                      "modifier": {
+                                        "mult": "1.25",
+                                        "desc": "borrowed_research",
+                                        "owner": {},
+                                        "modifier": {
+                                          "mult": "0",
+                                          "desc": "situation_cyberization_pause_desc",
+                                          "has_situation_flag": "situation_cyberization_pause"
+                                        }
+                                      },
+                                      "triggered_modifier": {
+                                        "potential": {
+                                          "owner": {},
+                                          "planet_jobs_unity_produces_mult": "0.10"
+                                        },
+                                        "triggered_modifier": {
+                                          "potential": {
+                                            "owner": {},
+                                            "planet_jobs_consumer_goods_produces_mult": "0.10"
+                                          },
+                                          "triggered_modifier": {
+                                            "potential": {
+                                              "owner": {},
+                                              "planet_jobs_upkeep_mult": "-0.05"
+                                            },
+                                            "triggered_blocked_desc": {
+                                              "trigger": {
+                                                "OR": {
+                                                  "owner": {
+                                                    "AND": {
+                                                      "situation_progress >": "250",
+                                                      "owner": {
+                                                        "NOT": {
+                                                          "any_owned_planet": {
+                                                            "has_active_building": "building_augmentation_center"
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "text": "situation_augmentation_center_needed_desc"
+                                              },
+                                              "abort_trigger": {
+                                                "OR": {
+                                                  "NOT": {
+                                                    "target.owner": {}
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "08_machine_age_situations.txt",
+    "_line_number": 740
+  },
+  "situation_cyberization_hive": {
+    "situation_cyberization_hive": {
+      "category": "neutral",
+      "picture": "GFX_evt_hive_cyberization",
+      "complete_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_outcome_ascension",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_cyberization_outcome",
+        "hidden_effect": {
+          "situation_event": {},
+          "set_situation_locked": "yes"
+        },
+        "stages": {
+          "stage_1": {
+            "icon": "GFX_situation_stage_1",
+            "icon_background": "GFX_situation_stage_frame_blue",
+            "end": "250",
+            "on_first_enter": {
+              "situation_event": {},
+              "custom_tooltip": "stage_cyberization_hive_effects"
+            },
+            "stage_2": {
+              "icon": "GFX_situation_stage_2",
+              "icon_background": "GFX_situation_stage_frame_blue",
+              "end": "500",
+              "on_first_enter": {
+                "situation_event": {},
+                "custom_tooltip": "stage_cyberization_hive_effects"
+              },
+              "stage_3": {
+                "icon": "GFX_situation_stage_3",
+                "icon_background": "GFX_situation_stage_frame_blue",
+                "end": "750",
+                "on_first_enter": {
+                  "situation_event": {},
+                  "custom_tooltip": "stage_cyberization_hive_effects"
+                },
+                "stage_4": {
+                  "icon": "GFX_situation_stage_4",
+                  "icon_background": "GFX_situation_stage_frame_blue",
+                  "end": "1000",
+                  "on_first_enter": {
+                    "situation_event": {},
+                    "custom_tooltip": "stage_cyberization_hive_effects"
+                  }
+                },
+                "approach": {
+                  "name": "situation_cyberization_overdrive",
+                  "icon": "GFX_situation_approach_this_is_fine",
+                  "icon_background": "GFX_situation_approach_bg_yellow",
+                  "on_select": {
+                    "custom_tooltip": "approach_cyberization_overdrive_tt"
+                  },
+                  "ai_weight": {
+                    "base": "0"
+                  },
+                  "modifier": {
+                    "country_engineering_tech_research_speed": "-0.15"
+                  }
+                },
+                "on_monthly": {
+                  "events": {}
+                },
+                "_comments": [
+                  "# cyber.3 is triggered by setting the cyberization_ongoing flag",
+                  "# cyber.9 is triggered by setting the hive_cyberization_ongoing_limited flag"
+                ],
+                "monthly_progress": {
+                  "base": "10",
+                  "_comments": [
+                    "# Modifiers are defined in tooltip order, most important first"
+                  ],
+                  "modifier": {
+                    "mult": "1.05",
+                    "desc": "tr_cybernetics_transubstantiation_synthesis",
+                    "owner": {},
+                    "modifier": {
+                      "mult": "1.05",
+                      "desc": "tr_cybernetics_organ_harvesting",
+                      "owner": {},
+                      "modifier": {
+                        "mult": "1.05",
+                        "desc": "tr_cybernetics_metabolic_reprocessing",
+                        "owner": {},
+                        "modifier": {
+                          "mult": "1.05",
+                          "desc": "tr_cybernetics_integrated_anatomy",
+                          "owner": {},
+                          "modifier": {
+                            "mult": "1.05",
+                            "desc": "tr_cybernetics_synaptic_sub_processing",
+                            "owner": {},
+                            "modifier": {
+                              "mult": "1.05",
+                              "desc": "tr_cybernetics_modular_cybernetics",
+                              "owner": {},
+                              "modifier": {
+                                "mult": "1.25",
+                                "desc": "tr_cybernetics_finish",
+                                "owner": {},
+                                "modifier": {
+                                  "mult": "0",
+                                  "desc": "situation_cyberization_pause_desc",
+                                  "has_situation_flag": "situation_cyberization_pause"
+                                }
+                              },
+                              "triggered_modifier": {
+                                "potential": {
+                                  "has_situation_flag": "prioritizing_resources"
+                                },
+                                "country_unity_produces_mult": "0.05"
+                              },
+                              "triggered_blocked_desc": {
+                                "trigger": {
+                                  "OR": {
+                                    "owner": {
+                                      "AND": {
+                                        "situation_progress >": "250",
+                                        "owner": {
+                                          "NOT": {
+                                            "any_owned_planet": {
+                                              "has_active_building": "building_augmentation_center"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "text": "situation_augmentation_center_needed_desc"
+                                },
+                                "abort_trigger": {
+                                  "OR": {
+                                    "NOT": {
+                                      "target.owner": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "08_machine_age_situations.txt",
+    "_line_number": 1036
+  },
+  "situation_paperclips": {
+    "situation_paperclips": {
+      "picture": "GFX_evt_sapient_AI",
+      "fail_icon_frame": "GFX_situation_outcome_frame_blue",
+      "fail_icon": "GFX_situation_outcome_unknown",
+      "category": "negative",
+      "start_value": "119",
+      "on_fail": {
+        "custom_tooltip": "situation_paperclips_outcome",
+        "hidden_effect": {
+          "owner": {
+            "country_event": {},
+            "destroy_situation": "this"
+          }
+        },
+        "on_abort": {
+          "_comments": [
+            "#custom_tooltip = situation_paperclips_abort"
+          ],
+          "hidden_effect": {
+            "owner": {
+              "country_event": {}
+            }
+          },
+          "stages": {
+            "situation_paperclip_stage_1": {
+              "icon": "GFX_situation_stage_1",
+              "icon_background": "GFX_situation_stage_frame_blue",
+              "end": "120",
+              "on_first_enter": {},
+              "custom_tooltip": "stage_the_drive_effects"
+            }
+          },
+          "approach": {
+            "name": "situation_fulfill_drive",
+            "icon": "GFX_situation_approach_balance_sheet",
+            "icon_background": "GFX_situation_approach_bg_yellow",
+            "default": "yes",
+            "modifier": {
+              "planet_artisans_consumer_goods_produces_mult": "0.10",
+              "planet_artisans_upkeep_mult": "0.10",
+              "country_unity_produces_mult": "0.05"
+            },
+            "ai_weight": {
+              "base": "1"
+            }
+          },
+          "on_monthly": {
+            "events": {}
+          },
+          "monthly_progress": {
+            "base": "-1"
+          },
+          "abort_trigger": {
+            "OR": {
+              "NOT": {
+                "target.owner": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "08_machine_age_situations.txt",
+    "_line_number": 1276
+  },
+  "situation_digitization": {
+    "situation_digitization": {
+      "category": "neutral",
+      "picture": "GFX_evt_synth_situation",
+      "complete_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_outcome_ascension",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_digitization_outcome",
+        "hidden_effect": {
+          "situation_event": {},
+          "set_situation_locked": "yes"
+        },
+        "stages": {
+          "stage_1": {
+            "icon": "GFX_situation_stage_1",
+            "icon_background": "GFX_situation_stage_frame_blue",
+            "end": "250",
+            "on_first_enter": {
+              "situation_event": {},
+              "custom_tooltip": "stage_digitization_effects"
+            },
+            "stage_2": {
+              "icon": "GFX_situation_stage_2",
+              "icon_background": "GFX_situation_stage_frame_blue",
+              "end": "500",
+              "on_first_enter": {
+                "situation_event": {},
+                "custom_tooltip": "stage_digitization_effects"
+              },
+              "stage_3": {
+                "icon": "GFX_situation_stage_3",
+                "icon_background": "GFX_situation_stage_frame_blue",
+                "end": "750",
+                "on_first_enter": {
+                  "situation_event": {},
+                  "custom_tooltip": "stage_digitization_effects"
+                },
+                "stage_4": {
+                  "icon": "GFX_situation_stage_4",
+                  "icon_background": "GFX_situation_stage_frame_blue",
+                  "end": "1000",
+                  "on_first_enter": {
+                    "situation_event": {},
+                    "custom_tooltip": "stage_digitization_effects"
+                  }
+                },
+                "approach": {
+                  "name": "situation_digitization_overclocked",
+                  "icon": "GFX_situation_approach_this_is_fine",
+                  "icon_background": "GFX_situation_approach_bg_yellow",
+                  "on_select": {
+                    "custom_tooltip": "approach_digitization_overclocked_tt"
+                  },
+                  "ai_weight": {
+                    "base": "0"
+                  },
+                  "modifier": {
+                    "country_engineering_tech_research_speed": "-0.15"
+                  }
+                },
+                "on_monthly": {
+                  "events": {}
+                },
+                "_comments": [
+                  "# synth.3 is triggered by setting the digitization_ongoing flag"
+                ],
+                "monthly_progress": {
+                  "base": "10",
+                  "_comments": [
+                    "# Modifiers are defined in tooltip order, most important first"
+                  ],
+                  "modifier": {
+                    "mult": "1.05",
+                    "desc": "tr_synthetics_maintenance_protocols",
+                    "owner": {},
+                    "modifier": {
+                      "mult": "1.05",
+                      "desc": "tr_synthetics_optimization_algorithms",
+                      "owner": {},
+                      "modifier": {
+                        "mult": "1.05",
+                        "desc": "tr_synthetics_transubstatiation_synthesis",
+                        "owner": {},
+                        "modifier": {
+                          "mult": "1.05",
+                          "desc": "tr_synthetics_power_systems",
+                          "owner": {},
+                          "modifier": {
+                            "mult": "1.05",
+                            "desc": "tr_synthetics_prefabricated_components",
+                            "owner": {},
+                            "modifier": {
+                              "mult": "1.05",
+                              "desc": "tr_synthetics_solid_state_actuators",
+                              "owner": {},
+                              "modifier": {
+                                "mult": "1.25",
+                                "desc": "tr_synthetics_finish",
+                                "owner": {},
+                                "modifier": {
+                                  "mult": "0",
+                                  "desc": "situation_digitization_pause_desc",
+                                  "has_situation_flag": "situation_digitization_pause"
+                                }
+                              },
+                              "triggered_blocked_desc": {
+                                "trigger": {
+                                  "owner": {
+                                    "NOT": {
+                                      "any_owned_planet": {
+                                        "has_active_building": "building_identity_complex"
+                                      }
+                                    }
+                                  }
+                                },
+                                "text": "situation_identity_complex_needed_desc"
+                              },
+                              "abort_trigger": {
+                                "OR": {
+                                  "NOT": {
+                                    "target.owner": {}
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "08_machine_age_situations.txt",
+    "_line_number": 1360
+  },
+  "situation_transformation": {
+    "situation_transformation": {
+      "category": "neutral",
+      "picture": "GFX_evt_machine_sapience",
+      "complete_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_outcome_ascension",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_transformation_outcome",
+        "hidden_effect": {
+          "situation_event": {},
+          "set_situation_locked": "yes"
+        },
+        "stages": {
+          "stage_1": {
+            "icon": "GFX_situation_stage_1",
+            "icon_background": "GFX_situation_stage_frame_blue",
+            "end": "250",
+            "on_first_enter": {
+              "situation_event": {},
+              "custom_tooltip": "stage_transformation_effects"
+            },
+            "stage_2": {
+              "icon": "GFX_situation_stage_2",
+              "icon_background": "GFX_situation_stage_frame_blue",
+              "end": "500",
+              "on_first_enter": {
+                "situation_event": {},
+                "custom_tooltip": "stage_transformation_effects"
+              },
+              "stage_3": {
+                "icon": "GFX_situation_stage_3",
+                "icon_background": "GFX_situation_stage_frame_blue",
+                "end": "750",
+                "on_first_enter": {
+                  "situation_event": {},
+                  "custom_tooltip": "stage_transformation_effects"
+                },
+                "stage_4": {
+                  "icon": "GFX_situation_stage_4",
+                  "icon_background": "GFX_situation_stage_frame_blue",
+                  "end": "1000",
+                  "on_first_enter": {
+                    "situation_event": {},
+                    "custom_tooltip": "stage_transformation_effects"
+                  }
+                },
+                "approach": {
+                  "name": "situation_transformation_overclocked",
+                  "icon": "GFX_situation_approach_this_is_fine",
+                  "icon_background": "GFX_situation_approach_bg_yellow",
+                  "on_select": {
+                    "custom_tooltip": "approach_transformation_overclocked_tt"
+                  },
+                  "ai_weight": {
+                    "base": "0"
+                  },
+                  "modifier": {
+                    "country_unity_produces_mult": "-0.2"
+                  }
+                },
+                "on_monthly": {
+                  "events": {}
+                },
+                "monthly_progress": {
+                  "base": "10",
+                  "_comments": [
+                    "# Modifiers are defined in tooltip order, most important first"
+                  ],
+                  "modifier": {
+                    "mult": "0",
+                    "desc": "situation_transformation_pause_desc",
+                    "has_situation_flag": "situation_transformation_pause"
+                  }
+                },
+                "triggered_modifier": {
+                  "potential": {
+                    "has_situation_flag": "transformation_physics_min"
+                  },
+                  "modifier": {
+                    "country_physics_tech_research_speed": "-0.05"
+                  }
+                },
+                "abort_trigger": {
+                  "OR": {
+                    "NOT": {
+                      "target.owner": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "08_machine_age_situations.txt",
+    "_line_number": 1592
+  },
+  "situation_nanotech_consume_planet": {
+    "situation_nanotech_consume_planet": {
+      "complete_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_exploding_planet",
+      "picture": {
+        "trigger": {
+          "target": {},
+          "picture": "GFX_evt_desert"
+        },
+        "picture": {
+          "trigger": {
+            "target": {},
+            "picture": "GFX_evt_tropical"
+          },
+          "picture": {
+            "trigger": {
+              "target": {},
+              "picture": "GFX_evt_arid"
+            },
+            "picture": {
+              "trigger": {
+                "target": {},
+                "picture": "GFX_evt_continental"
+              },
+              "picture": {
+                "trigger": {
+                  "target": {},
+                  "picture": "GFX_evt_alpine_city"
+                },
+                "picture": {
+                  "trigger": {
+                    "target": {},
+                    "picture": "GFX_evt_savannah"
+                  },
+                  "picture": {
+                    "trigger": {
+                      "target": {},
+                      "picture": "GFX_evt_ocean"
+                    },
+                    "picture": {
+                      "trigger": {
+                        "target": {},
+                        "picture": "GFX_evt_tundra"
+                      },
+                      "picture": {
+                        "trigger": {
+                          "target": {},
+                          "picture": "GFX_evt_arctic"
+                        },
+                        "picture": {
+                          "trigger": {
+                            "target": {},
+                            "picture": "GFX_evt_gaia"
+                          },
+                          "picture": {
+                            "trigger": {
+                              "target": {},
+                              "picture": "GFX_evt_tomb_world"
+                            },
+                            "picture": {
+                              "trigger": {
+                                "target": {},
+                                "picture": "GFX_evt_infested"
+                              },
+                              "picture": {
+                                "trigger": {
+                                  "target": {},
+                                  "picture": "GFX_evt_ai_planet"
+                                },
+                                "picture": {
+                                  "trigger": {
+                                    "target": {},
+                                    "picture": "GFX_evt_city_planet"
+                                  },
+                                  "stages": {
+                                    "stage_1": {
+                                      "icon": "GFX_situation_stage_1",
+                                      "icon_background": "GFX_situation_stage_frame_green",
+                                      "end": "1000",
+                                      "custom_tooltip": "stage_slushify"
+                                    }
+                                  },
+                                  "category": "positive",
+                                  "start_value": "0",
+                                  "on_progress_complete": {
+                                    "custom_tooltip": "nanotech_consume_finish_tooltip",
+                                    "hidden_effect": {
+                                      "situation_event": {}
+                                    },
+                                    "on_monthly": {
+                                      "events": {}
+                                    },
+                                    "on_abort": {
+                                      "target": {
+                                        "remove_planet_flag": "being_devoured",
+                                        "remove_modifier": "being_devoured_modifier"
+                                      }
+                                    },
+                                    "approach": {
+                                      "name": "approach_restraint",
+                                      "on_select": {
+                                        "custom_tooltip": "terravore_restraint_effect",
+                                        "owner": {
+                                          "add_resource": {},
+                                          "abort_situation": "this"
+                                        },
+                                        "icon": "GFX_situation_approach_influence",
+                                        "icon_background": "GFX_situation_approach_bg_yellow",
+                                        "ai_weight": {
+                                          "base": "10"
+                                        }
+                                      },
+                                      "monthly_progress": {
+                                        "base": "0",
+                                        "modifier": {
+                                          "add": "value:terravore_progress",
+                                          "desc": "string_terravore_progress"
+                                        }
+                                      },
+                                      "abort_trigger": {
+                                        "OR": {
+                                          "NOT": {
+                                            "target.owner": {}
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "08_machine_age_situations.txt",
+    "_line_number": 1817
+  }
+}

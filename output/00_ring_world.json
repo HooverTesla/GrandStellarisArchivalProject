@@ -1,0 +1,361 @@
+{
+  "ring_world_1": {
+    "ring_world_1": {
+      "entity": "construction_platform_entity",
+      "construction_entity": "construction_platform_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "place_entity_on_planet_plane": "no",
+      "entity_offset": {
+        "build_time": "1800",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "5000",
+            "influence": "300"
+          },
+          "upkeep": {
+            "energy": "5"
+          }
+        },
+        "custom_tooltip_requirements": "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_RING_WORLD",
+        "prerequisites": {
+          "possible": {
+            "hidden_trigger": {
+              "exists": "starbase"
+            },
+            "custom_tooltip": {
+              "fail_text": "requires_no_black_hole",
+              "NOT": {},
+              "custom_tooltip": {
+                "fail_text": "requires_no_existing_megastructure",
+                "has_no_non_gate_megastructure": "yes",
+                "NOT": {
+                  "any_system_planet": {
+                    "is_planet_class": "pc_cosmogenesis_world"
+                  }
+                }
+              }
+            },
+            "placement_rules": {
+              "planet_possible": {
+                "custom_tooltip": {
+                  "fail_text": "requires_no_anomaly",
+                  "NOT": {},
+                  "custom_tooltip": {
+                    "fail_text": "requires_planets_for_material",
+                    "hidden:solar_system": {}
+                  }
+                },
+                "ai_weight": {
+                  "factor": "10",
+                  "modifier": {
+                    "factor": "0.1",
+                    "starbase": {},
+                    "modifier": {
+                      "factor": "0.1",
+                      "any_neighbor_system": {
+                        "exists": "owner",
+                        "NOT": {
+                          "owner": {}
+                        }
+                      }
+                    },
+                    "on_build_start": {
+                      "on_build_cancel": {
+                        "on_build_complete": {
+                          "set_star_flag": "ring_world_built"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_ring_world.txt",
+    "_line_number": 11
+  },
+  "ring_world_2_intermediate": {
+    "ring_world_2_intermediate": {
+      "entity": "",
+      "construction_entity": "ringworld_seam_entity_01_full_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "show_galactic_map_icon": "no",
+      "show_in_outliner": "no",
+      "build_time": "4800",
+      "resources": {
+        "category": "megastructures",
+        "cost": {
+          "alloys": "10000"
+        }
+      },
+      "upgrade_from": {},
+      "prerequisites": {
+        "on_build_start": {
+          "on_build_cancel": {
+            "on_build_complete": {
+              "every_system_planet": {
+                "limit": {
+                  "remove_planet": "yes"
+                },
+                "set_asteroid_belt": {
+                  "radius": "0"
+                },
+                "remove_megastructure": "fromfrom",
+                "spawn_megastructure": {
+                  "name": "NAME_Ring_Section_D",
+                  "type": "ring_world_2",
+                  "orbit_angle": "270",
+                  "orbit_distance": "45",
+                  "owner": "from",
+                  "graphical_culture": "fromfrom",
+                  "planet": "star"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_ring_world.txt",
+    "_line_number": 135
+  },
+  "ring_world_2": {
+    "ring_world_2": {
+      "entity": "ringworld_3x_seams_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "upgrade_from": {},
+      "upgrade_desc": "hide",
+      "_comments": [
+        "# used from script only"
+      ],
+      "potential": {}
+    },
+    "_source_file": "00_ring_world.txt",
+    "_line_number": 204
+  },
+  "ring_world_3_intermediate": {
+    "ring_world_3_intermediate": {
+      "entity": "",
+      "construction_entity": "ringworld_phase_3_construction_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "build_time": "3600",
+      "show_galactic_map_icon": "no",
+      "show_in_outliner": "no",
+      "resources": {
+        "category": "megastructures",
+        "cost": {
+          "alloys": "10000"
+        }
+      },
+      "upgrade_from": {},
+      "prerequisites": {
+        "show_prereqs": "yes",
+        "prereq_name": "RING_WORLD_SHOW_NAME",
+        "on_build_complete": {
+          "from": {
+            "set_country_flag": "has_built_or_repaired_megastructure"
+          },
+          "spawn_planet": {
+            "class": "pc_ringworld_habitable",
+            "location": "fromfrom",
+            "orbit_angle_offset": "-30",
+            "init_effect": {
+              "set_name": "NAME_Habitable_Section_A",
+              "set_planet_entity": {
+                "entity": "ringworld_habitable_entity_01_entity",
+                "graphical_culture": "fromfrom"
+              },
+              "set_surveyed": {
+                "surveyed": "yes",
+                "surveyor": "FROM"
+              },
+              "set_all_comms_surveyed": "yes",
+              "clear_blockers": "yes",
+              "save_event_target_as": "ring_section",
+              "trigger_megastructure_icon": "yes",
+              "set_planet_flag": "megastructure"
+            }
+          },
+          "fromfrom.planet": {
+            "set_planet_flag": "has_megastructure"
+          },
+          "remove_megastructure": "fromfrom",
+          "if": {
+            "limit": {
+              "NOT": {},
+              "set_star_flag": "ring_section_1",
+              "event_target:ring_section": {
+                "break": "yes"
+              },
+              "if": {
+                "limit": {
+                  "has_star_flag": "ring_section_1",
+                  "NOT": {},
+                  "set_star_flag": "ring_section_2",
+                  "event_target:ring_section": {
+                    "break": "yes"
+                  },
+                  "if": {
+                    "limit": {
+                      "has_star_flag": "ring_section_2",
+                      "NOT": {},
+                      "set_star_flag": "ring_section_3",
+                      "event_target:ring_section": {
+                        "break": "yes"
+                      },
+                      "if": {
+                        "limit": {
+                          "remove_star_flag": "ring_section_3",
+                          "event_target:ring_section": {
+                            "break": "yes"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_ring_world.txt",
+    "_line_number": 219
+  },
+  "ring_world_ruined": {
+    "ring_world_ruined": {
+      "entity": "ringworld_destroyed_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "potential": {
+        "always": "no"
+      }
+    },
+    "_source_file": "00_ring_world.txt",
+    "_line_number": 341
+  },
+  "ring_world_restored": {
+    "ring_world_restored": {
+      "entity": "",
+      "construction_entity": "ringworld_phase_3_construction_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "show_galactic_map_icon": "no",
+      "show_in_outliner": "no",
+      "build_time": "3600",
+      "resources": {
+        "category": "megastructures",
+        "cost": {
+          "alloys": "10000"
+        }
+      },
+      "upgrade_from": {},
+      "possible": {
+        "from": {
+          "has_technology": "tech_mega_engineering"
+        },
+        "custom_tooltip": {
+          "fail_text": "requires_surveyed_system",
+          "NOT": {
+            "any_system_planet": {
+              "is_surveyed": {
+                "who": "prev.from",
+                "status": "no"
+              }
+            }
+          }
+        }
+      },
+      "ai_weight": {
+        "weight": "300",
+        "modifier": {
+          "weight": "0",
+          "from": {}
+        },
+        "on_build_start": {
+          "fromfrom": {
+            "set_graphical_culture": "root.from"
+          }
+        },
+        "on_build_complete": {
+          "every_system_ambient_object": {
+            "limit": {
+              "OR": {
+                "is_ambient_object_type": "small_debris_object"
+              }
+            },
+            "destroy_ambient_object": "this"
+          },
+          "spawn_planet": {
+            "class": "pc_ringworld_habitable",
+            "location": "fromfrom",
+            "orbit_angle_offset": "30",
+            "init_effect": {
+              "set_name": "NAME_Habitable_Section_A",
+              "set_planet_entity": {
+                "entity": "ringworld_habitable_entity_01_entity",
+                "graphical_culture": "fromfrom"
+              },
+              "set_surveyed": {
+                "surveyed": "yes",
+                "surveyor": "FROM"
+              },
+              "set_all_comms_surveyed": "yes",
+              "clear_blockers": "yes",
+              "save_event_target_as": "ring_section",
+              "trigger_megastructure_icon": "yes",
+              "set_planet_flag": "megastructure"
+            }
+          },
+          "remove_megastructure": "fromfrom",
+          "from": {
+            "set_country_flag": "has_built_or_repaired_megastructure",
+            "country_event": {},
+            "if": {
+              "limit": {
+                "NOT": {},
+                "set_star_flag": "ring_section_1",
+                "event_target:ring_section": {
+                  "break": "yes"
+                },
+                "if": {
+                  "limit": {
+                    "has_star_flag": "ring_section_1",
+                    "NOT": {},
+                    "set_star_flag": "ring_section_2",
+                    "event_target:ring_section": {
+                      "break": "yes"
+                    },
+                    "if": {
+                      "limit": {
+                        "has_star_flag": "ring_section_2",
+                        "NOT": {},
+                        "set_star_flag": "ring_section_3",
+                        "event_target:ring_section": {
+                          "break": "yes"
+                        },
+                        "if": {
+                          "limit": {
+                            "remove_star_flag": "ring_section_3",
+                            "event_target:ring_section": {
+                              "break": "yes"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_ring_world.txt",
+    "_line_number": 356
+  }
+}

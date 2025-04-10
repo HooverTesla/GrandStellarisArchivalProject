@@ -1,0 +1,111 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "origin.7710",
+      "title": "origin.7710.name",
+      "desc": "origin.7710.desc",
+      "picture": "GFX_evt_aggressive_flora",
+      "show_sound": "event_ground_battle",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "WORRYING"
+      }
+    },
+    "_source_file": "origin_events_5.txt",
+    "_line_number": 1236
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "origin.7400",
+      "title": "origin.7400.name",
+      "desc": "origin.7400.desc",
+      "picture": "GFX_evt_space_station",
+      "show_sound": "event_default",
+      "location": "root",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "remove_planet_flag": "seed_pods_colonization",
+        "solar_system": {
+          "create_starbase": {
+            "size": "starbase_outpost",
+            "owner": "root.owner"
+          },
+          "if": {
+            "limit": {
+              "starbase": {
+                "add_starbase_component": {
+                  "component": "STARBASE_AURA_BULWARK_ARRAY"
+                }
+              }
+            }
+          }
+        },
+        "option": {
+          "name": "OK",
+          "tooltip": {
+            "solar_system": {
+              "create_starbase": {
+                "size": "starbase_outpost",
+                "owner": "root.owner"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_5.txt",
+    "_line_number": 1001
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "origin.7315",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "is_space_fauna": "yes",
+        "controller": {
+          "is_fauna_country": "no"
+        },
+        "has_fleet_flag": "fruitful_seeded_critter",
+        "from": {
+          "is_scope_type": "planet",
+          "is_valid_planet_for_seed": "yes"
+        }
+      },
+      "immediate": {
+        "from": {
+          "plant_fruitful_seeds": {
+            "SEEDS_OWNER": "root.controller",
+            "SEEDED_FLEET": "root"
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_5.txt",
+    "_line_number": 707
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "origin.7305",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "is_space_fauna": "yes",
+        "owner": {
+          "has_origin": "origin_fruitful"
+        }
+      },
+      "immediate": {
+        "fleet": {
+          "fleet_event": {
+            "id": "origin.7303",
+            "scopes": {}
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_5.txt",
+    "_line_number": 553
+  }
+}

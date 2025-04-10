@@ -1,0 +1,69 @@
+{
+  "resources": {
+    "resources": {
+      "category": "ship_components",
+      "inline_script": {
+        "script": "grand_archive/mutations/component_dynamic_cost",
+        "COST": "$DYNAMIC_COST$"
+      },
+      "cost": {
+        "exotic_gases": "$EXOTIC_GASES$",
+        "rare_crystals": "$RARE_CRYSTALS$",
+        "sr_dark_matter": "$DARK_MATTER$",
+        "sr_zro": "$ZRO$",
+        "mult": "@fauna_cost_scaling"
+      }
+    },
+    "_source_file": "camouflage_mutation.txt",
+    "_line_number": 3
+  },
+  "modifier": {
+    "modifier": {
+      "ship_cloaking_strength_add": "$STRENGTH$"
+    },
+    "_source_file": "camouflage_mutation.txt",
+    "_line_number": 18
+  },
+  "triggered_ship_modifier": {
+    "triggered_ship_modifier": {
+      "potential": {
+        "$POTENTIAL_TRIGGER$": "yes"
+      },
+      "modifier": {
+        "ship_shield_reduction": "$SHIELD_NULLIFICATION$"
+      }
+    },
+    "_source_file": "camouflage_mutation.txt",
+    "_line_number": 22
+  },
+  "size_restriction": {
+    "size_restriction": {},
+    "_source_file": "camouflage_mutation.txt",
+    "_line_number": 34
+  },
+  "inline_script": {
+    "inline_script": {
+      "script": "grand_archive/mutations/camouflage/upgrade_$COMPONENT_SET$",
+      "SIZE": "$SIZE_CAPITAL$"
+    },
+    "_source_file": "camouflage_mutation.txt",
+    "_line_number": 44
+  },
+  "ai_tags": {
+    "ai_tags": {},
+    "_source_file": "camouflage_mutation.txt",
+    "_line_number": 49
+  },
+  "ai_weight": {
+    "ai_weight": {
+      "weight": "$WEIGHT$",
+      "modifier": {
+        "factor": "0",
+        "no_resource_for_component": {},
+        "inline_script": "ship_components/weights/roles_cloaking_devices"
+      }
+    },
+    "_source_file": "camouflage_mutation.txt",
+    "_line_number": 59
+  }
+}

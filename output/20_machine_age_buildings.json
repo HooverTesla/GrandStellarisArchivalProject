@@ -1,0 +1,2133 @@
+{
+  "building_augmentation_bazaars": {
+    "building_augmentation_bazaars": {
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "1",
+      "category": "trade",
+      "potential": {
+        "owner": {
+          "NOT": {
+            "NOT": {},
+            "allow": {
+              "always": "yes"
+            },
+            "destroy_trigger": {
+              "exists": "owner",
+              "OR": {
+                "owner": {
+                  "has_modifier": "resort_colony"
+                }
+              },
+              "planet_modifier": {
+                "job_merchant_add": "1",
+                "job_augmentor_add": "1"
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "owner",
+                  "owner": {
+                    "has_tradition": "tr_cybernetics_integrated_anatomy"
+                  },
+                  "any_owned_pop": {
+                    "has_auto_modding_trait": "yes"
+                  }
+                },
+                "modifier": {
+                  "auto_mod_monthly_add": "2"
+                }
+              },
+              "resources": {
+                "category": "planet_buildings",
+                "cost": {
+                  "minerals": "@b2_minerals"
+                },
+                "upkeep": {
+                  "energy": "@b2_upkeep"
+                }
+              },
+              "triggered_desc": {
+                "trigger": {
+                  "OR": {
+                    "is_scope_valid": "no",
+                    "AND": {
+                      "exists": "owner",
+                      "owner": {
+                        "is_gestalt": "no"
+                      },
+                      "is_cyborg_empire": "no"
+                    }
+                  }
+                },
+                "text": "job_augmentor_research_effect_desc"
+              },
+              "ai_resource_production": {
+                "energy": "3",
+                "trigger": {
+                  "solar_system": {
+                    "has_system_trade_value >": "80"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 16
+  },
+  "building_transcendental_retreat": {
+    "building_transcendental_retreat": {
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "1",
+      "category": "pop_assembly",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "NOT": {
+            "NOT": {},
+            "allow": {
+              "always": "yes"
+            },
+            "destroy_trigger": {
+              "exists": "owner",
+              "OR": {
+                "owner": {
+                  "NOT": {
+                    "has_valid_civic": "civic_natural_design"
+                  }
+                },
+                "has_modifier": "resort_colony"
+              }
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "always": "yes"
+              },
+              "modifier": {
+                "job_healthcare_add": "1"
+              }
+            },
+            "resources": {
+              "category": "planet_buildings",
+              "cost": {
+                "minerals": "@b3_minerals"
+              },
+              "upkeep": {
+                "energy": "@b3_upkeep"
+              }
+            },
+            "triggered_desc": {
+              "text": "job_healthcare_effect_desc"
+            },
+            "prerequisites": {}
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 125
+  },
+  "building_hive_transcendental_retreat": {
+    "building_hive_transcendental_retreat": {
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "1",
+      "category": "pop_assembly",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "NOT": {
+            "NOT": {},
+            "allow": {
+              "always": "yes"
+            },
+            "destroy_trigger": {
+              "exists": "owner",
+              "OR": {
+                "owner": {
+                  "NOT": {
+                    "has_valid_civic": "civic_hive_natural_design"
+                  }
+                },
+                "has_modifier": "resort_colony"
+              }
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {
+                  "has_origin": "origin_progenitor_hive"
+                }
+              },
+              "modifier": {
+                "job_offspring_drone_add": "1"
+              }
+            },
+            "resources": {
+              "category": "planet_buildings",
+              "cost": {
+                "minerals": "@b3_minerals"
+              },
+              "upkeep": {
+                "energy": "@b3_upkeep"
+              }
+            },
+            "triggered_desc": {
+              "trigger": {
+                "exists": "owner",
+                "owner": {
+                  "has_origin": "origin_progenitor_hive"
+                }
+              },
+              "text": "job_offspring_drone_effect_desc"
+            },
+            "prerequisites": {}
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 205
+  },
+  "building_amphitheater_of_the_mind": {
+    "building_amphitheater_of_the_mind": {
+      "position_priority": "100",
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "1",
+      "empire_limit": {
+        "base": "1",
+        "modifier": {
+          "mult": "-1",
+          "has_country_flag": "cybernetic_creed_research"
+        }
+      },
+      "can_demolish": "no",
+      "category": "research",
+      "potential": {
+        "NOR": {
+          "has_modifier": "slave_colony",
+          "has_building": "building_grand_concert_hall_of_the_mind"
+        },
+        "exists": "owner",
+        "owner": {
+          "has_origin": "origin_cybernetic_creed",
+          "has_country_flag": "cybernetic_creed_research"
+        }
+      },
+      "allow": {
+        "exists": "owner",
+        "has_upgraded_capital": "yes",
+        "hidden_trigger": {
+          "owner": {},
+          "custom_tooltip": {
+            "fail_text": "not_cybernetic_creed_research",
+            "owner": {}
+          },
+          "convert_to": {},
+          "destroy_trigger": {
+            "exists": "owner",
+            "OR": {
+              "has_modifier": "slave_colony",
+              "owner": {
+                "OR": {
+                  "NOT": {
+                    "AND": {
+                      "has_origin": "origin_cybernetic_creed",
+                      "OR": {
+                        "has_country_flag": "cybernetic_creed_general"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "resources": {
+              "category": "planet_buildings",
+              "cost": {
+                "minerals": "@b2_minerals"
+              },
+              "upkeep": {
+                "energy": "@b2_upkeep"
+              }
+            },
+            "planet_modifier": {
+              "job_researcher_add": "2",
+              "job_haruspex_add": "1"
+            },
+            "triggered_desc": {
+              "text": "job_haruspex_effect_desc"
+            },
+            "upgrades": {},
+            "ai_resource_production": {
+              "trigger": {
+                "planet_resource_compare": {
+                  "resource": "physics_research",
+                  "value >": "30"
+                }
+              },
+              "physics_research": "5",
+              "society_research": "5",
+              "engineering_research": "5"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 337
+  },
+  "building_grand_concert_hall_of_the_mind": {
+    "building_grand_concert_hall_of_the_mind": {
+      "position_priority": "100",
+      "base_buildtime": "@b3_time",
+      "can_build": "no",
+      "can_demolish": "no",
+      "category": "research",
+      "allow": {
+        "has_major_upgraded_capital": "yes",
+        "hidden_trigger": {
+          "exists": "owner",
+          "owner": {
+            "NOT": {},
+            "custom_tooltip": {
+              "fail_text": "not_cybernetic_creed_research",
+              "owner": {}
+            },
+            "destroy_trigger": {
+              "exists": "owner",
+              "OR": {
+                "has_modifier": "slave_colony",
+                "owner": {
+                  "OR": {
+                    "NOT": {
+                      "AND": {
+                        "has_origin": "origin_cybernetic_creed",
+                        "OR": {
+                          "has_country_flag": "cybernetic_creed_general"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "resources": {
+                "category": "planet_buildings",
+                "cost": {
+                  "minerals": "@b2_minerals"
+                },
+                "upkeep": {
+                  "energy": "@b2_upkeep"
+                }
+              },
+              "planet_modifier": {
+                "job_technophant_add": "1",
+                "job_researcher_add": "4",
+                "job_haruspex_add": "1"
+              },
+              "triggered_desc": {
+                "text": "job_haruspex_effect_desc"
+              },
+              "ai_resource_production": {
+                "trigger": {
+                  "planet_resource_compare": {
+                    "resource": "physics_research",
+                    "value >": "30"
+                  }
+                },
+                "physics_research": "5",
+                "society_research": "5",
+                "engineering_research": "5"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 441
+  },
+  "building_battlement_of_steel": {
+    "building_battlement_of_steel": {
+      "position_priority": "100",
+      "can_be_ruined": "no",
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "1",
+      "empire_limit": {
+        "base": "1",
+        "modifier": {
+          "mult": "-1",
+          "has_country_flag": "cybernetic_creed_war"
+        }
+      },
+      "can_demolish": "no",
+      "category": "army",
+      "potential": {
+        "NOR": {
+          "has_modifier": "slave_colony",
+          "has_building": "building_grand_battlements_of_steel"
+        },
+        "exists": "owner",
+        "owner": {
+          "has_origin": "origin_cybernetic_creed",
+          "has_country_flag": "cybernetic_creed_war"
+        }
+      },
+      "allow": {
+        "has_upgraded_capital": "yes",
+        "hidden_trigger": {
+          "exists": "owner",
+          "owner": {},
+          "custom_tooltip": {
+            "fail_text": "not_cybernetic_creed_war",
+            "owner": {}
+          },
+          "convert_to": {},
+          "destroy_trigger": {
+            "exists": "owner",
+            "OR": {
+              "has_modifier": "slave_colony",
+              "owner": {
+                "OR": {
+                  "NOT": {
+                    "AND": {
+                      "has_origin": "origin_cybernetic_creed",
+                      "OR": {
+                        "has_country_flag": "cybernetic_creed_general"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "planet_modifier": {
+              "job_haruspex_add": "1",
+              "job_soldier_add": "2",
+              "planet_orbital_bombardment_damage": "-0.1"
+            },
+            "resources": {
+              "category": "planet_buildings_strongholds",
+              "cost": {
+                "minerals": "@b1_minerals"
+              },
+              "upkeep": {
+                "energy": "@b1_upkeep"
+              }
+            },
+            "triggered_desc": {
+              "text": "job_soldier_effect_desc"
+            },
+            "upgrades": {}
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 527
+  },
+  "building_grand_battlements_of_steel": {
+    "building_grand_battlements_of_steel": {
+      "position_priority": "100",
+      "can_be_ruined": "no",
+      "base_buildtime": "@b3_time",
+      "can_build": "no",
+      "can_demolish": "no",
+      "category": "army",
+      "allow": {
+        "has_major_upgraded_capital": "yes",
+        "hidden_trigger": {
+          "exists": "owner",
+          "owner": {
+            "NOT": {},
+            "custom_tooltip": {
+              "fail_text": "not_cybernetic_creed_war",
+              "owner": {}
+            },
+            "destroy_trigger": {
+              "exists": "owner",
+              "OR": {
+                "has_modifier": "slave_colony",
+                "owner": {
+                  "OR": {
+                    "NOT": {
+                      "AND": {
+                        "has_origin": "origin_cybernetic_creed",
+                        "OR": {
+                          "has_country_flag": "cybernetic_creed_general"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "planetary_ftl_inhibitor": "yes",
+              "planet_modifier": {
+                "job_technophant_add": "1",
+                "job_haruspex_add": "1",
+                "job_soldier_add": "4",
+                "planet_orbital_bombardment_damage": "-0.2"
+              },
+              "resources": {
+                "category": "planet_buildings_strongholds",
+                "cost": {
+                  "minerals": "@b1_minerals"
+                },
+                "upkeep": {
+                  "energy": "@b1_upkeep"
+                }
+              },
+              "triggered_desc": {
+                "text": "job_soldier_effect_desc"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 622
+  },
+  "building_sanctuary_of_toil": {
+    "building_sanctuary_of_toil": {
+      "position_priority": "100",
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "1",
+      "empire_limit": {
+        "base": "1",
+        "modifier": {
+          "mult": "-1",
+          "has_country_flag": "cybernetic_creed_labor"
+        }
+      },
+      "can_demolish": "no",
+      "category": "resource",
+      "potential": {
+        "NOR": {
+          "has_modifier": "slave_colony",
+          "has_building": "building_grand_cathedral_of_toil"
+        },
+        "exists": "owner",
+        "owner": {
+          "has_origin": "origin_cybernetic_creed",
+          "has_country_flag": "cybernetic_creed_labor"
+        }
+      },
+      "allow": {
+        "has_upgraded_capital": "yes",
+        "hidden_trigger": {
+          "exists": "owner",
+          "owner": {},
+          "custom_tooltip": {
+            "fail_text": "not_cybernetic_creed_labor",
+            "owner": {}
+          },
+          "convert_to": {},
+          "destroy_trigger": {
+            "OR": {
+              "has_modifier": "slave_colony",
+              "owner": {
+                "OR": {
+                  "NOT": {
+                    "AND": {
+                      "has_origin": "origin_cybernetic_creed",
+                      "OR": {
+                        "has_country_flag": "cybernetic_creed_general"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "planet_modifier": {
+              "job_haruspex_add": "1",
+              "planet_farmers_food_produces_add": "0.25",
+              "planet_technician_energy_produces_add": "0.25",
+              "planet_miners_minerals_produces_add": "0.25"
+            },
+            "triggered_desc": {
+              "text": "job_haruspex_effect_desc"
+            },
+            "upgrades": {},
+            "resources": {
+              "category": "planet_buildings",
+              "cost": {
+                "minerals": "@b1_minerals"
+              },
+              "upkeep": {
+                "energy": "@b1_upkeep"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 699
+  },
+  "building_grand_cathedral_of_toil": {
+    "building_grand_cathedral_of_toil": {
+      "position_priority": "100",
+      "base_buildtime": "@b2_time",
+      "can_build": "no",
+      "can_demolish": "no",
+      "category": "resource",
+      "allow": {
+        "has_major_upgraded_capital": "yes",
+        "hidden_trigger": {
+          "exists": "owner",
+          "owner": {
+            "NOT": {},
+            "custom_tooltip": {
+              "fail_text": "not_cybernetic_creed_labor",
+              "owner": {}
+            },
+            "destroy_trigger": {
+              "OR": {
+                "has_modifier": "slave_colony",
+                "owner": {
+                  "OR": {
+                    "NOT": {
+                      "AND": {
+                        "has_origin": "origin_cybernetic_creed",
+                        "OR": {
+                          "has_country_flag": "cybernetic_creed_general"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "planet_modifier": {
+                "job_technophant_add": "1",
+                "job_haruspex_add": "1",
+                "planet_farmers_food_produces_add": "0.5",
+                "planet_technician_energy_produces_add": "0.5",
+                "planet_miners_minerals_produces_add": "0.5"
+              },
+              "triggered_desc": {
+                "text": "job_haruspex_effect_desc"
+              },
+              "resources": {
+                "category": "planet_buildings",
+                "cost": {
+                  "minerals": "@b2_minerals"
+                },
+                "upkeep": {
+                  "energy": "@b2_upkeep"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 788
+  },
+  "building_forge_of_the_fellowship": {
+    "building_forge_of_the_fellowship": {
+      "position_priority": "100",
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "1",
+      "empire_limit": {
+        "base": "1",
+        "modifier": {
+          "mult": "-1",
+          "has_country_flag": "cybernetic_creed_construction"
+        }
+      },
+      "can_demolish": "no",
+      "category": "manufacturing",
+      "potential": {
+        "NOR": {
+          "has_modifier": "slave_colony",
+          "has_building": "building_grand_forge_of_the_fellowship"
+        },
+        "exists": "owner",
+        "owner": {
+          "has_origin": "origin_cybernetic_creed",
+          "has_country_flag": "cybernetic_creed_construction"
+        }
+      },
+      "allow": {
+        "has_upgraded_capital": "yes",
+        "hidden_trigger": {
+          "owner": {},
+          "custom_tooltip": {
+            "fail_text": "not_cybernetic_creed_construction",
+            "owner": {}
+          },
+          "convert_to": {},
+          "destroy_trigger": {
+            "exists": "owner",
+            "OR": {
+              "has_modifier": "slave_colony",
+              "owner": {
+                "OR": {
+                  "NOT": {
+                    "AND": {
+                      "has_origin": "origin_cybernetic_creed",
+                      "OR": {
+                        "has_country_flag": "cybernetic_creed_general"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "resources": {
+              "category": "planet_buildings",
+              "cost": {
+                "minerals": "@b2_minerals"
+              },
+              "upkeep": {
+                "energy": "@b2_upkeep"
+              }
+            },
+            "planet_modifier": {
+              "job_haruspex_add": "1"
+            },
+            "triggered_desc": {
+              "trigger": {
+                "exists": "owner",
+                "owner": {
+                  "is_regular_empire": "yes",
+                  "is_crafter_empire": "yes"
+                }
+              },
+              "text": "job_artificer_effect_desc"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {
+                  "is_regular_empire": "yes",
+                  "is_catalytic_empire": "yes",
+                  "is_crafter_empire": "yes"
+                }
+              },
+              "modifier": {
+                "job_catalytic_technician_add": "1",
+                "job_artificer_add": "1"
+              }
+            },
+            "upgrades": {}
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 868
+  },
+  "building_grand_forge_of_the_fellowship": {
+    "building_grand_forge_of_the_fellowship": {
+      "position_priority": "100",
+      "base_buildtime": "@b3_time",
+      "can_build": "no",
+      "can_demolish": "no",
+      "category": "manufacturing",
+      "allow": {
+        "has_major_upgraded_capital": "yes",
+        "hidden_trigger": {
+          "exists": "owner",
+          "owner": {
+            "NOT": {},
+            "custom_tooltip": {
+              "fail_text": "not_cybernetic_creed_construction",
+              "owner": {}
+            },
+            "destroy_trigger": {
+              "OR": {
+                "has_modifier": "slave_colony",
+                "AND": {
+                  "exists": "owner",
+                  "owner": {
+                    "OR": {
+                      "NOT": {
+                        "AND": {
+                          "has_origin": "origin_cybernetic_creed",
+                          "OR": {
+                            "has_country_flag": "cybernetic_creed_general"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "resources": {
+                "category": "planet_buildings",
+                "cost": {
+                  "minerals": "@b3_minerals"
+                },
+                "upkeep": {
+                  "energy": "@b3_upkeep"
+                }
+              },
+              "planet_modifier": {
+                "job_technophant_add": "1",
+                "job_haruspex_add": "1"
+              },
+              "triggered_desc": {
+                "trigger": {
+                  "exists": "owner",
+                  "owner": {
+                    "is_regular_empire": "yes",
+                    "is_crafter_empire": "yes"
+                  }
+                },
+                "text": "job_artisan_effect_desc"
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "owner",
+                  "owner": {
+                    "is_regular_empire": "yes",
+                    "is_catalytic_empire": "yes",
+                    "is_crafter_empire": "yes"
+                  }
+                },
+                "modifier": {
+                  "job_catalytic_technician_add": "2",
+                  "job_artificer_add": "2"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 1058
+  },
+  "building_the_sanctum_of_augmentation": {
+    "building_the_sanctum_of_augmentation": {
+      "position_priority": "100",
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "1",
+      "empire_limit": {
+        "base": "1",
+        "modifier": {
+          "mult": "-1",
+          "has_country_flag": "cybernetic_creed_general"
+        }
+      },
+      "can_demolish": "no",
+      "category": "unity",
+      "potential": {
+        "NOR": {
+          "has_modifier": "slave_colony",
+          "has_building": "building_the_united_sanctum_of_augmentation"
+        },
+        "exists": "owner",
+        "owner": {
+          "has_origin": "origin_cybernetic_creed",
+          "has_country_flag": "cybernetic_creed_general"
+        }
+      },
+      "allow": {
+        "has_upgraded_capital": "yes",
+        "hidden_trigger": {
+          "exists": "owner",
+          "owner": {},
+          "custom_tooltip": {
+            "fail_text": "not_cybernetic_creed_general",
+            "owner": {}
+          },
+          "convert_to": {},
+          "destroy_trigger": {
+            "exists": "owner",
+            "OR": {
+              "has_modifier": "slave_colony",
+              "owner": {
+                "OR": {
+                  "NOT": {
+                    "AND": {
+                      "has_origin": "origin_cybernetic_creed",
+                      "OR": {
+                        "has_country_flag": "cybernetic_creed_construction"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "resources": {
+              "category": "planet_buildings",
+              "cost": {
+                "minerals": "@b2_minerals"
+              },
+              "upkeep": {
+                "energy": "@b2_upkeep"
+              }
+            },
+            "planet_modifier": {
+              "job_technophant_add": "1",
+              "job_haruspex_add": "2"
+            },
+            "triggered_desc": {
+              "text": "job_haruspex_effect_desc"
+            },
+            "upgrades": {}
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 1227
+  },
+  "building_the_united_sanctum_of_augmentation": {
+    "building_the_united_sanctum_of_augmentation": {
+      "position_priority": "100",
+      "base_buildtime": "@b3_time",
+      "can_build": "no",
+      "can_demolish": "no",
+      "category": "unity",
+      "allow": {
+        "has_major_upgraded_capital": "yes",
+        "hidden_trigger": {
+          "exists": "owner",
+          "owner": {
+            "NOT": {},
+            "custom_tooltip": {
+              "fail_text": "not_cybernetic_creed_general",
+              "owner": {}
+            },
+            "destroy_trigger": {
+              "OR": {
+                "has_modifier": "slave_colony",
+                "owner": {
+                  "OR": {
+                    "NOT": {
+                      "AND": {
+                        "has_origin": "origin_cybernetic_creed",
+                        "OR": {
+                          "has_country_flag": "cybernetic_creed_construction"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "resources": {
+                "category": "planet_buildings",
+                "cost": {
+                  "minerals": "@b3_minerals"
+                },
+                "upkeep": {
+                  "energy": "@b3_upkeep"
+                }
+              },
+              "planet_modifier": {
+                "job_technophant_add": "2",
+                "job_haruspex_add": "4"
+              },
+              "triggered_desc": {
+                "text": "job_haruspex_effect_desc"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 1318
+  },
+  "building_identity_repository": {
+    "building_identity_repository": {
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "1",
+      "position_priority": "100",
+      "can_demolish": "no",
+      "can_be_disabled": "no",
+      "category": "research",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "has_origin": "origin_synthetic_fertility",
+          "NOT": {}
+        },
+        "destroy_trigger": {
+          "exists": "owner",
+          "NOT": {
+            "owner": {
+              "has_origin": "origin_synthetic_fertility"
+            }
+          }
+        },
+        "convert_to": {},
+        "allow": {
+          "owner": {},
+          "resources": {
+            "category": "planet_buildings",
+            "cost": {
+              "minerals": "@b4_minerals"
+            },
+            "upkeep": {
+              "energy": "@b1_upkeep",
+              "mult": "owner.value:identity_repository_scaling_mult"
+            },
+            "produces": {
+              "trigger": {
+                "exists": "owner",
+                "owner": {},
+                "physics_research": "2",
+                "society_research": "2",
+                "engineering_research": "2",
+                "unity": "2",
+                "mult": "owner.value:identity_repository_scaling_mult"
+              }
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "has_global_flag": "game_started",
+                "any_owned_pop": {
+                  "is_robot_pop": "yes"
+                }
+              },
+              "planet_jobs_robotic_produces_mult": "0.01",
+              "mult": "owner.value:identity_repository_scaling_mult"
+            },
+            "triggered_desc": {
+              "text": "building_identity_repository_tt"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 1391
+  },
+  "building_abandoned_gene_clinic": {
+    "building_abandoned_gene_clinic": {
+      "icon": "building_ancient_cryo_chamber",
+      "position_priority": "100",
+      "can_demolish": "no",
+      "can_build": "no",
+      "category": "research",
+      "potential": {
+        "exists": "owner",
+        "owner": {},
+        "destroy_trigger": {
+          "exists": "owner",
+          "NOT": {
+            "owner": {}
+          },
+          "allow": {
+            "owner": {},
+            "triggered_desc": {
+              "text": "building_abandoned_gene_clinic_tt"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 1468
+  },
+  "building_lathe_capital": {
+    "building_lathe_capital": {
+      "capital": "yes",
+      "can_build": "no",
+      "can_demolish": "no",
+      "can_be_ruined": "no",
+      "can_be_disabled": "no",
+      "position_priority": "0",
+      "building_sets": {
+        "category": "government",
+        "potential": {
+          "uses_district_set": "cosmogenesis_world",
+          "exists": "owner"
+        },
+        "resources": {
+          "category": "planet_buildings",
+          "upkeep": {
+            "energy": "@b3_upkeep",
+            "alloys": "5"
+          }
+        },
+        "planet_modifier": {
+          "planet_housing_add": "20",
+          "planet_amenities_add": "15",
+          "planet_stability_add": "15"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {
+              "planet_jobs_productive_upkeep_mult": "0.1",
+              "planet_jobs_productive_produces_mult": "0.1"
+            }
+          },
+          "upgrades": {}
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 1504
+  },
+  "building_lathe_major_capital": {
+    "building_lathe_major_capital": {
+      "base_buildtime": "@b2_time",
+      "capital": "yes",
+      "can_build": "no",
+      "can_demolish": "no",
+      "can_be_ruined": "no",
+      "can_be_disabled": "no",
+      "position_priority": "0",
+      "building_sets": {
+        "category": "government",
+        "potential": {
+          "uses_district_set": "cosmogenesis_world",
+          "exists": "owner",
+          "owner": {
+            "has_ascension_perk": "ap_cosmogenesis"
+          }
+        },
+        "resources": {
+          "category": "planet_buildings",
+          "cost": {
+            "alloys": "@b4_minerals"
+          },
+          "upkeep": {
+            "energy": "@b3_upkeep",
+            "alloys": "10"
+          }
+        },
+        "planet_modifier": {
+          "planet_max_districts_add": "2",
+          "planet_housing_add": "40",
+          "planet_amenities_add": "30",
+          "planet_stability_add": "25"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {
+              "planet_jobs_productive_upkeep_mult": "0.1",
+              "planet_jobs_productive_produces_mult": "0.1"
+            }
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {},
+              "modifier": {
+                "planet_jobs_productive_upkeep_mult": "0.1",
+                "planet_jobs_productive_produces_mult": "0.1"
+              }
+            },
+            "upgrades": {},
+            "on_built": {
+              "planet": {
+                "set_planet_entity": {
+                  "entity": "neural_calculator_phase_2_entity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 1553
+  },
+  "building_lathe_super_capital": {
+    "building_lathe_super_capital": {
+      "base_buildtime": "@b3_time",
+      "capital": "yes",
+      "can_build": "no",
+      "can_demolish": "no",
+      "can_be_ruined": "no",
+      "can_be_disabled": "no",
+      "position_priority": "0",
+      "building_sets": {
+        "category": "government",
+        "potential": {
+          "uses_district_set": "cosmogenesis_world",
+          "exists": "owner",
+          "owner": {
+            "has_ascension_perk": "ap_cosmogenesis"
+          }
+        },
+        "resources": {
+          "category": "planet_buildings",
+          "cost": {
+            "alloys": "@b4_minerals"
+          },
+          "upkeep": {
+            "energy": "@b3_upkeep",
+            "alloys": "15"
+          }
+        },
+        "planet_modifier": {
+          "planet_max_districts_add": "4",
+          "planet_housing_add": "100",
+          "planet_amenities_add": "50",
+          "planet_stability_add": "40"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {
+              "planet_jobs_productive_upkeep_mult": "0.1",
+              "planet_jobs_productive_produces_mult": "0.1"
+            }
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {},
+              "modifier": {
+                "planet_jobs_productive_upkeep_mult": "0.1",
+                "planet_jobs_productive_produces_mult": "0.1"
+              }
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {},
+                "modifier": {
+                  "planet_jobs_productive_upkeep_mult": "0.1",
+                  "planet_jobs_productive_produces_mult": "0.1"
+                }
+              },
+              "on_built": {
+                "planet": {
+                  "set_planet_entity": {
+                    "entity": "neural_calculator_phase_3_entity"
+                  }
+                }
+              },
+              "ai_estimate_without_unemployment": "yes",
+              "additional_ai_weight": "200",
+              "ai_weight_coefficient": "1.2"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 1628
+  },
+  "building_lathe_resonator": {
+    "building_lathe_resonator": {
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "2",
+      "building_sets": {
+        "potential": {
+          "is_planet_class": "pc_cosmogenesis_world"
+        },
+        "category": "resource",
+        "resources": {
+          "category": "planet_buildings",
+          "cost": {
+            "alloys": "@b3_minerals",
+            "rare_crystals": "@fe_sr_cost",
+            "advanced_logic": "@b2_minerals"
+          },
+          "upkeep": {
+            "energy": "@b2_upkeep",
+            "rare_crystals": "@b2_rare_upkeep"
+          }
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "always": "yes"
+          },
+          "planet_jobs_produces_mult": "0.01",
+          "mult": "value:num_chip_slave_raw"
+        },
+        "prerequisites": {},
+        "triggered_desc": {
+          "text": "lathe_resonator_tt"
+        },
+        "ai_estimate_without_unemployment": "yes",
+        "additional_ai_weight": "200",
+        "ai_weight_coefficient": "1.2"
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 1711
+  },
+  "building_lathe_stabilisator": {
+    "building_lathe_stabilisator": {
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "2",
+      "building_sets": {
+        "potential": {
+          "is_planet_class": "pc_cosmogenesis_world",
+          "exists": "owner",
+          "owner": {
+            "has_ascension_perk": "ap_cosmogenesis"
+          }
+        },
+        "category": "government",
+        "resources": {
+          "category": "planet_buildings",
+          "cost": {
+            "alloys": "@b3_minerals",
+            "exotic_gases": "@fe_sr_cost",
+            "advanced_logic": "@b2_minerals"
+          },
+          "upkeep": {
+            "energy": "@b2_upkeep",
+            "exotic_gases": "@b2_rare_upkeep"
+          }
+        },
+        "triggered_planet_modifier": {
+          "planet_stability_add": "15"
+        },
+        "ai_estimate_without_unemployment": "yes",
+        "additional_ai_weight": "200",
+        "ai_weight_coefficient": "1.2"
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 1757
+  },
+  "building_lathe_overclocker": {
+    "building_lathe_overclocker": {
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "2",
+      "building_sets": {
+        "potential": {
+          "is_planet_class": "pc_cosmogenesis_world",
+          "exists": "owner",
+          "owner": {
+            "has_ascension_perk": "ap_cosmogenesis"
+          }
+        },
+        "category": "resource",
+        "resources": {
+          "category": "planet_buildings",
+          "cost": {
+            "alloys": "@b3_minerals",
+            "volatile_motes": "@fe_sr_cost",
+            "advanced_logic": "@b2_minerals"
+          },
+          "upkeep": {
+            "energy": "@b2_upkeep",
+            "volatile_motes": "@b2_rare_upkeep"
+          }
+        },
+        "triggered_planet_modifier": {
+          "modifier": {
+            "planet_neural_chips_physics_research_produces_add": "1",
+            "planet_neural_chips_society_research_produces_add": "1",
+            "planet_neural_chips_engineering_research_produces_add": "1",
+            "planet_neural_chips_advanced_logic_produces_add": "0.5",
+            "pop_purge_speed": "0.75"
+          }
+        },
+        "_comments": [
+          "#triggered_desc = {",
+          "#\ttext = lathe_overclocker_tt",
+          "#}"
+        ],
+        "prerequisites": {},
+        "ai_estimate_without_unemployment": "yes",
+        "additional_ai_weight": "200",
+        "ai_weight_coefficient": "1.2"
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 1796
+  },
+  "building_lathe_preserver": {
+    "building_lathe_preserver": {
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "2",
+      "building_sets": {
+        "potential": {
+          "is_planet_class": "pc_cosmogenesis_world",
+          "exists": "owner",
+          "owner": {
+            "has_ascension_perk": "ap_cosmogenesis"
+          }
+        },
+        "category": "amenity",
+        "resources": {
+          "category": "planet_buildings",
+          "cost": {
+            "alloys": "@b3_minerals",
+            "exotic_gases": "@fe_sr_cost",
+            "advanced_logic": "@b2_minerals"
+          },
+          "upkeep": {
+            "energy": "@b2_upkeep",
+            "exotic_gases": "@b2_rare_upkeep"
+          }
+        },
+        "planet_modifier": {
+          "pop_purge_speed": "-0.15"
+        },
+        "prerequisites": {},
+        "ai_estimate_without_unemployment": "yes",
+        "additional_ai_weight": "200",
+        "ai_weight_coefficient": "1.2"
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 1846
+  },
+  "building_lathe_reactor": {
+    "building_lathe_reactor": {
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "2",
+      "building_sets": {
+        "potential": {
+          "is_planet_class": "pc_cosmogenesis_world",
+          "exists": "owner",
+          "owner": {
+            "has_ascension_perk": "ap_cosmogenesis"
+          }
+        },
+        "category": "resource",
+        "resources": {
+          "category": "planet_buildings",
+          "cost": {
+            "alloys": "@b3_minerals",
+            "exotic_gases": "@fe_sr_cost",
+            "advanced_logic": "@b2_minerals"
+          },
+          "upkeep": {
+            "exotic_gases": "@b4_rare_upkeep"
+          }
+        },
+        "planet_modifier": {
+          "planet_jobs_upkeep_mult": "-0.15",
+          "planet_buildings_upkeep_mult": "-0.15",
+          "planet_districts_energy_upkeep_mult": "-0.15"
+        },
+        "ai_estimate_without_unemployment": "yes",
+        "additional_ai_weight": "200",
+        "ai_weight_coefficient": "1.2"
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 1886
+  },
+  "building_lathe_life_support": {
+    "building_lathe_life_support": {
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "2",
+      "building_sets": {
+        "potential": {
+          "is_planet_class": "pc_cosmogenesis_world",
+          "exists": "owner",
+          "owner": {
+            "has_ascension_perk": "ap_cosmogenesis"
+          }
+        },
+        "category": "amenity",
+        "resources": {
+          "category": "planet_buildings",
+          "cost": {
+            "alloys": "@b3_minerals",
+            "rare_crystals": "@fe_sr_cost",
+            "advanced_logic": "@b2_minerals"
+          },
+          "upkeep": {
+            "energy": "@b2_upkeep",
+            "rare_crystals": "@b2_rare_upkeep"
+          }
+        },
+        "planet_modifier": {
+          "planet_housing_add": "50",
+          "planet_amenities_add": "50"
+        },
+        "prerequisites": {},
+        "ai_estimate_without_unemployment": "yes",
+        "additional_ai_weight": "200",
+        "ai_weight_coefficient": "1.2"
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 1925
+  },
+  "building_lathe_cogitator": {
+    "building_lathe_cogitator": {
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "2",
+      "building_sets": {
+        "potential": {
+          "is_planet_class": "pc_cosmogenesis_world",
+          "exists": "owner",
+          "owner": {
+            "has_ascension_perk": "ap_cosmogenesis"
+          }
+        },
+        "category": "army",
+        "resources": {
+          "category": "planet_buildings",
+          "cost": {
+            "alloys": "@b3_minerals",
+            "volatile_motes": "@fe_sr_cost",
+            "advanced_logic": "@b3_minerals"
+          },
+          "upkeep": {
+            "energy": "@b3_upkeep",
+            "volatile_motes": "@b3_rare_upkeep"
+          }
+        },
+        "planet_modifier": {
+          "planet_amenities_add": "-50",
+          "planet_jobs_produces_mult": "-0.35"
+        },
+        "triggered_country_modifier": {
+          "potential": {
+            "always": "yes"
+          },
+          "country_naval_cap_mult": "0.01",
+          "ship_experience_gain_mult": "0.02",
+          "mult": "value:num_chip_slave_raw"
+        },
+        "triggered_desc": {
+          "text": "building_lathe_cogitator_tt"
+        },
+        "prerequisites": {},
+        "ai_estimate_without_unemployment": "yes",
+        "additional_ai_weight": "200",
+        "ai_weight_coefficient": "1.2"
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 1969
+  },
+  "building_lathe_validator": {
+    "building_lathe_validator": {
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "2",
+      "building_sets": {
+        "potential": {
+          "is_planet_class": "pc_cosmogenesis_world",
+          "exists": "owner",
+          "owner": {
+            "has_ascension_perk": "ap_cosmogenesis"
+          }
+        },
+        "category": "research",
+        "resources": {
+          "category": "planet_buildings",
+          "cost": {
+            "alloys": "@b3_minerals",
+            "rare_crystals": "@fe_sr_cost",
+            "advanced_logic": "@b3_minerals"
+          },
+          "upkeep": {
+            "energy": "@b3_upkeep",
+            "rare_crystals": "@b3_rare_upkeep"
+          }
+        },
+        "planet_modifier": {
+          "planet_stability_add": "-10"
+        },
+        "triggered_country_modifier": {
+          "potential": {
+            "always": "yes"
+          },
+          "category_computing_research_speed_mult": "0.01",
+          "mult": "value:num_chip_slave_raw"
+        },
+        "triggered_desc": {
+          "text": "building_lathe_validator_tt"
+        },
+        "prerequisites": {},
+        "ai_estimate_without_unemployment": "yes",
+        "additional_ai_weight": "200",
+        "ai_weight_coefficient": "1.2"
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 2024
+  },
+  "building_augmentation_center": {
+    "building_augmentation_center": {
+      "base_buildtime": "@b3_time",
+      "desc": {
+        "trigger": {
+          "exists": "owner",
+          "owner": {
+            "is_regular_empire": "yes",
+            "NOT": {
+              "NOR": {
+                "has_country_flag": "cyber_control_independent"
+              }
+            }
+          },
+          "text": "building_augmentation_center_desc"
+        },
+        "desc": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {
+              "is_regular_empire": "yes",
+              "NOT": {
+                "has_country_flag": "cyber_control_government"
+              }
+            },
+            "text": "building_augmentation_center_government_desc"
+          },
+          "desc": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {
+                "is_regular_empire": "yes",
+                "NOT": {
+                  "has_country_flag": "cyber_control_corporate"
+                }
+              },
+              "text": "building_augmentation_center_corporate_desc"
+            },
+            "desc": {
+              "trigger": {
+                "exists": "owner",
+                "owner": {
+                  "is_regular_empire": "yes",
+                  "NOT": {
+                    "has_country_flag": "cyber_control_independent"
+                  }
+                },
+                "text": "building_augmentation_center_independent_desc"
+              },
+              "desc": {
+                "trigger": {
+                  "exists": "owner",
+                  "owner": {
+                    "is_gestalt": "yes"
+                  }
+                },
+                "text": "building_augmentation_center_hive_desc"
+              },
+              "category": "pop_assembly",
+              "base_cap_amount": "1",
+              "potential": {
+                "owner": {
+                  "OR": {
+                    "has_country_flag": "augmentation_center_available",
+                    "has_active_tradition": "tr_cybernetics_augmentation_centers"
+                  }
+                }
+              },
+              "destroy_trigger": {
+                "exists": "owner",
+                "owner": {
+                  "NOR": {
+                    "has_country_flag": "augmentation_center_available",
+                    "has_active_tradition": "tr_cybernetics_augmentation_centers"
+                  }
+                }
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "owner",
+                  "owner": {},
+                  "modifier": {
+                    "job_augmentor_add": "2"
+                  }
+                },
+                "triggered_planet_modifier": {
+                  "potential": {
+                    "exists": "owner",
+                    "owner": {},
+                    "modifier": {
+                      "job_augmentor_add": "2"
+                    }
+                  },
+                  "triggered_planet_modifier": {
+                    "potential": {
+                      "exists": "owner",
+                      "owner": {},
+                      "modifier": {
+                        "job_augmentor_drone_add": "2"
+                      }
+                    },
+                    "_comments": [
+                      "### CONTROLLING SECTOR MODIFIERS ###",
+                      "### JOB STRATA FOCUS MODIFIERS ###"
+                    ],
+                    "triggered_planet_modifier": {
+                      "potential": {
+                        "exists": "owner",
+                        "owner": {
+                          "has_country_flag": "cyber_focus_everyone"
+                        }
+                      },
+                      "modifier": {
+                        "planet_jobs_produces_mult": "0.05"
+                      }
+                    },
+                    "resources": {
+                      "category": "planet_buildings",
+                      "cost": {
+                        "minerals": "@b3_minerals"
+                      },
+                      "upkeep": {
+                        "energy": "@b3_upkeep"
+                      }
+                    },
+                    "triggered_desc": {
+                      "trigger": {
+                        "exists": "owner",
+                        "owner": {
+                          "is_gestalt": "yes"
+                        },
+                        "NOR": {
+                          "is_cyborg_empire": "yes",
+                          "can_assemble_hive_pop": "yes"
+                        }
+                      },
+                      "text": "job_augmentor_drone_research_effect_desc"
+                    },
+                    "is_essential": "yes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 2100
+  },
+  "building_cyberdome": {
+    "building_cyberdome": {
+      "base_buildtime": "@b3_time",
+      "base_cap_amount": "1",
+      "desc": {
+        "text": "building_cyberdome_desc"
+      },
+      "category": "amenity",
+      "potential": {
+        "owner": {
+          "is_imperial_authority": "yes",
+          "has_country_flag": "cyber_collectivist"
+        },
+        "is_capital": "yes"
+      },
+      "allow": {},
+      "destroy_trigger": {
+        "OR": {
+          "AND": {
+            "exists": "planet",
+            "planet": {
+              "is_capital": "no"
+            }
+          }
+        }
+      },
+      "planet_modifier": {
+        "job_cyberdome_duelist_add": "2",
+        "job_cyberdome_spectator_add": "2"
+      },
+      "_comments": [
+        "# With edict"
+      ],
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "has_edict": "neurocasted_spectacles"
+          }
+        },
+        "planet_housing_add": "50",
+        "pop_growth_from_immigration": "0.2",
+        "planet_pops_upkeep_mult": "-0.1",
+        "job_cyberdome_duelist_per_pop": "0.05 # 1 job per 20 pops",
+        "job_cyberdome_spectator_per_pop": "0.1 # 1 job per 10 pops"
+      },
+      "resources": {
+        "category": "planet_buildings",
+        "cost": {
+          "minerals": "@b2_minerals"
+        },
+        "upkeep": {
+          "energy": "3"
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 2374
+  },
+  "building_identity_complex": {
+    "building_identity_complex": {
+      "base_buildtime": "@b3_time",
+      "empire_limit": {
+        "base": "1"
+      },
+      "desc": {
+        "text": "building_identity_complex_desc"
+      },
+      "category": "pop_assembly",
+      "potential": {
+        "owner": {},
+        "destroy_trigger": {
+          "exists": "owner",
+          "NOT": {
+            "owner": {}
+          },
+          "planet_modifier": {
+            "job_identity_designer_add": "2"
+          },
+          "triggered_desc": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {
+                "NOT": {}
+              },
+              "text": "job_identity_designer_effect_desc"
+            },
+            "resources": {
+              "category": "planet_buildings",
+              "cost": {
+                "minerals": "@b3_minerals"
+              },
+              "upkeep": {
+                "energy": "@b3_upkeep"
+              }
+            },
+            "is_essential": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 2449
+  },
+  "building_ai_emporium": {
+    "building_ai_emporium": {
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "1",
+      "owner_type": "corporate",
+      "category": "resource",
+      "potential": {
+        "has_branch_office": "yes",
+        "branch_office_owner": {
+          "is_synth_corporate": "yes",
+          "has_country_flag": "synth_physical"
+        }
+      },
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "building_ai_emporium_outlawed_robots_tt",
+          "planet.owner": {
+            "NOT": {}
+          }
+        },
+        "planet_modifier": {
+          "job_roboticist_branch_office_value_mult": "0.10",
+          "job_identity_designer_add": "1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "branch_office_owner": {},
+            "planet_crime_add": "20",
+            "mult": "branch_office_owner.value:scripted_modifier_mult|MODIFIER|branch_office_holding_crime_mult|"
+          },
+          "on_built": {
+            "planet.owner": {
+              "create_built_robot_species": "yes"
+            }
+          },
+          "resources": {
+            "category": "planet_branch_office_buildings",
+            "cost": {
+              "minerals": "@b3_minerals"
+            },
+            "produces": {
+              "energy": "10",
+              "physics_research": "10"
+            }
+          },
+          "ai_weight": {
+            "weight": "2",
+            "modifier": {
+              "weight": "0.5",
+              "branch_office_owner": {
+                "has_monthly_income": {
+                  "resource": "energy"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 2511
+  },
+  "building_clear_thought_clinic": {
+    "building_clear_thought_clinic": {
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "1",
+      "owner_type": "corporate",
+      "category": "resource",
+      "potential": {
+        "has_branch_office": "yes",
+        "branch_office_owner": {
+          "is_synth_corporate": "yes",
+          "has_country_flag": "synth_virtual"
+        }
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "branch_office_owner": {},
+          "planet_crime_add": "20",
+          "mult": "branch_office_owner.value:scripted_modifier_mult|MODIFIER|branch_office_holding_crime_mult|"
+        },
+        "planet_modifier": {
+          "trade_value_mult": "0.10",
+          "pop_happiness": "-0.05",
+          "job_clerk_add": "2"
+        },
+        "resources": {
+          "category": "planet_branch_office_buildings",
+          "cost": {
+            "minerals": "@b3_minerals"
+          },
+          "produces": {
+            "energy": "10",
+            "society_research": "10"
+          }
+        },
+        "on_built": {
+          "planet.owner": {
+            "save_event_target_as": "planet_owner"
+          },
+          "branch_office_owner": {
+            "save_event_target_as": "branch_office_owner",
+            "random_spynetwork": {
+              "limit": {
+                "owner": {
+                  "is_same_value": "event_target:branch_office_owner"
+                },
+                "target": {
+                  "is_same_value": "event_target:planet_owner"
+                }
+              },
+              "add_modifier": {
+                "modifier": "clear_thought_clinic_modifier",
+                "days": "-1"
+              }
+            }
+          }
+        },
+        "on_destroy": {
+          "planet": {
+            "save_event_target_as": "planet"
+          },
+          "planet.owner": {
+            "save_event_target_as": "planet_owner"
+          },
+          "branch_office_owner": {
+            "save_event_target_as": "branch_office_owner"
+          },
+          "if": {
+            "limit": {
+              "event_target:planet_owner": {
+                "any_owned_planet": {
+                  "NOT": {
+                    "is_same_value": "event_target:planet"
+                  },
+                  "has_branch_office": "yes",
+                  "branch_office_owner": {
+                    "is_same_value": "event_target:branch_office_owner"
+                  },
+                  "has_holding": {
+                    "holding": "building_clear_thought_clinic",
+                    "owner": "event_target:branch_office_owner"
+                  }
+                }
+              }
+            }
+          },
+          "_comments": [
+            "# Do nothing"
+          ],
+          "else": {
+            "event_target:branch_office_owner": {
+              "random_spynetwork": {
+                "limit": {
+                  "owner": {
+                    "is_same_value": "event_target:branch_office_owner"
+                  },
+                  "target": {
+                    "is_same_value": "event_target:planet_owner"
+                  }
+                },
+                "remove_modifier": "clear_thought_clinic_modifier"
+              }
+            }
+          }
+        },
+        "triggered_desc": {
+          "text": "clear_thought_clinic_tt"
+        },
+        "ai_weight": {
+          "weight": "2",
+          "modifier": {
+            "weight": "0.5",
+            "branch_office_owner": {
+              "has_monthly_income": {
+                "resource": "energy"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 2597
+  },
+  "building_nanolab_1": {
+    "building_nanolab_1": {
+      "base_buildtime": "@b2_time",
+      "category": "research",
+      "potential": {
+        "exists": "owner",
+        "owner": {},
+        "allow": {
+          "exists": "owner",
+          "owner": {},
+          "destroy_trigger": {
+            "exists": "owner",
+            "OR": {
+              "NOT": {
+                "has_modifier": "resort_colony"
+              }
+            },
+            "resources": {
+              "category": "planet_buildings",
+              "cost": {
+                "minerals": "@b3_minerals",
+                "nanites": "@b2_rare_cost"
+              },
+              "upkeep": {
+                "energy": "@b3_upkeep",
+                "nanites": "@b2_rare_upkeep"
+              }
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {
+                  "is_individual_machine": "yes"
+                }
+              },
+              "job_nanotech_researcher_add": "3"
+            },
+            "triggered_desc": {
+              "trigger": {
+                "exists": "owner",
+                "owner": {
+                  "is_individual_machine": "yes"
+                }
+              },
+              "text": "job_nanotech_researcher_effect_desc"
+            },
+            "upgrades": {}
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 2730
+  },
+  "building_nanolab_2": {
+    "building_nanolab_2": {
+      "base_buildtime": "@b3_time",
+      "can_build": "no",
+      "category": "research",
+      "potential": {
+        "exists": "owner",
+        "owner": {},
+        "allow": {
+          "has_upgraded_capital": "yes"
+        },
+        "destroy_trigger": {
+          "exists": "owner",
+          "OR": {
+            "NOT": {
+              "has_modifier": "resort_colony"
+            }
+          },
+          "resources": {
+            "category": "planet_buildings",
+            "cost": {
+              "minerals": "@b4_minerals",
+              "nanites": "@b3_rare_cost"
+            },
+            "upkeep": {
+              "energy": "@b4_upkeep",
+              "nanites": "@b3_rare_upkeep"
+            }
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {
+                "is_individual_machine": "yes"
+              }
+            },
+            "job_nanotech_researcher_add": "6"
+          },
+          "triggered_desc": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {
+                "is_individual_machine": "yes"
+              }
+            },
+            "text": "job_nanotech_researcher_effect_desc"
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 2811
+  },
+  "building_nanotech_cauldron": {
+    "building_nanotech_cauldron": {
+      "base_buildtime": "@b2_time",
+      "category": "manufacturing",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "NOT": {
+            "NOT": {},
+            "allow": {
+              "always": "yes"
+            },
+            "destroy_trigger": {
+              "exists": "owner",
+              "OR": {
+                "NOT": {
+                  "has_modifier": "resort_colony"
+                }
+              },
+              "resources": {
+                "category": "planet_buildings",
+                "cost": {
+                  "alloys": "@b3_minerals"
+                },
+                "upkeep": {
+                  "nanites": "3",
+                  "energy": "30"
+                },
+                "produces": {
+                  "alloys": "15"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "20_machine_age_buildings.txt",
+    "_line_number": 2884
+  }
+}

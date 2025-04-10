@@ -1,0 +1,182 @@
+{
+  "no_observation": {
+    "no_observation": {
+      "icon": "GFX_fleet_order_button_ground_support_selective",
+      "small_icon": "1",
+      "resources": {
+        "category": "station_observer_missions",
+        "_comments": [
+          "# Unity from Diplomatic Networking Tradition",
+          "# Trade policy outputs",
+          "# Scaled by pre-FTL technological age",
+          "# in pre_ftl_trade_value_mult",
+          "# Default trade policy OR no trade policy (for gestalts)",
+          "# Only gain energy from the pact.",
+          "# Consumer Benefits trade policy",
+          "# Gain energy and consumer goods from the pact.",
+          "# Marketplace of Ideas trade policy",
+          "# Gain energy and unity from the pact.",
+          "# Trade League trade policy",
+          "# Gain energy, consumer goods and unity from the pact.",
+          "# Holy Covenant trade policy",
+          "# Gain energy and unity from the pact.",
+          "# Equal Standing GalCom resolution has passed",
+          "# gain a small amount of strategic resources that",
+          "# are present on the planet if you can mine them.",
+          "# Exotic Gases",
+          "# Rare crystals",
+          "# Volatile Motes"
+        ],
+        "produces": {
+          "trigger": {
+            "has_modifier": "preftl_action_trade_pact",
+            "exists": "owner",
+            "owner": {
+              "is_galactic_community_member": "yes",
+              "has_technology": "tech_mine_volatile_motes"
+            },
+            "is_active_resolution": "resolution_pre_ftl_stances_equal_standing"
+          },
+          "volatile_motes": "2",
+          "mult": "value:pre_ftl_age_mult"
+        }
+      },
+      "potential": {
+        "FROM": {
+          "exists": "owner",
+          "owner": {
+            "is_primitive": "yes",
+            "current_awareness_level": "full"
+          }
+        }
+      },
+      "valid": {
+        "FROM": {
+          "exists": "owner",
+          "owner": {
+            "is_primitive": "yes",
+            "current_awareness_level": "full"
+          }
+        }
+      },
+      "ai_weight": {
+        "weight": "1"
+      }
+    },
+    "_source_file": "00_missions.txt",
+    "_line_number": 46
+  },
+  "passive_observation": {
+    "passive_observation": {
+      "icon": "GFX_fleet_task_passive_observation",
+      "small_icon": "1",
+      "resources": {
+        "category": "station_observer_missions",
+        "_comments": [
+          "# Base society research output.",
+          "# Increased society output from Advanced Xenostudies.",
+          "# Consumer goods output from Underdeveloped System Utilization.",
+          "# Base physics and engineering output from Exploitation Act.",
+          "# Increased physics and engineering output from Exploitation Act combined with Advanced Xenostudies."
+        ],
+        "produces": {
+          "trigger": {
+            "has_fleet_flag": "denied_probing"
+          },
+          "unity": "2"
+        }
+      },
+      "potential": {
+        "FROM": {
+          "exists": "owner",
+          "owner": {
+            "is_primitive": "yes",
+            "NOT": {}
+          }
+        },
+        "valid": {
+          "NOT": {
+            "has_policy_flag": "interference_aggressive"
+          },
+          "FROM": {
+            "exists": "owner",
+            "owner": {
+              "is_primitive": "yes",
+              "NOT": {}
+            }
+          },
+          "ai_weight": {
+            "weight": "1"
+          }
+        }
+      }
+    },
+    "_source_file": "00_missions.txt",
+    "_line_number": 213
+  },
+  "specimen_collection": {
+    "specimen_collection": {
+      "icon": "GFX_fleet_task_specimen_collection",
+      "small_icon": "2",
+      "resources": {
+        "category": "station_observer_missions",
+        "_comments": [
+          "# Base society research output.",
+          "# Increased society output from Advanced Xenostudies.",
+          "# Consumer goods output from Underdeveloped System Utilization.",
+          "# Base physics and engineering output from Exploitation Act.",
+          "# Increased physics and engineering output from Exploitation Act combined with Advanced Xenostudies."
+        ],
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {
+              "is_galactic_community_member": "yes"
+            },
+            "is_active_resolution": "resolution_pre_ftl_stances_exploitation",
+            "OR": {
+              "is_active_resolution": "resolution_galacticstudies_extradimensional_experimentation"
+            }
+          },
+          "physics_research": "3",
+          "engineering_research": "3",
+          "mult": "value:pre_ftl_spy_network_mult"
+        }
+      },
+      "potential": {
+        "FROM": {
+          "exists": "owner",
+          "owner": {
+            "is_primitive": "yes",
+            "NOT": {}
+          }
+        },
+        "valid": {
+          "OR": {
+            "has_policy_flag": "interference_aggressive"
+          },
+          "FROM": {
+            "exists": "owner",
+            "owner": {
+              "is_primitive": "yes",
+              "NOT": {},
+              "custom_tooltip": {
+                "text": "locked_to_passive_observation",
+                "observation_outpost": {
+                  "NOT": {
+                    "has_fleet_flag": "denied_probing"
+                  }
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "weight": "5\t# Use if policy allows it"
+          }
+        }
+      }
+    },
+    "_source_file": "00_missions.txt",
+    "_line_number": 325
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "weapon_component_template": {
+    "weapon_component_template": {
+      "type": "point_defence",
+      "key": "FLAK_BATTERY_4",
+      "size": "point_defence",
+      "icon": "GFX_ship_part_flak_batteries_4",
+      "icon_frame": "1",
+      "prerequisites": {
+        "component_set": "FLAK_BATTERY_4",
+        "projectile_gfx": "flak_pd_3",
+        "tags": {
+          "ai_tags": {
+            "resources": {
+              "category": "ship_components",
+              "cost": {
+                "alloys": "13"
+              },
+              "upkeep": {
+                "energy": "0.13",
+                "alloys": "0.013"
+              }
+            },
+            "point_defence_targets": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_weapons_pointdefence.txt",
+    "_line_number": 190
+  }
+}

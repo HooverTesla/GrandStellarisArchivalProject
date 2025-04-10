@@ -1,0 +1,49 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "fallen_machine_empire.74",
+      "title": "OK",
+      "desc": "OK",
+      "hide_window": "yes",
+      "trigger": {
+        "has_global_flag": "fe_task_no_colonies_active",
+        "OR": {
+          "NOT": {
+            "NOT": {
+              "any_country": {
+                "has_country_flag": "fe_task_no_colonies_origin",
+                "OR": {
+                  "NOT": {
+                    "any_country": {
+                      "has_country_flag": "fe_task_no_colonies",
+                      "is_at_war_with": "prev"
+                    }
+                  }
+                }
+              }
+            },
+            "mean_time_to_happen": {
+              "days": "10"
+            },
+            "immediate": {
+              "remove_global_flag": "fe_task_no_colonies_active",
+              "hidden_effect": {
+                "remove_global_flag": "fe_task_no_colonies_active",
+                "every_country": {
+                  "if": {
+                    "limit": {
+                      "end_event_chain": "fe_no_colonies_task_chain"
+                    },
+                    "remove_country_flag": "fe_task_no_colonies_origin"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "fallen_machine_empire_events.txt",
+    "_line_number": 1860
+  }
+}

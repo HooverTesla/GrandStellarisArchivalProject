@@ -1,0 +1,520 @@
+{
+  "add_resource_astral_threads": {
+    "add_resource_astral_threads": {
+      "if": {
+        "limit": {
+          "set_variable": {
+            "which": "astral_threads_scripted_rewards_mult",
+            "value": "1"
+          }
+        },
+        "add_resource": {
+          "astral_threads": "@\\[( $VALUE$ * $MULT|1$ + $ADD|0$ )]",
+          "mult": "astral_threads_scripted_rewards_mult"
+        },
+        "hidden_effect": {
+          "country_event": {}
+        }
+      }
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 3
+  },
+  "spawn_astral_scar": {
+    "spawn_astral_scar": {
+      "spawn_planet": {
+        "class": "pc_astral_scar",
+        "spawn_beyond_gravity_well": "yes",
+        "orbit_angle_offset": "360",
+        "size": "20",
+        "init_effect": {
+          "set_name": "NAME_Astral_Scar",
+          "add_deposit": "d_astral_threads_deposit_1",
+          "prevent_anomaly": "yes",
+          "set_planet_flag": "suppress_archaeological_sites",
+          "if": {
+            "limit": {
+              "solar_system": {
+                "has_owner": "yes"
+              }
+            },
+            "create_message": {
+              "type": "MESSAGE_ASTRAL_SCAR_DISCOVERED",
+              "localization": "MESSAGE_ASTRAL_SCAR_DISCOVERED_DESC",
+              "days": "30",
+              "target": "this",
+              "recipient": "solar_system.owner"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 20
+  },
+  "split_astral_scar": {
+    "split_astral_scar": {
+      "solar_system": {
+        "spawn_astral_rift": {
+          "id": "$ID|none$",
+          "in_place_of": "prev",
+          "init_effect": {
+            "every_playable_country": {
+              "limit": {
+                "prevprevprev": {
+                  "is_surveyed": {}
+                },
+                "prev": {
+                  "set_surveyed": {}
+                },
+                "set_astral_rift_flag": "split_opened_rift",
+                "if": {
+                  "limit": {
+                    "prevprev": {
+                      "has_research_station": "yes"
+                    }
+                  },
+                  "create_research_station": {
+                    "owner": "prev.owner"
+                  }
+                }
+              }
+            }
+          },
+          "hidden_effect": {
+            "remove_planet": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 49
+  },
+  "find_closest_player_planet": {
+    "find_closest_player_planet": {
+      "closest_system": {
+        "limit": {
+          "AND": {
+            "has_owner": "yes",
+            "owner": {},
+            "any_system_planet": {
+              "habitable_planet": "yes",
+              "OR": {
+                "is_colony": "yes",
+                "is_capital": "yes"
+              }
+            }
+          },
+          "random_system_planet": {
+            "limit": {
+              "habitable_planet": "yes",
+              "OR": {
+                "is_colony": "yes",
+                "is_capital": "yes"
+              }
+            },
+            "save_global_event_target_as": "$GLOBAL_TARGET$"
+          }
+        }
+      }
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 84
+  },
+  "find_closest_player_planet_local": {
+    "find_closest_player_planet_local": {
+      "find_closest_player_planet": {
+        "OWNER_SCOPE": "$OWNER_SCOPE$",
+        "GLOBAL_TARGET": "$EVENT_TARGET$"
+      },
+      "event_target:$EVENT_TARGET$": {
+        "save_event_target_as": "$EVENT_TARGET$"
+      },
+      "clear_global_event_target": "$EVENT_TARGET$"
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 112
+  },
+  "update_fleet_space_storm_reduction_zroni_rift": {
+    "update_fleet_space_storm_reduction_zroni_rift": {
+      "if": {
+        "limit": {
+          "NOT": {
+            "solar_system": {
+              "has_modifier": "space_storm"
+            }
+          },
+          "add_modifier": {},
+          "else_if": {
+            "limit": {
+              "has_modifier": "zroni_insight_space_storm_reduction_modifier",
+              "solar_system": {
+                "NOT": {}
+              },
+              "remove_modifier": "zroni_insight_space_storm_reduction_modifier"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 124
+  },
+  "spawn_formless_defense_fleet": {
+    "spawn_formless_defense_fleet": {
+      "create_fleet": {
+        "name": "NAME_Formless_Defense",
+        "settings": {
+          "can_upgrade": "no",
+          "can_change_composition": "no",
+          "can_change_leader": "no",
+          "uses_naval_capacity": "no",
+          "spawn_debris": "no"
+        },
+        "effect": {
+          "set_owner": "prev",
+          "while": {
+            "count": "$FLEET_SIZE|10$",
+            "create_ship": {
+              "name": "NAME_Formless_Cruiser",
+              "design": "NAME_Formless_Cruiser",
+              "upgradable": "no"
+            }
+          },
+          "set_location": {
+            "target": "event_target:formless_anchor"
+          },
+          "set_fleet_flag": "$FLEET_FLAG$"
+        }
+      }
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 149
+  },
+  "spawn_extradimensional_scouts_fleet": {
+    "spawn_extradimensional_scouts_fleet": {
+      "create_fleet": {
+        "name": "NAME_Extradimensional_Scouts",
+        "settings": {
+          "can_upgrade": "no",
+          "can_change_composition": "no",
+          "can_change_leader": "no",
+          "uses_naval_capacity": "no",
+          "spawn_debris": "no"
+        },
+        "effect": {
+          "set_owner": "prev",
+          "while": {
+            "count": "8",
+            "create_ship": {
+              "name": "NAME_Extradimensional_Scout",
+              "design": "NAME_Extradimensional_Scout",
+              "upgradable": "no"
+            }
+          },
+          "set_location": {
+            "target": "prevprev",
+            "distance": "35",
+            "angle": "@\\[ 45 * $INDEX$ ]"
+          },
+          "set_fleet_flag": "invader_scout",
+          "owner": {
+            "change_variable": {
+              "which": "alive_scout_fleet_count",
+              "value": "1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 177
+  },
+  "spawn_formless_invader_fleet": {
+    "spawn_formless_invader_fleet": {
+      "create_fleet": {
+        "name": "NAME_Formless_Aberrant_Invaders",
+        "settings": {
+          "can_upgrade": "no",
+          "can_change_composition": "no",
+          "can_change_leader": "no",
+          "uses_naval_capacity": "no",
+          "spawn_debris": "no"
+        },
+        "effect": {
+          "set_owner": "prev",
+          "set_variable": {
+            "which": "cruisers_to_spawn",
+            "value": "battleships_to_spawn"
+          },
+          "multiply_variable": {
+            "which": "cruisers_to_spawn",
+            "value": "2.9"
+          },
+          "while": {
+            "count": "battleships_to_spawn",
+            "create_ship": {
+              "name": "NAME_Formless_Aberrant_Invader_Battleship",
+              "design": "NAME_Formless_Aberrant_Invader_Battleship",
+              "upgradable": "no"
+            }
+          },
+          "set_location": {
+            "target": "prevprev"
+          },
+          "set_fleet_flag": "formless_invader",
+          "auto_follow_fleet": {
+            "target": "event_target:formless_anchor",
+            "attack_fleet": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 213
+  },
+  "enable_the_seal_weave_astral_fabric": {
+    "enable_the_seal_weave_astral_fabric": {
+      "disable_the_seal_modifiers": "yes",
+      "event_target:formless_system": {
+        "every_fleet_in_system": {
+          "limit": {
+            "owner": {
+              "is_same_value": "event_target:the_seal_situation.owner"
+            }
+          },
+          "add_modifier": {
+            "modifier": "the_seal_weave_astral_fabric_modifiers"
+          }
+        }
+      }
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 265
+  },
+  "enable_the_seal_pump_exotic_gases": {
+    "enable_the_seal_pump_exotic_gases": {
+      "disable_the_seal_modifiers": "yes",
+      "event_target:formless_system": {
+        "every_fleet_in_system": {
+          "limit": {
+            "owner": {
+              "is_same_value": "event_target:the_seal_situation.owner"
+            }
+          },
+          "add_modifier": {
+            "modifier": "the_seal_pump_exotic_gases_modifier"
+          }
+        }
+      }
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 281
+  },
+  "disable_the_seal_modifiers": {
+    "disable_the_seal_modifiers": {
+      "event_target:formless_system": {
+        "every_fleet_in_system": {
+          "limit": {
+            "remove_modifier": "the_seal_pump_exotic_gases_modifier"
+          },
+          "every_fleet_in_system": {
+            "limit": {
+              "remove_modifier": "the_seal_weave_astral_fabric_modifiers"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 297
+  },
+  "schedule_next_formless_reward": {
+    "schedule_next_formless_reward": {
+      "hidden_effect": {
+        "remove_country_flag": "formless_reward_available",
+        "country_event": {
+          "id": "astral_planes.3111",
+          "days": "@formless_reward_delay_days"
+        }
+      }
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 310
+  },
+  "add_monthly_resource_mult_if_produced": {
+    "add_monthly_resource_mult_if_produced": {
+      "if": {
+        "limit": {
+          "has_monthly_income": {},
+          "add_monthly_resource_mult": {
+            "resource": "$RESOURCE$",
+            "value": "$VALUE$"
+          }
+        }
+      }
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 324
+  },
+  "copy_basic_resources_effect": {
+    "copy_basic_resources_effect": {
+      "_comments": [
+        "#Clear previous values",
+        "#Assign new values"
+      ],
+      "export_resource_stockpile_to_variable": {
+        "resource": "food",
+        "variable": "food_stockpile_to_clear"
+      },
+      "add_resource": {
+        "food": "1",
+        "mult": "$FROM$.food_stockpile_to_give"
+      },
+      "clear_variable": "food_stockpile_to_clear",
+      "$FROM$": {
+        "clear_variable": "food_stockpile_to_give"
+      }
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 341
+  },
+  "copy_manufactured_resources_effect": {
+    "copy_manufactured_resources_effect": {
+      "_comments": [
+        "#Clear previous values",
+        "#Assign new values"
+      ],
+      "export_resource_stockpile_to_variable": {
+        "resource": "alloys",
+        "variable": "alloys_stockpile_to_clear"
+      },
+      "add_resource": {
+        "alloys": "1",
+        "mult": "$FROM$.alloys_stockpile_to_give"
+      },
+      "clear_variable": "alloys_stockpile_to_clear",
+      "$FROM$": {
+        "clear_variable": "alloys_stockpile_to_give"
+      }
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 405
+  },
+  "copy_advanced_resources_effect": {
+    "copy_advanced_resources_effect": {
+      "_comments": [
+        "#Clear previous values",
+        "#Assign new values"
+      ],
+      "export_resource_stockpile_to_variable": {
+        "resource": "rare_crystals",
+        "variable": "rare_crystals_stockpile_to_clear"
+      },
+      "add_resource": {
+        "rare_crystals": "1",
+        "mult": "$FROM$.rare_crystals_stockpile_to_give"
+      },
+      "clear_variable": "rare_crystals_stockpile_to_clear",
+      "$FROM$": {
+        "clear_variable": "rare_crystals_stockpile_to_give"
+      }
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 451
+  },
+  "copy_rare_resources_effect": {
+    "copy_rare_resources_effect": {
+      "_comments": [
+        "#Clear previous values",
+        "#Assign new values"
+      ],
+      "export_resource_stockpile_to_variable": {
+        "resource": "nanites",
+        "variable": "nanites_stockpile_to_clear"
+      },
+      "add_resource": {
+        "nanites": "1",
+        "mult": "$FROM$.nanites_stockpile_to_give"
+      },
+      "clear_variable": "nanites_stockpile_to_clear",
+      "$FROM$": {
+        "clear_variable": "nanites_stockpile_to_give"
+      }
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 515
+  },
+  "copy_basic_resources_incomes_effect": {
+    "copy_basic_resources_incomes_effect": {
+      "remove_modifier": "copy_food_income_modifier",
+      "_comments": [
+        "#Clear previous values",
+        "#Assign new values"
+      ],
+      "$FROM$": {
+        "clear_variable": "food_income_to_give"
+      },
+      "add_modifier": {
+        "modifier": "copy_food_income_modifier",
+        "mult": "$FROM$.food_income_to_give"
+      }
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 597
+  },
+  "copy_manufactured_resources_incomes_effect": {
+    "copy_manufactured_resources_incomes_effect": {
+      "remove_modifier": "copy_alloys_income_modifier",
+      "_comments": [
+        "#Clear previous values",
+        "#Assign new values"
+      ],
+      "$FROM$": {
+        "clear_variable": "alloys_income_to_give"
+      },
+      "add_modifier": {
+        "modifier": "copy_alloys_income_modifier",
+        "mult": "$FROM$.alloys_income_to_give"
+      }
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 637
+  },
+  "copy_advanced_resources_incomes_effect": {
+    "copy_advanced_resources_incomes_effect": {
+      "remove_modifier": "copy_rare_crystals_income_modifier",
+      "_comments": [
+        "#Clear previous values",
+        "#Assign new values"
+      ],
+      "$FROM$": {
+        "clear_variable": "rare_crystals_income_to_give"
+      },
+      "add_modifier": {
+        "modifier": "copy_rare_crystals_income_modifier",
+        "mult": "$FROM$.rare_crystals_income_to_give"
+      }
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 667
+  },
+  "copy_rare_resources_incomes_effect": {
+    "copy_rare_resources_incomes_effect": {
+      "remove_modifier": "copy_nanites_income_modifier",
+      "_comments": [
+        "#Clear previous values",
+        "#Assign new values"
+      ],
+      "$FROM$": {
+        "clear_variable": "nanites_income_to_give"
+      },
+      "add_modifier": {
+        "modifier": "copy_nanites_income_modifier",
+        "mult": "$FROM$.nanites_income_to_give"
+      }
+    },
+    "_source_file": "astral_planes_effects.txt",
+    "_line_number": 707
+  }
+}

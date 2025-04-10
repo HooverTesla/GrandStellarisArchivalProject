@@ -1,0 +1,28 @@
+{
+  "ship_section_template": {
+    "ship_section_template": {
+      "key": "TITAN_STERN",
+      "ship_size": "titan",
+      "fits_on_slot": "stern",
+      "should_draw_components": "yes",
+      "entity": "titan_stern_entity",
+      "icon": "GFX_ship_part_core_stern",
+      "ai_tags": {
+        "component_slot": {
+          "name": "LARGE_GUN_02",
+          "template": "large_turret",
+          "locatorname": "large_gun_02"
+        },
+        "aux_utility_slots": "3",
+        "resources": {
+          "category": "ship_sections",
+          "cost": {
+            "alloys": "@section_cost"
+          }
+        }
+      }
+    },
+    "_source_file": "titan.txt",
+    "_line_number": 84
+  }
+}

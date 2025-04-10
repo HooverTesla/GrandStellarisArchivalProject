@@ -1,0 +1,947 @@
+{
+  "building_crude_huts": {
+    "building_crude_huts": {
+      "capital": "yes",
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "position_priority": "0",
+      "category": "amenity",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes",
+          "is_hive_empire": "no",
+          "has_country_flag": "stone_age"
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no",
+            "is_hive_empire": "yes"
+          }
+        }
+      },
+      "planet_modifier": {
+        "planet_amenities_add": "5",
+        "planet_housing_add": "4",
+        "planet_crime_add": "-10"
+      },
+      "upgrades": {}
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 8
+  },
+  "building_primitive_dwellings": {
+    "building_primitive_dwellings": {
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "category": "amenity",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes",
+          "is_hive_empire": "no",
+          "OR": {
+            "has_country_flag": "steam_age"
+          }
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no",
+            "is_hive_empire": "yes"
+          }
+        }
+      },
+      "planet_modifier": {
+        "planet_housing_add": "6"
+      },
+      "upgrades": {}
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 46
+  },
+  "building_stone_palace": {
+    "building_stone_palace": {
+      "capital": "yes",
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "position_priority": "0",
+      "category": "government",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes",
+          "is_hive_empire": "no",
+          "OR": {
+            "has_country_flag": "steam_age"
+          }
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no",
+            "is_hive_empire": "yes"
+          }
+        }
+      },
+      "convert_to": {},
+      "planet_modifier": {
+        "job_primitive_noble_add": "1",
+        "job_primitive_warrior_add": "1",
+        "job_primitive_researcher_add": "1",
+        "job_primitive_priest_add": "1",
+        "planet_housing_add": "3",
+        "planet_amenities_add": "25",
+        "planet_crime_add": "-10"
+      },
+      "upgrades": {}
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 87
+  },
+  "building_primitive_factory": {
+    "building_primitive_factory": {
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "category": "manufacturing",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes",
+          "is_hive_empire": "no",
+          "OR": {
+            "has_country_flag": "early_space_age"
+          }
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no",
+            "is_hive_empire": "yes"
+          }
+        }
+      },
+      "planet_modifier": {
+        "job_primitive_laborer_add": "2"
+      },
+      "upgrades": {}
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 142
+  },
+  "building_primitive_mine": {
+    "building_primitive_mine": {
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "category": "resource",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes",
+          "is_hive_empire": "no",
+          "OR": {
+            "has_country_flag": "early_space_age"
+          }
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no",
+            "is_hive_empire": "yes"
+          }
+        }
+      },
+      "planet_modifier": {
+        "job_primitive_miner_add": "2"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "job_primitive_miner_add": "8"
+        },
+        "upgrades": {}
+      }
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 184
+  },
+  "building_primitive_power_plant": {
+    "building_primitive_power_plant": {
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "category": "resource",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes",
+          "is_hive_empire": "no",
+          "OR": {
+            "has_country_flag": "early_space_age"
+          }
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no",
+            "is_hive_empire": "yes"
+          }
+        }
+      },
+      "planet_modifier": {
+        "job_primitive_technician_add": "2"
+      },
+      "upgrades": {}
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 231
+  },
+  "building_primitive_farm": {
+    "building_primitive_farm": {
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "category": "resource",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes",
+          "is_hive_empire": "no",
+          "OR": {
+            "has_country_flag": "early_space_age"
+          },
+          "is_lithoid_empire": "no"
+        }
+      },
+      "convert_to": {},
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no",
+            "is_hive_empire": "yes",
+            "is_lithoid_empire": "yes"
+          }
+        }
+      },
+      "planet_modifier": {
+        "job_primitive_farmer_add": "10"
+      },
+      "upgrades": {}
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 272
+  },
+  "building_primitive_capital": {
+    "building_primitive_capital": {
+      "capital": "yes",
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "position_priority": "0",
+      "category": "government",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes",
+          "is_hive_empire": "no",
+          "OR": {
+            "has_country_flag": "early_space_age"
+          }
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no",
+            "is_hive_empire": "yes"
+          }
+        }
+      },
+      "convert_to": {},
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_primitive": "yes",
+            "OR": {
+              "has_country_flag": "early_space_age"
+            }
+          }
+        },
+        "job_primitive_bureaucrat_add": "2",
+        "job_primitive_warrior_2_add": "2",
+        "job_primitive_researcher_2_add": "2",
+        "job_primitive_priest_2_add": "2",
+        "job_primitive_entertainer_add": "2",
+        "planet_housing_add": "5",
+        "planet_amenities_add": "25",
+        "planet_crime_add": "-20",
+        "planet_max_branch_office_buildings_add": "1"
+      }
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 317
+  },
+  "building_urban_dwellings": {
+    "building_urban_dwellings": {
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "icon": "building_residence",
+      "category": "amenity",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes",
+          "is_hive_empire": "no",
+          "OR": {
+            "has_country_flag": "early_space_age"
+          }
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no",
+            "is_hive_empire": "yes"
+          }
+        }
+      },
+      "planet_modifier": {
+        "planet_housing_add": "24"
+      },
+      "upgrades": {}
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 400
+  },
+  "building_pre_ftl_radio_telescope": {
+    "building_pre_ftl_radio_telescope": {
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "base_cap_amount": "1",
+      "category": "research",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes",
+          "has_country_flag": "early_space_age"
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "no"
+        }
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "job_primitive_researcher_2_add": "2"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "job_primitive_hive_brain_drone_add": "2"
+          },
+          "triggered_desc": {
+            "text": "awareness_gain_desc"
+          }
+        }
+      }
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 444
+  },
+  "building_hive_crude_huts": {
+    "building_hive_crude_huts": {
+      "icon": "building_crude_huts",
+      "capital": "yes",
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "position_priority": "0",
+      "category": "amenity",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes",
+          "is_hive_empire": "yes",
+          "has_country_flag": "stone_age"
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no",
+            "is_hive_empire": "no"
+          }
+        }
+      },
+      "planet_modifier": {
+        "planet_amenities_no_happiness_add": "5",
+        "planet_housing_add": "4",
+        "planet_crime_no_happiness_add": "-10"
+      },
+      "upgrades": {}
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 491
+  },
+  "building_hive_primitive_dwellings": {
+    "building_hive_primitive_dwellings": {
+      "icon": "building_primitive_dwellings",
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "category": "amenity",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes",
+          "is_hive_empire": "yes",
+          "OR": {
+            "has_country_flag": "steam_age"
+          }
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no",
+            "is_hive_empire": "no"
+          }
+        }
+      },
+      "planet_modifier": {
+        "planet_housing_add": "6"
+      },
+      "upgrades": {}
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 530
+  },
+  "building_hive_stone_palace": {
+    "building_hive_stone_palace": {
+      "icon": "building_stone_palace",
+      "capital": "yes",
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "position_priority": "0",
+      "category": "government",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes",
+          "is_hive_empire": "yes",
+          "OR": {
+            "has_country_flag": "steam_age"
+          }
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no",
+            "is_hive_empire": "no"
+          }
+        }
+      },
+      "convert_to": {},
+      "planet_modifier": {
+        "job_primitive_hive_synapse_drone_add": "1",
+        "job_primitive_hive_warrior_add": "1",
+        "job_primitive_hive_cerebellum_drone_add": "1",
+        "job_primitive_hive_spawning_drone_add": "1",
+        "planet_housing_add": "3",
+        "planet_amenities_no_happiness_add": "25",
+        "planet_crime_no_happiness_add": "-10"
+      },
+      "upgrades": {}
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 572
+  },
+  "building_hive_primitive_factory": {
+    "building_hive_primitive_factory": {
+      "icon": "building_primitive_factory",
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "category": "manufacturing",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes",
+          "is_hive_empire": "yes",
+          "OR": {
+            "has_country_flag": "early_space_age"
+          }
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no",
+            "is_hive_empire": "no"
+          }
+        }
+      },
+      "planet_modifier": {
+        "job_primitive_hive_factory_drone_add": "2"
+      },
+      "upgrades": {}
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 628
+  },
+  "building_hive_primitive_mine": {
+    "building_hive_primitive_mine": {
+      "icon": "building_primitive_mine",
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "category": "resource",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes",
+          "is_hive_empire": "yes",
+          "OR": {
+            "has_country_flag": "early_space_age"
+          }
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no",
+            "is_hive_empire": "no"
+          }
+        }
+      },
+      "planet_modifier": {
+        "job_primitive_hive_miner_add": "2"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "job_primitive_hive_miner_add": "8"
+        },
+        "upgrades": {}
+      }
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 671
+  },
+  "building_hive_primitive_power_plant": {
+    "building_hive_primitive_power_plant": {
+      "icon": "building_primitive_power_plant",
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "category": "resource",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes",
+          "is_hive_empire": "yes",
+          "OR": {
+            "has_country_flag": "early_space_age"
+          }
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no",
+            "is_hive_empire": "no"
+          }
+        }
+      },
+      "planet_modifier": {
+        "job_primitive_hive_technician_add": "2"
+      },
+      "upgrades": {}
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 719
+  },
+  "building_hive_primitive_farm": {
+    "building_hive_primitive_farm": {
+      "icon": "building_primitive_farm",
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "category": "resource",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes",
+          "is_hive_empire": "yes",
+          "OR": {
+            "has_country_flag": "early_space_age"
+          },
+          "is_lithoid_empire": "no"
+        }
+      },
+      "convert_to": {},
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no",
+            "is_hive_empire": "no",
+            "is_lithoid_empire": "yes"
+          }
+        }
+      },
+      "planet_modifier": {
+        "job_primitive_hive_farmer_add": "10"
+      },
+      "upgrades": {}
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 761
+  },
+  "building_hive_primitive_capital": {
+    "building_hive_primitive_capital": {
+      "icon": "building_primitive_capital",
+      "capital": "yes",
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "position_priority": "0",
+      "category": "government",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes",
+          "is_hive_empire": "yes",
+          "OR": {
+            "has_country_flag": "early_space_age"
+          }
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no",
+            "is_hive_empire": "no"
+          }
+        }
+      },
+      "convert_to": {},
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_primitive": "yes",
+            "OR": {
+              "has_country_flag": "early_space_age"
+            }
+          }
+        },
+        "job_primitive_hive_synapse_drone_2_add": "2",
+        "job_primitive_hive_warrior_2_add": "2",
+        "job_primitive_hive_brain_drone_add": "2",
+        "job_primitive_hive_spawning_drone_add": "1",
+        "planet_housing_add": "5",
+        "planet_amenities_no_happiness_add": "25",
+        "planet_crime_no_happiness_add": "-20"
+      }
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 807
+  },
+  "building_hive_urban_dwellings": {
+    "building_hive_urban_dwellings": {
+      "icon": "building_residence",
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "category": "amenity",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes",
+          "is_hive_empire": "yes",
+          "OR": {
+            "has_country_flag": "early_space_age"
+          }
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no",
+            "is_hive_empire": "no"
+          }
+        }
+      },
+      "planet_modifier": {
+        "planet_housing_add": "24"
+      },
+      "upgrades": {}
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 889
+  },
+  "building_primitive_clinic": {
+    "building_primitive_clinic": {
+      "base_buildtime": "@b1_time",
+      "base_cap_amount": "1",
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "category": "amenity",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes",
+          "is_hive_empire": "yes",
+          "OR": {
+            "has_country_flag": "early_space_age"
+          }
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no",
+            "is_hive_empire": "no"
+          }
+        }
+      },
+      "planet_modifier": {
+        "job_healthcare_add": "2"
+      },
+      "resources": {
+        "category": "planet_buildings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep"
+        }
+      },
+      "prerequisites": {},
+      "upgrades": {},
+      "convert_to": {},
+      "triggered_desc": {
+        "text": "job_healthcare_effect_desc"
+      },
+      "on_destroy": {},
+      "on_repaired": {}
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 937
+  },
+  "building_solarpunk_gaiaseeder": {
+    "building_solarpunk_gaiaseeder": {
+      "icon": "building_gaiaseeders_4",
+      "base_buildtime": "@b1_time",
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "category": "amenity",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes"
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no"
+          }
+        }
+      },
+      "planet_modifier": {
+        "job_solarpunk_anarchist_add": "10"
+      },
+      "resources": {
+        "category": "planet_buildings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep"
+        }
+      },
+      "prerequisites": {},
+      "upgrades": {},
+      "on_destroy": {},
+      "on_repaired": {}
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 1005
+  },
+  "building_solarpunk_ranger_lodge": {
+    "building_solarpunk_ranger_lodge": {
+      "icon": "building_paradise_dome",
+      "base_buildtime": "@b1_time",
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "category": "amenity",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes"
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no"
+          }
+        }
+      },
+      "planet_modifier": {
+        "job_solarpunk_anarchist_add": "5"
+      },
+      "resources": {
+        "category": "planet_buildings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep"
+        }
+      },
+      "prerequisites": {},
+      "upgrades": {},
+      "on_destroy": {},
+      "on_repaired": {}
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 1059
+  },
+  "building_solarpunk_sapling": {
+    "building_solarpunk_sapling": {
+      "icon": "holding_tree_of_life_sapling",
+      "base_buildtime": "@b1_time",
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "category": "amenity",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes"
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no"
+          }
+        }
+      },
+      "planet_modifier": {
+        "job_solarpunk_anarchist_add": "5",
+        "planet_farmers_food_produces_add": "2"
+      },
+      "resources": {
+        "category": "planet_buildings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep"
+        }
+      },
+      "prerequisites": {},
+      "upgrades": {},
+      "on_destroy": {},
+      "on_repaired": {}
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 1113
+  },
+  "building_solarpunk_organic_paradise": {
+    "building_solarpunk_organic_paradise": {
+      "icon": "building_paradise_dome",
+      "base_buildtime": "@b1_time",
+      "can_build": "no",
+      "can_demolish": "yes",
+      "can_be_ruined": "no",
+      "category": "amenity",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes"
+        }
+      },
+      "destroy_trigger": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_primitive": "no"
+          }
+        }
+      },
+      "planet_modifier": {
+        "job_solarpunk_anarchist_add": "5",
+        "planet_housing_add": "20",
+        "planet_max_buildings_add": "5"
+      },
+      "resources": {
+        "category": "planet_buildings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep"
+        }
+      },
+      "prerequisites": {},
+      "upgrades": {},
+      "on_destroy": {},
+      "on_repaired": {}
+    },
+    "_source_file": "11_primitive_buildings.txt",
+    "_line_number": 1168
+  }
+}

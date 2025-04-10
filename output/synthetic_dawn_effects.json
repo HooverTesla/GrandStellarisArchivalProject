@@ -1,0 +1,87 @@
+{
+  "create_terminator_country": {
+    "create_terminator_country": {
+      "create_country": {
+        "name": "random",
+        "type": "default",
+        "species": "last_created_species",
+        "ignore_initial_colony_error": "yes",
+        "day_zero_contact": "no",
+        "ethos": {
+          "authority": "auth_machine_intelligence",
+          "origin": "origin_separatists",
+          "civics": {
+            "civic": "random"
+          },
+          "flag": "random",
+          "effect": {
+            "modify_species": {
+              "species": "this",
+              "add_trait": "trait_machine_unit",
+              "add_traits_at_start_of_list": "yes"
+            },
+            "save_event_target_as": "current_uprising"
+          }
+        }
+      }
+    },
+    "_source_file": "synthetic_dawn_effects.txt",
+    "_line_number": -1
+  },
+  "create_assimilator_country": {
+    "create_assimilator_country": {
+      "create_country": {
+        "name": "random",
+        "type": "default",
+        "species": "last_created_species",
+        "ignore_initial_colony_error": "yes",
+        "day_zero_contact": "no",
+        "ethos": {
+          "authority": "auth_machine_intelligence",
+          "origin": "origin_separatists",
+          "civics": {
+            "civic": "random"
+          },
+          "flag": "random",
+          "effect": {
+            "modify_species": {
+              "species": "this",
+              "add_trait": "trait_machine_unit",
+              "add_traits_at_start_of_list": "yes"
+            },
+            "save_event_target_as": "current_uprising"
+          }
+        }
+      }
+    },
+    "_source_file": "synthetic_dawn_effects.txt",
+    "_line_number": 25
+  },
+  "create_machine_country": {
+    "create_machine_country": {
+      "create_country": {
+        "name": "random",
+        "type": "default",
+        "species": "last_created_species",
+        "ignore_initial_colony_error": "yes",
+        "day_zero_contact": "no",
+        "ethos": {
+          "authority": "auth_machine_intelligence",
+          "civics": "random",
+          "flag": "random",
+          "origin": "origin_separatists",
+          "effect": {
+            "modify_species": {
+              "species": "this",
+              "add_trait": "trait_machine_unit",
+              "add_traits_at_start_of_list": "yes"
+            },
+            "save_event_target_as": "current_uprising"
+          }
+        }
+      }
+    },
+    "_source_file": "synthetic_dawn_effects.txt",
+    "_line_number": 51
+  }
+}

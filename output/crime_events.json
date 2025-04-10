@@ -1,0 +1,105 @@
+{
+  "planet_event": {
+    "planet_event": {
+      "id": "crime.1001",
+      "title": "crime.1001.name",
+      "desc": "crime.1001.desc",
+      "picture": "GFX_evt_dark_alley",
+      "show_sound": "event_criminal_activity",
+      "location": "root",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_branch_office": "yes",
+        "branch_office_owner": {
+          "is_criminal_syndicate": "yes",
+          "NOT": {}
+        },
+        "immediate": {
+          "_comments": [
+            "# 10 year cooldown"
+          ],
+          "branch_office_owner": {
+            "set_timed_country_flag": {}
+          },
+          "option": {
+            "name": "crime.1001.a",
+            "close_branch_office": "yes",
+            "hidden_effect": {
+              "set_timed_planet_flag": {
+                "event_target:office_owner": {
+                  "country_event": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "crime_events.txt",
+    "_line_number": 1934
+  },
+  "event": {
+    "event": {
+      "id": "crime.1000",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_playable_country": {
+          "any_owned_planet": {
+            "has_branch_office": "yes",
+            "branch_office_owner": {
+              "is_criminal_syndicate": "yes",
+              "NOT": {}
+            }
+          }
+        },
+        "immediate": {
+          "random_list": {
+            "19": {
+              "1": {
+                "random_playable_country": {
+                  "limit": {
+                    "any_owned_planet": {
+                      "has_branch_office": "yes",
+                      "branch_office_owner": {
+                        "is_criminal_syndicate": "yes",
+                        "NOT": {}
+                      }
+                    },
+                    "random_owned_planet": {
+                      "limit": {
+                        "has_branch_office": "yes",
+                        "branch_office_owner": {
+                          "planet_event": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "crime_events.txt",
+    "_line_number": 1880
+  },
+  "country_event": {
+    "country_event": {
+      "id": "crime.1002",
+      "title": "crime.1002.name",
+      "desc": "crime.1002.desc",
+      "picture": "GFX_evt_dark_alley",
+      "show_sound": "event_criminal_activity",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "UNFORTUNATE",
+        "custom_tooltip": "crime.1002.tooltip"
+      }
+    },
+    "_source_file": "crime_events.txt",
+    "_line_number": 1971
+  }
+}

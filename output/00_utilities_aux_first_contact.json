@@ -1,0 +1,35 @@
+{
+  "utility_component_template": {
+    "utility_component_template": {
+      "key": "GRAVITY_SNARE_CLOAKING_PSI",
+      "size": "small",
+      "icon": "GFX_ship_part_cloak_psi",
+      "icon_frame": "1",
+      "power": "0",
+      "modifier": {
+        "ship_cloaking_strength_add": "@cloaking_very_high_strength",
+        "ship_capture_chance_add": "0.15"
+      },
+      "triggered_ship_modifier": {
+        "potential": {
+          "is_cloaked": "yes",
+          "has_non_psionic_shields": "yes"
+        },
+        "modifier": {
+          "ship_shield_reduction": "1"
+        }
+      },
+      "custom_tooltip": "CLOAKING_PSI_TOOLTIP",
+      "size_restriction": {
+        "prerequisites": {
+          "component_set": "science_cloaking_components",
+          "ai_weight": {
+            "weight": "@psi_cloaking_weight"
+          }
+        }
+      }
+    },
+    "_source_file": "00_utilities_aux_first_contact.txt",
+    "_line_number": 1234
+  }
+}

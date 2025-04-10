@@ -1,0 +1,123 @@
+{
+  "psionic_avatar": {
+    "psionic_avatar": {
+      "graphical_culture": "no",
+      "is_space_object": "yes",
+      "max_speed": "@speed_very_fast",
+      "rotation_speed": "1",
+      "acceleration": "0.3",
+      "modifier": {
+        "ship_evasion_add": "15",
+        "ship_shield_add": "45000",
+        "ship_shield_regen_add_static": "225"
+      },
+      "max_hitpoints": "@battleship_hp",
+      "size_multiplier": "16",
+      "fleet_slot_size": "16",
+      "section_slots": {
+        "num_target_locators": "0",
+        "icon": "ship_size_space_monster",
+        "class": "shipclass_military",
+        "is_designable": "no"
+      }
+    },
+    "_source_file": "12_psionic.txt",
+    "_line_number": 34
+  },
+  "corrupted_avatar": {
+    "corrupted_avatar": {
+      "graphical_culture": "no",
+      "is_space_object": "yes",
+      "max_speed": "@speed_very_fast",
+      "rotation_speed": "1",
+      "acceleration": "0.2",
+      "modifier": {
+        "ship_evasion_add": "25",
+        "ship_shield_add": "75000",
+        "ship_shield_regen_add_static": "225"
+      },
+      "max_hitpoints": "@titan_hp",
+      "size_multiplier": "16",
+      "fleet_slot_size": "16",
+      "section_slots": {
+        "num_target_locators": "0",
+        "icon": "ship_size_space_monster",
+        "class": "shipclass_military",
+        "is_designable": "no",
+        "components_add_to_cost": "no",
+        "resources": {
+          "category": "ships",
+          "cost": {
+            "sr_zro": "@salvagecostlargerare"
+          }
+        }
+      }
+    },
+    "_source_file": "12_psionic.txt",
+    "_line_number": 57
+  },
+  "shroud_manifestation": {
+    "shroud_manifestation": {
+      "graphical_culture": "no",
+      "is_space_object": "yes",
+      "max_speed": "@speed_fast",
+      "rotation_speed": "1",
+      "acceleration": "0.2",
+      "modifier": {
+        "ship_evasion_add": "25",
+        "ship_shield_add": "75000",
+        "ship_shield_regen_add_static": "225"
+      },
+      "max_hitpoints": "@titan_hp",
+      "size_multiplier": "16",
+      "fleet_slot_size": "16",
+      "section_slots": {
+        "num_target_locators": "0",
+        "icon": "ship_size_space_monster",
+        "class": "shipclass_military",
+        "is_designable": "no",
+        "components_add_to_cost": "no",
+        "resources": {
+          "category": "ships",
+          "cost": {
+            "sr_zro": "@salvagecostmediumrare"
+          }
+        }
+      }
+    },
+    "_source_file": "12_psionic.txt",
+    "_line_number": 87
+  },
+  "warped_consciousness": {
+    "warped_consciousness": {
+      "graphical_culture": "no",
+      "is_space_object": "yes",
+      "max_speed": "@speed_very_slow",
+      "rotation_speed": "1",
+      "acceleration": "0.1",
+      "modifier": {
+        "ship_evasion_add": "25",
+        "ship_shield_add": "75000",
+        "ship_shield_regen_add_static": "750"
+      },
+      "max_hitpoints": "@titan_hp",
+      "size_multiplier": "32",
+      "fleet_slot_size": "32",
+      "section_slots": {
+        "num_target_locators": "0",
+        "icon": "ship_size_space_monster",
+        "class": "shipclass_military",
+        "is_designable": "no",
+        "components_add_to_cost": "no",
+        "resources": {
+          "category": "ships",
+          "cost": {
+            "sr_zro": "@salvagecostlargerare"
+          }
+        }
+      }
+    },
+    "_source_file": "12_psionic.txt",
+    "_line_number": 117
+  }
+}

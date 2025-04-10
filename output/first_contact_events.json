@@ -1,0 +1,79 @@
+{
+  "first_contact_event": {
+    "first_contact_event": {
+      "id": "first_contact.4000",
+      "title": "first_contact.4000.name",
+      "desc": {
+        "trigger": {
+          "owner": {
+            "has_origin": "origin_payback"
+          }
+        },
+        "text": "first_contact.4000.desc.payback"
+      },
+      "picture": "GFX_evt_worrying_signal",
+      "show_sound": "event_mysterious_signal",
+      "location": "fromfromfrom",
+      "is_triggered_only": "yes",
+      "first_contact": "yes",
+      "immediate": {
+        "set_name": "first_contact.4000.name",
+        "_comments": [
+          "#set_site_progress_locked = yes"
+        ]
+      },
+      "after": {
+        "_comments": [
+          "#set_site_progress_locked = no"
+        ],
+        "hidden_effect": {
+          "fire_on_action": {
+            "on_action": "on_first_contact_started"
+          }
+        }
+      },
+      "option": {
+        "name": {
+          "trigger": {
+            "owner": {
+              "has_origin": "origin_payback"
+            }
+          },
+          "text": "first_contact.4000.a.payback"
+        },
+        "set_first_contact_starting_stage": "yes"
+      }
+    },
+    "_source_file": "first_contact_events.txt",
+    "_line_number": 8605
+  },
+  "country_event": {
+    "country_event": {
+      "id": "first_contact.6000",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "OR": {
+          "is_country_type": "awakened_fallen_empire"
+        },
+        "from": {
+          "is_country_type": "primitive"
+        }
+      },
+      "immediate": {
+        "set_country_flag": "first_contact_completed@from",
+        "set_timed_country_flag": {
+          "flag": "recent_comms_timed",
+          "days": "3600"
+        },
+        "from": {
+          "save_event_target_as": "contact_empire",
+          "set_country_flag": "first_contact_completed@root"
+        },
+        "country_event": {}
+      }
+    },
+    "_source_file": "first_contact_events.txt",
+    "_line_number": 8668
+  }
+}

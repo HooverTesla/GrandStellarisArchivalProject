@@ -1,0 +1,4486 @@
+{
+  "tech_planetary_defenses": {
+    "tech_planetary_defenses": {
+      "cost": "0",
+      "area": "society",
+      "start_tech": "yes",
+      "category": {
+        "tier": "0"
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3
+  },
+  "tech_interplanetary_commerce": {
+    "tech_interplanetary_commerce": {
+      "cost": "0",
+      "area": "society",
+      "start_tech": "yes",
+      "category": {
+        "tier": "0",
+        "potential": {
+          "is_gestalt": "no"
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 17
+  },
+  "tech_space_trading": {
+    "tech_space_trading": {
+      "cost": "@tier1cost3",
+      "area": "society",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight3",
+          "potential": {
+            "is_regular_empire": "yes"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.25",
+              "has_tradition": "tr_prosperity_adopt"
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 35
+  },
+  "tech_interstellar_economics": {
+    "tech_interstellar_economics": {
+      "cost": "@tier3cost1",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "potential": {
+            "is_gestalt": "no"
+          },
+          "weight_modifier": {
+            "factor": "2",
+            "modifier": {
+              "factor": "1.25",
+              "has_tradition": "tr_prosperity_adopt"
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 61
+  },
+  "tech_galactic_markets": {
+    "tech_galactic_markets": {
+      "cost": "@tier4cost1",
+      "area": "society",
+      "tier": "4",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier4weight1",
+          "is_rare": "yes",
+          "_comments": [
+            "# unlocks Galactic Stock Exchange empire wonder"
+          ],
+          "potential": {
+            "is_gestalt": "no"
+          },
+          "weight_modifier": {
+            "factor": "0.5",
+            "modifier": {
+              "factor": "0.25",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {}
+                },
+                "inline_script": {
+                  "script": "technologies/rare_technologies_weight_modifiers",
+                  "TECHNOLOGY": "tech_galactic_markets"
+                },
+                "modifier": {
+                  "factor": "0"
+                }
+              },
+              "ai_weight": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 96
+  },
+  "tech_prescient_data_modeling": {
+    "tech_prescient_data_modeling": {
+      "cost": "@tier3cost1",
+      "area": "society",
+      "category": {
+        "tier": "3",
+        "is_rare": "yes",
+        "ai_update_type": "all",
+        "weight": "0",
+        "weight_modifier": {
+          "factor": "0"
+        },
+        "modifier": {
+          "trade_value_mult": "0.05"
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 132
+  },
+  "tech_industrial_farming": {
+    "tech_industrial_farming": {
+      "cost": "0",
+      "area": "society",
+      "tier": "0",
+      "category": {
+        "start_tech": "yes"
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 154
+  },
+  "tech_eco_simulation": {
+    "tech_eco_simulation": {
+      "cost": "@tier1cost1",
+      "area": "society",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight1",
+          "modifier": {
+            "planet_farmers_food_produces_mult": "0.2",
+            "starbase_constructions_food_produces_mult": "0.10"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.01",
+              "OR": {
+                "is_machine_empire": "yes",
+                "is_lithoid_empire": "yes",
+                "is_individual_machine": "yes",
+                "has_origin": "origin_synthetic_fertility"
+              },
+              "NOR": {
+                "has_country_flag": "non_lithoid_subspecies",
+                "has_valid_civic": "civic_machine_assimilator",
+                "any_owned_planet": {
+                  "OR": {
+                    "num_districts": {
+                      "num_districts": {}
+                    }
+                  }
+                },
+                "modifier": {
+                  "factor": "0.5",
+                  "OR": {
+                    "is_machine_empire": "yes",
+                    "is_lithoid_empire": "yes",
+                    "AND": {
+                      "is_individual_machine": "yes",
+                      "NOT": {}
+                    }
+                  },
+                  "modifier": {
+                    "factor": "2",
+                    "has_relic": "r_pox_sample"
+                  }
+                },
+                "ai_weight": {
+                  "modifier": {
+                    "factor": "1.5",
+                    "has_ethic": "ethic_fanatic_pacifist"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 167
+  },
+  "tech_gene_crops": {
+    "tech_gene_crops": {
+      "cost": "@tier2cost1",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight1",
+          "modifier": {
+            "planet_farmers_food_produces_mult": "0.2",
+            "starbase_constructions_food_produces_mult": "0.10"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.01",
+              "OR": {
+                "is_machine_empire": "yes",
+                "is_lithoid_empire": "yes",
+                "is_individual_machine": "yes",
+                "has_origin": "origin_synthetic_fertility"
+              },
+              "NOR": {
+                "has_country_flag": "non_lithoid_subspecies",
+                "has_valid_civic": "civic_machine_assimilator",
+                "any_owned_planet": {
+                  "OR": {
+                    "num_districts": {
+                      "num_districts": {}
+                    }
+                  }
+                },
+                "modifier": {
+                  "factor": "0.5",
+                  "OR": {
+                    "is_machine_empire": "yes",
+                    "is_lithoid_empire": "yes",
+                    "AND": {
+                      "is_individual_machine": "yes",
+                      "NOT": {}
+                    }
+                  },
+                  "modifier": {
+                    "factor": "2",
+                    "has_relic": "r_pox_sample"
+                  }
+                },
+                "ai_weight": {
+                  "factor": "@farming_ai_weight_factor",
+                  "modifier": {
+                    "factor": "1.5",
+                    "has_ethic": "ethic_fanatic_pacifist"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 239
+  },
+  "tech_nano_vitality_crops": {
+    "tech_nano_vitality_crops": {
+      "cost": "@tier3cost1",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "modifier": {
+            "planet_farmers_food_produces_mult": "0.2",
+            "starbase_constructions_food_produces_mult": "0.10"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.01",
+              "OR": {
+                "is_machine_empire": "yes",
+                "is_lithoid_empire": "yes",
+                "is_individual_machine": "yes",
+                "has_origin": "origin_synthetic_fertility"
+              },
+              "NOR": {
+                "has_country_flag": "non_lithoid_subspecies",
+                "has_valid_civic": "civic_machine_assimilator",
+                "any_owned_planet": {
+                  "OR": {
+                    "num_districts": {
+                      "num_districts": {}
+                    }
+                  }
+                },
+                "modifier": {
+                  "factor": "0.5",
+                  "OR": {
+                    "is_machine_empire": "yes",
+                    "is_lithoid_empire": "yes",
+                    "AND": {
+                      "is_individual_machine": "yes",
+                      "NOT": {}
+                    }
+                  },
+                  "modifier": {
+                    "factor": "2",
+                    "has_relic": "r_pox_sample"
+                  }
+                },
+                "ai_weight": {
+                  "factor": "@farming_ai_weight_factor",
+                  "modifier": {
+                    "factor": "1.5",
+                    "has_ethic": "ethic_fanatic_pacifist"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 312
+  },
+  "tech_nutrient_replication": {
+    "tech_nutrient_replication": {
+      "cost": "@tier4cost3",
+      "area": "society",
+      "tier": "4",
+      "is_rare": "yes",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier4weight3",
+          "modifier": {
+            "planet_jobs_food_produces_mult": "0.15",
+            "starbase_constructions_food_produces_mult": "0.10"
+          },
+          "potential": {
+            "is_machine_empire": "no"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.01",
+              "OR": {
+                "is_machine_empire": "yes",
+                "is_lithoid_empire": "yes",
+                "is_individual_machine": "yes",
+                "has_origin": "origin_synthetic_fertility"
+              },
+              "NOR": {
+                "has_country_flag": "non_lithoid_subspecies",
+                "has_valid_civic": "civic_machine_assimilator",
+                "any_owned_planet": {
+                  "OR": {
+                    "num_districts": {
+                      "num_districts": {}
+                    }
+                  }
+                },
+                "modifier": {
+                  "factor": "0.5",
+                  "OR": {
+                    "is_machine_empire": "yes",
+                    "is_lithoid_empire": "yes",
+                    "AND": {
+                      "is_individual_machine": "yes",
+                      "NOT": {}
+                    }
+                  },
+                  "modifier": {
+                    "factor": "0.50",
+                    "NOR": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {}
+                      },
+                      "inline_script": {
+                        "script": "technologies/rare_technologies_weight_modifiers",
+                        "TECHNOLOGY": "tech_nutrient_replication"
+                      },
+                      "modifier": {
+                        "factor": "2",
+                        "has_relic": "r_pox_sample"
+                      }
+                    },
+                    "ai_weight": {
+                      "factor": "@farming_ai_weight_factor",
+                      "modifier": {
+                        "factor": "1.5",
+                        "has_ethic": "ethic_fanatic_pacifist"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 385
+  },
+  "tech_hydroponics": {
+    "tech_hydroponics": {
+      "cost": "@tier1cost1",
+      "area": "society",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight1",
+          "_comments": [
+            "# unlock hydroponics buildings"
+          ],
+          "weight_modifier": {
+            "factor": "2",
+            "modifier": {
+              "factor": "0.01",
+              "OR": {
+                "is_machine_empire": "yes",
+                "is_lithoid_empire": "yes",
+                "is_individual_machine": "yes",
+                "has_origin": "origin_synthetic_fertility"
+              },
+              "NOR": {
+                "has_country_flag": "non_lithoid_subspecies",
+                "has_valid_civic": "civic_machine_assimilator",
+                "any_owned_planet": {
+                  "OR": {
+                    "num_districts": {
+                      "num_districts": {}
+                    }
+                  }
+                },
+                "modifier": {
+                  "factor": "0.5",
+                  "OR": {
+                    "is_machine_empire": "yes",
+                    "is_lithoid_empire": "yes",
+                    "AND": {
+                      "is_individual_machine": "yes",
+                      "NOT": {}
+                    }
+                  },
+                  "modifier": {
+                    "factor": "2",
+                    "has_relic": "r_pox_sample"
+                  }
+                },
+                "ai_weight": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 473
+  },
+  "tech_food_processing_1": {
+    "tech_food_processing_1": {
+      "cost": "@tier1cost2",
+      "area": "society",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight2",
+          "_comments": [
+            "# unlock food processing facility"
+          ],
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.01",
+              "OR": {
+                "is_machine_empire": "yes",
+                "is_lithoid_empire": "yes",
+                "is_individual_machine": "yes",
+                "has_origin": "origin_synthetic_fertility"
+              },
+              "NOR": {
+                "has_country_flag": "non_lithoid_subspecies",
+                "has_valid_civic": "civic_machine_assimilator",
+                "any_owned_planet": {
+                  "OR": {
+                    "num_districts": {
+                      "num_districts": {}
+                    }
+                  }
+                },
+                "modifier": {
+                  "factor": "0.5",
+                  "OR": {
+                    "is_machine_empire": "yes",
+                    "is_lithoid_empire": "yes",
+                    "AND": {
+                      "is_individual_machine": "yes",
+                      "NOT": {}
+                    }
+                  },
+                  "modifier": {
+                    "factor": "2",
+                    "has_relic": "r_pox_sample"
+                  }
+                },
+                "ai_weight": {
+                  "factor": "@farming_building_ai_weight_factor # leads to food processing building",
+                  "modifier": {
+                    "factor": "2",
+                    "is_catalytic_empire": "yes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 528
+  },
+  "tech_food_processing_2": {
+    "tech_food_processing_2": {
+      "cost": "@tier3cost1",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "weight_modifier": {
+            "factor": "2",
+            "modifier": {
+              "factor": "0.01",
+              "OR": {
+                "is_machine_empire": "yes",
+                "is_lithoid_empire": "yes",
+                "is_individual_machine": "yes",
+                "has_origin": "origin_synthetic_fertility"
+              },
+              "NOR": {
+                "has_country_flag": "non_lithoid_subspecies",
+                "has_valid_civic": "civic_machine_assimilator",
+                "any_owned_planet": {
+                  "OR": {
+                    "num_districts": {
+                      "num_districts": {}
+                    }
+                  }
+                },
+                "modifier": {
+                  "factor": "0.5",
+                  "OR": {
+                    "is_machine_empire": "yes",
+                    "is_lithoid_empire": "yes",
+                    "AND": {
+                      "is_individual_machine": "yes",
+                      "NOT": {}
+                    }
+                  },
+                  "modifier": {
+                    "factor": "2",
+                    "has_relic": "r_pox_sample"
+                  }
+                },
+                "ai_weight": {
+                  "factor": "@farming_building_ai_weight_factor # food processing",
+                  "modifier": {
+                    "factor": "0",
+                    "country_uses_food": "no"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 608
+  },
+  "tech_alien_life_studies": {
+    "tech_alien_life_studies": {
+      "cost": "@tier1cost2",
+      "area": "society",
+      "tier": "1",
+      "category": {
+        "weight": "@tier1weight2",
+        "potential": {
+          "is_regular_empire": "yes"
+        },
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "OR": {
+              "has_ethic": "ethic_xenophile",
+              "AND": {
+                "has_ethic": "ethic_xenophobe",
+                "NOT": {}
+              }
+            },
+            "modifier": {
+              "factor": "3",
+              "OR": {
+                "has_ethic": "ethic_fanatic_xenophile",
+                "AND": {
+                  "has_ethic": "ethic_fanatic_xenophobe",
+                  "NOT": {}
+                }
+              },
+              "modifier": {
+                "factor": "2",
+                "has_relic": "r_pox_sample"
+              }
+            },
+            "ai_weight": {
+              "factor": "@society_research_ai_factor",
+              "modifier": {
+                "factor": "1.25",
+                "OR": {
+                  "has_ethic": "ethic_xenophile",
+                  "AND": {
+                    "has_ethic": "ethic_xenophobe",
+                    "NOT": {}
+                  }
+                },
+                "modifier": {
+                  "factor": "1.5",
+                  "OR": {
+                    "has_ethic": "ethic_fanatic_xenophile",
+                    "AND": {
+                      "has_ethic": "ethic_fanatic_xenophobe",
+                      "NOT": {}
+                    }
+                  },
+                  "modifier": {
+                    "factor": "0",
+                    "NOT": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 874
+  },
+  "tech_colonization_1": {
+    "tech_colonization_1": {
+      "cost": "0",
+      "area": "society",
+      "tier": "0",
+      "category": {
+        "prerequisites": {
+          "start_tech": "yes",
+          "prereqfor_desc": {
+            "ship": {
+              "title": "TECH_UNLOCK_COLONY_SHIP_CONSTRUCTION_TITLE",
+              "desc": "TECH_UNLOCK_COLONY_SHIP_CONSTRUCTION_DESC"
+            }
+          },
+          "weight_modifier": {
+            "factor": "1000"
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 964
+  },
+  "tech_colonization_2": {
+    "tech_colonization_2": {
+      "cost": "@tier1cost3",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight3",
+          "modifier": {
+            "pop_environment_tolerance": "0.05"
+          },
+          "weight_modifier": {},
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 990
+  },
+  "tech_colonization_3": {
+    "tech_colonization_3": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "modifier": {
+            "pop_environment_tolerance": "0.05"
+          },
+          "weight_modifier": {},
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 1012
+  },
+  "tech_colonization_4": {
+    "tech_colonization_4": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight3",
+          "modifier": {
+            "pop_environment_tolerance": "0.05"
+          },
+          "weight_modifier": {},
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 1034
+  },
+  "tech_colonization_5": {
+    "tech_colonization_5": {
+      "cost": "@tier4cost3",
+      "area": "society",
+      "tier": "4",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier4weight3",
+          "modifier": {
+            "pop_environment_tolerance": "0.05"
+          },
+          "weight_modifier": {},
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 1056
+  },
+  "tech_tomb_world_adaption": {
+    "tech_tomb_world_adaption": {
+      "cost": "@tier3cost1",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "is_rare": "yes",
+          "modifier": {
+            "pc_nuked_habitability": "0.2"
+          },
+          "weight_modifier": {
+            "factor": "0.5",
+            "modifier": {
+              "factor": "0.20",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {}
+                },
+                "inline_script": {
+                  "script": "technologies/rare_technologies_weight_modifiers",
+                  "TECHNOLOGY": "tech_tomb_world_adaption"
+                },
+                "modifier": {
+                  "factor": "2",
+                  "any_owned_planet": {
+                    "is_planet_class": "pc_nuked"
+                  }
+                }
+              },
+              "ai_weight": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 1077
+  },
+  "tech_frontier_health": {
+    "tech_frontier_health": {
+      "cost": "@tier1cost2",
+      "area": "society",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight2",
+          "potential": {
+            "is_regular_empire": "yes",
+            "is_individual_machine": "no"
+          },
+          "weight_modifier": {
+            "factor": "2",
+            "modifier": {
+              "factor": "2",
+              "has_country_flag": "payback_researching_gene_clinics"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 1115
+  },
+  "tech_frontier_hospital": {
+    "tech_frontier_hospital": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "potential": {
+            "is_gestalt": "no",
+            "is_individual_machine": "no"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "2",
+              "has_relic": "r_pox_sample"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 1146
+  },
+  "tech_mountain_range": {
+    "tech_mountain_range": {
+      "cost": "@tier2cost2",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight2",
+          "weight_groups": {},
+          "mod_weight_if_group_picked": {
+            "deposit_blockers": "0.5"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "0"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 1182
+  },
+  "tech_volcano": {
+    "tech_volcano": {
+      "cost": "@tier2cost2",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight2",
+          "weight_groups": {},
+          "mod_weight_if_group_picked": {
+            "deposit_blockers": "0.5"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "0"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 1244
+  },
+  "tech_dangerous_wildlife": {
+    "tech_dangerous_wildlife": {
+      "cost": "@tier2cost2",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight2",
+          "weight_groups": {},
+          "mod_weight_if_group_picked": {
+            "deposit_blockers": "0.5"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "0"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 1304
+  },
+  "tech_dense_jungle": {
+    "tech_dense_jungle": {
+      "cost": "@tier1cost2",
+      "area": "society",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight2",
+          "weight_groups": {},
+          "mod_weight_if_group_picked": {
+            "deposit_blockers": "0.5"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "0"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 1363
+  },
+  "tech_quicksand_basin": {
+    "tech_quicksand_basin": {
+      "cost": "@tier1cost2",
+      "area": "society",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight2",
+          "weight_groups": {},
+          "mod_weight_if_group_picked": {
+            "deposit_blockers": "0.5"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "0"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 1422
+  },
+  "tech_noxious_swamp": {
+    "tech_noxious_swamp": {
+      "cost": "@tier1cost2",
+      "area": "society",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight2",
+          "weight_groups": {},
+          "mod_weight_if_group_picked": {
+            "deposit_blockers": "0.5"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "0"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 1481
+  },
+  "tech_massive_glacier": {
+    "tech_massive_glacier": {
+      "cost": "@tier1cost2",
+      "area": "society",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight2",
+          "weight_groups": {},
+          "mod_weight_if_group_picked": {
+            "deposit_blockers": "0.5"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "0"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 1540
+  },
+  "tech_toxic_kelp": {
+    "tech_toxic_kelp": {
+      "cost": "@tier1cost2",
+      "area": "society",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight2",
+          "weight_groups": {},
+          "mod_weight_if_group_picked": {
+            "deposit_blockers": "0.5"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "0"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 1599
+  },
+  "tech_deep_sinkhole": {
+    "tech_deep_sinkhole": {
+      "cost": "@tier1cost2",
+      "area": "society",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight2",
+          "weight_groups": {},
+          "mod_weight_if_group_picked": {
+            "deposit_blockers": "0.5"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "0"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 1658
+  },
+  "tech_terrestrial_sculpting": {
+    "tech_terrestrial_sculpting": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "feature_flags": {},
+          "weight_modifier": {
+            "factor": "1.5\t# terraforming needs to be a bit more common",
+            "modifier": {
+              "factor": "1.25",
+              "has_origin": "origin_life_seeded"
+            }
+          },
+          "ai_weight": {
+            "factor": "@terraforming_tech_ai_factor",
+            "modifier": {
+              "factor": "2",
+              "is_ai": "no #auto-research"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 1722
+  },
+  "tech_ecological_adaptation": {
+    "tech_ecological_adaptation": {
+      "cost": "@tier3cost2",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight2",
+          "feature_flags": {},
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.25",
+              "has_tradition": "tr_expansion_adopt"
+            }
+          },
+          "ai_weight": {
+            "factor": "@terraforming_tech_ai_factor",
+            "modifier": {
+              "factor": "2",
+              "is_ai": "no #auto-research"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 1810
+  },
+  "tech_climate_restoration": {
+    "tech_climate_restoration": {
+      "cost": "@tier4cost1",
+      "area": "society",
+      "tier": "4",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier4weight1",
+          "_comments": [
+            "# unlocks additional terraforming-options"
+          ],
+          "prereqfor_desc": {
+            "diplo_action": {
+              "title": "TECH_UNLOCK_TERRAFORMING_NUKED_CHANGE_TITLE",
+              "desc": "TECH_UNLOCK_TERRAFORMING_NUKED_CHANGE_DESC"
+            }
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.25",
+              "has_tradition": "tr_expansion_adopt"
+            }
+          },
+          "ai_weight": {
+            "factor": "@terraforming_tech_ai_factor",
+            "modifier": {
+              "factor": "5",
+              "any_system_within_border": {
+                "any_system_planet": {
+                  "is_planet_class": "pc_nuked"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 1870
+  },
+  "tech_genome_mapping": {
+    "tech_genome_mapping": {
+      "cost": "@tier1cost1",
+      "area": "society",
+      "tier": "1",
+      "category": {
+        "weight": "@tier1weight1",
+        "gateway": "biological",
+        "modifier": {
+          "pop_growth_speed": "0.10"
+        },
+        "potential": {
+          "OR": {
+            "is_machine_empire": "no",
+            "has_civic": "civic_machine_guided_sapience"
+          }
+        },
+        "weight_modifier": {
+          "factor": "1.5\t# genetech needs to be a bit more common",
+          "modifier": {
+            "factor": "2",
+            "AND": {
+              "OR": {
+                "is_individual_machine": "yes",
+                "has_origin": "origin_synthetic_fertility"
+              },
+              "any_owned_species": {
+                "is_organic_species": "yes"
+              }
+            }
+          }
+        },
+        "ai_weight": {
+          "factor": "@pop_growth_tech_ai_factor"
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 1924
+  },
+  "tech_vitality_boosters": {
+    "tech_vitality_boosters": {
+      "cost": "@tier2cost2",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight2",
+          "modifier": {
+            "leader_lifespan_add": "10"
+          },
+          "potential": {
+            "OR": {
+              "is_machine_empire": "no",
+              "has_civic": "civic_machine_assimilator"
+            }
+          },
+          "weight_modifier": {
+            "factor": "1.5\t# genetech needs to be a bit more common",
+            "modifier": {
+              "factor": "2",
+              "AND": {
+                "is_individual_machine": "yes",
+                "any_owned_species": {
+                  "is_organic_species": "yes"
+                }
+              }
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 1987
+  },
+  "tech_epigenetic_triggers": {
+    "tech_epigenetic_triggers": {
+      "cost": "@tier2cost2",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight2",
+          "feature_flags": {},
+          "potential": {
+            "NOR": {
+              "has_valid_civic": "civic_fanatic_purifiers",
+              "is_natural_design_empire": "yes",
+              "_comments": [
+                "#has_valid_civic = civic_machine_terminator # covered by not being machine",
+                "#has_valid_civic = civic_hive_devouring_swarm # can uplift to make delicious"
+              ]
+            },
+            "OR": {
+              "is_machine_empire": "no",
+              "has_civic": "civic_machine_guided_sapience"
+            }
+          },
+          "prereqfor_desc": {
+            "custom": {
+              "title": "TECH_UNLOCK_EPIGENETICS_TITLE",
+              "desc": "TECH_UNLOCK_EPIGENETICS_DESC"
+            }
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0",
+              "NOR": {
+                "has_country_flag": "found_presapients",
+                "any_planet_within_border": {
+                  "any_owned_pop": {
+                    "is_sapient": "no"
+                  }
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "1.5",
+              "has_ethic": "ethic_fanatic_xenophile"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 2045
+  },
+  "tech_cloning": {
+    "tech_cloning": {
+      "cost": "@tier2cost2",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight2",
+          "modifier": {
+            "pop_growth_speed": "0.10"
+          },
+          "potential": {
+            "OR": {
+              "is_machine_empire": "no",
+              "has_civic": "civic_machine_assimilator"
+            },
+            "is_natural_design_empire": "no"
+          },
+          "weight_modifier": {
+            "factor": "1.5\t# genetech needs to be a bit more common",
+            "modifier": {
+              "factor": "2",
+              "AND": {
+                "is_individual_machine": "yes",
+                "any_owned_species": {
+                  "is_organic_species": "yes"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "factor": "@pop_growth_tech_ai_factor"
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 2154
+  },
+  "tech_gene_banks": {
+    "tech_gene_banks": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "potential": {
+            "OR": {
+              "is_machine_empire": "no",
+              "has_civic": "civic_machine_assimilator"
+            },
+            "is_natural_design_empire": "no"
+          },
+          "weight_modifier": {
+            "factor": "0.5",
+            "modifier": {
+              "factor": "0.20",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {}
+                    },
+                    "inline_script": {
+                      "script": "technologies/rare_technologies_weight_modifiers",
+                      "TECHNOLOGY": "tech_gene_banks"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 2211
+  },
+  "tech_gene_seed_purification": {
+    "tech_gene_seed_purification": {
+      "cost": "@tier4cost1",
+      "area": "society",
+      "category": {
+        "tier": "4",
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "@tier4weight1",
+          "_comments": [
+            "# unlocks gene-warrior armies"
+          ],
+          "potential": {
+            "NOR": {
+              "is_machine_empire": "yes",
+              "is_natural_design_empire": "yes",
+              "is_individual_machine": "yes"
+            }
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.10",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {}
+                },
+                "inline_script": {
+                  "script": "technologies/rare_technologies_weight_modifiers",
+                  "TECHNOLOGY": "tech_gene_seed_purification"
+                },
+                "modifier": {
+                  "factor": "1.25",
+                  "OR": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {}
+                    },
+                    "modifier": {
+                      "factor": "2",
+                      "AND": {
+                        "is_individual_machine": "yes",
+                        "any_owned_species": {
+                          "is_organic_species": "yes"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 2264
+  },
+  "tech_morphogenetic_field_mastery": {
+    "tech_morphogenetic_field_mastery": {
+      "cost": "@tier4cost1",
+      "area": "society",
+      "category": {
+        "tier": "4",
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "@tier4weight1",
+          "_comments": [
+            "# unlocks xeno-armies"
+          ],
+          "potential": {
+            "NOR": {
+              "is_machine_empire": "yes",
+              "is_natural_design_empire": "yes",
+              "is_individual_machine": "yes"
+            }
+          },
+          "weight_modifier": {
+            "factor": "0.5",
+            "modifier": {
+              "factor": "0.20",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {}
+                },
+                "inline_script": {
+                  "script": "technologies/rare_technologies_weight_modifiers",
+                  "TECHNOLOGY": "tech_morphogenetic_field_mastery"
+                },
+                "modifier": {
+                  "factor": "1.25",
+                  "OR": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {}
+                      },
+                      "modifier": {
+                        "factor": "1.25",
+                        "OR": {
+                          "has_trait_in_council": {
+                            "has_trait_in_council": {}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 2337
+  },
+  "tech_gene_tailoring": {
+    "tech_gene_tailoring": {
+      "cost": "@tier3cost1",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "gateway": "biological",
+          "modifier": {
+            "description": "tech_gene_tailoring_modifier_desc",
+            "description_parameters": {
+              "POINTS": "@tech_gene_tailoring_POINTS"
+            },
+            "BIOLOGICAL_species_trait_points_add": "@tech_gene_tailoring_POINTS"
+          },
+          "feature_flags": {},
+          "potential": {
+            "OR": {
+              "is_machine_empire": "no",
+              "has_civic": "civic_machine_servitor"
+            },
+            "is_natural_design_empire": "no"
+          },
+          "weight_modifier": {
+            "factor": "2.0\t# genetech needs to be a bit more common",
+            "modifier": {
+              "factor": "0",
+              "is_individual_machine": "yes",
+              "NOT": {
+                "any_owned_species": {
+                  "is_organic_species": "yes"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "2",
+              "has_origin": "origin_necrophage",
+              "has_trait": "trait_necrophage"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 2408
+  },
+  "tech_glandular_acclimation": {
+    "tech_glandular_acclimation": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight3",
+          "feature_flags": {},
+          "potential": {
+            "OR": {
+              "is_machine_empire": "no",
+              "has_civic": "civic_machine_servitor"
+            },
+            "is_natural_design_empire": "no"
+          },
+          "weight_modifier": {
+            "factor": "1.5\t# genetech needs to be a bit more common",
+            "modifier": {
+              "factor": "2",
+              "AND": {
+                "is_individual_machine": "yes",
+                "any_owned_species": {
+                  "is_organic_species": "yes"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "2",
+              "has_origin": "origin_necrophage",
+              "has_trait": "trait_necrophage"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 2478
+  },
+  "tech_lithoid_transgenesis": {
+    "tech_lithoid_transgenesis": {
+      "cost": "@tier5cost1",
+      "area": "society",
+      "tier": "5",
+      "is_rare": "yes",
+      "weight": "@tier5weight1",
+      "category": {
+        "gateway": "biological",
+        "prereqfor_desc": {
+          "custom": {
+            "title": "TECH_UNLOCK_LITHOID_GENETICS_TITLE",
+            "desc": "TECH_UNLOCK_LITHOID_GENETICS_DESC"
+          }
+        },
+        "weight_modifier": {
+          "factor": "2",
+          "modifier": {
+            "factor": "1.5",
+            "has_ethic": "ethic_fanatic_xenophile"
+          },
+          "inline_script": {
+            "script": "technologies/rare_technologies_weight_modifiers",
+            "TECHNOLOGY": "tech_lithoid_transgenesis"
+          }
+        },
+        "ai_weight": {
+          "modifier": {
+            "factor": "1.5",
+            "has_ethic": "ethic_fanatic_xenophile"
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 2538
+  },
+  "tech_plantoid_transgenesis": {
+    "tech_plantoid_transgenesis": {
+      "cost": "@tier5cost1",
+      "area": "society",
+      "tier": "5",
+      "is_rare": "yes",
+      "weight": "@tier5weight1",
+      "category": {
+        "gateway": "biological",
+        "prereqfor_desc": {
+          "custom": {
+            "title": "TECH_UNLOCK_PLANTOID_GENETICS_TITLE",
+            "desc": "TECH_UNLOCK_PLANTOID_GENETICS_DESC"
+          }
+        },
+        "weight_modifier": {
+          "factor": "2",
+          "modifier": {
+            "factor": "1.5",
+            "has_ethic": "ethic_fanatic_xenophile"
+          },
+          "inline_script": {
+            "script": "technologies/rare_technologies_weight_modifiers",
+            "TECHNOLOGY": "tech_plantoid_transgenesis"
+          }
+        },
+        "ai_weight": {
+          "modifier": {
+            "factor": "1.5",
+            "has_ethic": "ethic_fanatic_xenophile"
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 2617
+  },
+  "tech_leviathan_transgenesis": {
+    "tech_leviathan_transgenesis": {
+      "cost": "@tier5cost1",
+      "area": "society",
+      "tier": "5",
+      "is_rare": "yes",
+      "weight": "@tier5weight1",
+      "category": {
+        "gateway": "biological",
+        "prereqfor_desc": {
+          "custom": {
+            "title": "TECH_UNLOCK_LEVIATHAN_GENETICS_TITLE",
+            "desc": "TECH_UNLOCK_LEVIATHAN_GENETICS_DESC"
+          }
+        },
+        "weight_modifier": {
+          "factor": "2",
+          "modifier": {
+            "factor": "1.5",
+            "has_ethic": "ethic_fanatic_xenophile"
+          },
+          "inline_script": {
+            "script": "technologies/rare_technologies_weight_modifiers",
+            "TECHNOLOGY": "tech_leviathan_transgenesis"
+          }
+        },
+        "ai_weight": {
+          "modifier": {
+            "factor": "1.5",
+            "has_ethic": "ethic_fanatic_xenophile"
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 2699
+  },
+  "tech_gene_expressions": {
+    "tech_gene_expressions": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "category": {
+        "tier": "3",
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "@tier3weight3",
+          "prereqfor_desc": {
+            "custom": {
+              "title": "TECH_UNLOCK_GENE_EXPRESSIONS_TITLE",
+              "desc": "TECH_UNLOCK_GENE_EXPRESSIONS_DESC"
+            }
+          },
+          "potential": {
+            "OR": {
+              "NOR": {
+                "is_machine_empire": "yes",
+                "is_individual_machine": "yes"
+              },
+              "has_civic": "civic_machine_servitor"
+            },
+            "NOR": {
+              "has_valid_civic": "civic_hive_natural_design"
+            }
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.50",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {}
+                    },
+                    "inline_script": {
+                      "script": "technologies/rare_technologies_weight_modifiers",
+                      "TECHNOLOGY": "tech_gene_expressions"
+                    },
+                    "modifier": {
+                      "factor": "2",
+                      "has_relic": "r_pox_sample"
+                    }
+                  },
+                  "ai_weight": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 2776
+  },
+  "tech_selected_lineages": {
+    "tech_selected_lineages": {
+      "cost": "@tier3cost2",
+      "area": "society",
+      "category": {
+        "tier": "3",
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "@tier3weight2",
+          "_comments": [
+            "# Modifiers from this tech is added through a policy-option"
+          ],
+          "potential": {
+            "NOT": {
+              "is_machine_empire": "yes"
+            }
+          },
+          "weight_modifier": {
+            "factor": "0.5",
+            "modifier": {
+              "factor": "0.50",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {}
+                    },
+                    "modifier": {
+                      "factor": "0.5",
+                      "is_individual_machine": "yes",
+                      "any_owned_species": {
+                        "is_organic_species": "no"
+                      }
+                    },
+                    "inline_script": {
+                      "script": "technologies/rare_technologies_weight_modifiers",
+                      "TECHNOLOGY": "tech_selected_lineages"
+                    }
+                  },
+                  "ai_weight": {
+                    "modifier": {
+                      "factor": "0",
+                      "has_ethic": "ethic_fanatic_egalitarian"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 2836
+  },
+  "tech_capacity_boosters": {
+    "tech_capacity_boosters": {
+      "cost": "@tier4cost3",
+      "area": "society",
+      "category": {
+        "tier": "4",
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "@tier4weight3",
+          "_comments": [
+            "# Modifiers from this tech is added through a policy-option"
+          ],
+          "potential": {
+            "NOR": {
+              "is_machine_empire": "yes",
+              "is_natural_design_empire": "yes"
+            }
+          },
+          "weight_modifier": {
+            "factor": "0.5",
+            "modifier": {
+              "factor": "0.20",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {}
+                    },
+                    "modifier": {
+                      "factor": "0.5",
+                      "is_individual_machine": "yes",
+                      "any_owned_species": {
+                        "is_organic_species": "no"
+                      }
+                    },
+                    "inline_script": {
+                      "script": "technologies/rare_technologies_weight_modifiers",
+                      "TECHNOLOGY": "tech_capacity_boosters"
+                    }
+                  },
+                  "ai_weight": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 2902
+  },
+  "tech_regenerative_hull_tissue": {
+    "tech_regenerative_hull_tissue": {
+      "area": "society",
+      "cost": "@tier3cost2",
+      "tier": "3",
+      "is_rare": "yes",
+      "category": {
+        "ai_update_type": "military",
+        "weight": "@tier3weight2",
+        "weight_modifier": {
+          "factor": "0\t\t# Can only be reverse engineered"
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 2958
+  },
+  "tech_doctrine_fleet_size_1": {
+    "tech_doctrine_fleet_size_1": {
+      "cost": "@tier1cost1",
+      "area": "society",
+      "tier": "1",
+      "category": {
+        "weight": "@tier1weight1",
+        "modifier": {
+          "command_limit_add": "20"
+        },
+        "weight_modifier": {
+          "factor": "3",
+          "modifier": {
+            "factor": "2",
+            "is_militarist": "yes"
+          }
+        },
+        "ai_weight": {
+          "modifier": {
+            "factor": "2",
+            "is_militarist": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 2981
+  },
+  "tech_doctrine_fleet_size_2": {
+    "tech_doctrine_fleet_size_2": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "modifier": {
+            "command_limit_add": "20"
+          },
+          "weight_modifier": {
+            "factor": "3",
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3011
+  },
+  "tech_doctrine_fleet_size_3": {
+    "tech_doctrine_fleet_size_3": {
+      "cost": "@tier3cost2",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight2",
+          "modifier": {
+            "command_limit_add": "20"
+          },
+          "weight_modifier": {
+            "factor": "3",
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3042
+  },
+  "tech_doctrine_fleet_size_4": {
+    "tech_doctrine_fleet_size_4": {
+      "cost": "@tier4cost1",
+      "area": "society",
+      "tier": "4",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier4weight1",
+          "modifier": {
+            "command_limit_add": "20"
+          },
+          "weight_modifier": {
+            "factor": "3",
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3073
+  },
+  "tech_doctrine_fleet_size_5": {
+    "tech_doctrine_fleet_size_5": {
+      "cost": "@tier5cost3",
+      "area": "society",
+      "tier": "5",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier5weight3",
+          "modifier": {
+            "command_limit_add": "20"
+          },
+          "weight_modifier": {
+            "factor": "3",
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3104
+  },
+  "tech_interstellar_fleet_traditions": {
+    "tech_interstellar_fleet_traditions": {
+      "cost": "@tier2cost2",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "weight": "@tier2weight2",
+        "weight_modifier": {
+          "factor": "3",
+          "modifier": {
+            "factor": "2",
+            "is_militarist": "yes"
+          }
+        },
+        "ai_weight": {
+          "modifier": {
+            "factor": "2",
+            "is_militarist": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3134
+  },
+  "tech_refit_standards": {
+    "tech_refit_standards": {
+      "cost": "@tier3cost1",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "modifier": {
+            "starbase_shipyard_build_speed_mult": "0.10",
+            "ships_upkeep_mult": "-0.05"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          },
+          "technology_swap": {
+            "name": "tech_refit_standards_beastmasters",
+            "inherit_icon": "no",
+            "inherit_effects": "no",
+            "trigger": {
+              "is_beastmasters_empire": "yes"
+            },
+            "modifier": {
+              "starbase_shipyard_space_fauna_build_speed_mult": "0.10",
+              "space_fauna_ship_upkeep_mult": "-0.05"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3164
+  },
+  "tech_command_matrix": {
+    "tech_command_matrix": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight3",
+          "modifier": {
+            "ship_fire_rate_mult": "0.05"
+          },
+          "weight_modifier": {
+            "factor": "3",
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3208
+  },
+  "tech_doctrine_navy_size_1": {
+    "tech_doctrine_navy_size_1": {
+      "cost": "@tier1cost2",
+      "area": "society",
+      "tier": "1",
+      "category": {
+        "weight": "@tier1weight2",
+        "modifier": {
+          "country_naval_cap_add": "25"
+        },
+        "weight_modifier": {
+          "factor": "3",
+          "modifier": {
+            "factor": "2",
+            "is_militarist": "yes"
+          }
+        },
+        "ai_weight": {
+          "modifier": {
+            "factor": "2",
+            "is_militarist": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3239
+  },
+  "tech_doctrine_navy_size_2": {
+    "tech_doctrine_navy_size_2": {
+      "cost": "@tier2cost2",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight2",
+          "modifier": {
+            "country_naval_cap_add": "25"
+          },
+          "weight_modifier": {
+            "factor": "10",
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3269
+  },
+  "tech_doctrine_navy_size_3": {
+    "tech_doctrine_navy_size_3": {
+      "cost": "@tier3cost1",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "modifier": {
+            "country_naval_cap_add": "25"
+          },
+          "weight_modifier": {
+            "factor": "3",
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3300
+  },
+  "tech_doctrine_navy_size_4": {
+    "tech_doctrine_navy_size_4": {
+      "cost": "@tier4cost3",
+      "area": "society",
+      "tier": "4",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier4weight3",
+          "modifier": {
+            "country_naval_cap_add": "25"
+          },
+          "weight_modifier": {
+            "factor": "3",
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3331
+  },
+  "tech_centralized_command": {
+    "tech_centralized_command": {
+      "cost": "@tier3cost2",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "weight": "@tier3weight2",
+        "_comments": [
+          "# unlocks military academy"
+        ],
+        "modifier": {
+          "country_occupation_armies_add": "2"
+        },
+        "weight_modifier": {
+          "modifier": {
+            "factor": "2",
+            "is_militarist": "yes"
+          }
+        },
+        "ai_weight": {
+          "modifier": {
+            "factor": "2",
+            "is_militarist": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3366
+  },
+  "tech_combat_training": {
+    "tech_combat_training": {
+      "cost": "@tier3cost1",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "modifier": {
+            "army_attack_damage_mult": "0.15",
+            "army_attack_morale_mult": "0.15"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3396
+  },
+  "tech_ground_defense_planning": {
+    "tech_ground_defense_planning": {
+      "cost": "@tier1cost2",
+      "area": "society",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight2",
+          "modifier": {
+            "army_defense_damage_mult": "0.33",
+            "show_only_custom_tooltip": "no",
+            "custom_tooltip": "ADD_NAVAL_CAPACITY_FROM_SOLDIERS"
+          },
+          "weight_modifier": {
+            "factor": "2",
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3428
+  },
+  "tech_global_defense_grid": {
+    "tech_global_defense_grid": {
+      "cost": "@tier2cost1",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight1",
+          "_comments": [
+            "# unlocks fortress"
+          ],
+          "modifier": {
+            "army_defense_health_mult": "0.25"
+          },
+          "weight_modifier": {
+            "factor": "2",
+            "modifier": {
+              "factor": "1.5",
+              "is_specialist_subject_type": {}
+            },
+            "ai_weight": {
+              "modifier": {
+                "factor": "2",
+                "is_militarist": "yes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3462
+  },
+  "tech_psionic_theory": {
+    "tech_psionic_theory": {
+      "cost": "@tier3cost1",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "is_rare": "yes",
+        "weight": "@tier3weight1",
+        "is_reverse_engineerable": "no",
+        "gateway": "psionics",
+        "potential": {
+          "OR": {
+            "NOT": {
+              "is_active_resolution": "resolution_galacticstudies_extradimensional_experimentation",
+              "has_relic": "r_zro_crystal"
+            }
+          },
+          "modifier": {
+            "empire_size_pops_mult": "-0.10"
+          },
+          "weight_modifier": {
+            "factor": "0.5",
+            "modifier": {
+              "factor": "2",
+              "OR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {}
+                  },
+                  "modifier": {
+                    "factor": "2",
+                    "OR": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {
+                          "has_trait_in_council": {
+                            "has_trait_in_council": {
+                              "has_trait_in_council": {}
+                            },
+                            "inline_script": {
+                              "script": "technologies/rare_technologies_weight_modifiers",
+                              "TECHNOLOGY": "tech_psionic_theory"
+                            },
+                            "modifier": {
+                              "factor": "0",
+                              "AND": {
+                                "is_materialist": "yes",
+                                "NOR": {
+                                  "has_tier1or2or3_in_council": {
+                                    "has_councilor": {
+                                      "any_owned_pop": {
+                                        "OR": {
+                                          "pop_has_trait": "trait_latent_psionic"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "ai_weight": {
+                                "modifier": {
+                                  "factor": "2",
+                                  "is_ai": "no #auto-research"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3504
+  },
+  "tech_telepathy": {
+    "tech_telepathy": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "@tier3weight3",
+          "is_reverse_engineerable": "no",
+          "potential": {
+            "NOT": {},
+            "weight_modifier": {
+              "factor": "0.5",
+              "modifier": {
+                "factor": "0.50",
+                "NOT": {
+                  "has_trait_in_council": {}
+                },
+                "inline_script": {
+                  "script": "technologies/rare_technologies_weight_modifiers",
+                  "TECHNOLOGY": "tech_telepathy"
+                },
+                "modifier": {
+                  "factor": "4",
+                  "OR": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {}
+                      }
+                    },
+                    "ai_weight": {
+                      "modifier": {
+                        "factor": "5",
+                        "is_spiritualist": "yes"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3620
+  },
+  "tech_precognition_interface": {
+    "tech_precognition_interface": {
+      "cost": "@tier4cost2",
+      "area": "society",
+      "tier": "4",
+      "category": {
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "@tier4weight2",
+          "is_reverse_engineerable": "no",
+          "_comments": [
+            "# unlocks precognitive interface-component, combat-computer granting evasion to ships"
+          ],
+          "prereqfor_desc": {
+            "hide_prereq_for_desc": "component",
+            "custom": {
+              "title": "TECH_UNLOCK_COMBAT_COMPUTER_PRECOG_TITLE",
+              "desc": "TECH_UNLOCK_COMBAT_COMPUTER_PRECOG_DESC"
+            }
+          },
+          "potential": {
+            "NOT": {},
+            "weight_modifier": {
+              "factor": "0.5",
+              "modifier": {
+                "factor": "0.50",
+                "NOT": {
+                  "has_trait_in_council": {}
+                },
+                "inline_script": {
+                  "script": "technologies/rare_technologies_weight_modifiers",
+                  "TECHNOLOGY": "tech_precognition_interface"
+                },
+                "modifier": {
+                  "factor": "2",
+                  "OR": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {}
+                      }
+                    },
+                    "ai_weight": {
+                      "modifier": {
+                        "factor": "2",
+                        "is_militarist": "yes"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3689
+  },
+  "tech_thought_enforcement": {
+    "tech_thought_enforcement": {
+      "cost": "@tier4cost2",
+      "area": "society",
+      "tier": "4",
+      "category": {
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "@tier4weight2",
+          "is_reverse_engineerable": "no",
+          "_comments": [
+            "# Unlocks thought enforcement edict"
+          ],
+          "potential": {
+            "NOT": {},
+            "weight_modifier": {
+              "factor": "0.5",
+              "modifier": {
+                "factor": "0.50",
+                "NOT": {
+                  "has_trait_in_council": {}
+                },
+                "inline_script": {
+                  "script": "technologies/rare_technologies_weight_modifiers",
+                  "TECHNOLOGY": "tech_thought_enforcement"
+                },
+                "modifier": {
+                  "factor": "2",
+                  "OR": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {}
+                      }
+                    },
+                    "ai_weight": {
+                      "modifier": {
+                        "factor": "2",
+                        "is_authoritarian": "yes"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3762
+  },
+  "tech_psi_jump_drive_1": {
+    "tech_psi_jump_drive_1": {
+      "cost": "@tier5cost2",
+      "area": "society",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "is_dangerous": "yes",
+        "prerequisites": {
+          "weight": "@tier5weight2",
+          "is_dangerous": "yes",
+          "is_reverse_engineerable": "no",
+          "feature_flags": {},
+          "prereqfor_desc": {
+            "component": {
+              "title": "TECH_UNLOCK_PSI_JUMPDRIVE_1_TITLE",
+              "desc": "TECH_UNLOCK_PSI_JUMPDRIVE_1_DESC"
+            }
+          },
+          "potential": {
+            "NOT": {},
+            "weight_modifier": {
+              "factor": "0.1",
+              "modifier": {
+                "factor": "0.1",
+                "NOR": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {
+                          "has_trait_in_council": {
+                            "has_trait_in_council": {
+                              "has_trait_in_council": {}
+                            },
+                            "inline_script": {
+                              "script": "technologies/rare_technologies_weight_modifiers",
+                              "TECHNOLOGY": "tech_psi_jump_drive_1"
+                            },
+                            "modifier": {
+                              "factor": "@ap_grasp_the_void_travel_tech",
+                              "has_country_flag": "jaunted_traveler_secret_revealed"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3836
+  },
+  "tech_galactic_ambitions": {
+    "tech_galactic_ambitions": {
+      "cost": "@tier2cost2",
+      "area": "society",
+      "category": {
+        "tier": "2",
+        "weight": "@tier2weight2",
+        "modifier": {
+          "country_starbase_capacity_add": "2"
+        },
+        "weight_modifier": {
+          "modifier": {
+            "factor": "0"
+          }
+        },
+        "ai_weight": {
+          "modifier": {
+            "factor": "2",
+            "is_militarist": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3903
+  },
+  "tech_manifest_destiny": {
+    "tech_manifest_destiny": {
+      "cost": "@tier4cost2",
+      "area": "society",
+      "category": {
+        "tier": "4",
+        "prerequisites": {
+          "weight": "@tier4weight2",
+          "modifier": {
+            "country_starbase_capacity_add": "2"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "2",
+              "has_ethic": "ethic_fanatic_militarist"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3944
+  },
+  "tech_interstellar_campaigns": {
+    "tech_interstellar_campaigns": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "category": {
+        "tier": "2",
+        "weight": "@tier2weight3",
+        "prerequisites": {
+          "modifier": {
+            "country_claim_influence_cost_mult": "-0.1",
+            "country_war_exhaustion_mult": "-0.1"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "2",
+              "is_militarist": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 3989
+  },
+  "tech_galactic_campaigns": {
+    "tech_galactic_campaigns": {
+      "cost": "@tier4cost1",
+      "area": "society",
+      "category": {
+        "tier": "4",
+        "weight": "@tier4weight1",
+        "prerequisites": {
+          "modifier": {
+            "country_claim_influence_cost_mult": "-0.1",
+            "country_war_exhaustion_mult": "-0.1"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "2",
+              "has_ethic": "ethic_fanatic_militarist"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4039
+  },
+  "tech_planetary_government": {
+    "tech_planetary_government": {
+      "cost": "@tier0cost1",
+      "area": "society",
+      "tier": "0",
+      "category": {
+        "start_tech": "yes",
+        "_comments": [
+          "# unlocks Planetary Outpost"
+        ],
+        "starting_potential": {
+          "is_low_tech_start": "no # So Broken Shackles origin players don't start with it"
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4094
+  },
+  "tech_planetary_unification": {
+    "tech_planetary_unification": {
+      "cost": "@tier1cost1",
+      "area": "society",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight1",
+          "gateway": "capital",
+          "feature_flags": {},
+          "_comments": [
+            "# also unlocks planet-happiness edict and gives a one time Unity award"
+          ],
+          "modifier": {
+            "country_unity_produces_mult": "0.05",
+            "show_only_custom_tooltip": "no",
+            "custom_tooltip": "tech_planetary_unification_effect"
+          },
+          "weight_modifier": {
+            "factor": "4",
+            "modifier": {
+              "factor": "0.75",
+              "NOT": {
+                "OR": {
+                  "has_ethic": "ethic_fanatic_pacifist"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "factor": "@capital_tech_ai_factor",
+            "modifier": {
+              "factor": "1.5",
+              "has_ethic": "ethic_fanatic_authoritarian"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4114
+  },
+  "tech_colonial_centralization": {
+    "tech_colonial_centralization": {
+      "cost": "@tier2cost2",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight2",
+          "gateway": "capital",
+          "_comments": [
+            "# unlocks Planetary Capital",
+            "# unlocks production-targets edict"
+          ],
+          "modifier": {
+            "country_official_cap_add": "1",
+            "country_commander_cap_add": "1",
+            "country_scientist_cap_add": "1"
+          },
+          "weight_modifier": {
+            "factor": "4"
+          },
+          "ai_weight": {
+            "factor": "@capital_tech_ai_factor"
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4173
+  },
+  "tech_galactic_administration": {
+    "tech_galactic_administration": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight3",
+          "gateway": "capital\t# unlocks Empire Capital-Complex",
+          "modifier": {
+            "country_government_civic_points_add": "1"
+          },
+          "weight_modifier": {
+            "factor": "4"
+          },
+          "ai_weight": {
+            "factor": "@capital_tech_ai_factor"
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4203
+  },
+  "tech_planetary_infrastructure_1": {
+    "tech_planetary_infrastructure_1": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "gateway": "infrastructure",
+          "modifier": {
+            "planet_max_buildings_add": "1",
+            "planet_colony_development_speed_mult": "0.25",
+            "habitat_max_districts_add": "1"
+          },
+          "weight_modifier": {
+            "factor": "4"
+          },
+          "ai_weight": {
+            "factor": "@building_slots_ai_tech_factor"
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4228
+  },
+  "tech_planetary_infrastructure_2": {
+    "tech_planetary_infrastructure_2": {
+      "cost": "@tier4cost3",
+      "area": "society",
+      "tier": "4",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier4weight3",
+          "modifier": {
+            "planet_max_buildings_add": "1",
+            "planet_colony_development_speed_mult": "0.25",
+            "habitat_max_districts_add": "1"
+          },
+          "weight_modifier": {
+            "factor": "4"
+          },
+          "ai_weight": {
+            "factor": "@building_slots_ai_tech_factor"
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4254
+  },
+  "tech_subdermal_stimulation": {
+    "tech_subdermal_stimulation": {
+      "cost": "@tier2cost2",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight2",
+          "is_rare": "yes",
+          "_comments": [
+            "# unlocks Chemical Bliss living standard"
+          ],
+          "feature_flags": {},
+          "potential": {
+            "NOR": {
+              "has_ethic": "ethic_gestalt_consciousness",
+              "has_civic": "civic_dystopian_society",
+              "is_individual_machine": "yes"
+            }
+          },
+          "weight_modifier": {
+            "factor": "0.5",
+            "modifier": {
+              "factor": "2",
+              "has_relic": "r_pox_sample"
+            },
+            "inline_script": {
+              "script": "technologies/rare_technologies_weight_modifiers",
+              "TECHNOLOGY": "tech_subdermal_stimulation"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "3",
+              "NOR": {
+                "has_ethic": "ethic_fanatic_egalitarian"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4280
+  },
+  "tech_tracking_implants": {
+    "tech_tracking_implants": {
+      "area": "society",
+      "cost": "@tier4cost2",
+      "tier": "4",
+      "category": {
+        "prerequisites": {
+          "is_rare": "yes",
+          "weight": "@tier4weight2",
+          "_comments": [
+            "# Unlocks tracking implants edict"
+          ],
+          "weight_modifier": {
+            "factor": "0.5",
+            "modifier": {
+              "factor": "0.20",
+              "NOR": {
+                "has_modifier": "curator_insight",
+                "has_trait_in_council": {
+                  "has_trait_in_council": {}
+                },
+                "modifier": {
+                  "factor": "2",
+                  "is_materialist": "yes",
+                  "is_authoritarian": "yes"
+                },
+                "inline_script": {
+                  "script": "technologies/rare_technologies_weight_modifiers",
+                  "TECHNOLOGY": "tech_tracking_implants"
+                }
+              },
+              "ai_weight": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4332
+  },
+  "tech_global_production_strategy": {
+    "tech_global_production_strategy": {
+      "cost": "@tier3cost1",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "_comments": [
+            "# unlocks Ministry of Production"
+          ],
+          "weight_modifier": {
+            "factor": "1.5",
+            "modifier": {
+              "factor": "1.5",
+              "is_specialist_subject_type": {}
+            },
+            "ai_weight": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4371
+  },
+  "tech_adaptive_bureaucracy": {
+    "tech_adaptive_bureaucracy": {
+      "cost": "@tier1cost2",
+      "area": "society",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight2",
+          "gateway": "espionage",
+          "modifier": {
+            "country_edict_fund_add": "20"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5"
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4404
+  },
+  "tech_effective_bureaucracy": {
+    "tech_effective_bureaucracy": {
+      "cost": "@tier2cost1",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight1",
+          "potential": {
+            "is_gestalt": "no"
+          },
+          "modifier": {
+            "country_edict_fund_add": "20"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5"
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4443
+  },
+  "tech_colonial_bureaucracy": {
+    "tech_colonial_bureaucracy": {
+      "cost": "@tier2cost1",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight1",
+          "gateway": "espionage",
+          "modifier": {
+            "country_edict_fund_add": "20",
+            "add_base_country_intel": "10"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5"
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4484
+  },
+  "tech_galactic_bureaucracy": {
+    "tech_galactic_bureaucracy": {
+      "cost": "@tier3cost1",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "modifier": {
+            "country_edict_fund_add": "20",
+            "add_base_country_intel": "10"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5"
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4523
+  },
+  "tech_living_state": {
+    "tech_living_state": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "potential": {
+            "NOT": {},
+            "modifier": {
+              "pop_factions_produces_mult": "0.1"
+            },
+            "weight_modifier": {
+              "modifier": {
+                "factor": "1.25",
+                "OR": {
+                  "has_ethic": "ethic_fanatic_authoritarian"
+                }
+              }
+            },
+            "ai_weight": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4563
+  },
+  "tech_collective_self": {
+    "tech_collective_self": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight3",
+          "modifier": {
+            "country_official_cap_add": "1",
+            "country_commander_cap_add": "1",
+            "country_scientist_cap_add": "1",
+            "external_leader_pool_add": "1"
+          },
+          "potential": {
+            "NOT": {},
+            "weight_modifier": {
+              "modifier": {
+                "factor": "1.5",
+                "OR": {
+                  "has_ethic": "ethic_fanatic_authoritarian"
+                }
+              }
+            },
+            "ai_weight": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4612
+  },
+  "tech_autonomous_agents": {
+    "tech_autonomous_agents": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "potential": {
+            "has_ethic": "ethic_gestalt_consciousness"
+          },
+          "modifier": {
+            "country_tech_influence_produces_add": "1",
+            "envoys_add": "1"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5"
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4664
+  },
+  "tech_embodied_dynamism": {
+    "tech_embodied_dynamism": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight3",
+          "modifier": {
+            "country_official_cap_add": "1",
+            "country_commander_cap_add": "1",
+            "country_scientist_cap_add": "1",
+            "external_leader_pool_add": "1",
+            "envoys_add": "1"
+          },
+          "potential": {
+            "has_ethic": "ethic_gestalt_consciousness"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5"
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4706
+  },
+  "tech_neural_implants": {
+    "tech_neural_implants": {
+      "cost": "@tier1cost3",
+      "area": "society",
+      "tier": "1",
+      "category": {
+        "weight": "@tier1weight3",
+        "_comments": [
+          "# unlocks slave processing plant, slave armies"
+        ],
+        "potential": {
+          "is_regular_empire": "yes"
+        },
+        "weight_modifier": {
+          "modifier": {
+            "factor": "0.0",
+            "OR": {
+              "allows_slavery": "no",
+              "NOT": {}
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "1.25",
+              "OR": {
+                "has_ethic": "ethic_fanatic_authoritarian"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4752
+  },
+  "tech_artificial_moral_codes": {
+    "tech_artificial_moral_codes": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "weight": "@tier2weight2",
+        "modifier": {
+          "planet_crime_mult": "-0.15",
+          "planet_amenities_mult": "0.05"
+        },
+        "potential": {
+          "NOT": {},
+          "weight_modifier": {
+            "factor": "1.5"
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4820
+  },
+  "tech_synthetic_thought_patterns": {
+    "tech_synthetic_thought_patterns": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight3",
+          "modifier": {
+            "planet_jobs_produces_mult": "0.05"
+          },
+          "potential": {
+            "is_gestalt": "no"
+          },
+          "weight_modifier": {
+            "factor": "1.5"
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4847
+  },
+  "tech_unity_of_purpose": {
+    "tech_unity_of_purpose": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "weight": "@tier2weight3",
+        "modifier": {
+          "planet_crime_no_happiness_mult": "-0.15",
+          "planet_amenities_no_happiness_mult": "0.05"
+        },
+        "potential": {
+          "is_gestalt": "yes"
+        },
+        "weight_modifier": {
+          "factor": "1.5"
+        },
+        "ai_weight": {}
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4874
+  },
+  "tech_collective_production_methods": {
+    "tech_collective_production_methods": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "modifier": {
+            "planet_jobs_produces_mult": "0.05"
+          },
+          "potential": {
+            "is_hive_empire": "yes"
+          },
+          "weight_modifier": {},
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4901
+  },
+  "tech_resource_processing_algorithms": {
+    "tech_resource_processing_algorithms": {
+      "cost": "@tier3cost1",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "modifier": {
+            "planet_jobs_produces_mult": "0.05"
+          },
+          "potential": {
+            "is_machine_empire": "yes"
+          },
+          "weight_modifier": {},
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4927
+  },
+  "tech_holo_entertainment": {
+    "tech_holo_entertainment": {
+      "cost": "0",
+      "area": "society",
+      "start_tech": "yes",
+      "category": {
+        "tier": "0",
+        "potential": {
+          "is_gestalt": "no"
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4951
+  },
+  "tech_hyper_entertainment_forum": {
+    "tech_hyper_entertainment_forum": {
+      "cost": "@tier1cost3",
+      "area": "society",
+      "category": {
+        "tier": "1",
+        "prerequisites": {
+          "weight": "@tier1weight3",
+          "potential": {
+            "is_gestalt": "no"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0",
+              "NOR": {
+                "has_technology": "tech_exotic_gases",
+                "has_country_flag": "has_market_access"
+              }
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4968
+  },
+  "tech_paradise_dome": {
+    "tech_paradise_dome": {
+      "cost": "@tier3cost1",
+      "area": "society",
+      "category": {
+        "tier": "3",
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "potential": {
+            "OR": {
+              "is_gestalt": "no",
+              "has_valid_civic": "civic_machine_servitor"
+            }
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0",
+              "NOR": {
+                "has_technology": "tech_rare_crystals",
+                "has_country_flag": "has_market_access"
+              }
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "@housing_ai_tech_factor",
+              "num_pops >": "100"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 4997
+  },
+  "tech_cultural_heritage": {
+    "tech_cultural_heritage": {
+      "cost": "0",
+      "area": "society",
+      "start_tech": "yes",
+      "category": {
+        "tier": "0",
+        "potential": {
+          "OR": {
+            "is_hive_empire": "no",
+            "is_memorialist_empire": "yes"
+          }
+        },
+        "weight_modifier": {},
+        "ai_weight": {}
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5038
+  },
+  "tech_heritage_site": {
+    "tech_heritage_site": {
+      "cost": "@tier1cost3",
+      "area": "society",
+      "category": {
+        "tier": "1",
+        "prerequisites": {
+          "weight": "@tier1weight3",
+          "_comments": [
+            "#unlocks upgraded culture building"
+          ],
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0",
+              "NOR": {
+                "has_technology": "tech_rare_crystals",
+                "has_country_flag": "has_market_access"
+              }
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5061
+  },
+  "tech_hypercomms_forum": {
+    "tech_hypercomms_forum": {
+      "cost": "@tier3cost1",
+      "area": "society",
+      "category": {
+        "tier": "3",
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "_comments": [
+            "#unlocks 2nd upgraded culture building"
+          ],
+          "weight_modifier": {},
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5088
+  },
+  "tech_autocurating_vault": {
+    "tech_autocurating_vault": {
+      "cost": "@tier3cost1",
+      "area": "society",
+      "category": {
+        "tier": "3",
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "potential": {
+            "NOR": {
+              "has_ethic": "ethic_fanatic_spiritualist",
+              "has_valid_civic": "civic_machine_servitor"
+            }
+          },
+          "weight_modifier": {},
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5107
+  },
+  "tech_holographic_rituals": {
+    "tech_holographic_rituals": {
+      "cost": "@tier2cost2",
+      "area": "society",
+      "category": {
+        "tier": "2",
+        "prerequisites": {
+          "weight": "@tier2weight2",
+          "potential": {
+            "OR": {
+              "has_ethic": "ethic_fanatic_spiritualist",
+              "AND": {
+                "is_gestalt": "no",
+                "has_make_spiritualist_perk": "yes"
+              }
+            }
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0",
+              "NOR": {
+                "has_technology": "tech_rare_crystals",
+                "has_country_flag": "has_market_access"
+              }
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5132
+  },
+  "tech_consecration_fields": {
+    "tech_consecration_fields": {
+      "cost": "@tier3cost2",
+      "area": "society",
+      "category": {
+        "tier": "3",
+        "prerequisites": {
+          "weight": "@tier3weight2",
+          "potential": {
+            "OR": {
+              "has_ethic": "ethic_fanatic_spiritualist",
+              "AND": {
+                "is_gestalt": "no",
+                "has_make_spiritualist_perk": "yes"
+              }
+            }
+          },
+          "weight_modifier": {},
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5168
+  },
+  "tech_transcendent_faith": {
+    "tech_transcendent_faith": {
+      "cost": "@tier4cost2",
+      "area": "society",
+      "category": {
+        "tier": "4",
+        "prerequisites": {
+          "weight": "@tier4weight2",
+          "potential": {
+            "OR": {
+              "has_ethic": "ethic_fanatic_spiritualist",
+              "AND": {
+                "is_gestalt": "no",
+                "has_make_spiritualist_perk": "yes"
+              }
+            }
+          },
+          "weight_modifier": {},
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5196
+  },
+  "tech_hive_node": {
+    "tech_hive_node": {
+      "cost": "0",
+      "area": "society",
+      "start_tech": "yes",
+      "category": {
+        "tier": "0",
+        "potential": {
+          "is_hive_empire": "yes"
+        },
+        "weight_modifier": {},
+        "ai_weight": {}
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5225
+  },
+  "tech_hive_cluster": {
+    "tech_hive_cluster": {
+      "cost": "@tier2cost2",
+      "area": "society",
+      "category": {
+        "tier": "2",
+        "prerequisites": {
+          "weight": "@tier2weight2",
+          "weight_modifier": {},
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5244
+  },
+  "tech_hive_confluence": {
+    "tech_hive_confluence": {
+      "cost": "@tier3cost2",
+      "area": "society",
+      "category": {
+        "tier": "3",
+        "prerequisites": {
+          "weight": "@tier3weight2",
+          "weight_modifier": {},
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5261
+  },
+  "tech_ascension_theory": {
+    "tech_ascension_theory": {
+      "area": "society",
+      "cost": "@tier4cost2",
+      "tier": "4",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "weight": "@tier4weight2",
+        "modifier": {
+          "ascension_perks_add": "1"
+        },
+        "feature_flags": {},
+        "weight_modifier": {
+          "factor": "0.5",
+          "modifier": {
+            "factor": "0.20",
+            "NOR": {
+              "has_modifier": "curator_insight",
+              "has_trait_in_council": {
+                "has_trait_in_council": {}
+              },
+              "inline_script": {
+                "script": "technologies/rare_technologies_weight_modifiers",
+                "TECHNOLOGY": "tech_ascension_theory"
+              },
+              "modifier": {
+                "factor": "0"
+              }
+            },
+            "ai_weight": {
+              "factor": "5 #more ascension perks are good"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5281
+  },
+  "tech_psionic_barrier": {
+    "tech_psionic_barrier": {
+      "area": "society",
+      "cost": "@tier3cost1",
+      "tier": "3",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "0",
+          "is_reverse_engineerable": "no",
+          "icon": "tech_psionic_barrier",
+          "weight_modifier": {
+            "factor": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5323
+  },
+  "tech_psionic_shield": {
+    "tech_psionic_shield": {
+      "area": "society",
+      "cost": "@tier5cost3",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "0",
+          "is_reverse_engineerable": "no",
+          "weight_modifier": {
+            "factor": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5340
+  },
+  "tech_penal_colonies": {
+    "tech_penal_colonies": {
+      "cost": "@tier3cost1",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "is_rare": "yes",
+          "potential": {
+            "is_gestalt": "no"
+          },
+          "weight_modifier": {
+            "factor": "0.5",
+            "modifier": {
+              "factor": "0.25",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {}
+                },
+                "inline_script": {
+                  "script": "technologies/rare_technologies_weight_modifiers",
+                  "TECHNOLOGY": "tech_penal_colonies"
+                },
+                "modifier": {
+                  "factor": "0"
+                }
+              },
+              "ai_weight": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5364
+  },
+  "tech_resort_colonies": {
+    "tech_resort_colonies": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "potential": {
+            "is_gestalt": "no"
+          },
+          "weight_modifier": {
+            "factor": "1.5",
+            "modifier": {
+              "factor": "0"
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5406
+  },
+  "tech_slave_colonies": {
+    "tech_slave_colonies": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "potential": {
+            "is_gestalt": "no"
+          },
+          "weight_modifier": {
+            "factor": "1",
+            "modifier": {
+              "factor": "0.25",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {}
+                },
+                "modifier": {
+                  "factor": "0.0",
+                  "OR": {
+                    "allows_slavery": "no",
+                    "NOT": {}
+                  }
+                },
+                "ai_weight": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5434
+  },
+  "tech_housing_agrarian_idyll": {
+    "tech_housing_agrarian_idyll": {
+      "cost": "@tier3cost1",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "weight": "@tier3weight1",
+        "modifier": {
+          "description": "district_housing_agrarian_idyll_tech_effect"
+        },
+        "weight_modifier": {
+          "factor": "1.5",
+          "modifier": {
+            "factor": "0",
+            "NOT": {}
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "@housing_ai_tech_factor",
+              "num_pops >": "100"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5474
+  },
+  "tech_xeno_diplomacy": {
+    "tech_xeno_diplomacy": {
+      "cost": "@tier2cost2",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight1",
+          "potential": {
+            "is_regular_empire": "yes"
+          },
+          "modifier": {
+            "diplo_weight_mult": "0.1"
+          },
+          "_comments": [
+            "## unlock embassy building and edict"
+          ],
+          "weight_modifier": {
+            "factor": "2",
+            "modifier": {
+              "factor": "0.01",
+              "has_civic": "civic_inwards_perfection"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "0.01",
+              "has_civic": "civic_inwards_perfection"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5505
+  },
+  "tech_xeno_relations": {
+    "tech_xeno_relations": {
+      "cost": "@tier3cost2",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "potential": {
+            "is_regular_empire": "yes"
+          },
+          "modifier": {
+            "diplo_weight_mult": "0.1"
+          },
+          "_comments": [
+            "## unlock embassy building upgrade"
+          ],
+          "weight_modifier": {
+            "factor": "2",
+            "modifier": {
+              "factor": "0.01",
+              "has_civic": "civic_inwards_perfection"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "0.01",
+              "has_civic": "civic_inwards_perfection"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5561
+  },
+  "tech_capital_productivity_1": {
+    "tech_capital_productivity_1": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "_comments": [
+            "# Increases production and upkeep of planets with tier 2 capitals or better."
+          ],
+          "modifier": {
+            "description": "tech_capital_productivity_1_effect"
+          },
+          "weight_modifier": {
+            "factor": "1",
+            "modifier": {
+              "factor": "0.25",
+              "NOT": {}
+            },
+            "ai_weight": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5617
+  },
+  "tech_capital_productivity_2": {
+    "tech_capital_productivity_2": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "_comments": [
+            "# Increases production and upkeep of planets with tier 2 capitals or better."
+          ],
+          "modifier": {
+            "description": "tech_capital_productivity_2_effect"
+          },
+          "weight_modifier": {
+            "factor": "1",
+            "modifier": {
+              "factor": "0.25",
+              "NOT": {}
+            },
+            "ai_weight": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5645
+  },
+  "tech_capital_productivity_3": {
+    "tech_capital_productivity_3": {
+      "cost": "@tier4cost3",
+      "area": "society",
+      "tier": "4",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "_comments": [
+            "# Increases production and upkeep of planets with tier 2 capitals or better."
+          ],
+          "modifier": {
+            "description": "tech_capital_productivity_3_effect"
+          },
+          "weight_modifier": {
+            "factor": "1",
+            "modifier": {
+              "factor": "0.25",
+              "NOT": {}
+            },
+            "ai_weight": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5673
+  },
+  "tech_covenant_composer": {
+    "tech_covenant_composer": {
+      "area": "society",
+      "cost": "@guardiantechcost",
+      "tier": "@guardiantechtier",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "0",
+          "is_reverse_engineerable": "no",
+          "icon": "tech_covenant_composer",
+          "weight_modifier": {
+            "factor": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5699
+  },
+  "tech_covenant_eater": {
+    "tech_covenant_eater": {
+      "area": "society",
+      "cost": "@guardiantechcost",
+      "tier": "@guardiantechtier",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "0",
+          "is_reverse_engineerable": "no",
+          "icon": "tech_covenant_eater",
+          "weight_modifier": {
+            "factor": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5716
+  },
+  "tech_covenant_instrument": {
+    "tech_covenant_instrument": {
+      "area": "society",
+      "cost": "@guardiantechcost",
+      "tier": "@guardiantechtier",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "0",
+          "is_reverse_engineerable": "no",
+          "icon": "tech_covenant_instrument",
+          "weight_modifier": {
+            "factor": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5733
+  },
+  "tech_covenant_whisperers": {
+    "tech_covenant_whisperers": {
+      "area": "society",
+      "cost": "@guardiantechcost",
+      "tier": "@guardiantechtier",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "0",
+          "is_reverse_engineerable": "no",
+          "icon": "tech_covenant_whisperers",
+          "weight_modifier": {
+            "factor": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5750
+  },
+  "tech_xeno_linguistics": {
+    "tech_xeno_linguistics": {
+      "cost": "@tier1cost2",
+      "area": "society",
+      "tier": "1",
+      "category": {
+        "weight": "0",
+        "icon": "tech_xeno_linguistics",
+        "is_rare": "yes",
+        "potential": {
+          "has_paragon_dlc": "yes",
+          "is_regular_empire": "yes",
+          "is_gestalt": "no",
+          "is_homicidal": "no"
+        },
+        "modifier": {
+          "first_contact_speed_mult": "0.2",
+          "show_only_custom_tooltip": "no",
+          "custom_tooltip": "tech_xeno_linguistics_effect"
+        },
+        "weight_modifier": {
+          "factor": "0",
+          "modifier": {
+            "add": "100",
+            "AND": {
+              "is_regular_empire": "yes",
+              "is_homicidal": "no",
+              "is_gestalt": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5769
+  },
+  "tech_node_reformatting_1": {
+    "tech_node_reformatting_1": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "potential": {
+            "is_machine_empire": "yes"
+          },
+          "gateway": "node_reformatting",
+          "prereqfor_desc": {
+            "custom": {
+              "title": "AGENDA_UNLOCK_NODE_REFORMATTING_TITLE",
+              "desc": "AGENDA_UNLOCK_NODE_REFORMATTING_DESC"
+            }
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5",
+              "any_owned_leader": {
+                "is_councilor": "yes",
+                "is_ruler": "no",
+                "has_skill  >": "9"
+              }
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5809
+  },
+  "tech_node_reformatting_2": {
+    "tech_node_reformatting_2": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight3",
+          "potential": {
+            "is_machine_empire": "yes"
+          },
+          "modifier": {
+            "restored_node_bonus_skill": "2",
+            "councilor_exp_gain": "0.25"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5",
+              "any_owned_leader": {
+                "is_councilor": "yes",
+                "is_ruler": "no",
+                "has_skill  >": "9"
+              }
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5877
+  },
+  "tech_node_reformatting_3": {
+    "tech_node_reformatting_3": {
+      "cost": "@tier4cost3",
+      "area": "society",
+      "tier": "4",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier4weight3",
+          "is_rare": "yes",
+          "potential": {
+            "is_machine_empire": "yes"
+          },
+          "modifier": {
+            "restored_node_bonus_skill": "2",
+            "councilor_skill_add": "1"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.25",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {}
+                },
+                "inline_script": {
+                  "script": "technologies/rare_technologies_weight_modifiers",
+                  "TECHNOLOGY": "tech_node_reformatting_3"
+                }
+              },
+              "ai_weight": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5934
+  },
+  "tech_node_culling_1": {
+    "tech_node_culling_1": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "potential": {
+            "is_hive_empire": "yes"
+          },
+          "gateway": "node_culling",
+          "prereqfor_desc": {
+            "custom": {
+              "title": "AGENDA_UNLOCK_NODE_CULLING_TITLE",
+              "desc": "AGENDA_UNLOCK_NODE_CULLING_DESC"
+            }
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5",
+              "any_owned_leader": {
+                "is_councilor": "yes",
+                "is_ruler": "no",
+                "has_skill  >": "9"
+              }
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 5997
+  },
+  "tech_node_culling_2": {
+    "tech_node_culling_2": {
+      "cost": "@tier3cost3",
+      "area": "society",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight3",
+          "potential": {
+            "is_hive_empire": "yes"
+          },
+          "modifier": {
+            "restored_node_bonus_skill": "2",
+            "councilor_exp_gain": "0.25"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5",
+              "any_owned_leader": {
+                "is_councilor": "yes",
+                "is_ruler": "no",
+                "has_skill  >": "9"
+              }
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 6065
+  },
+  "tech_node_culling_3": {
+    "tech_node_culling_3": {
+      "cost": "@tier4cost3",
+      "area": "society",
+      "tier": "4",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier4weight3",
+          "is_rare": "yes",
+          "potential": {
+            "is_hive_empire": "yes"
+          },
+          "modifier": {
+            "restored_node_bonus_skill": "2",
+            "councilor_skill_add": "1"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.25",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {}
+                },
+                "inline_script": {
+                  "script": "technologies/rare_technologies_weight_modifiers",
+                  "TECHNOLOGY": "tech_node_culling_3"
+                }
+              },
+              "ai_weight": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 6122
+  },
+  "tech_bio_reactor": {
+    "tech_bio_reactor": {
+      "cost": "@tier1cost1",
+      "area": "society",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight1",
+          "is_rare": "yes",
+          "weight_modifier": {
+            "factor": "0.1",
+            "modifier": {
+              "factor": "20",
+              "OR": {
+                "is_catalytic_empire": "yes",
+                "is_machine_empire": "yes",
+                "is_mechanical_empire": "yes",
+                "is_lithoid_empire": "yes"
+              }
+            },
+            "inline_script": {
+              "script": "technologies/rare_technologies_weight_modifiers",
+              "TECHNOLOGY": "tech_bio_reactor"
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 6184
+  },
+  "tech_bio_reactor_2": {
+    "tech_bio_reactor_2": {
+      "cost": "@tier2cost1",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight1",
+          "is_rare": "yes",
+          "weight_modifier": {
+            "factor": "0.1",
+            "modifier": {
+              "factor": "20",
+              "OR": {
+                "is_catalytic_empire": "yes",
+                "is_machine_empire": "yes",
+                "is_mechanical_empire": "yes",
+                "is_lithoid_empire": "yes"
+              }
+            },
+            "inline_script": {
+              "script": "technologies/rare_technologies_weight_modifiers",
+              "TECHNOLOGY": "tech_bio_reactor_2"
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_soc_tech.txt",
+    "_line_number": 6215
+  }
+}

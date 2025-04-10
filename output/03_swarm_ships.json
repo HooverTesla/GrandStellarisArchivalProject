@@ -1,0 +1,281 @@
+{
+  "large_ship_swarm": {
+    "large_ship_swarm": {
+      "is_space_object": "yes",
+      "graphical_culture": {
+        "max_speed": "@speed_slow",
+        "acceleration": "0.2",
+        "rotation_speed": "0.15",
+        "collision_radius": "@battleship_collision_radius",
+        "modifier": {
+          "ship_evasion_add": "5",
+          "ship_armor_add": "3000",
+          "ships_upkeep_mult": "-1"
+        },
+        "max_hitpoints": "@battleship_hp",
+        "size_multiplier": "8",
+        "fleet_slot_size": "8",
+        "section_slots": {
+          "num_target_locators": "0",
+          "is_space_station": "no",
+          "icon": "ship_size_military_8",
+          "class": "shipclass_military",
+          "is_designable": "no",
+          "is_space_fauna_ship": "yes",
+          "components_add_to_cost": "no",
+          "resources": {
+            "category": "ships",
+            "cost": {
+              "food": "@salvagecostlarge"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_swarm_ships.txt",
+    "_line_number": 33
+  },
+  "large_ship_carrier_swarm": {
+    "large_ship_carrier_swarm": {
+      "is_space_object": "yes",
+      "graphical_culture": {
+        "max_speed": "@speed_slow",
+        "acceleration": "0.2",
+        "rotation_speed": "0.15",
+        "collision_radius": "@battleship_collision_radius",
+        "modifier": {
+          "ship_evasion_add": "5",
+          "ship_armor_add": "3000",
+          "ships_upkeep_mult": "-1"
+        },
+        "max_hitpoints": "@battleship_hp",
+        "size_multiplier": "8",
+        "fleet_slot_size": "8",
+        "section_slots": {
+          "num_target_locators": "0",
+          "is_space_station": "no",
+          "icon": "ship_size_military_8",
+          "class": "shipclass_military",
+          "is_designable": "no",
+          "is_space_fauna_ship": "yes",
+          "components_add_to_cost": "no",
+          "resources": {
+            "category": "ships",
+            "cost": {
+              "food": "@salvagecostlarge"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_swarm_ships.txt",
+    "_line_number": 67
+  },
+  "small_ship_swarm": {
+    "small_ship_swarm": {
+      "is_space_object": "yes",
+      "graphical_culture": {
+        "max_speed": "@speed_fast",
+        "acceleration": "0.3",
+        "rotation_speed": "0.2",
+        "collision_radius": "@destroyer_collision_radius",
+        "modifier": {
+          "ship_evasion_add": "65",
+          "ship_armor_add": "1000",
+          "ships_upkeep_mult": "-1"
+        },
+        "max_hitpoints": "@corvette_hp",
+        "size_multiplier": "2",
+        "fleet_slot_size": "2",
+        "section_slots": {
+          "num_target_locators": "0",
+          "icon": "ship_size_military_2",
+          "is_space_station": "no",
+          "class": "shipclass_military",
+          "is_designable": "no",
+          "is_space_fauna_ship": "yes",
+          "components_add_to_cost": "no",
+          "resources": {
+            "category": "ships",
+            "cost": {
+              "food": "@salvagecostsmall"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_swarm_ships.txt",
+    "_line_number": 101
+  },
+  "queen_swarm": {
+    "queen_swarm": {
+      "is_space_object": "yes",
+      "graphical_culture": {
+        "max_speed": "@speed_slow",
+        "acceleration": "0.2",
+        "rotation_speed": "0.15",
+        "collision_radius": "@battleship_collision_radius",
+        "modifier": {
+          "ship_evasion_add": "5",
+          "ship_armor_add": "6000",
+          "ships_upkeep_mult": "-1"
+        },
+        "max_hitpoints": "@titan_hp",
+        "size_multiplier": "8",
+        "fleet_slot_size": "8",
+        "section_slots": {
+          "num_target_locators": "0",
+          "is_space_station": "no",
+          "icon": "ship_size_military_16",
+          "class": "shipclass_military",
+          "is_designable": "no",
+          "is_space_fauna_ship": "yes",
+          "components_add_to_cost": "no",
+          "resources": {
+            "category": "ships",
+            "cost": {
+              "food": "@salvagecostlarge"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_swarm_ships.txt",
+    "_line_number": 135
+  },
+  "construction_ship_swarm": {
+    "construction_ship_swarm": {
+      "graphical_culture": {
+        "is_space_object": "yes",
+        "max_speed": "@speed_slow",
+        "acceleration": "0.3",
+        "rotation_speed": "0.2",
+        "modifier": {
+          "ship_evasion_add": "15",
+          "ship_armor_add": "300"
+        },
+        "max_hitpoints": "@construction_hp",
+        "size_multiplier": "1",
+        "fleet_slot_size": "1",
+        "section_slots": {
+          "num_target_locators": "0",
+          "is_space_station": "no",
+          "icon": "ship_size_constructor",
+          "is_civilian": "yes",
+          "is_designable": "no",
+          "is_space_fauna_ship": "yes",
+          "class": "shipclass_constructor",
+          "required_component_set": "thruster_components",
+          "components_add_to_cost": "no",
+          "resources": {
+            "category": "ships",
+            "cost": {
+              "food": "@salvagecostsmall"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_swarm_ships.txt",
+    "_line_number": 169
+  },
+  "colony_ship_swarm": {
+    "colony_ship_swarm": {
+      "graphical_culture": {
+        "is_space_object": "yes",
+        "max_speed": "@speed_slow",
+        "acceleration": "0.3",
+        "rotation_speed": "0.2",
+        "modifier": {
+          "ship_evasion_add": "15",
+          "ship_armor_add": "300"
+        },
+        "max_hitpoints": "@colony_hp",
+        "size_multiplier": "1",
+        "fleet_slot_size": "1",
+        "section_slots": {
+          "num_target_locators": "0",
+          "is_space_station": "no",
+          "icon": "ship_size_colonizer",
+          "is_civilian": "yes",
+          "is_designable": "no",
+          "is_space_fauna_ship": "yes",
+          "class": "shipclass_colonizer",
+          "required_component_set": "thruster_components",
+          "components_add_to_cost": "no",
+          "resources": {
+            "category": "ships",
+            "cost": {
+              "food": "@salvagecostmedium"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_swarm_ships.txt",
+    "_line_number": 205
+  },
+  "transport_ship_swarm": {
+    "transport_ship_swarm": {
+      "graphical_culture": {
+        "is_space_object": "yes",
+        "max_speed": "@speed_fast",
+        "acceleration": "0.6",
+        "rotation_speed": "0.2",
+        "modifier": {
+          "ship_evasion_add": "70",
+          "ship_armor_add": "300"
+        },
+        "max_hitpoints": "@corvette_hp",
+        "size_multiplier": "1",
+        "fleet_slot_size": "1",
+        "section_slots": {
+          "num_target_locators": "0",
+          "is_space_station": "no",
+          "icon": "ship_size_transport",
+          "is_designable": "no",
+          "is_space_fauna_ship": "yes",
+          "class": "shipclass_transport",
+          "required_component_set": "thruster_components",
+          "components_add_to_cost": "no",
+          "resources": {
+            "category": "ships",
+            "cost": {
+              "food": "@salvagecostmedium"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_swarm_ships.txt",
+    "_line_number": 240
+  },
+  "sentinel_station": {
+    "sentinel_station": {
+      "is_space_object": "yes",
+      "entity": "enclave_station_entity",
+      "graphical_culture": "no",
+      "max_speed": "0.0",
+      "acceleration": "0.0",
+      "rotation_speed": "0.002",
+      "modifier": {
+        "ship_evasion_mult": "-1",
+        "ships_upkeep_mult": "-0.25"
+      },
+      "max_hitpoints": "@station_enclave_hp",
+      "size_multiplier": "8",
+      "fleet_slot_size": "4",
+      "section_slots": {
+        "num_target_locators": "0",
+        "is_space_station": "yes",
+        "build_block_radius": "@build_block_radius_civilian",
+        "class": "shipclass_military_station",
+        "is_designable": "no",
+        "is_space_fauna_ship": "yes",
+        "icon": "ship_size_military_station"
+      }
+    },
+    "_source_file": "03_swarm_ships.txt",
+    "_line_number": 277
+  }
+}

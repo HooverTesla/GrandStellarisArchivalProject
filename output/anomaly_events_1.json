@@ -1,0 +1,381 @@
+{
+  "ship_event": {
+    "ship_event": {
+      "id": "anomaly.186",
+      "title": "anomaly.186.name",
+      "desc": {
+        "text": "anomaly.186.desc.v4",
+        "trigger": {
+          "hidden:owner": {
+            "is_individual_machine": "yes"
+          }
+        }
+      },
+      "picture": "GFX_evt_sapient_AI",
+      "show_sound": "event_radio_chatter",
+      "location": "fromfrom",
+      "is_triggered_only": "yes",
+      "trackable": "yes",
+      "option": {
+        "name": "anomaly.186.a",
+        "hidden_effect": {
+          "owner": {
+            "add_monthly_resource_mult": {
+              "resource": "engineering_research",
+              "value": "@tier4researchreward",
+              "min": "@tier4researchmin",
+              "max": "@tier4researchmax"
+            }
+          }
+        },
+        "option": {
+          "name": "anomaly.186.b",
+          "trigger": {
+            "owner": {
+              "add_monthly_resource_mult": {
+                "resource": "engineering_research",
+                "value": "@tier3researchreward",
+                "min": "@tier3researchmin",
+                "max": "@tier3researchmax"
+              },
+              "give_specimen": {},
+              "hidden_effect": {
+                "fromfrom": {
+                  "owner": {
+                    "set_country_flag": "limbo_downloaded"
+                  }
+                }
+              },
+              "option": {
+                "name": "anomaly.186.c",
+                "trigger": {
+                  "owner": {
+                    "NOT": {
+                      "OR": {
+                        "has_technology": "tech_synthetic_workers",
+                        "is_individual_machine": "yes"
+                      },
+                      "NOT": {
+                        "has_policy_flag": "ai_outlawed"
+                      },
+                      "NOR": {
+                        "AND": {
+                          "is_individual_machine": "no",
+                          "has_ethic": "ethic_fanatic_spiritualist"
+                        }
+                      }
+                    }
+                  },
+                  "allow": {
+                    "owner": {
+                      "capital_scope": {
+                        "enable_special_project": {
+                          "name": "LIMBO_2_PROJECT",
+                          "location": "this",
+                          "owner": "root.owner"
+                        }
+                      },
+                      "give_specimen": {}
+                    },
+                    "option": {
+                      "name": "anomaly.186.e",
+                      "custom_tooltip": "anomaly.186.e.tt",
+                      "trigger": {
+                        "owner": {
+                          "has_origin": "origin_synthetic_fertility"
+                        }
+                      },
+                      "allow": {
+                        "owner": {
+                          "has_origin": "origin_synthetic_fertility"
+                        }
+                      },
+                      "owner": {
+                        "hidden_effect": {
+                          "change_variable": {
+                            "which": "num_dead_identities",
+                            "value": "5"
+                          }
+                        },
+                        "give_specimen": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "anomaly_events_1.txt",
+    "_line_number": 4763
+  },
+  "country_event": {
+    "country_event": {
+      "id": "anomaly.1199",
+      "title": "anomaly.1199.name",
+      "desc": "anomaly.1199.desc",
+      "show_sound": "event_mystic_reveal",
+      "picture": "GFX_evt_synth_organic_relations",
+      "location": "capital_scope",
+      "is_triggered_only": "yes",
+      "_comments": [
+        "#dismantle the robots for parts"
+      ],
+      "option": {
+        "name": "anomaly.189.c",
+        "custom_tooltip": "anomaly.186.a.alt.tooltip",
+        "trigger": {
+          "add_resource": {},
+          "option": {
+            "name": "anomaly.1199.a",
+            "custom_tooltip": "anomaly.189.b.tooltip",
+            "trigger": {
+              "NOT": {
+                "has_policy_flag": "ai_outlawed"
+              },
+              "any_system": {
+                "NOR": {
+                  "exists": "space_owner",
+                  "has_star_flag": "primitive_system"
+                },
+                "any_system_planet": {
+                  "habitable_planet": "yes",
+                  "has_anomaly": "no",
+                  "_comments": [
+                    "#is_colony = no",
+                    "#is_capital = no"
+                  ],
+                  "NOR": {
+                    "exists": "controller"
+                  }
+                }
+              }
+            },
+            "allow": {
+              "NOT": {
+                "has_policy_flag": "ai_outlawed"
+              },
+              "any_system": {
+                "NOR": {
+                  "exists": "space_owner",
+                  "has_star_flag": "primitive_system"
+                },
+                "any_system_planet": {
+                  "habitable_planet": "yes",
+                  "has_anomaly": "no",
+                  "_comments": [
+                    "#is_colony = no",
+                    "#is_capital = no"
+                  ],
+                  "NOR": {
+                    "exists": "controller"
+                  }
+                }
+              }
+            },
+            "hidden_effect": {
+              "random_system": {
+                "limit": {
+                  "NOR": {
+                    "exists": "space_owner",
+                    "has_star_flag": "primitive_system"
+                  },
+                  "any_system_planet": {
+                    "habitable_planet": "yes",
+                    "has_anomaly": "no",
+                    "is_colony": "no",
+                    "is_capital": "no",
+                    "NOR": {
+                      "exists": "controller"
+                    }
+                  }
+                },
+                "random_system_planet": {
+                  "limit": {
+                    "habitable_planet": "yes",
+                    "has_owner": "no",
+                    "has_anomaly": "no",
+                    "is_colony": "no",
+                    "is_capital": "no"
+                  },
+                  "save_event_target_as": "colonized_planet",
+                  "set_surveyed": {
+                    "surveyed": "yes",
+                    "surveyor": "root"
+                  },
+                  "prevent_anomaly": "yes",
+                  "create_species": {
+                    "name": "NAME_Awoken_Robot",
+                    "plural": "NAME_Awoken_Robot",
+                    "class": "ROBOT",
+                    "namelist": "FUN3",
+                    "portrait": "default_robot",
+                    "traits": {
+                      "trait": "trait_mechanical"
+                    }
+                  },
+                  "create_country": {
+                    "name": "NAME_Awoken",
+                    "name_list": "FUN3",
+                    "species": "last_created_species",
+                    "type": "default",
+                    "ethos": {
+                      "ethic": "ethic_xenophile"
+                    },
+                    "authority": "random",
+                    "civics": "random",
+                    "auto_delete": "no",
+                    "flag": {
+                      "icon": {
+                        "category": "blocky",
+                        "file": "flag_blocky_21.dds"
+                      },
+                      "background": {
+                        "category": "backgrounds",
+                        "file": "new_dawn.dds"
+                      },
+                      "colors": {}
+                    },
+                    "exclude_day_zero_contact": "root",
+                    "effect": {
+                      "establish_communications_no_message": "root",
+                      "root": {
+                        "every_federation_ally": {
+                          "establish_communications": "prevprev"
+                        }
+                      },
+                      "add_trust": {
+                        "amount": "10",
+                        "who": "root"
+                      },
+                      "save_event_target_as": "awoken_country",
+                      "set_country_flag": "synthetic_empire",
+                      "species": {
+                        "if": {
+                          "change_species_characteristics": {}
+                        },
+                        "create_leader": {
+                          "class": "random_ruler",
+                          "species": "owner_main_species",
+                          "name": "random",
+                          "skill": "5"
+                        },
+                        "set_leader": "last_created_leader",
+                        "copy_techs_from": {
+                          "target": "root",
+                          "except": {}
+                        }
+                      }
+                    },
+                    "set_owner": "event_target:awoken_country",
+                    "_comments": [
+                      "# Food",
+                      "# Misc",
+                      "# Genetics",
+                      "# Horizon Signal"
+                    ],
+                    "set_capital": "yes",
+                    "while": {
+                      "count": "6",
+                      "create_pop": {
+                        "species": "last_created_species"
+                      }
+                    },
+                    "add_building": "building_factory_1",
+                    "add_district": "district_city",
+                    "create_army": {
+                      "name": "NAME_Awoken_Army",
+                      "owner": "event_target:awoken_country",
+                      "species": "event_target:awoken_country",
+                      "type": "defense_army"
+                    },
+                    "root": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "anomaly_events_1.txt",
+    "_line_number": 5504
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "anomaly.144",
+      "title": "anomaly.144.name",
+      "desc": "anomaly.144.desc",
+      "picture": "GFX_evt_ship_travel",
+      "show_sound": "event_mystic_reveal",
+      "location": "event_target:shrine",
+      "trackable": "yes",
+      "event_chain": "old_gods_chain",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "FROM": {
+            "has_star_flag": "old_gods_system_3@root.owner"
+          }
+        },
+        "immediate": {
+          "FROM": {
+            "owner": {
+              "create_ambient_object": {
+                "type": "shrine_object",
+                "location": "solar_system"
+              },
+              "last_created_ambient_object": {
+                "save_event_target_as": "shrine",
+                "enable_special_project": {
+                  "name": "OLD_GODS_PERCIPIENT_PROJECT",
+                  "location": "this",
+                  "owner": "root"
+                }
+              },
+              "owner": {},
+              "option": {
+                "name": "anomaly.144.a"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "anomaly_events_1.txt",
+    "_line_number": 2077
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "anomaly.191",
+      "title": "anomaly.191.name",
+      "desc": "anomaly.191.desc",
+      "show_sound": "event_radio_chatter",
+      "picture": "GFX_evt_asteroid_approaching_planet",
+      "location": "fromfrom",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "INTRIGUING",
+        "custom_tooltip": "anomaly.191.a.tooltip",
+        "hidden_effect": {
+          "hidden_effect": {
+            "add_modifier": {
+              "modifier": "projecting_moon",
+              "days": "-1"
+            },
+            "add_deposit": "d_engineering_3",
+            "set_surveyed": {
+              "surveyed": "yes",
+              "surveyor": "event_target:ship_owner"
+            },
+            "remove_planet_flag": "projecting_moon"
+          }
+        }
+      }
+    },
+    "_source_file": "anomaly_events_1.txt",
+    "_line_number": 2719
+  }
+}

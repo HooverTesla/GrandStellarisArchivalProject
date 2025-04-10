@@ -1,0 +1,90 @@
+{
+  "projectile_gfx_missile": {
+    "projectile_gfx_missile": {
+      "name": "spikespores",
+      "_comments": [
+        "#common for all types of projectiles"
+      ],
+      "color": {
+        "hit_entity": "spikespores_hit_entity",
+        "shield_hit_entity": "spikespores_shield_hit_entity",
+        "muzzle_flash_entity": "spikespores_muzzle_flash_entity",
+        "entity": "spikespores_entity",
+        "_comments": [
+          "#missile specific data"
+        ],
+        "shield_impact": {
+          "size": "large",
+          "delay": "0.0"
+        }
+      }
+    },
+    "_source_file": "grand_archive.txt",
+    "_line_number": 1
+  },
+  "projectile_gfx_beam": {
+    "projectile_gfx_beam": {
+      "name": "voidworm_bite",
+      "_comments": [
+        "#common for all types of projectiles"
+      ],
+      "color": {
+        "hit_entity": "voidworm_bite_hit_entity",
+        "shield_hit_entity": "voidworm_bite_shield_hit_entity",
+        "muzzle_flash_entity": "voidworm_bite_muzzle_entity",
+        "windup_entity": "voidworm_bite_windup_entity",
+        "width": "10.0",
+        "_comments": [
+          "#beam specific data"
+        ],
+        "texture_scroll_speed": "1.0",
+        "texture_tiling": "5.5",
+        "hit": {
+          "alpha_curve": {},
+          "duration": "3.0"
+        },
+        "miss": {
+          "alpha_curve": {},
+          "duration": "3.0"
+        },
+        "texture": "gfx/models/combat_items/titan_laser_diffuse.dds",
+        "shield_impact": {
+          "size": "large",
+          "loop_duration": "0.5",
+          "delay": "0.2"
+        }
+      }
+    },
+    "_source_file": "grand_archive.txt",
+    "_line_number": 19
+  },
+  "projectile_gfx_ballistic": {
+    "projectile_gfx_ballistic": {
+      "name": "meteoroid_slinger",
+      "_comments": [
+        "#common for all types of projectiles"
+      ],
+      "color": {
+        "hit_entity": "meteoroid_slinger_hit_entity",
+        "shield_hit_entity": "meteoroid_slinger_shield_hit_entity",
+        "muzzle_flash_entity": "meteoroid_slinger_muzzle_entity",
+        "entity": "meteoroid_slinger_entity",
+        "_comments": [
+          "#ballistic specific"
+        ],
+        "speed": "450.0\t\t\t#preferred speed of the projectile",
+        "max_duration": "1.0\t\t#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds",
+        "random_scale_multiplier": {
+          "min": "0.2",
+          "max": "1.0"
+        },
+        "shield_impact": {
+          "size": "large",
+          "delay": "0.0"
+        }
+      }
+    },
+    "_source_file": "grand_archive.txt",
+    "_line_number": 65
+  }
+}

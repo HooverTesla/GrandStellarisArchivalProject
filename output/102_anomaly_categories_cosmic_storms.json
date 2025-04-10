@@ -1,0 +1,326 @@
+{
+  "STORMS_PREC_WM_ONE": {
+    "STORMS_PREC_WM_ONE": {
+      "desc": "STORMS_PREC_WM_ONE_DESC",
+      "picture": "GFX_evt_relic_world_street",
+      "level": "@precursor_easy",
+      "max_once": "yes",
+      "_comments": [
+        "# Spawned through add_anomaly effect in cstorms.100"
+      ],
+      "spawn_chance": {
+        "base": "0"
+      },
+      "on_spawn": {
+        "set_planet_flag": "precursor_world"
+      },
+      "on_success": "cstorms.105"
+    },
+    "_source_file": "102_anomaly_categories_cosmic_storms.txt",
+    "_line_number": 11
+  },
+  "STORMS_PREC_ONE": {
+    "STORMS_PREC_ONE": {
+      "desc": "STORMS_PREC_ONE_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "@precursor_easy",
+      "max_once": "yes",
+      "_comments": [
+        "# Spawned through add_anomaly effect in cstorms.200"
+      ],
+      "spawn_chance": {
+        "base": "0"
+      },
+      "on_spawn": {
+        "set_planet_flag": "precursor_world",
+        "_comments": [
+          "# Mark as used, so we can avoid in other precursor events."
+        ],
+        "solar_system": {},
+        "on_success": "cstorms.205"
+      }
+    },
+    "_source_file": "102_anomaly_categories_cosmic_storms.txt",
+    "_line_number": 30
+  },
+  "crimson_crawlers_category": {
+    "crimson_crawlers_category": {
+      "desc": "crimson_crawlers_category_desc",
+      "picture": "GFX_evt_crimson_crawlers",
+      "level": "3",
+      "should_ai_use": "no",
+      "max_once_global": "yes",
+      "spawn_chance": {
+        "base": "10",
+        "modifier": {
+          "factor": "0",
+          "OR": {
+            "is_starting_planet_type": "no",
+            "has_cosmic_storms_dlc": "no",
+            "is_colonizable": "no",
+            "has_planet_flag": "prescripted_ideal",
+            "from.owner": {
+              "OR": {
+                "cares_for_crimson_crawlers": "no",
+                "country_uses_food": "no"
+              }
+            }
+          }
+        }
+      },
+      "on_spawn": {
+        "add_modifier": {
+          "modifier": "crimson_crawlers"
+        }
+      },
+      "on_success": "cstorms.1255"
+    },
+    "_source_file": "102_anomaly_categories_cosmic_storms.txt",
+    "_line_number": 53
+  },
+  "STORMS_ANOM_ANTS": {
+    "STORMS_ANOM_ANTS": {
+      "desc": "STORMS_ANOM_ANTS_DESC",
+      "picture": "GFX_evt_asteroid_field",
+      "level": "3",
+      "max_once_global": "yes",
+      "spawn_chance": {
+        "base": "0"
+      },
+      "_comments": [
+        "# triggered by cstorms.5"
+      ],
+      "on_spawn": {
+        "create_ambient_object": {
+          "type": "small_debris_object"
+        }
+      },
+      "on_success": "cstorms.5020"
+    },
+    "_source_file": "102_anomaly_categories_cosmic_storms.txt",
+    "_line_number": 98
+  },
+  "STORMS_ANOM_BRAIN": {
+    "STORMS_ANOM_BRAIN": {
+      "desc": "STORMS_ANOM_BRAIN_DESC",
+      "picture": "GFX_evt_cosmic_storms_shroud_storm",
+      "level": "5",
+      "max_once_global": "yes",
+      "_comments": [
+        "# triggered by cstorms.5"
+      ],
+      "spawn_chance": {
+        "base": "0"
+      },
+      "on_spawn": {
+        "create_ambient_object": {
+          "type": "small_debris_object"
+        }
+      },
+      "on_success": "cstorms.5025"
+    },
+    "_source_file": "102_anomaly_categories_cosmic_storms.txt",
+    "_line_number": 118
+  },
+  "STORMS_ANOM_STAT": {
+    "STORMS_ANOM_STAT": {
+      "desc": "STORMS_ANOM_STAT_DESC",
+      "picture": "GFX_evt_ruined_system",
+      "level": "3",
+      "max_once_global": "yes",
+      "_comments": [
+        "# triggered by cstorms.5"
+      ],
+      "spawn_chance": {
+        "base": "0"
+      },
+      "on_success": "cstorms.5030"
+    },
+    "_source_file": "102_anomaly_categories_cosmic_storms.txt",
+    "_line_number": 137
+  },
+  "but_they_are_cute_category": {
+    "but_they_are_cute_category": {
+      "desc": "but_they_are_cute_category_desc",
+      "picture": "GFX_evt_but_they_are_cute",
+      "max_once": "yes",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "from.owner": {
+            "OR": {
+              "is_homicidal": "yes",
+              "is_gestalt": "yes"
+            }
+          }
+        }
+      },
+      "on_success": "cstorms.1500"
+    },
+    "_source_file": "102_anomaly_categories_cosmic_storms.txt",
+    "_line_number": 153
+  },
+  "terrestial_telescope_category": {
+    "terrestial_telescope_category": {
+      "desc": "terrestial_telescope_category_desc",
+      "picture": "GFX_evt_space_station",
+      "level": "3",
+      "should_ai_use": "no",
+      "_comments": [
+        "# triggered by cstorms.5"
+      ],
+      "spawn_chance": {
+        "base": "0"
+      },
+      "on_success": "cstorms.1605"
+    },
+    "_source_file": "102_anomaly_categories_cosmic_storms.txt",
+    "_line_number": 180
+  },
+  "the_imitator_category": {
+    "the_imitator_category": {
+      "desc": "the_imitator_category_desc",
+      "picture": "GFX_evt_space_debris",
+      "max_once": "yes",
+      "level": "3",
+      "should_ai_use": "no",
+      "_comments": [
+        "# triggered by cstorms.5"
+      ],
+      "spawn_chance": {
+        "base": "0"
+      },
+      "on_success": "cstorms.1550"
+    },
+    "_source_file": "102_anomaly_categories_cosmic_storms.txt",
+    "_line_number": 195
+  },
+  "STORMS_ANOM_POLYCHROMATIC": {
+    "STORMS_ANOM_POLYCHROMATIC": {
+      "desc": "STORMS_ANOM_POLYCHROMATIC_DESC",
+      "picture": "GFX_evt_star_pulsar",
+      "max_once": "yes",
+      "level": "2",
+      "should_ai_use": "no",
+      "_comments": [
+        "# triggered by cstorms.10"
+      ],
+      "spawn_chance": {
+        "base": "0"
+      },
+      "on_spawn": {
+        "clear_deposits": "yes"
+      },
+      "on_success": "cstorms.5035"
+    },
+    "_source_file": "102_anomaly_categories_cosmic_storms.txt",
+    "_line_number": 212
+  },
+  "STORMS_ANOM_TRIPLETS": {
+    "STORMS_ANOM_TRIPLETS": {
+      "desc": "STORMS_ANOM_TRIPLETS_DESC",
+      "picture": "GFX_evt_crystal_asteroids",
+      "max_once": "yes",
+      "level": "2",
+      "should_ai_use": "no",
+      "_comments": [
+        "# triggered by cstorms.10"
+      ],
+      "spawn_chance": {
+        "base": "0"
+      },
+      "on_success": "cstorms.5040"
+    },
+    "_source_file": "102_anomaly_categories_cosmic_storms.txt",
+    "_line_number": 231
+  },
+  "STORMS_ANOM_TRAVELLERS": {
+    "STORMS_ANOM_TRAVELLERS": {
+      "desc": "STORMS_ANOM_TRAVELLERS_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "max_once": "yes",
+      "level": "2",
+      "should_ai_use": "no",
+      "_comments": [
+        "# triggered by cstorms.10"
+      ],
+      "spawn_chance": {
+        "base": "0"
+      },
+      "on_success": "cstorms.5050"
+    },
+    "_source_file": "102_anomaly_categories_cosmic_storms.txt",
+    "_line_number": 247
+  },
+  "STORMS_COSMIC_SLUDGE": {
+    "STORMS_COSMIC_SLUDGE": {
+      "desc": "STORMS_COSMIC_SLUDGE_DESC",
+      "picture": "GFX_evt_star_chart",
+      "max_once": "yes",
+      "level": "2",
+      "should_ai_use": "no",
+      "_comments": [
+        "# triggered by cstorms.10"
+      ],
+      "spawn_chance": {
+        "base": "0"
+      },
+      "on_success": "cstorms.5060"
+    },
+    "_source_file": "102_anomaly_categories_cosmic_storms.txt",
+    "_line_number": 263
+  },
+  "STORMS_SHATTERED_SATTELITE": {
+    "STORMS_SHATTERED_SATTELITE": {
+      "desc": "STORMS_SHATTERED_SATTELITE_DESC",
+      "picture": "GFX_evt_star_chart",
+      "max_once": "yes",
+      "level": "2",
+      "should_ai_use": "no",
+      "_comments": [
+        "# triggered by cstorms.10"
+      ],
+      "spawn_chance": {
+        "base": "0"
+      },
+      "on_success": "cstorms.5070"
+    },
+    "_source_file": "102_anomaly_categories_cosmic_storms.txt",
+    "_line_number": 279
+  },
+  "STORMS_EVISCERATED_FAUNA": {
+    "STORMS_EVISCERATED_FAUNA": {
+      "desc": "STORMS_EVISCERATED_FAUNA_DESC",
+      "picture": "GFX_evt_star_chart",
+      "level": "2",
+      "max_once_global": "yes",
+      "_comments": [
+        "# triggered by cstorms.10"
+      ],
+      "spawn_chance": {
+        "base": "0"
+      },
+      "on_success": "cstorms.5080"
+    },
+    "_source_file": "102_anomaly_categories_cosmic_storms.txt",
+    "_line_number": 295
+  },
+  "STORMS_DISPLACED_TIYANKI": {
+    "STORMS_DISPLACED_TIYANKI": {
+      "desc": "STORMS_DISPLACED_TIYANKI_DESC",
+      "picture": "GFX_evt_tiyanki_family",
+      "level": "2",
+      "max_once_global": "yes",
+      "_comments": [
+        "# triggered by cstorms.10"
+      ],
+      "spawn_chance": {
+        "base": "0"
+      },
+      "on_success": "cstorms.5090"
+    },
+    "_source_file": "102_anomaly_categories_cosmic_storms.txt",
+    "_line_number": 310
+  }
+}

@@ -1,0 +1,289 @@
+{
+  "ship_event": {
+    "ship_event": {
+      "id": "federations3.2000",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "owner",
+        "owner": {
+          "exists": "federation",
+          "has_federation": "yes",
+          "federation": {
+            "OR": {
+              "has_federation_type": "research_federation"
+            },
+            "NOT": {
+              "NOT": {
+                "any_member": {
+                  "is_at_war": "no",
+                  "has_technology": "tech_sensors_2"
+                },
+                "NOT": {
+                  "any_member": {
+                    "has_event_chain": "dismembered_cloud_chain"
+                  }
+                }
+              }
+            }
+          },
+          "immediate": {
+            "owner": {
+              "save_event_target_as": "discloud_coordinator",
+              "set_variable": {
+                "which": "discloud_failed",
+                "value": "0"
+              },
+              "federation": {
+                "set_federation_flag": "dismembered_cloud",
+                "set_timed_federation_flag": {
+                  "flag": "recent_or_current_dismembered_cloud",
+                  "days": "7200"
+                },
+                "every_member": {
+                  "set_country_flag": "discloud_notdone",
+                  "random_list": {
+                    "_comments": [
+                      "#Factors set to a non-zero value, to account for federations which have more members than the number of random_list items below:"
+                    ],
+                    "10": {
+                      "modifier": {
+                        "set_country_flag": "discloud_red"
+                      },
+                      "10": {
+                        "modifier": {
+                          "set_country_flag": "discloud_yellow"
+                        },
+                        "10": {
+                          "modifier": {
+                            "set_country_flag": "discloud_green"
+                          },
+                          "10": {
+                            "modifier": {
+                              "set_country_flag": "discloud_blue"
+                            },
+                            "10": {
+                              "modifier": {
+                                "set_country_flag": "discloud_indigo"
+                              },
+                              "10": {
+                                "modifier": {
+                                  "set_country_flag": "discloud_pink"
+                                },
+                                "10": {
+                                  "modifier": {
+                                    "set_country_flag": "discloud_gray"
+                                  },
+                                  "10": {
+                                    "modifier": {
+                                      "set_country_flag": "discloud_orange"
+                                    },
+                                    "10": {
+                                      "modifier": {
+                                        "set_country_flag": "discloud_brown"
+                                      },
+                                      "10": {
+                                        "modifier": {
+                                          "set_country_flag": "discloud_cyan"
+                                        }
+                                      },
+                                      "country_event": {
+                                        "capital_scope": {
+                                          "if": {
+                                            "limit": {
+                                              "exists": "solar_system.starbase"
+                                            },
+                                            "create_ambient_object": {
+                                              "type": "nebula_2",
+                                              "location": "solar_system.starbase"
+                                            },
+                                            "last_created_ambient_object": {
+                                              "set_location": {
+                                                "target": "solar_system.starbase",
+                                                "distance": "0",
+                                                "angle": "random"
+                                              },
+                                              "set_ambient_object_flag": "discloud_cloud"
+                                            }
+                                          },
+                                          "else": {
+                                            "create_ambient_object": {
+                                              "type": "nebula_2",
+                                              "location": "solar_system"
+                                            },
+                                            "last_created_ambient_object": {
+                                              "set_location": {
+                                                "target": "solar_system.star",
+                                                "distance": "0",
+                                                "angle": "random"
+                                              },
+                                              "set_ambient_object_flag": "discloud_cloud"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_events_3.txt",
+    "_line_number": 784
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "federations3.2103",
+      "title": "federations3.2103.name",
+      "desc": {
+        "trigger": {
+          "from": {
+            "NOT": {}
+          },
+          "text": "federations3.2103.desc.generic"
+        },
+        "desc": {
+          "trigger": {
+            "from": {
+              "exists": "federation",
+              "has_federation": "yes",
+              "federation": {
+                "has_federation_type": "research_federation",
+                "any_member": {
+                  "has_federation_flag": "leylines_valid"
+                },
+                "has_country_flag": "leylines_arcsite_owner"
+              }
+            },
+            "immediate": {
+              "event_target:leylines_coordinator": {
+                "change_variable": {}
+              },
+              "option": {
+                "name": "INTERESTING",
+                "create_archaeological_site": "leylines_digsite",
+                "hidden_effect": {
+                  "event_target:leylines_coordinator": {
+                    "change_variable": {}
+                  },
+                  "ai_chance": {},
+                  "option": {
+                    "name": "NOTIME",
+                    "ai_chance": {
+                      "factor": "1",
+                      "modifier": {
+                        "factor": "5",
+                        "OR": {
+                          "from": {
+                            "from": {}
+                          },
+                          "modifier": {
+                            "factor": "15",
+                            "from": {},
+                            "modifier": {
+                              "factor": "60",
+                              "from": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "picture": "GFX_evt_atmospheric_entry",
+          "show_sound": "event_mystic_reveal",
+          "location": "root",
+          "is_triggered_only": "yes"
+        }
+      }
+    },
+    "_source_file": "federations_events_3.txt",
+    "_line_number": 1483
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "federations3.2120",
+      "title": "federations3.2120.name",
+      "desc": "federations3.2120.desc",
+      "picture": "GFX_evt_clocks",
+      "show_sound": "event_mystic_reveal",
+      "location": "event_target:leylines_world",
+      "archaeology": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "from": {},
+        "after": {
+          "from": {
+            "set_site_progress_locked": "no",
+            "expire_site_event": "federations3.2120"
+          },
+          "hidden_effect": {
+            "if": {
+              "limit": {
+                "exists": "event_target:leylines_coordinator"
+              },
+              "event_target:leylines_coordinator": {
+                "change_variable": {
+                  "change_variable": {
+                    "country_event": {}
+                  }
+                }
+              },
+              "option": {
+                "name": "FASCINATING",
+                "if": {
+                  "limit": {
+                    "medium_artifact_reward": "yes"
+                  },
+                  "else": {
+                    "owner": {
+                      "add_monthly_resource_mult": {
+                        "resource": "society_research",
+                        "value": "@tier2researchreward",
+                        "min": "@tier2researchmin",
+                        "max": "@tier2researchmax"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_events_3.txt",
+    "_line_number": 2003
+  },
+  "country_event": {
+    "country_event": {
+      "id": "federations3.2270",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "OR": {
+          "has_modifier": "spifed_jointop_success"
+        }
+      },
+      "immediate": {
+        "remove_modifier": "spifed_jointop_success"
+      }
+    },
+    "_source_file": "federations_events_3.txt",
+    "_line_number": 3057
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "decision_planet_food_boost": {
+    "decision_planet_food_boost": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_resources",
+      "resources": {
+        "category": "decisions",
+        "cost": {
+          "food": "1000"
+        }
+      },
+      "potential": {
+        "owner": {
+          "is_regular_empire": "yes",
+          "is_lithoid_empire": "no"
+        },
+        "NOR": {
+          "has_modifier": "planet_population_control"
+        },
+        "always": "no"
+      },
+      "allow": {
+        "NOT": {},
+        "effect": {
+          "add_modifier": {},
+          "ai_weight": {
+            "weight": "5",
+            "_comments": [
+              "# don't encourage growth if there is no free housing"
+            ],
+            "modifier": {
+              "factor": "0"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_resource_decisions.txt",
+    "_line_number": 8
+  },
+  "decision_planet_luxuries_boost": {
+    "decision_planet_luxuries_boost": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_luxuries",
+      "resources": {
+        "category": "decisions",
+        "cost": {
+          "trigger": {
+            "num_pops >": "100"
+          },
+          "consumer_goods": "1000"
+        }
+      },
+      "potential": {
+        "owner": {
+          "NOT": {},
+          "allow": {
+            "NOT": {},
+            "effect": {
+              "add_modifier": {},
+              "ai_weight": {
+                "weight": "1",
+                "modifier": {
+                  "factor": "0"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_resource_decisions.txt",
+    "_line_number": 50
+  }
+}

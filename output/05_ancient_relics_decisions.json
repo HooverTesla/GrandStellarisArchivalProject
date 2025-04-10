@@ -1,0 +1,429 @@
+{
+  "decision_tissue_growth_stimulants": {
+    "decision_tissue_growth_stimulants": {
+      "owned_planets_only": "yes",
+      "sound": "event_laboratory_sound",
+      "icon": "decision_resources",
+      "resources": {
+        "category": "decisions",
+        "cost": {
+          "energy": "200"
+        }
+      },
+      "potential": {
+        "owner": {
+          "is_machine_empire": "no",
+          "has_country_flag": "city_of_bones_completed"
+        },
+        "NOT": {},
+        "allow": {
+          "NOT": {},
+          "effect": {
+            "add_modifier": {},
+            "ai_weight": {
+              "weight": "1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_ancient_relics_decisions.txt",
+    "_line_number": 10
+  },
+  "decision_explosive_fungifoam_housing": {
+    "decision_explosive_fungifoam_housing": {
+      "owned_planets_only": "yes",
+      "sound": "event_laboratory_sound",
+      "icon": "decision_resources",
+      "resources": {
+        "category": "decisions",
+        "cost": {
+          "energy": "500"
+        }
+      },
+      "potential": {
+        "owner": {
+          "is_machine_empire": "yes",
+          "has_country_flag": "city_of_bones_completed"
+        },
+        "NOT": {},
+        "allow": {
+          "NOT": {},
+          "effect": {
+            "add_modifier": {},
+            "ai_weight": {
+              "weight": "1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_ancient_relics_decisions.txt",
+    "_line_number": 43
+  },
+  "decision_baol_life_seed": {
+    "decision_baol_life_seed": {
+      "owned_planets_only": "yes",
+      "sound": "event_laboratory_sound",
+      "icon": "decision_resort_colony",
+      "enactment_time": "720",
+      "potential": {
+        "NOT": {
+          "is_planet_class": "pc_gaia"
+        },
+        "is_artificial": "no",
+        "exists": "owner",
+        "owner": {
+          "owner": {
+            "has_country_flag": "not_activated_baol"
+          },
+          "NOT": {},
+          "allow": {
+            "effect": {
+              "custom_tooltip": "decision_baol_life_seed_effects",
+              "_comments": [
+                "# Convert to Gaia world, spawn Nu-Baol pops"
+              ],
+              "hidden_effect": {
+                "change_pc": "pc_gaia",
+                "if": {
+                  "limit": {
+                    "if": {
+                      "limit": {
+                        "owner": {
+                          "is_hive_empire": "yes"
+                        }
+                      },
+                      "create_hive_nu_baol_effect": "yes"
+                    },
+                    "else": {
+                      "create_nu_baol_effect": "yes"
+                    }
+                  },
+                  "while": {
+                    "count": "4",
+                    "create_pop": {
+                      "species": "event_target:nu_baol_species",
+                      "ethos": {
+                        "ethic": "ethic_pacifist"
+                      }
+                    }
+                  },
+                  "planet_event": {}
+                },
+                "on_queued": {
+                  "owner": {},
+                  "on_unqueued": {
+                    "owner": {},
+                    "ai_weight": {
+                      "weight": "0"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_ancient_relics_decisions.txt",
+    "_line_number": 79
+  },
+  "decision_baol_life_seed_enhance": {
+    "decision_baol_life_seed_enhance": {
+      "owned_planets_only": "yes",
+      "sound": "event_laboratory_sound",
+      "icon": "decision_resort_colony",
+      "potential": {
+        "is_planet_class": "pc_gaia",
+        "exists": "owner",
+        "owner": {},
+        "allow": {
+          "effect": {
+            "custom_tooltip": "decision_baol_life_seed_enhance_effects",
+            "_comments": [
+              "# Convert to Gaia world, spawn Nu-Baol pops"
+            ],
+            "hidden_effect": {
+              "owner": {
+                "if": {
+                  "limit": {
+                    "if": {
+                      "limit": {
+                        "owner": {
+                          "is_hive_empire": "yes"
+                        }
+                      },
+                      "create_hive_nu_baol_effect": "yes"
+                    },
+                    "else": {
+                      "create_nu_baol_effect": "yes"
+                    }
+                  },
+                  "while": {
+                    "count": "10",
+                    "random_owned_pop": {
+                      "limit": {
+                        "NOR": {
+                          "is_robot_pop": "yes",
+                          "has_trait": "trait_pc_gaia_preference_terraforming"
+                        }
+                      },
+                      "modify_species": {
+                        "species": "this",
+                        "remove_trait": "trait_pc_nuked_preference",
+                        "add_trait": "trait_pc_gaia_preference_terraforming"
+                      }
+                    }
+                  },
+                  "planet_event": {}
+                },
+                "on_queued": {
+                  "owner": {},
+                  "ai_weight": {
+                    "weight": "0"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_ancient_relics_decisions.txt",
+    "_line_number": 148
+  },
+  "decision_museum_exhibits": {
+    "decision_museum_exhibits": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_museum",
+      "potential": {
+        "owner": {
+          "is_gestalt": "no",
+          "OR": {
+            "is_megacorp": "no",
+            "is_worker_coop_empire": "yes"
+          }
+        },
+        "NOT": {},
+        "allow": {
+          "NOT": {
+            "has_modifier": "planet_museum_exhibits"
+          },
+          "OR": {
+            "num_assigned_jobs": {
+              "job": "haruspex",
+              "value >": "1"
+            }
+          }
+        },
+        "resources": {
+          "category": "decisions",
+          "cost": {
+            "minor_artifacts": "@minor_artifact_decision_cost"
+          }
+        },
+        "effect": {
+          "_comments": [
+            "#custom_tooltip = decision_museum_exhibits_effect"
+          ],
+          "add_modifier": {},
+          "ai_weight": {
+            "weight": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "05_ancient_relics_decisions.txt",
+    "_line_number": 222
+  },
+  "decision_manager_awards": {
+    "decision_manager_awards": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_deal",
+      "potential": {
+        "owner": {
+          "is_megacorp": "yes",
+          "is_worker_coop_empire": "no"
+        },
+        "NOT": {},
+        "allow": {
+          "NOT": {},
+          "resources": {
+            "category": "decisions",
+            "cost": {
+              "minor_artifacts": "@minor_artifact_decision_cost"
+            }
+          },
+          "effect": {
+            "add_modifier": {},
+            "ai_weight": {
+              "weight": "0"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_ancient_relics_decisions.txt",
+    "_line_number": 283
+  },
+  "decision_sanctuary_exhibits": {
+    "decision_sanctuary_exhibits": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_museum",
+      "potential": {
+        "owner": {
+          "NOT": {},
+          "allow": {
+            "NOT": {},
+            "resources": {
+              "category": "decisions",
+              "cost": {
+                "minor_artifacts": "@minor_artifact_decision_cost"
+              }
+            },
+            "effect": {
+              "add_modifier": {},
+              "ai_weight": {
+                "weight": "0"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_ancient_relics_decisions.txt",
+    "_line_number": 316
+  },
+  "decision_artifact_relays_hivemind": {
+    "decision_artifact_relays_hivemind": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_satellite_in_orbit",
+      "potential": {
+        "owner": {},
+        "allow": {
+          "NOT": {},
+          "resources": {
+            "category": "decisions",
+            "cost": {
+              "minor_artifacts": "@minor_artifact_decision_cost"
+            }
+          },
+          "effect": {
+            "custom_tooltip": "decision_artifact_relays_hivemind_effect",
+            "hidden_effect": {
+              "add_modifier": {}
+            },
+            "ai_weight": {
+              "weight": "0"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_ancient_relics_decisions.txt",
+    "_line_number": 346
+  },
+  "decision_artifact_relays_machine": {
+    "decision_artifact_relays_machine": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_satellite_in_orbit",
+      "potential": {
+        "owner": {
+          "is_machine_empire": "yes",
+          "NOT": {
+            "has_civic": "civic_machine_servitor"
+          }
+        },
+        "NOT": {},
+        "allow": {
+          "NOT": {},
+          "resources": {
+            "category": "decisions",
+            "cost": {
+              "minor_artifacts": "@minor_artifact_decision_cost"
+            }
+          },
+          "effect": {
+            "custom_tooltip": "decision_artifact_relays_machine_effect",
+            "hidden_effect": {
+              "add_modifier": {}
+            },
+            "ai_weight": {
+              "weight": "0"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_ancient_relics_decisions.txt",
+    "_line_number": 378
+  },
+  "decision_machine_oracle": {
+    "decision_machine_oracle": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_crime",
+      "resources": {
+        "category": "decisions",
+        "cost": {
+          "energy": "200",
+          "unity": "500"
+        }
+      },
+      "potential": {
+        "owner": {
+          "is_machine_empire": "yes",
+          "has_country_flag": "oracle_completed"
+        },
+        "NOT": {},
+        "allow": {
+          "NOT": {},
+          "effect": {
+            "add_modifier": {},
+            "ai_weight": {
+              "weight": "1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_ancient_relics_decisions.txt",
+    "_line_number": 416
+  },
+  "decision_yuht_cleanseplanet": {
+    "decision_yuht_cleanseplanet": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_animal_wildlife",
+      "resources": {
+        "category": "decisions",
+        "cost": {
+          "energy": "500"
+        }
+      },
+      "potential": {
+        "can_have_habitable_deposits": "yes",
+        "owner": {
+          "has_country_flag": "artifact_yuht_research_completed"
+        },
+        "NOT": {
+          "NOT": {},
+          "effect": {
+            "add_planet_devastation": "50",
+            "add_modifier": {
+              "remove_fauna_yuht": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_ancient_relics_decisions.txt",
+    "_line_number": 448
+  }
+}

@@ -1,0 +1,883 @@
+{
+  "create_normal_pirate_country": {
+    "create_normal_pirate_country": {
+      "event_target:pirate_system": {
+        "random_system_planet": {
+          "limit": {
+            "save_event_target_as": "pirate_home",
+            "create_country": {
+              "name": "NAME_Pirates",
+              "type": "pirate",
+              "species": "event_target:owner_species",
+              "name_list": "PRT1",
+              "flag": {
+                "background": {
+                  "category": "backgrounds",
+                  "file": "00_solid.dds"
+                },
+                "colors": {}
+              },
+              "effect": {
+                "save_event_target_as": "pirate_band"
+              }
+            },
+            "event_target:pirate_band": {
+              "set_name": "random",
+              "randomize_flag_symbol": "pirate",
+              "every_country": {
+                "establish_communications_no_message": "prev"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 17
+  },
+  "create_drone_pirate_country": {
+    "create_drone_pirate_country": {
+      "event_target:pirate_system": {
+        "random_system_planet": {
+          "save_event_target_as": "pirate_home",
+          "create_country": {
+            "name": "NAME_Pirates",
+            "type": "pirate",
+            "species": "event_target:owner_species",
+            "name_list": "PRT1",
+            "flag": {
+              "background": {
+                "category": "backgrounds",
+                "file": "00_solid.dds"
+              },
+              "colors": {}
+            },
+            "effect": {
+              "save_event_target_as": "pirate_band",
+              "set_country_flag": "drone_pirate"
+            }
+          },
+          "event_target:pirate_band": {
+            "set_name": "random",
+            "randomize_flag_symbol": "pirate",
+            "every_country": {
+              "establish_communications_no_message": "prev"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 54
+  },
+  "create_drone_pirate_country_2": {
+    "create_drone_pirate_country_2": {
+      "event_target:pirate_system": {
+        "random_system_planet": {
+          "save_event_target_as": "pirate_home",
+          "create_country": {
+            "name": "NAME_Pirates",
+            "type": "pirate",
+            "species": "event_target:pirate_species",
+            "name_list": "PRT1",
+            "flag": {
+              "background": {
+                "category": "backgrounds",
+                "file": "00_solid.dds"
+              },
+              "colors": {}
+            },
+            "effect": {
+              "save_event_target_as": "pirate_band",
+              "set_country_flag": "drone_pirate"
+            }
+          },
+          "event_target:pirate_band": {
+            "set_name": "random",
+            "randomize_flag_symbol": "pirate",
+            "every_country": {
+              "establish_communications_no_message": "prev"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 91
+  },
+  "create_machine_pirate_country": {
+    "create_machine_pirate_country": {
+      "event_target:pirate_system": {
+        "random_system_planet": {
+          "save_event_target_as": "pirate_home",
+          "create_country": {
+            "name": "NAME_Pirates",
+            "type": "pirate",
+            "species": "event_target:owner_species",
+            "name_list": "PRT1",
+            "flag": {
+              "background": {
+                "category": "backgrounds",
+                "file": "00_solid.dds"
+              },
+              "colors": {}
+            },
+            "effect": {
+              "save_event_target_as": "pirate_band",
+              "set_country_flag": "machine_pirate"
+            }
+          },
+          "event_target:pirate_band": {
+            "set_name": "random",
+            "randomize_flag_symbol": "pirate",
+            "every_country": {
+              "establish_communications_no_message": "prev"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 128
+  },
+  "create_machine_pirate_country_2": {
+    "create_machine_pirate_country_2": {
+      "event_target:pirate_system": {
+        "random_system_planet": {
+          "save_event_target_as": "pirate_home",
+          "create_country": {
+            "name": "NAME_Pirates",
+            "type": "pirate",
+            "species": "event_target:pirate_species",
+            "name_list": "PRT1",
+            "flag": {
+              "background": {
+                "category": "backgrounds",
+                "file": "00_solid.dds"
+              },
+              "colors": {}
+            },
+            "effect": {
+              "save_event_target_as": "pirate_band",
+              "set_country_flag": "machine_pirate"
+            }
+          },
+          "event_target:pirate_band": {
+            "set_name": "random",
+            "randomize_flag_symbol": "pirate",
+            "every_country": {
+              "establish_communications_no_message": "prev"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 165
+  },
+  "create_pirate_base_1": {
+    "create_pirate_base_1": {
+      "create_fleet": {
+        "name": "NAME_Pirate_Station",
+        "effect": {
+          "set_owner": "event_target:pirate_band",
+          "create_ship": {
+            "name": "random",
+            "design": "NAME_Pirate_Nest",
+            "graphical_culture": "pirate_01"
+          },
+          "set_location": "event_target:pirate_home"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 202
+  },
+  "create_pirate_fleet": {
+    "create_pirate_fleet": {
+      "event_target:pirate_band": {
+        "create_leader": {
+          "class": "commander",
+          "species": "owner_main_species",
+          "name": "random",
+          "skill": "1"
+        },
+        "create_fleet": {
+          "name": "NAME_Pirate_Fleet",
+          "effect": {
+            "set_owner": "event_target:pirate_band",
+            "if": {
+              "limit": {
+                "event_target:pirate_system": {}
+              },
+              "create_pirate_ships_10": "yes"
+            },
+            "assign_leader": "last_created_leader",
+            "set_location": "event_target:pirate_home",
+            "set_fleet_stance": "aggressive",
+            "set_aggro_range_measure_from": "self",
+            "set_aggro_range": "800"
+          }
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 217
+  },
+  "create_pirate_ships_0": {
+    "create_pirate_ships_0": {
+      "create_ship_design": {
+        "design": "NAME_Reaver"
+      },
+      "while": {
+        "count": "10",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 336
+  },
+  "create_pirate_ships_1": {
+    "create_pirate_ships_1": {
+      "create_ship_design": {
+        "design": "NAME_Brigand"
+      },
+      "while": {
+        "count": "4",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 350
+  },
+  "create_pirate_ships_2": {
+    "create_pirate_ships_2": {
+      "create_ship_design": {
+        "design": "NAME_Brigand"
+      },
+      "while": {
+        "count": "6",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 375
+  },
+  "create_pirate_ships_3": {
+    "create_pirate_ships_3": {
+      "create_ship_design": {
+        "design": "NAME_Brigand"
+      },
+      "while": {
+        "count": "6",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 400
+  },
+  "create_pirate_ships_4": {
+    "create_pirate_ships_4": {
+      "create_ship_design": {
+        "design": "NAME_Marauder"
+      },
+      "while": {
+        "count": "4",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 425
+  },
+  "create_pirate_ships_5": {
+    "create_pirate_ships_5": {
+      "create_ship_design": {
+        "design": "NAME_Corsair"
+      },
+      "while": {
+        "count": "2",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 450
+  },
+  "create_pirate_ships_6": {
+    "create_pirate_ships_6": {
+      "create_ship_design": {
+        "design": "NAME_Black_Earl"
+      },
+      "while": {
+        "count": "2",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 497
+  },
+  "create_pirate_ships_7": {
+    "create_pirate_ships_7": {
+      "create_ship_design": {
+        "design": "NAME_Black_Earl"
+      },
+      "while": {
+        "count": "2",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 555
+  },
+  "create_pirate_ships_8": {
+    "create_pirate_ships_8": {
+      "create_ship_design": {
+        "design": "NAME_Black_Earl"
+      },
+      "while": {
+        "count": "4",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 613
+  },
+  "create_pirate_ships_9": {
+    "create_pirate_ships_9": {
+      "create_ship_design": {
+        "design": "NAME_Black_Earl"
+      },
+      "while": {
+        "count": "2",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 671
+  },
+  "create_pirate_ships_10": {
+    "create_pirate_ships_10": {
+      "create_ship_design": {
+        "design": "NAME_Brigand"
+      },
+      "while": {
+        "count": "6",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 696
+  },
+  "create_privateer_country": {
+    "create_privateer_country": {
+      "event_target:privateer_system": {
+        "random_system_planet": {
+          "save_event_target_as": "privateer_home",
+          "create_country": {
+            "name": "NAME_Privateers",
+            "type": "pirate",
+            "species": "event_target:owner_species",
+            "name_list": "PRT1",
+            "flag": {
+              "background": {
+                "category": "backgrounds",
+                "file": "00_solid.dds"
+              },
+              "colors": {}
+            },
+            "effect": {
+              "save_event_target_as": "privateer_band"
+            }
+          },
+          "event_target:privateer_band": {
+            "randomize_flag_symbol": "pirate",
+            "every_country": {
+              "establish_communications_no_message": "prev"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 733
+  },
+  "create_privateer_fleet": {
+    "create_privateer_fleet": {
+      "event_target:privateer_band": {
+        "create_leader": {
+          "class": "commander",
+          "species": "owner_main_species",
+          "name": "random",
+          "skill": "1"
+        },
+        "create_fleet": {
+          "name": "NAME_Privateers",
+          "effect": {
+            "set_owner": "event_target:privateer_band",
+            "if": {
+              "limit": {
+                "event_target:target_country": {
+                  "fleet_power >": "100000"
+                }
+              },
+              "create_privateer_ships_12": "yes"
+            },
+            "assign_leader": "last_created_leader",
+            "set_location": "event_target:privateer_home",
+            "set_fleet_stance": "aggressive",
+            "set_aggro_range_measure_from": "self",
+            "set_aggro_range": "800"
+          }
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 768
+  },
+  "create_privateer_ships_0": {
+    "create_privateer_ships_0": {
+      "create_ship_design": {
+        "design": "NAME_Brigand"
+      },
+      "while": {
+        "count": "1",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 905
+  },
+  "create_privateer_ships_1": {
+    "create_privateer_ships_1": {
+      "create_ship_design": {
+        "design": "NAME_Reaver"
+      },
+      "while": {
+        "count": "2",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 919
+  },
+  "create_privateer_ships_2": {
+    "create_privateer_ships_2": {
+      "create_ship_design": {
+        "design": "NAME_Brigand"
+      },
+      "while": {
+        "count": "2",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 933
+  },
+  "create_privateer_ships_3": {
+    "create_privateer_ships_3": {
+      "create_ship_design": {
+        "design": "NAME_Skull"
+      },
+      "while": {
+        "count": "7",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 958
+  },
+  "create_privateer_ships_4": {
+    "create_privateer_ships_4": {
+      "create_ship_design": {
+        "design": "NAME_Skull"
+      },
+      "while": {
+        "count": "11",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 972
+  },
+  "create_privateer_ships_5": {
+    "create_privateer_ships_5": {
+      "create_ship_design": {
+        "design": "NAME_Corsair"
+      },
+      "while": {
+        "count": "4",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 986
+  },
+  "create_privateer_ships_6": {
+    "create_privateer_ships_6": {
+      "create_ship_design": {
+        "design": "NAME_Black_Earl"
+      },
+      "while": {
+        "count": "2",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 1011
+  },
+  "create_privateer_ships_7": {
+    "create_privateer_ships_7": {
+      "create_ship_design": {
+        "design": "NAME_Black_Earl"
+      },
+      "while": {
+        "count": "6",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 1058
+  },
+  "create_privateer_ships_8": {
+    "create_privateer_ships_8": {
+      "create_ship_design": {
+        "design": "NAME_Black_Earl"
+      },
+      "while": {
+        "count": "8",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 1116
+  },
+  "create_privateer_ships_9": {
+    "create_privateer_ships_9": {
+      "create_ship_design": {
+        "design": "NAME_Corsair"
+      },
+      "while": {
+        "count": "5",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 1174
+  },
+  "create_privateer_ships_10": {
+    "create_privateer_ships_10": {
+      "create_ship_design": {
+        "design": "NAME_Corsair"
+      },
+      "while": {
+        "count": "10",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 1210
+  },
+  "create_privateer_ships_11": {
+    "create_privateer_ships_11": {
+      "create_ship_design": {
+        "design": "NAME_Corsair"
+      },
+      "while": {
+        "count": "4",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 1268
+  },
+  "create_privateer_ships_12": {
+    "create_privateer_ships_12": {
+      "create_ship_design": {
+        "design": "NAME_Corsair"
+      },
+      "while": {
+        "count": "12",
+        "create_ship": {
+          "name": "random",
+          "design": "last_created_design",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 1326
+  },
+  "create_thalassocracy_country": {
+    "create_thalassocracy_country": {
+      "if": {
+        "limit": {
+          "create_species": {
+            "name": "NAME_Thalassocracy_species",
+            "plural": "NAME_Thalassocracy_species_plural",
+            "adjective": "NAME_Thalassocracy_species_adj",
+            "class": "MAM",
+            "portrait": "mam1",
+            "namelist": "HUM2",
+            "traits": {
+              "ideal_planet_class": "pc_habitat",
+              "trait": "trait_void_dweller_1"
+            },
+            "effect": {},
+            "create_country": {
+              "name": "NAME_Thalassocracy",
+              "type": "pirate",
+              "contact_rule": "on_action_only",
+              "species": "event_target:thalassocracy_species",
+              "_comments": [
+                "# ignore_initial_colony_error = yes"
+              ],
+              "name_list": "HUM2",
+              "flag": {
+                "icon": {
+                  "category": "pirate",
+                  "file": "flag_pirate_9.dds"
+                },
+                "background": {
+                  "category": "backgrounds",
+                  "file": "pattern_01.dds"
+                },
+                "colors": {}
+              },
+              "effect": {
+                "save_global_event_target_as": "thalassocracy_country",
+                "set_faction_hostility": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 1390
+  },
+  "create_thalassocracy_fleet": {
+    "create_thalassocracy_fleet": {
+      "event_target:thalassocracy_country": {
+        "create_leader": {
+          "class": "commander",
+          "species": "owner_main_species",
+          "name": "random",
+          "skill": "4"
+        },
+        "create_fleet": {
+          "name": "NAME_Thalassocracy_fleet",
+          "effect": {
+            "set_owner": "event_target:thalassocracy_country",
+            "if": {
+              "limit": {
+                "event_target:thalassocracy_target_system": {
+                  "has_system_trade_value >": "140"
+                }
+              },
+              "create_thalassocracy_ships_3": "yes"
+            },
+            "assign_leader": "last_created_leader",
+            "_comments": [
+              "# set_fleet_formation = { }"
+            ],
+            "set_location": "event_target:thalassocracy_spawn_planet",
+            "set_fleet_stance": "aggressive",
+            "set_aggro_range_measure_from": "self",
+            "set_aggro_range": "400",
+            "save_global_event_target_as": "thalassocracy_fleet",
+            "auto_move_to_planet": {
+              "target": "event_target:thalassocracy_target_planet",
+              "clear_auto_move_on_arrival": "no",
+              "arrival_effect": "thalassocracy_patrol"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 1442
+  },
+  "create_thalassocracy_ships_1": {
+    "create_thalassocracy_ships_1": {
+      "while": {
+        "count": "14",
+        "create_ship": {
+          "name": "random",
+          "design": "NAME_Bemat_cruiser_02",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 1496
+  },
+  "create_thalassocracy_ships_2": {
+    "create_thalassocracy_ships_2": {
+      "while": {
+        "count": "18",
+        "create_ship": {
+          "name": "random",
+          "design": "NAME_Bemat_cruiser_02",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 1531
+  },
+  "create_thalassocracy_ships_3": {
+    "create_thalassocracy_ships_3": {
+      "while": {
+        "count": "20",
+        "create_ship": {
+          "name": "random",
+          "design": "NAME_Bemat_cruiser_02",
+          "graphical_culture": "pirate_01"
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 1574
+  },
+  "thalassocracy_patrol": {
+    "thalassocracy_patrol": {
+      "if": {
+        "limit": {
+          "solar_system": {
+            "random_system_planet": {
+              "limit": {
+                "NOT": {},
+                "save_global_event_target_as": "thalassocracy_target_planet",
+                "set_planet_flag": "thalassocracy_visited"
+              }
+            }
+          },
+          "else_if": {
+            "limit": {
+              "solar_system": {
+                "random_neighbor_system": {
+                  "limit": {
+                    "any_system_planet": {
+                      "NOT": {}
+                    },
+                    "save_global_event_target_as": "thalassocracy_target_system",
+                    "random_system_planet": {
+                      "limit": {
+                        "NOT": {},
+                        "save_global_event_target_as": "thalassocracy_target_planet",
+                        "set_planet_flag": "thalassocracy_visited"
+                      }
+                    }
+                  }
+                },
+                "else": {
+                  "event_target:thalassocracy_spawn_planet": {
+                    "save_global_event_target_as": "thalassocracy_target_planet"
+                  }
+                },
+                "auto_move_to_planet": {
+                  "target": "event_target:thalassocracy_target_planet",
+                  "clear_auto_move_on_arrival": "no",
+                  "arrival_effect": "thalassocracy_patrol"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "pirate_fleet_effects.txt",
+    "_line_number": 1617
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "defined_text": {
+    "defined_text": {
+      "name": "GetOperativesLowerPlural",
+      "text": {
+        "trigger": {
+          "is_scope_valid": "yes",
+          "is_gestalt": "yes"
+        },
+        "localization_key": "operative_drone_plural_lower"
+      },
+      "default": "operative_plural_lower"
+    },
+    "_source_file": "05_scripted_loc_nem.txt",
+    "_line_number": 809
+  },
+  "define_text": {
+    "define_text": {
+      "name": "GetKaleidoscopeMood",
+      "text": {
+        "trigger": {
+          "event_target:global_event_country": {
+            "check_variable": {
+              "which": "kaleidoscope_global_mood",
+              "value >": "15"
+            }
+          }
+        },
+        "localization_key": "kaleidoscope_mood_happy"
+      }
+    },
+    "_source_file": "05_scripted_loc_nem.txt",
+    "_line_number": 828
+  }
+}

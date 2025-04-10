@@ -1,0 +1,496 @@
+{
+  "quantum_catapult_0": {
+    "quantum_catapult_0": {
+      "entity": "construction_platform_entity",
+      "construction_entity": "construction_platform_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "place_entity_on_planet_plane": "no",
+      "entity_offset": {
+        "build_time": "1800",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "2000",
+            "influence": "300"
+          },
+          "upkeep": {
+            "energy": "25"
+          }
+        },
+        "custom_tooltip_requirements": "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_QUANTUM_CATAPULT",
+        "prerequisites": {
+          "possible": {
+            "hidden_trigger": {
+              "exists": "starbase"
+            },
+            "custom_tooltip": {
+              "fail_text": "requires_surveyed_system",
+              "NOT": {
+                "any_system_planet": {
+                  "is_surveyed": {
+                    "who": "prev.from",
+                    "status": "no"
+                  }
+                }
+              }
+            }
+          },
+          "placement_rules": {
+            "planet_possible": {
+              "custom_tooltip": {
+                "fail_text": "requires_no_anomaly",
+                "NOT": {},
+                "custom_tooltip": {
+                  "fail_text": "requires_neutron_star_or_pulsar",
+                  "is_star": "yes",
+                  "if": {
+                    "limit": {
+                      "is_trinary_star": "no",
+                      "is_binary_star": "no"
+                    },
+                    "OR": {
+                      "is_star_class": "sc_pulsar"
+                    }
+                  },
+                  "else": {
+                    "OR": {
+                      "is_planet_class": "pc_pulsar"
+                    }
+                  }
+                }
+              }
+            },
+            "_comments": [
+              "# root = system",
+              "# from = country"
+            ],
+            "ai_weight": {
+              "factor": "15",
+              "modifier": {
+                "factor": "0.1",
+                "starbase": {},
+                "modifier": {
+                  "factor": "0.1",
+                  "any_neighbor_system": {
+                    "exists": "owner",
+                    "NOT": {
+                      "owner": {}
+                    }
+                  },
+                  "modifier": {
+                    "factor": "0",
+                    "from": {
+                      "any_system_within_border": {
+                        "distance": {
+                          "source": "root.solar_system",
+                          "use_bypasses": "no",
+                          "min_jumps": "1",
+                          "max_jumps": "25"
+                        },
+                        "any_system_megastructure": {
+                          "OR": {
+                            "is_megastructure_type": "quantum_catapult_improved_slingshot"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "on_build_start": {
+                  "on_build_cancel": {
+                    "on_build_complete": {
+                      "from": {
+                        "if": {
+                          "limit": {
+                            "has_relic": "r_contingency_core",
+                            "has_country_flag": "built_quantum_catapult_site"
+                          },
+                          "set_country_flag": "built_quantum_catapult_site_contingency"
+                        },
+                        "else_if": {
+                          "limit": {
+                            "NOT": {},
+                            "set_country_flag": "built_quantum_catapult_site",
+                            "country_event": {}
+                          },
+                          "fromfrom.planet": {
+                            "if": {
+                              "limit": {
+                                "orbital_station": {
+                                  "dismantle": "yes"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "13_quantum_catapult.txt",
+    "_line_number": 10
+  },
+  "quantum_catapult_1": {
+    "quantum_catapult_1": {
+      "entity": "quantum_catapult_stage_1_entity",
+      "_comments": [
+        "#entity = \"quantum_catapult_stage_1_entity\"",
+        "#construction_entity = \"quantum_catapult_stage_1_entity\""
+      ],
+      "construction_entity": "quantum_catapult_stage_1_entity",
+      "portrait": "GFX_megastructure_quantum_catapult_background",
+      "place_entity_on_planet_plane": "yes",
+      "entity_offset": {
+        "build_time": "1800",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "3000"
+          },
+          "upkeep": {
+            "energy": "50"
+          }
+        },
+        "upgrade_from": {},
+        "prerequisites": {
+          "bypass_type": "quantum_catapult",
+          "country_modifier": {
+            "fleet_mia_time_mult": "-0.1"
+          },
+          "station_modifier": {
+            "catapult_spread_base": "50",
+            "catapult_range_base": "300",
+            "quantum_catapult_megastructure_bypass_windup_mult": "0"
+          },
+          "on_build_complete": {
+            "from": {}
+          }
+        }
+      }
+    },
+    "_source_file": "13_quantum_catapult.txt",
+    "_line_number": 167
+  },
+  "quantum_catapult_2": {
+    "quantum_catapult_2": {
+      "entity": "quantum_catapult_stage_2_entity",
+      "_comments": [
+        "#entity = \"quantum_catapult_stage_2_entity\"",
+        "#construction_entity = \"quantum_catapult_stage_2_entity\""
+      ],
+      "construction_entity": "quantum_catapult_stage_2_entity",
+      "portrait": "GFX_megastructure_quantum_catapult_background",
+      "place_entity_on_planet_plane": "yes",
+      "entity_offset": {
+        "build_time": "1800",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "3000"
+          },
+          "upkeep": {
+            "energy": "60"
+          }
+        },
+        "upgrade_from": {},
+        "possible": {
+          "from": {
+            "has_technology": "tech_quantum_catapult"
+          }
+        },
+        "prerequisites": {
+          "country_modifier": {
+            "fleet_mia_time_mult": "-0.2"
+          },
+          "station_modifier": {
+            "catapult_spread_base": "35",
+            "catapult_range_base": "450",
+            "quantum_catapult_megastructure_bypass_windup_mult": "-0.25"
+          },
+          "on_build_complete": {
+            "from": {},
+            "bypass_type": "quantum_catapult"
+          }
+        }
+      }
+    },
+    "_source_file": "13_quantum_catapult.txt",
+    "_line_number": 211
+  },
+  "quantum_catapult_3": {
+    "quantum_catapult_3": {
+      "entity": "quantum_catapult_stage_3_entity",
+      "_comments": [
+        "#entity = \"quantum_catapult_stage_3_entity\"",
+        "#construction_entity = \"quantum_catapult_stage_3_entity\""
+      ],
+      "construction_entity": "quantum_catapult_stage_3_entity",
+      "portrait": "GFX_megastructure_quantum_catapult_background",
+      "place_entity_on_planet_plane": "yes",
+      "entity_offset": {
+        "build_time": "1800",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "10000"
+          },
+          "upkeep": {
+            "energy": "75"
+          }
+        },
+        "upgrade_from": {},
+        "possible": {
+          "from": {
+            "has_technology": "tech_mega_engineering"
+          }
+        },
+        "prerequisites": {
+          "show_prereqs": "yes",
+          "country_modifier": {
+            "fleet_mia_time_mult": "-0.3"
+          },
+          "station_modifier": {
+            "catapult_spread_base": "25",
+            "catapult_range_base": "750",
+            "quantum_catapult_megastructure_bypass_windup_mult": "-0.5"
+          },
+          "on_build_complete": {
+            "from": {
+              "set_country_flag": "has_built_or_repaired_megastructure",
+              "country_event": {}
+            },
+            "bypass_type": "quantum_catapult"
+          }
+        }
+      }
+    },
+    "_source_file": "13_quantum_catapult.txt",
+    "_line_number": 260
+  },
+  "quantum_catapult_ruined": {
+    "quantum_catapult_ruined": {
+      "entity": "quantum_catapult_01_destroyed_entity",
+      "construction_entity": "quantum_catapult_01_destroyed_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "place_entity_on_planet_plane": "yes",
+      "entity_offset": {
+        "upgrade_from": {},
+        "potential": {
+          "always": "no"
+        }
+      }
+    },
+    "_source_file": "13_quantum_catapult.txt",
+    "_line_number": 307
+  },
+  "quantum_catapult_restored": {
+    "quantum_catapult_restored": {
+      "entity": "quantum_catapult_stage_3_entity",
+      "_comments": [
+        "#entity = \"quantum_catapult_stage_4_entity\"",
+        "#construction_entity = \"quantum_catapult_stage_4_entity\""
+      ],
+      "construction_entity": "quantum_catapult_stage_3_entity",
+      "portrait": "GFX_megastructure_quantum_catapult_background",
+      "place_entity_on_planet_plane": "yes",
+      "entity_offset": {
+        "build_time": "3600",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "10000"
+          },
+          "upkeep": {
+            "energy": "50"
+          }
+        },
+        "upgrade_from": {},
+        "possible": {
+          "from": {
+            "has_technology": "tech_mega_engineering"
+          }
+        },
+        "country_modifier": {
+          "fleet_mia_time_mult": "-0.3"
+        },
+        "station_modifier": {
+          "catapult_spread_base": "25",
+          "catapult_range_base": "750",
+          "quantum_catapult_megastructure_bypass_windup_mult": "-0.5"
+        },
+        "on_build_start": {
+          "fromfrom": {
+            "set_graphical_culture": "root.from"
+          }
+        },
+        "on_build_complete": {
+          "set_star_flag": "quantum_catapult_built",
+          "every_system_ambient_object": {
+            "limit": {
+              "OR": {
+                "is_ambient_object_type": "medium_debris_02_object"
+              }
+            },
+            "destroy_ambient_object": "this"
+          },
+          "from": {
+            "set_country_flag": "has_built_or_repaired_megastructure",
+            "country_event": {
+              "country_event": {}
+            },
+            "bypass_type": "quantum_catapult"
+          }
+        }
+      }
+    },
+    "_source_file": "13_quantum_catapult.txt",
+    "_line_number": 328
+  },
+  "quantum_catapult_permanently_ruined": {
+    "quantum_catapult_permanently_ruined": {
+      "entity": "quantum_catapult_01_destroyed_entity",
+      "construction_entity": "quantum_catapult_01_destroyed_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "place_entity_on_planet_plane": "yes",
+      "entity_offset": {
+        "show_galactic_map_icon": "no",
+        "show_in_outliner": "no",
+        "upgrade_from": {},
+        "potential": {
+          "always": "no"
+        }
+      }
+    },
+    "_source_file": "13_quantum_catapult.txt",
+    "_line_number": 391
+  },
+  "quantum_catapult_ruined_slingshot": {
+    "quantum_catapult_ruined_slingshot": {
+      "entity": "quantum_catapult_01_destroyed_entity",
+      "construction_entity": "quantum_catapult_01_destroyed_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "place_entity_on_planet_plane": "yes",
+      "entity_offset": {
+        "upgrade_from": {},
+        "potential": {
+          "always": "no"
+        }
+      }
+    },
+    "_source_file": "13_quantum_catapult.txt",
+    "_line_number": 412
+  },
+  "quantum_catapult_restored_slingshot": {
+    "quantum_catapult_restored_slingshot": {
+      "entity": "quantum_catapult_stage_2_entity",
+      "construction_entity": "quantum_catapult_stage_2_entity",
+      "portrait": "GFX_megastructure_quantum_catapult_background",
+      "place_entity_on_planet_plane": "yes",
+      "entity_offset": {
+        "build_time": "3600",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "2500"
+          },
+          "upkeep": {
+            "energy": "30"
+          }
+        },
+        "upgrade_from": {},
+        "possible": {
+          "from": {
+            "OR": {
+              "has_technology": "tech_quantum_catapult",
+              "has_origin": "origin_star_slingshot"
+            }
+          }
+        },
+        "country_modifier": {
+          "fleet_mia_time_mult": "-0.2"
+        },
+        "station_modifier": {
+          "catapult_spread_base": "35",
+          "catapult_range_base": "450",
+          "quantum_catapult_megastructure_bypass_windup_mult": "-0.3"
+        },
+        "on_build_start": {
+          "fromfrom": {
+            "set_graphical_culture": "root.from"
+          }
+        },
+        "on_build_complete": {
+          "every_system_ambient_object": {
+            "limit": {
+              "OR": {
+                "is_ambient_object_type": "medium_debris_02_object"
+              }
+            },
+            "destroy_ambient_object": "this"
+          },
+          "from": {
+            "country_event": {
+              "country_event": {}
+            },
+            "bypass_type": "quantum_catapult"
+          }
+        }
+      }
+    },
+    "_source_file": "13_quantum_catapult.txt",
+    "_line_number": 433
+  },
+  "quantum_catapult_improved_slingshot": {
+    "quantum_catapult_improved_slingshot": {
+      "entity": "quantum_catapult_stage_3_entity",
+      "construction_entity": "quantum_catapult_stage_3_entity",
+      "portrait": "GFX_megastructure_quantum_catapult_background",
+      "place_entity_on_planet_plane": "yes",
+      "entity_offset": {
+        "build_time": "3600",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "10000"
+          },
+          "upkeep": {
+            "energy": "50"
+          }
+        },
+        "upgrade_from": {},
+        "possible": {
+          "from": {
+            "has_technology": "tech_mega_engineering"
+          }
+        },
+        "prerequisites": {
+          "show_prereqs": "no",
+          "country_modifier": {
+            "fleet_mia_time_mult": "-0.3"
+          },
+          "station_modifier": {
+            "catapult_spread_base": "25",
+            "catapult_range_base": "750",
+            "quantum_catapult_megastructure_bypass_windup_mult": "-0.6"
+          },
+          "on_build_complete": {
+            "set_star_flag": "quantum_catapult_built",
+            "from": {
+              "set_country_flag": "has_built_or_repaired_megastructure",
+              "country_event": {}
+            },
+            "bypass_type": "quantum_catapult"
+          }
+        }
+      }
+    },
+    "_source_file": "13_quantum_catapult.txt",
+    "_line_number": 500
+  }
+}

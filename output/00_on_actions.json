@@ -1,0 +1,2586 @@
+{
+  "on_game_start": {
+    "on_game_start": {
+      "events": {},
+      "random_events": {
+        "19": "0",
+        "1": "akx.8000"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 0
+  },
+  "on_game_start_country": {
+    "on_game_start_country": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 28
+  },
+  "on_single_player_save_game_load": {
+    "on_single_player_save_game_load": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 71
+  },
+  "on_monthly_pulse": {
+    "on_monthly_pulse": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 75
+  },
+  "on_monthly_pulse_pre_ftl_observation": {
+    "on_monthly_pulse_pre_ftl_observation": {
+      "random_events": {
+        "100": "fircon.2550\t\t# The Right to Leave",
+        "_comments": [
+          "# Neolithic Observation Events",
+          "# Bronze and Iron Age Events",
+          "# Medieval and Renaissance Age Events",
+          "# Steam, Industrial, and Machine Events",
+          "# Atomic and Early Space Age Events",
+          "# Early Space Age",
+          "# Non-era related Observation Events",
+          "# Situation Events",
+          "# Hive Observation Events",
+          "# Pre-3.7 Observation Events",
+          "# Non-Era Related Observation Events",
+          "# Medieval or Victorian Era Events",
+          "# Pre-Industrial Events",
+          "# # Post-Industrial Events",
+          "# Atomic and Early Space Age Events"
+        ],
+        "25": "observation.1300\t# Aggressive Observation causes ethics change",
+        "5": "observation.1400\t# Nuclear War Warning",
+        "20": "fircon.2600\t\t# First Interplanetary Flight",
+        "50": "observation.200\t# Shuttle Intercepted",
+        "10": "preftl.2166\t\t# New World Order Situation"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 125
+  },
+  "on_monthly_pulse_pre_ftl_observation_broken_shackles": {
+    "on_monthly_pulse_pre_ftl_observation_broken_shackles": {
+      "random_events": {
+        "100": "fircon.1335\t\t# The Journey Begins",
+        "_comments": [
+          "# \"First Contact\" Observation events",
+          "# Pre-3.7 Observation Events"
+        ],
+        "50": "observation.200\t# Shuttle Intercepted",
+        "25": "observation.1300\t# Aggressive Observation causes ethics change",
+        "5": "observation.1400\t# Nuclear War"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 184
+  },
+  "on_yearly_pulse": {
+    "on_yearly_pulse": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 206
+  },
+  "on_bi_yearly_pulse": {
+    "on_bi_yearly_pulse": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 246
+  },
+  "on_five_year_pulse": {
+    "on_five_year_pulse": {
+      "events": {},
+      "random_events": {
+        "150": "0",
+        "50": "situation.2000 # Situation - The Kaleidoscope"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 257
+  },
+  "on_decade_pulse": {
+    "on_decade_pulse": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 271
+  },
+  "on_mid_game_pulse": {
+    "on_mid_game_pulse": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 288
+  },
+  "on_late_game_pulse": {
+    "on_late_game_pulse": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 300
+  },
+  "on_monthly_pulse_country": {
+    "on_monthly_pulse_country": {
+      "events": {},
+      "random_events": {
+        "75": "0",
+        "25": "origin.7300\t\t\t# Fruitful origin - luring space fauna to feeding stations"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 306
+  },
+  "on_yearly_pulse_country": {
+    "on_yearly_pulse_country": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 356
+  },
+  "on_yearly_random_pulse_country_caravaneers_list": {
+    "on_yearly_random_pulse_country_caravaneers_list": {
+      "random_events": {
+        "1": "cara.4020 # Caravan leaves hulk behind (previously: MTTH 2 years)",
+        "2": "cara.4050 # Caravaneers steal stuff (previously: MTTH 1 year)"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 378
+  },
+  "on_bi_yearly_pulse_country": {
+    "on_bi_yearly_pulse_country": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 390
+  },
+  "on_five_year_pulse_country": {
+    "on_five_year_pulse_country": {
+      "events": {},
+      "_comments": [
+        "# See also: on_five_year_random_pulse_country = {}"
+      ],
+      "random_events": {
+        "75": "0",
+        "25": "precursor.314\t# Neighbor gifts an artifact (previously: MTTH 20 years)"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 398
+  },
+  "on_five_year_random_pulse_country": {
+    "on_five_year_random_pulse_country": {
+      "random_events": {
+        "100": "action.2211\t\t# on_five_year_random_pulse_country_negative_list",
+        "50": "envoy_events.4\t\t# Respected Envoy to Galactic Community",
+        "25": "situation.500\t\t# Gravity Well situation",
+        "5": "fircon.1200\t\t\t# Jaunting Traveler",
+        "1900": "0"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 428
+  },
+  "on_five_years_communication_spread_country": {
+    "on_five_years_communication_spread_country": {
+      "random_events": {
+        "75": "0",
+        "35": "communications_spread.1\t# Communications - neighbor (previously: MTTH 120 months)",
+        "25": "communications_spread.3\t# Communications - neighbor (previously: MTTH 240 months)"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 444
+  },
+  "on_five_year_random_pulse_overlord": {
+    "on_five_year_random_pulse_overlord": {
+      "random_events": {
+        "200": "0",
+        "10": "subject.3050\t# Spiritualist - Pilgrimages"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 454
+  },
+  "on_five_year_random_pulse_pre_ftl": {
+    "on_five_year_random_pulse_pre_ftl": {
+      "random_events": {
+        "200": "0",
+        "10": "fircon.8530\t# Different Flavors of Government"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 472
+  },
+  "on_five_year_random_pulse_pre_ftl_tech_events": {
+    "on_five_year_random_pulse_pre_ftl_tech_events": {
+      "random_events": {
+        "200": "0",
+        "10": "observation.2029 # Gatekeeper for Ethical Considerations"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 496
+  },
+  "on_five_year_random_pulse_country_negative_list": {
+    "on_five_year_random_pulse_country_negative_list": {
+      "random_events": {
+        "10": "envoy_events.220\t# Offense Taken",
+        "20": "action.2212\t\t# Nothing, done differently because of operation_diplomatic_incident"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 512
+  },
+  "on_five_year_random_pulse_country_fe_list": {
+    "on_five_year_random_pulse_country_fe_list": {
+      "random_events": {
+        "30": "fallen_empires_tasks.1 # Patronizing Fallen Empire gives a gift (previously: MTTH 100 years)",
+        "100": "fallen_empires_tasks.3 # Xenophile Fallen Empire asks for a pop (previously: MTTH 20 years)",
+        "40": "fallen_empires_tasks.7 # Xenophile Fallen Empire asks for a pop (previously: MTTH 200 years)",
+        "10": "fallen_empires_tasks.14 # Xenophile Fallen Empire asks for a pop (previously: MTTH 500 years)",
+        "50": "fallen_empires_tasks.21 # Materialist Fallen Empire asks for scientist (previously: MTTH 50 years)",
+        "200": "fallen_empires_tasks.23 # Xenophile Fallen Empire asks for brain scans found in anomaly (previously: MTTH 10 years)",
+        "280": "0"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 528
+  },
+  "on_decade_pulse_country": {
+    "on_decade_pulse_country": {
+      "events": {},
+      "random_events": {
+        "50": "origin.4300 # Payback Origin - Out of Warranty event chain"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 541
+  },
+  "on_decade_pulse_skrand_country": {
+    "on_decade_pulse_skrand_country": {
+      "random_events": {
+        "1": "paragon.3090",
+        "3": "paragon.3020"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 559
+  },
+  "on_decade_random_pulse_country_payback_broken_shackles": {
+    "on_decade_random_pulse_country_payback_broken_shackles": {
+      "random_events": {
+        "70": "0",
+        "10": "origin.4140\t# Help during the war"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 572
+  },
+  "on_mid_game_pulse_country": {
+    "on_mid_game_pulse_country": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 582
+  },
+  "on_late_game_pulse_country": {
+    "on_late_game_pulse_country": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 589
+  },
+  "on_initialize_advanced_colony": {
+    "on_initialize_advanced_colony": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 597
+  },
+  "on_become_advanced_empire": {
+    "on_become_advanced_empire": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 606
+  },
+  "on_press_begin": {
+    "on_press_begin": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 614
+  },
+  "on_custom_diplomacy": {
+    "on_custom_diplomacy": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 625
+  },
+  "on_first_contact": {
+    "on_first_contact": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 671
+  },
+  "on_first_contact_finished": {
+    "on_first_contact_finished": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 685
+  },
+  "on_enforce_borders": {
+    "on_enforce_borders": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 699
+  },
+  "on_ground_combat_started": {
+    "on_ground_combat_started": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 707
+  },
+  "on_planet_attackers_win": {
+    "on_planet_attackers_win": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 722
+  },
+  "on_planet_attackers_lose": {
+    "on_planet_attackers_lose": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 758
+  },
+  "on_planet_defenders_win": {
+    "on_planet_defenders_win": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 767
+  },
+  "on_planet_defenders_lose": {
+    "on_planet_defenders_lose": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 784
+  },
+  "on_system_first_visited": {
+    "on_system_first_visited": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 801
+  },
+  "on_entering_system_first_time": {
+    "on_entering_system_first_time": {
+      "events": {},
+      "random_events": {
+        "200": "0",
+        "10": "leader.19"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 810
+  },
+  "on_entering_system": {
+    "on_entering_system": {
+      "events": {},
+      "random_events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 861
+  },
+  "on_entering_system_fleet": {
+    "on_entering_system_fleet": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 874
+  },
+  "on_crossing_border": {
+    "on_crossing_border": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 972
+  },
+  "on_survey_planet": {
+    "on_survey_planet": {
+      "events": {},
+      "random_events": {
+        "100": "0",
+        "6": "precursor.2000\t# Cybrex",
+        "_comments": [
+          "# The following feature weight multipliers which allow On the Shoulders of Giants players to catch up. See '@origin_shoulders_multiplier'."
+        ],
+        "35": "ancrel.1\t\t# Zroni",
+        "15": "ancrel.2000\t# Grunur/Baol",
+        "25": "cstorms.200\t# adAkkaria"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 987
+  },
+  "on_survey_astral_rift": {
+    "on_survey_astral_rift": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1050
+  },
+  "on_planet_surveyed": {
+    "on_planet_surveyed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1057
+  },
+  "on_astral_rift_surveyed": {
+    "on_astral_rift_surveyed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1069
+  },
+  "on_system_survey": {
+    "on_system_survey": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1079
+  },
+  "on_system_survey_ship": {
+    "on_system_survey_ship": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1091
+  },
+  "on_colonization_started": {
+    "on_colonization_started": {
+      "events": {},
+      "random_events": {
+        "190": "0"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1107
+  },
+  "on_colonized": {
+    "on_colonized": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1135
+  },
+  "on_colony_destroyed": {
+    "on_colony_destroyed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1170
+  },
+  "on_colony_destroyed_by_bombardment": {
+    "on_colony_destroyed_by_bombardment": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1182
+  },
+  "on_entering_battle": {
+    "on_entering_battle": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1191
+  },
+  "on_ship_destroyed_victim": {
+    "on_ship_destroyed_victim": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1215
+  },
+  "on_ship_destroyed_perp": {
+    "on_ship_destroyed_perp": {
+      "events": {},
+      "random_events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1269
+  },
+  "on_damage_taken": {
+    "on_damage_taken": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1303
+  },
+  "on_starbase_destroyed": {
+    "on_starbase_destroyed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1311
+  },
+  "on_starbase_disabled": {
+    "on_starbase_disabled": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1326
+  },
+  "on_ship_disengaged_victim": {
+    "on_ship_disengaged_victim": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1336
+  },
+  "on_ship_disengaged_perp": {
+    "on_ship_disengaged_perp": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1345
+  },
+  "on_fleet_destroyed_victim": {
+    "on_fleet_destroyed_victim": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1354
+  },
+  "on_fleet_destroyed_perp": {
+    "on_fleet_destroyed_perp": {
+      "events": {},
+      "_comments": [
+        "#story.114",
+        "#story.209",
+        "#story.309",
+        "#story.311",
+        "#story.214",
+        "#story.409",
+        "#\t\tfactions.330"
+      ],
+      "random_events": {
+        "300": "0",
+        "2": "leader.17"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1390
+  },
+  "on_space_battle_won": {
+    "on_space_battle_won": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1483
+  },
+  "on_space_battle_lost": {
+    "on_space_battle_lost": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1497
+  },
+  "on_space_battle_over": {
+    "on_space_battle_over": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1507
+  },
+  "on_fleet_exit_battle": {
+    "on_fleet_exit_battle": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1517
+  },
+  "on_fleet_disbanded": {
+    "on_fleet_disbanded": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1527
+  },
+  "on_ship_disbanded": {
+    "on_ship_disbanded": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1535
+  },
+  "on_army_disbanded": {
+    "on_army_disbanded": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1543
+  },
+  "on_fleet_auto_move_arrival": {
+    "on_fleet_auto_move_arrival": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1550
+  },
+  "on_fleet_contract_started": {
+    "on_fleet_contract_started": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1572
+  },
+  "on_fleet_contract_expired": {
+    "on_fleet_contract_expired": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1583
+  },
+  "on_fleet_contract_cancelled": {
+    "on_fleet_contract_cancelled": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1596
+  },
+  "on_fleet_contract_broken": {
+    "on_fleet_contract_broken": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1608
+  },
+  "on_building_mining_station": {
+    "on_building_mining_station": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1622
+  },
+  "on_building_research_station": {
+    "on_building_research_station": {
+      "events": {},
+      "random_events": {
+        "100": "0",
+        "5": "federations3.2000"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1641
+  },
+  "on_building_outpost_station": {
+    "on_building_outpost_station": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1659
+  },
+  "on_building_wormhole_station": {
+    "on_building_wormhole_station": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1670
+  },
+  "on_building_starbase_outpost": {
+    "on_building_starbase_outpost": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1677
+  },
+  "on_building_observation_station": {
+    "on_building_observation_station": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1694
+  },
+  "on_building_starbase_ai": {
+    "on_building_starbase_ai": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1709
+  },
+  "on_building_starbase_exd_0": {
+    "on_building_starbase_exd_0": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1719
+  },
+  "on_building_starbase_exd": {
+    "on_building_starbase_exd": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1726
+  },
+  "on_building_starbase_swarm": {
+    "on_building_starbase_swarm": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1731
+  },
+  "on_building_starbase_marauder": {
+    "on_building_starbase_marauder": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1737
+  },
+  "on_destroying_station": {
+    "on_destroying_station": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1744
+  },
+  "on_losing_station_control": {
+    "on_losing_station_control": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1752
+  },
+  "on_gaining_station_control": {
+    "on_gaining_station_control": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1760
+  },
+  "on_entering_war": {
+    "on_entering_war": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1768
+  },
+  "on_fleet_detected": {
+    "on_fleet_detected": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1775
+  },
+  "on_ship_disabled": {
+    "on_ship_disabled": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1782
+  },
+  "on_ship_enabled": {
+    "on_ship_enabled": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1800
+  },
+  "on_uplift_completion": {
+    "on_uplift_completion": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1812
+  },
+  "on_terraforming_begun": {
+    "on_terraforming_begun": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1825
+  },
+  "on_terraforming_complete": {
+    "on_terraforming_complete": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1834
+  },
+  "on_planet_class_changed": {
+    "on_planet_class_changed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1849
+  },
+  "on_planet_bombarded": {
+    "on_planet_bombarded": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1861
+  },
+  "on_planet_zero_pops": {
+    "on_planet_zero_pops": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1890
+  },
+  "on_planet_zero_pops_ground_combat": {
+    "on_planet_zero_pops_ground_combat": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1901
+  },
+  "on_pop_abducted": {
+    "on_pop_abducted": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1907
+  },
+  "on_pop_enslaved": {
+    "on_pop_enslaved": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1919
+  },
+  "on_pop_emancipated": {
+    "on_pop_emancipated": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1929
+  },
+  "on_pop_resettled": {
+    "on_pop_resettled": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1937
+  },
+  "on_pre_communications_established": {
+    "on_pre_communications_established": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1947
+  },
+  "on_post_communications_established": {
+    "on_post_communications_established": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1957
+  },
+  "on_post_communications_established_always_fire": {
+    "on_post_communications_established_always_fire": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1973
+  },
+  "on_presence_revealed": {
+    "on_presence_revealed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1983
+  },
+  "on_pop_bombed_to_death": {
+    "on_pop_bombed_to_death": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 1992
+  },
+  "on_new_heir": {
+    "on_new_heir": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2001
+  },
+  "on_heir_promoted_to_ruler": {
+    "on_heir_promoted_to_ruler": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2009
+  },
+  "on_ruler_created": {
+    "on_ruler_created": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2017
+  },
+  "on_leader_death_notify": {
+    "on_leader_death_notify": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2027
+  },
+  "on_leader_death_no_notify": {
+    "on_leader_death_no_notify": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2036
+  },
+  "on_leader_death": {
+    "on_leader_death": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2042
+  },
+  "on_leader_hired": {
+    "on_leader_hired": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2065
+  },
+  "on_leader_fired": {
+    "on_leader_fired": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2075
+  },
+  "on_leader_level_up": {
+    "on_leader_level_up": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2089
+  },
+  "on_leader_assigned": {
+    "on_leader_assigned": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2098
+  },
+  "on_leader_unassigned": {
+    "on_leader_unassigned": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2106
+  },
+  "on_ruler_set": {
+    "on_ruler_set": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2111
+  },
+  "on_ruler_removed": {
+    "on_ruler_removed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2121
+  },
+  "on_blocker_cleared": {
+    "on_blocker_cleared": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2128
+  },
+  "on_ship_order": {
+    "on_ship_order": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2143
+  },
+  "on_policy_changed": {
+    "on_policy_changed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2152
+  },
+  "on_ship_built": {
+    "on_ship_built": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2168
+  },
+  "on_ship_designed": {
+    "on_ship_designed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2189
+  },
+  "on_ship_upgraded": {
+    "on_ship_upgraded": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2198
+  },
+  "on_war_beginning": {
+    "on_war_beginning": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2207
+  },
+  "on_war_ended": {
+    "on_war_ended": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2229
+  },
+  "on_country_released_in_war": {
+    "on_country_released_in_war": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2244
+  },
+  "on_tech_increased": {
+    "on_tech_increased": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2252
+  },
+  "on_modification_complete": {
+    "on_modification_complete": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2318
+  },
+  "on_planet_occupied": {
+    "on_planet_occupied": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2331
+  },
+  "on_planet_returned": {
+    "on_planet_returned": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2343
+  },
+  "on_emergency_ftl": {
+    "on_emergency_ftl": {
+      "events": {},
+      "random_events": {
+        "310": "0",
+        "10": "leader.11"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2353
+  },
+  "on_army_recruited": {
+    "on_army_recruited": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2380
+  },
+  "on_army_killed_in_combat": {
+    "on_army_killed_in_combat": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2390
+  },
+  "on_army_killed_no_combat": {
+    "on_army_killed_no_combat": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2403
+  },
+  "on_building_complete": {
+    "on_building_complete": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2412
+  },
+  "on_building_queued": {
+    "on_building_queued": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2428
+  },
+  "on_building_unqueued": {
+    "on_building_unqueued": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2435
+  },
+  "on_building_upgraded": {
+    "on_building_upgraded": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2442
+  },
+  "on_building_demolished": {
+    "on_building_demolished": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2454
+  },
+  "on_building_repaired": {
+    "on_building_repaired": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2463
+  },
+  "on_district_complete": {
+    "on_district_complete": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2472
+  },
+  "on_building_replaced": {
+    "on_building_replaced": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2481
+  },
+  "on_building_downgraded": {
+    "on_building_downgraded": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2492
+  },
+  "on_district_queued": {
+    "on_district_queued": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2501
+  },
+  "on_district_unqueued": {
+    "on_district_unqueued": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2508
+  },
+  "on_district_demolished": {
+    "on_district_demolished": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2515
+  },
+  "on_auto_colony_type_changed": {
+    "on_auto_colony_type_changed": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2524
+  },
+  "on_tutorial_level_changed": {
+    "on_tutorial_level_changed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2529
+  },
+  "on_war_won": {
+    "on_war_won": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2542
+  },
+  "on_war_lost": {
+    "on_war_lost": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2571
+  },
+  "on_status_quo": {
+    "on_status_quo": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2591
+  },
+  "on_status_quo_forced": {
+    "on_status_quo_forced": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2605
+  },
+  "on_pop_added": {
+    "on_pop_added": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2615
+  },
+  "on_pop_rights_change": {
+    "on_pop_rights_change": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2623
+  },
+  "on_pop_grown": {
+    "on_pop_grown": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2634
+  },
+  "on_pop_assembled": {
+    "on_pop_assembled": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2644
+  },
+  "on_pop_purged": {
+    "on_pop_purged": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2657
+  },
+  "on_pop_declined": {
+    "on_pop_declined": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2681
+  },
+  "on_pop_displaced": {
+    "on_pop_displaced": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2693
+  },
+  "on_rebels_take_planet": {
+    "on_rebels_take_planet": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2705
+  },
+  "on_rebels_take_planet_owner_switched": {
+    "on_rebels_take_planet_owner_switched": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2715
+  },
+  "on_planet_ownerless": {
+    "on_planet_ownerless": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2724
+  },
+  "on_planet_transfer": {
+    "on_planet_transfer": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2740
+  },
+  "on_planet_conquer": {
+    "on_planet_conquer": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2771
+  },
+  "on_capital_changed": {
+    "on_capital_changed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2784
+  },
+  "on_fleet_enter_orbit": {
+    "on_fleet_enter_orbit": {
+      "events": {},
+      "random_events": {
+        "90": "0",
+        "10": "origin.7303 # Fruitful Partnership - Organic ships you own can get a seed!"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2794
+  },
+  "on_join_federation": {
+    "on_join_federation": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2808
+  },
+  "on_leave_federation": {
+    "on_leave_federation": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2820
+  },
+  "on_federation_law_vote_succeed": {
+    "on_federation_law_vote_succeed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2830
+  },
+  "on_federation_law_vote_failed": {
+    "on_federation_law_vote_failed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2839
+  },
+  "on_federation_leader_elections": {
+    "on_federation_leader_elections": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2847
+  },
+  "on_federation_new_leader": {
+    "on_federation_new_leader": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2854
+  },
+  "on_federation_leader_challenge": {
+    "on_federation_leader_challenge": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2862
+  },
+  "on_country_created": {
+    "on_country_created": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2875
+  },
+  "on_country_destroyed": {
+    "on_country_destroyed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2892
+  },
+  "on_country_type_changed": {
+    "on_country_type_changed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2919
+  },
+  "on_megastructure_built": {
+    "on_megastructure_built": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2930
+  },
+  "on_megastructure_upgrade_begin": {
+    "on_megastructure_upgrade_begin": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2948
+  },
+  "on_megastructure_upgraded": {
+    "on_megastructure_upgraded": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2959
+  },
+  "on_colony_1_year_old": {
+    "on_colony_1_year_old": {
+      "events": {},
+      "random_events": {
+        "300": "0",
+        "30": "factions.3000 # The Political Frontier"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 2983
+  },
+  "on_colony_2_years_old": {
+    "on_colony_2_years_old": {
+      "events": {},
+      "random_events": {
+        "150": "0",
+        "30": "factions.3000 # The Political Frontier",
+        "3": "colony_fed.100 #Impossible Corrie",
+        "_comments": [
+          "### Colony Events & Chains - 14",
+          "# 0 = colony.8099 # Insidious Ophidians",
+          "### Archaeology Colony Sites",
+          "### Tomb Worlds - 8",
+          "### Federations"
+        ],
+        "15": "colony.2060 # Strange Mushrooms",
+        "6": "colony.180 # Asteroid Sighted",
+        "10": "colony.3001 # Rogue Moon",
+        "8": "colony.7229 # Glacial Crisis, flag only",
+        "75": "colony.170 # Orbital Debris"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3004
+  },
+  "on_colony_3_years_old": {
+    "on_colony_3_years_old": {
+      "events": {},
+      "random_events": {
+        "150": "0",
+        "2": "colony.1520 # Mharin Kharin",
+        "_comments": [
+          "### Colony Events & Chains - 14",
+          "### Archaeology Colony Sites",
+          "### Tomb Worlds - 8",
+          "### Federations",
+          "### Astral Rifts anomalies"
+        ],
+        "10": "colony.9350 # Myrmeku Colonies",
+        "6": "colony.180 # Asteroid Sighted",
+        "5": "colony.3005 # Dimensional Portal",
+        "3": "ancrel.6049 # Blade of the Huntress",
+        "50": "colony.170 # Orbital Debris",
+        "4": "colony_fed.100 #Impossible Corrie",
+        "20": "astral_planes.6029 # Astralnomical Marvel"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3054
+  },
+  "on_colony_4_years_old": {
+    "on_colony_4_years_old": {
+      "random_events": {
+        "150": "0",
+        "1": "colony.2010 # A Change of Heart",
+        "_comments": [
+          "### Colony Events & Chains - 14",
+          "### Archaeology Colony Sites",
+          "### Astral Rifts anomalies"
+        ],
+        "2": "colony.9200 # Ancient Manufactorium",
+        "3": "ancrel.6049 # Blade of the Huntress",
+        "6": "situation.150 # Living Snow, higher weight because only for deserts",
+        "20": "astral_planes.6029 # Astralnomical Marvel"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3098
+  },
+  "on_colony_5_years_old": {
+    "on_colony_5_years_old": {
+      "events": {},
+      "random_events": {
+        "150": "0",
+        "3": "ancrel.6049 # Blade of the Huntress",
+        "_comments": [
+          "# Colony Events",
+          "### Archaeology Colony Sites",
+          "### Astral Rifts anomalies"
+        ],
+        "6": "situation.150 # Living Snow, higher weight because only for deserts",
+        "20": "astral_planes.6029 # Astralnomical Marvel"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3118
+  },
+  "on_colony_6_years_old": {
+    "on_colony_6_years_old": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3139
+  },
+  "on_colony_7_years_old": {
+    "on_colony_7_years_old": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3142
+  },
+  "on_colony_8_years_old": {
+    "on_colony_8_years_old": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3145
+  },
+  "on_colony_9_years_old": {
+    "on_colony_9_years_old": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3148
+  },
+  "on_colony_10_years_old": {
+    "on_colony_10_years_old": {
+      "random_events": {
+        "150": "0",
+        "10": "colony.7165 # Troublesome Critters, higher weight because it requires specific flag",
+        "_comments": [
+          "# Colony Events"
+        ]
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3152
+  },
+  "on_colony_25_years_old": {
+    "on_colony_25_years_old": {
+      "random_events": {
+        "95": "0",
+        "5": "situation.200 # Geomagnetic Storm"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3160
+  },
+  "on_colony_monthly_pulse": {
+    "on_colony_monthly_pulse": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3168
+  },
+  "on_colony_yearly_pulse": {
+    "on_colony_yearly_pulse": {
+      "events": {},
+      "random_events": {
+        "3": "manifesti.1",
+        "25": "crime.41 # Criminal Underworld Disappears (Low Crime)",
+        "22": "0"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3172
+  },
+  "on_colony_5_year_pulse": {
+    "on_colony_5_year_pulse": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3188
+  },
+  "on_colony_10_year_pulse": {
+    "on_colony_10_year_pulse": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3195
+  },
+  "on_colony_10_year_pulse_random_pop_events_list": {
+    "on_colony_10_year_pulse_random_pop_events_list": {
+      "random_events": {
+        "50": "pop.13 # (previously: MTTH 220 months)"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3204
+  },
+  "on_leader_spawned": {
+    "on_leader_spawned": {
+      "events": {},
+      "random_events": {
+        "80": "0",
+        "20": "utopia.2601"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3219
+  },
+  "on_added_to_leader_pool": {
+    "on_added_to_leader_pool": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3243
+  },
+  "empire_init_add_technologies": {
+    "empire_init_add_technologies": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3252
+  },
+  "empire_init_capital_planet": {
+    "empire_init_capital_planet": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3263
+  },
+  "empire_init_create_ships": {
+    "empire_init_create_ships": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3272
+  },
+  "on_election_started": {
+    "on_election_started": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3280
+  },
+  "on_election_ended": {
+    "on_election_ended": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3288
+  },
+  "on_entering_gateway": {
+    "on_entering_gateway": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3299
+  },
+  "on_entering_wormhole": {
+    "on_entering_wormhole": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3306
+  },
+  "on_entering_shroud_tunnel": {
+    "on_entering_shroud_tunnel": {
+      "events": {},
+      "random_events": {
+        "74": "0",
+        "10": "enclave.6005 # Mind Wipe - Leader Trait addition",
+        "5": "enclave.6020 # Dreamer's Wake",
+        "1": "enclave.4250 #Psionic Breach - Psionic Avatar Appears"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3317
+  },
+  "on_entering_strange_wormhole": {
+    "on_entering_strange_wormhole": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3335
+  },
+  "on_jump_drive": {
+    "on_jump_drive": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3343
+  },
+  "on_ship_quantum_catapult": {
+    "on_ship_quantum_catapult": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3350
+  },
+  "on_fleet_quantum_catapult": {
+    "on_fleet_quantum_catapult": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3357
+  },
+  "on_pirate_spawn": {
+    "on_pirate_spawn": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3366
+  },
+  "on_starbase_transfer": {
+    "on_starbase_transfer": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3375
+  },
+  "on_fleet_combat_joined_attacker": {
+    "on_fleet_combat_joined_attacker": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3394
+  },
+  "on_fleet_combat_joined_defender": {
+    "on_fleet_combat_joined_defender": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3405
+  },
+  "on_system_lost": {
+    "on_system_lost": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3418
+  },
+  "on_system_gained": {
+    "on_system_gained": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3435
+  },
+  "on_slave_sold_on_market": {
+    "on_slave_sold_on_market": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3455
+  },
+  "on_relic_received": {
+    "on_relic_received": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3459
+  },
+  "on_relic_activated": {
+    "on_relic_activated": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3468
+  },
+  "on_relic_lost": {
+    "on_relic_lost": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3476
+  },
+  "on_arch_stage_finished": {
+    "on_arch_stage_finished": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3485
+  },
+  "on_arch_site_finished": {
+    "on_arch_site_finished": {
+      "events": {},
+      "random_events": {
+        "90": "0",
+        "10": "federations3.2100 # Joint Operation: Genius Caeli"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3488
+  },
+  "on_resolution_passed": {
+    "on_resolution_passed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3504
+  },
+  "on_resolution_failed": {
+    "on_resolution_failed": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3527
+  },
+  "on_galactic_community_formed": {
+    "on_galactic_community_formed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3531
+  },
+  "on_galactic_council_established": {
+    "on_galactic_council_established": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3537
+  },
+  "on_add_community_member": {
+    "on_add_community_member": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3544
+  },
+  "on_remove_community_member": {
+    "on_remove_community_member": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3554
+  },
+  "on_add_to_council": {
+    "on_add_to_council": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3563
+  },
+  "on_remove_from_council": {
+    "on_remove_from_council": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3569
+  },
+  "on_join_alliance": {
+    "on_join_alliance": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3572
+  },
+  "on_leave_alliance": {
+    "on_leave_alliance": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3575
+  },
+  "on_sign_commercial_pact": {
+    "on_sign_commercial_pact": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3580
+  },
+  "on_sign_defensive_pact": {
+    "on_sign_defensive_pact": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3588
+  },
+  "on_sign_migration_pact": {
+    "on_sign_migration_pact": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3596
+  },
+  "on_sign_non_aggression_pact": {
+    "on_sign_non_aggression_pact": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3605
+  },
+  "on_sign_research_pact": {
+    "on_sign_research_pact": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3613
+  },
+  "on_becoming_subject": {
+    "on_becoming_subject": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3621
+  },
+  "on_subject_integrated": {
+    "on_subject_integrated": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3637
+  },
+  "on_released_as_vassal": {
+    "on_released_as_vassal": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3649
+  },
+  "on_ask_to_leave_federation_declined": {
+    "on_ask_to_leave_federation_declined": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3669
+  },
+  "on_spynetwork_formed": {
+    "on_spynetwork_formed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3676
+  },
+  "on_add_to_imperial_council": {
+    "on_add_to_imperial_council": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3685
+  },
+  "on_remove_from_imperial_council": {
+    "on_remove_from_imperial_council": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3690
+  },
+  "on_first_contact_started": {
+    "on_first_contact_started": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3695
+  },
+  "on_first_contact_stage_1_no_path": {
+    "on_first_contact_stage_1_no_path": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3703
+  },
+  "on_first_contact_generic_stage_2": {
+    "on_first_contact_generic_stage_2": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3707
+  },
+  "on_branch_office_established": {
+    "on_branch_office_established": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3715
+  },
+  "on_branch_office_closed": {
+    "on_branch_office_closed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3722
+  },
+  "on_system_occupied": {
+    "on_system_occupied": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3731
+  },
+  "on_system_controller_changed": {
+    "on_system_controller_changed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3740
+  },
+  "on_system_returned": {
+    "on_system_returned": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3753
+  },
+  "on_orbital_defense_planet_ownerless": {
+    "on_orbital_defense_planet_ownerless": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3763
+  },
+  "on_operation_chapter_finished": {
+    "on_operation_chapter_finished": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3771
+  },
+  "on_operation_finished": {
+    "on_operation_finished": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3776
+  },
+  "on_operation_cancelled": {
+    "on_operation_cancelled": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3782
+  },
+  "on_pre_government_changed": {
+    "on_pre_government_changed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3790
+  },
+  "on_post_government_changed": {
+    "on_post_government_changed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3798
+  },
+  "on_custodian_term_ends": {
+    "on_custodian_term_ends": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3814
+  },
+  "on_tradition_picked": {
+    "on_tradition_picked": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3822
+  },
+  "on_ascension_perk_picked": {
+    "on_ascension_perk_picked": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3831
+  },
+  "on_megastructure_change_owner": {
+    "on_megastructure_change_owner": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3841
+  },
+  "on_megastructure_ownerless": {
+    "on_megastructure_ownerless": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3851
+  },
+  "on_crystalline_empire_task": {
+    "on_crystalline_empire_task": {
+      "random_events": {
+        "10": "central.70 # Curious Scientist"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3854
+  },
+  "on_destroy_star_system": {
+    "on_destroy_star_system": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3865
+  },
+  "on_admirals_bickering_event_chain": {
+    "on_admirals_bickering_event_chain": {
+      "random_events": {
+        "10": "subject.1140"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3872
+  },
+  "on_establish_mercenary_enclave": {
+    "on_establish_mercenary_enclave": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3884
+  },
+  "on_debris_researched": {
+    "on_debris_researched": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3895
+  },
+  "on_debris_scavenged": {
+    "on_debris_scavenged": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3906
+  },
+  "on_debris_reanimated": {
+    "on_debris_reanimated": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3917
+  },
+  "on_debris_scavenged_and_researched": {
+    "on_debris_scavenged_and_researched": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3928
+  },
+  "special_project_success": {
+    "special_project_success": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3937
+  },
+  "anomaly_success": {
+    "anomaly_success": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3945
+  },
+  "on_specialist_subject_conversion_started": {
+    "on_specialist_subject_conversion_started": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3956
+  },
+  "on_specialist_subject_conversion_finished": {
+    "on_specialist_subject_conversion_finished": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3966
+  },
+  "on_specialist_subject_conversion_aborted": {
+    "on_specialist_subject_conversion_aborted": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3976
+  },
+  "on_capitals_connected": {
+    "on_capitals_connected": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3985
+  },
+  "on_agreement_change_accepted": {
+    "on_agreement_change_accepted": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 3995
+  },
+  "on_shroudwalker_divination_visitors_situation": {
+    "on_shroudwalker_divination_visitors_situation": {
+      "random_events": {
+        "1": "enclave.5560 # Wayward Pilgrims"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4004
+  },
+  "on_shroudwalker_divination_locus_situation": {
+    "on_shroudwalker_divination_locus_situation": {
+      "random_events": {
+        "1": "enclave.5180 # The Color of Science - anomaly.6740 (>15% progress)"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4018
+  },
+  "on_shroudwalker_insight_situation_finish": {
+    "on_shroudwalker_insight_situation_finish": {
+      "random_events": {
+        "40": "enclave.7060 # Asset",
+        "25": "enclave.7070 # Intel",
+        "10": "enclave.7075 # Shroud is busy right now, come back later (Nothing)"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4032
+  },
+  "on_astral_rift_spawned": {
+    "on_astral_rift_spawned": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4043
+  },
+  "on_astral_rift_exploration_start": {
+    "on_astral_rift_exploration_start": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4054
+  },
+  "on_astral_rift_pre_event_fire": {
+    "on_astral_rift_pre_event_fire": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4068
+  },
+  "on_astral_rift_exploration_complete": {
+    "on_astral_rift_exploration_complete": {
+      "events": {},
+      "random_events": {
+        "1": "astral_planes.6095  # Final Escapee Mercedes Romero",
+        "49": "0"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4078
+  },
+  "on_commercial_pact_broken": {
+    "on_commercial_pact_broken": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4097
+  },
+  "on_beholder_target_planet_reached": {
+    "on_beholder_target_planet_reached": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4113
+  },
+  "on_azaryn_target_planet_reached": {
+    "on_azaryn_target_planet_reached": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4119
+  },
+  "on_azaryn_action_cancel": {
+    "on_azaryn_action_cancel": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4125
+  },
+  "on_cosmogenesis_exodus_planet_reached": {
+    "on_cosmogenesis_exodus_planet_reached": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4131
+  },
+  "on_agenda_finished": {
+    "on_agenda_finished": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4140
+  },
+  "on_cloaking_activated": {
+    "on_cloaking_activated": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4149
+  },
+  "on_cloaking_deactivated": {
+    "on_cloaking_deactivated": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4157
+  },
+  "on_awareness_level_increase": {
+    "on_awareness_level_increase": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4167
+  },
+  "on_awareness_level_decrease": {
+    "on_awareness_level_decrease": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4178
+  },
+  "on_pre_ftl_pop_ethic_shift": {
+    "on_pre_ftl_pop_ethic_shift": {
+      "random_events": {
+        "500": "0",
+        "5": "observation.3152\t# Societal Shift towards Materialist"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4185
+  },
+  "on_country_attacked": {
+    "on_country_attacked": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4202
+  },
+  "on_dimensional_lock_expired": {
+    "on_dimensional_lock_expired": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4211
+  },
+  "on_space_storm_created": {
+    "on_space_storm_created": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4219
+  },
+  "on_space_storm_destroyed": {
+    "on_space_storm_destroyed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4227
+  },
+  "on_machine_leader_malfunction": {
+    "on_machine_leader_malfunction": {
+      "random_events": {
+        "1": "syndaw.26 # assigned Governor"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4234
+  },
+  "on_synth_leader_malfunction": {
+    "on_synth_leader_malfunction": {
+      "random_events": {
+        "1": "action.76 # assigned Governor"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4243
+  },
+  "on_pop_ethic_changed": {
+    "on_pop_ethic_changed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4255
+  },
+  "on_cyberization_situation_random_events_list": {
+    "on_cyberization_situation_random_events_list": {
+      "random_events": {
+        "1": "cyber.360 # Stage 3 Challenge"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4265
+  },
+  "on_cyberization_hive_situation_random_events_list": {
+    "on_cyberization_hive_situation_random_events_list": {
+      "random_events": {
+        "1": "cyber.2460 # Stage 4 Challenge"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4277
+  },
+  "on_digitization_situation_random_events_list": {
+    "on_digitization_situation_random_events_list": {
+      "random_events": {
+        "1": "synth.360 # Stage 3 Challenge"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4290
+  },
+  "on_futureshock_chain_work_family_events_list": {
+    "on_futureshock_chain_work_family_events_list": {
+      "random_events": {
+        "5": "cyber.855 # Making the Grade",
+        "_comments": [
+          "# Work",
+          "# Family"
+        ]
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4303
+  },
+  "on_futureshock_chain_leisure_events_list": {
+    "on_futureshock_chain_leisure_events_list": {
+      "random_events": {
+        "5": "cyber.1255 # Cyberbrain Hacking",
+        "_comments": [
+          "#Leisure",
+          "#Society"
+        ]
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4323
+  },
+  "on_synthshock_chain_identity_events_list": {
+    "on_synthshock_chain_identity_events_list": {
+      "random_events": {
+        "5": "synth.630 # Home Server Architecture"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4339
+  },
+  "on_synthshock_chain_opportunity_events_list": {
+    "on_synthshock_chain_opportunity_events_list": {
+      "random_events": {
+        "5": "synth.1030 # Respawn"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4349
+  },
+  "on_synth_queen_random_demand_list": {
+    "on_synth_queen_random_demand_list": {
+      "random_events": {
+        "5": "crisis.8300 # Synth Queen Demand - Habitable System"
+      }
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4359
+  },
+  "on_galaxy_map_during_tutorial": {
+    "on_galaxy_map_during_tutorial": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4369
+  },
+  "on_snare_sent": {
+    "on_snare_sent": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4378
+  },
+  "on_truce_end": {
+    "on_truce_end": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4387
+  },
+  "on_starbase_occupied": {
+    "on_starbase_occupied": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4396
+  },
+  "on_specimen_acquired": {
+    "on_specimen_acquired": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4404
+  },
+  "on_specimen_sold": {
+    "on_specimen_sold": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4420
+  },
+  "on_ship_engulfed": {
+    "on_ship_engulfed": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4431
+  },
+  "on_storm_entered_system": {
+    "on_storm_entered_system": {
+      "random_events": {
+        "90": "0",
+        "10": "cstorms.1800"
+      },
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4439
+  },
+  "on_storm_left_system": {
+    "on_storm_left_system": {
+      "random_events": {
+        "75": "0",
+        "5": "cstorms.1310",
+        "20": "cstorms.10"
+      },
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4455
+  },
+  "on_exhibit_unlocked": {
+    "on_exhibit_unlocked": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4481
+  },
+  "on_fauna_captured": {
+    "on_fauna_captured": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4495
+  },
+  "on_fauna_capture_ended": {
+    "on_fauna_capture_ended": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4506
+  },
+  "on_vivarium_populated": {
+    "on_vivarium_populated": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4514
+  },
+  "on_space_fauna_culled": {
+    "on_space_fauna_culled": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4523
+  },
+  "on_storm_finished": {
+    "on_storm_finished": {},
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4531
+  },
+  "on_storm_encountered": {
+    "on_storm_encountered": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4537
+  },
+  "on_leader_captured": {
+    "on_leader_captured": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4548
+  },
+  "debug_spawn_storm_random_system": {
+    "debug_spawn_storm_random_system": {
+      "events": {}
+    },
+    "_source_file": "00_on_actions.txt",
+    "_line_number": 4554
+  }
+}

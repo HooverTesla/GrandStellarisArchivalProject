@@ -1,0 +1,1169 @@
+{
+  "d_arcane_replicator": {
+    "d_arcane_replicator": {
+      "is_for_colonizable": "yes",
+      "icon": "d_station_reactor",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "resources": {
+          "category": "hab_deposits",
+          "produces": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {
+                "any_owned_pop": {
+                  "has_trait": "trait_exotic_metabolism"
+                }
+              }
+            },
+            "exotic_gases": "4"
+          }
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 18
+  },
+  "d_system_resources": {
+    "d_system_resources": {
+      "is_for_colonizable": "yes",
+      "icon": "d_station_cargo",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "_comments": [
+          "# Major Orbitals give additional District Slots",
+          "# Non-Resource Orbitals give additional Building Slots",
+          "# Advanced Habitat Capitals get additional District Slots and Building Slots",
+          "# Extra Jobs from Order's Outposts"
+        ],
+        "triggered_planet_modifier": {
+          "potential": {
+            "uses_district_set": "habitat",
+            "solar_system": {
+              "any_fleet_in_system": {
+                "is_ship_size": "major_orbital_knights"
+              }
+            },
+            "exists": "owner",
+            "owner": {
+              "has_origin": "origin_toxic_knights"
+            }
+          },
+          "job_knight_add": "1",
+          "mult": "solar_system.value:num_major_orbitals_class|CLASS|knights|"
+        },
+        "custom_tooltip": "system_resources_tooltip"
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 63
+  },
+  "d_orbital_research": {
+    "d_orbital_research": {
+      "is_for_colonizable": "yes",
+      "icon": "d_engineering_research",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "custom_tooltip": "d_orbital_research_tt",
+        "_comments": [
+          "# Research Districts"
+        ],
+        "triggered_planet_modifier": {
+          "potential": {
+            "always": "yes"
+          },
+          "district_hab_science_max": "1",
+          "mult": "value:habitat_district_value|TYPE|science|"
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 146
+  },
+  "d_orbital_energy": {
+    "d_orbital_energy": {
+      "is_for_colonizable": "yes",
+      "icon": "d_satellite_in_orbit",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "custom_tooltip": "d_orbital_energy_tt",
+        "_comments": [
+          "# Energy Districts"
+        ],
+        "triggered_planet_modifier": {
+          "potential": {
+            "always": "yes"
+          },
+          "district_hab_energy_max": "1",
+          "mult": "value:habitat_district_value|TYPE|energy|"
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 163
+  },
+  "d_orbital_mining": {
+    "d_orbital_mining": {
+      "is_for_colonizable": "yes",
+      "icon": "d_mining_station",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "custom_tooltip": "d_orbital_mining_tt",
+        "_comments": [
+          "# Mining Districts"
+        ],
+        "triggered_planet_modifier": {
+          "potential": {
+            "always": "yes"
+          },
+          "district_hab_mining_max": "1",
+          "mult": "value:habitat_district_value|TYPE|mining|"
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 180
+  },
+  "d_ruined_major_orbital": {
+    "d_ruined_major_orbital": {
+      "time": "360",
+      "is_for_colonizable": "no",
+      "category": "deposit_cat_blockers",
+      "icon": "d_ruined_system",
+      "potential": {
+        "always": "no"
+      },
+      "planet_modifier": {
+        "habitability_ceil_add": "-0.05",
+        "planet_max_districts_add": "-0.5"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "OR": {
+            "has_building": "building_imperial_hive_capital"
+          }
+        },
+        "planet_max_districts_add": "-0.50"
+      },
+      "resources": {
+        "category": "deposit_blockers",
+        "cost": {
+          "alloys": "250"
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 201
+  },
+  "d_ruined_minor_orbital": {
+    "d_ruined_minor_orbital": {
+      "time": "90",
+      "is_for_colonizable": "no",
+      "category": "deposit_cat_blockers",
+      "icon": "d_ruined_system",
+      "potential": {
+        "always": "no"
+      },
+      "planet_modifier": {
+        "habitability_ceil_add": "-0.05"
+      },
+      "resources": {
+        "category": "deposit_blockers",
+        "cost": {
+          "alloys": "50"
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 241
+  },
+  "d_arcane_generator": {
+    "d_arcane_generator": {
+      "is_for_colonizable": "yes",
+      "icon": "d_station_reactor",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "planet_modifier": {
+          "planet_amenities_add": "5"
+        },
+        "resources": {
+          "category": "planet_deposits",
+          "produces": {
+            "trigger": {
+              "planet": {},
+              "volatile_motes": "@rw_maintenance_sr",
+              "energy": "@rw_maintenance"
+            },
+            "produces": {
+              "trigger": {
+                "OR": {
+                  "planet": {
+                    "planet": {}
+                  },
+                  "rare_crystals": "@rw_maintenance_sr",
+                  "energy": "@rw_maintenance"
+                },
+                "produces": {
+                  "trigger": {
+                    "planet": {},
+                    "exotic_gases": "@rw_maintenance_sr",
+                    "energy": "@rw_maintenance"
+                  },
+                  "produces": {
+                    "trigger": {
+                      "OR": {
+                        "planet": {
+                          "planet": {
+                            "planet": {}
+                          },
+                          "energy": "@rw_maintenance"
+                        },
+                        "produces": {
+                          "trigger": {
+                            "planet": {},
+                            "energy": "@rw_maintenance",
+                            "volatile_motes": "@rw_maintenance_sr"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 265
+  },
+  "d_segment_rubble_1": {
+    "d_segment_rubble_1": {
+      "is_for_colonizable": "yes",
+      "icon": "d_organic_landfill",
+      "category": "deposit_cat_blockers",
+      "time": "360",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "250"
+          }
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 322
+  },
+  "d_segment_rubble_1_small": {
+    "d_segment_rubble_1_small": {
+      "is_for_colonizable": "yes",
+      "icon": "d_ruins_small",
+      "category": "deposit_cat_blockers",
+      "time": "360",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "250"
+          }
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 342
+  },
+  "d_segment_rubble_2": {
+    "d_segment_rubble_2": {
+      "is_for_colonizable": "yes",
+      "icon": "d_metal_boneyard",
+      "category": "deposit_cat_blockers",
+      "time": "360",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "250"
+          }
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 362
+  },
+  "d_segment_rubble_3": {
+    "d_segment_rubble_3": {
+      "is_for_colonizable": "yes",
+      "icon": "d_ruins_medium",
+      "category": "deposit_cat_blockers",
+      "time": "360",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "250"
+          }
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 382
+  },
+  "d_segment_rubble_4": {
+    "d_segment_rubble_4": {
+      "is_for_colonizable": "yes",
+      "icon": "d_city_ruins",
+      "category": "deposit_cat_blockers",
+      "time": "360",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "250"
+          }
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 402
+  },
+  "d_decrepit_tunnels_1": {
+    "d_decrepit_tunnels_1": {
+      "is_for_colonizable": "yes",
+      "icon": "d_mining_tunnels",
+      "category": "deposit_cat_blockers",
+      "time": "360",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-2"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "1000"
+          }
+        },
+        "on_cleared": {
+          "owner": {
+            "add_resource": {
+              "minerals": "200",
+              "alloys": "100"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 423
+  },
+  "d_decrepit_tunnels_2": {
+    "d_decrepit_tunnels_2": {
+      "is_for_colonizable": "yes",
+      "icon": "d_mining_tunnels",
+      "category": "deposit_cat_blockers",
+      "time": "360",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-2"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "1000"
+          }
+        },
+        "on_cleared": {
+          "owner": {
+            "add_resource": {
+              "minerals": "200",
+              "alloys": "100"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 452
+  },
+  "d_decrepit_tunnels_3": {
+    "d_decrepit_tunnels_3": {
+      "is_for_colonizable": "yes",
+      "icon": "d_mining_tunnels",
+      "category": "deposit_cat_blockers",
+      "time": "360",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-2"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "1000"
+          }
+        },
+        "on_cleared": {
+          "owner": {
+            "add_resource": {
+              "minerals": "200",
+              "alloys": "100"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 481
+  },
+  "d_malfunctioning_reactor": {
+    "d_malfunctioning_reactor": {
+      "time": "720",
+      "is_for_colonizable": "yes",
+      "icon": "d_station_reactor",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "always": "no"
+      },
+      "can_be_cleared": {
+        "custom_tooltip": {
+          "text": "d_malfunctioning_reactor_tooltip",
+          "exists": "owner",
+          "owner": {
+            "has_technology": "tech_zero_point_power"
+          }
+        }
+      },
+      "planet_modifier": {
+        "planet_max_districts_add": "-5",
+        "planet_structures_energy_upkeep_mult": "1"
+      },
+      "resources": {
+        "category": "deposit_blockers",
+        "cost": {
+          "energy": "2000",
+          "alloys": "1000"
+        }
+      },
+      "ai_weight": {
+        "weight": "2"
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 512
+  },
+  "d_sr_diurnal_regulator": {
+    "d_sr_diurnal_regulator": {
+      "time": "360",
+      "is_for_colonizable": "yes",
+      "icon": "d_satellite_in_orbit",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "always": "no"
+      },
+      "can_be_cleared": {
+        "custom_tooltip": {
+          "text": "d_sr_diurnal_regulator_tooltip",
+          "exists": "owner",
+          "owner": {
+            "has_technology": "tech_thrusters_2"
+          }
+        }
+      },
+      "planet_modifier": {
+        "planet_max_districts_add": "-2",
+        "habitability_ceil_add": "-0.25"
+      },
+      "resources": {
+        "category": "deposit_blockers",
+        "cost": {
+          "energy": "300",
+          "alloys": "150"
+        }
+      },
+      "ai_weight": {
+        "weight": "2"
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 551
+  },
+  "d_sr_vacuum_fields": {
+    "d_sr_vacuum_fields": {
+      "time": "360",
+      "is_for_colonizable": "yes",
+      "icon": "d_station_cargo",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "always": "no"
+      },
+      "can_be_cleared": {
+        "custom_tooltip": {
+          "text": "d_sr_vacuum_fields_tooltip",
+          "exists": "owner",
+          "owner": {
+            "has_technology": "tech_shields_2"
+          }
+        }
+      },
+      "planet_modifier": {
+        "planet_max_districts_add": "-2",
+        "habitability_ceil_add": "-0.25"
+      },
+      "ai_weight": {
+        "weight": "2"
+      },
+      "resources": {
+        "category": "deposit_blockers",
+        "cost": {
+          "energy": "300",
+          "alloys": "150"
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 590
+  },
+  "d_sr_ring_gyros": {
+    "d_sr_ring_gyros": {
+      "time": "360",
+      "is_for_colonizable": "yes",
+      "icon": "d_ruined_system",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "always": "no"
+      },
+      "can_be_cleared": {
+        "custom_tooltip": {
+          "text": "d_sr_ring_gyros_tooltip",
+          "exists": "owner",
+          "owner": {
+            "has_technology": "tech_starbase_3"
+          }
+        }
+      },
+      "planet_modifier": {
+        "planet_max_districts_add": "-2",
+        "habitability_ceil_add": "-0.25"
+      },
+      "ai_weight": {
+        "weight": "2"
+      },
+      "resources": {
+        "category": "deposit_blockers",
+        "cost": {
+          "energy": "300",
+          "alloys": "150"
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 629
+  },
+  "d_sr_power_grid": {
+    "d_sr_power_grid": {
+      "time": "360",
+      "is_for_colonizable": "yes",
+      "icon": "d_glitchy_matrix",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "always": "no"
+      },
+      "can_be_cleared": {
+        "custom_tooltip": {
+          "text": "d_sr_power_grid_tooltip",
+          "exists": "owner",
+          "owner": {
+            "has_technology": "tech_power_hub_1"
+          }
+        }
+      },
+      "planet_modifier": {
+        "planet_max_districts_add": "-2",
+        "habitability_ceil_add": "-0.25"
+      },
+      "ai_weight": {
+        "weight": "2"
+      },
+      "resources": {
+        "category": "deposit_blockers",
+        "cost": {
+          "energy": "300",
+          "alloys": "150"
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 668
+  },
+  "d_spore_vents": {
+    "d_spore_vents": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "icon": "d_gaseous_eruption",
+      "_comments": [
+        "# For ordinary Empires"
+      ],
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "job_gas_plant_engineer_add": "2",
+          "job_gas_plant_engineer_per_pop": "0.05 # 1 per 20"
+        },
+        "_comments": [
+          "# For Gestalt Empires"
+        ],
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "job_gas_plant_engineer_gestalt_add": "2",
+            "job_gas_plant_engineer_gestalt_per_pop": "0.05 # 1 per 20"
+          },
+          "drop_weight": {
+            "weight": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 706
+  },
+  "d_cave_shroom_veins": {
+    "d_cave_shroom_veins": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "icon": "d_fungal_caves",
+      "_comments": [
+        "# For ordinary Empires"
+      ],
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "job_cave_cleaner_add": "3",
+          "job_cave_cleaner_per_pop": "0.05 # 1 per 20"
+        },
+        "_comments": [
+          "# For Gestalt Empires"
+        ],
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "job_cave_cleaner_gestalt_add": "3",
+            "job_cave_cleaner_gestalt_per_pop": "0.05 # 1 per 20"
+          },
+          "drop_weight": {
+            "weight": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 738
+  },
+  "d_tree_of_life_home": {
+    "d_tree_of_life_home": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "icon": "d_huge_tree",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "has_origin": "origin_tree_of_life"
+        }
+      },
+      "planet_modifier": {
+        "pop_growth_speed": "0.15",
+        "planet_jobs_society_research_produces_mult": "0.10",
+        "planet_housing_add": "10",
+        "district_farming_max": "4"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_farming_max": "4",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "resources": {
+        "category": "planet_deposits",
+        "upkeep": {
+          "food": "4"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 774
+  },
+  "d_tree_of_life_colony": {
+    "d_tree_of_life_colony": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "icon": "d_huge_tree",
+      "potential": {
+        "exists": "owner",
+        "planet": {
+          "owner": {
+            "has_origin": "origin_tree_of_life"
+          }
+        }
+      },
+      "planet_modifier": {
+        "pop_growth_speed": "0.1",
+        "planet_jobs_society_research_produces_mult": "0.10",
+        "planet_housing_add": "5",
+        "district_farming_max": "2"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_farming_max": "2",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "resources": {
+        "category": "planet_deposits",
+        "upkeep": {
+          "food": "2"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 815
+  },
+  "d_buried_lithoids": {
+    "d_buried_lithoids": {
+      "icon": "d_buried_lithoids",
+      "time": "360",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare_blocker",
+      "potential": {
+        "on_cleared": {
+          "if": {
+            "limit": {
+              "NOT": {},
+              "owner": {},
+              "if": {
+                "limit": {
+                  "owner": {},
+                  "create_pop": {
+                    "species": "owner"
+                  }
+                }
+              },
+              "resources": {
+                "category": "deposit_blockers",
+                "cost": {
+                  "trigger": {
+                    "NOT": {},
+                    "energy": "300"
+                  },
+                  "cost": {
+                    "trigger": {
+                      "owner": {},
+                      "minerals": "1000"
+                    }
+                  },
+                  "ai_weight": {
+                    "weight": "2",
+                    "modifier": {
+                      "factor": "0",
+                      "AND": {
+                        "owner": {
+                          "from": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 860
+  },
+  "d_buried_lithoids_overlord": {
+    "d_buried_lithoids_overlord": {
+      "icon": "d_buried_lithoids",
+      "time": "360",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare_blocker",
+      "potential": {
+        "on_cleared": {
+          "if": {
+            "limit": {
+              "NOT": {},
+              "owner": {},
+              "if": {
+                "limit": {
+                  "owner.overlord": {},
+                  "create_pop": {
+                    "species": "owner.overlord"
+                  }
+                }
+              },
+              "ai_weight": {
+                "weight": "2",
+                "modifier": {
+                  "factor": "0",
+                  "AND": {
+                    "owner.overlord": {
+                      "from": {}
+                    }
+                  },
+                  "resources": {
+                    "category": "deposit_blockers",
+                    "cost": {
+                      "trigger": {
+                        "NOT": {},
+                        "energy": "300"
+                      },
+                      "cost": {
+                        "trigger": {
+                          "owner": {},
+                          "minerals": "1000"
+                        }
+                      },
+                      "ai_weight": {
+                        "weight": "2"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 917
+  },
+  "d_lithoid_crater": {
+    "d_lithoid_crater": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "icon": "d_crater",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "has_origin": "origin_lithoid"
+        }
+      },
+      "planet_modifier": {
+        "planet_max_districts_add": "6",
+        "district_farming_max": "-6",
+        "pop_growth_speed": "0.25",
+        "district_mining_max": "6"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_mining_max": "6",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "custom_tooltip": "d_lithoid_crater_custom_tooltip",
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 975
+  },
+  "d_machine_minerals": {
+    "d_machine_minerals": {
+      "is_for_colonizable": "yes",
+      "icon": "d_veiny_cliffs",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "resources": {
+          "category": "planet_deposits",
+          "produces": {
+            "minerals": "25"
+          }
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 1007
+  },
+  "d_organic_slurry": {
+    "d_organic_slurry": {
+      "is_for_colonizable": "yes",
+      "icon": "d_bubbling_swamp",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "resources": {
+          "category": "planet_deposits",
+          "produces": {
+            "food": "15"
+          }
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 1022
+  },
+  "d_project_cornucopia": {
+    "d_project_cornucopia": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "icon": "d_mining_tunnels",
+      "potential": {
+        "planet_modifier": {
+          "district_mining_max": "4",
+          "planet_jobs_minerals_produces_mult": "0.05",
+          "pop_environment_tolerance": "-0.2"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "always": "yes"
+          },
+          "district_mining_max": "4",
+          "mult": "value:natural_desposit_district_amount_multiplier"
+        },
+        "drop_weight": {
+          "weight": "0"
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 1040
+  },
+  "d_disco_planet": {
+    "d_disco_planet": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "icon": "d_tradestation_interior",
+      "planet_modifier": {
+        "planet_amenities_mult": "0.2",
+        "planet_miners_exotic_gases_produces_add": "0.1",
+        "pop_growth_speed": "0.15"
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 1065
+  },
+  "d_disco_planet2": {
+    "d_disco_planet2": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "icon": "d_tradestation_interior",
+      "planet_modifier": {
+        "planet_amenities_mult": "0.2",
+        "pop_growth_speed": "0.15"
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 1082
+  },
+  "d_impossiblecorrie": {
+    "d_impossiblecorrie": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "icon": "d_veiny_cliffs",
+      "triggered_planet_modifier": {
+        "planet_jobs_physics_research_produces_mult": "0.2"
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 1099
+  },
+  "d_bluelotus": {
+    "d_bluelotus": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "icon": "d_bunker_door",
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "modifier": {
+            "job_bluelotus_technician_add": "1"
+          }
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {
+              "job_bluelotus_drone_add": "1"
+            }
+          },
+          "drop_weight": {
+            "weight": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 1114
+  },
+  "d_bluelotus2": {
+    "d_bluelotus2": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "icon": "d_bunker_door",
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "modifier": {
+            "job_bluelotus_technician_add": "2"
+          }
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "modifier": {
+              "job_bluelotus_drone_add": "2"
+            }
+          },
+          "drop_weight": {
+            "weight": "0"
+          }
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 1144
+  },
+  "d_ruin_bluelotus": {
+    "d_ruin_bluelotus": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "icon": "d_ruins_medium",
+      "resources": {
+        "category": "planet_deposits",
+        "produces": {
+          "alloys": "1"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 1173
+  },
+  "d_crater_bluelotus": {
+    "d_crater_bluelotus": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "icon": "d_crater",
+      "planet_modifier": {
+        "district_mining_max": "1"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "always": "yes"
+        },
+        "district_mining_max": "1",
+        "mult": "value:natural_desposit_district_amount_multiplier"
+      },
+      "resources": {
+        "category": "planet_deposits",
+        "produces": {
+          "alloys": "2"
+        }
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 1191
+  },
+  "d_federation_hegemony_monument_1": {
+    "d_federation_hegemony_monument_1": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "icon": "d_monument_in_space",
+      "country_modifier": {
+        "country_monuments_influence_produces_add": "0.25"
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 1219
+  },
+  "d_federation_hegemony_monument_2": {
+    "d_federation_hegemony_monument_2": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "icon": "d_monument_in_space",
+      "country_modifier": {
+        "country_monuments_influence_produces_add": "0.5"
+      },
+      "drop_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 1234
+  },
+  "d_resource_consolidation_1": {
+    "d_resource_consolidation_1": {
+      "is_for_colonizable": "yes",
+      "icon": "d_station_junk",
+      "category": "deposit_cat_blockers",
+      "time": "360",
+      "potential": {
+        "planet_modifier": {
+          "job_replicator_add": "-1",
+          "planet_max_districts_add": "-1"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "minerals": "600"
+          }
+        },
+        "ai_weight": {
+          "weight": "2"
+        }
+      }
+    },
+    "_source_file": "07_federations_deposits.txt",
+    "_line_number": 1250
+  }
+}

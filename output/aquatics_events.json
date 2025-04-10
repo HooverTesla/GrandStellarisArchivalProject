@@ -1,0 +1,164 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "aquatics.1001",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "trigger": {
+        "OR": {
+          "has_origin": "origin_ocean_machines"
+        }
+      },
+      "immediate": {
+        "capital_scope.solar_system": {
+          "closest_system": {
+            "limit": {
+              "max_steps": "3",
+              "random_system_planet": {
+                "limit": {
+                  "is_asteroid": "yes"
+                },
+                "change_pc": "pc_ice_asteroid"
+              }
+            },
+            "closest_system": {
+              "limit": {
+                "max_steps": "6",
+                "random_system_planet": {
+                  "limit": {
+                    "is_asteroid": "yes"
+                  },
+                  "change_pc": "pc_ice_asteroid"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "aquatics_events.txt",
+    "_line_number": 1763
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "aquatics.305",
+      "title": "aquatics.305.name",
+      "desc": "aquatics.305.desc",
+      "picture": "GFX_evt_here_be_dragons",
+      "show_sound": "event_aqu_dragon",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from": {
+          "has_star_flag": "here_be_dragons_system",
+          "owner": {
+            "has_origin": "origin_here_be_dragons",
+            "NOT": {},
+            "any_fleet_in_system": {
+              "is_ship_size": "space_dragon_origin",
+              "NOT": {
+                "owner": {
+                  "OR": {
+                    "is_country_type": "default",
+                    "is_hostile": "root.space_owner"
+                  }
+                }
+              }
+            }
+          },
+          "NOT": {},
+          "option": {
+            "name": "CURIOUS"
+          }
+        }
+      }
+    },
+    "_source_file": "aquatics_events.txt",
+    "_line_number": 1673
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "aquatics.1005",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "trigger": {
+        "OR": {
+          "has_modifier": "ocean_paradise_hive"
+        },
+        "NOT": {},
+        "immediate": {
+          "if": {
+            "limit": {
+              "remove_modifier": "ocean_paradise"
+            },
+            "else": {}
+          }
+        }
+      }
+    },
+    "_source_file": "aquatics_events.txt",
+    "_line_number": 1817
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "aquatics.310",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "trigger": {
+        "from": {
+          "is_ship_size": "space_dragon_origin",
+          "exists": "owner",
+          "owner": {
+            "is_country_type": "origin_dragon",
+            "has_country_flag": "here_be_the_dragon@root.owner"
+          }
+        },
+        "owner": {
+          "any_active_first_contact": {
+            "contact_country": {}
+          }
+        },
+        "immediate": {
+          "owner": {
+            "random_active_first_contact": {
+              "limit": {
+                "contact_country": {},
+                "finish_first_contact": "yes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "aquatics_events.txt",
+    "_line_number": 1714
+  },
+  "first_contact_event": {
+    "first_contact_event": {
+      "id": "aquatics.280",
+      "title": "aquatics.280.name",
+      "desc": "aquatics.280.desc",
+      "picture": "GFX_evt_exploding_ship",
+      "show_sound": "event_screams",
+      "is_triggered_only": "yes",
+      "first_contact": "yes",
+      "immediate": {
+        "set_site_progress_locked": "yes",
+        "set_first_contact_flag": "aquatics_280_fired"
+      },
+      "after": {
+        "set_site_progress_locked": "no"
+      },
+      "option": {
+        "name": "UNFORTUNATE",
+        "add_stage_clues": "-2",
+        "if": {
+          "limit": {
+            "leader": {}
+          }
+        }
+      }
+    },
+    "_source_file": "aquatics_events.txt",
+    "_line_number": 1601
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "nexus_opinion_first_hit": {
+    "nexus_opinion_first_hit": {
+      "opinion": {
+        "base": "@first_hit_opinion_change"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_cosmic_storms.txt",
+    "_line_number": 5
+  },
+  "nexus_opinion_second_hit": {
+    "nexus_opinion_second_hit": {
+      "opinion": {
+        "base": "@second_hit_opinion_change"
+      },
+      "decay": {
+        "base": "0.75",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_cosmic_storms.txt",
+    "_line_number": 19
+  },
+  "nexus_opinion_third_hit": {
+    "nexus_opinion_third_hit": {
+      "opinion": {
+        "base": "@third_hit_opinion_change"
+      },
+      "decay": {
+        "base": "1.25",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_cosmic_storms.txt",
+    "_line_number": 33
+  },
+  "nexus_opinion_summon_hit": {
+    "nexus_opinion_summon_hit": {
+      "opinion": {
+        "base": "@nexus_hit_opinion_change"
+      },
+      "decay": {
+        "base": "1.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_cosmic_storms.txt",
+    "_line_number": 47
+  },
+  "nexus_opinion_the_code": {
+    "nexus_opinion_the_code": {
+      "opinion": {
+        "base": "@the_code_hit_opinion_change"
+      },
+      "decay": {
+        "base": "1.5",
+        "modifier": {
+          "factor": "value:positive_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_cosmic_storms.txt",
+    "_line_number": 64
+  }
+}

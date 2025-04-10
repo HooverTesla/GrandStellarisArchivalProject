@@ -1,0 +1,66 @@
+{
+  "fleet_can_be_scrapped": {
+    "fleet_can_be_scrapped": {
+      "owner": {
+        "is_cloaked": "no",
+        "OR": {
+          "is_ship_class": "shipclass_constructor"
+        },
+        "NOR": {
+          "is_ship_size": "warped_consciousness",
+          "is_reanimated": "yes"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_enclaves.txt",
+    "_line_number": 0
+  },
+  "has_active_shroudwalker_divination": {
+    "has_active_shroudwalker_divination": {
+      "count_situation": {
+        "limit": {
+          "OR": {
+            "is_situation_type": "divination_visitors"
+          }
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_enclaves.txt",
+    "_line_number": 30
+  },
+  "has_shroudwalker_divination_event": {
+    "has_shroudwalker_divination_event": {
+      "has_active_event": {}
+    },
+    "_source_file": "02_scripted_triggers_enclaves.txt",
+    "_line_number": 42
+  },
+  "has_salvager_event": {
+    "has_salvager_event": {
+      "has_active_event": {}
+    },
+    "_source_file": "02_scripted_triggers_enclaves.txt",
+    "_line_number": 63
+  },
+  "has_trader_event": {
+    "has_trader_event": {
+      "has_active_event": {}
+    },
+    "_source_file": "02_scripted_triggers_enclaves.txt",
+    "_line_number": 80
+  },
+  "has_artisan_event": {
+    "has_artisan_event": {
+      "has_active_event": {}
+    },
+    "_source_file": "02_scripted_triggers_enclaves.txt",
+    "_line_number": 115
+  },
+  "has_curator_event": {
+    "has_curator_event": {
+      "has_active_event": {}
+    },
+    "_source_file": "02_scripted_triggers_enclaves.txt",
+    "_line_number": 141
+  }
+}

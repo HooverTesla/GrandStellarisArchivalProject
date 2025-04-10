@@ -1,0 +1,98 @@
+{
+  "slingshot_digsite": {
+    "slingshot_digsite": {
+      "desc": "slingshot_digsite_desc",
+      "picture": "GFX_evt_slingshot_stars",
+      "stages": "6",
+      "weight": "0",
+      "max_instances": "999",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "potential": {
+        "hidden_trigger": {
+          "owner": {
+            "has_country_flag": "slingshot_origin_arcsite_owner"
+          }
+        }
+      },
+      "visible": {
+        "owner": {
+          "has_country_flag": "slingshot_origin_arcsite_owner"
+        },
+        "default_site_visible_trigger": "yes"
+      },
+      "stage": {
+        "difficulty": "3",
+        "icon": "GFX_archaeology_runes_A3",
+        "event": "origin.3540"
+      },
+      "on_roll_failed": {
+        "from": {
+          "standard_archaeological_site_on_roll_failed": {}
+        }
+      }
+    },
+    "_source_file": "06_overlord_arc_sites.txt",
+    "_line_number": 25
+  },
+  "larion_digsite": {
+    "larion_digsite": {
+      "desc": "larion_digsite_desc",
+      "picture": "GFX_evt_landing_ship",
+      "stages": "3",
+      "weight": "0",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "potential": {
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "4",
+          "icon": "GFX_archaeology_runes_C2",
+          "event": "unique.10"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "06_overlord_arc_sites.txt",
+    "_line_number": 93
+  },
+  "zevox_digsite": {
+    "zevox_digsite": {
+      "desc": "zevox_digsite_desc",
+      "picture": "GFX_evt_landing_ship_2",
+      "stages": "4",
+      "weight": "0",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "potential": {
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "1",
+          "icon": "GFX_archaeology_runes_D6",
+          "event": "unique.65"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "06_overlord_arc_sites.txt",
+    "_line_number": 136
+  }
+}

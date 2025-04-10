@@ -1,0 +1,236 @@
+{
+  "origin_dragon_stage_1": {
+    "origin_dragon_stage_1": {
+      "icon": "GFX_firstcontact_icon_progress",
+      "picture": "GFX_evt_star_chart",
+      "difficulty": "3",
+      "stage_event": {
+        "summary": "fcsum_origin_dragon_1",
+        "event_weight": {
+          "weight": "1"
+        },
+        "event": "aquatics.255"
+      },
+      "on_roll_failed": {
+        "standard_first_contact_on_roll_failed": {}
+      }
+    },
+    "_source_file": "02_first_contact_unique_stories.txt",
+    "_line_number": 5
+  },
+  "origin_dragon_stage_2": {
+    "origin_dragon_stage_2": {
+      "icon": "GFX_firstcontact_icon_question",
+      "picture": "GFX_evt_star_chart",
+      "difficulty": "8",
+      "stage_event": {
+        "summary": "fcsum_origin_dragon_2",
+        "event_weight": {
+          "weight": "1"
+        },
+        "event": "aquatics.260"
+      },
+      "on_roll_failed": {
+        "standard_first_contact_on_roll_failed": {}
+      }
+    },
+    "_source_file": "02_first_contact_unique_stories.txt",
+    "_line_number": 24
+  },
+  "origin_dragon_finish": {
+    "origin_dragon_finish": {
+      "icon": "GFX_firstcontact_icon_success",
+      "picture": "GFX_evt_star_chart",
+      "difficulty": "8",
+      "stage_event": {
+        "summary": "fcsum_origin_dragon_3",
+        "event_weight": {
+          "weight": "1"
+        },
+        "event": "aquatics.265"
+      },
+      "on_roll_failed": {
+        "standard_first_contact_on_roll_failed": {}
+      }
+    },
+    "_source_file": "02_first_contact_unique_stories.txt",
+    "_line_number": 43
+  },
+  "slavers_stage_1": {
+    "slavers_stage_1": {
+      "icon": "GFX_firstcontact_icon_progress",
+      "picture": "GFX_evt_star_chart",
+      "difficulty": "3",
+      "_comments": [
+        "# Broken Shackles"
+      ],
+      "stage_event": {
+        "summary": "fcsum_comms_established",
+        "event_weight": {
+          "weight": "0",
+          "modifier": {
+            "weight": "1000",
+            "owner": {}
+          },
+          "event": "origin.5065"
+        },
+        "_comments": [
+          "# Payback"
+        ],
+        "stage_event": {
+          "summary": "fcsum_comms_established",
+          "event_weight": {
+            "weight": "0",
+            "modifier": {
+              "weight": "1000",
+              "owner": {}
+            },
+            "event": "origin.4200"
+          },
+          "on_roll_failed": {
+            "standard_first_contact_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "02_first_contact_unique_stories.txt",
+    "_line_number": 66
+  },
+  "slavers_stage_2": {
+    "slavers_stage_2": {
+      "icon": "GFX_firstcontact_icon_success",
+      "picture": "GFX_evt_star_chart",
+      "difficulty": "3",
+      "_comments": [
+        "# Broken Shackles"
+      ],
+      "stage_event": {
+        "summary": "fcsum_comms_established",
+        "event_weight": {
+          "weight": "0",
+          "modifier": {
+            "weight": "1000",
+            "owner": {}
+          },
+          "event": "origin.5070"
+        },
+        "_comments": [
+          "# Payback"
+        ],
+        "stage_event": {
+          "summary": "fcsum_comms_established",
+          "event_weight": {
+            "weight": "0",
+            "modifier": {
+              "weight": "1000",
+              "owner": {}
+            },
+            "event": "origin.4205"
+          },
+          "on_roll_failed": {
+            "standard_first_contact_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "02_first_contact_unique_stories.txt",
+    "_line_number": 104
+  },
+  "slavers_finish": {
+    "slavers_finish": {
+      "icon": "GFX_firstcontact_icon_success",
+      "picture": "GFX_evt_star_chart",
+      "difficulty": "5",
+      "_comments": [
+        "# Broken Shackles"
+      ],
+      "stage_event": {
+        "summary": "fcsum_comms_established",
+        "event_weight": {
+          "weight": "0",
+          "modifier": {
+            "weight": "1000",
+            "owner": {}
+          },
+          "event": "origin.5075"
+        },
+        "_comments": [
+          "# Payback"
+        ],
+        "stage_event": {
+          "summary": "fcsum_comms_established",
+          "event_weight": {
+            "weight": "0",
+            "modifier": {
+              "weight": "1000",
+              "owner": {}
+            },
+            "event": "origin.4210"
+          },
+          "on_roll_failed": {
+            "standard_first_contact_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "02_first_contact_unique_stories.txt",
+    "_line_number": 142
+  },
+  "jaunting_traveler_stage_1": {
+    "jaunting_traveler_stage_1": {
+      "icon": "GFX_firstcontact_icon_progress",
+      "picture": "GFX_evt_star_chart",
+      "difficulty": "3",
+      "stage_event": {
+        "summary": "fcsum_jaunting_traveler_summary",
+        "event_weight": {
+          "weight": "1"
+        },
+        "event": "fircon.1210"
+      },
+      "on_roll_failed": {
+        "standard_first_contact_on_roll_failed": {}
+      }
+    },
+    "_source_file": "02_first_contact_unique_stories.txt",
+    "_line_number": 179
+  },
+  "jaunting_traveler_stage_2": {
+    "jaunting_traveler_stage_2": {
+      "icon": "GFX_firstcontact_icon_question",
+      "picture": "GFX_evt_star_chart",
+      "difficulty": "2",
+      "stage_event": {
+        "summary": "fcsum_jaunting_traveler_summary",
+        "event_weight": {
+          "weight": "1"
+        },
+        "event": "fircon.1211"
+      },
+      "on_roll_failed": {
+        "standard_first_contact_on_roll_failed": {}
+      }
+    },
+    "_source_file": "02_first_contact_unique_stories.txt",
+    "_line_number": 198
+  },
+  "jaunting_traveler_finish": {
+    "jaunting_traveler_finish": {
+      "icon": "GFX_firstcontact_icon_success",
+      "picture": "GFX_evt_star_chart",
+      "difficulty": "3",
+      "stage_event": {
+        "summary": "fcsum_jaunting_traveler_summary",
+        "event_weight": {
+          "weight": "1"
+        },
+        "event": "fircon.1212"
+      },
+      "on_roll_failed": {
+        "standard_first_contact_on_roll_failed": {}
+      }
+    },
+    "_source_file": "02_first_contact_unique_stories.txt",
+    "_line_number": 217
+  }
+}

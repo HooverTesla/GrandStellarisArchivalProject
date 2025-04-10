@@ -1,0 +1,251 @@
+{
+  "storm_size_multiplier": {
+    "storm_size_multiplier": {
+      "base": "1",
+      "modifier": {
+        "mult": "1.4",
+        "galaxy_size": "huge"
+      }
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 4
+  },
+  "storm_range_min": {
+    "storm_range_min": {
+      "base": "1",
+      "modifier": {
+        "mult": "10",
+        "galaxy_size": "huge"
+      }
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 33
+  },
+  "storm_range_max": {
+    "storm_range_max": {
+      "base": "1",
+      "modifier": {
+        "mult": "16",
+        "galaxy_size": "huge"
+      }
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 62
+  },
+  "storm_ship_damage_received": {
+    "storm_ship_damage_received": {
+      "base": "$DMG$"
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 86
+  },
+  "gravity_storm_malus_mult": {
+    "gravity_storm_malus_mult": {
+      "base": "0",
+      "complex_trigger_modifier": {
+        "trigger": "ship_size_multiplier",
+        "mode": "add"
+      },
+      "mult": "value:storm_ship_weapons_mult"
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 90
+  },
+  "storm_ship_weapons_mult": {
+    "storm_ship_weapons_mult": {
+      "base": "1",
+      "modifier": {
+        "subtract": "0.5",
+        "fleet.owner": {
+          "has_technology": "tech_ship_storm_weapons_2"
+        }
+      }
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 101
+  },
+  "storm_building_production_multiplier": {
+    "storm_building_production_multiplier": {
+      "base": "0",
+      "modifier": {
+        "add": "0.3",
+        "is_active_resolution": "resolution_cosmic_storms_manipulation_mandate"
+      }
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 121
+  },
+  "storm_area_placing_reticle_radius_multiplier": {
+    "storm_area_placing_reticle_radius_multiplier": {
+      "base": "1",
+      "modifier": {
+        "mult": "1.2",
+        "galaxy_size": "huge"
+      }
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 147
+  },
+  "storm_area_placing_max_range_multiplier": {
+    "storm_area_placing_max_range_multiplier": {
+      "base": "1",
+      "modifier": {
+        "mult": "0.75",
+        "AND": {}
+      }
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 179
+  },
+  "storm_callers_councilor_tech_discovery_chance_multiplier": {
+    "storm_callers_councilor_tech_discovery_chance_multiplier": {
+      "base": "0.05",
+      "modifier": {
+        "mult": "value:councilor_level_combo|COUNCILOR_1|councilor_storm_callers|COUNCILOR_2|councilor_storm_callers_megacorp|",
+        "any_owned_leader": {
+          "is_councilor": "yes",
+          "OR": {
+            "is_councilor_type": "councilor_storm_callers_megacorp"
+          }
+        }
+      },
+      "add": "1"
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 220
+  },
+  "storm_resistant_production_multiplier": {
+    "storm_resistant_production_multiplier": {
+      "base": "1",
+      "modifier": {
+        "mult": "0.9",
+        "has_modifier": "storm_trap_insight_modifier"
+      }
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 241
+  },
+  "storm_early_game_spawn_chance_scaled": {
+    "storm_early_game_spawn_chance_scaled": {
+      "base": "@storm_spawn_chance_early_game",
+      "mult": "trigger:num_cosmic_storm_early_game_spawn_chance_scale_setting"
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 278
+  },
+  "storm_mid_game_spawn_chance_scaled": {
+    "storm_mid_game_spawn_chance_scaled": {
+      "base": "@storm_spawn_chance_mid_game",
+      "mult": "trigger:num_cosmic_storm_mid_game_spawn_chance_scale_setting"
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 284
+  },
+  "storm_late_game_spawn_chance_scaled": {
+    "storm_late_game_spawn_chance_scaled": {
+      "base": "@storm_spawn_chance_late_game",
+      "mult": "trigger:num_cosmic_storm_late_game_spawn_chance_scale_setting"
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 290
+  },
+  "nexus_storm_spawn_chance_scaled": {
+    "nexus_storm_spawn_chance_scaled": {
+      "base": "@nexus_storm_spawn_chance",
+      "mult": "trigger:num_cosmic_storm_late_game_spawn_chance_scale_setting"
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 296
+  },
+  "storm_early_game_spawn_max_cap_scaled": {
+    "storm_early_game_spawn_max_cap_scaled": {
+      "base": "1",
+      "mult": "trigger:num_cosmic_storm_early_game_spawn_max_cap_setting"
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 301
+  },
+  "storm_mid_game_spawn_max_cap_scaled": {
+    "storm_mid_game_spawn_max_cap_scaled": {
+      "base": "1",
+      "mult": "trigger:num_cosmic_storm_mid_game_spawn_max_cap_setting"
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 306
+  },
+  "storm_late_game_spawn_max_cap_scaled": {
+    "storm_late_game_spawn_max_cap_scaled": {
+      "base": "1",
+      "mult": "trigger:num_cosmic_storm_late_game_spawn_max_cap_setting"
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 311
+  },
+  "storm_early_game_cooldown_in_days_scaled": {
+    "storm_early_game_cooldown_in_days_scaled": {
+      "base": "@storm_cooldown_in_days_early_game",
+      "mult": "trigger:num_cosmic_storm_spawn_cooldown_scale_setting"
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 317
+  },
+  "storm_mid_game_cooldown_in_days_scaled": {
+    "storm_mid_game_cooldown_in_days_scaled": {
+      "base": "@storm_cooldown_in_days_mid_game",
+      "mult": "trigger:num_cosmic_storm_spawn_cooldown_scale_setting"
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 323
+  },
+  "storm_late_game_cooldown_in_days_scaled": {
+    "storm_late_game_cooldown_in_days_scaled": {
+      "base": "@storm_cooldown_in_days_late_game",
+      "mult": "trigger:num_cosmic_storm_spawn_cooldown_scale_setting"
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 329
+  },
+  "nexus_storm_cooldown_in_days_scaled": {
+    "nexus_storm_cooldown_in_days_scaled": {
+      "base": "@nexus_storm_cooldown_in_days",
+      "mult": "trigger:num_cosmic_storm_spawn_cooldown_scale_setting"
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 335
+  },
+  "storm_early_game_cooldown_variance_scaled": {
+    "storm_early_game_cooldown_variance_scaled": {
+      "base": "@storm_cooldown_variance_early_game",
+      "mult": "trigger:num_cosmic_storm_spawn_cooldown_scale_setting"
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 341
+  },
+  "storm_mid_game_cooldown_variance_scaled": {
+    "storm_mid_game_cooldown_variance_scaled": {
+      "base": "@storm_cooldown_variance_mid_game",
+      "mult": "trigger:num_cosmic_storm_spawn_cooldown_scale_setting"
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 347
+  },
+  "storm_late_game_cooldown_variance_scaled": {
+    "storm_late_game_cooldown_variance_scaled": {
+      "base": "@storm_cooldown_variance_late_game",
+      "mult": "trigger:num_cosmic_storm_spawn_cooldown_scale_setting"
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 353
+  },
+  "hyperlane_detailer_modifier_mult": {
+    "hyperlane_detailer_modifier_mult": {
+      "base": "1",
+      "modifier": {
+        "mult": "1.5",
+        "owner": {}
+      }
+    },
+    "_source_file": "03_script_values_cosmic_storms.txt",
+    "_line_number": 359
+  }
+}

@@ -1,0 +1,993 @@
+{
+  "fallen_empire_humiliate_effect": {
+    "fallen_empire_humiliate_effect": {
+      "hidden_effect": {
+        "if": {
+          "limit": {
+            "has_ascension_perk": "ap_cosmogenesis"
+          },
+          "add_modifier": {},
+          "else": {
+            "add_modifier": {},
+            "if": {
+              "limit": {
+                "set_policy": {
+                  "policy": "diplomatic_stance",
+                  "option": "diplo_stance_belligerent",
+                  "cooldown": "yes"
+                }
+              },
+              "end_rivalry": "event_target:fallen_empire_humiliator",
+              "save_event_target_as": "fallen_empire_humiliated",
+              "event_target:fallen_empire_humiliator": {
+                "remove_opinion_modifier": {
+                  "remove_opinion_modifier": {
+                    "remove_opinion_modifier": {
+                      "remove_opinion_modifier": {
+                        "remove_opinion_modifier": {
+                          "remove_opinion_modifier": {
+                            "remove_opinion_modifier": {},
+                            "event_target:fallen_empire_humiliator": {
+                              "every_system_within_border": {
+                                "limit": {
+                                  "event_target:fallen_empire_humiliated": {
+                                    "if": {
+                                      "limit": {
+                                        "prev": {},
+                                        "every_subject": {
+                                          "limit": {
+                                            "prevprev": {}
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 0
+  },
+  "fallen_empire_stop_atrocities_effect": {
+    "fallen_empire_stop_atrocities_effect": {
+      "hidden_effect": {
+        "set_policy": {
+          "policy": "purge",
+          "option": "purge_not_allowed",
+          "cooldown": "yes"
+        },
+        "every_subject": {
+          "set_policy": {
+            "policy": "purge",
+            "option": "purge_not_allowed",
+            "cooldown": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 55
+  },
+  "payback_stop_atrocities_effect": {
+    "payback_stop_atrocities_effect": {
+      "hidden_effect": {
+        "set_policy": {
+          "policy": "interference",
+          "option": "interference_not_allowed",
+          "cooldown": "yes"
+        },
+        "every_subject": {
+          "set_policy": {
+            "policy": "interference",
+            "option": "interference_not_allowed",
+            "cooldown": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 82
+  },
+  "fallen_empire_stop_ai_effect": {
+    "fallen_empire_stop_ai_effect": {
+      "hidden_effect": {
+        "set_policy": {
+          "policy": "artificial_intelligence_policy",
+          "option": "ai_outlawed",
+          "cooldown": "yes"
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 119
+  },
+  "fallen_empire_cleanse_holy_worlds_effect": {
+    "fallen_empire_cleanse_holy_worlds_effect": {
+      "every_owned_planet": {
+        "limit": {
+          "has_modifier": "holy_planet"
+        },
+        "destroy_colony": "yes"
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 129
+  },
+  "fallen_empire_cleanse_border_worlds_effect": {
+    "fallen_empire_cleanse_border_worlds_effect": {
+      "every_owned_planet": {
+        "limit": {
+          "is_capital": "no",
+          "solar_system": {
+            "has_hyperlane_to": "event_target:fallen_empire_humiliator"
+          }
+        },
+        "destroy_colony": "yes"
+      },
+      "every_controlled_fleet": {
+        "limit": {
+          "is_ship_class": "shipclass_starbase",
+          "solar_system": {
+            "has_hyperlane_to": "event_target:fallen_empire_humiliator"
+          }
+        },
+        "destroy_fleet": "this"
+      },
+      "every_subject": {
+        "every_owned_planet": {
+          "limit": {
+            "is_capital": "no",
+            "solar_system": {
+              "has_hyperlane_to": "event_target:fallen_empire_humiliator"
+            }
+          },
+          "destroy_colony": "yes"
+        },
+        "every_controlled_fleet": {
+          "limit": {
+            "is_ship_class": "shipclass_starbase",
+            "solar_system": {
+              "has_hyperlane_to": "event_target:fallen_empire_humiliator"
+            }
+          },
+          "destroy_fleet": "this"
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 138
+  },
+  "create_fe_home_citadel": {
+    "create_fe_home_citadel": {
+      "create_starbase": {
+        "size": "starbase_citadel",
+        "module": "gun_battery",
+        "building": "titan_yards",
+        "effect": {
+          "while": {
+            "count": "10",
+            "create_fallen_empire_platform": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 182
+  },
+  "create_fe_citadel": {
+    "create_fe_citadel": {
+      "create_starbase": {
+        "size": "starbase_citadel",
+        "module": "gun_battery",
+        "building": "dark_matter_listening_post",
+        "effect": {
+          "while": {
+            "count": "4",
+            "create_fallen_empire_platform": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 207
+  },
+  "create_fe_outpost": {
+    "create_fe_outpost": {
+      "create_starbase": {
+        "size": "starbase_outpost",
+        "effect": {
+          "while": {
+            "count": "2",
+            "create_fallen_empire_platform": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 229
+  },
+  "create_broken_fe_outpost": {
+    "create_broken_fe_outpost": {
+      "create_ambient_object": {
+        "type": "medium_debris_01_object"
+      },
+      "last_created_ambient_object": {
+        "set_location": {
+          "target": "event_target:broken_outpost",
+          "distance": "6",
+          "angle": "240"
+        }
+      },
+      "_comments": [
+        "#create_ambient_object = {",
+        "#\ttype = large_debris_object",
+        "#}",
+        "#last_created_ambient_object = {",
+        "#\tset_location = {",
+        "#\t\ttarget = event_target:broken_outpost",
+        "#\t\tdistance = 0",
+        "#\t}",
+        "#}"
+      ]
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 241
+  },
+  "create_fe_servant_species": {
+    "create_fe_servant_species": {
+      "create_species": {
+        "name": "random",
+        "class": "random_non_machine",
+        "portrait": "random",
+        "traits": {
+          "ideal_planet_class": "root",
+          "trait": "trait_charismatic"
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 333
+  },
+  "create_fe_servant_robots": {
+    "create_fe_servant_robots": {
+      "create_species": {
+        "name": "NAME_Synthetic",
+        "plural": "NAME_Synthetic_plural",
+        "class": "ROBOT",
+        "namelist": "this",
+        "portrait": "default_robot",
+        "traits": {
+          "trait": "trait_robot_domestic_protocols"
+        },
+        "effect": {
+          "set_synth_or_robot_portrait_effect": "yes"
+        }
+      },
+      "set_built_species": "last_created_species"
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 350
+  },
+  "create_fe_fringe_colony": {
+    "create_fe_fringe_colony": {
+      "set_planet_flag": "fallen_empire_world",
+      "clear_blockers": "yes",
+      "prevent_anomaly": "yes",
+      "set_owner": "ROOT",
+      "add_building": "building_fe_dome",
+      "while": {
+        "count": "8",
+        "create_pop": {
+          "species": "event_target:fe_servants"
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 369
+  },
+  "create_fe_spiritualist_fringe_colony": {
+    "create_fe_spiritualist_fringe_colony": {
+      "set_planet_flag": "fallen_empire_world",
+      "clear_blockers": "yes",
+      "prevent_anomaly": "yes",
+      "set_owner": "ROOT",
+      "add_building": "building_fe_dome",
+      "while": {
+        "count": "20",
+        "create_pop": {
+          "species": "owner_main_species"
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 397
+  },
+  "awaken_fallen_machine_empire": {
+    "awaken_fallen_machine_empire": {
+      "every_country": {
+        "limit": {
+          "is_country_type": "fallen_empire",
+          "is_machine_empire": "yes"
+        },
+        "country_event": {}
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 437
+  },
+  "awaken_guardians_of_the_galaxy": {
+    "awaken_guardians_of_the_galaxy": {
+      "random_list": {
+        "60": {
+          "random_country": {
+            "limit": {
+              "is_country_type": "fallen_empire",
+              "OR": {
+                "has_ethic": "ethic_fanatic_xenophile"
+              }
+            },
+            "set_country_flag": "guardians_of_the_galaxy",
+            "set_timed_country_flag": {
+              "set_timed_country_flag": {}
+            },
+            "15": {
+              "every_country": {
+                "limit": {
+                  "is_country_type": "fallen_empire",
+                  "OR": {
+                    "has_ethic": "ethic_fanatic_xenophile"
+                  }
+                },
+                "set_country_flag": "guardians_of_the_galaxy",
+                "set_timed_country_flag": {
+                  "set_timed_country_flag": {}
+                },
+                "25": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 447
+  },
+  "create_fallen_empire_platform": {
+    "create_fallen_empire_platform": {
+      "if": {
+        "limit": {
+          "owner": {},
+          "create_ship": {
+            "name": "random",
+            "design": "NAME_Sigma",
+            "graphical_culture": "owner"
+          }
+        },
+        "if": {
+          "limit": {
+            "owner": {},
+            "create_ship": {
+              "name": "random",
+              "design": "NAME_Cloaker",
+              "graphical_culture": "owner"
+            }
+          },
+          "if": {
+            "limit": {
+              "owner": {},
+              "create_ship": {
+                "name": "random",
+                "design": "NAME_Faith",
+                "graphical_culture": "owner"
+              }
+            },
+            "if": {
+              "limit": {
+                "owner": {
+                  "OR": {
+                    "has_ethic": "ethic_fanatic_pacifist"
+                  }
+                }
+              },
+              "create_ship": {
+                "name": "random",
+                "design": "NAME_Watcher",
+                "graphical_culture": "owner"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 483
+  },
+  "create_fallen_empire_colossus": {
+    "create_fallen_empire_colossus": {
+      "if": {
+        "limit": {
+          "owner": {},
+          "create_ship": {
+            "name": "random",
+            "design": "NAME_Omega",
+            "graphical_culture": "owner"
+          }
+        },
+        "if": {
+          "limit": {
+            "owner": {},
+            "create_ship": {
+              "name": "random",
+              "design": "NAME_Enforcer",
+              "graphical_culture": "owner"
+            }
+          },
+          "if": {
+            "limit": {
+              "owner": {},
+              "create_ship": {
+                "name": "random",
+                "design": "NAME_Cleanser",
+                "graphical_culture": "owner"
+              }
+            },
+            "if": {
+              "limit": {
+                "owner": {
+                  "OR": {
+                    "has_ethic": "ethic_fanatic_pacifist"
+                  }
+                }
+              },
+              "create_ship": {
+                "name": "random",
+                "design": "NAME_Adjuster",
+                "graphical_culture": "owner"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 546
+  },
+  "create_fallen_empire_titan": {
+    "create_fallen_empire_titan": {
+      "if": {
+        "limit": {
+          "owner": {},
+          "create_ship": {
+            "name": "random",
+            "design": "NAME_Alpha",
+            "graphical_culture": "owner"
+          }
+        },
+        "if": {
+          "limit": {
+            "owner": {},
+            "create_ship": {
+              "name": "random",
+              "design": "NAME_Savant",
+              "graphical_culture": "owner"
+            }
+          },
+          "if": {
+            "limit": {
+              "owner": {},
+              "create_ship": {
+                "name": "random",
+                "design": "NAME_Eternal",
+                "graphical_culture": "owner"
+              }
+            },
+            "if": {
+              "limit": {
+                "owner": {
+                  "OR": {
+                    "has_ethic": "ethic_fanatic_pacifist"
+                  }
+                }
+              },
+              "create_ship": {
+                "name": "random",
+                "design": "NAME_Keeper",
+                "graphical_culture": "owner"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 609
+  },
+  "create_fallen_empire_large_ship": {
+    "create_fallen_empire_large_ship": {
+      "if": {
+        "limit": {
+          "owner": {},
+          "create_ship": {
+            "name": "random",
+            "design": "NAME_Beta",
+            "graphical_culture": "owner"
+          }
+        },
+        "else_if": {
+          "limit": {
+            "owner": {},
+            "create_ship": {
+              "name": "random",
+              "design": "NAME_Scholar",
+              "graphical_culture": "owner"
+            }
+          },
+          "else_if": {
+            "limit": {
+              "owner": {},
+              "create_ship": {
+                "name": "random",
+                "design": "NAME_Avatar",
+                "graphical_culture": "owner"
+              }
+            },
+            "else_if": {
+              "limit": {
+                "owner": {
+                  "OR": {
+                    "has_ethic": "ethic_fanatic_militarist"
+                  }
+                }
+              },
+              "create_ship": {
+                "name": "random",
+                "design": "NAME_Supremacy",
+                "graphical_culture": "owner"
+              }
+            },
+            "else": {
+              "create_ship": {
+                "name": "random",
+                "design": "NAME_Custodian",
+                "graphical_culture": "owner"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 672
+  },
+  "create_fallen_empire_small_ship": {
+    "create_fallen_empire_small_ship": {
+      "if": {
+        "limit": {
+          "owner": {},
+          "create_ship": {
+            "name": "random",
+            "design": "NAME_Gamma",
+            "graphical_culture": "owner"
+          }
+        },
+        "else_if": {
+          "limit": {
+            "owner": {},
+            "create_ship": {
+              "name": "random",
+              "design": "NAME_Sage",
+              "graphical_culture": "owner"
+            }
+          },
+          "else_if": {
+            "limit": {
+              "owner": {},
+              "create_ship": {
+                "name": "random",
+                "design": "NAME_Zealot",
+                "graphical_culture": "owner"
+              }
+            },
+            "else_if": {
+              "limit": {
+                "owner": {
+                  "OR": {
+                    "has_ethic": "ethic_fanatic_militarist"
+                  }
+                }
+              },
+              "create_ship": {
+                "name": "random",
+                "design": "NAME_Glory",
+                "graphical_culture": "owner"
+              }
+            },
+            "else": {
+              "create_ship": {
+                "name": "random",
+                "design": "NAME_Overseer",
+                "graphical_culture": "owner"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 727
+  },
+  "create_fallen_empire_construction_ship": {
+    "create_fallen_empire_construction_ship": {
+      "if": {
+        "limit": {
+          "owner": {},
+          "create_ship": {
+            "name": "random",
+            "design": "NAME_Theta",
+            "graphical_culture": "owner"
+          }
+        },
+        "else_if": {
+          "limit": {
+            "owner": {},
+            "create_ship": {
+              "name": "random",
+              "design": "NAME_Librarian",
+              "graphical_culture": "owner"
+            }
+          },
+          "else_if": {
+            "limit": {
+              "owner": {},
+              "create_ship": {
+                "name": "random",
+                "design": "NAME_Penitent",
+                "graphical_culture": "owner"
+              }
+            },
+            "else_if": {
+              "limit": {
+                "owner": {},
+                "create_ship": {
+                  "name": "random",
+                  "design": "NAME_Servitor",
+                  "graphical_culture": "owner"
+                }
+              },
+              "else": {
+                "create_ship": {
+                  "name": "random",
+                  "design": "NAME_Builder",
+                  "graphical_culture": "owner"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 782
+  },
+  "create_fallen_empire_reinforcements": {
+    "create_fallen_empire_reinforcements": {
+      "create_fleet": {
+        "effect": {
+          "set_owner": "prev.owner",
+          "while": {
+            "count": "8",
+            "create_fallen_empire_small_ship": "yes"
+          },
+          "random_list": {
+            "25": {
+              "set_location": {
+                "target": "prev",
+                "distance": "75",
+                "angle": "random"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 832
+  },
+  "create_fallen_empire_fleet": {
+    "create_fallen_empire_fleet": {
+      "owner": {
+        "create_leader": {
+          "class": "commander",
+          "species": "owner_main_species",
+          "name": "random",
+          "skill": "10",
+          "leader_age_min": "25",
+          "leader_age_max": "45"
+        }
+      },
+      "create_fleet": {
+        "effect": {
+          "set_owner": "prev.owner",
+          "while": {
+            "count": "18",
+            "create_fallen_empire_small_ship": "yes"
+          },
+          "random_list": {
+            "25": {
+              "set_location": {
+                "target": "prev",
+                "distance": "75",
+                "angle": "random"
+              }
+            }
+          }
+        }
+      },
+      "last_created_fleet": {}
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 878
+  },
+  "create_fallen_empire_starting_navy": {
+    "create_fallen_empire_starting_navy": {
+      "create_fallen_empire_fleet": "yes",
+      "random": {
+        "chance": "25",
+        "create_fleet": {
+          "effect": {
+            "set_owner": "prev.owner",
+            "create_fallen_empire_titan": "yes",
+            "set_location": {
+              "target": "prev",
+              "distance": "20",
+              "angle": "random"
+            }
+          }
+        }
+      },
+      "if": {
+        "limit": {
+          "host_has_dlc": "Apocalypse"
+        },
+        "random": {
+          "chance": "10",
+          "create_fleet": {
+            "effect": {
+              "set_owner": "prev.owner",
+              "create_fallen_empire_colossus": "yes",
+              "set_location": {
+                "target": "prev",
+                "distance": "30",
+                "angle": "random"
+              }
+            }
+          }
+        }
+      },
+      "create_fleet": {
+        "effect": {
+          "set_owner": "prev.owner",
+          "create_fallen_empire_construction_ship": "yes",
+          "set_location": {
+            "target": "prev",
+            "distance": "100",
+            "angle": "random"
+          }
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 935
+  },
+  "add_awakened_fallen_empire_fleet": {
+    "add_awakened_fallen_empire_fleet": {
+      "country_event": {
+        "if": {
+          "limit": {
+            "any_country": {
+              "is_country_type": "default",
+              "OR": {
+                "AND": {
+                  "any_country": {
+                    "has_defensive_pact": "prev"
+                  }
+                }
+              }
+            }
+          },
+          "country_event": {},
+          "if": {
+            "limit": {
+              "any_country": {
+                "is_country_type": "default",
+                "OR": {
+                  "AND": {
+                    "any_country": {
+                      "has_defensive_pact": "prev"
+                    }
+                  }
+                }
+              }
+            },
+            "country_event": {}
+          }
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 1010
+  },
+  "add_awakened_fallen_empire_resources": {
+    "add_awakened_fallen_empire_resources": {
+      "_comments": [
+        "# Changing country type resets resources, so give them full stores"
+      ],
+      "add_resource": {
+        "add_resource": {
+          "add_resource": {
+            "add_resource": {
+              "add_resource": {
+                "add_resource": {
+                  "add_resource": {
+                    "add_resource": {
+                      "add_resource": {
+                        "add_resource": {
+                          "add_resource": {
+                            "if": {
+                              "limit": {
+                                "add_resource": {}
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 1062
+  },
+  "add_non_aligned_league_opinions": {
+    "add_non_aligned_league_opinions": {
+      "add_opinion_modifier": {
+        "prev": {
+          "every_country": {
+            "limit": {
+              "is_in_federation_with": "prevprev",
+              "NOT": {
+                "NOT": {
+                  "has_opinion_modifier": {
+                    "who": "prev",
+                    "modifier": "opinion_non_aligned_league"
+                  }
+                }
+              },
+              "add_opinion_modifier": {
+                "prev": {},
+                "every_country": {
+                  "limit": {
+                    "is_country_type": "awakened_fallen_empire"
+                  },
+                  "add_opinion_modifier": {
+                    "prev": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 1082
+  },
+  "create_scion_wormhole_link": {
+    "create_scion_wormhole_link": {
+      "capital_scope": {
+        "solar_system": {},
+        "event_target:scion_master": {
+          "random_system_within_border": {},
+          "event_target:home_system": {
+            "event_target:fe_target_system": {
+              "prev": {
+                "spawn_natural_wormhole": {
+                  "bypass_type": "wormhole",
+                  "random_pos": "no",
+                  "orbit_angle": "360"
+                }
+              },
+              "spawn_natural_wormhole": {
+                "bypass_type": "wormhole",
+                "random_pos": "no",
+                "orbit_angle": "270"
+              },
+              "link_wormholes": "prev"
+            }
+          },
+          "set_country_flag": "encountered_first_wormhole",
+          "add_seen_bypass_type": "wormhole"
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 1109
+  },
+  "give_fe_tech": {
+    "give_fe_tech": {
+      "if": {
+        "limit": {
+          "NOT": {},
+          "give_technology": {
+            "break": "yes"
+          },
+          "if": {
+            "limit": {
+              "NOT": {},
+              "give_technology": {
+                "break": "yes"
+              },
+              "if": {
+                "limit": {
+                  "NOT": {},
+                  "give_technology": {
+                    "break": "yes"
+                  },
+                  "if": {
+                    "limit": {
+                      "NOT": {},
+                      "give_technology": {
+                        "break": "yes"
+                      },
+                      "if": {
+                        "limit": {
+                          "NOT": {},
+                          "give_technology": {
+                            "break": "yes"
+                          },
+                          "if": {
+                            "limit": {
+                              "NOT": {},
+                              "give_technology": {
+                                "break": "yes"
+                              },
+                              "if": {
+                                "limit": {
+                                  "NOT": {},
+                                  "give_technology": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "fallen_empire_scripted_effects.txt",
+    "_line_number": 1137
+  }
+}

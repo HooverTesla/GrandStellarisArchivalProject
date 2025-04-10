@@ -1,0 +1,2621 @@
+{
+  "tech_solar_panel_network": {
+    "tech_solar_panel_network": {
+      "area": "engineering",
+      "tier": "0",
+      "category": {
+        "prerequisites": {
+          "start_tech": "yes",
+          "potential": {
+            "is_gestalt": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 3
+  },
+  "tech_space_exploration": {
+    "tech_space_exploration": {
+      "cost": "0",
+      "area": "engineering",
+      "start_tech": "yes",
+      "category": {
+        "tier": "0",
+        "_comments": [
+          "#allow auto-explore on science ships"
+        ],
+        "feature_flags": {},
+        "prereqfor_desc": {
+          "ship": {
+            "title": "TECH_UNLOCK_SCIENCE_SHIP_CONSTRUCTION_TITLE",
+            "desc": "TECH_UNLOCK_SCIENCE_SHIP_CONSTRUCTION_DESC"
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 19
+  },
+  "tech_corvettes": {
+    "tech_corvettes": {
+      "cost": "@tier0cost1",
+      "area": "engineering",
+      "start_tech": "yes",
+      "category": {
+        "prerequisites": {
+          "tier": "0",
+          "prereqfor_desc": {
+            "ship": {
+              "title": "TECH_UNLOCK_CORVETTE_CONSTRUCTION_TITLE",
+              "desc": "TECH_UNLOCK_CORVETTE_CONSTRUCTION_DESC"
+            }
+          },
+          "weight_modifier": {
+            "factor": "1000"
+          },
+          "ai_weight": {
+            "weight": "10000"
+          },
+          "starting_potential": {
+            "is_low_tech_start": "no # So Broken Shackles origin players don't start with it"
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 42
+  },
+  "tech_destroyers": {
+    "tech_destroyers": {
+      "cost": "@tier2cost1",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight1",
+          "gateway": "ship",
+          "_comments": [
+            "## unlock destroyer"
+          ],
+          "prereqfor_desc": {
+            "ship": {
+              "title": "TECH_UNLOCK_DESTROYER_CONSTRUCTION_TITLE",
+              "desc": "TECH_UNLOCK_DESTROYER_CONSTRUCTION_DESC"
+            }
+          },
+          "modifier": {
+            "command_limit_add": "10"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.1",
+              "NOT": {},
+              "modifier": {
+                "factor": "1.25",
+                "has_tradition": "tr_supremacy_adopt"
+              }
+            },
+            "ai_weight": {
+              "factor": "@ai_ship_types_factor"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 72
+  },
+  "tech_cruisers": {
+    "tech_cruisers": {
+      "cost": "@tier3cost1",
+      "area": "engineering",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "gateway": "ship",
+          "_comments": [
+            "## unlock cruisers"
+          ],
+          "prereqfor_desc": {
+            "ship": {
+              "title": "TECH_UNLOCK_CRUISER_CONSTRUCTION_TITLE",
+              "desc": "TECH_UNLOCK_CRUISER_CONSTRUCTION_DESC"
+            }
+          },
+          "modifier": {
+            "command_limit_add": "10"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.1",
+              "NOT": {},
+              "modifier": {
+                "factor": "1.25",
+                "has_tradition": "tr_supremacy_adopt"
+              }
+            },
+            "ai_weight": {
+              "factor": "@ai_ship_types_factor"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 129
+  },
+  "tech_battleships": {
+    "tech_battleships": {
+      "cost": "@tier4cost1",
+      "area": "engineering",
+      "tier": "4",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier4weight1",
+          "_comments": [
+            "## unlock battleships"
+          ],
+          "prereqfor_desc": {
+            "ship": {
+              "title": "TECH_UNLOCK_BATTLESHIP_CONSTRUCTION_TITLE",
+              "desc": "TECH_UNLOCK_BATTLESHIP_CONSTRUCTION_DESC"
+            }
+          },
+          "modifier": {
+            "command_limit_add": "10"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.1",
+              "NOT": {},
+              "modifier": {
+                "factor": "1.25",
+                "has_tradition": "tr_supremacy_adopt"
+              }
+            },
+            "ai_weight": {
+              "factor": "@ai_ship_types_factor"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 185
+  },
+  "tech_titans": {
+    "tech_titans": {
+      "cost": "@tier5cost1",
+      "area": "engineering",
+      "tier": "5",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier5weight1",
+          "ai_update_type": "military",
+          "modifier": {
+            "command_limit_add": "10"
+          },
+          "potential": {
+            "host_has_dlc": "Apocalypse"
+          },
+          "_comments": [
+            "## unlock titans"
+          ],
+          "prereqfor_desc": {
+            "hide_prereq_for_desc": "component",
+            "ship": {
+              "title": "TECH_UNLOCK_TITAN_CONSTRUCTION_TITLE",
+              "desc": "TECH_UNLOCK_TITAN_CONSTRUCTION_DESC"
+            },
+            "custom": {
+              "title": "TECH_UNLOCK_ION_CANNON_CONSTRUCTION_TITLE",
+              "desc": "TECH_UNLOCK_ION_CANNON_CONSTRUCTION_DESC"
+            }
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.1",
+              "NOT": {},
+              "modifier": {
+                "factor": "1.25",
+                "has_tradition": "tr_supremacy_adopt"
+              }
+            },
+            "ai_weight": {
+              "factor": "@ai_ship_types_factor"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 241
+  },
+  "tech_juggernaut": {
+    "tech_juggernaut": {
+      "cost": "@tier5cost3",
+      "area": "engineering",
+      "category": {
+        "tier": "5",
+        "prerequisites": {
+          "weight": "@tier5weight3",
+          "is_rare": "yes",
+          "potential": {
+            "host_has_dlc": "Federations"
+          },
+          "_comments": [
+            "# unlocks Juggernaut"
+          ],
+          "weight_modifier": {
+            "factor": "0.25",
+            "modifier": {
+              "factor": "1.5",
+              "OR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {}
+                    },
+                    "inline_script": {
+                      "script": "technologies/rare_technologies_weight_modifiers",
+                      "TECHNOLOGY": "tech_juggernaut"
+                    },
+                    "modifier": {
+                      "factor": "1.25",
+                      "has_technology": "tech_titans"
+                    }
+                  },
+                  "prereqfor_desc": {
+                    "hide_prereq_for_desc": "component",
+                    "ship": {
+                      "title": "TECH_UNLOCK_JUGGERNAUT_CONSTRUCTION_TITLE",
+                      "desc": "TECH_UNLOCK_JUGGERNAUT_CONSTRUCTION_DESC"
+                    }
+                  },
+                  "ai_weight": {
+                    "factor": "@ai_ship_types_factor"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 306
+  },
+  "tech_corvette_build_speed": {
+    "tech_corvette_build_speed": {
+      "cost": "@tier1cost2",
+      "area": "engineering",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight2",
+          "modifier": {
+            "custom_tooltip": "tech_corvette_build_speed_effect",
+            "ship_corvette_cost_mult": "-0.05",
+            "shipsize_corvette_build_speed_mult": "0.25",
+            "shipsize_offspring_corvette_build_speed_mult": "0.25",
+            "shipsize_frigate_build_speed_mult": "0.25"
+          },
+          "weight_modifier": {},
+          "ai_weight": {},
+          "technology_swap": {
+            "name": "tech_small_space_fauna_build_speed",
+            "inherit_icon": "no",
+            "inherit_effects": "no",
+            "trigger": {
+              "is_beastmasters_empire": "yes"
+            },
+            "modifier": {
+              "small_space_fauna_ship_cost_mult": "-0.05",
+              "small_space_fauna_build_speed_mult": "0.25"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 361
+  },
+  "tech_corvette_hull_1": {
+    "tech_corvette_hull_1": {
+      "cost": "@tier1cost3",
+      "area": "engineering",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight3",
+          "modifier": {
+            "custom_tooltip": "tech_corvette_hull_effect",
+            "shipsize_corvette_hull_mult": "0.1",
+            "shipsize_offspring_corvette_hull_mult": "0.1",
+            "shipsize_frigate_hull_mult": "0.1"
+          },
+          "weight_modifier": {},
+          "ai_weight": {},
+          "technology_swap": {
+            "name": "tech_small_space_fauna_hull_1",
+            "inherit_icon": "no",
+            "inherit_effects": "no",
+            "trigger": {
+              "is_beastmasters_empire": "yes"
+            },
+            "modifier": {
+              "small_space_fauna_ship_hull_mult": "0.1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 400
+  },
+  "tech_corvette_hull_2": {
+    "tech_corvette_hull_2": {
+      "cost": "@tier2cost3",
+      "area": "engineering",
+      "tier": "2",
+      "is_rare": "yes",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "modifier": {
+            "custom_tooltip": "tech_corvette_hull_effect",
+            "shipsize_corvette_hull_mult": "0.1",
+            "shipsize_offspring_corvette_hull_mult": "0.1",
+            "shipsize_frigate_hull_mult": "0.1"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.25",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {}
+                    },
+                    "inline_script": {
+                      "script": "technologies/rare_technologies_weight_modifiers",
+                      "TECHNOLOGY": "tech_corvette_hull_2"
+                    }
+                  },
+                  "ai_weight": {},
+                  "technology_swap": {
+                    "name": "tech_small_space_fauna_hull_2",
+                    "inherit_icon": "no",
+                    "inherit_effects": "no",
+                    "trigger": {
+                      "is_beastmasters_empire": "yes"
+                    },
+                    "modifier": {
+                      "small_space_fauna_ship_hull_mult": "0.1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 437
+  },
+  "tech_destroyer_build_speed": {
+    "tech_destroyer_build_speed": {
+      "cost": "@tier2cost2",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight2",
+          "modifier": {
+            "custom_tooltip": "tech_destroyer_build_speed_effect",
+            "ship_destroyer_cost_mult": "-0.05",
+            "shipsize_destroyer_build_speed_mult": "0.25",
+            "shipsize_offspring_destroyer_build_speed_mult": "0.25"
+          },
+          "weight_modifier": {},
+          "ai_weight": {},
+          "technology_swap": {
+            "name": "tech_medium_space_fauna_build_speed",
+            "inherit_icon": "no",
+            "inherit_effects": "no",
+            "trigger": {
+              "is_beastmasters_empire": "yes"
+            },
+            "modifier": {
+              "medium_space_fauna_ship_cost_mult": "-0.05",
+              "medium_space_fauna_build_speed_mult": "0.25"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 492
+  },
+  "tech_destroyer_hull_1": {
+    "tech_destroyer_hull_1": {
+      "cost": "@tier2cost3",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "modifier": {
+            "custom_tooltip": "tech_destroyer_hull_effect",
+            "shipsize_destroyer_hull_mult": "0.1",
+            "shipsize_offspring_destroyer_hull_mult": "0.1"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.25",
+              "has_tradition": "tr_supremacy_adopt"
+            }
+          },
+          "ai_weight": {},
+          "technology_swap": {
+            "name": "tech_medium_space_fauna_hull_1",
+            "inherit_icon": "no",
+            "inherit_effects": "no",
+            "trigger": {
+              "is_beastmasters_empire": "yes"
+            },
+            "modifier": {
+              "medium_space_fauna_ship_hull_mult": "0.1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 530
+  },
+  "tech_destroyer_hull_2": {
+    "tech_destroyer_hull_2": {
+      "cost": "@tier3cost1",
+      "area": "engineering",
+      "tier": "3",
+      "is_rare": "yes",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "modifier": {
+            "custom_tooltip": "tech_destroyer_hull_effect",
+            "shipsize_destroyer_hull_mult": "0.1",
+            "shipsize_offspring_destroyer_hull_mult": "0.1"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.25",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {}
+                    },
+                    "modifier": {
+                      "factor": "1.25",
+                      "has_tradition": "tr_supremacy_adopt"
+                    },
+                    "inline_script": {
+                      "script": "technologies/rare_technologies_weight_modifiers",
+                      "TECHNOLOGY": "tech_destroyer_hull_2"
+                    }
+                  },
+                  "ai_weight": {},
+                  "technology_swap": {
+                    "name": "tech_medium_space_fauna_hull_2",
+                    "inherit_icon": "no",
+                    "inherit_effects": "no",
+                    "trigger": {
+                      "is_beastmasters_empire": "yes"
+                    },
+                    "modifier": {
+                      "medium_space_fauna_ship_hull_mult": "0.1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 571
+  },
+  "tech_cruiser_build_speed": {
+    "tech_cruiser_build_speed": {
+      "cost": "@tier3cost2",
+      "area": "engineering",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight2",
+          "modifier": {
+            "custom_tooltip": "tech_cruiser_build_speed_effect",
+            "ship_cruiser_cost_mult": "-0.05",
+            "shipsize_cruiser_build_speed_mult": "0.25",
+            "shipsize_offspring_cruiser_build_speed_mult": "0.25"
+          },
+          "weight_modifier": {},
+          "ai_weight": {},
+          "technology_swap": {
+            "name": "tech_large_space_fauna_build_speed",
+            "inherit_icon": "no",
+            "inherit_effects": "no",
+            "trigger": {
+              "is_beastmasters_empire": "yes"
+            },
+            "modifier": {
+              "large_space_fauna_ship_cost_mult": "-0.05",
+              "large_space_fauna_build_speed_mult": "0.25"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 629
+  },
+  "tech_cruiser_hull_1": {
+    "tech_cruiser_hull_1": {
+      "cost": "@tier3cost3",
+      "area": "engineering",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight3",
+          "modifier": {
+            "custom_tooltip": "tech_cruiser_hull_effect",
+            "shipsize_cruiser_hull_mult": "0.1",
+            "shipsize_offspring_cruiser_hull_mult": "0.1"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.25",
+              "has_tradition": "tr_supremacy_adopt"
+            }
+          },
+          "ai_weight": {},
+          "technology_swap": {
+            "name": "tech_large_space_fauna_hull_1",
+            "inherit_icon": "no",
+            "inherit_effects": "no",
+            "trigger": {
+              "is_beastmasters_empire": "yes"
+            },
+            "modifier": {
+              "large_space_fauna_ship_hull_mult": "0.1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 667
+  },
+  "tech_cruiser_hull_2": {
+    "tech_cruiser_hull_2": {
+      "cost": "@tier4cost1",
+      "area": "engineering",
+      "tier": "4",
+      "is_rare": "yes",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier4weight1",
+          "modifier": {
+            "custom_tooltip": "tech_cruiser_hull_effect",
+            "shipsize_cruiser_hull_mult": "0.1",
+            "shipsize_offspring_cruiser_hull_mult": "0.1"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.25",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {}
+                    },
+                    "inline_script": {
+                      "script": "technologies/rare_technologies_weight_modifiers",
+                      "TECHNOLOGY": "tech_cruiser_hull_2"
+                    },
+                    "modifier": {
+                      "factor": "1.25",
+                      "has_tradition": "tr_supremacy_adopt"
+                    }
+                  },
+                  "ai_weight": {},
+                  "technology_swap": {
+                    "name": "tech_large_space_fauna_hull_2",
+                    "inherit_icon": "no",
+                    "inherit_effects": "no",
+                    "trigger": {
+                      "is_beastmasters_empire": "yes"
+                    },
+                    "modifier": {
+                      "large_space_fauna_ship_hull_mult": "0.1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 707
+  },
+  "tech_battleship_build_speed": {
+    "tech_battleship_build_speed": {
+      "cost": "@tier4cost2",
+      "area": "engineering",
+      "tier": "4",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier4weight2",
+          "modifier": {
+            "custom_tooltip": "tech_battleship_build_speed_effect",
+            "ship_battleship_cost_mult": "-0.05",
+            "shipsize_battleship_build_speed_mult": "0.25",
+            "shipsize_offspring_battleship_build_speed_mult": "0.25"
+          },
+          "weight_modifier": {},
+          "ai_weight": {},
+          "technology_swap": {
+            "name": "tech_extra_large_space_fauna_build_speed",
+            "inherit_icon": "no",
+            "inherit_effects": "no",
+            "trigger": {
+              "is_beastmasters_empire": "yes"
+            },
+            "modifier": {
+              "extra_large_space_fauna_ship_cost_mult": "-0.05",
+              "extra_large_space_fauna_build_speed_mult": "0.25"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 765
+  },
+  "tech_battleship_hull_1": {
+    "tech_battleship_hull_1": {
+      "cost": "@tier4cost3",
+      "area": "engineering",
+      "tier": "4",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier4weight3",
+          "modifier": {
+            "custom_tooltip": "tech_battleship_hull_effect",
+            "shipsize_battleship_hull_mult": "0.1",
+            "shipsize_offspring_battleship_hull_mult": "0.1"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.25",
+              "has_tradition": "tr_supremacy_adopt"
+            }
+          },
+          "ai_weight": {},
+          "technology_swap": {
+            "name": "tech_extra_large_space_fauna_hull_1",
+            "inherit_icon": "no",
+            "inherit_effects": "no",
+            "trigger": {
+              "is_beastmasters_empire": "yes"
+            },
+            "modifier": {
+              "extra_large_space_fauna_ship_hull_mult": "0.1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 803
+  },
+  "tech_battleship_hull_2": {
+    "tech_battleship_hull_2": {
+      "cost": "@tier5cost1",
+      "area": "engineering",
+      "tier": "5",
+      "is_rare": "yes",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier5weight1",
+          "modifier": {
+            "custom_tooltip": "tech_battleship_hull_effect",
+            "shipsize_battleship_hull_mult": "0.1",
+            "shipsize_offspring_battleship_hull_mult": "0.1"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.25",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {}
+                    },
+                    "inline_script": {
+                      "script": "technologies/rare_technologies_weight_modifiers",
+                      "TECHNOLOGY": "tech_battleship_hull_2"
+                    },
+                    "modifier": {
+                      "factor": "1.25",
+                      "has_tradition": "tr_supremacy_adopt"
+                    }
+                  },
+                  "ai_weight": {},
+                  "technology_swap": {
+                    "name": "tech_extra_large_space_fauna_hull_2",
+                    "inherit_icon": "no",
+                    "inherit_effects": "no",
+                    "trigger": {
+                      "is_beastmasters_empire": "yes"
+                    },
+                    "modifier": {
+                      "extra_large_space_fauna_ship_hull_mult": "0.1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 843
+  },
+  "tech_titan_hull_1": {
+    "tech_titan_hull_1": {
+      "cost": "@tier5cost2",
+      "area": "engineering",
+      "tier": "5",
+      "is_rare": "yes",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier5weight2",
+          "modifier": {
+            "shipsize_titan_hull_mult": "0.1"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.25",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {}
+                    },
+                    "inline_script": {
+                      "script": "technologies/rare_technologies_weight_modifiers",
+                      "TECHNOLOGY": "tech_titan_hull_1"
+                    },
+                    "modifier": {
+                      "factor": "1.25",
+                      "has_tradition": "tr_supremacy_adopt"
+                    }
+                  },
+                  "ai_weight": {},
+                  "technology_swap": {
+                    "name": "tech_titanic_space_fauna_hull_1",
+                    "inherit_icon": "no",
+                    "inherit_effects": "no",
+                    "trigger": {
+                      "is_beastmasters_empire": "yes"
+                    },
+                    "modifier": {
+                      "titanic_space_fauna_ship_hull_mult": "0.1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 901
+  },
+  "tech_titan_hull_2": {
+    "tech_titan_hull_2": {
+      "cost": "@tier5cost3",
+      "area": "engineering",
+      "tier": "5",
+      "is_rare": "yes",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier5weight3",
+          "modifier": {
+            "shipsize_titan_hull_mult": "0.1"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.25",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {}
+                    },
+                    "inline_script": {
+                      "script": "technologies/rare_technologies_weight_modifiers",
+                      "TECHNOLOGY": "tech_titan_hull_2"
+                    },
+                    "modifier": {
+                      "factor": "1.25",
+                      "has_tradition": "tr_supremacy_adopt"
+                    }
+                  },
+                  "ai_weight": {},
+                  "technology_swap": {
+                    "name": "tech_titanic_space_fauna_hull_2",
+                    "inherit_icon": "no",
+                    "inherit_effects": "no",
+                    "trigger": {
+                      "is_beastmasters_empire": "yes"
+                    },
+                    "modifier": {
+                      "titanic_space_fauna_ship_hull_mult": "0.1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 953
+  },
+  "tech_starbase_1": {
+    "tech_starbase_1": {
+      "cost": "0",
+      "area": "engineering",
+      "start_tech": "yes",
+      "category": {
+        "prerequisites": {
+          "tier": "0",
+          "prereqfor_desc": {
+            "ship": {
+              "title": "TECH_UNLOCK_OUTPOST_CONSTRUCTION_TITLE",
+              "desc": "TECH_UNLOCK_OUTPOST_CONSTRUCTION_DESC"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1004
+  },
+  "tech_starbase_2": {
+    "tech_starbase_2": {
+      "cost": "0",
+      "area": "engineering",
+      "start_tech": "yes",
+      "category": {
+        "tier": "0",
+        "prerequisites": {
+          "prereqfor_desc": {
+            "ship": {
+              "title": "TECH_UNLOCK_STARPORT_CONSTRUCTION_TITLE",
+              "desc": "TECH_UNLOCK_STARPORT_CONSTRUCTION_DESC"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1023
+  },
+  "tech_starbase_3": {
+    "tech_starbase_3": {
+      "cost": "@tier2cost2",
+      "area": "engineering",
+      "category": {
+        "tier": "2",
+        "prerequisites": {
+          "weight": "@tier2weight2",
+          "_comments": [
+            "# unlocks Starhold"
+          ],
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.1",
+              "NOT": {},
+              "modifier": {
+                "factor": "10",
+                "has_modifier": "agenda_impenetrable_border_finish"
+              }
+            },
+            "prereqfor_desc": {
+              "ship": {
+                "title": "TECH_UNLOCK_STARHOLD_CONSTRUCTION_TITLE",
+                "desc": "TECH_UNLOCK_STARHOLD_CONSTRUCTION_DESC"
+              }
+            },
+            "ai_weight": {
+              "factor": "@ai_starbase_types_factor"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1043
+  },
+  "tech_starbase_4": {
+    "tech_starbase_4": {
+      "cost": "@tier3cost2",
+      "area": "engineering",
+      "category": {
+        "tier": "3",
+        "prerequisites": {
+          "weight": "@tier3weight2",
+          "_comments": [
+            "# unlocks Star Fortress"
+          ],
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.1",
+              "NOT": {},
+              "modifier": {
+                "factor": "5",
+                "has_modifier": "agenda_impenetrable_border_finish"
+              }
+            },
+            "prereqfor_desc": {
+              "ship": {
+                "title": "TECH_UNLOCK_STAR_FORTRESS_CONSTRUCTION_TITLE",
+                "desc": "TECH_UNLOCK_STAR_FORTRESS_CONSTRUCTION_DESC"
+              }
+            },
+            "ai_weight": {
+              "factor": "@ai_starbase_types_factor"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1105
+  },
+  "tech_starbase_5": {
+    "tech_starbase_5": {
+      "cost": "@tier4cost2",
+      "area": "engineering",
+      "category": {
+        "tier": "4",
+        "prerequisites": {
+          "weight": "@tier4weight2",
+          "_comments": [
+            "# unlocks Citadel"
+          ],
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.1",
+              "NOT": {},
+              "modifier": {
+                "factor": "5",
+                "has_modifier": "agenda_impenetrable_border_finish"
+              }
+            },
+            "prereqfor_desc": {
+              "ship": {
+                "title": "TECH_UNLOCK_CITADEL_CONSTRUCTION_TITLE",
+                "desc": "TECH_UNLOCK_CITADEL_CONSTRUCTION_DESC"
+              }
+            },
+            "ai_weight": {
+              "factor": "@ai_starbase_types_factor"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1167
+  },
+  "tech_habitat_1": {
+    "tech_habitat_1": {
+      "cost": "@tier3cost2",
+      "area": "engineering",
+      "category": {
+        "tier": "3",
+        "prerequisites": {
+          "weight": "@tier3weight2",
+          "potential": {
+            "OR": {
+              "has_void_dweller_origin": "yes",
+              "has_origin": "origin_toxic_knights",
+              "host_has_dlc": "Utopia"
+            }
+          },
+          "_comments": [
+            "# unlocks Habitats"
+          ],
+          "weight_modifier": {
+            "modifier": {
+              "factor": "0.1",
+              "NOT": {},
+              "modifier": {
+                "factor": "1.25",
+                "has_tradition": "tr_expansion_finish"
+              }
+            },
+            "prereqfor_desc": {
+              "ship": {
+                "title": "allow_habitats",
+                "desc": "habitat_central_complex_MEGASTRUCTURE_DETAILS"
+              }
+            },
+            "ai_weight": {
+              "modifier": {
+                "factor": "100",
+                "OR": {
+                  "has_origin": "origin_toxic_knights",
+                  "has_country_flag": "payback_habitat",
+                  "has_valid_civic": "civic_void_hive"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1229
+  },
+  "tech_habitat_2": {
+    "tech_habitat_2": {
+      "cost": "@tier4cost2",
+      "area": "engineering",
+      "category": {
+        "tier": "4",
+        "prerequisites": {
+          "weight": "@tier4weight3",
+          "is_rare": "yes",
+          "potential": {
+            "OR": {
+              "has_void_dweller_origin": "yes #Not toxic knights, they just need level 1 tech",
+              "host_has_dlc": "Utopia"
+            }
+          },
+          "modifier": {
+            "habitat_max_districts_add": "1"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "10",
+              "is_void_dweller_empire": "yes"
+            },
+            "inline_script": {
+              "script": "technologies/rare_technologies_weight_modifiers",
+              "TECHNOLOGY": "tech_habitat_2"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "100",
+              "OR": {
+                "has_origin": "origin_toxic_knights",
+                "has_country_flag": "payback_habitat",
+                "has_valid_civic": "civic_void_hive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1305
+  },
+  "tech_habitat_3": {
+    "tech_habitat_3": {
+      "cost": "@tier5cost2",
+      "area": "engineering",
+      "category": {
+        "tier": "4",
+        "prerequisites": {
+          "weight": "@tier4weight3",
+          "is_rare": "yes",
+          "potential": {
+            "OR": {
+              "is_void_dweller_empire": "yes",
+              "host_has_dlc": "Utopia"
+            }
+          },
+          "modifier": {
+            "habitat_max_districts_add": "1"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "10",
+              "is_void_dweller_empire": "yes"
+            },
+            "inline_script": {
+              "script": "technologies/rare_technologies_weight_modifiers",
+              "TECHNOLOGY": "tech_habitat_3"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "100",
+              "OR": {
+                "is_void_dweller_empire": "yes",
+                "has_origin": "origin_toxic_knights",
+                "has_country_flag": "payback_habitat",
+                "has_valid_civic": "civic_void_hive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1356
+  },
+  "tech_modular_engineering": {
+    "tech_modular_engineering": {
+      "cost": "@tier2cost3",
+      "area": "engineering",
+      "category": {
+        "tier": "2",
+        "prerequisites": {
+          "is_rare": "yes",
+          "weight": "@tier2weight3",
+          "modifier": {
+            "starbase_buildings_cost_mult": "-0.25",
+            "starbase_modules_cost_mult": "-0.25"
+          },
+          "weight_modifier": {
+            "factor": "0.5",
+            "modifier": {
+              "factor": "0.5",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {}
+                },
+                "inline_script": {
+                  "script": "technologies/rare_technologies_weight_modifiers",
+                  "TECHNOLOGY": "tech_modular_engineering"
+                }
+              },
+              "ai_weight": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1413
+  },
+  "tech_space_defense_station_improvement": {
+    "tech_space_defense_station_improvement": {
+      "cost": "@tier3cost3",
+      "area": "engineering",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "is_rare": "yes",
+          "weight": "@tier3weight3",
+          "modifier": {
+            "starbase_upgrade_cost_mult": "-0.15",
+            "starbase_upgrade_speed_mult": "0.25"
+          },
+          "weight_modifier": {
+            "factor": "0.5",
+            "modifier": {
+              "factor": "0.25",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {}
+                },
+                "modifier": {
+                  "factor": "1.5",
+                  "is_specialist_subject_type": {},
+                  "inline_script": {
+                    "script": "technologies/rare_technologies_weight_modifiers",
+                    "TECHNOLOGY": "tech_space_defense_station_improvement"
+                  },
+                  "modifier": {
+                    "factor": "1.25",
+                    "OR": {
+                      "has_ethic": "ethic_fanatic_militarist"
+                    }
+                  }
+                },
+                "ai_weight": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1448
+  },
+  "tech_strike_craft_1": {
+    "tech_strike_craft_1": {
+      "cost": "@tier1cost3",
+      "area": "engineering",
+      "tier": "1",
+      "ai_update_type": "military",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight3",
+          "_comments": [
+            "## unlock strike craft 1"
+          ],
+          "weight_modifier": {},
+          "ai_weight": {
+            "modifier": {
+              "factor": "@disfavored_weapon_ai_tech_factor",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1497
+  },
+  "tech_strike_craft_2": {
+    "tech_strike_craft_2": {
+      "cost": "@tier2cost3",
+      "area": "engineering",
+      "tier": "2",
+      "ai_update_type": "military",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "_comments": [
+            "## unlock strike craft 2"
+          ],
+          "weight_modifier": {},
+          "ai_weight": {
+            "modifier": {
+              "factor": "@disfavored_weapon_ai_tech_factor",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1524
+  },
+  "tech_strike_craft_3": {
+    "tech_strike_craft_3": {
+      "cost": "@tier3cost3",
+      "area": "engineering",
+      "tier": "3",
+      "ai_update_type": "military",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight3",
+          "_comments": [
+            "## unlock strike craft 3"
+          ],
+          "weight_modifier": {},
+          "ai_weight": {
+            "modifier": {
+              "factor": "@disfavored_weapon_ai_tech_factor",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1551
+  },
+  "tech_strike_craft_skrand": {
+    "tech_strike_craft_skrand": {
+      "cost": "@tier4cost3",
+      "area": "engineering",
+      "is_rare": "yes",
+      "tier": "4",
+      "ai_update_type": "military",
+      "category": {
+        "prerequisites": {
+          "weight": "0",
+          "_comments": [
+            "## unlock unique strike craft component from Skrand storyline"
+          ],
+          "potential": {
+            "has_paragon_dlc": "yes"
+          },
+          "weight_modifier": {},
+          "ai_weight": {
+            "base": "100"
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1577
+  },
+  "tech_assault_armies": {
+    "tech_assault_armies": {
+      "cost": "@tier1cost1",
+      "area": "engineering",
+      "tier": "0",
+      "category": {
+        "prerequisites": {
+          "start_tech": "yes"
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1601
+  },
+  "tech_ship_armor_1": {
+    "tech_ship_armor_1": {
+      "cost": "@tier1cost1",
+      "area": "engineering",
+      "tier": "0",
+      "category": {
+        "ai_update_type": "all",
+        "start_tech": "yes"
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1615
+  },
+  "tech_ship_armor_2": {
+    "tech_ship_armor_2": {
+      "area": "engineering",
+      "cost": "@tier1cost2",
+      "tier": "1",
+      "category": {
+        "ai_update_type": "all",
+        "prerequisites": {
+          "weight": "@tier1weight2",
+          "gateway": "infrastructure",
+          "weight_modifier": {
+            "factor": "1.25",
+            "modifier": {
+              "factor": "1.5",
+              "is_specialist_subject_type": {}
+            },
+            "ai_weight": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1630
+  },
+  "tech_ship_armor_3": {
+    "tech_ship_armor_3": {
+      "area": "engineering",
+      "cost": "@tier2cost2",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "prerequisites": {
+          "weight": "@tier2weight2",
+          "gateway": "infrastructure",
+          "weight_modifier": {
+            "factor": "1.25",
+            "modifier": {
+              "factor": "1.5",
+              "is_specialist_subject_type": {}
+            },
+            "ai_weight": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1656
+  },
+  "tech_ship_armor_4": {
+    "tech_ship_armor_4": {
+      "area": "engineering",
+      "cost": "@tier3cost2",
+      "tier": "3",
+      "category": {
+        "ai_update_type": "all",
+        "prerequisites": {
+          "weight": "@tier3weight2",
+          "gateway": "infrastructure",
+          "weight_modifier": {
+            "factor": "1.25",
+            "modifier": {
+              "factor": "1.5",
+              "is_specialist_subject_type": {}
+            },
+            "ai_weight": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1682
+  },
+  "tech_ship_armor_5": {
+    "tech_ship_armor_5": {
+      "area": "engineering",
+      "cost": "@tier4cost2",
+      "tier": "4",
+      "category": {
+        "ai_update_type": "all",
+        "prerequisites": {
+          "weight": "@tier4weight2",
+          "weight_modifier": {
+            "factor": "1.25",
+            "modifier": {
+              "factor": "1.5",
+              "is_specialist_subject_type": {}
+            },
+            "ai_weight": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1707
+  },
+  "tech_crystal_armor_1": {
+    "tech_crystal_armor_1": {
+      "area": "engineering",
+      "cost": "@tier2cost3",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "0",
+        "weight_modifier": {
+          "modifier": {
+            "add": "5",
+            "has_country_flag": "crystal_armor_1_weight"
+          }
+        },
+        "ai_weight": {}
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1733
+  },
+  "tech_crystal_armor_2": {
+    "tech_crystal_armor_2": {
+      "area": "engineering",
+      "cost": "@tier4cost1",
+      "tier": "4",
+      "is_rare": "yes",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "0",
+        "ai_weight": {}
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1753
+  },
+  "tech_armor_hardeners_1": {
+    "tech_armor_hardeners_1": {
+      "area": "engineering",
+      "cost": "@tier2cost3",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "weight_modifier": {},
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1769
+  },
+  "tech_armor_hardeners_2": {
+    "tech_armor_hardeners_2": {
+      "area": "engineering",
+      "cost": "@tier5cost3",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "prerequisites": {
+          "weight": "@tier5weight3",
+          "weight_modifier": {},
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1787
+  },
+  "tech_thrusters_1": {
+    "tech_thrusters_1": {
+      "area": "engineering",
+      "cost": "0",
+      "start_tech": "yes",
+      "tier": "0",
+      "category": {
+        "ai_update_type": "all",
+        "prereqfor_desc": {
+          "hide_prereq_for_desc": "component",
+          "custom": {
+            "title": "TECH_UNLOCK_THRUSTER_1_TITLE",
+            "desc": "TECH_UNLOCK_THRUSTER_1_DESC"
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1807
+  },
+  "tech_thrusters_2": {
+    "tech_thrusters_2": {
+      "area": "engineering",
+      "cost": "@tier2cost1",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "prerequisites": {
+          "weight": "@tier2weight1",
+          "weight_modifier": {
+            "factor": "1.25",
+            "modifier": {
+              "factor": "2",
+              "has_technology": "tech_destroyers"
+            }
+          },
+          "prereqfor_desc": {
+            "hide_prereq_for_desc": "component",
+            "custom": {
+              "title": "TECH_UNLOCK_THRUSTER_2_TITLE",
+              "desc": "TECH_UNLOCK_THRUSTER_2_DESC"
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1829
+  },
+  "tech_thrusters_3": {
+    "tech_thrusters_3": {
+      "area": "engineering",
+      "cost": "@tier3cost1",
+      "tier": "3",
+      "category": {
+        "ai_update_type": "all",
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "weight_modifier": {
+            "factor": "1.25",
+            "modifier": {
+              "factor": "2",
+              "has_technology": "tech_cruisers"
+            }
+          },
+          "prereqfor_desc": {
+            "hide_prereq_for_desc": "component",
+            "custom": {
+              "title": "TECH_UNLOCK_THRUSTER_3_TITLE",
+              "desc": "TECH_UNLOCK_THRUSTER_3_DESC"
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1861
+  },
+  "tech_thrusters_4": {
+    "tech_thrusters_4": {
+      "area": "engineering",
+      "cost": "@tier4cost1",
+      "tier": "4",
+      "category": {
+        "ai_update_type": "all",
+        "prerequisites": {
+          "weight": "@tier4weight1",
+          "weight_modifier": {
+            "factor": "1.25",
+            "modifier": {
+              "factor": "2",
+              "has_technology": "tech_battleships"
+            }
+          },
+          "prereqfor_desc": {
+            "hide_prereq_for_desc": "component",
+            "custom": {
+              "title": "TECH_UNLOCK_THRUSTER_4_TITLE",
+              "desc": "TECH_UNLOCK_THRUSTER_4_DESC"
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1893
+  },
+  "tech_space_defense_station_1": {
+    "tech_space_defense_station_1": {
+      "cost": "0",
+      "tier": "0",
+      "area": "engineering",
+      "start_tech": "yes",
+      "category": {
+        "prerequisites": {}
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1924
+  },
+  "tech_defense_platform_hull_1": {
+    "tech_defense_platform_hull_1": {
+      "cost": "@tier2cost2",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "is_rare": "yes",
+          "weight": "@tier2weight2",
+          "weight_modifier": {
+            "factor": "0.50",
+            "inline_script": {
+              "script": "technologies/rare_technologies_weight_modifiers",
+              "TECHNOLOGY": "tech_defense_platform_hull_1"
+            },
+            "modifier": {
+              "shipsize_military_station_small_hull_mult": "0.1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1935
+  },
+  "tech_basic_industry": {
+    "tech_basic_industry": {
+      "cost": "0",
+      "area": "engineering",
+      "start_tech": "yes",
+      "category": {
+        "tier": "0",
+        "icon": "tech_space_construction"
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1964
+  },
+  "tech_mechanized_mining": {
+    "tech_mechanized_mining": {
+      "cost": "0",
+      "area": "engineering",
+      "start_tech": "yes",
+      "category": {
+        "tier": "0",
+        "icon": "tech_space_construction"
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1975
+  },
+  "tech_powered_exoskeletons": {
+    "tech_powered_exoskeletons": {
+      "cost": "@tier1cost1",
+      "area": "engineering",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight1",
+          "gateway": "robotics",
+          "modifier": {
+            "army_damage_mult": "0.05",
+            "planet_jobs_worker_produces_mult": "0.05"
+          },
+          "weight_modifier": {
+            "factor": "1.5"
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "@robots_ai_tech_factor",
+              "is_spiritualist": "no",
+              "is_hive_empire": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 1992
+  },
+  "tech_space_mining_1": {
+    "tech_space_mining_1": {
+      "cost": "@tier1cost1",
+      "area": "engineering",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight1",
+          "modifier": {
+            "station_gatherers_produces_mult": "0.10"
+          },
+          "weight_modifier": {},
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2021
+  },
+  "tech_space_mining_2": {
+    "tech_space_mining_2": {
+      "cost": "@tier1cost3",
+      "area": "engineering",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight3",
+          "modifier": {
+            "station_gatherers_produces_mult": "0.10"
+          },
+          "weight_modifier": {},
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2042
+  },
+  "tech_space_mining_3": {
+    "tech_space_mining_3": {
+      "cost": "@tier2cost1",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight1",
+          "modifier": {
+            "station_gatherers_produces_mult": "0.10"
+          },
+          "weight_modifier": {},
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2063
+  },
+  "tech_space_mining_4": {
+    "tech_space_mining_4": {
+      "cost": "@tier2cost3",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "modifier": {
+            "station_gatherers_produces_mult": "0.10"
+          },
+          "weight_modifier": {},
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2084
+  },
+  "tech_space_mining_5": {
+    "tech_space_mining_5": {
+      "cost": "@tier3cost1",
+      "area": "engineering",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "modifier": {
+            "station_gatherers_produces_mult": "0.10"
+          },
+          "weight_modifier": {},
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2105
+  },
+  "tech_mining_1": {
+    "tech_mining_1": {
+      "cost": "@tier1cost1",
+      "area": "engineering",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight1",
+          "modifier": {
+            "planet_miners_minerals_produces_mult": "0.20",
+            "starbase_constructions_minerals_produces_mult": "0.10"
+          },
+          "weight_modifier": {},
+          "ai_weight": {
+            "factor": "@ai_mining_factor"
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2127
+  },
+  "tech_mining_2": {
+    "tech_mining_2": {
+      "cost": "@tier2cost1",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight1",
+          "modifier": {
+            "planet_miners_minerals_produces_mult": "0.20",
+            "starbase_constructions_minerals_produces_mult": "0.10"
+          },
+          "weight_modifier": {},
+          "ai_weight": {
+            "factor": "@ai_mining_factor"
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2151
+  },
+  "tech_mining_3": {
+    "tech_mining_3": {
+      "cost": "@tier3cost1",
+      "area": "engineering",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "modifier": {
+            "planet_miners_minerals_produces_mult": "0.20",
+            "starbase_constructions_minerals_produces_mult": "0.10"
+          },
+          "technology_swap": {
+            "name": "tech_mining_3",
+            "inherit_icon": "yes",
+            "inherit_effects": "yes",
+            "trigger": {
+              "has_ascension_perk": "ap_weather_control"
+            },
+            "prereqfor_desc": {
+              "custom": {
+                "title": "tech_generate_magnetic_storm_tt"
+              }
+            },
+            "weight": {
+              "factor": "1"
+            }
+          },
+          "weight_modifier": {},
+          "ai_weight": {
+            "factor": "@ai_mining_factor"
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2176
+  },
+  "tech_mineral_purification_1": {
+    "tech_mineral_purification_1": {
+      "cost": "@tier1cost3",
+      "area": "engineering",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight3",
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5",
+              "is_specialist_subject_type": {}
+            },
+            "ai_weight": {
+              "factor": "@ai_mining_building_factor"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2216
+  },
+  "tech_mineral_purification_2": {
+    "tech_mineral_purification_2": {
+      "cost": "@tier2cost3",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "weight_modifier": {
+            "factor": "2",
+            "modifier": {
+              "factor": "1.5",
+              "is_specialist_subject_type": {},
+              "modifier": {
+                "factor": "0",
+                "NOR": {
+                  "has_technology": "tech_volatile_motes",
+                  "has_country_flag": "has_market_access"
+                }
+              }
+            },
+            "ai_weight": {
+              "factor": "@ai_mining_building_factor"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2239
+  },
+  "tech_alloys_1": {
+    "tech_alloys_1": {
+      "cost": "@tier1cost3",
+      "area": "engineering",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight3",
+          "_comments": [
+            "# Unlock better alloy buildings"
+          ],
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5",
+              "is_specialist_subject_type": {}
+            },
+            "ai_weight": {
+              "factor": "@ai_alloy_factor_factor"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2272
+  },
+  "tech_alloys_2": {
+    "tech_alloys_2": {
+      "cost": "@tier3cost1",
+      "area": "engineering",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "_comments": [
+            "# Unlock better alloy buildings"
+          ],
+          "weight_modifier": {
+            "factor": "2",
+            "modifier": {
+              "factor": "1.5",
+              "is_specialist_subject_type": {}
+            },
+            "ai_weight": {
+              "factor": "@ai_alloy_factor_factor"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2305
+  },
+  "tech_advanced_metallurgy_1": {
+    "tech_advanced_metallurgy_1": {
+      "cost": "@tier2cost1",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight1",
+          "modifier": {
+            "planet_metallurgists_produces_mult": "0.10"
+          },
+          "weight_modifier": {
+            "factor": "2"
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2330
+  },
+  "tech_advanced_metallurgy_2": {
+    "tech_advanced_metallurgy_2": {
+      "cost": "@tier4cost1",
+      "area": "engineering",
+      "tier": "4",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier4weight1",
+          "modifier": {
+            "planet_metallurgists_produces_mult": "0.10"
+          },
+          "weight_modifier": {
+            "factor": "2"
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2352
+  },
+  "tech_luxuries_1": {
+    "tech_luxuries_1": {
+      "cost": "@tier1cost3",
+      "area": "engineering",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight3",
+          "_comments": [
+            "# Unlocks better consumer goods buildings"
+          ],
+          "potential": {
+            "country_uses_consumer_goods": "yes"
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "1.5",
+              "is_specialist_subject_type": {}
+            },
+            "ai_weight": {
+              "factor": "@ai_civilian_factory_factor"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2376
+  },
+  "tech_luxuries_2": {
+    "tech_luxuries_2": {
+      "cost": "@tier3cost1",
+      "area": "engineering",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "_comments": [
+            "# Unlocks better luxury goods buildings"
+          ],
+          "potential": {
+            "country_uses_consumer_goods": "yes"
+          },
+          "weight_modifier": {
+            "factor": "2",
+            "modifier": {
+              "factor": "1.5",
+              "is_specialist_subject_type": {}
+            },
+            "ai_weight": {
+              "factor": "@ai_civilian_factory_factor"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2413
+  },
+  "tech_robotic_workers": {
+    "tech_robotic_workers": {
+      "cost": "@tier1cost3",
+      "area": "engineering",
+      "tier": "1",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier1weight3",
+          "gateway": "robotics",
+          "feature_flags": {
+            "potential": {
+              "NOR": {
+                "has_ethic": "ethic_gestalt_consciousness",
+                "is_individual_machine": "yes"
+              }
+            },
+            "weight_modifier": {
+              "factor": "1.5",
+              "modifier": {
+                "factor": "2",
+                "OR": {
+                  "has_ethic": "ethic_fanatic_materialist"
+                }
+              }
+            },
+            "ai_weight": {
+              "factor": "@robots_ai_tech_factor",
+              "modifier": {
+                "factor": "1000",
+                "has_origin": "origin_synthetic_fertility"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2626
+  },
+  "tech_droid_workers": {
+    "tech_droid_workers": {
+      "cost": "@tier2cost3",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "gateway": "robotics",
+          "feature_flags": {
+            "potential": {
+              "NOR": {
+                "has_ethic": "ethic_gestalt_consciousness",
+                "is_individual_machine": "yes"
+              }
+            },
+            "weight_modifier": {
+              "modifier": {
+                "factor": "2",
+                "has_origin": "origin_mechanists"
+              }
+            },
+            "ai_weight": {
+              "factor": "@robots_ai_tech_factor",
+              "modifier": {
+                "factor": "1000",
+                "has_origin": "origin_synthetic_fertility"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2695
+  },
+  "tech_synthetic_workers": {
+    "tech_synthetic_workers": {
+      "cost": "@tier4cost2",
+      "area": "engineering",
+      "tier": "4",
+      "category": {
+        "prerequisites": {
+          "is_rare": "yes",
+          "is_dangerous": "yes",
+          "weight": "@tier4weight2",
+          "feature_flags": {
+            "gateway": "robotics",
+            "modifier": {
+              "planet_jobs_robotic_produces_mult": "0.10"
+            },
+            "potential": {
+              "NOR": {
+                "has_ethic": "ethic_gestalt_consciousness",
+                "is_individual_machine": "yes"
+              }
+            },
+            "weight_modifier": {
+              "factor": "0.5",
+              "modifier": {
+                "factor": "0.20",
+                "NOR": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {
+                          "has_trait_in_council": {
+                            "has_trait_in_council": {
+                              "has_trait_in_council": {}
+                            }
+                          },
+                          "ai_weight": {
+                            "factor": "@robots_ai_tech_factor",
+                            "modifier": {
+                              "factor": "1000",
+                              "has_origin": "origin_synthetic_fertility"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "inline_script": {
+                "script": "technologies/rare_technologies_weight_modifiers",
+                "TECHNOLOGY": "tech_synthetic_workers"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2768
+  },
+  "tech_synthetic_leaders": {
+    "tech_synthetic_leaders": {
+      "cost": "@tier4cost3",
+      "area": "engineering",
+      "tier": "4",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier4weight3",
+          "feature_flags": {
+            "_comments": [
+              "## unlocks robot-leaders"
+            ],
+            "potential": {
+              "NOR": {
+                "has_ethic": "ethic_gestalt_consciousness",
+                "is_individual_machine": "yes"
+              }
+            },
+            "weight_modifier": {
+              "modifier": {
+                "factor": "0.33",
+                "has_origin": "origin_necrophage",
+                "has_trait": "trait_necrophage"
+              }
+            },
+            "ai_weight": {
+              "modifier": {
+                "factor": "0",
+                "NOT": {
+                  "NOT": {},
+                  "modifier": {
+                    "factor": "2",
+                    "is_materialist": "yes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2863
+  },
+  "tech_robot_assembly_complex": {
+    "tech_robot_assembly_complex": {
+      "icon": "tech_mega_assembly",
+      "cost": "@tier4cost1",
+      "area": "engineering",
+      "tier": "4",
+      "category": {
+        "prerequisites": {
+          "is_rare": "yes",
+          "weight": "@tier4weight1",
+          "potential": {
+            "NOT": {},
+            "weight_modifier": {
+              "factor": "0.5",
+              "modifier": {
+                "factor": "0.20",
+                "NOR": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {
+                          "has_trait_in_council": {
+                            "has_trait_in_council": {
+                              "has_trait_in_council": {}
+                            },
+                            "inline_script": {
+                              "script": "technologies/rare_technologies_weight_modifiers",
+                              "TECHNOLOGY": "tech_robot_assembly_complex"
+                            }
+                          },
+                          "ai_weight": {
+                            "factor": "@pop_growth_tech_ai_factor"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2912
+  },
+  "tech_integrated_cybernetics": {
+    "tech_integrated_cybernetics": {
+      "cost": "@tier2cost3",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "modifier": {
+            "pop_environment_tolerance": "0.05"
+          },
+          "potential": {
+            "OR": {
+              "AND": {
+                "is_machine_empire": "no",
+                "is_individual_machine": "no"
+              },
+              "has_civic": "civic_machine_assimilator"
+            }
+          },
+          "weight_modifier": {
+            "factor": "1.5"
+          },
+          "ai_weight": {
+            "factor": "2",
+            "modifier": {
+              "factor": "1000",
+              "has_origin": "origin_cybernetic_creed"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2954
+  },
+  "tech_space_construction": {
+    "tech_space_construction": {
+      "cost": "0",
+      "area": "engineering",
+      "tier": "0",
+      "category": {
+        "start_tech": "yes",
+        "prereqfor_desc": {
+          "ship": {
+            "title": "TECH_UNLOCK_CONSTRUCTION_SHIP_CONSTRUCTION_TITLE",
+            "desc": "TECH_UNLOCK_CONSTRUCTION_SHIP_CONSTRUCTION_DESC"
+          },
+          "_comments": [
+            "# used to separate the entries",
+            "# used to separate the entries"
+          ],
+          "custom": {
+            "title": "TECH_UNLOCK_RESEARCH_STATION_TITLE",
+            "desc": "TECH_UNLOCK_RESEARCH_STATION_DESC"
+          }
+        },
+        "ai_weight": {}
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 2993
+  },
+  "tech_afterburners_1": {
+    "tech_afterburners_1": {
+      "area": "engineering",
+      "cost": "@tier1cost2",
+      "tier": "1",
+      "category": {
+        "ai_update_type": "all",
+        "prerequisites": {
+          "weight": "@tier1weight2",
+          "weight_modifier": {
+            "factor": "1.25",
+            "modifier": {
+              "factor": "2",
+              "has_technology": "tech_thrusters_3"
+            }
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 3028
+  },
+  "tech_afterburners_2": {
+    "tech_afterburners_2": {
+      "area": "engineering",
+      "cost": "@tier3cost2",
+      "tier": "3",
+      "category": {
+        "ai_update_type": "all",
+        "prerequisites": {
+          "weight": "@tier3weight2",
+          "weight_modifier": {
+            "factor": "1.25"
+          },
+          "ai_weight": {}
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 3054
+  },
+  "tech_assembly_pattern": {
+    "tech_assembly_pattern": {
+      "cost": "@tier1cost3",
+      "area": "engineering",
+      "tier": "1",
+      "category": {
+        "weight": "@tier1weight3",
+        "modifier": {
+          "planet_building_build_speed_mult": "0.25"
+        },
+        "weight_modifier": {
+          "modifier": {
+            "factor": "1.25",
+            "OR": {
+              "has_ethic": "ethic_fanatic_militarist"
+            }
+          }
+        },
+        "ai_weight": {}
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 3078
+  },
+  "tech_construction_templates": {
+    "tech_construction_templates": {
+      "cost": "@tier3cost2",
+      "area": "engineering",
+      "tier": "3",
+      "is_rare": "yes",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight2",
+          "modifier": {
+            "planet_building_build_speed_mult": "0.50",
+            "empire_size_districts_mult": "-0.10",
+            "show_only_custom_tooltip": "no",
+            "custom_tooltip": "tech_construction_templates_effect"
+          },
+          "weight_modifier": {
+            "factor": "0.5",
+            "modifier": {
+              "factor": "0.5",
+              "NOR": {
+                "has_trait_in_council": {
+                  "has_trait_in_council": {}
+                },
+                "inline_script": {
+                  "script": "technologies/rare_technologies_weight_modifiers",
+                  "TECHNOLOGY": "tech_construction_templates"
+                },
+                "modifier": {
+                  "factor": "1.25",
+                  "OR": {
+                    "has_ethic": "ethic_fanatic_militarist"
+                  }
+                }
+              },
+              "ai_weight": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 3104
+  },
+  "tech_housing_1": {
+    "tech_housing_1": {
+      "cost": "@tier2cost2",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "weight": "@tier2weight2",
+        "modifier": {
+          "description": "district_housing_tech_effect"
+        },
+        "weight_modifier": {
+          "factor": "1.5"
+        },
+        "ai_weight": {
+          "modifier": {
+            "factor": "@housing_ai_tech_factor",
+            "num_pops >": "100"
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 3152
+  },
+  "tech_housing_2": {
+    "tech_housing_2": {
+      "cost": "@tier3cost1",
+      "area": "engineering",
+      "tier": "3",
+      "category": {
+        "prerequisites": {
+          "weight": "@tier3weight1",
+          "modifier": {
+            "description": "district_housing_tech_effect"
+          },
+          "weight_modifier": {
+            "factor": "1.5",
+            "modifier": {
+              "factor": "0",
+              "has_valid_civic": "civic_agrarian_idyll"
+            }
+          },
+          "ai_weight": {
+            "modifier": {
+              "factor": "@housing_ai_tech_factor",
+              "num_pops >": "100"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 3177
+  },
+  "tech_leviathan_techgenesis": {
+    "tech_leviathan_techgenesis": {
+      "cost": "@tier5cost1",
+      "area": "engineering",
+      "tier": "5",
+      "is_rare": "yes",
+      "weight": "@tier5weight1",
+      "category": {
+        "potential": {
+          "has_machine_age_dlc": "yes"
+        },
+        "prereqfor_desc": {
+          "custom": {
+            "title": "TECH_UNLOCK_LEVIATHAN_MACHINE_TITLE",
+            "desc": "TECH_UNLOCK_LEVIATHAN_MACHINE_DESC"
+          }
+        },
+        "weight_modifier": {
+          "factor": "0"
+        },
+        "_comments": [
+          "# Awarded by event"
+        ],
+        "ai_weight": {
+          "modifier": {
+            "factor": "1.5",
+            "has_ethic": "ethic_fanatic_xenophile"
+          }
+        }
+      }
+    },
+    "_source_file": "00_eng_tech.txt",
+    "_line_number": 3206
+  }
+}

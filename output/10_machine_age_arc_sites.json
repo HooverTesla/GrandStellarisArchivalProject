@@ -1,0 +1,61 @@
+{
+  "synth_queen_history_site_1": {
+    "synth_queen_history_site_1": {
+      "desc": "synth_queen_history_site_1_desc",
+      "picture": "GFX_evt_ancient_alien_temple",
+      "stages": "5",
+      "weight": "0",
+      "max_instances": "999",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "visible": {
+        "is_ai": "no",
+        "default_site_visible_trigger": "yes"
+      },
+      "stage": {
+        "difficulty": "4",
+        "icon": "GFX_archaeology_runes_F5",
+        "event": "crisis.21120"
+      },
+      "on_roll_failed": {
+        "from": {
+          "standard_archaeological_site_on_roll_failed": {}
+        }
+      }
+    },
+    "_source_file": "10_machine_age_arc_sites.txt",
+    "_line_number": 7
+  },
+  "synth_queen_history_site_2": {
+    "synth_queen_history_site_2": {
+      "desc": "synth_queen_history_site_2_desc",
+      "picture": "GFX_evt_scanning_remains",
+      "stages": "5",
+      "weight": "0",
+      "max_instances": "999",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "visible": {
+        "is_ai": "no",
+        "default_site_visible_trigger": "yes",
+        "has_country_flag": "synth_queen_history_site_2_arcsite_owner_@from.planet"
+      },
+      "stage": {
+        "difficulty": "1",
+        "icon": "GFX_archaeology_runes_C5",
+        "event": "crisis.21220"
+      },
+      "on_roll_failed": {
+        "from": {
+          "standard_archaeological_site_on_roll_failed": {}
+        }
+      }
+    },
+    "_source_file": "10_machine_age_arc_sites.txt",
+    "_line_number": 61
+  }
+}

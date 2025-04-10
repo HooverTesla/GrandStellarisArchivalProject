@@ -1,0 +1,31 @@
+{
+  "special_project": {
+    "special_project": {
+      "key": "FORM_COVENANT_PROJECT",
+      "cost": {
+        "base": "500",
+        "scaled_modifier": {
+          "limit": {
+            "scope": "this",
+            "add": "50",
+            "calc": "pop_count"
+          }
+        },
+        "tech_department": "society_technology",
+        "picture": "GFX_evt_psionics",
+        "location": "no",
+        "icon": "gfx/interface/icons/situation_log/situation_log_main_quest.dds",
+        "timelimit": "-1",
+        "event_scope": "planet_event",
+        "on_success": {
+          "event_target:form_covenant_owner": {
+            "set_country_flag": "tradition_covenant",
+            "country_event": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_projects_utopia.txt",
+    "_line_number": 104
+  }
+}

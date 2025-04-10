@@ -1,0 +1,602 @@
+{
+  "orbital_arc_furnace_1": {
+    "orbital_arc_furnace_1": {
+      "entity": "arc_crucible_stage_1_entity",
+      "construction_entity": "arc_crucible_stage_1_entity",
+      "construction_scale": "1.02 #to avoid z-fighting of consrucion entity with the base entity",
+      "portrait": "GFX_megastructure_arc_furnace_background",
+      "place_entity_on_planet_plane": "yes",
+      "entity_offset": {
+        "rotate_to_center": "no",
+        "scale_offset": "yes",
+        "use_planet_resource": "yes",
+        "_comments": [
+          "#show_in_outliner = no"
+        ],
+        "scales_with_planet": "yes",
+        "build_time": "360 # 1 year",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "500",
+            "unity": "500"
+          },
+          "upkeep": {
+            "energy": "20"
+          }
+        },
+        "construction_blocks_and_blocked_by": "self_type",
+        "build_system_tooltip": "arc_furnace_tooltip",
+        "dismantle_cost": {
+          "category": "megastructures",
+          "cost": {
+            "energy": "500"
+          }
+        },
+        "dismantle_time": "360",
+        "dismantle_potential": {
+          "always": "yes"
+        },
+        "dismantle_possible": {
+          "can_dismantle_megastructure": {
+            "TECH": "tech_orbital_arc_furnace"
+          }
+        },
+        "on_dismantle_complete": {
+          "every_system_planet": {
+            "limit": {
+              "has_modifier": "orbital_arc_furnace_1_mod"
+            },
+            "dismantle_arc_furnace_effect": "yes"
+          },
+          "random_system_planet": {
+            "limit": {
+              "has_planet_flag": "has_arc_furnace"
+            },
+            "set_planet_entity": {
+              "remove_planet_flag": "has_arc_furnace"
+            },
+            "from": {
+              "add_resource": {
+                "alloys": "500",
+                "mult": "modifier:megastructure_dismantle_refund_mult"
+              },
+              "if": {
+                "limit": {
+                  "check_variable": {
+                    "which": "arc_furnace_counter",
+                    "value >": "1"
+                  }
+                },
+                "change_variable": {
+                  "which": "arc_furnace_counter",
+                  "value": "-1"
+                }
+              }
+            }
+          },
+          "prerequisites": {
+            "potential": {
+              "always": "yes"
+            },
+            "possible": {
+              "hidden_trigger": {
+                "exists": "starbase"
+              },
+              "custom_tooltip": {
+                "fail_text": "requires_less_than_x_arc_furnaces",
+                "from": {
+                  "check_variable": {
+                    "which": "arc_furnace_counter",
+                    "value <": "value:arc_furnace_limit"
+                  }
+                }
+              }
+            },
+            "placement_rules": {
+              "planet_possible": {
+                "custom_tooltip": {
+                  "fail_text": "requires_no_anomaly",
+                  "NOT": {},
+                  "is_planet_class": "pc_molten",
+                  "custom_tooltip": {
+                    "fail_text": "requires_no_existing_megastructure",
+                    "NOR": {
+                      "has_planet_flag": "has_megastructure"
+                    }
+                  },
+                  "if": {
+                    "limit": {
+                      "from": {},
+                      "solar_system": {
+                        "count_system_planet": {
+                          "count >": "8",
+                          "limit": {
+                            "NOT": {
+                              "is_star": "no",
+                              "is_astral_scar": "no",
+                              "colonizable_planet": "no"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "country_modifier": {
+                    "custom_tooltip": "orbital_arc_furnace_1_mod_tooltip"
+                  },
+                  "_comments": [
+                    "# root = system",
+                    "# from = country"
+                  ],
+                  "ai_weight": {
+                    "factor": "5",
+                    "modifier": {
+                      "factor": "0.1",
+                      "starbase": {},
+                      "modifier": {
+                        "factor": "0.1",
+                        "any_neighbor_system": {
+                          "exists": "owner",
+                          "NOT": {
+                            "owner": {}
+                          }
+                        }
+                      },
+                      "on_build_start": {
+                        "set_star_flag": "arc_furnace_construction",
+                        "if": {
+                          "limit": {
+                            "exists": "from"
+                          },
+                          "from": {
+                            "change_variable": {
+                              "which": "arc_furnace_counter",
+                              "value": "1"
+                            }
+                          }
+                        }
+                      },
+                      "on_build_cancel": {
+                        "remove_star_flag": "arc_furnace_construction",
+                        "if": {
+                          "limit": {
+                            "exists": "from"
+                          },
+                          "from": {
+                            "if": {
+                              "limit": {
+                                "check_variable": {
+                                  "which": "arc_furnace_counter",
+                                  "value >": "1"
+                                }
+                              },
+                              "change_variable": {
+                                "which": "arc_furnace_counter",
+                                "value": "-1"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "on_build_complete": {
+                        "remove_star_flag": "arc_furnace_construction",
+                        "fromfrom.planet": {
+                          "set_planet_flag": "has_arc_furnace",
+                          "if": {
+                            "limit": {
+                              "orbital_station": {
+                                "dismantle": "yes"
+                              }
+                            },
+                            "set_planet_entity": {},
+                            "from": {
+                              "country_event": {
+                                "id": "machine_age.3405 #2nd Arc Furnace built"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "17_orbital_arc_furnace.txt",
+    "_line_number": 16
+  },
+  "orbital_arc_furnace_2": {
+    "orbital_arc_furnace_2": {
+      "entity": "arc_crucible_stage_2_entity",
+      "construction_entity": "arc_crucible_stage_2_entity",
+      "construction_scale": "1.02 #to avoid z-fighting of consrucion entity with the base entity",
+      "portrait": "GFX_megastructure_arc_furnace_background",
+      "entity_offset": {
+        "rotate_to_center": "no",
+        "scale_offset": "yes",
+        "use_planet_resource": "yes",
+        "_comments": [
+          "#show_in_outliner = no"
+        ],
+        "scales_with_planet": "yes",
+        "build_time": "1080 # 3 years",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "1000",
+            "unity": "1000"
+          },
+          "upkeep": {
+            "energy": "40"
+          }
+        },
+        "construction_blocks_and_blocked_by": "none",
+        "dismantle_cost": {
+          "category": "megastructures",
+          "cost": {
+            "energy": "1000"
+          }
+        },
+        "dismantle_time": "360",
+        "dismantle_potential": {
+          "always": "yes"
+        },
+        "dismantle_possible": {
+          "can_dismantle_megastructure": {
+            "TECH": "tech_orbital_arc_furnace"
+          }
+        },
+        "on_dismantle_complete": {
+          "every_system_planet": {
+            "limit": {
+              "has_modifier": "orbital_arc_furnace_2_mod"
+            },
+            "dismantle_arc_furnace_effect": "yes"
+          },
+          "random_system_planet": {
+            "limit": {
+              "has_planet_flag": "has_arc_furnace"
+            },
+            "set_planet_entity": {
+              "remove_planet_flag": "has_arc_furnace"
+            },
+            "from": {
+              "add_resource": {
+                "alloys": "1000",
+                "mult": "modifier:megastructure_dismantle_refund_mult"
+              },
+              "if": {
+                "limit": {
+                  "check_variable": {
+                    "which": "arc_furnace_counter",
+                    "value >": "1"
+                  }
+                },
+                "change_variable": {
+                  "which": "arc_furnace_counter",
+                  "value": "-1"
+                }
+              }
+            }
+          },
+          "upgrade_from": {},
+          "prerequisites": {
+            "potential": {
+              "always": "yes"
+            },
+            "country_modifier": {
+              "custom_tooltip": "orbital_arc_furnace_2_mod_tooltip"
+            },
+            "on_build_start": {
+              "set_star_flag": "arc_furnace_construction"
+            },
+            "on_build_cancel": {
+              "remove_star_flag": "arc_furnace_construction"
+            },
+            "on_build_complete": {
+              "remove_star_flag": "arc_furnace_construction",
+              "from": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "17_orbital_arc_furnace.txt",
+    "_line_number": 271
+  },
+  "orbital_arc_furnace_3": {
+    "orbital_arc_furnace_3": {
+      "entity": "arc_crucible_stage_3_entity",
+      "construction_entity": "arc_crucible_stage_3_entity",
+      "construction_scale": "1.02 #to avoid z-fighting of consrucion entity with the base entity",
+      "portrait": "GFX_megastructure_arc_furnace_background",
+      "entity_offset": {
+        "rotate_to_center": "no",
+        "scale_offset": "yes",
+        "place_entity_on_planet_plane": "yes",
+        "use_planet_resource": "yes",
+        "_comments": [
+          "#show_in_outliner = no"
+        ],
+        "scales_with_planet": "yes",
+        "build_time": "1080 # 3 years",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "1500",
+            "unity": "2000"
+          },
+          "upkeep": {
+            "energy": "80"
+          }
+        },
+        "construction_blocks_and_blocked_by": "none",
+        "dismantle_cost": {
+          "category": "megastructures",
+          "cost": {
+            "energy": "1500"
+          }
+        },
+        "dismantle_time": "360",
+        "dismantle_potential": {
+          "always": "yes"
+        },
+        "dismantle_possible": {
+          "can_dismantle_megastructure": {
+            "TECH": "tech_orbital_arc_furnace"
+          }
+        },
+        "on_dismantle_complete": {
+          "every_system_planet": {
+            "limit": {
+              "has_modifier": "orbital_arc_furnace_3_mod"
+            },
+            "dismantle_arc_furnace_effect": "yes"
+          },
+          "random_system_planet": {
+            "limit": {
+              "has_planet_flag": "has_arc_furnace"
+            },
+            "set_planet_entity": {
+              "remove_planet_flag": "has_arc_furnace"
+            },
+            "from": {
+              "add_resource": {
+                "alloys": "1500",
+                "mult": "modifier:megastructure_dismantle_refund_mult"
+              },
+              "if": {
+                "limit": {
+                  "check_variable": {
+                    "which": "arc_furnace_counter",
+                    "value >": "1"
+                  }
+                },
+                "change_variable": {
+                  "which": "arc_furnace_counter",
+                  "value": "-1"
+                }
+              }
+            }
+          },
+          "upgrade_from": {},
+          "prerequisites": {
+            "potential": {
+              "always": "yes"
+            },
+            "country_modifier": {
+              "custom_tooltip": "orbital_arc_furnace_3_mod_tooltip"
+            },
+            "on_build_start": {
+              "set_star_flag": "arc_furnace_construction"
+            },
+            "on_build_cancel": {
+              "remove_star_flag": "arc_furnace_construction"
+            },
+            "on_build_complete": {
+              "remove_star_flag": "arc_furnace_construction",
+              "from": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "17_orbital_arc_furnace.txt",
+    "_line_number": 379
+  },
+  "orbital_arc_furnace_4": {
+    "orbital_arc_furnace_4": {
+      "entity": "arc_crucible_stage_4_entity",
+      "construction_entity": "arc_crucible_stage_4_entity",
+      "construction_scale": "1.02 #to avoid z-fighting of consrucion entity with the base entity",
+      "portrait": "GFX_megastructure_arc_furnace_background",
+      "entity_offset": {
+        "rotate_to_center": "no",
+        "scale_offset": "yes",
+        "place_entity_on_planet_plane": "yes",
+        "show_in_outliner": "no",
+        "use_planet_resource": "yes",
+        "scales_with_planet": "yes",
+        "build_time": "1080 # 3 years",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "2000",
+            "unity": "4000"
+          },
+          "upkeep": {
+            "energy": "100"
+          }
+        },
+        "construction_blocks_and_blocked_by": "none",
+        "dismantle_cost": {
+          "category": "megastructures",
+          "cost": {
+            "energy": "2000"
+          }
+        },
+        "dismantle_time": "360",
+        "dismantle_potential": {
+          "always": "yes"
+        },
+        "dismantle_possible": {
+          "can_dismantle_megastructure": {
+            "TECH": "tech_orbital_arc_furnace"
+          }
+        },
+        "on_dismantle_complete": {
+          "every_system_planet": {
+            "limit": {
+              "has_modifier": "orbital_arc_furnace_4_mod"
+            },
+            "dismantle_arc_furnace_effect": "yes"
+          },
+          "random_system_planet": {
+            "limit": {
+              "has_planet_flag": "has_arc_furnace"
+            },
+            "set_planet_entity": {
+              "remove_planet_flag": "has_arc_furnace"
+            },
+            "from": {
+              "add_resource": {
+                "alloys": "2000",
+                "mult": "modifier:megastructure_dismantle_refund_mult"
+              },
+              "if": {
+                "limit": {
+                  "check_variable": {
+                    "which": "arc_furnace_counter",
+                    "value >": "1"
+                  }
+                },
+                "change_variable": {
+                  "which": "arc_furnace_counter",
+                  "value": "-1"
+                }
+              }
+            }
+          },
+          "upgrade_from": {},
+          "prerequisites": {
+            "potential": {
+              "always": "yes"
+            },
+            "country_modifier": {
+              "custom_tooltip": "orbital_arc_furnace_4_mod_tooltip"
+            },
+            "on_build_start": {
+              "set_star_flag": "arc_furnace_construction"
+            },
+            "on_build_cancel": {
+              "remove_star_flag": "arc_furnace_construction"
+            },
+            "on_build_complete": {
+              "remove_star_flag": "arc_furnace_construction",
+              "from": {
+                "if": {
+                  "limit": {
+                    "any_system_megastructure": {
+                      "is_megastructure_type": "dyson_swarm_3"
+                    }
+                  },
+                  "from": {
+                    "set_country_flag": "burning_brightly_achievement"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "17_orbital_arc_furnace.txt",
+    "_line_number": 488
+  },
+  "orbital_arc_furnace_destroyed": {
+    "orbital_arc_furnace_destroyed": {
+      "entity": "arc_crucible_destroyed_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "entity_offset": {
+        "rotate_to_center": "no",
+        "scale_offset": "yes",
+        "place_entity_on_planet_plane": "yes",
+        "show_in_outliner": "no",
+        "scales_with_planet": "yes",
+        "potential": {
+          "always": "no"
+        }
+      }
+    },
+    "_source_file": "17_orbital_arc_furnace.txt",
+    "_line_number": 594
+  },
+  "orbital_arc_furnace_restored": {
+    "orbital_arc_furnace_restored": {
+      "entity": "arc_crucible_stage_4_entity",
+      "construction_entity": "arc_crucible_stage_4_entity",
+      "construction_scale": "1.02 #to avoid z-fighting of consrucion entity with the base entity",
+      "portrait": "GFX_megastructure_arc_furnace_background",
+      "entity_offset": {
+        "rotate_to_center": "no",
+        "scale_offset": "yes",
+        "place_entity_on_planet_plane": "yes",
+        "show_in_outliner": "no",
+        "use_planet_resource": "yes",
+        "scales_with_planet": "yes",
+        "build_time": "720 # 2 years",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "3000",
+            "unity": "2000"
+          },
+          "upkeep": {
+            "energy": "100"
+          }
+        },
+        "construction_blocks_and_blocked_by": "none",
+        "upgrade_from": {},
+        "prerequisites": {
+          "potential": {
+            "always": "yes"
+          },
+          "country_modifier": {
+            "custom_tooltip": "orbital_arc_furnace_4_mod_tooltip"
+          },
+          "on_build_start": {
+            "set_star_flag": "arc_furnace_construction"
+          },
+          "on_build_cancel": {
+            "remove_star_flag": "arc_furnace_construction"
+          },
+          "on_build_complete": {
+            "remove_star_flag": "arc_furnace_construction",
+            "from": {
+              "fromfrom.planet": {
+                "set_planet_entity": {},
+                "if": {
+                  "limit": {
+                    "any_system_megastructure": {
+                      "is_megastructure_type": "dyson_swarm_3"
+                    }
+                  },
+                  "from": {
+                    "set_country_flag": "burning_brightly_achievement"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "17_orbital_arc_furnace.txt",
+    "_line_number": 616
+  }
+}

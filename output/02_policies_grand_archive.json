@@ -1,0 +1,56 @@
+{
+  "metabolic_regulation": {
+    "metabolic_regulation": {
+      "potential": {
+        "has_tradition": "tr_domestication_metabolic_regulation"
+      },
+      "option": {
+        "name": "growth_accelerant",
+        "modifier": {
+          "space_fauna_growth_rate_mult": "0.5",
+          "space_fauna_ship_upkeep_mult": "0.3"
+        },
+        "AI_weight": {
+          "weight": "1"
+        }
+      }
+    },
+    "_source_file": "02_policies_grand_archive.txt",
+    "_line_number": 5
+  },
+  "space_fauna_growth": {
+    "space_fauna_growth": {
+      "potential": {
+        "OR": {
+          "has_technology": "tech_alien_cloning",
+          "is_voidworms_country_type": "yes"
+        }
+      },
+      "option": {
+        "name": "excessive_space_fauna_growth",
+        "policy_flags": {},
+        "AI_weight": {
+          "weight": "1"
+        }
+      }
+    },
+    "_source_file": "02_policies_grand_archive.txt",
+    "_line_number": 43
+  },
+  "exhibition_focus": {
+    "exhibition_focus": {
+      "potential": {
+        "has_tradition": "tr_archivism_exhibition_specialization"
+      },
+      "option": {
+        "name": "no_focus",
+        "modifier": {},
+        "AI_weight": {
+          "weight": "5"
+        }
+      }
+    },
+    "_source_file": "02_policies_grand_archive.txt",
+    "_line_number": 79
+  }
+}

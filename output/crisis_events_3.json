@@ -1,0 +1,215 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "crisis.2620",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_nemesis": "yes",
+        "from": {},
+        "immediate": {
+          "_comments": [
+            "# ships are transferred before on-action fires;",
+            "# as a fallback you keep BtC ships if you're somehow also a BtC empire"
+          ],
+          "if": {
+            "limit": {
+              "_comments": [
+                "# Star-Eaters"
+              ],
+              "if": {
+                "else": {
+                  "every_controlled_ship": {
+                    "limit": {
+                      "delete_ship": "this"
+                    }
+                  },
+                  "_comments": [
+                    "# Cruisers"
+                  ],
+                  "if": {
+                    "else": {
+                      "every_controlled_ship": {
+                        "limit": {
+                          "delete_ship": "this"
+                        }
+                      },
+                      "_comments": [
+                        "# Destroyers"
+                      ],
+                      "if": {
+                        "else": {
+                          "every_controlled_ship": {
+                            "limit": {
+                              "delete_ship": "this"
+                            }
+                          },
+                          "_comments": [
+                            "# Corvettes"
+                          ],
+                          "if": {
+                            "else": {
+                              "every_controlled_ship": {
+                                "limit": {
+                                  "OR": {
+                                    "is_ship_size": "crisis_corvette"
+                                  }
+                                },
+                                "delete_ship": "this"
+                              }
+                            },
+                            "from": {
+                              "_comments": [
+                                "# clean up Aetherophasic Engine from integrated empire",
+                                "# and delete any remaining ships just in case"
+                              ],
+                              "every_owned_megastructure": {
+                                "limit": {
+                                  "OR": {
+                                    "is_megastructure_type": "crisis_sphere_0"
+                                  }
+                                },
+                                "delete_megastructure": "this"
+                              },
+                              "every_controlled_ship": {
+                                "limit": {
+                                  "OR": {
+                                    "is_ship_size": "crisis_corvette"
+                                  }
+                                },
+                                "delete_ship": "this"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "crisis_events_3.txt",
+    "_line_number": 4396
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "crisis.2476",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "pre_triggers": {
+        "has_owner": "yes",
+        "has_ground_combat": "no"
+      },
+      "trigger": {
+        "exists": "owner",
+        "owner": {
+          "planet_devastation >": "100",
+          "NOT": {
+            "from": {},
+            "immediate": {
+              "destroy_colony": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "crisis_events_3.txt",
+    "_line_number": 4216
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "crisis.2600",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "solar_system": {
+          "if": {
+            "limit": {
+              "NOT": {
+                "any_system_ambient_object": {}
+              },
+              "star": {
+                "create_ambient_object": {
+                  "type": "contingency_1",
+                  "location": "this"
+                },
+                "last_created_ambient_object": {
+                  "set_ambient_object_flag": "contingency_system_effect",
+                  "set_location": {
+                    "target": "prev",
+                    "distance": "0",
+                    "angle": "random"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "crisis_events_3.txt",
+    "_line_number": 4271
+  },
+  "event": {
+    "event": {
+      "id": "crisis.2080",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_global_flag": "synth_terror"
+      },
+      "immediate": {
+        "every_country": {
+          "limit": {
+            "is_country_type": "default",
+            "has_country_flag": "synth_terror_country",
+            "NOT": {
+              "NOR": {
+                "is_hive_empire": "yes",
+                "is_machine_empire": "yes",
+                "owner_species": {}
+              },
+              "random_list": {
+                "30": {
+                  "country_event": {},
+                  "70": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "crisis_events_3.txt",
+    "_line_number": 2971
+  },
+  "starbase_event": {
+    "starbase_event": {
+      "id": "crisis.2610",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from.owner": {
+          "NOT": {
+            "solar_system": {
+              "any_system_planet": {}
+            }
+          },
+          "immediate": {
+            "solar_system": {
+              "from.owner": {
+                "country_event": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "crisis_events_3.txt",
+    "_line_number": 4332
+  }
+}

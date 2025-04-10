@@ -1,0 +1,402 @@
+{
+  "time": {
+    "time": {},
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 10
+  },
+  "energy": {
+    "energy": {
+      "tradable": "yes",
+      "category": "basic",
+      "max": "50000",
+      "deficit_situation": "situation_energy_deficit",
+      "culling_conversion_value": "1",
+      "ai_weight": {
+        "weight": "1.5"
+      },
+      "ai_wants": {
+        "base": "500"
+      }
+    },
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 21
+  },
+  "minerals": {
+    "minerals": {
+      "tradable": "yes",
+      "category": "basic",
+      "market_amount": "100",
+      "market_price": "100",
+      "max": "15000",
+      "deficit_situation": "situation_mineral_deficit",
+      "culling_conversion_value": "1",
+      "ai_weight": {
+        "weight": "1"
+      },
+      "ai_wants": {
+        "base": "1000"
+      }
+    },
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 39
+  },
+  "food": {
+    "food": {
+      "tradable": "yes",
+      "category": "basic",
+      "market_amount": "100",
+      "market_price": "100",
+      "max": "15000",
+      "deficit_situation": "situation_food_deficit",
+      "culling_conversion_value": "1",
+      "ai_weight": {
+        "weight": "1",
+        "modifier": {
+          "factor": "0.1",
+          "country_uses_food": "no"
+        }
+      },
+      "ai_wants": {
+        "base": "500",
+        "modifier": {
+          "factor": "0.1",
+          "country_uses_food": "no"
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 59
+  },
+  "physics_research": {
+    "physics_research": {
+      "category": "other",
+      "allow_deficit": "no",
+      "culling_conversion_value": "3",
+      "ai_weight": {
+        "weight": "1"
+      },
+      "intangible_weight": "0.33"
+    },
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 85
+  },
+  "society_research": {
+    "society_research": {
+      "category": "other",
+      "allow_deficit": "no",
+      "culling_conversion_value": "3",
+      "ai_weight": {
+        "weight": "1"
+      },
+      "intangible_weight": "0.33"
+    },
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 97
+  },
+  "engineering_research": {
+    "engineering_research": {
+      "category": "other",
+      "allow_deficit": "no",
+      "culling_conversion_value": "3",
+      "ai_weight": {
+        "weight": "1"
+      },
+      "intangible_weight": "0.33"
+    },
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 109
+  },
+  "influence": {
+    "influence": {
+      "category": "other",
+      "max": "1000",
+      "tooltip_decimals": "1",
+      "fixed_max_amount": "yes",
+      "deficit_modifier": "influence_deficit #found in static modifiers",
+      "ai_weight": {
+        "weight": "1"
+      }
+    },
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 121
+  },
+  "unity": {
+    "unity": {
+      "category": "other",
+      "deficit_modifier": "unity_deficit #found in static modifiers",
+      "culling_conversion_value": "1",
+      "ai_weight": {
+        "weight": "1"
+      }
+    },
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 134
+  },
+  "consumer_goods": {
+    "consumer_goods": {
+      "tradable": "yes",
+      "category": "advanced",
+      "market_amount": "50",
+      "market_price": "100",
+      "max": "15000",
+      "deficit_situation": "situation_consumer_goods_deficit",
+      "culling_conversion_value": "2",
+      "ai_weight": {
+        "weight": "5",
+        "modifier": {
+          "factor": "0.1",
+          "country_uses_consumer_goods": "no"
+        }
+      },
+      "ai_wants": {
+        "base": "500",
+        "modifier": {
+          "factor": "0.1",
+          "country_uses_consumer_goods": "no"
+        }
+      },
+      "tradable_in_market": {
+        "NOT": {
+          "has_valid_civic": "civic_machine_obsessional_directive"
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 152
+  },
+  "alloys": {
+    "alloys": {
+      "tradable": "yes",
+      "category": "advanced",
+      "market_amount": "25",
+      "market_price": "100",
+      "max": "15000",
+      "deficit_situation": "situation_alloys_deficit",
+      "culling_conversion_value": "4",
+      "ai_weight": {
+        "weight": "5"
+      },
+      "ai_wants": {
+        "base": "500"
+      }
+    },
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 185
+  },
+  "volatile_motes": {
+    "volatile_motes": {
+      "tradable": "yes",
+      "category": "strategic",
+      "market_amount": "10",
+      "market_price": "100",
+      "max": "15000",
+      "prerequisites": {
+        "deficit_situation": "situation_volatile_motes_deficit",
+        "culling_conversion_value": "7",
+        "ai_weight": {
+          "weight": "10"
+        },
+        "ai_wants": {
+          "base": "10"
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 210
+  },
+  "exotic_gases": {
+    "exotic_gases": {
+      "tradable": "yes",
+      "category": "strategic",
+      "market_amount": "10",
+      "market_price": "100",
+      "max": "15000",
+      "prerequisites": {
+        "deficit_situation": "situation_exotic_gases_deficit",
+        "culling_conversion_value": "7",
+        "ai_weight": {
+          "weight": "10"
+        },
+        "ai_wants": {
+          "base": "10"
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 232
+  },
+  "rare_crystals": {
+    "rare_crystals": {
+      "tradable": "yes",
+      "category": "strategic",
+      "market_amount": "10",
+      "market_price": "100",
+      "max": "15000",
+      "prerequisites": {
+        "deficit_situation": "situation_rare_crystals_deficit",
+        "culling_conversion_value": "7",
+        "ai_weight": {
+          "weight": "10"
+        },
+        "ai_wants": {
+          "base": "10"
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 254
+  },
+  "sr_living_metal": {
+    "sr_living_metal": {
+      "tradable": "yes",
+      "category": "rare",
+      "market_amount": "5",
+      "market_price": "100",
+      "max": "15000",
+      "prerequisites": {
+        "visibility_prerequisite": {
+          "deficit_modifier": "sr_living_metal_deficit",
+          "culling_conversion_value": "20",
+          "ai_weight": {
+            "weight": "100"
+          },
+          "ai_wants": {
+            "base": "5"
+          }
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 281
+  },
+  "sr_zro": {
+    "sr_zro": {
+      "tradable": "yes",
+      "category": "rare",
+      "market_amount": "5",
+      "market_price": "100",
+      "max": "15000",
+      "prerequisites": {
+        "visibility_prerequisite": {
+          "deficit_modifier": "sr_zro_deficit",
+          "culling_conversion_value": "20",
+          "ai_weight": {
+            "weight": "100"
+          },
+          "ai_wants": {
+            "base": "5"
+          }
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 304
+  },
+  "sr_dark_matter": {
+    "sr_dark_matter": {
+      "tradable": "yes",
+      "category": "rare",
+      "market_amount": "5",
+      "market_price": "100",
+      "max": "15000",
+      "prerequisites": {
+        "visibility_prerequisite": {
+          "ai_weight": {
+            "weight": "100"
+          },
+          "deficit_modifier": "dark_matter_deficit #found in static modifiers",
+          "culling_conversion_value": "20",
+          "ai_wants": {
+            "base": "5"
+          }
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 327
+  },
+  "nanites": {
+    "nanites": {
+      "tradable": "no",
+      "category": "rare",
+      "visibility_prerequisite": {
+        "deficit_modifier": "nanites_deficit #found in static modifiers",
+        "culling_conversion_value": "20",
+        "ai_weight": {
+          "weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 349
+  },
+  "minor_artifacts": {
+    "minor_artifacts": {
+      "tradable": "no",
+      "category": "rare",
+      "max": "2000",
+      "special_max_amount": "yes",
+      "visibility_prerequisite": {
+        "culling_conversion_value": "10",
+        "ai_weight": {
+          "weight": "100"
+        },
+        "ai_wants": {
+          "base": "5"
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 369
+  },
+  "astral_threads": {
+    "astral_threads": {
+      "tradable": "no",
+      "category": "rare",
+      "max": "500",
+      "special_max_amount": "yes",
+      "dynamic_capacity": {
+        "base": "@astral_threads_capacity_from_each_explored_rift",
+        "complex_trigger_modifier": {
+          "trigger": "astral_rifts_completed",
+          "mode": "mult"
+        }
+      },
+      "prerequisites": {
+        "visibility_prerequisite": {
+          "culling_conversion_value": "5",
+          "ai_weight": {
+            "weight": "100"
+          },
+          "ai_wants": {
+            "base": "5"
+          }
+        }
+      }
+    },
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 389
+  },
+  "menace": {
+    "menace": {
+      "tradable": "no",
+      "category": "other",
+      "ai_weight": {
+        "weight": "1"
+      }
+    },
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 417
+  },
+  "advanced_logic": {
+    "advanced_logic": {
+      "tradable": "no",
+      "category": "other",
+      "ai_weight": {
+        "weight": "1"
+      }
+    },
+    "_source_file": "00_strategic_resources.txt",
+    "_line_number": 426
+  }
+}

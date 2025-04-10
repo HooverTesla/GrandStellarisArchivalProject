@@ -1,0 +1,281 @@
+{
+  "sys_outpost": {
+    "sys_outpost": {
+      "potential": {
+        "exists": "owner"
+      }
+    },
+    "_source_file": "00_system_types.txt",
+    "_line_number": 3
+  },
+  "sys_mining": {
+    "sys_mining": {
+      "potential": {
+        "exists": "owner"
+      },
+      "weight_modifier": {
+        "modifier": {
+          "add": "1",
+          "count_fleet_in_system": {
+            "limit": {}
+          },
+          "modifier": {
+            "add": "1",
+            "count_fleet_in_system": {
+              "limit": {}
+            },
+            "modifier": {
+              "add": "1",
+              "count_fleet_in_system": {
+                "limit": {}
+              },
+              "modifier": {
+                "add": "1",
+                "count_fleet_in_system": {
+                  "limit": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_system_types.txt",
+    "_line_number": 11
+  },
+  "sys_research": {
+    "sys_research": {
+      "potential": {
+        "exists": "owner"
+      },
+      "weight_modifier": {
+        "modifier": {
+          "add": "1",
+          "count_fleet_in_system": {
+            "limit": {}
+          },
+          "modifier": {
+            "add": "1",
+            "count_fleet_in_system": {
+              "limit": {}
+            },
+            "modifier": {
+              "add": "1",
+              "count_fleet_in_system": {
+                "limit": {}
+              },
+              "modifier": {
+                "add": "1",
+                "count_fleet_in_system": {
+                  "limit": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_system_types.txt",
+    "_line_number": 49
+  },
+  "sys_shipyard": {
+    "sys_shipyard": {
+      "potential": {
+        "exists": "starbase",
+        "starbase": {
+          "has_starbase_size >": "starbase_starport",
+          "count_starbase_modules": {
+            "type": "shipyard"
+          }
+        }
+      },
+      "weight_modifier": {
+        "base": "100",
+        "modifier": {
+          "add": "100",
+          "starbase": {
+            "count_starbase_modules": {
+              "type": "shipyard"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_system_types.txt",
+    "_line_number": 87
+  },
+  "sys_anchorage": {
+    "sys_anchorage": {
+      "potential": {
+        "exists": "starbase",
+        "starbase": {
+          "has_starbase_size >": "starbase_starport",
+          "count_starbase_modules": {
+            "type": "anchorage"
+          }
+        }
+      },
+      "weight_modifier": {
+        "base": "100",
+        "modifier": {
+          "add": "100",
+          "starbase": {
+            "count_starbase_modules": {
+              "type": "anchorage"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_system_types.txt",
+    "_line_number": 142
+  },
+  "sys_trading_hub": {
+    "sys_trading_hub": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "exists": "starbase",
+          "starbase": {
+            "has_starbase_size >": "starbase_starport",
+            "count_starbase_modules": {
+              "type": "trading_hub"
+            }
+          }
+        },
+        "weight_modifier": {
+          "base": "100",
+          "modifier": {
+            "add": "100",
+            "starbase": {
+              "count_starbase_modules": {
+                "type": "trading_hub"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_system_types.txt",
+    "_line_number": 197
+  },
+  "sys_fortress": {
+    "sys_fortress": {
+      "potential": {
+        "exists": "starbase",
+        "starbase": {
+          "has_starbase_size >": "starbase_starport",
+          "OR": {
+            "has_starbase_module": "hangar_bay"
+          }
+        }
+      },
+      "weight_modifier": {
+        "base": "50",
+        "modifier": {
+          "add": "50",
+          "starbase": {
+            "count_starbase_modules": {
+              "type": "hangar_bay"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_system_types.txt",
+    "_line_number": 253
+  },
+  "sys_colonized": {
+    "sys_colonized": {
+      "potential": {
+        "exists": "owner",
+        "any_system_colony": {
+          "is_owned_by": "root.owner"
+        }
+      },
+      "weight_modifier": {
+        "base": "200"
+      }
+    },
+    "_source_file": "00_system_types.txt",
+    "_line_number": 462
+  },
+  "sys_capital": {
+    "sys_capital": {
+      "potential": {
+        "exists": "owner",
+        "any_system_colony": {
+          "is_owned_by": "root.owner",
+          "is_capital": "yes"
+        }
+      },
+      "weight_modifier": {
+        "base": "1000"
+      }
+    },
+    "_source_file": "00_system_types.txt",
+    "_line_number": 476
+  },
+  "sys_homeworld": {
+    "sys_homeworld": {
+      "potential": {
+        "exists": "owner",
+        "any_system_colony": {
+          "is_owned_by": "root.owner",
+          "is_homeworld": "yes"
+        }
+      },
+      "weight_modifier": {
+        "base": "2000"
+      }
+    },
+    "_source_file": "00_system_types.txt",
+    "_line_number": 492
+  },
+  "sys_trading_hub_gestalt": {
+    "sys_trading_hub_gestalt": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "exists": "starbase",
+          "starbase": {
+            "has_starbase_size >": "starbase_starport",
+            "count_starbase_modules": {
+              "type": "trading_hub"
+            }
+          }
+        },
+        "weight_modifier": {
+          "base": "100",
+          "modifier": {
+            "add": "100",
+            "starbase": {
+              "count_starbase_modules": {
+                "type": "trading_hub"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_system_types.txt",
+    "_line_number": 507
+  },
+  "sys_marauder": {
+    "sys_marauder": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "is_country_type": "awakened_marauders"
+          }
+        }
+      },
+      "weight_modifier": {
+        "base": "1000"
+      }
+    },
+    "_source_file": "00_system_types.txt",
+    "_line_number": 563
+  }
+}

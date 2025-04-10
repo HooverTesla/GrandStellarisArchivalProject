@@ -1,0 +1,29 @@
+{
+  "situation_event": {
+    "situation_event": {
+      "id": "deficit.220",
+      "title": "BANKRUPTCY",
+      "desc": "deficit.220.desc",
+      "picture": "GFX_evt_deficit",
+      "show_sound": "event_life_support_fail",
+      "is_triggered_only": "yes",
+      "situation": "this",
+      "force_open": "yes",
+      "option": {
+        "name": "UNFORTUNATE",
+        "owner": {
+          "add_resource": {
+            "exotic_gases": "@bailout_strategic_base_amount",
+            "mult": "value:bailout_scaling_factor"
+          },
+          "country_defaulted_effect": "yes"
+        }
+      },
+      "after": {
+        "destroy_situation": "this"
+      }
+    },
+    "_source_file": "situation_deficit_events.txt",
+    "_line_number": 1295
+  }
+}

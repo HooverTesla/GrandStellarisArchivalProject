@@ -1,0 +1,464 @@
+{
+  "auth_democratic": {
+    "auth_democratic": {
+      "election_term_years": "10",
+      "re_election_allowed": "yes",
+      "election_type": "democratic",
+      "uses_mandates": "yes",
+      "color": {
+        "ruler_council_position": "councilor_ruler_democratic",
+        "possible": {
+          "origin": {
+            "NOR": {
+              "text": "origin_legendary_leader_no_gov_change",
+              "value": "origin_legendary_leader_imperial"
+            }
+          },
+          "ethics": {
+            "NOR": {
+              "value": "ethic_fanatic_authoritarian"
+            }
+          }
+        },
+        "country_modifier": {
+          "faction_approval": "0.10",
+          "country_leader_pool_size": "1",
+          "custom_tooltip": "auth_democratic_tt"
+        },
+        "random_weight": {
+          "base": "2"
+        },
+        "advanced_authority_swap": {
+          "name": "auth_synth_democratic_virtual",
+          "description": "auth_synth_democratic_virtual_desc",
+          "inherit_icon": "no",
+          "inherit_effects": "no",
+          "trigger": {
+            "is_scope_valid": "yes",
+            "has_country_flag": "synth_virtual"
+          },
+          "modifier": {
+            "custom_tooltip": "auth_synth_democratic_virtual_tt",
+            "country_edict_fund_mult": "0.5",
+            "pop_government_ethic_attraction": "-0.25",
+            "country_war_exhaustion_mult": "-0.5",
+            "ship_speed_mult": "0.15",
+            "starbase_shipyard_build_speed_mult": "0.25",
+            "show_only_custom_tooltip": "no"
+          }
+        },
+        "tags": {}
+      }
+    },
+    "_source_file": "00_authorities.txt",
+    "_line_number": 59
+  },
+  "auth_oligarchic": {
+    "auth_oligarchic": {
+      "election_term_years": "20",
+      "election_type": "oligarchic",
+      "can_have_emergency_elections": "yes",
+      "max_election_candidates": "4",
+      "has_agendas": "yes",
+      "color": {
+        "ruler_council_position": "councilor_ruler_oligarchic",
+        "possible": {
+          "origin": {
+            "NOR": {
+              "text": "origin_legendary_leader_no_gov_change",
+              "value": "origin_legendary_leader_imperial"
+            }
+          },
+          "ethics": {
+            "NOR": {
+              "value": "ethic_fanatic_authoritarian"
+            }
+          }
+        },
+        "country_modifier": {
+          "councilor_skill_add": "2"
+        },
+        "advanced_authority_swap": {
+          "name": "auth_synth_oligarchic_virtual",
+          "description": "auth_synth_oligarchic_virtual_desc",
+          "inherit_icon": "no",
+          "inherit_effects": "no",
+          "trigger": {
+            "is_scope_valid": "yes",
+            "has_country_flag": "synth_virtual"
+          },
+          "modifier": {
+            "custom_tooltip": "auth_cyber_oligarch_ruler_enforcers_tt",
+            "pop_category_rulers_upkeep_mult": "0.15",
+            "edicts_upkeep_mult": "-0.2",
+            "edicts_cost_mult": "-0.75",
+            "empire_size_districts_mult": "-0.10",
+            "empire_size_colonies_mult": "-0.50",
+            "show_only_custom_tooltip": "no"
+          }
+        },
+        "random_weight": {
+          "base": "2"
+        },
+        "tags": {}
+      }
+    },
+    "_source_file": "00_authorities.txt",
+    "_line_number": 200
+  },
+  "auth_dictatorial": {
+    "auth_dictatorial": {
+      "election_type": "oligarchic",
+      "has_agendas": "yes",
+      "color": {
+        "ruler_council_position": "councilor_ruler_dictatorial",
+        "possible": {
+          "origin": {
+            "NOT": {
+              "text": "origin_legendary_leader_no_gov_change",
+              "value": "origin_legendary_leader_imperial"
+            }
+          },
+          "ethics": {
+            "NOR": {
+              "value": "ethic_fanatic_egalitarian"
+            }
+          }
+        },
+        "country_modifier": {
+          "councilor_ruler_dictatorial_exp_gain": "0.25",
+          "country_leader_pool_size": "-1"
+        },
+        "advanced_authority_swap": {
+          "name": "auth_cyber_dictatorial_collectivist_official",
+          "description": "auth_cyber_dictatorial_collectivist_desc",
+          "inherit_icon": "no",
+          "inherit_effects": "no",
+          "trigger": {
+            "is_scope_valid": "yes",
+            "has_country_flag": "cyber_collectivist",
+            "exists": "ruler",
+            "ruler": {},
+            "modifier": {
+              "custom_tooltip": "auth_cyber_dictatorial_collectivist_official_tt",
+              "show_only_custom_tooltip": "yes",
+              "planet_jobs_worker_produces_mult": "0.15",
+              "planet_stability_add": "5",
+              "edicts_upkeep_mult": "-0.25",
+              "pop_amenities_usage_mult": "0.15"
+            }
+          },
+          "advanced_authority_swap": {
+            "name": "auth_cyber_dictatorial_collectivist_commander",
+            "description": "auth_cyber_dictatorial_collectivist_desc",
+            "inherit_icon": "no",
+            "inherit_effects": "no",
+            "trigger": {
+              "is_scope_valid": "yes",
+              "has_country_flag": "cyber_collectivist",
+              "exists": "ruler",
+              "ruler": {},
+              "modifier": {
+                "custom_tooltip": "auth_cyber_dictatorial_collectivist_commander_tt",
+                "show_only_custom_tooltip": "yes",
+                "ship_fire_rate_mult": "0.10",
+                "job_soldier_stability_add": "2",
+                "planet_stability_add": "5",
+                "edicts_upkeep_mult": "-0.25",
+                "pop_amenities_usage_mult": "0.15"
+              }
+            },
+            "advanced_authority_swap": {
+              "name": "auth_cyber_dictatorial_collectivist_scientist",
+              "description": "auth_cyber_dictatorial_collectivist_desc",
+              "inherit_icon": "no",
+              "inherit_effects": "no",
+              "trigger": {
+                "is_scope_valid": "yes",
+                "has_country_flag": "cyber_collectivist",
+                "exists": "ruler",
+                "ruler": {},
+                "modifier": {
+                  "custom_tooltip": "auth_cyber_dictatorial_collectivist_scientist_tt",
+                  "show_only_custom_tooltip": "yes",
+                  "all_technology_research_speed": "0.10",
+                  "planet_stability_add": "5",
+                  "edicts_upkeep_mult": "-0.25",
+                  "pop_amenities_usage_mult": "0.15"
+                }
+              },
+              "advanced_authority_swap": {
+                "name": "auth_synth_dictatorial_virtual",
+                "description": "auth_synth_dictatorial_virtual_desc",
+                "inherit_icon": "no",
+                "inherit_effects": "no",
+                "trigger": {
+                  "is_scope_valid": "yes",
+                  "has_country_flag": "synth_virtual"
+                },
+                "modifier": {
+                  "ruler_skill_add": "5",
+                  "all_technology_research_speed": "-0.05",
+                  "planet_researchers_upkeep_mult": "0.05",
+                  "pop_government_ethic_attraction": "1",
+                  "pop_ethics_shift_speed_mult": "0.5",
+                  "planet_buildings_upkeep_mult": "-0.2",
+                  "planet_buildings_cost_mult": "-0.1"
+                }
+              },
+              "tags": {}
+            }
+          }
+        },
+        "random_weight": {
+          "base": "2"
+        },
+        "_comments": [
+          "# If any modifiers for Cybernetic Collectivist Dictatorial authorities are changed",
+          "# update the following custom tooltips in machine_age_situations_1_l_english.yml",
+          "# auth_cyber_dictatorial_collectivist_official_effects",
+          "# auth_cyber_dictatorial_collectivist_commander_effects",
+          "# auth_cyber_dictatorial_collectivist_scientist_effects",
+          "# auth_cyber_dictatorial_collectivist_base_effects"
+        ]
+      }
+    },
+    "_source_file": "00_authorities.txt",
+    "_line_number": 343
+  },
+  "auth_imperial": {
+    "auth_imperial": {
+      "has_heir": "yes",
+      "has_agendas": "yes",
+      "color": {
+        "ruler_council_position": "councilor_ruler_imperial",
+        "possible": {
+          "origin": {
+            "NOT": {
+              "text": "origin_legendary_leader_no_gov_change",
+              "value": "origin_legendary_leader_dictatorial"
+            }
+          },
+          "ethics": {
+            "NOR": {
+              "value": "ethic_fanatic_egalitarian"
+            }
+          }
+        },
+        "country_modifier": {
+          "country_leader_pool_size": "-1"
+        },
+        "_comments": [
+          "# Additional modifiers are found in inline_scripts\\buildings\\on_all_capital_buildings.txt"
+        ],
+        "advanced_authority_swap": {
+          "name": "auth_synth_imperial_virtual",
+          "description": "auth_synth_imperial_virtual_desc",
+          "inherit_icon": "no",
+          "inherit_effects": "no",
+          "ruler_council_position": "councilor_ruler_imperial_synth",
+          "trigger": {
+            "is_scope_valid": "yes",
+            "has_country_flag": "synth_virtual"
+          },
+          "modifier": {
+            "planet_jobs_worker_produces_mult": "0.10",
+            "ship_hull_regen_add_perc": "0.05",
+            "ship_armor_regen_add_perc": "0.05",
+            "custom_tooltip": "auth_synth_imperial_virtual_tt",
+            "show_only_custom_tooltip": "no"
+          },
+          "tags": {}
+        },
+        "random_weight": {
+          "base": "2"
+        },
+        "tags": {}
+      }
+    },
+    "_source_file": "00_authorities.txt",
+    "_line_number": 548
+  },
+  "auth_hive_mind": {
+    "auth_hive_mind": {
+      "has_heir": "no",
+      "election_type": "none",
+      "has_factions": "no",
+      "can_reform": "no",
+      "localization_postfix": "hive_mind",
+      "color": {
+        "valid_for_released_vassal": "yes",
+        "ruler_council_position": "councilor_ruler_hive_mind",
+        "playable": {
+          "has_utopia": "yes"
+        },
+        "possible": {
+          "ethics": {
+            "value": "ethic_gestalt_consciousness"
+          },
+          "species_archetype": {},
+          "random_weight": {
+            "base": "2"
+          },
+          "traits": {
+            "trait": "trait_hive_mind"
+          },
+          "country_modifier": {
+            "pop_growth_speed": "0.25",
+            "empire_size_penalty_mult": "-0.25"
+          },
+          "tags": {},
+          "advanced_authority_swap": {
+            "name": "auth_cyber_hive_integrated",
+            "description": "auth_cyber_hive_integrated_desc",
+            "inherit_icon": "no",
+            "inherit_effects": "no",
+            "trigger": {
+              "is_scope_valid": "yes",
+              "has_country_flag": "cyber_hive_integrated"
+            },
+            "modifier": {
+              "planet_pop_assembly_organic_mult": "0.15",
+              "custom_tooltip": "auth_cyber_hive_integrated_tt",
+              "empire_size_penalty_mult": "-0.33",
+              "leaders_upkeep_mult": "0.05",
+              "show_only_custom_tooltip": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_authorities.txt",
+    "_line_number": 690
+  },
+  "auth_machine_intelligence": {
+    "auth_machine_intelligence": {
+      "machine_empire": "yes",
+      "has_heir": "no",
+      "election_type": "none",
+      "has_factions": "no",
+      "can_reform": "no",
+      "localization_postfix": "machine_intelligence",
+      "color": {
+        "valid_for_released_vassal": "no",
+        "ruler_council_position": "councilor_ruler_machine_intelligence",
+        "playable": {
+          "OR": {
+            "has_synthetic_dawn": "yes",
+            "has_machine_age_dlc": "yes"
+          }
+        },
+        "possible": {
+          "ethics": {
+            "value": "ethic_gestalt_consciousness"
+          },
+          "species_archetype": {},
+          "random_weight": {
+            "base": "2"
+          },
+          "traits": {
+            "trait": "trait_machine_unit"
+          },
+          "country_modifier": {
+            "colony_start_num_pops_add": "1",
+            "planet_pop_assembly_add": "1",
+            "station_gatherers_produces_mult": "0.1",
+            "pop_growth_speed_reduction": "0.5"
+          },
+          "tags": {},
+          "_comments": [
+            "#Memory Aggregator",
+            "#Neural Chorus"
+          ],
+          "advanced_authority_swap": {
+            "name": "auth_neural_chorus",
+            "description": "auth_neural_chorus_desc",
+            "inherit_icon": "no",
+            "inherit_effects": "no",
+            "trigger": {
+              "is_scope_valid": "yes",
+              "has_country_flag": "driven_neural_chorus"
+            },
+            "modifier": {
+              "custom_tooltip": "auth_driven_neural_chorus_tt",
+              "show_only_custom_tooltip": "no",
+              "colony_start_num_pops_add": "1",
+              "planet_pops_cyborgs_upkeep_mult": "0.1"
+            },
+            "tags": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_authorities.txt",
+    "_line_number": 772
+  },
+  "auth_ancient_machine_intelligence": {
+    "auth_ancient_machine_intelligence": {
+      "has_heir": "no",
+      "election_type": "none",
+      "can_reform": "no",
+      "valid_for_released_vassal": "no",
+      "ruler_council_position": "councilor_ruler_machine_intelligence",
+      "icon": "gfx/interface/icons/governments/authorities/auth_hive_mind.dds",
+      "potential": {}
+    },
+    "_source_file": "00_authorities.txt",
+    "_line_number": 879
+  },
+  "auth_corporate": {
+    "auth_corporate": {
+      "election_term_years": "20",
+      "election_type": "oligarchic",
+      "can_have_emergency_elections": "yes",
+      "max_election_candidates": "4",
+      "localization_postfix": "corporate",
+      "has_agendas": "yes",
+      "color": {
+        "ruler_council_position": "councilor_ruler_corporate",
+        "potential": {
+          "country_type": {},
+          "playable": {
+            "has_megacorp": "yes"
+          },
+          "possible": {
+            "origin": {
+              "NOR": {
+                "text": "origin_legendary_leader_no_gov_change",
+                "value": "origin_legendary_leader_imperial"
+              }
+            },
+            "ethics": {
+              "NOR": {
+                "value": "ethic_fanatic_authoritarian"
+              }
+            }
+          },
+          "country_modifier": {
+            "commercial_pact_mult": "0.20",
+            "empire_size_colonies_mult": "0.50",
+            "external_leader_pool_add": "1"
+          },
+          "advanced_authority_swap": {
+            "name": "auth_synth_corporate_virtual",
+            "description": "auth_synth_corporate_virtual_desc",
+            "inherit_icon": "no",
+            "inherit_effects": "no",
+            "trigger": {
+              "is_scope_valid": "yes",
+              "has_country_flag": "synth_virtual"
+            },
+            "modifier": {
+              "custom_tooltip": "auth_synth_corporate_virtual_tt",
+              "intel_decryption_add": "1",
+              "show_only_custom_tooltip": "no"
+            }
+          },
+          "tags": {}
+        }
+      }
+    },
+    "_source_file": "00_authorities.txt",
+    "_line_number": 901
+  }
+}

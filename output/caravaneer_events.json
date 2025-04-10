@@ -1,0 +1,288 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "cara.333",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "is_ai": "yes",
+        "is_country_type": "default",
+        "exists": "event_target:caravaneer_home_country",
+        "has_communications": "event_target:caravaneer_home_country",
+        "OR": {
+          "AND": {
+            "has_resource": {
+              "type": "energy",
+              "amount >": "@ai_min_energy"
+            },
+            "has_monthly_income": {
+              "resource": "energy",
+              "value >": "50"
+            }
+          },
+          "check_variable": {
+            "which": "owned_cc_var",
+            "value >": "3000"
+          }
+        }
+      },
+      "immediate": {
+        "country_event": {
+          "id": "cara.100",
+          "scopes": {
+            "from": "event_target:caravaneer_home_country"
+          }
+        }
+      }
+    },
+    "_source_file": "caravaneer_events.txt",
+    "_line_number": 5590
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "cara.3257",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "immediate": {
+        "solar_system": {
+          "closest_system": {
+            "min_steps": "1",
+            "use_bypasses": "yes",
+            "limit": {
+              "is_capital_system": "yes",
+              "any_system_planet": {},
+              "random_system_planet": {
+                "limit": {
+                  "save_event_target_as": "fleet3_next_capital_destination",
+                  "log": "fleet 3 set next destination"
+                }
+              }
+            },
+            "auto_move_to_planet": {
+              "target": "event_target:fleet3_next_capital_destination",
+              "clear_auto_move_on_arrival": "no",
+              "arrival_effect": "fleet3_continue_journey"
+            },
+            "log": "fleet 3 engaged auto_move",
+            "if": {
+              "limit": {
+                "fleet_event": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "caravaneer_events.txt",
+    "_line_number": 3634
+  },
+  "event": {
+    "event": {
+      "id": "cara.960",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_playable_country": {
+          "has_modifier": "galatron_modifier"
+        }
+      },
+      "immediate": {
+        "random_playable_country": {
+          "limit": {
+            "random_list": {
+              "_comments": [
+                "# Null"
+              ],
+              "60": {
+                "40": {
+                  "random_list": {
+                    "_comments": [
+                      "# Energy"
+                    ],
+                    "1": {
+                      "add_resource": {
+                        "create_message": {
+                          "type": "MESSAGE_TYPE_GALPULSE",
+                          "localization": "MESSAGE_GALPULSE_ENERGY",
+                          "days": "30",
+                          "target": "capital_scope"
+                        }
+                      },
+                      "_comments": [
+                        "# Minerals"
+                      ],
+                      "1": {
+                        "add_resource": {
+                          "create_message": {
+                            "type": "MESSAGE_TYPE_GALPULSE",
+                            "localization": "MESSAGE_GALPULSE_MINERALS",
+                            "days": "30",
+                            "target": "capital_scope"
+                          }
+                        },
+                        "_comments": [
+                          "# Alloys"
+                        ],
+                        "1": {
+                          "add_resource": {
+                            "create_message": {
+                              "type": "MESSAGE_TYPE_GALPULSE",
+                              "localization": "MESSAGE_GALPULSE_ALLOYS",
+                              "days": "30",
+                              "target": "capital_scope"
+                            }
+                          },
+                          "_comments": [
+                            "# Consumer Goods"
+                          ],
+                          "1": {
+                            "add_resource": {
+                              "create_message": {
+                                "type": "MESSAGE_TYPE_GALPULSE",
+                                "localization": "MESSAGE_GALPULSE_CONSUMER_GOODS",
+                                "days": "30",
+                                "target": "capital_scope"
+                              }
+                            },
+                            "_comments": [
+                              "# Influence"
+                            ],
+                            "1": {
+                              "add_resource": {
+                                "create_message": {
+                                  "type": "MESSAGE_TYPE_GALPULSE",
+                                  "localization": "MESSAGE_GALPULSE_INFLUENCE",
+                                  "days": "30",
+                                  "target": "capital_scope"
+                                }
+                              },
+                              "_comments": [
+                                "# Unity"
+                              ],
+                              "1": {
+                                "add_resource": {
+                                  "create_message": {
+                                    "type": "MESSAGE_TYPE_GALPULSE",
+                                    "localization": "MESSAGE_GALPULSE_UNITY",
+                                    "days": "30",
+                                    "target": "capital_scope"
+                                  }
+                                },
+                                "_comments": [
+                                  "# Society Research"
+                                ],
+                                "1": {
+                                  "add_resource": {
+                                    "create_message": {
+                                      "type": "MESSAGE_TYPE_GALPULSE",
+                                      "localization": "MESSAGE_GALPULSE_SOCIETY",
+                                      "days": "30",
+                                      "target": "capital_scope"
+                                    }
+                                  },
+                                  "_comments": [
+                                    "# Physics Research"
+                                  ],
+                                  "1": {
+                                    "add_resource": {
+                                      "create_message": {
+                                        "type": "MESSAGE_TYPE_GALPULSE",
+                                        "localization": "MESSAGE_GALPULSE_PHYSICS",
+                                        "days": "30",
+                                        "target": "capital_scope"
+                                      }
+                                    },
+                                    "_comments": [
+                                      "# Engineering Research"
+                                    ],
+                                    "1": {
+                                      "add_resource": {
+                                        "create_message": {
+                                          "type": "MESSAGE_TYPE_GALPULSE",
+                                          "localization": "MESSAGE_GALPULSE_ENGINEERING",
+                                          "days": "30",
+                                          "target": "capital_scope"
+                                        }
+                                      },
+                                      "_comments": [
+                                        "# Naval Capacity +10"
+                                      ],
+                                      "1": {
+                                        "modifier": {
+                                          "factor": "0",
+                                          "has_modifier": "galatron_naval_cap1"
+                                        },
+                                        "add_modifier": {
+                                          "modifier": "galatron_naval_cap1",
+                                          "days": "-1"
+                                        },
+                                        "create_message": {
+                                          "type": "MESSAGE_TYPE_GALPULSE",
+                                          "localization": "MESSAGE_GALPULSE_NAVAL_CAP1",
+                                          "days": "30",
+                                          "target": "capital_scope"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "caravaneer_events.txt",
+    "_line_number": 4143
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "cara.4161",
+      "title": "cara.4161.name",
+      "desc": "cara.4161.desc",
+      "picture": "GFX_evt_psionics",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "FASCINATING",
+        "owner": {
+          "add_monthly_resource_mult": {
+            "resource": "society_research",
+            "value": "@tier2researchreward",
+            "min": "@tier2researchmin",
+            "max": "@tier2researchmax"
+          },
+          "if": {
+            "limit": {
+              "NOT": {},
+              "add_research_option": "tech_psionic_theory",
+              "add_tech_progress": {
+                "tech": "tech_psionic_theory",
+                "progress": "0.5"
+              }
+            },
+            "else_if": {
+              "limit": {
+                "has_tech_option": "tech_psionic_theory"
+              },
+              "add_research_option": "tech_psionic_theory",
+              "add_tech_progress": {
+                "tech": "tech_psionic_theory",
+                "progress": "0.75"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "caravaneer_events.txt",
+    "_line_number": 5551
+  }
+}

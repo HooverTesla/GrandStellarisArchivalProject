@@ -1,0 +1,120 @@
+{
+  "planet_event": {
+    "planet_event": {
+      "id": "plant.115",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "OR": {
+          "has_active_building": "building_gaiaseeders_pc_gaia"
+        },
+        "has_planet_flag": "gaia_seeder_bloom"
+      },
+      "immediate": {
+        "set_saved_date": {
+          "key": "gaia_seeder_bloom_timer",
+          "days_from_present": "1800",
+          "expires": "1800"
+        },
+        "set_variable_to_random_value": {
+          "which": "num_pops",
+          "min": "3",
+          "max": "5",
+          "rounded": "yes"
+        },
+        "set_variable": {
+          "which": "bloomed_pops",
+          "value": "0"
+        },
+        "while": {
+          "count": "num_pops",
+          "random_owned_pop": {
+            "limit": {
+              "species": {
+                "is_flora_species": "yes"
+              },
+              "is_being_assimilated": "no",
+              "is_being_purged": "no",
+              "NOT": {
+                "has_trait": "trait_plantoid_bloomed"
+              }
+            },
+            "if": {
+              "limit": {
+                "NOR": {
+                  "has_trait": "trait_pc_gaia_preference_terraforming"
+                }
+              },
+              "modify_species": {
+                "species": "this",
+                "ideal_planet_class": "pc_gaia"
+              }
+            },
+            "modify_species": {
+              "species": "this",
+              "add_trait": "trait_plantoid_bloomed"
+            },
+            "planet": {
+              "change_variable": {
+                "which": "bloomed_pops",
+                "value": "1"
+              }
+            }
+          }
+        },
+        "create_message": {
+          "type": "MESSAGE_POPS_IDYLLIC_BLOOMED",
+          "localization": "MESSAGE_POPS_IDYLLIC_BLOOMED",
+          "days": "30",
+          "target": "this",
+          "variable": {
+            "type": "variable",
+            "varname": "bloomed_pops",
+            "localization": "VALUE",
+            "scope": "this"
+          }
+        },
+        "planet_event": {
+          "id": "plant.115",
+          "days": "1800"
+        }
+      }
+    },
+    "_source_file": "plantoid_events.txt",
+    "_line_number": 203
+  },
+  "country_event": {
+    "country_event": {
+      "id": "plant.110",
+      "is_triggered_only": "yes",
+      "title": "plant.100.name",
+      "desc": {
+        "trigger": {
+          "from.from.planet": {
+            "has_planet_flag": "terraformed_against_will"
+          }
+        },
+        "text": "plant.110.desc.hydrocentric"
+      },
+      "picture": "GFX_evt_gaia",
+      "option": {
+        "name": "plant.110.b",
+        "exclusive_trigger": {
+          "is_machine_empire": "no",
+          "from.from.planet": {
+            "NOT": {}
+          },
+          "add_modifier": {
+            "modifier": "thankful_for_gaia",
+            "years": "10"
+          }
+        },
+        "option": {
+          "name": "plant.110.c"
+        }
+      }
+    },
+    "_source_file": "plantoid_events.txt",
+    "_line_number": 146
+  }
+}

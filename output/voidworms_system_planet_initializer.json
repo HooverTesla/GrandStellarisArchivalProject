@@ -1,0 +1,125 @@
+{
+  "usage_odds": {
+    "usage_odds": {
+      "add": "value:voidworms_$SIZE$_spawn_chance",
+      "modifier": {
+        "factor": "0",
+        "any_neighbor_system": {
+          "exists": "owner",
+          "owner": {
+            "OR": {
+              "is_fallen_empire": "yes",
+              "is_country_type": "dormant_marauders"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "voidworms_system_planet_initializer.txt",
+    "_line_number": 4
+  },
+  "planet": {
+    "planet": {
+      "class": "pc_toxic",
+      "size": "20",
+      "orbit_distance": {
+        "orbit_angle": {
+          "init_effect": {
+            "save_event_target_as": "toxic_planet_3",
+            "if": {
+              "limit": {
+                "has_toxoids": "yes"
+              },
+              "set_planet_flag": "toxic_terraforming_candidate",
+              "add_modifier": {
+                "modifier": "toxic_terraforming_candidate"
+              }
+            },
+            "prevent_anomaly": "yes",
+            "set_deposit": "d_dark_matter_deposit_1"
+          }
+        }
+      }
+    },
+    "_source_file": "voidworms_system_planet_initializer.txt",
+    "_line_number": 96
+  },
+  "init_effect": {
+    "init_effect": {
+      "save_global_event_target_as": "voidworm_system_$SIZE$",
+      "create_voidworms_country": "yes",
+      "event_target:voidworms_country": {
+        "create_voidworms_small_fleet": {
+          "create_voidworms_medium_fleet": {
+            "create_voidworms_large_fleet": {},
+            "create_fleet": {
+              "name": "NAME_Voidworms_Starbase",
+              "settings": {
+                "effect": {
+                  "set_owner": "event_target:voidworms_country",
+                  "create_ship": {
+                    "name": "NAME_Voidworms_Starbase",
+                    "design": "NAME_Voidworms_Starbase",
+                    "upgradable": "no",
+                    "effect": {
+                      "set_ship_flag": "voidworms_starbase"
+                    }
+                  },
+                  "set_location": {
+                    "target": "event_target:toxic_planet_1",
+                    "distance": "40",
+                    "angle": "random"
+                  }
+                }
+              },
+              "create_fleet": {
+                "name": "NAME_Voidworms_Starbase",
+                "settings": {
+                  "effect": {
+                    "set_owner": "event_target:voidworms_country",
+                    "create_ship": {
+                      "name": "NAME_Voidworms_Starbase",
+                      "design": "NAME_Voidworms_Starbase",
+                      "upgradable": "no",
+                      "effect": {
+                        "set_ship_flag": "voidworms_starbase"
+                      }
+                    },
+                    "set_location": {
+                      "target": "event_target:toxic_planet_2",
+                      "distance": "45",
+                      "angle": "random"
+                    }
+                  }
+                },
+                "create_fleet": {
+                  "name": "NAME_Voidworms_Starbase",
+                  "settings": {
+                    "effect": {
+                      "set_owner": "event_target:voidworms_country",
+                      "create_ship": {
+                        "name": "NAME_Voidworms_Starbase",
+                        "design": "NAME_Voidworms_Starbase",
+                        "upgradable": "no",
+                        "effect": {
+                          "set_ship_flag": "voidworms_starbase"
+                        }
+                      },
+                      "set_location": {
+                        "target": "event_target:toxic_planet_3",
+                        "distance": "30",
+                        "angle": "random"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "voidworms_system_planet_initializer.txt",
+    "_line_number": 119
+  }
+}

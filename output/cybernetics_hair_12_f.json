@@ -1,0 +1,78 @@
+{
+  "cybernetics_hair_12_f": {
+    "cybernetics_hair_12_f": {
+      "default": "gfx/models/portraits/cybernetics/cybernetics_portrait_12_f_hair_01.dds",
+      "game_setup": {
+        "default": "gfx/models/portraits/cybernetics/cybernetics_portrait_12_f_hair_01.dds"
+      },
+      "_comments": [
+        "#species scope",
+        "#pop scope",
+        "#leader scope"
+      ],
+      "species": {
+        "default": "gfx/models/portraits/cybernetics/cybernetics_portrait_12_f_hair_01.dds"
+      },
+      "pop": {
+        "default": "gfx/models/portraits/cybernetics/cybernetics_portrait_12_f_hair_01.dds",
+        "random": {
+          "list": {}
+        }
+      },
+      "leader": {
+        "random": {
+          "trigger": {
+            "list": {}
+          },
+          "random": {
+            "trigger": {
+              "list": {}
+            },
+            "random": {
+              "trigger": {
+                "list": {}
+              },
+              "random": {
+                "trigger": {
+                  "list": {}
+                }
+              },
+              "_comments": [
+                "#leader scope"
+              ],
+              "ruler": {
+                "random": {
+                  "trigger": {
+                    "owner": {},
+                    "list": {}
+                  },
+                  "random": {
+                    "trigger": {
+                      "owner": {},
+                      "list": {}
+                    },
+                    "random": {
+                      "trigger": {
+                        "owner": {
+                          "OR": {
+                            "has_government": "gov_stagnant_ascendancy",
+                            "has_primitive_government": "yes",
+                            "has_materialist_government": "yes",
+                            "has_pacifist_government": "yes"
+                          }
+                        }
+                      },
+                      "list": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "cybernetics_hair_12_f.txt",
+    "_line_number": 21
+  }
+}

@@ -1,0 +1,545 @@
+{
+  "has_upgraded_capital": {
+    "has_upgraded_capital": {
+      "if": {
+        "limit": {
+          "custom_tooltip": {
+            "fail_text": "requires_building_resort_capital",
+            "OR": {
+              "has_building": "building_resort_major_capital"
+            }
+          }
+        },
+        "else_if": {
+          "limit": {
+            "custom_tooltip": {
+              "fail_text": "requires_building_slave_capital",
+              "OR": {
+                "has_building": "building_slave_major_capital"
+              }
+            }
+          },
+          "else_if": {
+            "limit": {
+              "custom_tooltip": {
+                "fail_text": "requires_building_hab_capital",
+                "OR": {
+                  "has_building": "building_imperial_hive_capital"
+                }
+              }
+            },
+            "else_if": {
+              "limit": {
+                "custom_tooltip": {
+                  "fail_text": "requires_building_hive_capital",
+                  "OR": {
+                    "has_building": "building_imperial_hive_capital"
+                  }
+                }
+              },
+              "else_if": {
+                "limit": {
+                  "custom_tooltip": {
+                    "fail_text": "requires_building_machine_capital",
+                    "OR": {
+                      "has_building": "building_imperial_machine_capital"
+                    }
+                  }
+                },
+                "else": {
+                  "custom_tooltip": {
+                    "fail_text": "requires_building_capital",
+                    "OR": {
+                      "has_building": "building_imperial_capital"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_buildings.txt",
+    "_line_number": -1
+  },
+  "has_major_upgraded_capital": {
+    "has_major_upgraded_capital": {
+      "if": {
+        "limit": {
+          "custom_tooltip": {
+            "fail_text": "requires_building_resort_major_capital",
+            "has_building": "building_resort_major_capital"
+          }
+        },
+        "else_if": {
+          "limit": {
+            "custom_tooltip": {
+              "fail_text": "requires_building_slave_major_capital",
+              "has_building": "building_slave_major_capital"
+            }
+          },
+          "else_if": {
+            "limit": {
+              "custom_tooltip": {
+                "fail_text": "requires_building_hab_major_capital",
+                "OR": {
+                  "has_building": "building_imperial_hive_capital"
+                }
+              }
+            },
+            "else_if": {
+              "limit": {
+                "custom_tooltip": {
+                  "fail_text": "requires_building_major_hive_capital",
+                  "OR": {
+                    "has_building": "building_imperial_hive_capital"
+                  }
+                }
+              },
+              "else_if": {
+                "limit": {
+                  "custom_tooltip": {
+                    "fail_text": "requires_building_machine_major_capital",
+                    "OR": {
+                      "has_building": "building_imperial_machine_capital"
+                    }
+                  }
+                },
+                "else": {
+                  "custom_tooltip": {
+                    "fail_text": "requires_building_major_capital",
+                    "OR": {
+                      "has_building": "building_imperial_capital"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_buildings.txt",
+    "_line_number": 70
+  },
+  "has_fully_upgraded_capital": {
+    "has_fully_upgraded_capital": {
+      "if": {
+        "limit": {
+          "custom_tooltip": {
+            "fail_text": "requires_building_resort_major_capital",
+            "has_building": "building_resort_major_capital"
+          }
+        },
+        "else_if": {
+          "limit": {
+            "custom_tooltip": {
+              "fail_text": "requires_building_slave_major_capital",
+              "has_building": "building_slave_major_capital"
+            }
+          },
+          "else_if": {
+            "limit": {
+              "custom_tooltip": {
+                "fail_text": "requires_building_hab_system_capital",
+                "OR": {
+                  "has_building": "building_imperial_hive_capital"
+                }
+              }
+            },
+            "else_if": {
+              "limit": {
+                "custom_tooltip": {
+                  "fail_text": "requires_building_major_hive_capital",
+                  "OR": {
+                    "has_building": "building_imperial_hive_capital"
+                  }
+                }
+              },
+              "else_if": {
+                "limit": {
+                  "custom_tooltip": {
+                    "fail_text": "requires_building_machine_major_capital",
+                    "OR": {
+                      "has_building": "building_imperial_machine_capital"
+                    }
+                  }
+                },
+                "else": {
+                  "custom_tooltip": {
+                    "fail_text": "requires_building_system_capital",
+                    "OR": {
+                      "has_building": "building_imperial_capital"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_buildings.txt",
+    "_line_number": 131
+  },
+  "uses_district_industrial": {
+    "uses_district_industrial": {
+      "OR": {
+        "uses_district_set": "shattered_ring_world"
+      }
+    },
+    "_source_file": "01_scripted_triggers_buildings.txt",
+    "_line_number": 190
+  },
+  "ideal_planet_is_wet": {
+    "ideal_planet_is_wet": {
+      "OR": {
+        "ideal_planet_class": "pc_tropical"
+      }
+    },
+    "_source_file": "01_scripted_triggers_buildings.txt",
+    "_line_number": 199
+  },
+  "ideal_planet_is_dry": {
+    "ideal_planet_is_dry": {
+      "OR": {
+        "ideal_planet_class": "pc_savannah"
+      }
+    },
+    "_source_file": "01_scripted_triggers_buildings.txt",
+    "_line_number": 207
+  },
+  "ideal_planet_is_cold": {
+    "ideal_planet_is_cold": {
+      "OR": {
+        "ideal_planet_class": "pc_alpine"
+      }
+    },
+    "_source_file": "01_scripted_triggers_buildings.txt",
+    "_line_number": 215
+  },
+  "ideal_planet_is_special": {
+    "ideal_planet_is_special": {
+      "NOR": {
+        "ideal_planet_class": "pc_alpine"
+      }
+    },
+    "_source_file": "01_scripted_triggers_buildings.txt",
+    "_line_number": 223
+  },
+  "can_build_gaiaseeder": {
+    "can_build_gaiaseeder": {
+      "_comments": [
+        "# Can always build on ideal worlds",
+        "# Requires Climate Restoration for Tomb Worlds"
+      ],
+      "if": {
+        "limit": {
+          "is_ideal_planet_class": {
+            "who": "owner",
+            "status": "yes"
+          }
+        },
+        "always": "yes"
+      },
+      "else_if": {
+        "limit": {
+          "planet": {},
+          "custom_tooltip": {
+            "fail_text": "gaiaseeders_tomb_world",
+            "owner": {}
+          },
+          "_comments": [
+            "# Requires Terrestrial Sculpting for same climate as homeworld"
+          ],
+          "else_if": {
+            "limit": {
+              "owner_species": {
+                "ideal_planet_is_wet": "yes"
+              },
+              "planet": {
+                "is_wet": "yes",
+                "is_ideal_planet_class": {
+                  "who": "owner",
+                  "status": "no"
+                }
+              }
+            },
+            "custom_tooltip": {
+              "fail_text": "gaiaseeders_same_climate_wet",
+              "owner": {}
+            },
+            "else_if": {
+              "limit": {
+                "owner_species": {
+                  "ideal_planet_is_dry": "yes"
+                },
+                "planet": {
+                  "is_dry": "yes",
+                  "is_ideal_planet_class": {
+                    "who": "owner",
+                    "status": "no"
+                  }
+                }
+              },
+              "custom_tooltip": {
+                "fail_text": "gaiaseeders_same_climate_dry",
+                "owner": {}
+              },
+              "else_if": {
+                "limit": {
+                  "owner_species": {
+                    "ideal_planet_is_cold": "yes"
+                  },
+                  "planet": {
+                    "is_cold": "yes",
+                    "is_ideal_planet_class": {
+                      "who": "owner",
+                      "status": "no"
+                    }
+                  }
+                },
+                "custom_tooltip": {
+                  "fail_text": "gaiaseeders_same_climate_cold",
+                  "owner": {}
+                },
+                "_comments": [
+                  "# Requires Ecological Adaptation for other climates"
+                ],
+                "else_if": {
+                  "limit": {
+                    "owner_species": {
+                      "ideal_planet_is_wet": "yes"
+                    },
+                    "planet": {
+                      "OR": {
+                        "is_dry": "yes",
+                        "is_cold": "yes"
+                      }
+                    }
+                  },
+                  "custom_tooltip": {
+                    "fail_text": "gaiaseeders_different_climate_wet",
+                    "owner": {}
+                  },
+                  "else_if": {
+                    "limit": {
+                      "owner_species": {
+                        "ideal_planet_is_dry": "yes"
+                      },
+                      "planet": {
+                        "OR": {
+                          "is_wet": "yes",
+                          "is_cold": "yes"
+                        }
+                      }
+                    },
+                    "custom_tooltip": {
+                      "fail_text": "gaiaseeders_different_climate_dry",
+                      "owner": {}
+                    },
+                    "else_if": {
+                      "limit": {
+                        "owner_species": {
+                          "ideal_planet_is_cold": "yes"
+                        },
+                        "planet": {
+                          "OR": {
+                            "is_wet": "yes",
+                            "is_dry": "yes"
+                          }
+                        }
+                      },
+                      "custom_tooltip": {
+                        "fail_text": "gaiaseeders_different_climate_cold",
+                        "owner": {}
+                      },
+                      "else_if": {
+                        "limit": {
+                          "owner_species": {
+                            "ideal_planet_is_special": "yes"
+                          },
+                          "planet": {
+                            "OR": {
+                              "is_wet": "yes",
+                              "is_dry": "yes",
+                              "is_cold": "yes"
+                            }
+                          }
+                        },
+                        "custom_tooltip": {
+                          "fail_text": "gaiaseeders_special_habitability_preference",
+                          "owner": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_buildings.txt",
+    "_line_number": 245
+  },
+  "can_build_overlord_gaiaseeder": {
+    "can_build_overlord_gaiaseeder": {
+      "_comments": [
+        "# Can always build on ideal worlds",
+        "# Requires Climate Restoration for Tomb Worlds"
+      ],
+      "if": {
+        "limit": {
+          "is_ideal_planet_class": {
+            "who": "owner.overlord",
+            "status": "yes"
+          }
+        },
+        "always": "yes"
+      },
+      "else_if": {
+        "limit": {
+          "planet": {},
+          "custom_tooltip": {
+            "fail_text": "gaiaseeders_tomb_world",
+            "owner.overlord": {}
+          },
+          "_comments": [
+            "# Requires Terrestrial Sculpting for same climate as homeworld"
+          ],
+          "else_if": {
+            "limit": {
+              "owner.overlord.species": {
+                "ideal_planet_is_wet": "yes"
+              },
+              "planet": {
+                "is_wet": "yes",
+                "is_ideal_planet_class": {
+                  "who": "owner.overlord",
+                  "status": "no"
+                }
+              }
+            },
+            "custom_tooltip": {
+              "fail_text": "gaiaseeders_same_climate_wet",
+              "owner.overlord": {}
+            },
+            "else_if": {
+              "limit": {
+                "owner.overlord.species": {
+                  "ideal_planet_is_dry": "yes"
+                },
+                "planet": {
+                  "is_dry": "yes",
+                  "is_ideal_planet_class": {
+                    "who": "owner.overlord",
+                    "status": "no"
+                  }
+                }
+              },
+              "custom_tooltip": {
+                "fail_text": "gaiaseeders_same_climate_dry",
+                "owner.overlord": {}
+              },
+              "else_if": {
+                "limit": {
+                  "owner.overlord.species": {
+                    "ideal_planet_is_cold": "yes"
+                  },
+                  "planet": {
+                    "is_cold": "yes",
+                    "is_ideal_planet_class": {
+                      "who": "owner.overlord",
+                      "status": "no"
+                    }
+                  }
+                },
+                "custom_tooltip": {
+                  "fail_text": "gaiaseeders_same_climate_cold",
+                  "owner.overlord": {}
+                },
+                "_comments": [
+                  "# Requires Ecological Adaptation for other climates"
+                ],
+                "else_if": {
+                  "limit": {
+                    "owner.overlord.species": {
+                      "ideal_planet_is_wet": "yes"
+                    },
+                    "planet": {
+                      "OR": {
+                        "is_dry": "yes",
+                        "is_cold": "yes"
+                      }
+                    }
+                  },
+                  "custom_tooltip": {
+                    "fail_text": "gaiaseeders_different_climate_wet",
+                    "owner.overlord": {}
+                  },
+                  "else_if": {
+                    "limit": {
+                      "owner.overlord.species": {
+                        "ideal_planet_is_dry": "yes"
+                      },
+                      "planet": {
+                        "OR": {
+                          "is_wet": "yes",
+                          "is_cold": "yes"
+                        }
+                      }
+                    },
+                    "custom_tooltip": {
+                      "fail_text": "gaiaseeders_different_climate_dry",
+                      "owner.overlord": {}
+                    },
+                    "else_if": {
+                      "limit": {
+                        "owner.overlord.species": {
+                          "ideal_planet_is_cold": "yes"
+                        },
+                        "planet": {
+                          "OR": {
+                            "is_wet": "yes",
+                            "is_dry": "yes"
+                          }
+                        }
+                      },
+                      "custom_tooltip": {
+                        "fail_text": "gaiaseeders_different_climate_cold",
+                        "owner.overlord": {}
+                      },
+                      "else_if": {
+                        "limit": {
+                          "owner.overlord.species": {
+                            "ideal_planet_is_special": "yes"
+                          },
+                          "planet": {
+                            "OR": {
+                              "is_wet": "yes",
+                              "is_dry": "yes",
+                              "is_cold": "yes"
+                            }
+                          }
+                        },
+                        "custom_tooltip": {
+                          "fail_text": "gaiaseeders_special_habitability_preference",
+                          "owner.overlord": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_buildings.txt",
+    "_line_number": 401
+  }
+}

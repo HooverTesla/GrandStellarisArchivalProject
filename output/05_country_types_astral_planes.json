@@ -1,0 +1,173 @@
+{
+  "formless": {
+    "formless": {
+      "scaled_difficulty_bonuses": "3.0\t# scales to setting",
+      "show_in_contacts_list": "yes",
+      "share_communications": "no",
+      "default_ships": "no",
+      "government": "no",
+      "blocks_piracy": "yes",
+      "needs_survey": "no",
+      "observable": "no",
+      "home_system": "formless_system",
+      "destroys_starbases": "yes",
+      "orbital_bombardment": "yes",
+      "mid_game_crisis": "yes",
+      "ai": {
+        "enabled": "yes",
+        "colonizer": "no",
+        "construction": "no",
+        "modules": {}
+      },
+      "faction": {
+        "hostile": "no",
+        "needs_border_access": "no",
+        "generate_borders": "no",
+        "needs_colony": "no"
+      },
+      "custom_diplomacy": "yes",
+      "modules": {
+        "standard_event_module": {
+          "all_technology_module": {
+            "exclusive_diplomacy_module": {
+              "contact_rule": "on_action_only"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_country_types_astral_planes.txt",
+    "_line_number": 1
+  },
+  "formless_event_aberrant_country": {
+    "formless_event_aberrant_country": {
+      "scaled_difficulty_bonuses": "3.0\t# scales to setting",
+      "show_in_contacts_list": "no",
+      "share_communications": "no",
+      "default_ships": "no",
+      "government": "no",
+      "blocks_piracy": "yes",
+      "needs_survey": "no",
+      "observable": "no",
+      "ai": {
+        "enabled": "no"
+      },
+      "faction": {
+        "hostile": "yes",
+        "needs_border_access": "no",
+        "generate_borders": "no",
+        "needs_colony": "no",
+        "auto_delete": "no"
+      },
+      "modules": {
+        "standard_event_module": {
+          "exclusive_diplomacy_module": {
+            "contact_rule": "on_action_only"
+          }
+        }
+      }
+    },
+    "_source_file": "05_country_types_astral_planes.txt",
+    "_line_number": 39
+  },
+  "grave_guardian": {
+    "grave_guardian": {
+      "scaled_difficulty_bonuses": "10.0\t# scales to setting",
+      "destroys_starbases": "yes",
+      "attack_unarmed_orbital_stations": "yes",
+      "government": "no",
+      "blocks_piracy": "yes",
+      "observable": "no",
+      "show_in_contacts_list": "no",
+      "share_survey_data": "no",
+      "custom_diplomacy": "no",
+      "enforces_borders": "no",
+      "needs_survey": "no",
+      "ai": {
+        "enabled": "yes",
+        "modules": {}
+      },
+      "faction": {
+        "hostile": "yes",
+        "needs_border_access": "no",
+        "generate_borders": "no",
+        "needs_colony": "no"
+      },
+      "modules": {
+        "exclusive_diplomacy_module": {
+          "all_technology_module": {
+            "standard_event_module": {}
+          }
+        }
+      }
+    },
+    "_source_file": "05_country_types_astral_planes.txt",
+    "_line_number": 67
+  },
+  "mirrored_country": {
+    "mirrored_country": {
+      "has_capital": "no",
+      "share_communications": "no",
+      "default_ships": "no",
+      "observable": "no",
+      "playable": "no",
+      "relations": "yes",
+      "share_survey_data": "no",
+      "orbital_bombardment": "no",
+      "can_use_invalid_technology": "no",
+      "can_planets_be_attacked": "no",
+      "ai": {
+        "enabled": "yes",
+        "declare_war": "no",
+        "colonizer": "no",
+        "modification": "no",
+        "construction": "no",
+        "tech": "no",
+        "espionage": "no",
+        "modules": {}
+      },
+      "faction": {
+        "hostile": "no",
+        "needs_border_access": "no",
+        "generate_borders": "no",
+        "needs_colony": "no",
+        "auto_delete": "no",
+        "intel_effects_surveyed": "no"
+      },
+      "hide_names_if_no_communication": "no",
+      "show_in_contacts_list": "yes",
+      "modules": {
+        "standard_event_module": {
+          "standard_economy_module": {
+            "standard_trade_routes_module": {
+              "exclusive_diplomacy_module": {
+                "contact_rule": "on_action_only",
+                "can_receive": {},
+                "can_send": {}
+              }
+            },
+            "resources": {
+              "category": "country_base",
+              "produces": {
+                "energy": "0",
+                "minerals": "0",
+                "food": "0",
+                "consumer_goods": "0",
+                "alloys": "0",
+                "volatile_motes": "0",
+                "exotic_gases": "0",
+                "rare_crystals": "0",
+                "sr_living_metal": "0",
+                "sr_zro": "0",
+                "sr_dark_matter": "0",
+                "nanites": "0"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_country_types_astral_planes.txt",
+    "_line_number": 103
+  }
+}

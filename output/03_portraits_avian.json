@@ -1,0 +1,308 @@
+{
+  "portraits": {
+    "portraits": {
+      "_comments": [
+        "# Avian"
+      ],
+      "avi1": {
+        "greeting_sound": "reptilian_01_greetings",
+        "character_textures": {}
+      },
+      "avi2": {
+        "character_textures": {}
+      },
+      "avi3": {
+        "character_textures": {}
+      },
+      "avi4": {
+        "character_textures": {}
+      },
+      "avi5": {
+        "character_textures": {}
+      },
+      "avi6_f": {
+        "character_textures": {}
+      },
+      "avi6_m": {
+        "character_textures": {}
+      },
+      "avi7_f": {
+        "character_textures": {}
+      },
+      "avi7_m": {
+        "character_textures": {}
+      },
+      "avi8": {
+        "character_textures": {}
+      },
+      "avi9": {
+        "character_textures": {}
+      },
+      "avi10": {
+        "character_textures": {}
+      },
+      "avi11": {
+        "character_textures": {}
+      },
+      "avi12": {
+        "character_textures": {}
+      },
+      "avi13": {
+        "character_textures": {}
+      },
+      "avi14_f": {
+        "character_textures": {}
+      },
+      "avi14_m": {
+        "character_textures": {}
+      },
+      "avi15": {
+        "character_textures": {}
+      },
+      "avi16": {
+        "avi17": {
+          "character_textures": {}
+        },
+        "avi18": {
+          "character_textures": {}
+        }
+      }
+    },
+    "_source_file": "03_portraits_avian.txt",
+    "_line_number": 17
+  },
+  "portrait_groups": {
+    "portrait_groups": {
+      "avi6": {
+        "default": "avi6_m",
+        "game_setup": {
+          "add": {
+            "trigger": {
+              "ruler": {
+                "OR": {
+                  "gender": "indeterminable"
+                }
+              }
+            },
+            "portraits": {}
+          }
+        },
+        "_comments": [
+          "#set = {",
+          "#\ttrigger = { ... }",
+          "#\tportraits = { ... }",
+          "#\t#using \"set =\" instead of \"add\" will first clear any portraits already added",
+          "#}",
+          "#species scope"
+        ],
+        "species": {
+          "add": {
+            "trigger": {
+              "exists": "species",
+              "NOT": {},
+              "portraits": {}
+            },
+            "add": {
+              "trigger": {
+                "exists": "species",
+                "NOT": {},
+                "portraits": {}
+              }
+            },
+            "_comments": [
+              "#pop scope"
+            ],
+            "pop": {
+              "add": {
+                "trigger": {
+                  "NOT": {},
+                  "portraits": {}
+                },
+                "add": {
+                  "trigger": {
+                    "NOT": {},
+                    "portraits": {}
+                  }
+                },
+                "leader": {
+                  "add": {
+                    "trigger": {
+                      "OR": {
+                        "gender": "indeterminable"
+                      }
+                    },
+                    "portraits": {}
+                  }
+                },
+                "ruler": {
+                  "add": {
+                    "trigger": {
+                      "OR": {
+                        "gender": "indeterminable"
+                      }
+                    },
+                    "portraits": {}
+                  }
+                }
+              },
+              "avi7": {
+                "default": "avi7_m",
+                "game_setup": {
+                  "add": {
+                    "trigger": {
+                      "ruler": {
+                        "OR": {
+                          "gender": "indeterminable"
+                        }
+                      }
+                    },
+                    "portraits": {}
+                  }
+                },
+                "_comments": [
+                  "#set = {",
+                  "#\ttrigger = { ... }",
+                  "#\tportraits = { ... }",
+                  "#\t#using \"set =\" instead of \"add\" will first clear any portraits already added",
+                  "#}",
+                  "#species scope"
+                ],
+                "species": {
+                  "add": {
+                    "trigger": {
+                      "exists": "species",
+                      "NOT": {},
+                      "portraits": {}
+                    },
+                    "add": {
+                      "trigger": {
+                        "exists": "species",
+                        "NOT": {},
+                        "portraits": {}
+                      }
+                    },
+                    "_comments": [
+                      "#pop scope"
+                    ],
+                    "pop": {
+                      "add": {
+                        "trigger": {
+                          "NOT": {},
+                          "portraits": {}
+                        },
+                        "add": {
+                          "trigger": {
+                            "NOT": {},
+                            "portraits": {}
+                          }
+                        },
+                        "leader": {
+                          "add": {
+                            "trigger": {
+                              "OR": {
+                                "gender": "indeterminable"
+                              }
+                            },
+                            "portraits": {}
+                          }
+                        },
+                        "ruler": {
+                          "add": {
+                            "trigger": {
+                              "OR": {
+                                "gender": "indeterminable"
+                              }
+                            },
+                            "portraits": {}
+                          }
+                        }
+                      },
+                      "avi14": {
+                        "default": "avi14_m",
+                        "game_setup": {
+                          "add": {
+                            "trigger": {
+                              "ruler": {
+                                "OR": {
+                                  "gender": "indeterminable"
+                                }
+                              }
+                            },
+                            "portraits": {}
+                          }
+                        },
+                        "_comments": [
+                          "#set = {",
+                          "#\ttrigger = { ... }",
+                          "#\tportraits = { ... }",
+                          "#\t#using \"set =\" instead of \"add\" will first clear any portraits already added",
+                          "#}",
+                          "#species scope"
+                        ],
+                        "species": {
+                          "add": {
+                            "trigger": {
+                              "exists": "species",
+                              "NOT": {},
+                              "portraits": {}
+                            },
+                            "add": {
+                              "trigger": {
+                                "exists": "species",
+                                "NOT": {},
+                                "portraits": {}
+                              }
+                            },
+                            "_comments": [
+                              "#pop scope"
+                            ],
+                            "pop": {
+                              "add": {
+                                "trigger": {
+                                  "NOT": {},
+                                  "portraits": {}
+                                },
+                                "add": {
+                                  "trigger": {
+                                    "NOT": {},
+                                    "portraits": {}
+                                  }
+                                },
+                                "leader": {
+                                  "add": {
+                                    "trigger": {
+                                      "OR": {
+                                        "gender": "indeterminable"
+                                      }
+                                    },
+                                    "portraits": {}
+                                  }
+                                },
+                                "ruler": {
+                                  "add": {
+                                    "trigger": {
+                                      "OR": {
+                                        "gender": "indeterminable"
+                                      }
+                                    },
+                                    "portraits": {}
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_portraits_avian.txt",
+    "_line_number": 238
+  }
+}

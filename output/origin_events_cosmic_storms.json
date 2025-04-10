@@ -1,0 +1,196 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "cstorms.330",
+      "title": "cstorms.330.name",
+      "picture": "GFX_evt_ship_travel",
+      "fire_only_once": "yes",
+      "is_triggered_only": "yes",
+      "desc": {
+        "trigger": {
+          "text": "cstorms.330.desc.normal"
+        },
+        "desc": {
+          "trigger": {
+            "has_event_chain": "cs_stormfever_chain",
+            "from": {
+              "exists": "solar_system",
+              "has_storm_rider_trait": "yes",
+              "solar_system": {
+                "is_inside_storm": "yes"
+              }
+            }
+          },
+          "immediate": {
+            "add_mission_counter": {
+              "mission": "MISSION_CS_STORM_FEVER_CHALLENGE_6",
+              "counter": "rider_died_in_storm",
+              "amount": "1"
+            }
+          },
+          "option": {
+            "name": "cstorms.330.a",
+            "hidden_effect": {
+              "remove_modifier": "cs_storm_chasers_bad_vibes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_cosmic_storms.txt",
+    "_line_number": 1629
+  },
+  "situation_event": {
+    "situation_event": {
+      "id": "cstorms.3190",
+      "title": "cstorms.3190.name",
+      "desc": {
+        "trigger": {
+          "NOR": {
+            "has_situation_flag": "storm_leader_failure"
+          }
+        },
+        "text": "cstorms.3190.desc.wait"
+      },
+      "picture": "GFX_evt_origin_stormchasers_specialproject",
+      "show_sound": "event_celebration",
+      "location": "owner.capital_scope",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "NOT": {
+          "situation_progress >": "700"
+        },
+        "immediate": {
+          "set_situation_flag": "cstorms_3190_happened",
+          "owner.capital_scope.solar_system": {
+            "random_system_ambient_object": {
+              "limit": {
+                "destroy_ambient_object": "this"
+              }
+            },
+            "switch": {
+              "trigger": "has_situation_flag",
+              "electric_system_storm": {
+                "owner": {
+                  "spawn_random_storm": {
+                    "type": "electric_storm",
+                    "cosmic_storm_start_position": "capital_scope.solar_system",
+                    "immediate": "yes"
+                  }
+                }
+              },
+              "magnetic_system_storm": {
+                "owner": {
+                  "spawn_random_storm": {
+                    "type": "magnetic_storm",
+                    "cosmic_storm_start_position": "capital_scope.solar_system",
+                    "immediate": "yes"
+                  }
+                }
+              },
+              "gravity_system_storm": {
+                "owner": {
+                  "spawn_random_storm": {
+                    "type": "gravity_storm",
+                    "cosmic_storm_start_position": "capital_scope.solar_system",
+                    "immediate": "yes"
+                  }
+                }
+              }
+            },
+            "last_created_cosmic_storm": {
+              "set_storm_flag": "storm_stormfall"
+            }
+          },
+          "option": {
+            "name": "cstorms.3190.a.wait",
+            "trigger": {
+              "NOR": {
+                "has_situation_flag": "storm_leader_failure"
+              }
+            },
+            "destroy_situation": "this",
+            "owner": {
+              "add_monthly_resource_mult": {
+                "resource": "unity",
+                "value": "@tier3unityreward",
+                "min": "@tier3unitymin",
+                "max": "@tier3unitymax"
+              }
+            }
+          },
+          "after": {
+            "owner": {
+              "if": {
+                "limit": {
+                  "add_modifier": {
+                    "modifier": "cs_storm_chasers_storm_fruition_gestalt",
+                    "days": "3600"
+                  }
+                },
+                "else": {
+                  "add_modifier": {
+                    "modifier": "cs_storm_chasers_storm_fruition",
+                    "days": "3600"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_cosmic_storms.txt",
+    "_line_number": 686
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "cstorms.331",
+      "title": "cstorms.330.name",
+      "picture": "GFX_evt_ship_travel",
+      "fire_only_once": "yes",
+      "is_triggered_only": "yes",
+      "desc": {
+        "trigger": {
+          "exists": "owner",
+          "owner": {
+            "is_gestalt": "yes"
+          }
+        },
+        "text": "cstorms.331.desc.gestalt"
+      },
+      "trigger": {
+        "exists": "leader",
+        "owner": {
+          "has_event_chain": "cs_stormfever_chain"
+        },
+        "from": {
+          "exists": "solar_system",
+          "solar_system": {
+            "is_inside_storm": "yes"
+          }
+        },
+        "leader": {
+          "has_storm_rider_trait": "yes"
+        }
+      },
+      "immediate": {
+        "owner": {
+          "add_mission_counter": {
+            "mission": "MISSION_CS_STORM_FEVER_CHALLENGE_6",
+            "counter": "rider_died_in_storm",
+            "amount": "1"
+          }
+        }
+      },
+      "option": {
+        "name": "cstorms.330.a",
+        "hidden_effect": {
+          "remove_modifier": "cs_storm_chasers_bad_vibes"
+        }
+      }
+    },
+    "_source_file": "origin_events_cosmic_storms.txt",
+    "_line_number": 1677
+  }
+}

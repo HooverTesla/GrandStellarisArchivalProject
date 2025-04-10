@@ -1,0 +1,40 @@
+{
+  "resources": {
+    "resources": {
+      "category": "ship_components",
+      "inline_script": {
+        "script": "grand_archive/mutations/component_dynamic_cost",
+        "COST": "$COST$"
+      },
+      "cost": {
+        "sr_dark_matter": "$DARK_MATTER$",
+        "mult": "@fauna_cost_scaling"
+      }
+    },
+    "_source_file": "component_thrusters_bio.txt",
+    "_line_number": 5
+  },
+  "modifier": {
+    "modifier": {
+      "ship_base_speed_mult": "$SPEED$",
+      "ship_evasion_add": "$EVASION$"
+    },
+    "_source_file": "component_thrusters_bio.txt",
+    "_line_number": 17
+  },
+  "inline_script": {
+    "inline_script": {
+      "script": "grand_archive/mutations/core_components/upgrade_thrusters_bio_$LEVEL$",
+      "CORRESPONDING_SIZE": "$CORRESPONDING_SIZE$"
+    },
+    "_source_file": "component_thrusters_bio.txt",
+    "_line_number": 24
+  },
+  "ai_weight": {
+    "ai_weight": {
+      "weight": "$LEVEL$"
+    },
+    "_source_file": "component_thrusters_bio.txt",
+    "_line_number": 31
+  }
+}

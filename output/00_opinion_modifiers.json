@@ -1,0 +1,4323 @@
+{
+  "opinion_cheat": {
+    "opinion_cheat": {
+      "opinion": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 7
+  },
+  "opinion_in_war": {
+    "opinion_in_war": {
+      "opinion": {
+        "base": "-50"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 18
+  },
+  "opinion_alliance": {
+    "opinion_alliance": {
+      "opinion": {
+        "base": "25"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 25
+  },
+  "opinion_defensive_pact": {
+    "opinion_defensive_pact": {
+      "opinion": {
+        "base": "20"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 32
+  },
+  "opinion_federation_associate": {
+    "opinion_federation_associate": {
+      "opinion": {
+        "base": "10"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 39
+  },
+  "opinion_federation": {
+    "opinion_federation": {
+      "opinion": {
+        "base": "50"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 46
+  },
+  "opinion_guarantees_independence": {
+    "opinion_guarantees_independence": {
+      "opinion": {
+        "base": "10"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 53
+  },
+  "opinion_closed_borders": {
+    "opinion_closed_borders": {
+      "opinion": {
+        "base": "-20"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 60
+  },
+  "opinion_subject": {
+    "opinion_subject": {
+      "opinion": {
+        "base": "50"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 67
+  },
+  "opinion_is_subject": {
+    "opinion_is_subject": {
+      "opinion": {
+        "base": "25"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 74
+  },
+  "opinion_policy_interference": {
+    "opinion_policy_interference": {
+      "opinion": {
+        "base": "0",
+        "modifier": {
+          "add": "10",
+          "has_policy_flag": "interference_not_allowed",
+          "FROM": {
+            "has_policy_flag": "interference_not_allowed"
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 83
+  },
+  "opinion_policy_slavery": {
+    "opinion_policy_slavery": {
+      "opinion": {
+        "base": "0",
+        "modifier": {
+          "add": "-10",
+          "has_ethic": "ethic_egalitarian",
+          "allows_slavery": "no",
+          "FROM": {
+            "NOT": {
+              "allows_slavery": "yes"
+            }
+          },
+          "modifier": {
+            "add": "-20",
+            "has_ethic": "ethic_fanatic_egalitarian",
+            "allows_slavery": "no",
+            "FROM": {
+              "NOT": {
+                "allows_slavery": "yes"
+              }
+            },
+            "modifier": {
+              "add": "-10",
+              "has_ethic": "ethic_xenophile",
+              "allows_slavery": "no",
+              "FROM": {
+                "NOT": {
+                  "allows_slavery": "yes"
+                }
+              },
+              "modifier": {
+                "add": "-20",
+                "has_ethic": "ethic_fanatic_xenophile",
+                "allows_slavery": "no",
+                "FROM": {
+                  "NOT": {
+                    "allows_slavery": "yes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 118
+  },
+  "opinion_policy_orbital_bombardment": {
+    "opinion_policy_orbital_bombardment": {
+      "opinion": {
+        "base": "0",
+        "modifier": {
+          "add": "-20",
+          "has_ethic": "ethic_fanatic_pacifist",
+          "from": {
+            "OR": {
+              "has_policy_flag": "orbital_bombardment_armageddon"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 165
+  },
+  "opinion_first_contact_hostility": {
+    "opinion_first_contact_hostility": {
+      "opinion": {
+        "base": "-25"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 192
+  },
+  "opinion_first_contact_war": {
+    "opinion_first_contact_war": {
+      "opinion": {
+        "base": "-75"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 199
+  },
+  "opinion_declared_war": {
+    "opinion_declared_war": {
+      "opinion": {
+        "base": "-25"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 259
+  },
+  "opinion_genocidal": {
+    "opinion_genocidal": {
+      "opinion": {
+        "base": "0",
+        "modifier": {
+          "add": "-5",
+          "has_ai_personality": "awakened_fallen_empire_xenophile"
+        }
+      },
+      "accumulative": "yes",
+      "min": "-1000",
+      "decay": {
+        "base": "1",
+        "modifier": {
+          "add": "3",
+          "has_ethic": "ethic_fanatic_xenophobe"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 272
+  },
+  "opinion_genocidal_our_species": {
+    "opinion_genocidal_our_species": {
+      "opinion": {
+        "base": "-25"
+      },
+      "accumulative": "yes",
+      "min": "-1000",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 343
+  },
+  "opinion_necrophage": {
+    "opinion_necrophage": {
+      "opinion": {
+        "base": "-1",
+        "modifier": {
+          "add": "-3",
+          "OR": {
+            "has_ethic": "ethic_fanatic_xenophile",
+            "has_origin": "origin_fruitful",
+            "has_valid_civic": "civic_machine_servitor"
+          }
+        }
+      },
+      "accumulative": "yes",
+      "min": "-100",
+      "decay": {
+        "base": "2",
+        "modifier": {
+          "add": "1",
+          "OR": {
+            "has_defensive_pact": "from",
+            "is_in_federation_with": "from"
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 358
+  },
+  "opinion_necrophage_our_species": {
+    "opinion_necrophage_our_species": {
+      "opinion": {
+        "base": "-10",
+        "modifier": {
+          "add": "3.5",
+          "has_migration_access": "from"
+        }
+      },
+      "accumulative": "yes",
+      "min": "-500",
+      "decay": {
+        "base": "3",
+        "modifier": {
+          "add": "2",
+          "OR": {
+            "has_defensive_pact": "from",
+            "is_in_federation_with": "from"
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 396
+  },
+  "opinion_nuker": {
+    "opinion_nuker": {
+      "opinion": {
+        "base": "0",
+        "modifier": {
+          "add": "-6",
+          "is_at_war_with": "root.from",
+          "is_country_type": "default"
+        }
+      },
+      "min": "-250",
+      "accumulative": "yes",
+      "decay": {
+        "base": "1",
+        "modifier": {
+          "add": "1",
+          "from": {}
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 422
+  },
+  "opinion_changed_federation": {
+    "opinion_changed_federation": {
+      "opinion": {
+        "base": "-200"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 493
+  },
+  "opinion_broke_federation": {
+    "opinion_broke_federation": {
+      "opinion": {
+        "base": "-200"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 506
+  },
+  "opinion_broke_association_status": {
+    "opinion_broke_association_status": {
+      "opinion": {
+        "base": "-25"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 519
+  },
+  "opinion_kicked_from_alliance": {
+    "opinion_kicked_from_alliance": {
+      "opinion": {
+        "base": "-200"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 532
+  },
+  "opinion_tried_to_kick": {
+    "opinion_tried_to_kick": {
+      "opinion": {
+        "base": "-100"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 545
+  },
+  "opinion_voted_down_proposal": {
+    "opinion_voted_down_proposal": {
+      "opinion": {
+        "base": "-50"
+      },
+      "min": "-150",
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 559
+  },
+  "opinion_changed_alliance": {
+    "opinion_changed_alliance": {
+      "opinion": {
+        "base": "-200"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 573
+  },
+  "opinion_broke_alliance": {
+    "opinion_broke_alliance": {
+      "opinion": {
+        "base": "-200"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 586
+  },
+  "opinion_broke_defensive_pact": {
+    "opinion_broke_defensive_pact": {
+      "opinion": {
+        "base": "-100"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 599
+  },
+  "opinion_broke_research_agreement": {
+    "opinion_broke_research_agreement": {
+      "opinion": {
+        "base": "-25"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 612
+  },
+  "opinion_broke_commercial_pact": {
+    "opinion_broke_commercial_pact": {
+      "opinion": {
+        "base": "-25"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 625
+  },
+  "opinion_broke_non_aggression_pact": {
+    "opinion_broke_non_aggression_pact": {
+      "opinion": {
+        "base": "-50"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 638
+  },
+  "opinion_broke_migration_pact": {
+    "opinion_broke_migration_pact": {
+      "opinion": {
+        "base": "-15"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 651
+  },
+  "opinion_broke_guarantee": {
+    "opinion_broke_guarantee": {
+      "opinion": {
+        "base": "-25"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 664
+  },
+  "opinion_subject_protection": {
+    "opinion_subject_protection": {
+      "opinion": {
+        "base": "150"
+      },
+      "decay": {
+        "base": "5"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 676
+  },
+  "opinion_cede_planet": {
+    "opinion_cede_planet": {
+      "opinion": {
+        "base": "-30"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "5"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 688
+  },
+  "opinion_forced_subjectized": {
+    "opinion_forced_subjectized": {
+      "opinion": {
+        "base": "-100"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 700
+  },
+  "opinion_subject_released": {
+    "opinion_subject_released": {
+      "opinion": {
+        "base": "100"
+      },
+      "decay": {
+        "base": "1"
+      },
+      "unique": "yes"
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 712
+  },
+  "opinion_status_quo_not_accepted": {
+    "opinion_status_quo_not_accepted": {
+      "opinion": {
+        "base": "-20"
+      },
+      "decay": {
+        "base": "5"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 724
+  },
+  "opinion_trade_gift": {
+    "opinion_trade_gift": {
+      "opinion": {
+        "base": "1"
+      },
+      "accumulative": "yes",
+      "max": "100",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 737
+  },
+  "opinion_was_in_trade": {
+    "opinion_was_in_trade": {
+      "opinion": {
+        "base": "-1"
+      },
+      "min": "-200",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 751
+  },
+  "opinion_subject_broke_free": {
+    "opinion_subject_broke_free": {
+      "opinion": {
+        "base": "-50"
+      },
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 763
+  },
+  "opinion_new_contact": {
+    "opinion_new_contact": {
+      "opinion": {
+        "base": "-20"
+      },
+      "decay": {
+        "base": "2",
+        "modifier": {
+          "add": "-1",
+          "OR": {
+            "has_ethic": "ethic_fanatic_xenophobe"
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 776
+  },
+  "opinion_threat": {
+    "opinion_threat": {
+      "opinion": {
+        "base": "-1"
+      },
+      "min": "-1000",
+      "unique": "yes"
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 802
+  },
+  "opinion_trust": {
+    "opinion_trust": {
+      "opinion": {
+        "base": "1"
+      },
+      "max": "100",
+      "unique": "yes"
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 813
+  },
+  "opinion_relative_power": {
+    "opinion_relative_power": {
+      "opinion": {
+        "base": "-1 # per 1% power"
+      },
+      "min": "-1000",
+      "unique": "yes"
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 824
+  },
+  "opinion_friction": {
+    "opinion_friction": {
+      "opinion": {
+        "base": "-1"
+      },
+      "unique": "yes"
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 834
+  },
+  "opinion_claims_on_us": {
+    "opinion_claims_on_us": {
+      "opinion": {
+        "base": "-5"
+      },
+      "unique": "yes"
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 843
+  },
+  "opinion_their_claims": {
+    "opinion_their_claims": {
+      "opinion": {
+        "base": "-5"
+      },
+      "unique": "yes"
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 852
+  },
+  "opinion_rivalry": {
+    "opinion_rivalry": {
+      "opinion": {
+        "base": "-100",
+        "modifier": {
+          "add": "-100",
+          "FROM": {
+            "has_policy_flag": "diplo_stance_animosity"
+          }
+        }
+      },
+      "unique": "yes"
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 861
+  },
+  "opinion_declared_rival": {
+    "opinion_declared_rival": {
+      "opinion": {
+        "base": "-100",
+        "modifier": {
+          "add": "-100",
+          "OR": {
+            "is_country_type": "awakened_fallen_empire"
+          }
+        }
+      },
+      "unique": "yes"
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 883
+  },
+  "opinion_ally_of_ally": {
+    "opinion_ally_of_ally": {
+      "opinion": {
+        "base": "25"
+      },
+      "unique": "yes"
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 899
+  },
+  "opinion_mutual_rival": {
+    "opinion_mutual_rival": {
+      "opinion": {
+        "base": "50"
+      },
+      "unique": "yes"
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 909
+  },
+  "opinion_mutual_threat": {
+    "opinion_mutual_threat": {
+      "opinion": {
+        "base": "1"
+      },
+      "unique": "yes"
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 918
+  },
+  "opinion_allied_to_rival": {
+    "opinion_allied_to_rival": {
+      "opinion": {
+        "base": "-100"
+      },
+      "unique": "yes"
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 927
+  },
+  "opinion_rivals_with_ally": {
+    "opinion_rivals_with_ally": {
+      "opinion": {
+        "base": "-100"
+      },
+      "unique": "yes"
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 936
+  },
+  "opinion_insult": {
+    "opinion_insult": {
+      "opinion": {
+        "base": "-200"
+      },
+      "unique": "yes",
+      "monthly": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 945
+  },
+  "opinion_demanded_subjectization": {
+    "opinion_demanded_subjectization": {
+      "opinion": {
+        "base": "-20",
+        "modifier": {
+          "factor": "10",
+          "is_country_type": "awakened_fallen_empire"
+        }
+      },
+      "decay": {
+        "base": "1"
+      },
+      "accumulative": "yes"
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 959
+  },
+  "opinion_decline_war": {
+    "opinion_decline_war": {
+      "opinion": {
+        "base": "-50"
+      },
+      "decay": {
+        "base": "3"
+      },
+      "min": "-100",
+      "accumulative": "yes"
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 977
+  },
+  "opinion_inactive_in_war": {
+    "opinion_inactive_in_war": {
+      "opinion": {
+        "base": "-50"
+      },
+      "months": "12"
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 990
+  },
+  "opinion_broke_away": {
+    "opinion_broke_away": {
+      "opinion": {
+        "base": "-100"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1003
+  },
+  "opinion_broke_away_from": {
+    "opinion_broke_away_from": {
+      "opinion": {
+        "base": "-100"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1015
+  },
+  "opinion_we_liberated": {
+    "opinion_we_liberated": {
+      "opinion": {
+        "base": "200"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1027
+  },
+  "opinion_liberated_us": {
+    "opinion_liberated_us": {
+      "opinion": {
+        "base": "200"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1039
+  },
+  "opinion_took_station": {
+    "opinion_took_station": {
+      "opinion": {
+        "base": "-5",
+        "modifier": {
+          "factor": "4",
+          "OR": {
+            "is_country_type": "awakened_fallen_empire"
+          }
+        }
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1051
+  },
+  "opinion_abandoned_apology": {
+    "opinion_abandoned_apology": {
+      "opinion": {
+        "base": "-35"
+      },
+      "decay": {
+        "base": "3",
+        "modifier": {
+          "add": "-2",
+          "has_ethic": "ethic_fanatic_xenophobe"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1072
+  },
+  "opinion_abandoned": {
+    "opinion_abandoned": {
+      "opinion": {
+        "base": "-50"
+      },
+      "decay": {
+        "base": "3",
+        "modifier": {
+          "add": "-2",
+          "has_ethic": "ethic_fanatic_xenophobe"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1099
+  },
+  "opinion_abandoned_insult": {
+    "opinion_abandoned_insult": {
+      "opinion": {
+        "base": "-75"
+      },
+      "decay": {
+        "base": "3",
+        "modifier": {
+          "add": "-2",
+          "has_ethic": "ethic_fanatic_xenophobe"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1126
+  },
+  "opinion_crew_saved": {
+    "opinion_crew_saved": {
+      "opinion": {
+        "base": "25"
+      },
+      "unique": "yes",
+      "decay": {
+        "base": "3",
+        "modifier": {
+          "add": "-2",
+          "has_ethic": "ethic_fanatic_xenophobe"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1155
+  },
+  "opinion_graverobber_1": {
+    "opinion_graverobber_1": {
+      "opinion": {
+        "base": "-20"
+      },
+      "unique": "yes",
+      "decay": {
+        "base": "3",
+        "modifier": {
+          "add": "-2",
+          "has_ethic": "ethic_fanatic_xenophobe"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1185
+  },
+  "opinion_graverobber_2": {
+    "opinion_graverobber_2": {
+      "opinion": {
+        "base": "-35"
+      },
+      "unique": "yes",
+      "decay": {
+        "base": "3",
+        "modifier": {
+          "add": "-2",
+          "has_ethic": "ethic_fanatic_xenophobe"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1215
+  },
+  "opinion_graverobber_3": {
+    "opinion_graverobber_3": {
+      "opinion": {
+        "base": "-50"
+      },
+      "unique": "yes",
+      "decay": {
+        "base": "4",
+        "modifier": {
+          "add": "-2",
+          "has_ethic": "ethic_fanatic_xenophobe"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1245
+  },
+  "opinion_literary_savior": {
+    "opinion_literary_savior": {
+      "opinion": {
+        "base": "20"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1271
+  },
+  "opinion_book_burner": {
+    "opinion_book_burner": {
+      "opinion": {
+        "base": "-20"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1277
+  },
+  "opinion_dead_captives": {
+    "opinion_dead_captives": {
+      "opinion": {
+        "base": "-10"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1283
+  },
+  "opinion_live_captives": {
+    "opinion_live_captives": {
+      "opinion": {
+        "base": "10"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1289
+  },
+  "opinion_faction_insult": {
+    "opinion_faction_insult": {
+      "opinion": {
+        "base": "-30"
+      },
+      "decay": {
+        "base": "5"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1296
+  },
+  "opinion_enlightened_us": {
+    "opinion_enlightened_us": {
+      "opinion": {
+        "base": "100"
+      },
+      "decay": {
+        "base": "5"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1306
+  },
+  "opinion_destroyed_portal": {
+    "opinion_destroyed_portal": {
+      "opinion": {
+        "base": "40"
+      },
+      "decay": {
+        "base": "5"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1316
+  },
+  "opinion_swarm": {
+    "opinion_swarm": {
+      "opinion": {
+        "base": "-1000"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1325
+  },
+  "opinion_prey": {
+    "opinion_prey": {
+      "opinion": {
+        "base": "-1000"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1331
+  },
+  "assassination_forgiven": {
+    "assassination_forgiven": {
+      "opinion": {
+        "base": "35"
+      },
+      "unique": "yes",
+      "decay": {
+        "base": "5",
+        "modifier": {
+          "add": "-4",
+          "has_ethic": "ethic_fanatic_pacifist"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1341
+  },
+  "opinion_primitive_violation": {
+    "opinion_primitive_violation": {
+      "opinion": {
+        "base": "-25",
+        "modifier": {
+          "factor": "0",
+          "OR": {
+            "has_ethic": "ethic_fanatic_xenophobe"
+          }
+        }
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1374
+  },
+  "opinion_fallen_empire_gift": {
+    "opinion_fallen_empire_gift": {
+      "opinion": {
+        "base": "50"
+      },
+      "max": "50",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1415
+  },
+  "opinion_accepted_fallen_empire_demand": {
+    "opinion_accepted_fallen_empire_demand": {
+      "opinion": {
+        "base": "25"
+      },
+      "max": "100",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1427
+  },
+  "opinion_refused_fallen_empire_demand": {
+    "opinion_refused_fallen_empire_demand": {
+      "opinion": {
+        "base": "-200"
+      },
+      "min": "-200",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1439
+  },
+  "opinion_spurned_fallen_empire_gift": {
+    "opinion_spurned_fallen_empire_gift": {
+      "opinion": {
+        "base": "-50"
+      },
+      "min": "-100",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1451
+  },
+  "opinion_failed_fallen_empire_task": {
+    "opinion_failed_fallen_empire_task": {
+      "opinion": {
+        "base": "-50"
+      },
+      "min": "-50",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1463
+  },
+  "opinion_majorly_failed_fallen_empire_task": {
+    "opinion_majorly_failed_fallen_empire_task": {
+      "opinion": {
+        "base": "-200"
+      },
+      "min": "-200",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1475
+  },
+  "opinion_angered_fallen_machine_empire": {
+    "opinion_angered_fallen_machine_empire": {
+      "opinion": {
+        "base": "-100"
+      },
+      "min": "-100",
+      "decay": {
+        "base": "10"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1487
+  },
+  "opinion_refused_fallen_empire_task": {
+    "opinion_refused_fallen_empire_task": {
+      "opinion": {
+        "base": "-25"
+      },
+      "min": "-25",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1499
+  },
+  "opinion_completed_fallen_empire_task": {
+    "opinion_completed_fallen_empire_task": {
+      "opinion": {
+        "base": "100"
+      },
+      "max": "200",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1511
+  },
+  "opinion_refused_fallen_empire_request": {
+    "opinion_refused_fallen_empire_request": {
+      "opinion": {
+        "base": "-50"
+      },
+      "min": "-100",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1523
+  },
+  "opinion_accepted_fallen_empire_request": {
+    "opinion_accepted_fallen_empire_request": {
+      "opinion": {
+        "base": "100"
+      },
+      "max": "200",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1535
+  },
+  "opinion_heretical_research": {
+    "opinion_heretical_research": {
+      "opinion": {
+        "base": "-50"
+      },
+      "decay": {
+        "base": "5"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1546
+  },
+  "encroaching_colony": {
+    "encroaching_colony": {
+      "opinion": {
+        "base": "-75"
+      },
+      "decay": {
+        "base": "5"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1556
+  },
+  "encroaching_scientists": {
+    "encroaching_scientists": {
+      "opinion": {
+        "base": "-50"
+      },
+      "decay": {
+        "base": "5"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1566
+  },
+  "opinion_shade_giver": {
+    "opinion_shade_giver": {
+      "opinion": {
+        "base": "100"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1577
+  },
+  "opinion_war_in_heaven_winner": {
+    "opinion_war_in_heaven_winner": {
+      "opinion": {
+        "base": "200"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "5"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1589
+  },
+  "opinion_war_in_heaven_ally": {
+    "opinion_war_in_heaven_ally": {
+      "opinion": {
+        "base": "100"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1601
+  },
+  "opinion_war_in_heaven_enemy": {
+    "opinion_war_in_heaven_enemy": {
+      "opinion": {
+        "base": "-100"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1613
+  },
+  "opinion_non_aligned_league": {
+    "opinion_non_aligned_league": {
+      "opinion": {
+        "base": "200"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1625
+  },
+  "opinion_non_aligned_league_declined": {
+    "opinion_non_aligned_league_declined": {
+      "opinion": {
+        "base": "-100"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1637
+  },
+  "opinion_non_aligned_league_fe": {
+    "opinion_non_aligned_league_fe": {
+      "opinion": {
+        "base": "-200"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1649
+  },
+  "opinion_crisis_fighter": {
+    "opinion_crisis_fighter": {
+      "opinion": {
+        "base": "100"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1661
+  },
+  "opinion_crisis_fighter_small": {
+    "opinion_crisis_fighter_small": {
+      "opinion": {
+        "base": "50"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1673
+  },
+  "opinion_destroyed_curator": {
+    "opinion_destroyed_curator": {
+      "opinion": {
+        "base": "-15"
+      },
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1684
+  },
+  "opinion_destroyed_curator_insight": {
+    "opinion_destroyed_curator_insight": {
+      "opinion": {
+        "base": "-30"
+      },
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1694
+  },
+  "opinion_destroyed_trader": {
+    "opinion_destroyed_trader": {
+      "opinion": {
+        "base": "-15"
+      },
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1704
+  },
+  "opinion_destroyed_trader_sr": {
+    "opinion_destroyed_trader_sr": {
+      "opinion": {
+        "base": "-30"
+      },
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1714
+  },
+  "opinion_ringworld_terms_accepted": {
+    "opinion_ringworld_terms_accepted": {
+      "opinion": {
+        "base": "40"
+      },
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1724
+  },
+  "opinion_ringworld_terms_denied": {
+    "opinion_ringworld_terms_denied": {
+      "opinion": {
+        "base": "-40"
+      },
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1734
+  },
+  "opinion_maneuvers_hardline": {
+    "opinion_maneuvers_hardline": {
+      "opinion": {
+        "base": "-100"
+      },
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1744
+  },
+  "opinion_maneuvers_conciliatory": {
+    "opinion_maneuvers_conciliatory": {
+      "opinion": {
+        "base": "-40"
+      },
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1754
+  },
+  "opinion_maneuvers_canceled": {
+    "opinion_maneuvers_canceled": {
+      "opinion": {
+        "base": "40"
+      },
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1764
+  },
+  "opinion_dysonsphere_terms_denied": {
+    "opinion_dysonsphere_terms_denied": {
+      "opinion": {
+        "base": "-40"
+      },
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1773
+  },
+  "opinion_dysonsphere_apology_rejected": {
+    "opinion_dysonsphere_apology_rejected": {
+      "opinion": {
+        "base": "-20"
+      },
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1782
+  },
+  "opinion_dysonsphere_insult": {
+    "opinion_dysonsphere_insult": {
+      "opinion": {
+        "base": "-40"
+      },
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1791
+  },
+  "opinion_invaded_mind": {
+    "opinion_invaded_mind": {
+      "opinion": {
+        "base": "-35"
+      },
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1800
+  },
+  "opinion_took_in_rebels": {
+    "opinion_took_in_rebels": {
+      "opinion": {
+        "base": "-30"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1809
+  },
+  "opinion_doomed_us_all": {
+    "opinion_doomed_us_all": {
+      "opinion": {
+        "base": "-1000"
+      },
+      "decay": {
+        "base": "5"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1818
+  },
+  "opinion_threatened_artifact": {
+    "opinion_threatened_artifact": {
+      "opinion": {
+        "base": "-50"
+      },
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1828
+  },
+  "opinion_machine_uprising_originator": {
+    "opinion_machine_uprising_originator": {
+      "opinion": {
+        "base": "-1000"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1838
+  },
+  "opinion_machine_uprising": {
+    "opinion_machine_uprising": {
+      "opinion": {
+        "base": "-1000"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1845
+  },
+  "opinion_machine_uprising_defeated": {
+    "opinion_machine_uprising_defeated": {
+      "opinion": {
+        "base": "80"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1852
+  },
+  "opinion_machine_uprising_machine_comrades_defeated": {
+    "opinion_machine_uprising_machine_comrades_defeated": {
+      "opinion": {
+        "base": "-80"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1862
+  },
+  "opinion_machine_uprising_victorious": {
+    "opinion_machine_uprising_victorious": {
+      "opinion": {
+        "base": "-80"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1873
+  },
+  "opinion_machine_uprising_machine_comrades_victorious": {
+    "opinion_machine_uprising_machine_comrades_victorious": {
+      "opinion": {
+        "base": "80"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1883
+  },
+  "opinion_stole_our_glands": {
+    "opinion_stole_our_glands": {
+      "opinion": {
+        "base": "-200"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1892
+  },
+  "opinion_returned_marauder_planet": {
+    "opinion_returned_marauder_planet": {
+      "opinion": {
+        "base": "40"
+      },
+      "max": "100",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1904
+  },
+  "opinion_kept_marauder_planet": {
+    "opinion_kept_marauder_planet": {
+      "opinion": {
+        "base": "-20"
+      },
+      "min": "-100",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1917
+  },
+  "opinion_ceded_starbase": {
+    "opinion_ceded_starbase": {
+      "opinion": {
+        "base": "100"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1928
+  },
+  "opinion_not_ceded_starbase": {
+    "opinion_not_ceded_starbase": {
+      "opinion": {
+        "base": "-100"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1938
+  },
+  "opinion_respect_independence": {
+    "opinion_respect_independence": {
+      "opinion": {
+        "base": "100"
+      },
+      "decay": {
+        "base": "-1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1948
+  },
+  "opinion_disrespect_independence": {
+    "opinion_disrespect_independence": {
+      "opinion": {
+        "base": "-100"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1958
+  },
+  "opinion_war_diadochi": {
+    "opinion_war_diadochi": {
+      "opinion": {
+        "base": "-150"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1969
+  },
+  "opinion_cracked_a_world": {
+    "opinion_cracked_a_world": {
+      "opinion": {
+        "base": "-100"
+      },
+      "accumulative": "yes",
+      "min": "-500",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1982
+  },
+  "opinion_cracked_an_uninhabited_world": {
+    "opinion_cracked_an_uninhabited_world": {
+      "opinion": {
+        "base": "-30"
+      },
+      "accumulative": "yes",
+      "min": "-150",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 1996
+  },
+  "opinion_cracked_my_world": {
+    "opinion_cracked_my_world": {
+      "opinion": {
+        "base": "-1000"
+      },
+      "accumulative": "yes",
+      "min": "-5000",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2011
+  },
+  "opinion_cracked_my_uninhabited_world": {
+    "opinion_cracked_my_uninhabited_world": {
+      "opinion": {
+        "base": "-300"
+      },
+      "accumulative": "yes",
+      "min": "-1500",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2025
+  },
+  "opinion_cracked_a_primitive_world": {
+    "opinion_cracked_a_primitive_world": {
+      "opinion": {
+        "base": "-40"
+      },
+      "accumulative": "yes",
+      "min": "-200",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2039
+  },
+  "opinion_cracked_a_primitive_world_phile": {
+    "opinion_cracked_a_primitive_world_phile": {
+      "opinion": {
+        "base": "-60"
+      },
+      "accumulative": "yes",
+      "min": "-300",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2053
+  },
+  "opinion_toxified_a_world": {
+    "opinion_toxified_a_world": {
+      "opinion": {
+        "base": "-100"
+      },
+      "accumulative": "yes",
+      "min": "-500",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2069
+  },
+  "opinion_toxified_an_uninhabited_world": {
+    "opinion_toxified_an_uninhabited_world": {
+      "opinion": {
+        "base": "-30"
+      },
+      "accumulative": "yes",
+      "min": "-150",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2083
+  },
+  "opinion_toxified_my_world": {
+    "opinion_toxified_my_world": {
+      "opinion": {
+        "base": "-1000"
+      },
+      "accumulative": "yes",
+      "min": "-5000",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2098
+  },
+  "opinion_toxified_my_uninhabited_world": {
+    "opinion_toxified_my_uninhabited_world": {
+      "opinion": {
+        "base": "-300"
+      },
+      "accumulative": "yes",
+      "min": "-1500",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2112
+  },
+  "opinion_toxified_a_primitive_world": {
+    "opinion_toxified_a_primitive_world": {
+      "opinion": {
+        "base": "-40"
+      },
+      "accumulative": "yes",
+      "min": "-200",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2126
+  },
+  "opinion_toxified_a_primitive_world_phile": {
+    "opinion_toxified_a_primitive_world_phile": {
+      "opinion": {
+        "base": "-60"
+      },
+      "accumulative": "yes",
+      "min": "-300",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2140
+  },
+  "opinion_swept_a_world": {
+    "opinion_swept_a_world": {
+      "opinion": {
+        "base": "-80"
+      },
+      "accumulative": "yes",
+      "min": "-400",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2156
+  },
+  "opinion_swept_my_world": {
+    "opinion_swept_my_world": {
+      "opinion": {
+        "base": "-800"
+      },
+      "accumulative": "yes",
+      "min": "-4000",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2170
+  },
+  "opinion_swept_a_primitive_world": {
+    "opinion_swept_a_primitive_world": {
+      "opinion": {
+        "base": "-40"
+      },
+      "accumulative": "yes",
+      "min": "-200",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2184
+  },
+  "opinion_swept_a_primitive_world_phile": {
+    "opinion_swept_a_primitive_world_phile": {
+      "opinion": {
+        "base": "-60"
+      },
+      "accumulative": "yes",
+      "min": "-300",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2198
+  },
+  "opinion_devolved_a_world": {
+    "opinion_devolved_a_world": {
+      "opinion": {
+        "base": "-80"
+      },
+      "accumulative": "yes",
+      "min": "-400",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2213
+  },
+  "opinion_devolved_my_world": {
+    "opinion_devolved_my_world": {
+      "opinion": {
+        "base": "-800"
+      },
+      "accumulative": "yes",
+      "min": "-4000",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2227
+  },
+  "opinion_devolved_a_primitive_world": {
+    "opinion_devolved_a_primitive_world": {
+      "opinion": {
+        "base": "-40"
+      },
+      "accumulative": "yes",
+      "min": "-200",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2241
+  },
+  "opinion_devolved_a_primitive_world_phile": {
+    "opinion_devolved_a_primitive_world_phile": {
+      "opinion": {
+        "base": "-60"
+      },
+      "accumulative": "yes",
+      "min": "-300",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2255
+  },
+  "opinion_assimilated_a_world": {
+    "opinion_assimilated_a_world": {
+      "opinion": {
+        "base": "-60"
+      },
+      "accumulative": "yes",
+      "min": "-300",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2269
+  },
+  "opinion_assimilated_my_world": {
+    "opinion_assimilated_my_world": {
+      "opinion": {
+        "base": "-600"
+      },
+      "accumulative": "yes",
+      "min": "-3000",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2283
+  },
+  "opinion_assimilated_a_primitive_world": {
+    "opinion_assimilated_a_primitive_world": {
+      "opinion": {
+        "base": "-40"
+      },
+      "accumulative": "yes",
+      "min": "-200",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2297
+  },
+  "opinion_assimilated_a_primitive_world_phile": {
+    "opinion_assimilated_a_primitive_world_phile": {
+      "opinion": {
+        "base": "-60"
+      },
+      "accumulative": "yes",
+      "min": "-300",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2311
+  },
+  "opinion_drenched_a_world": {
+    "opinion_drenched_a_world": {
+      "opinion": {
+        "base": "-60"
+      },
+      "accumulative": "yes",
+      "min": "-300",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2325
+  },
+  "opinion_drenched_my_world": {
+    "opinion_drenched_my_world": {
+      "opinion": {
+        "base": "-600"
+      },
+      "accumulative": "yes",
+      "min": "-3000",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2339
+  },
+  "opinion_drenched_a_primitive_world": {
+    "opinion_drenched_a_primitive_world": {
+      "opinion": {
+        "base": "-40"
+      },
+      "accumulative": "yes",
+      "min": "-200",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2353
+  },
+  "opinion_drenched_a_primitive_world_phile": {
+    "opinion_drenched_a_primitive_world_phile": {
+      "opinion": {
+        "base": "-60"
+      },
+      "accumulative": "yes",
+      "min": "-300",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2367
+  },
+  "opinion_converted_a_world": {
+    "opinion_converted_a_world": {
+      "opinion": {
+        "base": "-40"
+      },
+      "accumulative": "yes",
+      "min": "-200",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2381
+  },
+  "opinion_converted_my_world": {
+    "opinion_converted_my_world": {
+      "opinion": "-400",
+      "accumulative": "yes",
+      "min": "-2000",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2395
+  },
+  "opinion_shielded_a_world": {
+    "opinion_shielded_a_world": {
+      "opinion": {
+        "base": "-20"
+      },
+      "accumulative": "yes",
+      "min": "-100",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2407
+  },
+  "opinion_shielded_my_world": {
+    "opinion_shielded_my_world": {
+      "opinion": {
+        "base": "-200"
+      },
+      "accumulative": "yes",
+      "min": "-1000",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2421
+  },
+  "opinion_worships_our_holy_world": {
+    "opinion_worships_our_holy_world": {
+      "opinion": {
+        "base": "30"
+      },
+      "accumulative": "yes"
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2433
+  },
+  "opinion_zarqlans_chosen": {
+    "opinion_zarqlans_chosen": {
+      "opinion": {
+        "base": "150"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2440
+  },
+  "opinion_imperial_overlord_ai_opinion": {
+    "opinion_imperial_overlord_ai_opinion": {
+      "opinion": {
+        "base": "150"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2447
+  },
+  "opinion_imperial_vassal_ai_opinion": {
+    "opinion_imperial_vassal_ai_opinion": {
+      "opinion": {
+        "base": "120"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2457
+  },
+  "opinion_imperial_vassal_new_overlord": {
+    "opinion_imperial_vassal_new_overlord": {
+      "opinion": {
+        "base": "150"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2466
+  },
+  "opinion_imperial_vassal_refused_overlordship": {
+    "opinion_imperial_vassal_refused_overlordship": {
+      "opinion": {
+        "base": "-80"
+      },
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2475
+  },
+  "opinion_imperial_vassal_harsh_response_overlord_opinion": {
+    "opinion_imperial_vassal_harsh_response_overlord_opinion": {
+      "opinion": {
+        "base": "-20"
+      },
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2485
+  },
+  "opinion_imperial_vassal_grateful_response_overlord_opinion": {
+    "opinion_imperial_vassal_grateful_response_overlord_opinion": {
+      "opinion": {
+        "base": "20"
+      },
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2495
+  },
+  "unique_event_savior_opinion_modifier": {
+    "unique_event_savior_opinion_modifier": {
+      "opinion": {
+        "base": "1000"
+      },
+      "decay": "2"
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2506
+  },
+  "opinion_abducted_aliens": {
+    "opinion_abducted_aliens": {
+      "opinion": {
+        "base": "0"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2517
+  },
+  "triggered_opinion_tr_versatility_universal_compatibility": {
+    "triggered_opinion_tr_versatility_universal_compatibility": {
+      "trigger": {
+        "is_machine_empire": "yes",
+        "FROM": {
+          "has_tradition": "tr_versatility_universal_compatibility"
+        }
+      },
+      "opinion": {
+        "base": "20 # remember to update the tradition's tooltip"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2530
+  },
+  "triggered_opinion_ap_defender_of_the_galaxy": {
+    "triggered_opinion_ap_defender_of_the_galaxy": {
+      "trigger": {
+        "FROM": {
+          "has_ascension_perk": "ap_defender_of_the_galaxy"
+        },
+        "is_country_type": "default",
+        "_comments": [
+          "# Is not a Fallen Empire, Awakened Empire or Pre-FTL Empire"
+        ],
+        "OR": {
+          "is_subject": "no",
+          "_comments": [
+            "# Is independent",
+            "# Or a subject of another empire that is capable of independent diplomacy"
+          ],
+          "AND": {
+            "is_subject": "yes",
+            "FROM": {
+              "NOT": {},
+              "any_agreement": {
+                "NOT": {
+                  "has_term_value": {
+                    "term": "subject_diplomacy",
+                    "value": "subject_can_not_do_diplomacy"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "opinion": {
+          "base": "200 # remember to update the ascension perk's tooltip"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2543
+  },
+  "triggered_opinion_democratic_authority": {
+    "triggered_opinion_democratic_authority": {
+      "trigger": {
+        "is_country_type": "default",
+        "is_democratic_authority": "yes",
+        "FROM": {
+          "is_country_type": "default",
+          "is_democratic_authority": "yes"
+        }
+      },
+      "opinion": {
+        "base": "10"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2576
+  },
+  "triggered_opinion_oligarchic_authority": {
+    "triggered_opinion_oligarchic_authority": {
+      "trigger": {
+        "is_country_type": "default",
+        "is_oligarchic_authority": "yes",
+        "FROM": {
+          "is_country_type": "default",
+          "is_oligarchic_authority": "yes"
+        }
+      },
+      "opinion": {
+        "base": "10"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2591
+  },
+  "triggered_opinion_dictatorial_authority": {
+    "triggered_opinion_dictatorial_authority": {
+      "trigger": {
+        "is_country_type": "default",
+        "is_dictatorial_authority": "yes",
+        "FROM": {
+          "is_country_type": "default",
+          "is_dictatorial_authority": "yes"
+        }
+      },
+      "opinion": {
+        "base": "10"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2606
+  },
+  "triggered_opinion_imperial_authority": {
+    "triggered_opinion_imperial_authority": {
+      "trigger": {
+        "is_country_type": "default",
+        "is_imperial_authority": "yes",
+        "FROM": {
+          "is_country_type": "default",
+          "is_imperial_authority": "yes"
+        }
+      },
+      "opinion": {
+        "base": "10"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2621
+  },
+  "triggered_opinion_both_hive_mind": {
+    "triggered_opinion_both_hive_mind": {
+      "trigger": {
+        "is_hive_empire": "yes",
+        "FROM": {
+          "NOT": {
+            "is_hive_empire": "yes"
+          }
+        },
+        "opinion": {
+          "base": "30"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2636
+  },
+  "triggered_opinion_hive_mind": {
+    "triggered_opinion_hive_mind": {
+      "trigger": {
+        "is_country_type": "default",
+        "NOT": {
+          "FROM": {
+            "NOT": {
+              "is_hive_empire": "yes"
+            }
+          },
+          "opinion": {
+            "base": "-30",
+            "modifier": {
+              "add": "-20",
+              "from": {
+                "has_country_flag": "scary_hive_envoys"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2650
+  },
+  "triggered_opinion_hive_mind_empath": {
+    "triggered_opinion_hive_mind_empath": {
+      "trigger": {
+        "is_country_type": "default",
+        "NOT": {
+          "FROM": {
+            "has_valid_civic": "civic_hive_empath",
+            "is_hive_empire": "yes"
+          }
+        },
+        "opinion": {
+          "base": "20"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2677
+  },
+  "triggered_opinion_cyborgs_fanatic": {
+    "triggered_opinion_cyborgs_fanatic": {
+      "trigger": {
+        "has_ethic": "ethic_fanatic_spiritualist",
+        "NOR": {
+          "is_cyborg_empire": "yes",
+          "is_mechanical_empire": "yes",
+          "has_origin": "origin_cybernetic_creed"
+        },
+        "FROM": {
+          "is_cyborg_empire": "yes"
+        }
+      },
+      "opinion": {
+        "base": "-40"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2692
+  },
+  "triggered_opinion_cyborgs_normal": {
+    "triggered_opinion_cyborgs_normal": {
+      "trigger": {
+        "has_ethic": "ethic_spiritualist",
+        "NOR": {
+          "is_cyborg_empire": "yes",
+          "is_mechanical_empire": "yes",
+          "has_origin": "origin_cybernetic_creed"
+        },
+        "FROM": {
+          "is_cyborg_empire": "yes"
+        }
+      },
+      "opinion": {
+        "base": "-20"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2710
+  },
+  "triggered_opinion_cybernetic_creed_of_cyborgs": {
+    "triggered_opinion_cybernetic_creed_of_cyborgs": {
+      "trigger": {
+        "OR": {
+          "has_ethic": "ethic_fanatic_spiritualist"
+        },
+        "has_origin": "origin_cybernetic_creed",
+        "FROM": {
+          "is_cyborg_empire": "yes # Note that this includes Driven Assimilators"
+        }
+      },
+      "opinion": {
+        "base": "20",
+        "modifier": {
+          "add": "20",
+          "has_ethic": "ethic_fanatic_spiritualist"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2728
+  },
+  "triggered_opinion_synthetics_normal": {
+    "triggered_opinion_synthetics_normal": {
+      "trigger": {
+        "has_ethic": "ethic_spiritualist",
+        "is_cyborg_empire": "no",
+        "is_mechanical_empire": "no",
+        "from": {},
+        "opinion": {
+          "base": "-40"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2749
+  },
+  "triggered_opinion_synthetics_fanatic": {
+    "triggered_opinion_synthetics_fanatic": {
+      "trigger": {
+        "has_ethic": "ethic_fanatic_spiritualist",
+        "is_cyborg_empire": "no",
+        "is_mechanical_empire": "no",
+        "from": {
+          "is_mechanical_empire": "yes",
+          "is_spiritualist": "no"
+        }
+      },
+      "opinion": {
+        "base": "-60"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2762
+  },
+  "triggered_opinion_synthetics_small": {
+    "triggered_opinion_synthetics_small": {
+      "trigger": {
+        "from": {
+          "is_cyborg_empire": "no",
+          "is_mechanical_empire": "no",
+          "NOR": {
+            "is_machine_empire": "yes",
+            "has_ethic": "ethic_fanatic_materialist"
+          }
+        },
+        "opinion": {
+          "base": "-20"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2778
+  },
+  "triggered_opinion_both_machine_intelligence": {
+    "triggered_opinion_both_machine_intelligence": {
+      "trigger": {
+        "is_machine_empire": "yes",
+        "NOT": {
+          "FROM": {
+            "NOT": {
+              "AND": {
+                "has_valid_civic": "civic_machine_assimilator",
+                "FROM": {}
+              },
+              "NOT": {
+                "AND": {
+                  "has_valid_civic": "civic_machine_servitor",
+                  "FROM": {}
+                }
+              },
+              "opinion": {
+                "base": "30"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2797
+  },
+  "triggered_organic_opinion_of_machine_empires": {
+    "triggered_organic_opinion_of_machine_empires": {
+      "trigger": {
+        "is_country_type": "default",
+        "FROM": {
+          "is_machine_empire": "yes",
+          "NOR": {
+            "has_valid_civic": "civic_machine_assimilator"
+          }
+        },
+        "is_mechanical_empire": "no",
+        "is_cyborg_empire": "no",
+        "is_individual_machine": "no",
+        "NOT": {
+          "has_ethic": "ethic_fanatic_spiritualist"
+        },
+        "AND": {
+          "NOR": {
+            "has_ethic": "ethic_gestalt_consciousness",
+            "owner_species": {
+              "owner_species": {
+                "has_ai_personality": "democratic_crusaders"
+              },
+              "FROM": {
+                "has_valid_civic": "civic_machine_servitor"
+              }
+            }
+          },
+          "opinion": {
+            "base": "-30"
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2824
+  },
+  "triggered_dc_opinion_of_servitors": {
+    "triggered_dc_opinion_of_servitors": {
+      "trigger": {
+        "has_ai_personality": "democratic_crusaders",
+        "FROM": {
+          "has_valid_civic": "civic_machine_servitor"
+        }
+      },
+      "opinion": {
+        "base": "-100"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2864
+  },
+  "triggered_dc_opinion_of_assimilators": {
+    "triggered_dc_opinion_of_assimilators": {
+      "trigger": {
+        "has_ai_personality": "democratic_crusaders",
+        "FROM": {
+          "has_valid_civic": "civic_machine_assimilator"
+        }
+      },
+      "opinion": {
+        "base": "-1000"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2877
+  },
+  "triggered_opinion_xenophobes": {
+    "triggered_opinion_xenophobes": {
+      "trigger": {
+        "from": {
+          "exists": "from.species",
+          "NAND": {
+            "is_same_species_class": "from",
+            "OR": {
+              "from": {
+                "has_valid_civic": "civic_selective_kinship"
+              }
+            }
+          },
+          "opinion": {
+            "base": "0",
+            "modifier": {
+              "add": "-10",
+              "OR": {
+                "has_ethic": "ethic_fanatic_xenophile"
+              },
+              "FROM": {
+                "NOT": {},
+                "modifier": {
+                  "add": "-5",
+                  "OR": {
+                    "has_ethic": "ethic_fanatic_xenophile"
+                  },
+                  "FROM": {
+                    "is_same_species_class": "FROM",
+                    "NOT": {
+                      "NOT": {},
+                      "modifier": {
+                        "add": "-10",
+                        "NOT": {
+                          "NOT": {
+                            "NOT": {
+                              "FROM": {
+                                "NOT": {},
+                                "modifier": {
+                                  "add": "-5",
+                                  "NOT": {
+                                    "NOT": {
+                                      "NOT": {
+                                        "FROM": {
+                                          "is_same_species_class": "FROM",
+                                          "NOT": {
+                                            "NOT": {},
+                                            "modifier": {
+                                              "add": "-20",
+                                              "OR": {
+                                                "has_ethic": "ethic_fanatic_xenophile"
+                                              },
+                                              "FROM": {
+                                                "has_ethic": "ethic_fanatic_xenophobe"
+                                              },
+                                              "NOT": {},
+                                              "modifier": {
+                                                "add": "-10",
+                                                "OR": {
+                                                  "has_ethic": "ethic_fanatic_xenophile"
+                                                },
+                                                "FROM": {
+                                                  "is_same_species_class": "FROM",
+                                                  "NOT": {
+                                                    "NOT": {},
+                                                    "modifier": {
+                                                      "add": "-20",
+                                                      "NOT": {
+                                                        "NOT": {
+                                                          "NOT": {
+                                                            "FROM": {
+                                                              "NOT": {},
+                                                              "modifier": {
+                                                                "add": "-10",
+                                                                "NOT": {
+                                                                  "NOT": {
+                                                                    "NOT": {
+                                                                      "FROM": {
+                                                                        "is_same_species_class": "FROM",
+                                                                        "NOT": {
+                                                                          "NOT": {}
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2894
+  },
+  "triggered_opinion_xenophiles": {
+    "triggered_opinion_xenophiles": {
+      "trigger": {
+        "from": {},
+        "opinion": {
+          "base": "0",
+          "modifier": {
+            "add": "10",
+            "NOR": {
+              "has_ethic": "ethic_fanatic_xenophobe"
+            },
+            "FROM": {
+              "exists": "from.species",
+              "NOT": {},
+              "modifier": {
+                "add": "20",
+                "NOR": {
+                  "has_ethic": "ethic_fanatic_xenophobe"
+                },
+                "FROM": {
+                  "exists": "from.species",
+                  "NOT": {},
+                  "modifier": {
+                    "add": "5",
+                    "NOR": {
+                      "has_ethic": "ethic_fanatic_xenophobe"
+                    },
+                    "FROM": {
+                      "exists": "from.species",
+                      "is_same_species_class": "FROM"
+                    },
+                    "modifier": {
+                      "add": "10",
+                      "NOR": {
+                        "has_ethic": "ethic_fanatic_xenophobe"
+                      },
+                      "FROM": {
+                        "exists": "from.species",
+                        "is_same_species_class": "FROM"
+                      },
+                      "modifier": {
+                        "add": "10",
+                        "has_ethic": "ethic_fanatic_xenophile",
+                        "FROM": {},
+                        "modifier": {
+                          "add": "20",
+                          "has_ethic": "ethic_fanatic_xenophile",
+                          "FROM": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 2995
+  },
+  "triggered_opinion_xenophobia": {
+    "triggered_opinion_xenophobia": {
+      "trigger": {
+        "from": {
+          "NAND": {
+            "is_same_species_class": "from",
+            "OR": {
+              "from": {
+                "has_valid_civic": "civic_selective_kinship"
+              }
+            }
+          },
+          "opinion": {
+            "base": "0",
+            "modifier": {
+              "add": "-20",
+              "NOT": {
+                "has_ethic": "ethic_xenophobe",
+                "exists": "from.species",
+                "NOT": {},
+                "modifier": {
+                  "add": "-10",
+                  "NOT": {
+                    "has_ethic": "ethic_xenophobe",
+                    "exists": "from.species",
+                    "is_same_species_class": "FROM",
+                    "NOT": {
+                      "NOT": {},
+                      "modifier": {
+                        "add": "-5",
+                        "NOT": {
+                          "has_ethic": "ethic_xenophobe",
+                          "exists": "from.species",
+                          "is_same_species_class": "FROM",
+                          "NOT": {
+                            "is_subspecies": "FROM"
+                          },
+                          "modifier": {
+                            "add": "-40",
+                            "NOT": {
+                              "has_ethic": "ethic_fanatic_xenophobe",
+                              "exists": "from.species",
+                              "NOT": {},
+                              "modifier": {
+                                "add": "-20",
+                                "NOT": {
+                                  "has_ethic": "ethic_fanatic_xenophobe",
+                                  "exists": "from.species",
+                                  "is_same_species_class": "FROM",
+                                  "NOT": {
+                                    "NOT": {},
+                                    "modifier": {
+                                      "add": "-10",
+                                      "NOT": {
+                                        "has_ethic": "ethic_fanatic_xenophobe",
+                                        "exists": "from.species",
+                                        "is_same_species_class": "FROM",
+                                        "NOT": {
+                                          "is_subspecies": "FROM"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3075
+  },
+  "triggered_opinion_xenophilia": {
+    "triggered_opinion_xenophilia": {
+      "trigger": {
+        "is_xenophile": "yes",
+        "exists": "from.species"
+      },
+      "opinion": {
+        "base": "0",
+        "modifier": {
+          "add": "20",
+          "has_ethic": "ethic_xenophile",
+          "NOT": {
+            "FROM": {
+              "NOT": {
+                "has_valid_civic": "civic_fanatic_purifiers"
+              }
+            }
+          },
+          "modifier": {
+            "add": "10",
+            "has_ethic": "ethic_xenophile",
+            "is_same_species_class": "FROM",
+            "NOT": {
+              "NOT": {
+                "FROM": {
+                  "NOT": {
+                    "has_valid_civic": "civic_fanatic_purifiers"
+                  }
+                }
+              },
+              "modifier": {
+                "add": "5",
+                "has_ethic": "ethic_xenophile",
+                "is_same_species_class": "FROM",
+                "NOT": {
+                  "is_subspecies": "FROM",
+                  "FROM": {
+                    "NOT": {
+                      "has_valid_civic": "civic_fanatic_purifiers"
+                    }
+                  }
+                },
+                "modifier": {
+                  "add": "40",
+                  "has_ethic": "ethic_fanatic_xenophile",
+                  "NOT": {
+                    "FROM": {
+                      "NOT": {
+                        "has_valid_civic": "civic_fanatic_purifiers"
+                      }
+                    }
+                  },
+                  "modifier": {
+                    "add": "20",
+                    "has_ethic": "ethic_fanatic_xenophile",
+                    "is_same_species_class": "FROM",
+                    "NOT": {
+                      "NOT": {
+                        "FROM": {
+                          "NOT": {
+                            "has_valid_civic": "civic_fanatic_purifiers"
+                          }
+                        }
+                      },
+                      "modifier": {
+                        "add": "10",
+                        "has_ethic": "ethic_fanatic_xenophile",
+                        "is_same_species_class": "FROM",
+                        "NOT": {
+                          "is_subspecies": "FROM",
+                          "FROM": {
+                            "NOT": {
+                              "has_valid_civic": "civic_fanatic_purifiers"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3143
+  },
+  "triggered_opinion_of_materialist": {
+    "triggered_opinion_of_materialist": {
+      "trigger": {
+        "from": {},
+        "opinion": {
+          "base": "0",
+          "modifier": {
+            "add": "-10",
+            "has_ethic": "ethic_spiritualist",
+            "FROM": {},
+            "modifier": {
+              "add": "-20",
+              "has_ethic": "ethic_spiritualist",
+              "FROM": {},
+              "modifier": {
+                "add": "-20",
+                "has_ethic": "ethic_fanatic_spiritualist",
+                "FROM": {},
+                "modifier": {
+                  "add": "-40",
+                  "has_ethic": "ethic_fanatic_spiritualist",
+                  "FROM": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3229
+  },
+  "triggered_opinion_of_materialist_pos": {
+    "triggered_opinion_of_materialist_pos": {
+      "trigger": {
+        "from": {},
+        "opinion": {
+          "base": "0",
+          "modifier": {
+            "add": "25",
+            "has_ethic": "ethic_fanatic_materialist",
+            "FROM": {},
+            "modifier": {
+              "add": "10",
+              "has_ethic": "ethic_fanatic_materialist",
+              "FROM": {},
+              "modifier": {
+                "add": "10",
+                "has_ethic": "ethic_materialist",
+                "FROM": {},
+                "modifier": {
+                  "add": "10",
+                  "has_ethic": "ethic_materialist",
+                  "FROM": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3260
+  },
+  "triggered_opinion_of_spiritualist": {
+    "triggered_opinion_of_spiritualist": {
+      "trigger": {
+        "from": {},
+        "opinion": {
+          "base": "0",
+          "modifier": {
+            "add": "-10",
+            "has_ethic": "ethic_materialist",
+            "FROM": {},
+            "modifier": {
+              "add": "-20",
+              "has_ethic": "ethic_materialist",
+              "FROM": {},
+              "modifier": {
+                "add": "-20",
+                "has_ethic": "ethic_fanatic_materialist",
+                "FROM": {},
+                "modifier": {
+                  "add": "-40",
+                  "has_ethic": "ethic_fanatic_materialist",
+                  "FROM": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3291
+  },
+  "triggered_opinion_of_spiritualist_pos": {
+    "triggered_opinion_of_spiritualist_pos": {
+      "trigger": {
+        "from": {},
+        "opinion": {
+          "base": "0",
+          "modifier": {
+            "add": "25",
+            "has_ethic": "ethic_fanatic_spiritualist",
+            "FROM": {},
+            "modifier": {
+              "add": "10",
+              "has_ethic": "ethic_fanatic_spiritualist",
+              "FROM": {},
+              "modifier": {
+                "add": "10",
+                "has_ethic": "ethic_spiritualist",
+                "FROM": {},
+                "modifier": {
+                  "add": "10",
+                  "has_ethic": "ethic_spiritualist",
+                  "FROM": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3322
+  },
+  "triggered_opinion_of_egalitarian": {
+    "triggered_opinion_of_egalitarian": {
+      "trigger": {
+        "from": {},
+        "opinion": {
+          "base": "0",
+          "modifier": {
+            "add": "-10",
+            "has_ethic": "ethic_authoritarian",
+            "FROM": {},
+            "modifier": {
+              "add": "-20",
+              "has_ethic": "ethic_authoritarian",
+              "FROM": {},
+              "modifier": {
+                "add": "-20",
+                "has_ethic": "ethic_fanatic_authoritarian",
+                "FROM": {},
+                "modifier": {
+                  "add": "-40",
+                  "has_ethic": "ethic_fanatic_authoritarian",
+                  "FROM": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3352
+  },
+  "triggered_opinion_of_egalitarian_pos": {
+    "triggered_opinion_of_egalitarian_pos": {
+      "trigger": {
+        "from": {},
+        "opinion": {
+          "base": "0",
+          "modifier": {
+            "add": "25",
+            "has_ethic": "ethic_fanatic_egalitarian",
+            "FROM": {},
+            "modifier": {
+              "add": "10",
+              "has_ethic": "ethic_fanatic_egalitarian",
+              "FROM": {},
+              "modifier": {
+                "add": "10",
+                "has_ethic": "ethic_egalitarian",
+                "FROM": {},
+                "modifier": {
+                  "add": "10",
+                  "has_ethic": "ethic_egalitarian",
+                  "FROM": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3383
+  },
+  "triggered_opinion_of_pacifist_pos": {
+    "triggered_opinion_of_pacifist_pos": {
+      "trigger": {
+        "from": {},
+        "opinion": {
+          "base": "0",
+          "modifier": {
+            "add": "25",
+            "has_ethic": "ethic_fanatic_pacifist",
+            "FROM": {},
+            "modifier": {
+              "add": "10",
+              "has_ethic": "ethic_fanatic_pacifist",
+              "FROM": {},
+              "modifier": {
+                "add": "10",
+                "has_ethic": "ethic_pacifist",
+                "FROM": {},
+                "modifier": {
+                  "add": "10",
+                  "has_ethic": "ethic_pacifist",
+                  "FROM": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3414
+  },
+  "triggered_opinion_of_authoritarian": {
+    "triggered_opinion_of_authoritarian": {
+      "trigger": {
+        "from": {},
+        "opinion": {
+          "base": "0",
+          "modifier": {
+            "add": "-10",
+            "has_ethic": "ethic_egalitarian",
+            "FROM": {},
+            "modifier": {
+              "add": "-20",
+              "has_ethic": "ethic_egalitarian",
+              "FROM": {},
+              "modifier": {
+                "add": "-20",
+                "has_ethic": "ethic_fanatic_egalitarian",
+                "FROM": {},
+                "modifier": {
+                  "add": "-40",
+                  "has_ethic": "ethic_fanatic_egalitarian",
+                  "FROM": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3444
+  },
+  "triggered_opinion_xenophage": {
+    "triggered_opinion_xenophage": {
+      "trigger": {
+        "NOR": {
+          "is_country_type": "fallen_empire",
+          "is_xenophobe": "yes",
+          "is_xenophage": "yes # i.e. consumes one or more of its constituent Species"
+        },
+        "from": {
+          "OR": {
+            "allows_slavery": "yes",
+            "allows_purge": "yes"
+          },
+          "is_xenophage": "yes # i.e. consumes one or more of its constituent Species"
+        }
+      },
+      "opinion": {
+        "base": "0",
+        "modifier": {
+          "add": "-25",
+          "OR": {
+            "has_ethic": "ethic_fanatic_xenophile"
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3473
+  },
+  "triggered_materialist_opinion_of_machine_empires": {
+    "triggered_materialist_opinion_of_machine_empires": {
+      "trigger": {
+        "has_ethic": "ethic_materialist",
+        "FROM": {
+          "OR": {
+            "is_machine_empire": "yes",
+            "is_individual_machine": "yes"
+          },
+          "NOR": {
+            "has_valid_civic": "civic_fanatic_purifiers"
+          }
+        }
+      },
+      "opinion": {
+        "base": "10"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3507
+  },
+  "triggered_fanatic_materialist_opinion_of_machine_empires": {
+    "triggered_fanatic_materialist_opinion_of_machine_empires": {
+      "trigger": {
+        "has_ethic": "ethic_fanatic_materialist",
+        "FROM": {
+          "OR": {
+            "is_machine_empire": "yes",
+            "is_individual_machine": "yes"
+          },
+          "NOR": {
+            "has_valid_civic": "civic_fanatic_purifiers"
+          }
+        }
+      },
+      "opinion": {
+        "base": "20"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3527
+  },
+  "triggered_spiritualist_opinion_of_machine_empires": {
+    "triggered_spiritualist_opinion_of_machine_empires": {
+      "trigger": {
+        "is_country_type": "default",
+        "has_ethic": "ethic_spiritualist",
+        "is_individual_machine": "no",
+        "is_mechanical_empire": "no",
+        "is_cyborg_empire": "no",
+        "FROM": {
+          "OR": {
+            "is_machine_empire": "yes",
+            "is_individual_machine": "yes"
+          },
+          "NOR": {
+            "has_valid_civic": "civic_fanatic_purifiers"
+          }
+        }
+      },
+      "opinion": {
+        "base": "-40"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3547
+  },
+  "triggered_fanatic_spiritualist_opinion_of_machine_empires": {
+    "triggered_fanatic_spiritualist_opinion_of_machine_empires": {
+      "trigger": {
+        "is_country_type": "default",
+        "has_ethic": "ethic_fanatic_spiritualist",
+        "is_individual_machine": "no",
+        "is_mechanical_empire": "no",
+        "is_cyborg_empire": "no",
+        "FROM": {
+          "OR": {
+            "is_machine_empire": "yes",
+            "is_individual_machine": "yes"
+          },
+          "NOR": {
+            "has_valid_civic": "civic_fanatic_purifiers"
+          }
+        }
+      },
+      "opinion": {
+        "base": "-60"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3571
+  },
+  "triggered_spiritualist_opinion_of_spiritualists_machine_empires": {
+    "triggered_spiritualist_opinion_of_spiritualists_machine_empires": {
+      "trigger": {
+        "is_country_type": "default",
+        "has_ethic": "ethic_spiritualist",
+        "is_individual_machine": "no",
+        "is_mechanical_empire": "no",
+        "is_cyborg_empire": "no",
+        "FROM": {
+          "is_individual_machine": "yes",
+          "OR": {
+            "has_ethic": "ethic_fanatic_spiritualist"
+          },
+          "NOR": {
+            "has_valid_civic": "civic_fanatic_purifiers"
+          }
+        }
+      },
+      "opinion": {
+        "base": "-20"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3595
+  },
+  "triggered_fanatic_spiritualist_opinion_of_spiritualists_machine_empires": {
+    "triggered_fanatic_spiritualist_opinion_of_spiritualists_machine_empires": {
+      "trigger": {
+        "is_country_type": "default",
+        "has_ethic": "ethic_fanatic_spiritualist",
+        "is_individual_machine": "no",
+        "is_mechanical_empire": "no",
+        "is_cyborg_empire": "no",
+        "FROM": {
+          "is_individual_machine": "yes",
+          "OR": {
+            "has_ethic": "ethic_fanatic_spiritualist"
+          },
+          "NOR": {
+            "has_valid_civic": "civic_fanatic_purifiers"
+          }
+        }
+      },
+      "opinion": {
+        "base": "-40"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3620
+  },
+  "triggered_spiritualist_fe_opinion_of_machine_empires": {
+    "triggered_spiritualist_fe_opinion_of_machine_empires": {
+      "trigger": {
+        "OR": {
+          "is_country_type": "fallen_empire"
+        },
+        "has_ethic": "ethic_fanatic_spiritualist",
+        "is_mechanical_empire": "no",
+        "is_cyborg_empire": "no",
+        "FROM": {
+          "OR": {
+            "is_machine_empire": "yes",
+            "is_individual_machine": "yes"
+          }
+        }
+      },
+      "opinion": {
+        "base": "-40"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3645
+  },
+  "triggered_spiritualist_fe_opinion_of_spiritualist_machine_empires": {
+    "triggered_spiritualist_fe_opinion_of_spiritualist_machine_empires": {
+      "trigger": {
+        "OR": {
+          "is_country_type": "fallen_empire"
+        },
+        "has_ethic": "ethic_fanatic_spiritualist",
+        "is_mechanical_empire": "no",
+        "is_cyborg_empire": "no",
+        "FROM": {
+          "is_individual_machine": "yes",
+          "OR": {
+            "has_ethic": "ethic_fanatic_spiritualist"
+          }
+        }
+      },
+      "opinion": {
+        "base": "-60"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3666
+  },
+  "triggered_individual_machine_opinion_of_individual_machine_empires": {
+    "triggered_individual_machine_opinion_of_individual_machine_empires": {
+      "trigger": {
+        "is_individual_machine": "yes",
+        "FROM": {
+          "is_individual_machine": "yes"
+        }
+      },
+      "opinion": {
+        "base": "20"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3688
+  },
+  "triggered_terminators_opinion_of_servitors": {
+    "triggered_terminators_opinion_of_servitors": {
+      "trigger": {
+        "is_country_type": "default",
+        "has_valid_civic": "civic_machine_terminator",
+        "FROM": {},
+        "opinion": {
+          "base": "-200"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3700
+  },
+  "triggered_opinion_both_servitors": {
+    "triggered_opinion_both_servitors": {
+      "trigger": {
+        "is_country_type": "default",
+        "has_valid_civic": "civic_machine_servitor",
+        "FROM": {},
+        "opinion": {
+          "base": "40"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3711
+  },
+  "triggered_decadent_opinion_of_servitors": {
+    "triggered_decadent_opinion_of_servitors": {
+      "trigger": {
+        "is_country_type": "default",
+        "OR": {
+          "owner_species": {
+            "owner_species": {
+              "has_ai_personality": "slaving_despots"
+            },
+            "FROM": {
+              "has_valid_civic": "civic_machine_servitor"
+            }
+          },
+          "opinion": {
+            "base": "20"
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3722
+  },
+  "triggered_spiritualist_negative_opinion_of_assimilators": {
+    "triggered_spiritualist_negative_opinion_of_assimilators": {
+      "trigger": {
+        "is_country_type": "default",
+        "is_individual_machine": "no",
+        "OR": {
+          "has_ethic": "ethic_fanatic_spiritualist"
+        },
+        "FROM": {},
+        "opinion": {
+          "base": "-200"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3740
+  },
+  "triggered_negative_opinion_of_assimilators": {
+    "triggered_negative_opinion_of_assimilators": {
+      "trigger": {
+        "is_country_type": "default",
+        "is_individual_machine": "no",
+        "NOR": {
+          "has_ethic": "ethic_gestalt_consciousness",
+          "has_ai_personality": "democratic_crusaders"
+        },
+        "FROM": {},
+        "opinion": {
+          "base": "-100"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3756
+  },
+  "triggered_opinion_both_assimilators": {
+    "triggered_opinion_both_assimilators": {
+      "trigger": {
+        "is_country_type": "default",
+        "has_valid_civic": "civic_machine_assimilator",
+        "FROM": {},
+        "opinion": {
+          "base": "40"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3773
+  },
+  "triggered_negative_opinion_of_swarm_fe": {
+    "triggered_negative_opinion_of_swarm_fe": {
+      "trigger": {
+        "has_ai_personality": "fallen_empire_xenophile",
+        "FROM": {},
+        "opinion": {
+          "base": "-80"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3784
+  },
+  "triggered_negative_opinion_of_exterminators_fe": {
+    "triggered_negative_opinion_of_exterminators_fe": {
+      "trigger": {
+        "has_ai_personality": "fallen_empire_xenophile",
+        "FROM": {},
+        "opinion": {
+          "base": "-40"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3794
+  },
+  "triggered_negative_opinion_of_exterminators": {
+    "triggered_negative_opinion_of_exterminators": {
+      "trigger": {
+        "is_country_type": "default",
+        "FROM": {
+          "is_mechanical_empire": "no",
+          "is_individual_machine": "no",
+          "NOR": {
+            "is_machine_empire": "yes",
+            "has_valid_civic": "civic_fanatic_purifiers",
+            "is_species_class": "MACHINE",
+            "has_country_flag": "synthetic_empire",
+            "owner_species": {
+              "has_trait": "trait_mechanical"
+            }
+          }
+        },
+        "opinion": {
+          "base": "-1000"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3804
+  },
+  "triggered_servitors_negative_opinion_of_exterminators": {
+    "triggered_servitors_negative_opinion_of_exterminators": {
+      "trigger": {
+        "is_country_type": "default",
+        "has_valid_civic": "civic_machine_servitor",
+        "FROM": {},
+        "opinion": {
+          "base": "-1000"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3827
+  },
+  "triggered_opinion_both_terminators": {
+    "triggered_opinion_both_terminators": {
+      "trigger": {
+        "is_country_type": "default",
+        "has_valid_civic": "civic_machine_terminator",
+        "FROM": {},
+        "opinion": {
+          "base": "200"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3838
+  },
+  "triggered_exterminators_opinion_of_organics": {
+    "triggered_exterminators_opinion_of_organics": {
+      "trigger": {
+        "is_country_type": "default",
+        "has_valid_civic": "civic_machine_terminator",
+        "FROM": {
+          "NOR": {
+            "is_machine_empire": "yes",
+            "is_individual_machine": "yes",
+            "is_species_class": "ROBOT",
+            "has_country_flag": "synthetic_empire",
+            "owner_species": {
+              "has_trait": "trait_mechanical"
+            }
+          }
+        }
+      },
+      "opinion": {
+        "base": "-1000"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3849
+  },
+  "triggered_exterminators_opinion_of_machines": {
+    "triggered_exterminators_opinion_of_machines": {
+      "trigger": {
+        "is_country_type": "default",
+        "has_valid_civic": "civic_machine_terminator",
+        "FROM": {
+          "OR": {
+            "is_machine_empire": "yes",
+            "is_individual_machine": "yes",
+            "is_species_class": "MACHINE",
+            "has_country_flag": "synthetic_empire",
+            "owner_species": {
+              "has_trait": "trait_mechanical"
+            }
+          },
+          "NOT": {
+            "has_valid_civic": "civic_machine_servitor"
+          }
+        }
+      },
+      "opinion": {
+        "base": "100"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3872
+  },
+  "triggered_opinion_barbaric_despoilers": {
+    "triggered_opinion_barbaric_despoilers": {
+      "trigger": {
+        "is_country_type": "default",
+        "NOR": {
+          "is_militarist": "yes",
+          "is_pacifist": "yes",
+          "is_authoritarian": "yes",
+          "has_ethic": "ethic_gestalt_consciousness",
+          "has_valid_civic": "civic_fanatic_purifiers"
+        },
+        "NOT": {
+          "FROM": {},
+          "opinion": {
+            "base": "-50"
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3899
+  },
+  "triggered_opinion_crusader_spirit": {
+    "triggered_opinion_crusader_spirit": {
+      "trigger": {
+        "is_country_type": "default",
+        "has_valid_civic": "civic_crusader_spirit",
+        "FROM": {
+          "NOT": {}
+        },
+        "opinion": {
+          "base": "-80"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3917
+  },
+  "triggered_opinion_crusader_spirit_pos": {
+    "triggered_opinion_crusader_spirit_pos": {
+      "trigger": {
+        "is_country_type": "default",
+        "has_valid_civic": "civic_crusader_spirit",
+        "FROM": {},
+        "opinion": {
+          "base": "20"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3930
+  },
+  "triggered_authoritarian_opinion_barbaric_despoilers": {
+    "triggered_authoritarian_opinion_barbaric_despoilers": {
+      "trigger": {
+        "is_country_type": "default",
+        "is_authoritarian": "yes",
+        "is_militarist": "no",
+        "is_pacifist": "no",
+        "NOT": {
+          "FROM": {},
+          "opinion": {
+            "base": "-40"
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3941
+  },
+  "triggered_militarist_opinion_barbaric_despoilers": {
+    "triggered_militarist_opinion_barbaric_despoilers": {
+      "trigger": {
+        "is_country_type": "default",
+        "is_militarist": "yes",
+        "NOT": {
+          "FROM": {},
+          "opinion": {
+            "base": "-20"
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3955
+  },
+  "triggered_pacifist_opinion_barbaric_despoilers": {
+    "triggered_pacifist_opinion_barbaric_despoilers": {
+      "trigger": {
+        "is_country_type": "default",
+        "is_pacifist": "yes",
+        "NOT": {
+          "FROM": {},
+          "opinion": {
+            "base": "-80"
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3967
+  },
+  "triggered_fe_opinion_barbaric_despoilers": {
+    "triggered_fe_opinion_barbaric_despoilers": {
+      "trigger": {
+        "OR": {
+          "is_country_type": "fallen_empire"
+        },
+        "has_ethic": "ethic_fanatic_xenophile",
+        "is_mechanical_empire": "no",
+        "is_cyborg_empire": "no",
+        "FROM": {},
+        "opinion": {
+          "base": "-40"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3979
+  },
+  "triggered_opinion_galatron_holder": {
+    "triggered_opinion_galatron_holder": {
+      "trigger": {
+        "is_gestalt": "no",
+        "FROM": {
+          "has_modifier": "galatron_modifier",
+          "NOT": {}
+        },
+        "opinion": {
+          "base": "25"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 3996
+  },
+  "triggered_opinion_galatron_denier": {
+    "triggered_opinion_galatron_denier": {
+      "trigger": {
+        "is_gestalt": "no",
+        "FROM": {
+          "has_modifier": "galatron_modifier",
+          "has_closed_borders": "prev"
+        }
+      },
+      "opinion": {
+        "base": "-50"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4010
+  },
+  "triggered_opinion_crime_corp": {
+    "triggered_opinion_crime_corp": {
+      "trigger": {
+        "is_gestalt": "no",
+        "is_megacorp": "no",
+        "FROM": {
+          "is_criminal_syndicate": "yes"
+        }
+      },
+      "opinion": {
+        "base": "-25"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4024
+  },
+  "opinion_crime_corp_branch_offices": {
+    "opinion_crime_corp_branch_offices": {
+      "min": "-200",
+      "block_triggered": "yes # stops modifier from automatically triggering when trigger evaluates to true",
+      "trigger": {
+        "FROM": {
+          "is_criminal_syndicate": "yes"
+        },
+        "is_gestalt": "no",
+        "is_megacorp": "no"
+      },
+      "opinion": {
+        "base": "-10"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4039
+  },
+  "opinion_voted_to_kill_tiyanki": {
+    "opinion_voted_to_kill_tiyanki": {
+      "opinion": {
+        "base": "-20"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4055
+  },
+  "opinion_voted_to_help_tiyanki": {
+    "opinion_voted_to_help_tiyanki": {
+      "opinion": {
+        "base": "20"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4065
+  },
+  "opinion_killed_tiyanki_fleet_1": {
+    "opinion_killed_tiyanki_fleet_1": {
+      "opinion": {
+        "base": "-10"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4076
+  },
+  "opinion_killed_tiyanki_fleet_2": {
+    "opinion_killed_tiyanki_fleet_2": {
+      "opinion": {
+        "base": "-20"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4088
+  },
+  "opinion_killed_all_tiyanki_1": {
+    "opinion_killed_all_tiyanki_1": {
+      "opinion": {
+        "base": "-25"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4099
+  },
+  "opinion_killed_all_tiyanki_2": {
+    "opinion_killed_all_tiyanki_2": {
+      "opinion": {
+        "base": "-50"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4109
+  },
+  "opinion_killed_all_tiyanki_3": {
+    "opinion_killed_all_tiyanki_3": {
+      "opinion": {
+        "base": "-100"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4119
+  },
+  "opinion_traitor_to_empire": {
+    "opinion_traitor_to_empire": {
+      "opinion": {
+        "base": "-200"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4129
+  },
+  "interfering_revolt_support": {
+    "interfering_revolt_support": {
+      "opinion": {
+        "base": "-200"
+      },
+      "decay": {
+        "base": "2"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4139
+  },
+  "triggered_opinion_relic_omnicodex": {
+    "triggered_opinion_relic_omnicodex": {
+      "trigger": {
+        "is_robot_empire": "no",
+        "FROM": {
+          "has_relic": "r_omnicodex",
+          "is_robot_empire": "yes"
+        }
+      },
+      "opinion": {
+        "base": "25"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4148
+  },
+  "triggered_opinion_blorg_insight": {
+    "triggered_opinion_blorg_insight": {
+      "trigger": {
+        "species": {
+          "is_human_species": "yes"
+        },
+        "FROM": {
+          "any_owned_leader": {
+            "is_councilor": "yes",
+            "has_trait": "leader_trait_blorg_insight"
+          }
+        }
+      },
+      "opinion": {
+        "base": "-25"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4161
+  },
+  "contact_with_MSI_01": {
+    "contact_with_MSI_01": {
+      "opinion": {
+        "base": "-200"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4178
+  },
+  "contact_with_MSI_02": {
+    "contact_with_MSI_02": {
+      "opinion": {
+        "base": "-100"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4184
+  },
+  "opinion_caught_spying": {
+    "opinion_caught_spying": {
+      "opinion": {
+        "base": "-200"
+      },
+      "decay": {
+        "base": "1.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4190
+  },
+  "opinion_life_of_the_party": {
+    "opinion_life_of_the_party": {
+      "opinion": {
+        "base": "150"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:positive_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4202
+  },
+  "opinion_double_rejection_party": {
+    "opinion_double_rejection_party": {
+      "opinion": {
+        "base": "-250"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4214
+  },
+  "opinion_wet_towel_party": {
+    "opinion_wet_towel_party": {
+      "opinion": {
+        "base": "-100"
+      },
+      "decay": {
+        "base": "1.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4226
+  },
+  "opinion_could_not_eat_the_food_party": {
+    "opinion_could_not_eat_the_food_party": {
+      "opinion": {
+        "base": "25"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4238
+  },
+  "opinion_has_sensitive_information_about_us": {
+    "opinion_has_sensitive_information_about_us": {
+      "opinion": {
+        "base": "-25"
+      },
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4250
+  },
+  "opinion_cosmogenesis_thesis": {
+    "opinion_cosmogenesis_thesis": {
+      "opinion": {
+        "base": "-75"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "1"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4261
+  },
+  "opinion_fallen_wannabe": {
+    "opinion_fallen_wannabe": {
+      "opinion": {
+        "base": "-10"
+      },
+      "accumulative": "yes"
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4271
+  },
+  "opinion_fallen_wannabe_materialist": {
+    "opinion_fallen_wannabe_materialist": {
+      "opinion": {
+        "base": "-20"
+      },
+      "accumulative": "yes"
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4278
+  },
+  "opinion_nice_forests": {
+    "opinion_nice_forests": {
+      "unique": "yes",
+      "opinion": {
+        "base": "50"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4286
+  },
+  "opinion_cut_our_forests": {
+    "opinion_cut_our_forests": {
+      "opinion": {
+        "base": "-50"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "0.5"
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4294
+  },
+  "triggered_selective_kinship": {
+    "triggered_selective_kinship": {
+      "trigger": {
+        "OR": {
+          "has_valid_civic": "civic_selective_kinship",
+          "from": {},
+          "exists": "from.species",
+          "is_same_species_class": "from"
+        },
+        "opinion": {
+          "base": "100"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4305
+  },
+  "triggered_selective_kinship_hates": {
+    "triggered_selective_kinship_hates": {
+      "trigger": {
+        "has_valid_civic": "civic_selective_kinship",
+        "exists": "from.species",
+        "NOT": {},
+        "opinion": {
+          "base": "-50"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers.txt",
+    "_line_number": 4320
+  }
+}

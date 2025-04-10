@@ -1,0 +1,335 @@
+{
+  "event": {
+    "event": {
+      "id": "astral_planes.5120",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_astral_planes_dlc": "yes",
+        "owner": {
+          "OR": {
+            "any_owned_leader": {
+              "is_immortal": "no"
+            },
+            "any_pool_leader": {
+              "is_immortal": "no"
+            }
+          }
+        },
+        "immediate": {
+          "every_owned_leader": {
+            "limit": {
+              "is_immortal": "no"
+            },
+            "set_immortal": "yes"
+          },
+          "every_pool_leader": {
+            "limit": {
+              "is_immortal": "no"
+            },
+            "set_immortal": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "astral_planes_events.txt",
+    "_line_number": 3563
+  },
+  "country_event": {
+    "country_event": {
+      "id": "astral_planes.6105",
+      "title": "NAME_Mercedes",
+      "desc": {
+        "trigger": {
+          "is_human_species": "yes"
+        },
+        "text": "astral_planes.6105.desc.human"
+      },
+      "show_sound": "cute_fungoid_greetings",
+      "is_triggered_only": "yes",
+      "picture": "GFX_leader_recruitment_bg_renowned",
+      "event_window_type": "leader_recruit",
+      "notification_event_icon": "GFX_message_leader_recruitment_nasuz",
+      "immediate": {
+        "create_species": {
+          "name": "PRESCRIPTED_species_name_blorg",
+          "plural": "PRESCRIPTED_species_plural_blorg",
+          "adjective": "PRESCRIPTED_species_adjective_blorg",
+          "class": "FUN",
+          "portrait": "fun12",
+          "gender": "indeterminable",
+          "traits": {
+            "ideal_planet_class": "capital_scope",
+            "trait": "trait_nomadic"
+          }
+        },
+        "create_leader": {
+          "species": "last_created_species",
+          "name": "NAME_Mercedes",
+          "custom_description": "Mercedes_DESC",
+          "class": "official",
+          "gender": "indeterminable",
+          "event_leader": "no # Leader is allowed to lead factions and win elections",
+          "background_ethic": "ethic_xenophile",
+          "skill": "4",
+          "skip_background_generation": "yes",
+          "custom_catch_phrase": "mercedes_catch_phrase",
+          "randomize_traits": "no",
+          "immortal": "yes",
+          "hide_age": "no",
+          "traits": {
+            "trait": "leader_trait_ambassador_favor_maker_2"
+          },
+          "effect": {
+            "save_event_target_as": "mercedes_leader"
+          }
+        },
+        "last_created_leader": {
+          "set_leader_flag": "is_in_recruit_window",
+          "set_age": "206"
+        },
+        "event_target:mercedes_leader": {
+          "set_owner": "root",
+          "exile_leader_as": "mercedes_leader"
+        }
+      },
+      "picture_event_data": {
+        "portrait": "event_target:mercedes_leader",
+        "room": "ethic_spaceship_room"
+      },
+      "option": {
+        "name": "HIRE",
+        "tag": "hire_leader",
+        "custom_tooltip": "astral_planes.6105.hire_custom_tooltip",
+        "hidden_effect": {
+          "hire_event_leader_effect": {
+            "LEADER": "mercedes_leader"
+          }
+        }
+      }
+    },
+    "_source_file": "astral_planes_events.txt",
+    "_line_number": 4874
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "astral_planes.3030",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_astral_planes_dlc": "yes",
+        "exists": "event_target:the_seal_situation",
+        "owner": {
+          "is_same_value": "event_target:the_seal_situation.owner"
+        }
+      },
+      "immediate": {
+        "if": {
+          "_comments": [
+            "# Entering Formless System"
+          ],
+          "limit": {
+            "from": {
+              "has_star_flag": "formless_system"
+            },
+            "fromfrom": {
+              "has_star_flag": "crystal_sphere_system"
+            }
+          },
+          "if": {
+            "limit": {
+              "event_target:the_seal_situation": {
+                "current_situation_approach": "situation_the_seal_pump_exotic_gases"
+              }
+            },
+            "add_modifier": {
+              "modifier": "the_seal_pump_exotic_gases_modifier"
+            }
+          }
+        },
+        "else": {
+          "_comments": [
+            "# Leaving Formless System"
+          ],
+          "limit": {
+            "from": {
+              "has_star_flag": "crystal_sphere_system"
+            },
+            "fromfrom": {
+              "has_star_flag": "formless_system"
+            }
+          },
+          "if": {
+            "limit": {
+              "remove_modifier": "the_seal_pump_exotic_gases_modifier"
+            },
+            "if": {
+              "limit": {
+                "remove_modifier": "the_seal_weave_astral_fabric_modifiers"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "astral_planes_events.txt",
+    "_line_number": 1871
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "astral_planes.6085",
+      "title": "astral_planes.6085.name",
+      "desc": "astral_planes.6085.desc",
+      "picture": "GFX_evt_nuclear_explosion",
+      "show_sound": "event_super_explosion",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "UNFORTUNATE",
+        "hidden_effect": {
+          "from": {},
+          "owner": {
+            "add_monthly_resource_mult": {
+              "resource": "minerals",
+              "value": "@tier2materialreward",
+              "min": "@tier2materialmin",
+              "max": "@tier2materialmax"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "astral_planes_events.txt",
+    "_line_number": 4772
+  },
+  "bypass_event": {
+    "bypass_event": {
+      "id": "astral_planes.1030",
+      "title": "astral_planes.1030.name",
+      "desc": "astral_planes.1030.desc",
+      "picture": "GFX_evt_astral_rift",
+      "show_sound": "event_space_cloud",
+      "location": "this",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_astral_planes_dlc": "yes"
+      },
+      "option": {
+        "name": "astral_planes.1030.a",
+        "custom_tooltip": "astral_planes.1030.a.tooltip",
+        "allow": {
+          "can_lock_be_renewed": "yes",
+          "owner": {
+            "add_resource": {
+              "astral_threads": "@dimensional_lock_cost",
+              "mult": "-1"
+            }
+          },
+          "renew_bypass_lock": "yes"
+        },
+        "option": {
+          "name": "astral_planes.1030.b",
+          "custom_tooltip": "astral_planes.1030.b.tooltip"
+        }
+      }
+    },
+    "_source_file": "astral_planes_events.txt",
+    "_line_number": 1506
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "astral_planes.6055",
+      "title": "astral_planes.6055.name",
+      "desc": {
+        "trigger": {
+          "owner": {},
+          "text": "astral_planes.6055.desc.rift"
+        },
+        "desc": {
+          "trigger": {
+            "owner": {},
+            "text": "astral_planes.6055.desc.scar"
+          },
+          "picture": {
+            "trigger": {
+              "owner": {},
+              "picture": "GFX_evt_astral_rift"
+            },
+            "picture": {
+              "trigger": {
+                "owner": {},
+                "picture": "GFX_evt_astral_scar"
+              },
+              "show_sound": "ap_rift_event_0_astral_wonder",
+              "location": "ROOT",
+              "is_triggered_only": "yes",
+              "pre_triggers": {
+                "has_owner": "yes",
+                "is_homeworld": "no",
+                "original_owner": "yes",
+                "is_ai": "no",
+                "has_ground_combat": "no",
+                "is_capital": "no",
+                "is_occupied_flag": "no"
+              },
+              "option": {
+                "name": "astral_planes.6055.a",
+                "remove_modifier": "astralnomical_interest_modifier",
+                "add_modifier": {
+                  "owner": {
+                    "add_monthly_resource_mult": {
+                      "resource": "unity",
+                      "value": "@tier2unityreward",
+                      "min": "@tier2unitymin",
+                      "max": "@tier2unitymax"
+                    }
+                  },
+                  "hidden_effect": {
+                    "if": {
+                      "limit": {
+                        "owner": {},
+                        "solar_system": {
+                          "every_system_planet": {
+                            "limit": {
+                              "prevent_anomaly": "yes"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "astral_planes_events.txt",
+    "_line_number": 4450
+  },
+  "leader_event": {
+    "leader_event": {
+      "id": "astral_planes.3155",
+      "title": "astral_planes.3155.name",
+      "desc": "astral_planes.3155.desc",
+      "picture": "GFX_evt_formless_system",
+      "show_sound": "event_celebration",
+      "event_window_type": "leader_story",
+      "picture_event_data": {
+        "portrait": "this",
+        "room": "root.owner"
+      },
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "astral_planes.3155.a",
+        "kill_leader": {
+          "fire": "yes",
+          "show_notification": "no"
+        }
+      }
+    },
+    "_source_file": "astral_planes_events.txt",
+    "_line_number": 3149
+  }
+}

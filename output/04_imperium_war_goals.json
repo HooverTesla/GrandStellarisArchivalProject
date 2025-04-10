@@ -1,0 +1,533 @@
+{
+  "wg_imperial_crusade": {
+    "wg_imperial_crusade": {
+      "casus_belli": "cb_event",
+      "hide_if_no_cb": "yes",
+      "release_occupied_systems_on_status_quo": "yes",
+      "allowed_peace_offers": {},
+      "surrender_acceptance": "-100",
+      "potential": {
+        "always": "no # event only"
+      },
+      "possible": {
+        "custom_tooltip": {
+          "fail_text": "has_claimed_all_systems",
+          "from": {
+            "is_country_type": "default",
+            "any_owned_planet": {
+              "is_colony": "yes",
+              "root": {
+                "NOT": {}
+              }
+            }
+          }
+        },
+        "on_accept": {
+          "from": {
+            "add_to_galactic_community": "yes"
+          }
+        },
+        "on_status_quo": {
+          "if": {
+            "limit": {
+              "exists": "last_created_country",
+              "last_created_country": {
+                "has_country_flag": "released_empire"
+              }
+            },
+            "last_created_country": {
+              "set_origin_effect": "yes",
+              "add_to_galactic_community": "yes"
+            },
+            "if": {
+              "limit": {
+                "root": {
+                  "last_created_country": {
+                    "set_merchant_government_effect": "yes"
+                  }
+                }
+              }
+            },
+            "ai_weight": {
+              "weight": "10"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_imperium_war_goals.txt",
+    "_line_number": 8
+  },
+  "wg_seize_council_seat": {
+    "wg_seize_council_seat": {
+      "casus_belli": "cb_trial_of_advancement",
+      "cede_claims": "no",
+      "hide_if_no_cb": "yes",
+      "release_occupied_systems_on_status_quo": "no",
+      "allowed_peace_offers": {},
+      "surrender_acceptance": "-100",
+      "potential": {},
+      "possible": {},
+      "on_accept": {
+        "from": {
+          "add_to_galactic_council": "yes",
+          "add_permanent_councillor": "yes"
+        },
+        "on_status_quo": {},
+        "ai_weight": {
+          "weight": "10"
+        }
+      }
+    },
+    "_source_file": "04_imperium_war_goals.txt",
+    "_line_number": 74
+  },
+  "wg_restore_the_community": {
+    "wg_restore_the_community": {
+      "casus_belli": "cb_galactic_empire",
+      "hide_if_no_cb": "yes",
+      "cede_claims": "no",
+      "galactic_empire_joins_defender": {
+        "allowed_peace_offers": {},
+        "war_exhaustion": "0.25",
+        "potential": {},
+        "possible": {},
+        "on_accept": {
+          "custom_tooltip": "war_goal_wg_dissolve_the_empire_accept",
+          "hidden_effect": {
+            "save_event_target_as": "dissolve_winner",
+            "fromfrom": {
+              "every_war_participant": {
+                "limit": {
+                  "country_event": {},
+                  "every_war_participant": {
+                    "limit": {
+                      "is_galactic_community_member": "no",
+                      "prev": {
+                        "using_war_goal": {
+                          "type": "wg_restore_the_community",
+                          "owner": "prev"
+                        }
+                      }
+                    },
+                    "country_event": {}
+                  },
+                  "from": {
+                    "restore_galactic_community_leader_backup_data": "yes",
+                    "set_galactic_emperor": "no"
+                  },
+                  "every_playable_country": {
+                    "limit": {
+                      "is_ai": "no",
+                      "fromfrom": {
+                        "NOT": {
+                          "is_war_participant": {}
+                        }
+                      },
+                      "country_event": {},
+                      "set_council_size": "0",
+                      "remove_global_flag": "galactic_council_formed"
+                    }
+                  },
+                  "ai_weight": {
+                    "weight": "100"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_imperium_war_goals.txt",
+    "_line_number": 106
+  },
+  "wg_imperial_rebuke": {
+    "wg_imperial_rebuke": {
+      "casus_belli": "cb_humiliation",
+      "cede_claims": "no",
+      "hide_if_no_cb": "no",
+      "set_defender_wargoal": "wg_humiliation_imperium",
+      "allowed_peace_offers": {},
+      "surrender_acceptance": "-25",
+      "potential": {
+        "has_total_war_cb": "no",
+        "is_galactic_emperor": "yes",
+        "from": {},
+        "possible": {
+          "custom_tooltip": {
+            "fail_text": "pax_galactica_active",
+            "NOT": {}
+          },
+          "on_accept": {
+            "custom_tooltip": "wg_humiliation_accept",
+            "hidden_effect": {
+              "add_resource": {
+                "from": {
+                  "add_modifier": {
+                    "if": {
+                      "limit": {
+                        "set_policy": {
+                          "policy": "diplomatic_stance",
+                          "option": "diplo_stance_belligerent",
+                          "cooldown": "yes"
+                        },
+                        "prev": {
+                          "set_country_flag": "humble_pie_achievement"
+                        }
+                      }
+                    }
+                  }
+                },
+                "ai_weight": {
+                  "weight": "1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_imperium_war_goals.txt",
+    "_line_number": 275
+  },
+  "wg_humiliation_imperium": {
+    "wg_humiliation_imperium": {
+      "casus_belli": "cb_event",
+      "cede_claims": "no",
+      "hide_if_no_cb": "no",
+      "set_defender_wargoal": "wg_imperial_rebuke",
+      "allowed_peace_offers": {},
+      "surrender_acceptance": "-50",
+      "potential": {
+        "always": "no"
+      },
+      "possible": {
+        "always": "yes"
+      },
+      "on_accept": {
+        "custom_tooltip": "wg_humiliation_imperium_accept",
+        "hidden_effect": {
+          "add_imperial_authority": "-25",
+          "add_resource": {
+            "from": {
+              "add_modifier": {
+                "if": {
+                  "limit": {
+                    "set_policy": {
+                      "policy": "diplomatic_stance",
+                      "option": "diplo_stance_belligerent",
+                      "cooldown": "yes"
+                    },
+                    "prev": {
+                      "set_country_flag": "humble_pie_achievement"
+                    }
+                  }
+                }
+              }
+            },
+            "ai_weight": {
+              "weight": "1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_imperium_war_goals.txt",
+    "_line_number": 329
+  },
+  "wg_take_galatron_imperium": {
+    "wg_take_galatron_imperium": {
+      "casus_belli": "cb_galatron",
+      "hide_if_no_cb": "yes",
+      "release_occupied_systems_on_status_quo": "no",
+      "set_defender_wargoal": "wg_humiliation_imperium",
+      "allowed_peace_offers": {},
+      "surrender_acceptance": "-40",
+      "potential": {
+        "is_galactic_emperor": "yes",
+        "from": {},
+        "possible": {
+          "custom_tooltip": {
+            "fail_text": "has_claimed_all_systems",
+            "from": {
+              "is_country_type": "default",
+              "any_owned_planet": {
+                "is_colony": "yes",
+                "root": {
+                  "NOT": {}
+                }
+              }
+            },
+            "custom_tooltip": {
+              "fail_text": "cannot_use_against_emperor",
+              "OR": {
+                "from": {
+                  "is_galactic_community_member": "no"
+                }
+              },
+              "custom_tooltip": {
+                "fail_text": "pax_galactica_active",
+                "NOT": {}
+              },
+              "on_accept": {
+                "hidden_effect": {
+                  "from": {
+                    "add_threat": {
+                      "who": "root",
+                      "amount": "0.5"
+                    }
+                  }
+                },
+                "from": {
+                  "add_modifier": {
+                    "hidden_effect": {
+                      "hidden_effect": {
+                        "add_relic": "r_galatron"
+                      },
+                      "on_status_quo": {
+                        "from": {
+                          "set_closed_borders": {
+                            "who": "prev",
+                            "status": "no"
+                          }
+                        }
+                      },
+                      "ai_weight": {
+                        "weight": "10",
+                        "modifier": {
+                          "factor": "0",
+                          "has_ethic": "ethic_gestalt_consciousness"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_imperium_war_goals.txt",
+    "_line_number": 379
+  },
+  "wg_expel_corp_imperium": {
+    "wg_expel_corp_imperium": {
+      "casus_belli": "cb_expel_corp",
+      "hide_if_no_cb": "yes",
+      "release_occupied_systems_on_status_quo": "no",
+      "set_defender_wargoal": "wg_humiliation_imperium",
+      "allowed_peace_offers": {},
+      "surrender_acceptance": "-50",
+      "potential": {
+        "is_galactic_emperor": "yes",
+        "from": {},
+        "possible": {
+          "custom_tooltip": {
+            "fail_text": "has_claimed_all_systems",
+            "from": {
+              "is_country_type": "default",
+              "any_owned_planet": {
+                "is_colony": "yes",
+                "root": {
+                  "NOT": {}
+                }
+              }
+            },
+            "custom_tooltip": {
+              "fail_text": "cannot_use_against_emperor",
+              "OR": {
+                "from": {
+                  "is_galactic_community_member": "no"
+                }
+              },
+              "custom_tooltip": {
+                "fail_text": "pax_galactica_active",
+                "NOT": {}
+              },
+              "on_status_quo": {
+                "hidden_effect": {
+                  "every_owned_planet": {
+                    "limit": {
+                      "branch_office_owner": {
+                        "close_branch_office": "yes"
+                      }
+                    },
+                    "custom_tooltip": "wg_expel_corp_status_quo_effects"
+                  },
+                  "on_accept": {
+                    "hidden_effect": {
+                      "every_owned_planet": {
+                        "limit": {
+                          "close_branch_office": "yes",
+                          "owner": {}
+                        },
+                        "custom_tooltip": "wg_expel_corp_effects"
+                      },
+                      "ai_weight": {
+                        "weight": "10"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_imperium_war_goals.txt",
+    "_line_number": 458
+  },
+  "wg_hostile_takeover_imperium": {
+    "wg_hostile_takeover_imperium": {
+      "casus_belli": "cb_hostile_takeover",
+      "hide_if_no_cb": "yes",
+      "release_occupied_systems_on_status_quo": "no",
+      "set_defender_wargoal": "wg_humiliation_imperium",
+      "allowed_peace_offers": {},
+      "surrender_acceptance": "-75",
+      "potential": {
+        "is_galactic_emperor": "yes",
+        "from": {},
+        "possible": {
+          "custom_tooltip": {
+            "fail_text": "has_claimed_all_systems",
+            "from": {
+              "is_country_type": "default",
+              "any_owned_planet": {
+                "is_colony": "yes",
+                "root": {
+                  "NOT": {}
+                }
+              }
+            },
+            "custom_tooltip": {
+              "fail_text": "cannot_use_against_emperor",
+              "OR": {
+                "from": {
+                  "is_galactic_community_member": "no"
+                }
+              },
+              "custom_tooltip": {
+                "fail_text": "pax_galactica_active",
+                "NOT": {}
+              },
+              "on_accept": {
+                "every_country": {
+                  "limit": {
+                    "OR": {
+                      "has_commercial_pact": "root",
+                      "is_in_federation_with": "root"
+                    }
+                  },
+                  "every_owned_planet": {
+                    "limit": {
+                      "has_branch_office": "from"
+                    },
+                    "hidden_effect": {
+                      "close_branch_office": "yes",
+                      "establish_branch_office": "root",
+                      "custom_tooltip": "wg_seize_branch_office_effects"
+                    }
+                  }
+                }
+              },
+              "ai_weight": {
+                "weight": "10"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_imperium_war_goals.txt",
+    "_line_number": 528
+  },
+  "wg_steal_galatron_imperium": {
+    "wg_steal_galatron_imperium": {
+      "casus_belli": "cb_steal_galatron",
+      "hide_if_no_cb": "yes",
+      "release_occupied_systems_on_status_quo": "no",
+      "set_defender_wargoal": "wg_humiliation_imperium",
+      "allowed_peace_offers": {},
+      "surrender_acceptance": "-40",
+      "potential": {
+        "is_galactic_emperor": "yes",
+        "from": {},
+        "possible": {
+          "custom_tooltip": {
+            "fail_text": "has_claimed_all_systems",
+            "from": {
+              "is_country_type": "default",
+              "any_owned_planet": {
+                "is_colony": "yes",
+                "root": {
+                  "NOT": {}
+                }
+              }
+            },
+            "custom_tooltip": {
+              "fail_text": "cannot_use_against_emperor",
+              "OR": {
+                "from": {
+                  "is_galactic_community_member": "no"
+                }
+              },
+              "custom_tooltip": {
+                "fail_text": "pax_galactica_active",
+                "NOT": {}
+              },
+              "on_accept": {
+                "hidden_effect": {
+                  "from": {
+                    "add_threat": {
+                      "who": "root",
+                      "amount": "0.5"
+                    }
+                  }
+                },
+                "if": {
+                  "limit": {
+                    "from": {
+                      "add_modifier": {
+                        "hidden_effect": {
+                          "hidden_effect": {
+                            "add_relic": "r_galatron"
+                          },
+                          "else": {
+                            "from": {
+                              "remove_modifier": "galatron_modifier",
+                              "add_modifier": {
+                                "hidden_effect": {
+                                  "add_modifier": {}
+                                },
+                                "on_status_quo": {
+                                  "hidden_effect": {},
+                                  "ai_weight": {
+                                    "weight": "10",
+                                    "modifier": {
+                                      "factor": "0",
+                                      "has_ethic": "ethic_gestalt_consciousness"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_imperium_war_goals.txt",
+    "_line_number": 603
+  }
+}

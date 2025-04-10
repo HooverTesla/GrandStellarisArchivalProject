@@ -1,0 +1,404 @@
+{
+  "l_english": {
+    "l_english": {
+      "name": "SETTINGS_VOICE_TYPE_default_advisor_voice_type",
+      "icon": "gfx/interface/icons/ethics/ethic_middle.dds",
+      "weight": {
+        "base": "1 # Fallback"
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 14
+  },
+  "l_authoritarian": {
+    "l_authoritarian": {
+      "name": "ethic_authoritarian",
+      "icon": "gfx/interface/icons/ethics/ethic_authoritarian.dds",
+      "playable": {
+        "local_has_dlc": "Synthetic Dawn Story Pack"
+      },
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "6",
+          "has_ethic": "ethic_fanatic_authoritarian"
+        }
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 24
+  },
+  "l_egalitarian": {
+    "l_egalitarian": {
+      "name": "ethic_egalitarian",
+      "icon": "gfx/interface/icons/ethics/ethic_egalitarian.dds",
+      "playable": {
+        "local_has_dlc": "Synthetic Dawn Story Pack"
+      },
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "6",
+          "has_ethic": "ethic_fanatic_egalitarian"
+        }
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 45
+  },
+  "l_xenophobe": {
+    "l_xenophobe": {
+      "name": "ethic_xenophobe",
+      "icon": "gfx/interface/icons/ethics/ethic_xenophobe.dds",
+      "playable": {
+        "local_has_dlc": "Synthetic Dawn Story Pack"
+      },
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "6",
+          "has_ethic": "ethic_fanatic_xenophobe"
+        }
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 66
+  },
+  "l_xenophile": {
+    "l_xenophile": {
+      "name": "ethic_xenophile",
+      "icon": "gfx/interface/icons/ethics/ethic_xenophile.dds",
+      "playable": {
+        "local_has_dlc": "Synthetic Dawn Story Pack"
+      },
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "4",
+          "OR": {
+            "has_ethic": "ethic_fanatic_xenophile",
+            "has_origin": "origin_storm_chasers"
+          }
+        }
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 87
+  },
+  "l_militarist": {
+    "l_militarist": {
+      "name": "ethic_militarist",
+      "icon": "gfx/interface/icons/ethics/ethic_militarist.dds",
+      "playable": {
+        "local_has_dlc": "Synthetic Dawn Story Pack"
+      },
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "6",
+          "has_ethic": "ethic_fanatic_militarist"
+        }
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 111
+  },
+  "l_pacifist": {
+    "l_pacifist": {
+      "name": "ethic_pacifist",
+      "icon": "gfx/interface/icons/ethics/ethic_pacifist.dds",
+      "playable": {
+        "local_has_dlc": "Synthetic Dawn Story Pack"
+      },
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "4",
+          "has_ethic": "ethic_fanatic_pacifist"
+        }
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 132
+  },
+  "l_spiritualist": {
+    "l_spiritualist": {
+      "name": "ethic_spiritualist",
+      "icon": "gfx/interface/icons/ethics/ethic_spiritualist.dds",
+      "playable": {
+        "local_has_dlc": "Synthetic Dawn Story Pack"
+      },
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "4",
+          "OR": {
+            "has_ethic": "ethic_fanatic_spiritualist",
+            "has_origin": "origin_cybernetic_creed"
+          }
+        }
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 153
+  },
+  "l_materialist": {
+    "l_materialist": {
+      "name": "ethic_materialist",
+      "icon": "gfx/interface/icons/ethics/ethic_materialist.dds",
+      "playable": {
+        "local_has_dlc": "Synthetic Dawn Story Pack"
+      },
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "4",
+          "has_ethic": "ethic_fanatic_materialist"
+        }
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 177
+  },
+  "l_hivemind": {
+    "l_hivemind": {
+      "name": "auth_hive_mind",
+      "icon": "gfx/interface/icons/governments/authorities/auth_hive_mind.dds",
+      "playable": {
+        "local_has_dlc": "Synthetic Dawn Story Pack"
+      },
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "8",
+          "has_authority": "auth_hive_mind"
+        }
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 198
+  },
+  "l_machine": {
+    "l_machine": {
+      "name": "auth_machine_intelligence",
+      "icon": "gfx/interface/icons/governments/authorities/auth_machine_intelligence.dds",
+      "playable": {
+        "local_has_dlc": "Synthetic Dawn Story Pack"
+      },
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "8",
+          "has_authority": "auth_machine_intelligence"
+        }
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 215
+  },
+  "l_the_diplomat": {
+    "l_the_diplomat": {
+      "name": "vo_the_diplomat",
+      "icon": "gfx/interface/icons/advisor_vo/vo_the_diplomat.dds",
+      "playable": {
+        "local_has_dlc": "Humanoids Species Pack"
+      },
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "8",
+          "has_country_flag": "human_1"
+        }
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 232
+  },
+  "l_the_soldier": {
+    "l_the_soldier": {
+      "name": "vo_the_soldier",
+      "icon": "gfx/interface/icons/advisor_vo/vo_the_soldier.dds",
+      "playable": {
+        "local_has_dlc": "Humanoids Species Pack"
+      },
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "8",
+          "has_country_flag": "human_2"
+        }
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 249
+  },
+  "l_the_technocrat": {
+    "l_the_technocrat": {
+      "name": "vo_the_technocrat",
+      "icon": "gfx/interface/icons/advisor_vo/vo_the_technocrat.dds",
+      "playable": {
+        "local_has_dlc": "Humanoids Species Pack"
+      },
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "8",
+          "has_country_flag": "the_voor"
+        }
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 266
+  },
+  "l_evil_corp": {
+    "l_evil_corp": {
+      "name": "vo_evil_corp",
+      "icon": "gfx/interface/icons/advisor_vo/vo_evil_corp.dds",
+      "playable": {
+        "local_has_dlc": "Megacorp"
+      },
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "factor": "100",
+          "has_country_flag": "chinorr_combine"
+        }
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 283
+  },
+  "l_slick_corp": {
+    "l_slick_corp": {
+      "name": "vo_slick_corp",
+      "icon": "gfx/interface/icons/advisor_vo/vo_slick_corp.dds",
+      "playable": {
+        "local_has_dlc": "Megacorp"
+      },
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "4",
+          "OR": {
+            "has_valid_civic": "civic_media_conglomerate"
+          }
+        }
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 312
+  },
+  "l_the_worker": {
+    "l_the_worker": {
+      "name": "vo_the_worker",
+      "icon": "gfx/interface/icons/advisor_vo/vo_the_worker.dds",
+      "playable": {
+        "local_has_dlc": "Megacorp"
+      },
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "8",
+          "OR": {
+            "has_valid_civic": "civic_shared_burden",
+            "is_worker_coop_empire": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 337
+  },
+  "l_lithoid_vir": {
+    "l_lithoid_vir": {
+      "name": "vo_lithoid_voice",
+      "icon": "gfx/interface/icons/traits/trait_lithoid.dds",
+      "playable": {
+        "local_has_dlc": "Lithoids Species Pack"
+      },
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "10",
+          "is_lithoid_empire": "yes"
+        }
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 365
+  },
+  "l_necroid_vir": {
+    "l_necroid_vir": {
+      "name": "vo_necroid_voice",
+      "icon": "gfx/interface/icons/traits/trait_necrophage.dds",
+      "playable": {
+        "local_has_dlc": "Necroids Species Pack"
+      },
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "4",
+          "OR": {
+            "has_valid_civic": "civic_machine_memorialist"
+          }
+        }
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 382
+  },
+  "l_aqu_vir": {
+    "l_aqu_vir": {
+      "name": "vo_aquatics_voice",
+      "icon": "gfx/interface/icons/traits/trait_aquatic.dds",
+      "playable": {
+        "local_has_dlc": "Aquatics Species Pack"
+      },
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "10",
+          "aquatics_portrait": "yes"
+        }
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 413
+  },
+  "l_tox_vir": {
+    "l_tox_vir": {
+      "name": "vo_toxoids_voice",
+      "icon": "gfx/interface/icons/traits/trait_noxious.dds",
+      "playable": {
+        "local_has_dlc": "Toxoids Species Pack"
+      },
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "10",
+          "toxoids_portrait": "yes"
+        }
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 430
+  },
+  "l_cybernetic_vir": {
+    "l_cybernetic_vir": {
+      "name": "vo_cybernetic_voice",
+      "icon": "gfx/interface/icons/traits/trait_cybernetic.dds",
+      "playable": {
+        "local_has_dlc": "The Machine Age"
+      },
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "10",
+          "cybernetic_portrait": "yes"
+        }
+      }
+    },
+    "_source_file": "00_advisor_voice_types.txt",
+    "_line_number": 447
+  }
+}

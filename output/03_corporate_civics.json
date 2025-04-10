@@ -1,0 +1,1711 @@
+{
+  "civic_franchising": {
+    "civic_franchising": {
+      "potential": {
+        "OR": {
+          "authority": {
+            "civics": {}
+          },
+          "random_weight": {
+            "ai_weight": {
+              "base": "@ai_civic_default_base_weight",
+              "modifier": {
+                "factor": "@ai_civic_personality_mismatch_factor",
+                "OR": {
+                  "has_ai_personality": "xenophobic_isolationists"
+                }
+              }
+            },
+            "description": "civic_tooltip_franchising_effects",
+            "modifier": {
+              "divided_patrongage_max_subjects": "1"
+            },
+            "swap_type": {
+              "description": "civic_tooltip_franchising_effects",
+              "trigger": {
+                "host_has_dlc": "Overlord"
+              },
+              "modifier": {
+                "planet_max_subject_holding_buildings_add": "1",
+                "specialist_subject_conversion_time_mult": "-0.33"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 26
+  },
+  "civic_trading_posts": {
+    "civic_trading_posts": {
+      "potential": {
+        "OR": {
+          "authority": {
+            "civics": {}
+          },
+          "random_weight": {
+            "ai_weight": {
+              "base": "@ai_civic_default_base_weight",
+              "modifier": {
+                "factor": "@ai_civic_personality_mismatch_factor",
+                "OR": {
+                  "has_ai_personality": "fanatic_purifiers"
+                }
+              }
+            },
+            "modifier": {
+              "country_starbase_capacity_add": "4",
+              "starbase_trade_collection_range_add": "1",
+              "starbase_trade_protection_add": "8"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 69
+  },
+  "civic_media_conglomerate": {
+    "civic_media_conglomerate": {
+      "potential": {
+        "OR": {
+          "authority": {
+            "civics": {}
+          },
+          "possible": {
+            "civics": {},
+            "random_weight": {
+              "ai_weight": {
+                "base": "@ai_civic_default_base_weight",
+                "modifier": {
+                  "factor": "@ai_civic_personality_match_factor",
+                  "OR": {
+                    "has_ai_personality": "fanatic_purifiers"
+                  }
+                }
+              },
+              "modifier": {
+                "country_war_exhaustion_mult": "-0.05",
+                "pop_citizen_happiness": "0.05"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 100
+  },
+  "civic_naval_contractors": {
+    "civic_naval_contractors": {
+      "potential": {
+        "OR": {
+          "authority": {
+            "civics": {}
+          },
+          "random_weight": {
+            "ai_weight": {
+              "base": "@ai_civic_default_base_weight",
+              "modifier": {
+                "factor": "@ai_civic_personality_forbid_factor",
+                "OR": {
+                  "has_ai_personality": "fanatic_purifiers"
+                }
+              }
+            },
+            "possible": {
+              "ethics": {
+                "OR": {
+                  "text": "civic_tooltip_militarist",
+                  "value": "ethic_fanatic_militarist"
+                }
+              },
+              "civics": {},
+              "modifier": {
+                "country_naval_cap_mult": "0.15"
+              },
+              "swap_type": {
+                "trigger": {
+                  "host_has_dlc": "Overlord"
+                },
+                "modifier": {
+                  "country_enclave_capacity_add": "2"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 131
+  },
+  "civic_free_traders": {
+    "civic_free_traders": {
+      "potential": {
+        "OR": {
+          "authority": {
+            "civics": {}
+          },
+          "random_weight": {
+            "ai_weight": {
+              "base": "@ai_civic_default_base_weight",
+              "modifier": {
+                "factor": "@ai_civic_personality_forbid_factor",
+                "OR": {
+                  "has_ai_personality": "fanatic_purifiers"
+                }
+              }
+            },
+            "modifier": {
+              "trade_value_mult": "0.10",
+              "branch_office_value_mult": "0.10"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 192
+  },
+  "civic_private_prospectors": {
+    "civic_private_prospectors": {
+      "potential": {
+        "OR": {
+          "authority": {
+            "civics": {}
+          },
+          "possible": {
+            "civics": {
+              "NOR": {
+                "text": "civic_tooltip_not_guided",
+                "value": "civic_machine_guided_sapience"
+              }
+            }
+          },
+          "random_weight": {
+            "ai_weight": {
+              "base": "@ai_civic_default_base_weight",
+              "modifier": {
+                "factor": "@ai_civic_personality_forbid_factor",
+                "OR": {}
+              }
+            },
+            "modifier": {
+              "empire_size_systems_mult": "-0.25",
+              "empire_size_colonies_mult": "-0.50"
+            },
+            "description": "civic_tooltip_private_prospectors_effects",
+            "_comments": [
+              "# unlocks sponsored_colonizer ship size"
+            ]
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 237
+  },
+  "civic_gospel_of_the_masses": {
+    "civic_gospel_of_the_masses": {
+      "potential": {
+        "OR": {
+          "authority": {
+            "civics": {}
+          },
+          "random_weight": {
+            "ai_weight": {
+              "base": "@ai_civic_default_base_weight",
+              "modifier": {
+                "factor": "@ai_civic_personality_forbid_factor",
+                "OR": {
+                  "has_ai_personality": "fanatic_purifiers"
+                }
+              }
+            },
+            "possible": {
+              "ethics": {
+                "OR": {
+                  "text": "civic_tooltip_spiritualist",
+                  "value": "ethic_fanatic_spiritualist"
+                }
+              }
+            },
+            "modifier": {
+              "pop_ethic_spiritualist_attraction_mult": "0.5",
+              "job_preacher_trade_value_add": "1"
+            },
+            "description": "civic_tooltip_gospel_of_the_masses_effects"
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 292
+  },
+  "civic_ruthless_competition": {
+    "civic_ruthless_competition": {
+      "potential": {
+        "OR": {
+          "authority": {
+            "civics": {}
+          },
+          "possible": {
+            "civics": {
+              "NOR": {
+                "value": "civic_worker_coop"
+              }
+            }
+          },
+          "random_weight": {
+            "ai_weight": {
+              "base": "@ai_civic_default_base_weight",
+              "modifier": {
+                "factor": "@ai_civic_personality_forbid_factor",
+                "OR": {
+                  "has_ai_personality": "fanatic_purifiers"
+                }
+              }
+            },
+            "modifier": {
+              "species_leader_exp_gain": "0.1",
+              "intel_decryption_add": "1",
+              "country_leader_pool_size": "1"
+            },
+            "swap_type": {
+              "trigger": {
+                "has_paragon_dlc": "yes"
+              },
+              "modifier": {
+                "leader_trait_selection_options_add": "1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 344
+  },
+  "civic_criminal_heritage": {
+    "civic_criminal_heritage": {
+      "modification": "no",
+      "potential": {
+        "OR": {
+          "authority": {
+            "civics": {}
+          },
+          "random_weight": {
+            "base": "@civic_default_random_weight",
+            "modifier": {
+              "factor": "0",
+              "blocks_disruptive_gameplay": "yes"
+            }
+          },
+          "modifier": {
+            "planet_branch_offices_cost_mult": "-0.20",
+            "spy_network_daily_value_mult": "0.20",
+            "intel_decryption_add": "1"
+          },
+          "description": "civic_tooltip_criminal_heritage_effects",
+          "swap_type": {
+            "trigger": {
+              "has_first_contact_dlc": "yes"
+            },
+            "description": "civic_tooltip_criminal_heritage_effects",
+            "modifier": {
+              "ship_cloaking_strength_add": "1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 407
+  },
+  "civic_private_military_companies": {
+    "civic_private_military_companies": {
+      "potential": {
+        "OR": {
+          "authority": {
+            "civics": {}
+          },
+          "random_weight": {
+            "ai_weight": {
+              "base": "@ai_civic_default_base_weight",
+              "modifier": {
+                "factor": "@ai_civic_personality_forbid_factor",
+                "OR": {
+                  "has_ai_personality": "fanatic_purifiers"
+                }
+              }
+            },
+            "possible": {
+              "ethics": {
+                "OR": {
+                  "text": "civic_tooltip_militarist",
+                  "value": "ethic_fanatic_militarist"
+                }
+              },
+              "civics": {},
+              "modifier": {
+                "commander_initial_skill": "1",
+                "army_starting_experience_add": "100",
+                "army_damage_mult": "0.2",
+                "armies_upkeep_mult": "-0.2"
+              },
+              "swap_type": {
+                "trigger": {
+                  "host_has_dlc": "Overlord"
+                },
+                "modifier": {
+                  "country_enclave_capacity_add": "1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 440
+  },
+  "civic_indentured_assets": {
+    "civic_indentured_assets": {
+      "potential": {
+        "OR": {
+          "authority": {
+            "civics": {}
+          },
+          "random_weight": {
+            "ai_weight": {
+              "base": "@ai_civic_default_base_weight",
+              "modifier": {
+                "factor": "@ai_civic_personality_forbid_factor",
+                "OR": {
+                  "has_ai_personality": "democratic_crusaders"
+                }
+              }
+            },
+            "possible": {
+              "ethics": {
+                "OR": {
+                  "text": "civic_tooltip_authoritarian",
+                  "value": "ethic_fanatic_authoritarian"
+                }
+              },
+              "civics": {
+                "NOR": {
+                  "value": "civic_pleasure_seekers"
+                }
+              }
+            },
+            "modifier": {
+              "planet_jobs_slave_produces_mult": "0.10",
+              "country_pop_enslaved_mult": "0.35"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 504
+  },
+  "civic_brand_loyalty": {
+    "civic_brand_loyalty": {
+      "potential": {
+        "OR": {
+          "authority": {
+            "civics": {}
+          },
+          "possible": {
+            "civics": {},
+            "random_weight": {
+              "ai_weight": {
+                "base": "@ai_civic_default_base_weight",
+                "modifier": {
+                  "factor": "@ai_civic_personality_mismatch_factor",
+                  "OR": {
+                    "has_ai_personality": "fanatic_befrienders"
+                  }
+                }
+              },
+              "modifier": {
+                "country_unity_produces_mult": "0.15",
+                "country_edict_fund_add": "25"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 561
+  },
+  "civic_public_relations_specialists": {
+    "civic_public_relations_specialists": {
+      "playable": {
+        "potential": {
+          "OR": {
+            "authority": {
+              "civics": {}
+            },
+            "possible": {
+              "civics": {},
+              "random_weight": {
+                "ai_weight": {
+                  "base": "@ai_civic_default_base_weight",
+                  "modifier": {
+                    "factor": "@ai_civic_personality_forbid_factor",
+                    "OR": {
+                      "has_ai_personality": "fanatic_purifiers"
+                    }
+                  }
+                },
+                "modifier": {
+                  "envoys_add": "2",
+                  "diplo_weight_mult": "0.3",
+                  "country_trust_cap_add": "15",
+                  "envoy_improve_relations_mult": "0.3"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 601
+  },
+  "civic_death_cult_corporate": {
+    "civic_death_cult_corporate": {
+      "playable": {
+        "description": "civic_tooltip_death_cult_effects",
+        "potential": {
+          "OR": {
+            "authority": {
+              "civics": {}
+            },
+            "random_weight": {
+              "ai_weight": {
+                "base": "@ai_civic_default_base_weight",
+                "modifier": {
+                  "factor": "@ai_civic_personality_forbid_factor",
+                  "OR": {
+                    "has_ai_personality": "fanatic_befrienders"
+                  }
+                }
+              },
+              "possible": {
+                "origin": {
+                  "NOR": {
+                    "value": "origin_cybernetic_creed"
+                  }
+                },
+                "civics": {
+                  "NOR": {
+                    "text": "civic_tooltip_not_dimensional_worship",
+                    "value": "civic_corporate_dimensional_worship"
+                  }
+                },
+                "ethics": {
+                  "OR": {
+                    "text": "civic_tooltip_spiritualist",
+                    "value": "ethic_fanatic_spiritualist"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 649
+  },
+  "civic_corporate_catalytic_processing": {
+    "civic_corporate_catalytic_processing": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_tooltip_catalytic_processing_corporate_effects",
+          "potential": {
+            "OR": {
+              "authority": {
+                "civics": {}
+              },
+              "possible": {
+                "origin": {
+                  "NOT": {
+                    "value": "origin_lithoid"
+                  }
+                },
+                "civics": {
+                  "NOT": {
+                    "value": "civic_catalytic_processing"
+                  }
+                }
+              },
+              "random_weight": {
+                "ai_weight": {
+                  "base": "0\t\t\t# Too dangerous to switch mid-game"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 715
+  },
+  "civic_corporate_hedonism": {
+    "civic_corporate_hedonism": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_tooltip_corporate_hedonism_effects",
+          "potential": {
+            "ethics": {
+              "OR": {
+                "authority": {
+                  "civics": {}
+                },
+                "possible": {
+                  "civics": {
+                    "NOR": {
+                      "value": "civic_slaver_guilds"
+                    }
+                  }
+                },
+                "random_weight": {
+                  "ai_weight": {
+                    "base": "@ai_civic_default_base_weight",
+                    "modifier": {
+                      "factor": "@ai_civic_personality_mismatch_factor",
+                      "OR": {
+                        "has_ai_personality": "fanatic_purifiers"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 743
+  },
+  "civic_corporate_anglers": {
+    "civic_corporate_anglers": {
+      "modification": {
+        "add": {
+          "has_civic": "civic_anglers"
+        },
+        "remove": {
+          "always": "no"
+        }
+      },
+      "alternate_civic_version": "civic_anglers",
+      "playable": {
+        "ai_playable": {
+          "description": "civic_tooltip_anglers_effects",
+          "potential": {
+            "OR": {
+              "authority": {
+                "civics": {},
+                "species_archetype": {},
+                "possible": {
+                  "species_archetype": {
+                    "origin": {
+                      "NOR": {
+                        "value": "origin_subterranean"
+                      }
+                    },
+                    "civics": {
+                      "NOT": {
+                        "value": "civic_anglers"
+                      }
+                    }
+                  },
+                  "traits": {
+                    "trait": "trait_aquatic"
+                  },
+                  "random_weight": {
+                    "base": "@civic_default_random_weight"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 791
+  },
+  "civic_corporate_machine_anglers": {
+    "civic_corporate_machine_anglers": {
+      "modification": "no",
+      "playable": {
+        "ai_playable": {
+          "description": "civic_tooltip_machine_anglers_effects",
+          "potential": {
+            "OR": {
+              "authority": {
+                "civics": {},
+                "species_archetype": {},
+                "possible": {
+                  "species_archetype": {
+                    "origin": {
+                      "NOR": {
+                        "value": "origin_subterranean_machines"
+                      }
+                    }
+                  },
+                  "traits": {
+                    "trait": "trait_robot_aquatic"
+                  },
+                  "random_weight": {
+                    "base": "@civic_default_random_weight"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 837
+  },
+  "civic_corporate_crafters": {
+    "civic_corporate_crafters": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_tooltip_crafters_effects",
+          "potential": {
+            "OR": {
+              "authority": {
+                "civics": {}
+              },
+              "possible": {
+                "civics": {},
+                "random_weight": {
+                  "base": "@civic_uncommon_random_weight"
+                },
+                "ai_weight": {
+                  "base": "@ai_civic_uncommon_base_weight",
+                  "modifier": {
+                    "factor": "@ai_civic_personality_forbid_factor",
+                    "OR": {
+                      "has_ai_personality": "slaving_despots"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 868
+  },
+  "civic_permanent_employment": {
+    "civic_permanent_employment": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_tooltip_permanent_employment_effects",
+          "potential": {
+            "OR": {
+              "authority": {
+                "civics": {}
+              },
+              "possible": {
+                "ethics": {
+                  "NOR": {
+                    "text": "civic_tooltip_not_egalitarian",
+                    "value": "ethic_fanatic_egalitarian"
+                  }
+                },
+                "origin": {
+                  "NOR": {
+                    "value": "origin_synthetic_fertility"
+                  }
+                },
+                "species_archetype": {},
+                "random_weight": {
+                  "ai_weight": {
+                    "base": "@ai_civic_uncommon_base_weight",
+                    "modifier": {
+                      "factor": "@ai_civic_personality_forbid_factor",
+                      "OR": {
+                        "has_ai_personality": "democratic_crusaders"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 913
+  },
+  "civic_corporate_relentless_industrialists": {
+    "civic_corporate_relentless_industrialists": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_tooltip_relentless_industrialists_effects",
+          "potential": {
+            "OR": {
+              "authority": {
+                "civics": {}
+              },
+              "possible": {
+                "ethics": {
+                  "OR": {
+                    "text": "civic_tooltip_materialist",
+                    "value": "ethic_fanatic_materialist"
+                  }
+                },
+                "origin": {
+                  "civics": {
+                    "NOR": {
+                      "value": "civic_relentless_industrialists"
+                    }
+                  }
+                },
+                "random_weight": {
+                  "base": "@civic_uncommon_random_weight"
+                },
+                "ai_weight": {
+                  "base": "@ai_civic_uncommon_base_weight",
+                  "modifier": {
+                    "factor": "@ai_civic_personality_forbid_factor",
+                    "OR": {
+                      "has_ai_personality": "harmonious_hierarchy"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 972
+  },
+  "civic_corporate_toxic_baths": {
+    "civic_corporate_toxic_baths": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_tooltip_toxic_baths_effects",
+          "potential": {
+            "OR": {
+              "authority": {
+                "civics": {},
+                "species_archetype": {
+                  "NOT": {
+                    "value": "MACHINE"
+                  }
+                }
+              },
+              "possible": {
+                "origin": {
+                  "civics": {},
+                  "random_weight": {
+                    "base": "@civic_uncommon_random_weight"
+                  },
+                  "ai_weight": {
+                    "base": "@ai_civic_uncommon_base_weight",
+                    "modifier": {
+                      "factor": "@ai_civic_personality_forbid_factor",
+                      "OR": {
+                        "has_ai_personality": "fanatic_befrienders"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 1038
+  },
+  "civic_corporate_scavengers": {
+    "civic_corporate_scavengers": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_scavengers_effects",
+          "potential": {
+            "OR": {
+              "authority": {
+                "civics": {}
+              },
+              "possible": {
+                "civics": {
+                  "NOT": {
+                    "value": "civic_scavengers"
+                  }
+                }
+              },
+              "modifier": {
+                "ships_alloys_upkeep_mult": "-0.05",
+                "planet_building_refund_mult": "0.10",
+                "megastructure_dismantle_refund_mult": "0.10"
+              },
+              "random_weight": {
+                "base": "@civic_default_random_weight"
+              },
+              "ai_weight": {
+                "base": "@ai_civic_default_base_weight",
+                "modifier": {
+                  "factor": "@ai_civic_personality_forbid_factor",
+                  "OR": {
+                    "has_ai_personality": "xenophobic_isolationists"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 1095
+  },
+  "civic_corporate_ascensionists": {
+    "civic_corporate_ascensionists": {
+      "playable": {
+        "OR": {
+          "host_has_dlc": "Utopia",
+          "has_astral_planes_dlc": "yes"
+        }
+      },
+      "ai_playable": {
+        "OR": {
+          "host_has_dlc": "Utopia",
+          "has_astral_planes_dlc": "yes"
+        }
+      },
+      "potential": {
+        "OR": {
+          "authority": {
+            "civics": {}
+          },
+          "possible": {
+            "ethics": {
+              "OR": {
+                "text": "civic_tooltip_spiritualist",
+                "value": "ethic_fanatic_spiritualist"
+              }
+            },
+            "civics": {
+              "NOT": {
+                "value": "civic_ascensionists"
+              }
+            }
+          },
+          "random_weight": {
+            "base": "@civic_uncommon_random_weight"
+          },
+          "ai_weight": {
+            "base": "@ai_civic_uncommon_base_weight",
+            "modifier": {
+              "factor": "@ai_civic_personality_mismatch_factor",
+              "OR": {
+                "has_ai_personality": "fanatic_purifiers"
+              }
+            }
+          },
+          "description": "civic_tooltip_ascensionists_effects",
+          "modifier": {
+            "planetary_ascension_effect_mult": "0.25",
+            "planetary_ascension_cost_mult": "-0.1",
+            "tradition_cost_empire_size_mult": "-0.25"
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 1150
+  },
+  "civic_privatized_exploration": {
+    "civic_privatized_exploration": {
+      "playable": {
+        "description": "civic_privatized_exploration_effects",
+        "potential": {
+          "OR": {
+            "authority": {
+              "civics": {},
+              "ethics": {
+                "NOT": {
+                  "value": "ethic_gestalt_consciousness"
+                }
+              }
+            },
+            "modification": {
+              "add": {
+                "has_technology": "tech_subspace_drive"
+              },
+              "remove": {
+                "has_technology": "tech_jump_drive_1"
+              }
+            },
+            "alternate_civic_version": "civic_eager_explorers",
+            "possible": {
+              "origin": {
+                "NOR": {
+                  "value": "origin_synthetic_fertility",
+                  "_comments": [
+                    "# No FC origins."
+                  ]
+                }
+              },
+              "civics": {
+                "NOT": {
+                  "value": "civic_eager_explorers"
+                },
+                "NOR": {
+                  "text": "civic_tooltip_not_guided",
+                  "value": "civic_machine_guided_sapience"
+                }
+              }
+            },
+            "modifier": {
+              "starbase_building_build_speed_mult": "0.3",
+              "starbase_module_build_speed_mult": "0.3",
+              "starbase_upgrade_speed_mult": "0.3",
+              "station_gatherers_produces_mult": "0.25",
+              "station_researchers_produces_mult": "0.25"
+            },
+            "random_weight": {
+              "base": "0"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 1219
+  },
+  "civic_corporate_hyperspace_specialty": {
+    "civic_corporate_hyperspace_specialty": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_corporate_hyperspace_specialty_effects",
+          "potential": {
+            "OR": {
+              "authority": {
+                "civics": {},
+                "possible": {
+                  "civics": {
+                    "NOR": {
+                      "text": "civic_tooltip_not_eager_explorers",
+                      "value": "civic_machine_exploration_protocol"
+                    }
+                  }
+                },
+                "modifier": {
+                  "planet_sensor_range_add": "2",
+                  "ship_speed_mult": "0.1",
+                  "country_physics_tech_research_speed": "0.15"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 1291
+  },
+  "civic_corporate_dimensional_worship": {
+    "civic_corporate_dimensional_worship": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_corporate_dimensional_worship_effects",
+          "potential": {
+            "ethics": {
+              "OR": {
+                "authority": {
+                  "civics": {},
+                  "possible": {
+                    "civics": {
+                      "NOR": {
+                        "text": "civic_tooltip_not_death_cult",
+                        "value": "civic_death_cult_corporate"
+                      }
+                    },
+                    "ethics": {
+                      "OR": {
+                        "text": "civic_tooltip_spiritualist",
+                        "value": "ethic_fanatic_spiritualist"
+                      }
+                    }
+                  },
+                  "modifier": {
+                    "country_astral_threads_produces_mult": "0.25"
+                  },
+                  "custom_tooltip_with_modifiers": "civic_dimensional_worship_effects_additional"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 1320
+  },
+  "civic_crusader_spirit_corporate": {
+    "civic_crusader_spirit_corporate": {
+      "playable": {
+        "ai_playable": {
+          "random_weight": {
+            "base": "4"
+          },
+          "description": "civic_tooltip_crusader_spirit_corporate_effects",
+          "potential": {
+            "OR": {
+              "authority": {
+                "civics": {},
+                "ethics": {
+                  "NOT": {
+                    "value": "ethic_gestalt_consciousness"
+                  }
+                }
+              },
+              "possible": {
+                "ethics": {
+                  "OR": {
+                    "text": "civic_tooltip_authoritarian_or_militarist",
+                    "value": "ethic_fanatic_authoritarian"
+                  },
+                  "NOR": {
+                    "text": "civic_tooltip_not_pacifist",
+                    "value": "ethic_fanatic_pacifist"
+                  }
+                }
+              },
+              "modifier": {
+                "local_trade_protection_add": "20",
+                "ships_upkeep_mult": "-0.05"
+              },
+              "swap_type": {
+                "trigger": {
+                  "host_has_dlc": "Overlord"
+                },
+                "description": "civic_tooltip_crusader_spirit_corporate_effects",
+                "modifier": {
+                  "country_enclave_capacity_add": "1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 1354
+  },
+  "civic_task_delegation_corporate": {
+    "civic_task_delegation_corporate": {
+      "playable": {
+        "ai_playable": {
+          "random_weight": {
+            "base": "4"
+          },
+          "potential": {
+            "OR": {
+              "authority": {
+                "civics": {},
+                "ethics": {
+                  "NOT": {
+                    "value": "ethic_gestalt_consciousness"
+                  }
+                }
+              },
+              "possible": {},
+              "modifier": {
+                "country_official_cap_add": "1",
+                "country_commander_cap_add": "1",
+                "country_scientist_cap_add": "1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 1403
+  },
+  "civic_private_healthcare_corporate": {
+    "civic_private_healthcare_corporate": {
+      "playable": {
+        "ai_playable": {
+          "random_weight": {
+            "base": "4"
+          },
+          "description": "civic_tooltip_civic_private_healthcare_corporate_effects",
+          "potential": {
+            "OR": {
+              "authority": {
+                "civics": {},
+                "ethics": {
+                  "NOT": {
+                    "value": "ethic_gestalt_consciousness"
+                  }
+                },
+                "origin": {
+                  "NOR": {
+                    "value": "origin_payback"
+                  }
+                }
+              },
+              "possible": {
+                "species_archetype": {
+                  "NOT": {
+                    "value": "MACHINE"
+                  }
+                }
+              },
+              "modifier": {
+                "leader_lifespan_add": "10"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 1429
+  },
+  "civic_memory_vault_corporate": {
+    "civic_memory_vault_corporate": {
+      "playable": {
+        "ai_playable": {
+          "random_weight": {
+            "base": "4"
+          },
+          "description": "civic_tooltip_memory_vault_corporate_effects",
+          "potential": {
+            "OR": {
+              "authority": {
+                "civics": {},
+                "ethics": {
+                  "NOT": {
+                    "value": "ethic_gestalt_consciousness"
+                  }
+                }
+              },
+              "possible": {
+                "civics": {
+                  "NOT": {
+                    "value": "civic_memory_vault"
+                  }
+                }
+              },
+              "modifier": {
+                "councilor_skill_add": "1",
+                "leader_initial_skill": "1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 1465
+  },
+  "civic_worker_coop": {
+    "civic_worker_coop": {
+      "potential": {
+        "OR": {
+          "authority": {
+            "civics": {}
+          },
+          "random_weight": {
+            "ai_weight": {
+              "base": "@ai_civic_default_base_weight",
+              "modifier": {
+                "factor": "@ai_civic_personality_match_factor",
+                "OR": {
+                  "has_ai_personality": "fanatic_purifiers"
+                }
+              }
+            },
+            "possible": {
+              "ethics": {
+                "OR": {
+                  "text": "civic_tooltip_egalitarian",
+                  "value": "ethic_fanatic_egalitarian"
+                },
+                "NOR": {
+                  "text": "civic_tooltip_not_xenophobe",
+                  "value": "ethic_fanatic_xenophobe"
+                }
+              },
+              "civics": {
+                "NOR": {
+                  "value": "civic_police_state"
+                }
+              }
+            },
+            "modifier": {
+              "election_term_years_mult": "-0.50",
+              "pop_demotion_time_mult": "-0.66",
+              "pop_ethic_egalitarian_attraction_mult": "0.5"
+            },
+            "description": "civic_tooltip_worker_coop_effects"
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 1496
+  },
+  "civic_corporate_dark_consortium": {
+    "civic_corporate_dark_consortium": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_corporate_dark_consortium_effects",
+          "potential": {
+            "OR": {
+              "authority": {
+                "value": "auth_corporate"
+              },
+              "civics": {
+                "value": "civic_galactic_sovereign_megacorp"
+              }
+            },
+            "civics": {
+              "NOT": {}
+            },
+            "modification": {
+              "moddable_conditions_custom_tooltip": "CIVIC_NOT_MODDABLE_ONLY_REMOVE",
+              "add": {
+                "has_technology": "tech_mine_dark_matter"
+              },
+              "remove": {
+                "fail_text": "CIVIC_LOCKED",
+                "NOT": {}
+              },
+              "alternate_civic_version": "civic_dark_consortium",
+              "random_weight": {
+                "base": "@civic_rare_random_weight"
+              },
+              "ai_weight": {
+                "base": "@civic_rare_random_weight"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 1557
+  },
+  "civic_augmentation_bazaars": {
+    "civic_augmentation_bazaars": {
+      "playable": {
+        "ai_playable": {
+          "random_weight": {
+            "base": "4"
+          },
+          "modification": "no",
+          "description": "civic_tooltip_augmentation_bazaars_effects",
+          "potential": {
+            "OR": {
+              "authority": {
+                "civics": {},
+                "ethics": {
+                  "NOT": {
+                    "value": "ethic_gestalt_consciousness"
+                  }
+                }
+              },
+              "possible": {
+                "origin": {
+                  "NOR": {
+                    "value": "origin_synthetic_fertility"
+                  }
+                },
+                "species_archetype": {},
+                "modifier": {
+                  "job_augmentor_trade_value_add": "4"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 1594
+  },
+  "civic_corporate_sovereign_guardianship": {
+    "civic_corporate_sovereign_guardianship": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_corporate_sovereign_guardianship_effects",
+          "potential": {
+            "ethics": {
+              "NOT": {
+                "value": "ethic_gestalt_consciousness"
+              }
+            },
+            "OR": {
+              "authority": {
+                "value": "auth_corporate"
+              },
+              "civics": {
+                "value": "civic_galactic_sovereign_megacorp"
+              }
+            }
+          },
+          "alternate_civic_version": "civic_sovereign_guardianship",
+          "modification": {
+            "add": {
+              "has_civic": "civic_sovereign_guardianship"
+            },
+            "remove": {
+              "always": "no"
+            }
+          },
+          "possible": {
+            "ethics": {
+              "OR": {
+                "text": "civic_tooltip_militarist",
+                "value": "ethic_fanatic_militarist"
+              }
+            },
+            "origin": {
+              "NOR": {
+                "value": "origin_broken_shackles"
+              }
+            },
+            "civics": {
+              "NOR": {
+                "text": "civic_tooltip_not_eager_explorers",
+                "value": "civic_machine_exploration_protocol"
+              }
+            }
+          },
+          "modifier": {
+            "empire_size_colonies_mult": "1",
+            "empire_size_branch_office_mult": "1",
+            "empire_size_systems_mult": "1.50",
+            "empire_size_pops_mult": "-0.50",
+            "empire_size_districts_mult": "-0.50",
+            "diplo_weight_mult": "0.2",
+            "planet_soldiers_unity_produces_add": "@sovereign_guardianship_soldier_unity"
+          },
+          "random_weight": {
+            "base": "@civic_rare_random_weight"
+          },
+          "ai_weight": {
+            "base": "@civic_rare_random_weight"
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 1630
+  },
+  "civic_corporate_guided_sapience": {
+    "civic_corporate_guided_sapience": {
+      "modification": "yes",
+      "playable": {
+        "ai_playable": {
+          "random_weight": {
+            "base": "@civic_rare_random_weight"
+          },
+          "potential": {
+            "authority": {
+              "value": "auth_corporate"
+            }
+          },
+          "possible": {
+            "origin": {
+              "NOR": {
+                "value": "origin_syncretic_evolution"
+              }
+            },
+            "ethics": {
+              "NOR": {
+                "text": "civic_tooltip_not_xenophobe",
+                "value": "ethic_fanatic_xenophobe"
+              }
+            },
+            "civics": {
+              "NOR": {
+                "text": "civic_tooltip_not_eager_explorers",
+                "value": "civic_machine_exploration_protocol"
+              }
+            }
+          },
+          "modifier": {
+            "terraforming_cost_mult": "-0.25",
+            "terraform_speed_mult": "0.25"
+          },
+          "description": "civic_tooltip_guided_sapience_effects",
+          "negative_description": "civic_tooltip_guided_sapience_negative_effects"
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 1706
+  },
+  "civic_corporate_toxic_baths_individual_machine": {
+    "civic_corporate_toxic_baths_individual_machine": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_tooltip_machine_toxic_baths_effects",
+          "potential": {
+            "OR": {
+              "authority": {
+                "civics": {},
+                "species_archetype": {
+                  "value": "MACHINE"
+                }
+              },
+              "possible": {
+                "origin": {
+                  "civics": {},
+                  "random_weight": {
+                    "base": "@civic_uncommon_random_weight"
+                  },
+                  "ai_weight": {
+                    "base": "@ai_civic_uncommon_base_weight",
+                    "modifier": {
+                      "factor": "@ai_civic_personality_forbid_factor",
+                      "OR": {
+                        "has_ai_personality": "fanatic_befrienders"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 1753
+  },
+  "civic_astrometeorology_megacorp": {
+    "civic_astrometeorology_megacorp": {
+      "playable": {
+        "has_cosmic_storms_dlc": "yes"
+      },
+      "ai_playable": {
+        "has_cosmic_storms_dlc": "yes"
+      },
+      "potential": {
+        "OR": {
+          "authority": {
+            "value": "auth_corporate"
+          },
+          "civics": {
+            "value": "civic_galactic_sovereign_megacorp"
+          }
+        }
+      },
+      "random_weight": {
+        "base": "@civic_default_random_weight"
+      },
+      "ai_weight": {
+        "base": "@ai_civic_default_base_weight"
+      },
+      "description": "civic_astrometeorology_megacorp_effect_tooltip"
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 1808
+  },
+  "civic_storm_callers_megacorp": {
+    "civic_storm_callers_megacorp": {
+      "modification": {
+        "add": {
+          "has_civic": "civic_storm_callers"
+        },
+        "remove": {
+          "always": "no"
+        }
+      },
+      "alternate_civic_version": "civic_storm_callers",
+      "playable": {
+        "ai_playable": {
+          "description": "civic_storm_callers_megacorp_effect_tooltip",
+          "potential": {
+            "OR": {
+              "authority": {
+                "civics": {}
+              },
+              "traits": {
+                "trait": "trait_storm_touched"
+              },
+              "modifier": {
+                "capital_storm_diplo_weight_mult": "0.20"
+              },
+              "random_weight": {
+                "base": "@civic_default_random_weight"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 1834
+  },
+  "civic_environmental_architects_megacorp": {
+    "civic_environmental_architects_megacorp": {
+      "playable": {
+        "has_cosmic_storms_dlc": "yes"
+      },
+      "ai_playable": {
+        "has_cosmic_storms_dlc": "yes"
+      },
+      "potential": {
+        "OR": {
+          "authority": {
+            "value": "auth_corporate"
+          },
+          "civics": {
+            "value": "civic_galactic_sovereign_megacorp"
+          }
+        }
+      },
+      "possible": {
+        "civics": {
+          "NOR": {
+            "text": "civic_tooltip_not_relentless_industrialists",
+            "value": "civic_corporate_relentless_industrialists"
+          }
+        },
+        "origin": {
+          "NOR": {
+            "value": "origin_void_machines"
+          }
+        }
+      },
+      "modification": {
+        "add": {
+          "has_civic": "civic_environmental_architects"
+        },
+        "remove": {
+          "always": "no"
+        }
+      },
+      "alternate_civic_version": "civic_environmental_architects",
+      "random_weight": {
+        "base": "@civic_default_random_weight"
+      },
+      "modifier": {
+        "planet_jobs_produces_mult": "0.1",
+        "pop_growth_speed": "0.1",
+        "planet_pops_upkeep_mult": "-0.15",
+        "planet_clear_blocker_speed_mult": "0.25"
+      },
+      "description": "civic_environmental_architects_megacorp_effect_tooltip",
+      "negative_description": "civic_environmental_architects_negative_effect_tooltip"
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 1864
+  },
+  "civic_corporate_galactic_curators": {
+    "civic_corporate_galactic_curators": {
+      "playable": {
+        "ai_playable": {
+          "description": "civic_corporate_galactic_curators_effects",
+          "potential": {
+            "OR": {
+              "authority": {
+                "civics": {
+                  "NOT": {}
+                },
+                "alternate_civic_version": "civic_galactic_curators",
+                "modification": {
+                  "add": {
+                    "has_civic": "civic_galactic_curators"
+                  },
+                  "remove": {
+                    "always": "no"
+                  }
+                },
+                "random_weight": {
+                  "base": "@civic_rare_random_weight"
+                },
+                "ai_weight": {
+                  "base": "@civic_rare_random_weight"
+                },
+                "modifier": {
+                  "planet_jobs_unity_produces_mult": "@galactic_curators_civic_unity_jobs_production_mult",
+                  "country_specimen_selling_cost_mult": "1.0",
+                  "country_exhibit_unlocking_cost_mult": "-0.50",
+                  "ship_anomaly_generation_chance_mult": "@galactic_curators_civic_anomaly_discovery_mult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 1943
+  },
+  "civic_corporate_beastmasters": {
+    "civic_corporate_beastmasters": {
+      "playable": {
+        "ai_playable": {
+          "flags": {
+            "description": "civic_beastmasters_effects",
+            "potential": {
+              "OR": {
+                "authority": {
+                  "civics": {},
+                  "possible": {
+                    "civics": {},
+                    "alternate_civic_version": "civic_beastmasters",
+                    "modification": {
+                      "add": {
+                        "has_civic": "civic_beastmasters"
+                      },
+                      "remove": {
+                        "always": "no"
+                      }
+                    },
+                    "modifier": {
+                      "artificial_ship_naval_cap_usage_mult": "2.0",
+                      "space_fauna_ship_cost_mult": "-0.15",
+                      "space_fauna_ship_upkeep_mult": "-0.10"
+                    },
+                    "random_weight": {
+                      "base": "@civic_rare_random_weight"
+                    },
+                    "ai_weight": {
+                      "base": "@civic_rare_random_weight"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_corporate_civics.txt",
+    "_line_number": 1981
+  }
+}

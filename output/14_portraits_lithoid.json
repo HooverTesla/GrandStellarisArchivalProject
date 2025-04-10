@@ -1,0 +1,159 @@
+{
+  "portraits": {
+    "portraits": {
+      "_comments": [
+        "# Lithoid"
+      ],
+      "lith1": {
+        "character_textures": {}
+      },
+      "lith2": {
+        "character_textures": {}
+      },
+      "lith3": {
+        "character_textures": {}
+      },
+      "lith4": {
+        "character_textures": {}
+      },
+      "lith5": {
+        "character_textures": {}
+      },
+      "lith6": {
+        "character_textures": {}
+      },
+      "lith7": {
+        "character_textures": {}
+      },
+      "lith8": {
+        "character_textures": {}
+      },
+      "lith9": {
+        "character_textures": {}
+      },
+      "lith10": {
+        "character_textures": {}
+      },
+      "lith11": {
+        "character_textures": {}
+      },
+      "lith12": {
+        "character_textures": {}
+      },
+      "lith13": {
+        "character_textures": {}
+      },
+      "lith14": {
+        "character_textures": {}
+      },
+      "lith15": {
+        "character_textures": {},
+        "custom_close_up_position_offset": {
+          "custom_close_up_scale": "1.2"
+        },
+        "lith_machine": {
+          "character_textures": {}
+        },
+        "lith_human_male": {
+          "character_textures": {},
+          "custom_attachment_label": "HAIR_STYLE",
+          "custom_close_up_position_offset": {
+            "custom_close_up_scale": "1.5",
+            "custom_mid_close_up_position_offset": {
+              "custom_mid_close_up_scale": "0.85"
+            },
+            "lith_human_female": {
+              "character_textures": {},
+              "custom_attachment_label": "HAIR_STYLE",
+              "custom_close_up_position_offset": {
+                "custom_close_up_scale": "1.5",
+                "custom_mid_close_up_position_offset": {
+                  "custom_mid_close_up_scale": "0.85"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "14_portraits_lithoid.txt",
+    "_line_number": 16
+  },
+  "portrait_groups": {
+    "portrait_groups": {
+      "lith_human": {
+        "default": "lith_human_male",
+        "game_setup": {
+          "add": {
+            "trigger": {
+              "ruler": {
+                "OR": {
+                  "gender": "indeterminable"
+                }
+              }
+            },
+            "portraits": {}
+          }
+        },
+        "_comments": [
+          "#species scope"
+        ],
+        "species": {
+          "add": {
+            "trigger": {
+              "exists": "species",
+              "NOT": {},
+              "portraits": {}
+            },
+            "add": {
+              "trigger": {
+                "exists": "species",
+                "NOT": {},
+                "portraits": {}
+              }
+            },
+            "_comments": [
+              "#pop scope"
+            ],
+            "pop": {
+              "add": {
+                "trigger": {
+                  "NOT": {},
+                  "portraits": {}
+                },
+                "add": {
+                  "trigger": {
+                    "NOT": {},
+                    "portraits": {}
+                  }
+                },
+                "leader": {
+                  "add": {
+                    "trigger": {
+                      "OR": {
+                        "gender": "indeterminable"
+                      }
+                    },
+                    "portraits": {}
+                  }
+                },
+                "ruler": {
+                  "add": {
+                    "trigger": {
+                      "OR": {
+                        "gender": "indeterminable"
+                      }
+                    },
+                    "portraits": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "14_portraits_lithoid.txt",
+    "_line_number": 179
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "utility_component_template": {
+    "utility_component_template": {
+      "key": "BIO_SENSORS_4",
+      "size": "small",
+      "icon": "GFX_ship_part_bio_sensor_4",
+      "icon_frame": "1",
+      "power": "0",
+      "resources": {
+        "category": "ship_components",
+        "inline_script": {
+          "script": "grand_archive/mutations/component_dynamic_cost",
+          "COST": "@cost_fauna_4"
+        }
+      },
+      "sensor_range": "@sensor4",
+      "hyperlane_range": "@hyperlane4",
+      "ship_modifier": {
+        "ship_tracking_add": "@hit4"
+      },
+      "prerequisites": {
+        "component_set": "sensor_components_bio",
+        "ai_weight": {
+          "weight": "1000"
+        }
+      }
+    },
+    "_source_file": "00_utilities_sensors.txt",
+    "_line_number": 231
+  }
+}

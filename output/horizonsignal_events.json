@@ -1,0 +1,350 @@
+{
+  "event": {
+    "event": {
+      "id": "akx.8000",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "random_system": {
+          "limit": {
+            "is_star_class": "sc_black_hole",
+            "is_fe_cluster": "no",
+            "NOR": {
+              "exists": "starbase",
+              "has_star_flag": "empire_cluster"
+            }
+          },
+          "set_star_flag": "horizonsignal_spawn"
+        }
+      }
+    },
+    "_source_file": "horizonsignal_events.txt",
+    "_line_number": 9
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "akx.9620",
+      "title": "akx.9620.name",
+      "desc": "akx.9620.desc",
+      "picture": "GFX_evt_technosphere",
+      "location": "root",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "solar_system": {
+          "random_system_planet": {
+            "limit": {
+              "save_event_target_as": "hole_pets"
+            }
+          }
+        },
+        "option": {
+          "name": "akx.9620.a",
+          "hidden_effect": {
+            "event_target:technosphere_ship": {
+              "destroy_fleet": "this",
+              "_comments": [
+                "# explosion ambient object?"
+              ]
+            }
+          },
+          "event_target:hole_pets": {
+            "add_deposit": "d_society_10"
+          }
+        }
+      }
+    },
+    "_source_file": "horizonsignal_events.txt",
+    "_line_number": 3464
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "akx.9535",
+      "title": "akx.9535.name",
+      "desc": "akx.9535.desc",
+      "picture": "GFX_evt_colony_settlement",
+      "location": "fromfrom",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "OK",
+        "owner": {
+          "add_monthly_resource_mult": {
+            "resource": "physics_research",
+            "value": "8",
+            "min": "200",
+            "max": "1000"
+          },
+          "if": {
+            "limit": {
+              "has_technology": "tech_akx_worm_1"
+            }
+          },
+          "_comments": [
+            "# nothing"
+          ],
+          "else": {
+            "add_tech_progress": {
+              "tech": "tech_akx_worm_1",
+              "progress": "0.1"
+            },
+            "if": {
+              "limit": {
+                "NOT": {
+                  "has_tech_option": "tech_akx_worm_1"
+                }
+              },
+              "add_research_option": "tech_akx_worm_1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "horizonsignal_events.txt",
+    "_line_number": 2886
+  },
+  "country_event": {
+    "country_event": {
+      "id": "akx.10030",
+      "title": "akx.10021.name",
+      "desc": "akx.10021.desc",
+      "picture": "GFX_evt_crisis_defeated",
+      "show_sound": "event_celebration",
+      "location": "root",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_country_flag": "worm_events_available",
+        "exists": "event_target:worm_enemy",
+        "from": {
+          "is_same_value": "event_target:worm_enemy"
+        }
+      },
+      "immediate": {
+        "event_target:worm_enemy": {
+          "destroy_country": "yes"
+        }
+      },
+      "after": {
+        "hidden_effect": {
+          "remove_country_flag": "worm_events_available",
+          "set_country_flag": "worm_awaited"
+        }
+      },
+      "option": {
+        "name": "akx.10021.a",
+        "end_event_chain": "WORM_CHAIN_2",
+        "add_monthly_resource_mult": {
+          "resource": "physics_research",
+          "value": "36",
+          "min": "1000",
+          "max": "8000"
+        },
+        "if": {
+          "limit": {
+            "add_relic": "r_worm_scales"
+          }
+        },
+        "after": {
+          "if": {
+            "limit": {
+              "NOT": {},
+              "set_country_flag": "horrific_celebration",
+              "generate_parade_city": "yes",
+              "start_situation": {
+                "type": "leviathan_celebration_opportunity",
+                "target": "event_target:parade_city",
+                "effect": {
+                  "set_situation_flag": "standard_unity_reward"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "horizonsignal_events.txt",
+    "_line_number": 3841
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "akx.10020",
+      "title": "akx.10020.name",
+      "desc": "akx.10020.desc",
+      "picture": "GFX_evt_black_hole",
+      "show_sound": "event_activating_unknown_technology",
+      "location": "root",
+      "is_triggered_only": "yes",
+      "pre_triggers": {
+        "is_ai": "no"
+      },
+      "immediate": {
+        "solar_system": {
+          "every_system_planet": {
+            "limit": {
+              "NOR": {
+                "is_planet_class": "pc_relic",
+                "is_star": "yes"
+              }
+            },
+            "every_owned_pop": {
+              "limit": {
+                "is_sapient": "yes"
+              },
+              "_comments": [
+                "# add planet class to organics"
+              ],
+              "if": {
+                "limit": {
+                  "modify_species": {
+                    "species": "this",
+                    "ideal_planet_class": "pc_nuked"
+                  }
+                },
+                "_comments": [
+                  "# add planet classes to basic machines"
+                ],
+                "if": {
+                  "limit": {
+                    "modify_species": {
+                      "species": "this",
+                      "remove_trait": "trait_wet_planet_preference",
+                      "add_trait": "trait_machine_pc_nuked_preference"
+                    }
+                  },
+                  "if": {
+                    "limit": {
+                      "modify_species": {
+                        "species": "this",
+                        "remove_trait": "trait_dry_planet_preference",
+                        "add_trait": "trait_machine_pc_nuked_preference"
+                      }
+                    },
+                    "if": {
+                      "limit": {
+                        "modify_species": {
+                          "species": "this",
+                          "remove_trait": "trait_frozen_planet_preference",
+                          "add_trait": "trait_machine_pc_nuked_preference"
+                        }
+                      },
+                      "_comments": [
+                        "# add traits to organics"
+                      ],
+                      "if": {
+                        "limit": {
+                          "is_robot_pop": "no",
+                          "NOT": {
+                            "has_trait": "trait_natural_physicists"
+                          }
+                        },
+                        "_comments": [
+                          "# remove opposite traits"
+                        ],
+                        "if": {
+                          "limit": {
+                            "modify_species": {
+                              "species": "this",
+                              "remove_trait": "trait_natural_engineers"
+                            }
+                          },
+                          "if": {
+                            "limit": {
+                              "modify_species": {
+                                "species": "this",
+                                "remove_trait": "trait_natural_sociologists"
+                              }
+                            },
+                            "if": {
+                              "limit": {
+                                "is_robot_pop": "no",
+                                "NOT": {
+                                  "has_trait": "trait_repugnant"
+                                }
+                              },
+                              "_comments": [
+                                "# remove opposite traits",
+                                "#Add traits to machines"
+                              ],
+                              "if": {
+                                "limit": {
+                                  "is_robot_pop": "yes",
+                                  "NOT": {
+                                    "has_trait": "trait_robot_artificial_physicists"
+                                  }
+                                },
+                                "_comments": [
+                                  "# remove opposite traits"
+                                ],
+                                "if": {
+                                  "limit": {
+                                    "modify_species": {
+                                      "species": "this",
+                                      "remove_trait": "trait_robot_artificial_engineers"
+                                    }
+                                  },
+                                  "if": {
+                                    "limit": {
+                                      "is_robot_pop": "yes",
+                                      "NOT": {
+                                        "has_trait": "trait_robot_uncanny"
+                                      }
+                                    },
+                                    "_comments": [
+                                      "# remove opposite traits"
+                                    ],
+                                    "if": {
+                                      "limit": {
+                                        "modify_species": {
+                                          "species": "this",
+                                          "remove_trait": "trait_robot_emotion_emulators"
+                                        }
+                                      },
+                                      "_comments": [
+                                        "# add trait"
+                                      ],
+                                      "modify_species": {
+                                        "species": "this",
+                                        "add_trait": "trait_robot_uncanny"
+                                      }
+                                    }
+                                  },
+                                  "change_pc": "pc_nuked",
+                                  "set_planet_flag": "nuked_planet_anomalies_disabled",
+                                  "reroll_planet": "yes"
+                                },
+                                "every_system_planet": {
+                                  "limit": {
+                                    "change_pc": "pc_black_hole"
+                                  },
+                                  "set_star_flag": "worm_black_hole",
+                                  "set_star_class": "sc_black_hole"
+                                },
+                                "owner": {},
+                                "after": {
+                                  "hidden_effect": {
+                                    "owner": {
+                                      "remove_country_flag": "worm_events_available",
+                                      "set_country_flag": "worm_tomb_ending"
+                                    }
+                                  }
+                                },
+                                "option": {
+                                  "name": "akx.10020.a",
+                                  "owner": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "horizonsignal_events.txt",
+    "_line_number": 3631
+  }
+}

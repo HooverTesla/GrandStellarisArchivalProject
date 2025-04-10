@@ -1,0 +1,397 @@
+{
+  "resolution_pre_ftl_stances_repeal_1": {
+    "resolution_pre_ftl_stances_repeal_1": {
+      "icon": "GFX_resolution_repeal_red",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t1"
+        }
+      },
+      "target": "no",
+      "fire_and_forget": "yes",
+      "effect": {
+        "custom_tooltip": "resolution_pre_ftl_stances_repeal_1_effect_success",
+        "hidden_effect": {
+          "cancel_resolution": "resolution_pre_ftl_stances_equal_standing",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_first_contact_dlc": "yes",
+            "is_active_resolution": "resolution_pre_ftl_stances_equal_standing"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_unpopular",
+            "modifier": {
+              "factor": "2",
+              "OR": {
+                "has_valid_civic": "civic_indentured_assets",
+                "is_slaver": "yes"
+              },
+              "desc": "gal_com_slaver_empire"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_resolutions_first_contact_dlc.txt",
+    "_line_number": 10
+  },
+  "resolution_pre_ftl_stances_repeal_2": {
+    "resolution_pre_ftl_stances_repeal_2": {
+      "icon": "GFX_resolution_repeal_red",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t1"
+        }
+      },
+      "target": "no",
+      "fire_and_forget": "yes",
+      "effect": {
+        "custom_tooltip": "resolution_pre_ftl_stances_repeal_2_effect_success",
+        "hidden_effect": {
+          "cancel_resolution": "resolution_pre_ftl_stances_non_interference",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_first_contact_dlc": "yes",
+            "is_active_resolution": "resolution_pre_ftl_stances_non_interference"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_unpopular",
+            "modifier": {
+              "factor": "2",
+              "has_valid_civic": "civic_machine_servitor",
+              "desc": "civic_machine_servitor"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_resolutions_first_contact_dlc.txt",
+    "_line_number": 93
+  },
+  "resolution_pre_ftl_stances_repeal_3": {
+    "resolution_pre_ftl_stances_repeal_3": {
+      "icon": "GFX_resolution_repeal_red",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t1"
+        }
+      },
+      "target": "no",
+      "fire_and_forget": "yes",
+      "effect": {
+        "custom_tooltip": "resolution_pre_ftl_stances_repeal_3_effect_success",
+        "hidden_effect": {
+          "cancel_resolution": "resolution_pre_ftl_stances_exploitation",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_first_contact_dlc": "yes",
+            "is_active_resolution": "resolution_pre_ftl_stances_exploitation"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_unpopular",
+            "modifier": {
+              "factor": "0.5",
+              "OR": {
+                "has_valid_civic": "civic_indentured_assets",
+                "is_slaver": "yes"
+              },
+              "desc": "gal_com_slaver_empire"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_resolutions_first_contact_dlc.txt",
+    "_line_number": 198
+  },
+  "resolution_pre_ftl_stances_equal_standing": {
+    "resolution_pre_ftl_stances_equal_standing": {
+      "icon": "GFX_resolution_pre_ftl_stances",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t1"
+        }
+      },
+      "target": "no",
+      "modifier": {
+        "op_cat_infiltration_difficulty_add": "2"
+      },
+      "effect": {
+        "custom_tooltip": "resolution_pre_ftl_stances_equal_standing_tooltip",
+        "hidden_effect": {
+          "every_playable_country": {
+            "limit": {
+              "is_galactic_community_member": "yes",
+              "has_met_primitives": "yes",
+              "OR": {
+                "has_policy_flag": "interference_aggressive"
+              },
+              "can_set_policy": {
+                "policy": "interference",
+                "option": "interference_active"
+              }
+            },
+            "country_event": {},
+            "set_global_flag": "galactic_community_resolution_passed",
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_passed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "fail_effects": {
+            "hidden_effect": {
+              "set_timed_country_flag": {
+                "add_modifier": {
+                  "modifier": "resolution_failed_diplomatic_weight",
+                  "days": "2200"
+                }
+              }
+            },
+            "potential": {
+              "has_first_contact_dlc": "yes"
+            },
+            "allow": {
+              "custom_tooltip": {
+                "fail_text": "exclusive_resolution_already_active",
+                "NOR": {
+                  "is_active_resolution": "resolution_pre_ftl_stances_exploitation"
+                }
+              }
+            },
+            "breach": {
+              "NOT": {
+                "has_met_primitives": "yes",
+                "OR": {
+                  "has_policy_flag": "interference_aggressive",
+                  "has_country_flag": "resolution_breached_pre_ftl_stances_equal_standing"
+                }
+              },
+              "ai_weight": {
+                "base": "@resolution_weight_normal",
+                "modifier": {
+                  "factor": "0",
+                  "OR": {
+                    "has_valid_civic": "civic_indentured_assets",
+                    "is_slaver": "yes"
+                  },
+                  "desc": "gal_com_slaver_empire"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_resolutions_first_contact_dlc.txt",
+    "_line_number": 317
+  },
+  "resolution_pre_ftl_stances_non_interference": {
+    "resolution_pre_ftl_stances_non_interference": {
+      "icon": "GFX_resolution_pre_ftl_stances",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t1"
+        }
+      },
+      "target": "no",
+      "modifier": {
+        "op_cat_infiltration_difficulty_add": "3"
+      },
+      "effect": {
+        "custom_tooltip": "resolution_pre_ftl_stances_non_interference_tooltip",
+        "hidden_effect": {
+          "every_playable_country": {
+            "limit": {
+              "is_galactic_community_member": "yes",
+              "has_met_primitives": "yes",
+              "OR": {
+                "has_policy_flag": "interference_aggressive"
+              }
+            },
+            "country_event": {},
+            "set_global_flag": "galactic_community_resolution_passed",
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_passed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "fail_effects": {
+            "hidden_effect": {
+              "set_timed_country_flag": {
+                "add_modifier": {
+                  "modifier": "resolution_failed_diplomatic_weight",
+                  "days": "2200"
+                }
+              }
+            },
+            "potential": {
+              "has_first_contact_dlc": "yes"
+            },
+            "allow": {
+              "custom_tooltip": {
+                "fail_text": "exclusive_resolution_already_active",
+                "NOR": {
+                  "is_active_resolution": "resolution_pre_ftl_stances_exploitation"
+                }
+              }
+            },
+            "modifier": {
+              "custom_tooltip": "resolution_pre_ftl_stances_non_interference_modifier"
+            },
+            "breach": {
+              "NOT": {
+                "has_met_primitives": "yes",
+                "OR": {
+                  "has_policy_flag": "interference_aggressive",
+                  "has_country_flag": "resolution_breached_pre_ftl_stances_non_interference"
+                }
+              },
+              "ai_weight": {
+                "base": "@resolution_weight_normal",
+                "modifier": {
+                  "factor": "0",
+                  "has_valid_civic": "civic_machine_servitor",
+                  "desc": "civic_machine_servitor"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_resolutions_first_contact_dlc.txt",
+    "_line_number": 477
+  },
+  "resolution_pre_ftl_stances_exploitation": {
+    "resolution_pre_ftl_stances_exploitation": {
+      "icon": "GFX_resolution_pre_ftl_stances",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t1"
+        }
+      },
+      "target": "no",
+      "modifier": {
+        "op_cat_infiltration_skill_add": "2"
+      },
+      "effect": {
+        "custom_tooltip": "resolution_pre_ftl_stances_exploitation_tooltip",
+        "hidden_effect": {
+          "every_playable_country": {
+            "limit": {
+              "is_galactic_community_member": "yes",
+              "has_met_primitives": "yes",
+              "has_policy_flag": "interference_not_allowed"
+            },
+            "country_event": {},
+            "set_global_flag": "galactic_community_resolution_passed",
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_passed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "fail_effects": {
+            "hidden_effect": {
+              "set_timed_country_flag": {
+                "add_modifier": {
+                  "modifier": "resolution_failed_diplomatic_weight",
+                  "days": "2200"
+                }
+              }
+            },
+            "potential": {
+              "has_first_contact_dlc": "yes"
+            },
+            "allow": {
+              "custom_tooltip": {
+                "fail_text": "exclusive_resolution_already_active",
+                "NOR": {
+                  "is_active_resolution": "resolution_pre_ftl_stances_equal_standing"
+                }
+              }
+            },
+            "breach": {
+              "NOT": {
+                "has_met_primitives": "yes",
+                "OR": {
+                  "has_policy_flag": "interference_not_allowed",
+                  "has_country_flag": "resolution_breached_pre_ftl_stances_exploitation"
+                }
+              },
+              "ai_weight": {
+                "base": "@resolution_weight_disliked",
+                "modifier": {
+                  "factor": "2",
+                  "OR": {
+                    "has_valid_civic": "civic_indentured_assets",
+                    "is_slaver": "yes"
+                  },
+                  "desc": "gal_com_slaver_empire"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_resolutions_first_contact_dlc.txt",
+    "_line_number": 628
+  }
+}

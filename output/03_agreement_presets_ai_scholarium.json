@@ -1,0 +1,271 @@
+{
+  "preset_scholarium_nice_01": {
+    "preset_scholarium_nice_01": {
+      "parent": "preset_scholarium",
+      "specialist_type": "specialist_scholarium",
+      "hidden": "yes",
+      "term_data": {
+        "discrete_terms": {}
+      },
+      "overlord_weight": {
+        "base": "75",
+        "modifier": {
+          "factor": "0.5",
+          "has_specialist_subject_type": {
+            "NOT": {},
+            "modifier": {
+              "factor": "1.5",
+              "FROM": {},
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_spiritualist": "yes"
+              }
+            },
+            "subject_weight": {
+              "base": "50",
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_spiritualist": "yes"
+              }
+            },
+            "potential": {
+              "has_overlord_dlc": "yes",
+              "NOR": {
+                "has_civic": "civic_inwards_perfection",
+                "FROM": {},
+                "OR": {
+                  "FROM": {
+                    "is_specialist_subject_type": {
+                      "tech_unlocked_ratio": {
+                        "who": "from",
+                        "ratio >": "@protectorate_tech_threshold"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_agreement_presets_ai_scholarium.txt",
+    "_line_number": 8
+  },
+  "preset_scholarium_nice_02": {
+    "preset_scholarium_nice_02": {
+      "parent": "preset_scholarium",
+      "specialist_type": "specialist_scholarium",
+      "hidden": "yes",
+      "term_data": {
+        "resource_terms": {},
+        "discrete_terms": {}
+      },
+      "overlord_weight": {
+        "base": "50",
+        "modifier": {
+          "factor": "0.5",
+          "has_specialist_subject_type": {
+            "NOT": {},
+            "modifier": {
+              "factor": "1.5",
+              "FROM": {},
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_spiritualist": "yes"
+              }
+            },
+            "subject_weight": {
+              "base": "100",
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_spiritualist": "yes"
+              }
+            },
+            "potential": {
+              "has_overlord_dlc": "yes",
+              "NOR": {
+                "has_civic": "civic_inwards_perfection",
+                "FROM": {},
+                "OR": {
+                  "FROM": {
+                    "is_specialist_subject_type": {
+                      "tech_unlocked_ratio": {
+                        "who": "from",
+                        "ratio >": "@protectorate_tech_threshold"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_agreement_presets_ai_scholarium.txt",
+    "_line_number": 104
+  },
+  "preset_scholarium_mean_01": {
+    "preset_scholarium_mean_01": {
+      "parent": "preset_scholarium",
+      "specialist_type": "specialist_scholarium",
+      "hidden": "yes",
+      "term_data": {
+        "resource_terms": {},
+        "discrete_terms": {}
+      },
+      "overlord_weight": {
+        "base": "125",
+        "modifier": {
+          "factor": "0.5",
+          "has_specialist_subject_type": {
+            "NOT": {},
+            "modifier": {
+              "factor": "1.5",
+              "FROM": {},
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_spiritualist": "yes"
+              }
+            },
+            "subject_weight": {
+              "base": "-100",
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_spiritualist": "yes"
+              }
+            },
+            "potential": {
+              "has_overlord_dlc": "yes",
+              "NOR": {
+                "has_civic": "civic_inwards_perfection",
+                "FROM": {},
+                "OR": {
+                  "FROM": {
+                    "is_specialist_subject_type": {
+                      "tech_unlocked_ratio": {
+                        "who": "from",
+                        "ratio >": "@protectorate_tech_threshold"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_agreement_presets_ai_scholarium.txt",
+    "_line_number": 210
+  },
+  "preset_scholarium_mean_02": {
+    "preset_scholarium_mean_02": {
+      "parent": "preset_scholarium",
+      "specialist_type": "specialist_scholarium",
+      "hidden": "yes",
+      "term_data": {
+        "resource_terms": {},
+        "discrete_terms": {}
+      },
+      "overlord_weight": {
+        "base": "150",
+        "modifier": {
+          "factor": "0.5",
+          "has_specialist_subject_type": {
+            "NOT": {},
+            "modifier": {
+              "factor": "1.5",
+              "FROM": {},
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_spiritualist": "yes"
+              }
+            },
+            "subject_weight": {
+              "base": "-250",
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_spiritualist": "yes"
+              }
+            },
+            "potential": {
+              "has_overlord_dlc": "yes",
+              "NOR": {
+                "has_civic": "civic_inwards_perfection",
+                "FROM": {},
+                "OR": {
+                  "FROM": {
+                    "is_specialist_subject_type": {
+                      "tech_unlocked_ratio": {
+                        "who": "from",
+                        "ratio >": "@protectorate_tech_threshold"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_agreement_presets_ai_scholarium.txt",
+    "_line_number": 312
+  },
+  "preset_scholarium_mean_03": {
+    "preset_scholarium_mean_03": {
+      "parent": "preset_scholarium",
+      "specialist_type": "specialist_scholarium",
+      "hidden": "yes",
+      "term_data": {
+        "resource_terms": {},
+        "discrete_terms": {}
+      },
+      "overlord_weight": {
+        "base": "175",
+        "modifier": {
+          "factor": "0.5",
+          "has_specialist_subject_type": {
+            "NOT": {},
+            "modifier": {
+              "factor": "1.5",
+              "FROM": {},
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_spiritualist": "yes"
+              }
+            },
+            "subject_weight": {
+              "base": "-500",
+              "modifier": {
+                "add": "@specialist_unaligned_ethics_value",
+                "is_spiritualist": "yes"
+              }
+            },
+            "potential": {
+              "has_overlord_dlc": "yes",
+              "NOR": {
+                "has_civic": "civic_inwards_perfection",
+                "FROM": {},
+                "OR": {
+                  "FROM": {
+                    "is_specialist_subject_type": {
+                      "tech_unlocked_ratio": {
+                        "who": "from",
+                        "ratio >": "@protectorate_tech_threshold"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_agreement_presets_ai_scholarium.txt",
+    "_line_number": 413
+  }
+}

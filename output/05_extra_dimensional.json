@@ -1,0 +1,170 @@
+{
+  "large_ship_ed": {
+    "large_ship_ed": {
+      "graphical_culture": {
+        "max_speed": "@speed_slow",
+        "acceleration": "0.2",
+        "rotation_speed": "0.15",
+        "collision_radius": "@battleship_collision_radius",
+        "modifier": {
+          "ship_evasion_add": "15"
+        },
+        "max_hitpoints": "@battleship_hp",
+        "size_multiplier": "8",
+        "fleet_slot_size": "8",
+        "section_slots": {
+          "num_target_locators": "0",
+          "is_space_station": "no",
+          "icon": "ship_size_military_8",
+          "class": "shipclass_military",
+          "is_designable": "no",
+          "components_add_to_cost": "no",
+          "resources": {
+            "category": "ships",
+            "cost": {
+              "energy": "@salvagecostlarge",
+              "sr_zro": "@salvagecostlargerare"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_extra_dimensional.txt",
+    "_line_number": 36
+  },
+  "medium_ship_ed": {
+    "medium_ship_ed": {
+      "graphical_culture": {
+        "max_speed": "@speed_default",
+        "acceleration": "0.25",
+        "rotation_speed": "0.175",
+        "collision_radius": "@cruiser_collision_radius",
+        "modifier": {
+          "ship_evasion_add": "25"
+        },
+        "max_hitpoints": "@cruiser_hp",
+        "size_multiplier": "4",
+        "fleet_slot_size": "4",
+        "section_slots": {
+          "num_target_locators": "0",
+          "is_space_station": "no",
+          "icon": "ship_size_military_4",
+          "class": "shipclass_military",
+          "is_designable": "no",
+          "components_add_to_cost": "no",
+          "resources": {
+            "category": "ships",
+            "cost": {
+              "energy": "@salvagecostmedium",
+              "sr_zro": "@salvagecostmediumrare"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_extra_dimensional.txt",
+    "_line_number": 67
+  },
+  "small_ship_ed": {
+    "small_ship_ed": {
+      "graphical_culture": {
+        "max_speed": "@speed_fast",
+        "acceleration": "0.3",
+        "rotation_speed": "0.2",
+        "collision_radius": "@destroyer_collision_radius",
+        "modifier": {
+          "ship_evasion_add": "20"
+        },
+        "max_hitpoints": "@destroyer_hp",
+        "size_multiplier": "2",
+        "fleet_slot_size": "2",
+        "section_slots": {
+          "num_target_locators": "0",
+          "icon": "ship_size_military_2",
+          "is_space_station": "no",
+          "class": "shipclass_military",
+          "is_designable": "no",
+          "components_add_to_cost": "no",
+          "resources": {
+            "category": "ships",
+            "cost": {
+              "energy": "@salvagecostsmall",
+              "sr_zro": "@salvagecostsmallrare"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_extra_dimensional.txt",
+    "_line_number": 98
+  },
+  "dimensional_portal_ed": {
+    "dimensional_portal_ed": {
+      "graphical_culture": {
+        "max_speed": "0.0",
+        "acceleration": "0.0",
+        "rotation_speed": "0.0",
+        "modifier": {
+          "ship_evasion_mult": "-1",
+          "ships_upkeep_mult": "-0.25"
+        },
+        "max_hitpoints": "150000",
+        "size_multiplier": "16",
+        "fleet_slot_size": "4",
+        "section_slots": {
+          "num_target_locators": "0",
+          "is_space_station": "yes",
+          "build_block_radius": "@build_block_radius_none",
+          "icon": "ship_size_space_monster",
+          "class": "shipclass_military_station",
+          "is_designable": "no",
+          "components_add_to_cost": "no",
+          "resources": {
+            "category": "ships",
+            "cost": {
+              "energy": "@salvagecostlarge",
+              "sr_zro": "@salvagecostlargerare"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_extra_dimensional.txt",
+    "_line_number": 130
+  },
+  "construction_ship_ed": {
+    "construction_ship_ed": {
+      "graphical_culture": {
+        "is_space_object": "yes",
+        "max_speed": "@speed_slow",
+        "acceleration": "0.3",
+        "rotation_speed": "0.2",
+        "modifier": {
+          "ship_evasion_add": "30"
+        },
+        "max_hitpoints": "@destroyer_hp",
+        "size_multiplier": "1",
+        "fleet_slot_size": "3",
+        "section_slots": {
+          "num_target_locators": "0",
+          "is_space_station": "no",
+          "icon": "ship_size_constructor",
+          "is_civilian": "yes",
+          "is_designable": "no",
+          "class": "shipclass_constructor",
+          "required_component_set": "thruster_components",
+          "components_add_to_cost": "no",
+          "resources": {
+            "category": "ships",
+            "cost": {
+              "energy": "@salvagecostsmall",
+              "sr_zro": "@salvagecostsmallrare"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_extra_dimensional.txt",
+    "_line_number": 162
+  }
+}

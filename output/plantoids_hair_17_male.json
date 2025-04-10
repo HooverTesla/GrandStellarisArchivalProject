@@ -1,0 +1,72 @@
+{
+  "plantoids_hair_17_male": {
+    "plantoids_hair_17_male": {
+      "default": "gfx/models/portraits/plantoid/plantoid_17_male_hair1.dds",
+      "game_setup": {
+        "default": "gfx/models/portraits/plantoid/plantoid_17_male_hair1.dds"
+      },
+      "_comments": [
+        "#species scope",
+        "#pop scope",
+        "#leader scope"
+      ],
+      "species": {
+        "default": "gfx/models/portraits/plantoid/plantoid_17_male_hair1.dds"
+      },
+      "pop": {
+        "default": "gfx/models/portraits/plantoid/plantoid_17_male_hair1.dds",
+        "random": {
+          "list": {}
+        }
+      },
+      "leader": {
+        "random": {
+          "trigger": {
+            "list": {}
+          },
+          "random": {
+            "trigger": {
+              "list": {}
+            },
+            "random": {
+              "trigger": {
+                "list": {}
+              },
+              "random": {
+                "trigger": {
+                  "list": {}
+                }
+              },
+              "_comments": [
+                "#leader scope"
+              ],
+              "ruler": {
+                "random": {
+                  "trigger": {
+                    "owner": {},
+                    "list": {}
+                  },
+                  "random": {
+                    "trigger": {
+                      "owner": {
+                        "OR": {
+                          "has_government": "gov_stagnant_ascendancy",
+                          "has_primitive_government": "yes",
+                          "has_materialist_government": "yes",
+                          "has_pacifist_government": "yes"
+                        }
+                      }
+                    },
+                    "list": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "plantoids_hair_17_male.txt",
+    "_line_number": 22
+  }
+}

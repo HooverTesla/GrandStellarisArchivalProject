@@ -1,0 +1,306 @@
+{
+  "pre_ftl_tech_progress_situation": {
+    "pre_ftl_tech_progress_situation": {
+      "picture": "GFX_evt_acquire_asset",
+      "complete_icon_frame": "GFX_situation_outcome_frame_blue",
+      "complete_icon": "GFX_situation_outcome_meh",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_unknown_outcome_approach",
+        "_comments": [
+          "# Tech up and start the situation again!"
+        ],
+        "hidden_effect": {
+          "owner": {
+            "country_event": {}
+          },
+          "on_abort": {
+            "_comments": [
+              "#Effects when Situation is cancelled via abort_trigger trigger"
+            ],
+            "hidden_effect": {
+              "owner": {
+                "country_event": {}
+              },
+              "abort_trigger": {
+                "owner": {
+                  "is_primitive": "no"
+                }
+              },
+              "on_fail": {
+                "log_error": "pre_ftl_tech_progress_situation situation failed, this is not meant to happen",
+                "custom_tooltip": "situation_unknown_outcome_approach",
+                "_comments": [
+                  "# Restart the situation",
+                  "# if we don't do this, the game crashes to desktop when you try to open the diplomacy screen"
+                ],
+                "hidden_effect": {
+                  "owner": {
+                    "start_situation": {
+                      "type": "pre_ftl_tech_progress_situation"
+                    }
+                  }
+                },
+                "on_monthly": {
+                  "random_events": {
+                    "95": "0",
+                    "5": "preftl.50\t# Random event gatekeeper"
+                  },
+                  "events": {}
+                },
+                "stages": {
+                  "high_level": {
+                    "icon": "GFX_situation_stage_1",
+                    "icon_background": "GFX_situation_stage_frame_blue",
+                    "end": "1920"
+                  }
+                },
+                "monthly_progress": {
+                  "base": "0",
+                  "_comments": [
+                    "# Total: 1920"
+                  ],
+                  "modifier": {
+                    "mult": "0",
+                    "desc": "tech_frozen",
+                    "owner": {},
+                    "modifier": {
+                      "mult": "3",
+                      "desc": "open_technological_enlightenment",
+                      "owner": {
+                        "has_country_flag": "open_technological_enlightenment_pact",
+                        "capital_scope": {
+                          "has_observation_outpost": "yes",
+                          "observation_outpost_owner": {
+                            "if": {
+                              "limit": {
+                                "is_galactic_community_formed": "yes",
+                                "is_galactic_community_member": "yes"
+                              },
+                              "NOT": {},
+                              "else": {
+                                "always": "yes"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "modifier": {
+                        "mult": "1.25",
+                        "desc": "payback_student",
+                        "owner": {
+                          "has_country_flag": "open_technological_enlightenment_pact",
+                          "capital_scope": {
+                            "has_observation_outpost": "yes",
+                            "observation_outpost_owner": {
+                              "has_modifier": "payback_student"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "approach": {
+                      "name": "approach_revolt_do_nothing",
+                      "icon": "GFX_situation_approach_this_is_fine",
+                      "icon_background": "GFX_situation_approach_bg_yellow",
+                      "default": "yes",
+                      "on_select": {
+                        "custom_tooltip": "deficit_approach_do_nothing_tooltip"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_AI_empire_situations.txt",
+    "_line_number": 17
+  },
+  "mercenary_dividends": {
+    "mercenary_dividends": {
+      "picture": "GFX_evt_acquire_asset",
+      "complete_icon_frame": "GFX_situation_outcome_frame_blue",
+      "complete_icon": "GFX_situation_outcome_meh",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_unknown_outcome_approach #not really necessary except to silence the error log",
+        "_comments": [
+          "#Figure out Patron and give resources",
+          "# Cut, potentially revisit later",
+          "#1 = Mercenaries poaching military",
+          "#1 = Joint research project",
+          "#1 = Joint officer drills",
+          "#1 = Competing Mercenaries",
+          "#1 = Small scale reward",
+          "#1 = A once per game rare event chain?"
+        ],
+        "owner": {},
+        "on_fail": {
+          "log_error": "mercenary_dividends situation failed, this is not meant to happen",
+          "destroy_situation": "this"
+        },
+        "on_monthly": {
+          "random_events": {
+            "5": "0"
+          }
+        },
+        "stages": {
+          "high_level": {
+            "icon": "GFX_situation_stage_1",
+            "icon_background": "GFX_situation_stage_frame_blue",
+            "end": "240"
+          }
+        },
+        "monthly_progress": {
+          "base": "@dividend_base_rate",
+          "_comments": [
+            "#total: 240 Can use scripted variable above to fine tune progress"
+          ],
+          "modifier": {
+            "add": "@dividend_hire_rate",
+            "desc": "fleet_hired",
+            "any_playable_country": {
+              "any_controlled_fleet": {
+                "owner": {}
+              }
+            },
+            "modifier": {
+              "add": "@dividend_non_patron_hire_rate",
+              "desc": "fleet_hired",
+              "exists": "owner",
+              "owner": {
+                "AND": {
+                  "any_owned_fleet": {
+                    "NOT": {
+                      "controller": {}
+                    },
+                    "any_owned_fleet": {
+                      "is_ship_size": "enclave_mercenary_station",
+                      "solar_system": {
+                        "exists": "owner",
+                        "space_owner": {
+                          "NOT": {
+                            "any_controlled_fleet": {
+                              "owner": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "modifier": {
+                  "add": "@dividend_rank_rate",
+                  "desc": "enclave_rank",
+                  "owner": {},
+                  "modifier": {
+                    "add": "@dividend_rank_rate",
+                    "desc": "enclave_rank",
+                    "owner": {},
+                    "modifier": {
+                      "add": "@dividend_rank_rate",
+                      "desc": "enclave_rank",
+                      "owner": {},
+                      "modifier": {
+                        "add": "@dividend_rank_rate",
+                        "desc": "enclave_rank",
+                        "owner": {},
+                        "modifier": {
+                          "add": "@dividend_rank_rate",
+                          "desc": "enclave_rank",
+                          "owner": {},
+                          "modifier": {
+                            "add": "@dividend_financial_trouble_rate",
+                            "desc": "enclave_rank",
+                            "owner": {},
+                            "modifier": {
+                              "add": "@dividend_lord_of_war_rate",
+                              "desc": "lord_of_war",
+                              "owner": {
+                                "any_owned_fleet": {
+                                  "is_ship_size": "enclave_mercenary_station",
+                                  "solar_system": {
+                                    "exists": "space_owner",
+                                    "space_owner": {
+                                      "has_ascension_perk": "ap_lord_of_war"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "approach": {
+                            "name": "approach_revolt_do_nothing",
+                            "icon": "GFX_situation_approach_this_is_fine",
+                            "icon_background": "GFX_situation_approach_bg_yellow",
+                            "default": "yes",
+                            "on_select": {
+                              "custom_tooltip": "deficit_approach_do_nothing_tooltip"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_AI_empire_situations.txt",
+    "_line_number": 277
+  },
+  "fallen_empires_situation": {
+    "fallen_empires_situation": {
+      "picture": "GFX_evt_fallen_empire",
+      "complete_icon_frame": "GFX_situation_outcome_frame_blue",
+      "complete_icon": "GFX_situation_outcome_meh",
+      "on_progress_complete": {},
+      "on_fail": {
+        "log_error": "fallen_empires_situation situation failed, this is not meant to happen",
+        "destroy_situation": "this"
+      },
+      "on_monthly": {
+        "random_events": {
+          "50": "fallen_empires.11 # Fallen Empire gets a construction ship if it's lost all construction ships (previously: MTTH 1 month)",
+          "15": "fallen_empires.10 # Fallen Empire establishes communications (previously: MTTH 3 month)"
+        }
+      },
+      "stages": {
+        "high_level": {
+          "icon": "GFX_situation_stage_1",
+          "icon_background": "GFX_situation_stage_frame_blue",
+          "end": "100"
+        }
+      },
+      "monthly_progress": {
+        "base": "0"
+      },
+      "approach": {
+        "name": "approach_revolt_do_nothing",
+        "icon": "GFX_situation_approach_this_is_fine",
+        "icon_background": "GFX_situation_approach_bg_yellow",
+        "default": "yes",
+        "on_select": {
+          "custom_tooltip": "deficit_approach_do_nothing_tooltip"
+        }
+      },
+      "abort_trigger": {
+        "OR": {
+          "NOT": {
+            "root.owner": {
+              "NOR": {
+                "is_country_type": "awakened_fallen_empire"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_AI_empire_situations.txt",
+    "_line_number": 436
+  }
+}

@@ -1,0 +1,249 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "origin.4936",
+      "title": "origin.4936.name",
+      "desc": "origin.4936.desc",
+      "picture": "GFX_evt_payback",
+      "show_sound": "event_dig_site",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_origin": "origin_payback",
+        "OR": {
+          "last_increased_tech": "tech_destroyers"
+        },
+        "any_owned_ship": {
+          "has_ship_flag": "payback_flagship"
+        },
+        "NOT": {
+          "has_special_project": "UPGRADE_FLAGSHIP"
+        }
+      },
+      "immediate": {
+        "random_owned_ship": {
+          "limit": {
+            "has_ship_flag": "payback_flagship"
+          },
+          "save_event_target_as": "payback_flagship"
+        }
+      },
+      "option": {
+        "name": "EXCELLENT",
+        "custom_tooltip": "origin.4936.tt",
+        "enable_special_project": {
+          "name": "UPGRADE_FLAGSHIP",
+          "location": "event_target:payback_flagship",
+          "owner": "ROOT"
+        }
+      }
+    },
+    "_source_file": "origin_events_4.txt",
+    "_line_number": 3557
+  },
+  "first_contact_event": {
+    "first_contact_event": {
+      "id": "origin.4210",
+      "title": "origin.4210.name",
+      "desc": "origin.4210.desc",
+      "picture": "GFX_evt_diplomatic_visit",
+      "show_sound": "event_celebration",
+      "is_triggered_only": "yes",
+      "first_contact": "yes",
+      "immediate": {
+        "set_site_progress_locked": "yes"
+      },
+      "after": {
+        "set_site_progress_locked": "no"
+      },
+      "option": {
+        "name": "EXCELLENT",
+        "finish_first_contact_effect": "yes",
+        "first_contact_inform_intel": "yes"
+      }
+    },
+    "_source_file": "origin_events_4.txt",
+    "_line_number": 426
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "origin.4304",
+      "title": "origin.4304.name",
+      "desc": "origin.4304.desc",
+      "picture": "GFX_evt_arena",
+      "show_sound": "event_celebration",
+      "is_triggered_only": "yes",
+      "location": "this",
+      "immediate": {
+        "remove_building": "building_clinic",
+        "if": {
+          "limit": {
+            "owner": {},
+            "add_building": "building_galactic_memorial_1"
+          },
+          "else": {
+            "add_building": "building_autochthon_monument"
+          }
+        },
+        "option": {
+          "name": "SPLENDID",
+          "owner": {
+            "add_modifier": {
+              "modifier": "payback_healing_scars",
+              "years": "5"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_4.txt",
+    "_line_number": 3054
+  },
+  "situation_event": {
+    "situation_event": {
+      "id": "origin.4170",
+      "title": "origin.4130.name",
+      "desc": "origin.4170.desc",
+      "is_triggered_only": "yes",
+      "diplomatic": "yes",
+      "picture_event_data": {
+        "portrait": "event_target:MSI_country.species",
+        "room": "slaver_room"
+      },
+      "trigger": {
+        "owner": {
+          "has_origin": "origin_payback",
+          "exists": "event_target:MSI_country",
+          "has_communications": "event_target:MSI_country",
+          "has_event_chain": "payback_debt_collectors_chain",
+          "NOR": {
+            "has_country_flag": "payback_revenge_complete"
+          },
+          "any_situation": {
+            "OR": {
+              "is_situation_type": "situation_alloys_deficit"
+            }
+          }
+        }
+      },
+      "immediate": {
+        "owner": {
+          "set_timed_country_flag": {
+            "flag": "origin_4170_recently_fired",
+            "days": "1800\t# 5 years"
+          }
+        }
+      },
+      "option": {
+        "name": "origin.4170.b",
+        "owner": {
+          "add_monthly_resource_mult": {
+            "resource": "unity",
+            "value": "@tier1materialreward",
+            "min": "@tier1materialmin",
+            "max": "@tier1materialmax"
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_4.txt",
+    "_line_number": 2725
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "origin.4937",
+      "title": "origin.4937.name",
+      "desc": "origin.4937.desc",
+      "picture": "GFX_evt_payback",
+      "show_sound": "event_dig_site",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "has_origin": "origin_payback",
+          "any_owned_ship": {
+            "has_ship_flag": "payback_flagship"
+          }
+        }
+      },
+      "immediate": {
+        "owner": {
+          "random_owned_ship": {
+            "limit": {
+              "has_ship_flag": "payback_flagship"
+            },
+            "save_event_target_as": "spawn_location",
+            "_comments": [
+              "# Unassign the leader so they won't get accidentally killed once we recreate the warship"
+            ],
+            "fleet": {
+              "if": {
+                "limit": {
+                  "exists": "leader"
+                },
+                "leader": {
+                  "save_event_target_as": "flagship_leader",
+                  "unassign_leader": "this"
+                }
+              }
+            }
+          }
+        }
+      },
+      "option": {
+        "name": "EXCELLENT",
+        "custom_tooltip": "origin.4937.tt",
+        "hidden_effect": {
+          "owner": {
+            "create_payback_warship_effect": "yes"
+          }
+        }
+      },
+      "after": {
+        "delete_ship": "event_target:spawn_location"
+      }
+    },
+    "_source_file": "origin_events_4.txt",
+    "_line_number": 3602
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "origin.4925",
+      "title": "origin.4925.name",
+      "desc": "origin.4925.desc",
+      "picture": "GFX_evt_baol_datacrystals",
+      "show_sound": "event_dig_site",
+      "archaeology": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "from": {
+          "set_site_progress_locked": "yes",
+          "save_event_target_as": "ship_wreck"
+        },
+        "solar_system": {
+          "random_system_planet": {
+            "limit": {
+              "save_event_target_as": "habitat_spawn_planet"
+            }
+          }
+        },
+        "after": {
+          "from": {},
+          "option": {
+            "custom_tooltip": "origin.4925.a.tt",
+            "name": "EXCELLENT",
+            "begin_event_chain": {
+              "event_chain": "payback_restore_warship_chain",
+              "target": "root.owner"
+            },
+            "enable_special_project": {
+              "name": "RESTORE_HABITAT_PROJECT",
+              "location": "event_target:ship_wreck",
+              "owner": "root.owner"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_4.txt",
+    "_line_number": 3422
+  }
+}

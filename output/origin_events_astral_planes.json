@@ -1,0 +1,112 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "astral_planes.2110",
+      "title": "astral_planes.2110.name",
+      "desc": "astral_planes.2110.desc",
+      "diplomatic": "yes",
+      "picture_event_data": {
+        "room": "no_video_feed_room"
+      },
+      "location": "fromfrom",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "END_TRANSMISSION"
+      }
+    },
+    "_source_file": "origin_events_astral_planes.txt",
+    "_line_number": 116
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "astral_planes.2120",
+      "title": "astral_planes.2120.name",
+      "desc": "astral_planes.2120.desc",
+      "picture": "GFX_evt_riftworld_archsite_crater",
+      "show_sound": "event_finding_loot",
+      "location": "this",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "FASCINATING",
+        "create_archaeological_site": "riftworld_digsite"
+      }
+    },
+    "_source_file": "origin_events_astral_planes.txt",
+    "_line_number": 134
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "astral_planes.2140",
+      "title": "astral_planes.2140.name",
+      "desc": {
+        "trigger": {
+          "controller": {
+            "NOT": {
+              "species": {
+                "is_archetype": "MACHINE"
+              }
+            }
+          },
+          "text": "astral_planes.2140.desc.machine"
+        },
+        "picture": "GFX_evt_riftworld_archsite_ancestors",
+        "show_sound": "ap_rift_event_0_astral_wonder",
+        "location": "from",
+        "is_triggered_only": "yes",
+        "archaeology": "yes",
+        "specimen": "ancient_rift_sphere",
+        "immediate": {
+          "from": {},
+          "after": {
+            "from": {},
+            "option": {
+              "name": {
+                "trigger": {
+                  "controller": {
+                    "is_synthetic_empire": "yes"
+                  }
+                },
+                "text": "astral_planes.2140.a.synthetic"
+              },
+              "small_artifact_reward": "yes",
+              "controller": {
+                "if": {
+                  "limit": {
+                    "NOT": {
+                      "has_technology": "tech_rift_sphere"
+                    }
+                  },
+                  "add_tech_progress": {
+                    "tech": "tech_rift_sphere",
+                    "progress": "0.5"
+                  },
+                  "if": {
+                    "limit": {
+                      "any_situation": {},
+                      "every_situation": {
+                        "limit": {
+                          "destroy_situation": "this"
+                        }
+                      }
+                    },
+                    "else": {
+                      "add_monthly_resource_mult": {
+                        "resource": "unity",
+                        "value": "@tier2unityreward",
+                        "min": "@tier2unitymin",
+                        "max": "@tier2unitymax"
+                      }
+                    },
+                    "set_country_flag": "riftworld_digsite_completed"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_astral_planes.txt",
+    "_line_number": 226
+  }
+}

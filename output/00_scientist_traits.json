@@ -1,0 +1,3658 @@
+{
+  "trait_ruler_space_miner": {
+    "trait_ruler_space_miner": {
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_space_miner",
+        "RARITY": "common",
+        "COUNCIL": "yes",
+        "TIER": "none"
+      },
+      "councilor_modifier": {
+        "station_gatherers_produces_mult": "0.10",
+        "station_gatherers_cost_mult": "-0.25"
+      },
+      "leader_potential_add": {
+        "has_paragon_dlc": "no"
+      },
+      "leader_class": {
+        "selectable_weight": {
+          "weight": "@class_trait_weight",
+          "inline_script": "paragon/council_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 5
+  },
+  "trait_ruler_home_in_the_sky": {
+    "trait_ruler_home_in_the_sky": {
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_home_in_the_sky",
+        "RARITY": "common",
+        "COUNCIL": "yes",
+        "TIER": "none"
+      },
+      "councilor_modifier": {
+        "starbase_modules_cost_mult": "-0.2",
+        "starbase_upgrade_cost_mult": "-0.10"
+      },
+      "leader_potential_add": {
+        "has_paragon_dlc": "no"
+      },
+      "leader_class": {
+        "selectable_weight": {
+          "weight": "@class_trait_weight",
+          "inline_script": "paragon/council_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 28
+  },
+  "leader_trait_carefree": {
+    "leader_trait_carefree": {
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_carefree",
+        "RARITY": "common",
+        "COUNCIL": "no",
+        "TIER": "1"
+      },
+      "modifier": {
+        "ship_anomaly_research_speed_mult": "0.10"
+      },
+      "leader_potential_add": {
+        "is_ruler": "no"
+      },
+      "leader_class": {
+        "opposites": {},
+        "selectable_weight": {
+          "weight": "@class_trait_weight",
+          "inline_script": {
+            "script": "paragon/subclass_weight_mult",
+            "SUBCLASS": "scientist_scholar"
+          }
+        },
+        "ai_weight": "50"
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 55
+  },
+  "leader_trait_carefree_2": {
+    "leader_trait_carefree_2": {
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_carefree",
+          "RARITY": "common",
+          "COUNCIL": "no",
+          "TIER": "2"
+        },
+        "modifier": {
+          "ship_anomaly_research_speed_mult": "0.25"
+        },
+        "leader_class": {
+          "opposites": {},
+          "ai_weight": "50"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 88
+  },
+  "leader_trait_roamer": {
+    "leader_trait_roamer": {
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_roamer",
+        "RARITY": "common",
+        "COUNCIL": "no",
+        "TIER": "1"
+      },
+      "modifier": {
+        "science_ship_survey_speed": "0.10"
+      },
+      "leader_potential_add": {
+        "is_ruler": "no"
+      },
+      "leader_class": {
+        "opposites": {},
+        "selectable_weight": {
+          "weight": "@class_trait_weight",
+          "inline_script": {
+            "script": "paragon/subclass_weight_mult",
+            "SUBCLASS": "scientist_explorer"
+          }
+        },
+        "ai_weight": "100"
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 112
+  },
+  "leader_trait_roamer_2": {
+    "leader_trait_roamer_2": {
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_roamer",
+          "RARITY": "common",
+          "COUNCIL": "no",
+          "TIER": "2"
+        },
+        "modifier": {
+          "science_ship_survey_speed": "0.20"
+        },
+        "leader_class": {
+          "opposites": {},
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 143
+  },
+  "leader_trait_archaeologist": {
+    "leader_trait_archaeologist": {
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_archaeologist",
+        "RARITY": "common",
+        "COUNCIL": "no",
+        "TIER": "1"
+      },
+      "modifier": {
+        "ship_archaeological_site_excavation_speed_mult": "0.1"
+      },
+      "leader_class": {
+        "selectable_weight": {
+          "weight": "@class_trait_weight",
+          "inline_script": {
+            "script": "paragon/subclass_weight_mult",
+            "SUBCLASS": "scientist_scholar"
+          }
+        },
+        "ai_weight": "100"
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 165
+  },
+  "leader_trait_archaeologist_2": {
+    "leader_trait_archaeologist_2": {
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_archaeologist",
+          "RARITY": "common",
+          "COUNCIL": "no",
+          "TIER": "2"
+        },
+        "modifier": {
+          "ship_archaeological_site_excavation_speed_mult": "0.2"
+        },
+        "leader_class": {
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 189
+  },
+  "leader_trait_meticulous": {
+    "leader_trait_meticulous": {
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_meticulous",
+        "RARITY": "common",
+        "COUNCIL": "no",
+        "TIER": "1"
+      },
+      "modifier": {
+        "ship_anomaly_generation_chance_mult": "0.1"
+      },
+      "leader_potential_add": {
+        "is_ruler": "no"
+      },
+      "leader_class": {
+        "opposites": {},
+        "selectable_weight": {
+          "weight": "@class_trait_weight",
+          "inline_script": {
+            "script": "paragon/subclass_weight_mult",
+            "SUBCLASS": "scientist_explorer"
+          }
+        },
+        "ai_weight": "50"
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 207
+  },
+  "leader_trait_meticulous_2": {
+    "leader_trait_meticulous_2": {
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_meticulous",
+          "RARITY": "common",
+          "COUNCIL": "no",
+          "TIER": "2"
+        },
+        "modifier": {
+          "ship_anomaly_generation_chance_mult": "0.15"
+        },
+        "leader_class": {
+          "opposites": {},
+          "ai_weight": "50"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 238
+  },
+  "leader_trait_custom_AI_assistant": {
+    "leader_trait_custom_AI_assistant": {
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_custom_AI_assistant",
+        "RARITY": "common",
+        "COUNCIL": "no",
+        "TIER": "none"
+      },
+      "modifier": {
+        "science_ship_survey_speed": "0.10",
+        "ship_anomaly_research_speed_mult": "0.10"
+      },
+      "leader_class": {
+        "prerequisites": {
+          "opposites": {
+            "selectable_weight": {
+              "weight": "@class_trait_weight",
+              "inline_script": {
+                "script": "paragon/dual_subclass_weight_mult",
+                "SUBCLASS_1": "scientist_explorer",
+                "SUBCLASS_2": "scientist_scholar"
+              }
+            },
+            "ai_weight": "50"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 260
+  },
+  "leader_trait_sapient_AI_assistant": {
+    "leader_trait_sapient_AI_assistant": {
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_sapient_AI_assistant",
+        "RARITY": "common",
+        "COUNCIL": "no",
+        "TIER": "none"
+      },
+      "modifier": {
+        "science_ship_survey_speed": "0.15",
+        "ship_anomaly_research_speed_mult": "0.15"
+      },
+      "leader_potential_add": {
+        "NOT": {},
+        "leader_class": {
+          "prerequisites": {
+            "opposites": {
+              "selectable_weight": {
+                "weight": "@class_trait_weight",
+                "inline_script": {
+                  "script": "paragon/dual_subclass_weight_mult",
+                  "SUBCLASS_1": "scientist_explorer",
+                  "SUBCLASS_2": "scientist_scholar"
+                }
+              },
+              "ai_weight": "70"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 289
+  },
+  "leader_trait_slippery": {
+    "leader_trait_slippery": {
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_slippery",
+        "RARITY": "veteran",
+        "COUNCIL": "no",
+        "TIER": "1"
+      },
+      "modifier": {
+        "ship_disengage_chance_mult": "0.25",
+        "ship_disengage_opportunities_add": "1",
+        "ship_hull_mult": "0.25"
+      },
+      "leader_potential_add": {
+        "has_trait": "subclass_scientist_explorer",
+        "has_paragon_dlc": "yes"
+      },
+      "leader_class": {
+        "selectable_weight": {
+          "weight": "@subclass_trait_weight",
+          "inline_script": {
+            "script": "paragon/subclass_weight_mult",
+            "SUBCLASS": "scientist_explorer"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 324
+  },
+  "leader_trait_slippery_2": {
+    "leader_trait_slippery_2": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_slippery",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "2"
+        },
+        "modifier": {
+          "ship_disengage_chance_mult": "0.5",
+          "ship_disengage_opportunities_add": "1",
+          "ship_hull_mult": "0.5"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 354
+  },
+  "leader_trait_slippery_3": {
+    "leader_trait_slippery_3": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_slippery",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "3"
+        },
+        "modifier": {
+          "ship_disengage_chance_mult": "1",
+          "ship_disengage_opportunities_add": "2",
+          "ship_hull_mult": "1"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 373
+  },
+  "leader_trait_prospector": {
+    "leader_trait_prospector": {
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_prospector",
+        "RARITY": "veteran",
+        "COUNCIL": "no",
+        "TIER": "1"
+      },
+      "_comments": [
+        "# Trait effects in paragon_events_2.txt"
+      ],
+      "leader_potential_add": {
+        "has_trait": "subclass_scientist_explorer",
+        "has_paragon_dlc": "yes"
+      },
+      "custom_tooltip": "leader_trait_prospector_effect",
+      "leader_class": {
+        "selectable_weight": {
+          "weight": "@subclass_trait_weight",
+          "inline_script": {
+            "script": "paragon/subclass_weight_mult",
+            "SUBCLASS": "scientist_explorer"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 393
+  },
+  "leader_trait_prospector_2": {
+    "leader_trait_prospector_2": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_prospector",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "2"
+        },
+        "custom_tooltip": "leader_trait_prospector_2_effect",
+        "_comments": [
+          "# Trait effects in paragon_events_2.txt"
+        ],
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 420
+  },
+  "leader_trait_prospector_3": {
+    "leader_trait_prospector_3": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_prospector",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "3"
+        },
+        "custom_tooltip_with_modifiers": "leader_trait_prospector_3_effect",
+        "_comments": [
+          "# Trait effects in paragon_events_2.txt"
+        ],
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 436
+  },
+  "leader_trait_observant": {
+    "leader_trait_observant": {
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "leader",
+        "ICON": "GFX_leader_trait_observant",
+        "RARITY": "veteran",
+        "COUNCIL": "no",
+        "TIER": "1"
+      },
+      "leader_potential_add": {
+        "OR": {
+          "has_trait": "subclass_commander_admiral"
+        },
+        "has_paragon_dlc": "yes"
+      },
+      "modifier": {
+        "ship_sensor_range_add": "1",
+        "ship_hyperlane_range_add": "2",
+        "ship_windup_mult": "-0.05"
+      },
+      "leader_class": {
+        "selectable_weight": {
+          "weight": "@subclass_trait_weight",
+          "inline_script": {
+            "script": "paragon/dual_subclass_weight_mult",
+            "SUBCLASS_1": "commander_admiral",
+            "SUBCLASS_2": "scientist_explorer"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 453
+  },
+  "leader_trait_observant_2": {
+    "leader_trait_observant_2": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "leader",
+          "ICON": "GFX_leader_trait_observant",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "2"
+        },
+        "modifier": {
+          "ship_sensor_range_add": "2",
+          "ship_hyperlane_range_add": "3",
+          "ship_windup_mult": "-0.15"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 488
+  },
+  "leader_trait_observant_3": {
+    "leader_trait_observant_3": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "leader",
+          "ICON": "GFX_leader_trait_observant",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "3"
+        },
+        "modifier": {
+          "ship_sensor_range_add": "3",
+          "ship_hyperlane_range_add": "4",
+          "ship_windup_mult": "-0.25"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 507
+  },
+  "leader_trait_academic_dig_site_expert": {
+    "leader_trait_academic_dig_site_expert": {
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_academic_dig_site_expert",
+        "RARITY": "free_or_veteran",
+        "COUNCIL": "no",
+        "TIER": "1"
+      },
+      "modifier": {
+        "ship_archaeological_site_clues_add": "1"
+      },
+      "leader_potential_add": {
+        "OR": {
+          "has_paragon_dlc": "no",
+          "has_trait": "subclass_scientist_scholar"
+        }
+      },
+      "leader_class": {
+        "selectable_weight": {
+          "inline_script": {
+            "script": "paragon/subclass_weight_mult",
+            "SUBCLASS": "scientist_scholar"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 527
+  },
+  "leader_trait_academic_dig_site_expert_2": {
+    "leader_trait_academic_dig_site_expert_2": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_academic_dig_site_expert",
+          "RARITY": "free_or_veteran",
+          "COUNCIL": "no",
+          "TIER": "2"
+        },
+        "modifier": {
+          "ship_archaeological_site_clues_add": "2"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 557
+  },
+  "leader_trait_academic_dig_site_expert_3": {
+    "leader_trait_academic_dig_site_expert_3": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_academic_dig_site_expert",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "3"
+        },
+        "modifier": {
+          "ship_archaeological_site_clues_add": "3"
+        },
+        "leader_potential_add": {
+          "has_paragon_dlc": "yes"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 574
+  },
+  "leader_trait_academic_minor_artifacts_expert": {
+    "leader_trait_academic_minor_artifacts_expert": {
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_academic_minor_artifacts_expert",
+        "RARITY": "free_or_veteran",
+        "COUNCIL": "no",
+        "TIER": "1"
+      },
+      "custom_tooltip": "leader_trait_academic_minor_artifacts_expert_tt",
+      "leader_potential_add": {
+        "has_ancrel": "yes",
+        "OR": {
+          "has_paragon_dlc": "no",
+          "has_trait": "subclass_scientist_scholar"
+        }
+      },
+      "leader_class": {
+        "prerequisites": {
+          "selectable_weight": {
+            "inline_script": {
+              "script": "paragon/subclass_weight_mult",
+              "SUBCLASS": "scientist_scholar"
+            },
+            "modifier": {
+              "from": {
+                "has_ascension_perk": "ap_archaeoengineers"
+              },
+              "factor": "@synergy_weight_mult"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 595
+  },
+  "leader_trait_academic_minor_artifacts_expert_2": {
+    "leader_trait_academic_minor_artifacts_expert_2": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_academic_minor_artifacts_expert",
+          "RARITY": "free_or_veteran",
+          "COUNCIL": "no",
+          "TIER": "2"
+        },
+        "custom_tooltip": "leader_trait_academic_minor_artifacts_expert_2_tt",
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 631
+  },
+  "leader_trait_academic_minor_artifacts_expert_3": {
+    "leader_trait_academic_minor_artifacts_expert_3": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_academic_minor_artifacts_expert",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "3"
+        },
+        "custom_tooltip": "leader_trait_academic_minor_artifacts_expert_3_tt",
+        "leader_potential_add": {
+          "has_paragon_dlc": "yes"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 646
+  },
+  "leader_trait_tuner": {
+    "leader_trait_tuner": {
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_tuner",
+        "RARITY": "veteran",
+        "COUNCIL": "no",
+        "TIER": "1"
+      },
+      "modifier": {
+        "ship_speed_mult": "0.25"
+      },
+      "leader_potential_add": {
+        "has_trait": "subclass_scientist_explorer",
+        "has_paragon_dlc": "yes"
+      },
+      "leader_class": {
+        "selectable_weight": {
+          "weight": "@subclass_trait_weight",
+          "inline_script": {
+            "script": "paragon/subclass_weight_mult",
+            "SUBCLASS": "scientist_explorer"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 665
+  },
+  "leader_trait_tuner_2": {
+    "leader_trait_tuner_2": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_tuner",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "2"
+        },
+        "modifier": {
+          "ship_speed_mult": "0.35"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 693
+  },
+  "leader_trait_tuner_3": {
+    "leader_trait_tuner_3": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_tuner",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "3"
+        },
+        "modifier": {
+          "ship_speed_mult": "0.5"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 710
+  },
+  "leader_trait_explorer_cloaking_focus": {
+    "leader_trait_explorer_cloaking_focus": {
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_explorer_cloaking_focus",
+        "RARITY": "veteran",
+        "COUNCIL": "no",
+        "TIER": "1"
+      },
+      "modifier": {
+        "ship_cloaking_strength_add": "1"
+      },
+      "prerequisites": {
+        "leader_potential_add": {
+          "has_trait": "subclass_scientist_explorer",
+          "has_paragon_dlc": "yes"
+        },
+        "leader_class": {
+          "selectable_weight": {
+            "weight": "@subclass_trait_weight",
+            "inline_script": {
+              "script": "paragon/subclass_weight_mult",
+              "SUBCLASS": "scientist_explorer"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 728
+  },
+  "leader_trait_explorer_cloaking_focus_2": {
+    "leader_trait_explorer_cloaking_focus_2": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_explorer_cloaking_focus",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "2"
+        },
+        "modifier": {
+          "ship_cloaking_strength_add": "2"
+        },
+        "prerequisites": {
+          "leader_class": {}
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 757
+  },
+  "leader_trait_explorer_cloaking_focus_3": {
+    "leader_trait_explorer_cloaking_focus_3": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_explorer_cloaking_focus",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "3"
+        },
+        "modifier": {
+          "ship_cloaking_strength_add": "2"
+        },
+        "custom_tooltip_with_modifiers": "leader_trait_explorer_cloaking_focus_3_tt",
+        "prerequisites": {
+          "leader_class": {}
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 775
+  },
+  "leader_trait_collaborator": {
+    "leader_trait_collaborator": {
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_collaborator",
+        "RARITY": "veteran",
+        "COUNCIL": "no",
+        "TIER": "1"
+      },
+      "planet_modifier": {
+        "planet_jobs_physics_research_produces_mult": "0.05",
+        "planet_jobs_society_research_produces_mult": "0.05",
+        "planet_jobs_engineering_research_produces_mult": "0.05"
+      },
+      "sector_modifier": {
+        "planet_jobs_physics_research_produces_mult": "0.025",
+        "planet_jobs_society_research_produces_mult": "0.025",
+        "planet_jobs_engineering_research_produces_mult": "0.025"
+      },
+      "leader_potential_add": {
+        "has_paragon_dlc": "yes",
+        "has_trait": "subclass_scientist_governor"
+      },
+      "leader_class": {
+        "opposites": {},
+        "selectable_weight": {
+          "weight": "@subclass_trait_weight",
+          "inline_script": "paragon/governor_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 798
+  },
+  "leader_trait_collaborator_2": {
+    "leader_trait_collaborator_2": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_collaborator",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "2"
+        },
+        "planet_modifier": {
+          "planet_jobs_physics_research_produces_mult": "0.075",
+          "planet_jobs_society_research_produces_mult": "0.075",
+          "planet_jobs_engineering_research_produces_mult": "0.075"
+        },
+        "sector_modifier": {
+          "planet_jobs_physics_research_produces_mult": "0.0375",
+          "planet_jobs_society_research_produces_mult": "0.0375",
+          "planet_jobs_engineering_research_produces_mult": "0.0375"
+        },
+        "leader_class": {
+          "opposites": {}
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 833
+  },
+  "leader_trait_collaborator_3": {
+    "leader_trait_collaborator_3": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_collaborator",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "3"
+        },
+        "planet_modifier": {
+          "planet_jobs_physics_research_produces_mult": "0.10",
+          "planet_jobs_society_research_produces_mult": "0.10",
+          "planet_jobs_engineering_research_produces_mult": "0.10"
+        },
+        "sector_modifier": {
+          "planet_jobs_physics_research_produces_mult": "0.05",
+          "planet_jobs_society_research_produces_mult": "0.05",
+          "planet_jobs_engineering_research_produces_mult": "0.05"
+        },
+        "leader_class": {
+          "opposites": {}
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 861
+  },
+  "leader_trait_manufacturer": {
+    "leader_trait_manufacturer": {
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "leader",
+        "ICON": "GFX_leader_trait_manufacturer",
+        "RARITY": "veteran",
+        "COUNCIL": "no",
+        "TIER": "1"
+      },
+      "leader_potential_add": {
+        "OR": {
+          "has_trait": "subclass_official_governor"
+        },
+        "has_paragon_dlc": "yes"
+      },
+      "planet_modifier": {
+        "planet_amenities_add": "10"
+      },
+      "sector_modifier": {
+        "planet_amenities_add": "5"
+      },
+      "leader_class": {
+        "selectable_weight": {
+          "weight": "@subclass_trait_weight",
+          "inline_script": "paragon/governor_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 890
+  },
+  "leader_trait_manufacturer_2": {
+    "leader_trait_manufacturer_2": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "leader",
+          "ICON": "GFX_leader_trait_manufacturer",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "2"
+        },
+        "planet_modifier": {
+          "planet_amenities_add": "20"
+        },
+        "sector_modifier": {
+          "planet_amenities_add": "10"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 920
+  },
+  "leader_trait_manufacturer_3": {
+    "leader_trait_manufacturer_3": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "leader",
+          "ICON": "GFX_leader_trait_manufacturer",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "3"
+        },
+        "planet_modifier": {
+          "planet_amenities_add": "40"
+        },
+        "sector_modifier": {
+          "planet_amenities_add": "20"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 940
+  },
+  "leader_trait_salvager": {
+    "leader_trait_salvager": {
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_salvager",
+        "RARITY": "veteran",
+        "COUNCIL": "no",
+        "TIER": "1"
+      },
+      "modifier": {
+        "ship_speed_mult": "0.05"
+      },
+      "leader_potential_add": {
+        "has_trait": "subclass_scientist_scholar",
+        "has_paragon_dlc": "yes"
+      },
+      "leader_class": {
+        "custom_tooltip_with_modifiers": "leader_trait_salvager_effect",
+        "selectable_weight": {
+          "weight": "@subclass_trait_weight",
+          "inline_script": {
+            "script": "paragon/subclass_weight_mult",
+            "SUBCLASS": "scientist_scholar"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 961
+  },
+  "leader_trait_salvager_2": {
+    "leader_trait_salvager_2": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_salvager",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "2"
+        },
+        "modifier": {
+          "ship_speed_mult": "0.15"
+        },
+        "leader_class": {
+          "custom_tooltip_with_modifiers": "leader_trait_salvager_effect_2"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 990
+  },
+  "leader_trait_salvager_3": {
+    "leader_trait_salvager_3": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_salvager",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "3"
+        },
+        "modifier": {
+          "ship_speed_mult": "0.25"
+        },
+        "leader_class": {
+          "custom_tooltip_with_modifiers": "leader_trait_salvager_effect_3"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1008
+  },
+  "leader_trait_space_miner": {
+    "leader_trait_space_miner": {
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "leader",
+        "ICON": "GFX_leader_trait_space_miner",
+        "RARITY": "veteran",
+        "COUNCIL": "no",
+        "TIER": "1"
+      },
+      "planet_modifier": {
+        "planet_miners_minerals_produces_add": "0.25"
+      },
+      "sector_modifier": {
+        "planet_miners_minerals_produces_add": "0.125"
+      },
+      "leader_potential_add": {
+        "has_governor_subclass": "yes",
+        "has_paragon_dlc": "yes"
+      },
+      "leader_class": {
+        "selectable_weight": {
+          "weight": "@subclass_trait_weight",
+          "inline_script": "paragon/governor_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1027
+  },
+  "leader_trait_space_miner_2": {
+    "leader_trait_space_miner_2": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "leader",
+          "ICON": "GFX_leader_trait_space_miner",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "2"
+        },
+        "planet_modifier": {
+          "planet_miners_minerals_produces_add": "0.5"
+        },
+        "sector_modifier": {
+          "planet_miners_minerals_produces_add": "0.25"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1054
+  },
+  "leader_trait_space_miner_3": {
+    "leader_trait_space_miner_3": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "leader",
+          "ICON": "GFX_leader_trait_space_miner",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "3"
+        },
+        "planet_modifier": {
+          "planet_miners_minerals_produces_add": "1"
+        },
+        "sector_modifier": {
+          "planet_miners_minerals_produces_add": "0.5"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1074
+  },
+  "leader_trait_inquisitive": {
+    "leader_trait_inquisitive": {
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_inquisitive",
+        "RARITY": "veteran",
+        "COUNCIL": "yes",
+        "TIER": "1"
+      },
+      "councilor_modifier": {
+        "all_technology_research_speed": "0.01",
+        "num_tech_alternatives_add": "1"
+      },
+      "leader_potential_add": {
+        "has_paragon_dlc": "yes",
+        "has_trait": "subclass_scientist_councilor"
+      },
+      "leader_class": {
+        "ai_weight": "100",
+        "opposites": {},
+        "selectable_weight": {
+          "weight": "@subclass_trait_weight",
+          "inline_script": "paragon/council_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1098
+  },
+  "leader_trait_inquisitive_2": {
+    "leader_trait_inquisitive_2": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_inquisitive",
+          "RARITY": "veteran",
+          "COUNCIL": "yes",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "all_technology_research_speed": "0.02",
+          "num_tech_alternatives_add": "1"
+        },
+        "leader_class": {
+          "ai_weight": "100",
+          "opposites": {}
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1128
+  },
+  "leader_trait_inquisitive_3": {
+    "leader_trait_inquisitive_3": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_inquisitive",
+          "RARITY": "veteran",
+          "COUNCIL": "yes",
+          "TIER": "3"
+        },
+        "councilor_modifier": {
+          "all_technology_research_speed": "0.04",
+          "num_tech_alternatives_add": "1"
+        },
+        "leader_class": {
+          "ai_weight": "100",
+          "opposites": {}
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1151
+  },
+  "leader_trait_maniacal": {
+    "leader_trait_maniacal": {
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_maniacal",
+        "RARITY": "free_or_veteran",
+        "COUNCIL": "yes",
+        "TIER": "1"
+      },
+      "councilor_modifier": {
+        "all_technology_research_speed": "0.03"
+      },
+      "_comments": [
+        "# increased chance to discover risky techs (weighted in tech-script)"
+      ],
+      "leader_potential_add": {
+        "OR": {
+          "has_paragon_dlc": "no",
+          "has_trait": "subclass_scientist_councilor"
+        }
+      },
+      "leader_class": {
+        "opposites": {},
+        "selectable_weight": {
+          "inline_script": "paragon/council_weight_mult"
+        },
+        "ai_weight": "110"
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1175
+  },
+  "leader_trait_maniacal_2": {
+    "leader_trait_maniacal_2": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_maniacal",
+          "RARITY": "free_or_veteran",
+          "COUNCIL": "yes",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "all_technology_research_speed": "0.06"
+        },
+        "_comments": [
+          "# increased chance to discover risky techs (weighted in tech-script)"
+        ],
+        "leader_class": {
+          "opposites": {},
+          "ai_weight": "110"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1207
+  },
+  "leader_trait_maniacal_3": {
+    "leader_trait_maniacal_3": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_maniacal",
+          "RARITY": "veteran",
+          "COUNCIL": "yes",
+          "TIER": "3"
+        },
+        "councilor_modifier": {
+          "all_technology_research_speed": "0.09"
+        },
+        "_comments": [
+          "# increased chance to discover risky techs (weighted in tech-script)"
+        ],
+        "leader_potential_add": {
+          "has_paragon_dlc": "yes",
+          "OR": {
+            "leader_class": "scientist",
+            "has_leader_flag": "renowned_materialist1"
+          }
+        },
+        "leader_class": {
+          "opposites": {},
+          "ai_weight": "110"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1230
+  },
+  "trait_ruler_expansionist": {
+    "trait_ruler_expansionist": {
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_expansionist",
+        "RARITY": "free_or_veteran",
+        "COUNCIL": "yes",
+        "TIER": "1"
+      },
+      "councilor_modifier": {
+        "starbase_outpost_cost_mult": "-0.05",
+        "country_starbase_influence_cost_mult": "-0.05"
+      },
+      "leader_potential_add": {
+        "OR": {
+          "has_paragon_dlc": "no",
+          "has_trait": "subclass_scientist_councilor"
+        }
+      },
+      "leader_class": {
+        "selectable_weight": {
+          "inline_script": "paragon/council_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1261
+  },
+  "trait_ruler_expansionist_2": {
+    "trait_ruler_expansionist_2": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_expansionist",
+          "RARITY": "free_or_veteran",
+          "COUNCIL": "yes",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "starbase_outpost_cost_mult": "-0.075",
+          "country_starbase_influence_cost_mult": "-0.075"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1288
+  },
+  "trait_ruler_expansionist_3": {
+    "trait_ruler_expansionist_3": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_expansionist",
+          "RARITY": "veteran",
+          "COUNCIL": "yes",
+          "TIER": "3"
+        },
+        "councilor_modifier": {
+          "starbase_outpost_cost_mult": "-0.10",
+          "country_starbase_influence_cost_mult": "-0.10"
+        },
+        "leader_potential_add": {
+          "has_paragon_dlc": "yes"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1306
+  },
+  "leader_trait_science_communicator": {
+    "leader_trait_science_communicator": {
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_science_communicator",
+        "RARITY": "veteran",
+        "COUNCIL": "yes",
+        "TIER": "1"
+      },
+      "councilor_modifier": {
+        "scientist_exp_gain": "0.05",
+        "ship_archaeological_site_clues_add": "1"
+      },
+      "leader_potential_add": {
+        "has_paragon_dlc": "yes",
+        "has_trait": "subclass_scientist_councilor"
+      },
+      "leader_class": {
+        "selectable_weight": {
+          "weight": "@subclass_trait_weight",
+          "inline_script": "paragon/council_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1328
+  },
+  "leader_trait_science_communicator_2": {
+    "leader_trait_science_communicator_2": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_science_communicator",
+          "RARITY": "veteran",
+          "COUNCIL": "yes",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "scientist_exp_gain": "0.15",
+          "ship_archaeological_site_clues_add": "1"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1353
+  },
+  "leader_trait_science_communicator_3": {
+    "leader_trait_science_communicator_3": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_science_communicator",
+          "RARITY": "veteran",
+          "COUNCIL": "yes",
+          "TIER": "3"
+        },
+        "councilor_modifier": {
+          "scientist_exp_gain": "0.25",
+          "ship_archaeological_site_clues_add": "2"
+        },
+        "leader_class": {}
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1371
+  },
+  "leader_trait_engineering_focus": {
+    "leader_trait_engineering_focus": {
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "trait/icon_engineering",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_engineering_focus",
+        "RARITY": "veteran",
+        "COUNCIL": "no",
+        "TIER": "1"
+      },
+      "planet_modifier": {
+        "planet_jobs_engineering_research_produces_mult": "0.1"
+      },
+      "sector_modifier": {
+        "planet_jobs_engineering_research_produces_mult": "0.05"
+      },
+      "leader_potential_add": {
+        "has_paragon_dlc": "yes",
+        "has_trait": "subclass_scientist_governor",
+        "has_scientist_focus": "no"
+      },
+      "leader_class": {
+        "triggered_desc": {
+          "ai_weight": "100",
+          "selectable_weight": {
+            "weight": "@subclass_trait_weight",
+            "inline_script": "paragon/governor_weight_mult"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1393
+  },
+  "leader_trait_engineering_focus_2": {
+    "leader_trait_engineering_focus_2": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon_engineering",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_engineering_focus",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "2"
+        },
+        "planet_modifier": {
+          "planet_jobs_engineering_research_produces_mult": "0.2"
+        },
+        "sector_modifier": {
+          "planet_jobs_engineering_research_produces_mult": "0.1"
+        },
+        "leader_class": {
+          "triggered_desc": {
+            "ai_weight": "100"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1423
+  },
+  "leader_trait_engineering_focus_3": {
+    "leader_trait_engineering_focus_3": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon_engineering",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_engineering_focus",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "3"
+        },
+        "planet_modifier": {
+          "planet_jobs_engineering_research_produces_mult": "0.3"
+        },
+        "sector_modifier": {
+          "planet_jobs_engineering_research_produces_mult": "0.15"
+        },
+        "leader_class": {
+          "triggered_desc": {
+            "ai_weight": "100"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1445
+  },
+  "leader_trait_physics_focus": {
+    "leader_trait_physics_focus": {
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "trait/icon_physics",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_physics_focus",
+        "RARITY": "veteran",
+        "COUNCIL": "no",
+        "TIER": "1"
+      },
+      "planet_modifier": {
+        "planet_jobs_physics_research_produces_mult": "0.1"
+      },
+      "sector_modifier": {
+        "planet_jobs_physics_research_produces_mult": "0.05"
+      },
+      "leader_potential_add": {
+        "has_paragon_dlc": "yes",
+        "has_trait": "subclass_scientist_governor",
+        "has_scientist_focus": "no"
+      },
+      "leader_class": {
+        "triggered_desc": {
+          "ai_weight": "100",
+          "selectable_weight": {
+            "weight": "@subclass_trait_weight",
+            "inline_script": "paragon/governor_weight_mult"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1468
+  },
+  "leader_trait_physics_focus_2": {
+    "leader_trait_physics_focus_2": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon_physics",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_physics_focus",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "2"
+        },
+        "planet_modifier": {
+          "planet_jobs_physics_research_produces_mult": "0.2"
+        },
+        "sector_modifier": {
+          "planet_jobs_physics_research_produces_mult": "0.1"
+        },
+        "leader_class": {
+          "triggered_desc": {
+            "ai_weight": "100"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1498
+  },
+  "leader_trait_physics_focus_3": {
+    "leader_trait_physics_focus_3": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon_physics",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_physics_focus",
+          "RARITY": "veteran",
+          "COUNCIL": "no",
+          "TIER": "3"
+        },
+        "planet_modifier": {
+          "planet_jobs_physics_research_produces_mult": "0.3"
+        },
+        "sector_modifier": {
+          "planet_jobs_physics_research_produces_mult": "0.15"
+        },
+        "leader_class": {
+          "triggered_desc": {
+            "ai_weight": "100"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1520
+  },
+  "leader_trait_society_focus": {
+    "leader_trait_society_focus": {
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "trait/icon_society",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_society_focus",
+        "RARITY": "veteran",
+        "COUNCIL": "no",
+        "TIER": "1"
+      },
+      "planet_modifier": {
+        "planet_jobs_society_research_produces_mult": "0.1"
+      },
+      "sector_modifier": {
+        "planet_jobs_society_research_produces_mult": "0.05"
+      },
+      "leader_potential_add": {
+        "has_paragon_dlc": "yes",
+        "has_trait": "subclass_scientist_governor",
+        "has_scientist_focus": "no"
+      },
+      "leader_class": {
+        "triggered_desc": {
+          "ai_weight": "100",
+          "selectable_weight": {
+            "weight": "@subclass_trait_weight",
+            "inline_script": "paragon/governor_weight_mult"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1543
+  },
+  "leader_trait_society_focus_2": {
+    "leader_trait_society_focus_2": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon_society",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_society_focus",
+          "RARITY": "veteran",
+          "COUNCIL": "yes",
+          "TIER": "2"
+        },
+        "planet_modifier": {
+          "planet_jobs_society_research_produces_mult": "0.2"
+        },
+        "sector_modifier": {
+          "planet_jobs_society_research_produces_mult": "0.1"
+        },
+        "leader_class": {
+          "triggered_desc": {
+            "ai_weight": "100"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1573
+  },
+  "leader_trait_society_focus_3": {
+    "leader_trait_society_focus_3": {
+      "leader_trait_type": "veteran",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon_society",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_society_focus",
+          "RARITY": "veteran",
+          "COUNCIL": "yes",
+          "TIER": "3"
+        },
+        "planet_modifier": {
+          "planet_jobs_society_research_produces_mult": "0.3"
+        },
+        "sector_modifier": {
+          "planet_jobs_society_research_produces_mult": "0.15"
+        },
+        "leader_class": {
+          "triggered_desc": {
+            "ai_weight": "100"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1595
+  },
+  "leader_trait_expertise_materials": {
+    "leader_trait_expertise_materials": {
+      "force_councilor_trait": "yes",
+      "_comments": [
+        "# This is needed due to the technocracy effects"
+      ],
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "traits/technocracy_expertise_effects",
+        "FIELD": "engineering",
+        "TIER": "1"
+      },
+      "councilor_modifier": {
+        "category_materials_research_speed_mult": "0.05",
+        "category_materials_draw_chance_mult": "0.25"
+      },
+      "leader_potential_add": {
+        "is_specialist_researcher_engineering": "no",
+        "can_leader_get_council_trait_trigger": "yes",
+        "OR": {
+          "has_paragon_dlc": "no",
+          "has_trait": "subclass_scientist_councilor"
+        }
+      },
+      "leader_class": {
+        "ai_weight": "100",
+        "selectable_weight": {
+          "inline_script": "paragon/council_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1621
+  },
+  "leader_trait_expertise_materials_2": {
+    "leader_trait_expertise_materials_2": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "engineering",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "category_materials_research_speed_mult": "0.10",
+          "category_materials_draw_chance_mult": "0.35"
+        },
+        "leader_class": {
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1658
+  },
+  "leader_trait_expertise_materials_3": {
+    "leader_trait_expertise_materials_3": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "engineering",
+          "TIER": "3"
+        },
+        "councilor_modifier": {
+          "category_materials_research_speed_mult": "0.15",
+          "category_materials_draw_chance_mult": "0.75"
+        },
+        "leader_potential_add": {
+          "has_paragon_dlc": "yes"
+        },
+        "leader_class": {
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1682
+  },
+  "leader_trait_expertise_propulsion": {
+    "leader_trait_expertise_propulsion": {
+      "force_councilor_trait": "yes",
+      "_comments": [
+        "# This is needed due to the technocracy effects"
+      ],
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "traits/technocracy_expertise_effects",
+        "FIELD": "engineering",
+        "TIER": "1"
+      },
+      "councilor_modifier": {
+        "category_propulsion_research_speed_mult": "0.05",
+        "category_propulsion_draw_chance_mult": "0.25"
+      },
+      "leader_potential_add": {
+        "is_specialist_researcher_engineering": "no",
+        "can_leader_get_council_trait_trigger": "yes",
+        "OR": {
+          "has_paragon_dlc": "no",
+          "has_trait": "subclass_scientist_councilor"
+        }
+      },
+      "leader_class": {
+        "ai_weight": "100",
+        "selectable_weight": {
+          "inline_script": "paragon/council_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1710
+  },
+  "leader_trait_expertise_propulsion_2": {
+    "leader_trait_expertise_propulsion_2": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "engineering",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "category_propulsion_research_speed_mult": "0.10",
+          "category_propulsion_draw_chance_mult": "0.35"
+        },
+        "leader_class": {
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1747
+  },
+  "leader_trait_expertise_propulsion_3": {
+    "leader_trait_expertise_propulsion_3": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "engineering",
+          "TIER": "3"
+        },
+        "councilor_modifier": {
+          "category_propulsion_research_speed_mult": "0.15",
+          "category_propulsion_draw_chance_mult": "0.75"
+        },
+        "leader_potential_add": {
+          "has_paragon_dlc": "yes"
+        },
+        "leader_class": {
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1771
+  },
+  "leader_trait_expertise_voidcraft": {
+    "leader_trait_expertise_voidcraft": {
+      "force_councilor_trait": "yes",
+      "_comments": [
+        "# This is needed due to the technocracy effects"
+      ],
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "traits/technocracy_expertise_effects",
+        "FIELD": "engineering",
+        "TIER": "1"
+      },
+      "councilor_modifier": {
+        "category_voidcraft_research_speed_mult": "0.05",
+        "category_voidcraft_draw_chance_mult": "0.25"
+      },
+      "leader_potential_add": {
+        "is_specialist_researcher_engineering": "no",
+        "can_leader_get_council_trait_trigger": "yes",
+        "OR": {
+          "has_paragon_dlc": "no",
+          "has_trait": "subclass_scientist_councilor"
+        }
+      },
+      "leader_class": {
+        "ai_weight": "70",
+        "selectable_weight": {
+          "inline_script": "paragon/council_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1799
+  },
+  "leader_trait_expertise_voidcraft_2": {
+    "leader_trait_expertise_voidcraft_2": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "engineering",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "category_voidcraft_research_speed_mult": "0.10",
+          "category_voidcraft_draw_chance_mult": "0.35"
+        },
+        "leader_class": {
+          "ai_weight": "70"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1836
+  },
+  "leader_trait_expertise_voidcraft_3": {
+    "leader_trait_expertise_voidcraft_3": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "engineering",
+          "TIER": "3"
+        },
+        "councilor_modifier": {
+          "category_voidcraft_research_speed_mult": "0.15",
+          "category_voidcraft_draw_chance_mult": "0.75"
+        },
+        "leader_potential_add": {
+          "has_paragon_dlc": "yes"
+        },
+        "leader_class": {
+          "ai_weight": "70"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1860
+  },
+  "leader_trait_expertise_industry": {
+    "leader_trait_expertise_industry": {
+      "force_councilor_trait": "yes",
+      "_comments": [
+        "# This is needed due to the technocracy effects"
+      ],
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "traits/technocracy_expertise_effects",
+        "FIELD": "engineering",
+        "TIER": "1"
+      },
+      "councilor_modifier": {
+        "category_industry_research_speed_mult": "0.05",
+        "category_industry_draw_chance_mult": "0.25"
+      },
+      "leader_potential_add": {
+        "is_specialist_researcher_engineering": "no",
+        "can_leader_get_council_trait_trigger": "yes",
+        "OR": {
+          "has_paragon_dlc": "no",
+          "has_trait": "subclass_scientist_councilor"
+        }
+      },
+      "leader_class": {
+        "ai_weight": "70",
+        "selectable_weight": {
+          "inline_script": "paragon/council_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1888
+  },
+  "leader_trait_expertise_industry_2": {
+    "leader_trait_expertise_industry_2": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "engineering",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "category_industry_research_speed_mult": "0.10",
+          "category_industry_draw_chance_mult": "0.35"
+        },
+        "leader_class": {
+          "ai_weight": "70"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1925
+  },
+  "leader_trait_expertise_industry_3": {
+    "leader_trait_expertise_industry_3": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "engineering",
+          "TIER": "3"
+        },
+        "councilor_modifier": {
+          "category_industry_research_speed_mult": "0.15",
+          "category_industry_draw_chance_mult": "0.75"
+        },
+        "leader_potential_add": {
+          "has_paragon_dlc": "yes"
+        },
+        "leader_class": {
+          "ai_weight": "70"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1949
+  },
+  "leader_trait_expertise_field_manipulation": {
+    "leader_trait_expertise_field_manipulation": {
+      "force_councilor_trait": "yes",
+      "_comments": [
+        "# This is needed due to the technocracy effects"
+      ],
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "traits/technocracy_expertise_effects",
+        "FIELD": "physics",
+        "TIER": "1"
+      },
+      "councilor_modifier": {
+        "category_field_manipulation_research_speed_mult": "0.05",
+        "category_field_manipulation_draw_chance_mult": "0.25"
+      },
+      "leader_potential_add": {
+        "is_specialist_researcher_physics": "no",
+        "can_leader_get_council_trait_trigger": "yes",
+        "OR": {
+          "has_paragon_dlc": "no",
+          "has_trait": "subclass_scientist_councilor"
+        }
+      },
+      "leader_class": {
+        "ai_weight": "100",
+        "selectable_weight": {
+          "inline_script": "paragon/council_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 1977
+  },
+  "leader_trait_expertise_field_manipulation_2": {
+    "leader_trait_expertise_field_manipulation_2": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "physics",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "category_field_manipulation_research_speed_mult": "0.10",
+          "category_field_manipulation_draw_chance_mult": "0.35"
+        },
+        "leader_class": {
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2014
+  },
+  "leader_trait_expertise_field_manipulation_3": {
+    "leader_trait_expertise_field_manipulation_3": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "physics",
+          "TIER": "3"
+        },
+        "councilor_modifier": {
+          "category_field_manipulation_research_speed_mult": "0.15",
+          "category_field_manipulation_draw_chance_mult": "0.75"
+        },
+        "leader_potential_add": {
+          "has_paragon_dlc": "yes"
+        },
+        "leader_class": {
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2038
+  },
+  "leader_trait_expertise_particles": {
+    "leader_trait_expertise_particles": {
+      "force_councilor_trait": "yes",
+      "_comments": [
+        "# This is needed due to the technocracy effects"
+      ],
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "traits/technocracy_expertise_effects",
+        "FIELD": "physics",
+        "TIER": "1"
+      },
+      "councilor_modifier": {
+        "category_particles_research_speed_mult": "0.05",
+        "category_particles_draw_chance_mult": "0.25"
+      },
+      "leader_potential_add": {
+        "is_specialist_researcher_physics": "no",
+        "can_leader_get_council_trait_trigger": "yes",
+        "OR": {
+          "has_paragon_dlc": "no",
+          "has_trait": "subclass_scientist_councilor"
+        }
+      },
+      "leader_class": {
+        "ai_weight": "100",
+        "selectable_weight": {
+          "inline_script": "paragon/council_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2066
+  },
+  "leader_trait_expertise_particles_2": {
+    "leader_trait_expertise_particles_2": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "physics",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "category_particles_research_speed_mult": "0.10",
+          "category_particles_draw_chance_mult": "0.35"
+        },
+        "leader_class": {
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2103
+  },
+  "leader_trait_expertise_particles_3": {
+    "leader_trait_expertise_particles_3": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "physics",
+          "TIER": "3"
+        },
+        "councilor_modifier": {
+          "category_particles_research_speed_mult": "0.15",
+          "category_particles_draw_chance_mult": "0.75"
+        },
+        "leader_potential_add": {
+          "has_paragon_dlc": "yes"
+        },
+        "leader_class": {
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2127
+  },
+  "leader_trait_expertise_computing": {
+    "leader_trait_expertise_computing": {
+      "force_councilor_trait": "yes",
+      "_comments": [
+        "# This is needed due to the technocracy effects"
+      ],
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "traits/technocracy_expertise_effects",
+        "FIELD": "physics",
+        "TIER": "1"
+      },
+      "councilor_modifier": {
+        "category_computing_research_speed_mult": "0.05",
+        "category_computing_draw_chance_mult": "0.25"
+      },
+      "leader_potential_add": {
+        "is_specialist_researcher_physics": "no",
+        "can_leader_get_council_trait_trigger": "yes",
+        "OR": {
+          "has_paragon_dlc": "no",
+          "has_trait": "subclass_scientist_councilor"
+        }
+      },
+      "leader_class": {
+        "ai_weight": "100",
+        "selectable_weight": {
+          "inline_script": "paragon/council_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2155
+  },
+  "leader_trait_expertise_computing_2": {
+    "leader_trait_expertise_computing_2": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "physics",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "category_computing_research_speed_mult": "0.10",
+          "category_computing_draw_chance_mult": "0.35"
+        },
+        "leader_class": {
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2192
+  },
+  "leader_trait_expertise_computing_3": {
+    "leader_trait_expertise_computing_3": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "physics",
+          "TIER": "3"
+        },
+        "councilor_modifier": {
+          "category_computing_research_speed_mult": "0.15",
+          "category_computing_draw_chance_mult": "0.75"
+        },
+        "leader_potential_add": {
+          "has_paragon_dlc": "yes"
+        },
+        "leader_class": {
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2216
+  },
+  "leader_trait_expertise_psionics": {
+    "leader_trait_expertise_psionics": {
+      "force_councilor_trait": "yes",
+      "_comments": [
+        "# This is needed due to the technocracy effects"
+      ],
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "traits/technocracy_expertise_effects",
+        "FIELD": "society",
+        "TIER": "1"
+      },
+      "councilor_modifier": {
+        "category_psionics_research_speed_mult": "0.15",
+        "category_psionics_draw_chance_mult": "0.5"
+      },
+      "leader_potential_add": {
+        "is_specialist_researcher_society": "no",
+        "can_leader_get_council_trait_trigger": "yes",
+        "OR": {
+          "has_psionic_leader_trait": "yes",
+          "AND": {
+            "exists": "owner",
+            "owner": {
+              "OR": {
+                "has_technology": "tech_psionic_theory",
+                "has_origin": "origin_shroudwalker_apprentice"
+              }
+            }
+          },
+          "species": {
+            "OR": {
+              "has_trait": "trait_psionic"
+            }
+          }
+        }
+      },
+      "leader_class": {
+        "ai_weight": "100",
+        "selectable_weight": {
+          "inline_script": "paragon/council_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2244
+  },
+  "leader_trait_expertise_psionics_2": {
+    "leader_trait_expertise_psionics_2": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "society",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "category_psionics_research_speed_mult": "0.2",
+          "category_psionics_draw_chance_mult": "1.00"
+        },
+        "leader_class": {
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2299
+  },
+  "leader_trait_expertise_psionics_3": {
+    "leader_trait_expertise_psionics_3": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "society",
+          "TIER": "3"
+        },
+        "councilor_modifier": {
+          "category_psionics_research_speed_mult": "0.35",
+          "category_psionics_draw_chance_mult": "2.00"
+        },
+        "leader_potential_add": {
+          "has_paragon_dlc": "yes"
+        },
+        "leader_class": {
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2323
+  },
+  "leader_trait_expertise_new_worlds": {
+    "leader_trait_expertise_new_worlds": {
+      "force_councilor_trait": "yes",
+      "_comments": [
+        "# This is needed due to the technocracy effects"
+      ],
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "traits/technocracy_expertise_effects",
+        "FIELD": "society",
+        "TIER": "1"
+      },
+      "councilor_modifier": {
+        "category_new_worlds_research_speed_mult": "0.05",
+        "category_new_worlds_draw_chance_mult": "0.25"
+      },
+      "leader_potential_add": {
+        "is_specialist_researcher_society": "no",
+        "can_leader_get_council_trait_trigger": "yes",
+        "OR": {
+          "has_paragon_dlc": "no",
+          "has_trait": "subclass_scientist_councilor"
+        }
+      },
+      "leader_class": {
+        "ai_weight": "100",
+        "selectable_weight": {
+          "inline_script": "paragon/council_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2351
+  },
+  "leader_trait_expertise_new_worlds_2": {
+    "leader_trait_expertise_new_worlds_2": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "society",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "category_new_worlds_research_speed_mult": "0.10",
+          "category_new_worlds_draw_chance_mult": "0.35"
+        },
+        "leader_class": {
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2388
+  },
+  "leader_trait_expertise_new_worlds_3": {
+    "leader_trait_expertise_new_worlds_3": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "society",
+          "TIER": "3"
+        },
+        "councilor_modifier": {
+          "category_new_worlds_research_speed_mult": "0.15",
+          "category_new_worlds_draw_chance_mult": "0.75"
+        },
+        "leader_potential_add": {
+          "has_paragon_dlc": "yes"
+        },
+        "leader_class": {
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2412
+  },
+  "leader_trait_expertise_statecraft": {
+    "leader_trait_expertise_statecraft": {
+      "force_councilor_trait": "yes",
+      "_comments": [
+        "# This is needed due to the technocracy effects"
+      ],
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "traits/technocracy_expertise_effects",
+        "FIELD": "society",
+        "TIER": "1"
+      },
+      "councilor_modifier": {
+        "category_statecraft_research_speed_mult": "0.05",
+        "category_statecraft_draw_chance_mult": "0.25"
+      },
+      "leader_potential_add": {
+        "is_specialist_researcher_society": "no",
+        "can_leader_get_council_trait_trigger": "yes",
+        "OR": {
+          "has_paragon_dlc": "no",
+          "has_trait": "subclass_scientist_councilor"
+        }
+      },
+      "leader_class": {
+        "ai_weight": "100",
+        "selectable_weight": {
+          "inline_script": "paragon/council_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2440
+  },
+  "leader_trait_expertise_statecraft_2": {
+    "leader_trait_expertise_statecraft_2": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "society",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "category_statecraft_research_speed_mult": "0.10",
+          "category_statecraft_draw_chance_mult": "0.35"
+        },
+        "leader_class": {
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2477
+  },
+  "leader_trait_expertise_statecraft_3": {
+    "leader_trait_expertise_statecraft_3": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "society",
+          "TIER": "3"
+        },
+        "councilor_modifier": {
+          "category_statecraft_research_speed_mult": "0.15",
+          "category_statecraft_draw_chance_mult": "0.75"
+        },
+        "leader_potential_add": {
+          "has_paragon_dlc": "yes"
+        },
+        "leader_class": {
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2501
+  },
+  "leader_trait_expertise_biology": {
+    "leader_trait_expertise_biology": {
+      "force_councilor_trait": "yes",
+      "_comments": [
+        "# This is needed due to the technocracy effects"
+      ],
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "traits/technocracy_expertise_effects",
+        "FIELD": "society",
+        "TIER": "1"
+      },
+      "councilor_modifier": {
+        "category_biology_research_speed_mult": "0.05",
+        "category_biology_draw_chance_mult": "0.25"
+      },
+      "leader_potential_add": {
+        "is_specialist_researcher_society": "no",
+        "can_leader_get_council_trait_trigger": "yes",
+        "OR": {
+          "has_paragon_dlc": "no",
+          "has_trait": "subclass_scientist_councilor"
+        }
+      },
+      "leader_class": {
+        "ai_weight": "100",
+        "selectable_weight": {
+          "inline_script": "paragon/council_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2529
+  },
+  "leader_trait_expertise_biology_2": {
+    "leader_trait_expertise_biology_2": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "society",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "category_biology_research_speed_mult": "0.10",
+          "category_biology_draw_chance_mult": "0.35"
+        },
+        "leader_class": {
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2566
+  },
+  "leader_trait_expertise_biology_3": {
+    "leader_trait_expertise_biology_3": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "society",
+          "TIER": "3"
+        },
+        "councilor_modifier": {
+          "category_biology_research_speed_mult": "0.15",
+          "category_biology_draw_chance_mult": "0.75"
+        },
+        "leader_potential_add": {
+          "has_paragon_dlc": "yes"
+        },
+        "leader_class": {
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2590
+  },
+  "leader_trait_expertise_military_theory": {
+    "leader_trait_expertise_military_theory": {
+      "force_councilor_trait": "yes",
+      "_comments": [
+        "# This is needed due to the technocracy effects"
+      ],
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "traits/technocracy_expertise_effects",
+        "FIELD": "society",
+        "TIER": "1"
+      },
+      "councilor_modifier": {
+        "category_military_theory_research_speed_mult": "0.05",
+        "category_military_theory_draw_chance_mult": "0.25"
+      },
+      "leader_potential_add": {
+        "is_specialist_researcher_society": "no",
+        "can_leader_get_council_trait_trigger": "yes",
+        "OR": {
+          "has_paragon_dlc": "no",
+          "has_trait": "subclass_scientist_councilor"
+        }
+      },
+      "leader_class": {
+        "ai_weight": "100",
+        "selectable_weight": {
+          "inline_script": "paragon/council_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2618
+  },
+  "leader_trait_expertise_military_theory_2": {
+    "leader_trait_expertise_military_theory_2": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "society",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "category_military_theory_research_speed_mult": "0.10",
+          "category_military_theory_draw_chance_mult": "0.35"
+        },
+        "leader_class": {
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2655
+  },
+  "leader_trait_expertise_military_theory_3": {
+    "leader_trait_expertise_military_theory_3": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "traits/technocracy_expertise_effects",
+          "FIELD": "society",
+          "TIER": "3"
+        },
+        "councilor_modifier": {
+          "category_military_theory_research_speed_mult": "0.15",
+          "category_military_theory_draw_chance_mult": "0.75"
+        },
+        "leader_potential_add": {
+          "has_paragon_dlc": "yes"
+        },
+        "leader_class": {
+          "ai_weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2679
+  },
+  "leader_trait_expertise_archaeostudies": {
+    "leader_trait_expertise_archaeostudies": {
+      "force_councilor_trait": "yes",
+      "_comments": [
+        "# This is needed due to the technocracy effects"
+      ],
+      "leader_trait_type": "veteran",
+      "inline_script": {
+        "script": "trait/icon_society",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_expertise_archaeostudies",
+        "RARITY": "free_or_veteran",
+        "COUNCIL": "yes",
+        "TIER": "1"
+      },
+      "councilor_modifier": {
+        "category_archaeostudies_research_speed_mult": "0.05",
+        "category_archaeostudies_draw_chance_mult": "0.15",
+        "starbase_shipyard_build_minor_artifacts_cost_mult": "-0.05"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "has_valid_civic": "civic_technocracy"
+          }
+        },
+        "planet_jobs_minor_artifacts_produces_mult": "0.10"
+      },
+      "triggered_sector_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "has_valid_civic": "civic_technocracy"
+          }
+        },
+        "planet_jobs_minor_artifacts_produces_mult": "0.05"
+      },
+      "leader_potential_add": {
+        "is_specialist_researcher_society": "no",
+        "can_leader_get_council_trait_trigger": "yes",
+        "OR": {
+          "has_paragon_dlc": "no",
+          "has_trait": "subclass_scientist_councilor"
+        },
+        "has_ancrel": "yes",
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "has_origin": "origin_remnants",
+            "has_ascension_perk": "ap_archaeoengineers",
+            "any_system_within_border": {
+              "any_archaeological_site": {
+                "is_site_completed": "yes"
+              }
+            },
+            "any_owned_planet": {
+              "has_active_building": "building_archaeostudies_faculty"
+            }
+          }
+        }
+      },
+      "leader_class": {
+        "ai_weight": {
+          "weight": "100",
+          "modifier": {
+            "factor": "0.3",
+            "owner": {
+              "num_buildings": {
+                "type": "building_archaeostudies_faculty",
+                "disabled": "no",
+                "in_construction": "no"
+              }
+            }
+          }
+        },
+        "selectable_weight": {
+          "inline_script": "paragon/council_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2707
+  },
+  "leader_trait_expertise_archaeostudies_2": {
+    "leader_trait_expertise_archaeostudies_2": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "trait/icon_society",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_expertise_archaeostudies",
+          "RARITY": "free_or_veteran",
+          "COUNCIL": "yes",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "category_archaeostudies_research_speed_mult": "0.10",
+          "category_archaeostudies_draw_chance_mult": "0.20",
+          "starbase_shipyard_build_minor_artifacts_cost_mult": "-0.075"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {
+              "has_valid_civic": "civic_technocracy"
+            }
+          },
+          "planet_jobs_minor_artifacts_produces_mult": "0.20"
+        },
+        "triggered_sector_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {
+              "has_valid_civic": "civic_technocracy"
+            }
+          },
+          "planet_jobs_minor_artifacts_produces_mult": "0.10"
+        },
+        "leader_class": {
+          "ai_weight": {
+            "weight": "100",
+            "modifier": {
+              "factor": "0.3",
+              "owner": {
+                "num_buildings": {
+                  "type": "building_archaeostudies_faculty",
+                  "disabled": "no",
+                  "in_construction": "no"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2787
+  },
+  "leader_trait_expertise_archaeostudies_3": {
+    "leader_trait_expertise_archaeostudies_3": {
+      "replace_traits": {
+        "leader_trait_type": "veteran",
+        "inline_script": {
+          "script": "trait/icon_society",
+          "CLASS": "scientist",
+          "ICON": "GFX_leader_trait_expertise_archaeostudies",
+          "RARITY": "veteran",
+          "COUNCIL": "yes",
+          "TIER": "3"
+        },
+        "councilor_modifier": {
+          "category_archaeostudies_research_speed_mult": "0.15",
+          "category_archaeostudies_draw_chance_mult": "0.35",
+          "starbase_shipyard_build_minor_artifacts_cost_mult": "-0.10"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {
+              "has_valid_civic": "civic_technocracy"
+            }
+          },
+          "planet_jobs_minor_artifacts_produces_mult": "0.30"
+        },
+        "triggered_sector_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {
+              "has_valid_civic": "civic_technocracy"
+            }
+          },
+          "planet_jobs_minor_artifacts_produces_mult": "0.15"
+        },
+        "leader_potential_add": {
+          "has_paragon_dlc": "yes"
+        },
+        "leader_class": {
+          "ai_weight": {
+            "weight": "100",
+            "modifier": {
+              "factor": "0.3",
+              "owner": {
+                "num_buildings": {
+                  "type": "building_archaeostudies_faculty",
+                  "disabled": "no",
+                  "in_construction": "no"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2838
+  },
+  "leader_trait_surveyor": {
+    "leader_trait_surveyor": {
+      "leader_trait_type": "destiny",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "leader",
+        "ICON": "GFX_leader_trait_surveyor",
+        "RARITY": "paragon",
+        "COUNCIL": "no",
+        "TIER": "none"
+      },
+      "leader_potential_add": {
+        "has_paragon_dlc": "yes",
+        "has_governor_subclass": "yes"
+      },
+      "planet_modifier": {
+        "planet_technician_physics_research_produces_add": "@trait_surveyor_amt",
+        "planet_farmers_society_research_produces_add": "@trait_surveyor_amt",
+        "planet_miners_engineering_research_produces_add": "@trait_surveyor_amt"
+      },
+      "sector_modifier": {
+        "planet_technician_physics_research_produces_add": "@trait_surveyor_sector_amt",
+        "planet_farmers_society_research_produces_add": "@trait_surveyor_sector_amt",
+        "planet_miners_engineering_research_produces_add": "@trait_surveyor_sector_amt"
+      },
+      "leader_class": {
+        "selectable_weight": {
+          "weight": "@subclass_trait_weight",
+          "inline_script": "paragon/governor_weight_mult"
+        },
+        "background_icon": "GFX_leader_background_destiny_1"
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2896
+  },
+  "leader_trait_midas_touch": {
+    "leader_trait_midas_touch": {
+      "leader_trait_type": "destiny",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_mindfulness",
+        "RARITY": "paragon",
+        "COUNCIL": "no",
+        "TIER": "none"
+      },
+      "_comments": [
+        "# Additional trait effects in paragon_2.2003"
+      ],
+      "modifier": {
+        "ship_anomaly_research_speed_mult": "0.25"
+      },
+      "leader_potential_add": {
+        "has_paragon_dlc": "yes",
+        "has_trait": "subclass_scientist_scholar"
+      },
+      "custom_tooltip_with_modifiers": "leader_trait_midas_touch_effect",
+      "leader_class": {
+        "selectable_weight": {
+          "weight": "@subclass_trait_weight",
+          "inline_script": {
+            "script": "paragon/subclass_weight_mult",
+            "SUBCLASS": "scientist_scholar"
+          }
+        },
+        "background_icon": "GFX_leader_background_destiny_1"
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2928
+  },
+  "leader_trait_collective_wisdom": {
+    "leader_trait_collective_wisdom": {
+      "leader_trait_type": "destiny",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_collective_wisdom",
+        "RARITY": "paragon",
+        "COUNCIL": "no",
+        "TIER": "none"
+      },
+      "leader_potential_add": {
+        "OR": {
+          "has_paragon_dlc": "no",
+          "has_trait": "subclass_scientist_scholar"
+        }
+      },
+      "modifier": {
+        "ship_archaeological_site_excavation_speed_mult": "-0.15"
+      },
+      "triggered_self_modifier": {
+        "potential": {
+          "has_ancrel": "yes",
+          "is_currently_excavating_site": "yes"
+        },
+        "leader_scientists_minor_artifacts_produces_add": "@trait_collective_wisdom_ma_amt"
+      },
+      "triggered_desc": {
+        "trigger": {
+          "has_ancrel": "yes",
+          "is_currently_excavating_site": "no"
+        },
+        "text": "leader_trait_collective_wisdom_ancrel_effect"
+      },
+      "leader_class": {
+        "selectable_weight": {
+          "weight": "@subclass_trait_weight",
+          "inline_script": {
+            "script": "paragon/subclass_weight_mult",
+            "SUBCLASS": "scientist_scholar"
+          }
+        },
+        "background_icon": "GFX_leader_background_destiny_1"
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 2960
+  },
+  "leader_trait_knowledge_for_the_masses": {
+    "leader_trait_knowledge_for_the_masses": {
+      "leader_trait_type": "destiny",
+      "ethic_destiny_trait": "yes",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_knowledge_for_the_masses",
+        "RARITY": "paragon",
+        "COUNCIL": "yes",
+        "TIER": "none"
+      },
+      "councilor_modifier": {
+        "species_leader_exp_gain": "0.25"
+      },
+      "leader_potential_add": {
+        "has_paragon_dlc": "yes",
+        "has_trait": "subclass_scientist_councilor"
+      },
+      "leader_class": {
+        "ai_weight": "100",
+        "selectable_weight": {
+          "weight": "@subclass_trait_weight",
+          "inline_script": "paragon/council_weight_mult"
+        },
+        "background_icon": "GFX_leader_background_destiny_1"
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 3018
+  },
+  "leader_trait_robotist": {
+    "leader_trait_robotist": {
+      "leader_trait_type": "destiny",
+      "ethic_destiny_trait": "yes",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "leader",
+        "ICON": "GFX_leader_trait_robotist",
+        "RARITY": "paragon",
+        "COUNCIL": "no",
+        "TIER": "none"
+      },
+      "leader_potential_add": {
+        "has_paragon_dlc": "yes",
+        "OR": {
+          "has_trait": "subclass_commander_governor"
+        },
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "has_technology": "tech_robotic_workers",
+            "has_cybernetic_ascension": "yes",
+            "is_individual_machine": "yes"
+          }
+        }
+      },
+      "planet_modifier": {
+        "planet_jobs_robotic_produces_mult": "0.2",
+        "planet_pops_robotics_upkeep_mult": "-0.2",
+        "planet_cyborg_jobs_produces_mult": "0.2",
+        "planet_pops_cyborgs_upkeep_mult": "-0.2"
+      },
+      "sector_modifier": {
+        "planet_jobs_robotic_produces_mult": "0.1",
+        "planet_pops_robotics_upkeep_mult": "-0.1",
+        "planet_cyborg_jobs_produces_mult": "0.1",
+        "planet_pops_cyborgs_upkeep_mult": "-0.1"
+      },
+      "leader_class": {
+        "selectable_weight": {
+          "weight": "@subclass_trait_weight",
+          "inline_script": "paragon/governor_weight_mult",
+          "modifier": {
+            "exists": "owner",
+            "owner": {
+              "OR": {
+                "has_cybernetic_ascension": "yes",
+                "has_synthetic_ascension": "yes",
+                "is_individual_machine": "yes"
+              }
+            },
+            "factor": "2"
+          }
+        },
+        "background_icon": "GFX_leader_background_destiny_1"
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 3045
+  },
+  "leader_trait_great_researcher": {
+    "leader_trait_great_researcher": {
+      "leader_trait_type": "destiny",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_experimenter",
+        "RARITY": "paragon",
+        "COUNCIL": "yes",
+        "TIER": "none"
+      },
+      "councilor_modifier": {
+        "all_technology_research_speed": "0.10"
+      },
+      "leader_potential_add": {
+        "has_paragon_dlc": "yes",
+        "has_trait": "subclass_scientist_councilor"
+      },
+      "leader_class": {
+        "selectable_weight": {
+          "weight": "@subclass_trait_weight",
+          "inline_script": "paragon/council_weight_mult"
+        },
+        "background_icon": "GFX_leader_background_destiny_1"
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 3103
+  },
+  "leader_trait_xeno_cataloger": {
+    "leader_trait_xeno_cataloger": {
+      "leader_trait_type": "destiny",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_generator_focus",
+        "RARITY": "paragon",
+        "COUNCIL": "no",
+        "TIER": "none"
+      },
+      "modifier": {
+        "science_ship_survey_speed": "0.50",
+        "ship_speed_mult": "0.50",
+        "ship_anomaly_generation_chance_mult": "0.15"
+      },
+      "leader_potential_add": {
+        "has_paragon_dlc": "yes",
+        "has_trait": "subclass_scientist_explorer"
+      },
+      "leader_class": {
+        "selectable_weight": {
+          "weight": "@subclass_trait_weight",
+          "inline_script": {
+            "script": "paragon/subclass_weight_mult",
+            "SUBCLASS": "scientist_explorer"
+          }
+        },
+        "background_icon": "GFX_leader_background_destiny_1"
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 3128
+  },
+  "leader_trait_frontier_adventurer": {
+    "leader_trait_frontier_adventurer": {
+      "leader_trait_type": "destiny",
+      "inline_script": {
+        "script": "paragon/leader_resource_produces",
+        "RESOURCE": "minor_artifacts",
+        "AMOUNT": "1"
+      },
+      "modifier": {
+        "science_ship_survey_speed": "0.25",
+        "ship_speed_mult": "0.25",
+        "ship_evasion_add": "15"
+      },
+      "leader_potential_add": {
+        "has_paragon_dlc": "yes",
+        "has_ancrel": "yes",
+        "has_trait": "subclass_scientist_explorer"
+      },
+      "leader_class": {
+        "selectable_weight": {
+          "weight": "@subclass_trait_weight",
+          "inline_script": {
+            "script": "paragon/subclass_weight_mult",
+            "SUBCLASS": "scientist_explorer"
+          }
+        },
+        "background_icon": "GFX_leader_background_destiny_1"
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 3159
+  },
+  "leader_trait_brilliant_shipwright": {
+    "leader_trait_brilliant_shipwright": {
+      "leader_trait_type": "destiny",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_brilliant_shipwright",
+        "RARITY": "paragon",
+        "COUNCIL": "yes",
+        "TIER": "none"
+      },
+      "councilor_modifier": {
+        "category_voidcraft_draw_chance_mult": "1",
+        "category_voidcraft_research_speed_mult": "0.15",
+        "starbase_shipyard_build_speed_mult": "0.33"
+      },
+      "leader_potential_add": {
+        "has_paragon_dlc": "yes",
+        "has_trait": "subclass_scientist_councilor"
+      },
+      "leader_class": {
+        "selectable_weight": {
+          "weight": "@subclass_trait_weight",
+          "inline_script": "paragon/council_weight_mult"
+        },
+        "background_icon": "GFX_leader_background_destiny_1"
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 3196
+  },
+  "leader_trait_truth_seeker": {
+    "leader_trait_truth_seeker": {
+      "leader_trait_type": "destiny",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_truth_seeker",
+        "RARITY": "paragon",
+        "COUNCIL": "no",
+        "TIER": "none"
+      },
+      "planet_modifier": {
+        "planet_psionic_jobs_produces_mult": "0.25",
+        "pop_job_amenities_mult": "0.20",
+        "pop_ethic_spiritualist_attraction_mult": "0.50"
+      },
+      "sector_modifier": {
+        "planet_psionic_jobs_produces_mult": "0.125",
+        "pop_job_amenities_mult": "0.10",
+        "pop_ethic_spiritualist_attraction_mult": "0.25"
+      },
+      "leader_potential_add": {
+        "has_paragon_dlc": "yes",
+        "has_trait": "subclass_scientist_governor"
+      },
+      "leader_class": {
+        "selectable_weight": {
+          "weight": "@subclass_trait_weight",
+          "inline_script": "paragon/governor_weight_mult",
+          "modifier": {
+            "exists": "owner",
+            "owner": {
+              "has_psionic_ascension": "yes"
+            },
+            "factor": "2"
+          }
+        },
+        "background_icon": "GFX_leader_background_destiny_1"
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 3223
+  },
+  "leader_trait_paranoid": {
+    "leader_trait_paranoid": {
+      "leader_trait_type": "negative",
+      "inline_script": {
+        "script": "trait/icon_negative",
+        "ICON": "GFX_leader_trait_paranoid",
+        "COUNCIL": "yes",
+        "TIER": "1"
+      },
+      "councilor_modifier": {
+        "all_technology_research_speed": "-0.05"
+      },
+      "leader_class": {
+        "opposites": {},
+        "selectable_weight": {
+          "weight": "@class_negative_trait_weight",
+          "inline_script": "paragon/council_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 3279
+  },
+  "leader_trait_paranoid_2": {
+    "leader_trait_paranoid_2": {
+      "leader_trait_type": "negative",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon_negative",
+          "ICON": "GFX_leader_trait_paranoid",
+          "COUNCIL": "yes",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "all_technology_research_speed": "-0.10"
+        },
+        "leader_class": {
+          "opposites": {},
+          "selectable_weight": "@tier2_negative_trait_weight"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 3304
+  },
+  "leader_trait_narrow_minded": {
+    "leader_trait_narrow_minded": {
+      "leader_trait_type": "negative",
+      "inline_script": {
+        "script": "trait/icon_negative",
+        "ICON": "GFX_leader_trait_narrow_minded",
+        "COUNCIL": "yes",
+        "TIER": "1"
+      },
+      "councilor_modifier": {
+        "all_technology_research_speed": "-0.05",
+        "_comments": [
+          "# Consider changing to reduced chance to draw Rare tech."
+        ]
+      },
+      "leader_class": {
+        "opposites": {},
+        "selectable_weight": {
+          "weight": "@class_negative_trait_weight",
+          "inline_script": "paragon/council_weight_mult",
+          "modifier": {
+            "species": {
+              "has_trait": "trait_slow_learners"
+            },
+            "factor": "@species_trait_weight_mult"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 3328
+  },
+  "leader_trait_narrow_minded_2": {
+    "leader_trait_narrow_minded_2": {
+      "leader_trait_type": "negative",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon_negative",
+          "ICON": "GFX_leader_trait_narrow_minded",
+          "COUNCIL": "yes",
+          "TIER": "2"
+        },
+        "councilor_modifier": {
+          "all_technology_research_speed": "-0.05",
+          "num_tech_alternatives_add": "-1"
+        },
+        "leader_class": {
+          "opposites": {},
+          "selectable_weight": "@tier2_negative_trait_weight"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 3358
+  },
+  "leader_trait_neurotic": {
+    "leader_trait_neurotic": {
+      "leader_trait_type": "negative",
+      "inline_script": {
+        "script": "trait/icon_negative",
+        "ICON": "GFX_leader_trait_neurotic",
+        "COUNCIL": "no",
+        "TIER": "1"
+      },
+      "modifier": {
+        "science_ship_survey_speed": "-0.05",
+        "ship_anomaly_research_speed_mult": "-0.05"
+      },
+      "leader_class": {
+        "opposites": {},
+        "selectable_weight": {
+          "weight": "@class_negative_trait_weight",
+          "inline_script": "paragon/pilot_weight_mult"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 3381
+  },
+  "leader_trait_neurotic_2": {
+    "leader_trait_neurotic_2": {
+      "leader_trait_type": "negative",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon_negative",
+          "ICON": "GFX_leader_trait_neurotic",
+          "COUNCIL": "no",
+          "TIER": "2"
+        },
+        "modifier": {
+          "science_ship_survey_speed": "-0.20",
+          "ship_anomaly_research_speed_mult": "-0.20"
+        },
+        "leader_class": {
+          "opposites": {},
+          "selectable_weight": "@tier2_negative_trait_weight"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 3406
+  },
+  "leader_trait_opinionated": {
+    "leader_trait_opinionated": {
+      "leader_trait_type": "negative",
+      "inline_script": {
+        "script": "trait/icon_negative",
+        "ICON": "GFX_leader_trait_opinionated",
+        "COUNCIL": "no",
+        "TIER": "1"
+      },
+      "planet_modifier": {
+        "planet_jobs_physics_research_produces_mult": "-0.05",
+        "planet_jobs_society_research_produces_mult": "-0.05",
+        "planet_jobs_engineering_research_produces_mult": "-0.05"
+      },
+      "sector_modifier": {
+        "planet_jobs_physics_research_produces_mult": "-0.025",
+        "planet_jobs_society_research_produces_mult": "-0.025",
+        "planet_jobs_engineering_research_produces_mult": "-0.025"
+      },
+      "leader_class": {
+        "opposites": {},
+        "selectable_weight": {
+          "weight": "@class_negative_trait_weight",
+          "inline_script": "paragon/governor_weight_mult",
+          "modifier": {
+            "species": {
+              "OR": {
+                "has_trait": "trait_robot_quarrelsome"
+              }
+            },
+            "factor": "@species_trait_weight_mult"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 3430
+  },
+  "leader_trait_opinionated_2": {
+    "leader_trait_opinionated_2": {
+      "leader_trait_type": "negative",
+      "replace_traits": {
+        "inline_script": {
+          "script": "trait/icon_negative",
+          "ICON": "GFX_leader_trait_opinionated",
+          "COUNCIL": "no",
+          "TIER": "2"
+        },
+        "planet_modifier": {
+          "planet_jobs_physics_research_produces_mult": "-0.075",
+          "planet_jobs_society_research_produces_mult": "-0.075",
+          "planet_jobs_engineering_research_produces_mult": "-0.075"
+        },
+        "sector_modifier": {
+          "planet_jobs_physics_research_produces_mult": "-0.0375",
+          "planet_jobs_society_research_produces_mult": "-0.0375",
+          "planet_jobs_engineering_research_produces_mult": "-0.0375"
+        },
+        "leader_class": {
+          "opposites": {},
+          "selectable_weight": "@tier2_negative_trait_weight"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 3469
+  },
+  "leader_trait_destructive": {
+    "leader_trait_destructive": {
+      "leader_trait_type": "negative",
+      "inline_script": {
+        "script": "paragon/leader_resource_upkeep",
+        "RESOURCE": "alloys",
+        "AMOUNT": "5"
+      },
+      "leader_class": {
+        "selectable_weight": {
+          "weight": "@class_negative_trait_weight",
+          "modifier": {
+            "species": {
+              "OR": {
+                "has_trait": "trait_robot_deviants"
+              }
+            },
+            "factor": "@species_trait_weight_mult"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 3498
+  },
+  "leader_trait_destructive_2": {
+    "leader_trait_destructive_2": {
+      "leader_trait_type": "negative",
+      "replace_traits": {
+        "inline_script": {
+          "script": "paragon/leader_resource_upkeep",
+          "RESOURCE": "alloys",
+          "AMOUNT": "10"
+        },
+        "leader_class": {
+          "selectable_weight": "@tier2_negative_trait_weight"
+        }
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 3526
+  },
+  "leader_trait_towel": {
+    "leader_trait_towel": {
+      "cost": "0",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_scroll",
+        "RARITY": "common",
+        "COUNCIL": "no",
+        "TIER": "none"
+      },
+      "modifier": {
+        "science_ship_survey_speed": "0.42"
+      },
+      "leader_class": {
+        "initial": "no",
+        "randomized": "no",
+        "ai_weight": "100"
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 3548
+  },
+  "leader_trait_percussive_maintainer": {
+    "leader_trait_percussive_maintainer": {
+      "cost": "0",
+      "inline_script": {
+        "script": "trait/icon",
+        "CLASS": "scientist",
+        "ICON": "GFX_leader_trait_percussive_maintenance",
+        "RARITY": "common",
+        "COUNCIL": "yes",
+        "TIER": "none"
+      },
+      "councilor_modifier": {
+        "category_computing_research_speed_mult": "0.1",
+        "ship_archaeological_site_excavation_speed_mult": "0.1",
+        "species_leader_exp_gain": "-0.1"
+      },
+      "leader_class": {
+        "initial": "no",
+        "randomized": "no",
+        "ai_weight": "100"
+      }
+    },
+    "_source_file": "00_scientist_traits.txt",
+    "_line_number": 3567
+  }
+}

@@ -1,0 +1,813 @@
+{
+  "building_noble_estates": {
+    "building_noble_estates": {
+      "base_buildtime": "@b2_time",
+      "icon": "building_palace",
+      "base_cap_amount": "1",
+      "category": "government",
+      "potential": {
+        "exists": "owner",
+        "planet": {
+          "or": {
+            "has_building": "building_noble_estates",
+            "owner": {}
+          },
+          "owner": {
+            "NOT": {},
+            "allow": {
+              "has_upgraded_capital": "yes",
+              "if": {
+                "limit": {
+                  "exists": "orbital_defence"
+                },
+                "orbital_defence": {
+                  "exists": "starbase",
+                  "starbase": {
+                    "NOR": {
+                      "has_starbase_building": "ring_noble_estates",
+                      "is_starbase_building_building": "ring_noble_estates"
+                    }
+                  }
+                }
+              }
+            },
+            "destroy_trigger": {
+              "exists": "owner",
+              "NOT": {
+                "owner": {}
+              },
+              "planet_modifier": {
+                "job_noble_add": "1",
+                "planet_housing_add": "1"
+              },
+              "resources": {
+                "category": "planet_buildings",
+                "cost": {
+                  "minerals": "@b1_minerals"
+                },
+                "upkeep": {
+                  "energy": "2"
+                }
+              },
+              "triggered_desc": {
+                "text": "job_noble_effect_desc"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_government_buildings.txt",
+    "_line_number": 9
+  },
+  "building_slave_processing": {
+    "building_slave_processing": {
+      "base_buildtime": "@b1_time",
+      "base_cap_amount": "1",
+      "category": "government",
+      "potential": {
+        "owner": {
+          "owner": {
+            "NOT": {},
+            "allow": {
+              "has_upgraded_capital": "yes",
+              "if": {
+                "limit": {
+                  "exists": "orbital_defence"
+                },
+                "orbital_defence": {
+                  "exists": "starbase",
+                  "starbase": {
+                    "NOR": {
+                      "has_starbase_building": "ring_slave_processing_facility",
+                      "is_starbase_building_building": "ring_slave_processing_facility"
+                    }
+                  }
+                }
+              }
+            },
+            "destroy_trigger": {
+              "exists": "owner",
+              "OR": {
+                "owner": {
+                  "NOT": {
+                    "has_modifier": "resort_colony"
+                  }
+                },
+                "planet_modifier": {
+                  "planet_jobs_slave_produces_mult": "0.05",
+                  "pop_cat_slave_political_power": "-0.25",
+                  "planet_resettlement_unemployed_mult": "-0.50"
+                },
+                "resources": {
+                  "category": "planet_buildings",
+                  "cost": {
+                    "minerals": "@b1_minerals"
+                  },
+                  "upkeep": {
+                    "energy": "2"
+                  }
+                },
+                "prerequisites": {},
+                "triggered_desc": {
+                  "text": "building_slave_processing_migrate_effect_desc"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_government_buildings.txt",
+    "_line_number": 75
+  },
+  "building_precinct_house": {
+    "building_precinct_house": {
+      "base_buildtime": "@b1_time",
+      "category": "government",
+      "potential": {
+        "owner": {
+          "NOT": {},
+          "allow": {
+            "hidden_trigger": {
+              "OR": {
+                "owner": {
+                  "AND": {
+                    "NOT": {
+                      "NOT": {}
+                    }
+                  }
+                },
+                "destroy_trigger": {
+                  "OR": {
+                    "AND": {
+                      "exists": "owner",
+                      "owner": {},
+                      "has_modifier": "slave_colony",
+                      "AND": {
+                        "exists": "owner",
+                        "owner": {
+                          "planet": {}
+                        }
+                      },
+                      "planet_modifier": {
+                        "job_enforcer_add": "2"
+                      },
+                      "resources": {
+                        "category": "planet_buildings",
+                        "cost": {
+                          "minerals": "@b1_minerals"
+                        },
+                        "upkeep": {
+                          "energy": "2"
+                        }
+                      },
+                      "prerequisites": {},
+                      "triggered_desc": {
+                        "text": "job_enforcer_effect_desc"
+                      },
+                      "show_tech_unlock_if": {
+                        "is_regular_empire": "yes"
+                      },
+                      "upgrades": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_government_buildings.txt",
+    "_line_number": 144
+  },
+  "building_hall_judgment": {
+    "building_hall_judgment": {
+      "base_buildtime": "@b2_time",
+      "category": "government",
+      "can_build": "no",
+      "potential": {
+        "owner": {
+          "NOT": {
+            "if": {
+              "limit": {
+                "owner": {},
+                "NOT": {
+                  "NOT": {}
+                },
+                "destroy_trigger": {
+                  "exists": "owner",
+                  "owner": {},
+                  "planet_modifier": {
+                    "job_enforcer_add": "5"
+                  },
+                  "resources": {
+                    "category": "planet_buildings",
+                    "cost": {
+                      "minerals": "@b2_minerals",
+                      "volatile_motes": "@b2_rare_cost"
+                    },
+                    "upkeep": {
+                      "energy": "@b1_upkeep",
+                      "volatile_motes": "@b2_rare_upkeep"
+                    }
+                  },
+                  "prerequisites": {},
+                  "triggered_desc": {
+                    "text": "job_enforcer_effect_desc"
+                  },
+                  "show_tech_unlock_if": {
+                    "is_regular_empire": "yes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_government_buildings.txt",
+    "_line_number": 210
+  },
+  "building_sentinel_posts": {
+    "building_sentinel_posts": {
+      "base_buildtime": "@b1_time",
+      "category": "government",
+      "potential": {
+        "exists": "owner",
+        "owner": {},
+        "allow": {
+          "hidden_trigger": {
+            "OR": {
+              "owner": {
+                "AND": {
+                  "NOT": {
+                    "NOT": {
+                      "NOT": {}
+                    }
+                  }
+                },
+                "destroy_trigger": {
+                  "exists": "owner",
+                  "NOT": {
+                    "owner": {}
+                  },
+                  "planet_modifier": {
+                    "job_patrol_drone_add": "2"
+                  },
+                  "resources": {
+                    "category": "planet_buildings",
+                    "cost": {
+                      "minerals": "@b1_minerals"
+                    },
+                    "upkeep": {
+                      "energy": "2"
+                    }
+                  },
+                  "prerequisites": {},
+                  "triggered_desc": {
+                    "text": "job_patrol_drone_effect_desc"
+                  },
+                  "show_tech_unlock_if": {
+                    "is_gestalt": "yes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_government_buildings.txt",
+    "_line_number": 263
+  },
+  "building_order_keep": {
+    "building_order_keep": {
+      "base_buildtime": "180",
+      "can_demolish": "no",
+      "can_be_disabled": "no",
+      "empire_limit": {
+        "base": "1"
+      },
+      "category": "government",
+      "potential": {
+        "owner": {
+          "has_planet_flag": "toxic_knights_habitat",
+          "owner": {},
+          "destroy_trigger": {
+            "OR": {
+              "NOT": {
+                "NOT": {}
+              },
+              "planet_modifier": {
+                "job_squire_add": "2",
+                "job_knight_add": "1",
+                "job_knight_per_pop": "0.05 # 1 for every 10 pop while quest active. 1 for 20 after quest.",
+                "planet_immigration_pull_add": "5",
+                "planet_resettlement_unemployed_destination_mult": "1"
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "owner": {},
+                  "modifier": {},
+                  "triggered_planet_modifier": {
+                    "potential": {
+                      "owner": {},
+                      "modifier": {
+                        "job_knight_add": "1",
+                        "job_knight_per_pop": "0.05"
+                      }
+                    },
+                    "triggered_planet_modifier": {
+                      "potential": {
+                        "owner": {},
+                        "planet_stability_add": "15"
+                      },
+                      "resources": {
+                        "cost": {
+                          "minerals": "1000"
+                        },
+                        "category": "planet_buildings"
+                      },
+                      "triggered_desc": {
+                        "text": "job_squire_effect_desc"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_government_buildings.txt",
+    "_line_number": 325
+  },
+  "building_order_castle": {
+    "building_order_castle": {
+      "icon": "building_order_holding",
+      "base_buildtime": "180",
+      "can_demolish": "no",
+      "can_be_disabled": "no",
+      "can_build": "no",
+      "category": "government",
+      "destroy_trigger": {
+        "OR": {
+          "NOT": {
+            "NOT": {}
+          },
+          "planet_modifier": {
+            "job_squire_add": "2",
+            "job_knight_add": "1",
+            "planet_immigration_pull_add": "1",
+            "planet_resettlement_unemployed_destination_mult": "0.2"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "owner": {},
+              "modifier": {
+                "job_knight_add": "1"
+              }
+            },
+            "resources": {
+              "category": "planet_buildings"
+            },
+            "triggered_desc": {
+              "text": "job_squire_effect_desc"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_government_buildings.txt",
+    "_line_number": 398
+  },
+  "building_psi_corps": {
+    "building_psi_corps": {
+      "base_buildtime": "@b2_time",
+      "category": "government",
+      "base_cap_amount": "1",
+      "potential": {
+        "host_has_dlc": "Utopia",
+        "owner": {
+          "NOT": {
+            "NOT": {},
+            "allow": {
+              "has_major_upgraded_capital": "yes",
+              "if": {
+                "limit": {
+                  "exists": "orbital_defence"
+                },
+                "orbital_defence": {
+                  "exists": "starbase",
+                  "starbase": {
+                    "NOR": {
+                      "has_starbase_building": "ring_psi_corps",
+                      "is_starbase_building_building": "ring_psi_corps"
+                    }
+                  }
+                }
+              }
+            },
+            "destroy_trigger": {
+              "exists": "owner",
+              "NOT": {
+                "owner": {}
+              },
+              "planet_modifier": {
+                "job_telepath_add": "2",
+                "planet_stability_add": "5"
+              },
+              "resources": {
+                "category": "planet_buildings",
+                "cost": {
+                  "minerals": "500"
+                },
+                "upkeep": {
+                  "energy": "@b2_upkeep"
+                }
+              },
+              "triggered_desc": {
+                "text": "job_telepath_effect_desc"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_government_buildings.txt",
+    "_line_number": 452
+  },
+  "building_embassy": {
+    "building_embassy": {
+      "base_buildtime": "@b2_time",
+      "category": "government",
+      "base_cap_amount": "1",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "exists": "planet",
+          "planet": {
+            "NOT": {
+              "NOT": {},
+              "upgrades": {},
+              "allow": {
+                "has_upgraded_capital": "yes",
+                "if": {
+                  "limit": {
+                    "exists": "orbital_defence"
+                  },
+                  "orbital_defence": {
+                    "exists": "starbase",
+                    "starbase": {
+                      "NOR": {
+                        "has_starbase_building": "ring_embassy_complex",
+                        "is_starbase_building_building": "ring_embassy_complex"
+                      }
+                    }
+                  }
+                }
+              },
+              "destroy_trigger": {
+                "OR": {
+                  "AND": {
+                    "exists": "owner",
+                    "owner": {},
+                    "planet": {}
+                  },
+                  "country_modifier": {
+                    "envoys_add": "1"
+                  },
+                  "planet_modifier": {
+                    "job_politician_add": "1"
+                  },
+                  "triggered_desc": {
+                    "text": "job_politician_effect_desc"
+                  },
+                  "resources": {
+                    "category": "planet_buildings",
+                    "cost": {
+                      "minerals": "@b2_minerals",
+                      "rare_crystals": "@b2_rare_cost"
+                    },
+                    "upkeep": {
+                      "energy": "@b2_upkeep",
+                      "rare_crystals": "@b2_rare_upkeep"
+                    }
+                  },
+                  "show_tech_unlock_if": {
+                    "is_regular_empire": "yes"
+                  },
+                  "prerequisites": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_government_buildings.txt",
+    "_line_number": 516
+  },
+  "building_grand_embassy": {
+    "building_grand_embassy": {
+      "base_buildtime": "@b3_time",
+      "can_build": "no",
+      "category": "government",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "planet": {
+            "NOT": {
+              "NOT": {},
+              "allow": {
+                "has_major_upgraded_capital": "yes",
+                "if": {
+                  "limit": {
+                    "exists": "orbital_defence"
+                  },
+                  "orbital_defence": {
+                    "exists": "starbase",
+                    "starbase": {
+                      "NOR": {
+                        "has_starbase_building": "ring_embassy_complex",
+                        "is_starbase_building_building": "ring_embassy_complex"
+                      }
+                    }
+                  }
+                }
+              },
+              "destroy_trigger": {
+                "OR": {
+                  "AND": {
+                    "exists": "owner",
+                    "owner": {},
+                    "planet": {}
+                  },
+                  "country_modifier": {
+                    "envoys_add": "2"
+                  },
+                  "planet_modifier": {
+                    "job_politician_add": "2"
+                  },
+                  "triggered_desc": {
+                    "text": "job_politician_effect_desc"
+                  },
+                  "resources": {
+                    "category": "planet_buildings",
+                    "cost": {
+                      "minerals": "@b3_minerals",
+                      "rare_crystals": "@b3_rare_cost"
+                    },
+                    "upkeep": {
+                      "energy": "@b3_upkeep",
+                      "rare_crystals": "@b3_rare_upkeep"
+                    }
+                  },
+                  "prerequisites": {},
+                  "show_tech_unlock_if": {
+                    "is_regular_empire": "yes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_government_buildings.txt",
+    "_line_number": 596
+  },
+  "building_gaiaseeders_1": {
+    "building_gaiaseeders_1": {
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "1",
+      "category": "government",
+      "can_be_disabled": "no",
+      "upgrades": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_country_type": "default",
+            "is_idyllic_bloom_empire": "yes"
+          },
+          "NOR": {
+            "is_planet_class": "pc_relic"
+          },
+          "is_artificial": "no"
+        },
+        "allow": {
+          "has_upgraded_capital": "yes"
+        },
+        "destroy_trigger": {
+          "OR": {
+            "is_planet_class": "pc_relic",
+            "NOT": {
+              "owner": {
+                "is_idyllic_bloom_empire": "no"
+              }
+            }
+          },
+          "resources": {
+            "category": "planet_buildings",
+            "cost": {
+              "energy": "1500",
+              "multiplier": "value:gaiaseeder_cost_mult"
+            },
+            "upkeep": {
+              "energy": "20",
+              "multiplier": "value:gaiaseeder_upkeep"
+            }
+          },
+          "planet_modifier": {
+            "pop_growth_speed": "0.1"
+          }
+        }
+      }
+    },
+    "_source_file": "02_government_buildings.txt",
+    "_line_number": 666
+  },
+  "building_gaiaseeders_2": {
+    "building_gaiaseeders_2": {
+      "base_buildtime": "@b2_time",
+      "can_build": "no",
+      "category": "government",
+      "can_be_disabled": "no",
+      "upgrades": {
+        "resources": {
+          "category": "planet_buildings",
+          "cost": {
+            "energy": "1500",
+            "exotic_gases": "@b2_rare_cost"
+          },
+          "upkeep": {
+            "energy": "20",
+            "exotic_gases": "@b2_rare_upkeep",
+            "multiplier": "value:gaiaseeder_upkeep"
+          }
+        },
+        "destroy_trigger": {
+          "OR": {
+            "is_planet_class": "pc_machine",
+            "NOT": {
+              "owner": {
+                "is_idyllic_bloom_empire": "no"
+              }
+            }
+          },
+          "allow": {
+            "can_build_gaiaseeder": "yes"
+          },
+          "planet_modifier": {
+            "pop_growth_speed": "0.05",
+            "pop_environment_tolerance": "0.1"
+          }
+        }
+      }
+    },
+    "_source_file": "02_government_buildings.txt",
+    "_line_number": 723
+  },
+  "building_gaiaseeders_3": {
+    "building_gaiaseeders_3": {
+      "base_buildtime": "@b2_time",
+      "can_build": "no",
+      "category": "government",
+      "can_be_disabled": "no",
+      "upgrades": {
+        "resources": {
+          "category": "planet_buildings",
+          "cost": {
+            "energy": "1500",
+            "exotic_gases": "@b3_rare_cost"
+          },
+          "upkeep": {
+            "energy": "20",
+            "exotic_gases": "@b3_rare_upkeep",
+            "multiplier": "value:gaiaseeder_upkeep"
+          }
+        },
+        "destroy_trigger": {
+          "OR": {
+            "is_planet_class": "pc_machine",
+            "NOT": {
+              "owner": {
+                "is_idyllic_bloom_empire": "no"
+              }
+            }
+          },
+          "allow": {
+            "can_build_gaiaseeder": "yes"
+          },
+          "planet_modifier": {
+            "pop_environment_tolerance": "0.2"
+          }
+        }
+      }
+    },
+    "_source_file": "02_government_buildings.txt",
+    "_line_number": 766
+  },
+  "building_gaiaseeders_4": {
+    "building_gaiaseeders_4": {
+      "base_buildtime": "@b2_time",
+      "category": "government",
+      "can_build": "no",
+      "can_demolish": "no",
+      "can_be_ruined": "no",
+      "can_be_disabled": "no",
+      "position_priority": "0",
+      "destroy_trigger": {
+        "OR": {
+          "NOT": {
+            "owner": {
+              "is_idyllic_bloom_empire": "no"
+            }
+          }
+        },
+        "resources": {
+          "category": "planet_buildings",
+          "cost": {
+            "energy": "1500",
+            "exotic_gases": "@b4_rare_cost"
+          },
+          "upkeep": {
+            "energy": "@b4_upkeep",
+            "exotic_gases": "@b3_rare_upkeep",
+            "multiplier": "value:gaiaseeder_cost_mult"
+          }
+        },
+        "triggered_desc": {
+          "text": "gaia_seeder_bloom_timer_tooltip",
+          "trigger": {
+            "has_planet_flag": "gaia_seeder_bloom_timer"
+          }
+        }
+      }
+    },
+    "_source_file": "02_government_buildings.txt",
+    "_line_number": 809
+  },
+  "building_gaiaseeders_pc_gaia": {
+    "building_gaiaseeders_pc_gaia": {
+      "base_buildtime": "@b2_time",
+      "base_cap_amount": "1",
+      "category": "government",
+      "can_demolish": "no",
+      "can_be_ruined": "no",
+      "can_be_disabled": "no",
+      "position_priority": "0",
+      "icon": "building_gaiaseeders_4",
+      "destroy_trigger": {
+        "OR": {
+          "NOT": {
+            "owner": {
+              "is_idyllic_bloom_empire": "no"
+            }
+          }
+        },
+        "resources": {
+          "category": "planet_buildings",
+          "cost": {
+            "energy": "1500",
+            "exotic_gases": "@b4_rare_cost"
+          },
+          "upkeep": {
+            "energy": "@b4_upkeep",
+            "exotic_gases": "@b3_rare_upkeep",
+            "multiplier": "value:gaiaseeder_cost_mult"
+          }
+        },
+        "potential": {
+          "hidden_trigger": {
+            "exists": "owner",
+            "owner": {
+              "is_country_type": "default",
+              "is_idyllic_bloom_empire": "yes"
+            },
+            "is_planet_class": "pc_gaia",
+            "NOR": {
+              "has_building": "building_gaiaseeders_pc_gaia",
+              "has_building_construction": "building_gaiaseeders_pc_gaia"
+            }
+          }
+        },
+        "allow": {
+          "has_upgraded_capital": "yes",
+          "can_build_gaiaseeder": "yes"
+        },
+        "triggered_desc": {
+          "text": "gaia_seeder_bloom_timer_tooltip",
+          "trigger": {
+            "has_planet_flag": "gaia_seeder_bloom_timer"
+          }
+        }
+      }
+    },
+    "_source_file": "02_government_buildings.txt",
+    "_line_number": 869
+  }
+}

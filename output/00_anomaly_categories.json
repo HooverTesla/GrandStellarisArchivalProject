@@ -1,0 +1,864 @@
+{
+  "crashed_ship_asteroid_category": {
+    "crashed_ship_asteroid_category": {
+      "desc": "crashed_ship_asteroid_category_desc",
+      "picture": "GFX_evt_crashed_station",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_asteroid": "yes"
+        }
+      },
+      "on_success": {
+        "1": {
+          "modifier": {
+            "factor": "0",
+            "from": {},
+            "anomaly_event": "anomaly.65"
+          }
+        }
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 8
+  },
+  "origin_asteroid_category": {
+    "origin_asteroid_category": {
+      "desc": "origin_asteroid_category_desc",
+      "picture": "GFX_evt_mining_station",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_asteroid": "yes"
+        }
+      },
+      "on_success": {
+        "1": {
+          "modifier": {
+            "factor": "0",
+            "from": {},
+            "anomaly_event": "anomaly.1"
+          },
+          "1": "anomaly.15",
+          "0": {
+            "modifier": {
+              "factor": "0",
+              "from": {},
+              "anomaly_event": "distar.225"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 33
+  },
+  "debris_asteroid_category": {
+    "debris_asteroid_category": {
+      "desc": "debris_asteroid_category_desc",
+      "picture": "GFX_evt_mining_station",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_asteroid": "yes",
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "on_success": {
+        "1": "anomaly.6800"
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 69
+  },
+  "emissions_asteroid_category": {
+    "emissions_asteroid_category": {
+      "desc": "emissions_asteroid_category_desc",
+      "picture": "GFX_evt_mining_station",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_asteroid": "yes"
+        }
+      },
+      "on_success": {
+        "1": {
+          "modifier": {
+            "factor": "0",
+            "from": {},
+            "anomaly_event": "anomaly.50"
+          },
+          "1": "anomaly.60"
+        }
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 89
+  },
+  "hatch_asteroid_category": {
+    "hatch_asteroid_category": {
+      "desc": "hatch_asteroid_category_desc",
+      "picture": "GFX_evt_mining_station",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_asteroid": "yes"
+        }
+      },
+      "on_success": {
+        "1": {
+          "modifier": {
+            "factor": "0",
+            "from": {},
+            "anomaly_event": "anomaly.25"
+          }
+        }
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 114
+  },
+  "collision_asteroid_category": {
+    "collision_asteroid_category": {
+      "desc": "collision_asteroid_category_desc",
+      "picture": "GFX_evt_mining_station",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_asteroid": "yes"
+        }
+      },
+      "max_once": "yes",
+      "on_success": {
+        "1": {
+          "modifier": {
+            "factor": "0",
+            "from": {},
+            "anomaly_event": "anomaly.55"
+          },
+          "1": "anomaly.6805"
+        }
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 140
+  },
+  "station_asteroid_category": {
+    "station_asteroid_category": {
+      "desc": "station_asteroid_category_desc",
+      "picture": "GFX_evt_mining_station",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_asteroid": "yes"
+        }
+      },
+      "max_once": "yes",
+      "on_success": {
+        "1": "anomaly.6810"
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 167
+  },
+  "life_asteroid_category": {
+    "life_asteroid_category": {
+      "desc": "life_asteroid_category_desc",
+      "picture": "GFX_evt_microscopic_life",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_asteroid": "yes",
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "max_once": "yes",
+      "on_success": {
+        "1": "anomaly.6825"
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 189
+  },
+  "object_gasgiant_category": {
+    "object_gasgiant_category": {
+      "desc": "object_gasgiant_category_desc",
+      "picture": "GFX_evt_gas_giant_station",
+      "level": "4",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_gas_giant"
+        }
+      },
+      "on_success": {
+        "1": "anomaly.335"
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 210
+  },
+  "moon_gasgiant_category": {
+    "moon_gasgiant_category": {
+      "desc": "moon_gasgiant_category_desc",
+      "picture": "GFX_evt_ship_in_orbit_3",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_gas_giant",
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "max_once": "yes",
+      "on_success": {
+        "1": "anomaly.340",
+        "0": {
+          "modifier": {
+            "add": "10",
+            "FROM": {},
+            "anomaly_event": "anomaly.6840"
+          }
+        }
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 230
+  },
+  "life_gasgiant_category": {
+    "life_gasgiant_category": {
+      "desc": "life_gasgiant_category_desc",
+      "picture": "GFX_evt_atmospheric_flight",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_gas_giant",
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "max_once": "yes",
+      "on_success": {
+        "1": "anomaly.6845"
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 258
+  },
+  "storms_gasgiant_category": {
+    "storms_gasgiant_category": {
+      "desc": "storms_gasgiant_category_desc",
+      "picture": "GFX_evt_atmospheric_flight",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_gas_giant"
+        }
+      },
+      "on_success": {
+        "1": "anomaly.330",
+        "0": {
+          "modifier": {
+            "add": "1",
+            "owner": {
+              "count_owned_ship": {
+                "limit": {}
+              }
+            },
+            "anomaly_event": "anomaly.6855"
+          }
+        }
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 279
+  },
+  "aerostat_gasgiant_category": {
+    "aerostat_gasgiant_category": {
+      "desc": "aerostat_gasgiant_category_desc",
+      "picture": "GFX_evt_gas_giant_station",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_gas_giant"
+        }
+      },
+      "on_success": {
+        "1": "anomaly.315"
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 309
+  },
+  "cargo_gasgiant_category": {
+    "cargo_gasgiant_category": {
+      "desc": "cargo_gasgiant_category_desc",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_gas_giant"
+        }
+      },
+      "on_success": {
+        "1": "anomaly.6865"
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 328
+  },
+  "debris_gasgiant_category": {
+    "debris_gasgiant_category": {
+      "desc": "debris_gasgiant_category_desc",
+      "picture": "GFX_evt_ruined_system",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_gas_giant",
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "on_success": {
+        "0": {
+          "modifier": {
+            "add": "1",
+            "OR": {
+              "any_system": {
+                "OR": {
+                  "has_star_flag": "nuked_sol"
+                }
+              },
+              "any_country": {
+                "OR": {
+                  "has_country_flag": "humans_early_space_age"
+                }
+              }
+            },
+            "owner": {
+              "NOR": {
+                "is_human_species": "yes",
+                "has_country_flag": "human_2"
+              }
+            }
+          },
+          "anomaly_event": "distar.1055"
+        },
+        "1": "anomaly.320"
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 347
+  },
+  "impact_uninhabitable_category": {
+    "impact_uninhabitable_category": {
+      "desc": "impact_uninhabitable_category_desc",
+      "picture": "GFX_evt_nuclear_explosion",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "uninhabitable_regular_planet": "yes"
+        }
+      },
+      "on_success": {
+        "1": {
+          "modifier": {
+            "factor": "0",
+            "from": {},
+            "anomaly_event": "anomaly.600"
+          },
+          "1": "anomaly.605"
+        }
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 393
+  },
+  "energy_uninhabitable_category": {
+    "energy_uninhabitable_category": {
+      "desc": "energy_uninhabitable_category_desc",
+      "picture": "GFX_evt_ship_in_orbit_3",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "uninhabitable_regular_planet": "yes"
+        }
+      },
+      "on_success": {
+        "1": {
+          "modifier": {
+            "factor": "0",
+            "from": {},
+            "anomaly_event": "anomaly.610"
+          },
+          "1": "distar.1040"
+        }
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 418
+  },
+  "signal_uninhabitable_category": {
+    "signal_uninhabitable_category": {
+      "desc": "signal_uninhabitable_category_desc",
+      "picture": "GFX_evt_ship_in_orbit_2",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "uninhabitable_regular_planet": "yes"
+        }
+      },
+      "on_success": {
+        "1": "anomaly.630"
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 445
+  },
+  "asteroid_uninhabitable_category": {
+    "asteroid_uninhabitable_category": {
+      "desc": "asteroid_uninhabitable_category_desc",
+      "picture": "GFX_evt_asteroid_approaching_planet",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "is_moon": "yes"
+        }
+      },
+      "on_success": {
+        "1": {
+          "modifier": {
+            "factor": "0",
+            "from": {},
+            "anomaly_event": "anomaly.660"
+          },
+          "1": "anomaly.6875"
+        }
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 464
+  },
+  "solar_uninhabitable_category": {
+    "solar_uninhabitable_category": {
+      "desc": "solar_uninhabitable_category_desc",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "2",
+          "uninhabitable_regular_planet": "yes"
+        }
+      },
+      "on_success": "anomaly.650"
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 493
+  },
+  "life_toxic_category": {
+    "life_toxic_category": {
+      "desc": "life_toxic_category_desc",
+      "picture": "GFX_evt_microscopic_life",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_toxic",
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "on_success": {
+        "1": "anomaly.6895"
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 509
+  },
+  "life_frozen_category": {
+    "life_frozen_category": {
+      "desc": "life_frozen_category_desc",
+      "picture": "GFX_evt_microscopic_life",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_frozen",
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "on_success": {
+        "1": "anomaly.6900"
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 530
+  },
+  "life_barren_category": {
+    "life_barren_category": {
+      "desc": "life_barren_category_desc",
+      "picture": "GFX_evt_microscopic_life",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "OR": {
+            "is_planet_class": "pc_barren_cold"
+          },
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "on_success": "anomaly.695"
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 550
+  },
+  "battle_uninhabitable_category": {
+    "battle_uninhabitable_category": {
+      "desc": "battle_uninhabitable_category_desc",
+      "picture": "GFX_evt_small_space_battle",
+      "level": "4",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "uninhabitable_regular_planet": "yes",
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "on_success": "anomaly.2530"
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 589
+  },
+  "shipyard_uninhabitable_category": {
+    "shipyard_uninhabitable_category": {
+      "desc": "shipyard_uninhabitable_category_desc",
+      "picture": "GFX_evt_ruined_system",
+      "level": "4",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "uninhabitable_regular_planet": "yes"
+        }
+      },
+      "on_success": "anomaly.2550"
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 606
+  },
+  "inhabited_toxic_category": {
+    "inhabited_toxic_category": {
+      "desc": "inhabited_toxic_category_desc",
+      "picture": "GFX_evt_relic_world_street",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_toxic",
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "on_success": {
+        "1": "anomaly.685"
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 622
+  },
+  "writing_uninhabitable_category": {
+    "writing_uninhabitable_category": {
+      "desc": "writing_uninhabitable_category_desc",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "uninhabitable_regular_planet": "yes",
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "on_success": "anomaly.635"
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 642
+  },
+  "beacon_uninhabitable_category": {
+    "beacon_uninhabitable_category": {
+      "desc": "beacon_uninhabitable_category_desc",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "uninhabitable_regular_planet": "yes",
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "on_success": "anomaly.705"
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 659
+  },
+  "mountain_uninhabitable_category": {
+    "mountain_uninhabitable_category": {
+      "desc": "mountain_uninhabitable_category_desc",
+      "picture": "GFX_evt_ship_in_orbit_3",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "uninhabitable_regular_planet": "yes",
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "on_success": {
+        "1": "anomaly.6905"
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 676
+  },
+  "object_uninhabitable_category": {
+    "object_uninhabitable_category": {
+      "desc": "object_uninhabitable_category_desc",
+      "picture": "GFX_evt_ship_in_orbit_2",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "uninhabitable_regular_planet": "yes",
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "on_success": "anomaly.2540"
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 696
+  },
+  "signal_gasgiant_category": {
+    "signal_gasgiant_category": {
+      "desc": "signal_gasgiant_category_desc",
+      "picture": "GFX_evt_atmospheric_flight",
+      "level": "5",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "is_planet_class": "pc_gas_giant"
+        }
+      },
+      "max_once_global": "yes",
+      "on_success": "anomaly.5000"
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 714
+  },
+  "ship_gasgiant_category": {
+    "ship_gasgiant_category": {
+      "desc": "ship_gasgiant_category_desc",
+      "picture": "GFX_evt_atmospheric_flight",
+      "level": "5",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_gas_giant"
+        }
+      },
+      "on_success": "anomaly.2560"
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 731
+  },
+  "terminal_gasgiant_category": {
+    "terminal_gasgiant_category": {
+      "desc": "terminal_gasgiant_category_desc",
+      "picture": "GFX_evt_ship_in_orbit_3",
+      "level": "5",
+      "_comments": [
+        "#risk = 30"
+      ],
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_planet_class": "pc_gas_giant",
+          "is_moon": "no"
+        }
+      },
+      "on_success": "anomaly.2570"
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 747
+  },
+  "sol_wasteland_category": {
+    "sol_wasteland_category": {
+      "desc": "sol_wasteland_category_desc",
+      "picture": "GFX_evt_city_ruins",
+      "level": "1",
+      "on_success": "galactic_features.104",
+      "_comments": [
+        "#Spawn set via initialisers"
+      ]
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 765
+  },
+  "living_metal_category": {
+    "living_metal_category": {
+      "desc": "living_metal_category_desc",
+      "picture": "GFX_evt_cold_barren",
+      "level": "7",
+      "should_ai_and_humans_use": "yes",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "OR": {
+            "has_deposit_for": "shipclass_research_station"
+          }
+        }
+      },
+      "on_success": "anomaly.2576"
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 776
+  },
+  "the_lonely_bot_category": {
+    "the_lonely_bot_category": {
+      "desc": "the_lonely_bot_category_desc",
+      "picture": "GFX_evt_alien_ruins",
+      "max_once_global": "yes",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "OR": {
+            "from.owner": {
+              "is_artificial": "yes"
+            }
+          }
+        },
+        "on_success": "anomaly.2580"
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 806
+  },
+  "fungal_emitters_category": {
+    "fungal_emitters_category": {
+      "desc": "fungal_emitters_category_desc",
+      "picture": "GFX_evt_cold_barren",
+      "level": "4",
+      "spawn_chance": {
+        "modifier": {
+          "add": "30",
+          "is_planet_class": "pc_barren",
+          "has_global_flag": "fumongus_spawned",
+          "closest_system": {
+            "limit": {
+              "has_star_flag": "fumongus_system"
+            },
+            "min_steps": "1",
+            "max_steps": "12"
+          }
+        }
+      },
+      "on_success": {
+        "1": {
+          "modifier": {
+            "factor": "0",
+            "owner": {},
+            "anomaly_event": "anomaly.6755"
+          },
+          "1": {
+            "modifier": {
+              "factor": "0",
+              "owner": {
+                "NAND": {
+                  "has_global_flag": "fumongus_resolved"
+                }
+              }
+            },
+            "anomaly_event": "anomaly.6765"
+          }
+        }
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 835
+  },
+  "lost_soul_cat": {
+    "lost_soul_cat": {
+      "desc": "lost_soul_cat_desc",
+      "picture": "GFX_evt_star_neutron",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "is_asteroid": "yes"
+        }
+      },
+      "on_success": "anomaly.6786"
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 888
+  },
+  "on_solar_sails_cat": {
+    "on_solar_sails_cat": {
+      "desc": "on_solar_sails_cat_desc",
+      "picture": "GFX_evt_star_neutron",
+      "level": "2",
+      "max_once_global": "yes",
+      "spawn_chance": {
+        "modifier": {
+          "add": "0.1",
+          "from.leader": {
+            "species": {
+              "NOT": {}
+            }
+          },
+          "modifier": {
+            "add": "0.3",
+            "from.leader": {
+              "species": {}
+            },
+            "modifier": {
+              "factor": "0",
+              "from.owner": {}
+            },
+            "on_success": "anomaly.7020"
+          }
+        }
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 901
+  },
+  "on_crashed_ship_cat": {
+    "on_crashed_ship_cat": {
+      "desc": "on_crashed_ship_desc",
+      "picture": "GFX_evt_physics_cache",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "from.owner": {}
+        },
+        "on_success": "anomaly.7030"
+      }
+    },
+    "_source_file": "00_anomaly_categories.txt",
+    "_line_number": 929
+  }
+}

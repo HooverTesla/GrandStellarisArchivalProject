@@ -1,0 +1,83 @@
+{
+  "councilor_augmentation_bazaars": {
+    "councilor_augmentation_bazaars": {
+      "leader_class": {
+        "is_leader_possible": {
+          "OR": {
+            "leader_class": "official"
+          }
+        },
+        "civic": "civic_augmentation_bazaars",
+        "modifier": {
+          "planet_cyborg_jobs_produces_mult": "0.01"
+        }
+      }
+    },
+    "_source_file": "02_machine_age_councilors.txt",
+    "_line_number": 0
+  },
+  "councilor_natural_design": {
+    "councilor_natural_design": {
+      "leader_class": {
+        "is_leader_possible": {
+          "OR": {
+            "leader_class": "official"
+          }
+        },
+        "civic": "civic_natural_design",
+        "modifier": {
+          "pop_citizen_happiness": "0.02"
+        }
+      }
+    },
+    "_source_file": "02_machine_age_councilors.txt",
+    "_line_number": 15
+  },
+  "councilor_individual_machine_predictive_analysis": {
+    "councilor_individual_machine_predictive_analysis": {
+      "leader_class": {
+        "is_leader_possible": {
+          "leader_class": "scientist"
+        },
+        "civic": "civic_individual_machine_predictive_analysis",
+        "modifier": {
+          "planet_researchers_upkeep_mult": "-0.02"
+        }
+      }
+    },
+    "_source_file": "02_machine_age_councilors.txt",
+    "_line_number": 30
+  },
+  "councilor_individual_machine_warbots": {
+    "councilor_individual_machine_warbots": {
+      "leader_class": {
+        "is_leader_possible": {
+          "leader_class": "commander"
+        },
+        "civic": "civic_individual_machine_warbots",
+        "modifier": {
+          "armies_upkeep_mult": "-0.05"
+        }
+      }
+    },
+    "_source_file": "02_machine_age_councilors.txt",
+    "_line_number": 41
+  },
+  "councilor_individual_machine_replication": {
+    "councilor_individual_machine_replication": {
+      "leader_class": {
+        "is_leader_possible": {
+          "OR": {
+            "leader_class": "official"
+          }
+        },
+        "civic": "civic_individual_machine_replication",
+        "modifier": {
+          "planet_pop_assemblers_upkeep_mult": "-0.02"
+        }
+      }
+    },
+    "_source_file": "02_machine_age_councilors.txt",
+    "_line_number": 52
+  }
+}

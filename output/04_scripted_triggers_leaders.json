@@ -1,0 +1,324 @@
+{
+  "is_assigned_to_federation": {
+    "is_assigned_to_federation": {
+      "has_envoy_task": {
+        "task": "federation"
+      }
+    },
+    "_source_file": "04_scripted_triggers_leaders.txt",
+    "_line_number": -1
+  },
+  "is_assigned_to_galcom": {
+    "is_assigned_to_galcom": {
+      "has_envoy_task": {
+        "task": "galactic_community"
+      }
+    },
+    "_source_file": "04_scripted_triggers_leaders.txt",
+    "_line_number": 5
+  },
+  "is_strengthing_imperial_authority": {
+    "is_strengthing_imperial_authority": {
+      "has_envoy_task": {
+        "task": "strengthen_imperial_authority"
+      }
+    },
+    "_source_file": "04_scripted_triggers_leaders.txt",
+    "_line_number": 11
+  },
+  "is_undermining_imperial_authority": {
+    "is_undermining_imperial_authority": {
+      "has_envoy_task": {
+        "task": "undermine_imperial_authority"
+      }
+    },
+    "_source_file": "04_scripted_triggers_leaders.txt",
+    "_line_number": 17
+  },
+  "leader_should_wear_general_uniform": {
+    "leader_should_wear_general_uniform": {
+      "OR": {
+        "exists": "planet",
+        "AND": {
+          "exists": "owner",
+          "owner": {
+            "any_owned_army": {
+              "exists": "leader",
+              "leader": {
+                "is_same_value": "root"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_scripted_triggers_leaders.txt",
+    "_line_number": 23
+  },
+  "has_blocker_removal_tech": {
+    "has_blocker_removal_tech": {
+      "OR": {
+        "has_technology": "tech_deep_sinkhole",
+        "_comments": [
+          "# Regular Blockers",
+          "# Shattered Ring"
+        ],
+        "AND": {
+          "OR": {
+            "has_technology": "tech_zero_point_power"
+          }
+        }
+      }
+    },
+    "_source_file": "04_scripted_triggers_leaders.txt",
+    "_line_number": 46
+  },
+  "has_matching_resolution_category_focus_trait_tier1or2or3": {
+    "has_matching_resolution_category_focus_trait_tier1or2or3": {
+      "OR": {
+        "has_matching_resolution_category_focus_trait_tier_1": "yes",
+        "has_matching_resolution_category_focus_trait_tier_2": "yes",
+        "has_matching_resolution_category_focus_trait_tier_3": "yes"
+      }
+    },
+    "_source_file": "04_scripted_triggers_leaders.txt",
+    "_line_number": 77
+  },
+  "has_matching_resolution_category_focus_trait_tier_1": {
+    "has_matching_resolution_category_focus_trait_tier_1": {
+      "switch": {
+        "trigger": "last_resolution_category_changed",
+        "resolution_category_commerce": {
+          "resolution_category_industry": {
+            "resolution_category_market": {
+              "resolution_category_sanctions_commerce_industry": {
+                "resolution_category_politics_tradition_1": {
+                  "resolution_category_politics_tradition_2": {
+                    "resolution_category_politics_tradition_3": {
+                      "resolution_category_politics_tradition_4": {
+                        "resolution_category_greatergood": {
+                          "resolution_category_galacticreforms": {
+                            "resolution_category_sanctions_politics_culture": {
+                              "resolution_category_ecology": {
+                                "resolution_category_galacticstudies": {
+                                  "resolution_category_divinity": {
+                                    "resolution_category_sanctions_environment_technology": {
+                                      "resolution_category_mutualdefense": {
+                                        "resolution_category_rulesofwar": {
+                                          "resolution_category_declare_crisis": {
+                                            "resolution_category_sanctions_defense_war": {
+                                              "resolution_category_galactic_focus": {
+                                                "_comments": [
+                                                  "# Nemesis"
+                                                ],
+                                                "resolution_category_imperial_council": {
+                                                  "resolution_category_foreign_relations": {
+                                                    "resolution_category_imperial_reforms": {
+                                                      "resolution_category_emperor_imperial_institutions": {
+                                                        "resolution_category_term_limits": {
+                                                          "resolution_category_custodian_reforms": {
+                                                            "resolution_category_galactic_institutions": {
+                                                              "_comments": [
+                                                                "# Overlord"
+                                                              ],
+                                                              "resolution_category_defenseprivatization": {
+                                                                "resolution_category_intergalacticdirective": {
+                                                                  "resolution_category_bureaucraticsurveillance": {
+                                                                    "_comments": [
+                                                                      "# First Contact"
+                                                                    ],
+                                                                    "resolution_category_pre_ftl_stances": {}
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_scripted_triggers_leaders.txt",
+    "_line_number": 85
+  },
+  "has_matching_resolution_category_focus_trait_tier_2": {
+    "has_matching_resolution_category_focus_trait_tier_2": {
+      "switch": {
+        "trigger": "last_resolution_category_changed",
+        "resolution_category_commerce": {
+          "resolution_category_industry": {
+            "resolution_category_market": {
+              "resolution_category_sanctions_commerce_industry": {
+                "resolution_category_politics_tradition_1": {
+                  "resolution_category_politics_tradition_2": {
+                    "resolution_category_politics_tradition_3": {
+                      "resolution_category_politics_tradition_4": {
+                        "resolution_category_greatergood": {
+                          "resolution_category_galacticreforms": {
+                            "resolution_category_sanctions_politics_culture": {
+                              "resolution_category_ecology": {
+                                "resolution_category_galacticstudies": {
+                                  "resolution_category_divinity": {
+                                    "resolution_category_sanctions_environment_technology": {
+                                      "resolution_category_mutualdefense": {
+                                        "resolution_category_rulesofwar": {
+                                          "resolution_category_declare_crisis": {
+                                            "resolution_category_sanctions_defense_war": {
+                                              "resolution_category_galactic_focus": {
+                                                "_comments": [
+                                                  "# Nemesis"
+                                                ],
+                                                "resolution_category_imperial_council": {
+                                                  "resolution_category_foreign_relations": {
+                                                    "resolution_category_imperial_reforms": {
+                                                      "resolution_category_emperor_imperial_institutions": {
+                                                        "resolution_category_term_limits": {
+                                                          "resolution_category_custodian_reforms": {
+                                                            "resolution_category_galactic_institutions": {
+                                                              "_comments": [
+                                                                "# Overlord"
+                                                              ],
+                                                              "resolution_category_defenseprivatization": {
+                                                                "resolution_category_intergalacticdirective": {
+                                                                  "resolution_category_bureaucraticsurveillance": {
+                                                                    "_comments": [
+                                                                      "# First Contact"
+                                                                    ],
+                                                                    "resolution_category_pre_ftl_stances": {}
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_scripted_triggers_leaders.txt",
+    "_line_number": 125
+  },
+  "has_matching_resolution_category_focus_trait_tier_3": {
+    "has_matching_resolution_category_focus_trait_tier_3": {
+      "switch": {
+        "trigger": "last_resolution_category_changed",
+        "resolution_category_commerce": {
+          "resolution_category_industry": {
+            "resolution_category_market": {
+              "resolution_category_sanctions_commerce_industry": {
+                "resolution_category_politics_tradition_1": {
+                  "resolution_category_politics_tradition_3": {
+                    "resolution_category_politics_tradition_3": {
+                      "resolution_category_politics_tradition_4": {
+                        "resolution_category_greatergood": {
+                          "resolution_category_galacticreforms": {
+                            "resolution_category_sanctions_politics_culture": {
+                              "resolution_category_ecology": {
+                                "resolution_category_galacticstudies": {
+                                  "resolution_category_divinity": {
+                                    "resolution_category_sanctions_environment_technology": {
+                                      "resolution_category_mutualdefense": {
+                                        "resolution_category_rulesofwar": {
+                                          "resolution_category_declare_crisis": {
+                                            "resolution_category_sanctions_defense_war": {
+                                              "resolution_category_galactic_focus": {
+                                                "_comments": [
+                                                  "# Nemesis"
+                                                ],
+                                                "resolution_category_imperial_council": {
+                                                  "resolution_category_foreign_relations": {
+                                                    "resolution_category_imperial_reforms": {
+                                                      "resolution_category_emperor_imperial_institutions": {
+                                                        "resolution_category_term_limits": {
+                                                          "resolution_category_custodian_reforms": {
+                                                            "resolution_category_galactic_institutions": {
+                                                              "_comments": [
+                                                                "# Overlord"
+                                                              ],
+                                                              "resolution_category_defenseprivatization": {
+                                                                "resolution_category_intergalacticdirective": {
+                                                                  "resolution_category_bureaucraticsurveillance": {
+                                                                    "_comments": [
+                                                                      "# First Contact"
+                                                                    ],
+                                                                    "resolution_category_pre_ftl_stances": {}
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_scripted_triggers_leaders.txt",
+    "_line_number": 165
+  }
+}

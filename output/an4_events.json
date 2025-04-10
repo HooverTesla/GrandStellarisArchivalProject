@@ -1,0 +1,265 @@
+{
+  "event": {
+    "event": {
+      "id": "drones.200",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "event_target:crystal_country #Global",
+        "event_target:crystal_country": {
+          "check_variable": {
+            "which": "crystals_split",
+            "value <": "20"
+          }
+        },
+        "any_system": {},
+        "immediate": {
+          "create_crystal_splitter_country": "yes #Checks if the Crystal Splitter country exists and recreates it if necessary",
+          "_comments": [
+            "#Pick a Crystal-occupied system"
+          ],
+          "random_system": {
+            "limit": {
+              "any_fleet_in_system": {
+                "exists": "owner",
+                "owner": {}
+              },
+              "set_timed_star_flag": {
+                "flag": "crystal_splitter_starting_system",
+                "years": "9 #to fit within decade_pulse"
+              },
+              "save_event_target_as": "crystal_splitter_starting_system",
+              "random_system_planet": {
+                "limit": {
+                  "save_event_target_as": "crystal_splitter_starting_planet"
+                }
+              },
+              "_comments": [
+                "#Pick another, unoccupied system"
+              ],
+              "if": {
+                "limit": {
+                  "any_system": {
+                    "distance": {
+                      "source": "event_target:crystal_splitter_starting_system",
+                      "use_bypasses": "no",
+                      "min_jumps": "1",
+                      "max_jumps": "5"
+                    },
+                    "is_valid_crystal_splitter_system": "yes"
+                  }
+                },
+                "event_target:crystal_splitter_starting_system": {
+                  "closest_system": {
+                    "limit": {
+                      "use_bypasses": "no",
+                      "min_steps": "1",
+                      "max_steps": "5",
+                      "set_timed_star_flag": {
+                        "flag": "crystal_splitter_destination_system",
+                        "years": "9"
+                      },
+                      "save_event_target_as": "crystal_splitter_destination_system"
+                    }
+                  }
+                },
+                "else": {
+                  "random_system": {
+                    "limit": {
+                      "set_timed_star_flag": {
+                        "flag": "crystal_splitter_destination_system",
+                        "years": "9"
+                      },
+                      "save_event_target_as": "crystal_splitter_destination_system"
+                    }
+                  },
+                  "_comments": [
+                    "#Send out a 'ship'"
+                  ],
+                  "event_target:crystal_splitter_starting_system": {
+                    "create_fleet": {
+                      "name": "NAME_Cracked_Crystalline_Shard",
+                      "effect": {
+                        "set_owner": "event_target:crystal_splitter_country",
+                        "set_fleet_stance": "passive",
+                        "create_ship": {
+                          "name": "",
+                          "design": "NAME_Cracked_Crystalline_Shard"
+                        },
+                        "set_location": {
+                          "target": "event_target:crystal_splitter_starting_planet",
+                          "distance": "25",
+                          "angle": "random"
+                        },
+                        "set_fleet_flag": "crystal_splitter_fleet",
+                        "queue_actions": {
+                          "wait": {
+                            "duration": "20",
+                            "random": "10"
+                          },
+                          "move_to": "event_target:crystal_splitter_destination_system"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "an4_events.txt",
+    "_line_number": 517
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "drones.205",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "event_target:crystal_splitter_country #Global",
+        "has_fleet_flag": "crystal_splitter_fleet",
+        "from": {},
+        "immediate": {
+          "create_crystal_country": "yes #Checks if the generic Crystal country exists and recreates it if necessary",
+          "from": {
+            "remove_star_flag": "crystal_splitter_destination_system",
+            "_comments": [
+              "#If the system is unoccupied, aim for an asteroid"
+            ],
+            "if": {
+              "limit": {
+                "NOT": {},
+                "event_target:crystal_country": {
+                  "change_variable": {},
+                  "random_system_planet": {
+                    "limit": {
+                      "set_planet_flag": "crystal_splitter_destination_asteroid",
+                      "save_event_target_as": "crystal_splitter_destination_asteroid",
+                      "root": {
+                        "auto_move_to_planet": {
+                          "target": "prev",
+                          "clear_auto_move_on_arrival": "no"
+                        },
+                        "owner": {}
+                      }
+                    },
+                    "_comments": [
+                      "#Continues in drones.206, triggered via on_fleet_auto_move_arrival",
+                      "#Else move along"
+                    ],
+                    "else": {
+                      "closest_system": {
+                        "limit": {
+                          "use_bypasses": "no",
+                          "min_steps": "1",
+                          "max_steps": "5",
+                          "set_timed_star_flag": {
+                            "flag": "crystal_splitter_destination_system",
+                            "years": "9"
+                          },
+                          "save_event_target_as": "crystal_splitter_destination_system"
+                        },
+                        "root": {
+                          "queue_actions": {
+                            "wait": "4",
+                            "move_to": "event_target:crystal_splitter_destination_system"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "an4_events.txt",
+    "_line_number": 620
+  },
+  "country_event": {
+    "country_event": {
+      "id": "drones.206",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_country_flag": "crystal_splitter_country #Global",
+        "from": {
+          "exists": "event_target:crystal_country #Global"
+        },
+        "immediate": {
+          "from": {
+            "solar_system": {
+              "random_system_planet": {
+                "limit": {
+                  "save_event_target_as": "crystal_splitter_destination_star"
+                }
+              },
+              "_comments": [
+                "#Create Shardling fleets"
+              ],
+              "create_fleet": {
+                "name": "NAME_Shardlings",
+                "effect": {
+                  "set_owner": "event_target:crystal_country #Global",
+                  "while": {
+                    "count": "9",
+                    "create_ship": {
+                      "name": "",
+                      "design": "NAME_Small_Crystal_Entity_Blue"
+                    }
+                  },
+                  "set_fleet_formation": {
+                    "position": {
+                      "position": {
+                        "position": {
+                          "position": {
+                            "position": {
+                              "position": {
+                                "position": {
+                                  "position": {
+                                    "position": {},
+                                    "set_formation_scale": "0.5",
+                                    "set_fleet_stance": "aggressive",
+                                    "set_aggro_range_measure_from": "return_point",
+                                    "set_aggro_range": "40",
+                                    "set_location": {
+                                      "target": "prev.orbit",
+                                      "distance": "20",
+                                      "angle": "20"
+                                    },
+                                    "queue_actions": {
+                                      "wait": {
+                                        "duration": "20",
+                                        "random": "10"
+                                      },
+                                      "move_to": "event_target:crystal_splitter_destination_star"
+                                    }
+                                  }
+                                },
+                                "orbit": {
+                                  "remove_planet_flag": "crystal_splitter_destination_asteroid",
+                                  "change_pc": "pc_shattered"
+                                },
+                                "destroy_fleet": "this"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "an4_events.txt",
+    "_line_number": 681
+  }
+}

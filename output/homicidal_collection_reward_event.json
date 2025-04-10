@@ -1,0 +1,71 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "$EVENT_ID$",
+      "title": "$EVENT_ID$.name",
+      "desc": {
+        "trigger": {
+          "OR": {
+            "has_country_flag": "selecting_historical_item_reward"
+          }
+        },
+        "text": "$EVENT_ID$.desc.aesthetic"
+      },
+      "picture": "GFX_evt_grand_archive",
+      "show_sound": "event_default",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_valid_civic": "$CIVIC$"
+      },
+      "immediate": {
+        "if": {
+          "limit": {
+            "set_country_flag": "selecting_xeno_geology_reward"
+          },
+          "else_if": {
+            "limit": {
+              "set_country_flag": "selecting_aesthetic_wonder_reward"
+            },
+            "else_if": {
+              "limit": {
+                "set_country_flag": "selecting_historical_item_reward"
+              }
+            },
+            "option": {
+              "name": "$EVENT_ID$.a",
+              "if": {
+                "limit": {
+                  "give_homicidal_stage_$STAGE$_reward": {},
+                  "else_if": {
+                    "limit": {
+                      "give_homicidal_stage_$STAGE$_reward": {},
+                      "else_if": {
+                        "limit": {
+                          "give_homicidal_stage_$STAGE$_reward": {}
+                        },
+                        "after": {
+                          "hidden_effect": {
+                            "remove_country_flag": "selecting_historical_item_reward",
+                            "country_event": {
+                              "id": "grand_archive.4130",
+                              "days": "1"
+                            },
+                            "_comments": [
+                              "# Cleanup"
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "homicidal_collection_reward_event.txt",
+    "_line_number": 4
+  }
+}

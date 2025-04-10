@@ -1,0 +1,799 @@
+{
+  "legislative_chorus": {
+    "legislative_chorus": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "edict_lock_in_months": "180",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "is_democratic_authority": "yes",
+        "has_country_flag": "cyber_individualist"
+      },
+      "modifier": {
+        "council_agenda_progress_speed": "0.25",
+        "council_agenda_finishing_effect_duration_mult": "0.25"
+      },
+      "allow": {},
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 14
+  },
+  "self_preservation_override": {
+    "self_preservation_override": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "is_democratic_authority": "yes",
+        "has_country_flag": "cyber_collectivist"
+      },
+      "modifier": {
+        "planet_cyborg_jobs_produces_mult": "0.2",
+        "pop_growth_speed": "-0.1"
+      },
+      "allow": {},
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 48
+  },
+  "battle_royale": {
+    "battle_royale": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "is_oligarchic_authority": "yes",
+        "has_country_flag": "cyber_individualist"
+      },
+      "modifier": {
+        "planet_jobs_specialist_produces_mult": "0.15",
+        "pop_cat_specialist_happiness": "-0.15",
+        "planet_jobs_worker_produces_mult": "0.15",
+        "pop_cat_worker_happiness": "-0.15",
+        "pop_demotion_time_mult": "-1"
+      },
+      "allow": {},
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 81
+  },
+  "stately_acclaim": {
+    "stately_acclaim": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "is_oligarchic_authority": "yes",
+        "has_country_flag": "cyber_collectivist"
+      },
+      "allow": {
+        "hidden_trigger": {
+          "has_extorted_faction": "yes"
+        },
+        "custom_tooltip": "edict_stately_acclaim_requirements_tt"
+      },
+      "modifier": {
+        "custom_tooltip": "edict_stately_acclaim_tt",
+        "show_only_custom_tooltip": "no",
+        "pop_demotion_time_mult": "-1"
+      },
+      "ai_weight": {
+        "weight": "1"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 117
+  },
+  "self_indictment_protocol": {
+    "self_indictment_protocol": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "is_dictatorial_authority": "yes",
+        "has_country_flag": "cyber_individualist"
+      },
+      "modifier": {
+        "planet_crime_add": "-30",
+        "planet_stability_add": "5",
+        "pop_cyborg_happiness": "0.15"
+      },
+      "allow": {},
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 155
+  },
+  "love_letter_virus": {
+    "love_letter_virus": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "is_dictatorial_authority": "yes",
+        "has_country_flag": "cyber_collectivist"
+      },
+      "modifier": {
+        "planet_resettlement_unemployed_mult": "1.00",
+        "pop_resettlement_cost_mult": "-0.15",
+        "pop_cyborg_happiness": "0.15"
+      },
+      "allow": {},
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 189
+  },
+  "levied_experience": {
+    "levied_experience": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "is_imperial_authority": "yes",
+        "has_country_flag": "cyber_individualist"
+      },
+      "modifier": {
+        "leader_trait_selection_options_add": "1",
+        "negative_traits_country": "-1"
+      },
+      "allow": {},
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 223
+  },
+  "neurocasted_spectacles": {
+    "neurocasted_spectacles": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "edict_lock_in_months": "12",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "is_imperial_authority": "yes",
+        "has_country_flag": "cyber_collectivist"
+      },
+      "modifier": {
+        "custom_tooltip": "edict_neurocasted_spectacles_effect",
+        "_comments": [
+          "# See the Cyberdome building for modifiers.",
+          "# Also see the inline script on_all_capital_buildings.txt"
+        ]
+      },
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "requires_cyberdome",
+          "owner.capital_scope": {
+            "has_building": "building_cyberdome"
+          }
+        }
+      },
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 257
+  },
+  "customer_insights": {
+    "customer_insights": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "is_megacorp": "yes",
+        "has_country_flag": "cyber_individualist"
+      },
+      "modifier": {
+        "planet_branch_offices_cost_mult": "-0.25",
+        "branch_office_value_mult": "0.25"
+      },
+      "allow": {},
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 298
+  },
+  "rolling_updates": {
+    "rolling_updates": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "is_megacorp": "yes",
+        "has_country_flag": "cyber_collectivist"
+      },
+      "modifier": {
+        "intel_encryption_add": "1",
+        "intel_decryption_add": "1",
+        "planet_pops_consumer_goods_upkeep_mult": "-0.15"
+      },
+      "allow": {},
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 331
+  },
+  "subsidized_identity_backups": {
+    "subsidized_identity_backups": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "has_country_flag": "edict_subsidized_identity_backups"
+      },
+      "modifier": {
+        "custom_tooltip": "edict_subsidized_identity_backups_effect",
+        "_comments": [
+          "# See the leader_trait_synthetic for modifiers."
+        ]
+      },
+      "allow": {},
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 365
+  },
+  "optimized_identity_creation": {
+    "optimized_identity_creation": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "has_country_flag": "edict_optimized_identity_creation"
+      },
+      "modifier": {
+        "planet_pop_assembly_mult": "0.15"
+      },
+      "allow": {},
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 397
+  },
+  "hive_mind_outreach": {
+    "hive_mind_outreach": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "is_hive_empire": "yes",
+        "has_country_flag": "cyber_hive_volitional"
+      },
+      "modifier": {
+        "ship_speed_mult": "0.15",
+        "diplomacy_influence_upkeep_mult": "-0.50"
+      },
+      "allow": {},
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 429
+  },
+  "hive_hyper_stimulants": {
+    "hive_hyper_stimulants": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "is_hive_empire": "yes",
+        "has_country_flag": "cyber_hive_integrated"
+      },
+      "modifier": {
+        "ship_evasion_mult": "0.10",
+        "planet_jobs_simple_drone_produces_mult": "0.3",
+        "planet_jobs_complex_drone_produces_mult": "-0.1"
+      },
+      "allow": {},
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 462
+  },
+  "hive_mega_construction": {
+    "hive_mega_construction": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "edict_lock_in_months": "180",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "alloys": "@HiveMegaAlloys",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "alloys": "@HiveMegaAlloys",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "OR": {
+          "has_country_flag": "cyber_hive_volitional"
+        }
+      },
+      "modifier": {
+        "megastructure_build_speed_mult": "0.50"
+      },
+      "allow": {},
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 497
+  },
+  "aggregated_memory": {
+    "aggregated_memory": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_policy",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "modifier": {
+        "council_agenda_progress_speed": "0.15",
+        "councilor_exp_gain": "0.10"
+      },
+      "potential": {
+        "has_country_flag": "driven_memory_aggregator",
+        "has_machine_age_dlc": "yes"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 532
+  },
+  "choral_harmony": {
+    "choral_harmony": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_policy",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "modifier": {
+        "planet_cyborg_jobs_produces_mult": "0.10"
+      },
+      "potential": {
+        "has_country_flag": "driven_neural_chorus",
+        "has_machine_age_dlc": "yes"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 560
+  },
+  "cybernetic_creed_construction_edict": {
+    "cybernetic_creed_construction_edict": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "edict_lock_in_months": "180",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "is_cyber_creed_advanced_government": "yes",
+        "has_country_flag": "cybernetic_creed_construction"
+      },
+      "modifier": {
+        "planet_building_build_speed_mult": "0.25",
+        "country_alloys_produces_mult": "0.1",
+        "country_consumer_goods_produces_mult": "0.1"
+      },
+      "allow": {},
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 588
+  },
+  "cybernetic_creed_war_edict": {
+    "cybernetic_creed_war_edict": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "edict_lock_in_months": "180",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "is_cyber_creed_advanced_government": "yes",
+        "has_country_flag": "cybernetic_creed_war"
+      },
+      "modifier": {
+        "country_naval_cap_mult": "0.1",
+        "ship_fire_rate_mult": "0.1",
+        "army_attack_damage_mult": "0.1"
+      },
+      "allow": {},
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 623
+  },
+  "cybernetic_creed_research_edict": {
+    "cybernetic_creed_research_edict": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "edict_lock_in_months": "180",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "is_cyber_creed_advanced_government": "yes",
+        "has_country_flag": "cybernetic_creed_research"
+      },
+      "modifier": {
+        "all_technology_research_speed": "0.1",
+        "num_tech_alternatives_add": "1",
+        "planet_researchers_upkeep_mult": "-0.1"
+      },
+      "allow": {},
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 658
+  },
+  "cybernetic_creed_construction_labor": {
+    "cybernetic_creed_construction_labor": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "edict_lock_in_months": "180",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "is_cyber_creed_advanced_government": "yes",
+        "has_country_flag": "cybernetic_creed_labor"
+      },
+      "modifier": {
+        "planet_jobs_worker_produces_mult": "0.2",
+        "planet_jobs_upkeep_mult": "-0.1"
+      },
+      "allow": {},
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 693
+  },
+  "cybernetic_creed_general_edict": {
+    "cybernetic_creed_general_edict": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "edict_lock_in_months": "180",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "unity": "@Edict2Cost",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "is_cyber_creed_advanced_government": "yes",
+        "has_country_flag": "cybernetic_creed_general"
+      },
+      "modifier": {
+        "planet_cyborg_jobs_produces_mult": "0.1",
+        "pop_happiness": "0.1",
+        "planet_stability_add": "5"
+      },
+      "allow": {},
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 727
+  },
+  "nanotech_naval_augmentation": {
+    "nanotech_naval_augmentation": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "edict_lock_in_months": "180",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "nanites": "2500",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "nanites": "5",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "has_tradition": "tr_nanotech_5"
+      },
+      "modifier": {
+        "country_naval_cap_mult": "0.25"
+      },
+      "allow": {},
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 763
+  },
+  "nanotech_alloy_augmentation": {
+    "nanotech_alloy_augmentation": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "edict_lock_in_months": "180",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "nanites": "2500",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "nanites": "5",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "has_tradition": "tr_nanotech_5"
+      },
+      "modifier": {
+        "country_alloys_produces_mult": "0.25"
+      },
+      "allow": {},
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 796
+  },
+  "nanotech_energy_augmentation": {
+    "nanotech_energy_augmentation": {
+      "length": "@EdictDuration",
+      "icon": "GFX_edict_type_time",
+      "edict_lock_in_months": "180",
+      "resources": {
+        "category": "edicts",
+        "cost": {
+          "nanites": "2500",
+          "multiplier": "value:edict_size_effect"
+        },
+        "upkeep": {
+          "nanites": "5",
+          "multiplier": "value:edict_size_effect"
+        }
+      },
+      "potential": {
+        "has_tradition": "tr_nanotech_5"
+      },
+      "modifier": {
+        "country_energy_produces_mult": "0.5"
+      },
+      "allow": {},
+      "ai_weight": {
+        "weight": "0"
+      }
+    },
+    "_source_file": "04_machine_age_edicts.txt",
+    "_line_number": 829
+  }
+}

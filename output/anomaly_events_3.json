@@ -1,0 +1,224 @@
+{
+  "ship_event": {
+    "ship_event": {
+      "id": "anomaly.4170",
+      "title": "anomaly.4170.name",
+      "desc": {
+        "text": "anomaly.4170.basic.desc",
+        "trigger": {
+          "root": {
+            "owner": {
+              "NOR": {
+                "has_ethic": "ethic_fanatic_materialist"
+              }
+            }
+          }
+        }
+      },
+      "picture": "GFX_evt_drilling_for_gas",
+      "show_sound": "event_scanner",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "hidden_effect": {
+          "from": {
+            "add_modifier": {
+              "modifier": "gas_rich_planet",
+              "days": "-1"
+            },
+            "add_deposit": "d_frozen_gas_lake"
+          },
+          "root": {
+            "owner": {
+              "set_country_flag": "limited_modifier_gas_rich_planet"
+            }
+          }
+        }
+      },
+      "option": {
+        "name": "anomaly.4170.a",
+        "custom_tooltip": "anomaly.4170.a.tooltip"
+      }
+    },
+    "_source_file": "anomaly_events_3.txt",
+    "_line_number": 5014
+  },
+  "country_event": {
+    "country_event": {
+      "id": "anomaly.4166",
+      "title": "PROJECT_COMPLETE",
+      "desc": {
+        "text": "anomaly.4166.desc",
+        "trigger": {
+          "NOR": {
+            "has_country_flag": "masters_writings_diplomacy_found"
+          }
+        }
+      },
+      "picture": "GFX_evt_small_space_battle",
+      "show_sound": "event_administrative_work",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "option": {
+        "trigger": {
+          "NOR": {
+            "has_ethic": "ethic_militarist"
+          }
+        },
+        "name": "anomaly.4166.a",
+        "custom_tooltip": "anomaly.4166.a.tooltip",
+        "hidden_effect": {
+          "set_country_flag": "edict_masters_writings_war"
+        }
+      }
+    },
+    "_source_file": "anomaly_events_3.txt",
+    "_line_number": 4957
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "anomaly.4036",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "FROM": {
+            "OR": {
+              "has_star_flag": "some_system_2"
+            }
+          }
+        },
+        "immediate": {
+          "random_controlled_ship": {
+            "save_event_target_as": "ship_for_fleet_event"
+          },
+          "if": {
+            "limit": {
+              "FROM": {
+                "owner": {
+                  "remove_point_of_interest": "anomaly.4035.poi.1"
+                },
+                "random_list": {
+                  "40": {
+                    "event_target:ship_for_fleet_event": {
+                      "random_system": {
+                        "limit": {
+                          "has_star_flag": "some_system_2"
+                        },
+                        "remove_star_flag": "some_system_2"
+                      },
+                      "owner": {
+                        "remove_point_of_interest": "anomaly.4035.poi.2",
+                        "set_country_flag": "finished_star_power_chain"
+                      }
+                    },
+                    "60": {
+                      "owner": {
+                        "add_event_chain_counter": {
+                          "event_chain": "star_power_chain",
+                          "counter": "systems_visited_poi",
+                          "amount": "1"
+                        }
+                      },
+                      "if": {
+                        "limit": {
+                          "FROM": {
+                            "owner": {
+                              "remove_point_of_interest": "anomaly.4035.poi.2"
+                            },
+                            "random_list": {
+                              "40": {
+                                "event_target:ship_for_fleet_event": {
+                                  "random_system": {
+                                    "limit": {
+                                      "has_star_flag": "some_system_1"
+                                    },
+                                    "remove_star_flag": "some_system_1"
+                                  },
+                                  "owner": {
+                                    "remove_point_of_interest": "anomaly.4035.poi.1",
+                                    "set_country_flag": "finished_star_power_chain"
+                                  }
+                                },
+                                "60": {
+                                  "owner": {
+                                    "add_event_chain_counter": {
+                                      "event_chain": "star_power_chain",
+                                      "counter": "systems_visited_poi",
+                                      "amount": "1"
+                                    }
+                                  },
+                                  "if": {
+                                    "limit": {
+                                      "owner": {
+                                        "NOT": {
+                                          "has_completed_event_chain_counter": {}
+                                        }
+                                      },
+                                      "event_target:ship_for_fleet_event": {},
+                                      "if": {
+                                        "limit": {
+                                          "owner": {
+                                            "NOT": {
+                                              "has_country_flag": "finished_star_power_chain"
+                                            },
+                                            "has_completed_event_chain_counter": {
+                                              "event_chain": "star_power_chain",
+                                              "counter": "systems_visited_poi"
+                                            }
+                                          }
+                                        },
+                                        "owner": {
+                                          "set_country_flag": "finished_star_power_chain"
+                                        },
+                                        "event_target:ship_for_fleet_event": {}
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "anomaly_events_3.txt",
+    "_line_number": 852
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "anomaly.4172",
+      "title": "anomaly.4170.name",
+      "desc": {
+        "text": "anomaly.4172.conqueror.desc",
+        "trigger": {
+          "owner": {
+            "NOT": {}
+          }
+        },
+        "picture": "GFX_evt_drilling_for_gas",
+        "show_sound": "event_default",
+        "location": "from",
+        "is_triggered_only": "yes",
+        "option": {
+          "name": "OK",
+          "trigger": {
+            "owner": {
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "anomaly_events_3.txt",
+    "_line_number": 5134
+  }
+}

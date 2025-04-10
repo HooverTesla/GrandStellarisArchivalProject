@@ -2,7 +2,7 @@
 from HooverWithMap import get_stellaris_path, iterate_folders
 from HooverHearingVoices import parse_localisation_file, extract_base_keys
 from HooverFoldingLaundry import parse_pdx_file
-from HooverWithFlashCards import create_index, merge_keys_to_index, store_variables_in_index
+from HooverWithFlashCards import create_flashCards, merge_keys_to_flashCards, save_flashCards_to_file, store_variables_in_flashCards
 from HooverWithBoxes import export_folder_jsons
 
 # === WHIP-ONLY COORDINATOR ===
@@ -23,7 +23,7 @@ def run_rosetta():
     print(f"[WHIP] Localisation files detected: {len(loc_files)}")
 
     loaded_folders = {}
-    index = {}
+    flashCards = {}
     all_variables = {}
 
     for loc_file in loc_files:
@@ -32,7 +32,7 @@ def run_rosetta():
         base_keys = extract_base_keys(entries)
         folder_name = loc_file.parent.name
         loaded_folders.setdefault(folder_name, {})[loc_file.name] = entries
-        index = merge_keys_to_index(base_keys, loc_file.name, index)
+        flashCards = merge_keys_to_flashCards(base_keys, loc_file.name, flashCards)
 
     # === Game data phase ===
     data_files = [f for f in all_files if f not in loc_files]
@@ -43,22 +43,25 @@ def run_rosetta():
         file_blocks, file_vars, _, keys = parse_pdx_file(file)
         folder_name = file.parent.name
         loaded_folders.setdefault(folder_name, {})[file.name] = file_blocks
-        index = create_index(file_blocks, index, file.name)
-        index = merge_keys_to_index(keys, file.name, index)
-        index = store_variables_in_index(file_vars, index)
+        flashCards = create_flashCards(file_blocks, flashCards, file.name)
+        flashCards = merge_keys_to_flashCards(keys, file.name, flashCards)
+        flashCards = store_variables_in_flashCards(file_vars, flashCards)
         all_variables.update(file_vars)
 
     print("[WHIP] Parsing complete. Exporting folder JSONs.")
     export_folder_jsons(loaded_folders)
 
     print("[WHIP] Export complete. Returning data structure.")
-    return {
-        "loaded": loaded_folders,
-        "index": index,
-        "variables": all_variables
-    }
+    save_flashCards_to_file(flashCards)
+    # return {
+    #     "loaded": loaded_folders,
+    #     "flashCards": flashCards,
+    #     "variables": all_variables
+    # }
+
+
 
 if __name__ == "__main__":
     result = run_rosetta()
     print("[WHIP] Rosetta returned:")
-    print(result)
+    # print(result)

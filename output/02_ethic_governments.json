@@ -1,0 +1,282 @@
+{
+  "gov_theocratic_republic": {
+    "gov_theocratic_republic": {
+      "ruler_title": "RT_REVERED_ELDER",
+      "ruler_title_female": "RT_REVERED_ELDER_FEMALE",
+      "possible": {
+        "is_democratic_authority": "yes",
+        "is_spiritualist": "yes"
+      },
+      "weight": {
+        "base": "@gov_ethic_weight"
+      }
+    },
+    "_source_file": "02_ethic_governments.txt",
+    "_line_number": 27
+  },
+  "gov_theocratic_oligarchy": {
+    "gov_theocratic_oligarchy": {
+      "ruler_title": "RT_CHIEF_PRECENTOR",
+      "ruler_title_female": "RT_CHIEF_PRECENTOR_FEMALE",
+      "possible": {
+        "is_oligarchic_authority": "yes",
+        "is_spiritualist": "yes"
+      },
+      "weight": {
+        "base": "@gov_ethic_weight"
+      }
+    },
+    "_source_file": "02_ethic_governments.txt",
+    "_line_number": 42
+  },
+  "gov_theocratic_dictatorship": {
+    "gov_theocratic_dictatorship": {
+      "ruler_title": "RT_PATRIARCH",
+      "ruler_title_female": "RT_MATRIARCH",
+      "possible": {
+        "is_dictatorial_authority": "yes",
+        "is_spiritualist": "yes"
+      },
+      "weight": {
+        "base": "@gov_ethic_weight"
+      }
+    },
+    "_source_file": "02_ethic_governments.txt",
+    "_line_number": 57
+  },
+  "gov_theocratic_monarchy": {
+    "gov_theocratic_monarchy": {
+      "ruler_title": "RT_ARCHPROPHET",
+      "ruler_title_female": "RT_ARCHPROPHETESS",
+      "heir_title": "HT_PRIEST",
+      "heir_title_female": "HT_PRIESTESS",
+      "use_regnal_names": "yes",
+      "dynastic_last_names": "yes",
+      "possible": {
+        "is_imperial_authority": "yes",
+        "is_spiritualist": "yes"
+      },
+      "weight": {
+        "base": "@gov_ethic_weight"
+      }
+    },
+    "_source_file": "02_ethic_governments.txt",
+    "_line_number": 73
+  },
+  "gov_direct_democracy": {
+    "gov_direct_democracy": {
+      "ruler_title": "RT_CHANCELLOR",
+      "ruler_title_female": "RT_CHANCELLOR_FEMALE",
+      "possible": {
+        "is_democratic_authority": "yes",
+        "is_materialist": "yes"
+      },
+      "weight": {
+        "base": "@gov_ethic_weight"
+      }
+    },
+    "_source_file": "02_ethic_governments.txt",
+    "_line_number": 94
+  },
+  "gov_executive_committee": {
+    "gov_executive_committee": {
+      "ruler_title": "RT_CHAIRMAN",
+      "ruler_title_female": "RT_CHAIRWOMAN",
+      "possible": {
+        "is_oligarchic_authority": "yes",
+        "is_materialist": "yes"
+      },
+      "weight": {
+        "base": "@gov_ethic_weight"
+      }
+    },
+    "_source_file": "02_ethic_governments.txt",
+    "_line_number": 109
+  },
+  "gov_totalitarian_regime": {
+    "gov_totalitarian_regime": {
+      "ruler_title": "RT_PRIMARCH",
+      "ruler_title_female": "RT_PRIMARCH_FEMALE",
+      "possible": {
+        "is_dictatorial_authority": "yes",
+        "is_materialist": "yes"
+      },
+      "weight": {
+        "base": "@gov_ethic_weight"
+      }
+    },
+    "_source_file": "02_ethic_governments.txt",
+    "_line_number": 124
+  },
+  "gov_despotic_hegemony": {
+    "gov_despotic_hegemony": {
+      "ruler_title": "RT_OVERLORD",
+      "ruler_title_female": "RT_OVERLORD_FEMALE",
+      "heir_title": "HT_DEPUTY_OVERLORD",
+      "heir_title_female": "HT_DEPUTY_OVERLORD_FEMALE",
+      "use_regnal_names": "yes",
+      "dynastic_last_names": "yes",
+      "possible": {
+        "is_imperial_authority": "yes",
+        "is_materialist": "yes"
+      },
+      "weight": {
+        "base": "@gov_ethic_weight"
+      }
+    },
+    "_source_file": "02_ethic_governments.txt",
+    "_line_number": 140
+  },
+  "gov_star_empire": {
+    "gov_star_empire": {
+      "ruler_title": "RT_EMPEROR",
+      "ruler_title_female": "RT_EMPRESS",
+      "heir_title": "HT_CROWN_PRINCE",
+      "heir_title_female": "HT_CROWN_PRINCESS",
+      "use_regnal_names": "yes",
+      "dynastic_last_names": "yes",
+      "possible": {
+        "is_imperial_authority": "yes",
+        "is_militarist": "yes"
+      },
+      "weight": {
+        "base": "@gov_ethic_weight",
+        "modifier": {
+          "factor": "2",
+          "OR": {
+            "has_valid_civic": "civic_nationalistic_zeal"
+          }
+        }
+      }
+    },
+    "_source_file": "02_ethic_governments.txt",
+    "_line_number": 162
+  },
+  "gov_military_dictatorship": {
+    "gov_military_dictatorship": {
+      "ruler_title": "RT_GRAND_MARSHAL",
+      "ruler_title_female": "RT_GRAND_MARSHAL_FEMALE",
+      "possible": {
+        "is_dictatorial_authority": "yes",
+        "is_militarist": "yes"
+      },
+      "weight": {
+        "base": "@gov_ethic_weight",
+        "modifier": {
+          "factor": "2",
+          "OR": {
+            "has_valid_civic": "civic_nationalistic_zeal"
+          }
+        }
+      }
+    },
+    "_source_file": "02_ethic_governments.txt",
+    "_line_number": 188
+  },
+  "gov_military_junta": {
+    "gov_military_junta": {
+      "ruler_title": "RT_ARCHON",
+      "ruler_title_female": "RT_ARCHON_FEMALE",
+      "possible": {
+        "is_oligarchic_authority": "yes",
+        "is_militarist": "yes"
+      },
+      "weight": {
+        "base": "@gov_ethic_weight",
+        "modifier": {
+          "factor": "2",
+          "OR": {
+            "has_valid_civic": "civic_nationalistic_zeal"
+          }
+        }
+      }
+    },
+    "_source_file": "02_ethic_governments.txt",
+    "_line_number": 210
+  },
+  "gov_military_commissariat": {
+    "gov_military_commissariat": {
+      "ruler_title": "RT_COMMISSARY_GENERAL",
+      "ruler_title_female": "RT_COMMISSARY_GENERAL_FEMALE",
+      "possible": {
+        "is_democratic_authority": "yes",
+        "is_militarist": "yes"
+      },
+      "weight": {
+        "base": "@gov_ethic_weight",
+        "modifier": {
+          "factor": "2",
+          "OR": {
+            "has_valid_civic": "civic_nationalistic_zeal"
+          }
+        }
+      }
+    },
+    "_source_file": "02_ethic_governments.txt",
+    "_line_number": 232
+  },
+  "gov_moral_democracy": {
+    "gov_moral_democracy": {
+      "ruler_title": "RT_PRIME_MINISTER",
+      "ruler_title_female": "RT_PRIME_MINISTER_FEMALE",
+      "possible": {
+        "is_democratic_authority": "yes",
+        "is_pacifist": "yes"
+      },
+      "weight": {
+        "base": "@gov_ethic_weight"
+      }
+    },
+    "_source_file": "02_ethic_governments.txt",
+    "_line_number": 256
+  },
+  "gov_irenic_bureaucracy": {
+    "gov_irenic_bureaucracy": {
+      "ruler_title": "RT_COORDINATOR",
+      "ruler_title_female": "RT_COORDINATOR_FEMALE",
+      "possible": {
+        "is_oligarchic_authority": "yes",
+        "is_pacifist": "yes"
+      },
+      "weight": {
+        "base": "@gov_ethic_weight"
+      }
+    },
+    "_source_file": "02_ethic_governments.txt",
+    "_line_number": 271
+  },
+  "gov_irenic_dictatorship": {
+    "gov_irenic_dictatorship": {
+      "ruler_title": "RT_SERENE_PROTECTOR",
+      "ruler_title_female": "RT_SERENE_PROTECTOR_FEMALE",
+      "possible": {
+        "is_dictatorial_authority": "yes",
+        "is_pacifist": "yes"
+      },
+      "weight": {
+        "base": "@gov_ethic_weight"
+      }
+    },
+    "_source_file": "02_ethic_governments.txt",
+    "_line_number": 286
+  },
+  "gov_irenic_monarchy": {
+    "gov_irenic_monarchy": {
+      "ruler_title": "RT_KING",
+      "ruler_title_female": "RT_QUEEN",
+      "heir_title": "HT_CROWN_PRINCE",
+      "heir_title_female": "HT_CROWN_PRINCESS",
+      "use_regnal_names": "yes",
+      "dynastic_last_names": "yes",
+      "possible": {
+        "is_imperial_authority": "yes",
+        "is_pacifist": "yes"
+      },
+      "weight": {
+        "base": "@gov_ethic_weight"
+      }
+    },
+    "_source_file": "02_ethic_governments.txt",
+    "_line_number": 302
+  }
+}

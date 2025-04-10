@@ -1,0 +1,188 @@
+{
+  "ship_event": {
+    "ship_event": {
+      "id": "federations2.109",
+      "title": "federations2.109.name",
+      "desc": "federations2.109.desc",
+      "picture": "GFX_evt_federation_fleet",
+      "show_sound": "event_announcement",
+      "location": "root",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "owner.federation": {
+          "random_member": {
+            "limit": {
+              "is_federation_leader": "yes"
+            },
+            "country_event": {}
+          },
+          "create_country": {
+            "type": "faction",
+            "name": "NAME_training_adversary",
+            "effect": {
+              "set_faction_hostility": {
+                "target": "root.owner",
+                "set_hostile": "yes",
+                "set_neutral": "no",
+                "set_friendly": "no"
+              },
+              "create_fleet": {
+                "name": "NAME_Training_Targets",
+                "effect": {
+                  "set_owner": "prev",
+                  "while": {
+                    "count": "5",
+                    "create_ship": {
+                      "name": "NAME_Elusive_Craft",
+                      "design": "NAME_Elusive_Craft",
+                      "prefix": "no",
+                      "upgradable": "no"
+                    }
+                  },
+                  "if": {
+                    "limit": {
+                      "years_passed >": "175"
+                    },
+                    "while": {
+                      "count": "2",
+                      "create_ship": {
+                        "name": "NAME_Elusive_Craft",
+                        "design": "NAME_Elusive_Craft",
+                        "prefix": "no",
+                        "upgradable": "no"
+                      }
+                    }
+                  },
+                  "set_location": {
+                    "target": "fromfrom",
+                    "distance": "25",
+                    "angle": "random"
+                  },
+                  "set_fleet_stance": "passive",
+                  "set_fleet_flag": "militarist_federation_training_target@root.owner",
+                  "save_event_target_as": "militarist_federation_training_target"
+                },
+                "settings": {
+                  "spawn_debris": "no"
+                }
+              }
+            }
+          },
+          "owner": {},
+          "option": {
+            "name": "federations2.109.A"
+          }
+        }
+      }
+    },
+    "_source_file": "federations_events_2.txt",
+    "_line_number": 3174
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "federations2.702",
+      "title": "federations2.702.name",
+      "desc": "federations2.702.desc",
+      "picture": "GFX_evt_ship_in_orbit_2",
+      "show_sound": "event_red_alert",
+      "archaeology": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "fromfrom": {
+          "solar_system": {
+            "random_system_planet": {
+              "limit": {
+                "save_event_target_as": "system_asteroid"
+              }
+            }
+          },
+          "after": {
+            "fromfrom": {},
+            "option": {
+              "name": "federations2.702.A",
+              "hidden_effect": {
+                "create_country": {
+                  "name": "NAME_Warder_of_the_Ruins",
+                  "type": "faction",
+                  "flag": {
+                    "icon": {
+                      "category": "pointy",
+                      "file": "flag_pointy_21.dds"
+                    },
+                    "background": {
+                      "category": "backgrounds",
+                      "file": "00_solid.dds"
+                    },
+                    "colors": {}
+                  }
+                },
+                "last_created_country": {
+                  "set_graphical_culture": "fallen_empire_04",
+                  "save_global_event_target_as": "ancient_warden_country"
+                }
+              },
+              "event_target:ancient_warden_country": {
+                "create_fleet": {
+                  "name": "NAME_Warder_of_the_Ruins",
+                  "settings": {
+                    "spawn_debris": "no"
+                  },
+                  "effect": {
+                    "set_owner": "event_target:ancient_warden_country",
+                    "create_ship": {
+                      "name": "NAME_Warder_of_the_Ruins",
+                      "design": "NAME_Warder_of_the_Ruins"
+                    },
+                    "set_location": {
+                      "target": "event_target:system_asteroid",
+                      "distance": "5",
+                      "angle": "random"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_events_2.txt",
+    "_line_number": 554
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "federations2.15",
+      "title": "federations2.15.name",
+      "desc": "federations2.15.desc",
+      "picture": "GFX_evt_society_research",
+      "location": "root",
+      "show_sound": "event_laboratory_sound",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "federations2.15.A",
+        "remove_modifier": "dancing_to_death_modifier",
+        "add_deposit": "d_fuming_bog"
+      }
+    },
+    "_source_file": "federations_events_2.txt",
+    "_line_number": 881
+  },
+  "country_event": {
+    "country_event": {
+      "id": "federations2.121",
+      "title": "federations2.121.name",
+      "desc": "federations2.121.desc",
+      "picture": "GFX_evt_fleet_from_surface",
+      "show_sound": "event_announcement",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "ACKNOWLEDGED",
+        "hidden_effect": {
+          "remove_country_flag": "militarist_joint_operation_fail"
+        }
+      }
+    },
+    "_source_file": "federations_events_2.txt",
+    "_line_number": 3710
+  }
+}

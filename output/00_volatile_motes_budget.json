@@ -1,0 +1,172 @@
+{
+  "volatile_motes_expenditure_planets": {
+    "volatile_motes_expenditure_planets": {
+      "resource": "volatile_motes",
+      "type": "expenditure",
+      "category": "planets",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.2"
+      }
+    },
+    "_source_file": "00_volatile_motes_budget.txt",
+    "_line_number": 8
+  },
+  "volatile_motes_expenditure_ships": {
+    "volatile_motes_expenditure_ships": {
+      "resource": "volatile_motes",
+      "type": "expenditure",
+      "category": "ships",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.1"
+      }
+    },
+    "_source_file": "00_volatile_motes_budget.txt",
+    "_line_number": 22
+  },
+  "volatile_motes_expenditure_upgrade": {
+    "volatile_motes_expenditure_upgrade": {
+      "resource": "volatile_motes",
+      "type": "expenditure",
+      "category": "ship_upgrades",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "base": "0.1"
+      }
+    },
+    "_source_file": "00_volatile_motes_budget.txt",
+    "_line_number": 36
+  },
+  "volatile_motes_expenditure_trade": {
+    "volatile_motes_expenditure_trade": {
+      "resource": "volatile_motes",
+      "type": "expenditure",
+      "category": "trade",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.1"
+      }
+    },
+    "_source_file": "00_volatile_motes_budget.txt",
+    "_line_number": 50
+  },
+  "volatile_motes_expenditure_starbases": {
+    "volatile_motes_expenditure_starbases": {
+      "resource": "volatile_motes",
+      "type": "expenditure",
+      "category": "starbases",
+      "potential": {
+        "any_owned_nonprimary_starbase": {
+          "has_starbase_size >": "orbital_ring_tier_2",
+          "exists": "planet"
+        }
+      },
+      "weight": {
+        "weight": "0.2",
+        "modifier": {
+          "factor": "0",
+          "NOT": {
+            "any_owned_nonprimary_starbase": {
+              "exists": "planet",
+              "OR": {
+                "AND": {
+                  "has_starbase_size": "orbital_ring_tier_3",
+                  "count_starbase_buildings": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_volatile_motes_budget.txt",
+    "_line_number": 65
+  },
+  "volatile_motes_upkeep_planets": {
+    "volatile_motes_upkeep_planets": {
+      "resource": "volatile_motes",
+      "type": "upkeep",
+      "category": "planets",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.9"
+      }
+    },
+    "_source_file": "00_volatile_motes_budget.txt",
+    "_line_number": 106
+  },
+  "volatile_motes_upkeep_ships": {
+    "volatile_motes_upkeep_ships": {
+      "resource": "volatile_motes",
+      "type": "upkeep",
+      "category": "ships",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.1"
+      }
+    },
+    "_source_file": "00_volatile_motes_budget.txt",
+    "_line_number": 120
+  },
+  "volatile_motes_upkeep_edicts": {
+    "volatile_motes_upkeep_edicts": {
+      "resource": "volatile_motes",
+      "type": "upkeep",
+      "category": "edicts",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "base": "0.25"
+      }
+    },
+    "_source_file": "00_volatile_motes_budget.txt",
+    "_line_number": 134
+  },
+  "volatile_motes_upkeep_hyper_relays": {
+    "volatile_motes_upkeep_hyper_relays": {
+      "resource": "volatile_motes",
+      "type": "upkeep",
+      "category": "megastructures_hyper_relay",
+      "potential": {
+        "has_technology": "tech_hyper_relays"
+      },
+      "weight": {
+        "weight": "0.1"
+      }
+    },
+    "_source_file": "00_volatile_motes_budget.txt",
+    "_line_number": 148
+  },
+  "volatile_motes_upkeep_starbases": {
+    "volatile_motes_upkeep_starbases": {
+      "resource": "volatile_motes",
+      "type": "upkeep",
+      "category": "starbases",
+      "potential": {
+        "any_owned_nonprimary_starbase": {
+          "has_starbase_size >": "orbital_ring_tier_2",
+          "exists": "planet"
+        }
+      },
+      "weight": {
+        "weight": "0.1"
+      }
+    },
+    "_source_file": "00_volatile_motes_budget.txt",
+    "_line_number": 162
+  }
+}

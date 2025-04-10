@@ -1,0 +1,72 @@
+{
+  "humanoid_02_female_01_hair": {
+    "humanoid_02_female_01_hair": {
+      "default": "gfx/models/portraits/humanoid/humanoid_02_female_hair_style_03.dds",
+      "game_setup": {
+        "default": "gfx/models/portraits/humanoid/humanoid_02_female_hair_style_03.dds"
+      },
+      "_comments": [
+        "#species scope",
+        "#pop scope",
+        "#leader scope"
+      ],
+      "species": {
+        "default": "gfx/models/portraits/humanoid/humanoid_02_female_hair_style_03.dds"
+      },
+      "pop": {
+        "default": "gfx/models/portraits/humanoid/humanoid_02_female_hair_style_03.dds",
+        "random": {
+          "list": {}
+        }
+      },
+      "leader": {
+        "random": {
+          "trigger": {
+            "list": {}
+          },
+          "random": {
+            "trigger": {
+              "list": {}
+            },
+            "random": {
+              "trigger": {
+                "list": {}
+              },
+              "random": {
+                "trigger": {
+                  "list": {}
+                }
+              },
+              "_comments": [
+                "#leader scope"
+              ],
+              "ruler": {
+                "random": {
+                  "trigger": {
+                    "owner": {},
+                    "list": {}
+                  },
+                  "random": {
+                    "trigger": {
+                      "owner": {
+                        "OR": {
+                          "has_government": "gov_stagnant_ascendancy",
+                          "has_primitive_government": "yes",
+                          "has_materialist_government": "yes",
+                          "has_pacifist_government": "yes"
+                        }
+                      }
+                    },
+                    "list": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "humanoid_02_female_01_hair.txt",
+    "_line_number": 21
+  }
+}

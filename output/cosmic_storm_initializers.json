@@ -1,0 +1,142 @@
+{
+  "weathermanipulators_home_system": {
+    "weathermanipulators_home_system": {
+      "class": "rl_standard_stars",
+      "usage": "misc_system_init",
+      "max_instances": "1",
+      "_comments": [
+        "# Spawned by event, so shouldn't be used during galaxy generation.",
+        "### Star"
+      ],
+      "usage_odds": "0",
+      "flags": {},
+      "planet": {
+        "class": "star",
+        "size": {
+          "orbit_distance": "0",
+          "orbit_angle": "1"
+        },
+        "change_orbit": "45",
+        "_comments": [
+          "### Coordinates A: Colonized Planet"
+        ],
+        "planet": {
+          "flags": {
+            "init_effect": {
+              "prevent_anomaly": "yes",
+              "create_archaeological_site": "site_weathermanipulators_CoordinatesA_Residential_Planet",
+              "save_global_event_target_as": "wm_digsite_A"
+            }
+          },
+          "_comments": [
+            "### Coordinates B: Desert Planet"
+          ],
+          "planet": {
+            "class": "pc_desert",
+            "flags": {
+              "init_effect": {
+                "prevent_anomaly": "yes",
+                "create_archaeological_site": "site_weathermanipulators_CoordinatesB_Industrial_Planet",
+                "save_global_event_target_as": "wm_digsite_B"
+              }
+            },
+            "_comments": [
+              "### Coordinates C: Barren Planet"
+            ],
+            "planet": {
+              "class": "pc_barren",
+              "flags": {
+                "init_effect": {
+                  "prevent_anomaly": "yes",
+                  "create_archaeological_site": "site_weathermanipulators_CoordinatesC_Barren_Planet",
+                  "save_global_event_target_as": "wm_digsite_C"
+                }
+              },
+              "_comments": [
+                "### Optional extra planets"
+              ],
+              "planet": {
+                "count": {
+                  "min": "0",
+                  "max": "3"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "cosmic_storm_initializers.txt",
+    "_line_number": 10
+  },
+  "adSalivul_system": {
+    "adSalivul_system": {
+      "name": "NAME_adSalivul",
+      "class": "rl_standard_stars",
+      "usage": "misc_system_init",
+      "max_instances": "1",
+      "usage_odds": "0",
+      "flags": {},
+      "_comments": [
+        "### Star"
+      ],
+      "planet": {
+        "class": "star",
+        "size": {
+          "orbit_distance": "0",
+          "orbit_angle": "1"
+        },
+        "change_orbit": "45",
+        "planet": {
+          "class": "pc_broken",
+          "flags": {
+            "init_effect": {
+              "add_deposit": "d_physics_3",
+              "save_global_event_target_as": "planet_assembling_the_past"
+            }
+          },
+          "planet": {
+            "count": {
+              "min": "2",
+              "max": "2"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "cosmic_storm_initializers.txt",
+    "_line_number": 74
+  },
+  "adSul_system": {
+    "adSul_system": {
+      "name": "NAME_adSul",
+      "class": "rl_standard_stars",
+      "usage": "misc_system_init",
+      "max_instances": "1",
+      "usage_odds": "0",
+      "flags": {},
+      "_comments": [
+        "### Star"
+      ],
+      "planet": {
+        "class": "star",
+        "size": {
+          "orbit_distance": "0",
+          "orbit_angle": "1",
+          "init_effect": {
+            "save_global_event_target_as": "adSul_star"
+          }
+        },
+        "change_orbit": "45",
+        "planet": {
+          "count": {
+            "min": "2",
+            "max": "2"
+          }
+        }
+      }
+    },
+    "_source_file": "cosmic_storm_initializers.txt",
+    "_line_number": 118
+  }
+}

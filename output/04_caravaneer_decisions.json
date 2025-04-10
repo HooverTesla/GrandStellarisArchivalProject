@@ -1,0 +1,92 @@
+{
+  "decision_caravaneer_bunkbeds": {
+    "decision_caravaneer_bunkbeds": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_resources",
+      "resources": {
+        "category": "decisions",
+        "cost": {}
+      },
+      "potential": {
+        "owner": {
+          "is_regular_empire": "yes",
+          "has_country_flag": "bunkbeds_ready"
+        }
+      },
+      "allow": {
+        "NOT": {},
+        "effect": {
+          "hidden_effect": {
+            "add_modifier": {},
+            "ai_weight": {
+              "weight": "1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_caravaneer_decisions.txt",
+    "_line_number": 7
+  },
+  "decision_caravaneer_tupperware": {
+    "decision_caravaneer_tupperware": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_resources",
+      "resources": {
+        "category": "decisions",
+        "cost": {}
+      },
+      "potential": {
+        "owner": {
+          "is_regular_empire": "yes",
+          "has_country_flag": "tupperware_ready"
+        }
+      },
+      "allow": {
+        "NOT": {},
+        "effect": {
+          "hidden_effect": {
+            "add_modifier": {},
+            "ai_weight": {
+              "weight": "1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_caravaneer_decisions.txt",
+    "_line_number": 39
+  },
+  "decision_caravaneer_atmospheric_deodorizer": {
+    "decision_caravaneer_atmospheric_deodorizer": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_resources",
+      "resources": {
+        "category": "decisions",
+        "cost": {}
+      },
+      "potential": {
+        "owner": {
+          "is_regular_empire": "yes",
+          "has_country_flag": "atmospheric_deodorizer_ready"
+        }
+      },
+      "allow": {
+        "NOT": {},
+        "effect": {
+          "hidden_effect": {
+            "add_modifier": {},
+            "ai_weight": {
+              "weight": "1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_caravaneer_decisions.txt",
+    "_line_number": 71
+  }
+}

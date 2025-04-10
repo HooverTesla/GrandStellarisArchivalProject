@@ -1,0 +1,30 @@
+{
+  "tradition_synthetics": {
+    "tradition_synthetics": {
+      "tree_template": "tree_11_12",
+      "adoption_bonus": "tr_synthetics_adopt",
+      "finish_bonus": "tr_synthetics_finish",
+      "potential": {
+        "OR": {
+          "AND": {
+            "is_machine_empire": "yes",
+            "has_synthetic_dawn": "yes",
+            "has_machine_age_dlc": "no"
+          }
+        },
+        "NOR": {
+          "has_cybernetic_ascension": "yes",
+          "has_genetic_ascension": "yes",
+          "has_psionic_ascension": "yes",
+          "is_natural_design_empire": "yes"
+        }
+      },
+      "traditions": {},
+      "ai_weight": {
+        "factor": "1000"
+      }
+    },
+    "_source_file": "01_synthetics.txt",
+    "_line_number": 1
+  }
+}

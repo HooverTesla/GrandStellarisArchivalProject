@@ -1,0 +1,1514 @@
+{
+  "DISTAR_WRECK_CAT": {
+    "DISTAR_WRECK_CAT": {
+      "desc": "DISTAR_WRECK_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "has_distar": "yes",
+          "from.owner": {
+            "is_homicidal": "no",
+            "any_neighbor_country": {
+              "is_ai": "yes",
+              "is_country_type": "default",
+              "is_homicidal": "no",
+              "has_communications": "from.owner",
+              "NOR": {
+                "is_at_war_with": "from.owner",
+                "is_same_value": "from.owner"
+              }
+            }
+          }
+        }
+      },
+      "on_success": "distar.1"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 2
+  },
+  "DISTAR_FLARE_CAT": {
+    "DISTAR_FLARE_CAT": {
+      "desc": "DISTAR_FLARE_CAT_DESC",
+      "picture": "GFX_evt_dead_city",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "0 #Handled in SysInit"
+        }
+      },
+      "on_success": "distar.6"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 30
+  },
+  "DISTAR_RAINBOW_CAT": {
+    "DISTAR_RAINBOW_CAT": {
+      "desc": "DISTAR_RAINBOW_CAT_DESC",
+      "picture": "GFX_evt_black_hole",
+      "level": "4",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "has_distar": "yes",
+          "is_star": "yes",
+          "is_star_class": "sc_black_hole",
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "on_success": "distar.15"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 44
+  },
+  "DISTAR_HOLO_CAT": {
+    "DISTAR_HOLO_CAT": {
+      "desc": "DISTAR_HOLO_CAT_DESC",
+      "picture": "GFX_evt_black_hole",
+      "level": "4",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "has_distar": "yes",
+          "is_star": "yes",
+          "is_star_class": "sc_black_hole",
+          "from.owner": {}
+        }
+      },
+      "on_success": "distar.20"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 62
+  },
+  "DISTAR_ROBO_CAT": {
+    "DISTAR_ROBO_CAT": {
+      "desc": "DISTAR_ROBO_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "0 #Handled in SysInit"
+        }
+      },
+      "max_once_global": "no",
+      "on_success": "distar.25"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 83
+  },
+  "DISTAR_NANO_CAT": {
+    "DISTAR_NANO_CAT": {
+      "desc": "DISTAR_NANO_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "4",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "has_distar": "yes",
+          "OR": {
+            "is_planet_class": "pc_frozen"
+          }
+        }
+      },
+      "max_once_global": "no",
+      "max_once": "yes",
+      "on_success": {
+        "1": {
+          "anomaly_event": "distar.40"
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 99
+  },
+  "DISTAR_FLOW_CAT": {
+    "DISTAR_FLOW_CAT": {
+      "desc": "DISTAR_FLOW_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "100 #Intentional, as it competes with other is_star anomalies",
+          "has_distar": "yes",
+          "is_star": "yes",
+          "solar_system": {
+            "any_system_megastructure": {
+              "is_megastructure_type": "gateway_ruined"
+            }
+          }
+        }
+      },
+      "max_once_global": "no",
+      "max_once": "yes",
+      "on_success": "distar.45"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 125
+  },
+  "DISTAR_LOST_CAT": {
+    "DISTAR_LOST_CAT": {
+      "desc": "DISTAR_LOST_CAT_DESC",
+      "picture": "GFX_evt_gas_giant",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "OR": {
+            "has_distar": "no",
+            "solar_system": {
+              "OR": {
+                "has_star_flag": "amoeba_home_system"
+              }
+            }
+          }
+        }
+      },
+      "on_success": "distar.50"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 148
+  },
+  "DISTAR_TIME_CAT": {
+    "DISTAR_TIME_CAT": {
+      "desc": "DISTAR_TIME_CAT_DESC",
+      "picture": "GFX_evt_space_debris",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "OR": {
+            "has_distar": "no",
+            "from.owner": {
+              "species_portrait": "mol4"
+            }
+          }
+        }
+      },
+      "max_once_global": "yes",
+      "on_success": "distar.60"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 176
+  },
+  "DISTAR_CLONE_CAT": {
+    "DISTAR_CLONE_CAT": {
+      "desc": "DISTAR_CLONE_CAT_DESC",
+      "picture": "GFX_evt_megastructure_construction",
+      "level": "6",
+      "max_once_global": "yes",
+      "_comments": [
+        "#Spawn set via initialisers"
+      ],
+      "on_success": {
+        "1": {
+          "anomaly_event": "distar.70"
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 206
+  },
+  "DISTAR_GEODE_CAT": {
+    "DISTAR_GEODE_CAT": {
+      "desc": "DISTAR_GEODE_CAT_DESC",
+      "picture": "GFX_evt_space_debris",
+      "level": "5",
+      "spawn_chance": {
+        "modifier": {
+          "add": "2",
+          "has_distar": "yes",
+          "is_asteroid": "yes",
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "on_success": "distar.75"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 221
+  },
+  "DISTAR_DEAD_GOD_CAT": {
+    "DISTAR_DEAD_GOD_CAT": {
+      "desc": "DISTAR_DEAD_GOD_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1000",
+          "has_distar": "yes",
+          "is_moon": "yes",
+          "habitable_planet": "no",
+          "solar_system": {
+            "any_system_colony": {
+              "exists": "owner",
+              "owner": {
+                "is_primitive": "yes"
+              },
+              "has_moon": "yes",
+              "any_moon": {
+                "is_same_value": "root"
+              }
+            }
+          }
+        }
+      },
+      "on_spawn": {
+        "solar_system": {
+          "random_system_planet": {
+            "limit": {
+              "exists": "owner",
+              "owner": {
+                "has_moon": "yes",
+                "any_moon": {
+                  "is_same_value": "root"
+                }
+              },
+              "add_modifier": {}
+            }
+          },
+          "on_success": "distar.80"
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 239
+  },
+  "DISTAR_ELECTRO_CAT": {
+    "DISTAR_ELECTRO_CAT": {
+      "desc": "DISTAR_ELECTRO_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "has_distar": "yes",
+          "has_any_strategic_resource": "no",
+          "OR": {
+            "is_asteroid": "yes",
+            "uninhabitable_regular_planet": "yes"
+          }
+        }
+      },
+      "on_success": "distar.85"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 283
+  },
+  "DISTAR_RUM_CAT": {
+    "DISTAR_RUM_CAT": {
+      "desc": "DISTAR_RUM_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "has_distar": "yes",
+          "is_planet_class": "pc_gas_giant",
+          "is_inside_nebula": "yes",
+          "from.owner": {
+            "OR": {
+              "is_gestalt": "no",
+              "AND": {
+                "is_machine_empire": "yes",
+                "NOR": {
+                  "has_civic": "civic_machine_assimilator"
+                },
+                "any_neighbor_country": {
+                  "is_ai": "yes",
+                  "is_country_type": "default",
+                  "has_communications": "from.owner",
+                  "NOR": {
+                    "is_gestalt": "yes",
+                    "is_at_war_with": "from.owner"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "on_success": {
+        "1": {
+          "modifier": {
+            "factor": "0",
+            "owner": {},
+            "anomaly_event": "distar.90"
+          },
+          "1": {
+            "modifier": {
+              "factor": "0",
+              "owner": {
+                "is_machine_empire": "no"
+              }
+            },
+            "anomaly_event": "distar.91"
+          }
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 303
+  },
+  "DISTAR_SOOTHE_CAT": {
+    "DISTAR_SOOTHE_CAT": {
+      "desc": "DISTAR_SOOTHE_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "OR": {
+            "has_distar": "no",
+            "from.owner": {}
+          }
+        },
+        "on_success": "distar.95"
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 358
+  },
+  "DISTAR_SOOTHE_GC_CAT": {
+    "DISTAR_SOOTHE_GC_CAT": {
+      "desc": "DISTAR_SOOTHE_GC_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "OR": {
+            "has_distar": "no",
+            "from.owner": {}
+          }
+        },
+        "on_success": "distar.100"
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 380
+  },
+  "DISTAR_EXO_CAT": {
+    "DISTAR_EXO_CAT": {
+      "desc": "DISTAR_EXO_CAT_DESC",
+      "picture": "GFX_evt_alien_nature",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "10",
+          "has_distar": "yes",
+          "habitable_planet_not_urban": "yes"
+        }
+      },
+      "on_spawn": {
+        "add_modifier": {},
+        "on_success": "distar.105"
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 403
+  },
+  "DISTAR_ICE_CAT": {
+    "DISTAR_ICE_CAT": {
+      "desc": "DISTAR_ICE_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "has_distar": "yes",
+          "is_planet_class": "pc_frozen",
+          "NOT": {}
+        },
+        "on_success": "distar.110"
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 423
+  },
+  "DISTAR_METAL_CAT": {
+    "DISTAR_METAL_CAT": {
+      "desc": "DISTAR_METAL_CAT_DESC",
+      "picture": "GFX_evt_toxic",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "has_distar": "yes",
+          "is_planet_class": "pc_toxic",
+          "NOT": {}
+        },
+        "on_success": {
+          "1": {
+            "anomaly_event": "distar.115"
+          }
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 440
+  },
+  "DISTAR_OCEAN_CAT": {
+    "DISTAR_OCEAN_CAT": {
+      "desc": "DISTAR_OCEAN_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "has_distar": "yes",
+          "is_planet_class": "pc_ocean"
+        }
+      },
+      "on_success": {
+        "1": {
+          "anomaly_event": "distar.120"
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 461
+  },
+  "DISTAR_COLLAPSE_CAT": {
+    "DISTAR_COLLAPSE_CAT": {
+      "desc": "DISTAR_COLLAPSE_CAT_DESC",
+      "picture": "GFX_evt_space_station",
+      "level": "6",
+      "spawn_chance": {
+        "modifier": {
+          "add": "0 #Handled in SysInit"
+        }
+      },
+      "max_once_global": "no",
+      "on_success": {
+        "1": {
+          "anomaly_event": "distar.125"
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 482
+  },
+  "DISTAR_FOES_CAT": {
+    "DISTAR_FOES_CAT": {
+      "desc": "DISTAR_FOES_CAT_DESC",
+      "picture": "GFX_evt_alien_cavemen",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "add": "0 #Handled in on_actions"
+        }
+      },
+      "on_success": {
+        "1": {
+          "anomaly_event": "distar.131"
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 501
+  },
+  "DISTAR_DIAMOND_CAT": {
+    "DISTAR_DIAMOND_CAT": {
+      "desc": "DISTAR_DIAMOND_CAT_DESC",
+      "picture": "GFX_evt_star_white",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "has_distar": "yes",
+          "is_star": "yes #Necessary b/c is_star_class actually means is_system_class",
+          "is_planet_class": "pc_f_star",
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "null_spawn_chance": "0.5 # 50% chance to spawn",
+      "on_success": {
+        "1": {
+          "anomaly_event": "distar.140"
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 520
+  },
+  "DISTAR_MOLTEN_CAT": {
+    "DISTAR_MOLTEN_CAT": {
+      "desc": "DISTAR_MOLTEN_CAT_DESC",
+      "picture": "GFX_evt_molten",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "has_distar": "yes",
+          "is_planet_class": "pc_molten",
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "null_spawn_chance": "0.5 # 50% chance to spawn",
+      "on_success": {
+        "1": {
+          "anomaly_event": "distar.145"
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 544
+  },
+  "DISTAR_MERCURY_CAT": {
+    "DISTAR_MERCURY_CAT": {
+      "desc": "DISTAR_MERCURY_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "7",
+      "should_ai_and_humans_use": "yes #So that the AI can also find living metal",
+      "spawn_chance": {
+        "modifier": {
+          "add": "0.1",
+          "has_distar": "yes",
+          "uninhabitable_regular_planet": "yes",
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "on_success": {
+        "1": {
+          "anomaly_event": "distar.150"
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 567
+  },
+  "DISTAR_WARFORM_CAT": {
+    "DISTAR_WARFORM_CAT": {
+      "desc": "DISTAR_WARFORM_CAT_DESC",
+      "picture": "GFX_evt_toxic",
+      "level": "5",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "has_distar": "yes",
+          "is_planet_class": "pc_toxic"
+        }
+      },
+      "max_once_global": "yes",
+      "on_success": {
+        "1": {
+          "anomaly_event": "distar.155"
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 590
+  },
+  "DISTAR_BRAINSLUG_CAT": {
+    "DISTAR_BRAINSLUG_CAT": {
+      "desc": "DISTAR_BRAINSLUG_CAT_DESC",
+      "picture": "GFX_evt_alien_nature",
+      "level": "4",
+      "spawn_chance": {
+        "modifier": {
+          "add": "10",
+          "has_distar": "yes",
+          "habitable_planet": "yes",
+          "OR": {
+            "has_deposit": "d_dangerous_wildlife_blocker",
+            "has_planet_modifier": "pm_dangerous_wildlife"
+          }
+        }
+      },
+      "on_spawn": {
+        "add_deposit": "d_abandoned_primitive_homesteads"
+      },
+      "max_once_global": "yes",
+      "on_success": {
+        "1": {
+          "anomaly_event": "distar.170"
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 613
+  },
+  "DISTAR_THIRSTY_CAT": {
+    "DISTAR_THIRSTY_CAT": {
+      "desc": "DISTAR_THIRSTY_CAT_DESC",
+      "picture": "GFX_evt_warm_barren",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "has_distar": "yes",
+          "is_planet_class": "pc_barren",
+          "NOT": {}
+        },
+        "on_success": {
+          "1": {
+            "anomaly_event": "distar.180"
+          }
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 641
+  },
+  "DISTAR_FLYTRAP_CAT": {
+    "DISTAR_FLYTRAP_CAT": {
+      "desc": "DISTAR_FLYTRAP_CAT_DESC",
+      "picture": "GFX_evt_alien_nature",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "OR": {
+            "has_distar": "no",
+            "from.owner": {
+              "is_machine_empire": "yes"
+            }
+          }
+        }
+      },
+      "on_spawn": {
+        "add_modifier": {},
+        "on_success": {
+          "1": {
+            "anomaly_event": "distar.185"
+          }
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 663
+  },
+  "DISTAR_LIVING_CAT": {
+    "DISTAR_LIVING_CAT": {
+      "desc": "DISTAR_LIVING_CAT_DESC",
+      "picture": "GFX_evt_ocean",
+      "level": "5",
+      "spawn_chance": {
+        "modifier": {
+          "add": "0 #Handled in SysInit"
+        }
+      },
+      "on_success": "distar.190"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 698
+  },
+  "DISTAR_ZONE_CAT": {
+    "DISTAR_ZONE_CAT": {
+      "desc": "DISTAR_ZONE_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "has_distar": "yes",
+          "habitable_planet": "yes",
+          "NOT": {}
+        },
+        "max_once_global": "no",
+        "max_once": "yes",
+        "on_spawn": {},
+        "on_success": "distar.220"
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 714
+  },
+  "DISTAR_RAT_CAT": {
+    "DISTAR_RAT_CAT": {
+      "desc": "DISTAR_RAT_CAT_DESC",
+      "picture": "GFX_evt_city_ruins",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "0 #Handled in on_actions"
+        }
+      },
+      "max_once": "yes",
+      "max_once_global": "no",
+      "on_spawn": {},
+      "on_success": {
+        "1": {
+          "max_once": "yes",
+          "max_once_global": "no",
+          "anomaly_event": "distar.231"
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 737
+  },
+  "DISTAR_MED_CAT": {
+    "DISTAR_MED_CAT": {
+      "desc": "DISTAR_MED_CAT_DESC",
+      "picture": "GFX_evt_space_debris",
+      "level": "5",
+      "spawn_chance": {
+        "modifier": {
+          "add": "0 #Set in sys_init"
+        }
+      },
+      "on_spawn": {},
+      "on_success": "distar.244"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 762
+  },
+  "DISTAR_POD_CAT": {
+    "DISTAR_POD_CAT": {
+      "desc": "DISTAR_POD_CAT_DESC",
+      "picture": "GFX_evt_space_debris",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "add": "0 #Set in sys_init"
+        }
+      },
+      "on_spawn": {},
+      "on_success": "distar.245"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 779
+  },
+  "DISTAR_PHASE_CAT": {
+    "DISTAR_PHASE_CAT": {
+      "desc": "DISTAR_PHASE_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "10",
+      "spawn_chance": {
+        "modifier": {
+          "add": "0 #Set in distar.256"
+        }
+      },
+      "on_spawn": {},
+      "on_success": {
+        "0": {
+          "modifier": {
+            "add": "1",
+            "from": {
+              "has_planet_flag": "phaseshifting_active",
+              "has_modifier": "phaseshifted",
+              "OR": {
+                "NOT": {
+                  "AND": {
+                    "exists": "space_owner",
+                    "space_owner": {
+                      "NOT": {}
+                    }
+                  }
+                }
+              },
+              "anomaly_event": "distar.250"
+            },
+            "0": {
+              "modifier": {
+                "add": "1",
+                "from": {
+                  "NOR": {
+                    "has_planet_flag": "phaseshifting_active",
+                    "has_modifier": "phaseshifted"
+                  }
+                }
+              },
+              "anomaly_event": "distar.303"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 796
+  },
+  "DISTAR_SOY_CAT": {
+    "DISTAR_SOY_CAT": {
+      "desc": "DISTAR_SOY_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "6",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "OR": {
+            "has_distar": "no",
+            "AND": {
+              "exists": "owner",
+              "owner": {}
+            }
+          }
+        },
+        "on_spawn": {
+          "planet_event": {},
+          "on_success": "distar.261"
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 859
+  },
+  "DISTAR_SIGNAL_CAT": {
+    "DISTAR_SIGNAL_CAT": {
+      "desc": "DISTAR_SIGNAL_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit_2",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "has_distar": "yes",
+          "is_star": "yes"
+        }
+      },
+      "max_once_global": "no",
+      "max_once": "yes",
+      "on_spawn": {},
+      "on_success": "distar.265"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 896
+  },
+  "DISTAR_PUZZLE_CAT": {
+    "DISTAR_PUZZLE_CAT": {
+      "desc": "DISTAR_PUZZLE_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit_2",
+      "level": "1",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "has_distar": "yes",
+          "is_asteroid": "yes"
+        }
+      },
+      "max_once_global": "no",
+      "max_once": "yes",
+      "on_spawn": {},
+      "on_success": "distar.270"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 918
+  },
+  "DISTAR_NANOCITY_CAT": {
+    "DISTAR_NANOCITY_CAT": {
+      "desc": "DISTAR_NANOCITY_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit_2",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "has_distar": "yes",
+          "OR": {
+            "is_planet_class": "pc_frozen"
+          }
+        }
+      },
+      "max_once_global": "no",
+      "max_once": "yes",
+      "on_success": {
+        "1": {
+          "anomaly_event": "distar.275"
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 939
+  },
+  "DISTAR_NANOSAND_CAT": {
+    "DISTAR_NANOSAND_CAT": {
+      "desc": "DISTAR_NANOSAND_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit_2",
+      "level": "2",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "has_distar": "yes",
+          "OR": {
+            "is_planet_class": "pc_gaia",
+            "AND": {
+              "is_planet_class": "pc_barren",
+              "has_any_strategic_resource": "no"
+            }
+          }
+        }
+      },
+      "max_once_global": "no",
+      "max_once": "yes",
+      "on_success": {
+        "1": {
+          "anomaly_event": "distar.280"
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 965
+  },
+  "DISTAR_MEDGAS_CAT": {
+    "DISTAR_MEDGAS_CAT": {
+      "desc": "DISTAR_MEDGAS_CAT_DESC",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "has_distar": "no",
+          "NOT": {
+            "from.owner": {
+              "NOR": {
+                "has_event_chain": "l_cluster_chain",
+                "has_completed_event_chain_counter": {
+                  "event_chain": "l_cluster_chain",
+                  "counter": "clues"
+                }
+              }
+            }
+          }
+        },
+        "max_once_global": "no",
+        "max_once": "yes",
+        "on_success": {
+          "1": {
+            "anomaly_event": "distar.285"
+          }
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 995
+  },
+  "debris_gasgiant_category_temp": {
+    "debris_gasgiant_category_temp": {
+      "desc": "debris_gasgiant_category_temp_desc",
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "8",
+      "max_once_global": "yes",
+      "null_spawn_chance": "0.65 # 35% chance to spawn",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "from.owner": {
+            "OR": {
+              "species_portrait": "fun4",
+              "is_gestalt": "yes"
+            }
+          }
+        }
+      },
+      "on_success": "distar.1000"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1052
+  },
+  "star_lifting_category": {
+    "star_lifting_category": {
+      "picture": "GFX_evt_star_pulsar",
+      "level": "4",
+      "max_once_global": "yes",
+      "spawn_chance": {
+        "modifier": {
+          "add": "0 # added in system initializer"
+        }
+      },
+      "on_success": "distar.1020"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1080
+  },
+  "abandoned_outpost_category": {
+    "abandoned_outpost_category": {
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "4",
+      "max_once_global": "yes",
+      "spawn_chance": {
+        "modifier": {
+          "add": "0 # added in system initializer"
+        }
+      },
+      "on_success": "distar.1030"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1094
+  },
+  "ast_debris_field_1_cat_2": {
+    "ast_debris_field_1_cat_2": {
+      "desc": "AST_DEBRIS_FIELD_1_DESC",
+      "picture": "GFX_evt_space_debris",
+      "level": "3",
+      "max_once": "yes",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "has_distar": "yes",
+          "is_asteroid": "yes"
+        }
+      },
+      "on_success": {
+        "1": {
+          "modifier": {
+            "factor": "0",
+            "from": {
+              "OR": {
+                "has_deposit_for": "shipclass_mining_station"
+              }
+            }
+          },
+          "anomaly_event": "distar.2000"
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1108
+  },
+  "atomic_clock_cat": {
+    "atomic_clock_cat": {
+      "desc": "AST_DEBRIS_FIELD_1_DESC",
+      "picture": "GFX_evt_space_debris",
+      "level": "3",
+      "max_once": "yes",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "NOR": {
+            "has_deposit_for": "shipclass_mining_station"
+          },
+          "solar_system": {
+            "any_system_planet": {
+              "OR": {
+                "AND": {
+                  "exists": "owner",
+                  "owner": {
+                    "NOT": {},
+                    "AND": {
+                      "habitable_planet": "yes",
+                      "is_colony": "no",
+                      "is_under_colonization": "no"
+                    }
+                  }
+                }
+              }
+            },
+            "modifier": {
+              "factor": "0",
+              "NOR": {
+                "has_distar": "yes"
+              }
+            }
+          },
+          "on_success": {
+            "1": "distar.1045"
+          }
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1171
+  },
+  "gaia_planet_cat": {
+    "gaia_planet_cat": {
+      "picture": "GFX_evt_alien_nature",
+      "level": "3",
+      "max_once_global": "yes",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "has_distar": "yes",
+          "is_planet_class": "pc_gaia"
+        }
+      },
+      "on_success": "distar.1060"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1214
+  },
+  "corrupt_data_cat": {
+    "corrupt_data_cat": {
+      "picture": "GFX_evt_ship_in_orbit_2",
+      "level": "4",
+      "max_once_global": "yes",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "OR": {
+            "has_moon": "yes",
+            "is_under_colonization": "yes",
+            "solar_system": {
+              "is_planet_class": "pc_gaia",
+              "has_deposit": "d_alien_pets_deposit",
+              "exists": "archaeological_site"
+            }
+          }
+        },
+        "on_success": "distar.1065"
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1230
+  },
+  "irregular_energy_cat": {
+    "irregular_energy_cat": {
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "4",
+      "max_once_global": "yes",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "from.owner": {
+            "OR": {
+              "is_gestalt": "yes",
+              "owner_species": {
+                "has_trait": "trait_machine_unit"
+              }
+            }
+          }
+        }
+      },
+      "on_success": "distar.1070"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1258
+  },
+  "peculiar_patterns_cat": {
+    "peculiar_patterns_cat": {
+      "picture": "GFX_evt_ship_in_orbit_2",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "add": "0.1",
+          "has_distar": "yes",
+          "OR": {
+            "is_planet_class": "pc_ocean"
+          }
+        }
+      },
+      "on_success": {
+        "0": {
+          "modifier": {
+            "add": "1",
+            "From": {
+              "is_planet_class": "pc_ocean"
+            }
+          },
+          "anomaly_event": "distar.2010"
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1287
+  },
+  "tomb_world_cat": {
+    "tomb_world_cat": {
+      "picture": "GFX_evt_ship_in_orbit_2",
+      "level": "4",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "has_distar": "yes",
+          "OR": {
+            "is_planet_class": "pc_barren_cold"
+          },
+          "NOT": {}
+        },
+        "on_success": {
+          "0": {
+            "modifier": {
+              "factor": "0",
+              "from": {
+                "OR": {
+                  "has_deposit_for": "shipclass_mining_station"
+                }
+              }
+            },
+            "anomaly_event": "distar.2015"
+          }
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1344
+  },
+  "alien_life_cat": {
+    "alien_life_cat": {
+      "picture": "GFX_evt_alien_nature",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "has_distar": "yes",
+          "habitable_planet": "yes",
+          "NOT": {}
+        },
+        "on_success": "distar.2020"
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1398
+  },
+  "moon_cat": {
+    "moon_cat": {
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "3",
+      "max_once_global": "yes",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "has_distar": "yes",
+          "is_moon": "yes",
+          "habitable_planet": "no",
+          "NOR": {
+            "has_deposit_for": "shipclass_mining_station"
+          },
+          "solar_system": {
+            "any_system_planet": {
+              "habitable_planet": "yes",
+              "has_moon": "yes",
+              "any_moon": {
+                "is_same_value": "prevprevprev"
+              }
+            }
+          }
+        }
+      },
+      "on_success": {
+        "1": {
+          "anomaly_event": "distar.2025"
+        }
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1413
+  },
+  "time_loop_world": {
+    "time_loop_world": {
+      "picture": "GFX_evt_ship_in_orbit",
+      "level": "4",
+      "max_once_global": "yes",
+      "spawn_chance": {
+        "modifier": {
+          "add": "0 # added in system initializer"
+        }
+      },
+      "on_success": "distar.2030"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1446
+  },
+  "stolen_ship_cat": {
+    "stolen_ship_cat": {
+      "picture": "GFX_evt_ship_in_orbit_2",
+      "level": "3",
+      "max_once_global": "yes",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "2",
+          "from.owner": {
+            "NOT": {
+              "has_global_flag": "l_cluster_opened",
+              "has_completed_event_chain_counter": {
+                "event_chain": "l_cluster_chain",
+                "counter": "clues"
+              }
+            },
+            "has_event_chain": "l_cluster_chain"
+          }
+        }
+      },
+      "on_success": "distar.2040"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1459
+  },
+  "transmitter_cat": {
+    "transmitter_cat": {
+      "picture": "GFX_evt_ship_in_orbit_2",
+      "level": "2",
+      "max_once_global": "yes",
+      "spawn_chance": {
+        "modifier": {
+          "add": "3",
+          "has_distar": "yes",
+          "is_star": "no",
+          "from.owner": {
+            "NOT": {
+              "has_global_flag": "l_cluster_opened",
+              "has_completed_event_chain_counter": {
+                "event_chain": "l_cluster_chain",
+                "counter": "clues"
+              }
+            },
+            "has_event_chain": "l_cluster_chain"
+          },
+          "solar_system": {
+            "any_system_megastructure": {
+              "OR": {
+                "is_megastructure_type": "lgate_base"
+              }
+            }
+          }
+        }
+      },
+      "on_success": "distar.2045"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1488
+  },
+  "disco_trojan_asteroid_cat": {
+    "disco_trojan_asteroid_cat": {
+      "desc": "disco_trojan_asteroid_cat_desc",
+      "picture": "GFX_evt_asteroid_field",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "from.owner": {}
+        },
+        "_comments": [
+          "# fiction doesn't work for hive minds/robots, so they're blocked"
+        ],
+        "on_success": "distar.3000"
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1526
+  },
+  "disco_impossible_organism_cat": {
+    "disco_impossible_organism_cat": {
+      "desc": "disco_impossible_organism_cat_desc",
+      "picture": "GFX_evt_toxic",
+      "level": "6",
+      "max_once_global": "yes",
+      "null_spawn_chance": "0.75 # 25% chance to spawn",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "from.owner": {
+            "OR": {
+              "has_ethic": "ethic_fanatic_xenophobe",
+              "is_gestalt": "yes #mentions inviduals"
+            }
+          }
+        }
+      },
+      "on_success": "distar.3010"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1549
+  },
+  "disco_stranded_scientist_cat": {
+    "disco_stranded_scientist_cat": {
+      "desc": "disco_stranded_scientist_cat_desc",
+      "picture": "GFX_evt_asteroid_field",
+      "max_once_global": "yes",
+      "level": "4",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "from.owner": {
+            "OR": {
+              "is_gestalt": "yes",
+              "has_ethic": "ethic_fanatic_xenophobe",
+              "is_human_species": "yes"
+            }
+          }
+        }
+      },
+      "on_success": "distar.3020"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1578
+  },
+  "disco_molluscoid_miners_cat": {
+    "disco_molluscoid_miners_cat": {
+      "desc": "disco_molluscoid_miners_cat_desc",
+      "picture": "GFX_evt_warm_barren",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "from.owner": {
+            "NOR": {
+              "is_gestalt": "yes",
+              "has_ethic": "ethic_fanatic_xenophobe",
+              "species_portrait": "mol6"
+            }
+          }
+        }
+      },
+      "on_success": "distar.3030"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1606
+  },
+  "disco_alien_machine_cat": {
+    "disco_alien_machine_cat": {
+      "desc": "disco_alien_machine_cat_desc",
+      "picture": "GFX_evt_asteroid_field",
+      "level": "3",
+      "null_spawn_chance": "0.5 # 50% chance to spawn",
+      "spawn_chance": {
+        "modifier": {
+          "add": "2",
+          "is_asteroid": "yes",
+          "has_any_strategic_resource": "no"
+        }
+      },
+      "on_success": "distar.3040"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1638
+  },
+  "disco_speed_demon_cat": {
+    "disco_speed_demon_cat": {
+      "desc": "disco_speed_demon_cat_desc",
+      "picture": "GFX_evt_asteroid_field",
+      "level": "4",
+      "spawn_chance": {
+        "modifier": {
+          "factor": "0",
+          "from.owner": {
+            "is_synthetic_empire": "yes"
+          }
+        }
+      },
+      "on_success": "distar.3050"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1656
+  },
+  "disco_breathing_rift_cat": {
+    "disco_breathing_rift_cat": {
+      "desc": "disco_breathing_rift_cat_desc",
+      "picture": "GFX_evt_ship_in_orbit_2",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "add": "2",
+          "is_star": "yes",
+          "OR": {
+            "is_star_class": "sc_pulsar"
+          }
+        }
+      },
+      "on_success": "distar.3060"
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1679
+  },
+  "disco_gray_cat": {
+    "disco_gray_cat": {
+      "desc": "disco_gray_cat_desc",
+      "picture": "GFX_evt_ship_in_orbit_2",
+      "level": "3",
+      "spawn_chance": {
+        "modifier": {
+          "add": "6",
+          "is_planet_class": "pc_gray_goo",
+          "solar_system": {},
+          "modifier": {
+            "factor": "0",
+            "OR": {
+              "has_global_flag": "gray_goo_empire_set"
+            }
+          }
+        },
+        "on_success": "graygoo.400"
+      }
+    },
+    "_source_file": "95_anomaly_categories_distant_stars.txt",
+    "_line_number": 1700
+  }
+}

@@ -1,0 +1,488 @@
+{
+  "portraits": {
+    "portraits": {
+      "_comments": [
+        "# toxoid",
+        "# toxoid 02 - the merchant"
+      ],
+      "tox1": {
+        "character_textures": {}
+      },
+      "tox2": {
+        "character_textures": {},
+        "custom_attachment_label": "MASK",
+        "custom_close_up_position_offset": {
+          "custom_close_up_scale": "1.2"
+        },
+        "_comments": [
+          "# toxoid 03 - Tripple Head"
+        ],
+        "tox3": {
+          "character_textures": {},
+          "custom_close_up_position_offset": {
+            "custom_close_up_scale": "1.5"
+          },
+          "_comments": [
+            "# toxoid 04 - the frog"
+          ],
+          "tox4": {
+            "character_textures": {},
+            "custom_close_up_position_offset": {
+              "custom_close_up_scale": "1.3"
+            },
+            "_comments": [
+              "# toxoid 05 - stink bug"
+            ],
+            "tox5_f": {
+              "character_textures": {},
+              "custom_close_up_position_offset": {
+                "custom_close_up_scale": "1.6"
+              },
+              "_comments": [
+                "# toxoid 05 - stink bug"
+              ],
+              "tox5_m": {
+                "character_textures": {},
+                "custom_close_up_position_offset": {
+                  "custom_close_up_scale": "1.6"
+                },
+                "_comments": [
+                  "# toxoid 06 - Tall Tubes"
+                ],
+                "tox6": {
+                  "character_textures": {},
+                  "custom_close_up_position_offset": {
+                    "custom_close_up_scale": "1.6"
+                  },
+                  "_comments": [
+                    "# toxoid 07 - trumpet alien"
+                  ],
+                  "tox7_f": {
+                    "character_textures": {},
+                    "custom_close_up_position_offset": {
+                      "custom_close_up_scale": "1.5"
+                    },
+                    "tox7_m": {
+                      "character_textures": {},
+                      "custom_close_up_position_offset": {
+                        "custom_close_up_scale": "1.5"
+                      },
+                      "tox7_i": {
+                        "character_textures": {},
+                        "custom_close_up_position_offset": {
+                          "custom_close_up_scale": "1.5"
+                        },
+                        "_comments": [
+                          "# toxoid 08 - tiny diver"
+                        ],
+                        "tox8": {
+                          "character_textures": {},
+                          "custom_close_up_position_offset": {
+                            "custom_close_up_scale": "1",
+                            "custom_attachment_label": "MASK"
+                          },
+                          "_comments": [
+                            "# toxoid 09 - the conch"
+                          ],
+                          "tox9_f": {
+                            "character_textures": {},
+                            "custom_close_up_position_offset": {
+                              "custom_close_up_scale": "1.2"
+                            },
+                            "tox9_m": {
+                              "character_textures": {},
+                              "custom_close_up_position_offset": {
+                                "custom_close_up_scale": "1.2"
+                              },
+                              "_comments": [
+                                "# toxoid 10 - noname"
+                              ],
+                              "tox10": {
+                                "character_textures": {},
+                                "custom_close_up_position_offset": {
+                                  "custom_close_up_scale": "1.4"
+                                },
+                                "_comments": [
+                                  "# toxic 11 -the sad hyena"
+                                ],
+                                "tox11": {
+                                  "character_textures": {},
+                                  "custom_close_up_position_offset": {
+                                    "custom_close_up_scale": "2",
+                                    "custom_attachment_label": "MASK"
+                                  },
+                                  "_comments": [
+                                    "# toxic 12 -Froggy"
+                                  ],
+                                  "tox12_f": {
+                                    "character_textures": {},
+                                    "custom_close_up_position_offset": {
+                                      "custom_close_up_scale": "1.8"
+                                    },
+                                    "tox12_m": {
+                                      "character_textures": {},
+                                      "custom_close_up_position_offset": {
+                                        "custom_close_up_scale": "1.8"
+                                      },
+                                      "_comments": [
+                                        "#Tubed Alien"
+                                      ],
+                                      "tox13": {
+                                        "character_textures": {},
+                                        "custom_close_up_position_offset": {
+                                          "custom_close_up_scale": "1"
+                                        },
+                                        "_comments": [
+                                          "# Toxoid 14 - Blax",
+                                          "# toxoid 15 - pipe boy"
+                                        ],
+                                        "tox14": {
+                                          "character_textures": {}
+                                        },
+                                        "tox15": {
+                                          "character_textures": {}
+                                        },
+                                        "tox_machine": {
+                                          "character_textures": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "17_portraits_toxoid.txt",
+    "_line_number": 52
+  },
+  "portrait_groups": {
+    "portrait_groups": {
+      "tox9": {
+        "default": "tox9_f",
+        "game_setup": {
+          "add": {
+            "trigger": {
+              "ruler": {
+                "OR": {
+                  "gender": "indeterminable"
+                }
+              }
+            },
+            "portraits": {}
+          }
+        },
+        "_comments": [
+          "#set = {",
+          "#\ttrigger = { ... }",
+          "#\tportraits = { ... }",
+          "#\t#using \"set =\" instead of \"add\" will first clear any portraits already added",
+          "#}",
+          "#species scope"
+        ],
+        "species": {
+          "add": {
+            "trigger": {
+              "NOT": {},
+              "portraits": {}
+            },
+            "add": {
+              "trigger": {
+                "NOT": {},
+                "portraits": {}
+              }
+            },
+            "_comments": [
+              "#pop scope"
+            ],
+            "pop": {
+              "add": {
+                "trigger": {
+                  "NOT": {},
+                  "portraits": {}
+                },
+                "add": {
+                  "trigger": {
+                    "NOT": {},
+                    "portraits": {}
+                  }
+                },
+                "leader": {
+                  "add": {
+                    "trigger": {
+                      "OR": {
+                        "gender": "indeterminable"
+                      }
+                    },
+                    "portraits": {}
+                  }
+                },
+                "ruler": {
+                  "add": {
+                    "trigger": {
+                      "OR": {
+                        "gender": "indeterminable"
+                      }
+                    },
+                    "portraits": {}
+                  }
+                }
+              },
+              "tox12": {
+                "default": "tox12_f",
+                "game_setup": {
+                  "add": {
+                    "trigger": {
+                      "ruler": {
+                        "OR": {
+                          "gender": "indeterminable"
+                        }
+                      }
+                    },
+                    "portraits": {}
+                  }
+                },
+                "_comments": [
+                  "#set = {",
+                  "#\ttrigger = { ... }",
+                  "#\tportraits = { ... }",
+                  "#\t#using \"set =\" instead of \"add\" will first clear any portraits already added",
+                  "#}",
+                  "#species scope"
+                ],
+                "species": {
+                  "add": {
+                    "trigger": {
+                      "NOT": {},
+                      "portraits": {}
+                    },
+                    "add": {
+                      "trigger": {
+                        "NOT": {},
+                        "portraits": {}
+                      }
+                    },
+                    "_comments": [
+                      "#pop scope"
+                    ],
+                    "pop": {
+                      "add": {
+                        "trigger": {
+                          "NOT": {},
+                          "portraits": {}
+                        },
+                        "add": {
+                          "trigger": {
+                            "NOT": {},
+                            "portraits": {}
+                          }
+                        },
+                        "leader": {
+                          "add": {
+                            "trigger": {
+                              "OR": {
+                                "gender": "indeterminable"
+                              }
+                            },
+                            "portraits": {}
+                          }
+                        },
+                        "ruler": {
+                          "add": {
+                            "trigger": {
+                              "OR": {
+                                "gender": "indeterminable"
+                              }
+                            },
+                            "portraits": {}
+                          }
+                        }
+                      },
+                      "tox5": {
+                        "default": "tox5_f",
+                        "game_setup": {
+                          "add": {
+                            "trigger": {
+                              "ruler": {
+                                "OR": {
+                                  "gender": "indeterminable"
+                                }
+                              }
+                            },
+                            "portraits": {}
+                          }
+                        },
+                        "_comments": [
+                          "#set = {",
+                          "#\ttrigger = { ... }",
+                          "#\tportraits = { ... }",
+                          "#\t#using \"set =\" instead of \"add\" will first clear any portraits already added",
+                          "#}",
+                          "#species scope"
+                        ],
+                        "species": {
+                          "add": {
+                            "trigger": {
+                              "NOT": {},
+                              "portraits": {}
+                            },
+                            "add": {
+                              "trigger": {
+                                "NOT": {},
+                                "portraits": {}
+                              }
+                            },
+                            "_comments": [
+                              "#pop scope"
+                            ],
+                            "pop": {
+                              "add": {
+                                "trigger": {
+                                  "NOT": {},
+                                  "portraits": {}
+                                },
+                                "add": {
+                                  "trigger": {
+                                    "NOT": {},
+                                    "portraits": {}
+                                  }
+                                },
+                                "leader": {
+                                  "add": {
+                                    "trigger": {
+                                      "OR": {
+                                        "gender": "indeterminable"
+                                      }
+                                    },
+                                    "portraits": {}
+                                  }
+                                },
+                                "ruler": {
+                                  "add": {
+                                    "trigger": {
+                                      "OR": {
+                                        "gender": "indeterminable"
+                                      }
+                                    },
+                                    "portraits": {}
+                                  }
+                                }
+                              },
+                              "tox7": {
+                                "default": "tox7_f",
+                                "game_setup": {
+                                  "add": {
+                                    "trigger": {
+                                      "ruler": {
+                                        "gender": "indeterminable"
+                                      }
+                                    },
+                                    "portraits": {}
+                                  }
+                                },
+                                "_comments": [
+                                  "#set = {",
+                                  "#\ttrigger = { ... }",
+                                  "#\tportraits = { ... }",
+                                  "#\t#using \"set =\" instead of \"add\" will first clear any portraits already added",
+                                  "#}",
+                                  "#species scope"
+                                ],
+                                "species": {
+                                  "add": {
+                                    "trigger": {
+                                      "NOT": {},
+                                      "portraits": {}
+                                    },
+                                    "add": {
+                                      "trigger": {
+                                        "NOT": {},
+                                        "portraits": {}
+                                      },
+                                      "add": {
+                                        "trigger": {
+                                          "exists": "species",
+                                          "NOT": {
+                                            "species": {
+                                              "OR": {
+                                                "species_gender": "female"
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "portraits": {}
+                                      }
+                                    },
+                                    "_comments": [
+                                      "#pop scope"
+                                    ],
+                                    "pop": {
+                                      "add": {
+                                        "trigger": {
+                                          "NOT": {},
+                                          "portraits": {}
+                                        },
+                                        "add": {
+                                          "trigger": {
+                                            "NOT": {},
+                                            "portraits": {}
+                                          },
+                                          "add": {
+                                            "trigger": {
+                                              "NOT": {
+                                                "species": {
+                                                  "species": {}
+                                                },
+                                                "portraits": {}
+                                              }
+                                            },
+                                            "leader": {
+                                              "add": {
+                                                "trigger": {
+                                                  "gender": "indeterminable"
+                                                },
+                                                "portraits": {}
+                                              }
+                                            },
+                                            "ruler": {
+                                              "add": {
+                                                "trigger": {
+                                                  "gender": "indeterminable"
+                                                },
+                                                "portraits": {}
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "17_portraits_toxoid.txt",
+    "_line_number": 315
+  }
+}

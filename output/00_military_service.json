@@ -1,0 +1,195 @@
+{
+  "military_service_full": {
+    "military_service_full": {
+      "potential": {
+        "if": {
+          "limit": {
+            "from": {},
+            "OR": {
+              "has_trait": "trait_cybernetic"
+            }
+          }
+        },
+        "allow": {
+          "hidden_trigger": {
+            "custom_tooltip": {
+              "fail_text": "MACHINE_NO_PURE_ORGANIC_SOLDIERS",
+              "if": {
+                "limit": {
+                  "from": {},
+                  "OR": {
+                    "has_trait": "trait_machine_unit",
+                    "AND": {
+                      "has_trait": "trait_cybernetic",
+                      "from": {
+                        "has_civic": "civic_machine_assimilator"
+                      }
+                    }
+                  }
+                }
+              },
+              "custom_tooltip": {
+                "fail_text": "is_undesirables_tooltip",
+                "NOR": {
+                  "has_citizenship_type": {
+                    "has_citizenship_type": {}
+                  },
+                  "custom_tooltip": {
+                    "fail_text": "is_slaves_tooltip",
+                    "NOT": {},
+                    "custom_tooltip": {
+                      "fail_text": "is_serviles_tooltip",
+                      "NOT": {},
+                      "custom_tooltip": {
+                        "fail_text": "is_servitude_tooltip",
+                        "NOT": {},
+                        "if": {
+                          "limit": {
+                            "from": {
+                              "NOT": {},
+                              "has_trait": "trait_mechanical"
+                            },
+                            "custom_tooltip": {
+                              "fail_text": "too_alien",
+                              "OR": {
+                                "is_same_species": "from",
+                                "from": {
+                                  "NOR": {
+                                    "has_ethic": "ethic_fanatic_xenophobe"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "custom_tooltip": {
+                            "fail_text": "HIVE_MIND_SPECIES_CITIZENS_ONLY",
+                            "OR": {
+                              "NOT": {
+                                "has_trait": "trait_hive_mind"
+                              }
+                            },
+                            "custom_tooltip": {
+                              "fail_text": "nerve_stapled_cannot_lead_armies",
+                              "can_think": "yes"
+                            }
+                          },
+                          "ai_will_do": {
+                            "factor": "5",
+                            "modifier": {
+                              "factor": "0",
+                              "from": {},
+                              "modifier": {
+                                "factor": "0",
+                                "from": {
+                                  "has_valid_ai_personality": "yes",
+                                  "NOT": {
+                                    "has_ai_personality_behaviour": "multispecies"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_military_service.txt",
+    "_line_number": 4
+  },
+  "military_service_limited": {
+    "military_service_limited": {
+      "potential": {
+        "from": {},
+        "allow": {
+          "hidden_trigger": {
+            "custom_tooltip": {
+              "fail_text": "same_species_disallowed",
+              "NOT": {},
+              "custom_tooltip": {
+                "fail_text": "species_is_being_purged",
+                "NOR": {
+                  "has_citizenship_type": {
+                    "has_citizenship_type": {}
+                  },
+                  "custom_tooltip": {
+                    "fail_text": "NON_MACHINE_SPECIES_NEED_PREREQ_TECH",
+                    "if": {
+                      "limit": {
+                        "OR": {
+                          "has_trait": "trait_machine_unit"
+                        }
+                      },
+                      "from": {
+                        "OR": {
+                          "is_machine_empire": "yes",
+                          "is_individual_machine": "yes",
+                          "has_technology": "tech_droid_workers"
+                        }
+                      }
+                    }
+                  }
+                },
+                "ai_will_do": {
+                  "factor": "1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_military_service.txt",
+    "_line_number": 131
+  },
+  "military_service_none": {
+    "military_service_none": {
+      "potential": {
+        "OR": {
+          "from": {
+            "NOT": {}
+          },
+          "allow": {
+            "hidden_trigger": {
+              "custom_tooltip": {
+                "fail_text": "same_species_disallowed",
+                "NOT": {},
+                "custom_tooltip": {
+                  "fail_text": "species_has_military_slavery",
+                  "NOT": {
+                    "has_slavery_type": {}
+                  },
+                  "custom_tooltip": {
+                    "fail_text": "MACHINE_SPECIES_NOT_MACHINE",
+                    "if": {
+                      "limit": {
+                        "from": {},
+                        "OR": {
+                          "NOR": {
+                            "has_trait": "trait_machine_unit"
+                          },
+                          "has_trait": "trait_robot_suppressed"
+                        }
+                      }
+                    }
+                  },
+                  "ai_will_do": {
+                    "factor": "0"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_military_service.txt",
+    "_line_number": 173
+  }
+}

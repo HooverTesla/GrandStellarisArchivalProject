@@ -1,0 +1,622 @@
+{
+  "portraits": {
+    "portraits": {
+      "_comments": [
+        "# aquatic",
+        "# Aquatics 7 - Coral"
+      ],
+      "aqu1_f": {
+        "character_textures": {}
+      },
+      "aqu1_m": {
+        "character_textures": {}
+      },
+      "aqu2_f": {
+        "character_textures": {}
+      },
+      "aqu2_m": {
+        "character_textures": {}
+      },
+      "aqu3": {
+        "character_textures": {}
+      },
+      "aqu4_f": {
+        "character_textures": {}
+      },
+      "aqu4_m": {
+        "character_textures": {}
+      },
+      "aqu5_f": {
+        "character_textures": {}
+      },
+      "aqu5_m": {
+        "character_textures": {}
+      },
+      "aqu6_m": {
+        "character_textures": {}
+      },
+      "aqu6_f": {
+        "character_textures": {}
+      },
+      "aqu7": {
+        "character_textures": {},
+        "custom_mid_close_up_position_offset": {
+          "custom_mid_close_up_scale": "1.0"
+        },
+        "aqu8": {
+          "character_textures": {}
+        },
+        "aqu9": {
+          "character_textures": {}
+        },
+        "aqu10": {
+          "character_textures": {}
+        },
+        "aqu11": {
+          "character_textures": {}
+        },
+        "aqu12": {
+          "character_textures": {}
+        },
+        "aqu13_f": {
+          "character_textures": {}
+        },
+        "aqu13_m": {
+          "character_textures": {}
+        },
+        "aqu14": {
+          "character_textures": {}
+        },
+        "aqu15_f": {
+          "character_textures": {}
+        },
+        "aqu15_m": {
+          "character_textures": {}
+        },
+        "aqu_machine": {
+          "character_textures": {}
+        }
+      }
+    },
+    "_source_file": "16_portraits_aquatic.txt",
+    "_line_number": 19
+  },
+  "portrait_groups": {
+    "portrait_groups": {
+      "aqu1": {
+        "default": "aqu1_f",
+        "game_setup": {
+          "add": {
+            "trigger": {
+              "ruler": {
+                "OR": {
+                  "gender": "indeterminable"
+                }
+              }
+            },
+            "portraits": {}
+          }
+        },
+        "_comments": [
+          "#set = {",
+          "#\ttrigger = { ... }",
+          "#\tportraits = { ... }",
+          "#\t#using \"set =\" instead of \"add\" will first clear any portraits already added",
+          "#}",
+          "#species scope"
+        ],
+        "species": {
+          "add": {
+            "trigger": {
+              "exists": "species",
+              "NOT": {},
+              "portraits": {}
+            },
+            "add": {
+              "trigger": {
+                "exists": "species",
+                "NOT": {},
+                "portraits": {}
+              }
+            },
+            "_comments": [
+              "#pop scope"
+            ],
+            "pop": {
+              "add": {
+                "trigger": {
+                  "NOT": {},
+                  "portraits": {}
+                },
+                "add": {
+                  "trigger": {
+                    "NOT": {},
+                    "portraits": {}
+                  }
+                },
+                "leader": {
+                  "add": {
+                    "trigger": {
+                      "OR": {
+                        "gender": "indeterminable"
+                      }
+                    },
+                    "portraits": {}
+                  }
+                },
+                "ruler": {
+                  "add": {
+                    "trigger": {
+                      "OR": {
+                        "gender": "indeterminable"
+                      }
+                    },
+                    "portraits": {}
+                  }
+                }
+              },
+              "aqu2": {
+                "default": "aqu2_f",
+                "game_setup": {
+                  "add": {
+                    "trigger": {
+                      "ruler": {
+                        "OR": {
+                          "gender": "indeterminable"
+                        }
+                      }
+                    },
+                    "portraits": {}
+                  }
+                },
+                "_comments": [
+                  "#set = {",
+                  "#\ttrigger = { ... }",
+                  "#\tportraits = { ... }",
+                  "#\t#using \"set =\" instead of \"add\" will first clear any portraits already added",
+                  "#}",
+                  "#species scope"
+                ],
+                "species": {
+                  "add": {
+                    "trigger": {
+                      "exists": "species",
+                      "NOT": {},
+                      "portraits": {}
+                    },
+                    "add": {
+                      "trigger": {
+                        "exists": "species",
+                        "NOT": {},
+                        "portraits": {}
+                      }
+                    },
+                    "_comments": [
+                      "#pop scope"
+                    ],
+                    "pop": {
+                      "add": {
+                        "trigger": {
+                          "NOT": {},
+                          "portraits": {}
+                        },
+                        "add": {
+                          "trigger": {
+                            "NOT": {},
+                            "portraits": {}
+                          }
+                        },
+                        "leader": {
+                          "add": {
+                            "trigger": {
+                              "OR": {
+                                "gender": "indeterminable"
+                              }
+                            },
+                            "portraits": {}
+                          }
+                        },
+                        "ruler": {
+                          "add": {
+                            "trigger": {
+                              "OR": {
+                                "gender": "indeterminable"
+                              }
+                            },
+                            "portraits": {}
+                          }
+                        }
+                      },
+                      "aqu4": {
+                        "default": "aqu4_f",
+                        "game_setup": {
+                          "add": {
+                            "trigger": {
+                              "ruler": {
+                                "OR": {
+                                  "gender": "indeterminable"
+                                }
+                              }
+                            },
+                            "portraits": {}
+                          }
+                        },
+                        "_comments": [
+                          "#set = {",
+                          "#\ttrigger = { ... }",
+                          "#\tportraits = { ... }",
+                          "#\t#using \"set =\" instead of \"add\" will first clear any portraits already added",
+                          "#}",
+                          "#species scope"
+                        ],
+                        "species": {
+                          "add": {
+                            "trigger": {
+                              "exists": "species",
+                              "NOT": {},
+                              "portraits": {}
+                            },
+                            "add": {
+                              "trigger": {
+                                "exists": "species",
+                                "NOT": {},
+                                "portraits": {}
+                              }
+                            },
+                            "_comments": [
+                              "#pop scope"
+                            ],
+                            "pop": {
+                              "add": {
+                                "trigger": {
+                                  "NOT": {},
+                                  "portraits": {}
+                                },
+                                "add": {
+                                  "trigger": {
+                                    "NOT": {},
+                                    "portraits": {}
+                                  }
+                                },
+                                "leader": {
+                                  "add": {
+                                    "trigger": {
+                                      "OR": {
+                                        "gender": "indeterminable"
+                                      }
+                                    },
+                                    "portraits": {}
+                                  }
+                                },
+                                "ruler": {
+                                  "add": {
+                                    "trigger": {
+                                      "OR": {
+                                        "gender": "indeterminable"
+                                      }
+                                    },
+                                    "portraits": {}
+                                  }
+                                }
+                              },
+                              "aqu15": {
+                                "default": "aqu15_f",
+                                "game_setup": {
+                                  "add": {
+                                    "trigger": {
+                                      "ruler": {
+                                        "OR": {
+                                          "gender": "indeterminable"
+                                        }
+                                      }
+                                    },
+                                    "portraits": {}
+                                  }
+                                },
+                                "_comments": [
+                                  "#set = {",
+                                  "#\ttrigger = { ... }",
+                                  "#\tportraits = { ... }",
+                                  "#\t#using \"set =\" instead of \"add\" will first clear any portraits already added",
+                                  "#}",
+                                  "#species scope"
+                                ],
+                                "species": {
+                                  "add": {
+                                    "trigger": {
+                                      "exists": "species",
+                                      "NOT": {},
+                                      "portraits": {}
+                                    },
+                                    "add": {
+                                      "trigger": {
+                                        "exists": "species",
+                                        "NOT": {},
+                                        "portraits": {}
+                                      }
+                                    },
+                                    "_comments": [
+                                      "#pop scope"
+                                    ],
+                                    "pop": {
+                                      "add": {
+                                        "trigger": {
+                                          "NOT": {},
+                                          "portraits": {}
+                                        },
+                                        "add": {
+                                          "trigger": {
+                                            "NOT": {},
+                                            "portraits": {}
+                                          }
+                                        },
+                                        "leader": {
+                                          "add": {
+                                            "trigger": {
+                                              "OR": {
+                                                "gender": "indeterminable"
+                                              }
+                                            },
+                                            "portraits": {}
+                                          }
+                                        },
+                                        "ruler": {
+                                          "add": {
+                                            "trigger": {
+                                              "OR": {
+                                                "gender": "indeterminable"
+                                              }
+                                            },
+                                            "portraits": {}
+                                          }
+                                        }
+                                      },
+                                      "aqu13": {
+                                        "default": "aqu13_f",
+                                        "game_setup": {
+                                          "add": {
+                                            "trigger": {
+                                              "ruler": {
+                                                "OR": {
+                                                  "gender": "indeterminable"
+                                                }
+                                              }
+                                            },
+                                            "portraits": {}
+                                          }
+                                        },
+                                        "_comments": [
+                                          "#set = {",
+                                          "#\ttrigger = { ... }",
+                                          "#\tportraits = { ... }",
+                                          "#\t#using \"set =\" instead of \"add\" will first clear any portraits already added",
+                                          "#}",
+                                          "#species scope"
+                                        ],
+                                        "species": {
+                                          "add": {
+                                            "trigger": {
+                                              "exists": "species",
+                                              "NOT": {},
+                                              "portraits": {}
+                                            },
+                                            "add": {
+                                              "trigger": {
+                                                "exists": "species",
+                                                "NOT": {},
+                                                "portraits": {}
+                                              }
+                                            },
+                                            "_comments": [
+                                              "#pop scope"
+                                            ],
+                                            "pop": {
+                                              "add": {
+                                                "trigger": {
+                                                  "NOT": {},
+                                                  "portraits": {}
+                                                },
+                                                "add": {
+                                                  "trigger": {
+                                                    "NOT": {},
+                                                    "portraits": {}
+                                                  }
+                                                },
+                                                "leader": {
+                                                  "add": {
+                                                    "trigger": {
+                                                      "OR": {
+                                                        "gender": "indeterminable"
+                                                      }
+                                                    },
+                                                    "portraits": {}
+                                                  }
+                                                },
+                                                "ruler": {
+                                                  "add": {
+                                                    "trigger": {
+                                                      "OR": {
+                                                        "gender": "indeterminable"
+                                                      }
+                                                    },
+                                                    "portraits": {}
+                                                  }
+                                                }
+                                              },
+                                              "aqu5": {
+                                                "default": "aqu5_f",
+                                                "game_setup": {
+                                                  "add": {
+                                                    "trigger": {
+                                                      "ruler": {
+                                                        "OR": {
+                                                          "gender": "indeterminable"
+                                                        }
+                                                      }
+                                                    },
+                                                    "portraits": {}
+                                                  }
+                                                },
+                                                "_comments": [
+                                                  "#set = {",
+                                                  "#\ttrigger = { ... }",
+                                                  "#\tportraits = { ... }",
+                                                  "#\t#using \"set =\" instead of \"add\" will first clear any portraits already added",
+                                                  "#}",
+                                                  "#species scope"
+                                                ],
+                                                "species": {
+                                                  "add": {
+                                                    "trigger": {
+                                                      "exists": "species",
+                                                      "NOT": {},
+                                                      "portraits": {}
+                                                    },
+                                                    "add": {
+                                                      "trigger": {
+                                                        "exists": "species",
+                                                        "NOT": {},
+                                                        "portraits": {}
+                                                      }
+                                                    },
+                                                    "_comments": [
+                                                      "#pop scope"
+                                                    ],
+                                                    "pop": {
+                                                      "add": {
+                                                        "trigger": {
+                                                          "NOT": {},
+                                                          "portraits": {}
+                                                        },
+                                                        "add": {
+                                                          "trigger": {
+                                                            "NOT": {},
+                                                            "portraits": {}
+                                                          }
+                                                        },
+                                                        "leader": {
+                                                          "add": {
+                                                            "trigger": {
+                                                              "OR": {
+                                                                "gender": "indeterminable"
+                                                              }
+                                                            },
+                                                            "portraits": {}
+                                                          }
+                                                        },
+                                                        "ruler": {
+                                                          "add": {
+                                                            "trigger": {
+                                                              "OR": {
+                                                                "gender": "indeterminable"
+                                                              }
+                                                            },
+                                                            "portraits": {}
+                                                          }
+                                                        }
+                                                      },
+                                                      "aqu6": {
+                                                        "default": "aqu6_f",
+                                                        "game_setup": {
+                                                          "add": {
+                                                            "trigger": {
+                                                              "ruler": {
+                                                                "OR": {
+                                                                  "gender": "indeterminable"
+                                                                }
+                                                              }
+                                                            },
+                                                            "portraits": {}
+                                                          }
+                                                        },
+                                                        "_comments": [
+                                                          "#set = {",
+                                                          "#\ttrigger = { ... }",
+                                                          "#\tportraits = { ... }",
+                                                          "#\t#using \"set =\" instead of \"add\" will first clear any portraits already added",
+                                                          "#}",
+                                                          "#species scope"
+                                                        ],
+                                                        "species": {
+                                                          "add": {
+                                                            "trigger": {
+                                                              "exists": "species",
+                                                              "NOT": {},
+                                                              "portraits": {}
+                                                            },
+                                                            "add": {
+                                                              "trigger": {
+                                                                "exists": "species",
+                                                                "NOT": {},
+                                                                "portraits": {}
+                                                              }
+                                                            },
+                                                            "_comments": [
+                                                              "#pop scope"
+                                                            ],
+                                                            "pop": {
+                                                              "add": {
+                                                                "trigger": {
+                                                                  "NOT": {},
+                                                                  "portraits": {}
+                                                                },
+                                                                "add": {
+                                                                  "trigger": {
+                                                                    "NOT": {},
+                                                                    "portraits": {}
+                                                                  }
+                                                                },
+                                                                "leader": {
+                                                                  "add": {
+                                                                    "trigger": {
+                                                                      "OR": {
+                                                                        "gender": "indeterminable"
+                                                                      }
+                                                                    },
+                                                                    "portraits": {}
+                                                                  }
+                                                                },
+                                                                "ruler": {
+                                                                  "add": {
+                                                                    "trigger": {
+                                                                      "OR": {
+                                                                        "gender": "indeterminable"
+                                                                      }
+                                                                    },
+                                                                    "portraits": {}
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "16_portraits_aquatic.txt",
+    "_line_number": 243
+  }
+}

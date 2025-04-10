@@ -1,0 +1,132 @@
+{
+  "pop_faction_event": {
+    "pop_faction_event": {
+      "id": "factions.1",
+      "title": "factions.1.title",
+      "desc": {
+        "trigger": {
+          "NOT": {
+            "owner": {
+              "has_origin": "origin_broken_shackles"
+            }
+          }
+        },
+        "picture": "GFX_evt_galactic_senate",
+        "show_sound": "event_factions",
+        "is_triggered_only": "yes",
+        "_comments": [
+          "#has_country_flag = first_faction"
+        ],
+        "option": {
+          "name": "OK",
+          "hidden_effect": {
+            "owner": {
+              "every_owned_planet": {
+                "every_owned_pop": {
+                  "force_faction_evaluation": "yes"
+                }
+              },
+              "set_country_flag": "first_faction"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "faction_events.txt",
+    "_line_number": 12
+  },
+  "country_event": {
+    "country_event": {
+      "id": "manifesti.30",
+      "title": "manifesti.30.name",
+      "desc": "manifesti.30.desc",
+      "picture": "GFX_evt_galactic_senate",
+      "show_sound": "event_factions",
+      "location": "capital_scope",
+      "is_triggered_only": "yes",
+      "event_chain": "manifesti_chain",
+      "trigger": {
+        "OR": {
+          "NOT": {
+            "has_country_flag": "manifesti_decline"
+          }
+        },
+        "immediate": {
+          "set_country_flag": "manifesti_decline #Can force removal of the faction even if the timed \"manifesti_faction\" flag remains active",
+          "every_owned_pop": {
+            "limit": {
+              "OR": {
+                "has_ethic": "ethic_fanatic_pacifist"
+              }
+            },
+            "set_pop_flag": "manifesti_bored"
+          }
+        },
+        "option": {
+          "name": "manifesti.30.a",
+          "add_modifier": {
+            "modifier": "manifesti_sweet_dreams_mod",
+            "days": "2880 #8 years"
+          },
+          "add_resource": {
+            "end_event_chain": "manifesti_chain"
+          },
+          "option": {
+            "name": "manifesti.30.b",
+            "exclusive_trigger": {
+              "OR": {
+                "is_authoritarian": "yes",
+                "is_militarist": "yes",
+                "is_xenophobe": "yes"
+              }
+            },
+            "add_modifier": {
+              "modifier": "manifesti_sweet_dreams_mod",
+              "days": "1440 #4 years"
+            },
+            "add_resource": {
+              "end_event_chain": "manifesti_chain"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "faction_events.txt",
+    "_line_number": 1178
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "manifesti.25",
+      "title": "manifesti.25.name",
+      "desc": "manifesti.25.desc",
+      "picture": "GFX_evt_announcement",
+      "show_sound": "event_factions",
+      "location": "owner.capital_scope",
+      "is_triggered_only": "yes",
+      "event_chain": "manifesti_chain",
+      "trigger": {
+        "owner": {},
+        "immediate": {
+          "option": {
+            "name": "INTERESTING",
+            "hidden_effect": {
+              "owner": {
+                "country_event": {}
+              }
+            },
+            "option": {
+              "name": "manifesti.25.b"
+            },
+            "after": {
+              "owner": {
+                "set_timed_country_flag": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "faction_events.txt",
+    "_line_number": 1133
+  }
+}

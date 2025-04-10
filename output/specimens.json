@@ -1,0 +1,4374 @@
+{
+  "acidic_spores": {
+    "acidic_spores": {
+      "icon": "GFX_specimen_acidic_spores",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "potential": {
+          "planet_jobs_food_produces_mult": "0.02"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:xeno_geology_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_minerals_produces_mult": "0.02"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 5
+  },
+  "adakkaria_propaganda_poster": {
+    "adakkaria_propaganda_poster": {
+      "icon": "GFX_specimen_adakkaria_propaganda_poster",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_stability_add": "2"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 26
+  },
+  "advisor_core": {
+    "advisor_core": {
+      "icon": "GFX_specimen_advisor_core",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "species_leader_exp_gain": "0.15"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 41
+  },
+  "alien_brain_scans": {
+    "alien_brain_scans": {
+      "icon": "GFX_specimen_alien_brain_scans",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "country_edict_fund_add": "10"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 56
+  },
+  "alien_dining_set": {
+    "alien_dining_set": {
+      "icon": "GFX_specimen_alien_dining_set",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_amenities_add": "3"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 71
+  },
+  "alien_jewelry": {
+    "alien_jewelry": {
+      "icon": "GFX_specimen_alien_jewelry",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "potential": {
+          "trade_value_mult": "0.03"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.02"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 86
+  },
+  "alien_toy": {
+    "alien_toy": {
+      "icon": "GFX_specimen_alien_toy",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_amenities_add": "3"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 107
+  },
+  "altar_to_the_elder_one": {
+    "altar_to_the_elder_one": {
+      "icon": "GFX_specimen_altar_to_the_elder_one",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "pop_government_ethic_attraction": "0.5"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 122
+  },
+  "aluminium_plaque": {
+    "aluminium_plaque": {
+      "icon": "GFX_specimen_aluminium_plaque",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "unity": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 137
+  },
+  "ammoniaphytus": {
+    "ammoniaphytus": {
+      "icon": "GFX_specimen_ammoniaphytus",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "potential": {
+          "trade_value_mult": "0.06"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.04"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 154
+  },
+  "amoeba_flagella_gland": {
+    "amoeba_flagella_gland": {
+      "icon": "GFX_specimen_amoeba_flagella_gland",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "space_fauna_ship_speed_mult": "0.1"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 175
+  },
+  "ancient_bust": {
+    "ancient_bust": {
+      "icon": "GFX_specimen_ancient_bust",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "potential": {
+          "trade_value_mult": "0.03"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.02"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 190
+  },
+  "ancient_kinetic_launcher": {
+    "ancient_kinetic_launcher": {
+      "icon": "GFX_specimen_ancient_kinetic_launcher",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "society_research": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 211
+  },
+  "ancient_laser_pointer": {
+    "ancient_laser_pointer": {
+      "icon": "GFX_specimen_ancient_laser_pointer",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "potential": {
+          "trade_value_mult": "0.03"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.02"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 228
+  },
+  "ancient_nanites": {
+    "ancient_nanites": {
+      "icon": "GFX_specimen_ancient_nanites",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "pop_environment_tolerance": "0.025"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 249
+  },
+  "ancient_nuclear_armament": {
+    "ancient_nuclear_armament": {
+      "icon": "GFX_specimen_ancient_nuclear_armament",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "country_unity_produces_mult": "0.02"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 264
+  },
+  "ancient_political_memoir": {
+    "ancient_political_memoir": {
+      "icon": "GFX_specimen_ancient_political_memoir",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "leaders_upkeep_mult": "-0.05"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 279
+  },
+  "ancient_rift_sphere": {
+    "ancient_rift_sphere": {
+      "icon": "GFX_specimen_ancient_rift_sphere",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "ship_speed_mult": "0.08"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 294
+  },
+  "ancient_satellite": {
+    "ancient_satellite": {
+      "icon": "GFX_specimen_ancient_satellite",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "ship_hull_mult": "0.07"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 309
+  },
+  "ancient_sensor": {
+    "ancient_sensor": {
+      "icon": "GFX_specimen_ancient_sensor",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "engineering_research": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 324
+  },
+  "asteroid_fossils": {
+    "asteroid_fossils": {
+      "icon": "GFX_specimen_asteroid_fossils",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_jobs_minerals_produces_mult": "0.02"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 341
+  },
+  "ballad_of_the_sable_knight": {
+    "ballad_of_the_sable_knight": {
+      "icon": "GFX_specimen_ballad_of_the_sable_knight",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_amenities_add": "5"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 356
+  },
+  "beauty_of_planet": {
+    "beauty_of_planet": {
+      "icon": "GFX_specimen_beauty_of_planet",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "pop_growth_speed": "0.02"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 371
+  },
+  "black_hole_chromatic_anomaly": {
+    "black_hole_chromatic_anomaly": {
+      "icon": "GFX_specimen_black_hole_chromatic_anomaly",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "ship_sensor_range_add": "1"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 386
+  },
+  "black_needle_ceremonial_sword": {
+    "black_needle_ceremonial_sword": {
+      "icon": "GFX_specimen_black_needle_ceremonial_sword",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "potential": {
+          "trade_value_mult": "0.06"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.04"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 401
+  },
+  "black_needle_ledger": {
+    "black_needle_ledger": {
+      "icon": "GFX_specimen_black_needle_ledger",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "country_edict_fund_add": "15"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 422
+  },
+  "burnt_migratory_trees": {
+    "burnt_migratory_trees": {
+      "icon": "GFX_specimen_burnt_migratory_trees",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "physics_research": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 437
+  },
+  "captain_ness_body": {
+    "captain_ness_body": {
+      "icon": "GFX_specimen_captain_ness_body",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "species_leader_exp_gain": "0.2"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 454
+  },
+  "captain_ness_logbook": {
+    "captain_ness_logbook": {
+      "icon": "GFX_specimen_captain_ness_logbook",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "unity": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 469
+  },
+  "carnivorous_megaflora": {
+    "carnivorous_megaflora": {
+      "icon": "GFX_specimen_carnivorous_megaflora",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "potential": {
+          "planet_jobs_consumer_goods_produces_mult": "0.02"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:xeno_geology_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.02"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 486
+  },
+  "castaway_robot": {
+    "castaway_robot": {
+      "icon": "GFX_specimen_castaway_robot",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_jobs_energy_produces_mult": "0.02"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 507
+  },
+  "cenotaph_display": {
+    "cenotaph_display": {
+      "icon": "GFX_specimen_cenotaph_display",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "space_fauna_ship_damage_mult": "0.03"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 522
+  },
+  "centrifugal_container": {
+    "centrifugal_container": {
+      "icon": "GFX_specimen_centrifugal_container",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "engineering_research": "20"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 537
+  },
+  "cetana_love": {
+    "cetana_love": {
+      "icon": "GFX_specimen_cetana_love",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "physics_research": "40"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 554
+  },
+  "chambered_clay_pot": {
+    "chambered_clay_pot": {
+      "icon": "GFX_specimen_chambered_clay_pot",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "unity": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 571
+  },
+  "claw_of_the_trickster": {
+    "claw_of_the_trickster": {
+      "icon": "GFX_specimen_claw_of_the_trickster",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_stability_add": "5"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 588
+  },
+  "confessions_benefactors": {
+    "confessions_benefactors": {
+      "icon": "GFX_specimen_confessions_benefactors",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "country_edict_fund_add": "15"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 603
+  },
+  "coprolite": {
+    "coprolite": {
+      "icon": "GFX_specimen_coprolite",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "potential": {
+          "planet_jobs_food_produces_mult": "0.02"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:xeno_geology_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_minerals_produces_mult": "0.02"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 618
+  },
+  "cosmic_diamond_fragment": {
+    "cosmic_diamond_fragment": {
+      "icon": "GFX_specimen_cosmic_diamond_fragment",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "country_rare_crystals_produces_mult": "0.15"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 639
+  },
+  "crimson_nimkips": {
+    "crimson_nimkips": {
+      "icon": "GFX_specimen_crimson_nimkips",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_amenities_add": "5"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 654
+  },
+  "crystal_core": {
+    "crystal_core": {
+      "icon": "GFX_specimen_crystal_core",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "space_fauna_growth_rate_mult": "0.1"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 669
+  },
+  "crystal_nest_fragments": {
+    "crystal_nest_fragments": {
+      "icon": "GFX_specimen_crystal_nest_fragments",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_jobs_energy_produces_mult": "0.04"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 684
+  },
+  "crystal_sphere_fragments": {
+    "crystal_sphere_fragments": {
+      "icon": "GFX_specimen_crystal_sphere_fragments",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "country_astral_threads_produces_mult": "0.12"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 699
+  },
+  "crystallized_cutholoid_eye": {
+    "crystallized_cutholoid_eye": {
+      "icon": "GFX_specimen_crystallized_cutholoid_eye",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "physics_research": "10"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 714
+  },
+  "cult_pendant": {
+    "cult_pendant": {
+      "icon": "GFX_specimen_cult_pendant",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_jobs_minerals_produces_mult": "0.02"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 731
+  },
+  "cunning_flora_specimen": {
+    "cunning_flora_specimen": {
+      "icon": "GFX_specimen_cunning_flora",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "physics_research": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 746
+  },
+  "curator_survey": {
+    "curator_survey": {
+      "icon": "GFX_specimen_curator_survey",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "engineering_research": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 763
+  },
+  "cutholoid_digestive_acids": {
+    "cutholoid_digestive_acids": {
+      "icon": "GFX_specimen_cutholoid_digestive_acids",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "space_fauna_ship_damage_mult": "0.05"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 780
+  },
+  "cybrex_mining_column": {
+    "cybrex_mining_column": {
+      "icon": "GFX_specimen_cybrex_mining_column",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_jobs_minerals_produces_mult": "0.06"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 795
+  },
+  "data_on_infinity": {
+    "data_on_infinity": {
+      "icon": "GFX_specimen_data_on_infinity",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "ship_sensor_range_add": "2"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 810
+  },
+  "datacore_of_sinople": {
+    "datacore_of_sinople": {
+      "icon": "GFX_specimen_datacore_of_sinople",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "society_research": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 825
+  },
+  "dathnak_gas": {
+    "dathnak_gas": {
+      "icon": "GFX_specimen_dathnak_gas",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "country_exotic_gases_produces_mult": "0.1"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 842
+  },
+  "dead_god_mantle": {
+    "dead_god_mantle": {
+      "icon": "GFX_specimen_dead_god_mantle",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "society_research": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 857
+  },
+  "decayed_megathrusters": {
+    "decayed_megathrusters": {
+      "icon": "GFX_specimen_decayed_megathrusters",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "ship_speed_mult": "0.05"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 874
+  },
+  "decayed_satellite": {
+    "decayed_satellite": {
+      "icon": "GFX_specimen_decayed_satellite",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "unity": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 889
+  },
+  "declaration_of_animosity": {
+    "declaration_of_animosity": {
+      "icon": "GFX_specimen_declaration_of_animosity",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "country_edict_fund_add": "5"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 906
+  },
+  "declaration_of_friendship": {
+    "declaration_of_friendship": {
+      "icon": "GFX_specimen_declaration_of_friendship",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "unity": "10"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 921
+  },
+  "derelict_cybrex_warform": {
+    "derelict_cybrex_warform": {
+      "icon": "GFX_specimen_derelict_cybrex_warform",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "ship_hull_mult": "0.1"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 938
+  },
+  "desiccated_brain_slug": {
+    "desiccated_brain_slug": {
+      "icon": "GFX_specimen_desiccated_brain_slug",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "engineering_research": "10"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 953
+  },
+  "destroyed_mascot_of_colony": {
+    "destroyed_mascot_of_colony": {
+      "icon": "GFX_specimen_destroyed_mascot_of_colony",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "country_unity_produces_mult": "0.07"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 970
+  },
+  "devolved_baol_drones": {
+    "devolved_baol_drones": {
+      "icon": "GFX_specimen_devolved_baol_drones",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "engineering_research": "20"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 985
+  },
+  "dimensional_endothelial_lining": {
+    "dimensional_endothelial_lining": {
+      "icon": "GFX_specimen_dimensional_endothelial_lining",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_jobs_energy_produces_mult": "0.04"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1002
+  },
+  "dna_archive": {
+    "dna_archive": {
+      "icon": "GFX_specimen_dna_archive",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "leaders_upkeep_mult": "-0.05"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1017
+  },
+  "doomsday_scrolls": {
+    "doomsday_scrolls": {
+      "icon": "GFX_specimen_doomsday_scrolls",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "country_unity_produces_mult": "0.05"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1032
+  },
+  "drone_ship_core": {
+    "drone_ship_core": {
+      "icon": "GFX_specimen_drone_ship_core",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "society_research": "20"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1047
+  },
+  "electric_life": {
+    "electric_life": {
+      "icon": "GFX_specimen_electric_life",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_jobs_energy_produces_mult": "0.06"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1064
+  },
+  "enormous_scrambled_albumen": {
+    "enormous_scrambled_albumen": {
+      "icon": "GFX_specimen_enormous_scrambled_albumen",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "potential": {
+          "planet_jobs_food_produces_mult": "0.04"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:xeno_geology_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_minerals_produces_mult": "0.04"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1079
+  },
+  "epic_of_zarqlan": {
+    "epic_of_zarqlan": {
+      "icon": "GFX_specimen_epic_of_zarqlan",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "country_unity_produces_mult": "0.05"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1100
+  },
+  "ethereal_dust": {
+    "ethereal_dust": {
+      "icon": "GFX_specimen_ethereal_dust",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "physics_research": "20"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1115
+  },
+  "exobiology_compendium": {
+    "exobiology_compendium": {
+      "icon": "GFX_specimen_exobiology_compendium",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "species_leader_exp_gain": "0.1"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1132
+  },
+  "extradimensional_ceramic_pot": {
+    "extradimensional_ceramic_pot": {
+      "icon": "GFX_specimen_extradimensional_ceramic_pot",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "physics_research": "20"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1147
+  },
+  "extradimensional_fungus": {
+    "extradimensional_fungus": {
+      "icon": "GFX_specimen_extradimensional_fungus",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "country_exotic_gases_produces_mult": "0.15"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1164
+  },
+  "fevorian_blueprints": {
+    "fevorian_blueprints": {
+      "icon": "GFX_specimen_fevorian_blueprints",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "ship_weapon_damage": "0.05"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1179
+  },
+  "figurehead_hyacinth": {
+    "figurehead_hyacinth": {
+      "icon": "GFX_specimen_figurehead_hyacinth",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "ship_hull_mult": "0.1"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1194
+  },
+  "first_defiled_astronaut": {
+    "first_defiled_astronaut": {
+      "icon": "GFX_specimen_first_defiled_astronaut",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "country_unity_produces_mult": "0.05"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1209
+  },
+  "first_league_crew_manifest": {
+    "first_league_crew_manifest": {
+      "icon": "GFX_specimen_first_league_crew_manifest",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_jobs_alloys_produces_mult": "0.04"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1224
+  },
+  "fish_in_the_sea_sheet_music": {
+    "fish_in_the_sea_sheet_music": {
+      "icon": "GFX_specimen_fish_in_the_sea_sheet_music",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_amenities_add": "7"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1239
+  },
+  "flag_of_the_jaro_lyjo": {
+    "flag_of_the_jaro_lyjo": {
+      "icon": "GFX_specimen_flag_of_the_jaro_lyjo",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "species_leader_exp_gain": "0.15"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1254
+  },
+  "flooded_settlement_mound": {
+    "flooded_settlement_mound": {
+      "icon": "GFX_specimen_flooded_settlement_mound",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "pop_environment_tolerance": "0.01"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1269
+  },
+  "fossilized_endoskeletons": {
+    "fossilized_endoskeletons": {
+      "icon": "GFX_specimen_fossilized_endoskeletons",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "army_damage_mult": "0.05"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1284
+  },
+  "fossilized_megastomach": {
+    "fossilized_megastomach": {
+      "icon": "GFX_specimen_fossilized_megastomach",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "engineering_research": "10"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1299
+  },
+  "fossilized_voidworm_tooth": {
+    "fossilized_voidworm_tooth": {
+      "icon": "GFX_specimen_fossilized_voidworm_tooth",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "potential": {
+          "planet_jobs_minerals_produces_mult": "0.02"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:xeno_geology_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_food_produces_mult": "0.02"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1316
+  },
+  "fossilized_vultaum_remains": {
+    "fossilized_vultaum_remains": {
+      "icon": "GFX_specimen_fossilized_vultaum_remains",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "potential": {
+          "planet_jobs_consumer_goods_produces_mult": "0.08"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:xeno_geology_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.08"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1337
+  },
+  "fractured_planet": {
+    "fractured_planet": {
+      "icon": "GFX_specimen_fractured_planet",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "country_volatile_motes_produces_mult": "0.05"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1358
+  },
+  "fragmented_zroni_archive": {
+    "fragmented_zroni_archive": {
+      "icon": "GFX_specimen_fragmented_zroni_archive",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "unity": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1373
+  },
+  "galactic_megadrive": {
+    "galactic_megadrive": {
+      "icon": "GFX_specimen_galactic_megadrive",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "physics_research": "20"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1390
+  },
+  "gamma_resistant_flora": {
+    "gamma_resistant_flora": {
+      "icon": "GFX_specimen_gamma_resistant_flora",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_amenities_add": "5"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1407
+  },
+  "gargantua_megalus": {
+    "gargantua_megalus": {
+      "icon": "GFX_specimen_gargantua_megalus",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_jobs_minerals_produces_mult": "0.02"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1422
+  },
+  "genesis_core": {
+    "genesis_core": {
+      "icon": "GFX_specimen_genesis_core",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_pop_assembly_mult": "0.06"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1437
+  },
+  "genetic_code": {
+    "genetic_code": {
+      "icon": "GFX_specimen_genetic_code",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_pop_assembly_organic_mult": "0.06"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1452
+  },
+  "geometric_water_currents": {
+    "geometric_water_currents": {
+      "icon": "GFX_specimen_geometric_water_currents",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_building_build_speed_mult": "0.1"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1467
+  },
+  "giant_egg_shell": {
+    "giant_egg_shell": {
+      "icon": "GFX_specimen_giant_egg_shell",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "starbase_shipyard_space_fauna_build_cost_mult": "-0.05"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1482
+  },
+  "golden_phonograph_record": {
+    "golden_phonograph_record": {
+      "icon": "GFX_specimen_golden_phonograph_record",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "unity": "40"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1497
+  },
+  "golem_contortionist_dna": {
+    "golem_contortionist_dna": {
+      "icon": "GFX_specimen_golem_contortionist_dna",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "country_rare_crystals_produces_mult": "0.15"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1514
+  },
+  "grunur_data_crystal": {
+    "grunur_data_crystal": {
+      "icon": "GFX_specimen_grunur_data_crystal",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "species_leader_exp_gain": "0.05"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1529
+  },
+  "head_of_the_beast": {
+    "head_of_the_beast": {
+      "icon": "GFX_specimen_head_of_the_beast",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "leaders_upkeep_mult": "-0.15"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1544
+  },
+  "heart_of_the_pulsar": {
+    "heart_of_the_pulsar": {
+      "icon": "GFX_specimen_heart_of_the_pulsar",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "potential": {
+          "trade_value_mult": "0.1"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.06"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1559
+  },
+  "hemterine_magnetic_figurehead": {
+    "hemterine_magnetic_figurehead": {
+      "icon": "GFX_specimen_hemterine_magnetic_figurehead",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "engineering_research": "20"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1580
+  },
+  "high_geode_of_the_molluscoids": {
+    "high_geode_of_the_molluscoids": {
+      "icon": "GFX_specimen_high_geode_of_the_molluscoids",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_jobs_minerals_produces_mult": "0.04"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1597
+  },
+  "hot_ice": {
+    "hot_ice": {
+      "icon": "GFX_specimen_hot_ice",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_amenities_add": "5"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1612
+  },
+  "hyper_mulch": {
+    "hyper_mulch": {
+      "icon": "GFX_specimen_hyper_mulch",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "potential": {
+          "planet_jobs_food_produces_mult": "0.08"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:xeno_geology_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_minerals_produces_mult": "0.08"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1627
+  },
+  "hyperfertile_soil": {
+    "hyperfertile_soil": {
+      "icon": "GFX_specimen_hyperfertile_soil",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "potential": {
+          "planet_jobs_food_produces_mult": "0.06"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:xeno_geology_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_minerals_produces_mult": "0.06"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1648
+  },
+  "illanii_archives": {
+    "illanii_archives": {
+      "icon": "GFX_specimen_illanii_archives",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "society_research": "20"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1669
+  },
+  "impossible_object": {
+    "impossible_object": {
+      "icon": "GFX_specimen_impossible_object",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "engineering_research": "10"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1686
+  },
+  "index_of_knowledge": {
+    "index_of_knowledge": {
+      "icon": "GFX_specimen_index_of_knowledge",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "physics_research": "10"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1703
+  },
+  "inet_trade_manifesto": {
+    "inet_trade_manifesto": {
+      "icon": "GFX_specimen_inet_trade_manifesto",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "potential": {
+          "trade_value_mult": "0.06"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.04"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1720
+  },
+  "inetian_model_manual": {
+    "inetian_model_manual": {
+      "icon": "GFX_specimen_inetian_model_manual",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "ship_speed_mult": "0.08"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1741
+  },
+  "infinite_reboot_loop": {
+    "infinite_reboot_loop": {
+      "icon": "GFX_specimen_data_on_infinity",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "ship_sensor_range_add": "2"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1756
+  },
+  "interdimensional_treaty": {
+    "interdimensional_treaty": {
+      "icon": "GFX_specimen_interdimensional_treaty",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "unity": "10"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1771
+  },
+  "intergalactic_projectile": {
+    "intergalactic_projectile": {
+      "icon": "GFX_specimen_intergalactic_projectile",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "ship_weapon_damage": "0.03"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1788
+  },
+  "invasive_exofungus": {
+    "invasive_exofungus": {
+      "icon": "GFX_specimen_invasive_exofungus",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "physics_research": "20"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1803
+  },
+  "irassian_bacterium_javoria": {
+    "irassian_bacterium_javoria": {
+      "icon": "GFX_specimen_irassian_bacterium_javoria",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "engineering_research": "20"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1820
+  },
+  "irassian_digital_atlas": {
+    "irassian_digital_atlas": {
+      "icon": "GFX_specimen_irassian_digital_atlas",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_stability_add": "3"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1837
+  },
+  "irassian_purge_order": {
+    "irassian_purge_order": {
+      "icon": "GFX_specimen_irassian_purge_order",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "species_leader_exp_gain": "0.05"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1852
+  },
+  "key_to_fertility": {
+    "key_to_fertility": {
+      "icon": "GFX_specimen_key_to_fertility",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "pop_growth_speed": "0.06"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1867
+  },
+  "khalanka_crystallized_corpses": {
+    "khalanka_crystallized_corpses": {
+      "icon": "GFX_specimen_khalanka_crystallized_corpses",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "country_rare_crystals_produces_mult": "0.15"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1882
+  },
+  "khamdai_magil_sha": {
+    "khamdai_magil_sha": {
+      "icon": "GFX_specimen_khamdai_magil_sha",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_stability_add": "3"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1897
+  },
+  "kuurian_cybrex_blueprints": {
+    "kuurian_cybrex_blueprints": {
+      "icon": "GFX_specimen_kuurian_cybrex_blueprints",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "army_damage_mult": "0.05"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1912
+  },
+  "landeer_arm": {
+    "landeer_arm": {
+      "icon": "GFX_specimen_landeer_arm",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "society_research": "10"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1927
+  },
+  "larionessi_cloning_vat": {
+    "larionessi_cloning_vat": {
+      "icon": "GFX_specimen_larionessi_cloning_vat",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "species_leader_exp_gain": "0.1"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1944
+  },
+  "last_copy_of_the_prince": {
+    "last_copy_of_the_prince": {
+      "icon": "GFX_specimen_last_copy_of_the_prince",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_amenities_add": "7"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1959
+  },
+  "last_fragment_fevor": {
+    "last_fragment_fevor": {
+      "icon": "GFX_specimen_last_fragment_fevor",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "ship_orbital_bombardment_mult": "0.15"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1974
+  },
+  "last_general_badge": {
+    "last_general_badge": {
+      "icon": "GFX_specimen_last_general_badge",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "species_leader_exp_gain": "0.15"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 1989
+  },
+  "last_mharin_kharin": {
+    "last_mharin_kharin": {
+      "icon": "GFX_specimen_last_mharin_kharin",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "pop_growth_speed": "0.08"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2004
+  },
+  "leviathan_scale": {
+    "leviathan_scale": {
+      "icon": "GFX_specimen_leviathan_scale",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_jobs_alloys_produces_mult": "0.08"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2019
+  },
+  "living_snow_sculpture": {
+    "living_snow_sculpture": {
+      "icon": "GFX_specimen_living_snow_sculpture",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "physics_research": "20"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2034
+  },
+  "localised_aurora_borealis": {
+    "localised_aurora_borealis": {
+      "icon": "GFX_specimen_localised_aurora_borealis",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_amenities_add": "3"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2051
+  },
+  "loopmail": {
+    "loopmail": {
+      "icon": "GFX_specimen_loopmail",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "society_research": "40"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2066
+  },
+  "lunatic_broker_therapy_box": {
+    "lunatic_broker_therapy_box": {
+      "icon": "GFX_specimen_lunatic_broker_therapy_box",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_amenities_add": "3"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2083
+  },
+  "manifesti_piece": {
+    "manifesti_piece": {
+      "icon": "GFX_specimen_manifesti_piece",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "society_research": "10"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2098
+  },
+  "manna_fruit": {
+    "manna_fruit": {
+      "icon": "GFX_specimen_manna_fruit",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "potential": {
+          "planet_jobs_food_produces_mult": "0.02"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:xeno_geology_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_minerals_produces_mult": "0.02"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2115
+  },
+  "massive_metatarsal": {
+    "massive_metatarsal": {
+      "icon": "GFX_specimen_massive_metatarsal",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "engineering_research": "10"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2136
+  },
+  "medal_for_services_to_diplomacy": {
+    "medal_for_services_to_diplomacy": {
+      "icon": "GFX_specimen_medal_for_services_to_diplomacy",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "country_edict_fund_add": "15"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2153
+  },
+  "megacorpse_hyperguitar": {
+    "megacorpse_hyperguitar": {
+      "icon": "GFX_specimen_megacorpse_hyperguitar",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_amenities_add": "5"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2168
+  },
+  "memorial_for_bubbles": {
+    "memorial_for_bubbles": {
+      "icon": "GFX_specimen_memorial_for_bubbles",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "unity": "20"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2183
+  },
+  "memorial_stone": {
+    "memorial_stone": {
+      "icon": "GFX_specimen_memorial_stone",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "engineering_research": "10"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2200
+  },
+  "memorial_to_homeworld": {
+    "memorial_to_homeworld": {
+      "icon": "GFX_specimen_memorial_to_homeworld",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "country_unity_produces_mult": "0.07"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2217
+  },
+  "memories_of_elik": {
+    "memories_of_elik": {
+      "icon": "GFX_specimen_memories_of_elik",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "leaders_upkeep_mult": "-0.1"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2232
+  },
+  "memory_orbs": {
+    "memory_orbs": {
+      "icon": "GFX_specimen_memory_orbs",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_amenities_add": "3"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2247
+  },
+  "mercenary_story": {
+    "mercenary_story": {
+      "icon": "GFX_specimen_alien_writing",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "unity": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2262
+  },
+  "metallic_snow": {
+    "metallic_snow": {
+      "icon": "GFX_specimen_metallic_snow",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_jobs_alloys_produces_mult": "0.04"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2279
+  },
+  "minamar_chandelier": {
+    "minamar_chandelier": {
+      "icon": "GFX_specimen_minamar_chandelier",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "pop_growth_speed": "0.04"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2294
+  },
+  "mineralized_brain": {
+    "mineralized_brain": {
+      "icon": "GFX_specimen_mineralized_brain",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "engineering_research": "20"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2309
+  },
+  "mini_moon_dust": {
+    "mini_moon_dust": {
+      "icon": "GFX_specimen_mini_moon_dust",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_jobs_minerals_produces_mult": "0.04"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2326
+  },
+  "mining_transmitter": {
+    "mining_transmitter": {
+      "icon": "GFX_specimen_mining_transmitter",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_jobs_minerals_produces_mult": "0.02"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2341
+  },
+  "miracle_cream": {
+    "miracle_cream": {
+      "icon": "GFX_specimen_miracle_cream",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "potential": {
+          "trade_value_mult": "0.1"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.06"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2356
+  },
+  "missile_lone_defender": {
+    "missile_lone_defender": {
+      "icon": "GFX_specimen_missile_lone_defender",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "ship_friendly_territory_shield_mult": "0.3"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2377
+  },
+  "molten_slag": {
+    "molten_slag": {
+      "icon": "GFX_specimen_molten_slag",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "engineering_research": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2392
+  },
+  "musings_on_infinity": {
+    "musings_on_infinity": {
+      "icon": "GFX_specimen_musings_on_infinity",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "ship_sensor_range_add": "2"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2409
+  },
+  "mutated_fumongus": {
+    "mutated_fumongus": {
+      "icon": "GFX_specimen_mutated_fumongus",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "ship_sensor_range_add": "1"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2424
+  },
+  "mutative_digestive_fluids": {
+    "mutative_digestive_fluids": {
+      "icon": "GFX_specimen_mutative_digestive_fluids",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "terraform_speed_mult": "0.2"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2439
+  },
+  "namarian_colonist_standard": {
+    "namarian_colonist_standard": {
+      "icon": "GFX_specimen_namarian_colonist_standard",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_stability_add": "4"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2454
+  },
+  "namarian_sculpture": {
+    "namarian_sculpture": {
+      "icon": "GFX_specimen_namarian_sculpture",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "potential": {
+          "trade_value_mult": "0.03"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.02"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2469
+  },
+  "namarian_vessel_heraldry": {
+    "namarian_vessel_heraldry": {
+      "icon": "GFX_specimen_namarian_vessel_heraldry",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_stability_add": "3"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2490
+  },
+  "nanite_sludge": {
+    "nanite_sludge": {
+      "icon": "GFX_specimen_nanite_sludge",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "country_edict_fund_add": "5"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2505
+  },
+  "obsidian_obelisk_fragment": {
+    "obsidian_obelisk_fragment": {
+      "icon": "GFX_specimen_obsidian_obelisk_fragment",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "country_astral_threads_produces_mult": "0.09"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2520
+  },
+  "oiled_fabric": {
+    "oiled_fabric": {
+      "icon": "GFX_specimen_oiled_fabric",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_stability_add": "2"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2535
+  },
+  "organic_computer": {
+    "organic_computer": {
+      "icon": "GFX_specimen_organic_computer",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_stability_add": "3"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2550
+  },
+  "organic_machine_interface_sculpture": {
+    "organic_machine_interface_sculpture": {
+      "icon": "GFX_specimen_organic_machine_interface_sculpture",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_stability_add": "3"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2565
+  },
+  "orinthi_teeth": {
+    "orinthi_teeth": {
+      "icon": "GFX_specimen_orinthi_teeth",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "engineering_research": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2580
+  },
+  "osseus_construction_material": {
+    "osseus_construction_material": {
+      "icon": "GFX_specimen_osseus_construction_material",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "engineering_research": "10"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2597
+  },
+  "path_to_progress": {
+    "path_to_progress": {
+      "icon": "GFX_specimen_path_to_progress",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "potential": {
+          "trade_value_mult": "0.15"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.08"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2614
+  },
+  "peerless_atomic_clock": {
+    "peerless_atomic_clock": {
+      "icon": "GFX_specimen_peerless_atomic_clock",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "physics_research": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2635
+  },
+  "perception_of_infinity": {
+    "perception_of_infinity": {
+      "icon": "GFX_specimen_musings_on_infinity",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "ship_sensor_range_add": "2"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2652
+  },
+  "perfectly_faceted_carbon": {
+    "perfectly_faceted_carbon": {
+      "icon": "GFX_specimen_perfectly_faceted_carbon",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "engineering_research": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2667
+  },
+  "pet_collar": {
+    "pet_collar": {
+      "icon": "GFX_specimen_pet_collar",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "space_fauna_ship_damage_mult": "0.04"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2684
+  },
+  "perikan_tapico_jewel": {
+    "perikan_tapico_jewel": {
+      "icon": "GFX_specimen_perikan_tapico_jewel",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "country_rare_crystals_produces_mult": "0.2"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2699
+  },
+  "piece_of_invocator": {
+    "piece_of_invocator": {
+      "icon": "GFX_specimen_piece_of_invocator",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "society_research": "20"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2714
+  },
+  "pilgrimage_last_days": {
+    "pilgrimage_last_days": {
+      "icon": "GFX_specimen_pilgrimage_last_days",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "country_unity_produces_mult": "0.02"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2731
+  },
+  "planet_crystalose": {
+    "planet_crystalose": {
+      "icon": "GFX_specimen_planet_crystalose",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "potential": {
+          "planet_jobs_food_produces_mult": "0.02"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:xeno_geology_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_minerals_produces_mult": "0.02"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2746
+  },
+  "planet_pushing_thruster": {
+    "planet_pushing_thruster": {
+      "icon": "GFX_specimen_planet_pushing_thruster",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "command_limit_add": "5"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2767
+  },
+  "planet_super_roots": {
+    "planet_super_roots": {
+      "icon": "GFX_specimen_planet_super_roots",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "potential": {
+          "planet_jobs_food_produces_mult": "0.02"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:xeno_geology_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_minerals_produces_mult": "0.02"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2782
+  },
+  "planet_vaccine": {
+    "planet_vaccine": {
+      "icon": "GFX_specimen_planet_vaccine",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "pop_growth_speed": "0.08"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2803
+  },
+  "planetary_sculpture": {
+    "planetary_sculpture": {
+      "icon": "GFX_specimen_planetary_sculpture",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "pop_growth_speed": "0.02"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2818
+  },
+  "primitive_mega_electromagnet": {
+    "primitive_mega_electromagnet": {
+      "icon": "GFX_specimen_primitive_mega_electromagnet",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "ship_orbital_bombardment_mult": "0.1"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2833
+  },
+  "programmable_puzzle_cube": {
+    "programmable_puzzle_cube": {
+      "icon": "GFX_specimen_programmable_puzzle_cube",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "physics_research": "10"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2848
+  },
+  "psionic_entity_residue": {
+    "psionic_entity_residue": {
+      "icon": "GFX_specimen_psionic_entity_residue",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_jobs_energy_produces_mult": "0.08"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2865
+  },
+  "radiated_remains": {
+    "radiated_remains": {
+      "icon": "GFX_specimen_radiated_remains",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "terraform_speed_mult": "0.1"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2880
+  },
+  "rainaissance": {
+    "rainaissance": {
+      "icon": "GFX_specimen_rainaissance",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_amenities_add": "3"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2895
+  },
+  "reactive_rock": {
+    "reactive_rock": {
+      "icon": "GFX_specimen_reactive_rock",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_jobs_minerals_produces_mult": "0.04"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2910
+  },
+  "reparation_invoice": {
+    "reparation_invoice": {
+      "icon": "GFX_specimen_reparation_invoice",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "country_edict_fund_add": "5"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2925
+  },
+  "repurposed_cleaning_drone": {
+    "repurposed_cleaning_drone": {
+      "icon": "GFX_specimen_repurposed_cleaning_drone",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_building_build_speed_mult": "0.25"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2940
+  },
+  "resonant_diffusion_crystal": {
+    "resonant_diffusion_crystal": {
+      "icon": "GFX_specimen_resonant_diffusion_crystal",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "country_rare_crystals_produces_mult": "0.1"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2955
+  },
+  "retarax_hunting_trophies": {
+    "retarax_hunting_trophies": {
+      "icon": "GFX_specimen_retarax_hunting_trophies",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "starbase_shipyard_space_fauna_build_speed_mult": "0.02"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2970
+  },
+  "robe_of_the_golden_broker": {
+    "robe_of_the_golden_broker": {
+      "icon": "GFX_specimen_robe_of_the_golden_broker",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "potential": {
+          "trade_value_mult": "0.15"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.08"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 2985
+  },
+  "rock_jellies": {
+    "rock_jellies": {
+      "icon": "GFX_specimen_rock_jellies",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_jobs_minerals_produces_mult": "0.08"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3006
+  },
+  "rudari_death_laser_prototype": {
+    "rudari_death_laser_prototype": {
+      "icon": "GFX_specimen_rudari_death_laser_prototype",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "ship_weapon_damage": "0.07"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3021
+  },
+  "saariah_guilt": {
+    "saariah_guilt": {
+      "icon": "GFX_specimen_saariah_guilt",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "species_leader_exp_gain": "0.15"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3036
+  },
+  "scent_based_information_device": {
+    "scent_based_information_device": {
+      "icon": "GFX_specimen_scent_based_information_device",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_amenities_add": "5"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3051
+  },
+  "scientific_treatise_of_telisa": {
+    "scientific_treatise_of_telisa": {
+      "icon": "GFX_specimen_scientific_treatise_of_telisa",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "species_leader_exp_gain": "0.1"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3066
+  },
+  "secrets_black_crown": {
+    "secrets_black_crown": {
+      "icon": "GFX_specimen_secrets_black_crown",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "society_research": "10"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3081
+  },
+  "sembelami_alms_basket": {
+    "sembelami_alms_basket": {
+      "icon": "GFX_specimen_sembelami_alms_basket",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "potential": {
+          "trade_value_mult": "0.10"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.06"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3098
+  },
+  "shallarian_data_core": {
+    "shallarian_data_core": {
+      "icon": "GFX_specimen_shallarian_data_core",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "society_research": "20"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3119
+  },
+  "shipyard_schematics": {
+    "shipyard_schematics": {
+      "icon": "GFX_specimen_shipyard_schematics",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "ship_hull_mult": "0.05"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3136
+  },
+  "sky_dragon": {
+    "sky_dragon": {
+      "icon": "GFX_specimen_sky_dragon",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "country_vivarium_max_capacity_add": "10"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3151
+  },
+  "smeegibb_statue": {
+    "smeegibb_statue": {
+      "icon": "GFX_specimen_smeegibb_statue",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_stability_add": "4"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3166
+  },
+  "sniran_spikes": {
+    "sniran_spikes": {
+      "icon": "GFX_specimen_sniran_spikes",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "engineering_research": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3181
+  },
+  "sonic_reflective_prism": {
+    "sonic_reflective_prism": {
+      "icon": "GFX_specimen_sonic_reflective_prism",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_amenities_add": "3"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3198
+  },
+  "spaceborne_hunter_handbook": {
+    "spaceborne_hunter_handbook": {
+      "icon": "GFX_specimen_spaceborne_hunter_handbook",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "ship_damage_against_space_fauna_mult": "0.07"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3213
+  },
+  "spaceborne_xeno_encyclopedia": {
+    "spaceborne_xeno_encyclopedia": {
+      "icon": "GFX_specimen_spaceborne_xeno_encyclopedia",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "country_vivarium_max_capacity_add": "10"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3228
+  },
+  "spiraling_attraction": {
+    "spiraling_attraction": {
+      "icon": "GFX_specimen_spiraling_attraction",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_building_build_speed_mult": "0.1"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3243
+  },
+  "spirit_of_the_unshackled": {
+    "spirit_of_the_unshackled": {
+      "icon": "GFX_specimen_spirit_of_the_unshackled",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_stability_add": "3"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3258
+  },
+  "star_mall_map": {
+    "star_mall_map": {
+      "icon": "GFX_specimen_star_mall_map",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "potential": {
+          "trade_value_mult": "0.03"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.02"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3273
+  },
+  "starmetal": {
+    "starmetal": {
+      "icon": "GFX_specimen_starmetal",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "engineering_research": "20"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3294
+  },
+  "striated_sand": {
+    "striated_sand": {
+      "icon": "GFX_specimen_striated_sand",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_jobs_minerals_produces_mult": "0.02"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3311
+  },
+  "sullebaster_control_column": {
+    "sullebaster_control_column": {
+      "icon": "GFX_specimen_sullebaster_control_column",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "society_research": "20"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3326
+  },
+  "symbiotic_fruit": {
+    "symbiotic_fruit": {
+      "icon": "GFX_specimen_symbiotic_fruit",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "potential": {
+          "planet_jobs_food_produces_mult": "0.04"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:xeno_geology_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_minerals_produces_mult": "0.04"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3343
+  },
+  "tarblac_shimmer": {
+    "tarblac_shimmer": {
+      "icon": "GFX_specimen_tarblac_shimmer",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "potential": {
+          "planet_jobs_consumer_goods_produces_mult": "0.02"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:xeno_geology_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.02"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3364
+  },
+  "terraforming_case_study": {
+    "terraforming_case_study": {
+      "icon": "GFX_specimen_terraforming_case_study",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "pop_environment_tolerance": "0.025"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3385
+  },
+  "terraforming_case_study_dry": {
+    "terraforming_case_study_dry": {
+      "icon": "GFX_specimen_terraforming_case_study_dry",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "pop_environment_tolerance": "0.025"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3399
+  },
+  "terraforming_case_study_frozen": {
+    "terraforming_case_study_frozen": {
+      "icon": "GFX_specimen_terraforming_case_study_frozen",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "pop_environment_tolerance": "0.025"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3413
+  },
+  "terraforming_machinery": {
+    "terraforming_machinery": {
+      "icon": "GFX_specimen_terraforming_machinery",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "society_research": "10"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3428
+  },
+  "terraforming_records": {
+    "terraforming_records": {
+      "icon": "GFX_specimen_terraforming_records",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "pop_environment_tolerance": "0.025"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3445
+  },
+  "the_final_sacrifice": {
+    "the_final_sacrifice": {
+      "icon": "GFX_specimen_the_final_sacrifice",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "potential": {
+          "trade_value_mult": "0.1"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.06"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3460
+  },
+  "the_mask_of_transformation": {
+    "the_mask_of_transformation": {
+      "icon": "GFX_specimen_the_mask_of_transformation",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "potential": {
+          "trade_value_mult": "0.06"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.04"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3481
+  },
+  "the_planet_orchestra": {
+    "the_planet_orchestra": {
+      "icon": "GFX_specimen_the_planet_orchestra",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "physics_research": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3502
+  },
+  "the_writer_sphere": {
+    "the_writer_sphere": {
+      "icon": "GFX_specimen_the_writer_sphere",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "country_astral_rift_speed_mult": "0.2"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3519
+  },
+  "tiny_ancient_sarcophagus": {
+    "tiny_ancient_sarcophagus": {
+      "icon": "GFX_specimen_tiny_ancient_sarcophagus",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "society_research": "10"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3534
+  },
+  "tiyanki_radioactive_sac": {
+    "tiyanki_radioactive_sac": {
+      "icon": "GFX_specimen_tiyanki_radioactive_sac",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "space_fauna_ship_hull_mult": "0.1"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3551
+  },
+  "torn_solar_sail": {
+    "torn_solar_sail": {
+      "icon": "GFX_specimen_torn_solar_sail",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "society_research": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3566
+  },
+  "toxic_bio_engine": {
+    "toxic_bio_engine": {
+      "icon": "GFX_specimen_toxic_bio_engine",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "ship_orbital_bombardment_mult": "0.05"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3583
+  },
+  "tree_of_life_sample": {
+    "tree_of_life_sample": {
+      "icon": "GFX_specimen_tree_of_life_sample",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "physics_research": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3598
+  },
+  "tricorne_of_aussan": {
+    "tricorne_of_aussan": {
+      "icon": "GFX_specimen_tricorne_of_aussan",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "potential": {
+          "trade_value_mult": "0.1"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.06"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3615
+  },
+  "triggerless_gun": {
+    "triggerless_gun": {
+      "icon": "GFX_specimen_triggerless_gun",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "ship_weapon_damage": "0.03"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3636
+  },
+  "uddloran_pelts": {
+    "uddloran_pelts": {
+      "icon": "GFX_specimen_uddloran_pelts",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "potential": {
+          "planet_jobs_consumer_goods_produces_mult": "0.02"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:xeno_geology_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.02"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3651
+  },
+  "underworld_cantina_sign": {
+    "underworld_cantina_sign": {
+      "icon": "GFX_specimen_underworld_cantina_sign",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "unity": "20"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3672
+  },
+  "unfinished_manifesto": {
+    "unfinished_manifesto": {
+      "icon": "GFX_specimen_unfinished_manifesto",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "pop_government_ethic_attraction": "0.2"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3689
+  },
+  "uranium_glassware": {
+    "uranium_glassware": {
+      "icon": "GFX_specimen_uranium_glassware",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_amenities_add": "3"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3704
+  },
+  "vault_of_polaris": {
+    "vault_of_polaris": {
+      "icon": "GFX_specimen_vault_of_polaris",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "country_vivarium_max_capacity_add": "15"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3719
+  },
+  "veil_of_selene": {
+    "veil_of_selene": {
+      "icon": "GFX_specimen_veil_of_selene",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_amenities_add": "7"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3734
+  },
+  "verdingo_tendril_hook": {
+    "verdingo_tendril_hook": {
+      "icon": "GFX_specimen_verdingo_tendril_hook",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_jobs_alloys_produces_mult": "0.06"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3749
+  },
+  "vibrating_crystal": {
+    "vibrating_crystal": {
+      "icon": "GFX_specimen_vibrating_crystal",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "potential": {
+          "planet_jobs_consumer_goods_produces_mult": "0.06"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:xeno_geology_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.06"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3764
+  },
+  "voidworm_amniotics": {
+    "voidworm_amniotics": {
+      "icon": "GFX_specimen_voidworm_amniotics",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "starbase_shipyard_space_fauna_build_speed_mult": "0.05"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3785
+  },
+  "voidworm_heart": {
+    "voidworm_heart": {
+      "icon": "GFX_specimen_voidworm_heart",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "country_unity_produces_mult": "0.1"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3800
+  },
+  "vultaum_religious_pamphlet": {
+    "vultaum_religious_pamphlet": {
+      "icon": "GFX_specimen_vultaum_religious_pamphlet",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "pop_government_ethic_attraction": "0.2"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3815
+  },
+  "vultaum_vr_video_game": {
+    "vultaum_vr_video_game": {
+      "icon": "GFX_specimen_vultaum_vr_video_game",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_amenities_add": "7"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3830
+  },
+  "warning_monolith": {
+    "warning_monolith": {
+      "icon": "GFX_specimen_warning_monolith",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "potential": {
+          "planet_jobs_consumer_goods_produces_mult": "0.02"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:xeno_geology_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.02"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3845
+  },
+  "wormhole_anchor": {
+    "wormhole_anchor": {
+      "icon": "GFX_specimen_wormhole_anchor",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "society_research": "10"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3866
+  },
+  "wormhole_fur": {
+    "wormhole_fur": {
+      "icon": "GFX_specimen_wormhole_fur",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "country_astral_threads_produces_mult": "0.09"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3883
+  },
+  "ytterite_preserved_corpse": {
+    "ytterite_preserved_corpse": {
+      "icon": "GFX_specimen_ytterite_preserved_corpse",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "engineering_research": "40"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3898
+  },
+  "ytterite_kaleidoscopic_fascinator": {
+    "ytterite_kaleidoscopic_fascinator": {
+      "icon": "GFX_specimen_ytterite_kaleidoscopic_fascinator",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "planet_amenities_add": "10"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3915
+  },
+  "ytterite_royal_scepter": {
+    "ytterite_royal_scepter": {
+      "icon": "GFX_specimen_ytterite_royal_scepter",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "exceptional"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "country_edict_fund_add": "20"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3930
+  },
+  "yuht_audio_console": {
+    "yuht_audio_console": {
+      "icon": "GFX_specimen_yuht_audio_console",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "physics_research": "20"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3945
+  },
+  "yuht_cryo_pod": {
+    "yuht_cryo_pod": {
+      "icon": "GFX_specimen_yuht_cryo_pod",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "epic"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "pop_environment_tolerance": "0.05"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3962
+  },
+  "yuht_crystal_skull": {
+    "yuht_crystal_skull": {
+      "icon": "GFX_specimen_yuht_crystal_skull",
+      "type": "aesthetic_wonder",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+        "potential": {
+          "trade_value_mult": "0.06"
+        },
+        "triggered_country_modifier": {
+          "mult": "value:aesthetic_wonder_specimens_modifiers_mult",
+          "potential": {
+            "planet_jobs_energy_produces_mult": "0.04"
+          }
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3977
+  },
+  "zombie_probe": {
+    "zombie_probe": {
+      "icon": "GFX_specimen_zombie_probe",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "resources": {
+        "category": "specimens",
+        "produces": {
+          "society_research": "5"
+        }
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 3998
+  },
+  "zone_a_sedative": {
+    "zone_a_sedative": {
+      "icon": "GFX_specimen_zone_a_sedative",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "terraform_speed_mult": "0.1"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 4015
+  },
+  "zroni_war_banners": {
+    "zroni_war_banners": {
+      "icon": "GFX_specimen_zroni_war_banners",
+      "type": "historical_item",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "rare"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:historical_item_specimens_modifiers_mult",
+        "species_leader_exp_gain": "0.1"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 4030
+  },
+  "zulcor_wings": {
+    "zulcor_wings": {
+      "icon": "GFX_specimen_zulcor_wings",
+      "type": "xeno_geology",
+      "inline_script": {
+        "script": "grand_archive/set_specimen_rarity",
+        "RARITY": "common"
+      },
+      "triggered_country_modifier": {
+        "mult": "value:xeno_geology_specimens_modifiers_mult",
+        "planet_jobs_alloys_produces_mult": "0.02"
+      }
+    },
+    "_source_file": "specimens.txt",
+    "_line_number": 4045
+  }
+}

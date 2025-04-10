@@ -1,0 +1,502 @@
+{
+  "refugee_pop_effect": {
+    "refugee_pop_effect": {
+      "remove_modifier": "pop_recently_conquered",
+      "remove_pop_flag": "event_purge",
+      "planet": {
+        "save_event_target_as": "RefugeeEscapedPlanet",
+        "if": {
+          "limit": {
+            "is_under_crisis_bombardment": "yes"
+          },
+          "solar_system": {
+            "random_fleet_in_system": {
+              "limit": {
+                "exists": "owner",
+                "owner": {
+                  "is_crisis_faction": "yes"
+                }
+              },
+              "owner": {}
+            }
+          }
+        },
+        "owner": {
+          "save_event_target_as": "RefugeeEscapedFrom",
+          "_comments": [
+            "# Set flag to not have to check the same thing again and again",
+            "# Good habitability and some housing"
+          ],
+          "every_relation": {
+            "limit": {
+              "has_any_habitability": "yes #bare minimum for being a refugee destination"
+            },
+            "set_country_flag": "valid_refugee_destination_for_@event_target:refugee_pop"
+          },
+          "if": {
+            "limit": {
+              "any_relation": {},
+              "random_relation": {
+                "limit": {
+                  "random_owned_planet": {
+                    "limit": {
+                      "habitability": {
+                        "free_housing >": "1",
+                        "is_under_colonization": "no",
+                        "is_controlled_by": "owner",
+                        "has_orbital_bombardment": "no",
+                        "NOT": {},
+                        "resettle_pop": {
+                          "pop": "event_target:refugee_pop",
+                          "planet": "this"
+                        },
+                        "event_target:refugee_pop": {
+                          "clear_pop_category": "yes",
+                          "if": {
+                            "limit": {
+                              "remove_modifier": "recent_refugee",
+                              "add_modifier": {},
+                              "else": {
+                                "add_modifier": {}
+                              },
+                              "if": {
+                                "limit": {
+                                  "NOT": {
+                                    "owner": {
+                                      "any_owned_planet": {
+                                        "any_owned_pop": {
+                                          "NOT": {
+                                            "is_same_species": "event_target:refugee_pop"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "event_target:refugee_pop": {},
+                                  "else": {
+                                    "event_target:refugee_pop": {}
+                                  }
+                                }
+                              },
+                              "_comments": [
+                                "# Good habitability"
+                              ],
+                              "else_if": {
+                                "limit": {
+                                  "any_relation": {},
+                                  "random_relation": {
+                                    "limit": {
+                                      "random_owned_planet": {
+                                        "limit": {
+                                          "habitability": {
+                                            "is_under_colonization": "no",
+                                            "is_controlled_by": "owner",
+                                            "has_orbital_bombardment": "no",
+                                            "NOT": {},
+                                            "resettle_pop": {
+                                              "pop": "event_target:refugee_pop",
+                                              "planet": "this"
+                                            },
+                                            "event_target:refugee_pop": {
+                                              "clear_pop_category": "yes",
+                                              "if": {
+                                                "limit": {
+                                                  "remove_modifier": "recent_refugee",
+                                                  "add_modifier": {},
+                                                  "else": {
+                                                    "add_modifier": {}
+                                                  },
+                                                  "if": {
+                                                    "limit": {
+                                                      "NOT": {
+                                                        "owner": {
+                                                          "any_owned_planet": {
+                                                            "any_owned_pop": {
+                                                              "NOT": {
+                                                                "is_same_species": "event_target:refugee_pop"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "event_target:refugee_pop": {},
+                                                      "else": {
+                                                        "event_target:refugee_pop": {}
+                                                      }
+                                                    }
+                                                  },
+                                                  "_comments": [
+                                                    "# Decent habitability and free housing"
+                                                  ],
+                                                  "else_if": {
+                                                    "limit": {
+                                                      "any_relation": {},
+                                                      "random_relation": {
+                                                        "limit": {
+                                                          "random_owned_planet": {
+                                                            "limit": {
+                                                              "habitability": {
+                                                                "free_housing >": "1",
+                                                                "is_under_colonization": "no",
+                                                                "is_controlled_by": "owner",
+                                                                "has_orbital_bombardment": "no",
+                                                                "NOT": {},
+                                                                "resettle_pop": {
+                                                                  "pop": "event_target:refugee_pop",
+                                                                  "planet": "this"
+                                                                },
+                                                                "event_target:refugee_pop": {
+                                                                  "clear_pop_category": "yes",
+                                                                  "if": {
+                                                                    "limit": {
+                                                                      "remove_modifier": "recent_refugee",
+                                                                      "add_modifier": {},
+                                                                      "else": {
+                                                                        "add_modifier": {}
+                                                                      },
+                                                                      "if": {
+                                                                        "limit": {
+                                                                          "NOT": {
+                                                                            "owner": {
+                                                                              "any_owned_planet": {
+                                                                                "any_owned_pop": {
+                                                                                  "NOT": {
+                                                                                    "is_same_species": "event_target:refugee_pop"
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "event_target:refugee_pop": {},
+                                                                          "else": {
+                                                                            "event_target:refugee_pop": {}
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      "_comments": [
+                                                                        "# Decent habitability"
+                                                                      ],
+                                                                      "else_if": {
+                                                                        "limit": {
+                                                                          "any_relation": {},
+                                                                          "random_relation": {
+                                                                            "limit": {
+                                                                              "random_owned_planet": {
+                                                                                "limit": {
+                                                                                  "habitability": {
+                                                                                    "is_under_colonization": "no",
+                                                                                    "is_controlled_by": "owner",
+                                                                                    "has_orbital_bombardment": "no",
+                                                                                    "NOT": {},
+                                                                                    "resettle_pop": {
+                                                                                      "pop": "event_target:refugee_pop",
+                                                                                      "planet": "this"
+                                                                                    },
+                                                                                    "event_target:refugee_pop": {
+                                                                                      "clear_pop_category": "yes",
+                                                                                      "if": {
+                                                                                        "limit": {
+                                                                                          "remove_modifier": "recent_refugee",
+                                                                                          "add_modifier": {},
+                                                                                          "else": {
+                                                                                            "add_modifier": {}
+                                                                                          },
+                                                                                          "if": {
+                                                                                            "limit": {
+                                                                                              "NOT": {
+                                                                                                "owner": {
+                                                                                                  "any_owned_planet": {
+                                                                                                    "any_owned_pop": {
+                                                                                                      "NOT": {
+                                                                                                        "is_same_species": "event_target:refugee_pop"
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              },
+                                                                                              "event_target:refugee_pop": {},
+                                                                                              "else": {
+                                                                                                "event_target:refugee_pop": {}
+                                                                                              }
+                                                                                            }
+                                                                                          },
+                                                                                          "_comments": [
+                                                                                            "# Some habitability and free housing"
+                                                                                          ],
+                                                                                          "else_if": {
+                                                                                            "limit": {
+                                                                                              "any_relation": {},
+                                                                                              "random_relation": {
+                                                                                                "limit": {
+                                                                                                  "random_owned_planet": {
+                                                                                                    "limit": {
+                                                                                                      "habitability": {
+                                                                                                        "free_housing >": "1",
+                                                                                                        "is_under_colonization": "no",
+                                                                                                        "is_controlled_by": "owner",
+                                                                                                        "has_orbital_bombardment": "no",
+                                                                                                        "NOT": {},
+                                                                                                        "resettle_pop": {
+                                                                                                          "pop": "event_target:refugee_pop",
+                                                                                                          "planet": "this"
+                                                                                                        },
+                                                                                                        "event_target:refugee_pop": {
+                                                                                                          "clear_pop_category": "yes",
+                                                                                                          "if": {
+                                                                                                            "limit": {
+                                                                                                              "remove_modifier": "recent_refugee",
+                                                                                                              "add_modifier": {},
+                                                                                                              "else": {
+                                                                                                                "add_modifier": {}
+                                                                                                              },
+                                                                                                              "if": {
+                                                                                                                "limit": {
+                                                                                                                  "NOT": {
+                                                                                                                    "owner": {
+                                                                                                                      "any_owned_planet": {
+                                                                                                                        "any_owned_pop": {
+                                                                                                                          "NOT": {
+                                                                                                                            "is_same_species": "event_target:refugee_pop"
+                                                                                                                          }
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  },
+                                                                                                                  "event_target:refugee_pop": {},
+                                                                                                                  "else": {
+                                                                                                                    "event_target:refugee_pop": {}
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              },
+                                                                                                              "_comments": [
+                                                                                                                "# Some habitability"
+                                                                                                              ],
+                                                                                                              "else_if": {
+                                                                                                                "limit": {
+                                                                                                                  "any_relation": {},
+                                                                                                                  "random_relation": {
+                                                                                                                    "limit": {
+                                                                                                                      "random_owned_planet": {
+                                                                                                                        "limit": {
+                                                                                                                          "habitability": {
+                                                                                                                            "is_under_colonization": "no",
+                                                                                                                            "is_controlled_by": "owner",
+                                                                                                                            "has_orbital_bombardment": "no",
+                                                                                                                            "NOT": {},
+                                                                                                                            "resettle_pop": {
+                                                                                                                              "pop": "event_target:refugee_pop",
+                                                                                                                              "planet": "this"
+                                                                                                                            },
+                                                                                                                            "event_target:refugee_pop": {
+                                                                                                                              "clear_pop_category": "yes",
+                                                                                                                              "if": {
+                                                                                                                                "limit": {
+                                                                                                                                  "remove_modifier": "recent_refugee",
+                                                                                                                                  "add_modifier": {},
+                                                                                                                                  "else": {
+                                                                                                                                    "add_modifier": {}
+                                                                                                                                  },
+                                                                                                                                  "if": {
+                                                                                                                                    "limit": {
+                                                                                                                                      "NOT": {
+                                                                                                                                        "owner": {
+                                                                                                                                          "any_owned_planet": {
+                                                                                                                                            "any_owned_pop": {
+                                                                                                                                              "NOT": {
+                                                                                                                                                "is_same_species": "event_target:refugee_pop"
+                                                                                                                                              }
+                                                                                                                                            }
+                                                                                                                                          }
+                                                                                                                                        }
+                                                                                                                                      },
+                                                                                                                                      "event_target:refugee_pop": {},
+                                                                                                                                      "else": {
+                                                                                                                                        "event_target:refugee_pop": {}
+                                                                                                                                      }
+                                                                                                                                    }
+                                                                                                                                  },
+                                                                                                                                  "_comments": [
+                                                                                                                                    "# Any habitability and free housing"
+                                                                                                                                  ],
+                                                                                                                                  "else_if": {
+                                                                                                                                    "limit": {
+                                                                                                                                      "any_relation": {},
+                                                                                                                                      "random_relation": {
+                                                                                                                                        "limit": {
+                                                                                                                                          "random_owned_planet": {
+                                                                                                                                            "limit": {
+                                                                                                                                              "free_housing >": "1",
+                                                                                                                                              "is_under_colonization": "no",
+                                                                                                                                              "is_controlled_by": "owner",
+                                                                                                                                              "has_orbital_bombardment": "no"
+                                                                                                                                            },
+                                                                                                                                            "resettle_pop": {
+                                                                                                                                              "pop": "event_target:refugee_pop",
+                                                                                                                                              "planet": "this"
+                                                                                                                                            },
+                                                                                                                                            "event_target:refugee_pop": {
+                                                                                                                                              "clear_pop_category": "yes",
+                                                                                                                                              "if": {
+                                                                                                                                                "limit": {
+                                                                                                                                                  "remove_modifier": "recent_refugee",
+                                                                                                                                                  "add_modifier": {},
+                                                                                                                                                  "else": {
+                                                                                                                                                    "add_modifier": {}
+                                                                                                                                                  },
+                                                                                                                                                  "if": {
+                                                                                                                                                    "limit": {
+                                                                                                                                                      "NOT": {
+                                                                                                                                                        "owner": {
+                                                                                                                                                          "any_owned_planet": {
+                                                                                                                                                            "any_owned_pop": {
+                                                                                                                                                              "NOT": {
+                                                                                                                                                                "is_same_species": "event_target:refugee_pop"
+                                                                                                                                                              }
+                                                                                                                                                            }
+                                                                                                                                                          }
+                                                                                                                                                        }
+                                                                                                                                                      },
+                                                                                                                                                      "event_target:refugee_pop": {},
+                                                                                                                                                      "else": {
+                                                                                                                                                        "event_target:refugee_pop": {}
+                                                                                                                                                      }
+                                                                                                                                                    }
+                                                                                                                                                  },
+                                                                                                                                                  "_comments": [
+                                                                                                                                                    "# Any habitability"
+                                                                                                                                                  ],
+                                                                                                                                                  "else_if": {
+                                                                                                                                                    "limit": {
+                                                                                                                                                      "any_relation": {},
+                                                                                                                                                      "random_relation": {
+                                                                                                                                                        "limit": {
+                                                                                                                                                          "random_owned_planet": {
+                                                                                                                                                            "limit": {
+                                                                                                                                                              "is_under_colonization": "no",
+                                                                                                                                                              "is_controlled_by": "owner",
+                                                                                                                                                              "has_orbital_bombardment": "no"
+                                                                                                                                                            },
+                                                                                                                                                            "resettle_pop": {
+                                                                                                                                                              "pop": "event_target:refugee_pop",
+                                                                                                                                                              "planet": "this"
+                                                                                                                                                            },
+                                                                                                                                                            "event_target:refugee_pop": {
+                                                                                                                                                              "clear_pop_category": "yes",
+                                                                                                                                                              "if": {
+                                                                                                                                                                "limit": {
+                                                                                                                                                                  "remove_modifier": "recent_refugee",
+                                                                                                                                                                  "add_modifier": {},
+                                                                                                                                                                  "else": {
+                                                                                                                                                                    "add_modifier": {}
+                                                                                                                                                                  },
+                                                                                                                                                                  "if": {
+                                                                                                                                                                    "limit": {
+                                                                                                                                                                      "NOT": {
+                                                                                                                                                                        "owner": {
+                                                                                                                                                                          "any_owned_planet": {
+                                                                                                                                                                            "any_owned_pop": {
+                                                                                                                                                                              "NOT": {
+                                                                                                                                                                                "is_same_species": "event_target:refugee_pop"
+                                                                                                                                                                              }
+                                                                                                                                                                            }
+                                                                                                                                                                          }
+                                                                                                                                                                        }
+                                                                                                                                                                      },
+                                                                                                                                                                      "event_target:refugee_pop": {},
+                                                                                                                                                                      "else": {
+                                                                                                                                                                        "event_target:refugee_pop": {}
+                                                                                                                                                                      }
+                                                                                                                                                                    }
+                                                                                                                                                                  },
+                                                                                                                                                                  "_comments": [
+                                                                                                                                                                    "# Clear flag at the end"
+                                                                                                                                                                  ],
+                                                                                                                                                                  "every_relation": {
+                                                                                                                                                                    "limit": {
+                                                                                                                                                                      "has_country_flag": "valid_refugee_destination_for_@event_target:refugee_pop"
+                                                                                                                                                                    },
+                                                                                                                                                                    "remove_country_flag": "valid_refugee_destination_for_@event_target:refugee_pop"
+                                                                                                                                                                  }
+                                                                                                                                                                }
+                                                                                                                                                              }
+                                                                                                                                                            }
+                                                                                                                                                          }
+                                                                                                                                                        }
+                                                                                                                                                      }
+                                                                                                                                                    }
+                                                                                                                                                  }
+                                                                                                                                                }
+                                                                                                                                              }
+                                                                                                                                            }
+                                                                                                                                          }
+                                                                                                                                        }
+                                                                                                                                      }
+                                                                                                                                    }
+                                                                                                                                  }
+                                                                                                                                }
+                                                                                                                              }
+                                                                                                                            }
+                                                                                                                          }
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "refugee_effects.txt",
+    "_line_number": 10
+  }
+}

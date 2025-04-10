@@ -1,0 +1,973 @@
+{
+  "situation_paragon_skrand_sickness": {
+    "situation_paragon_skrand_sickness": {
+      "picture": "GFX_evt_disease_outbreak",
+      "category": "negative",
+      "complete_icon_frame": "GFX_situation_outcome_frame_red",
+      "complete_icon": "GFX_situation_outcome_negative",
+      "start_value": "5",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_unknown_outcome_approach",
+        "hidden_effect": {
+          "situation_event": {},
+          "set_situation_locked": "yes"
+        },
+        "abort_trigger": {
+          "owner": {
+            "NOT": {}
+          },
+          "stages": {
+            "stage_1": {
+              "icon": "GFX_situation_stage_1",
+              "icon_background": "GFX_situation_stage_frame_red",
+              "end": "25",
+              "on_first_enter": {},
+              "custom_tooltip": "stage_unknown_effects"
+            },
+            "stage_2": {
+              "icon": "GFX_situation_stage_2",
+              "icon_background": "GFX_situation_stage_frame_red",
+              "end": "50",
+              "on_first_enter": {
+                "situation_event": {},
+                "custom_tooltip": "stage_unknown_effects"
+              },
+              "stage_3": {
+                "icon": "GFX_situation_stage_3",
+                "icon_background": "GFX_situation_stage_frame_red",
+                "end": "75",
+                "on_first_enter": {
+                  "situation_event": {},
+                  "custom_tooltip": "stage_unknown_effects"
+                },
+                "stage_4": {
+                  "icon": "GFX_situation_stage_4",
+                  "icon_background": "GFX_situation_stage_frame_red",
+                  "end": "100",
+                  "on_first_enter": {
+                    "situation_event": {},
+                    "custom_tooltip": "stage_unknown_effects"
+                  }
+                },
+                "approach": {
+                  "name": "situation_paragon_skrand_sickness_nothing",
+                  "icon": "GFX_situation_approach_balance_sheet",
+                  "icon_background": "GFX_situation_approach_bg_red",
+                  "on_select": {
+                    "custom_tooltip": "approach_situation_paragon_skrand_sickness_nothing_tt"
+                  },
+                  "resources": {
+                    "category": "situations",
+                    "upkeep": {
+                      "food": "2",
+                      "energy": "4"
+                    }
+                  }
+                },
+                "monthly_progress": {
+                  "base": "3",
+                  "modifier": {
+                    "add": "-0.5",
+                    "desc": "situation_paragon_skrand_sickness_tech_tt",
+                    "owner": {},
+                    "modifier": {
+                      "add": "-0.5",
+                      "desc": "situation_paragon_skrand_sickness_ascension_tt",
+                      "owner": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_paragon_situations.txt",
+    "_line_number": 3
+  },
+  "situation_paragon_skrand_cure": {
+    "situation_paragon_skrand_cure": {
+      "picture": "GFX_evt_disease_outbreak",
+      "category": "positive",
+      "complete_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_outcome_positive",
+      "start_value": "0",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_unknown_outcome_approach",
+        "hidden_effect": {
+          "situation_event": {},
+          "set_situation_locked": "yes"
+        },
+        "abort_trigger": {
+          "owner": {
+            "NOT": {}
+          },
+          "stages": {
+            "stage_1": {
+              "icon": "GFX_situation_stage_1",
+              "icon_background": "GFX_situation_stage_frame_green",
+              "end": "100",
+              "on_first_enter": {},
+              "custom_tooltip": "stage_unknown_effects"
+            }
+          },
+          "approach": {
+            "name": "situation_paragon_skrand_cure_nothing",
+            "icon": "GFX_situation_approach_balance_sheet",
+            "icon_background": "GFX_situation_approach_bg_red",
+            "on_select": {
+              "custom_tooltip": "approach_situation_paragon_skrand_cure_nothing_tt"
+            },
+            "modifier": {
+              "country_society_research_produces_mult": "-0.03"
+            }
+          },
+          "monthly_progress": {
+            "base": "1",
+            "modifier": {
+              "add": "0.4",
+              "desc": "situation_paragon_skrand_cure_ascension_tt",
+              "owner": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_paragon_situations.txt",
+    "_line_number": 134
+  },
+  "situation_paragon_skrand_integration": {
+    "situation_paragon_skrand_integration": {
+      "picture": "GFX_evt_salute",
+      "category": "positive",
+      "complete_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_outcome_positive",
+      "start_value": "0",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_unknown_outcome_approach",
+        "hidden_effect": {
+          "situation_event": {},
+          "set_situation_locked": "yes"
+        },
+        "abort_trigger": {
+          "owner": {
+            "NOT": {}
+          },
+          "stages": {
+            "stage_1": {
+              "icon": "GFX_situation_stage_1",
+              "icon_background": "GFX_situation_stage_frame_green",
+              "end": "33",
+              "on_first_enter": {},
+              "custom_tooltip": "stage_unknown_effects"
+            },
+            "stage_2": {
+              "icon": "GFX_situation_stage_2",
+              "icon_background": "GFX_situation_stage_frame_green",
+              "end": "66",
+              "on_first_enter": {
+                "situation_event": {},
+                "custom_tooltip": "stage_unknown_effects"
+              },
+              "stage_3": {
+                "icon": "GFX_situation_stage_3",
+                "icon_background": "GFX_situation_stage_frame_green",
+                "end": "100",
+                "on_first_enter": {
+                  "situation_event": {},
+                  "custom_tooltip": "stage_unknown_effects"
+                }
+              },
+              "approach": {
+                "name": "situation_paragon_skrand_low",
+                "icon": "GFX_situation_approach_balance_sheet",
+                "icon_background": "GFX_situation_approach_bg_yellow",
+                "on_select": {
+                  "custom_tooltip": "approach_situation_paragon_skrand_low_tt"
+                },
+                "modifier": {
+                  "species_leader_exp_gain": "0.05",
+                  "ship_base_speed_mult": "-0.1",
+                  "ship_evasion_mult": "-0.1",
+                  "ship_fire_rate_mult": "-0.1",
+                  "ship_tracking_mult": "-0.1",
+                  "ship_accuracy_mult": "-0.1"
+                }
+              },
+              "monthly_progress": {
+                "base": "0",
+                "modifier": {
+                  "add": "0.2",
+                  "desc": "situation_paragon_skrand_low",
+                  "current_situation_approach": "situation_paragon_skrand_low"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_paragon_situations.txt",
+    "_line_number": 220
+  },
+  "situation_paragon_skrand_upgrade": {
+    "situation_paragon_skrand_upgrade": {
+      "picture": "GFX_evt_mercenary_fleet",
+      "category": "positive",
+      "complete_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_outcome_positive",
+      "start_value": "0",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_unknown_outcome_approach",
+        "hidden_effect": {
+          "situation_event": {},
+          "set_situation_locked": "yes"
+        },
+        "abort_trigger": {
+          "NOT": {
+            "event_target:last_talon_ship": {},
+            "owner": {
+              "NOT": {}
+            },
+            "stages": {
+              "stage_1": {
+                "icon": "GFX_situation_stage_1",
+                "icon_background": "GFX_situation_stage_frame_green",
+                "end": "33",
+                "on_first_enter": {},
+                "custom_tooltip": "stage_unknown_effects"
+              },
+              "stage_2": {
+                "icon": "GFX_situation_stage_2",
+                "icon_background": "GFX_situation_stage_frame_green",
+                "end": "66",
+                "on_first_enter": {
+                  "situation_event": {},
+                  "custom_tooltip": "stage_unknown_effects"
+                },
+                "stage_3": {
+                  "icon": "GFX_situation_stage_3",
+                  "icon_background": "GFX_situation_stage_frame_green",
+                  "end": "100",
+                  "on_first_enter": {
+                    "situation_event": {},
+                    "custom_tooltip": "stage_unknown_effects"
+                  }
+                },
+                "approach": {
+                  "name": "situation_paragon_skrand_low",
+                  "icon": "GFX_situation_approach_balance_sheet",
+                  "icon_background": "GFX_situation_approach_bg_yellow",
+                  "on_select": {
+                    "custom_tooltip": "approach_situation_paragon_skrand_low_tt"
+                  },
+                  "modifier": {
+                    "country_engineering_research_produces_mult": "-0.2"
+                  },
+                  "resources": {
+                    "category": "situations",
+                    "upkeep": {
+                      "alloys": "10"
+                    }
+                  }
+                },
+                "monthly_progress": {
+                  "base": "0",
+                  "modifier": {
+                    "add": "0.2",
+                    "desc": "situation_paragon_skrand_low",
+                    "current_situation_approach": "situation_paragon_skrand_low"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_paragon_situations.txt",
+    "_line_number": 318
+  },
+  "situation_paragon_skrand_crisis": {
+    "situation_paragon_skrand_crisis": {
+      "picture": "GFX_evt_physics_research",
+      "category": "positive",
+      "complete_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_outcome_positive",
+      "start_value": "0",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_unknown_outcome_approach",
+        "hidden_effect": {
+          "situation_event": {},
+          "set_situation_locked": "yes"
+        },
+        "abort_trigger": {
+          "owner": {
+            "NOT": {}
+          },
+          "stages": {
+            "stage_1": {
+              "icon": "GFX_situation_stage_1",
+              "icon_background": "GFX_situation_stage_frame_green",
+              "end": "33",
+              "on_first_enter": {},
+              "custom_tooltip": "stage_unknown_effects"
+            },
+            "stage_2": {
+              "icon": "GFX_situation_stage_2",
+              "icon_background": "GFX_situation_stage_frame_green",
+              "end": "66",
+              "on_first_enter": {
+                "situation_event": {},
+                "custom_tooltip": "stage_unknown_effects"
+              },
+              "stage_3": {
+                "icon": "GFX_situation_stage_3",
+                "icon_background": "GFX_situation_stage_frame_green",
+                "end": "100",
+                "on_first_enter": {
+                  "situation_event": {},
+                  "custom_tooltip": "stage_unknown_effects"
+                }
+              },
+              "approach": {
+                "name": "situation_paragon_skrand_low",
+                "icon": "GFX_situation_approach_balance_sheet",
+                "icon_background": "GFX_situation_approach_bg_red",
+                "on_select": {
+                  "custom_tooltip": "approach_situation_paragon_skrand_low_tt"
+                },
+                "modifier": {
+                  "planet_researchers_produces_mult": "-0.1",
+                  "country_energy_produces_mult": "-0.05"
+                }
+              },
+              "monthly_progress": {
+                "base": "0",
+                "modifier": {
+                  "add": "0.2",
+                  "desc": "situation_paragon_skrand_low",
+                  "current_situation_approach": "situation_paragon_skrand_low"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_paragon_situations.txt",
+    "_line_number": 421
+  },
+  "situation_paragon_skrand_study": {
+    "situation_paragon_skrand_study": {
+      "picture": "GFX_evt_rare_tech_cache",
+      "category": "positive",
+      "complete_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_outcome_positive",
+      "start_value": "0",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_unknown_outcome_approach",
+        "hidden_effect": {
+          "situation_event": {},
+          "set_situation_locked": "yes"
+        },
+        "abort_trigger": {
+          "NOT": {
+            "event_target:last_talon_ship": {},
+            "owner": {
+              "NOT": {}
+            },
+            "stages": {
+              "stage_1": {
+                "icon": "GFX_situation_stage_1",
+                "icon_background": "GFX_situation_stage_frame_green",
+                "end": "100",
+                "custom_tooltip": "stage_unknown_effects"
+              }
+            },
+            "approach": {
+              "name": "situation_paragon_skrand_low",
+              "icon": "GFX_situation_approach_balance_sheet",
+              "icon_background": "GFX_situation_approach_bg_yellow",
+              "on_select": {
+                "custom_tooltip": "approach_situation_paragon_skrand_low_tt"
+              },
+              "modifier": {
+                "country_engineering_research_produces_mult": "-0.1",
+                "starbase_shipyard_build_speed_mult": "-0.1"
+              }
+            },
+            "monthly_progress": {
+              "base": "0",
+              "modifier": {
+                "add": "0.2",
+                "desc": "situation_paragon_skrand_low",
+                "current_situation_approach": "situation_paragon_skrand_low"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_paragon_situations.txt",
+    "_line_number": 528
+  },
+  "situation_paragon_skrand_rebuild": {
+    "situation_paragon_skrand_rebuild": {
+      "picture": "GFX_evt_megastructure_construction",
+      "category": "positive",
+      "complete_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_outcome_positive",
+      "start_value": "0",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_unknown_outcome_approach",
+        "hidden_effect": {
+          "situation_event": {},
+          "set_situation_locked": "yes"
+        },
+        "abort_trigger": {
+          "owner": {
+            "NOT": {}
+          },
+          "stages": {
+            "stage_1": {
+              "icon": "GFX_situation_stage_1",
+              "icon_background": "GFX_situation_stage_frame_green",
+              "end": "360",
+              "custom_tooltip": "stage_unknown_effects"
+            }
+          },
+          "approach": {
+            "name": "situation_paragon_skrand_none",
+            "icon": "GFX_situation_approach_balance_sheet",
+            "icon_background": "GFX_situation_approach_bg_red",
+            "on_select": {
+              "custom_tooltip": "approach_situation_paragon_skrand_none_tt"
+            },
+            "resources": {
+              "category": "situations",
+              "upkeep": {
+                "alloys": "2"
+              }
+            }
+          },
+          "monthly_progress": {
+            "base": "0",
+            "modifier": {
+              "add": "1",
+              "desc": "situation_paragon_skrand_balanced",
+              "current_situation_approach": "situation_paragon_skrand_balanced"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_paragon_situations.txt",
+    "_line_number": 601
+  },
+  "situation_paragon_skrand_species": {
+    "situation_paragon_skrand_species": {
+      "picture": "GFX_evt_genetic_modification",
+      "category": "positive",
+      "complete_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_outcome_positive",
+      "start_value": "0",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_unknown_outcome_approach",
+        "hidden_effect": {
+          "situation_event": {},
+          "set_situation_locked": "yes"
+        },
+        "abort_trigger": {
+          "owner": {
+            "NOT": {}
+          },
+          "stages": {
+            "stage_1": {
+              "icon": "GFX_situation_stage_1",
+              "icon_background": "GFX_situation_stage_frame_green",
+              "end": "50",
+              "on_first_enter": {},
+              "custom_tooltip": "stage_unknown_effects"
+            },
+            "stage_2": {
+              "icon": "GFX_situation_stage_2",
+              "icon_background": "GFX_situation_stage_frame_green",
+              "end": "100",
+              "on_first_enter": {
+                "situation_event": {},
+                "custom_tooltip": "stage_unknown_effects"
+              }
+            },
+            "approach": {
+              "name": "situation_paragon_skrand_low",
+              "icon": "GFX_situation_approach_balance_sheet",
+              "icon_background": "GFX_situation_approach_bg_red",
+              "on_select": {
+                "custom_tooltip": "approach_situation_paragon_skrand_low_tt"
+              },
+              "modifier": {
+                "country_society_research_produces_mult": "-0.10",
+                "modify_species_cost_mult": "0.1"
+              },
+              "resources": {
+                "category": "situations",
+                "upkeep": {
+                  "food": "10"
+                }
+              }
+            },
+            "monthly_progress": {
+              "base": "0",
+              "modifier": {
+                "add": "0.2",
+                "desc": "situation_paragon_skrand_low",
+                "current_situation_approach": "situation_paragon_skrand_low"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_paragon_situations.txt",
+    "_line_number": 674
+  },
+  "situation_paragon_skrand_story": {
+    "situation_paragon_skrand_story": {
+      "picture": "GFX_evt_spymaster",
+      "category": "positive",
+      "complete_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_outcome_positive",
+      "start_value": "0",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_unknown_outcome_approach",
+        "hidden_effect": {
+          "situation_event": {},
+          "set_situation_locked": "yes"
+        },
+        "abort_trigger": {
+          "owner": {
+            "NOT": {}
+          },
+          "stages": {
+            "stage_1": {
+              "icon": "GFX_situation_stage_1",
+              "icon_background": "GFX_situation_stage_frame_green",
+              "end": "25",
+              "on_first_enter": {},
+              "custom_tooltip": "stage_unknown_effects"
+            },
+            "stage_2": {
+              "icon": "GFX_situation_stage_2",
+              "icon_background": "GFX_situation_stage_frame_green",
+              "end": "50",
+              "on_first_enter": {
+                "situation_event": {},
+                "custom_tooltip": "stage_unknown_effects"
+              },
+              "stage_3": {
+                "icon": "GFX_situation_stage_3",
+                "icon_background": "GFX_situation_stage_frame_green",
+                "end": "75",
+                "on_first_enter": {
+                  "situation_event": {},
+                  "custom_tooltip": "stage_unknown_effects"
+                },
+                "stage_4": {
+                  "icon": "GFX_situation_stage_4",
+                  "icon_background": "GFX_situation_stage_frame_green",
+                  "end": "100",
+                  "on_first_enter": {
+                    "situation_event": {},
+                    "custom_tooltip": "stage_unknown_effects"
+                  }
+                },
+                "approach": {
+                  "name": "situation_paragon_skrand_low",
+                  "icon": "GFX_situation_approach_balance_sheet",
+                  "icon_background": "GFX_situation_approach_bg_red",
+                  "on_select": {
+                    "custom_tooltip": "approach_situation_paragon_skrand_low_tt"
+                  },
+                  "modifier": {
+                    "planet_researchers_energy_upkeep_add": "0.1"
+                  }
+                },
+                "monthly_progress": {
+                  "base": "0.1",
+                  "modifier": {
+                    "add": "owner.value:minimal_researchers_skrand",
+                    "desc": "situation_paragon_skrand_low_researchers",
+                    "current_situation_approach": "situation_paragon_skrand_low"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_paragon_situations.txt",
+    "_line_number": 767
+  },
+  "paragon_origin_promise": {
+    "paragon_origin_promise": {
+      "picture": "GFX_evt_space_station",
+      "category": "positive",
+      "complete_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_outcome_meh",
+      "start_value": "0",
+      "on_start": {},
+      "on_progress_complete": {
+        "custom_tooltip": "situation_promise_outcome",
+        "set_situation_locked": "yes",
+        "hidden_effect": {
+          "owner": {
+            "remove_country_flag": "origin_upgrade_agendas_situation",
+            "remove_modifier": "council_in_tatter"
+          },
+          "situation_event": {
+            "destroy_situation": "this"
+          }
+        },
+        "abort_trigger": {
+          "owner": {
+            "exists": "ruler",
+            "ruler": {
+              "NOT": {}
+            }
+          },
+          "on_abort": {
+            "hidden_effect": {
+              "owner": {
+                "remove_country_flag": "origin_upgrade_agendas_situation",
+                "remove_modifier": "council_in_tatter"
+              }
+            }
+          },
+          "stages": {
+            "stage_1": {
+              "icon": "GFX_situation_stage_1",
+              "icon_background": "GFX_situation_stage_frame_green",
+              "end": "480",
+              "on_first_enter": {},
+              "custom_tooltip": "situation_insight_stages"
+            }
+          },
+          "approach": {
+            "name": "situation_origin_first_promise_prospecting",
+            "icon": "GFX_situation_approach_energy_credits",
+            "icon_background": "GFX_situation_approach_bg_green",
+            "on_select": {
+              "custom_tooltip": "approach_situation_origin_promise_prospecting_tt"
+            },
+            "allow": {
+              "custom_tooltip": "approach_allow_tooltip_promise",
+              "hidden_trigger": {
+                "owner": {}
+              },
+              "modifier": {
+                "station_gatherers_produces_mult": "0.2",
+                "science_ship_survey_speed": "-0.5"
+              }
+            },
+            "approach": {
+              "name": "situation_origin_first_promise_construction",
+              "icon": "GFX_situation_approach_fleet",
+              "icon_background": "GFX_situation_approach_bg_green",
+              "on_select": {
+                "custom_tooltip": "approach_situation_origin_promise_construction_tt"
+              },
+              "allow": {
+                "custom_tooltip": "approach_allow_tooltip_promise",
+                "hidden_trigger": {
+                  "owner": {}
+                },
+                "modifier": {
+                  "planet_building_build_speed_mult": "0.35",
+                  "starbase_shipyard_build_speed_mult": "0.35",
+                  "planet_metallurgists_alloys_produces_add": "-0.15"
+                }
+              },
+              "approach": {
+                "name": "situation_origin_first_promise_engineering",
+                "icon": "GFX_situation_approach_research",
+                "icon_background": "GFX_situation_approach_bg_green",
+                "on_select": {
+                  "custom_tooltip": "approach_situation_origin_promise_engineering_tt"
+                },
+                "allow": {
+                  "custom_tooltip": "approach_allow_tooltip_promise",
+                  "hidden_trigger": {
+                    "owner": {}
+                  },
+                  "modifier": {
+                    "planet_researchers_produces_mult": "0.1",
+                    "planet_researchers_upkeep_mult": "0.35"
+                  }
+                },
+                "on_monthly": {
+                  "events": {},
+                  "random_events": {
+                    "800": "0",
+                    "2": "paragon.5150",
+                    "1": "paragon.5110"
+                  }
+                },
+                "monthly_progress": {
+                  "base": "1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_paragon_situations.txt",
+    "_line_number": 869
+  },
+  "paragon_origin_forgotten": {
+    "paragon_origin_forgotten": {
+      "picture": "GFX_evt_conclave",
+      "category": "neutral",
+      "complete_icon_frame": "GFX_situation_outcome_frame_blue",
+      "complete_icon": "GFX_situation_outcome_unknown",
+      "start_value": "0",
+      "on_start": {},
+      "on_progress_complete": {
+        "custom_tooltip": "situation_unknown_outcome_approach",
+        "set_situation_locked": "yes",
+        "situation_event": {
+          "hidden_effect": {
+            "owner": {
+              "clear_variable": "clampdown_costs_mult"
+            }
+          }
+        },
+        "abort_trigger": {
+          "owner": {
+            "exists": "ruler",
+            "ruler": {
+              "NOT": {}
+            }
+          },
+          "stages": {
+            "stage_1": {
+              "icon": "GFX_situation_stage_1",
+              "icon_background": "GFX_situation_stage_frame_red",
+              "end": "45",
+              "on_first_enter": {},
+              "modifier": {}
+            },
+            "stage_2": {
+              "icon": "GFX_situation_stage_2",
+              "icon_background": "GFX_situation_stage_frame_red",
+              "end": "90",
+              "on_first_enter": {
+                "situation_event": {},
+                "modifier": {}
+              },
+              "stage_3": {
+                "icon": "GFX_situation_stage_3",
+                "icon_background": "GFX_situation_stage_frame_red",
+                "end": "135",
+                "on_first_enter": {
+                  "situation_event": {},
+                  "modifier": {}
+                },
+                "stage_4": {
+                  "icon": "GFX_situation_stage_4",
+                  "icon_background": "GFX_situation_stage_frame_red",
+                  "end": "180",
+                  "on_first_enter": {
+                    "situation_event": {},
+                    "modifier": {}
+                  }
+                },
+                "approach": {
+                  "name": "situation_origin_forgotten_crackdown",
+                  "icon": "GFX_situation_approach_fist",
+                  "icon_background": "GFX_situation_approach_bg_red",
+                  "on_select": {
+                    "custom_tooltip": "approach_situation_origin_forgotten_crackdown_tt"
+                  },
+                  "modifier": {
+                    "planet_stability_add": "-10"
+                  }
+                },
+                "on_monthly": {
+                  "random_events": {}
+                },
+                "monthly_progress": {
+                  "base": "1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_paragon_situations.txt",
+    "_line_number": 1010
+  },
+  "paragon_origin_reformists_struggle": {
+    "paragon_origin_reformists_struggle": {
+      "picture": "GFX_evt_crisis_declared",
+      "category": "negative",
+      "complete_icon_frame": "GFX_situation_outcome_frame_red",
+      "complete_icon": "GFX_situation_outcome_revolt",
+      "start_value": "0",
+      "on_start": {
+        "set_timed_situation_flag": {
+          "flag": "origin_recent_random_event",
+          "days": "360"
+        },
+        "owner": {
+          "set_variable": {
+            "which": "paragon_origin_reformists_negotiation_value",
+            "value": "0"
+          }
+        }
+      },
+      "on_progress_complete": {
+        "custom_tooltip": "situation_paragon_origin_reformists_struggle_complete",
+        "owner": {
+          "country_event": {
+            "hidden_effect": {
+              "set_country_flag": "reformists_situation_finished",
+              "clear_variable": "paragon_origin_reformists_negotiation_value"
+            }
+          },
+          "destroy_situation": "this"
+        },
+        "abort_trigger": {
+          "owner": {
+            "exists": "ruler",
+            "ruler": {
+              "NOT": {}
+            }
+          },
+          "on_abort": {
+            "owner": {
+              "country_event": {
+                "clear_variable": "paragon_origin_reformists_negotiation_value"
+              }
+            },
+            "stages": {
+              "stage_1": {
+                "icon": "GFX_situation_stage_1",
+                "icon_background": "GFX_situation_stage_frame_red",
+                "end": "60",
+                "on_first_enter": {},
+                "custom_tooltip": "situation_reformists_struggle_3",
+                "modifier": {
+                  "planet_stability_add": "-2.5",
+                  "pop_ethic_egalitarian_attraction_mult": "0.1"
+                }
+              },
+              "stage_2": {
+                "icon": "GFX_situation_stage_2",
+                "icon_background": "GFX_situation_stage_frame_red",
+                "end": "120",
+                "on_first_enter": {},
+                "custom_tooltip": "situation_reformists_struggle_2",
+                "modifier": {
+                  "planet_stability_add": "-5",
+                  "pop_ethic_egalitarian_attraction_mult": "0.2"
+                }
+              },
+              "stage_3": {
+                "icon": "GFX_situation_stage_3",
+                "icon_background": "GFX_situation_stage_frame_red",
+                "end": "180",
+                "on_first_enter": {},
+                "custom_tooltip": "situation_reformists_struggle_1",
+                "modifier": {
+                  "planet_stability_add": "-10",
+                  "pop_ethic_egalitarian_attraction_mult": "0.4"
+                }
+              }
+            },
+            "approach": {
+              "name": "situation_paragon_origin_reformists_struggle_harsh",
+              "icon": "GFX_situation_approach_fist",
+              "icon_background": "GFX_situation_approach_bg_red",
+              "on_select": {
+                "owner": {
+                  "hidden_effect": {
+                    "if": {
+                      "limit": {
+                        "prev": {
+                          "hidden_effect": {
+                            "set_variable": {
+                              "which": "paragon_origin_reformists_negotiation_value",
+                              "value": "0"
+                            }
+                          }
+                        }
+                      },
+                      "custom_tooltip": "approach_situation_paragon_origin_reformists_struggle_harsh_tt"
+                    },
+                    "default": "yes"
+                  },
+                  "approach": {
+                    "name": "situation_paragon_origin_reformists_struggle_accept",
+                    "icon": "GFX_situation_approach_handshake",
+                    "icon_background": "GFX_situation_approach_bg_green",
+                    "allow": {
+                      "custom_tooltip": "approach_allow_tooltip_reformists_struggle_accept",
+                      "hidden_trigger": {
+                        "owner": {
+                          "ruler": {
+                            "check_variable": {
+                              "which": "paragon_origin_delusion_tier"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "on_select": {
+                      "owner": {
+                        "hidden_effect": {},
+                        "custom_tooltip": "approach_situation_paragon_origin_reformists_struggle_accept_tt"
+                      }
+                    },
+                    "on_monthly": {
+                      "events": {},
+                      "random_events": {
+                        "2": "paragon.5090 #Reformists",
+                        "3": "paragon.5065 #Tyranny",
+                        "1": "paragon.5075 #Loyalists"
+                      }
+                    },
+                    "monthly_progress": {
+                      "base": "0",
+                      "modifier": {
+                        "add": "-0.1",
+                        "desc": "paragon_origin_reformists_killed",
+                        "owner": {},
+                        "modifier": {
+                          "add": "0.1",
+                          "desc": "paragon_origin_reformists_alive",
+                          "owner": {},
+                          "modifier": {
+                            "add": "15",
+                            "desc": "paragon_origin_hunt",
+                            "current_situation_approach": "situation_paragon_origin_reformists_struggle_accept"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_paragon_situations.txt",
+    "_line_number": 1129
+  }
+}

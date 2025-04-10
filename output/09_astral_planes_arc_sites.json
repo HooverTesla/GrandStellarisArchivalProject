@@ -1,0 +1,32 @@
+{
+  "riftworld_digsite": {
+    "riftworld_digsite": {
+      "desc": "riftworld_digsite_desc",
+      "picture": "GFX_evt_riftworld_archsite_crater",
+      "stages": "4",
+      "weight": "0",
+      "max_instances": "999",
+      "notification_duration": "-1",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "potential": {},
+      "visible": {
+        "default_site_visible_trigger": "yes"
+      },
+      "stage": {
+        "difficulty": "2",
+        "icon": "GFX_archaeology_runes_A4",
+        "event": "astral_planes.2140"
+      },
+      "on_roll_failed": {
+        "from": {
+          "standard_archaeological_site_on_roll_failed": {}
+        }
+      }
+    },
+    "_source_file": "09_astral_planes_arc_sites.txt",
+    "_line_number": 8
+  }
+}

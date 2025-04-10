@@ -1,0 +1,95 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "tutorial.2550",
+      "title": "tutorial.2550.name",
+      "desc": "tutorial.2550.desc",
+      "is_advisor_event": "yes",
+      "is_triggered_only": "yes",
+      "show_sound": "tut_msg_detection_arrays",
+      "trigger": {
+        "has_technology": "tech_detection_array",
+        "NOT": {},
+        "immediate": {
+          "set_country_flag": "tutorial_tech_detection_array"
+        },
+        "option": {
+          "name": "OK"
+        }
+      }
+    },
+    "_source_file": "tutorial_events.txt",
+    "_line_number": 4195
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "tutorial.2145",
+      "title": "tutorial.2145.name",
+      "desc": {
+        "trigger": {
+          "has_first_contact_dlc": "yes"
+        },
+        "text": "tutorial.2145.desc.dlc"
+      },
+      "show_sound": "tut_msg_observation_post",
+      "is_triggered_only": "yes",
+      "is_advisor_event": "yes",
+      "trigger": {
+        "owner": {
+          "is_tutorial_level": "2",
+          "has_event_chain": "tutorial_20_chain"
+        }
+      },
+      "immediate": {
+        "owner": {
+          "complete_tutorial_step": "190_built_observation_post",
+          "end_event_chain": "tutorial_20_chain",
+          "set_country_flag": "finished_tutorial_20"
+        }
+      },
+      "option": {
+        "name": "OK"
+      }
+    },
+    "_source_file": "tutorial_events.txt",
+    "_line_number": 4108
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "tutorial.9000",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "is_tutorial_level": "2",
+          "NOT": {
+            "has_ethic": "ethic_gestalt_consciousness"
+          }
+        },
+        "is_in_frontier_space": "yes"
+      },
+      "immediate": {
+        "owner": {}
+      }
+    },
+    "_source_file": "tutorial_events.txt",
+    "_line_number": 2074
+  },
+  "first_contact_event": {
+    "first_contact_event": {
+      "id": "tutorial.2004",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "owner": {
+          "country_event": {
+            "id": "tutorial.2005",
+            "scopes": {}
+          }
+        }
+      }
+    },
+    "_source_file": "tutorial_events.txt",
+    "_line_number": 3635
+  }
+}

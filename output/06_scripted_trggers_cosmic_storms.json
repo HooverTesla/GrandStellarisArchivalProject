@@ -1,0 +1,61 @@
+{
+  "has_psionic_leader": {
+    "has_psionic_leader": {
+      "leader": {
+        "has_psionic_leader_trait": "yes"
+      }
+    },
+    "_source_file": "06_scripted_trggers_cosmic_storms.txt",
+    "_line_number": -1
+  },
+  "is_authoritarian_or_homicidal": {
+    "is_authoritarian_or_homicidal": {
+      "OR": {
+        "is_authoritarian": "yes",
+        "is_homicidal": "yes"
+      }
+    },
+    "_source_file": "06_scripted_trggers_cosmic_storms.txt",
+    "_line_number": 5
+  },
+  "is_valid_planet_for_storm_uncovered_anomaly": {
+    "is_valid_planet_for_storm_uncovered_anomaly": {
+      "AND": {
+        "has_anomaly": "no",
+        "is_preventing_anomaly": "no",
+        "uninhabitable_regular_planet": "yes"
+      }
+    },
+    "_source_file": "06_scripted_trggers_cosmic_storms.txt",
+    "_line_number": 12
+  },
+  "is_leader_in_storm": {
+    "is_leader_in_storm": {
+      "OR": {
+        "AND": {
+          "exists": "planet",
+          "planet.solar_system": {
+            "has_star_flag": "storm_system"
+          }
+        }
+      }
+    },
+    "_source_file": "06_scripted_trggers_cosmic_storms.txt",
+    "_line_number": 20
+  },
+  "cares_for_crimson_crawlers": {
+    "cares_for_crimson_crawlers": {
+      "_comments": [
+        "# Terravores don't care",
+        "# Machines don't either."
+      ],
+      "NAND": {
+        "is_lithoid_empire": "yes",
+        "has_valid_civic": "civic_hive_devouring_swarm"
+      },
+      "is_machine_empire": "no"
+    },
+    "_source_file": "06_scripted_trggers_cosmic_storms.txt",
+    "_line_number": 40
+  }
+}

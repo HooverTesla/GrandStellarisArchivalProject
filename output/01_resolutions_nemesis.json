@@ -1,0 +1,3510 @@
+{
+  "resolution_declare_crisis": {
+    "resolution_declare_crisis": {
+      "icon": "GFX_resolution_declare_crisis",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t5"
+        }
+      },
+      "target": "yes",
+      "harmful": "yes",
+      "valid_target": {
+        "NOT": {
+          "OR": {
+            "is_country_type": "default",
+            "AND": {
+              "is_fallen_empire": "yes",
+              "NOT": {}
+            },
+            "NOT": {},
+            "modifier": {
+              "starbase_shipyard_build_speed_mult": "0.20",
+              "ships_upkeep_mult": "-0.1"
+            },
+            "effect": {
+              "custom_tooltip": "resolution_declare_crisis_tooltip",
+              "hidden_effect": {
+                "if": {
+                  "limit": {
+                    "remove_from_galactic_community": "yes"
+                  },
+                  "if": {
+                    "limit": {
+                      "is_galactic_council_established": "yes",
+                      "is_part_of_galactic_council": "yes"
+                    },
+                    "remove_from_galactic_council": "yes"
+                  },
+                  "every_subject": {
+                    "if": {
+                      "limit": {
+                        "remove_from_galactic_community": "yes"
+                      },
+                      "if": {
+                        "limit": {
+                          "is_galactic_council_established": "yes",
+                          "is_part_of_galactic_council": "yes"
+                        },
+                        "remove_from_galactic_council": "yes"
+                      }
+                    },
+                    "set_country_flag": "declared_crisis",
+                    "save_event_target_as": "new_crisis",
+                    "country_event": {
+                      "every_playable_country": {
+                        "limit": {
+                          "is_ai": "no",
+                          "NOT": {},
+                          "country_event": {},
+                          "if": {
+                            "limit": {
+                              "galactic_custodian": {
+                                "save_event_target_as": "community_war_leader",
+                                "if": {
+                                  "limit": {
+                                    "event_target:new_crisis": {
+                                      "leave_alliance": {}
+                                    }
+                                  }
+                                },
+                                "else_if": {
+                                  "limit": {
+                                    "galactic_emperor": {
+                                      "save_event_target_as": "community_war_leader"
+                                    }
+                                  },
+                                  "else": {
+                                    "random_playable_country": {
+                                      "limit": {
+                                        "is_galactic_community_member": "yes",
+                                        "NOT": {},
+                                        "weights": {
+                                          "base": "1",
+                                          "modifier": {
+                                            "add": "10",
+                                            "is_galactic_council_established": "yes",
+                                            "is_part_of_galactic_council": "yes"
+                                          }
+                                        },
+                                        "save_event_target_as": "community_war_leader"
+                                      }
+                                    },
+                                    "declare_crisis_war_effect": "yes"
+                                  }
+                                },
+                                "potential": {
+                                  "has_nemesis": "yes",
+                                  "has_galactic_emperor": "no",
+                                  "is_part_of_galactic_council": "yes"
+                                },
+                                "ai_weight": {
+                                  "base": "@resolution_weight_hated",
+                                  "_comments": [
+                                    "# Should almost always declare on Crisis countries in end game",
+                                    "# More likely to declare on very powerful homicidal empires",
+                                    "# More likely to declare on very powerful homicidal empires",
+                                    "# More likely to declare on rivals",
+                                    "# Never on yourself",
+                                    "# More likely to declare on a crisis country that has started cracking stars"
+                                  ],
+                                  "modifier": {
+                                    "factor": "6",
+                                    "from": {
+                                      "desc": "gal_com_target_has_cracked_stars"
+                                    },
+                                    "_comments": [
+                                      "# Should be reluctant to use on normal countries",
+                                      "# Very unlikely to use on Custodian"
+                                    ],
+                                    "modifier": {
+                                      "factor": "0.2",
+                                      "from": {
+                                        "desc": "gal_com_target_is_the_custodian"
+                                      },
+                                      "_comments": [
+                                        "# Unlikely to use on scary Fallen Empire"
+                                      ],
+                                      "modifier": {
+                                        "factor": "5",
+                                        "from": {
+                                          "has_crisis_level": "crisis_level_5"
+                                        },
+                                        "desc": "gal_com_crisis_level_5"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 43
+  },
+  "resolution_repeal_crisis": {
+    "resolution_repeal_crisis": {
+      "icon": "GFX_resolution_repeal_red",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t5"
+        }
+      },
+      "target": "yes",
+      "harmful": "no",
+      "valid_target": {
+        "OR": {
+          "is_country_type": "default",
+          "is_fallen_empire": "yes"
+        },
+        "has_country_flag": "declared_crisis"
+      },
+      "effect": {
+        "hidden_effect": {
+          "remove_country_flag": "declared_crisis",
+          "save_event_target_as": "former_crisis",
+          "random_war": {
+            "limit": {
+              "using_war_goal": {
+                "type": "wg_declared_crisis",
+                "owner": "event_target:former_crisis"
+              }
+            },
+            "every_war_participant": {
+              "limit": {
+                "NOT": {},
+                "country_event": {},
+                "every_war_participant": {
+                  "prev": {
+                    "remove_war_participant": "prev"
+                  }
+                }
+              },
+              "country_event": {}
+            },
+            "potential": {
+              "has_galactic_emperor": "no",
+              "has_nemesis": "yes"
+            },
+            "ai_weight": {
+              "base": "@resolution_weight_hated",
+              "_comments": [
+                "# More likely to repeal if it's a normal country",
+                "# Should be very unlikely to repeal end game crisis country",
+                "# Unlikely to repeal very powerful homicidal countries"
+              ],
+              "modifier": {
+                "factor": "0.2",
+                "from": {
+                  "is_homicidal": "yes",
+                  "relative_power": {
+                    "who": "prev",
+                    "category": "fleet",
+                    "value": "overwhelming"
+                  }
+                },
+                "desc": "gal_com_target_is_strong_homicidal_empire"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 296
+  },
+  "resolution_declare_crisis_empire": {
+    "resolution_declare_crisis_empire": {
+      "icon": "GFX_resolution_declare_crisis",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t5"
+        }
+      },
+      "target": "yes",
+      "harmful": "yes",
+      "valid_target": {
+        "NOT": {
+          "is_galactic_emperor": "no",
+          "OR": {
+            "is_country_type": "default",
+            "AND": {
+              "is_fallen_empire": "yes",
+              "NOT": {}
+            },
+            "NOT": {},
+            "modifier": {
+              "starbase_shipyard_build_speed_mult": "0.20",
+              "ships_upkeep_mult": "-0.1"
+            },
+            "effect": {
+              "custom_tooltip": "resolution_declare_crisis_empire_tooltip",
+              "hidden_effect": {
+                "if": {
+                  "limit": {
+                    "remove_from_galactic_community": "yes"
+                  },
+                  "if": {
+                    "limit": {
+                      "is_galactic_council_established": "yes",
+                      "is_part_of_galactic_council": "yes"
+                    },
+                    "remove_from_galactic_council": "yes"
+                  },
+                  "every_subject": {
+                    "if": {
+                      "limit": {
+                        "remove_from_galactic_community": "yes"
+                      },
+                      "if": {
+                        "limit": {
+                          "is_galactic_council_established": "yes",
+                          "is_part_of_galactic_council": "yes"
+                        },
+                        "remove_from_galactic_council": "yes"
+                      }
+                    },
+                    "set_country_flag": "declared_crisis",
+                    "save_event_target_as": "new_crisis",
+                    "country_event": {
+                      "every_playable_country": {
+                        "limit": {
+                          "is_ai": "no",
+                          "NOT": {},
+                          "country_event": {},
+                          "galactic_emperor": {
+                            "save_event_target_as": "community_war_leader"
+                          },
+                          "declare_crisis_war_effect": "yes"
+                        }
+                      },
+                      "potential": {
+                        "has_galactic_emperor": "yes",
+                        "has_nemesis": "yes",
+                        "is_part_of_galactic_council": "yes"
+                      },
+                      "ai_weight": {
+                        "base": "@resolution_weight_hated",
+                        "_comments": [
+                          "# Should almost always declare on Crisis countries in end game",
+                          "# More likely to declare on very powerful homicidal empires",
+                          "# More likely to declare on very powerful homicidal empires",
+                          "# More likely to declare on rivals",
+                          "# Never on yourself",
+                          "# More likely to declare on empire who hvae cracked a star"
+                        ],
+                        "modifier": {
+                          "factor": "6",
+                          "from": {
+                            "desc": "gal_com_target_has_cracked_stars"
+                          },
+                          "_comments": [
+                            "# Should be reluctant to use on normal countries",
+                            "# Very unlikely to use on Custodian"
+                          ],
+                          "modifier": {
+                            "factor": "0.2",
+                            "from": {
+                              "desc": "gal_com_target_is_the_custodian"
+                            },
+                            "_comments": [
+                              "# Unlikely to use on scary Fallen Empire"
+                            ],
+                            "modifier": {
+                              "factor": "0.2",
+                              "from": {
+                                "is_fallen_empire": "yes",
+                                "relative_power": {
+                                  "who": "prev",
+                                  "category": "fleet",
+                                  "value": "overwhelming"
+                                }
+                              },
+                              "desc": "gal_com_target_is_powerful_fallen_empire"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 401
+  },
+  "resolution_repeal_crisis_empire": {
+    "resolution_repeal_crisis_empire": {
+      "icon": "GFX_resolution_repeal_red",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t5"
+        }
+      },
+      "target": "yes",
+      "harmful": "no",
+      "valid_target": {
+        "OR": {
+          "is_country_type": "default",
+          "is_fallen_empire": "yes"
+        },
+        "has_country_flag": "declared_crisis"
+      },
+      "effect": {
+        "hidden_effect": {
+          "remove_country_flag": "declared_crisis",
+          "save_event_target_as": "former_crisis",
+          "random_playable_country": {
+            "limit": {
+              "save_event_target_as": "gal_emperor"
+            },
+            "random_war": {
+              "limit": {
+                "using_war_goal": {
+                  "type": "wg_declared_crisis",
+                  "owner": "event_target:former_crisis"
+                }
+              },
+              "every_war_participant": {
+                "limit": {
+                  "NOT": {},
+                  "country_event": {},
+                  "every_war_participant": {
+                    "prev": {
+                      "remove_war_participant": "prev"
+                    }
+                  }
+                },
+                "country_event": {}
+              },
+              "potential": {
+                "has_galactic_emperor": "yes",
+                "has_nemesis": "yes"
+              },
+              "ai_weight": {
+                "base": "@resolution_weight_hated",
+                "_comments": [
+                  "# More likely to repeal if it's a normal country",
+                  "# Should be very unlikely to repeal end game crisis country",
+                  "# Unlikely to repeal very powerful homicidal countries"
+                ],
+                "modifier": {
+                  "factor": "0.2",
+                  "from": {
+                    "is_homicidal": "yes",
+                    "relative_power": {
+                      "who": "prev",
+                      "category": "fleet",
+                      "value": "overwhelming"
+                    }
+                  },
+                  "desc": "gal_com_target_is_very_strong_homicidal_empire"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 574
+  },
+  "resolution_galacticreforms_nominate_custodian": {
+    "resolution_galacticreforms_nominate_custodian": {
+      "icon": "GFX_resolution_nominate_custodian",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t5"
+        }
+      },
+      "target": "yes",
+      "harmful": "no",
+      "valid_target": {
+        "is_country_type": "default",
+        "is_galactic_community_member": "yes",
+        "is_part_of_galactic_council": "yes",
+        "custom_tooltip": {
+          "fail_text": "nominate_other_custodian_not_crisis",
+          "NOR": {
+            "has_ascension_perk": "ap_cosmogenesis",
+            "has_valid_civic": "civic_pompous_purists"
+          }
+        }
+      },
+      "effect": {
+        "set_galactic_custodian": "yes",
+        "hidden_effect": {
+          "country_event": {
+            "if": {
+              "limit": {
+                "country_event": {}
+              }
+            },
+            "potential": {
+              "has_nemesis": "yes",
+              "is_galactic_council_established": "yes",
+              "has_galactic_custodian": "no",
+              "has_galactic_emperor": "no"
+            },
+            "allow": {
+              "custom_tooltip": {
+                "fail_text": "nominate_custodian_not_crisis",
+                "NOR": {
+                  "has_ascension_perk": "ap_cosmogenesis"
+                }
+              }
+            },
+            "active": {
+              "has_galactic_custodian": "no"
+            },
+            "ai_weight": {
+              "base": "@resolution_weight_normal",
+              "modifier": {
+                "factor": "12",
+                "any_neighbor_country": {
+                  "desc": "gal_com_neighboring_crisis_empire"
+                },
+                "modifier": {
+                  "factor": "20",
+                  "any_playable_country": {
+                    "desc": "gal_com_someone_is_revealed_crisis"
+                  },
+                  "modifier": {
+                    "factor": "8",
+                    "any_playable_country": {
+                      "desc": "gal_com_someone_declared_crisis"
+                    },
+                    "modifier": {
+                      "factor": "10",
+                      "any_country": {
+                        "desc": "gal_com_exists_awakened_fallen_empire"
+                      },
+                      "modifier": {
+                        "factor": "20",
+                        "has_global_flag": "war_in_heaven_ongoing",
+                        "desc": "gal_com_ongoing_war_in_heaven"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 692
+  },
+  "resolution_galacticreforms_unseat_custodian": {
+    "resolution_galacticreforms_unseat_custodian": {
+      "icon": "GFX_resolution_end_custodianship",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "yes",
+      "harmful": "yes",
+      "valid_target": {
+        "is_galactic_custodian": "yes"
+      },
+      "modifier": {},
+      "effect": {
+        "custom_tooltip": "resolution_galacticreforms_unseat_custodian_tooltip",
+        "hidden_effect": {
+          "if": {
+            "limit": {
+              "cancel_resolution": "resolution_custodian_perpetual_custodianship"
+            },
+            "country_event": {}
+          },
+          "fail_effects": {},
+          "potential": {
+            "is_galactic_custodian": "no"
+          },
+          "active": {
+            "has_galactic_custodian": "yes"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_unpopular",
+            "modifier": {
+              "factor": "1.6",
+              "is_xenophobe": "yes",
+              "NOT": {
+                "any_neighbor_country": {},
+                "desc": "ethic_xenophobe"
+              },
+              "modifier": {
+                "factor": "0.2",
+                "any_country": {
+                  "desc": "gal_com_someone_is_revealed_crisis"
+                },
+                "modifier": {
+                  "factor": "0.2",
+                  "any_playable_country": {
+                    "desc": "gal_com_someone_declared_crisis"
+                  },
+                  "modifier": {
+                    "factor": "0.2",
+                    "any_neighbor_country": {
+                      "desc": "gal_com_neighboring_crisis_empire"
+                    },
+                    "modifier": {
+                      "factor": "0",
+                      "any_playable_country": {
+                        "desc": "gal_com_crisis_sphere_revealed"
+                      },
+                      "modifier": {
+                        "factor": "0.2",
+                        "any_country": {
+                          "desc": "gal_com_exists_awakened_fallen_empire"
+                        },
+                        "modifier": {
+                          "factor": "0.2",
+                          "has_global_flag": "war_in_heaven_ongoing",
+                          "desc": "gal_com_ongoing_war_in_heaven"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 869
+  },
+  "resolution_custodian_form_empire": {
+    "resolution_custodian_form_empire": {
+      "icon": "GFX_resolution_form_galactic_empire",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "effect": {
+        "if": {
+          "limit": {
+            "custom_tooltip": "resolution_custodian_form_empire_tooltip"
+          },
+          "if": {
+            "limit": {
+              "custom_tooltip": "resolution_custodian_form_empire_tooltip_machine"
+            },
+            "if": {
+              "limit": {
+                "custom_tooltip": "resolution_custodian_form_empire_tooltip_hive"
+              },
+              "hidden_effect": {
+                "random_playable_country": {
+                  "limit": {
+                    "country_event": {}
+                  }
+                },
+                "fail_effects": {},
+                "potential": {
+                  "has_nemesis": "yes",
+                  "is_galactic_custodian": "yes",
+                  "is_active_resolution": "resolution_custodian_perpetual_custodianship",
+                  "has_galactic_emperor": "no"
+                },
+                "allow": {
+                  "custom_tooltip": {
+                    "fail_text": "requires_no_war_in_heaven",
+                    "NOT": {}
+                  },
+                  "active": {
+                    "has_galactic_custodian": "yes"
+                  },
+                  "ai_weight": {
+                    "base": "@resolution_weight_disliked",
+                    "modifier": {
+                      "factor": "10",
+                      "any_neighbor_country": {
+                        "desc": "gal_com_neighboring_crisis_empire"
+                      },
+                      "modifier": {
+                        "factor": "20",
+                        "any_playable_country": {
+                          "desc": "gal_com_crisis_sphere_revealed"
+                        },
+                        "modifier": {
+                          "factor": "8",
+                          "any_playable_country": {
+                            "desc": "gal_com_someone_declared_crisis"
+                          },
+                          "modifier": {
+                            "factor": "10",
+                            "any_country": {
+                              "desc": "gal_com_exists_awakened_fallen_empire"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 1024
+  },
+  "resolution_custodian_united_front": {
+    "resolution_custodian_united_front": {
+      "icon": "GFX_resolution_united_front",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {
+        "description": "resolution_custodian_united_front_modifier_desc",
+        "damage_vs_country_type_synth_queen_mult": "0.2",
+        "damage_vs_country_type_swarm_mult": "0.2",
+        "damage_vs_country_type_extradimensional_mult": "0.2",
+        "damage_vs_country_type_extradimensional_2_mult": "0.2",
+        "damage_vs_country_type_extradimensional_3_mult": "0.2",
+        "damage_vs_country_type_ai_empire_mult": "0.2",
+        "damage_vs_country_type_gray_goo_mult": "0.2",
+        "damage_vs_player_crisis_mult": "0.2",
+        "country_energy_produces_mult": "-0.03"
+      },
+      "effect": {},
+      "fail_effects": {},
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "resolution_already_active",
+          "NOT": {}
+        },
+        "potential": {
+          "has_nemesis": "yes",
+          "is_galactic_custodian": "yes",
+          "any_country": {},
+          "ai_weight": {
+            "base": "@resolution_weight_disliked",
+            "modifier": {
+              "factor": "12",
+              "any_neighbor_country": {
+                "desc": "gal_com_neighboring_crisis_empire"
+              },
+              "modifier": {
+                "factor": "20",
+                "any_playable_country": {
+                  "desc": "gal_com_crisis_sphere_revealed"
+                },
+                "modifier": {
+                  "factor": "8",
+                  "any_playable_country": {
+                    "desc": "gal_com_someone_declared_crisis"
+                  },
+                  "modifier": {
+                    "factor": "0.5",
+                    "has_ai_personality": "xenophobic_isolationists",
+                    "NOT": {
+                      "any_neighbor_country": {},
+                      "desc": "personality_xenophobic_isolationists"
+                    },
+                    "modifier": {
+                      "factor": "10",
+                      "any_country": {
+                        "desc": "gal_com_exists_awakened_fallen_empire"
+                      },
+                      "modifier": {
+                        "factor": "20",
+                        "has_global_flag": "war_in_heaven_ongoing",
+                        "desc": "gal_com_ongoing_war_in_heaven"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 1192
+  },
+  "resolution_custodian_galactic_mobilization": {
+    "resolution_custodian_galactic_mobilization": {
+      "icon": "GFX_resolution_galactic_mobilization",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "triggered_modifier": {
+        "potential": {
+          "is_gestalt": "yes"
+        },
+        "modifier": {
+          "resolution_custodian_galactic_mobilization_gestalt": "1"
+        }
+      },
+      "effect": {},
+      "fail_effects": {},
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "resolution_already_active",
+          "NOT": {}
+        },
+        "potential": {
+          "has_nemesis": "yes",
+          "is_galactic_custodian": "yes"
+        },
+        "ai_weight": {
+          "base": "@resolution_weight_hated",
+          "modifier": {
+            "factor": "0.6",
+            "is_pacifist": "yes",
+            "NOT": {
+              "any_neighbor_country": {},
+              "desc": "ethic_pacifist"
+            },
+            "modifier": {
+              "factor": "12",
+              "any_neighbor_country": {
+                "desc": "gal_com_neighboring_crisis_empire"
+              },
+              "modifier": {
+                "factor": "20",
+                "any_playable_country": {
+                  "desc": "gal_com_crisis_sphere_revealed"
+                },
+                "modifier": {
+                  "factor": "8",
+                  "any_playable_country": {
+                    "desc": "gal_com_someone_declared_crisis"
+                  },
+                  "modifier": {
+                    "factor": "10",
+                    "any_country": {
+                      "desc": "gal_com_exists_awakened_fallen_empire"
+                    },
+                    "modifier": {
+                      "factor": "20",
+                      "has_global_flag": "war_in_heaven_ongoing",
+                      "desc": "gal_com_ongoing_war_in_heaven"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 1358
+  },
+  "resolution_custodian_galactic_standard": {
+    "resolution_custodian_galactic_standard": {
+      "icon": "GFX_resolution_galactic_standard",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {
+        "resolution_custodian_galactic_standard": "1"
+      },
+      "effect": {},
+      "fail_effects": {},
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "resolution_already_active",
+          "NOT": {}
+        },
+        "potential": {
+          "has_nemesis": "yes",
+          "is_galactic_custodian": "yes"
+        },
+        "ai_weight": {
+          "base": "@resolution_weight_normal",
+          "modifier": {
+            "factor": "4",
+            "is_galactic_custodian": "yes",
+            "desc": "gal_com_is_the_custodian"
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 1515
+  },
+  "resolution_custodian_anti_piracy": {
+    "resolution_custodian_anti_piracy": {
+      "icon": "GFX_resolution_anti_piracy_initiative",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {
+        "description": "resolution_custodian_anti_piracy_modifier_desc",
+        "local_trade_protection_add": "5",
+        "damage_vs_country_type_pirate_mult": "0.2",
+        "damage_vs_country_type_dormant_marauders_mult": "0.2",
+        "damage_vs_country_type_awakened_marauders_mult": "0.2",
+        "country_energy_produces_mult": "-0.03"
+      },
+      "effect": {},
+      "fail_effects": {},
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "resolution_already_active",
+          "NOT": {}
+        },
+        "potential": {
+          "has_nemesis": "yes",
+          "is_galactic_custodian": "yes"
+        },
+        "ai_weight": {
+          "base": "@resolution_weight_disliked",
+          "modifier": {
+            "factor": "0.5",
+            "is_gestalt": "yes",
+            "NOT": {
+              "any_neighbor_country": {},
+              "desc": "ethic_gestalt_consciousness"
+            },
+            "modifier": {
+              "factor": "4",
+              "is_galactic_custodian": "yes",
+              "desc": "gal_com_is_the_custodian"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 1585
+  },
+  "resolution_custodian_extend_custodianship": {
+    "resolution_custodian_extend_custodianship": {
+      "icon": "GFX_resolution_term_limits",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "effect": {
+        "custom_tooltip": "resolution_custodian_extend_custodianship_tooltip",
+        "hidden_effect": {
+          "add_custodian_term_days": "10800",
+          "set_country_flag": "extended_custodianship"
+        }
+      },
+      "fail_effects": {},
+      "potential": {
+        "has_nemesis": "yes",
+        "is_galactic_custodian": "yes",
+        "NOT": {
+          "is_active_resolution": "resolution_custodian_perpetual_custodianship",
+          "has_country_flag": "extended_custodianship"
+        }
+      },
+      "active": {
+        "has_galactic_custodian": "yes"
+      },
+      "ai_weight": {
+        "base": "@resolution_weight_normal",
+        "modifier": {
+          "factor": "12",
+          "any_neighbor_country": {
+            "desc": "gal_com_neighboring_crisis_empire"
+          },
+          "modifier": {
+            "factor": "20",
+            "any_playable_country": {
+              "desc": "gal_com_crisis_sphere_revealed"
+            },
+            "modifier": {
+              "factor": "8",
+              "any_playable_country": {
+                "desc": "gal_com_someone_declared_crisis"
+              },
+              "modifier": {
+                "factor": "10",
+                "any_country": {
+                  "desc": "gal_com_exists_awakened_fallen_empire"
+                },
+                "modifier": {
+                  "factor": "20",
+                  "has_global_flag": "war_in_heaven_ongoing",
+                  "desc": "gal_com_ongoing_war_in_heaven"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 1663
+  },
+  "resolution_custodian_perpetual_custodianship": {
+    "resolution_custodian_perpetual_custodianship": {
+      "icon": "GFX_resolution_term_limits",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "effect": {
+        "custom_tooltip": "resolution_custodian_perpetual_custodianship_tooltip",
+        "hidden_effect": {
+          "set_custodian_term_days": "-1 # -1 means that the timer will stop counting"
+        }
+      },
+      "fail_effects": {},
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "resolution_already_active",
+          "NOT": {}
+        },
+        "potential": {
+          "has_nemesis": "yes",
+          "is_galactic_custodian": "yes"
+        },
+        "active": {
+          "has_galactic_custodian": "yes"
+        },
+        "ai_weight": {
+          "base": "@resolution_weight_unpopular",
+          "modifier": {
+            "factor": "12",
+            "any_neighbor_country": {
+              "desc": "gal_com_neighboring_crisis_empire"
+            },
+            "modifier": {
+              "factor": "20",
+              "any_playable_country": {
+                "desc": "gal_com_crisis_sphere_revealed"
+              },
+              "modifier": {
+                "factor": "8",
+                "any_playable_country": {
+                  "desc": "gal_com_someone_declared_crisis"
+                },
+                "modifier": {
+                  "factor": "10",
+                  "any_country": {
+                    "desc": "gal_com_exists_awakened_fallen_empire"
+                  },
+                  "modifier": {
+                    "factor": "20",
+                    "has_global_flag": "war_in_heaven_ongoing",
+                    "desc": "gal_com_ongoing_war_in_heaven"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 1815
+  },
+  "resolution_custodian_end_custodianship": {
+    "resolution_custodian_end_custodianship": {
+      "icon": "GFX_resolution_end_custodianship",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "effect": {
+        "custom_tooltip": "resolution_custodian_end_custodianship_tooltip",
+        "hidden_effect": {
+          "country_event": {}
+        },
+        "fail_effects": {},
+        "potential": {
+          "has_nemesis": "yes",
+          "is_galactic_custodian": "yes"
+        },
+        "active": {
+          "has_galactic_custodian": "yes"
+        },
+        "ai_weight": {
+          "base": "@resolution_weight_popular",
+          "modifier": {
+            "factor": "0",
+            "is_galactic_custodian": "yes",
+            "desc": "gal_com_is_the_custodian"
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 1961
+  },
+  "resolution_custodian_gdf": {
+    "resolution_custodian_gdf": {
+      "icon": "GFX_resolution_galactic_defense_force",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "resolution_already_active",
+          "NOT": {}
+        },
+        "modifier": {
+          "resolution_custodian_gdf": "1"
+        },
+        "effect": {
+          "set_galactic_defense_force": "yes",
+          "hidden_effect": {
+            "set_global_flag": "gdf_active",
+            "random_playable_country": {
+              "limit": {
+                "save_event_target_as": "custodian"
+              },
+              "every_playable_country": {
+                "limit": {
+                  "country_event": {}
+                }
+              },
+              "fail_effects": {},
+              "potential": {
+                "has_nemesis": "yes",
+                "is_galactic_custodian": "yes"
+              },
+              "ai_weight": {
+                "base": "@resolution_weight_unpopular",
+                "modifier": {
+                  "factor": "0.6",
+                  "is_pacifist": "yes",
+                  "NOT": {
+                    "any_neighbor_country": {},
+                    "desc": "ethic_pacifist"
+                  },
+                  "modifier": {
+                    "factor": "0.6",
+                    "is_xenophobe": "yes",
+                    "NOT": {
+                      "any_neighbor_country": {},
+                      "desc": "ethic_xenophobe"
+                    },
+                    "modifier": {
+                      "factor": "4",
+                      "any_country": {
+                        "desc": "gal_com_someone_is_revealed_crisis"
+                      },
+                      "modifier": {
+                        "factor": "12",
+                        "any_neighbor_country": {
+                          "desc": "gal_com_neighboring_crisis_empire"
+                        },
+                        "modifier": {
+                          "factor": "20",
+                          "any_playable_country": {
+                            "desc": "gal_com_crisis_sphere_revealed"
+                          },
+                          "modifier": {
+                            "factor": "14",
+                            "any_playable_country": {
+                              "desc": "gal_com_someone_declared_crisis"
+                            },
+                            "modifier": {
+                              "factor": "10",
+                              "any_country": {
+                                "desc": "gal_com_exists_awakened_fallen_empire"
+                              },
+                              "modifier": {
+                                "factor": "20",
+                                "has_global_flag": "war_in_heaven_ongoing",
+                                "desc": "gal_com_ongoing_war_in_heaven"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 2024
+  },
+  "resolution_custodian_expand_gdf": {
+    "resolution_custodian_expand_gdf": {
+      "icon": "GFX_resolution_expand_gdf",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "resolution_already_active",
+          "NOT": {}
+        },
+        "modifier": {
+          "resolution_custodian_gdf_2": "1",
+          "country_community_gdf_naval_capacity": "400"
+        },
+        "effect": {
+          "hidden_effect": {
+            "if": {
+              "limit": {
+                "has_global_flag": "independent_gdf",
+                "exists": "event_target:gdf_country"
+              },
+              "event_target:gdf_country": {
+                "remove_modifier": "gdf_naval_cap",
+                "add_modifier": {}
+              }
+            }
+          },
+          "fail_effects": {},
+          "potential": {
+            "has_nemesis": "yes",
+            "is_galactic_custodian": "yes",
+            "is_active_resolution": "resolution_custodian_gdf"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_disliked",
+            "modifier": {
+              "factor": "0.6",
+              "is_pacifist": "yes",
+              "NOT": {
+                "any_neighbor_country": {},
+                "desc": "ethic_pacifist"
+              },
+              "modifier": {
+                "factor": "0.6",
+                "is_xenophobe": "yes",
+                "NOT": {
+                  "any_neighbor_country": {},
+                  "desc": "ethic_xenophobe"
+                },
+                "modifier": {
+                  "factor": "2",
+                  "any_country": {
+                    "desc": "gal_com_someone_is_revealed_crisis"
+                  },
+                  "modifier": {
+                    "factor": "12",
+                    "any_neighbor_country": {
+                      "desc": "gal_com_neighboring_crisis_empire"
+                    },
+                    "modifier": {
+                      "factor": "20",
+                      "any_playable_country": {
+                        "desc": "gal_com_crisis_sphere_revealed"
+                      },
+                      "modifier": {
+                        "factor": "8",
+                        "any_playable_country": {
+                          "desc": "gal_com_someone_declared_crisis"
+                        },
+                        "modifier": {
+                          "factor": "10",
+                          "any_country": {
+                            "desc": "gal_com_exists_awakened_fallen_empire"
+                          },
+                          "modifier": {
+                            "factor": "20",
+                            "has_global_flag": "war_in_heaven_ongoing",
+                            "desc": "gal_com_ongoing_war_in_heaven"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 2205
+  },
+  "resolution_custodian_disband_gdf": {
+    "resolution_custodian_disband_gdf": {
+      "icon": "GFX_resolution_disband_gdf",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "effect": {
+        "set_galactic_defense_force": "no",
+        "hidden_effect": {
+          "cancel_resolution": "resolution_custodian_gdf",
+          "remove_global_flag": "gdf_active",
+          "if": {
+            "limit": {
+              "remove_global_flag": "independent_gdf"
+            },
+            "if": {
+              "limit": {
+                "event_target:gdf_country": {
+                  "every_controlled_fleet": {
+                    "destroy_country": "yes"
+                  }
+                },
+                "if": {
+                  "limit": {
+                    "cancel_resolution": "resolution_custodian_expand_gdf"
+                  },
+                  "every_playable_country": {
+                    "limit": {
+                      "country_event": {}
+                    }
+                  },
+                  "fail_effects": {},
+                  "potential": {
+                    "has_nemesis": "yes",
+                    "is_active_resolution": "resolution_custodian_gdf",
+                    "has_galactic_emperor": "no"
+                  },
+                  "ai_weight": {
+                    "base": "@resolution_weight_unpopular",
+                    "modifier": {
+                      "factor": "2",
+                      "is_pacifist": "yes",
+                      "NOT": {
+                        "any_neighbor_country": {},
+                        "desc": "ethic_pacifist"
+                      },
+                      "modifier": {
+                        "factor": "1.6",
+                        "is_xenophobe": "yes",
+                        "NOT": {
+                          "any_neighbor_country": {},
+                          "desc": "ethic_xenophobe"
+                        },
+                        "modifier": {
+                          "factor": "0.2",
+                          "any_country": {
+                            "desc": "gal_com_someone_is_revealed_crisis"
+                          },
+                          "modifier": {
+                            "factor": "0.2",
+                            "any_playable_country": {
+                              "desc": "gal_com_someone_is_revealed_crisis"
+                            },
+                            "modifier": {
+                              "factor": "0.2",
+                              "any_neighbor_country": {
+                                "desc": "gal_com_neighboring_crisis_empire"
+                              },
+                              "modifier": {
+                                "factor": "0",
+                                "any_playable_country": {
+                                  "desc": "gal_com_crisis_sphere_revealed"
+                                },
+                                "modifier": {
+                                  "factor": "0.2",
+                                  "any_country": {
+                                    "desc": "gal_com_exists_awakened_fallen_empire"
+                                  },
+                                  "modifier": {
+                                    "factor": "0.2",
+                                    "has_global_flag": "war_in_heaven_ongoing",
+                                    "desc": "gal_com_ongoing_war_in_heaven"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 2385
+  },
+  "resolution_custodian_ina": {
+    "resolution_custodian_ina": {
+      "icon": "GFX_resolution_form_ina",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {
+        "resolution_custodian_ina": "1"
+      },
+      "effect": {},
+      "fail_effects": {},
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "resolution_already_active",
+          "NOT": {}
+        },
+        "potential": {
+          "has_nemesis": "yes",
+          "is_galactic_custodian": "yes"
+        },
+        "ai_weight": {
+          "base": "@resolution_weight_normal",
+          "modifier": {
+            "factor": "4",
+            "is_galactic_custodian": "yes",
+            "desc": "gal_com_is_the_custodian"
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 2548
+  },
+  "resolution_custodian_disband_ina": {
+    "resolution_custodian_disband_ina": {
+      "icon": "GFX_resolution_disband_ina",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "effect": {
+        "cancel_resolution": "resolution_custodian_ina"
+      },
+      "fail_effects": {},
+      "potential": {
+        "has_nemesis": "yes",
+        "is_active_resolution": "resolution_custodian_ina"
+      },
+      "ai_weight": {
+        "base": "@resolution_weight_disliked",
+        "modifier": {
+          "factor": "0",
+          "is_galactic_custodian": "yes",
+          "desc": "gal_com_is_the_custodian"
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 2621
+  },
+  "resolution_custodian_gto": {
+    "resolution_custodian_gto": {
+      "icon": "GFX_resolution_form_gto",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {
+        "resolution_custodian_gto": "1"
+      },
+      "active": {
+        "has_galactic_emperor": "no"
+      },
+      "effect": {},
+      "fail_effects": {},
+      "potential": {
+        "has_nemesis": "yes",
+        "is_galactic_custodian": "yes",
+        "has_galactic_emperor": "no"
+      },
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "resolution_already_active",
+          "NOT": {}
+        },
+        "ai_weight": {
+          "base": "@resolution_weight_normal",
+          "modifier": {
+            "factor": "4",
+            "is_galactic_custodian": "yes",
+            "desc": "gal_com_is_the_custodian"
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 2686
+  },
+  "resolution_custodian_disband_gto": {
+    "resolution_custodian_disband_gto": {
+      "icon": "GFX_resolution_disband_gto",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "effect": {
+        "cancel_resolution": "resolution_custodian_gto"
+      },
+      "fail_effects": {},
+      "potential": {
+        "has_nemesis": "yes",
+        "is_active_resolution": "resolution_custodian_gto",
+        "has_galactic_emperor": "no"
+      },
+      "ai_weight": {
+        "base": "@resolution_weight_disliked",
+        "modifier": {
+          "factor": "0",
+          "is_galactic_custodian": "yes",
+          "desc": "gal_com_is_the_custodian"
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 2767
+  },
+  "resolution_custodian_galpol": {
+    "resolution_custodian_galpol": {
+      "icon": "GFX_resolution_form_galpol",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {
+        "resolution_custodian_galpol": "1"
+      },
+      "effect": {},
+      "fail_effects": {},
+      "potential": {
+        "has_nemesis": "yes",
+        "is_galactic_custodian": "yes"
+      },
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "resolution_already_active",
+          "NOT": {}
+        },
+        "ai_weight": {
+          "base": "@resolution_weight_normal",
+          "modifier": {
+            "factor": "2",
+            "any_owned_planet": {
+              "has_branch_office": "yes",
+              "branch_office_owner": {},
+              "desc": "gal_com_owns_planet_with_criminal_syndicate_branch_office"
+            },
+            "modifier": {
+              "factor": "4",
+              "is_galactic_custodian": "yes",
+              "desc": "gal_com_is_the_custodian"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 2839
+  },
+  "resolution_custodian_disband_galpol": {
+    "resolution_custodian_disband_galpol": {
+      "icon": "GFX_resolution_disband_galpol",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "effect": {
+        "cancel_resolution": "resolution_custodian_galpol"
+      },
+      "fail_effects": {},
+      "potential": {
+        "is_active_resolution": "resolution_custodian_galpol"
+      },
+      "ai_weight": {
+        "base": "@resolution_weight_disliked",
+        "modifier": {
+          "factor": "0.2",
+          "any_owned_planet": {
+            "has_branch_office": "yes",
+            "branch_office_owner": {},
+            "desc": "gal_com_owns_planet_with_criminal_syndicate_branch_office"
+          },
+          "modifier": {
+            "factor": "0",
+            "is_galactic_custodian": "yes",
+            "desc": "gal_com_is_the_custodian"
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 2912
+  },
+  "resolution_galactic_empire_imperial_crusade": {
+    "resolution_galactic_empire_imperial_crusade": {
+      "icon": "GFX_resolution_imperial_crusade",
+      "potential": {
+        "has_galactic_emperor": "yes",
+        "NOT": {
+          "any_war": {
+            "using_war_goal": {
+              "type": "wg_imperial_crusade",
+              "owner": "attacker"
+            }
+          }
+        }
+      },
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t1"
+        }
+      },
+      "target": "yes",
+      "harmful": "yes",
+      "valid_target": {
+        "is_country_type": "default",
+        "is_galactic_community_member": "no",
+        "NOR": {
+          "has_country_flag": "empire_rebel"
+        },
+        "is_homicidal": "no",
+        "NOT": {},
+        "allow": {
+          "imperial_authority >": "140"
+        },
+        "active": {
+          "has_galactic_emperor": "yes",
+          "from": {},
+          "effect": {
+            "custom_tooltip": "resolution_imperial_crusade_tooltip",
+            "hidden_effect": {
+              "save_event_target_as": "crusade_target",
+              "galactic_emperor": {
+                "save_event_target_as": "gal_emperor",
+                "declare_war": {
+                  "target": "event_target:crusade_target",
+                  "name": "NAME_Imperial_Crusade_War",
+                  "attacker_war_goal": "wg_imperial_crusade"
+                }
+              },
+              "random_war": {
+                "limit": {
+                  "using_war_goal": {
+                    "type": "wg_imperial_crusade",
+                    "owner": "event_target:gal_emperor"
+                  }
+                },
+                "save_event_target_as": "imperial_crusade_war"
+              },
+              "every_playable_country": {
+                "limit": {
+                  "is_galactic_emperor": "no",
+                  "is_galactic_community_member": "yes",
+                  "NOR": {
+                    "is_in_federation_with": "event_target:crusade_target",
+                    "AND": {
+                      "exists": "overlord",
+                      "overlord": {}
+                    }
+                  },
+                  "if": {
+                    "limit": {
+                      "any_war": {
+                        "any_war_participant": {
+                          "is_same_value": "event_target:crusade_target"
+                        }
+                      }
+                    },
+                    "every_war": {
+                      "limit": {
+                        "any_war_participant": {
+                          "is_same_value": "event_target:crusade_target"
+                        }
+                      },
+                      "remove_war_participant": "event_target:crusade_target"
+                    }
+                  },
+                  "join_war_on_side": {
+                    "war": "event_target:imperial_crusade_war",
+                    "side": "event_target:gal_emperor"
+                  }
+                },
+                "event_target:crusade_target": {
+                  "country_event": {},
+                  "every_playable_country": {
+                    "limit": {
+                      "is_ai": "no",
+                      "has_communications": "event_target:crusade_target",
+                      "NOT": {},
+                      "country_event": {}
+                    }
+                  },
+                  "ai_weight": {
+                    "base": "@resolution_weight_normal",
+                    "modifier": {
+                      "factor": "2",
+                      "is_rival": "from",
+                      "desc": "gal_com_proposer_is_rival"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 2981
+  },
+  "resolution_emperor_united_front": {
+    "resolution_emperor_united_front": {
+      "icon": "GFX_resolution_united_front",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {
+        "description": "resolution_custodian_united_front_modifier_desc",
+        "damage_vs_country_type_synth_queen_mult": "0.2",
+        "damage_vs_country_type_swarm_mult": "0.2",
+        "damage_vs_country_type_extradimensional_mult": "0.2",
+        "damage_vs_country_type_extradimensional_2_mult": "0.2",
+        "damage_vs_country_type_extradimensional_3_mult": "0.2",
+        "damage_vs_country_type_ai_empire_mult": "0.2",
+        "damage_vs_country_type_gray_goo_mult": "0.2",
+        "damage_vs_player_crisis_mult": "0.2",
+        "country_energy_produces_mult": "-0.03"
+      },
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "resolution_already_active",
+          "NOT": {}
+        },
+        "effect": {},
+        "fail_effects": {},
+        "potential": {
+          "has_nemesis": "yes",
+          "is_galactic_emperor": "yes",
+          "any_country": {},
+          "active": {
+            "has_galactic_emperor": "yes"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_disliked",
+            "modifier": {
+              "factor": "12",
+              "any_neighbor_country": {
+                "desc": "gal_com_neighboring_crisis_empire"
+              },
+              "modifier": {
+                "factor": "20",
+                "any_playable_country": {
+                  "desc": "gal_com_crisis_sphere_revealed"
+                },
+                "modifier": {
+                  "factor": "8",
+                  "any_playable_country": {
+                    "desc": "gal_com_someone_declared_crisis"
+                  },
+                  "modifier": {
+                    "factor": "0.5",
+                    "has_ai_personality": "xenophobic_isolationists",
+                    "NOT": {
+                      "any_neighbor_country": {},
+                      "desc": "personality_xenophobic_isolationists"
+                    },
+                    "modifier": {
+                      "factor": "10",
+                      "any_country": {
+                        "desc": "gal_com_exists_awakened_fallen_empire"
+                      },
+                      "modifier": {
+                        "factor": "20",
+                        "has_global_flag": "war_in_heaven_ongoing",
+                        "desc": "gal_com_ongoing_war_in_heaven"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 3144
+  },
+  "resolution_emperor_imperial_armada": {
+    "resolution_emperor_imperial_armada": {
+      "icon": "GFX_resolution_imperial_armada",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {
+        "resolution_custodian_gdf": "1"
+      },
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "resolution_already_active",
+          "NOT": {}
+        },
+        "effect": {
+          "if": {
+            "limit": {
+              "set_galactic_defense_force": "yes"
+            },
+            "hidden_effect": {
+              "every_playable_country": {
+                "limit": {
+                  "country_event": {}
+                }
+              },
+              "fail_effects": {},
+              "potential": {
+                "has_nemesis": "yes",
+                "is_galactic_emperor": "yes"
+              },
+              "active": {
+                "has_galactic_emperor": "yes"
+              },
+              "ai_weight": {
+                "base": "@resolution_weight_unpopular",
+                "modifier": {
+                  "factor": "0.6",
+                  "is_pacifist": "yes",
+                  "NOT": {
+                    "any_neighbor_country": {},
+                    "desc": "ethic_pacifist"
+                  },
+                  "modifier": {
+                    "factor": "0.6",
+                    "is_xenophobe": "yes",
+                    "NOT": {
+                      "any_neighbor_country": {},
+                      "desc": "ethic_xenophobe"
+                    },
+                    "modifier": {
+                      "factor": "4",
+                      "any_country": {
+                        "desc": "gal_com_someone_is_revealed_crisis"
+                      },
+                      "modifier": {
+                        "factor": "12",
+                        "any_neighbor_country": {
+                          "desc": "gal_com_neighboring_crisis_empire"
+                        },
+                        "modifier": {
+                          "factor": "20",
+                          "any_playable_country": {
+                            "desc": "gal_com_crisis_sphere_revealed"
+                          },
+                          "modifier": {
+                            "factor": "8",
+                            "any_playable_country": {
+                              "desc": "gal_com_someone_declared_crisis"
+                            },
+                            "modifier": {
+                              "factor": "10",
+                              "any_country": {
+                                "desc": "gal_com_exists_awakened_fallen_empire"
+                              },
+                              "modifier": {
+                                "factor": "20",
+                                "has_global_flag": "war_in_heaven_ongoing",
+                                "desc": "gal_com_ongoing_war_in_heaven"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 3313
+  },
+  "resolution_emperor_expand_ia": {
+    "resolution_emperor_expand_ia": {
+      "icon": "GFX_resolution_expand_armada",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "resolution_already_active",
+          "NOT": {}
+        },
+        "modifier": {
+          "resolution_custodian_gdf_2": "1",
+          "country_community_gdf_naval_capacity": "400"
+        },
+        "effect": {},
+        "fail_effects": {},
+        "potential": {
+          "has_nemesis": "yes",
+          "is_galactic_emperor": "yes",
+          "is_active_resolution": "resolution_emperor_imperial_armada"
+        },
+        "active": {
+          "has_galactic_emperor": "yes"
+        },
+        "ai_weight": {
+          "base": "@resolution_weight_disliked",
+          "modifier": {
+            "factor": "0.6",
+            "is_pacifist": "yes",
+            "NOT": {
+              "any_neighbor_country": {},
+              "desc": "ethic_pacifist"
+            },
+            "modifier": {
+              "factor": "0.6",
+              "is_xenophobe": "yes",
+              "NOT": {
+                "any_neighbor_country": {},
+                "desc": "ethic_xenophobe"
+              },
+              "modifier": {
+                "factor": "2",
+                "any_country": {
+                  "desc": "gal_com_someone_is_revealed_crisis"
+                },
+                "modifier": {
+                  "factor": "12",
+                  "any_neighbor_country": {
+                    "desc": "gal_com_neighboring_crisis_empire"
+                  },
+                  "modifier": {
+                    "factor": "20",
+                    "any_playable_country": {
+                      "desc": "gal_com_crisis_sphere_revealed"
+                    },
+                    "modifier": {
+                      "factor": "8",
+                      "any_playable_country": {
+                        "desc": "gal_com_someone_declared_crisis"
+                      },
+                      "modifier": {
+                        "factor": "10",
+                        "any_country": {
+                          "desc": "gal_com_exists_awakened_fallen_empire"
+                        },
+                        "modifier": {
+                          "factor": "20",
+                          "has_global_flag": "war_in_heaven_ongoing",
+                          "desc": "gal_com_ongoing_war_in_heaven"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 3485
+  },
+  "resolution_emperor_imperial_legions": {
+    "resolution_emperor_imperial_legions": {
+      "icon": "GFX_resolution_imperial_legions",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "resolution_already_active",
+          "NOT": {}
+        },
+        "modifier": {},
+        "effect": {
+          "random_playable_country": {
+            "limit": {
+              "custom_tooltip": "resolution_emperor_imperial_legions_tooltip"
+            },
+            "hidden_effect": {
+              "every_playable_country": {
+                "limit": {
+                  "country_event": {}
+                }
+              },
+              "fail_effects": {},
+              "potential": {
+                "has_nemesis": "yes",
+                "is_galactic_emperor": "yes"
+              },
+              "active": {
+                "has_galactic_emperor": "yes"
+              },
+              "ai_weight": {
+                "base": "@resolution_weight_unpopular",
+                "modifier": {
+                  "factor": "0.4",
+                  "is_pacifist": "yes",
+                  "NOT": {
+                    "any_neighbor_country": {},
+                    "desc": "ethic_pacifist"
+                  },
+                  "modifier": {
+                    "factor": "0.6",
+                    "is_xenophobe": "yes",
+                    "NOT": {
+                      "any_neighbor_country": {},
+                      "desc": "ethic_xenophobe"
+                    },
+                    "modifier": {
+                      "factor": "4",
+                      "any_country": {
+                        "desc": "gal_com_someone_is_revealed_crisis"
+                      },
+                      "modifier": {
+                        "factor": "12",
+                        "any_neighbor_country": {
+                          "desc": "gal_com_neighboring_crisis_empire"
+                        },
+                        "modifier": {
+                          "factor": "20",
+                          "any_playable_country": {
+                            "desc": "gal_com_crisis_sphere_revealed"
+                          },
+                          "modifier": {
+                            "factor": "14",
+                            "any_playable_country": {
+                              "desc": "gal_com_someone_declared_crisis"
+                            },
+                            "modifier": {
+                              "factor": "10",
+                              "any_country": {
+                                "desc": "gal_com_exists_awakened_fallen_empire"
+                              },
+                              "modifier": {
+                                "factor": "20",
+                                "has_global_flag": "war_in_heaven_ongoing",
+                                "desc": "gal_com_ongoing_war_in_heaven"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 3638
+  },
+  "resolution_emperor_ina": {
+    "resolution_emperor_ina": {
+      "icon": "GFX_resolution_form_ina",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {
+        "resolution_custodian_ina": "1"
+      },
+      "effect": {},
+      "fail_effects": {},
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "resolution_already_active",
+          "NOT": {}
+        },
+        "potential": {
+          "has_nemesis": "yes",
+          "is_galactic_emperor": "yes"
+        },
+        "active": {
+          "has_galactic_emperor": "yes"
+        },
+        "ai_weight": {
+          "base": "@resolution_weight_normal",
+          "modifier": {
+            "factor": "4",
+            "is_galactic_emperor": "yes",
+            "desc": "galactic_emperor"
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 3787
+  },
+  "resolution_emperor_disband_ina": {
+    "resolution_emperor_disband_ina": {
+      "icon": "GFX_resolution_council_size",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "effect": {
+        "cancel_resolution": "resolution_emperor_ina"
+      },
+      "fail_effects": {},
+      "potential": {
+        "has_nemesis": "yes",
+        "is_galactic_emperor": "yes",
+        "is_active_resolution": "resolution_emperor_ina"
+      },
+      "active": {
+        "has_galactic_emperor": "yes"
+      },
+      "ai_weight": {
+        "base": "@resolution_weight_disliked",
+        "modifier": {
+          "factor": "0",
+          "is_galactic_emperor": "yes",
+          "desc": "galactic_emperor"
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 3864
+  },
+  "resolution_emperor_gto": {
+    "resolution_emperor_gto": {
+      "icon": "GFX_resolution_form_gto",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {
+        "resolution_custodian_gto": "1"
+      },
+      "effect": {},
+      "fail_effects": {},
+      "potential": {
+        "has_nemesis": "yes",
+        "is_galactic_emperor": "yes"
+      },
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "resolution_already_active",
+          "NOT": {}
+        },
+        "active": {
+          "has_galactic_emperor": "yes"
+        },
+        "ai_weight": {
+          "base": "@resolution_weight_normal",
+          "modifier": {
+            "factor": "4",
+            "is_galactic_emperor": "yes",
+            "desc": "galactic_emperor"
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 3933
+  },
+  "resolution_emperor_disband_gto": {
+    "resolution_emperor_disband_gto": {
+      "icon": "GFX_resolution_council_size",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "effect": {
+        "cancel_resolution": "resolution_emperor_gto"
+      },
+      "fail_effects": {},
+      "potential": {
+        "has_nemesis": "yes",
+        "is_galactic_emperor": "yes",
+        "is_active_resolution": "resolution_emperor_gto"
+      },
+      "active": {
+        "has_galactic_emperor": "yes"
+      },
+      "ai_weight": {
+        "base": "@resolution_weight_disliked",
+        "modifier": {
+          "factor": "0",
+          "is_galactic_emperor": "yes",
+          "desc": "galactic_emperor"
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 4014
+  },
+  "resolution_emperor_isd": {
+    "resolution_emperor_isd": {
+      "icon": "GFX_resolution_imperial_security_directorate",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "resolution_already_active",
+          "NOT": {}
+        },
+        "modifier": {
+          "resolution_emperor_isd": "1"
+        },
+        "effect": {
+          "random_playable_country": {
+            "limit": {
+              "add_modifier": {},
+              "hidden_effect": {
+                "every_playable_country": {
+                  "limit": {
+                    "country_event": {}
+                  }
+                },
+                "fail_effects": {},
+                "potential": {
+                  "has_nemesis": "yes",
+                  "is_galactic_emperor": "yes"
+                },
+                "active": {
+                  "has_galactic_emperor": "yes"
+                },
+                "ai_weight": {
+                  "base": "@resolution_weight_disliked",
+                  "modifier": {
+                    "factor": "2",
+                    "any_owned_planet": {
+                      "has_branch_office": "yes",
+                      "branch_office_owner": {},
+                      "desc": "gal_com_owns_planet_with_criminal_syndicate_branch_office"
+                    },
+                    "modifier": {
+                      "factor": "20",
+                      "is_galactic_emperor": "yes",
+                      "desc": "galactic_emperor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 4091
+  },
+  "resolution_emperor_imperial_charter": {
+    "resolution_emperor_imperial_charter": {
+      "icon": "GFX_resolution_imperial_trade_company",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "yes",
+      "harmful": "no",
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "resolution_already_active",
+          "NOT": {}
+        },
+        "valid_target": {
+          "is_country_type": "default",
+          "is_galactic_community_member": "yes",
+          "is_megacorp": "yes",
+          "is_galactic_emperor": "no"
+        },
+        "modifier": {},
+        "effect": {
+          "custom_tooltip": "resolution_emperor_imperial_charter_tooltip",
+          "hidden_effect": {
+            "set_global_flag": "imperial_charter_granted",
+            "add_modifier": {
+              "random_playable_country": {
+                "limit": {
+                  "set_variable": {
+                    "which": "imp_concession_ports",
+                    "value": "0"
+                  }
+                },
+                "every_playable_country": {
+                  "limit": {
+                    "is_ai": "no",
+                    "NOT": {
+                      "is_galactic_community_member": "yes",
+                      "is_galactic_emperor": "no"
+                    },
+                    "country_event": {}
+                  }
+                },
+                "fail_effects": {},
+                "potential": {
+                  "has_nemesis": "yes",
+                  "is_galactic_emperor": "yes",
+                  "NOR": {
+                    "has_civic": "civic_galactic_sovereign_megacorp # Megacorp Emperors build their own concession ports",
+                    "has_global_flag": "imperial_charter_granted"
+                  }
+                },
+                "active": {
+                  "has_galactic_emperor": "yes"
+                },
+                "ai_weight": {
+                  "base": "@resolution_weight_disliked",
+                  "modifier": {
+                    "factor": "20",
+                    "is_same_value": "from",
+                    "desc": "gal_com_target_is_me"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 4184
+  },
+  "resolution_emperor_revoke_imperial_charter": {
+    "resolution_emperor_revoke_imperial_charter": {
+      "icon": "GFX_resolution_imperial_trade_company",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "yes",
+      "harmful": "yes",
+      "valid_target": {
+        "is_country_type": "default",
+        "is_galactic_community_member": "yes",
+        "is_megacorp": "yes",
+        "is_galactic_emperor": "no",
+        "has_modifier": "imperial_charter"
+      },
+      "modifier": {},
+      "effect": {
+        "hidden_effect": {
+          "remove_global_flag": "imperial_charter_granted",
+          "remove_modifier": "imperial_charter",
+          "every_galaxy_planet": {
+            "limit": {
+              "remove_holding": {
+                "holding": "building_imperial_concession_port",
+                "owner": "galactic_emperor"
+              },
+              "remove_planet_flag": "imp_concession_port"
+            },
+            "random_playable_country": {
+              "limit": {
+                "set_variable": {
+                  "which": "imp_concession_ports",
+                  "value": "0"
+                },
+                "add_imp_concession_ports_0": "yes"
+              }
+            }
+          },
+          "fail_effects": {},
+          "potential": {
+            "has_nemesis": "yes",
+            "is_galactic_emperor": "yes",
+            "has_global_flag": "imperial_charter_granted"
+          },
+          "active": {
+            "has_galactic_emperor": "yes"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_popular",
+            "modifier": {
+              "factor": "20",
+              "is_galactic_emperor": "yes",
+              "OR": {
+                "is_hostile_to": "FROM",
+                "is_domineering_to": "FROM",
+                "is_unfriendly_to": "FROM"
+              },
+              "desc": "gal_com_emperor_unfriendly_to_proposer"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 4276
+  },
+  "resolution_emperor_abolish_council": {
+    "resolution_emperor_abolish_council": {
+      "icon": "GFX_resolution_abolish_imperial_council",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t5"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "effect": {
+        "custom_tooltip": "resolution_emperor_abolish_council_tooltip",
+        "hidden_effect": {
+          "set_council_size": "0",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_nemesis": "yes",
+            "is_galactic_emperor": "yes",
+            "is_galactic_council_established": "yes"
+          },
+          "active": {
+            "has_galactic_emperor": "yes"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_hated",
+            "modifier": {
+              "factor": "0.5",
+              "is_subject": "yes",
+              "overlord": {
+                "opinion_level": {
+                  "is_part_of_galactic_council": "yes",
+                  "is_galactic_emperor": "no"
+                },
+                "desc": "gal_com_support_overlord_on_galatic_council"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 4359
+  },
+  "resolution_emperor_restore_council": {
+    "resolution_emperor_restore_council": {
+      "icon": "GFX_resolution_imperial_council",
+      "potential": {
+        "has_nemesis": "yes",
+        "is_galactic_emperor": "yes",
+        "is_galactic_council_established": "no"
+      },
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t1"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "allow": {},
+      "active": {
+        "has_galactic_emperor": "yes"
+      },
+      "effect": {
+        "custom_tooltip": "resolution_emperor_restore_council_tooltip",
+        "hidden_effect": {
+          "set_council_size": "3",
+          "set_council_veto": "no",
+          "set_global_flag": "resolution_with_breach_effect_passed # council denouncement",
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_loved",
+            "modifier": {
+              "factor": "1.5",
+              "OR": {
+                "galactic_community_rank <": "3",
+                "AND": {
+                  "is_subject": "yes",
+                  "overlord": {
+                    "opinion_level": {
+                      "galactic_community_rank <": "3"
+                    }
+                  }
+                },
+                "desc": "gal_com_they_or_overlord_high_ranked"
+              },
+              "modifier": {
+                "factor": "0.8",
+                "NAND": {
+                  "is_subject": "yes",
+                  "overlord": {
+                    "opinion_level": {
+                      "galactic_community_rank <": "3"
+                    }
+                  },
+                  "desc": "gal_com_neither_they_or_overlord_high_ranked"
+                },
+                "modifier": {
+                  "factor": "1.1",
+                  "is_xenophile": "yes",
+                  "desc": "ethic_xenophile"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 4434
+  },
+  "resolution_emperor_council_size_1": {
+    "resolution_emperor_council_size_1": {
+      "icon": "GFX_resolution_imperial_council_size",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "effect": {
+        "set_council_size": "1",
+        "hidden_effect": {
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_nemesis": "yes",
+            "is_galactic_emperor": "yes",
+            "is_galactic_council_established": "yes",
+            "num_council_positions": "2"
+          },
+          "active": {
+            "has_galactic_emperor": "yes"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_hated",
+            "modifier": {
+              "factor": "3",
+              "OR": {
+                "galactic_community_rank": "1",
+                "AND": {
+                  "is_subject": "yes",
+                  "overlord": {
+                    "opinion_level": {
+                      "galactic_community_rank": "1"
+                    }
+                  }
+                },
+                "desc": "gal_com_wants_to_reduce_council_size"
+              },
+              "modifier": {
+                "factor": "1.2",
+                "is_authoritarian": "yes",
+                "desc": "ethic_authoritarian"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 4535
+  },
+  "resolution_emperor_council_size_2": {
+    "resolution_emperor_council_size_2": {
+      "icon": "GFX_resolution_imperial_council_size",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "effect": {
+        "set_council_size": "2",
+        "hidden_effect": {
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_nemesis": "yes",
+            "is_galactic_emperor": "yes",
+            "is_galactic_council_established": "yes",
+            "OR": {
+              "num_council_positions": "3"
+            }
+          },
+          "active": {
+            "has_galactic_emperor": "yes"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_disliked",
+            "modifier": {
+              "factor": "0",
+              "num_council_positions": "3",
+              "OR": {
+                "galactic_community_rank": "3",
+                "AND": {
+                  "is_subject": "yes",
+                  "overlord": {
+                    "opinion_level": {
+                      "galactic_community_rank": "3"
+                    }
+                  }
+                },
+                "desc": "gal_com_they_or_overlord_would_be_removed_from_council"
+              },
+              "modifier": {
+                "factor": "0",
+                "num_council_positions": "1",
+                "OR": {
+                  "galactic_community_rank": "1",
+                  "AND": {
+                    "is_subject": "yes",
+                    "overlord": {
+                      "opinion_level": {
+                        "galactic_community_rank": "1"
+                      }
+                    }
+                  },
+                  "desc": "gal_com_alone_on_council_or_overlord"
+                },
+                "modifier": {
+                  "factor": "3",
+                  "num_council_positions": "3",
+                  "OR": {
+                    "galactic_community_rank <": "2",
+                    "AND": {
+                      "is_subject": "yes",
+                      "overlord": {
+                        "opinion_level": {
+                          "galactic_community_rank <": "2"
+                        }
+                      }
+                    },
+                    "desc": "gal_com_wants_to_reduce_council_size"
+                  },
+                  "modifier": {
+                    "factor": "3",
+                    "num_council_positions": "1",
+                    "OR": {
+                      "galactic_community_rank": "2",
+                      "AND": {
+                        "is_subject": "yes",
+                        "overlord": {
+                          "opinion_level": {
+                            "galactic_community_rank": "2"
+                          }
+                        }
+                      },
+                      "desc": "gal_com_wants_to_add_themselves_or_overlord_to_council"
+                    },
+                    "modifier": {
+                      "factor": "1.2",
+                      "num_council_positions": "1",
+                      "is_egalitarian": "yes",
+                      "desc": "ethic_egalitarian"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 4628
+  },
+  "resolution_emperor_council_size_3": {
+    "resolution_emperor_council_size_3": {
+      "icon": "GFX_resolution_imperial_council_size",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "effect": {
+        "set_council_size": "3",
+        "set_global_flag": "galactic_council_formed",
+        "hidden_effect": {
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_nemesis": "yes",
+            "is_galactic_emperor": "yes",
+            "is_galactic_council_established": "yes",
+            "OR": {
+              "num_council_positions": "4"
+            }
+          },
+          "active": {
+            "has_galactic_emperor": "yes"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_unpopular",
+            "modifier": {
+              "factor": "0",
+              "num_council_positions": "4",
+              "OR": {
+                "galactic_community_rank": "4",
+                "AND": {
+                  "is_subject": "yes",
+                  "overlord": {
+                    "opinion_level": {
+                      "galactic_community_rank": "4"
+                    }
+                  }
+                },
+                "desc": "gal_com_they_or_overlord_would_be_removed_from_council"
+              },
+              "modifier": {
+                "factor": "0",
+                "num_council_positions": "2",
+                "OR": {
+                  "galactic_community_rank <": "2",
+                  "AND": {
+                    "is_subject": "yes",
+                    "overlord": {
+                      "opinion_level": {
+                        "galactic_community_rank <": "2"
+                      }
+                    }
+                  },
+                  "desc": "gal_com_dont_let_others_in_on_the_council"
+                },
+                "modifier": {
+                  "factor": "3",
+                  "num_council_positions": "4",
+                  "OR": {
+                    "galactic_community_rank <": "3",
+                    "AND": {
+                      "is_subject": "yes",
+                      "overlord": {
+                        "opinion_level": {
+                          "galactic_community_rank <": "3"
+                        }
+                      }
+                    },
+                    "desc": "gal_com_wants_to_reduce_council_size"
+                  },
+                  "modifier": {
+                    "factor": "3",
+                    "AND": {
+                      "num_council_positions": "2",
+                      "OR": {
+                        "galactic_community_rank": "3",
+                        "AND": {
+                          "is_subject": "yes",
+                          "overlord": {
+                            "opinion_level": {
+                              "galactic_community_rank": "3"
+                            }
+                          }
+                        }
+                      },
+                      "desc": "gal_com_wants_to_add_themselves_or_overlord_to_council"
+                    },
+                    "modifier": {
+                      "factor": "1.2",
+                      "num_council_positions": "4",
+                      "is_authoritarian": "yes",
+                      "desc": "ethic_authoritarian"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 4784
+  },
+  "resolution_emperor_council_size_4": {
+    "resolution_emperor_council_size_4": {
+      "icon": "GFX_resolution_imperial_council_size",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "effect": {
+        "set_council_size": "4",
+        "set_global_flag": "galactic_council_formed",
+        "hidden_effect": {
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_nemesis": "yes",
+            "is_galactic_emperor": "yes",
+            "is_galactic_council_established": "yes",
+            "OR": {
+              "num_council_positions": "5"
+            }
+          },
+          "active": {
+            "has_galactic_emperor": "yes"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_normal",
+            "modifier": {
+              "factor": "0",
+              "num_council_positions": "5",
+              "OR": {
+                "galactic_community_rank": "5",
+                "AND": {
+                  "is_subject": "yes",
+                  "overlord": {
+                    "opinion_level": {
+                      "galactic_community_rank": "5"
+                    }
+                  }
+                },
+                "desc": "gal_com_they_or_overlord_would_be_removed_from_council"
+              },
+              "modifier": {
+                "factor": "0",
+                "num_council_positions": "3",
+                "OR": {
+                  "galactic_community_rank <": "3",
+                  "AND": {
+                    "is_subject": "yes",
+                    "overlord": {
+                      "opinion_level": {
+                        "galactic_community_rank <": "3"
+                      }
+                    }
+                  },
+                  "desc": "gal_com_dont_let_others_in_on_the_council"
+                },
+                "modifier": {
+                  "factor": "3",
+                  "num_council_positions": "5",
+                  "OR": {
+                    "galactic_community_rank <": "4",
+                    "AND": {
+                      "is_subject": "yes",
+                      "overlord": {
+                        "opinion_level": {
+                          "galactic_community_rank <": "4"
+                        }
+                      }
+                    },
+                    "desc": "gal_com_wants_to_reduce_council_size"
+                  },
+                  "modifier": {
+                    "factor": "3",
+                    "num_council_positions": "3",
+                    "OR": {
+                      "galactic_community_rank": "4",
+                      "AND": {
+                        "is_subject": "yes",
+                        "overlord": {
+                          "opinion_level": {
+                            "galactic_community_rank": "4"
+                          }
+                        }
+                      },
+                      "desc": "gal_com_wants_to_add_themselves_or_overlord_to_council"
+                    },
+                    "modifier": {
+                      "factor": "1.2",
+                      "num_council_positions": "3",
+                      "is_egalitarian": "yes",
+                      "desc": "ethic_egalitarian"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 4945
+  },
+  "resolution_emperor_council_size_5": {
+    "resolution_emperor_council_size_5": {
+      "icon": "GFX_resolution_imperial_council_size",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "effect": {
+        "set_council_size": "5",
+        "set_global_flag": "galactic_council_formed",
+        "hidden_effect": {
+          "set_timed_country_flag": {
+            "add_modifier": {
+              "modifier": "resolution_passed_diplomatic_weight",
+              "days": "2200"
+            }
+          }
+        },
+        "fail_effects": {
+          "hidden_effect": {
+            "set_timed_country_flag": {
+              "add_modifier": {
+                "modifier": "resolution_failed_diplomatic_weight",
+                "days": "2200"
+              }
+            }
+          },
+          "potential": {
+            "has_nemesis": "yes",
+            "is_galactic_emperor": "yes",
+            "is_galactic_council_established": "yes",
+            "num_council_positions": "4"
+          },
+          "active": {
+            "has_galactic_emperor": "yes"
+          },
+          "ai_weight": {
+            "base": "@resolution_weight_popular",
+            "modifier": {
+              "factor": "3",
+              "num_council_positions": "4",
+              "OR": {
+                "galactic_community_rank": "5",
+                "AND": {
+                  "is_subject": "yes",
+                  "overlord": {
+                    "opinion_level": {
+                      "galactic_community_rank": "5"
+                    }
+                  }
+                },
+                "desc": "gal_com_wants_to_add_themselves_or_overlord_to_council"
+              },
+              "modifier": {
+                "factor": "1.2",
+                "is_egalitarian": "yes",
+                "desc": "ethic_egalitarian"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 5094
+  },
+  "resolution_emperor_permanent_seat": {
+    "resolution_emperor_permanent_seat": {
+      "icon": "GFX_resolution_imperial_council_member_permanent",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t5"
+        }
+      },
+      "target": "yes",
+      "harmful": "no",
+      "valid_target": {
+        "is_country_type": "default",
+        "is_galactic_community_member": "yes",
+        "is_part_of_galactic_council": "yes",
+        "is_permanent_councillor": "no",
+        "is_galactic_emperor": "no"
+      },
+      "effect": {
+        "add_permanent_councillor": "yes"
+      },
+      "potential": {
+        "has_nemesis": "yes",
+        "is_galactic_emperor": "yes",
+        "is_galactic_council_established": "yes",
+        "NOR": {
+          "is_active_resolution": "resolution_emperor_by_appointment"
+        }
+      },
+      "active": {
+        "has_galactic_emperor": "yes"
+      },
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "resolution_already_active",
+          "NOT": {}
+        },
+        "ai_weight": {
+          "base": "@resolution_weight_disliked"
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 5177
+  },
+  "resolution_emperor_revoke_permanent_seat": {
+    "resolution_emperor_revoke_permanent_seat": {
+      "icon": "GFX_resolution_imperial_council_member_permanent",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t5"
+        }
+      },
+      "target": "yes",
+      "harmful": "yes",
+      "valid_target": {
+        "is_country_type": "default",
+        "is_galactic_community_member": "yes",
+        "is_part_of_galactic_council": "yes",
+        "is_permanent_councillor": "yes",
+        "is_galactic_emperor": "no"
+      },
+      "effect": {
+        "remove_permanent_councillor": "yes"
+      },
+      "potential": {
+        "has_nemesis": "yes",
+        "is_galactic_emperor": "yes",
+        "is_galactic_council_established": "yes",
+        "NOR": {
+          "is_active_resolution": "resolution_emperor_by_appointment"
+        }
+      },
+      "active": {
+        "has_galactic_emperor": "yes"
+      },
+      "ai_weight": {
+        "base": "@resolution_weight_disliked"
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 5227
+  },
+  "resolution_emperor_trial_of_advancement": {
+    "resolution_emperor_trial_of_advancement": {
+      "icon": "GFX_resolution_imperial_council_trial",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "effect": {
+        "custom_tooltip": "resolution_emperor_trial_of_advancement_tooltip",
+        "hidden_effect": {
+          "_comments": [
+            "# Suspend Council Elections"
+          ],
+          "every_playable_country": {
+            "limit": {
+              "is_galactic_community_member": "yes",
+              "is_part_of_galactic_council": "yes",
+              "is_galactic_emperor": "no"
+            },
+            "add_permanent_councillor": "yes"
+          },
+          "if": {
+            "limit": {
+              "cancel_resolution": "resolution_emperor_by_appointment"
+            },
+            "else_if": {
+              "limit": {
+                "cancel_resolution": "resolution_emperor_by_election"
+              }
+            }
+          },
+          "fail_effects": {},
+          "potential": {
+            "has_nemesis": "yes",
+            "is_galactic_emperor": "yes"
+          },
+          "active": {
+            "has_galactic_emperor": "yes"
+          },
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "resolution_already_active",
+              "NOT": {}
+            },
+            "ai_weight": {
+              "base": "@resolution_weight_disliked",
+              "modifier": {
+                "weight": "0",
+                "is_part_of_galactic_council": "yes",
+                "is_galactic_emperor": "no",
+                "any_playable_country": {
+                  "is_part_of_galactic_council": "no",
+                  "relative_power": {
+                    "who": "prev",
+                    "category": "fleet",
+                    "value >": "equivalent"
+                  }
+                },
+                "desc": "gal_com_weaker_than_non_council_member"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 5279
+  },
+  "resolution_emperor_by_appointment": {
+    "resolution_emperor_by_appointment": {
+      "icon": "GFX_resolution_imperial_council_appointment",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "effect": {
+        "custom_tooltip": "resolution_emperor_by_appointment_tooltip",
+        "hidden_effect": {
+          "every_playable_country": {
+            "limit": {
+              "is_galactic_community_member": "yes",
+              "is_part_of_galactic_council": "yes",
+              "is_galactic_emperor": "no"
+            },
+            "add_permanent_councillor": "yes"
+          },
+          "set_emperor_can_change_council_members": "yes",
+          "if": {
+            "limit": {
+              "cancel_resolution": "resolution_emperor_trial_of_advancement"
+            },
+            "else_if": {
+              "limit": {
+                "cancel_resolution": "resolution_emperor_by_election"
+              }
+            }
+          },
+          "fail_effects": {},
+          "potential": {
+            "has_nemesis": "yes",
+            "is_galactic_emperor": "yes"
+          },
+          "active": {
+            "has_galactic_emperor": "yes"
+          },
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "resolution_already_active",
+              "NOT": {}
+            },
+            "ai_weight": {
+              "base": "@resolution_weight_hated"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 5389
+  },
+  "resolution_emperor_by_election": {
+    "resolution_emperor_by_election": {
+      "icon": "GFX_resolution_imperial_council_diplomatic_weight",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "effect": {
+        "custom_tooltip": "resolution_emperor_by_election_tooltip",
+        "hidden_effect": {
+          "_comments": [
+            "# Restore Council Elections"
+          ],
+          "every_playable_country": {
+            "limit": {
+              "is_galactic_community_member": "yes",
+              "is_part_of_galactic_council": "yes",
+              "is_galactic_emperor": "no",
+              "is_permanent_councillor": "yes"
+            },
+            "remove_permanent_councillor": "yes"
+          },
+          "if": {
+            "limit": {
+              "cancel_resolution": "resolution_emperor_trial_of_advancement"
+            },
+            "else_if": {
+              "limit": {
+                "cancel_resolution": "resolution_emperor_by_appointment"
+              }
+            }
+          },
+          "fail_effects": {},
+          "potential": {
+            "has_nemesis": "yes",
+            "is_galactic_emperor": "yes"
+          },
+          "active": {
+            "has_galactic_emperor": "yes"
+          },
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "resolution_already_active",
+              "NOT": {}
+            },
+            "ai_weight": {
+              "base": "@resolution_weight_disliked",
+              "modifier": {
+                "factor": "0",
+                "galactic_community_rank <": "2",
+                "is_part_of_galactic_council": "no",
+                "desc": "gal_com_top_two_rank"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 5457
+  },
+  "resolution_emperor_pax_galactica": {
+    "resolution_emperor_pax_galactica": {
+      "icon": "GFX_resolution_pax_galactica",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "effect": {
+        "custom_tooltip": "resolution_emperor_pax_galactica_tooltip",
+        "hidden_effect": {
+          "every_war": {
+            "limit": {
+              "NOR": {
+                "using_war_goal": {
+                  "type": "wg_declared_crisis",
+                  "owner": "attacker"
+                }
+              },
+              "any_attacker": {
+                "any_defender": {},
+                "every_war_participant": {
+                  "limit": {
+                    "prev": {
+                      "country_event": {}
+                    }
+                  }
+                },
+                "fail_effects": {},
+                "potential": {
+                  "has_nemesis": "yes",
+                  "is_galactic_emperor": "yes"
+                },
+                "allow": {
+                  "imperial_authority >": "180",
+                  "custom_tooltip": {
+                    "fail_text": "resolution_already_active",
+                    "NOT": {}
+                  },
+                  "active": {
+                    "has_galactic_emperor": "yes"
+                  },
+                  "ai_weight": {
+                    "base": "@resolution_weight_unpopular",
+                    "modifier": {
+                      "factor": "4",
+                      "any_country": {
+                        "desc": "gal_com_someone_is_revealed_crisis"
+                      },
+                      "modifier": {
+                        "factor": "4",
+                        "any_neighbor_country": {
+                          "desc": "gal_com_neighboring_crisis_empire"
+                        },
+                        "modifier": {
+                          "factor": "4",
+                          "any_playable_country": {
+                            "desc": "gal_com_crisis_sphere_revealed"
+                          },
+                          "modifier": {
+                            "factor": "2",
+                            "any_playable_country": {
+                              "desc": "gal_com_someone_declared_crisis"
+                            },
+                            "modifier": {
+                              "factor": "2",
+                              "any_country": {
+                                "desc": "gal_com_exists_awakened_fallen_empire"
+                              },
+                              "modifier": {
+                                "factor": "4",
+                                "has_global_flag": "war_in_heaven_ongoing",
+                                "desc": "gal_com_ongoing_war_in_heaven"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 5575
+  },
+  "resolution_emperor_repeal_pax_galactica": {
+    "resolution_emperor_repeal_pax_galactica": {
+      "icon": "GFX_resolution_repeal_pax_galactica",
+      "resources": {
+        "category": "resolutions",
+        "cost": {
+          "influence": "@resolution_cost_t3"
+        }
+      },
+      "target": "no",
+      "modifier": {},
+      "effect": {
+        "custom_tooltip": "resolution_emperor_repeal_pax_galactica_tooltip",
+        "hidden_effect": {
+          "cancel_resolution": "resolution_emperor_pax_galactica"
+        }
+      },
+      "fail_effects": {},
+      "potential": {
+        "has_nemesis": "yes",
+        "is_galactic_emperor": "yes",
+        "is_active_resolution": "resolution_emperor_pax_galactica"
+      },
+      "active": {
+        "has_galactic_emperor": "yes"
+      },
+      "ai_weight": {
+        "base": "@resolution_weight_unpopular",
+        "modifier": {
+          "factor": "4",
+          "is_militarist": "yes",
+          "desc": "ethic_militarist"
+        }
+      }
+    },
+    "_source_file": "01_resolutions_nemesis.txt",
+    "_line_number": 5717
+  }
+}

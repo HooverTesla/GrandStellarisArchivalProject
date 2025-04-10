@@ -1,0 +1,4297 @@
+{
+  "print_scope_trigger": {
+    "print_scope_trigger": {
+      "log": "------------------------------"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 14
+  },
+  "is_pirate_system": {
+    "is_pirate_system": {
+      "any_fleet_in_system": {
+        "is_ship_size": "pirate_station"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 33
+  },
+  "is_shackled_robot_species_rights": {
+    "is_shackled_robot_species_rights": {
+      "OR": {
+        "has_trait": "trait_machine_unit"
+      },
+      "species_rights_robot_full_rights_check": "no"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 39
+  },
+  "is_free_robot_species_rights": {
+    "is_free_robot_species_rights": {
+      "OR": {
+        "has_trait": "trait_machine_unit"
+      },
+      "species_rights_robot_full_rights_check": "yes"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 47
+  },
+  "species_rights_robot_full_rights_check": {
+    "species_rights_robot_full_rights_check": {
+      "exists": "from",
+      "from": {
+        "OR": {
+          "has_policy_flag": "ai_full_rights",
+          "is_mechanical_empire": "yes",
+          "has_origin": "origin_synthetic_fertility"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 55
+  },
+  "is_free_robot": {
+    "is_free_robot": {
+      "has_trait": "trait_mechanical",
+      "exists": "owner",
+      "owner": {
+        "has_technology": "tech_synthetic_workers",
+        "OR": {
+          "has_policy_flag": "ai_full_rights",
+          "is_mechanical_empire": "yes"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 66
+  },
+  "is_shackled_robot": {
+    "is_shackled_robot": {
+      "has_trait": "trait_mechanical",
+      "NAND": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "AND": {
+              "has_policy_flag": "ai_full_rights",
+              "OR": {
+                "has_technology": "tech_synthetic_workers\" #Robits don't get rights until they are Synths",
+                "has_country_flag": "robots_have_souls #syndaw.545"
+              }
+            },
+            "is_mechanical_empire": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 79
+  },
+  "country_has_shackled_robots": {
+    "country_has_shackled_robots": {
+      "NOR": {
+        "AND": {
+          "has_policy_flag": "ai_full_rights",
+          "OR": {
+            "has_technology": "tech_synthetic_workers\" #Robits don't get rights until they are Synths",
+            "has_country_flag": "robots_have_souls #syndaw.545"
+          }
+        },
+        "is_mechanical_empire": "yes"
+      },
+      "any_owned_species": {
+        "has_trait": "trait_mechanical"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 99
+  },
+  "is_non_sapient_robot": {
+    "is_non_sapient_robot": {
+      "has_trait": "trait_mechanical",
+      "NAND": {
+        "exists": "owner",
+        "owner": {
+          "has_technology": "tech_synthetic_workers",
+          "NOT": {}
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 115
+  },
+  "is_non_menial_laborer": {
+    "is_non_menial_laborer": {
+      "OR": {
+        "is_enslaved": "no",
+        "NOT": {},
+        "is_non_sapient_robot": "no",
+        "is_sapient": "yes"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 126
+  },
+  "wears_clothes": {
+    "wears_clothes": {
+      "OR": {
+        "is_human_species": "yes",
+        "species_portrait": "cyb5"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 135
+  },
+  "is_fallen_empire_machine": {
+    "is_fallen_empire_machine": {
+      "OR": {
+        "is_country_type": "awakened_fallen_empire"
+      },
+      "is_machine_empire": "yes"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 254
+  },
+  "is_fallen_empire_berserk_machine": {
+    "is_fallen_empire_berserk_machine": {
+      "is_fallen_empire_machine": "yes",
+      "has_valid_civic": "civic_malfunctioning_custodian"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 262
+  },
+  "is_fallen_empire_materialist": {
+    "is_fallen_empire_materialist": {
+      "OR": {
+        "is_country_type": "awakened_fallen_empire"
+      },
+      "has_ethic": "ethic_fanatic_materialist"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 267
+  },
+  "is_fallen_empire_spiritualist": {
+    "is_fallen_empire_spiritualist": {
+      "OR": {
+        "is_country_type": "awakened_fallen_empire"
+      },
+      "has_ethic": "ethic_fanatic_spiritualist"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 275
+  },
+  "is_fallen_empire_xenophobe": {
+    "is_fallen_empire_xenophobe": {
+      "OR": {
+        "is_country_type": "awakened_fallen_empire"
+      },
+      "has_ethic": "ethic_fanatic_xenophobe"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 283
+  },
+  "is_fallen_empire_xenophile": {
+    "is_fallen_empire_xenophile": {
+      "OR": {
+        "is_country_type": "awakened_fallen_empire"
+      },
+      "has_ethic": "ethic_fanatic_xenophile"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 291
+  },
+  "is_valid_fallen_empire_for_task": {
+    "is_valid_fallen_empire_for_task": {
+      "is_country_type": "fallen_empire",
+      "is_at_war": "no",
+      "OR": {
+        "has_ethic": "ethic_fanatic_materialist",
+        "is_machine_empire": "yes"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 299
+  },
+  "is_fe_cluster": {
+    "is_fe_cluster": {
+      "OR": {
+        "is_in_cluster": "scion_fe2_cluster"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 311
+  },
+  "is_marauder_cluster": {
+    "is_marauder_cluster": {
+      "OR": {
+        "is_in_cluster": "marauder_3_cluster"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 323
+  },
+  "has_leviathans": {
+    "has_leviathans": {
+      "host_has_dlc": "Leviathans Story Pack"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 331
+  },
+  "has_utopia": {
+    "has_utopia": {
+      "host_has_dlc": "Utopia"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 336
+  },
+  "has_plantoids": {
+    "has_plantoids": {
+      "host_has_dlc": "Plantoids Species Pack"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 341
+  },
+  "has_synthetic_dawn": {
+    "has_synthetic_dawn": {
+      "host_has_dlc": "Synthetic Dawn Story Pack"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 346
+  },
+  "has_humanoids": {
+    "has_humanoids": {
+      "host_has_dlc": "Humanoids Species Pack"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 351
+  },
+  "has_humanoids_local": {
+    "has_humanoids_local": {
+      "local_has_dlc": "Humanoids Species Pack"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 355
+  },
+  "has_not_humanoids": {
+    "has_not_humanoids": {
+      "NOT": {}
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 360
+  },
+  "has_lithoids": {
+    "has_lithoids": {
+      "host_has_dlc": "Lithoids Species Pack"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 365
+  },
+  "has_federations_dlc": {
+    "has_federations_dlc": {
+      "host_has_dlc": "Federations"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 370
+  },
+  "has_necroids": {
+    "has_necroids": {
+      "host_has_dlc": "Necroids Species Pack"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 375
+  },
+  "has_nemesis": {
+    "has_nemesis": {
+      "host_has_dlc": "Nemesis"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 380
+  },
+  "has_aquatics": {
+    "has_aquatics": {
+      "host_has_dlc": "Aquatics Species Pack"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 385
+  },
+  "has_space_monster_dlc": {
+    "has_space_monster_dlc": {
+      "OR": {
+        "host_has_dlc": "Aquatics Species Pack\"\t\t# Sky Dragon"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 390
+  },
+  "has_genetic_dlc": {
+    "has_genetic_dlc": {
+      "OR": {
+        "host_has_dlc": "Lithoids Species Pack\"\t\t# Lithoid Traits",
+        "has_space_monster_dlc": "yes"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 399
+  },
+  "harvested_leviathan_dna": {
+    "harvested_leviathan_dna": {
+      "OR": {
+        "has_country_flag": "harvested_tiyanki_dna"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 407
+  },
+  "has_overlord_dlc": {
+    "has_overlord_dlc": {
+      "host_has_dlc": "Overlord"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 415
+  },
+  "has_toxoids": {
+    "has_toxoids": {
+      "host_has_dlc": "Toxoids Species Pack"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 420
+  },
+  "has_first_contact_dlc": {
+    "has_first_contact_dlc": {
+      "host_has_dlc": "First Contact Story Pack"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 425
+  },
+  "has_astral_planes_dlc": {
+    "has_astral_planes_dlc": {
+      "host_has_dlc": "Astral Planes"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 430
+  },
+  "has_cosmic_storms_dlc": {
+    "has_cosmic_storms_dlc": {
+      "host_has_dlc": "Cosmic Storms"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 435
+  },
+  "has_machine_age_dlc": {
+    "has_machine_age_dlc": {
+      "host_has_dlc": "The Machine Age"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 440
+  },
+  "has_synthetic_dawn_not_machine_age": {
+    "has_synthetic_dawn_not_machine_age": {
+      "host_has_dlc": "Synthetic Dawn Story Pack",
+      "NOT": {
+        "host_has_dlc": "The Machine Age"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 445
+  },
+  "has_synthetic_dawn_and_machine_age": {
+    "has_synthetic_dawn_and_machine_age": {
+      "host_has_dlc": "The Machine Age"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 453
+  },
+  "has_grand_archive_dlc": {
+    "has_grand_archive_dlc": {
+      "host_has_dlc": "Grand Archive"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 459
+  },
+  "has_rick_the_cube_dlc": {
+    "has_rick_the_cube_dlc": {
+      "host_has_dlc": "Rick The Cube Species Portrait"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 464
+  },
+  "has_stargazer_dlc": {
+    "has_stargazer_dlc": {
+      "host_has_dlc": "Stargazer Species Portrait"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 469
+  },
+  "uninhabitable_regular_planet": {
+    "uninhabitable_regular_planet": {
+      "OR": {
+        "is_planet_class": "pc_frozen"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 474
+  },
+  "colonizable_planet": {
+    "colonizable_planet": {
+      "OR": {
+        "is_planet_class": "pc_machine",
+        "habitable_structure": "yes",
+        "habitable_planet": "yes"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 484
+  },
+  "habitable_planet": {
+    "habitable_planet": {
+      "OR": {
+        "habitable_planet_not_urban": "yes",
+        "is_planet_class": "pc_city"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 496
+  },
+  "habitable_planet_not_urban": {
+    "habitable_planet_not_urban": {
+      "OR": {
+        "is_planet_class": "pc_gaia"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 504
+  },
+  "is_urban_planet": {
+    "is_urban_planet": {
+      "OR": {
+        "is_planet_class": "pc_relic"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 519
+  },
+  "is_starting_planet_type": {
+    "is_starting_planet_type": {
+      "OR": {
+        "is_planet_class": "pc_savannah"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 526
+  },
+  "can_have_habitable_deposits": {
+    "can_have_habitable_deposits": {
+      "OR": {
+        "is_planet_class": "pc_relic"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 540
+  },
+  "habitable_structure": {
+    "habitable_structure": {
+      "is_artificial": "yes",
+      "OR": {
+        "is_colony": "yes",
+        "is_colonizable": "yes"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 557
+  },
+  "has_ringworld_output_boost": {
+    "has_ringworld_output_boost": {
+      "is_ringworld": "yes"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 565
+  },
+  "is_guardian_country": {
+    "is_guardian_country": {
+      "OR": {
+        "is_country_type": "guardian_toxic_god"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 569
+  },
+  "is_curator_guardian_poi": {
+    "is_curator_guardian_poi": {
+      "OR": {
+        "is_point_of_interest": {
+          "id": "curator_poi_scavenger_bot",
+          "owner": "root",
+          "event_chain": "curator_poi_chain"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 587
+  },
+  "has_encountered_other_species": {
+    "has_encountered_other_species": {
+      "OR": {
+        "has_origin": "origin_payback",
+        "has_civic": "civic_machine_servitor",
+        "any_owned_species": {
+          "NOT": {
+            "NOT": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 647
+  },
+  "allows_alien_leaders": {
+    "allows_alien_leaders": {
+      "any_owned_species": {
+        "NOT": {
+          "has_citizenship_rights": "yes"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 668
+  },
+  "can_be_leader": {
+    "can_be_leader": {
+      "has_citizenship_rights": "yes",
+      "_comments": [
+        "# Rule out Traits for servitude & lack of free will"
+      ],
+      "NOR": {
+        "has_trait": "trait_syncretic_proles",
+        "can_think": "no"
+      },
+      "OR": {
+        "is_same_species": "root",
+        "root": {
+          "NAND": {
+            "has_origin": "origin_necrophage",
+            "has_trait": "trait_necrophage"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 675
+  },
+  "can_be_military_leader": {
+    "can_be_military_leader": {
+      "is_enslaved": "no",
+      "is_sapient": "yes",
+      "OR": {
+        "is_robot_pop": "no",
+        "owner": {
+          "owner": {
+            "owner": {},
+            "OR": {
+              "AND": {
+                "owner": {
+                  "has_citizenship_type": {
+                    "has_military_service_type": {},
+                    "AND": {
+                      "NOT": {
+                        "has_military_service_type": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 704
+  },
+  "can_be_soldier": {
+    "can_be_soldier": {
+      "is_sapient": "yes",
+      "exists": "prev.owner",
+      "OR": {
+        "has_military_service_type": {
+          "has_military_service_type": {}
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 726
+  },
+  "allows_slavery": {
+    "allows_slavery": {
+      "OR": {
+        "has_policy_flag": "slavery_allowed",
+        "has_ethic": "ethic_gestalt_consciousness"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 735
+  },
+  "allows_purge": {
+    "allows_purge": {
+      "OR": {
+        "has_policy_flag": "purge_allowed",
+        "has_ethic": "ethic_gestalt_consciousness",
+        "has_valid_civic": "civic_fanatic_purifiers"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 742
+  },
+  "allows_preftl_exploitation": {
+    "allows_preftl_exploitation": {
+      "OR": {
+        "has_policy_flag": "interference_active"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 750
+  },
+  "can_build_megastructure_on_planet": {
+    "can_build_megastructure_on_planet": {
+      "has_any_megastructure": "no",
+      "NOR": {
+        "has_planet_flag": "has_megastructure",
+        "solar_system": {
+          "has_star_flag": "ring_world_built"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 757
+  },
+  "has_generic_government": {
+    "has_generic_government": {
+      "OR": {
+        "has_government": "gov_representative_democracy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 768
+  },
+  "has_spiritualist_government": {
+    "has_spiritualist_government": {
+      "OR": {
+        "has_government": "gov_dimensional_covenant",
+        "AND": {
+          "has_advanced_government": "yes",
+          "is_spiritualist": "yes"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 778
+  },
+  "has_militarist_government": {
+    "has_militarist_government": {
+      "OR": {
+        "has_government": "gov_defensive_union",
+        "AND": {
+          "has_advanced_government": "yes",
+          "is_militarist": "yes"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 798
+  },
+  "has_pacifist_government": {
+    "has_pacifist_government": {
+      "OR": {
+        "has_government": "gov_celestial_empire",
+        "AND": {
+          "has_advanced_government": "yes",
+          "is_pacifist": "yes"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 819
+  },
+  "has_materialist_government": {
+    "has_materialist_government": {
+      "OR": {
+        "has_government": "gov_rational_consensus",
+        "AND": {
+          "has_advanced_government": "yes",
+          "is_materialist": "yes"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 833
+  },
+  "has_purifier_government": {
+    "has_purifier_government": {
+      "OR": {
+        "has_government": "gov_blood_court"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 850
+  },
+  "has_primitive_government": {
+    "has_primitive_government": {
+      "OR": {
+        "has_government": "gov_fragmented_nation_states"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 859
+  },
+  "has_advanced_government": {
+    "has_advanced_government": {
+      "OR": {
+        "has_cyber_government": "yes",
+        "has_synth_government": "yes"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 866
+  },
+  "has_cyber_government": {
+    "has_cyber_government": {
+      "OR": {
+        "has_government": "gov_cyber_hive_integrated"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 873
+  },
+  "has_synth_government": {
+    "has_synth_government": {
+      "OR": {
+        "has_government": "gov_synth_corporate_virtual"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 889
+  },
+  "prefers_scientist_governors": {
+    "prefers_scientist_governors": {
+      "OR": {
+        "has_valid_civic": "civic_technocracy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 904
+  },
+  "prefers_commander_governors": {
+    "prefers_commander_governors": {
+      "OR": {
+        "has_valid_civic": "civic_barbaric_despoilers"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 910
+  },
+  "is_lonely_hive_mind_pop": {
+    "is_lonely_hive_mind_pop": {
+      "has_trait": "trait_hive_mind",
+      "NOT": {
+        "from": {
+          "NOR": {
+            "is_country_type": "awakened_fallen_empire"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 917
+  },
+  "is_disconnected_machine_pop": {
+    "is_disconnected_machine_pop": {
+      "has_trait": "trait_machine_unit",
+      "from": {
+        "NOR": {
+          "is_machine_empire": "yes",
+          "is_country_type": "awakened_fallen_empire",
+          "is_individual_machine": "yes"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 929
+  },
+  "has_culture_shock": {
+    "has_culture_shock": {
+      "OR": {
+        "has_modifier": "planet_culture_shock"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 942
+  },
+  "has_any_megastructure_in_empire": {
+    "has_any_megastructure_in_empire": {
+      "any_system_within_border": {
+        "OR": {
+          "has_megastructure": "quantum_catapult_restored_slingshot"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 958
+  },
+  "is_binary_star": {
+    "is_binary_star": {
+      "OR": {
+        "is_star_class": "sc_binary_10"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1028
+  },
+  "owner_has_resolution": {
+    "owner_has_resolution": {
+      "exists": "owner",
+      "owner": {
+        "is_galactic_community_member": "yes",
+        "is_active_resolution": "$RES$"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1044
+  },
+  "is_under_crisis_bombardment": {
+    "is_under_crisis_bombardment": {
+      "has_orbital_bombardment": "yes",
+      "any_fleet_in_orbit": {
+        "exists": "owner",
+        "owner": {
+          "is_crisis_faction": "yes"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1052
+  },
+  "is_crisis_faction": {
+    "is_crisis_faction": {
+      "OR": {
+        "is_country_type": "voidworms_crisis"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1062
+  },
+  "has_crisis": {
+    "has_crisis": {
+      "OR": {
+        "has_global_flag": "crisis_stage_4"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1078
+  },
+  "has_crisis_stage": {
+    "has_crisis_stage": {
+      "has_global_flag": "crisis_stage_$STAGE|1$"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1090
+  },
+  "has_crisis_stage_1": {
+    "has_crisis_stage_1": {
+      "has_global_flag": "crisis_stage_1"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1094
+  },
+  "has_crisis_stage_2": {
+    "has_crisis_stage_2": {
+      "has_global_flag": "crisis_stage_2"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1098
+  },
+  "has_crisis_stage_3": {
+    "has_crisis_stage_3": {
+      "has_global_flag": "crisis_stage_3"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1102
+  },
+  "has_crisis_stage_4": {
+    "has_crisis_stage_4": {
+      "has_global_flag": "crisis_stage_4"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1106
+  },
+  "endgame_crisis_large_size_trigger": {
+    "endgame_crisis_large_size_trigger": {
+      "OR": {
+        "count_system_within_border": {}
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1110
+  },
+  "crisis_happened_and_defeated": {
+    "crisis_happened_and_defeated": {
+      "OR": {
+        "AND": {
+          "has_global_flag": "synth_queen_defeated"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1117
+  },
+  "is_pre_sapient_livestock": {
+    "is_pre_sapient_livestock": {
+      "is_sapient": "no",
+      "has_citizenship_type": {
+        "has_slavery_type": {}
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1138
+  },
+  "is_livestock": {
+    "is_livestock": {
+      "has_slavery_type": {}
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1144
+  },
+  "is_synthetic_empire": {
+    "is_synthetic_empire": {
+      "OR": {
+        "has_country_flag": "synthetic_empire",
+        "is_machine_empire": "yes",
+        "is_individual_machine": "yes"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1148
+  },
+  "is_trinary_star": {
+    "is_trinary_star": {
+      "OR": {
+        "is_star_class": "sc_trinary_4"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1156
+  },
+  "planet_can_be_liberated_from_owner": {
+    "planet_can_be_liberated_from_owner": {
+      "owner": {
+        "NOR": {
+          "is_country_type": "fallen_empire",
+          "is_hive_empire": "yes",
+          "is_machine_empire": "yes"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1165
+  },
+  "is_cyborg_empire": {
+    "is_cyborg_empire": {
+      "owner_species": {}
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1176
+  },
+  "is_mechanical_empire": {
+    "is_mechanical_empire": {
+      "OR": {
+        "owner_species": {
+          "has_country_flag": "synthetic_empire"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1180
+  },
+  "is_robot_empire": {
+    "is_robot_empire": {
+      "OR": {
+        "owner_species": {
+          "owner_species": {
+            "has_country_flag": "synthetic_empire",
+            "is_machine_empire": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1187
+  },
+  "is_mechanical_species": {
+    "is_mechanical_species": {
+      "species": {
+        "OR": {
+          "has_trait": "trait_mechanical # Robots & Synthetically-ascended Pops"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1197
+  },
+  "is_virtual_empire": {
+    "is_virtual_empire": {
+      "owner_species": {}
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1206
+  },
+  "is_lithoid_empire": {
+    "is_lithoid_empire": {
+      "owner_species": {}
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1210
+  },
+  "is_lithoid_devouring_swarm": {
+    "is_lithoid_devouring_swarm": {
+      "is_lithoid_empire": "yes",
+      "has_valid_civic": "civic_hive_devouring_swarm"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1214
+  },
+  "is_lithoid_devouring_swarm_consumption_world": {
+    "is_lithoid_devouring_swarm_consumption_world": {
+      "exists": "owner",
+      "NOR": {
+        "is_ideal_planet_class": {
+          "who": "owner",
+          "status": "yes"
+        },
+        "AND": {
+          "owner": {
+            "any_owned_species": {
+              "NOR": {
+                "has_citizenship_type": {
+                  "has_citizenship_type": {},
+                  "prevprev": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1219
+  },
+  "is_country_type_with_subjects": {
+    "is_country_type_with_subjects": {
+      "OR": {
+        "is_country_type": "awakened_marauders"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1241
+  },
+  "is_valid_target_fe_stop_atrocities": {
+    "is_valid_target_fe_stop_atrocities": {
+      "OR": {
+        "allows_slavery": "yes",
+        "allows_purge": "yes"
+      },
+      "NOT": {
+        "NOR": {
+          "has_valid_civic": "civic_fanatic_purifiers"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1249
+  },
+  "is_valid_target_fe_stop_ai": {
+    "is_valid_target_fe_stop_ai": {
+      "NOT": {
+        "NOT": {
+          "has_technology": "tech_synthetic_workers",
+          "is_mechanical_empire": "no"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1262
+  },
+  "is_valid_target_fe_cleanse_holy_worlds": {
+    "is_valid_target_fe_cleanse_holy_worlds": {
+      "NOT": {
+        "OR": {
+          "any_owned_planet": {
+            "has_modifier": "holy_planet"
+          },
+          "any_subject": {
+            "any_owned_planet": {
+              "has_modifier": "holy_planet"
+            },
+            "NOT": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1269
+  },
+  "has_sapient_combat_computer": {
+    "has_sapient_combat_computer": {
+      "OR": {
+        "has_component": "COMBAT_COMPUTER_PLATFORM_SAPIENT"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1284
+  },
+  "has_autonomous_combat_computer": {
+    "has_autonomous_combat_computer": {
+      "OR": {
+        "has_component": "COMBAT_COMPUTER_PLATFORM_AUTONOMOUS"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1295
+  },
+  "is_ethics_aligned": {
+    "is_ethics_aligned": {
+      "OR": {
+        "has_ethic": "ethic_fanatic_$ARG1$"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1307
+  },
+  "has_opposing_ethics": {
+    "has_opposing_ethics": {
+      "OR": {
+        "AND": {
+          "$COUNTRY1$": {
+            "$COUNTRY2$": {},
+            "AND": {
+              "$COUNTRY1$": {
+                "$COUNTRY2$": {},
+                "AND": {
+                  "$COUNTRY1$": {
+                    "$COUNTRY2$": {},
+                    "AND": {
+                      "$COUNTRY1$": {
+                        "$COUNTRY2$": {},
+                        "AND": {
+                          "$COUNTRY1$": {
+                            "$COUNTRY2$": {},
+                            "AND": {
+                              "$COUNTRY1$": {
+                                "$COUNTRY2$": {},
+                                "AND": {
+                                  "$COUNTRY1$": {
+                                    "$COUNTRY2$": {},
+                                    "AND": {
+                                      "$COUNTRY1$": {
+                                        "$COUNTRY2$": {}
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1314
+  },
+  "has_alternative_ethics": {
+    "has_alternative_ethics": {
+      "OR": {
+        "AND": {
+          "$THIS_SCOPE$": {
+            "is_materialist": "yes"
+          },
+          "$REF_SCOPE$": {
+            "is_materialist": "no",
+            "is_spiritualist": "no"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1351
+  },
+  "is_fanatic": {
+    "is_fanatic": {
+      "OR": {
+        "has_ethic": "ethic_fanatic_xenophobe"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1428
+  },
+  "is_pacifist": {
+    "is_pacifist": {
+      "OR": {
+        "has_ethic": "ethic_fanatic_pacifist"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1441
+  },
+  "is_militarist": {
+    "is_militarist": {
+      "OR": {
+        "has_ethic": "ethic_fanatic_militarist"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1448
+  },
+  "is_materialist": {
+    "is_materialist": {
+      "OR": {
+        "has_ethic": "ethic_fanatic_materialist"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1455
+  },
+  "is_spiritualist": {
+    "is_spiritualist": {
+      "OR": {
+        "has_ethic": "ethic_fanatic_spiritualist"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1462
+  },
+  "is_egalitarian": {
+    "is_egalitarian": {
+      "OR": {
+        "has_ethic": "ethic_fanatic_egalitarian"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1469
+  },
+  "is_authoritarian": {
+    "is_authoritarian": {
+      "OR": {
+        "has_ethic": "ethic_fanatic_authoritarian"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1476
+  },
+  "is_xenophile": {
+    "is_xenophile": {
+      "OR": {
+        "has_ethic": "ethic_fanatic_xenophile"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1483
+  },
+  "is_xenophobe": {
+    "is_xenophobe": {
+      "OR": {
+        "has_ethic": "ethic_fanatic_xenophobe"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1490
+  },
+  "is_regular_empire": {
+    "is_regular_empire": {
+      "OR": {
+        "is_country_type": "awakened_fallen_empire",
+        "_comments": [
+          "#for checks in buildings and districts"
+        ]
+      },
+      "NOT": {}
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1497
+  },
+  "is_default_or_fallen": {
+    "is_default_or_fallen": {
+      "OR": {
+        "is_country_type": "awakened_fallen_empire #for checks in buildings"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1508
+  },
+  "is_capitalist": {
+    "is_capitalist": {
+      "OR": {
+        "is_megacorp": "yes",
+        "has_civic": "civic_merchant_guilds"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1516
+  },
+  "is_megacorp": {
+    "is_megacorp": {
+      "has_authority": "auth_corporate"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1524
+  },
+  "has_corporate_government": {
+    "has_corporate_government": {
+      "OR": {
+        "is_megacorp": "yes",
+        "has_civic": "civic_galactic_sovereign_megacorp"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1528
+  },
+  "is_gestalt": {
+    "is_gestalt": {
+      "has_ethic": "ethic_gestalt_consciousness"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1535
+  },
+  "is_hive_empire": {
+    "is_hive_empire": {
+      "has_authority": "auth_hive_mind"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1539
+  },
+  "is_machine_empire": {
+    "is_machine_empire": {
+      "has_authority": "auth_machine_intelligence"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1543
+  },
+  "is_autocracy": {
+    "is_autocracy": {
+      "OR": {
+        "has_ethic": "ethic_gestalt_consciousness",
+        "is_imperial_authority": "yes",
+        "is_dictatorial_authority": "yes"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1547
+  },
+  "is_oligarchy": {
+    "is_oligarchy": {
+      "OR": {
+        "is_oligarchic_authority": "yes",
+        "is_megacorp": "yes"
+      },
+      "NOR": {
+        "has_ethic": "ethic_fanatic_egalitarian"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1555
+  },
+  "is_democracy": {
+    "is_democracy": {
+      "OR": {
+        "is_democratic_authority": "yes",
+        "AND": {
+          "is_megacorp": "yes",
+          "is_egalitarian": "yes"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1566
+  },
+  "is_democratic_authority": {
+    "is_democratic_authority": {
+      "has_authority": "auth_democratic"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1576
+  },
+  "is_oligarchic_authority": {
+    "is_oligarchic_authority": {
+      "has_authority": "auth_oligarchic"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1580
+  },
+  "is_imperial_authority": {
+    "is_imperial_authority": {
+      "has_authority": "auth_imperial"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1584
+  },
+  "is_dictatorial_authority": {
+    "is_dictatorial_authority": {
+      "has_authority": "auth_dictatorial"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1588
+  },
+  "is_cyber_democracy": {
+    "is_cyber_democracy": {
+      "is_democratic_authority": "yes",
+      "OR": {
+        "has_country_flag": "cyber_collectivist"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1592
+  },
+  "is_cyber_oligarchy": {
+    "is_cyber_oligarchy": {
+      "is_oligarchic_authority": "yes",
+      "OR": {
+        "has_country_flag": "cyber_collectivist"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1600
+  },
+  "is_cyber_dictatorial": {
+    "is_cyber_dictatorial": {
+      "is_dictatorial_authority": "yes",
+      "OR": {
+        "has_country_flag": "cyber_collectivist"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1608
+  },
+  "is_cyber_imperial": {
+    "is_cyber_imperial": {
+      "is_imperial_authority": "yes",
+      "OR": {
+        "has_country_flag": "cyber_collectivist"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1616
+  },
+  "is_cyber_corporate": {
+    "is_cyber_corporate": {
+      "is_megacorp": "yes",
+      "OR": {
+        "has_country_flag": "cyber_collectivist"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1624
+  },
+  "is_synth_democracy": {
+    "is_synth_democracy": {
+      "is_democratic_authority": "yes",
+      "OR": {
+        "has_country_flag": "synth_virtual"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1632
+  },
+  "is_synth_oligarchy": {
+    "is_synth_oligarchy": {
+      "is_oligarchic_authority": "yes",
+      "OR": {
+        "has_country_flag": "synth_virtual"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1640
+  },
+  "is_synth_dictatorial": {
+    "is_synth_dictatorial": {
+      "is_dictatorial_authority": "yes",
+      "OR": {
+        "has_country_flag": "synth_virtual"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1648
+  },
+  "is_synth_imperial": {
+    "is_synth_imperial": {
+      "is_imperial_authority": "yes",
+      "OR": {
+        "has_country_flag": "synth_virtual"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1656
+  },
+  "is_synth_corporate": {
+    "is_synth_corporate": {
+      "is_megacorp": "yes",
+      "OR": {
+        "has_country_flag": "synth_virtual"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1664
+  },
+  "can_set_ai_policy": {
+    "can_set_ai_policy": {
+      "is_mechanical_empire": "no",
+      "OR": {
+        "has_technology": "tech_sapient_ai",
+        "any_relation": {
+          "has_communications": "prev",
+          "OR": {
+            "is_country_type": "default",
+            "has_ai_personality_behaviour": "robot_liberator"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1672
+  },
+  "has_met_primitives": {
+    "has_met_primitives": {
+      "OR": {
+        "has_country_flag": "encountered_first_primitive",
+        "any_relation": {
+          "has_communications": "root",
+          "is_country_type": "primitive"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1694
+  },
+  "has_comms_with_alien_empire": {
+    "has_comms_with_alien_empire": {
+      "custom_tooltip": {
+        "fail_text": "has_comms_with_alien_empire_tooltip",
+        "any_relation": {
+          "has_communications": "root",
+          "OR": {
+            "is_country_type": "awakened_fallen_empire"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1704
+  },
+  "has_comms_with_alien_civilization": {
+    "has_comms_with_alien_civilization": {
+      "any_relation": {
+        "has_communications": "root",
+        "OR": {
+          "is_country_type": "awakened_marauders"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1718
+  },
+  "has_total_war_cb": {
+    "has_total_war_cb": {
+      "OR": {
+        "_comments": [
+          "#attacker checks"
+        ],
+        "AND": {
+          "OR": {
+            "is_country_type": "awakened_fallen_empire",
+            "has_valid_civic": "civic_machine_assimilator",
+            "AND": {
+              "has_valid_civic": "civic_fanatic_purifiers",
+              "NOT": {}
+            }
+          },
+          "_comments": [
+            "#end threat checks"
+          ],
+          "AND": {
+            "is_country_type": "default",
+            "NOR": {
+              "is_country_type": "awakened_fallen_empire",
+              "has_valid_civic": "civic_machine_terminator"
+            },
+            "from": {
+              "OR": {
+                "is_country_type": "awakened_fallen_empire",
+                "has_valid_civic": "civic_machine_terminator"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1733
+  },
+  "has_isolated_system": {
+    "has_isolated_system": {
+      "any_system_within_border": {
+        "any_neighbor_system": {
+          "root": {
+            "intel_level": {
+              "system": "prev"
+            }
+          },
+          "NOR": {
+            "has_star_flag": "enclave",
+            "any_fleet_in_system": {
+              "exists": "owner",
+              "owner": {},
+              "any_fleet_in_system": {}
+            },
+            "NOT": {
+              "any_neighbor_system": {
+                "exists": "space_owner",
+                "NOT": {
+                  "any_neighbor_system": {
+                    "NOT": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1785
+  },
+  "has_bordering_system": {
+    "has_bordering_system": {
+      "any_system_within_border": {
+        "any_neighbor_system": {
+          "root": {
+            "intel_level": {
+              "system": "prev"
+            }
+          },
+          "NOR": {
+            "has_star_flag": "enclave",
+            "any_fleet_in_system": {
+              "exists": "owner",
+              "owner": {},
+              "any_ship_in_system": {
+                "is_ship_size": "constructor",
+                "is_constructing": "starbase"
+              },
+              "any_fleet_in_system": {}
+            },
+            "NOT": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1825
+  },
+  "is_potential_diadochi_system": {
+    "is_potential_diadochi_system": {
+      "exists": "starbase",
+      "starbase": {
+        "NOR": {
+          "has_star_flag": "fourth_diadochi_system"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1856
+  },
+  "has_no_non_gate_megastructure": {
+    "has_no_non_gate_megastructure": {
+      "OR": {
+        "has_any_megastructure": "no",
+        "NOT": {
+          "has_star_flag": "ring_world_built",
+          "any_system_megastructure": {
+            "OR": {
+              "is_megastructure_type": "grand_archive_0"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1883
+  },
+  "system_has_dyson_sphere": {
+    "system_has_dyson_sphere": {
+      "solar_system": {
+        "any_system_megastructure": {
+          "OR": {
+            "is_megastructure_type": "dyson_sphere_restored"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 1983
+  },
+  "is_homicidal": {
+    "is_homicidal": {
+      "OR": {
+        "has_valid_civic": "civic_hive_devouring_swarm"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2000
+  },
+  "is_unfriendly": {
+    "is_unfriendly": {
+      "OR": {
+        "has_valid_civic": "civic_barbaric_despoilers"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2008
+  },
+  "is_slaver": {
+    "is_slaver": {
+      "OR": {
+        "has_valid_civic": "civic_barbaric_despoilers",
+        "has_ascension_perk": "ap_nihilistic_acquisition"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2017
+  },
+  "is_xenophage": {
+    "is_xenophage": {
+      "OR": {
+        "allows_purge": "yes",
+        "allows_slavery": "yes"
+      },
+      "any_owned_species": {
+        "is_sapient": "yes",
+        "OR": {
+          "AND": {
+            "has_citizenship_type": {
+              "OR": {
+                "has_slavery_type": {
+                  "has_slavery_type": {}
+                },
+                "AND": {
+                  "OR": {
+                    "has_citizenship_type": {
+                      "has_citizenship_type": {},
+                      "OR": {
+                        "has_purge_type": {
+                          "has_purge_type": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2025
+  },
+  "has_active_xuracorp_trade": {
+    "has_active_xuracorp_trade": {
+      "OR": {
+        "has_modifier": "enclave_trade_5_xur"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2054
+  },
+  "has_active_riggan_trade": {
+    "has_active_riggan_trade": {
+      "OR": {
+        "has_modifier": "enclave_trade_5_rig"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2064
+  },
+  "has_active_muutagan_trade": {
+    "has_active_muutagan_trade": {
+      "OR": {
+        "has_modifier": "enclave_trade_5_mut"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2074
+  },
+  "has_distar": {
+    "has_distar": {
+      "host_has_dlc": "Distant Stars Story Pack"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2085
+  },
+  "is_wet": {
+    "is_wet": {
+      "has_climate": "wet"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2093
+  },
+  "is_dry": {
+    "is_dry": {
+      "has_climate": "dry",
+      "NOT": {}
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2097
+  },
+  "is_barren": {
+    "is_barren": {
+      "OR": {
+        "is_planet_class": "pc_asteroid"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2102
+  },
+  "is_cold": {
+    "is_cold": {
+      "has_climate": "cold"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2110
+  },
+  "can_have_mineral_deposits": {
+    "can_have_mineral_deposits": {
+      "OR": {
+        "is_planet_class": "pc_shattered"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2114
+  },
+  "can_have_energy_deposits": {
+    "can_have_energy_deposits": {
+      "OR": {
+        "is_planet_class": "pc_ice_asteroid"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2127
+  },
+  "can_have_society_deposits": {
+    "can_have_society_deposits": {
+      "is_planet_class": "pc_toxic"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2143
+  },
+  "can_have_minor_physics_deposits": {
+    "can_have_minor_physics_deposits": {
+      "OR": {
+        "is_planet_class": "pc_t_star"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2147
+  },
+  "can_have_physics_deposits": {
+    "can_have_physics_deposits": {
+      "OR": {
+        "is_planet_class": "pc_black_hole"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2160
+  },
+  "can_have_minor_engineering_deposits": {
+    "can_have_minor_engineering_deposits": {
+      "OR": {
+        "is_planet_class": "pc_gas_giant"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2176
+  },
+  "can_have_engineering_deposits": {
+    "can_have_engineering_deposits": {
+      "OR": {
+        "is_planet_class": "pc_black_hole"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2183
+  },
+  "can_have_trade_deposits": {
+    "can_have_trade_deposits": {
+      "OR": {
+        "is_planet_class": "pc_toxic",
+        "is_asteroid": "yes"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2193
+  },
+  "can_have_volatile_motes_deposit": {
+    "can_have_volatile_motes_deposit": {
+      "OR": {
+        "is_planet_class": "pc_asteroid"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2202
+  },
+  "can_have_rare_crystals_deposits": {
+    "can_have_rare_crystals_deposits": {
+      "OR": {
+        "is_planet_class": "pc_toxic"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2209
+  },
+  "can_have_exotic_gases_deposits": {
+    "can_have_exotic_gases_deposits": {
+      "OR": {
+        "is_planet_class": "pc_ice_asteroid",
+        "is_inside_nebula": "yes"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2216
+  },
+  "is_fallen_empire": {
+    "is_fallen_empire": {
+      "OR": {
+        "is_country_type": "awakened_fallen_empire"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2224
+  },
+  "has_galactic_wonders": {
+    "has_galactic_wonders": {
+      "OR": {
+        "has_ascension_perk": "ap_galactic_wonders_utopia_and_megacorp"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2231
+  },
+  "can_build_megastructures": {
+    "can_build_megastructures": {
+      "OR": {
+        "has_technology": "tech_cosmogenesis_world",
+        "can_build_unity_megastructures": "yes"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2239
+  },
+  "can_build_unity_megastructures": {
+    "can_build_unity_megastructures": {
+      "OR": {
+        "has_technology": "tech_dyson_swarm"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2251
+  },
+  "has_gw_ring_world": {
+    "has_gw_ring_world": {
+      "OR": {
+        "has_ascension_perk": "ap_galactic_wonders_utopia_and_megacorp"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2266
+  },
+  "has_gw_dyson_sphere": {
+    "has_gw_dyson_sphere": {
+      "OR": {
+        "has_ascension_perk": "ap_galactic_wonders_utopia_and_megacorp"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2273
+  },
+  "has_gw_think_tank": {
+    "has_gw_think_tank": {
+      "has_technology": "tech_science_nexus"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2280
+  },
+  "has_gw_spy_orb": {
+    "has_gw_spy_orb": {
+      "has_technology": "tech_sentry_array"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2284
+  },
+  "has_gw_matter_decompressor": {
+    "has_gw_matter_decompressor": {
+      "OR": {
+        "has_ascension_perk": "ap_galactic_wonders_utopia_and_megacorp"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2288
+  },
+  "has_gw_strategic_coordination_center": {
+    "has_gw_strategic_coordination_center": {
+      "has_technology": "tech_strategic_coordination"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2295
+  },
+  "has_gw_mega_art_installation": {
+    "has_gw_mega_art_installation": {
+      "has_technology": "tech_mega_art"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2299
+  },
+  "has_gw_interstellar_assembly": {
+    "has_gw_interstellar_assembly": {
+      "has_technology": "tech_interstellar_assembly"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2303
+  },
+  "can_generate_trade_value": {
+    "can_generate_trade_value": {
+      "exists": "owner",
+      "owner": {}
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2307
+  },
+  "is_crossbreeding_possible": {
+    "is_crossbreeding_possible": {
+      "is_sapient": "yes",
+      "NOR": {
+        "has_trait": "trait_clone_soldier_infertile_full_potential",
+        "is_half_species": "any"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2312
+  },
+  "has_ancrel": {
+    "has_ancrel": {
+      "host_has_dlc": "Ancient Relics Story Pack"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2325
+  },
+  "simulation_1_upkeep_affordable": {
+    "simulation_1_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2329
+  },
+  "research_lab_1_upkeep_affordable": {
+    "research_lab_1_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      },
+      "OR": {
+        "AND": {
+          "is_regular_empire": "yes",
+          "has_monthly_income": {
+            "resource": "consumer_goods"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2336
+  },
+  "foundry_1_upkeep_affordable": {
+    "foundry_1_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "volatile_motes",
+        "value >": "1"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2366
+  },
+  "autochthon_monument_upkeep_affordable": {
+    "autochthon_monument_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "consumer_goods"
+      },
+      "is_regular_empire": "yes"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2378
+  },
+  "organic_sanctuary_upkeep_affordable": {
+    "organic_sanctuary_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2390
+  },
+  "holo_theatres_upkeep_affordable": {
+    "holo_theatres_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      },
+      "OR": {
+        "AND": {
+          "NOT": {
+            "has_monthly_income": {
+              "resource": "consumer_goods"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2397
+  },
+  "galactic_stock_exchange_upkeep_affordable": {
+    "galactic_stock_exchange_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2420
+  },
+  "robot_assembly_plant_upkeep_affordable": {
+    "robot_assembly_plant_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "minerals"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2427
+  },
+  "precinct_house_upkeep_affordable": {
+    "precinct_house_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2438
+  },
+  "clinic_upkeep_affordable": {
+    "clinic_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "consumer_goods"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2445
+  },
+  "ministry_production_upkeep_affordable": {
+    "ministry_production_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2456
+  },
+  "institute_upkeep_affordable": {
+    "institute_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2463
+  },
+  "machine_assembly_plant_upkeep_affordable": {
+    "machine_assembly_plant_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "minerals"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2470
+  },
+  "maintenance_depot_upkeep_affordable": {
+    "maintenance_depot_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2481
+  },
+  "sentinel_posts_upkeep_affordable": {
+    "sentinel_posts_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2488
+  },
+  "production_center_upkeep_affordable": {
+    "production_center_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      },
+      "OR": {
+        "AND": {
+          "is_regular_empire": "yes",
+          "always": "yes"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2495
+  },
+  "hive_node_upkeep_affordable": {
+    "hive_node_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "food"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2526
+  },
+  "uplink_node_upkeep_affordable": {
+    "uplink_node_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "minerals"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2537
+  },
+  "food_processing_facility_upkeep_affordable": {
+    "food_processing_facility_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2548
+  },
+  "luxury_residence_upkeep_affordable": {
+    "luxury_residence_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2555
+  },
+  "chemical_plant_upkeep_affordable": {
+    "chemical_plant_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "minerals"
+      },
+      "_comments": [
+        "# Both the regular job and gestalt job has the same upkeep"
+      ]
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2562
+  },
+  "refinery_upkeep_affordable": {
+    "refinery_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "minerals"
+      },
+      "_comments": [
+        "# Both the regular job and gestalt job has the same upkeep"
+      ]
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2574
+  },
+  "crystal_plant_upkeep_affordable": {
+    "crystal_plant_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "minerals"
+      },
+      "_comments": [
+        "# Both the regular job and gestalt job has the same upkeep"
+      ]
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2586
+  },
+  "bureaucracy_upkeep_affordable": {
+    "bureaucracy_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2598
+  },
+  "commercial_zone_upkeep_affordable": {
+    "commercial_zone_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2605
+  },
+  "spawning_pool_upkeep_affordable": {
+    "spawning_pool_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "food"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2612
+  },
+  "hive_warren_upkeep_affordable": {
+    "hive_warren_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2623
+  },
+  "resource_silo_upkeep_affordable": {
+    "resource_silo_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2630
+  },
+  "energy_grid_upkeep_affordable": {
+    "energy_grid_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2637
+  },
+  "drone_storage_upkeep_affordable": {
+    "drone_storage_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2644
+  },
+  "stronghold_upkeep_affordable": {
+    "stronghold_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2651
+  },
+  "planetary_shield_generator_upkeep_affordable": {
+    "planetary_shield_generator_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2658
+  },
+  "supercomputer_upkeep_affordable": {
+    "supercomputer_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "minerals"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2665
+  },
+  "mineral_purification_plant_upkeep_affordable": {
+    "mineral_purification_plant_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2676
+  },
+  "overseer_homes_upkeep_affordable": {
+    "overseer_homes_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2683
+  },
+  "slave_huts_upkeep_affordable": {
+    "slave_huts_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2690
+  },
+  "hydroponics_farm_upkeep_affordable": {
+    "hydroponics_farm_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2697
+  },
+  "slave_processing_upkeep_affordable": {
+    "slave_processing_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2704
+  },
+  "temple_upkeep_affordable": {
+    "temple_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "energy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2711
+  },
+  "embassy_upkeep_affordable": {
+    "embassy_upkeep_affordable": {
+      "has_monthly_income": {
+        "resource": "rare_crystals",
+        "value >": "@b2_rare_upkeep"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2718
+  },
+  "enigmatic_modifier_jobs": {
+    "enigmatic_modifier_jobs": {
+      "OR": {
+        "is_unemployed": "yes",
+        "has_job": "technician_drone"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2729
+  },
+  "is_special_colony_type": {
+    "is_special_colony_type": {
+      "OR": {
+        "has_modifier": "gestation_colony"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2761
+  },
+  "scion_has_techs": {
+    "scion_has_techs": {
+      "OR": {
+        "has_technology": "tech_alloys_1",
+        "NOT": {},
+        "OR": {
+          "has_technology": "tech_mineral_purification_2",
+          "NOT": {},
+          "OR": {
+            "has_technology": "tech_space_defense_station_improvement",
+            "NOT": {},
+            "OR": {
+              "has_technology": "tech_battleships",
+              "NOT": {},
+              "OR": {
+                "has_technology": "tech_titan_hull_1",
+                "NOT": {},
+                "OR": {
+                  "has_technology": "tech_space_science_2",
+                  "NOT": {},
+                  "OR": {
+                    "has_technology": "tech_self_aware_logic",
+                    "NOT": {},
+                    "OR": {
+                      "has_technology": "tech_antimatter_power",
+                      "NOT": {},
+                      "OR": {
+                        "has_technology": "tech_combat_computers_autonomous",
+                        "NOT": {},
+                        "OR": {
+                          "has_technology": "tech_jump_drive_1",
+                          "NOT": {},
+                          "OR": {
+                            "has_technology": "tech_eco_simulation",
+                            "NOT": {},
+                            "OR": {
+                              "has_technology": "tech_colonization_4",
+                              "NOT": {},
+                              "OR": {
+                                "has_technology": "tech_climate_restoration",
+                                "NOT": {},
+                                "OR": {
+                                  "has_technology": "tech_ascension_theory",
+                                  "NOT": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2770
+  },
+  "has_precursor_intro": {
+    "has_precursor_intro": {
+      "OR": {
+        "has_country_flag": "adakkaria_intro",
+        "_comments": [
+          "# Still in the early stages of 'On the Shoulders of Giants'"
+        ],
+        "AND": {
+          "has_origin": "origin_shoulders_of_giants",
+          "NOT": {}
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2830
+  },
+  "baol_colony_1_trigger": {
+    "baol_colony_1_trigger": {
+      "has_access_fleet": "root.owner",
+      "is_capital_system": "no",
+      "NOR": {
+        "is_same_value": "root.solar_system",
+        "has_star_flag": "sol_system",
+        "is_star_class": "sc_black_hole"
+      },
+      "OR": {
+        "has_owner": "no",
+        "owner": {},
+        "any_system_planet": {
+          "is_planet_class": "pc_barren",
+          "has_anomaly": "no",
+          "NOT": {
+            "NOT": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2849
+  },
+  "baol_colony_2_trigger": {
+    "baol_colony_2_trigger": {
+      "has_access_fleet": "root.owner",
+      "is_capital_system": "no",
+      "NOR": {
+        "is_same_value": "root.solar_system",
+        "has_star_flag": "sol_system",
+        "is_star_class": "sc_black_hole"
+      },
+      "OR": {
+        "has_owner": "no",
+        "owner": {},
+        "any_system_planet": {
+          "is_planet_class": "pc_asteroid",
+          "has_anomaly": "no",
+          "NOT": {
+            "NOT": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2871
+  },
+  "baol_colony_3_trigger": {
+    "baol_colony_3_trigger": {
+      "has_access_fleet": "root.owner",
+      "is_capital_system": "no",
+      "NOR": {
+        "is_same_value": "root.solar_system",
+        "has_star_flag": "sol_system",
+        "is_star_class": "sc_black_hole"
+      },
+      "OR": {
+        "has_owner": "no",
+        "owner": {},
+        "any_system_planet": {
+          "habitable_planet": "yes",
+          "is_urban_planet": "no",
+          "has_anomaly": "no",
+          "NOR": {
+            "exists": "archaeological_site",
+            "has_planet_flag": "suppress_archaeological_sites"
+          },
+          "OR": {
+            "is_colony": "no"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2893
+  },
+  "baol_colony_3_fallback_trigger": {
+    "baol_colony_3_fallback_trigger": {
+      "is_capital_system": "no",
+      "NOR": {
+        "is_same_value": "root.solar_system",
+        "has_star_flag": "sol_system",
+        "is_star_class": "sc_black_hole"
+      },
+      "any_system_planet": {
+        "habitable_planet": "yes",
+        "is_urban_planet": "no",
+        "has_anomaly": "no",
+        "NOR": {
+          "exists": "archaeological_site",
+          "has_planet_flag": "suppress_archaeological_sites"
+        },
+        "OR": {
+          "is_colony": "no"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2922
+  },
+  "lithoids_portrait": {
+    "lithoids_portrait": {
+      "OR": {
+        "species_portrait": "lith15"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2948
+  },
+  "necroids_portrait": {
+    "necroids_portrait": {
+      "OR": {
+        "species_portrait": "nec15"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2968
+  },
+  "aquatics_portrait": {
+    "aquatics_portrait": {
+      "OR": {
+        "species_portrait": "aqu15"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 2988
+  },
+  "toxoids_portrait": {
+    "toxoids_portrait": {
+      "OR": {
+        "species_portrait": "tox15"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3008
+  },
+  "cybernetic_portrait": {
+    "cybernetic_portrait": {
+      "OR": {
+        "species_portrait": "cyb13"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3028
+  },
+  "synthetic_portrait": {
+    "synthetic_portrait": {
+      "OR": {
+        "species_portrait": "synth09"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3046
+  },
+  "is_owner_ethic_pop_faction": {
+    "is_owner_ethic_pop_faction": {
+      "switch": {
+        "trigger": "is_pop_faction_type",
+        "prosperity": {
+          "owner": {},
+          "progressive": {
+            "owner": {},
+            "imperialist": {
+              "owner": {},
+              "isolationist": {
+                "owner": {},
+                "supremacist": {
+                  "owner": {},
+                  "technologist": {
+                    "owner": {},
+                    "totalitarian": {
+                      "owner": {},
+                      "traditionalist": {
+                        "owner": {},
+                        "xenoist": {
+                          "owner": {},
+                          "default": {
+                            "always": "yes"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3060
+  },
+  "species_can_be_necrophaged": {
+    "species_can_be_necrophaged": {
+      "NOR": {
+        "is_archetype": "PRESAPIENT",
+        "is_same_species": "prev.owner_species",
+        "AND": {
+          "has_slavery_type": {
+            "prev.owner": {},
+            "has_citizenship_type": {},
+            "species_has_happiness_with_owner": "prev.owner"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3097
+  },
+  "is_amoeba_country_type": {
+    "is_amoeba_country_type": {
+      "OR": {
+        "is_country_type": "amoeba_faction"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3112
+  },
+  "is_tiyanki_country_type": {
+    "is_tiyanki_country_type": {
+      "OR": {
+        "is_country_type": "tiyanki_garrison"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3121
+  },
+  "is_crystal_country_type": {
+    "is_crystal_country_type": {
+      "OR": {
+        "is_country_type": "crystal_faction"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3128
+  },
+  "is_drone_country_type": {
+    "is_drone_country_type": {
+      "OR": {
+        "is_country_type": "drone_faction"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3135
+  },
+  "is_voidworms_country_type": {
+    "is_voidworms_country_type": {
+      "OR": {
+        "is_country_type": "voidworms_treasure_hunters"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3142
+  },
+  "is_voidworms_hostile_country_type": {
+    "is_voidworms_hostile_country_type": {
+      "OR": {
+        "is_country_type": "voidworms_crisis"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3150
+  },
+  "is_cutholoids_country_type": {
+    "is_cutholoids_country_type": {
+      "is_country_type": "cutholoids"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3157
+  },
+  "is_capturable_space_critter_country_type": {
+    "is_capturable_space_critter_country_type": {
+      "OR": {
+        "is_tiyanki_country_type": "yes",
+        "is_amoeba_country_type": "yes",
+        "is_crystal_country_type": "yes",
+        "is_voidworms_country_type": "yes",
+        "is_cutholoids_country_type": "yes"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3161
+  },
+  "is_pacified_space_critter_country_type": {
+    "is_pacified_space_critter_country_type": {
+      "OR": {
+        "is_country_type": "tiyanki",
+        "AND": {
+          "OR": {
+            "is_country_type": "amoeba_borderless"
+          },
+          "root": {},
+          "AND": {
+            "is_country_type": "crystal",
+            "root": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3171
+  },
+  "is_valid_drone_expansion_destination_system": {
+    "is_valid_drone_expansion_destination_system": {
+      "NOR": {
+        "is_star_class": "sc_black_hole",
+        "has_star_flag": "frenzied_voidworms_system"
+      },
+      "any_system_planet": {
+        "can_have_mineral_deposits": "yes"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3189
+  },
+  "is_valid_crystal_splitter_system": {
+    "is_valid_crystal_splitter_system": {
+      "NOR": {
+        "exists": "starbase",
+        "is_star_class": "sc_black_hole",
+        "has_star_flag": "frenzied_voidworms_system"
+      },
+      "any_system_planet": {}
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3212
+  },
+  "basic_eligibility_for_separatism_joining_trigger": {
+    "basic_eligibility_for_separatism_joining_trigger": {
+      "if": {
+        "limit": {
+          "event_target:rebellion_species": {},
+          "is_hive_empire": "yes"
+        },
+        "else_if": {
+          "limit": {
+            "event_target:rebellion_species": {},
+            "is_machine_empire": "yes"
+          },
+          "else": {
+            "is_regular_empire": "yes",
+            "OR": {
+              "is_same_species": "event_target:rebellion_species",
+              "AND": {
+                "event_target:revolt_situation": {
+                  "has_ethic": "ethic_fanatic_egalitarian"
+                }
+              }
+            },
+            "NOT": {
+              "is_subject": "no",
+              "NOR": {
+                "is_in_federation_with": "event_target:revolt_situation.owner",
+                "has_defensive_pact": "event_target:revolt_situation.owner",
+                "has_non_aggression_pact": "event_target:revolt_situation.owner"
+              },
+              "has_communications": "event_target:revolt_situation.owner",
+              "is_country_type": "default"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3233
+  },
+  "default_endgame_early_start_triggers": {
+    "default_endgame_early_start_triggers": {
+      "OR": {
+        "NOT": {
+          "any_country": {
+            "OR": {
+              "is_country_type": "awakened_fallen_empire"
+            }
+          }
+        },
+        "has_global_flag": "no_war_in_heaven",
+        "AND": {
+          "has_global_flag": "war_in_heaven_started",
+          "OR": {
+            "has_global_flag": "war_in_heaven_ended",
+            "NOT": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3267
+  },
+  "should_ai_focus_on_trade": {
+    "should_ai_focus_on_trade": {
+      "is_ai": "yes",
+      "OR": {
+        "has_ai_personality": "ruthless_capitalists"
+      },
+      "owner_main_species": {
+        "OR": {
+          "has_trait": "trait_robot_trading_algorithms"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3288
+  },
+  "valid_curators_intel_trade_target": {
+    "valid_curators_intel_trade_target": {
+      "is_country_type": "default",
+      "NOR": {
+        "is_same_value": "root",
+        "AND": {
+          "exists": "event_target:curator_customer_3",
+          "is_same_value": "event_target:curator_customer_3"
+        }
+      },
+      "root": {
+        "has_communications": "prev",
+        "NOR": {
+          "intel": {
+            "has_relation_flag": {
+              "who": "prev",
+              "flag": "curator_bought_intel_on"
+            }
+          }
+        },
+        "OR": {
+          "AND": {
+            "is_ai": "yes",
+            "has_communications": "event_target:curator_enclave_country",
+            "OR": {
+              "is_galactic_community_member": "yes",
+              "any_system_within_border": {
+                "any_fleet_in_system": {
+                  "is_owned_by": "event_target:curator_enclave_country"
+                }
+              }
+            }
+          },
+          "event_target:curator_enclave_country": {
+            "trust": {
+              "who": "prev",
+              "value >": "50"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3303
+  },
+  "normal_shroud_message": {
+    "normal_shroud_message": {
+      "NOR": {
+        "has_country_flag": "shroud_intro",
+        "any_playable_country": {}
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3352
+  },
+  "crisis_shroud_message": {
+    "crisis_shroud_message": {
+      "NOT": {
+        "any_playable_country": {}
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3359
+  },
+  "no_resource_for_component": {
+    "no_resource_for_component": {
+      "is_country_type": "default",
+      "OR": {
+        "NOT": {
+          "can_buy_on_market": "$RESOURCE$ #i.e. has galactic market or positive income"
+        },
+        "AND": {
+          "is_ai": "yes",
+          "has_monthly_income": {
+            "resource": "$RESOURCE$"
+          },
+          "resource_stockpile_compare": {
+            "resource": "$RESOURCE$"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3364
+  },
+  "should_terraform_trigger": {
+    "should_terraform_trigger": {
+      "ideal_planet_class": "$CLASS_TO$ #Technically not needed because the AI will pick the one with the highest habitability",
+      "is_lithoid": "no",
+      "_comments": [
+        "#Still useful as an early out, though."
+      ],
+      "is_mechanical_empire": "no",
+      "is_cyborg_empire": "no",
+      "from": {
+        "OR": {
+          "is_colony": "no",
+          "AND": {
+            "any_owned_species": {
+              "ideal_planet_class": "$CLASS_TO$",
+              "is_sapient": "yes"
+            },
+            "NOT": {
+              "any_owned_species": {
+                "ideal_planet_class": "$CLASS_FROM$",
+                "is_sapient": "yes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3385
+  },
+  "has_been_declared_crisis": {
+    "has_been_declared_crisis": {
+      "OR": {
+        "has_country_flag": "declared_crisis",
+        "has_crisis_level": "crisis_level_5"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3410
+  },
+  "is_non_ruined_crisis_sphere": {
+    "is_non_ruined_crisis_sphere": {
+      "OR": {
+        "is_megastructure_type": "crisis_sphere_4"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3417
+  },
+  "is_crisis_sphere": {
+    "is_crisis_sphere": {
+      "OR": {
+        "is_megastructure_type": "crisis_sphere_ruined"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3427
+  },
+  "is_low_tech_start": {
+    "is_low_tech_start": {
+      "OR": {
+        "is_primitive": "yes",
+        "has_origin": "origin_payback",
+        "is_eager_explorer_empire": "yes"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3438
+  },
+  "is_eager_explorer_empire": {
+    "is_eager_explorer_empire": {
+      "OR": {
+        "has_civic": "civic_machine_exploration_protocol"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3447
+  },
+  "is_pleasure_seeker": {
+    "is_pleasure_seeker": {
+      "OR": {
+        "has_valid_civic": "civic_corporate_hedonism"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3456
+  },
+  "is_crafter_empire": {
+    "is_crafter_empire": {
+      "OR": {
+        "has_valid_civic": "civic_corporate_crafters"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3463
+  },
+  "is_anglers_empire": {
+    "is_anglers_empire": {
+      "OR": {
+        "has_valid_civic": "civic_corporate_machine_anglers"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3470
+  },
+  "is_catalytic_empire": {
+    "is_catalytic_empire": {
+      "OR": {
+        "has_valid_civic": "civic_machine_catalytic_processing"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3479
+  },
+  "is_idyllic_bloom_empire": {
+    "is_idyllic_bloom_empire": {
+      "OR": {
+        "has_valid_civic": "civic_life_seeded"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3488
+  },
+  "is_death_cult_empire": {
+    "is_death_cult_empire": {
+      "OR": {
+        "has_valid_civic": "civic_death_cult_corporate"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3496
+  },
+  "is_worker_coop_empire": {
+    "is_worker_coop_empire": {
+      "has_valid_civic": "civic_worker_coop"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3503
+  },
+  "is_subterranean_empire": {
+    "is_subterranean_empire": {
+      "OR": {
+        "has_origin": "origin_subterranean_machines"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3507
+  },
+  "overlord_subject_event_trigger": {
+    "overlord_subject_event_trigger": {
+      "exists": "event_target:subject_empire",
+      "event_target:overlord_empire": {
+        "is_overlord_to": "event_target:subject_empire"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3514
+  },
+  "subject_pacifist_overlord_opposing": {
+    "subject_pacifist_overlord_opposing": {
+      "is_pacifist": "yes",
+      "overlord": {}
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3522
+  },
+  "subject_militarist_overlord_opposing": {
+    "subject_militarist_overlord_opposing": {
+      "is_militarist": "yes",
+      "overlord": {}
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3527
+  },
+  "subject_authoritarian_overlord_opposing": {
+    "subject_authoritarian_overlord_opposing": {
+      "is_authoritarian": "yes",
+      "overlord": {}
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3532
+  },
+  "subject_egalitarian_overlord_opposing": {
+    "subject_egalitarian_overlord_opposing": {
+      "is_egalitarian": "yes",
+      "overlord": {}
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3537
+  },
+  "subject_materialist_overlord_opposing": {
+    "subject_materialist_overlord_opposing": {
+      "is_materialist": "yes",
+      "overlord": {}
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3542
+  },
+  "subject_spiritualist_overlord_opposing": {
+    "subject_spiritualist_overlord_opposing": {
+      "is_spiritualist": "yes",
+      "overlord": {}
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3547
+  },
+  "subject_xenophile_overlord_opposing": {
+    "subject_xenophile_overlord_opposing": {
+      "is_xenophile": "yes",
+      "overlord": {}
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3552
+  },
+  "subject_xenophobe_overlord_opposing": {
+    "subject_xenophobe_overlord_opposing": {
+      "is_xenophobe": "yes",
+      "overlord": {}
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3557
+  },
+  "subject_overlord_opposing_ethics": {
+    "subject_overlord_opposing_ethics": {
+      "OR": {
+        "subject_pacifist_overlord_opposing": "yes",
+        "subject_militarist_overlord_opposing": "yes",
+        "subject_authoritarian_overlord_opposing": "yes",
+        "subject_egalitarian_overlord_opposing": "yes",
+        "subject_materialist_overlord_opposing": "yes",
+        "subject_spiritualist_overlord_opposing": "yes",
+        "subject_xenophile_overlord_opposing": "yes",
+        "subject_xenophobe_overlord_opposing": "yes"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3562
+  },
+  "has_research_building": {
+    "has_research_building": {
+      "OR": {
+        "has_building": "building_astrometeorology_observation_center"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3575
+  },
+  "is_orbital_ring": {
+    "is_orbital_ring": {
+      "has_starbase_size >": "orbital_ring_tier_1"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3586
+  },
+  "is_normal_starbase": {
+    "is_normal_starbase": {
+      "has_starbase_size >": "starbase_outpost"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3590
+  },
+  "is_faction_allowed": {
+    "is_faction_allowed": {
+      "OR": {
+        "AND": {
+          "has_origin": "origin_broken_shackles"
+        }
+      },
+      "NOT": {
+        "NOT": {}
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3594
+  },
+  "has_non_hostile_origin_dragon_trigger": {
+    "has_non_hostile_origin_dragon_trigger": {
+      "any_system_within_border": {
+        "has_star_flag": "here_be_dragons_system",
+        "any_fleet_in_system": {
+          "is_ship_size": "space_dragon_origin",
+          "owner": {
+            "has_country_flag": "here_be_the_dragon@prevprevprev",
+            "NOT": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3613
+  },
+  "is_dragon_breeder_country": {
+    "is_dragon_breeder_country": {
+      "has_country_flag": "dragon_breeders",
+      "any_owned_ship": {
+        "is_ship_size": "space_dragon_origin"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3626
+  },
+  "is_dragon": {
+    "is_dragon": {
+      "OR": {
+        "is_ship_size": "reanimated_space_dragon_origin"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3633
+  },
+  "values_others": {
+    "values_others": {
+      "OR": {
+        "is_xenophile": "yes",
+        "has_valid_civic": "civic_machine_exploration_protocol",
+        "has_origin": "origin_fruitful",
+        "has_animal_handler_job": "yes",
+        "has_symbiosis_integrator_job": "yes"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3647
+  },
+  "is_robotic_or_voidspawn_species": {
+    "is_robotic_or_voidspawn_species": {
+      "OR": {
+        "is_robotic_species": "yes",
+        "has_trait": "trait_voidling"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3659
+  },
+  "country_has_situation": {
+    "country_has_situation": {
+      "any_situation": {
+        "is_situation_type": "$SITUATION$"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3666
+  },
+  "has_actual_deficit": {
+    "has_actual_deficit": {
+      "resource_stockpile_compare": {
+        "resource": "$RESOURCE$",
+        "value": "0"
+      },
+      "resource_income_compare": {
+        "resource": "$RESOURCE$"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3673
+  },
+  "has_negative_income_with_stockpile": {
+    "has_negative_income_with_stockpile": {
+      "resource_stockpile_compare": {
+        "resource": "$RESOURCE$"
+      },
+      "resource_income_compare": {
+        "resource": "$RESOURCE$"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3684
+  },
+  "is_situation_leviathan_biological": {
+    "is_situation_leviathan_biological": {
+      "OR": {
+        "has_situation_flag": "celebration_hrozgar"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3695
+  },
+  "is_fanatical": {
+    "is_fanatical": {
+      "OR": {
+        "has_ethic": "ethic_fanatic_pacifist"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3708
+  },
+  "can_have_sensory_readings": {
+    "can_have_sensory_readings": {
+      "OR": {
+        "is_planet_class": "pc_city"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3721
+  },
+  "can_have_resource_discovery": {
+    "can_have_resource_discovery": {
+      "OR": {
+        "is_planet_class": "pc_barren_cold"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3742
+  },
+  "is_reanimator": {
+    "is_reanimator": {
+      "OR": {
+        "has_valid_civic": "civic_hive_cordyceptic_drones",
+        "has_ascension_perk": "ap_mechromancy"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3753
+  },
+  "is_memorialist_empire": {
+    "is_memorialist_empire": {
+      "OR": {
+        "has_valid_civic": "civic_machine_memorialist"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3762
+  },
+  "is_relentless_industrialist_empire": {
+    "is_relentless_industrialist_empire": {
+      "OR": {
+        "has_valid_civic": "civic_corporate_relentless_industrialists"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3770
+  },
+  "uses_standard_ship_sizes": {
+    "uses_standard_ship_sizes": {
+      "OR": {
+        "is_country_type": "enclave_mercenary",
+        "has_country_flag": "use_default_ships #for modders: apply this in on_country_created for new country types that you want to use corvettes etc"
+      },
+      "is_beastmasters_empire": "no"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3777
+  },
+  "uses_fauna_ship_sizes": {
+    "uses_fauna_ship_sizes": {
+      "is_beastmasters_empire": "yes"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3787
+  },
+  "is_organic_controllable_ship": {
+    "is_organic_controllable_ship": {
+      "OR": {
+        "is_ship_size": "large_ship_carrier_swarm #Brood-Queen relic",
+        "AND": {
+          "is_space_fauna": "yes",
+          "is_reanimated": "no",
+          "owner": {
+            "is_fauna_country": "no"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3792
+  },
+  "ai_should_build_habitats": {
+    "ai_should_build_habitats": {
+      "is_country_type": "default",
+      "OR": {
+        "is_at_war": "no"
+      },
+      "has_technology": "tech_habitat_1",
+      "if": {
+        "limit": {
+          "is_void_dweller_empire": "no #VDs should build habitats even if there are other planets available"
+        },
+        "ai_colonize_plans <": "0",
+        "OR": {
+          "NOR": {
+            "has_trait": "trait_robot_aquatic"
+          },
+          "has_ascension_perk": "ap_hydrocentric"
+        }
+      },
+      "NOT": {
+        "any_neighbor_country": {
+          "is_crisis_faction": "yes"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3817
+  },
+  "has_any_industry_district": {
+    "has_any_industry_district": {
+      "OR": {
+        "has_district": "district_arcology_civilian_industry"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3850
+  },
+  "has_any_farming_district_or_buildings": {
+    "has_any_farming_district_or_buildings": {
+      "OR": {
+        "has_district": "district_farming_uncapped",
+        "has_building": "building_hydroponics_farm"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3860
+  },
+  "has_any_mining_district": {
+    "has_any_mining_district": {
+      "OR": {
+        "has_district": "district_mining_uncapped"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3869
+  },
+  "has_any_generator_district_or_building": {
+    "has_any_generator_district_or_building": {
+      "OR": {
+        "has_district": "district_rw_generator",
+        "has_building": "building_betharian_power_plant"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3877
+  },
+  "uses_habitat_capitals": {
+    "uses_habitat_capitals": {
+      "uses_district_set": "habitat"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3887
+  },
+  "has_unity_times_empire_size": {
+    "has_unity_times_empire_size": {
+      "resource_stockpile_compare": {}
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3893
+  },
+  "got_any_unprotected_drones": {
+    "got_any_unprotected_drones": {
+      "if": {
+        "limit": {
+          "current_situation_approach": "protect_simple_drones"
+        },
+        "target": {
+          "any_owned_pop": {
+            "is_robot_pop": "yes",
+            "is_pop_category": "complex_drone"
+          }
+        }
+      },
+      "else_if": {
+        "limit": {
+          "current_situation_approach": "protect_complex_drones"
+        },
+        "target": {
+          "any_owned_pop": {
+            "is_robot_pop": "yes",
+            "is_pop_category": "simple_drone"
+          }
+        }
+      },
+      "else": {
+        "target": {
+          "any_owned_pop": {
+            "is_robot_pop": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3898
+  },
+  "has_councilor": {
+    "has_councilor": {
+      "exists": "owner",
+      "owner": {
+        "any_owned_leader": {
+          "is_councilor": "yes",
+          "is_councilor_type": "$COUNCILOR$"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3931
+  },
+  "has_enclave_councilor": {
+    "has_enclave_councilor": {
+      "OR": {
+        "has_councilor": {
+          "has_councilor": {
+            "has_councilor": {
+              "has_councilor": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3941
+  },
+  "is_enclave_councilor_type": {
+    "is_enclave_councilor_type": {
+      "OR": {
+        "is_councilor_type": "councilor_enclave_trader"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3950
+  },
+  "is_gestalt_node": {
+    "is_gestalt_node": {
+      "OR": {
+        "is_councilor_type": "councilor_gestalt_regulatory"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3959
+  },
+  "has_special_star_flag_trigger": {
+    "has_special_star_flag_trigger": {
+      "OR": {
+        "has_star_flag": "overlord_empire_flag",
+        "_comments": [
+          "# Start System Flags",
+          "# Enclaves",
+          "# L-Gate",
+          "# Leviathans",
+          "# Hostile Systems",
+          "# Megastructures",
+          "# Others"
+        ]
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 3968
+  },
+  "has_sacrificial_edict": {
+    "has_sacrificial_edict": {
+      "OR": {
+        "has_edict": "sacrifice_togetherness"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4020
+  },
+  "can_think": {
+    "can_think": {
+      "NOR": {
+        "has_trait": "trait_robot_suppressed"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4029
+  },
+  "has_slave_origin": {
+    "has_slave_origin": {
+      "OR": {
+        "has_origin": "origin_payback"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4037
+  },
+  "has_reduced_pop_origin": {
+    "has_reduced_pop_origin": {
+      "OR": {
+        "has_origin": "origin_fear_of_the_dark"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4044
+  },
+  "has_specialist_subject_leader_trait": {
+    "has_specialist_subject_leader_trait": {
+      "OR": {
+        "has_trait": "leader_trait_tactical_algorithms"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4051
+  },
+  "has_toxic_baths": {
+    "has_toxic_baths": {
+      "OR": {
+        "has_valid_civic": "civic_corporate_toxic_baths_individual_machine"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4066
+  },
+  "is_human_species": {
+    "is_human_species": {
+      "OR": {
+        "species_portrait": "cyb12"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4077
+  },
+  "has_fallen_empire_subject_preset": {
+    "has_fallen_empire_subject_preset": {
+      "OR": {
+        "agreement_preset": "preset_thrall"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4086
+  },
+  "is_overtuned": {
+    "is_overtuned": {
+      "OR": {
+        "has_trait": "trait_excessive_endurance"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4096
+  },
+  "is_non_hostile_to_wraith": {
+    "is_non_hostile_to_wraith": {
+      "OR": {
+        "is_country_type": "vluur",
+        "is_voidworms_country_type": "yes"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4114
+  },
+  "is_preftl_but_not_special": {
+    "is_preftl_but_not_special": {
+      "is_primitive": "yes",
+      "OR": {
+        "species": {
+          "NOR": {
+            "has_trait": "trait_pc_habitat_preference"
+          }
+        },
+        "_comments": [
+          "#\t\t\thas_trait = pc_warden_guardian_preference"
+        ],
+        "capital_scope": {
+          "NOR": {
+            "has_planet_flag": "prescripted_ideal"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4140
+  },
+  "is_scavenger": {
+    "is_scavenger": {
+      "OR": {
+        "has_valid_civic": "civic_corporate_scavengers"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4159
+  },
+  "is_market_nominee_planet": {
+    "is_market_nominee_planet": {
+      "OR": {
+        "has_modifier": "market_nominee_level_5"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4166
+  },
+  "has_chosen_covenant_trait_non_ruler": {
+    "has_chosen_covenant_trait_non_ruler": {
+      "OR": {
+        "has_trait": "leader_trait_whisperers_chosen"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4176
+  },
+  "has_presapient_trait": {
+    "has_presapient_trait": {
+      "OR": {
+        "has_trait": "trait_presapient_forcefully_devolved"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4185
+  },
+  "is_memory_vault_empire": {
+    "is_memory_vault_empire": {
+      "OR": {
+        "has_valid_civic": "civic_memory_vault_hive"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4198
+  },
+  "has_federator_personality": {
+    "has_federator_personality": {
+      "OR": {
+        "has_ai_personality": "peaceful_traders"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4207
+  },
+  "is_ascensionist_empire": {
+    "is_ascensionist_empire": {
+      "OR": {
+        "has_valid_civic": "civic_machine_ascensionists"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4216
+  },
+  "is_flora_species": {
+    "is_flora_species": {
+      "OR": {
+        "is_species_class": "PLANT"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4225
+  },
+  "is_rival_technologically_superior": {
+    "is_rival_technologically_superior": {
+      "any_rival_country": {
+        "relative_power": {
+          "who": "root",
+          "category": "technology",
+          "value >": "superior"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4232
+  },
+  "is_rival_economically_superior": {
+    "is_rival_economically_superior": {
+      "any_rival_country": {
+        "relative_power": {
+          "who": "root",
+          "category": "economy",
+          "value >": "superior"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4242
+  },
+  "is_rival_militarily_superior": {
+    "is_rival_militarily_superior": {
+      "any_rival_country": {
+        "relative_power": {
+          "who": "root",
+          "category": "fleet",
+          "value >": "superior"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4252
+  },
+  "blocks_disruptive_gameplay": {
+    "blocks_disruptive_gameplay": {
+      "is_difficulty": "0"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4262
+  },
+  "is_void_dweller_empire": {
+    "is_void_dweller_empire": {
+      "OR": {
+        "has_ascension_perk": "ap_voidborn",
+        "has_void_dweller_origin": "yes"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4266
+  },
+  "has_void_dweller_origin": {
+    "has_void_dweller_origin": {
+      "OR": {
+        "has_origin": "origin_void_machines"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4273
+  },
+  "is_apocalyptic_empire": {
+    "is_apocalyptic_empire": {
+      "OR": {
+        "has_origin": "origin_post_apocalyptic_machines"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4280
+  },
+  "has_any_storm_building": {
+    "has_any_storm_building": {
+      "_comments": [
+        "# All the storm related buildings (except Astrometeorology Observation Center) go here"
+      ],
+      "OR": {
+        "has_building": "building_storm_grand_theater"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4287
+  },
+  "has_any_storm_repellent_building": {
+    "has_any_storm_repellent_building": {
+      "OR": {
+        "any_owned_planet": {
+          "OR": {
+            "has_building": "building_advanced_storm_repellent_center"
+          }
+        },
+        "any_owned_starbase": {
+          "has_starbase_building": "storm_repelling_computer"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4303
+  },
+  "has_any_storm_attracting_building": {
+    "has_any_storm_attracting_building": {
+      "OR": {
+        "any_owned_planet": {
+          "OR": {
+            "has_building": "building_advanced_storm_attraction_center"
+          }
+        },
+        "any_owned_starbase": {
+          "has_starbase_building": "storm_attraction_computer"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4317
+  },
+  "has_storm_resistant_production_building": {
+    "has_storm_resistant_production_building": {
+      "OR": {
+        "has_building": "building_advanced_storm_resistant_production"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4331
+  },
+  "system_has_negating_storm_building": {
+    "system_has_negating_storm_building": {
+      "solar_system": {
+        "any_system_planet": {
+          "has_building": "building_planetary_shield_generator"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4338
+  },
+  "system_has_storm_repelling_tech": {
+    "system_has_storm_repelling_tech": {
+      "OR": {
+        "any_system_planet": {
+          "OR": {
+            "has_building": "building_advanced_storm_repellent_center",
+            "has_building_construction": "building_advanced_storm_repellent_center"
+          }
+        },
+        "AND": {
+          "exists": "starbase",
+          "starbase": {
+            "OR": {
+              "has_starbase_building": "storm_repelling_computer",
+              "is_starbase_building_building": "storm_repelling_computer"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4346
+  },
+  "system_has_storm_attraction_tech": {
+    "system_has_storm_attraction_tech": {
+      "OR": {
+        "any_system_planet": {
+          "OR": {
+            "has_building": "building_advanced_storm_attraction_center",
+            "has_building_construction": "building_advanced_storm_attraction_center"
+          }
+        },
+        "AND": {
+          "exists": "starbase",
+          "starbase": {
+            "OR": {
+              "has_starbase_building": "storm_attraction_computer",
+              "is_starbase_building_building": "storm_attraction_computer"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4368
+  },
+  "blocks_minister_of_state": {
+    "blocks_minister_of_state": {
+      "OR": {
+        "is_gestalt": "yes",
+        "has_valid_civic": "civic_fanatic_purifiers"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4390
+  },
+  "is_terraforming_candidate": {
+    "is_terraforming_candidate": {
+      "OR": {
+        "has_modifier": "toxic_terraforming_candidate"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4398
+  },
+  "has_engineered_evolution_synergy": {
+    "has_engineered_evolution_synergy": {
+      "OR": {
+        "has_origin": "origin_clone_army"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4406
+  },
+  "has_flesh_is_weak_anti_synergy": {
+    "has_flesh_is_weak_anti_synergy": {
+      "is_materialist": "no"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4415
+  },
+  "has_organo_machine_interfacing_assimilator_synergy": {
+    "has_organo_machine_interfacing_assimilator_synergy": {
+      "has_civic": "civic_machine_assimilator"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4419
+  },
+  "has_synthetic_evolution_synergy": {
+    "has_synthetic_evolution_synergy": {
+      "has_origin": "origin_mechanists"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4423
+  },
+  "has_synthetic_evolution_anti_synergy": {
+    "has_synthetic_evolution_anti_synergy": {
+      "is_materialist": "no"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4427
+  },
+  "blocks_ai_synthetic_evolution": {
+    "blocks_ai_synthetic_evolution": {
+      "OR": {
+        "has_policy_flag": "robots_outlawed",
+        "has_origin": "origin_slavers",
+        "has_valid_civic": "civic_hive_idyllic_bloom"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4431
+  },
+  "has_mind_over_matter_synergy": {
+    "has_mind_over_matter_synergy": {
+      "OR": {
+        "has_ascension_perk": "ap_become_the_crisis",
+        "has_origin": "origin_demonic_incursion",
+        "has_country_flag": "knights_met_end_of_cycle"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4444
+  },
+  "has_mind_over_matter_anti_synergy": {
+    "has_mind_over_matter_anti_synergy": {
+      "is_spiritualist": "no"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4452
+  },
+  "has_synthetic_age_anti_synergy": {
+    "has_synthetic_age_anti_synergy": {
+      "has_civic": "civic_machine_assimilator"
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4456
+  },
+  "has_auto_modding_trait": {
+    "has_auto_modding_trait": {
+      "OR": {
+        "has_trait": "trait_auto_mod_overtuned"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4460
+  },
+  "can_dismantle_megastructure": {
+    "can_dismantle_megastructure": {
+      "solar_system": {
+        "is_owned_by": "from"
+      },
+      "from": {
+        "has_technology": "$TECH$",
+        "is_at_war": "no"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4469
+  },
+  "is_astrometeorologist_empire": {
+    "is_astrometeorologist_empire": {
+      "OR": {
+        "has_civic": "civic_astrometeorology_megacorp"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4479
+  },
+  "is_storm_callers_empire": {
+    "is_storm_callers_empire": {
+      "OR": {
+        "has_civic": "civic_storm_callers_megacorp"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4488
+  },
+  "has_storm_attraction_civic": {
+    "has_storm_attraction_civic": {
+      "OR": {
+        "is_astrometeorologist_empire": "yes",
+        "is_storm_callers_empire": "yes"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4495
+  },
+  "is_environmental_architects_empire": {
+    "is_environmental_architects_empire": {
+      "OR": {
+        "has_civic": "civic_environmental_architects_megacorp"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4502
+  },
+  "influence_building_destruction_trigger": {
+    "influence_building_destruction_trigger": {
+      "exists": "owner",
+      "owner": {
+        "solar_system": {
+          "system_has_storm_repelling_tech": "yes"
+        },
+        "owner": {
+          "has_storm_attraction_civic": "no",
+          "NOT": {
+            "has_origin": "origin_storm_chasers"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4511
+  },
+  "has_sr_deposit": {
+    "has_sr_deposit": {
+      "OR": {
+        "has_deposit": "d_crystal_reef"
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4525
+  },
+  "can_obtain_volatile_motes": {
+    "can_obtain_volatile_motes": {
+      "custom_tooltip": {
+        "fail_text": "must_have_access_to_volatile_motes_tt",
+        "OR": {
+          "has_technology": "tech_volatile_motes",
+          "has_country_flag": "has_market_access"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4537
+  },
+  "can_obtain_rare_crystals": {
+    "can_obtain_rare_crystals": {
+      "custom_tooltip": {
+        "fail_text": "must_have_access_to_rare_crystals_tt",
+        "OR": {
+          "has_technology": "tech_rare_crystals",
+          "has_country_flag": "has_market_access"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers.txt",
+    "_line_number": 4548
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "star_power_chain": {
+    "star_power_chain": {
+      "picture": "GFX_evt_star_yellow",
+      "icon": "gfx/interface/icons/situation_log/situation_log_quest.dds",
+      "counter": {
+        "systems_visited_poi": {
+          "max": "2"
+        }
+      }
+    },
+    "_source_file": "00_event_chains_3.txt",
+    "_line_number": 0
+  },
+  "market_founding_chain": {
+    "market_founding_chain": {
+      "picture": "GFX_evt_financial_instruments",
+      "icon": "gfx/interface/icons/situation_log/situation_log_quest.dds"
+    },
+    "_source_file": "00_event_chains_3.txt",
+    "_line_number": 10
+  },
+  "market_relocation_chain": {
+    "market_relocation_chain": {
+      "picture": "GFX_evt_tradestation_interior",
+      "icon": "gfx/interface/icons/situation_log/situation_log_quest.dds"
+    },
+    "_source_file": "00_event_chains_3.txt",
+    "_line_number": 15
+  },
+  "clone_fertility_chain": {
+    "clone_fertility_chain": {
+      "picture": "GFX_evt_genetic_modification",
+      "icon": "gfx/interface/icons/situation_log/situation_log_main_quest.dds",
+      "abort_trigger": {
+        "is_synthetic_empire": "yes"
+      }
+    },
+    "_source_file": "00_event_chains_3.txt",
+    "_line_number": 20
+  },
+  "tiyanki_graveyard_chain": {
+    "tiyanki_graveyard_chain": {
+      "picture": "GFX_evt_unidentified_monster",
+      "icon": "gfx/interface/icons/situation_log/situation_log_quest.dds"
+    },
+    "_source_file": "00_event_chains_3.txt",
+    "_line_number": 28
+  },
+  "machine_uprising_chain": {
+    "machine_uprising_chain": {
+      "picture": "GFX_evt_robot_assembly_plant",
+      "icon": "gfx/interface/icons/situation_log/situation_log_ai.dds"
+    },
+    "_source_file": "00_event_chains_3.txt",
+    "_line_number": 33
+  },
+  "snake_infestation_chain": {
+    "snake_infestation_chain": {
+      "picture": "GFX_evt_genetic_modification",
+      "icon": "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+    },
+    "_source_file": "00_event_chains_3.txt",
+    "_line_number": 38
+  },
+  "shrouded_ship_chain": {
+    "shrouded_ship_chain": {
+      "picture": "GFX_evt_ship_travel",
+      "icon": "gfx/interface/icons/situation_log/situation_log_quest.dds",
+      "counter": {
+        "\"shrouded_ship_discoveries\"": {
+          "max": "2"
+        }
+      }
+    },
+    "_source_file": "00_event_chains_3.txt",
+    "_line_number": 43
+  },
+  "homeworlds_chain": {
+    "homeworlds_chain": {
+      "icon": "gfx/interface/icons/situation_log/situation_log_main_quest.dds",
+      "picture": "GFX_evt_space_debris",
+      "counter": {
+        "found_homeworlds": {
+          "max": "3"
+        }
+      }
+    },
+    "_source_file": "00_event_chains_3.txt",
+    "_line_number": 53
+  },
+  "MSI_chain": {
+    "MSI_chain": {
+      "icon": "gfx/interface/icons/situation_log/situation_log_main_quest.dds",
+      "picture": "GFX_evt_announcement"
+    },
+    "_source_file": "00_event_chains_3.txt",
+    "_line_number": 63
+  },
+  "whisperers_covenant_chain": {
+    "whisperers_covenant_chain": {
+      "picture": "GFX_evt_shroudwalker_enclave",
+      "icon": "gfx/interface/icons/situation_log/situation_log_extradimensional.dds"
+    },
+    "_source_file": "00_event_chains_3.txt",
+    "_line_number": 68
+  },
+  "eater_covenant_chain": {
+    "eater_covenant_chain": {
+      "picture": "GFX_evt_shroudwalker_enclave",
+      "icon": "gfx/interface/icons/situation_log/situation_log_extradimensional.dds"
+    },
+    "_source_file": "00_event_chains_3.txt",
+    "_line_number": 73
+  },
+  "composer_covenant_chain": {
+    "composer_covenant_chain": {
+      "picture": "GFX_evt_shroudwalker_enclave",
+      "icon": "gfx/interface/icons/situation_log/situation_log_extradimensional.dds"
+    },
+    "_source_file": "00_event_chains_3.txt",
+    "_line_number": 78
+  },
+  "instrument_covenant_chain": {
+    "instrument_covenant_chain": {
+      "picture": "GFX_evt_shroudwalker_enclave",
+      "icon": "gfx/interface/icons/situation_log/situation_log_extradimensional.dds"
+    },
+    "_source_file": "00_event_chains_3.txt",
+    "_line_number": 83
+  },
+  "myrmeku_chain": {
+    "myrmeku_chain": {
+      "picture": "GFX_evt_underground_civilization",
+      "icon": "gfx/interface/icons/situation_log/situation_log_quest.dds",
+      "abort_trigger": {
+        "event_target:myrmeku_planet": {
+          "OR": {
+            "is_planet_class": "pc_broken",
+            "NAND": {
+              "exists": "owner",
+              "owner": {
+                "has_country_flag": "myrmeku_flag@prev"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_event_chains_3.txt",
+    "_line_number": 90
+  },
+  "fruitful_partnership_chain": {
+    "fruitful_partnership_chain": {
+      "picture": "GFX_evt_fruitful_partnership",
+      "icon": "gfx/interface/icons/situation_log/situation_log_planet.dds"
+    },
+    "_source_file": "00_event_chains_3.txt",
+    "_line_number": 109
+  },
+  "fruitful_partnership_war_chain": {
+    "fruitful_partnership_war_chain": {
+      "picture": "GFX_evt_fruitful_partnership",
+      "icon": "gfx/interface/icons/situation_log/situation_log_planet.dds",
+      "abort_trigger": {
+        "is_at_war": "no"
+      }
+    },
+    "_source_file": "00_event_chains_3.txt",
+    "_line_number": 115
+  },
+  "ideal_furnace_chain": {
+    "ideal_furnace_chain": {
+      "icon": "gfx/interface/icons/situation_log/situation_log_quest.dds",
+      "picture": "GFX_evt_arc_crucible"
+    },
+    "_source_file": "00_event_chains_3.txt",
+    "_line_number": 123
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "opinion_from_personality": {
+    "opinion_from_personality": {
+      "opinion": {
+        "modifier": {
+          "add": "100",
+          "has_ai_personality": "fanatic_befrienders"
+        }
+      }
+    },
+    "_source_file": "01_personality_opinions.txt",
+    "_line_number": 3
+  },
+  "opinion_devouring_swarm": {
+    "opinion_devouring_swarm": {
+      "trigger": {
+        "is_country_type": "default",
+        "OR": {
+          "has_valid_civic": "civic_hive_devouring_swarm",
+          "AND": {
+            "from": {
+              "NOT": {}
+            }
+          },
+          "opinion": {
+            "modifier": {
+              "add": "-1000"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_personality_opinions.txt",
+    "_line_number": 16
+  },
+  "opinion_fanatic_purifiers_vs_xeno": {
+    "opinion_fanatic_purifiers_vs_xeno": {
+      "opinion": {
+        "modifier": {
+          "add": "-1000",
+          "has_valid_civic": "civic_fanatic_purifiers",
+          "NOT": {}
+        }
+      }
+    },
+    "_source_file": "01_personality_opinions.txt",
+    "_line_number": 34
+  },
+  "opinion_both_fanatic_purifiers": {
+    "opinion_both_fanatic_purifiers": {
+      "opinion": {
+        "modifier": {
+          "add": "200",
+          "has_valid_civic": "civic_fanatic_purifiers",
+          "FROM": {
+            "is_same_species": "FROM"
+          }
+        }
+      }
+    },
+    "_source_file": "01_personality_opinions.txt",
+    "_line_number": 44
+  },
+  "opinion_fanatic_purifiers": {
+    "opinion_fanatic_purifiers": {
+      "opinion": {
+        "modifier": {
+          "add": "-1000",
+          "is_country_type": "default",
+          "NOR": {
+            "has_valid_civic": "civic_machine_terminator"
+          },
+          "FROM": {}
+        }
+      }
+    },
+    "_source_file": "01_personality_opinions.txt",
+    "_line_number": 55
+  },
+  "opinion_zealots_vs_materialists": {
+    "opinion_zealots_vs_materialists": {
+      "opinion": {
+        "modifier": {
+          "add": "-100",
+          "OR": {
+            "FROM": {
+              "FROM": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_personality_opinions.txt",
+    "_line_number": 70
+  },
+  "opinion_hw_vs_pacifist": {
+    "opinion_hw_vs_pacifist": {
+      "opinion": {
+        "modifier": {
+          "add": "-100",
+          "has_ai_personality": "honorbound_warriors",
+          "FROM": {},
+          "modifier": {
+            "add": "-50",
+            "has_ai_personality": "honorbound_warriors",
+            "FROM": {}
+          }
+        }
+      }
+    },
+    "_source_file": "01_personality_opinions.txt",
+    "_line_number": 90
+  },
+  "opinion_dc_vs_democratic": {
+    "opinion_dc_vs_democratic": {
+      "opinion": {
+        "modifier": {
+          "add": "25",
+          "has_ai_personality": "democratic_crusaders",
+          "FROM": {}
+        }
+      }
+    },
+    "_source_file": "01_personality_opinions.txt",
+    "_line_number": 105
+  },
+  "opinion_dc_vs_oligarchic": {
+    "opinion_dc_vs_oligarchic": {
+      "opinion": {
+        "modifier": {
+          "add": "-50",
+          "has_ai_personality": "democratic_crusaders",
+          "OR": {
+            "FROM": {
+              "FROM": {
+                "is_megacorp": "yes",
+                "NOT": {
+                  "has_valid_civic": "civic_worker_coop"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_personality_opinions.txt",
+    "_line_number": 115
+  },
+  "opinion_dc_vs_autocracy": {
+    "opinion_dc_vs_autocracy": {
+      "opinion": {
+        "modifier": {
+          "add": "-100",
+          "has_ai_personality": "democratic_crusaders",
+          "FROM": {
+            "OR": {
+              "is_imperial_authority": "yes",
+              "is_dictatorial_authority": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_personality_opinions.txt",
+    "_line_number": 133
+  },
+  "opinion_desecrated_holy_world": {
+    "opinion_desecrated_holy_world": {
+      "opinion": {
+        "modifier": {
+          "add": "-200",
+          "has_ai_personality_behaviour": "holy_planets",
+          "from": {
+            "OR": {
+              "is_country_type": "awakened_fallen_empire"
+            },
+            "is_valid_target_fe_cleanse_holy_worlds": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "01_personality_opinions.txt",
+    "_line_number": 149
+  },
+  "opinion_encroaching_borders": {
+    "opinion_encroaching_borders": {
+      "opinion": {
+        "modifier": {
+          "add": "-200",
+          "has_ai_personality_behaviour": "demands_clear_borders",
+          "from": {
+            "OR": {
+              "is_country_type": "awakened_fallen_empire"
+            },
+            "any_system_within_border": {
+              "has_hyperlane_to": "root"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_personality_opinions.txt",
+    "_line_number": 166
+  },
+  "opinion_war_diadochi": {
+    "opinion_war_diadochi": {
+      "opinion": {
+        "modifier": {
+          "add": "-100",
+          "has_government": "gov_diadochi",
+          "FROM": {
+            "has_government": "gov_diadochi"
+          }
+        }
+      }
+    },
+    "_source_file": "01_personality_opinions.txt",
+    "_line_number": 185
+  }
+}

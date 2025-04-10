@@ -1,0 +1,35 @@
+{
+  "utility_component_template": {
+    "utility_component_template": {
+      "key": "AFTERBURNER_2",
+      "size": "aux",
+      "icon": "GFX_ship_part_afterburner_2",
+      "icon_frame": "1",
+      "power": "-20",
+      "resources": {
+        "category": "ship_components",
+        "cost": {
+          "alloys": "6"
+        }
+      },
+      "modifier": {
+        "ship_speed_mult": "0.20",
+        "ship_evasion_mult": "0.10"
+      },
+      "class_restriction": {
+        "prerequisites": {
+          "component_set": "AFTERBURNER_2",
+          "ai_weight": {
+            "weight": "15",
+            "modifier": {
+              "factor": "0.5",
+              "is_preferred_weapons": "weapon_type_explosive"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_utilities_afterburners.txt",
+    "_line_number": 57
+  }
+}

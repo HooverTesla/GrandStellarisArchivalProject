@@ -1,0 +1,53 @@
+{
+  "automate_capital_machine_servitor_planet": {
+    "automate_capital_machine_servitor_planet": {
+      "category": "planet_automation_designation_construction",
+      "available": {
+        "has_designation": "col_capital_machine",
+        "exists": "owner",
+        "owner": {},
+        "prio_districts": {},
+        "buildings": {
+          "1": {
+            "building": "building_machine_capital"
+          },
+          "2": {
+            "building": "building_organic_sanctuary",
+            "available": {
+              "num_buildings": {}
+            },
+            "3": {
+              "building": "building_foundry_1"
+            },
+            "4": {
+              "building": "building_embassy"
+            },
+            "5": {
+              "building": "building_uplink_node",
+              "available": {
+                "num_buildings": {}
+              },
+              "6": {
+                "building": "building_energy_grid"
+              },
+              "7": {
+                "building": "building_organic_sanctuary",
+                "available": {
+                  "num_buildings": {}
+                },
+                "8": {
+                  "building": "building_supercomputer"
+                },
+                "9": {
+                  "building": "building_research_lab_1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_capital_machine_servitor_automation.txt",
+    "_line_number": 11
+  }
+}

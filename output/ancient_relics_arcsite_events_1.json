@@ -1,0 +1,126 @@
+{
+  "ship_event": {
+    "ship_event": {
+      "id": "ancrel.4077",
+      "title": "ancrel.4077.name",
+      "desc": {
+        "trigger": {
+          "owner": {
+            "has_country_flag": "evermore_joy"
+          }
+        },
+        "text": "ancrel.4077.desc.b"
+      },
+      "picture": "GFX_evt_ancient_databank",
+      "location": "owner.capital_scope",
+      "show_sound": "event_dangerous_animals",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "EXCELLENT",
+        "trigger": {
+          "owner": {},
+          "owner.capital_scope": {
+            "add_modifier": {}
+          },
+          "option": {
+            "name": "EXCELLENT",
+            "trigger": {
+              "owner": {
+                "add_modifier": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "ancient_relics_arcsite_events_1.txt",
+    "_line_number": 6525
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "ancrel.7005",
+      "title": "ancrel.7005.name",
+      "desc": "ancrel.7005.desc",
+      "picture": "GFX_evt_engineering_research",
+      "show_sound": "event_finding_loot",
+      "archaeology": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "fromfrom": {},
+        "after": {
+          "fromfrom": {},
+          "option": {
+            "name": "OK",
+            "owner": {
+              "add_research_option": "tech_plasma_2",
+              "add_tech_progress": {
+                "tech": "tech_plasma_2",
+                "progress": "0.30"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "ancient_relics_arcsite_events_1.txt",
+    "_line_number": 7070
+  },
+  "country_event": {
+    "country_event": {
+      "id": "ancrel.7007",
+      "title": "ancrel.7007.name",
+      "desc": "ancrel.7007.desc",
+      "picture": "GFX_evt_surreal_visions",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "FASCINATING",
+        "locked_random_list": {
+          "10": {
+            "add_random_research_option": {
+              "add_progress": "0.50",
+              "area": "society",
+              "ignore_prereqs": "no",
+              "fail_effects": {
+                "add_monthly_resource_mult": {
+                  "resource": "society_research",
+                  "value": "@tier5researchreward",
+                  "min": "@tier5researchmin",
+                  "max": "@tier5researchmax"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "ancient_relics_arcsite_events_1.txt",
+    "_line_number": 7158
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "ancrel.4062",
+      "title": "ancrel.4059.name",
+      "desc": "ancrel.4062.desc",
+      "location": "event_target:sentinels_planet",
+      "show_sound": "event_dangerous_animals",
+      "diplomatic": "yes",
+      "is_triggered_only": "yes",
+      "picture_event_data": {
+        "room": "no_video_feed_room"
+      },
+      "option": {
+        "name": "ancrel.4059.e",
+        "while": {
+          "count": "9",
+          "create_army": {
+            "name": "NAME_Sentinels",
+            "owner": "root.owner",
+            "type": "sentinel_army"
+          }
+        }
+      }
+    },
+    "_source_file": "ancient_relics_arcsite_events_1.txt",
+    "_line_number": 6713
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "character": {
+    "character": {
+      "size": {
+        "entity": {
+          "orientation": "center_down",
+          "position": {
+            "scale": "24",
+            "default_close_up_scale": "2"
+          },
+          "_comments": [
+            "#2d Portrait position"
+          ],
+          "icon": {
+            "orientation": "center_down",
+            "position": {
+              "scale": "1.0"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_portraits_main.txt",
+    "_line_number": 13
+  },
+  "character_large": {
+    "character_large": {
+      "size": {
+        "entity": {
+          "orientation": "center_down",
+          "position": {
+            "scale": "12",
+            "default_close_up_scale": "2"
+          },
+          "_comments": [
+            "#2d Portrait position"
+          ],
+          "icon": {
+            "orientation": "center_down",
+            "position": {
+              "scale": "1.0"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_portraits_main.txt",
+    "_line_number": 31
+  },
+  "room": {
+    "room": {
+      "size": {
+        "room_texture_selector": "room_selector",
+        "character": {
+          "orientation": "lower_left",
+          "position": {
+            "scale": "1.0"
+          },
+          "planet": {
+            "orientation": "upper_right",
+            "position": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_portraits_main.txt",
+    "_line_number": 52
+  },
+  "empty_room": {
+    "empty_room": {
+      "size": {
+        "room_texture_selector": "room_selector",
+        "planet": {
+          "orientation": "upper_right",
+          "position": {}
+        }
+      }
+    },
+    "_source_file": "00_portraits_main.txt",
+    "_line_number": 68
+  },
+  "character_without_room": {
+    "character_without_room": {
+      "size": {
+        "character": {
+          "orientation": "lower_left",
+          "position": {
+            "scale": "1.0"
+          }
+        }
+      }
+    },
+    "_source_file": "00_portraits_main.txt",
+    "_line_number": 78
+  },
+  "planet": {
+    "planet": {
+      "size": {
+        "character": {
+          "orientation": "lower_left",
+          "position": {
+            "scale": "0.5"
+          },
+          "sky": {
+            "orientation": "upper_right",
+            "position": {},
+            "environment": {
+              "orientation": "lower_left",
+              "position": {},
+              "city": {
+                "orientation": "lower_left",
+                "position": {
+                  "min_pop": "4",
+                  "max_pop": "4"
+                },
+                "environment": {
+                  "orientation": "lower_left",
+                  "position": {},
+                  "city": {
+                    "orientation": "lower_left",
+                    "position": {
+                      "min_pop": "1",
+                      "max_pop": "4"
+                    },
+                    "environment": {
+                      "orientation": "lower_left",
+                      "position": {},
+                      "city": {
+                        "orientation": "lower_left",
+                        "position": {
+                          "min_pop": "2",
+                          "max_pop": "4"
+                        },
+                        "environment": {
+                          "orientation": "lower_left",
+                          "position": {},
+                          "_comments": [
+                            "#entity_selector = \"test_entity_selector\""
+                          ],
+                          "city": {
+                            "orientation": "lower_right",
+                            "position": {
+                              "min_pop": "3",
+                              "max_pop": "4"
+                            },
+                            "city": {
+                              "orientation": "lower_left",
+                              "position": {
+                                "min_pop": "0",
+                                "max_pop": "4"
+                              },
+                              "city": {
+                                "orientation": "lower_right",
+                                "position": {
+                                  "min_pop": "5"
+                                },
+                                "environment_override": {
+                                  "texture": "pc_subterranean_city",
+                                  "origin": "origin_subterranean",
+                                  "environment": {
+                                    "orientation": "lower_left",
+                                    "position": {}
+                                  },
+                                  "environment_override": {
+                                    "texture": "pc_subterranean_city",
+                                    "origin": "origin_subterranean_machines",
+                                    "environment": {
+                                      "orientation": "lower_left",
+                                      "position": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_portraits_main.txt",
+    "_line_number": 107
+  },
+  "portraits": {
+    "portraits": {
+      "_comments": [
+        "### DEBUG ###################################",
+        "#character_textures = {",
+        "#\t\t\t\"gfx/models/portraits/mammalian/mammalian_normal_alien_06_1.dds\"",
+        "#\t\t\t\"gfx/models/portraits/mammalian/mammalian_normal_alien_06_2.dds\"",
+        "#\t\t\t\"gfx/models/portraits/mammalian/mammalian_normal_alien_06_3.dds\"",
+        "#\t\t\t\"gfx/models/portraits/mammalian/mammalian_normal_alien_06_4.dds\"",
+        "#\t\t}",
+        "# AI",
+        "# AI Crisis"
+      ],
+      "debug": {
+        "entity": "frontend_background_entity",
+        "_comments": [
+          "#spriteType = \"GFX_portrait_mam1\"",
+          "#entity = \"portrait_mammalian_06_presapient_entity\"",
+          "#entity = \"portrait_mammalian_14_entity\"",
+          "#entity = \"portrait_reptilian_11_entity\"",
+          "#entity = \"portrait_molluscoid_13_entity\"",
+          "#entity = \"portrait_fungoid_10_entity\"",
+          "#entity = \"portrait_arthropoid_10_entity\""
+        ],
+        "clothes_selector": "no_texture",
+        "attachment_selector": "no_texture"
+      },
+      "default_robot": {
+        "entity": "portrait_robot_01_entity\"\tclothes_selector = \"no_texture\"\tattachment_selector = \"no_texture\"\tgreeting_sound = \"robot_human_greetings",
+        "character_textures": {}
+      },
+      "ai_crisis_1": {
+        "ai_crisis_2": {
+          "hum_robot_red": {
+            "_comments": [
+              "# Swarm"
+            ],
+            "swarm1": {
+              "swarm1small": {
+                "_comments": [
+                  "# Extra dimensional"
+                ],
+                "exd1": {
+                  "exd2": {
+                    "exd3": {
+                      "exd4": {
+                        "exd1_leader": {
+                          "exd2_leader": {
+                            "exd3_leader": {
+                              "exd4_leader": {
+                                "_comments": [
+                                  "# Shroud"
+                                ],
+                                "shroud1": {}
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_portraits_main.txt",
+    "_line_number": 214
+  },
+  "portrait_groups": {
+    "portrait_groups": {
+      "swarm": {
+        "default": "swarm1small",
+        "game_setup": {
+          "add": {
+            "portraits": {}
+          }
+        },
+        "_comments": [
+          "#leader scope"
+        ],
+        "ruler": {
+          "add": {
+            "portraits": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_portraits_main.txt",
+    "_line_number": 266
+  },
+  "portrait_evolution": {
+    "portrait_evolution": {
+      "default_mask_pair": {
+        "mask": "gfx/models/portraits/common/default_portrait_evolution_mask.dds",
+        "decal": "gfx/models/portraits/common/default_portrait_evolution_decal.dds"
+      },
+      "mask_color": {
+        "evolution_stages": {
+          "_comments": [
+            "# cybernetization stages"
+          ]
+        }
+      }
+    },
+    "_source_file": "00_portraits_main.txt",
+    "_line_number": 292
+  }
+}

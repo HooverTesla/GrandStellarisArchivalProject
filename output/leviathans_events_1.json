@@ -1,0 +1,258 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "leviathans.675",
+      "title": "distar.218.name",
+      "desc": {
+        "trigger": {
+          "is_machine_empire": "yes"
+        },
+        "text": "leviathans.675.desc.machine"
+      },
+      "location": "from",
+      "is_triggered_only": "yes",
+      "picture": "GFX_evt_necromancy",
+      "show_sound": "event_mystic_reveal",
+      "option": {
+        "name": "it_hungers",
+        "create_fleet": {
+          "name": "NAME_Avice",
+          "effect": {
+            "set_owner": "root",
+            "create_ship": {
+              "name": "NAME_Avice",
+              "design": "NAME_Reanimated_Grand_Dragon",
+              "prefix": "no",
+              "upgradable": "no"
+            },
+            "set_location": {
+              "target": "from",
+              "distance": "0",
+              "angle": "random"
+            },
+            "set_fleet_stance": "passive"
+          },
+          "settings": {
+            "can_upgrade": "no",
+            "can_change_composition": "no",
+            "can_change_leader": "no",
+            "uses_naval_capacity": "no",
+            "spawn_debris": "no"
+          }
+        }
+      }
+    },
+    "_source_file": "leviathans_events_1.txt",
+    "_line_number": 8456
+  },
+  "event": {
+    "event": {
+      "id": "leviathans.170",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_country": {
+          "is_country_type": "default",
+          "resource_stockpile_compare": {
+            "OR": {
+              "has_active_xuracorp_trade": "yes",
+              "has_active_riggan_trade": "yes",
+              "has_active_muutagan_trade": "yes"
+            }
+          }
+        },
+        "immediate": {
+          "every_country": {
+            "limit": {
+              "is_country_type": "default",
+              "resource_stockpile_compare": {
+                "OR": {
+                  "has_active_xuracorp_trade": "yes",
+                  "has_active_riggan_trade": "yes",
+                  "has_active_muutagan_trade": "yes"
+                }
+              },
+              "country_event": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "leviathans_events_1.txt",
+    "_line_number": 2760
+  },
+  "inline_script": {
+    "inline_script": {
+      "script": "grand_archive/collection/curator_postponed_reward_stage_3_event",
+      "EVENT_ID": "leviathans.4117",
+      "LOCALIZATION_ID": "grand_archive.4105",
+      "CATEGORY": "historical_item",
+      "RELIC_1": "r_entangled_relay",
+      "RELIC_2": "r_propagandosphere",
+      "RELIC_3": "r_prototype_vir_core",
+      "RELIC_4": "r_executus_compendium",
+      "RELIC_5": "r_preservation_chamber",
+      "RESOURCE": "unity",
+      "RESOURCE_MULT": "unity"
+    },
+    "_source_file": "leviathans_events_1.txt",
+    "_line_number": 6919
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "leviathans.654",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "is_country_type": "default"
+        },
+        "from": {
+          "has_star_flag": "guardians_dragon_system"
+        },
+        "any_combatant_fleet": {
+          "exists": "owner",
+          "owner": {
+            "is_country_type": "guardian_dragon"
+          },
+          "_comments": [
+            "#NOT = { has_fleet_flag = aggro_cooldown }"
+          ],
+          "any_controlled_ship": {
+            "is_ship_size": "space_dragon_red"
+          }
+        }
+      },
+      "immediate": {
+        "from": {
+          "random_fleet_in_system": {
+            "limit": {
+              "exists": "owner",
+              "owner": {
+                "is_country_type": "guardian_dragon"
+              },
+              "_comments": [
+                "#NOT = { has_fleet_flag = aggro_cooldown }"
+              ],
+              "any_controlled_ship": {
+                "is_ship_size": "space_dragon_red"
+              }
+            },
+            "random_controlled_ship": {
+              "limit": {
+                "save_event_target_as": "dragon_ship"
+              },
+              "clear_fleet_actions": "this",
+              "queue_actions": {
+                "repeat": {
+                  "max_iterations": "1",
+                  "find_random_system": {
+                    "trigger": {
+                      "id": "guardian.hibernate.7",
+                      "has_star_flag": "guardians_dragon_system"
+                    },
+                    "found_system": {
+                      "move_to": "this",
+                      "find_random_planet": {
+                        "trigger": {
+                          "id": "guardian.hibernate.8",
+                          "is_star": "yes"
+                        },
+                        "found_planet": {
+                          "move_to": "this",
+                          "orbit_planet": "this",
+                          "effect": {
+                            "id": "guardian.hibernate.9",
+                            "event_target:dragon_ship": {
+                              "repair_ship": "yes"
+                            }
+                          }
+                        }
+                      },
+                      "wait": {
+                        "duration": "60"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "leviathans_events_1.txt",
+    "_line_number": 7937
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "leviathans.660",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "owner",
+        "from": {
+          "is_same_value": "event_target:guardian_dragon_planet",
+          "NOR": {
+            "has_planet_flag": "deegged"
+          }
+        },
+        "owner": {
+          "is_country_type": "default"
+        }
+      },
+      "immediate": {
+        "owner": {
+          "country_event": {
+            "country_event": {}
+          }
+        }
+      }
+    },
+    "_source_file": "leviathans_events_1.txt",
+    "_line_number": 8078
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "leviathans.664",
+      "title": "leviathans.664.name",
+      "desc": "leviathans.664.desc",
+      "picture": "GFX_evt_space_dragon",
+      "location": "root",
+      "show_sound": "event_mystic_reveal",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "create_fleet": {
+          "name": "NAME_Ether_Hatchling",
+          "settings": {
+            "can_upgrade": "no",
+            "can_change_composition": "no",
+            "can_change_leader": "no",
+            "uses_naval_capacity": "no",
+            "spawn_debris": "no"
+          },
+          "effect": {
+            "set_owner": "root.owner",
+            "create_ship_design": {
+              "design": "NAME_Dragonspawn"
+            },
+            "create_ship": {
+              "design": "last_created_design",
+              "name": "NAME_Scile",
+              "prefix": "no",
+              "upgradable": "no"
+            },
+            "set_location": "root"
+          }
+        },
+        "owner": {},
+        "option": {
+          "name": "leviathans.664.a",
+          "custom_tooltip": "leviathans.664.a.tooltip"
+        }
+      }
+    },
+    "_source_file": "leviathans_events_1.txt",
+    "_line_number": 8238
+  }
+}

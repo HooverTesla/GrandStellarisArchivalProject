@@ -1,0 +1,30 @@
+{
+  "special_project": {
+    "special_project": {
+      "key": "CARAVAN_HULK_PROJECT",
+      "days_to_research": "180",
+      "tech_department": "engineering_technology",
+      "timelimit": "3600",
+      "picture": "GFX_evt_unknown_ships",
+      "icon": "gfx/interface/icons/situation_log/situation_log_quest.dds",
+      "event_scope": "ship_event",
+      "requirements": {
+        "shipclass_constructor": "1"
+      },
+      "on_success": {
+        "owner": {},
+        "on_fail": {
+          "if": {
+            "limit": {
+              "event_target:caravan_hulk_object": {
+                "destroy_ambient_object": "this"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_projects_megacorp.txt",
+    "_line_number": 4
+  }
+}

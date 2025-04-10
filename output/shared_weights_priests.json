@@ -1,0 +1,22 @@
+{
+  "modifier": {
+    "modifier": {
+      "add": "10",
+      "has_building": "building_the_united_sanctum_of_augmentation"
+    },
+    "_source_file": "shared_weights_priests.txt",
+    "_line_number": 117
+  },
+  "complex_trigger_modifier": {
+    "complex_trigger_modifier": {
+      "trigger": "num_buildings",
+      "parameters": {
+        "type": "building_fe_temple_2"
+      },
+      "mode": "add",
+      "mult": "@fe2_jobs"
+    },
+    "_source_file": "shared_weights_priests.txt",
+    "_line_number": 71
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "cb_scion": {
+    "cb_scion": {
+      "show_in_diplomacy": "yes",
+      "show_notification": "yes",
+      "potential": {
+        "is_country_type": "default",
+        "is_subject": "yes",
+        "any_agreement": {
+          "agreement_preset": "preset_scion"
+        }
+      },
+      "is_valid": {
+        "from": {
+          "is_country_type": "default",
+          "NOT": {
+            "any_agreement": {
+              "agreement_preset": "preset_scion"
+            }
+          }
+        },
+        "has_total_war_cb": "no",
+        "NOT": {}
+      }
+    },
+    "_source_file": "04_federation_casus_belli.txt",
+    "_line_number": 9
+  },
+  "cb_hegemon": {
+    "cb_hegemon": {
+      "show_in_diplomacy": "yes",
+      "show_notification": "yes",
+      "potential": {
+        "has_federation": "yes",
+        "is_federation_leader": "yes",
+        "federation": {
+          "has_federation_type": "hegemony_federation",
+          "has_federation_perk": "president_hegemony_cb_1"
+        }
+      },
+      "is_valid": {
+        "from": {
+          "is_country_type": "default",
+          "NOT": {},
+          "has_total_war_cb": "no"
+        }
+      }
+    },
+    "_source_file": "04_federation_casus_belli.txt",
+    "_line_number": 33
+  },
+  "cb_secession": {
+    "cb_secession": {
+      "show_in_diplomacy": "yes",
+      "show_notification": "yes",
+      "potential": {
+        "has_federation": "yes",
+        "federation": {
+          "has_country_flag": "asked_to_leave_hegemony",
+          "NOT": {},
+          "is_valid": {
+            "from": {
+              "is_in_federation_with": "prev",
+              "is_federation_leader": "yes"
+            },
+            "has_total_war_cb": "no"
+          }
+        }
+      }
+    },
+    "_source_file": "04_federation_casus_belli.txt",
+    "_line_number": 53
+  }
+}

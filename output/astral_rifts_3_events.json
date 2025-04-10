@@ -1,0 +1,124 @@
+{
+  "astral_rift_event": {
+    "astral_rift_event": {
+      "id": "astral_rift.3245",
+      "title": "astral_rift.3245.name",
+      "desc": "astral_rift.3245.desc",
+      "picture": "GFX_evt_astral_rift_psionic_stranger",
+      "show_sound": "ap_rift_event_32_psionic_comms",
+      "difficulty": "@astral_rift_easy_plus_difficulty",
+      "astral_rift": "yes",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "astral_rift.3245.a",
+        "explorer": {
+          "astral_thread_large_reward": "yes",
+          "add_monthly_resource_mult": {
+            "resource": "rare_crystals",
+            "value": "@tier3materialreward",
+            "min": "@tier3materialmin",
+            "max": "@tier3materialmax"
+          }
+        },
+        "finish_astral_rift": "yes"
+      }
+    },
+    "_source_file": "astral_rifts_3_events.txt",
+    "_line_number": 2573
+  },
+  "country_event": {
+    "country_event": {
+      "id": "astral_rift.3285",
+      "title": "astral_rift.3285.name",
+      "desc": {
+        "text": "astral_rift.3285.desc.default"
+      },
+      "picture": "GFX_evt_astral_rift_psionic_stranger_2",
+      "show_sound": "ap_rift_event_32_psionic_comms",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "astral_rift.3285.a",
+        "add_modifier": {
+          "hidden_effect": {
+            "every_controlled_fleet": {
+              "limit": {
+                "update_fleet_space_storm_reduction_zroni_rift": "yes"
+              }
+            },
+            "add_monthly_resource_mult": {
+              "resource": "rare_crystals",
+              "value": "@tier5materialreward",
+              "min": "@tier5materialmin",
+              "max": "@tier5materialmax"
+            },
+            "astral_thread_large_reward": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "astral_rifts_3_events.txt",
+    "_line_number": 2642
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "astral_rift.3290",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_astral_planes_dlc": "yes",
+        "owner": {
+          "has_modifier": "zroni_insight_modifier"
+        }
+      },
+      "immediate": {
+        "update_fleet_space_storm_reduction_zroni_rift": "yes"
+      }
+    },
+    "_source_file": "astral_rifts_3_events.txt",
+    "_line_number": 2691
+  },
+  "system_event": {
+    "system_event": {
+      "id": "astral_rift.3291",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_astral_planes_dlc": "yes"
+      },
+      "immediate": {
+        "every_fleet_in_system": {
+          "limit": {
+            "exists": "owner",
+            "owner": {
+              "has_modifier": "zroni_insight_modifier"
+            }
+          },
+          "update_fleet_space_storm_reduction_zroni_rift": "yes"
+        }
+      }
+    },
+    "_source_file": "astral_rifts_3_events.txt",
+    "_line_number": 2709
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "astral_rift.3292",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_astral_planes_dlc": "yes",
+        "owner": {
+          "has_modifier": "zroni_insight_modifier"
+        }
+      },
+      "immediate": {
+        "fleet": {
+          "remove_modifier": "zroni_insight_space_storm_reduction_modifier # to re-assign modifier to take new ship into account",
+          "update_fleet_space_storm_reduction_zroni_rift": "yes"
+        }
+      }
+    },
+    "_source_file": "astral_rifts_3_events.txt",
+    "_line_number": 2732
+  }
+}

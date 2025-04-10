@@ -1,0 +1,238 @@
+{
+  "portraits": {
+    "portraits": {
+      "_comments": [
+        "# Mammalian",
+        "#custom_close_up_position_offset = { x = -25 y = 300 }",
+        "#custom_close_up_scale = 2"
+      ],
+      "mam1": {
+        "greeting_sound": "mammalian_01_greetings",
+        "character_textures": {}
+      },
+      "mam2": {
+        "greeting_sound": "mammalian_01_greetings",
+        "character_textures": {}
+      },
+      "mam3": {
+        "greeting_sound": "mammalian_01_greetings",
+        "character_textures": {}
+      },
+      "mam4_f": {
+        "greeting_sound": "mammalian_01_greetings",
+        "character_textures": {}
+      },
+      "mam4_m": {
+        "greeting_sound": "mammalian_01_greetings",
+        "character_textures": {}
+      },
+      "mam5": {
+        "greeting_sound": "mammalian_01_greetings",
+        "character_textures": {}
+      },
+      "mam6": {
+        "greeting_sound": "mammalian_01_greetings",
+        "character_textures": {}
+      },
+      "mam7": {
+        "greeting_sound": "mammalian_01_greetings",
+        "character_textures": {}
+      },
+      "mam8": {
+        "greeting_sound": "mammalian_01_greetings",
+        "character_textures": {}
+      },
+      "mam9": {
+        "greeting_sound": "mammalian_01_greetings",
+        "character_textures": {}
+      },
+      "mam10": {
+        "greeting_sound": "mammalian_01_greetings",
+        "character_textures": {}
+      },
+      "mam11": {
+        "greeting_sound": "mammalian_01_greetings",
+        "character_textures": {}
+      },
+      "mam12": {
+        "greeting_sound": "mammalian_01_greetings",
+        "character_textures": {}
+      },
+      "mam13": {
+        "greeting_sound": "mammalian_01_greetings",
+        "character_textures": {}
+      },
+      "mam14": {
+        "character_textures": {}
+      },
+      "mam15": {
+        "greeting_sound": "mammalian_01_greetings",
+        "character_textures": {}
+      },
+      "mam16_f": {
+        "character_textures": {}
+      },
+      "mam16_m": {
+        "character_textures": {}
+      },
+      "mam17": {
+        "character_textures": {}
+      }
+    },
+    "_source_file": "01_portraits_mammalian.txt",
+    "_line_number": 21
+  },
+  "portrait_groups": {
+    "portrait_groups": {
+      "mam4": {
+        "default": "mam4_f",
+        "game_setup": {
+          "add": {
+            "trigger": {
+              "ruler": {
+                "OR": {
+                  "gender": "indeterminable"
+                }
+              }
+            },
+            "portraits": {}
+          }
+        },
+        "leader": {
+          "add": {
+            "trigger": {
+              "OR": {
+                "gender": "indeterminable"
+              }
+            },
+            "portraits": {}
+          }
+        },
+        "ruler": {
+          "add": {
+            "trigger": {
+              "OR": {
+                "gender": "indeterminable"
+              }
+            },
+            "portraits": {}
+          }
+        },
+        "_comments": [
+          "#species scope"
+        ],
+        "species": {
+          "add": {
+            "trigger": {
+              "exists": "species",
+              "NOT": {},
+              "portraits": {}
+            },
+            "add": {
+              "trigger": {
+                "exists": "species",
+                "NOT": {},
+                "portraits": {}
+              }
+            },
+            "_comments": [
+              "#pop scope"
+            ],
+            "pop": {
+              "add": {
+                "trigger": {
+                  "NOT": {},
+                  "portraits": {}
+                },
+                "add": {
+                  "trigger": {
+                    "NOT": {},
+                    "portraits": {}
+                  }
+                }
+              },
+              "mam16": {
+                "default": "mam16_f",
+                "game_setup": {
+                  "add": {
+                    "trigger": {
+                      "ruler": {
+                        "OR": {
+                          "gender": "indeterminable"
+                        }
+                      }
+                    },
+                    "portraits": {}
+                  }
+                },
+                "_comments": [
+                  "#set = {",
+                  "#\ttrigger = { ... }",
+                  "#\tportraits = { ... }",
+                  "#\t#using \"set =\" instead of \"add\" will first clear any portraits already added",
+                  "#}",
+                  "#species scope"
+                ],
+                "species": {
+                  "add": {
+                    "trigger": {
+                      "exists": "species",
+                      "NOT": {},
+                      "portraits": {}
+                    },
+                    "add": {
+                      "trigger": {
+                        "exists": "species",
+                        "NOT": {},
+                        "portraits": {}
+                      }
+                    },
+                    "_comments": [
+                      "#pop scope"
+                    ],
+                    "pop": {
+                      "add": {
+                        "trigger": {
+                          "NOT": {},
+                          "portraits": {}
+                        },
+                        "add": {
+                          "trigger": {
+                            "NOT": {},
+                            "portraits": {}
+                          }
+                        },
+                        "leader": {
+                          "add": {
+                            "trigger": {
+                              "OR": {
+                                "gender": "indeterminable"
+                              }
+                            },
+                            "portraits": {}
+                          }
+                        },
+                        "ruler": {
+                          "add": {
+                            "trigger": {
+                              "OR": {
+                                "gender": "indeterminable"
+                              }
+                            },
+                            "portraits": {}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_portraits_mammalian.txt",
+    "_line_number": 241
+  }
+}

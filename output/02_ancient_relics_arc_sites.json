@@ -1,0 +1,1721 @@
+{
+  "omnirelic_site": {
+    "omnirelic_site": {
+      "desc": "cool_relic_world_site_desc",
+      "picture": "GFX_evt_relic_world",
+      "stages": "4",
+      "max_instances": "1",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "visible": {
+        "default_site_visible_trigger": "yes"
+      },
+      "on_visible": {
+        "country_event": {},
+        "stage": {
+          "difficulty": "6",
+          "icon": "GFX_archaeology_runes_D4",
+          "event": "ancrel.24"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 8
+  },
+  "site_command_center": {
+    "site_command_center": {
+      "desc": "site_command_center_intro",
+      "picture": "GFX_evt_barren_dig_site",
+      "stages": "4",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "is_planet_class": "pc_asteroid",
+          "has_ancrel": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "4",
+            "icon": "GFX_archaeology_runes_A4",
+            "event": "ancrel.6020"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 57
+  },
+  "site_hunting_ground": {
+    "site_hunting_ground": {
+      "desc": "site_hunting_ground_intro",
+      "picture": "GFX_evt_archaeology_camp",
+      "stages": "5",
+      "weight": "0",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "7",
+            "icon": "GFX_archaeology_runes_B5",
+            "event": "ancrel.6070"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 114
+  },
+  "site_zarqlan": {
+    "site_zarqlan": {
+      "desc": "site_zarqlan_intro",
+      "picture": "GFX_evt_excavation_team",
+      "stages": "6",
+      "weight": {
+        "base": "0"
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "8",
+            "icon": "GFX_archaeology_runes_C6",
+            "event": "ancrel.6125"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 170
+  },
+  "site_minigalaxy_1": {
+    "site_minigalaxy_1": {
+      "desc": "site_minigalaxy_1_intro",
+      "picture": "GFX_evt_barren_dig_site",
+      "stages": "3",
+      "weight": "0",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "5",
+            "icon": "GFX_archaeology_runes_D3",
+            "event": "ancrel.6165"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 230
+  },
+  "site_minigalaxy_2": {
+    "site_minigalaxy_2": {
+      "desc": "site_minigalaxy_2_intro",
+      "picture": "GFX_evt_overgrown_city",
+      "stages": "4",
+      "weight": "0",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "8",
+          "icon": "GFX_archaeology_runes_D6",
+          "event": "ancrel.6185"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 273
+  },
+  "site_star_petal": {
+    "site_star_petal": {
+      "desc": "site_star_petal_intro",
+      "picture": "GFX_evt_gas_giant_station",
+      "stages": "4",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "is_planet_class": "pc_gas_giant",
+          "has_ancrel": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "4",
+            "icon": "GFX_archaeology_runes_E4",
+            "event": "ancrel.6215"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 319
+  },
+  "site_robot_debris": {
+    "site_robot_debris": {
+      "desc": "site_robot_debris_intro",
+      "picture": "GFX_evt_space_debris",
+      "stages": "3",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "OR": {
+            "is_planet_class": "pc_ice_asteroid"
+          },
+          "has_ancrel": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "5",
+            "icon": "GFX_archaeology_runes_F3",
+            "event": "ancrel.6260"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 374
+  },
+  "site_freighter_crash": {
+    "site_freighter_crash": {
+      "desc": "site_freighter_crash_intro",
+      "picture": "GFX_evt_crashed_station",
+      "stages": "6",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "OR": {
+            "is_planet_class": "pc_toxic"
+          },
+          "has_ancrel": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "7",
+            "icon": "GFX_archaeology_runes_D6",
+            "event": "ancrel.6350"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 430
+  },
+  "site_moon_bump": {
+    "site_moon_bump": {
+      "desc": "site_moon_bump_intro",
+      "picture": "GFX_evt_relic_world_street",
+      "stages": "2",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "uninhabitable_regular_planet": "yes",
+          "has_ancrel": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "4",
+            "icon": "GFX_archaeology_runes_A2",
+            "event": "ancrel.9005"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 500
+  },
+  "site_echoes_inside": {
+    "site_echoes_inside": {
+      "desc": "site_echoes_inside_intro",
+      "picture": "GFX_evt_arid",
+      "stages": "4",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "is_planet_class": "pc_barren",
+          "has_ancrel": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "3",
+            "icon": "GFX_archaeology_runes_B4",
+            "event": "ancrel.9040"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 546
+  },
+  "site_target_from_orbit": {
+    "site_target_from_orbit": {
+      "desc": "site_target_from_orbit_intro",
+      "picture": "GFX_evt_ship_in_orbit",
+      "stages": "3",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "uninhabitable_regular_planet": "yes",
+          "has_ancrel": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "5",
+            "icon": "GFX_archaeology_runes_A6",
+            "event": "ancrel.9051"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 603
+  },
+  "site_shot_into_the_ground": {
+    "site_shot_into_the_ground": {
+      "desc": "site_shot_into_the_ground_intro",
+      "picture": "GFX_evt_big_landing_ship",
+      "stages": "3",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "uninhabitable_regular_planet": "yes",
+          "has_ancrel": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "4",
+            "icon": "GFX_archaeology_runes_E2",
+            "event": "ancrel.9076"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 655
+  },
+  "site_cut_to_fit": {
+    "site_cut_to_fit": {
+      "desc": "site_cut_to_fit_intro",
+      "picture": "GFX_evt_ship_in_orbit",
+      "stages": "3",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "uninhabitable_regular_planet": "yes",
+          "has_ancrel": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "5",
+            "icon": "GFX_archaeology_runes_D3",
+            "event": "ancrel.9101"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 707
+  },
+  "site_deja_vu_dig": {
+    "site_deja_vu_dig": {
+      "desc": "site_deja_vu_dig_intro",
+      "picture": "GFX_evt_archaeology_camp",
+      "stages": "3",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "uninhabitable_regular_planet": "yes",
+          "has_ancrel": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "1",
+            "icon": "GFX_archaeology_runes_C3",
+            "event": "ancrel.9126"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 759
+  },
+  "site_trench_world": {
+    "site_trench_world": {
+      "desc": "site_trench_world_intro",
+      "picture": "GFX_evt_tundra",
+      "stages": "2",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "is_planet_class": "pc_barren",
+          "has_ancrel": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "5",
+            "icon": "GFX_archaeology_runes_D3",
+            "event": "ancrel.9146"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 810
+  },
+  "site_ebb_and_flow": {
+    "site_ebb_and_flow": {
+      "desc": "site_ebb_and_flow_intro",
+      "picture": "GFX_evt_warm_barren",
+      "stages": "4",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "is_planet_class": "pc_molten",
+          "has_ancrel": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "7",
+            "icon": "GFX_archaeology_runes_B4",
+            "event": "ancrel.9176"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 858
+  },
+  "site_sky_glow_hymn": {
+    "site_sky_glow_hymn": {
+      "desc": "site_sky_glow_hymn_intro",
+      "picture": "GFX_evt_big_landing_ship",
+      "stages": "3",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "uninhabitable_regular_planet": "yes",
+          "has_ancrel": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "3",
+            "icon": "GFX_archaeology_runes_A3",
+            "event": "ancrel.9196"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 915
+  },
+  "site_warmer_climates": {
+    "site_warmer_climates": {
+      "desc": "site_warmer_climates_intro",
+      "picture": "GFX_evt_alien_ruins",
+      "stages": "3",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "uninhabitable_regular_planet": "yes",
+          "has_ancrel": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "5",
+            "icon": "GFX_archaeology_runes_B4",
+            "event": "ancrel.9221"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 967
+  },
+  "site_phoenix_collective": {
+    "site_phoenix_collective": {
+      "desc": "site_phoenix_collective_intro",
+      "picture": "GFX_evt_overgrown_city",
+      "stages": "4",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "uninhabitable_regular_planet": "yes",
+          "has_ancrel": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "2",
+            "icon": "GFX_archaeology_runes_E5",
+            "event": "ancrel.9251"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 1020
+  },
+  "site_grand_herald": {
+    "site_grand_herald": {
+      "desc": "site_grand_herald_intro",
+      "picture": "GFX_evt_ancient_alien_temple",
+      "stages": "6",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "50",
+          "OR": {
+            "is_planet_class": "pc_savannah"
+          },
+          "has_ancrel": "yes",
+          "NOT": {}
+        },
+        "allow": {
+          "exists": "leader",
+          "leader": {},
+          "visible": {
+            "default_site_visible_trigger": "yes"
+          },
+          "on_visible": {
+            "country_event": {},
+            "stage": {
+              "difficulty": "6",
+              "icon": "GFX_archaeology_runes_C2",
+              "event": "ancrel.9291"
+            },
+            "on_roll_failed": {
+              "from": {
+                "standard_archaeological_site_on_roll_failed": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 1080
+  },
+  "site_hive_coral": {
+    "site_hive_coral": {
+      "desc": "site_hive_coral_intro",
+      "picture": "GFX_evt_ship_in_orbit_2",
+      "stages": "3",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "is_planet_class": "pc_ocean",
+          "has_ancrel": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "3",
+            "icon": "GFX_archaeology_runes_B3",
+            "event": "ancrel.9316"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 1153
+  },
+  "site_orbital_rain": {
+    "site_orbital_rain": {
+      "desc": "site_orbital_rain_intro",
+      "picture": "GFX_evt_ship_in_orbit",
+      "stages": "3",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "is_planet_class": "pc_ocean",
+          "has_ancrel": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "4",
+            "icon": "GFX_archaeology_runes_A3",
+            "event": "ancrel.9341"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 1205
+  },
+  "site_fossilized_jellyfish": {
+    "site_fossilized_jellyfish": {
+      "desc": "site_fossilized_jellyfish_intro",
+      "picture": "GFX_evt_ocean",
+      "stages": "3",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "is_planet_class": "pc_ocean",
+          "has_ancrel": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "4",
+            "icon": "GFX_archaeology_runes_B4",
+            "event": "ancrel.9366"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 1257
+  },
+  "site_popular_rock": {
+    "site_popular_rock": {
+      "desc": "site_popular_rock_intro",
+      "picture": "GFX_evt_ice_asteroids",
+      "stages": "2",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "is_planet_class": "pc_asteroid",
+          "has_ancrel": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "3",
+            "icon": "GFX_archaeology_runes_D4",
+            "event": "ancrel.9386"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 1308
+  },
+  "site_strange_flows": {
+    "site_strange_flows": {
+      "desc": "site_strange_flows_intro",
+      "picture": "GFX_evt_glitchy_matrix",
+      "stages": "3",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "is_planet_class": "pc_molten",
+          "has_ancrel": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "4",
+            "icon": "GFX_archaeology_runes_A2",
+            "event": "ancrel.9411"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 1355
+  },
+  "site_lost_moments": {
+    "site_lost_moments": {
+      "desc": "site_lost_moments_intro",
+      "picture": "GFX_evt_tomb_world",
+      "stages": "3",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "uninhabitable_regular_planet": "yes",
+          "has_ancrel": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "2",
+            "icon": "GFX_archaeology_runes_A2",
+            "event": "fedev.9440"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 1405
+  },
+  "site_lesser_messenger": {
+    "site_lesser_messenger": {
+      "desc": "site_lesser_messenger_intro",
+      "picture": "GFX_evt_ship_in_orbit",
+      "stages": "5",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "50",
+          "OR": {
+            "is_planet_class": "pc_savannah"
+          },
+          "has_ancrel": "yes",
+          "NOT": {}
+        },
+        "allow": {
+          "exists": "leader",
+          "leader": {},
+          "visible": {
+            "default_site_visible_trigger": "yes"
+          },
+          "on_visible": {
+            "country_event": {},
+            "stage": {
+              "difficulty": "4",
+              "icon": "GFX_archaeology_runes_A2",
+              "event": "fedev.9461"
+            },
+            "on_roll_failed": {
+              "from": {
+                "standard_archaeological_site_on_roll_failed": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 1459
+  },
+  "asteroid_vault_1": {
+    "asteroid_vault_1": {
+      "desc": "asteroid_vault_1_desc",
+      "picture": "GFX_evt_asteroid_field",
+      "stages": "2",
+      "max_instances": "1",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "visible": {
+        "default_site_visible_trigger": "yes"
+      },
+      "on_visible": {
+        "country_event": {},
+        "weight": {
+          "base": "0",
+          "modifier": {
+            "add": "100",
+            "has_ancrel": "yes",
+            "is_planet_class": "pc_asteroid"
+          }
+        },
+        "stage": {
+          "difficulty": "3",
+          "icon": "GFX_archaeology_runes_C2",
+          "event": "ancrel.103"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 1522
+  },
+  "planetary_mechanocalibrator": {
+    "planetary_mechanocalibrator": {
+      "desc": "planetary_mechanocalibrator_desc",
+      "picture": "GFX_evt_city_ruins",
+      "stages": "6",
+      "max_instances": "1",
+      "weight": "0 #Set in ancrel.2050; originates from an AncRel system initializer",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "5",
+          "icon": "GFX_archaeology_runes_C2",
+          "event": "ancrel.2056"
+        },
+        "_comments": [
+          "# Executes every time the research process doesn't go to another stage",
+          "# From is the scope of the Archaeology Site itself"
+        ],
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 1564
+  },
+  "it_was_aliens_site": {
+    "it_was_aliens_site": {
+      "desc": "it_was_aliens_site_desc",
+      "picture": "GFX_evt_dead_city",
+      "stages": "3",
+      "max_instances": "1",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "visible": {
+        "default_site_visible_trigger": "yes"
+      },
+      "on_visible": {
+        "country_event": {},
+        "weight": {
+          "base": "0",
+          "modifier": {
+            "add": "60",
+            "has_ancrel": "yes",
+            "habitable_planet": "yes"
+          }
+        },
+        "stage": {
+          "difficulty": "6",
+          "icon": "GFX_archaeology_runes_C6",
+          "event": "ancrel.106"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 1619
+  },
+  "ancient_battle_site": {
+    "ancient_battle_site": {
+      "desc": "ancient_battle_site_desc",
+      "picture": "GFX_evt_landing_ship",
+      "stages": "2",
+      "max_instances": "1",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "visible": {
+        "default_site_visible_trigger": "yes"
+      },
+      "on_visible": {
+        "country_event": {},
+        "weight": {
+          "base": "0",
+          "modifier": {
+            "add": "100",
+            "has_ancrel": "yes",
+            "habitable_planet": "yes"
+          }
+        },
+        "stage": {
+          "difficulty": "5",
+          "icon": "GFX_archaeology_runes_E6",
+          "event": "ancrel.109"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 1667
+  },
+  "mutation_vats": {
+    "mutation_vats": {
+      "desc": "mutation_vats_desc",
+      "picture": "GFX_evt_scanning_remains",
+      "stages": "3",
+      "max_instances": "1",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "has_ancrel": "yes",
+          "is_planet_class": "pc_nuked",
+          "NOT": {
+            "NOT": {}
+          },
+          "allow": {
+            "exists": "leader",
+            "leader": {},
+            "visible": {
+              "default_site_visible_trigger": "yes"
+            },
+            "stage": {
+              "difficulty": "3",
+              "icon": "GFX_archaeology_runes_A6",
+              "event": "ancrel.2047"
+            },
+            "_comments": [
+              "# Executes every time the research process doesn't go to another stage",
+              "# From is the scope of the Archaeology Site itself"
+            ],
+            "on_roll_failed": {
+              "from": {
+                "standard_archaeological_site_on_roll_failed": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 1709
+  },
+  "city_of_bones": {
+    "city_of_bones": {
+      "stages": "3",
+      "max_instances": "1",
+      "desc": {
+        "trigger": {
+          "planet": {},
+          "text": "city_of_bones_desc"
+        },
+        "desc": {
+          "trigger": {
+            "planet": {},
+            "text": "city_of_bones_desc_uncol"
+          },
+          "picture": "GFX_evt_relic_world_street",
+          "weight": {
+            "base": "0",
+            "modifier": {
+              "add": "100",
+              "has_ancrel": "yes",
+              "OR": {
+                "is_planet_class": "pc_gaia"
+              }
+            }
+          },
+          "allow": {
+            "exists": "leader",
+            "leader": {},
+            "visible": {
+              "default_site_visible_trigger": "yes"
+            },
+            "stage": {
+              "difficulty": "2",
+              "icon": "GFX_archaeology_runes_D3",
+              "event": "ancrel.2043"
+            },
+            "_comments": [
+              "# Executes every time the research process doesn't go to another stage",
+              "# From is the scope of the Archaeology Site itself"
+            ],
+            "on_roll_failed": {
+              "from": {
+                "standard_archaeological_site_on_roll_failed": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 1757
+  },
+  "the_host": {
+    "the_host": {
+      "desc": "the_host_desc",
+      "picture": "GFX_evt_underground_civilization",
+      "stages": "3",
+      "max_instances": "1",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "has_ancrel": "yes",
+          "OR": {
+            "is_planet_class": "pc_relic"
+          }
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "2",
+          "icon": "GFX_archaeology_runes_E3",
+          "event": "ancrel.2072"
+        },
+        "_comments": [
+          "# Executes every time the research process doesn't go to another stage",
+          "# From is the scope of the Archaeology Site itself"
+        ],
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 1819
+  },
+  "site_hidden_lab_a": {
+    "site_hidden_lab_a": {
+      "desc": "site_hidden_lab_intro",
+      "picture": "GFX_evt_frozen",
+      "stages": "3",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "1",
+          "has_ancrel": "yes",
+          "is_planet_class": "pc_frozen"
+        }
+      },
+      "visible": {
+        "default_site_visible_trigger": "yes"
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "stage": {
+          "difficulty": "2",
+          "icon": "GFX_archaeology_runes_A3",
+          "event": "ancrel.7003"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 1881
+  },
+  "endless_expanse_digsite": {
+    "endless_expanse_digsite": {
+      "desc": "endless_expanse_digsite_desc",
+      "picture": "GFX_evt_frozen",
+      "stages": "4",
+      "max_instances": "1",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "100",
+          "has_ancrel": "yes",
+          "is_planet_class": "pc_frozen"
+        }
+      },
+      "visible": {
+        "default_site_visible_trigger": "yes"
+      },
+      "on_visible": {
+        "country_event": {},
+        "allow": {
+          "is_ship_class": "shipclass_science_ship",
+          "exists": "leader"
+        },
+        "stage": {
+          "difficulty": "3",
+          "event": "ancrel.4047",
+          "icon": "GFX_archaeology_runes_F4"
+        },
+        "on_roll_failed": {
+          "from": {}
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 1924
+  },
+  "endless_expanse_digsite_2": {
+    "endless_expanse_digsite_2": {
+      "desc": "endless_expanse_digsite_2_desc",
+      "picture": "GFX_evt_gas_giant_station",
+      "stages": "4",
+      "max_instances": "1",
+      "weight": "0 #launched via ancrel.4047",
+      "visible": {
+        "default_site_visible_trigger": "yes"
+      },
+      "on_visible": {
+        "country_event": {},
+        "allow": {
+          "is_ship_class": "shipclass_science_ship",
+          "exists": "leader"
+        },
+        "stage": {
+          "difficulty": "4",
+          "event": "ancrel.4046",
+          "icon": "GFX_archaeology_runes_F4"
+        },
+        "on_roll_failed": {
+          "from": {}
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 1974
+  },
+  "site_percussive_maintenance": {
+    "site_percussive_maintenance": {
+      "desc": "site_percussive_maintenance_intro",
+      "picture": "GFX_evt_space_debris",
+      "stages": "4",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "30",
+          "has_ancrel": "yes",
+          "OR": {
+            "is_planet_class": "pc_pulsar"
+          }
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "5",
+            "icon": "GFX_archaeology_runes_B6",
+            "event": "ancrel.12015"
+          },
+          "on_create": {
+            "create_ambient_object": {
+              "type": "abandoned_weapon_station",
+              "location": "root.planet"
+            }
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 2022
+  },
+  "lithoids_digsite": {
+    "lithoids_digsite": {
+      "desc": "lithoids_digsite_desc",
+      "picture": "GFX_evt_hidden_door",
+      "stages": "5",
+      "max_instances": "1",
+      "weight": "0",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "visible": {
+        "default_site_visible_trigger": "yes"
+      },
+      "on_visible": {
+        "country_event": {},
+        "stage": {
+          "difficulty": "5",
+          "event": "ancrel.4005",
+          "icon": "GFX_archaeology_runes_A5"
+        },
+        "on_roll_failed": {
+          "from": {}
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 2086
+  },
+  "rubricator_digsite": {
+    "rubricator_digsite": {
+      "desc": "rubricator_digsite_desc",
+      "picture": "GFX_evt_relic_world",
+      "stages": "5",
+      "max_instances": "1",
+      "weight": "0",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "visible": {
+        "has_country_flag": "discovered_rubricator_planet",
+        "default_site_visible_trigger": "yes"
+      },
+      "on_visible": {
+        "country_event": {},
+        "stage": {
+          "difficulty": "7",
+          "event": "ancrel.4017",
+          "icon": "GFX_archaeology_runes_E5"
+        },
+        "on_roll_failed": {
+          "from": {}
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 2134
+  },
+  "oracle_digsite": {
+    "oracle_digsite": {
+      "desc": "oracle_digsite_desc",
+      "picture": "GFX_evt_crashed_station",
+      "stages": "4",
+      "max_instances": "1",
+      "weight": "0",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "visible": {
+        "default_site_visible_trigger": "yes"
+      },
+      "on_visible": {
+        "country_event": {},
+        "stage": {
+          "difficulty": "6",
+          "event": "ancrel.4035",
+          "icon": "GFX_archaeology_runes_B4"
+        },
+        "on_roll_failed": {
+          "from": {}
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 2183
+  },
+  "sentinels_digsite": {
+    "sentinels_digsite": {
+      "desc": "sentinels_digsite_desc",
+      "picture": "GFX_evt_huge_monument",
+      "stages": "3",
+      "max_instances": "1",
+      "weight": "0",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "visible": {
+        "default_site_visible_trigger": "yes"
+      },
+      "on_visible": {
+        "country_event": {},
+        "stage": {
+          "difficulty": "4",
+          "event": "ancrel.4054",
+          "icon": "GFX_archaeology_runes_B3"
+        },
+        "on_roll_failed": {
+          "from": {}
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 2226
+  },
+  "site_the_library": {
+    "site_the_library": {
+      "desc": "site_the_library_intro",
+      "picture": "GFX_evt_archaeological_dig",
+      "stages": "5",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "20",
+          "has_ancrel": "yes",
+          "OR": {
+            "is_planet_class": "pc_barren_cold"
+          },
+          "NOT": {},
+          "modifier": {
+            "factor": "2",
+            "has_leviathans": "yes"
+          }
+        },
+        "allow": {
+          "exists": "leader",
+          "leader": {},
+          "visible": {
+            "default_site_visible_trigger": "yes"
+          },
+          "on_visible": {
+            "country_event": {},
+            "stage": {
+              "difficulty": "6",
+              "icon": "GFX_archaeology_runes_E6",
+              "event": "ancrel.12040"
+            },
+            "on_create": {
+              "planet": {
+                "clear_deposits": "yes",
+                "add_modifier": {
+                  "modifier": "ancient_glassed_planet"
+                }
+              }
+            },
+            "on_roll_failed": {
+              "from": {
+                "standard_archaeological_site_on_roll_failed": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 2270
+  },
+  "relicrails_digsite": {
+    "relicrails_digsite": {
+      "desc": "relicrails_digsite_desc",
+      "picture": "GFX_evt_archaeological_dig",
+      "stages": "4",
+      "max_instances": "1",
+      "weight": "0 # Generated from a DLC-locked event",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "visible": {
+        "default_site_visible_trigger": "yes"
+      },
+      "stage": {
+        "difficulty": "3",
+        "event": "federations3.1025",
+        "icon": "GFX_archaeology_runes_D4"
+      },
+      "on_roll_failed": {
+        "from": {}
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 2343
+  },
+  "site_polaris_seed_vault": {
+    "site_polaris_seed_vault": {
+      "desc": "polaris_seed_vault_desc",
+      "picture": "GFX_evt_ocean",
+      "stages": "4",
+      "max_instances": "1",
+      "weight": "0",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "visible": {
+        "has_global_flag": "polaris_seen",
+        "default_site_visible_trigger": "yes"
+      },
+      "on_visible": {
+        "country_event": {},
+        "stage": {
+          "difficulty": "6",
+          "event": "ancrel.13006",
+          "icon": "GFX_archaeology_runes_E5"
+        },
+        "on_roll_failed": {
+          "from": {}
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 2387
+  },
+  "site_tombworld_weapon_cache": {
+    "site_tombworld_weapon_cache": {
+      "desc": "site_tombworld_weapon_cache_desc",
+      "picture": "GFX_evt_tomb_world",
+      "stages": "3",
+      "weight": "0",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "5",
+            "event": "terra.105",
+            "icon": "GFX_archaeology_runes_B1"
+          },
+          "on_roll_failed": {
+            "from": {}
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 2434
+  },
+  "site_rage_sage_dig": {
+    "site_rage_sage_dig": {
+      "desc": "seeds_of_destruction_intro",
+      "picture": "GFX_evt_frozen",
+      "stages": "4",
+      "weight": "0",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes",
+          "is_gestalt": "no"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "1",
+            "icon": "GFX_archaeology_runes_A3",
+            "event": "ancrel.14006"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_ancient_relics_arc_sites.txt",
+    "_line_number": 2478
+  }
+}

@@ -1,0 +1,450 @@
+{
+  "complex_specialist_job_check_trigger": {
+    "complex_specialist_job_check_trigger": {
+      "hidden_trigger": {
+        "exists": "owner",
+        "OR": {
+          "NOT": {
+            "AND": {
+              "owner": {
+                "owner": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 0
+  },
+  "entertainer_job_check_trigger": {
+    "entertainer_job_check_trigger": {
+      "custom_tooltip": "SPECIALIST_JOB_TRIGGER",
+      "hidden_trigger": {
+        "exists": "owner",
+        "OR": {
+          "is_enslaved": "no",
+          "has_slavery_type": {},
+          "is_being_purged": "no",
+          "is_being_assimilated": "no",
+          "_comments": [
+            "# Rule out Traits for servitude & lack of free will"
+          ],
+          "NOR": {
+            "has_trait": "trait_syncretic_proles",
+            "can_think": "no"
+          },
+          "OR": {
+            "NOT": {
+              "owner": {},
+              "NOT": {
+                "has_citizenship_type": {
+                  "type": "citizenship_organic_trophy",
+                  "country": "owner"
+                }
+              },
+              "if": {
+                "limit": {
+                  "divinity_right_to_work_job_check_trigger_exempt": "no"
+                },
+                "divinity_right_to_work_job_check_trigger_specialist": "yes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 13
+  },
+  "battle_thrall_job_check_trigger": {
+    "battle_thrall_job_check_trigger": {
+      "custom_tooltip": "BATTLE_THRALL_JOB_TRIGGER",
+      "hidden_trigger": {
+        "exists": "owner",
+        "OR": {
+          "is_enslaved": "no",
+          "has_slavery_type": {},
+          "is_being_purged": "no",
+          "is_being_assimilated": "no",
+          "_comments": [
+            "# Rule out Traits for servitude & lack of free will"
+          ],
+          "NOR": {
+            "has_trait": "trait_syncretic_proles",
+            "can_think": "no"
+          },
+          "NOT": {
+            "has_military_service_type": {
+              "type": "military_service_none"
+            }
+          },
+          "OR": {
+            "NOT": {
+              "owner": {},
+              "NOT": {
+                "has_citizenship_type": {
+                  "type": "citizenship_organic_trophy",
+                  "country": "owner"
+                }
+              },
+              "if": {
+                "limit": {
+                  "divinity_right_to_work_job_check_trigger_exempt": "no"
+                },
+                "divinity_right_to_work_job_check_trigger_specialist": "yes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 47
+  },
+  "soldier_job_check_trigger": {
+    "soldier_job_check_trigger": {
+      "custom_tooltip": "SOLDIER_JOB_TRIGGER",
+      "hidden_trigger": {
+        "exists": "owner",
+        "is_being_purged": "no",
+        "is_being_assimilated": "no",
+        "NOT": {
+          "has_citizenship_type": {
+            "type": "citizenship_organic_trophy",
+            "country": "owner"
+          }
+        },
+        "NAND": {
+          "has_citizenship_type": {
+            "type": "citizenship_slavery",
+            "country": "owner"
+          },
+          "OR": {
+            "has_slavery_type": {
+              "has_slavery_type": {}
+            },
+            "if": {
+              "limit": {
+                "divinity_right_to_work_job_check_trigger_exempt": "no"
+              },
+              "divinity_right_to_work_job_check_trigger_worker": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 86
+  },
+  "divinity_right_to_work_job_check_trigger_exempt": {
+    "divinity_right_to_work_job_check_trigger_exempt": {
+      "hidden_trigger": {
+        "OR": {
+          "NOT": {
+            "is_robotic_species": "no",
+            "AND": {
+              "exists": "owner",
+              "owner": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 122
+  },
+  "divinity_right_to_work_job_check_trigger_worker": {
+    "divinity_right_to_work_job_check_trigger_worker": {
+      "NOT": {
+        "planet": {
+          "any_owned_pop": {
+            "is_unemployed": "yes",
+            "is_robotic_species": "no",
+            "is_pop_category": "worker"
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 135
+  },
+  "divinity_right_to_work_job_check_trigger_specialist": {
+    "divinity_right_to_work_job_check_trigger_specialist": {
+      "NOT": {
+        "planet": {
+          "any_owned_pop": {
+            "is_unemployed": "yes",
+            "is_robotic_species": "no",
+            "OR": {
+              "is_pop_category": "worker"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 147
+  },
+  "divinity_right_to_work_job_check_trigger_ruler": {
+    "divinity_right_to_work_job_check_trigger_ruler": {
+      "NOT": {
+        "planet": {
+          "any_owned_pop": {
+            "is_unemployed": "yes",
+            "is_robotic_species": "no"
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 162
+  },
+  "has_utopian_living_standard_type": {
+    "has_utopian_living_standard_type": {
+      "has_living_standard": {}
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 173
+  },
+  "has_very_high_living_standard_type": {
+    "has_very_high_living_standard_type": {
+      "OR": {
+        "has_living_standard": {
+          "has_living_standard": {}
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 177
+  },
+  "has_shared_burden_living_standard_type": {
+    "has_shared_burden_living_standard_type": {
+      "has_living_standard": {}
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 184
+  },
+  "has_worker_ownership_living_standard_type": {
+    "has_worker_ownership_living_standard_type": {
+      "has_living_standard": {}
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 188
+  },
+  "has_dystopian_society_living_standard_type": {
+    "has_dystopian_society_living_standard_type": {
+      "has_living_standard": {}
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 192
+  },
+  "has_academic_living_standard_type": {
+    "has_academic_living_standard_type": {
+      "has_living_standard": {}
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 196
+  },
+  "has_high_living_standard_type": {
+    "has_high_living_standard_type": {
+      "has_living_standard": {}
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 200
+  },
+  "has_normal_living_standard_type": {
+    "has_normal_living_standard_type": {
+      "has_living_standard": {}
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 204
+  },
+  "has_stratified_living_standard_type": {
+    "has_stratified_living_standard_type": {
+      "has_living_standard": {}
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 208
+  },
+  "has_low_living_standard_type": {
+    "has_low_living_standard_type": {
+      "has_living_standard": {}
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 212
+  },
+  "has_decadent_living_standard_type": {
+    "has_decadent_living_standard_type": {
+      "has_living_standard": {}
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 216
+  },
+  "is_lithoid": {
+    "is_lithoid": {
+      "species": {
+        "is_archetype": "LITHOID"
+      }
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 220
+  },
+  "is_organic_species": {
+    "is_organic_species": {
+      "species": {
+        "OR": {
+          "is_archetype": "LITHOID"
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 226
+  },
+  "is_pre_sapient": {
+    "is_pre_sapient": {
+      "species": {
+        "is_archetype": "PRESAPIENT"
+      }
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 235
+  },
+  "is_pre_sapient_lithoid": {
+    "is_pre_sapient_lithoid": {
+      "species": {
+        "is_species_class": "PRE_LITHOID"
+      }
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 241
+  },
+  "is_robotic_species": {
+    "is_robotic_species": {
+      "species": {
+        "is_robotic": "yes"
+      }
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 248
+  },
+  "can_take_servant_job": {
+    "can_take_servant_job": {
+      "OR": {
+        "is_domestic_robot": "yes",
+        "is_domestic_servant": "yes"
+      }
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 254
+  },
+  "can_fill_specialist_job_trigger": {
+    "can_fill_specialist_job_trigger": {
+      "custom_tooltip": "SPECIALIST_JOB_TRIGGER",
+      "hidden_trigger": {
+        "NOT": {
+          "exists": "owner",
+          "OR": {
+            "is_enslaved": "no",
+            "has_slavery_type": {},
+            "is_being_purged": "no",
+            "is_being_assimilated": "no",
+            "_comments": [
+              "# Rule out Traits for servitude & lack of free will"
+            ],
+            "NOR": {
+              "has_trait": "trait_syncretic_proles",
+              "can_think": "no"
+            },
+            "OR": {
+              "NOT": {
+                "owner": {},
+                "NOT": {
+                  "has_citizenship_type": {
+                    "type": "citizenship_organic_trophy",
+                    "country": "owner"
+                  }
+                },
+                "if": {
+                  "limit": {
+                    "divinity_right_to_work_job_check_trigger_exempt": "no"
+                  },
+                  "divinity_right_to_work_job_check_trigger_specialist": "yes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 261
+  },
+  "is_domestic_servant": {
+    "is_domestic_servant": {
+      "is_enslaved": "yes",
+      "has_slavery_type": {}
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 296
+  },
+  "is_domestic_robot": {
+    "is_domestic_robot": {
+      "has_trait": "trait_robot_domestic_protocols",
+      "exists": "owner",
+      "has_citizenship_type": {
+        "type": "citizenship_robot_servitude",
+        "country": "owner"
+      }
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 301
+  },
+  "prosperity_gospel_check_trigger": {
+    "prosperity_gospel_check_trigger": {
+      "is_spiritualist": "yes",
+      "planet": {
+        "exists": "owner",
+        "OR": {
+          "owner": {
+            "AND": {
+              "has_branch_office": "yes",
+              "branch_office_owner": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 310
+  },
+  "has_unemployed_or_servants": {
+    "has_unemployed_or_servants": {
+      "OR": {
+        "num_assigned_jobs": {
+          "job": "servant"
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 324
+  },
+  "has_sr_producing_job": {
+    "has_sr_producing_job": {
+      "OR": {
+        "has_job": "translucer_drone"
+      }
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 334
+  },
+  "has_research_job": {
+    "has_research_job": {
+      "OR": {
+        "has_job": "astrometeorologist_machine"
+      }
+    },
+    "_source_file": "01_scripted_triggers_jobs.txt",
+    "_line_number": 351
+  }
+}

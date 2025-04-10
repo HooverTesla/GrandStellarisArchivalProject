@@ -1,0 +1,210 @@
+{
+  "rare_crystals_expenditure_planets": {
+    "rare_crystals_expenditure_planets": {
+      "resource": "rare_crystals",
+      "type": "expenditure",
+      "category": "planets",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.2"
+      }
+    },
+    "_source_file": "00_rare_crystals_budget.txt",
+    "_line_number": 8
+  },
+  "rare_crystals_expenditure_ships": {
+    "rare_crystals_expenditure_ships": {
+      "resource": "rare_crystals",
+      "type": "expenditure",
+      "category": "ships",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.1",
+        "modifier": {
+          "factor": "5",
+          "is_dragon_breeder_country": "yes"
+        }
+      }
+    },
+    "_source_file": "00_rare_crystals_budget.txt",
+    "_line_number": 22
+  },
+  "rare_crystals_expenditure_upgrade": {
+    "rare_crystals_expenditure_upgrade": {
+      "resource": "rare_crystals",
+      "type": "expenditure",
+      "category": "ship_upgrades",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "base": "0.1"
+      }
+    },
+    "_source_file": "00_rare_crystals_budget.txt",
+    "_line_number": 40
+  },
+  "rare_crystals_expenditure_trade": {
+    "rare_crystals_expenditure_trade": {
+      "resource": "rare_crystals",
+      "type": "expenditure",
+      "category": "trade",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.1"
+      }
+    },
+    "_source_file": "00_rare_crystals_budget.txt",
+    "_line_number": 54
+  },
+  "rare_crystals_expenditure_hyper_relays": {
+    "rare_crystals_expenditure_hyper_relays": {
+      "resource": "rare_crystals",
+      "type": "expenditure",
+      "category": "megastructures_hyper_relay",
+      "potential": {
+        "has_technology": "tech_hyper_relays",
+        "any_system_within_border": {
+          "NOR": {
+            "has_megastructure": "hyper_relay_restored"
+          },
+          "OR": {
+            "is_capital_system": "yes",
+            "any_neighbor_system": {
+              "OR": {
+                "has_megastructure": "hyper_relay_restored"
+              }
+            }
+          }
+        }
+      },
+      "weight": {
+        "weight": "0.5"
+      },
+      "desired_min": {
+        "base": "100"
+      },
+      "desired_max": {
+        "base": "100"
+      }
+    },
+    "_source_file": "00_rare_crystals_budget.txt",
+    "_line_number": 68
+  },
+  "rare_crystals_expenditure_starbases": {
+    "rare_crystals_expenditure_starbases": {
+      "resource": "rare_crystals",
+      "type": "expenditure",
+      "category": "starbases",
+      "potential": {
+        "any_owned_nonprimary_starbase": {
+          "has_starbase_size >": "orbital_ring_tier_2",
+          "exists": "planet"
+        }
+      },
+      "weight": {
+        "weight": "0.2",
+        "modifier": {
+          "factor": "0",
+          "NOT": {
+            "any_owned_nonprimary_starbase": {
+              "exists": "planet",
+              "OR": {
+                "AND": {
+                  "has_starbase_size": "orbital_ring_tier_3",
+                  "count_starbase_buildings": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_rare_crystals_budget.txt",
+    "_line_number": 104
+  },
+  "rare_crystals_upkeep_planets": {
+    "rare_crystals_upkeep_planets": {
+      "resource": "rare_crystals",
+      "type": "upkeep",
+      "category": "planets",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.9"
+      }
+    },
+    "_source_file": "00_rare_crystals_budget.txt",
+    "_line_number": 145
+  },
+  "rare_crystals_upkeep_ships": {
+    "rare_crystals_upkeep_ships": {
+      "resource": "rare_crystals",
+      "type": "upkeep",
+      "category": "ships",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.1"
+      }
+    },
+    "_source_file": "00_rare_crystals_budget.txt",
+    "_line_number": 159
+  },
+  "rare_crystals_upkeep_edicts": {
+    "rare_crystals_upkeep_edicts": {
+      "resource": "rare_crystals",
+      "type": "upkeep",
+      "category": "edicts",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "base": "0.25"
+      }
+    },
+    "_source_file": "00_rare_crystals_budget.txt",
+    "_line_number": 173
+  },
+  "rare_crystals_upkeep_hyper_relays": {
+    "rare_crystals_upkeep_hyper_relays": {
+      "resource": "rare_crystals",
+      "type": "upkeep",
+      "category": "megastructures_hyper_relay",
+      "potential": {
+        "has_technology": "tech_hyper_relays"
+      },
+      "weight": {
+        "weight": "0.1"
+      }
+    },
+    "_source_file": "00_rare_crystals_budget.txt",
+    "_line_number": 187
+  },
+  "rare_crystals_upkeep_starbases": {
+    "rare_crystals_upkeep_starbases": {
+      "resource": "rare_crystals",
+      "type": "upkeep",
+      "category": "starbases",
+      "potential": {
+        "any_owned_nonprimary_starbase": {
+          "has_starbase_size >": "orbital_ring_tier_2",
+          "exists": "planet"
+        }
+      },
+      "weight": {
+        "weight": "0.1"
+      }
+    },
+    "_source_file": "00_rare_crystals_budget.txt",
+    "_line_number": 201
+  }
+}

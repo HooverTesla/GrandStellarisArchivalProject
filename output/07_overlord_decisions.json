@@ -1,0 +1,109 @@
+{
+  "decision_strip_mining": {
+    "decision_strip_mining": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_strip_mining",
+      "enactment_time": "180",
+      "resources": {
+        "category": "decisions",
+        "cost": {
+          "influence": "15"
+        }
+      },
+      "potential": {
+        "owner": {
+          "is_specialist_subject_tier": {
+            "TYPE": "prospectorium",
+            "TIER": "3"
+          }
+        },
+        "any_deposit": {
+          "has_deposit_category": "deposit_cat_food"
+        },
+        "NOT": {},
+        "effect": {
+          "custom_tooltip": "decision_strip_mining_tt",
+          "hidden_effect": {
+            "random_deposit": {
+              "limit": {
+                "remove_deposit": "yes"
+              }
+            },
+            "add_deposit": "d_prospectorium_strip_mine"
+          },
+          "ai_weight": {
+            "weight": "1",
+            "modifier": {
+              "factor": "0",
+              "OR": {
+                "has_designation": "col_farming",
+                "AND": {
+                  "has_district": "district_farming",
+                  "num_free_districts": {},
+                  "AND": {
+                    "has_district": "district_farming_uncapped",
+                    "num_free_districts": {}
+                  }
+                },
+                "modifier": {
+                  "factor": "0.1",
+                  "owner": {
+                    "has_valid_civic": "civic_environmentalist"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_overlord_decisions.txt",
+    "_line_number": 9
+  },
+  "decision_grow_progenitor": {
+    "decision_grow_progenitor": {
+      "owned_planets_only": "yes",
+      "icon": "descision_progenitor_empty",
+      "enactment_time": "800",
+      "resources": {
+        "category": "decisions",
+        "cost": {
+          "trigger": {
+            "owner": {},
+            "food": "400"
+          },
+          "cost": {
+            "trigger": {
+              "owner": {},
+              "minerals": "400"
+            }
+          },
+          "potential": {
+            "has_deposit": "d_progenitor_empty",
+            "exists": "owner",
+            "owner": {},
+            "effect": {
+              "remove_deposit": "d_progenitor_empty",
+              "add_deposit": "d_progenitor",
+              "hidden_effect": {
+                "owner": {
+                  "if": {
+                    "limit": {
+                      "remove_modifier": "missing_progenitor_modifier"
+                    }
+                  }
+                }
+              },
+              "ai_weight": {
+                "weight": "100"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_overlord_decisions.txt",
+    "_line_number": 79
+  }
+}

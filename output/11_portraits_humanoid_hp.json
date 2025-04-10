@@ -1,0 +1,215 @@
+{
+  "portraits": {
+    "portraits": {
+      "humanoid_hp_01": {
+        "character_textures": {}
+      },
+      "humanoid_hp_01_female": {
+        "character_textures": {}
+      },
+      "_comments": [
+        "#GNOME PORTRAIT",
+        "#DWARF PORTRAIT"
+      ],
+      "humanoid_hp_02": {
+        "character_textures": {},
+        "custom_attachment_label": "HAIR_STYLE"
+      },
+      "humanoid_hp_02_female": {
+        "character_textures": {},
+        "custom_attachment_label": "HAIR_STYLE"
+      },
+      "humanoid_hp_06": {
+        "character_textures": {}
+      },
+      "humanoid_hp_06_female": {
+        "character_textures": {}
+      },
+      "humanoid_hp_07": {
+        "character_textures": {}
+      },
+      "humanoid_hp_07_female": {
+        "character_textures": {}
+      },
+      "humanoid_hp_08": {
+        "character_textures": {}
+      },
+      "humanoid_hp_08_female": {
+        "character_textures": {}
+      },
+      "humanoid_hp_09": {
+        "character_textures": {}
+      },
+      "humanoid_hp_09_female": {
+        "character_textures": {}
+      },
+      "humanoid_hp_10": {
+        "character_textures": {}
+      },
+      "humanoid_hp_10_female": {
+        "character_textures": {}
+      },
+      "humanoid_hp_11": {
+        "character_textures": {},
+        "custom_attachment_label": "HAIR_STYLE"
+      },
+      "humanoid_hp_11_female": {
+        "character_textures": {},
+        "custom_attachment_label": "HAIR_STYLE"
+      },
+      "humanoid_hp_12": {
+        "character_textures": {}
+      },
+      "humanoid_hp_12_female": {
+        "character_textures": {}
+      },
+      "humanoid_hp_13": {
+        "character_textures": {}
+      },
+      "humanoid_hp_13_female": {
+        "character_textures": {}
+      },
+      "humanoid_hp_14_male": {
+        "character_textures": {},
+        "custom_attachment_label": "HAIR_STYLE",
+        "custom_close_up_position_offset": {
+          "custom_close_up_scale": "1.30"
+        },
+        "_comments": [
+          "#custom_mid_close_up_position_offset = { x = 0 y = -100 }",
+          "#custom_mid_close_up_scale = 0.75"
+        ],
+        "humanoid_hp_14_female": {
+          "character_textures": {},
+          "custom_attachment_label": "HAIR_STYLE",
+          "custom_close_up_position_offset": {
+            "custom_close_up_scale": "1.30"
+          },
+          "_comments": [
+            "#custom_mid_close_up_position_offset = { x = 0 y = -100 }",
+            "#custom_mid_close_up_scale = 0.75"
+          ],
+          "humanoid_elf_male": {
+            "character_textures": {},
+            "_comments": [
+              "#custom_attachment_label = \"HAIR_STYLE\""
+            ],
+            "custom_close_up_position_offset": {
+              "custom_close_up_scale": "1.3",
+              "custom_mid_close_up_position_offset": {
+                "custom_mid_close_up_scale": "0.75"
+              },
+              "humanoid_elf_female": {
+                "character_textures": {},
+                "custom_attachment_label": "HAIR_STYLE",
+                "custom_close_up_position_offset": {
+                  "custom_close_up_scale": "1.30",
+                  "custom_mid_close_up_position_offset": {
+                    "custom_mid_close_up_scale": "0.75"
+                  },
+                  "humanoid_hp_16_male": {
+                    "character_textures": {},
+                    "custom_mid_close_up_position_offset": {
+                      "custom_mid_close_up_scale": "1.20",
+                      "custom_close_up_position_offset": {
+                        "custom_close_up_scale": "1.35"
+                      },
+                      "humanoid_hp_16_female": {
+                        "character_textures": {},
+                        "custom_mid_close_up_position_offset": {
+                          "custom_mid_close_up_scale": "1.20",
+                          "custom_close_up_position_offset": {
+                            "custom_close_up_scale": "1.35"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "11_portraits_humanoid_hp.txt",
+    "_line_number": 44
+  },
+  "portrait_groups": {
+    "portrait_groups": {
+      "humanoid_hp_16": {
+        "default": "humanoid_hp_16_male",
+        "game_setup": {
+          "add": {
+            "trigger": {
+              "ruler": {
+                "OR": {
+                  "gender": "indeterminable"
+                }
+              }
+            },
+            "portraits": {}
+          }
+        },
+        "_comments": [
+          "#species scope"
+        ],
+        "species": {
+          "add": {
+            "trigger": {
+              "exists": "species",
+              "NOT": {},
+              "portraits": {}
+            },
+            "add": {
+              "trigger": {
+                "exists": "species",
+                "NOT": {},
+                "portraits": {}
+              }
+            },
+            "_comments": [
+              "#pop scope"
+            ],
+            "pop": {
+              "add": {
+                "trigger": {
+                  "NOT": {},
+                  "portraits": {}
+                },
+                "add": {
+                  "trigger": {
+                    "NOT": {},
+                    "portraits": {}
+                  }
+                },
+                "leader": {
+                  "add": {
+                    "trigger": {
+                      "OR": {
+                        "gender": "indeterminable"
+                      }
+                    },
+                    "portraits": {}
+                  }
+                },
+                "ruler": {
+                  "add": {
+                    "trigger": {
+                      "OR": {
+                        "gender": "indeterminable"
+                      }
+                    },
+                    "portraits": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "11_portraits_humanoid_hp.txt",
+    "_line_number": 2096
+  }
+}

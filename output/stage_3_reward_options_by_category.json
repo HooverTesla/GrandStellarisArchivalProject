@@ -1,0 +1,64 @@
+{
+  "inline_script": {
+    "inline_script": {
+      "script": "grand_archive/collection/stage_3_reward_option",
+      "EVENT_ID": "$EVENT_ID$",
+      "CATEGORY": "$CATEGORY$",
+      "TRIGGER": "$TRIGGER$",
+      "SELECTED_RELIC": "$RELIC_5$",
+      "OTHER_RELIC_1": "$RELIC_1$",
+      "OTHER_RELIC_2": "$RELIC_2$",
+      "OTHER_RELIC_3": "$RELIC_3$",
+      "OTHER_RELIC_4": "$RELIC_4$"
+    },
+    "_source_file": "stage_3_reward_options_by_category.txt",
+    "_line_number": 47
+  },
+  "option": {
+    "option": {
+      "trigger": {
+        "$TRIGGER$_$CATEGORY$": "yes",
+        "NOR": {
+          "AND": {
+            "has_country_flag": "selected_relic_$RELIC_1$",
+            "event_target:curator_enclave_country": {
+              "NOT": {}
+            },
+            "AND": {
+              "has_country_flag": "selected_relic_$RELIC_2$",
+              "event_target:curator_enclave_country": {
+                "NOT": {}
+              },
+              "AND": {
+                "has_country_flag": "selected_relic_$RELIC_3$",
+                "event_target:curator_enclave_country": {
+                  "NOT": {}
+                },
+                "AND": {
+                  "has_country_flag": "selected_relic_$RELIC_4$",
+                  "event_target:curator_enclave_country": {
+                    "NOT": {}
+                  },
+                  "AND": {
+                    "has_country_flag": "selected_relic_$RELIC_5$",
+                    "event_target:curator_enclave_country": {
+                      "NOT": {}
+                    }
+                  }
+                },
+                "name": "$EVENT_ID$.3.no_relic.faction_modifier.$CATEGORY$",
+                "add_modifier": {
+                  "hidden_effect": {
+                    "set_country_flag": "received_collection_stage_3_reward_$CATEGORY$"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "stage_3_reward_options_by_category.txt",
+    "_line_number": 107
+  }
+}

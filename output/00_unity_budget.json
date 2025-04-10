@@ -1,0 +1,140 @@
+{
+  "unity_expenditure_edicts": {
+    "unity_expenditure_edicts": {
+      "resource": "unity",
+      "type": "expenditure",
+      "category": "edicts",
+      "potential": {
+        "has_resource": {
+          "type": "unity"
+        }
+      },
+      "weight": {
+        "weight": "0.2"
+      }
+    },
+    "_source_file": "00_unity_budget.txt",
+    "_line_number": 7
+  },
+  "unity_expenditure_traditions": {
+    "unity_expenditure_traditions": {
+      "resource": "unity",
+      "type": "expenditure",
+      "category": "traditions",
+      "potential": {
+        "has_unlocked_all_traditions": "no"
+      },
+      "weight": {
+        "weight": "0.8"
+      }
+    },
+    "_source_file": "00_unity_budget.txt",
+    "_line_number": 24
+  },
+  "unity_expenditure_megastructures": {
+    "unity_expenditure_megastructures": {
+      "resource": "unity",
+      "type": "expenditure",
+      "category": "megastructures",
+      "potential": {
+        "is_at_war": "no",
+        "can_build_unity_megastructures": "yes",
+        "has_resource": {
+          "type": "unity"
+        }
+      },
+      "weight": {
+        "weight": "0.1"
+      },
+      "desired_max": {
+        "base": "7500"
+      }
+    },
+    "_source_file": "00_unity_budget.txt",
+    "_line_number": 41
+  },
+  "unity_expenditure_decisions": {
+    "unity_expenditure_decisions": {
+      "resource": "unity",
+      "type": "expenditure",
+      "category": "decisions",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.20"
+      },
+      "desired_max": {
+        "base": "1000"
+      }
+    },
+    "_source_file": "00_unity_budget.txt",
+    "_line_number": 64
+  },
+  "unity_expenditure_leaders": {
+    "unity_expenditure_leaders": {
+      "resource": "unity",
+      "type": "expenditure",
+      "category": "leaders",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.4"
+      }
+    },
+    "_source_file": "00_unity_budget.txt",
+    "_line_number": 81
+  },
+  "unity_upkeep_country": {
+    "unity_upkeep_country": {
+      "resource": "unity",
+      "type": "upkeep",
+      "category": "country",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.2"
+      },
+      "desired_max": {
+        "base": "200"
+      }
+    },
+    "_source_file": "00_unity_budget.txt",
+    "_line_number": 96
+  },
+  "unity_upkeep_leaders": {
+    "unity_upkeep_leaders": {
+      "resource": "unity",
+      "type": "upkeep",
+      "category": "leaders",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.3"
+      },
+      "desired_max": {
+        "base": "50"
+      }
+    },
+    "_source_file": "00_unity_budget.txt",
+    "_line_number": 114
+  },
+  "unity_upkeep_edicts": {
+    "unity_upkeep_edicts": {
+      "resource": "unity",
+      "type": "upkeep",
+      "category": "edicts",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.07"
+      }
+    },
+    "_source_file": "00_unity_budget.txt",
+    "_line_number": 131
+  }
+}

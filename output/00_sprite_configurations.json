@@ -1,0 +1,20 @@
+{
+  "holographic": {
+    "holographic": {
+      "trigger": {
+        "OR": {
+          "AND": {
+            "is_scope_type": "species",
+            "species": {
+              "has_species_flag": "holographic_appearance"
+            }
+          }
+        }
+      },
+      "masking_texture": "gfx/interface/leaders/portrait_mask_fade.dds",
+      "effectFile": "gfx/FX/buttonstate_rendertarget_hologram.shader"
+    },
+    "_source_file": "00_sprite_configurations.txt",
+    "_line_number": 14
+  }
+}

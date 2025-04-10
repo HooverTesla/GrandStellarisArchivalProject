@@ -1,0 +1,349 @@
+{
+  "buildings_build_building": {
+    "buildings_build_building": {
+      "NOT": {
+        "planet": {
+          "has_current_purge": "yes"
+        }
+      },
+      "OR": {
+        "has_modifier": "planet_growth_discouraged",
+        "free_district_slots": "0"
+      },
+      "NAND": {
+        "exists": "owner",
+        "owner": {
+          "is_lithoid_devouring_swarm_consumption_world": "yes"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 0
+  },
+  "country_uses_food": {
+    "country_uses_food": {
+      "if": {
+        "limit": {
+          "_comments": [
+            "# Check if we have an uninitialized economy, then return true to be safe because we don't know"
+          ],
+          "resource_expenses_compare": {
+            "resource": "energy",
+            "value": "0"
+          }
+        }
+      },
+      "else": {
+        "resource_expenses_compare": {
+          "resource": "food"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 21
+  },
+  "country_uses_consumer_goods": {
+    "country_uses_consumer_goods": {
+      "if": {
+        "limit": {
+          "_comments": [
+            "# Check if we have an uninitialized economy, then return true to be safe because we don't know"
+          ],
+          "resource_expenses_compare": {
+            "resource": "energy",
+            "value": "0"
+          }
+        }
+      },
+      "else": {
+        "OR": {
+          "has_valid_civic": "civic_machine_obsessional_directive",
+          "resource_expenses_compare": {
+            "resource": "consumer_goods"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 48
+  },
+  "buildings_unemployed": {
+    "buildings_unemployed": {
+      "planet": {
+        "any_owned_pop": {
+          "NOT": {
+            "NOR": {
+              "is_pop_category": "ruler"
+            },
+            "OR": {
+              "is_unemployed": "yes",
+              "has_job": "servant"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 77
+  },
+  "buildings_difficulty": {
+    "buildings_difficulty": {
+      "has_resource": {
+        "has_resource": {}
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 93
+  },
+  "buildings_stop_pop": {
+    "buildings_stop_pop": {
+      "exists": "owner",
+      "free_district_slots": "0"
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 100
+  },
+  "districts_good_energy": {
+    "districts_good_energy": {
+      "planet": {
+        "OR": {
+          "has_modifier": "gas_rich_planet_fo_realz",
+          "has_planet_flag": "buildings_good_energy"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 106
+  },
+  "districts_good_minerals": {
+    "districts_good_minerals": {
+      "planet": {
+        "OR": {
+          "has_modifier": "minerals_relic",
+          "has_planet_flag": "buildings_good_minerals"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 118
+  },
+  "districts_good_food": {
+    "districts_good_food": {
+      "planet": {
+        "OR": {
+          "has_modifier": "lush_planet",
+          "has_planet_flag": "buildings_good_food"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 132
+  },
+  "jobs_work_minerals_goods": {
+    "jobs_work_minerals_goods": {
+      "exists": "owner",
+      "owner": {
+        "is_ai": "yes",
+        "has_monthly_income": {
+          "resource": "minerals"
+        },
+        "OR": {
+          "AND": {
+            "has_resource": {
+              "type": "consumer_goods"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 141
+  },
+  "buildings_has_motes": {
+    "buildings_has_motes": {
+      "exists": "owner",
+      "OR": {
+        "owner": {
+          "has_monthly_income": {
+            "resource": "volatile_motes",
+            "value >": "3"
+          }
+        },
+        "AND": {
+          "owner": {
+            "has_monthly_income": {
+              "resource": "volatile_motes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 184
+  },
+  "buildings_has_crystals": {
+    "buildings_has_crystals": {
+      "exists": "owner",
+      "OR": {
+        "owner": {
+          "has_monthly_income": {
+            "resource": "rare_crystals",
+            "value >": "3"
+          }
+        },
+        "AND": {
+          "owner": {
+            "has_monthly_income": {
+              "resource": "rare_crystals"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 205
+  },
+  "buildings_has_exotic_gases": {
+    "buildings_has_exotic_gases": {
+      "exists": "owner",
+      "OR": {
+        "owner": {
+          "has_monthly_income": {
+            "resource": "exotic_gases",
+            "value >": "3"
+          }
+        },
+        "AND": {
+          "owner": {
+            "has_monthly_income": {
+              "resource": "exotic_gases"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 226
+  },
+  "jobs_any_research": {
+    "jobs_any_research": {
+      "planet": {
+        "any_owned_pop": {
+          "OR": {
+            "has_job": "dimensional_portal_researcher_gestalt"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 247
+  },
+  "has_farming_designation": {
+    "has_farming_designation": {
+      "OR": {
+        "has_designation": "col_habitat_gestalt_farming"
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 262
+  },
+  "has_fortress_designation": {
+    "has_fortress_designation": {
+      "or": {
+        "has_designation": "col_habitat_fortress"
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 271
+  },
+  "has_factory_designation": {
+    "has_factory_designation": {
+      "OR": {
+        "has_designation": "col_habitat_factory"
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 278
+  },
+  "has_foundry_designation": {
+    "has_foundry_designation": {
+      "OR": {
+        "has_designation": "col_hiv_foundry"
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 288
+  },
+  "has_generator_designation": {
+    "has_generator_designation": {
+      "OR": {
+        "has_designation": "col_ring_generator"
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 299
+  },
+  "has_industrial_designation": {
+    "has_industrial_designation": {
+      "OR": {
+        "has_designation": "col_ecu_industrial"
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 307
+  },
+  "has_mining_designation": {
+    "has_mining_designation": {
+      "OR": {
+        "has_designation": "col_mining"
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 315
+  },
+  "has_refinery_designation": {
+    "has_refinery_designation": {
+      "OR": {
+        "has_designation": "col_habitat_refinery"
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 322
+  },
+  "has_research_designation": {
+    "has_research_designation": {
+      "OR": {
+        "has_designation": "col_ecu_research"
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 329
+  },
+  "has_unity_designation": {
+    "has_unity_designation": {
+      "OR": {
+        "has_designation": "col_habitat_bureau_spiritualist"
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 338
+  },
+  "has_rural_designation": {
+    "has_rural_designation": {
+      "OR": {
+        "has_designation": "col_mac"
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 352
+  },
+  "has_trade_designation": {
+    "has_trade_designation": {
+      "OR": {
+        "has_designation": "col_ecu_mix"
+      }
+    },
+    "_source_file": "00_scripted_triggers_ai.txt",
+    "_line_number": 362
+  }
+}

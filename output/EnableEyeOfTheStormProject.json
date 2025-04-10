@@ -1,0 +1,30 @@
+{
+  "if": {
+    "if": {
+      "limit": {
+        "$STORM_SCOPE$": {},
+        "enable_special_project": {
+          "name": "EYE_OF_THE_gravity_storm_PROJECT",
+          "location": "this.star",
+          "owner": "this.owner"
+        }
+      }
+    },
+    "_source_file": "EnableEyeOfTheStormProject.txt",
+    "_line_number": 0
+  },
+  "else_if": {
+    "else_if": {
+      "limit": {
+        "$STORM_SCOPE$": {},
+        "enable_special_project": {
+          "name": "EYE_OF_THE_nexus_storm_PROJECT",
+          "location": "this.star",
+          "owner": "this.owner"
+        }
+      }
+    },
+    "_source_file": "EnableEyeOfTheStormProject.txt",
+    "_line_number": 70
+  }
+}

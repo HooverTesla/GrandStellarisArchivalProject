@@ -1,0 +1,1797 @@
+{
+  "trait_auto_mod_robotic": {
+    "trait_auto_mod_robotic": {
+      "cost": {
+        "base": "3",
+        "modifier": {
+          "add": "-1",
+          "has_origin": "origin_mechanists"
+        }
+      },
+      "auto_mod": "yes",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "species_possible_remove": {
+          "always": "yes"
+        },
+        "species_possible_merge_remove": {
+          "always": "yes"
+        },
+        "slave_cost": {
+          "energy": "1000"
+        },
+        "assembly_score": {
+          "base": "2"
+        },
+        "custom_tooltip_with_modifiers": "automodding_trait_robotic_tooltip"
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 3
+  },
+  "trait_robot_power_drills": {
+    "trait_robot_power_drills": {
+      "cost": "2",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "modifier": {
+          "planet_jobs_minerals_produces_mult": "0.15"
+        },
+        "slave_cost": {
+          "energy": "750"
+        },
+        "assembly_score": {
+          "modifier": {
+            "add": "1.5",
+            "from": {},
+            "modifier": {
+              "add": "0.5",
+              "from": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 31
+  },
+  "trait_robot_harvesters": {
+    "trait_robot_harvesters": {
+      "cost": "2",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "modifier": {
+          "planet_jobs_food_produces_mult": "0.15"
+        },
+        "slave_cost": {
+          "energy": "750"
+        },
+        "assembly_score": {
+          "modifier": {
+            "add": "1.5",
+            "from": {},
+            "modifier": {
+              "add": "0.5",
+              "from": {}
+            },
+            "ai_weight": {
+              "modifier": {
+                "factor": "0",
+                "exists": "from",
+                "from": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 56
+  },
+  "trait_robot_superconductive": {
+    "trait_robot_superconductive": {
+      "cost": "2",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "modifier": {
+          "planet_jobs_energy_produces_mult": "0.15"
+        },
+        "slave_cost": {
+          "energy": "750"
+        },
+        "assembly_score": {
+          "modifier": {
+            "add": "1.5",
+            "from": {},
+            "modifier": {
+              "add": "0.5",
+              "from": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 87
+  },
+  "trait_robot_efficient_processors": {
+    "trait_robot_efficient_processors": {
+      "cost": "3",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "modifier": {
+          "planet_jobs_produces_mult": "0.05"
+        },
+        "slave_cost": {
+          "energy": "500"
+        },
+        "assembly_score": {
+          "modifier": {
+            "add": "0.5 #always good"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 112
+  },
+  "trait_robot_logic_engines": {
+    "trait_robot_logic_engines": {
+      "cost": "2",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "_comments": [
+          "# Droids, Synths and Machines"
+        ],
+        "species_potential_add": {
+          "OR": {
+            "can_add_droid_traits": "yes",
+            "can_add_synth_traits": "yes",
+            "owner_is_machine_intelligence": "yes",
+            "owner_is_individual_machine": "yes"
+          }
+        },
+        "modifier": {
+          "planet_jobs_physics_research_produces_mult": "0.10",
+          "planet_jobs_society_research_produces_mult": "0.10",
+          "planet_jobs_engineering_research_produces_mult": "0.10"
+        },
+        "slave_cost": {
+          "energy": "750"
+        },
+        "assembly_score": {
+          "modifier": {
+            "add": "1.5",
+            "from": {}
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 131
+  },
+  "trait_robot_loyalty_circuits": {
+    "trait_robot_loyalty_circuits": {
+      "cost": "2",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "_comments": [
+          "# Synth or Individualist Machine"
+        ],
+        "species_potential_add": {
+          "OR": {
+            "can_add_synth_traits": "yes",
+            "owner_is_individual_machine": "yes"
+          }
+        },
+        "forbidden_ethics": {
+          "modifier": {
+            "pop_happiness": "0.1"
+          },
+          "slave_cost": {
+            "energy": "500"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 162
+  },
+  "trait_robot_domestic_protocols": {
+    "trait_robot_domestic_protocols": {
+      "cost": "2",
+      "category": "robotic",
+      "initial": "no",
+      "randomized": "no",
+      "allowed_archetypes": {
+        "_comments": [
+          "# Droid, Synth or Individualist Machine"
+        ],
+        "species_potential_add": {
+          "OR": {
+            "can_add_droid_traits": "yes",
+            "can_add_synth_traits": "yes",
+            "owner_is_individual_machine": "yes"
+          }
+        },
+        "forbidden_ethics": {
+          "modifier": {
+            "pop_job_amenities_mult": "0.20"
+          },
+          "slave_cost": {
+            "energy": "750"
+          },
+          "custom_tooltip_with_modifiers": "TRAIT_DOMESTIC_PROTOCOLS_EFFECT"
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 186
+  },
+  "trait_robot_double_jointed": {
+    "trait_robot_double_jointed": {
+      "cost": "1",
+      "category": "robotic",
+      "opposites": {
+        "allowed_archetypes": {
+          "modifier": {
+            "pop_housing_usage_mult": "-0.1"
+          },
+          "slave_cost": {
+            "energy": "750"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 212
+  },
+  "trait_robot_bulky": {
+    "trait_robot_bulky": {
+      "cost": "-1",
+      "category": "robotic",
+      "opposites": {
+        "allowed_archetypes": {
+          "modifier": {
+            "pop_housing_usage_mult": "0.1"
+          },
+          "ai_weight": {
+            "factor": "0"
+          },
+          "slave_cost": {
+            "energy": "-150"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 227
+  },
+  "trait_robot_enhanced_memory": {
+    "trait_robot_enhanced_memory": {
+      "cost": "2",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "_comments": [
+          "# Synth, Machine Intelligence or Individualist Machine"
+        ],
+        "species_potential_add": {
+          "OR": {
+            "can_add_synth_traits": "yes",
+            "owner_is_machine_intelligence": "yes",
+            "owner_is_individual_machine": "yes"
+          }
+        },
+        "modifier": {
+          "negative_leader_traits_species": "-1",
+          "leaders_upkeep_mult": "-0.25"
+        },
+        "ai_weight": {
+          "factor": "0"
+        },
+        "slave_cost": {
+          "energy": "750"
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 245
+  },
+  "trait_robot_emotion_emulators": {
+    "trait_robot_emotion_emulators": {
+      "cost": "1",
+      "category": "robotic",
+      "opposites": {
+        "allowed_archetypes": {
+          "modifier": {
+            "pop_job_amenities_mult": "0.20"
+          },
+          "slave_cost": {
+            "energy": "750"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 269
+  },
+  "trait_robot_uncanny": {
+    "trait_robot_uncanny": {
+      "cost": "-1",
+      "category": "robotic",
+      "opposites": {
+        "allowed_archetypes": {
+          "modifier": {
+            "pop_job_amenities_mult": "-0.20"
+          },
+          "ai_weight": {
+            "factor": "0"
+          },
+          "slave_cost": {
+            "energy": "-150"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 282
+  },
+  "trait_robot_durable": {
+    "trait_robot_durable": {
+      "cost": "1",
+      "category": "robotic",
+      "opposites": {
+        "allowed_archetypes": {
+          "modifier": {
+            "planet_pops_robotics_upkeep_mult": "-0.10"
+          },
+          "slave_cost": {
+            "energy": "750"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 300
+  },
+  "trait_robot_high_maintenance": {
+    "trait_robot_high_maintenance": {
+      "cost": "-1",
+      "category": "robotic",
+      "opposites": {
+        "allowed_archetypes": {
+          "modifier": {
+            "planet_pops_robotics_upkeep_mult": "0.10"
+          },
+          "ai_weight": {
+            "factor": "0"
+          },
+          "slave_cost": {
+            "energy": "-150"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 315
+  },
+  "trait_robot_learning_algorithms": {
+    "trait_robot_learning_algorithms": {
+      "cost": "1",
+      "category": "robotic",
+      "opposites": {
+        "allowed_archetypes": {
+          "_comments": [
+            "# Synth, Machine Intelligence or Individualist Machine"
+          ],
+          "species_potential_add": {
+            "OR": {
+              "can_add_synth_traits": "yes",
+              "owner_is_machine_intelligence": "yes",
+              "owner_is_individual_machine": "yes"
+            }
+          },
+          "modifier": {
+            "species_leader_exp_gain": "0.10"
+          },
+          "slave_cost": {
+            "energy": "750"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 333
+  },
+  "trait_robot_repurposed_hardware": {
+    "trait_robot_repurposed_hardware": {
+      "cost": "-1",
+      "category": "robotic",
+      "opposites": {
+        "allowed_archetypes": {
+          "_comments": [
+            "# Synth, Machine Intelligence or Individualist Machine"
+          ],
+          "species_potential_add": {
+            "OR": {
+              "can_add_synth_traits": "yes",
+              "owner_is_machine_intelligence": "yes",
+              "owner_is_individual_machine": "yes"
+            }
+          },
+          "modifier": {
+            "species_leader_exp_gain": "-0.10"
+          },
+          "ai_weight": {
+            "weight": "1",
+            "modifier": {
+              "factor": "0"
+            }
+          },
+          "slave_cost": {
+            "energy": "-250"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 356
+  },
+  "trait_robot_mass_produced": {
+    "trait_robot_mass_produced": {
+      "cost": "1",
+      "category": "robotic",
+      "opposites": {
+        "allowed_archetypes": {
+          "modifier": {
+            "planet_pop_assembly_mult": "0.15"
+          },
+          "slave_cost": {
+            "energy": "1500"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 386
+  },
+  "trait_robot_custom_made": {
+    "trait_robot_custom_made": {
+      "cost": "-1",
+      "category": "robotic",
+      "opposites": {
+        "allowed_archetypes": {
+          "modifier": {
+            "planet_pop_assembly_mult": "-0.15"
+          },
+          "ai_weight": {
+            "factor": "0"
+          },
+          "slave_cost": {
+            "energy": "-200"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 401
+  },
+  "trait_robot_recycled": {
+    "trait_robot_recycled": {
+      "cost": "2",
+      "category": "robotic",
+      "opposites": {
+        "allowed_archetypes": {
+          "_comments": [
+            "#assembling_modifier, declining_modifier, growing_modifier are applied to planet when pop is the one assembling/declining/growing"
+          ],
+          "assembling_modifier": {
+            "planet_pop_assemblers_upkeep_mult": "-0.20"
+          },
+          "slave_cost": {
+            "energy": "1500"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 419
+  },
+  "trait_robot_luxurious": {
+    "trait_robot_luxurious": {
+      "cost": "-2",
+      "category": "robotic",
+      "opposites": {
+        "allowed_archetypes": {
+          "_comments": [
+            "#assembling_modifier, declining_modifier, growing_modifier are applied to planet when pop is the one assembling/declining/growing"
+          ],
+          "assembling_modifier": {
+            "planet_pop_assemblers_upkeep_mult": "0.20"
+          },
+          "ai_weight": {
+            "weight": "1",
+            "modifier": {
+              "factor": "0"
+            }
+          },
+          "slave_cost": {
+            "energy": "-200"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 435
+  },
+  "trait_robot_propaganda_machines": {
+    "trait_robot_propaganda_machines": {
+      "cost": "1",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "_comments": [
+          "# Droid, Synth, Machine Intelligence or Individualist Machine"
+        ],
+        "species_potential_add": {
+          "OR": {
+            "can_add_droid_traits": "yes",
+            "can_add_synth_traits": "yes",
+            "owner_is_machine_intelligence": "yes",
+            "owner_is_individual_machine": "yes"
+          }
+        },
+        "opposites": {
+          "modifier": {
+            "planet_jobs_unity_produces_mult": "0.15",
+            "planet_jobs_unity_upkeep_mult": "-0.1"
+          },
+          "slave_cost": {
+            "energy": "750"
+          },
+          "assembly_score": {
+            "modifier": {
+              "add": "1.5",
+              "from": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 458
+  },
+  "trait_robot_streamlined_protocols": {
+    "trait_robot_streamlined_protocols": {
+      "cost": "2",
+      "category": "robotic",
+      "opposites": {
+        "allowed_archetypes": {
+          "modifier": {
+            "species_empire_size_mult": "-0.10"
+          },
+          "slave_cost": {
+            "energy": "750"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 487
+  },
+  "trait_robot_high_bandwidth": {
+    "trait_robot_high_bandwidth": {
+      "cost": "-2",
+      "category": "robotic",
+      "opposites": {
+        "allowed_archetypes": {
+          "modifier": {
+            "species_empire_size_mult": "0.10"
+          },
+          "slave_cost": {
+            "energy": "-150"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 500
+  },
+  "trait_robot_trading_algorithms": {
+    "trait_robot_trading_algorithms": {
+      "cost": "2",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "forbidden_ethics": {
+          "opposites": {
+            "_comments": [
+              "# Droid, Synth, or Individualist Machine"
+            ],
+            "species_potential_add": {
+              "OR": {
+                "can_add_droid_traits": "yes",
+                "can_add_synth_traits": "yes",
+                "owner_is_individual_machine": "yes"
+              },
+              "owner_is_machine_intelligence": "no",
+              "owner_is_hive_empire": "no"
+            },
+            "modifier": {
+              "pop_job_trade_mult": "0.25"
+            },
+            "slave_cost": {
+              "energy": "500"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 513
+  },
+  "trait_robot_quarrelsome": {
+    "trait_robot_quarrelsome": {
+      "icon": "gfx/interface/icons/traits/trait_quarrelsome.dds",
+      "cost": "-1",
+      "category": "robotic",
+      "_comments": [
+        "# Synths and Individualist Machines"
+      ],
+      "species_potential_add": {
+        "OR": {
+          "can_add_synth_traits": "yes",
+          "owner_is_individual_machine": "yes"
+        }
+      },
+      "opposites": {
+        "allowed_archetypes": {
+          "forbidden_ethics": {
+            "modifier": {
+              "planet_jobs_unity_produces_mult": "-0.1"
+            },
+            "ai_weight": {
+              "weight": "1",
+              "modifier": {
+                "factor": "0"
+              }
+            },
+            "slave_cost": {
+              "energy": "-200"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 537
+  },
+  "trait_robot_deviants": {
+    "trait_robot_deviants": {
+      "icon": "gfx/interface/icons/traits/trait_deviants.dds",
+      "cost": "-1",
+      "category": "robotic",
+      "_comments": [
+        "# Synths and Individualist Machines"
+      ],
+      "species_potential_add": {
+        "OR": {
+          "can_add_synth_traits": "yes",
+          "owner_is_individual_machine": "yes"
+        }
+      },
+      "potential_crossbreeding_chance": "1.0",
+      "modifier": {
+        "allowed_archetypes": {
+          "forbidden_ethics": {
+            "ai_weight": {
+              "weight": "0"
+            },
+            "slave_cost": {
+              "energy": "-200"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 567
+  },
+  "trait_robot_decadent": {
+    "trait_robot_decadent": {
+      "icon": "gfx/interface/icons/traits/trait_decadent.dds",
+      "cost": "-1",
+      "category": "robotic",
+      "_comments": [
+        "# Synths and Individualist Machines"
+      ],
+      "species_potential_add": {
+        "OR": {
+          "can_add_synth_traits": "yes",
+          "owner_is_individual_machine": "yes"
+        }
+      },
+      "allowed_archetypes": {
+        "forbidden_ethics": {
+          "modifier": {
+            "pop_cat_worker_happiness": "-0.1",
+            "pop_cat_slave_happiness": "-0.1"
+          },
+          "ai_weight": {
+            "weight": "0"
+          },
+          "slave_cost": {
+            "energy": "-200"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 590
+  },
+  "trait_robot_wasteful": {
+    "trait_robot_wasteful": {
+      "icon": "gfx/interface/icons/traits/trait_wasteful.dds",
+      "cost": "-1",
+      "category": "robotic",
+      "_comments": [
+        "# Synths and Individualist Machines"
+      ],
+      "species_potential_add": {
+        "OR": {
+          "can_add_synth_traits": "yes",
+          "owner_is_individual_machine": "yes"
+        }
+      },
+      "allowed_archetypes": {
+        "forbidden_ethics": {
+          "modifier": {
+            "planet_pops_consumer_goods_upkeep_mult": "0.10"
+          },
+          "ai_weight": {
+            "weight": "0"
+          },
+          "slave_cost": {
+            "energy": "-200"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 615
+  },
+  "trait_robot_artificial_engineers": {
+    "trait_robot_artificial_engineers": {
+      "host_has_dlc": "The Machine Age",
+      "cost": "1",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "opposites": {},
+        "_comments": [
+          "# Droid, Synth, Machine Intelligence or Individualist Machine"
+        ],
+        "species_potential_add": {
+          "OR": {
+            "can_add_droid_traits": "yes",
+            "can_add_synth_traits": "yes",
+            "owner_is_machine_intelligence": "yes",
+            "owner_is_individual_machine": "yes"
+          }
+        },
+        "modifier": {
+          "planet_jobs_engineering_research_produces_mult": "0.15"
+        },
+        "slave_cost": {
+          "energy": "750"
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 639
+  },
+  "trait_robot_artificial_physicists": {
+    "trait_robot_artificial_physicists": {
+      "host_has_dlc": "The Machine Age",
+      "cost": "1",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "opposites": {},
+        "_comments": [
+          "# Droid, Synth, Machine Intelligence or Individualist Machine"
+        ],
+        "species_potential_add": {
+          "OR": {
+            "can_add_droid_traits": "yes",
+            "can_add_synth_traits": "yes",
+            "owner_is_machine_intelligence": "yes",
+            "owner_is_individual_machine": "yes"
+          }
+        },
+        "modifier": {
+          "planet_jobs_physics_research_produces_mult": "0.15"
+        },
+        "slave_cost": {
+          "energy": "750"
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 665
+  },
+  "trait_robot_artificial_sociologists": {
+    "trait_robot_artificial_sociologists": {
+      "host_has_dlc": "The Machine Age",
+      "cost": "1",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "opposites": {},
+        "_comments": [
+          "# Droid, Synth, Machine Intelligence or Individualist Machine"
+        ],
+        "species_potential_add": {
+          "OR": {
+            "can_add_droid_traits": "yes",
+            "can_add_synth_traits": "yes",
+            "owner_is_machine_intelligence": "yes",
+            "owner_is_individual_machine": "yes"
+          }
+        },
+        "modifier": {
+          "planet_jobs_society_research_produces_mult": "0.15"
+        },
+        "slave_cost": {
+          "energy": "750"
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 692
+  },
+  "trait_robot_integrated_weaponry": {
+    "trait_robot_integrated_weaponry": {
+      "host_has_dlc": "The Machine Age",
+      "cost": "2",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "opposites": {
+          "_comments": [
+            "# Droid, Synth, Machine Intelligence or Individualist Machine"
+          ],
+          "species_potential_add": {
+            "OR": {
+              "can_add_droid_traits": "yes",
+              "can_add_synth_traits": "yes",
+              "owner_is_machine_intelligence": "yes",
+              "owner_is_individual_machine": "yes"
+            }
+          },
+          "randomized": "no",
+          "modifier": {
+            "army_damage_mult": "1.0"
+          },
+          "custom_tooltip": "INTEGRATED_WEAPONRY_TT",
+          "slave_cost": {
+            "energy": "1000"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 720
+  },
+  "trait_robot_delicate_frames": {
+    "trait_robot_delicate_frames": {
+      "host_has_dlc": "The Machine Age",
+      "cost": "-1",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "opposites": {
+          "_comments": [
+            "# Droid, Synth, Machine Intelligence or Individualist Machine"
+          ],
+          "species_potential_add": {
+            "OR": {
+              "can_add_droid_traits": "yes",
+              "can_add_synth_traits": "yes",
+              "owner_is_machine_intelligence": "yes",
+              "owner_is_individual_machine": "yes"
+            }
+          },
+          "randomized": "no",
+          "modifier": {
+            "army_damage_mult": "-0.5",
+            "planet_jobs_robot_worker_produces_mult": "-0.05"
+          },
+          "slave_cost": {
+            "energy": "-250"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 747
+  },
+  "trait_robot_scarcity_algorithms": {
+    "trait_robot_scarcity_algorithms": {
+      "host_has_dlc": "The Machine Age",
+      "cost": "-1",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "forbidden_ethics": {
+          "opposites": {
+            "_comments": [
+              "# Droid, Synth, or Individualist Machine"
+            ],
+            "species_potential_add": {
+              "OR": {
+                "can_add_droid_traits": "yes",
+                "can_add_synth_traits": "yes",
+                "owner_is_individual_machine": "yes"
+              },
+              "owner_is_machine_intelligence": "no",
+              "owner_is_hive_empire": "no"
+            },
+            "randomized": "no",
+            "modifier": {
+              "pop_job_trade_mult": "-0.25"
+            },
+            "slave_cost": {
+              "energy": "-150"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 775
+  },
+  "trait_robot_ancient_dreadnought": {
+    "trait_robot_ancient_dreadnought": {
+      "host_has_dlc": "The Machine Age",
+      "cost": "3",
+      "category": "robotic",
+      "_comments": [
+        "# Synth, Machine Intelligence or Individualist Machine"
+      ],
+      "species_potential_add": {
+        "OR": {
+          "can_add_synth_traits": "yes",
+          "owner_is_machine_intelligence": "yes",
+          "owner_is_individual_machine": "yes"
+        },
+        "exists": "from",
+        "from": {
+          "has_technology": "tech_leviathan_techgenesis",
+          "has_country_flag": "harvested_dreadnought_parts"
+        }
+      },
+      "potential_crossbreeding_chance": "1.0",
+      "initial": "no",
+      "randomized": "no",
+      "opposites": {
+        "allowed_archetypes": {
+          "modifier": {
+            "army_damage_mult": "5",
+            "planet_metallurgists_produces_mult": "0.15"
+          },
+          "slave_cost": {
+            "energy": "1500"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 805
+  },
+  "trait_robot_enigmatic_fortress": {
+    "trait_robot_enigmatic_fortress": {
+      "host_has_dlc": "The Machine Age",
+      "cost": "3",
+      "category": "robotic",
+      "_comments": [
+        "# Synth, Machine Intelligence or Individualist Machine"
+      ],
+      "species_potential_add": {
+        "OR": {
+          "can_add_synth_traits": "yes",
+          "owner_is_machine_intelligence": "yes",
+          "owner_is_individual_machine": "yes"
+        },
+        "exists": "from",
+        "from": {
+          "has_technology": "tech_leviathan_techgenesis",
+          "has_country_flag": "harvested_fortress_parts"
+        }
+      },
+      "potential_crossbreeding_chance": "1.0",
+      "initial": "no",
+      "randomized": "no",
+      "opposites": {
+        "allowed_archetypes": {
+          "modifier": {
+            "pop_amenities_usage_mult": "-0.5"
+          },
+          "slave_cost": {
+            "energy": "1500"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 838
+  },
+  "trait_robot_infinity_sphere": {
+    "trait_robot_infinity_sphere": {
+      "host_has_dlc": "The Machine Age",
+      "cost": "3",
+      "category": "robotic",
+      "_comments": [
+        "# Synth, Machine Intelligence or Individualist Machine"
+      ],
+      "species_potential_add": {
+        "OR": {
+          "can_add_synth_traits": "yes",
+          "owner_is_machine_intelligence": "yes",
+          "owner_is_individual_machine": "yes"
+        },
+        "exists": "from",
+        "from": {
+          "has_technology": "tech_leviathan_techgenesis",
+          "has_country_flag": "harvested_sphere_parts"
+        }
+      },
+      "potential_crossbreeding_chance": "1.0",
+      "initial": "no",
+      "randomized": "no",
+      "opposites": {
+        "allowed_archetypes": {
+          "modifier": {
+            "planet_researchers_upkeep_mult": "-0.5"
+          },
+          "slave_cost": {
+            "energy": "1500"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 870
+  },
+  "trait_robot_scavenger_bot": {
+    "trait_robot_scavenger_bot": {
+      "host_has_dlc": "The Machine Age",
+      "cost": "3",
+      "category": "robotic",
+      "_comments": [
+        "# Synth, Machine Intelligence or Individualist Machine"
+      ],
+      "species_potential_add": {
+        "OR": {
+          "can_add_synth_traits": "yes",
+          "owner_is_machine_intelligence": "yes",
+          "owner_is_individual_machine": "yes"
+        },
+        "exists": "from",
+        "from": {
+          "has_technology": "tech_leviathan_techgenesis",
+          "has_country_flag": "harvested_scavenger_parts"
+        }
+      },
+      "potential_crossbreeding_chance": "1.0",
+      "initial": "no",
+      "randomized": "no",
+      "opposites": {
+        "allowed_archetypes": {
+          "modifier": {
+            "planet_pop_assembly_mult": "0.5"
+          },
+          "slave_cost": {
+            "energy": "1500"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 902
+  },
+  "trait_robot_history_warbot": {
+    "trait_robot_history_warbot": {
+      "host_has_dlc": "The Machine Age",
+      "cost": "0",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "species_potential_add": {
+          "always": "no"
+        },
+        "species_possible_remove": {
+          "always": "no"
+        },
+        "opposites": {
+          "modifier": {
+            "army_damage_mult": "0.05"
+          },
+          "slave_cost": {
+            "energy": "750"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 940
+  },
+  "trait_robot_history_artbot": {
+    "trait_robot_history_artbot": {
+      "host_has_dlc": "The Machine Age",
+      "cost": "0",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "species_potential_add": {
+          "always": "no"
+        },
+        "species_possible_remove": {
+          "always": "no"
+        },
+        "opposites": {
+          "modifier": {
+            "pop_job_amenities_mult": "0.05"
+          },
+          "slave_cost": {
+            "energy": "750"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 965
+  },
+  "trait_robot_history_explorebot": {
+    "trait_robot_history_explorebot": {
+      "host_has_dlc": "The Machine Age",
+      "cost": "0",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "species_potential_add": {
+          "always": "no"
+        },
+        "species_possible_remove": {
+          "always": "no"
+        },
+        "opposites": {
+          "modifier": {
+            "planet_jobs_unity_produces_mult": "0.02"
+          },
+          "slave_cost": {
+            "energy": "750"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 990
+  },
+  "trait_robot_history_researchbot": {
+    "trait_robot_history_researchbot": {
+      "host_has_dlc": "The Machine Age",
+      "cost": "0",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "species_potential_add": {
+          "always": "no"
+        },
+        "species_possible_remove": {
+          "always": "no"
+        },
+        "opposites": {
+          "modifier": {
+            "planet_jobs_physics_research_produces_mult": "0.02",
+            "planet_jobs_society_research_produces_mult": "0.02",
+            "planet_jobs_engineering_research_produces_mult": "0.02"
+          },
+          "slave_cost": {
+            "energy": "750"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 1015
+  },
+  "trait_robot_history_resourcebot": {
+    "trait_robot_history_resourcebot": {
+      "host_has_dlc": "The Machine Age",
+      "cost": "0",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "species_potential_add": {
+          "always": "no"
+        },
+        "species_possible_remove": {
+          "always": "no"
+        },
+        "opposites": {
+          "modifier": {
+            "planet_jobs_minerals_produces_mult": "0.05"
+          },
+          "slave_cost": {
+            "energy": "750"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 1042
+  },
+  "trait_robot_history_chatbot": {
+    "trait_robot_history_chatbot": {
+      "host_has_dlc": "The Machine Age",
+      "cost": "0",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "species_potential_add": {
+          "always": "no"
+        },
+        "species_possible_remove": {
+          "always": "no"
+        },
+        "opposites": {
+          "modifier": {
+            "planet_jobs_upkeep_mult": "-0.02"
+          },
+          "slave_cost": {
+            "energy": "750"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 1067
+  },
+  "trait_robot_survivor": {
+    "trait_robot_survivor": {
+      "cost": "0",
+      "category": "robotic",
+      "initial": "no",
+      "randomized": "no",
+      "species_potential_add": {
+        "always": "no"
+      },
+      "allowed_archetypes": {
+        "modifier": {
+          "pc_nuked_habitability": "0.7",
+          "leader_lifespan_add": "10"
+        },
+        "slave_cost": {
+          "energy": "500"
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 1091
+  },
+  "trait_robot_digital_1": {
+    "trait_robot_digital_1": {
+      "cost": "0",
+      "category": "robotic",
+      "initial": "no",
+      "randomized": "no",
+      "allowed_archetypes": {
+        "species_potential_add": {
+          "always": "no"
+        },
+        "species_possible_remove": {
+          "always": "no"
+        },
+        "modifier": {
+          "habitability_floor_add": "0.25",
+          "pop_housing_usage_mult": "-0.9"
+        },
+        "custom_tooltip": "trait_robot_digital_1_tt",
+        "slave_cost": {
+          "energy": "750"
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 1114
+  },
+  "trait_robot_digital_2": {
+    "trait_robot_digital_2": {
+      "icon": "gfx/interface/icons/traits/trait_robot_digital_1.dds",
+      "cost": "0",
+      "category": "robotic",
+      "initial": "no",
+      "randomized": "no",
+      "allowed_archetypes": {
+        "species_potential_add": {
+          "always": "no"
+        },
+        "species_possible_remove": {
+          "always": "no"
+        },
+        "modifier": {
+          "habitability_floor_add": "0.25",
+          "pop_housing_usage_mult": "-0.9"
+        },
+        "triggered_pop_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {
+              "has_tradition": "tr_virtuality_1"
+            }
+          },
+          "planet_jobs_produces_mult": "1",
+          "mult": "value:virtuality_concentrated_production_mult"
+        },
+        "custom_tooltip": "trait_robot_digital_2_tt",
+        "slave_cost": {
+          "energy": "750"
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 1142
+  },
+  "trait_robot_suppressed": {
+    "trait_robot_suppressed": {
+      "cost": "3",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "species_potential_add": {
+          "can_do_advanced_robo_modding": "yes"
+        },
+        "species_possible_remove": {
+          "always": "yes"
+        },
+        "species_possible_merge_remove": {
+          "always": "yes"
+        },
+        "initial": "no",
+        "randomized": "no",
+        "opposites": {},
+        "modifier": {
+          "planet_jobs_produces_mult": "0.1",
+          "species_leader_exp_gain": "-1"
+        },
+        "slave_cost": {
+          "energy": "750"
+        },
+        "custom_tooltip_with_modifiers": "trait_robot_suppressed_tt"
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 1182
+  },
+  "trait_robot_shielded_components": {
+    "trait_robot_shielded_components": {
+      "cost": "3",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "species_potential_add": {
+          "can_do_advanced_robo_modding": "yes"
+        },
+        "species_possible_remove": {
+          "always": "yes"
+        },
+        "species_possible_merge_remove": {
+          "always": "yes"
+        },
+        "initial": "no",
+        "randomized": "no",
+        "modifier": {
+          "pop_environment_tolerance": "0.30",
+          "planet_jobs_produces_mult": "0.05",
+          "leader_lifespan_add": "50"
+        },
+        "slave_cost": {
+          "energy": "750"
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 1214
+  },
+  "trait_robot_monoform": {
+    "trait_robot_monoform": {
+      "cost": "4",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "species_potential_add": {
+          "can_do_advanced_robo_modding": "yes"
+        },
+        "species_possible_remove": {
+          "always": "yes"
+        },
+        "species_possible_merge_remove": {
+          "always": "yes"
+        },
+        "initial": "no",
+        "randomized": "no",
+        "modifier": {
+          "pop_housing_usage_mult": "-0.8",
+          "planet_pop_assembly_mult": "0.2"
+        },
+        "slave_cost": {
+          "energy": "750"
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 1244
+  },
+  "trait_robot_inquisitative_axioms": {
+    "trait_robot_inquisitative_axioms": {
+      "cost": "4",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "species_potential_add": {
+          "can_do_advanced_robo_modding": "yes"
+        },
+        "species_possible_remove": {
+          "always": "yes"
+        },
+        "species_possible_merge_remove": {
+          "always": "yes"
+        },
+        "initial": "no",
+        "randomized": "no",
+        "modifier": {
+          "planet_researchers_produces_mult": "0.2",
+          "leaders_upkeep_mult": "-0.1",
+          "negative_traits_leader": "-1"
+        },
+        "opposites": {
+          "slave_cost": {
+            "energy": "750"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 1274
+  },
+  "trait_robot_ceaseless_symmetric_annihilation_engine": {
+    "trait_robot_ceaseless_symmetric_annihilation_engine": {
+      "cost": "2",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "species_potential_add": {
+          "can_do_advanced_robo_modding": "yes"
+        },
+        "species_possible_add": {},
+        "species_possible_remove": {
+          "always": "yes"
+        },
+        "species_possible_merge_remove": {
+          "always": "yes"
+        },
+        "initial": "no",
+        "randomized": "no",
+        "modifier": {
+          "planet_jobs_produces_mult": "0.40"
+        },
+        "slave_cost": {
+          "energy": "750"
+        },
+        "custom_tooltip_with_modifiers": "trait_robot_ceaseless_symmetric_annihilation_engine_tt"
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 1306
+  },
+  "trait_robot_ferro_viscosity_augmentation": {
+    "trait_robot_ferro_viscosity_augmentation": {
+      "cost": "2",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "species_potential_add": {
+          "can_do_advanced_robo_modding": "yes"
+        },
+        "species_possible_add": {},
+        "species_possible_remove": {
+          "always": "yes"
+        },
+        "species_possible_merge_remove": {
+          "always": "yes"
+        },
+        "initial": "no",
+        "randomized": "no",
+        "modifier": {
+          "leader_lifespan_mult": "0.5"
+        },
+        "triggered_pop_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {
+              "is_gestalt": "no"
+            }
+          },
+          "pop_amenities_usage_mult": "-0.50"
+        },
+        "slave_cost": {
+          "energy": "750"
+        },
+        "custom_tooltip_with_modifiers": "trait_robot_ferro_viscosity_augmentation_tt"
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 1340
+  },
+  "trait_robot_biomimetic_assembly": {
+    "trait_robot_biomimetic_assembly": {
+      "cost": "1",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "species_potential_add": {
+          "can_do_advanced_robo_modding": "yes"
+        },
+        "species_possible_add": {},
+        "species_possible_remove": {
+          "always": "yes"
+        },
+        "species_possible_merge_remove": {
+          "always": "yes"
+        },
+        "initial": "no",
+        "randomized": "no",
+        "assembling_modifier": {
+          "planet_pop_assemblers_upkeep_mult": "-0.80"
+        },
+        "slave_cost": {
+          "energy": "750"
+        },
+        "custom_tooltip_with_modifiers": "trait_robot_biomimetic_assembly_tt"
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 1390
+  },
+  "trait_robot_matrix_trading": {
+    "trait_robot_matrix_trading": {
+      "cost": "1",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "opposites": {
+          "forbidden_ethics": {
+            "_comments": [
+              "# Droid, Synth, or Individualist Machine"
+            ],
+            "species_potential_add": {
+              "can_do_advanced_robo_modding": "yes",
+              "OR": {
+                "can_add_droid_traits": "yes",
+                "can_add_synth_traits": "yes",
+                "owner_is_individual_machine": "yes"
+              },
+              "owner_is_machine_intelligence": "no",
+              "owner_is_hive_empire": "no"
+            },
+            "species_possible_add": {},
+            "species_possible_remove": {
+              "always": "yes"
+            },
+            "species_possible_merge_remove": {
+              "always": "yes"
+            },
+            "initial": "no",
+            "randomized": "no",
+            "modifier": {
+              "pop_job_trade_mult": "0.5"
+            },
+            "slave_cost": {
+              "energy": "750"
+            },
+            "custom_tooltip_with_modifiers": "trait_robot_matrix_trading_tt"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 1421
+  },
+  "trait_robot_mote_powered_tools": {
+    "trait_robot_mote_powered_tools": {
+      "cost": "1",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "species_potential_add": {
+          "can_do_advanced_robo_modding": "yes"
+        },
+        "species_possible_add": {},
+        "species_possible_remove": {
+          "always": "yes"
+        },
+        "species_possible_merge_remove": {
+          "always": "yes"
+        },
+        "initial": "no",
+        "randomized": "no",
+        "triggered_pop_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {
+              "country_uses_consumer_goods": "no"
+            }
+          },
+          "planet_metallurgists_produces_mult": "0.2"
+        },
+        "slave_cost": {
+          "energy": "750"
+        },
+        "custom_tooltip_with_modifiers": "trait_robot_mote_powered_tools_tt"
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 1464
+  },
+  "trait_robot_exotic_fuel_consumption": {
+    "trait_robot_exotic_fuel_consumption": {
+      "host_has_dlc": "The Machine Age",
+      "cost": "1",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "species_potential_add": {
+          "always": "yes"
+        },
+        "species_possible_add": {},
+        "species_possible_remove": {
+          "always": "yes"
+        },
+        "species_possible_merge_remove": {
+          "always": "yes"
+        },
+        "initial": "no",
+        "randomized": "no",
+        "modifier": {
+          "planet_jobs_produces_mult": "0.10"
+        },
+        "slave_cost": {
+          "energy": "750"
+        },
+        "custom_tooltip_with_modifiers": "trait_robot_exotic_fuel_consumption_tt"
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 1512
+  },
+  "trait_robot_rare_crystal_exterior": {
+    "trait_robot_rare_crystal_exterior": {
+      "host_has_dlc": "The Machine Age",
+      "cost": "1",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "species_potential_add": {
+          "always": "yes"
+        },
+        "species_possible_add": {
+          "custom_tooltip": {
+            "fail_text": "requires_im_or_droid",
+            "exists": "from",
+            "from": {
+              "OR": {
+                "is_individual_machine": "yes",
+                "is_machine_empire": "yes",
+                "has_technology": "tech_droid_workers"
+              }
+            }
+          }
+        },
+        "species_possible_remove": {
+          "always": "yes"
+        },
+        "species_possible_merge_remove": {
+          "always": "yes"
+        },
+        "initial": "no",
+        "randomized": "no",
+        "modifier": {
+          "planet_metallurgists_produces_mult": "0.2"
+        },
+        "slave_cost": {
+          "energy": "750"
+        },
+        "custom_tooltip_with_modifiers": "trait_robot_rare_crystal_exterior_tt"
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 1545
+  },
+  "trait_robot_volatile_mote_reactor": {
+    "trait_robot_volatile_mote_reactor": {
+      "host_has_dlc": "The Machine Age",
+      "cost": "1",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "species_potential_add": {
+          "always": "yes"
+        },
+        "species_possible_add": {},
+        "species_possible_remove": {
+          "always": "yes"
+        },
+        "species_possible_merge_remove": {
+          "always": "yes"
+        },
+        "initial": "no",
+        "randomized": "no",
+        "modifier": {
+          "pop_environment_tolerance": "0.3"
+        },
+        "slave_cost": {
+          "energy": "750"
+        },
+        "custom_tooltip_with_modifiers": "trait_robot_volatile_mote_reactor_tt"
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 1589
+  },
+  "trait_robot_immortality": {
+    "trait_robot_immortality": {
+      "cost": "4",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "species_potential_add": {
+          "OR": {
+            "can_add_synth_traits": "yes",
+            "owner_is_machine_intelligence": "yes",
+            "owner_is_individual_machine": "yes"
+          }
+        },
+        "species_possible_add": {
+          "always": "yes"
+        },
+        "species_possible_remove": {
+          "always": "yes"
+        },
+        "species_possible_merge_remove": {
+          "always": "yes"
+        },
+        "initial": "yes",
+        "randomized": "no",
+        "immortal_leaders": "yes",
+        "slave_cost": {
+          "energy": "1000"
+        },
+        "custom_tooltip": "trait_robot_immortality_tt"
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 1620
+  },
+  "trait_robot_synthetic_dawn": {
+    "trait_robot_synthetic_dawn": {
+      "cost": "0",
+      "category": "robotic",
+      "allowed_archetypes": {
+        "species_potential_add": {
+          "hidden_trigger": {
+            "from": {
+              "has_modifier": "synthetic_dawn"
+            },
+            "can_add_synth_traits": "yes"
+          },
+          "species_possible_add": {
+            "always": "yes"
+          },
+          "species_possible_remove": {
+            "always": "yes"
+          },
+          "species_possible_merge_remove": {
+            "always": "yes"
+          },
+          "modifier": {
+            "pop_government_ethic_attraction": "0.50",
+            "pop_happiness": "0.05",
+            "planet_jobs_unity_produces_mult": "0.05"
+          },
+          "initial": "no",
+          "randomized": "no",
+          "immortal_leaders": "no",
+          "slave_cost": {
+            "energy": "1000"
+          }
+        }
+      }
+    },
+    "_source_file": "05_species_traits_robotic.txt",
+    "_line_number": 1654
+  }
+}

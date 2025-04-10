@@ -1,0 +1,70 @@
+{
+  "special_project": {
+    "special_project": {
+      "key": "NON_BELIEVERS_PROJECT",
+      "cost": "0",
+      "days_to_research": "80",
+      "tech_department": "society_technology",
+      "picture": "GFX_evt_underground_civilization",
+      "icon": "gfx/interface/icons/situation_log/situation_log_ship.dds",
+      "location": "yes",
+      "timelimit": "1080",
+      "event_scope": "ship_event",
+      "requirements": {
+        "shipclass_transport": "1"
+      },
+      "on_success": {
+        "while": {
+          "count": "3",
+          "event_target:non_believers_planet": {
+            "create_army": {
+              "name": "NAME_subterranean_task_force",
+              "owner": "event_target:non_believers_country",
+              "species": "event_target:non_believers_species",
+              "type": "subterranean_defense_army"
+            }
+          }
+        },
+        "owner": {
+          "set_country_flag": "helped_non_believers",
+          "random_list": {
+            "20": {
+              "30": {
+                "50": {}
+              }
+            },
+            "on_fail": {
+              "owner": {
+                "random_list": {
+                  "20": {
+                    "30": {
+                      "50": {}
+                    }
+                  },
+                  "abort_trigger": {
+                    "event_target:non_believers_planet": {
+                      "OR": {
+                        "NOT": {
+                          "AND": {
+                            "exists": "owner",
+                            "owner": {
+                              "NOT": {
+                                "is_same_value": "event_target:non_believers_country"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_projects_first_contact_dlc.txt",
+    "_line_number": 337
+  }
+}

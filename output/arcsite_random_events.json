@@ -1,0 +1,80 @@
+{
+  "fleet_event": {
+    "fleet_event": {
+      "id": "arcsite.9005",
+      "title": "arcsite.9005.name",
+      "desc": "arcsite.9005.desc",
+      "picture": "GFX_evt_frozen",
+      "show_sound": "event_default",
+      "archaeology": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "fromfrom": {
+          "NOT": {
+            "has_archaeology_flag": "icebreaker"
+          }
+        }
+      },
+      "immediate": {
+        "fromfrom": {
+          "set_site_progress_locked": "yes",
+          "set_archaeology_flag": "icebreaker"
+        }
+      },
+      "_comments": [
+        "# Try the prototype machine"
+      ],
+      "option": {
+        "name": "MAKE_IT_SO",
+        "allow": {
+          "owner": {
+            "resource_stockpile_compare": {
+              "resource": "energy",
+              "value >": "400"
+            }
+          }
+        },
+        "owner": {
+          "add_resource": {
+            "energy": "-400"
+          }
+        },
+        "random_list": {
+          "2": {
+            "custom_tooltip": "arcsite.9005.tt.carefree",
+            "hidden_effect": {
+              "fromfrom": {
+                "leader": {
+                  "add_trait": "leader_trait_carefree",
+                  "add_experience": "150"
+                }
+              }
+            },
+            "1": {
+              "custom_tooltip": "arcsite.9005.tt.paranoid",
+              "hidden_effect": {
+                "fromfrom": {
+                  "leader": {
+                    "add_trait": "leader_trait_paranoid",
+                    "add_experience": "50"
+                  }
+                }
+              }
+            }
+          },
+          "_comments": [
+            "# Don't risk it"
+          ],
+          "option": {
+            "name": "arcsite.9005.a"
+          },
+          "after": {
+            "fromfrom": {}
+          }
+        }
+      }
+    },
+    "_source_file": "arcsite_random_events.txt",
+    "_line_number": 161
+  }
+}

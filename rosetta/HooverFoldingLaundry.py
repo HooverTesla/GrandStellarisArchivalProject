@@ -1,4 +1,5 @@
 import re
+from collections import deque
 
 # === PARSE SINGLE PDX BLOCK ===
 def parse_pdx_block(lines, file_variables):
@@ -7,11 +8,11 @@ def parse_pdx_block(lines, file_variables):
     key = None
     comment_buffer = []
 
-    def finalize(key, value):
+    def finalize(k, val):
         if isinstance(stack[-1], dict):
-            stack[-1][key] = value
+            stack[-1][k] = val
         elif isinstance(stack[-1], list):
-            stack[-1].append(value)
+            stack[-1].append(val)
 
     stack.append(current)
 
@@ -27,16 +28,17 @@ def parse_pdx_block(lines, file_variables):
             continue
 
         if "{" in line:
+            # Attach any pending comments to the current object
             if comment_buffer:
                 if isinstance(stack[-1], dict):
                     stack[-1].setdefault("_comments", []).extend(comment_buffer)
                 comment_buffer = []
 
             if "=" in line:
-                key, _ = line.split("=", 1)
-                key = key.strip()
+                k, _ = line.split("=", 1)
+                k = k.strip()
                 new = {}
-                finalize(key, new)
+                finalize(k, new)
                 stack.append(new)
             else:
                 new = {}
@@ -56,6 +58,7 @@ def parse_pdx_block(lines, file_variables):
 
     return current
 
+
 # === PARSE FULL FILE ===
 def parse_pdx_file(filepath):
     try:
@@ -64,7 +67,6 @@ def parse_pdx_file(filepath):
     except UnicodeDecodeError:
         with open(filepath, "r", encoding="cp1252") as f:
             lines = f.readlines()
-
 
     file_variables = {}
     current_key = None
@@ -79,21 +81,28 @@ def parse_pdx_file(filepath):
         if not stripped:
             continue
 
+        # Check for variable definitions like @some_var = 10
         var_match = re.match(r'(@\w+)\s*=\s*(\d+)', stripped)
         if var_match:
             var_name, var_value = var_match.groups()
             file_variables[var_name] = int(var_value)
             continue
 
-        if bracket_level == 0 and "=" in stripped and "{" in stripped:
-            current_key = stripped.split("=")[0].strip()
+        # For bracket counting, remove anything after '#' in this line
+        bracket_line = stripped
+        comment_start = bracket_line.find('#')
+        if comment_start != -1:
+            bracket_line = bracket_line[:comment_start].rstrip()
+
+        if bracket_level == 0 and "=" in bracket_line and "{" in bracket_line:
+            current_key = bracket_line.split("=", 1)[0].strip()
             all_keys.add(current_key)
-            current_block = [line]
-            bracket_level += line.count("{") - line.count("}")
+            current_block = [line]  # store full line (with comments) for block parser
+            bracket_level += bracket_line.count("{") - bracket_line.count("}")
 
         elif bracket_level > 0:
-            current_block.append(line)
-            bracket_level += line.count("{") - line.count("}")
+            current_block.append(line)  # store full line (with comments)
+            bracket_level += bracket_line.count("{") - bracket_line.count("}")
 
             if bracket_level == 0:
                 parsed = parse_pdx_block(current_block, file_variables)

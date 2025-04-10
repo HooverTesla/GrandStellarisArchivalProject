@@ -1,0 +1,31 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "specialist.1280",
+      "title": "specialist.1280.title",
+      "desc": "specialist.1280.desc",
+      "picture": "GFX_evt_physics_cache",
+      "show_sound": "evn_ove_scholarium_cache_physics",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "EXCELLENT",
+        "event_target:prospectorium_discovery_target": {
+          "prospectorium_resource_discovery_reward_effect": {
+            "RESOURCE": "sr_living_metal",
+            "DEPOSIT1": "d_living_metal_deposit",
+            "DEPOSIT2": "d_living_metal_deposit",
+            "DEPOSIT3": "d_living_metal_deposit",
+            "RESOURCELOW": "@RareResourceLow",
+            "RESOURCELOWBOOSTED": "@RareResourceLowBoosted",
+            "RESOURCEMEDIUM": "@RareResourceMedium",
+            "RESOURCEMEDIUMBOOSTED": "@RareResourceMediumBoosted",
+            "RESOURCEHIGH": "@RareResourceHigh",
+            "RESOURCEHIGHBOOSTED": "@RareResourceHighBoosted"
+          }
+        }
+      }
+    },
+    "_source_file": "overlord_specialist_events.txt",
+    "_line_number": 771
+  }
+}

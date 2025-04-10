@@ -1,0 +1,30 @@
+{
+  "special_project": {
+    "special_project": {
+      "key": "COLOSSUS_PROJECT",
+      "cost": "50000",
+      "tech_department": "engineering_technology",
+      "_comments": [
+        "#cost = 50"
+      ],
+      "icon": "gfx/interface/icons/situation_log/situation_log_main_quest.dds",
+      "picture": "GFX_evt_planet_beam",
+      "location": "no",
+      "event_scope": "country_event",
+      "requirements": {},
+      "on_progress_50": {
+        "owner": {
+          "country_event": {}
+        },
+        "on_success": {
+          "owner": {
+            "country_event": {}
+          },
+          "on_fail": {}
+        }
+      }
+    },
+    "_source_file": "00_projects_apocalypse.txt",
+    "_line_number": 5
+  }
+}

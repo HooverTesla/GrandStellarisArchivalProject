@@ -1,0 +1,1218 @@
+{
+  "shroud_energy_cost": {
+    "shroud_energy_cost": {
+      "add_resource": {}
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": -1
+  },
+  "remove_shroud_flags": {
+    "remove_shroud_flags": {
+      "hidden_effect": {
+        "remove_country_flag": "low.16"
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 3
+  },
+  "randomize_shroud_flags": {
+    "randomize_shroud_flags": {
+      "random_list": {
+        "25": {
+          "if": {
+            "limit": {
+              "count_controlled_ship": {
+                "limit": {},
+                "count_owned_army": {
+                  "limit": {}
+                },
+                "set_country_flag": "high.16"
+              },
+              "else": {},
+              "125": {},
+              "random_list": {
+                "25": {
+                  "if": {
+                    "limit": {
+                      "set_country_flag": "medium.1"
+                    },
+                    "else": {},
+                    "25": {
+                      "if": {
+                        "limit": {
+                          "set_country_flag": "medium.2"
+                        },
+                        "else": {},
+                        "25": {
+                          "if": {
+                            "limit": {
+                              "set_country_flag": "medium.3"
+                            },
+                            "else": {},
+                            "25": {
+                              "if": {
+                                "limit": {
+                                  "set_country_flag": "medium.4"
+                                },
+                                "else": {},
+                                "25": {
+                                  "if": {
+                                    "limit": {
+                                      "set_country_flag": "medium.5"
+                                    },
+                                    "else": {},
+                                    "25": {
+                                      "if": {
+                                        "limit": {
+                                          "set_country_flag": "medium.6"
+                                        },
+                                        "else": {},
+                                        "25": {
+                                          "if": {
+                                            "limit": {
+                                              "set_country_flag": "medium.7"
+                                            },
+                                            "else": {},
+                                            "25": {
+                                              "if": {
+                                                "limit": {
+                                                  "set_country_flag": "medium.8"
+                                                },
+                                                "else": {},
+                                                "25": {
+                                                  "if": {
+                                                    "limit": {
+                                                      "set_country_flag": "medium.9"
+                                                    },
+                                                    "else": {},
+                                                    "25": {
+                                                      "if": {
+                                                        "limit": {
+                                                          "set_country_flag": "medium.10"
+                                                        },
+                                                        "else": {},
+                                                        "25": {
+                                                          "if": {
+                                                            "limit": {
+                                                              "set_country_flag": "medium.11"
+                                                            },
+                                                            "else": {},
+                                                            "25": {
+                                                              "if": {
+                                                                "limit": {
+                                                                  "set_country_flag": "medium.12"
+                                                                },
+                                                                "else": {},
+                                                                "25": {
+                                                                  "if": {
+                                                                    "limit": {
+                                                                      "set_country_flag": "medium.13"
+                                                                    },
+                                                                    "else": {},
+                                                                    "25": {
+                                                                      "if": {
+                                                                        "limit": {
+                                                                          "set_country_flag": "medium.14"
+                                                                        },
+                                                                        "else": {},
+                                                                        "25": {
+                                                                          "if": {
+                                                                            "limit": {
+                                                                              "set_country_flag": "medium.15"
+                                                                            },
+                                                                            "else": {},
+                                                                            "25": {
+                                                                              "if": {
+                                                                                "limit": {
+                                                                                  "NOT": {
+                                                                                    "count_controlled_ship": {
+                                                                                      "limit": {},
+                                                                                      "count_owned_army": {
+                                                                                        "limit": {}
+                                                                                      },
+                                                                                      "set_country_flag": "medium.16"
+                                                                                    },
+                                                                                    "else": {},
+                                                                                    "80": {},
+                                                                                    "random_list": {
+                                                                                      "25": {
+                                                                                        "if": {
+                                                                                          "limit": {
+                                                                                            "NOR": {
+                                                                                              "has_country_flag": "medium.1"
+                                                                                            }
+                                                                                          },
+                                                                                          "set_country_flag": "low.1"
+                                                                                        },
+                                                                                        "else_if": {
+                                                                                          "limit": {
+                                                                                            "NOR": {
+                                                                                              "has_country_flag": "medium.2"
+                                                                                            }
+                                                                                          },
+                                                                                          "set_country_flag": "low.2"
+                                                                                        },
+                                                                                        "else": {},
+                                                                                        "25": {
+                                                                                          "if": {
+                                                                                            "limit": {
+                                                                                              "NOR": {
+                                                                                                "has_country_flag": "medium.2"
+                                                                                              }
+                                                                                            },
+                                                                                            "set_country_flag": "low.2"
+                                                                                          },
+                                                                                          "else_if": {
+                                                                                            "limit": {
+                                                                                              "NOR": {
+                                                                                                "has_country_flag": "medium.3"
+                                                                                              }
+                                                                                            },
+                                                                                            "set_country_flag": "low.3"
+                                                                                          },
+                                                                                          "else": {},
+                                                                                          "25": {
+                                                                                            "if": {
+                                                                                              "limit": {
+                                                                                                "NOR": {
+                                                                                                  "has_country_flag": "medium.3"
+                                                                                                }
+                                                                                              },
+                                                                                              "set_country_flag": "low.3"
+                                                                                            },
+                                                                                            "else_if": {
+                                                                                              "limit": {
+                                                                                                "NOR": {
+                                                                                                  "has_country_flag": "medium.4"
+                                                                                                }
+                                                                                              },
+                                                                                              "set_country_flag": "low.4"
+                                                                                            },
+                                                                                            "else": {},
+                                                                                            "25": {
+                                                                                              "if": {
+                                                                                                "limit": {
+                                                                                                  "NOR": {
+                                                                                                    "has_country_flag": "medium.4"
+                                                                                                  }
+                                                                                                },
+                                                                                                "set_country_flag": "low.4"
+                                                                                              },
+                                                                                              "else_if": {
+                                                                                                "limit": {
+                                                                                                  "NOR": {
+                                                                                                    "has_country_flag": "medium.5"
+                                                                                                  }
+                                                                                                },
+                                                                                                "set_country_flag": "low.5"
+                                                                                              },
+                                                                                              "else": {},
+                                                                                              "25": {
+                                                                                                "if": {
+                                                                                                  "limit": {
+                                                                                                    "NOR": {
+                                                                                                      "has_country_flag": "medium.5"
+                                                                                                    }
+                                                                                                  },
+                                                                                                  "set_country_flag": "low.5"
+                                                                                                },
+                                                                                                "else_if": {
+                                                                                                  "limit": {
+                                                                                                    "NOR": {
+                                                                                                      "has_country_flag": "medium.6"
+                                                                                                    }
+                                                                                                  },
+                                                                                                  "set_country_flag": "low.6"
+                                                                                                },
+                                                                                                "else": {},
+                                                                                                "25": {
+                                                                                                  "if": {
+                                                                                                    "limit": {
+                                                                                                      "NOR": {
+                                                                                                        "has_country_flag": "medium.6"
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "set_country_flag": "low.6"
+                                                                                                  },
+                                                                                                  "else_if": {
+                                                                                                    "limit": {
+                                                                                                      "NOR": {
+                                                                                                        "has_country_flag": "medium.7"
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "set_country_flag": "low.7"
+                                                                                                  },
+                                                                                                  "else": {},
+                                                                                                  "25": {
+                                                                                                    "if": {
+                                                                                                      "limit": {
+                                                                                                        "NOR": {
+                                                                                                          "has_country_flag": "medium.7"
+                                                                                                        }
+                                                                                                      },
+                                                                                                      "set_country_flag": "low.7"
+                                                                                                    },
+                                                                                                    "else_if": {
+                                                                                                      "limit": {
+                                                                                                        "NOR": {
+                                                                                                          "has_country_flag": "medium.8"
+                                                                                                        }
+                                                                                                      },
+                                                                                                      "set_country_flag": "low.8"
+                                                                                                    },
+                                                                                                    "else": {},
+                                                                                                    "25": {
+                                                                                                      "if": {
+                                                                                                        "limit": {
+                                                                                                          "NOR": {
+                                                                                                            "has_country_flag": "medium.8"
+                                                                                                          }
+                                                                                                        },
+                                                                                                        "set_country_flag": "low.8"
+                                                                                                      },
+                                                                                                      "else_if": {
+                                                                                                        "limit": {
+                                                                                                          "NOR": {
+                                                                                                            "has_country_flag": "medium.9"
+                                                                                                          }
+                                                                                                        },
+                                                                                                        "set_country_flag": "low.9"
+                                                                                                      },
+                                                                                                      "else": {},
+                                                                                                      "25": {
+                                                                                                        "if": {
+                                                                                                          "limit": {
+                                                                                                            "NOR": {
+                                                                                                              "has_country_flag": "medium.9"
+                                                                                                            }
+                                                                                                          },
+                                                                                                          "set_country_flag": "low.9"
+                                                                                                        },
+                                                                                                        "else_if": {
+                                                                                                          "limit": {
+                                                                                                            "NOR": {
+                                                                                                              "has_country_flag": "medium.10"
+                                                                                                            }
+                                                                                                          },
+                                                                                                          "set_country_flag": "low.10"
+                                                                                                        },
+                                                                                                        "else": {},
+                                                                                                        "25": {
+                                                                                                          "if": {
+                                                                                                            "limit": {
+                                                                                                              "NOR": {
+                                                                                                                "has_country_flag": "medium.10"
+                                                                                                              }
+                                                                                                            },
+                                                                                                            "set_country_flag": "low.10"
+                                                                                                          },
+                                                                                                          "else_if": {
+                                                                                                            "limit": {
+                                                                                                              "NOR": {
+                                                                                                                "has_country_flag": "medium.11"
+                                                                                                              }
+                                                                                                            },
+                                                                                                            "set_country_flag": "low.11"
+                                                                                                          },
+                                                                                                          "else": {},
+                                                                                                          "25": {
+                                                                                                            "if": {
+                                                                                                              "limit": {
+                                                                                                                "NOR": {
+                                                                                                                  "has_country_flag": "medium.11"
+                                                                                                                }
+                                                                                                              },
+                                                                                                              "set_country_flag": "low.11"
+                                                                                                            },
+                                                                                                            "else_if": {
+                                                                                                              "limit": {
+                                                                                                                "NOR": {
+                                                                                                                  "has_country_flag": "medium.12"
+                                                                                                                }
+                                                                                                              },
+                                                                                                              "set_country_flag": "low.12"
+                                                                                                            },
+                                                                                                            "else": {},
+                                                                                                            "25": {
+                                                                                                              "if": {
+                                                                                                                "limit": {
+                                                                                                                  "NOR": {
+                                                                                                                    "has_country_flag": "medium.12"
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                "set_country_flag": "low.12"
+                                                                                                              },
+                                                                                                              "else_if": {
+                                                                                                                "limit": {
+                                                                                                                  "NOR": {
+                                                                                                                    "has_country_flag": "medium.13"
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                "set_country_flag": "low.13"
+                                                                                                              },
+                                                                                                              "else": {},
+                                                                                                              "25": {
+                                                                                                                "if": {
+                                                                                                                  "limit": {
+                                                                                                                    "NOR": {
+                                                                                                                      "has_country_flag": "medium.13"
+                                                                                                                    }
+                                                                                                                  },
+                                                                                                                  "set_country_flag": "low.13"
+                                                                                                                },
+                                                                                                                "else_if": {
+                                                                                                                  "limit": {
+                                                                                                                    "NOR": {
+                                                                                                                      "has_country_flag": "medium.14"
+                                                                                                                    }
+                                                                                                                  },
+                                                                                                                  "set_country_flag": "low.14"
+                                                                                                                },
+                                                                                                                "else": {},
+                                                                                                                "25": {
+                                                                                                                  "if": {
+                                                                                                                    "limit": {
+                                                                                                                      "NOR": {
+                                                                                                                        "has_country_flag": "medium.14"
+                                                                                                                      }
+                                                                                                                    },
+                                                                                                                    "set_country_flag": "low.14"
+                                                                                                                  },
+                                                                                                                  "else_if": {
+                                                                                                                    "limit": {
+                                                                                                                      "NOR": {
+                                                                                                                        "has_country_flag": "medium.15"
+                                                                                                                      }
+                                                                                                                    },
+                                                                                                                    "set_country_flag": "low.15"
+                                                                                                                  },
+                                                                                                                  "else": {},
+                                                                                                                  "25": {
+                                                                                                                    "if": {
+                                                                                                                      "limit": {
+                                                                                                                        "NOR": {
+                                                                                                                          "has_country_flag": "medium.15"
+                                                                                                                        }
+                                                                                                                      },
+                                                                                                                      "set_country_flag": "low.15"
+                                                                                                                    },
+                                                                                                                    "else_if": {
+                                                                                                                      "limit": {
+                                                                                                                        "NOR": {
+                                                                                                                          "has_country_flag": "medium.16"
+                                                                                                                        }
+                                                                                                                      },
+                                                                                                                      "set_country_flag": "low.16"
+                                                                                                                    },
+                                                                                                                    "else": {},
+                                                                                                                    "25": {
+                                                                                                                      "if": {
+                                                                                                                        "limit": {
+                                                                                                                          "NOR": {
+                                                                                                                            "has_country_flag": "medium.16"
+                                                                                                                          }
+                                                                                                                        },
+                                                                                                                        "set_country_flag": "low.16"
+                                                                                                                      },
+                                                                                                                      "else_if": {
+                                                                                                                        "limit": {
+                                                                                                                          "NOR": {
+                                                                                                                            "has_country_flag": "medium.1"
+                                                                                                                          },
+                                                                                                                          "count_controlled_ship": {
+                                                                                                                            "limit": {},
+                                                                                                                            "count_owned_army": {
+                                                                                                                              "limit": {}
+                                                                                                                            },
+                                                                                                                            "set_country_flag": "low.1"
+                                                                                                                          },
+                                                                                                                          "else": {}
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 57
+  },
+  "happiness_shroud_high": {
+    "happiness_shroud_high": {
+      "hidden_effect": {
+        "random_list": {
+          "70": {
+            "20": {
+              "10": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 656
+  },
+  "happiness_shroud_medium": {
+    "happiness_shroud_medium": {
+      "hidden_effect": {
+        "random_list": {
+          "50": {
+            "30": {
+              "20": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 665
+  },
+  "happiness_shroud_low": {
+    "happiness_shroud_low": {
+      "hidden_effect": {
+        "random_list": {
+          "30": {
+            "40": {
+              "30": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 674
+  },
+  "upkeep_shroud_high": {
+    "upkeep_shroud_high": {
+      "hidden_effect": {
+        "random_list": {
+          "70": {
+            "20": {
+              "10": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 683
+  },
+  "upkeep_shroud_medium": {
+    "upkeep_shroud_medium": {
+      "hidden_effect": {
+        "random_list": {
+          "50": {
+            "30": {
+              "20": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 692
+  },
+  "upkeep_shroud_low": {
+    "upkeep_shroud_low": {
+      "hidden_effect": {
+        "random_list": {
+          "30": {
+            "40": {
+              "30": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 701
+  },
+  "research_shroud_high": {
+    "research_shroud_high": {
+      "hidden_effect": {
+        "random_list": {
+          "70": {
+            "20": {
+              "10": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 710
+  },
+  "research_shroud_medium": {
+    "research_shroud_medium": {
+      "hidden_effect": {
+        "random_list": {
+          "50": {
+            "30": {
+              "20": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 719
+  },
+  "research_shroud_low": {
+    "research_shroud_low": {
+      "hidden_effect": {
+        "random_list": {
+          "30": {
+            "40": {
+              "30": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 728
+  },
+  "shields_shroud_high": {
+    "shields_shroud_high": {
+      "hidden_effect": {
+        "random_list": {
+          "70": {
+            "20": {
+              "10": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 737
+  },
+  "shields_shroud_medium": {
+    "shields_shroud_medium": {
+      "hidden_effect": {
+        "random_list": {
+          "50": {
+            "30": {
+              "20": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 746
+  },
+  "shields_shroud_low": {
+    "shields_shroud_low": {
+      "hidden_effect": {
+        "random_list": {
+          "30": {
+            "40": {
+              "30": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 755
+  },
+  "weapons_shroud_high": {
+    "weapons_shroud_high": {
+      "hidden_effect": {
+        "random_list": {
+          "70": {
+            "20": {
+              "10": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 764
+  },
+  "weapons_shroud_medium": {
+    "weapons_shroud_medium": {
+      "hidden_effect": {
+        "random_list": {
+          "50": {
+            "30": {
+              "20": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 773
+  },
+  "weapons_shroud_low": {
+    "weapons_shroud_low": {
+      "hidden_effect": {
+        "random_list": {
+          "30": {
+            "40": {
+              "30": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 782
+  },
+  "firingrate_shroud_high": {
+    "firingrate_shroud_high": {
+      "hidden_effect": {
+        "random_list": {
+          "70": {
+            "20": {
+              "10": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 791
+  },
+  "firingrate_shroud_medium": {
+    "firingrate_shroud_medium": {
+      "hidden_effect": {
+        "random_list": {
+          "50": {
+            "30": {
+              "20": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 800
+  },
+  "firingrate_shroud_low": {
+    "firingrate_shroud_low": {
+      "hidden_effect": {
+        "random_list": {
+          "30": {
+            "40": {
+              "30": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 809
+  },
+  "ethics_shroud_high": {
+    "ethics_shroud_high": {
+      "hidden_effect": {
+        "random_list": {
+          "70": {
+            "20": {
+              "10": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 818
+  },
+  "ethics_shroud_medium": {
+    "ethics_shroud_medium": {
+      "hidden_effect": {
+        "random_list": {
+          "50": {
+            "30": {
+              "20": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 827
+  },
+  "ethics_shroud_low": {
+    "ethics_shroud_low": {
+      "hidden_effect": {
+        "random_list": {
+          "30": {
+            "40": {
+              "30": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 836
+  },
+  "influence_shroud_high": {
+    "influence_shroud_high": {
+      "hidden_effect": {
+        "random_list": {
+          "70": {
+            "20": {
+              "10": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 845
+  },
+  "influence_shroud_medium": {
+    "influence_shroud_medium": {
+      "hidden_effect": {
+        "random_list": {
+          "50": {
+            "30": {
+              "20": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 854
+  },
+  "influence_shroud_low": {
+    "influence_shroud_low": {
+      "hidden_effect": {
+        "random_list": {
+          "30": {
+            "40": {
+              "30": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 863
+  },
+  "unity_shroud_high": {
+    "unity_shroud_high": {
+      "hidden_effect": {
+        "random_list": {
+          "70": {
+            "20": {
+              "10": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 872
+  },
+  "unity_shroud_medium": {
+    "unity_shroud_medium": {
+      "hidden_effect": {
+        "random_list": {
+          "50": {
+            "30": {
+              "20": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 881
+  },
+  "unity_shroud_low": {
+    "unity_shroud_low": {
+      "hidden_effect": {
+        "random_list": {
+          "30": {
+            "40": {
+              "30": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 890
+  },
+  "evasion_shroud_high": {
+    "evasion_shroud_high": {
+      "hidden_effect": {
+        "random_list": {
+          "70": {
+            "20": {
+              "10": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 899
+  },
+  "evasion_shroud_medium": {
+    "evasion_shroud_medium": {
+      "hidden_effect": {
+        "random_list": {
+          "50": {
+            "30": {
+              "20": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 908
+  },
+  "evasion_shroud_low": {
+    "evasion_shroud_low": {
+      "hidden_effect": {
+        "random_list": {
+          "30": {
+            "40": {
+              "30": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 917
+  },
+  "repair_shroud_high": {
+    "repair_shroud_high": {
+      "hidden_effect": {
+        "random_list": {
+          "70": {
+            "20": {
+              "10": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 926
+  },
+  "repair_shroud_medium": {
+    "repair_shroud_medium": {
+      "hidden_effect": {
+        "random_list": {
+          "50": {
+            "30": {
+              "20": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 935
+  },
+  "repair_shroud_low": {
+    "repair_shroud_low": {
+      "hidden_effect": {
+        "random_list": {
+          "30": {
+            "40": {
+              "30": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 944
+  },
+  "lifespan_shroud_high": {
+    "lifespan_shroud_high": {
+      "hidden_effect": {
+        "random_list": {
+          "70": {
+            "20": {
+              "10": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 953
+  },
+  "lifespan_shroud_medium": {
+    "lifespan_shroud_medium": {
+      "hidden_effect": {
+        "random_list": {
+          "50": {
+            "30": {
+              "20": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 962
+  },
+  "lifespan_shroud_low": {
+    "lifespan_shroud_low": {
+      "hidden_effect": {
+        "random_list": {
+          "30": {
+            "40": {
+              "30": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 971
+  },
+  "speed_shroud_high": {
+    "speed_shroud_high": {
+      "hidden_effect": {
+        "random_list": {
+          "70": {
+            "20": {
+              "10": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 980
+  },
+  "speed_shroud_medium": {
+    "speed_shroud_medium": {
+      "hidden_effect": {
+        "random_list": {
+          "50": {
+            "30": {
+              "20": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 989
+  },
+  "speed_shroud_low": {
+    "speed_shroud_low": {
+      "hidden_effect": {
+        "random_list": {
+          "30": {
+            "40": {
+              "30": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 998
+  },
+  "morale_shroud_high": {
+    "morale_shroud_high": {
+      "hidden_effect": {
+        "random_list": {
+          "70": {
+            "20": {
+              "10": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 1007
+  },
+  "morale_shroud_medium": {
+    "morale_shroud_medium": {
+      "hidden_effect": {
+        "random_list": {
+          "50": {
+            "30": {
+              "20": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 1016
+  },
+  "morale_shroud_low": {
+    "morale_shroud_low": {
+      "hidden_effect": {
+        "random_list": {
+          "30": {
+            "40": {
+              "30": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 1025
+  },
+  "sensor_shroud_high": {
+    "sensor_shroud_high": {
+      "hidden_effect": {
+        "random_list": {
+          "70": {
+            "20": {
+              "10": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 1034
+  },
+  "sensor_shroud_medium": {
+    "sensor_shroud_medium": {
+      "hidden_effect": {
+        "random_list": {
+          "50": {
+            "30": {
+              "20": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 1043
+  },
+  "sensor_shroud_low": {
+    "sensor_shroud_low": {
+      "hidden_effect": {
+        "random_list": {
+          "30": {
+            "40": {
+              "30": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 1052
+  },
+  "avatar_shroud_high": {
+    "avatar_shroud_high": {
+      "hidden_effect": {
+        "random_list": {
+          "38": {
+            "38": {
+              "20": {
+                "10": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 1061
+  },
+  "avatar_shroud_medium": {
+    "avatar_shroud_medium": {
+      "hidden_effect": {
+        "random_list": {
+          "25": {
+            "25": {
+              "30": {
+                "20": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 1071
+  },
+  "avatar_shroud_low": {
+    "avatar_shroud_low": {
+      "hidden_effect": {
+        "random_list": {
+          "15": {
+            "15": {
+              "40": {
+                "30": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "shroud_scripted_effects.txt",
+    "_line_number": 1081
+  }
+}

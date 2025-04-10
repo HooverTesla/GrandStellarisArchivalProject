@@ -1,0 +1,32 @@
+{
+  "triggered_planet_modifier": {
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_machine_empire": "yes",
+          "has_active_tradition": "tr_virtuality_4"
+        },
+        "has_farming_designation": "no"
+      },
+      "job_maintenance_drone_add": "0.5",
+      "mult": "owner.value:hab_void_dweller_jobs"
+    },
+    "_source_file": "habitat_housing_job_swaps.txt",
+    "_line_number": 135
+  },
+  "triggered_desc": {
+    "triggered_desc": {
+      "trigger": {
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": "yes"
+        },
+        "has_farming_designation": "yes"
+      },
+      "text": "job_agri_drone_effect_desc"
+    },
+    "_source_file": "habitat_housing_job_swaps.txt",
+    "_line_number": 109
+  }
+}

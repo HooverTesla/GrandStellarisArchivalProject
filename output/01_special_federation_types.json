@@ -1,0 +1,28 @@
+{
+  "imperial_loyalists_federation": {
+    "imperial_loyalists_federation": {
+      "base_intel": "50",
+      "icon": "GFX_hegemony_federation",
+      "ownership_limits": "default",
+      "potential": {
+        "always": "no"
+      },
+      "allow": {},
+      "levels": {
+        "level_1": {
+          "experience": "@xp_to_level_2 # Experience until next rank",
+          "perks": {}
+        }
+      },
+      "on_create": {
+        "set_federation_flag": "special_federation",
+        "remove_federation_flag": "enable_federation_cooldowns"
+      },
+      "ai_weight": {
+        "base": "0"
+      }
+    },
+    "_source_file": "01_special_federation_types.txt",
+    "_line_number": 28
+  }
+}

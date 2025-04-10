@@ -1,0 +1,682 @@
+{
+  "shipyard": {
+    "shipyard": {
+      "icon": "GFX_starbase_shipyard",
+      "section": "ASSEMBLYYARD_STARBASE_SECTION",
+      "construction_days": "180",
+      "initial": "yes",
+      "potential": {
+        "is_normal_starbase": "yes",
+        "solar_system": {
+          "count_starbase_modules": {
+            "type": "beastport",
+            "include_being_constructed": "yes"
+          }
+        }
+      },
+      "possible": {
+        "solar_system": {
+          "count_starbase_modules": {
+            "type": "beastport",
+            "include_being_constructed": "yes"
+          }
+        }
+      },
+      "abort_construction_trigger": {
+        "OR": {
+          "has_starbase_module": "beastport"
+        }
+      },
+      "resources": {
+        "category": "starbase_modules",
+        "cost": {
+          "alloys": "50"
+        },
+        "upkeep": {
+          "energy": "1"
+        }
+      },
+      "station_modifier": {
+        "starbase_shipyard_capacity_add": "1"
+      },
+      "triggered_station_modifier": {
+        "potential": {
+          "starbase_shipyard_capacity_add": "1"
+        },
+        "on_finished": {
+          "set_ship_construction_type": "starbase_shipyard"
+        },
+        "on_destroyed": {
+          "if": {
+            "limit": {
+              "set_ship_construction_type": "none"
+            }
+          },
+          "ai_weight": {
+            "inline_script": {
+              "script": "starbase_modules/ship_construction_ai_weight",
+              "MODULE": "shipyard"
+            },
+            "modifier": {
+              "factor": "0",
+              "owner": {
+                "uses_standard_ship_sizes": "no"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_starbase_modules.txt",
+    "_line_number": 16
+  },
+  "anchorage": {
+    "anchorage": {
+      "icon": "GFX_starbase_anchorage",
+      "section": "ANCHORAGE_STARBASE_SECTION",
+      "construction_days": "180",
+      "potential": {
+        "is_normal_starbase": "yes"
+      },
+      "resources": {
+        "category": "starbase_modules",
+        "cost": {
+          "alloys": "50"
+        },
+        "upkeep": {
+          "energy": "1"
+        }
+      },
+      "country_modifier": {
+        "country_naval_cap_add": "4"
+      },
+      "triggered_country_modifier": {
+        "potential": {
+          "is_scope_valid": "yes",
+          "has_starbase_building": "naval_logistics_office"
+        },
+        "country_naval_cap_add": "2"
+      },
+      "ai_weight": {
+        "weight": "100 #use same weight here - ai weighting is done in starbase_types.txt",
+        "modifier": {
+          "factor": "2",
+          "count_starbase_modules": {
+            "type": "anchorage"
+          }
+        }
+      }
+    },
+    "_source_file": "00_starbase_modules.txt",
+    "_line_number": 100
+  },
+  "gun_battery": {
+    "gun_battery": {
+      "section": "BATTERY_STARBASE_SECTION",
+      "icon": "GFX_spaceport_modules",
+      "construction_days": "180",
+      "potential": {
+        "is_normal_starbase": "yes"
+      },
+      "resources": {
+        "category": "starbase_modules",
+        "cost": {
+          "alloys": "50"
+        },
+        "upkeep": {
+          "energy": "1"
+        }
+      },
+      "station_modifier": {
+        "ship_hull_mult": "0.10",
+        "ship_armor_mult": "0.10",
+        "starbase_trade_protection_range_add": "1",
+        "starbase_trade_protection_add": "5",
+        "starbase_defense_platform_capacity_add": "1"
+      },
+      "ai_weight": {
+        "weight": "100 #use same weight here - ai weighting is done in starbase_types.txt",
+        "modifier": {
+          "factor": "2",
+          "exists": "owner",
+          "owner": {
+            "OR": {
+              "is_preferred_weapons": "weapon_type_kinetic"
+            }
+          }
+        }
+      },
+      "show_in_tech": "tech_mass_drivers_1"
+    },
+    "_source_file": "00_starbase_modules.txt",
+    "_line_number": 145
+  },
+  "missile_battery": {
+    "missile_battery": {
+      "section": "MISSILE_STARBASE_SECTION",
+      "icon": "GFX_starbase_missile_battery",
+      "construction_days": "180",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_normal_starbase": "yes"
+        },
+        "resources": {
+          "category": "starbase_modules",
+          "cost": {
+            "alloys": "50"
+          },
+          "upkeep": {
+            "energy": "1"
+          }
+        },
+        "station_modifier": {
+          "ship_hull_mult": "0.10",
+          "ship_armor_mult": "0.10",
+          "starbase_trade_protection_range_add": "1",
+          "starbase_trade_protection_add": "5",
+          "starbase_defense_platform_capacity_add": "1"
+        },
+        "ai_weight": {
+          "weight": "100 #use same weight here - ai weighting is done in starbase_types.txt",
+          "modifier": {
+            "factor": "2",
+            "exists": "owner",
+            "owner": {}
+          },
+          "show_in_tech": "tech_torpedoes_1"
+        }
+      }
+    },
+    "_source_file": "00_starbase_modules.txt",
+    "_line_number": 192
+  },
+  "hangar_bay": {
+    "hangar_bay": {
+      "icon": "GFX_starbase_hangar_bay",
+      "section": "HANGAR_STARBASE_SECTION",
+      "construction_days": "180",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_normal_starbase": "yes"
+        },
+        "resources": {
+          "category": "starbase_modules",
+          "cost": {
+            "alloys": "50"
+          },
+          "upkeep": {
+            "energy": "1"
+          }
+        },
+        "station_modifier": {
+          "ship_hull_mult": "0.10",
+          "ship_armor_mult": "0.10",
+          "starbase_trade_protection_range_add": "1",
+          "starbase_trade_protection_add": "10",
+          "starbase_defense_platform_capacity_add": "1"
+        },
+        "ai_weight": {
+          "weight": "100 #use same weight here - ai weighting is done in starbase_types.txt",
+          "modifier": {
+            "factor": "2",
+            "exists": "owner",
+            "owner": {}
+          },
+          "show_in_tech": "tech_strike_craft_1"
+        }
+      }
+    },
+    "_source_file": "00_starbase_modules.txt",
+    "_line_number": 235
+  },
+  "solar_panel_network": {
+    "solar_panel_network": {
+      "icon": "GFX_solar_panel_network",
+      "section": "SCIENCE_STARBASE_SECTION",
+      "construction_days": "180",
+      "initial": "yes",
+      "potential": {
+        "exists": "owner",
+        "is_normal_starbase": "yes",
+        "owner": {
+          "is_gestalt": "yes",
+          "has_technology": "tech_solar_panel_network",
+          "NOT": {}
+        },
+        "possible": {
+          "solar_system": {
+            "custom_tooltip": {
+              "fail_text": "requires_no_black_hole_or_dyson_sphere",
+              "NOR": {
+                "is_star_class": "sc_black_hole",
+                "has_megastructure": "dyson_sphere_5"
+              }
+            }
+          }
+        },
+        "show_in_tech": "tech_solar_panel_network",
+        "resources": {
+          "category": "starbase_modules",
+          "cost": {
+            "alloys": "50"
+          },
+          "produces": {
+            "trigger": {
+              "exists": "owner",
+              "owner": {
+                "is_galactic_community_member": "yes"
+              },
+              "OR": {
+                "is_active_resolution": "resolution_galacticstudies_extradimensional_experimentation"
+              }
+            },
+            "energy": "6"
+          }
+        },
+        "ai_weight": {
+          "weight": "100 #use same weight here - ai weighting is done in starbase_types.txt"
+        }
+      }
+    },
+    "_source_file": "00_starbase_modules.txt",
+    "_line_number": 278
+  },
+  "trading_hub": {
+    "trading_hub": {
+      "icon": "GFX_starbase_trading_hub",
+      "section": "REFINERY_STARBASE_SECTION",
+      "construction_days": "180",
+      "initial": "yes",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": "no"
+        },
+        "is_normal_starbase": "yes"
+      },
+      "resources": {
+        "category": "starbase_modules",
+        "cost": {
+          "alloys": "50"
+        },
+        "upkeep": {
+          "energy": "1"
+        }
+      },
+      "station_modifier": {
+        "starbase_trade_collection_range_add": "1"
+      },
+      "triggered_station_modifier": {
+        "potential": {
+          "hidden_trigger": {
+            "owner": {
+              "has_councilor": {}
+            },
+            "trade_value_add": "0.5",
+            "mult": "value:councilor_level|TYPE|councilor_trading_posts|"
+          },
+          "ai_weight": {
+            "weight": "100 #use same weight here - ai weighting is done in starbase_types.txt",
+            "modifier": {
+              "factor": "5",
+              "NOT": {
+                "solar_system": {
+                  "any_neighbor_system": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_starbase_modules.txt",
+    "_line_number": 340
+  },
+  "detection_array": {
+    "detection_array": {
+      "icon": "GFX_spaceport_module_detecton_array",
+      "section": "SCIENCE_STARBASE_SECTION",
+      "construction_days": "180",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_normal_starbase": "yes"
+        },
+        "possible": {
+          "NOT": {
+            "has_starbase_building": "dark_matter_listening_post"
+          }
+        },
+        "resources": {
+          "category": "starbase_modules",
+          "cost": {
+            "alloys": "100"
+          },
+          "upkeep": {
+            "energy": "1"
+          }
+        },
+        "station_modifier": {
+          "ship_cloaking_detection_add": "1"
+        },
+        "ai_build_at_chokepoint": "yes",
+        "ai_build_outside_chokepoint": "yes",
+        "ai_weight": {
+          "weight": "100 #use same weight here - ai weighting is done in starbase_types.txt",
+          "modifier": {
+            "add": "1000",
+            "owner": {
+              "NOT": {
+                "any_owned_starbase": {
+                  "has_starbase_module": "detection_array"
+                }
+              }
+            }
+          }
+        },
+        "show_in_tech": "tech_detection_array"
+      }
+    },
+    "_source_file": "00_starbase_modules.txt",
+    "_line_number": 395
+  },
+  "archaeo_rampart": {
+    "archaeo_rampart": {
+      "section": "ANCHORAGE_STARBASE_SECTION",
+      "icon": "GFX_starbase_archaeo_rampart",
+      "construction_days": "180",
+      "potential": {
+        "is_normal_starbase": "yes",
+        "owner": {},
+        "resources": {
+          "category": "starbase_modules",
+          "cost": {
+            "alloys": "50",
+            "minor_artifacts": "@minor_artifacts_cost_xl"
+          },
+          "upkeep": {
+            "energy": "1"
+          }
+        },
+        "triggered_station_modifier": {
+          "potential": {
+            "owner": {
+              "NOT": {}
+            },
+            "shipclass_starbase_hull_mult": "0.15",
+            "shipclass_starbase_armor_mult": "0.15",
+            "starbase_defense_platform_capacity_add": "2"
+          },
+          "triggered_station_modifier": {
+            "potential": {
+              "owner": {
+                "has_ascension_perk": "ap_archaeoengineers"
+              }
+            },
+            "shipclass_starbase_hull_mult": "0.15",
+            "shipclass_starbase_armor_mult": "0.20",
+            "shipclass_starbase_armor_hardening_add": "0.10",
+            "starbase_defense_platform_capacity_add": "2"
+          },
+          "custom_tooltip": "sm_archaeo_rampart_desc_modifier",
+          "defense_platform_modifier": {
+            "shipclass_military_station_damage_mult": "0.05",
+            "shipclass_military_station_hull_mult": "0.05"
+          },
+          "ai_weight": {
+            "weight": "100 #use same weight here - ai weighting is done in starbase_types.txt"
+          },
+          "show_in_tech": "tech_archaeo_rampart"
+        }
+      }
+    },
+    "_source_file": "00_starbase_modules.txt",
+    "_line_number": 448
+  },
+  "astromining_bay": {
+    "astromining_bay": {
+      "icon": "GFX_starbase_mining_terminal",
+      "section": "REFINERY_STARBASE_SECTION",
+      "construction_days": "180",
+      "potential": {
+        "is_orbital_ring": "no",
+        "owner": {
+          "has_civic": "civic_machine_astromining_drones"
+        }
+      },
+      "resources": {
+        "category": "starbase_modules",
+        "cost": {
+          "alloys": "25"
+        },
+        "produces": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {
+              "is_galactic_community_member": "yes"
+            },
+            "OR": {
+              "is_active_resolution": "resolution_galacticstudies_extradimensional_experimentation"
+            }
+          },
+          "energy": "6"
+        }
+      },
+      "system_modifier": {
+        "station_gatherers_produces_mult": "0.15"
+      },
+      "triggered_system_modifier": {
+        "potential": {
+          "station_gatherers_produces_mult": "0.1"
+        },
+        "ai_weight": {
+          "weight": "100 #use same weight here - ai weighting is done in starbase_types.txt",
+          "modifier": {
+            "factor": "2",
+            "solar_system": {
+              "count_orbital_station": {
+                "limit": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_starbase_modules.txt",
+    "_line_number": 504
+  },
+  "hatchery": {
+    "hatchery": {
+      "icon": "GFX_starbase_hatchery",
+      "section": "ASSEMBLYYARD_STARBASE_SECTION",
+      "construction_days": "180",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "has_technology": "tech_alien_cloning",
+          "is_beastmasters_empire": "no"
+        },
+        "is_normal_starbase": "yes",
+        "solar_system": {
+          "count_starbase_modules": {
+            "type": "beastport",
+            "include_being_constructed": "yes"
+          }
+        }
+      },
+      "possible": {
+        "solar_system": {
+          "count_starbase_modules": {
+            "type": "beastport",
+            "include_being_constructed": "yes"
+          }
+        }
+      },
+      "abort_construction_trigger": {
+        "OR": {
+          "has_starbase_module": "beastport"
+        }
+      },
+      "resources": {
+        "category": "starbase_modules",
+        "cost": {
+          "alloys": "50"
+        },
+        "upkeep": {
+          "energy": "1"
+        }
+      },
+      "station_modifier": {
+        "custom_tooltip": "sm_hatchery_capacity_add_tt",
+        "show_only_custom_tooltip": "yes",
+        "starbase_shipyard_capacity_add": "1"
+      },
+      "country_modifier": {
+        "country_vivarium_max_capacity_add": "5"
+      },
+      "on_finished": {
+        "set_ship_construction_type": "starbase_hatchery"
+      },
+      "on_destroyed": {
+        "if": {
+          "limit": {
+            "set_ship_construction_type": "none"
+          }
+        },
+        "ai_weight": {
+          "inline_script": {
+            "script": "starbase_modules/ship_construction_ai_weight",
+            "MODULE": "hatchery"
+          },
+          "modifier": {
+            "factor": "0",
+            "owner": {
+              "uses_fauna_ship_sizes": "no"
+            }
+          }
+        },
+        "show_in_tech": "tech_alien_cloning"
+      }
+    },
+    "_source_file": "00_starbase_modules.txt",
+    "_line_number": 569
+  },
+  "beastport": {
+    "beastport": {
+      "icon": "GFX_starbase_beastport",
+      "section": "ASSEMBLYYARD_STARBASE_SECTION",
+      "construction_days": "180",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "has_technology": "tech_alien_cloning",
+          "is_beastmasters_empire": "yes"
+        },
+        "is_normal_starbase": "yes",
+        "solar_system": {
+          "count_starbase_modules": {
+            "type": "hatchery",
+            "include_being_constructed": "yes"
+          }
+        }
+      },
+      "possible": {
+        "solar_system": {
+          "count_starbase_modules": {
+            "type": "hatchery",
+            "include_being_constructed": "yes"
+          }
+        }
+      },
+      "abort_construction_trigger": {
+        "OR": {
+          "has_starbase_module": "hatchery"
+        }
+      },
+      "resources": {
+        "category": "starbase_modules",
+        "cost": {
+          "alloys": "50"
+        },
+        "upkeep": {
+          "energy": "1"
+        }
+      },
+      "station_modifier": {
+        "custom_tooltip": "sm_beastport_capacity_add_tt",
+        "show_only_custom_tooltip": "yes",
+        "starbase_shipyard_capacity_add": "1"
+      },
+      "country_modifier": {
+        "country_vivarium_max_capacity_add": "5"
+      },
+      "on_finished": {
+        "set_ship_construction_type": "starbase_beastport"
+      },
+      "on_destroyed": {
+        "if": {
+          "limit": {
+            "set_ship_construction_type": "none"
+          }
+        },
+        "ai_weight": {
+          "inline_script": {
+            "script": "starbase_modules/ship_construction_ai_weight",
+            "MODULE": "beastport"
+          },
+          "modifier": {
+            "factor": "0",
+            "owner": {
+              "uses_fauna_ship_sizes": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_starbase_modules.txt",
+    "_line_number": 663
+  },
+  "vivarium_tank": {
+    "vivarium_tank": {
+      "icon": "GFX_starbase_vivarium_tank",
+      "section": "SCIENCE_STARBASE_SECTION",
+      "construction_days": "180",
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "OR": {
+            "has_technology": "tech_gravity_wells",
+            "has_origin": "origin_primal_calling"
+          }
+        },
+        "is_normal_starbase": "yes"
+      },
+      "resources": {
+        "category": "starbase_modules",
+        "cost": {
+          "alloys": "50"
+        },
+        "upkeep": {
+          "energy": "1"
+        }
+      },
+      "country_modifier": {
+        "country_vivarium_max_capacity_add": "10"
+      },
+      "orbit_modifier": {
+        "space_fauna_growth_rate_mult": "0.1"
+      },
+      "ai_weight": {
+        "inline_script": {
+          "script": "starbase_modules/ship_construction_ai_weight",
+          "MODULE": "vivarium_tank"
+        }
+      },
+      "show_in_tech": "tech_gravity_wells"
+    },
+    "_source_file": "00_starbase_modules.txt",
+    "_line_number": 754
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "strike_craft_component_template": {
+    "strike_craft_component_template": {
+      "key": "ANCIENT_DRILLER_BEASTS_EXTRA_LARGE",
+      "size": "extra_large",
+      "entity": "space_amoeba_small_entity",
+      "weapon_type": "point_defence",
+      "icon": "GFX_mutation_ancient_driller_beasts",
+      "icon_frame": "1",
+      "ship_behavior": "fighters_behavior",
+      "prerequisites": {
+        "component_set": "ANCIENT_DRILLER_BEASTS",
+        "projectile_gfx": "strike_craft_laser_3",
+        "tags": {
+          "ai_tags": {
+            "point_defence_targets": {
+              "resources": {
+                "category": "ship_components",
+                "inline_script": {
+                  "script": "grand_archive/mutations/component_dynamic_cost",
+                  "COST": "352"
+                },
+                "cost": {
+                  "minor_artifacts": "10"
+                }
+              },
+              "count": "@count4",
+              "regeneration_per_day": "@regen",
+              "launch_time": "@launch_time",
+              "damage": {
+                "cooldown": "2.3",
+                "range": "@attack_range",
+                "engagement_range": "@engagement_range",
+                "accuracy": "1.00",
+                "tracking": "1.00",
+                "health": "10",
+                "armor": "0",
+                "shield": "25",
+                "evasion": "0.80",
+                "speed": "@speed4",
+                "rotation_speed": "0.8",
+                "acceleration": "1",
+                "armor_penetration": "1.0",
+                "shield_damage": "0.5",
+                "ai_weight": {
+                  "weight": "1",
+                  "modifier": {
+                    "factor": "0",
+                    "no_resource_for_component": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_mutation_strike_craft_components.txt",
+    "_line_number": 1462
+  }
+}

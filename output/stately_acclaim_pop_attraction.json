@@ -1,0 +1,17 @@
+{
+  "modifier": {
+    "modifier": {
+      "factor": "1.5",
+      "exists": "owner",
+      "owner": {
+        "has_edict": "stately_acclaim",
+        "any_pop_faction": {
+          "has_ethic": "ethic_$ETHIC$",
+          "is_faction_extorted": "yes"
+        }
+      }
+    },
+    "_source_file": "stately_acclaim_pop_attraction.txt",
+    "_line_number": 0
+  }
+}

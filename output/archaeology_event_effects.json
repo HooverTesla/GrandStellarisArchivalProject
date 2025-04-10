@@ -1,0 +1,1640 @@
+{
+  "standard_archaeological_site_on_roll_failed_range_entry": {
+    "standard_archaeological_site_on_roll_failed_range_entry": {
+      "custom_tooltip_with_params": {
+        "description": "ARCHAEOLOGICAL_SITE_ON_ROLL_FAILED_RANGE",
+        "description_parameters": {
+          "\"MIN\"": "$MIN$",
+          "\"MAX\"": "$MAX$",
+          "\"CLUES\"": "$CLUES$",
+          "\"CHANCE\"": "@\\[( 2 + ( $MAX$ + $DIE_MAX$ - |$MAX$ - $SCORE$ - $DIE_MAX$| ) - ( $MIN$ + $DIE_MIN$ + |$MIN$ - $SCORE$ - $DIE_MIN$| ) ) / ( 2*( $DIE_MAX$ - $DIE_MIN$ + 1 ) )]",
+          "\"SCORE\"": "$SCORE$"
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 7
+  },
+  "standard_archaeological_site_on_roll_failed_greater_than_eq_entry": {
+    "standard_archaeological_site_on_roll_failed_greater_than_eq_entry": {
+      "custom_tooltip_with_params": {
+        "description": "ARCHAEOLOGICAL_SITE_ON_ROLL_FAILED_GREATER_THAN_EQ",
+        "description_parameters": {
+          "\"MIN\"": "$MIN$",
+          "\"CHANCE\"": "@\\[( $SCORE$ - $MIN$ + $DIE_MAX$ + 1 ) / ( $DIE_MAX$ - $DIE_MIN$ + 1 )]",
+          "\"SCORE\"": "$SCORE$"
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 20
+  },
+  "standard_archaeological_site_on_roll_failed_less_than_eq_entry": {
+    "standard_archaeological_site_on_roll_failed_less_than_eq_entry": {
+      "custom_tooltip_with_params": {
+        "description": "ARCHAEOLOGICAL_SITE_ON_ROLL_FAILED_LESS_THAN_EQ",
+        "description_parameters": {
+          "\"MAX\"": "$MAX$",
+          "\"CLUES\"": "$CLUES$",
+          "\"CHANCE\"": "@\\[( ( $MAX$ - $SCORE$ - $DIE_MIN$ + 1 ) / ( $DIE_MAX$ - $DIE_MIN$ + 1 ) )]",
+          "\"SCORE\"": "$SCORE$"
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 31
+  },
+  "standard_archaeological_site_on_roll_failed_case": {
+    "standard_archaeological_site_on_roll_failed_case": {
+      "custom_tooltip_with_params": {
+        "description": "archaeology_roll_header",
+        "description_parameters": {
+          "\"SCORE\"": "$SCORE$"
+        }
+      },
+      "standard_archaeological_site_on_roll_failed_less_than_eq_entry": {
+        "standard_archaeological_site_on_roll_failed_range_entry": {
+          "standard_archaeological_site_on_roll_failed_range_entry": {
+            "standard_archaeological_site_on_roll_failed_greater_than_eq_entry": {}
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 43
+  },
+  "standard_archaeological_site_on_roll_failed": {
+    "standard_archaeological_site_on_roll_failed": {
+      "switch": {
+        "trigger": "is_site_current_stage_score_no_die",
+        "-8": {
+          "-7": {
+            "-6": {
+              "-5": {
+                "-4": {
+                  "-3": {
+                    "-2": {
+                      "-1": {
+                        "0": {
+                          "1": {
+                            "2": {
+                              "3": {
+                                "4": {
+                                  "5": {
+                                    "6": {
+                                      "7": {
+                                        "8": {
+                                          "9": {
+                                            "10": {
+                                              "11": {
+                                                "12": {
+                                                  "13": {
+                                                    "14 >": {},
+                                                    "hidden_effect": {
+                                                      "switch": {
+                                                        "trigger": "is_site_current_stage_score",
+                                                        "5 <": {
+                                                          "prev": {
+                                                            "leader": {
+                                                              "random_list": {
+                                                                "120": {
+                                                                  "10": {
+                                                                    "modifier": {
+                                                                      "factor": "0",
+                                                                      "from": {
+                                                                        "is_current_stage_clues": "0"
+                                                                      }
+                                                                    },
+                                                                    "$RANDOM_EVENTS$": "yes"
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "10 <": {
+                                                              "13 <": {}
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 57
+  },
+  "small_artifact_reward": {
+    "small_artifact_reward": {
+      "if": {
+        "limit": {
+          "custom_tooltip": "minor_artifacts_found",
+          "locked_random_list": {
+            "33": {
+              "owner": {},
+              "33": {
+                "owner": {},
+                "33": {
+                  "owner": {}
+                },
+                "hidden_effect": {
+                  "owner": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 115
+  },
+  "medium_artifact_reward": {
+    "medium_artifact_reward": {
+      "if": {
+        "limit": {
+          "custom_tooltip": "minor_artifacts_found",
+          "locked_random_list": {
+            "33": {
+              "owner": {},
+              "33": {
+                "owner": {},
+                "33": {
+                  "owner": {}
+                },
+                "hidden_effect": {
+                  "owner": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 136
+  },
+  "large_artifact_reward": {
+    "large_artifact_reward": {
+      "if": {
+        "limit": {
+          "custom_tooltip": "minor_artifacts_found",
+          "locked_random_list": {
+            "33": {
+              "owner": {},
+              "33": {
+                "owner": {},
+                "33": {
+                  "owner": {}
+                },
+                "hidden_effect": {
+                  "owner": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 157
+  },
+  "great_artifact_reward": {
+    "great_artifact_reward": {
+      "if": {
+        "limit": {
+          "custom_tooltip": "minor_artifacts_found",
+          "locked_random_list": {
+            "33": {
+              "owner": {},
+              "33": {
+                "owner": {},
+                "33": {
+                  "owner": {}
+                },
+                "hidden_effect": {
+                  "owner": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 178
+  },
+  "relic_world_deposits": {
+    "relic_world_deposits": {
+      "reset_planet": "yes",
+      "clear_deposits": "yes",
+      "add_deposit": "d_relic_metal_boneyard",
+      "prevent_anomaly": "yes"
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 203
+  },
+  "create_grand_herald": {
+    "create_grand_herald": {
+      "custom_tooltip": "get_herald",
+      "hidden_effect": {
+        "owner": {
+          "create_fleet": {
+            "name": "NAME_Grand_Herald",
+            "settings": {
+              "spawn_debris": "no"
+            },
+            "effect": {
+              "set_owner": "prev",
+              "create_ship_design": {
+                "design": "NAME_Herald"
+              },
+              "random_list": {
+                "10": {
+                  "create_ship": {
+                    "name": "NAME_Grand_Herald",
+                    "design": "last_created_design",
+                    "graphical_culture": "arthropoid_01",
+                    "prefix": "no",
+                    "upgradable": "no"
+                  }
+                }
+              },
+              "set_location": "fromfrom.planet",
+              "set_herald_damage": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 216
+  },
+  "set_herald_damage": {
+    "set_herald_damage": {
+      "random_list": {
+        "5": {},
+        "_comments": [
+          "#"
+        ],
+        "25": {
+          "add_modifier": {
+            "modifier": "herald_75",
+            "days": "-1"
+          },
+          "owner": {
+            "enable_special_project": {
+              "name": "Herald_repair"
+            }
+          }
+        },
+        "50": {
+          "add_modifier": {
+            "modifier": "herald_50",
+            "days": "-1"
+          },
+          "owner": {
+            "enable_special_project": {
+              "name": "Herald_repair"
+            }
+          }
+        },
+        "20": {
+          "add_modifier": {
+            "modifier": "herald_25",
+            "days": "-1"
+          },
+          "owner": {
+            "enable_special_project": {
+              "name": "Herald_repair"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 311
+  },
+  "remove_herald_damage": {
+    "remove_herald_damage": {
+      "every_controlled_fleet": {
+        "remove_modifier": "herald_25"
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 351
+  },
+  "all_random_events": {
+    "all_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {
+              "10": {
+                "10": {
+                  "modifier": {
+                    "factor": "0",
+                    "from": {
+                      "planet": {}
+                    },
+                    "site_wildlife": "yes"
+                  },
+                  "10": {
+                    "10": {
+                      "10": {
+                        "10": {
+                          "10": {
+                            "10": {
+                              "10": {
+                                "modifier": {
+                                  "factor": "0",
+                                  "owner": {},
+                                  "fleet_event": {},
+                                  "10": {
+                                    "fleet_event": {
+                                      "modifier": {
+                                        "factor": "2",
+                                        "leader": {}
+                                      },
+                                      "2": {
+                                        "10": {
+                                          "10": {
+                                            "10": {
+                                              "modifier": {
+                                                "factor": "0",
+                                                "OR": {
+                                                  "from.planet": {
+                                                    "NOT": {},
+                                                    "leader.species": {
+                                                      "has_trait": "trait_pc_nuked_preference"
+                                                    },
+                                                    "owner": {}
+                                                  },
+                                                  "fleet_event": {},
+                                                  "5": {
+                                                    "modifier": {
+                                                      "factor": "0",
+                                                      "owner": {
+                                                        "OR": {
+                                                          "is_gestalt": "yes",
+                                                          "country_uses_food": "no",
+                                                          "has_country_flag": "triggered_sentinels_random_event"
+                                                        }
+                                                      }
+                                                    },
+                                                    "fleet_event": {},
+                                                    "10": {
+                                                      "modifier": {
+                                                        "factor": "0",
+                                                        "owner": {},
+                                                        "fleet_event": {},
+                                                        "_comments": [
+                                                          "# Bespoke Random Events"
+                                                        ],
+                                                        "20": {
+                                                          "modifier": {
+                                                            "factor": "0",
+                                                            "NOT": {},
+                                                            "fleet_event": {},
+                                                            "20": {
+                                                              "modifier": {
+                                                                "factor": "0",
+                                                                "NOT": {
+                                                                  "From": {
+                                                                    "is_site_type": "rubricator_digsite"
+                                                                  }
+                                                                },
+                                                                "Owner": {
+                                                                  "has_country_flag": "triggered_rubricator_random_event"
+                                                                }
+                                                              },
+                                                              "fleet_event": {}
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 389
+  },
+  "site_traps": {
+    "site_traps": {
+      "random_list": {
+        "25": {
+          "25": {
+            "25": {
+              "25": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 500
+  },
+  "site_laser_grid_trap": {
+    "site_laser_grid_trap": {
+      "random_list": {
+        "5": {
+          "25": {
+            "25": {
+              "25": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 509
+  },
+  "site_sentry_guns_trap": {
+    "site_sentry_guns_trap": {
+      "random_list": {
+        "5": {
+          "25": {
+            "25": {
+              "25": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 518
+  },
+  "site_crusher_droids_trap": {
+    "site_crusher_droids_trap": {
+      "random_list": {
+        "5": {
+          "25": {
+            "25": {
+              "25": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 527
+  },
+  "site_guardian_droids_trap": {
+    "site_guardian_droids_trap": {
+      "random_list": {
+        "5": {
+          "25": {
+            "25": {
+              "25": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 536
+  },
+  "site_wildlife": {
+    "site_wildlife": {
+      "random_list": {
+        "5": {
+          "25": {
+            "25": {
+              "25": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 545
+  },
+  "site_collapsed_roof": {
+    "site_collapsed_roof": {
+      "random_list": {
+        "5": {
+          "25": {
+            "25": {
+              "25": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 554
+  },
+  "site_ocean_sites_random_events": {
+    "site_ocean_sites_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "_comments": [
+              "#Hostile Wildlife"
+            ],
+            "10": {
+              "10": {
+                "10": {
+                  "10": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 563
+  },
+  "space_station_random_events": {
+    "space_station_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "fleet_event": {
+              "modifier": {
+                "factor": "2",
+                "leader": {}
+              },
+              "10": {
+                "10": {
+                  "modifier": {
+                    "factor": "0",
+                    "has_ancrel": "no"
+                  },
+                  "fleet_event": {},
+                  "10": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 577
+  },
+  "site_explosive_decompression": {
+    "site_explosive_decompression": {
+      "random_list": {
+        "5": {
+          "fleet_event": {
+            "modifier": {
+              "factor": "0",
+              "leader.species": {}
+            },
+            "25": {
+              "fleet_event": {
+                "modifier": {
+                  "factor": "0",
+                  "owner_species": {}
+                },
+                "25": {
+                  "25": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 599
+  },
+  "site_from_gateway_sent_random_events": {
+    "site_from_gateway_sent_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {
+              "10": {
+                "10": {
+                  "10": {
+                    "modifier": {
+                      "factor": "0",
+                      "leader.species": {},
+                      "fleet_event": {},
+                      "10": {
+                        "fleet_event": {
+                          "modifier": {
+                            "factor": "2",
+                            "leader": {}
+                          },
+                          "10": {
+                            "10": {
+                              "modifier": {
+                                "factor": "0",
+                                "has_ancrel": "no"
+                              },
+                              "fleet_event": {},
+                              "10": {
+                                "10": {
+                                  "10": {
+                                    "10": {
+                                      "10": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 626
+  },
+  "site_ex_gravitas_random_events": {
+    "site_ex_gravitas_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "fleet_event": {
+              "modifier": {
+                "factor": "2",
+                "leader": {}
+              },
+              "10": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 666
+  },
+  "site_something_waiting_random_events": {
+    "site_something_waiting_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {
+              "10": {
+                "fleet_event": {
+                  "modifier": {
+                    "factor": "2",
+                    "leader": {}
+                  },
+                  "10": {
+                    "10": {
+                      "modifier": {
+                        "factor": "0",
+                        "has_ancrel": "no"
+                      },
+                      "fleet_event": {},
+                      "10": {
+                        "10": {
+                          "10": {
+                            "10": {
+                              "10": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 680
+  },
+  "site_buried_deep_random_events": {
+    "site_buried_deep_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {
+              "fleet_event": {
+                "modifier": {
+                  "factor": "2",
+                  "leader": {}
+                },
+                "10": {
+                  "10": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 708
+  },
+  "site_in_memoriam_random_events": {
+    "site_in_memoriam_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {
+              "10": {
+                "10": {
+                  "10": {
+                    "10": {
+                      "modifier": {
+                        "factor": "0",
+                        "has_ancrel": "no"
+                      },
+                      "fleet_event": {},
+                      "10": {
+                        "10": {
+                          "10": {
+                            "10": {}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 724
+  },
+  "site_the_last_stand_random_events": {
+    "site_the_last_stand_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {
+              "10": {
+                "10": {
+                  "10": {
+                    "10": {
+                      "fleet_event": {
+                        "modifier": {
+                          "factor": "2",
+                          "leader": {}
+                        },
+                        "10": {
+                          "10": {
+                            "modifier": {
+                              "factor": "0",
+                              "has_ancrel": "no"
+                            },
+                            "fleet_event": {},
+                            "10": {}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 746
+  },
+  "site_dark_secret_random_events": {
+    "site_dark_secret_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "fleet_event": {
+              "modifier": {
+                "factor": "2",
+                "leader": {}
+              },
+              "10": {
+                "10": {
+                  "10": {
+                    "10": {
+                      "10": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 773
+  },
+  "site_moon_bump_random_events": {
+    "site_moon_bump_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {
+              "fleet_event": {
+                "modifier": {
+                  "factor": "2",
+                  "leader": {}
+                },
+                "10": {
+                  "10": {
+                    "10": {
+                      "10": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 795
+  },
+  "site_echoes_inside_random_events": {
+    "site_echoes_inside_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {}
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 813
+  },
+  "site_target_from_orbit_random_events": {
+    "site_target_from_orbit_random_events": {
+      "random_list": {
+        "_comments": [
+          "#Laser Grid"
+        ],
+        "10": {
+          "10": {
+            "10": {
+              "10": {
+                "_comments": [
+                  "#Sentinel Droids"
+                ],
+                "10": {
+                  "10": {
+                    "10": {
+                      "10": {
+                        "_comments": [
+                          "#Unstable Ruins"
+                        ],
+                        "10": {
+                          "10": {
+                            "10": {
+                              "10": {
+                                "_comments": [
+                                  "#Other"
+                                ],
+                                "10": {
+                                  "10": {
+                                    "10": {
+                                      "10": {
+                                        "10": {
+                                          "10": {
+                                            "fleet_event": {
+                                              "modifier": {
+                                                "factor": "2",
+                                                "leader": {}
+                                              },
+                                              "10": {
+                                                "10": {
+                                                  "10": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 821
+  },
+  "site_shot_into_the_ground_random_events": {
+    "site_shot_into_the_ground_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {
+              "10": {
+                "10": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 857
+  },
+  "site_cut_to_fit_random_events": {
+    "site_cut_to_fit_random_events": {
+      "random_list": {
+        "10": {
+          "fleet_event": {
+            "modifier": {
+              "factor": "2",
+              "leader": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 867
+  },
+  "site_deja_vu_dig_random_events": {
+    "site_deja_vu_dig_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {
+              "10": {
+                "10": {
+                  "10": {
+                    "10": {
+                      "10": {
+                        "10": {
+                          "10": {
+                            "10": {
+                              "10": {
+                                "10": {
+                                  "10": {
+                                    "10": {
+                                      "10": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 879
+  },
+  "site_trench_world_random_events": {
+    "site_trench_world_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {
+              "10": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 900
+  },
+  "site_ebb_and_flow_random_events": {
+    "site_ebb_and_flow_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {
+              "10": {
+                "10": {
+                  "10": {
+                    "fleet_event": {
+                      "modifier": {
+                        "factor": "2",
+                        "leader": {}
+                      },
+                      "10": {
+                        "10": {
+                          "10": {
+                            "10": {
+                              "10": {
+                                "10": {
+                                  "10": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 909
+  },
+  "site_sky_glow_hymn_random_events": {
+    "site_sky_glow_hymn_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {
+              "10": {
+                "10": {
+                  "10": {
+                    "10": {
+                      "10": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 933
+  },
+  "site_warmer_climates_random_events": {
+    "site_warmer_climates_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {
+              "10": {
+                "fleet_event": {
+                  "modifier": {
+                    "factor": "2",
+                    "leader": {}
+                  },
+                  "10": {
+                    "10": {
+                      "10": {
+                        "10": {
+                          "10": {
+                            "10": {
+                              "10": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 946
+  },
+  "site_phoenix_collective_random_events": {
+    "site_phoenix_collective_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {
+              "10": {
+                "fleet_event": {
+                  "modifier": {
+                    "factor": "2",
+                    "leader": {}
+                  },
+                  "10": {
+                    "10": {
+                      "10": {
+                        "10": {
+                          "10": {
+                            "10": {
+                              "10": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 968
+  },
+  "site_grand_herald_random_events": {
+    "site_grand_herald_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {
+              "10": {
+                "10": {
+                  "fleet_event": {
+                    "modifier": {
+                      "factor": "2",
+                      "leader": {}
+                    },
+                    "10": {
+                      "10": {
+                        "10": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 990
+  },
+  "site_popular_rock_random_events": {
+    "site_popular_rock_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {
+              "10": {
+                "10": {
+                  "10": {
+                    "10": {
+                      "fleet_event": {
+                        "modifier": {
+                          "factor": "2",
+                          "leader": {}
+                        },
+                        "10": {
+                          "10": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 1009
+  },
+  "site_strange_flows_random_events": {
+    "site_strange_flows_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "fleet_event": {
+              "modifier": {
+                "factor": "2",
+                "leader": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 1029
+  },
+  "site_ruins_of_shallash_random_events": {
+    "site_ruins_of_shallash_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {
+              "10": {
+                "fleet_event": {
+                  "modifier": {
+                    "factor": "2",
+                    "leader": {}
+                  },
+                  "2": {
+                    "10": {
+                      "modifier": {
+                        "factor": "0",
+                        "has_ancrel": "no"
+                      },
+                      "fleet_event": {},
+                      "10": {
+                        "10": {
+                          "10": {
+                            "modifier": {
+                              "factor": "0",
+                              "OR": {
+                                "from.planet": {
+                                  "NOT": {},
+                                  "leader.species": {
+                                    "has_trait": "trait_pc_nuked_preference"
+                                  },
+                                  "owner": {}
+                                },
+                                "fleet_event": {},
+                                "40": {}
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 1042
+  },
+  "site_fumongus_random_events": {
+    "site_fumongus_random_events": {
+      "random_list": {
+        "_comments": [
+          "#Hostile Wildlife"
+        ],
+        "5": {
+          "25": {
+            "25": {
+              "25": {
+                "_comments": [
+                  "#Fungal Zombies"
+                ],
+                "5": {
+                  "25": {
+                    "25": {
+                      "25": {
+                        "30": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 1084
+  },
+  "site_relicrails_random_events": {
+    "site_relicrails_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {
+              "10": {
+                "fleet_event": {
+                  "modifier": {
+                    "factor": "2",
+                    "leader": {}
+                  },
+                  "10": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 1100
+  },
+  "clone_army_random_events": {
+    "clone_army_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {
+              "10": {
+                "10": {
+                  "10": {
+                    "10": {
+                      "10": {
+                        "10": {
+                          "10": {
+                            "10": {}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 1116
+  },
+  "site_transformation_random_events": {
+    "site_transformation_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {}
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 1132
+  },
+  "site_spaceship_random_events": {
+    "site_spaceship_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {
+              "10": {
+                "10": {
+                  "modifier": {
+                    "factor": "0",
+                    "has_ancrel": "no"
+                  },
+                  "fleet_event": {},
+                  "10": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 1140
+  },
+  "tiyanki_graveyard_random_events": {
+    "tiyanki_graveyard_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "fleet_event": {
+              "modifier": {
+                "factor": "2",
+                "leader": {}
+              },
+              "10": {
+                "10": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 1157
+  },
+  "site_ice_trauma_random_events": {
+    "site_ice_trauma_random_events": {
+      "random_list": {
+        "5": {
+          "5": {
+            "10": {
+              "10": {
+                "10": {
+                  "10": {
+                    "modifier": {
+                      "factor": "2",
+                      "leader": {},
+                      "fleet_event": {},
+                      "10": {
+                        "50": {
+                          "50": {
+                            "modifier": {
+                              "factor": "0",
+                              "owner": {
+                                "NOR": {
+                                  "has_technology": "tech_climate_restoration",
+                                  "has_ascension_perk": "ap_hydrocentric"
+                                }
+                              }
+                            },
+                            "fleet_event": {}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 1172
+  },
+  "site_genius_caeli_random_events": {
+    "site_genius_caeli_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "5": {
+              "10": {
+                "10": {
+                  "5": {
+                    "modifier": {
+                      "factor": "0",
+                      "is_organic_species": "no",
+                      "is_lithoid": "yes"
+                    },
+                    "fleet_event": {},
+                    "10": {
+                      "modifier": {
+                        "factor": "0",
+                        "is_organic_species": "no"
+                      },
+                      "fleet_event": {},
+                      "10": {
+                        "modifier": {
+                          "factor": "0",
+                          "is_organic_species": "no"
+                        },
+                        "fleet_event": {},
+                        "20": {
+                          "modifier": {
+                            "factor": "0",
+                            "has_ancrel": "no"
+                          },
+                          "fleet_event": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 1205
+  },
+  "site_engineered_species_random_events": {
+    "site_engineered_species_random_events": {
+      "random_list": {
+        "10": {
+          "5": {
+            "10": {
+              "5": {
+                "10": {
+                  "5": {
+                    "10": {
+                      "5": {
+                        "modifier": {
+                          "factor": "0",
+                          "is_organic_species": "no",
+                          "is_lithoid": "yes"
+                        },
+                        "fleet_event": {},
+                        "10": {
+                          "modifier": {
+                            "factor": "0",
+                            "has_ancrel": "no"
+                          },
+                          "fleet_event": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 1244
+  },
+  "site_krazura_random_events": {
+    "site_krazura_random_events": {
+      "random_list": {
+        "80": {
+          "20": {
+            "modifier": {
+              "factor": "50",
+              "owner": {
+                "is_species_class": "AVI"
+              }
+            },
+            "fleet_event": {}
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 1271
+  },
+  "cosmic_storm_precursor_random_events": {
+    "cosmic_storm_precursor_random_events": {
+      "random_list": {
+        "10": {
+          "10": {
+            "10": {
+              "10": {
+                "fleet_event": {
+                  "modifier": {
+                    "factor": "2",
+                    "leader": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "archaeology_event_effects.txt",
+    "_line_number": 1286
+  }
+}

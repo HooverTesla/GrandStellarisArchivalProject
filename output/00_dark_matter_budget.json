@@ -1,0 +1,161 @@
+{
+  "dark_matter_expenditure_planets": {
+    "dark_matter_expenditure_planets": {
+      "resource": "sr_dark_matter",
+      "type": "expenditure",
+      "category": "planets",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.2"
+      }
+    },
+    "_source_file": "00_dark_matter_budget.txt",
+    "_line_number": 9
+  },
+  "dark_matter_expenditure_ships": {
+    "dark_matter_expenditure_ships": {
+      "resource": "sr_dark_matter",
+      "type": "expenditure",
+      "category": "ships",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.1",
+        "modifier": {
+          "factor": "10",
+          "has_ascension_perk": "ap_become_the_crisis",
+          "has_crisis_level": "crisis_level_5",
+          "NOT": {
+            "count_controlled_fleet": {
+              "count >": "1",
+              "limit": {
+                "is_ship_size": "star_eater"
+              }
+            }
+          }
+        }
+      },
+      "desired_min": {
+        "base": "0",
+        "modifier": {
+          "add": "10000",
+          "has_ascension_perk": "ap_become_the_crisis",
+          "NOT": {
+            "count_controlled_fleet": {
+              "count >": "1",
+              "limit": {
+                "is_ship_size": "star_eater"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_dark_matter_budget.txt",
+    "_line_number": 23
+  },
+  "dark_matter_expenditure_megastructures": {
+    "dark_matter_expenditure_megastructures": {
+      "resource": "sr_dark_matter",
+      "type": "expenditure",
+      "category": "megastructures",
+      "potential": {
+        "has_ascension_perk": "ap_become_the_crisis",
+        "has_crisis_level": "crisis_level_5"
+      },
+      "weight": {
+        "weight": "0.8"
+      },
+      "desired_min": {
+        "base": "0",
+        "modifier": {
+          "add": "50000",
+          "any_owned_megastructure": {
+            "is_megastructure_type": "crisis_sphere_3",
+            "is_upgrading": "no"
+          }
+        }
+      }
+    },
+    "_source_file": "00_dark_matter_budget.txt",
+    "_line_number": 65
+  },
+  "dark_matter_expenditure_upgrade": {
+    "dark_matter_expenditure_upgrade": {
+      "resource": "sr_dark_matter",
+      "type": "expenditure",
+      "category": "ship_upgrades",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "base": "0.1"
+      }
+    },
+    "_source_file": "00_dark_matter_budget.txt",
+    "_line_number": 111
+  },
+  "dark_matter_expenditure_trade": {
+    "dark_matter_expenditure_trade": {
+      "resource": "sr_dark_matter",
+      "type": "expenditure",
+      "category": "trade",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.1"
+      }
+    },
+    "_source_file": "00_dark_matter_budget.txt",
+    "_line_number": 125
+  },
+  "dark_matter_upkeep_planets": {
+    "dark_matter_upkeep_planets": {
+      "resource": "sr_dark_matter",
+      "type": "upkeep",
+      "category": "planets",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.9"
+      }
+    },
+    "_source_file": "00_dark_matter_budget.txt",
+    "_line_number": 141
+  },
+  "dark_matter_upkeep_ships": {
+    "dark_matter_upkeep_ships": {
+      "resource": "sr_dark_matter",
+      "type": "upkeep",
+      "category": "ships",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "weight": "0.1"
+      }
+    },
+    "_source_file": "00_dark_matter_budget.txt",
+    "_line_number": 155
+  },
+  "dark_matter_upkeep_edicts": {
+    "dark_matter_upkeep_edicts": {
+      "resource": "sr_dark_matter",
+      "type": "upkeep",
+      "category": "edicts",
+      "potential": {
+        "always": "yes"
+      },
+      "weight": {
+        "base": "0.25"
+      }
+    },
+    "_source_file": "00_dark_matter_budget.txt",
+    "_line_number": 169
+  }
+}

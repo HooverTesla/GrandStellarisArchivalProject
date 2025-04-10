@@ -1,0 +1,2243 @@
+{
+  "hostile_init_01": {
+    "hostile_init_01": {
+      "class": "rl_standard_stars",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "4",
+        "modifier": {
+          "factor": "0.1",
+          "NOT": {},
+          "modifier": {
+            "factor": "0",
+            "is_bottleneck_system": "yes"
+          }
+        },
+        "max_instances": "1",
+        "flags": {
+          "planet": {
+            "count": "1",
+            "class": "star",
+            "orbit_distance": "0",
+            "orbit_angle": "1",
+            "size": {
+              "has_ring": "no"
+            },
+            "change_orbit": "45",
+            "planet": {
+              "count": "1",
+              "orbit_distance": "20",
+              "orbit_angle": {
+                "size": {
+                  "has_ring": "no",
+                  "class": "pc_broken",
+                  "init_effect": {
+                    "prevent_anomaly": "yes",
+                    "set_deposit": "d_physics_8"
+                  }
+                },
+                "planet": {
+                  "count": {
+                    "orbit_distance": "20",
+                    "orbit_angle": {
+                      "change_orbit": "@base_moon_distance",
+                      "moon": {
+                        "count": {
+                          "orbit_angle": {
+                            "orbit_distance": "5"
+                          }
+                        },
+                        "init_effect": {
+                          "create_crystal_country": "yes",
+                          "random_system_planet": {
+                            "limit": {
+                              "event_target:crystal_country": {
+                                "create_fleet": {
+                                  "name": "NAME_Sapphire_Lurkers",
+                                  "effect": {
+                                    "set_owner": "event_target:crystal_country",
+                                    "while": {
+                                      "count": "20",
+                                      "create_ship": {
+                                        "name": "",
+                                        "design": "NAME_Small_Crystal_Entity_Blue"
+                                      }
+                                    },
+                                    "set_location": "PREVPREV",
+                                    "set_fleet_stance": "aggressive",
+                                    "set_aggro_range_measure_from": "self",
+                                    "set_aggro_range": "150"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 11
+  },
+  "hostile_init_02": {
+    "hostile_init_02": {
+      "class": "rl_standard_stars",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "4",
+        "modifier": {
+          "factor": "0",
+          "NOT": {},
+          "modifier": {
+            "factor": "0",
+            "is_bottleneck_system": "yes"
+          }
+        },
+        "flags": {
+          "planet": {
+            "count": "1",
+            "class": "star",
+            "orbit_distance": "0",
+            "orbit_angle": "1",
+            "size": {
+              "has_ring": "no"
+            },
+            "change_orbit": "45",
+            "planet": {
+              "count": {
+                "orbit_distance": "20",
+                "orbit_angle": {
+                  "change_orbit": "@base_moon_distance",
+                  "moon": {
+                    "count": {
+                      "orbit_angle": {
+                        "orbit_distance": "5"
+                      }
+                    },
+                    "init_effect": {
+                      "create_crystal_country": "yes",
+                      "random_system_planet": {
+                        "limit": {
+                          "is_star": "no",
+                          "NOT": {
+                            "is_same_value": "event_target:blue2_trigger_2"
+                          }
+                        },
+                        "save_event_target_as": "blue2_trigger_3"
+                      },
+                      "event_target:crystal_country": {
+                        "if": {
+                          "limit": {
+                            "create_fleet": {
+                              "name": "NAME_Sapphire_Lurkers",
+                              "effect": {
+                                "set_owner": "event_target:crystal_country",
+                                "while": {
+                                  "count": "14",
+                                  "create_ship": {
+                                    "name": "",
+                                    "design": "NAME_Small_Crystal_Entity_Blue"
+                                  }
+                                },
+                                "set_location": "event_target:blue2_trigger_3",
+                                "set_fleet_stance": "aggressive",
+                                "set_aggro_range_measure_from": "self",
+                                "set_aggro_range": "150"
+                              }
+                            }
+                          },
+                          "if": {
+                            "limit": {
+                              "create_fleet": {
+                                "name": "NAME_Sapphire_Lurkers",
+                                "effect": {
+                                  "set_owner": "event_target:crystal_country",
+                                  "while": {
+                                    "count": "6",
+                                    "create_ship": {
+                                      "name": "",
+                                      "design": "NAME_Small_Crystal_Entity_Blue"
+                                    }
+                                  },
+                                  "set_location": "event_target:blue2_trigger_2",
+                                  "set_fleet_stance": "aggressive",
+                                  "set_aggro_range_measure_from": "self",
+                                  "set_aggro_range": "150"
+                                }
+                              }
+                            },
+                            "if": {
+                              "limit": {
+                                "create_fleet": {
+                                  "name": "NAME_Sapphire_Lurkers",
+                                  "effect": {
+                                    "set_owner": "event_target:crystal_country",
+                                    "while": {
+                                      "count": "6",
+                                      "create_ship": {
+                                        "name": "",
+                                        "design": "NAME_Small_Crystal_Entity_Blue"
+                                      }
+                                    },
+                                    "set_location": "event_target:blue2_trigger_1",
+                                    "set_fleet_stance": "aggressive",
+                                    "set_aggro_range_measure_from": "self",
+                                    "set_aggro_range": "150"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 113
+  },
+  "hostile_init_03": {
+    "hostile_init_03": {
+      "class": "rl_standard_stars",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "1",
+        "modifier": {
+          "factor": "0",
+          "NOT": {},
+          "modifier": {
+            "factor": "0",
+            "is_bottleneck_system": "yes"
+          }
+        },
+        "max_instances": "1",
+        "flags": {
+          "planet": {
+            "count": "1",
+            "class": "star",
+            "orbit_distance": "0",
+            "orbit_angle": "1",
+            "size": {
+              "has_ring": "no"
+            },
+            "change_orbit": "45",
+            "planet": {
+              "count": {
+                "orbit_distance": "20",
+                "orbit_angle": {
+                  "change_orbit": "@base_moon_distance",
+                  "moon": {
+                    "count": {
+                      "orbit_angle": {
+                        "orbit_distance": "5"
+                      }
+                    },
+                    "init_effect": {
+                      "create_crystal_country": "yes",
+                      "random_system_planet": {
+                        "limit": {
+                          "is_star": "no",
+                          "is_moon": "no",
+                          "NOR": {
+                            "is_same_value": "event_target:green_trigger_2"
+                          }
+                        },
+                        "save_event_target_as": "green_trigger_3"
+                      },
+                      "event_target:crystal_country": {
+                        "create_fleet": {
+                          "name": "NAME_Emerald_Roamers",
+                          "effect": {
+                            "set_owner": "event_target:crystal_country",
+                            "create_ship": {
+                              "name": "",
+                              "design": "NAME_Large_Crystal_Entity_Green"
+                            },
+                            "while": {
+                              "count": "8",
+                              "create_ship": {
+                                "name": "",
+                                "design": "NAME_Small_Crystal_Entity_Green"
+                              }
+                            },
+                            "set_location": "event_target:green_trigger_3",
+                            "set_fleet_stance": "aggressive",
+                            "set_aggro_range_measure_from": "self",
+                            "set_aggro_range": "100",
+                            "queue_actions": {
+                              "repeat": {
+                                "find_closest_planet": {
+                                  "trigger": {
+                                    "id": "greenC.1.trigger.3",
+                                    "is_planet": "event_target:green_trigger_3"
+                                  },
+                                  "found_planet": {
+                                    "move_to": "this",
+                                    "orbit_planet": "THIS"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 268
+  },
+  "hostile_init_04": {
+    "hostile_init_04": {
+      "class": "rl_standard_stars",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "2",
+        "modifier": {
+          "factor": "0",
+          "NOT": {},
+          "modifier": {
+            "factor": "0",
+            "is_bottleneck_system": "yes"
+          }
+        },
+        "flags": {
+          "planet": {
+            "count": "1",
+            "class": "star",
+            "orbit_distance": "0",
+            "orbit_angle": "1",
+            "size": {
+              "has_ring": "no"
+            },
+            "change_orbit": "45",
+            "planet": {
+              "count": "3",
+              "orbit_distance": "20",
+              "orbit_angle": {},
+              "init_effect": {
+                "create_crystal_country": "yes",
+                "random_system_planet": {
+                  "limit": {
+                    "is_star": "no",
+                    "NOT": {
+                      "is_same_value": "event_target:green2_trigger_2"
+                    }
+                  },
+                  "save_event_target_as": "green2_trigger_3"
+                },
+                "event_target:crystal_country": {
+                  "save_event_target_as": "green2_owner",
+                  "create_fleet": {
+                    "name": "NAME_Emerald_Roamers",
+                    "effect": {
+                      "set_owner": "event_target:crystal_country",
+                      "create_ship": {
+                        "name": "",
+                        "design": "NAME_Medium_Crystal_Entity_Green"
+                      },
+                      "while": {
+                        "count": "6",
+                        "create_ship": {
+                          "name": "",
+                          "design": "NAME_Small_Crystal_Entity_Green"
+                        }
+                      },
+                      "set_location": "event_target:green2_trigger_2",
+                      "set_fleet_stance": "aggressive",
+                      "set_aggro_range_measure_from": "self",
+                      "set_aggro_range": "40",
+                      "queue_actions": {
+                        "repeat": {
+                          "find_closest_planet": {
+                            "trigger": {
+                              "id": "greenC2.3.trigger.2",
+                              "is_planet": "event_target:green2_trigger_2"
+                            },
+                            "found_planet": {
+                              "move_to": "this",
+                              "orbit_planet": "this"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 412
+  },
+  "hostile_init_05": {
+    "hostile_init_05": {
+      "class": "rl_standard_stars",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "2",
+        "modifier": {
+          "factor": "0",
+          "NOT": {},
+          "modifier": {
+            "factor": "0",
+            "is_bottleneck_system": "yes"
+          }
+        },
+        "flags": {
+          "planet": {
+            "count": "1",
+            "class": "star",
+            "orbit_distance": "0",
+            "orbit_angle": "1",
+            "size": {
+              "has_ring": "no"
+            },
+            "change_orbit": "45",
+            "planet": {
+              "count": {
+                "orbit_distance": "20",
+                "orbit_angle": {
+                  "change_orbit": "@base_moon_distance",
+                  "moon": {
+                    "count": {
+                      "orbit_angle": {
+                        "orbit_distance": "5"
+                      }
+                    },
+                    "init_effect": {
+                      "random_system_planet": {
+                        "limit": {
+                          "is_star": "no",
+                          "is_moon": "no",
+                          "NOT": {
+                            "is_same_value": "event_target:red_trigger_3"
+                          }
+                        },
+                        "save_event_target_as": "red_trigger_4"
+                      },
+                      "create_crystal_country": "yes",
+                      "event_target:crystal_country": {
+                        "save_event_target_as": "red_crystals",
+                        "create_fleet": {
+                          "name": "NAME_Ruby_Stack",
+                          "effect": {
+                            "set_owner": "event_target:crystal_country",
+                            "while": {
+                              "count": "6",
+                              "create_ship": {
+                                "name": "",
+                                "design": "NAME_Small_Crystal_Entity_Red"
+                              }
+                            },
+                            "set_location": "event_target:red_trigger_4",
+                            "set_fleet_stance": "aggressive",
+                            "set_aggro_range_measure_from": "return_point",
+                            "set_aggro_range": "30",
+                            "queue_actions": {
+                              "repeat": {
+                                "wait": {
+                                  "duration": "9999"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 658
+  },
+  "hostile_init_06": {
+    "hostile_init_06": {
+      "class": "rl_standard_stars",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "2",
+        "modifier": {
+          "factor": "0",
+          "NOT": {},
+          "modifier": {
+            "factor": "0",
+            "is_bottleneck_system": "yes"
+          }
+        },
+        "max_instances": "1",
+        "flags": {
+          "planet": {
+            "count": "1",
+            "class": "star",
+            "orbit_distance": "0",
+            "orbit_angle": "1",
+            "size": {
+              "has_ring": "no"
+            },
+            "change_orbit": "45",
+            "planet": {
+              "count": "1",
+              "orbit_distance": "25",
+              "class": "pc_gaia",
+              "orbit_angle": {
+                "size": {},
+                "planet": {
+                  "count": {
+                    "orbit_distance": "20",
+                    "orbit_angle": {
+                      "change_orbit": "@base_moon_distance",
+                      "moon": {
+                        "count": {
+                          "orbit_angle": {
+                            "orbit_distance": "5"
+                          }
+                        },
+                        "init_effect": {
+                          "create_crystal_country": "yes",
+                          "random_system_planet": {
+                            "limit": {
+                              "is_star": "no",
+                              "is_moon": "no",
+                              "NOT": {
+                                "is_same_value": "event_target:red2_trigger_3"
+                              }
+                            },
+                            "save_event_target_as": "red2_trigger_4"
+                          },
+                          "event_target:crystal_country": {
+                            "save_event_target_as": "red2_crystals",
+                            "create_fleet": {
+                              "name": "NAME_Ruby_Swarm",
+                              "effect": {
+                                "set_owner": "event_target:crystal_country",
+                                "while": {
+                                  "count": "7",
+                                  "create_ship": {
+                                    "name": "",
+                                    "design": "NAME_Small_Crystal_Entity_Red"
+                                  }
+                                },
+                                "set_location": "event_target:red2_trigger_4",
+                                "set_fleet_stance": "aggressive",
+                                "set_aggro_range_measure_from": "return_point",
+                                "set_aggro_range": "100",
+                                "queue_actions": {
+                                  "repeat": {
+                                    "wait": {
+                                      "duration": "9999"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 858
+  },
+  "hostile_init_07": {
+    "hostile_init_07": {
+      "class": "sc_pulsar",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "10",
+        "modifier": {
+          "factor": "0",
+          "NOT": {},
+          "modifier": {
+            "factor": "0",
+            "is_bottleneck_system": "yes"
+          }
+        },
+        "max_instances": "1",
+        "spawn_chance": "100",
+        "flags": {
+          "planet": {
+            "count": {
+              "orbit_distance": "20",
+              "orbit_angle": {
+                "change_orbit": "@base_moon_distance",
+                "moon": {
+                  "count": {
+                    "orbit_angle": {
+                      "orbit_distance": "5"
+                    }
+                  },
+                  "init_effect": {
+                    "create_crystal_country": "yes",
+                    "random_system_planet": {
+                      "limit": {
+                        "event_target:crystal_country": {
+                          "save_event_target_as": "elite1_owner",
+                          "create_fleet": {
+                            "name": "NAME_Emerald_Guardians",
+                            "effect": {
+                              "set_owner": "event_target:crystal_country",
+                              "while": {
+                                "count": "16",
+                                "create_ship": {
+                                  "name": "",
+                                  "design": "NAME_Small_Crystal_Entity_Green_Elite"
+                                }
+                              },
+                              "set_location": {
+                                "target": "prevprev",
+                                "distance": "40",
+                                "angle": "288"
+                              },
+                              "set_fleet_stance": "aggressive",
+                              "set_aggro_range_measure_from": "self",
+                              "set_aggro_range": "500"
+                            }
+                          },
+                          "_comments": [
+                            "#set_fleet_stance = aggressive",
+                            "#set_aggro_range_measure_from = return_point",
+                            "#set_aggro_range = 500"
+                          ]
+                        }
+                      }
+                    },
+                    "neighbor_system": {
+                      "distance": {
+                        "initializer": "hostile_init_04\" # Green Patrol variation"
+                      },
+                      "neighbor_system": {
+                        "distance": {
+                          "initializer": "hostile_init_06\" # Red variation"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "change_orbit": "45"
+        }
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 1097
+  },
+  "hostile_init_08": {
+    "hostile_init_08": {
+      "class": "rl_standard_stars",
+      "asteroid_belt": {
+        "type": "rocky_asteroid_belt",
+        "radius": "95"
+      },
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "4",
+        "modifier": {
+          "factor": "0.1",
+          "NOT": {},
+          "modifier": {
+            "factor": "0",
+            "is_bottleneck_system": "yes"
+          }
+        },
+        "flags": {
+          "planet": {
+            "count": "1",
+            "class": "star",
+            "orbit_distance": "0",
+            "orbit_angle": "1",
+            "size": {
+              "has_ring": "no"
+            },
+            "change_orbit": "30",
+            "planet": {
+              "count": "2",
+              "orbit_distance": "20",
+              "orbit_angle": {},
+              "change_orbit": "25",
+              "planet": {
+                "class": "pc_asteroid",
+                "orbit_distance": "0",
+                "orbit_angle": {},
+                "planet": {
+                  "class": "pc_asteroid",
+                  "orbit_distance": "0",
+                  "orbit_angle": {},
+                  "planet": {
+                    "count": {
+                      "orbit_distance": "25",
+                      "orbit_angle": {
+                        "change_orbit": "@base_moon_distance",
+                        "moon": {
+                          "count": {
+                            "orbit_angle": {
+                              "orbit_distance": "5"
+                            }
+                          },
+                          "init_effect": {
+                            "create_cloud_country": "yes",
+                            "random_system_planet": {
+                              "limit": {
+                                "set_deposit": "d_energy_2",
+                                "event_target:cloud_country": {
+                                  "set_aggro_range": "500",
+                                  "create_fleet": {
+                                    "name": "NAME_Void_Cloud",
+                                    "effect": {
+                                      "set_owner": "event_target:cloud_country",
+                                      "create_ship": {
+                                        "name": "",
+                                        "design": "NAME_Cloud_Entity"
+                                      },
+                                      "set_location": "PREVPREV",
+                                      "set_fleet_stance": "aggressive",
+                                      "set_aggro_range_measure_from": "self",
+                                      "set_aggro_range": "500"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 1323
+  },
+  "hostile_init_10": {
+    "hostile_init_10": {
+      "class": "rl_standard_stars",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "4",
+        "modifier": {
+          "factor": "0",
+          "NOT": {},
+          "modifier": {
+            "factor": "0",
+            "is_bottleneck_system": "yes"
+          }
+        },
+        "flags": {
+          "planet": {
+            "count": "1",
+            "class": "star",
+            "orbit_distance": "0",
+            "orbit_angle": "1",
+            "size": {
+              "has_ring": "no"
+            },
+            "change_orbit": "45",
+            "planet": {
+              "count": {
+                "orbit_distance": "20",
+                "orbit_angle": {
+                  "change_orbit": "@base_moon_distance",
+                  "moon": {
+                    "count": {
+                      "orbit_angle": {
+                        "orbit_distance": "5"
+                      }
+                    },
+                    "init_effect": {
+                      "create_amoeba_country": "yes",
+                      "random_system_planet": {
+                        "limit": {
+                          "event_target:amoeba_country": {
+                            "create_fleet": {
+                              "name": "NAME_Space_Amoeba_plural",
+                              "settings": {
+                                "garrison": "yes"
+                              },
+                              "effect": {
+                                "set_owner": "event_target:amoeba_country",
+                                "while": {
+                                  "count": "2",
+                                  "create_ship": {
+                                    "name": "",
+                                    "design": "NAME_Large_Space_Organism_Zebra"
+                                  }
+                                },
+                                "set_formation_scale": "3.0",
+                                "set_location": "PREVPREV",
+                                "set_fleet_stance": "aggressive",
+                                "set_aggro_range_measure_from": "self",
+                                "set_aggro_range": "100",
+                                "set_fleet_flag": "is_garrison_fleet"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 1417
+  },
+  "hostile_init_10_small_amoeba_pack": {
+    "hostile_init_10_small_amoeba_pack": {
+      "class": "rl_standard_stars",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "4",
+        "modifier": {
+          "factor": "0.1",
+          "NOT": {},
+          "modifier": {
+            "factor": "0",
+            "has_star_flag": "empire_cluster"
+          }
+        },
+        "flags": {
+          "planet": {
+            "count": "1",
+            "class": "star",
+            "orbit_distance": "0",
+            "orbit_angle": "1",
+            "size": {
+              "has_ring": "no"
+            },
+            "change_orbit": "45",
+            "planet": {
+              "count": {
+                "orbit_distance": "20",
+                "orbit_angle": {
+                  "change_orbit": "@base_moon_distance",
+                  "moon": {
+                    "count": {
+                      "orbit_angle": {
+                        "orbit_distance": "5"
+                      }
+                    },
+                    "init_effect": {
+                      "create_amoeba_country": "yes",
+                      "random_system_planet": {
+                        "limit": {
+                          "event_target:amoeba_country": {
+                            "create_fleet": {
+                              "name": "NAME_Space_Amoeba_plural",
+                              "settings": {
+                                "garrison": "yes"
+                              },
+                              "effect": {
+                                "set_owner": "event_target:amoeba_country",
+                                "while": {
+                                  "count": "1",
+                                  "create_ship": {
+                                    "name": "",
+                                    "design": "NAME_Large_Space_Organism_Teal"
+                                  }
+                                },
+                                "set_location": "PREVPREV",
+                                "set_fleet_stance": "aggressive",
+                                "set_aggro_range_measure_from": "self",
+                                "set_aggro_range": "100",
+                                "set_fleet_flag": "is_garrison_fleet"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 1504
+  },
+  "hostile_init_11": {
+    "hostile_init_11": {
+      "class": "rl_standard_stars",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "4",
+        "modifier": {
+          "factor": "0",
+          "NOT": {},
+          "modifier": {
+            "factor": "0",
+            "has_star_flag": "empire_cluster"
+          }
+        },
+        "flags": {
+          "planet": {
+            "count": "1",
+            "class": "star",
+            "orbit_distance": "0",
+            "orbit_angle": "1",
+            "size": {
+              "has_ring": "no"
+            },
+            "change_orbit": "45",
+            "planet": {
+              "count": {
+                "orbit_distance": "20",
+                "orbit_angle": {
+                  "change_orbit": "@base_moon_distance",
+                  "moon": {
+                    "count": {
+                      "orbit_angle": {
+                        "orbit_distance": "5"
+                      }
+                    },
+                    "init_effect": {
+                      "create_amoeba_country": "yes",
+                      "random_system_planet": {
+                        "limit": {
+                          "save_event_target_as": "grazing_grounds",
+                          "event_target:amoeba_country": {
+                            "create_fleet": {
+                              "name": "NAME_Space_Amoeba_Hunters",
+                              "effect": {
+                                "set_owner": "event_target:amoeba_country",
+                                "random_list": {
+                                  "20": {
+                                    "set_fleet_flag": "tiyanki_hunter"
+                                  },
+                                  "70": {
+                                    "set_fleet_flag": "empty_system"
+                                  }
+                                },
+                                "while": {
+                                  "count": "1",
+                                  "create_ship": {
+                                    "name": "",
+                                    "design": "NAME_Large_Space_Organism_Orange"
+                                  }
+                                },
+                                "set_location": "PREVPREV",
+                                "set_fleet_stance": "aggressive",
+                                "set_aggro_range_measure_from": "self",
+                                "set_aggro_range": "20",
+                                "set_fleet_flag": "NAME_Space_Amoeba_Hunters",
+                                "if": {
+                                  "limit": {
+                                    "save_event_target_as": "hunting_amoeba",
+                                    "queue_actions": {
+                                      "wait": {
+                                        "duration": "5000",
+                                        "random": "1000"
+                                      }
+                                    }
+                                  },
+                                  "else": {
+                                    "queue_actions": {
+                                      "wait": {
+                                        "duration": "5000",
+                                        "random": "1000"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 1587
+  },
+  "hostile_init_12": {
+    "hostile_init_12": {
+      "class": "rl_standard_stars",
+      "asteroid_belt": {
+        "type": "rocky_asteroid_belt",
+        "radius": "95"
+      },
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "4",
+        "modifier": {
+          "factor": "0.1",
+          "NOT": {},
+          "modifier": {
+            "factor": "0",
+            "has_star_flag": "empire_cluster"
+          }
+        },
+        "flags": {
+          "planet": {
+            "count": "1",
+            "class": "star",
+            "orbit_distance": "0",
+            "orbit_angle": "1",
+            "size": {
+              "has_ring": "no"
+            },
+            "change_orbit": "30",
+            "planet": {
+              "count": "2",
+              "orbit_distance": "20",
+              "orbit_angle": {},
+              "change_orbit": "25",
+              "planet": {
+                "class": "pc_asteroid",
+                "orbit_distance": "0",
+                "orbit_angle": {},
+                "planet": {
+                  "class": "pc_asteroid",
+                  "orbit_distance": "0",
+                  "orbit_angle": {},
+                  "planet": {
+                    "count": {
+                      "orbit_distance": "25",
+                      "orbit_angle": {
+                        "change_orbit": "@base_moon_distance",
+                        "moon": {
+                          "count": {
+                            "orbit_angle": {
+                              "orbit_distance": "5"
+                            }
+                          },
+                          "init_effect": {
+                            "create_drone_country": "yes",
+                            "random_system_planet": {
+                              "limit": {
+                                "has_deposit_for": "shipclass_mining_station",
+                                "is_star": "no",
+                                "NOT": {},
+                                "set_deposit": "d_minerals_4",
+                                "event_target:drone_country": {
+                                  "save_event_target_as": "mining_drones",
+                                  "create_fleet": {
+                                    "name": "NAME_Ancient_Mining_Drones",
+                                    "effect": {
+                                      "set_owner": "event_target:drone_country",
+                                      "while": {
+                                        "count": "4",
+                                        "create_ship": {
+                                          "name": "",
+                                          "design": "NAME_Ancient_Combat_Drone"
+                                        }
+                                      },
+                                      "set_location": "PREVPREV",
+                                      "set_fleet_stance": "aggressive",
+                                      "set_aggro_range_measure_from": "return_point",
+                                      "set_aggro_range": "150",
+                                      "queue_actions": {
+                                        "repeat": {
+                                          "wait": {
+                                            "duration": "999",
+                                            "random": "10"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "create_mining_station": {
+                                  "owner": "event_target:mining_drones"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 1696
+  },
+  "hostile_init_12_mining_drones": {
+    "hostile_init_12_mining_drones": {
+      "class": "rl_standard_stars",
+      "asteroid_belt": {
+        "type": "rocky_asteroid_belt",
+        "radius": "95"
+      },
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "4",
+        "modifier": {
+          "factor": "0",
+          "NOT": {},
+          "modifier": {
+            "factor": "0",
+            "has_star_flag": "empire_cluster"
+          }
+        },
+        "flags": {
+          "planet": {
+            "count": "1",
+            "class": "star",
+            "orbit_distance": "0",
+            "orbit_angle": "1",
+            "size": {
+              "has_ring": "no"
+            },
+            "change_orbit": "30",
+            "planet": {
+              "count": "2",
+              "orbit_distance": "20",
+              "orbit_angle": {},
+              "change_orbit": "25",
+              "planet": {
+                "class": "pc_asteroid",
+                "orbit_distance": "0",
+                "orbit_angle": {},
+                "planet": {
+                  "class": "pc_asteroid",
+                  "orbit_distance": "0",
+                  "orbit_angle": {},
+                  "planet": {
+                    "count": {
+                      "orbit_distance": "25",
+                      "orbit_angle": {
+                        "change_orbit": "@base_moon_distance",
+                        "moon": {
+                          "count": {
+                            "orbit_angle": {
+                              "orbit_distance": "5"
+                            }
+                          },
+                          "init_effect": {
+                            "create_drone_country": "yes",
+                            "random_system_planet": {
+                              "limit": {
+                                "has_deposit_for": "shipclass_mining_station",
+                                "is_star": "no",
+                                "NOT": {},
+                                "set_deposit": "d_minerals_8",
+                                "event_target:drone_country": {
+                                  "save_event_target_as": "mining_drones",
+                                  "create_fleet": {
+                                    "name": "NAME_Ancient_Mining_Drones",
+                                    "effect": {
+                                      "set_owner": "event_target:drone_country",
+                                      "while": {
+                                        "count": "2",
+                                        "create_ship": {
+                                          "name": "",
+                                          "design": "NAME_Ancient_Destroyer"
+                                        }
+                                      },
+                                      "set_location": "PREVPREV",
+                                      "set_fleet_stance": "aggressive",
+                                      "set_aggro_range_measure_from": "return_point",
+                                      "set_aggro_range": "150",
+                                      "queue_actions": {
+                                        "repeat": {
+                                          "wait": {
+                                            "duration": "999",
+                                            "random": "10"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "create_mining_station": {
+                                  "owner": "event_target:mining_drones"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 1814
+  },
+  "hostile_init_12_drone_destroyer": {
+    "hostile_init_12_drone_destroyer": {
+      "class": "rl_standard_stars",
+      "asteroid_belt": {
+        "type": "rocky_asteroid_belt",
+        "radius": "95"
+      },
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "1",
+        "modifier": {
+          "factor": "0",
+          "NOT": {},
+          "modifier": {
+            "factor": "0",
+            "is_bottleneck_system": "yes"
+          }
+        },
+        "flags": {
+          "planet": {
+            "count": "1",
+            "class": "star",
+            "orbit_distance": "0",
+            "orbit_angle": "1",
+            "size": {
+              "has_ring": "no"
+            },
+            "change_orbit": "30",
+            "planet": {
+              "count": "2",
+              "orbit_distance": "20",
+              "orbit_angle": {},
+              "change_orbit": "25",
+              "planet": {
+                "class": "pc_asteroid",
+                "orbit_distance": "0",
+                "orbit_angle": {},
+                "planet": {
+                  "class": "pc_asteroid",
+                  "orbit_distance": "0",
+                  "orbit_angle": {},
+                  "planet": {
+                    "count": {
+                      "orbit_distance": "25",
+                      "orbit_angle": {
+                        "change_orbit": "@base_moon_distance",
+                        "moon": {
+                          "count": {
+                            "orbit_angle": {
+                              "orbit_distance": "5"
+                            }
+                          },
+                          "init_effect": {
+                            "create_drone_country": "yes",
+                            "random_system_planet": {
+                              "limit": {
+                                "set_deposit": "d_minerals_8",
+                                "event_target:drone_country": {
+                                  "save_event_target_as": "mining_drones",
+                                  "create_fleet": {
+                                    "name": "NAME_Asset_Protection_Unit",
+                                    "effect": {
+                                      "set_owner": "event_target:drone_country",
+                                      "while": {
+                                        "count": "3",
+                                        "create_ship": {
+                                          "name": "",
+                                          "design": "NAME_Ancient_Destroyer"
+                                        }
+                                      },
+                                      "set_location": "PREVPREV",
+                                      "set_fleet_stance": "aggressive",
+                                      "set_aggro_range_measure_from": "return_point",
+                                      "set_aggro_range": "150",
+                                      "queue_actions": {
+                                        "repeat": {
+                                          "wait": {
+                                            "duration": "999",
+                                            "random": "10"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "create_mining_station": {
+                                  "owner": "event_target:mining_drones"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 1939
+  },
+  "hostile_init_13": {
+    "hostile_init_13": {
+      "class": "rl_standard_stars",
+      "asteroid_belt": {
+        "type": "rocky_asteroid_belt",
+        "radius": "120"
+      },
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "2",
+        "modifier": {
+          "factor": "0",
+          "NOT": {},
+          "modifier": {
+            "factor": "0",
+            "has_star_flag": "empire_cluster"
+          }
+        },
+        "flags": {
+          "planet": {
+            "count": "1",
+            "orbit_distance": "20",
+            "orbit_angle": "-195",
+            "change_orbit": "4",
+            "moon": {
+              "count": "1"
+            }
+          },
+          "init_effect": {
+            "create_drone_country": "yes",
+            "random_system_planet": {
+              "limit": {
+                "set_deposit": "d_minerals_8",
+                "event_target:drone_country": {
+                  "create_fleet": {
+                    "name": "NAME_Ancient_Mining_Drones",
+                    "effect": {
+                      "set_owner": "event_target:drone_country",
+                      "while": {
+                        "count": "3",
+                        "create_ship": {
+                          "name": "",
+                          "design": "NAME_Ancient_Combat_Drone"
+                        }
+                      },
+                      "set_location": "PREVPREV",
+                      "set_fleet_stance": "aggressive",
+                      "set_aggro_range_measure_from": "return_point",
+                      "set_aggro_range": "200"
+                    }
+                  }
+                },
+                "create_mining_station": {
+                  "owner": "event_target:drone_country"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 2067
+  },
+  "hostile_init_14": {
+    "hostile_init_14": {
+      "class": "rl_standard_stars",
+      "asteroid_belt": {
+        "type": "rocky_asteroid_belt",
+        "radius": "150"
+      },
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "10",
+        "modifier": {
+          "factor": "0",
+          "NOT": {},
+          "modifier": {
+            "factor": "0",
+            "is_bottleneck_system": "yes"
+          }
+        },
+        "max_instances": "1",
+        "spawn_chance": "100",
+        "flags": {
+          "planet": {
+            "count": "1",
+            "class": "star",
+            "orbit_distance": "0",
+            "orbit_angle": "1",
+            "size": {
+              "has_ring": "no",
+              "init_effect": {
+                "create_drone_country": "yes"
+              }
+            },
+            "change_orbit": "120",
+            "planet": {
+              "count": "3",
+              "class": "pc_asteroid",
+              "orbit_distance": "0",
+              "orbit_angle": {
+                "init_effect": {
+                  "create_fleet": {
+                    "name": "NAME_Asset_Protection_Unit",
+                    "effect": {
+                      "set_owner": "event_target:drone_country",
+                      "while": {
+                        "count": "10",
+                        "create_ship": {
+                          "name": "",
+                          "design": "NAME_Ancient_Destroyer"
+                        }
+                      },
+                      "set_location": {
+                        "target": "prev",
+                        "distance": "20",
+                        "angle": "180"
+                      },
+                      "set_formation_scale": "2",
+                      "set_fleet_stance": "aggressive",
+                      "set_aggro_range_measure_from": "return_point",
+                      "set_aggro_range": "200"
+                    }
+                  },
+                  "if": {
+                    "limit": {
+                      "NOT": {},
+                      "set_planet_flag": "ore_grinder_planet",
+                      "set_deposit": "d_minerals_10",
+                      "create_fleet": {
+                        "name": "NAME_Central_Processing",
+                        "effect": {
+                          "set_owner": "event_target:drone_country",
+                          "create_ship": {
+                            "name": "NAME_Ore_Grinder",
+                            "design": "NAME_Drone_Home_Base",
+                            "graphical_culture": "drone"
+                          },
+                          "set_location": "prev",
+                          "save_event_target_as": "ore_grinder",
+                          "set_fleet_flag": "ore_grinder"
+                        }
+                      }
+                    },
+                    "else": {
+                      "create_mining_station": {
+                        "owner": "event_target:drone_country"
+                      }
+                    }
+                  }
+                },
+                "change_orbit": "30",
+                "planet": {
+                  "count": "6",
+                  "class": "pc_asteroid",
+                  "orbit_distance": "0",
+                  "orbit_angle": {
+                    "init_effect": {
+                      "create_fleet": {
+                        "name": "NAME_Mining_Corps",
+                        "effect": {
+                          "set_owner": "event_target:drone_country",
+                          "while": {
+                            "count": "1",
+                            "create_ship": {
+                              "name": "",
+                              "design": "NAME_Ancient_Combat_Drone"
+                            }
+                          },
+                          "set_location": {
+                            "target": "prev",
+                            "distance": "20",
+                            "angle": "0"
+                          },
+                          "set_formation_scale": "2",
+                          "set_fleet_stance": "aggressive",
+                          "set_aggro_range_measure_from": "return_point",
+                          "set_aggro_range": "200"
+                        }
+                      },
+                      "create_mining_station": {
+                        "owner": "event_target:drone_country"
+                      }
+                    }
+                  },
+                  "change_orbit": "-60",
+                  "planet": {
+                    "count": "6",
+                    "class": "pc_asteroid",
+                    "orbit_distance": "0",
+                    "orbit_angle": {
+                      "init_effect": {
+                        "create_fleet": {
+                          "name": "NAME_Mining_Corps",
+                          "effect": {
+                            "set_owner": "event_target:drone_country",
+                            "while": {
+                              "count": "1",
+                              "create_ship": {
+                                "name": "",
+                                "design": "NAME_Ancient_Combat_Drone"
+                              }
+                            },
+                            "set_location": {
+                              "target": "prev",
+                              "distance": "20",
+                              "angle": "0"
+                            },
+                            "set_formation_scale": "2",
+                            "set_fleet_stance": "aggressive",
+                            "set_aggro_range_measure_from": "return_point",
+                            "set_aggro_range": "200"
+                          }
+                        },
+                        "create_mining_station": {
+                          "owner": "event_target:drone_country"
+                        }
+                      }
+                    },
+                    "change_orbit": "-50",
+                    "planet": {
+                      "count": "1",
+                      "orbit_distance": "20",
+                      "class": "pc_molten",
+                      "orbit_angle": {
+                        "init_effect": {
+                          "if": {
+                            "limit": {
+                              "has_machine_age_dlc": "yes"
+                            },
+                            "random_list": {
+                              "1": {
+                                "save_event_target_as": "ruined_furnace_planet",
+                                "prevent_anomaly": "yes",
+                                "clear_deposits": "yes",
+                                "add_deposit": "d_alloys_1",
+                                "solar_system": {
+                                  "spawn_megastructure": {
+                                    "type": "orbital_arc_furnace_destroyed",
+                                    "planet": "event_target:ruined_furnace_planet",
+                                    "init_effect": {
+                                      "create_ambient_object": {
+                                        "type": "medium_debris_02_object",
+                                        "location": "this"
+                                      },
+                                      "last_created_ambient_object": {
+                                        "set_location": {
+                                          "target": "prev",
+                                          "distance": "3",
+                                          "angle": "270"
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "event_target:ruined_furnace_planet": {
+                                  "set_planet_entity": {}
+                                },
+                                "3": {}
+                              }
+                            }
+                          }
+                        },
+                        "_comments": [
+                          "# No Ruined Arc Furnace for you!"
+                        ],
+                        "neighbor_system": {
+                          "distance": {
+                            "initializer": "hostile_init_12"
+                          },
+                          "neighbor_system": {
+                            "distance": {
+                              "initializer": "hostile_init_12_drone_destroyer"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 2270
+  },
+  "hostile_init_15": {
+    "hostile_init_15": {
+      "class": "rl_standard_stars",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "4",
+        "modifier": {
+          "factor": "0.1",
+          "NOT": {},
+          "modifier": {
+            "factor": "0",
+            "has_star_flag": "empire_cluster"
+          }
+        },
+        "flags": {
+          "planet": {
+            "count": "1",
+            "class": "star",
+            "orbit_distance": "0",
+            "orbit_angle": "1",
+            "size": {
+              "has_ring": "no"
+            },
+            "change_orbit": "45",
+            "planet": {
+              "count": {
+                "orbit_distance": "10",
+                "orbit_angle": {},
+                "planet": {
+                  "count": {
+                    "orbit_distance": "60",
+                    "class": "pc_gas_giant",
+                    "orbit_angle": {
+                      "size": "25",
+                      "change_orbit": "@base_moon_distance",
+                      "moon": {
+                        "count": {
+                          "size": {
+                            "orbit_angle": {
+                              "orbit_distance": "6"
+                            }
+                          },
+                          "change_orbit": "20",
+                          "planet": {
+                            "count": {
+                              "orbit_distance": "20",
+                              "orbit_angle": {},
+                              "init_effect": {
+                                "create_tiyanki_country": "yes",
+                                "random_system_planet": {
+                                  "limit": {
+                                    "save_event_target_as": "giant",
+                                    "event_target:tiyanki_country": {
+                                      "save_event_target_as": "tiyanki_country2",
+                                      "random_list": {
+                                        "10": {
+                                          "10": {
+                                            "10": {
+                                              "10": {
+                                                "10": {}
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 2585
+  },
+  "hostile_init_16": {
+    "hostile_init_16": {
+      "class": "rl_standard_stars",
+      "name": "NAME_Tiyana_Vek",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "90000",
+        "modifier": {
+          "factor": "0",
+          "has_star_flag": "empire_cluster"
+        }
+      },
+      "max_instances": "1",
+      "flags": {
+        "planet": {
+          "count": "1",
+          "class": "star",
+          "orbit_distance": "0",
+          "orbit_angle": "1",
+          "size": {
+            "has_ring": "no",
+            "init_effect": {
+              "prevent_anomaly": "yes",
+              "clear_deposits": "yes",
+              "add_deposit": "d_physics_6",
+              "create_ambient_object": {
+                "type": "space_storm_2",
+                "location": "this"
+              },
+              "last_created_ambient_object": {
+                "set_location": {
+                  "target": "prev",
+                  "distance": "0",
+                  "angle": "random"
+                }
+              }
+            }
+          },
+          "planet": {
+            "class": "pc_gas_giant",
+            "name": "NAME_Zathika_Mev",
+            "orbit_distance": "45",
+            "orbit_angle": "35",
+            "size": "30",
+            "has_ring": "no",
+            "flags": {
+              "init_effect": {
+                "prevent_anomaly": "yes",
+                "clear_deposits": "yes",
+                "save_event_target_as": "giant1",
+                "add_deposit": "d_society_6"
+              }
+            },
+            "planet": {
+              "class": "pc_gas_giant",
+              "name": "NAME_Surribzha",
+              "orbit_distance": "0",
+              "orbit_angle": "85",
+              "size": "25",
+              "has_ring": "yes",
+              "flags": {
+                "init_effect": {
+                  "prevent_anomaly": "yes",
+                  "clear_deposits": "yes",
+                  "save_event_target_as": "giant2",
+                  "add_deposit": "d_society_6"
+                }
+              },
+              "planet": {
+                "class": "pc_gas_giant",
+                "name": "NAME_Yllarv",
+                "orbit_distance": "0",
+                "orbit_angle": "95",
+                "size": "35",
+                "has_ring": "no",
+                "flags": {
+                  "init_effect": {
+                    "prevent_anomaly": "yes",
+                    "clear_deposits": "yes",
+                    "save_event_target_as": "giant3",
+                    "add_deposit": "d_society_6"
+                  }
+                },
+                "planet": {
+                  "class": "pc_gas_giant",
+                  "name": "NAME_Khetzhavu",
+                  "orbit_distance": "0",
+                  "orbit_angle": "90",
+                  "size": "31",
+                  "has_ring": "no",
+                  "flags": {
+                    "init_effect": {
+                      "prevent_anomaly": "yes",
+                      "clear_deposits": "yes",
+                      "save_event_target_as": "giant4",
+                      "add_deposit": "d_society_6"
+                    }
+                  },
+                  "planet": {
+                    "class": "pc_frozen",
+                    "name": "NAME_Valzhuva",
+                    "orbit_distance": "25",
+                    "orbit_angle": "145",
+                    "size": "14",
+                    "has_ring": "no",
+                    "init_effect": {
+                      "prevent_anomaly": "yes"
+                    }
+                  },
+                  "init_effect": {
+                    "create_tiyanki_garrison_country": "yes",
+                    "save_global_event_target_as": "tiyanki_spawn_system",
+                    "create_tiyanki_home_fleet_1": "yes",
+                    "create_tiyanki_home_fleet_2": "yes",
+                    "create_tiyanki_home_fleet_3": "yes",
+                    "create_tiyanki_home_fleet_4": "yes",
+                    "create_tiyanki_home_roaming_fleets": "yes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 2671
+  },
+  "hostile_init_18": {
+    "hostile_init_18": {
+      "class": "rl_standard_stars",
+      "asteroid_belt": {
+        "type": "rocky_asteroid_belt",
+        "radius": "95"
+      },
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "100",
+        "modifier": {
+          "factor": "0",
+          "NOT": {},
+          "modifier": {
+            "factor": "0",
+            "is_bottleneck_system": "yes"
+          }
+        },
+        "max_instances": "1",
+        "spawn_chance": "100",
+        "flags": {
+          "planet": {
+            "count": "1",
+            "class": "star",
+            "orbit_distance": "0",
+            "orbit_angle": "1",
+            "size": {
+              "has_ring": "no",
+              "init_effect": {
+                "prevent_anomaly": "yes",
+                "set_deposit": "d_energy_4",
+                "create_pirate_country": "yes",
+                "event_target:pirate_country": {
+                  "if": {
+                    "limit": {
+                      "NOT": {
+                        "has_modifier": "pirate_power"
+                      }
+                    },
+                    "add_modifier": {
+                      "modifier": "pirate_power",
+                      "days": "-1"
+                    }
+                  }
+                },
+                "every_country": {
+                  "establish_communications_no_message": "event_target:pirate_country"
+                },
+                "create_fleet": {
+                  "name": "NAME_Young_Blood",
+                  "effect": {
+                    "set_owner": "event_target:pirate_country",
+                    "create_ship_design": {
+                      "design": "NAME_Reaver"
+                    },
+                    "while": {
+                      "count": "12",
+                      "create_ship": {
+                        "name": "random",
+                        "design": "last_created_design",
+                        "graphical_culture": "pirate_01"
+                      }
+                    },
+                    "set_location": {
+                      "target": "prev",
+                      "distance": "90",
+                      "angle": "200"
+                    },
+                    "set_fleet_stance": "aggressive",
+                    "set_aggro_range_measure_from": "self",
+                    "set_aggro_range": "150",
+                    "set_fleet_flag": "pirate_home_system_fleet",
+                    "save_global_event_target_as": "young_blood"
+                  }
+                }
+              }
+            },
+            "change_orbit": "95",
+            "planet": {
+              "class": "pc_asteroid",
+              "orbit_distance": "0",
+              "orbit_angle": {
+                "init_effect": {
+                  "prevent_anomaly": "yes",
+                  "set_deposit": "d_minerals_10"
+                }
+              },
+              "planet": {
+                "class": "pc_asteroid",
+                "orbit_distance": "0",
+                "orbit_angle": {
+                  "init_effect": {
+                    "prevent_anomaly": "yes",
+                    "set_deposit": "d_minerals_8"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 2814
+  },
+  "hostile_init_20": {
+    "hostile_init_20": {
+      "class": "rl_trinary_stars",
+      "name": "NAME_Amor_Alveo",
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "5000",
+        "modifier": {
+          "factor": "0",
+          "is_bottleneck_system": "yes"
+        }
+      },
+      "max_instances": "1",
+      "inner_radius_offset": "100",
+      "outer_radius_offset": "100",
+      "flags": {
+        "asteroid_belt": {
+          "type": "icy_asteroid_belt",
+          "radius": "280"
+        },
+        "planet": {
+          "class": "pc_gas_giant",
+          "name": "NAME_Veronax",
+          "orbit_distance": "57",
+          "orbit_angle": "110",
+          "size": "42",
+          "has_ring": "no",
+          "flags": {
+            "init_effect": {
+              "prevent_anomaly": "yes",
+              "clear_deposits": "yes",
+              "save_event_target_as": "amoeba_giant",
+              "add_deposit": "d_exotic_gases_3"
+            },
+            "change_orbit": "@base_moon_distance",
+            "moon": {
+              "class": "pc_barren_cold",
+              "name": "NAME_Evor_Tomos",
+              "orbit_angle": {
+                "orbit_distance": "10",
+                "size": "12",
+                "init_effect": {
+                  "prevent_anomaly": "yes",
+                  "clear_deposits": "yes",
+                  "add_deposit": "d_minerals_4"
+                }
+              },
+              "moon": {
+                "class": "pc_barren_cold",
+                "name": "NAME_Evor_Aras",
+                "orbit_angle": {
+                  "orbit_distance": "5",
+                  "size": "9",
+                  "init_effect": {
+                    "prevent_anomaly": "yes",
+                    "clear_deposits": "yes",
+                    "add_deposit": "d_society_6"
+                  }
+                }
+              },
+              "change_orbit": "42",
+              "_comments": [
+                "#Some ice asteroids too",
+                "#Some asteroids"
+              ],
+              "planet": {
+                "name": "NAME_Pesior",
+                "class": "pc_ice_asteroid",
+                "orbit_distance": "0",
+                "orbit_angle": "107",
+                "size": "5",
+                "has_ring": "no",
+                "init_effect": {
+                  "save_event_target_as": "amoeba_ice_asteroid_3",
+                  "set_planet_flag": "amoeba_ice_asteroid_3",
+                  "prevent_anomaly": "yes",
+                  "clear_deposits": "yes",
+                  "add_deposit": "d_rare_crystals_2"
+                }
+              },
+              "init_effect": {
+                "save_global_event_target_as": "amoeba_home_system",
+                "create_amoeba_home_fleet_1": "yes",
+                "create_amoeba_home_fleet_2": "yes",
+                "create_amoeba_home_roaming_fleets": "yes"
+              }
+            }
+          }
+        },
+        "change_orbit": "29",
+        "_comments": [
+          "## Three molten worlds",
+          "#Some asteroids",
+          "#A huge gas giant"
+        ]
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 3021
+  },
+  "hostile_init_21": {
+    "hostile_init_21": {
+      "name": "NAME_Tiyun_Ort",
+      "class": "sc_m_giant",
+      "asteroid_belt": {
+        "type": "icy_asteroid_belt",
+        "radius": "150"
+      },
+      "usage": "misc_system_init",
+      "usage_odds": {
+        "base": "90000",
+        "modifier": {
+          "factor": "2",
+          "is_bottleneck_system": "yes"
+        }
+      },
+      "max_instances": "1",
+      "flags": {
+        "planet": {
+          "count": "1",
+          "class": "star",
+          "orbit_distance": "0",
+          "orbit_angle": "1",
+          "size": {
+            "has_ring": "no",
+            "init_effect": {
+              "prevent_anomaly": "yes",
+              "clear_deposits": "yes",
+              "add_deposit": "d_physics_6",
+              "save_event_target_as": "graveyard_star",
+              "set_planet_flag": "graveyard_star",
+              "create_ambient_object": {
+                "type": "space_storm_2",
+                "location": "this"
+              },
+              "last_created_ambient_object": {
+                "set_location": {
+                  "target": "prev",
+                  "distance": "0",
+                  "angle": "random"
+                }
+              },
+              "_comments": [
+                "# Decorations"
+              ],
+              "while": {
+                "count": "10",
+                "create_ambient_object": {
+                  "type": "small_dead_tiyanki_object",
+                  "entity_offset_angle": {
+                    "entity_offset": {
+                      "entity_offset_height": {},
+                      "last_created_ambient_object": {
+                        "set_location": {
+                          "target": "prev",
+                          "distance": "40",
+                          "angle": "random"
+                        }
+                      }
+                    }
+                  }
+                },
+                "planet": {
+                  "class": "pc_barren",
+                  "name": "NAME_Ghanek",
+                  "orbit_distance": "80",
+                  "orbit_angle": "300",
+                  "size": "25",
+                  "has_ring": "no",
+                  "init_effect": {
+                    "prevent_anomaly": "yes",
+                    "clear_deposits": "yes",
+                    "save_event_target_as": "graveyard_gas",
+                    "set_planet_flag": "graveyard_gas",
+                    "add_deposit": "d_volatile_motes_3"
+                  }
+                },
+                "init_effect": {
+                  "create_ambient_object": {
+                    "type": "nebula_L3_entity",
+                    "entity_offset_height": "-5",
+                    "location": "this"
+                  },
+                  "last_created_ambient_object": {
+                    "set_location": {
+                      "target": "event_target:graveyard_star",
+                      "distance": "0",
+                      "angle": "random"
+                    }
+                  },
+                  "create_tiyanki_garrison_country": "yes",
+                  "save_global_event_target_as": "tiyanki_graveyard_system",
+                  "create_tiyanki_graveyard_gravekeeper_fleet": "yes",
+                  "create_tiyanki_graveyard_roaming_fleet_1": "yes",
+                  "create_tiyanki_graveyard_roaming_fleet_2": "yes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 3309
+  },
+  "hostile_init_22": {
+    "hostile_init_22": {
+      "name": "NAME_Klendath",
+      "class": "rl_standard_stars",
+      "asteroid_belt": {
+        "type": "rocky_asteroid_belt",
+        "radius": "60"
+      },
+      "flags": {
+        "usage": "misc_system_init",
+        "usage_odds": {
+          "base": "20",
+          "modifier": {
+            "factor": "0",
+            "OR": {
+              "is_fe_cluster": "yes",
+              "is_marauder_cluster": "yes",
+              "has_star_flag": "empire_cluster"
+            }
+          }
+        },
+        "max_instances": "1",
+        "planet": {
+          "count": "1",
+          "class": "pc_barren",
+          "orbit_distance": {
+            "orbit_angle": "1",
+            "size": "30",
+            "has_ring": "no",
+            "home_planet": "no",
+            "moon": {
+              "class": "random",
+              "orbit_distance": "10",
+              "size": "1"
+            },
+            "init_effect": {
+              "create_drone_country": "yes",
+              "create_mining_station": {
+                "owner": "event_target:drone_country"
+              }
+            }
+          },
+          "planet": {
+            "count": "1",
+            "class": "pc_barren",
+            "orbit_distance": {
+              "orbit_angle": "1",
+              "size": "30",
+              "has_ring": "no",
+              "home_planet": "no",
+              "init_effect": {
+                "create_drone_country": "yes"
+              }
+            },
+            "init_effect": {
+              "create_drone_country": "yes",
+              "random_system_planet": {
+                "limit": {
+                  "set_deposit": "d_minerals_8",
+                  "event_target:drone_country": {
+                    "save_event_target_as": "mining_drones",
+                    "create_fleet": {
+                      "name": "NAME_Asset_Protection_Unit",
+                      "effect": {
+                        "set_owner": "event_target:drone_country",
+                        "while": {
+                          "count": "1",
+                          "create_ship": {
+                            "name": "",
+                            "design": "NAME_Ancient_Destroyer"
+                          }
+                        },
+                        "set_location": "PREVPREV",
+                        "set_fleet_stance": "aggressive",
+                        "set_aggro_range_measure_from": "return_point",
+                        "set_aggro_range": "200",
+                        "queue_actions": {
+                          "repeat": {
+                            "find_closest_planet": {
+                              "trigger": {
+                                "id": "whiteC.1.trigger.3",
+                                "is_planet": "event_target:white_trigger_3"
+                              },
+                              "found_planet": {
+                                "move_to": "this",
+                                "orbit_planet": "THIS"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "hostile_system_initializers.txt",
+    "_line_number": 3463
+  }
+}

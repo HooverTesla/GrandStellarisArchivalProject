@@ -1,0 +1,31 @@
+{
+  "weapon_component_template": {
+    "weapon_component_template": {
+      "key": "SPACE_CLOUD_LIGHTNING",
+      "size": "large",
+      "type": "instant",
+      "icon": "GFX_ship_part_space_cloud_weapon_1",
+      "icon_frame": "1",
+      "projectile_gfx": "arc_emitter",
+      "tags": {
+        "ai_tags": {
+          "component_set": "SPACE_CLOUD_WEAPON_1",
+          "prerequisites": {
+            "resources": {
+              "category": "ship_components",
+              "cost": {
+                "alloys": "@s_t3_cost"
+              },
+              "upkeep": {
+                "energy": "@s_t3_upkeep_energy",
+                "alloys": "@s_t3_upkeep_alloys"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_weapons_critters_cloud.txt",
+    "_line_number": 10
+  }
+}

@@ -1,0 +1,289 @@
+{
+  "planet_event": {
+    "planet_event": {
+      "id": "origin.3255 #removes Missing Offspring when abandoning colonies",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_modifier": "missing_offspring_modifier"
+      },
+      "immediate": {
+        "remove_modifier": "missing_offspring_modifier"
+      }
+    },
+    "_source_file": "origin_events_3.txt",
+    "_line_number": 748
+  },
+  "country_event": {
+    "country_event": {
+      "id": "origin.6280",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_origin": "origin_fear_of_the_dark",
+        "exists": "fromfrom",
+        "fromfrom": {
+          "OR": {
+            "is_country_type": "awakened_fallen_empire"
+          }
+        },
+        "from": {
+          "any_system_planet": {
+            "has_owner": "yes",
+            "owner": {
+              "has_country_flag": "fotd_seperatist_country@root"
+            }
+          }
+        },
+        "NOT": {},
+        "immediate": {
+          "from": {
+            "random_system_planet": {
+              "limit": {
+                "has_planet_flag": "fotd_seperatist_planet@root"
+              },
+              "every_owned_pop": {
+                "kill_pop": "yes"
+              },
+              "change_pc": "pc_nuked",
+              "destroy_colony": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_3.txt",
+    "_line_number": 6587
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "origin.6160",
+      "title": "origin.6160.name",
+      "desc": "origin.6160.desc",
+      "picture": "GFX_evt_fleet_from_surface",
+      "show_sound": "event_yellow_alert",
+      "location": "from",
+      "event_chain": "fotd_chain",
+      "trigger": {
+        "from": {
+          "has_planet_flag": "fotd_hunter@root.owner"
+        }
+      },
+      "is_triggered_only": "yes",
+      "immediate": {
+        "solar_system": {
+          "random_system_planet": {
+            "limit": {
+              "is_moon": "yes"
+            },
+            "set_planet_flag": "fotd_moon@root.owner"
+          }
+        }
+      },
+      "option": {
+        "name": "origin.6160.a",
+        "custom_tooltip": "origin.6160.a.tooltip",
+        "owner": {
+          "add_modifier": {
+            "give_specimen": {},
+            "hidden_effect": {
+              "from": {
+                "every_owned_pop": {
+                  "kill_pop": "yes"
+                },
+                "change_pc": "pc_nuked",
+                "destroy_colony": "yes"
+              },
+              "owner": {
+                "country_event": {
+                  "country_event": {}
+                },
+                "ai_chance": {
+                  "weight": "10",
+                  "modifier": {
+                    "factor": "0.01",
+                    "owner": {
+                      "OR": {
+                        "is_galactic_custodian": "yes",
+                        "is_galactic_emperor": "yes"
+                      }
+                    }
+                  }
+                }
+              },
+              "option": {
+                "name": "origin.6160.b",
+                "custom_tooltip": "origin.6160.c.tooltip",
+                "hidden_effect": {
+                  "owner": {
+                    "country_event": {},
+                    "from.owner": {
+                      "set_country_flag": "fevorian_enlighten@root",
+                      "country_event": {}
+                    },
+                    "ai_chance": {
+                      "weight": "10",
+                      "modifier": {
+                        "factor": "2",
+                        "owner": {
+                          "is_xenophile": "yes"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_3.txt",
+    "_line_number": 4720
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "origin.6255",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from": {
+          "has_star_flag": "fotd_system",
+          "exists": "owner",
+          "owner": {
+            "is_hostile": "root.owner",
+            "has_origin": "origin_fear_of_the_dark"
+          },
+          "any_fleet_in_system": {
+            "owner": {}
+          }
+        },
+        "immediate": {
+          "from": {
+            "random_fleet_in_system": {
+              "limit": {
+                "owner": {
+                  "set_hostile": "root.owner",
+                  "establish_communications_no_message": "root.owner"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_3.txt",
+    "_line_number": 6236
+  },
+  "first_contact_event": {
+    "first_contact_event": {
+      "id": "origin.6044",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "OR": {
+          "owner": {
+            "has_origin": "origin_fear_of_the_dark",
+            "NOT": {},
+            "from": {
+              "owner": {},
+              "immediate": {
+                "if": {
+                  "limit": {
+                    "owner": {
+                      "country_event": {
+                        "id": "origin.6045",
+                        "days": "14",
+                        "scopes": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_3.txt",
+    "_line_number": 3423
+  },
+  "event": {
+    "event": {
+      "id": "origin.6245",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_playable_country": {
+          "has_origin": "origin_fear_of_the_dark"
+        }
+      },
+      "immediate": {
+        "every_playable_country": {
+          "limit": {
+            "has_origin": "origin_fear_of_the_dark",
+            "any_pre_ftl_within_border": {
+              "has_country_flag": "fotd_seperatist_country@prev"
+            }
+          },
+          "random_pre_ftl_within_border": {
+            "limit": {
+              "has_country_flag": "fotd_seperatist_country@prev"
+            },
+            "country_event": {
+              "country_event": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_3.txt",
+    "_line_number": 5711
+  },
+  "situation_event": {
+    "situation_event": {
+      "id": "origin.6225",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "target.space_owner": {
+          "has_origin": "origin_fear_of_the_dark",
+          "home_planet": {
+            "is_same_value": "root.owner.home_planet"
+          }
+        }
+      },
+      "immediate": {
+        "switch": {
+          "trigger": "current_stage",
+          "stage_2": {
+            "target.space_owner": {
+              "country_event": {
+                "id": "origin.6230"
+              }
+            }
+          },
+          "stage_3": {
+            "target.space_owner": {
+              "country_event": {
+                "id": "origin.6235"
+              }
+            }
+          },
+          "stage_4": {
+            "hidden_effect": {
+              "target.space_owner": {
+                "country_event": {
+                  "id": "origin.6240",
+                  "scopes": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_3.txt",
+    "_line_number": 5515
+  }
+}

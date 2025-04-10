@@ -1,0 +1,1737 @@
+{
+  "d_mountain_range": {
+    "d_mountain_range": {
+      "time": "270",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers_natural",
+      "can_be_cleared": {
+        "custom_tooltip": {
+          "fail_text": "has_ranger_lodge",
+          "planet": {
+            "NOT": {}
+          }
+        },
+        "resources": {
+          "category": "deposit_blockers_natural",
+          "cost": {
+            "energy": "1000"
+          }
+        },
+        "potential": {
+          "planet_size >": "10"
+        },
+        "planet_modifier": {
+          "planet_max_districts_add": "-2"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "planet_rangers_minerals_produces_add": "@ranger_large_production"
+          },
+          "inline_script": "deposits/ai_weight_natural_blocker",
+          "drop_weight": {
+            "weight": "@blocker_low",
+            "modifier": {
+              "factor": "0",
+              "num_free_districts": {
+                "type": "district_city"
+              }
+            }
+          },
+          "prerequisites": {}
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 25
+  },
+  "d_active_volcano": {
+    "d_active_volcano": {
+      "time": "270",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers_natural",
+      "can_be_cleared": {
+        "custom_tooltip": {
+          "fail_text": "has_ranger_lodge",
+          "planet": {
+            "NOT": {}
+          }
+        },
+        "resources": {
+          "category": "deposit_blockers_natural",
+          "cost": {
+            "energy": "1000"
+          }
+        },
+        "potential": {
+          "planet_size >": "10"
+        },
+        "planet_modifier": {
+          "planet_max_districts_add": "-2"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "planet_rangers_energy_produces_add": "@ranger_large_production"
+          },
+          "inline_script": "deposits/ai_weight_natural_blocker",
+          "drop_weight": {
+            "weight": "@blocker_low",
+            "modifier": {
+              "factor": "0",
+              "num_free_districts": {
+                "type": "district_city"
+              }
+            }
+          },
+          "prerequisites": {}
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 91
+  },
+  "d_dangerous_wildlife_blocker": {
+    "d_dangerous_wildlife_blocker": {
+      "time": "270",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers_natural",
+      "can_be_cleared": {
+        "custom_tooltip": {
+          "fail_text": "has_ranger_lodge",
+          "planet": {
+            "NOT": {}
+          }
+        },
+        "resources": {
+          "category": "deposit_blockers_natural",
+          "cost": {
+            "energy": "500"
+          }
+        },
+        "potential": {
+          "planet_size >": "10"
+        },
+        "planet_modifier": {
+          "planet_max_districts_add": "-2"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "planet_rangers_society_research_produces_add": "@ranger_large_production"
+          },
+          "inline_script": "deposits/environmental_architects_natural_blocker_modifier",
+          "on_cleared": {
+            "hidden_effect": {
+              "if": {
+                "limit": {
+                  "exists": "owner",
+                  "owner": {
+                    "has_civic": "civic_hive_devouring_swarm"
+                  }
+                },
+                "owner": {},
+                "give_bio_repurposing_reward_on_organic_deposit_cleared": "yes"
+              },
+              "planetscaper_pop_effect": "yes"
+            },
+            "inline_script": "deposits/ai_weight_natural_blocker",
+            "drop_weight": {
+              "weight": "@blocker_low",
+              "modifier": {
+                "factor": "0",
+                "num_free_districts": {
+                  "type": "district_city"
+                }
+              }
+            },
+            "prerequisites": {}
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 157
+  },
+  "d_dense_jungle": {
+    "d_dense_jungle": {
+      "time": "180",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers_natural",
+      "can_be_cleared": {
+        "custom_tooltip": {
+          "fail_text": "has_ranger_lodge",
+          "planet": {
+            "NOT": {}
+          }
+        },
+        "resources": {
+          "category": "deposit_blockers_natural",
+          "cost": {
+            "energy": "500"
+          }
+        },
+        "potential": {
+          "is_wet": "yes"
+        },
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "planet_rangers_food_produces_add": "@ranger_small_production"
+          },
+          "inline_script": "deposits/ai_weight_natural_blocker",
+          "on_cleared": {
+            "hidden_effect": {
+              "give_bio_repurposing_reward_on_organic_deposit_cleared": "yes"
+            },
+            "planetscaper_pop_effect": "yes"
+          },
+          "all_blocker_swap_types": "yes",
+          "drop_weight": {
+            "weight": "@blocker_high",
+            "modifier": {
+              "factor": "0",
+              "num_free_districts": {
+                "type": "district_city"
+              }
+            }
+          },
+          "prerequisites": {}
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 234
+  },
+  "d_toxic_kelp": {
+    "d_toxic_kelp": {
+      "time": "180",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers_natural",
+      "can_be_cleared": {
+        "custom_tooltip": {
+          "fail_text": "has_ranger_lodge",
+          "planet": {
+            "NOT": {}
+          }
+        },
+        "resources": {
+          "category": "deposit_blockers_natural",
+          "cost": {
+            "energy": "500"
+          }
+        },
+        "potential": {
+          "is_wet": "yes"
+        },
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "planet_rangers_food_produces_add": "@ranger_small_production"
+          },
+          "inline_script": "deposits/ai_weight_natural_blocker",
+          "on_cleared": {
+            "hidden_effect": {
+              "give_bio_repurposing_reward_on_organic_deposit_cleared": "yes"
+            },
+            "planetscaper_pop_effect": "yes"
+          },
+          "all_blocker_swap_types": "yes",
+          "drop_weight": {
+            "weight": "@blocker_high",
+            "modifier": {
+              "factor": "0",
+              "num_free_districts": {
+                "type": "district_city"
+              }
+            }
+          },
+          "prerequisites": {}
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 306
+  },
+  "d_deep_sinkhole": {
+    "d_deep_sinkhole": {
+      "time": "180",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers_natural",
+      "can_be_cleared": {
+        "custom_tooltip": {
+          "fail_text": "has_ranger_lodge",
+          "planet": {
+            "NOT": {}
+          }
+        },
+        "resources": {
+          "category": "deposit_blockers_natural",
+          "cost": {
+            "energy": "500"
+          }
+        },
+        "potential": {
+          "is_dry": "yes"
+        },
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "planet_rangers_energy_produces_add": "@ranger_small_production"
+          },
+          "inline_script": "deposits/ai_weight_natural_blocker",
+          "all_blocker_swap_types": "yes",
+          "drop_weight": {
+            "weight": "@blocker_high",
+            "modifier": {
+              "factor": "0",
+              "num_free_districts": {
+                "type": "district_city"
+              }
+            }
+          },
+          "prerequisites": {}
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 375
+  },
+  "d_quicksand_basin": {
+    "d_quicksand_basin": {
+      "time": "180",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers_natural",
+      "can_be_cleared": {
+        "custom_tooltip": {
+          "fail_text": "has_ranger_lodge",
+          "planet": {
+            "NOT": {}
+          }
+        },
+        "resources": {
+          "category": "deposit_blockers_natural",
+          "cost": {
+            "energy": "500"
+          }
+        },
+        "potential": {
+          "is_dry": "yes"
+        },
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "planet_rangers_minerals_produces_add": "@ranger_small_production"
+          },
+          "inline_script": "deposits/ai_weight_natural_blocker",
+          "all_blocker_swap_types": "yes",
+          "drop_weight": {
+            "weight": "@blocker_high",
+            "modifier": {
+              "factor": "0",
+              "num_free_districts": {
+                "type": "district_city"
+              }
+            }
+          },
+          "prerequisites": {}
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 443
+  },
+  "d_noxious_swamp": {
+    "d_noxious_swamp": {
+      "time": "180",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers_natural",
+      "can_be_cleared": {
+        "custom_tooltip": {
+          "fail_text": "has_ranger_lodge",
+          "planet": {
+            "NOT": {}
+          }
+        },
+        "resources": {
+          "category": "deposit_blockers_natural",
+          "cost": {
+            "energy": "500"
+          }
+        },
+        "potential": {
+          "is_cold": "yes"
+        },
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "planet_rangers_food_produces_add": "@ranger_small_production"
+          },
+          "inline_script": "deposits/ai_weight_natural_blocker",
+          "on_cleared": {
+            "hidden_effect": {
+              "give_bio_repurposing_reward_on_organic_deposit_cleared": "yes"
+            },
+            "planetscaper_pop_effect": "yes"
+          },
+          "all_blocker_swap_types": "yes",
+          "drop_weight": {
+            "weight": "@blocker_high",
+            "modifier": {
+              "factor": "0",
+              "num_free_districts": {
+                "type": "district_city"
+              }
+            }
+          },
+          "prerequisites": {}
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 507
+  },
+  "d_massive_glacier": {
+    "d_massive_glacier": {
+      "time": "180",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers_natural",
+      "can_be_cleared": {
+        "custom_tooltip": {
+          "fail_text": "has_ranger_lodge",
+          "planet": {
+            "NOT": {}
+          }
+        },
+        "resources": {
+          "category": "deposit_blockers_natural",
+          "cost": {
+            "energy": "500"
+          }
+        },
+        "potential": {
+          "is_cold": "yes"
+        },
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "planet_rangers_minerals_produces_add": "@ranger_small_production"
+          },
+          "inline_script": "deposits/ai_weight_natural_blocker",
+          "all_blocker_swap_types": "yes",
+          "drop_weight": {
+            "weight": "@blocker_high",
+            "modifier": {
+              "factor": "0",
+              "num_free_districts": {
+                "type": "district_city"
+              }
+            }
+          },
+          "prerequisites": {}
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 576
+  },
+  "d_radioactive_wasteland": {
+    "d_radioactive_wasteland": {
+      "time": "270",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "all_blocker_swap_types": "yes",
+      "potential": {
+        "is_planet_class": "pc_nuked"
+      },
+      "planet_modifier": {
+        "planet_max_districts_add": "-1"
+      },
+      "resources": {
+        "category": "deposit_blockers",
+        "cost": {
+          "energy": "800"
+        }
+      },
+      "drop_weight": {
+        "weight": "@blocker_high",
+        "modifier": {
+          "factor": "0",
+          "num_free_districts": {
+            "type": "district_city"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 639
+  },
+  "d_city_ruins": {
+    "d_city_ruins": {
+      "time": "360",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "is_planet_class": "pc_relic"
+      },
+      "planet_modifier": {
+        "planet_max_districts_add": "-2"
+      },
+      "resources": {
+        "category": "deposit_blockers",
+        "cost": {
+          "energy": "1200"
+        }
+      },
+      "drop_weight": {
+        "weight": "@blocker_high",
+        "modifier": {
+          "factor": "0",
+          "num_free_districts": {
+            "type": "district_city"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 673
+  },
+  "d_bomb_crater": {
+    "d_bomb_crater": {
+      "icon": "d_crater",
+      "time": "270",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "all_blocker_swap_types": "yes",
+      "potential": {
+        "is_planet_class": "pc_nuked"
+      },
+      "planet_modifier": {
+        "planet_max_districts_add": "-1"
+      },
+      "resources": {
+        "category": "deposit_blockers",
+        "cost": {
+          "energy": "800"
+        }
+      },
+      "drop_weight": {
+        "weight": "@blocker_low",
+        "modifier": {
+          "factor": "0",
+          "num_free_districts": {
+            "type": "district_city"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 708
+  },
+  "d_crater": {
+    "d_crater": {
+      "time": "100",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "always": "no"
+      },
+      "planet_modifier": {
+        "planet_max_districts_add": "-1"
+      },
+      "resources": {
+        "category": "deposit_blockers",
+        "cost": {
+          "energy": "300"
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 742
+  },
+  "d_ruined_district": {
+    "d_ruined_district": {
+      "time": "200",
+      "is_for_colonizable": "no",
+      "category": "deposit_cat_blockers",
+      "icon": "d_crater",
+      "potential": {
+        "always": "no"
+      },
+      "planet_modifier": {
+        "planet_max_districts_add": "-1"
+      },
+      "resources": {
+        "category": "deposit_blockers",
+        "cost": {
+          "energy": "300"
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 763
+  },
+  "d_wandering_forests": {
+    "d_wandering_forests": {
+      "icon": "d_dense_jungle",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "always": "no"
+      },
+      "planet_modifier": {
+        "planet_max_districts_add": "-1"
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 785
+  },
+  "d_sinkhole_subterraneans": {
+    "d_sinkhole_subterraneans": {
+      "icon": "d_deep_sinkhole",
+      "time": "100",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "always": "no"
+      },
+      "planet_modifier": {
+        "planet_max_districts_add": "-1"
+      },
+      "resources": {
+        "category": "deposit_blockers",
+        "cost": {
+          "energy": "500"
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 801
+  },
+  "d_titanic_life_blocker": {
+    "d_titanic_life_blocker": {
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_rare",
+      "potential": {
+        "resources": {
+          "produces": {
+            "society_research": "8"
+          }
+        },
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 824
+  },
+  "d_failing_infrastructure": {
+    "d_failing_infrastructure": {
+      "icon": "d_metal_boneyard",
+      "time": "120",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "use_weights_for_blocker_swap_types": "yes",
+        "blocker_swap_types": {},
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "300"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 844
+  },
+  "d_forgotten_civilization": {
+    "d_forgotten_civilization": {
+      "icon": "d_ruins_small",
+      "time": "120",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "use_weights_for_blocker_swap_types": "yes",
+        "blocker_swap_types": {},
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "300"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 878
+  },
+  "d_decrepit_dwellings": {
+    "d_decrepit_dwellings": {
+      "icon": "d_slums",
+      "time": "120",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "on_cleared": {
+          "hidden_effect": {
+            "if": {
+              "limit": {
+                "any_owned_pop": {
+                  "NOT": {
+                    "is_robot_pop": "no"
+                  }
+                },
+                "random_owned_pop": {
+                  "limit": {
+                    "NOT": {
+                      "is_robot_pop": "no"
+                    },
+                    "root": {
+                      "create_pop": {
+                        "species": "prev"
+                      }
+                    }
+                  }
+                },
+                "else": {
+                  "random_owned_pop": {
+                    "root": {
+                      "create_pop": {
+                        "species": "prev"
+                      }
+                    }
+                  }
+                }
+              },
+              "custom_tooltip": "d_decrepit_dwellings_custom_tooltip"
+            },
+            "inline_script": "deposits/ai_weight_pop_creating_blocker",
+            "resources": {
+              "category": "deposit_blockers",
+              "cost": {
+                "energy": "300"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 915
+  },
+  "d_tomb_world_ruins": {
+    "d_tomb_world_ruins": {
+      "icon": "d_city_ruins",
+      "time": "120",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "on_cleared": {
+          "create_pop": {
+            "species": "owner"
+          }
+        },
+        "inline_script": "deposits/ai_weight_pop_creating_blocker",
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "300"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 974
+  },
+  "d_tomb_world_wasteland": {
+    "d_tomb_world_wasteland": {
+      "icon": "d_radioactive_wasteland",
+      "time": "120",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "use_weights_for_blocker_swap_types": "no",
+        "blocker_swap_types": {},
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "300"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1002
+  },
+  "d_machine_empire_ruins": {
+    "d_machine_empire_ruins": {
+      "icon": "d_city_ruins",
+      "time": "120",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "use_weights_for_blocker_swap_types": "no",
+        "blocker_swap_types": {},
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "300"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1029
+  },
+  "d_exterminators_ruins": {
+    "d_exterminators_ruins": {
+      "icon": "d_city_ruins",
+      "time": "120",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "use_weights_for_blocker_swap_types": "no",
+        "blocker_swap_types": {},
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "300"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1057
+  },
+  "d_former_battlefield": {
+    "d_former_battlefield": {
+      "icon": "d_radioactive_wasteland",
+      "time": "120",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "use_weights_for_blocker_swap_types": "no",
+        "blocker_swap_types": {},
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "300"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1083
+  },
+  "d_strip_mine": {
+    "d_strip_mine": {
+      "icon": "d_crater",
+      "time": "120",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "use_weights_for_blocker_swap_types": "yes",
+        "blocker_swap_types": {},
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "300"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1109
+  },
+  "d_unsupervised_settlement": {
+    "d_unsupervised_settlement": {
+      "icon": "d_slums",
+      "time": "120",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "on_cleared": {
+          "hidden_effect": {
+            "if": {
+              "limit": {
+                "any_owned_pop": {
+                  "is_robot_pop": "no"
+                }
+              },
+              "random_owned_pop": {
+                "limit": {
+                  "is_robot_pop": "no"
+                },
+                "root": {
+                  "create_pop": {
+                    "species": "prev"
+                  }
+                }
+              }
+            },
+            "else": {
+              "random_owned_pop": {
+                "root": {
+                  "create_pop": {
+                    "species": "prev"
+                  }
+                }
+              }
+            }
+          },
+          "custom_tooltip": "d_decrepit_dwellings_custom_tooltip"
+        },
+        "inline_script": "deposits/ai_weight_pop_creating_blocker",
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "300"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1140
+  },
+  "d_collapsed_burrows": {
+    "d_collapsed_burrows": {
+      "icon": "d_deep_sinkhole",
+      "time": "120",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "on_cleared": {
+          "create_pop": {
+            "species": "owner"
+          }
+        },
+        "inline_script": "deposits/ai_weight_pop_creating_blocker",
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "300"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1195
+  },
+  "d_assimilators_ruins": {
+    "d_assimilators_ruins": {
+      "icon": "d_city_ruins",
+      "time": "120",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "use_weights_for_blocker_swap_types": "no",
+        "blocker_swap_types": {},
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "300"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1223
+  },
+  "d_fungoid_extermination": {
+    "d_fungoid_extermination": {
+      "icon": "d_infestation",
+      "time": "120",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "300"
+          }
+        },
+        "on_cleared": {
+          "hidden_effect": {
+            "give_bio_repurposing_reward_on_organic_deposit_cleared": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1250
+  },
+  "d_egg_cracking": {
+    "d_egg_cracking": {
+      "icon": "d_deep_sinkhole",
+      "time": "120",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "500"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1276
+  },
+  "d_ruined_building_blocker": {
+    "d_ruined_building_blocker": {
+      "icon": "d_city_ruins",
+      "time": "120",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "on_cleared": {
+          "create_pop": {
+            "species": "owner"
+          }
+        },
+        "inline_script": "deposits/ai_weight_pop_creating_blocker",
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "300"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1299
+  },
+  "d_ruined_arcology": {
+    "d_ruined_arcology": {
+      "time": "360",
+      "icon": "d_city_ruins",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "750",
+            "minerals": "250"
+          }
+        },
+        "on_cleared": {
+          "if": {
+            "limit": {
+              "exists": "owner",
+              "owner": {
+                "has_ancrel": "yes"
+              }
+            },
+            "custom_tooltip": "minor_artifacts_found",
+            "random_list": {
+              "33": {
+                "owner": {},
+                "33": {
+                  "owner": {},
+                  "33": {
+                    "owner": {}
+                  },
+                  "if": {
+                    "limit": {
+                      "owner": {
+                        "NOT": {},
+                        "planet": {},
+                        "hidden_effect": {
+                          "owner": {
+                            "set_country_flag": "league_world_found"
+                          }
+                        },
+                        "custom_tooltip": "league_artifact_research_unlocked"
+                      }
+                    },
+                    "if": {
+                      "limit": {
+                        "exists": "owner",
+                        "owner": {
+                          "is_capital": "yes"
+                        },
+                        "custom_tooltip": "rediscover_tech",
+                        "hidden_effect": {
+                          "owner": {
+                            "country_event": {}
+                          }
+                        }
+                      },
+                      "ai_weight": {
+                        "weight": "2"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1330
+  },
+  "d_archaeological_site": {
+    "d_archaeological_site": {
+      "icon": "d_archaeological_dig",
+      "potential": {
+        "can_be_cleared": {
+          "planet_modifier": {
+            "planet_max_districts_add": "-1"
+          },
+          "is_for_colonizable": "yes",
+          "category": "deposit_cat_rare_blocker"
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1403
+  },
+  "d_hibernating_lithoids": {
+    "d_hibernating_lithoids": {
+      "icon": "d_buried_lithoids",
+      "time": "360",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "on_cleared": {
+          "if": {
+            "limit": {
+              "is_homeworld": "no"
+            },
+            "owner": {},
+            "if": {
+              "limit": {
+                "is_homeworld": "yes"
+              },
+              "create_pop": {
+                "species": "owner"
+              }
+            }
+          },
+          "resources": {
+            "category": "deposit_blockers",
+            "cost": {
+              "trigger": {
+                "planet": {
+                  "is_homeworld": "yes"
+                }
+              },
+              "minerals": "1000"
+            }
+          },
+          "ai_weight": {
+            "weight": "2",
+            "modifier": {
+              "factor": "2",
+              "AND": {
+                "from": {
+                  "num_unemployed": "0",
+                  "is_homeworld": "yes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1422
+  },
+  "d_lithoid_devastation": {
+    "d_lithoid_devastation": {
+      "icon": "d_gaseous_eruption",
+      "time": "360",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "can_be_cleared": {
+          "custom_tooltip": {
+            "fail_text": "requires_actor_not_devouring_swarm_lithoid",
+            "exists": "owner",
+            "owner": {
+              "OR": {
+                "is_lithoid_empire": "no",
+                "NOT": {}
+              }
+            }
+          },
+          "planet_modifier": {
+            "planet_max_districts_add": "-1",
+            "pop_environment_tolerance": "-0.1"
+          },
+          "drop_weight": {
+            "weight": "0"
+          },
+          "resources": {
+            "category": "deposit_blockers",
+            "cost": {
+              "energy": "1000"
+            }
+          },
+          "ai_weight": {
+            "weight": "2"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1484
+  },
+  "d_terraforming_blocker": {
+    "d_terraforming_blocker": {
+      "time": "180",
+      "icon": "d_organic_landfill",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "500"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1524
+  },
+  "d_exploited_deposit_blocker": {
+    "d_exploited_deposit_blocker": {
+      "time": "180",
+      "icon": "d_crater",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "500"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1545
+  },
+  "d_tainted_snowcaps": {
+    "d_tainted_snowcaps": {
+      "time": "360",
+      "icon": "d_tainted_snowcaps_blocker",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-2",
+          "planet_amenities_add": "-5"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "1000"
+          }
+        },
+        "ai_weight": {
+          "weight": "2"
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1567
+  },
+  "d_poisonous_algae": {
+    "d_poisonous_algae": {
+      "time": "360",
+      "icon": "d_poisonous_algae_blocker",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-2",
+          "planet_farmers_food_produces_mult": "-0.15"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "1000"
+          }
+        },
+        "on_cleared": {
+          "hidden_effect": {
+            "give_bio_repurposing_reward_on_organic_deposit_cleared": "yes"
+          }
+        },
+        "ai_weight": {
+          "weight": "2"
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1593
+  },
+  "d_venomous_insects": {
+    "d_venomous_insects": {
+      "time": "360",
+      "icon": "d_venomous_insects_blocker",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1",
+          "planet_max_buildings_add": "-1",
+          "pop_happiness": "-0.1"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "1000"
+          }
+        },
+        "on_cleared": {
+          "hidden_effect": {
+            "give_bio_repurposing_reward_on_organic_deposit_cleared": "yes"
+          }
+        },
+        "ai_weight": {
+          "weight": "2"
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1624
+  },
+  "d_unpleasant_atmosphere": {
+    "d_unpleasant_atmosphere": {
+      "time": "360",
+      "icon": "d_unpleasant_atmosphere_blocker",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "pop_environment_tolerance": "-0.05"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "500"
+          }
+        },
+        "ai_weight": {
+          "weight": "2"
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1655
+  },
+  "d_rotten_soil": {
+    "d_rotten_soil": {
+      "time": "360",
+      "icon": "d_rotten_soil_blocker",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_buildings_add": "-2"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "1000"
+          }
+        },
+        "ai_weight": {
+          "weight": "0",
+          "modifier": {
+            "set": "2",
+            "from": {}
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1680
+  },
+  "d_mass_graves": {
+    "d_mass_graves": {
+      "time": "360",
+      "icon": "d_rotten_soil_blocker",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "habitability_ceil_add": "-0.1",
+          "planet_amenities_add": "-5",
+          "planet_max_districts_add": "-2"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "1000"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1707
+  },
+  "d_seed_bombing_fungoid_blocker": {
+    "d_seed_bombing_fungoid_blocker": {
+      "icon": "d_fungal_forest",
+      "time": "180",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers_natural",
+      "can_be_cleared": {
+        "custom_tooltip": {
+          "fail_text": "has_ranger_lodge",
+          "planet": {
+            "NOT": {}
+          }
+        },
+        "potential": {
+          "planet_modifier": {
+            "planet_max_districts_add": "-1"
+          },
+          "inline_script": "deposits/environmental_architects_natural_blocker_modifier",
+          "on_cleared": {
+            "hidden_effect": {
+              "give_bio_repurposing_reward_on_organic_deposit_cleared": "yes",
+              "_comments": [
+                "# clear the variable that handled the bombardment event"
+              ],
+              "change_variable": {
+                "which": "seed_bomb_blockers",
+                "value": "-1"
+              },
+              "if": {
+                "limit": {
+                  "check_variable": {
+                    "which": "seed_bomb_blockers",
+                    "value": "0"
+                  }
+                },
+                "clear_variable": "seed_bomb_blockers"
+              }
+            },
+            "_comments": [
+              "# pops created if you're a gardener cutting out the weeds",
+              "# no extra pops if you don't have flora species"
+            ],
+            "if": {
+              "limit": {
+                "exists": "owner",
+                "owner": {
+                  "has_origin": "origin_fruitful",
+                  "any_owned_species": {
+                    "is_flora_species": "yes"
+                  }
+                }
+              },
+              "custom_tooltip": "d_seed_bombing_blocker_custom_tooltip",
+              "hidden_effect": {
+                "if": {
+                  "limit": {
+                    "owner_main_species": {
+                      "is_flora_species": "yes"
+                    }
+                  },
+                  "create_pop": {
+                    "species": "owner_main_species"
+                  }
+                },
+                "else_if": {
+                  "limit": {
+                    "owner": {
+                      "any_owned_species": {
+                        "is_flora_species": "yes"
+                      }
+                    }
+                  },
+                  "owner": {
+                    "random_owned_species": {
+                      "limit": {
+                        "is_flora_species": "yes"
+                      },
+                      "save_event_target_as": "plants_species"
+                    }
+                  },
+                  "create_pop": {
+                    "species": "event_target:plants_species"
+                  }
+                }
+              }
+            },
+            "planetscaper_pop_effect": "yes"
+          },
+          "all_blocker_swap_types": "yes",
+          "resources": {
+            "category": "deposit_blockers",
+            "cost": {
+              "trigger": {
+                "planet.owner_main_species": {
+                  "is_flora_species": "yes"
+                }
+              },
+              "energy": "150"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1737
+  },
+  "d_seed_bombing_plantoid_blocker": {
+    "d_seed_bombing_plantoid_blocker": {
+      "icon": "d_dense_jungle",
+      "time": "180",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers_natural",
+      "can_be_cleared": {
+        "custom_tooltip": {
+          "fail_text": "has_ranger_lodge",
+          "planet": {
+            "NOT": {}
+          }
+        },
+        "potential": {
+          "planet_modifier": {
+            "planet_max_districts_add": "-1"
+          },
+          "inline_script": "deposits/environmental_architects_natural_blocker_modifier",
+          "on_cleared": {
+            "give_bio_repurposing_reward_on_organic_deposit_cleared": "yes",
+            "hidden_effect": {
+              "_comments": [
+                "# clear the variable that handled the bombardment event"
+              ],
+              "change_variable": {
+                "which": "seed_bomb_blockers",
+                "value": "-1"
+              },
+              "if": {
+                "limit": {
+                  "check_variable": {
+                    "which": "seed_bomb_blockers",
+                    "value": "0"
+                  }
+                },
+                "clear_variable": "seed_bomb_blockers"
+              }
+            },
+            "_comments": [
+              "# pops created if you're a gardener cutting out the weeds",
+              "# no extra pops if you don't have flora species"
+            ],
+            "if": {
+              "limit": {
+                "exists": "owner",
+                "owner": {
+                  "has_origin": "origin_fruitful",
+                  "any_owned_species": {
+                    "is_flora_species": "yes"
+                  }
+                }
+              },
+              "custom_tooltip": "d_seed_bombing_blocker_custom_tooltip",
+              "hidden_effect": {
+                "if": {
+                  "limit": {
+                    "owner_main_species": {
+                      "is_flora_species": "yes"
+                    }
+                  },
+                  "create_pop": {
+                    "species": "owner.owner_main_species"
+                  }
+                },
+                "else_if": {
+                  "limit": {
+                    "owner": {
+                      "any_owned_species": {
+                        "is_flora_species": "yes"
+                      }
+                    }
+                  },
+                  "owner": {
+                    "random_owned_species": {
+                      "limit": {
+                        "is_flora_species": "yes"
+                      },
+                      "save_event_target_as": "plants_species"
+                    }
+                  },
+                  "create_pop": {
+                    "species": "event_target:plants_species"
+                  }
+                }
+              }
+            },
+            "planetscaper_pop_effect": "yes"
+          },
+          "all_blocker_swap_types": "yes",
+          "resources": {
+            "category": "deposit_blockers_natural",
+            "cost": {
+              "trigger": {
+                "owner_main_species": {
+                  "is_flora_species": "yes"
+                }
+              },
+              "energy": "150"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1853
+  },
+  "d_sprawling_landfill_blocker": {
+    "d_sprawling_landfill_blocker": {
+      "time": "180",
+      "icon": "d_organic_landfill",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "planet_modifier": {
+          "planet_max_districts_add": "-1",
+          "pop_environment_tolerance": "-0.05"
+        },
+        "resources": {
+          "category": "deposit_blockers",
+          "cost": {
+            "energy": "1000"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1963
+  },
+  "d_nanotech_devastation": {
+    "d_nanotech_devastation": {
+      "icon": "d_buried_lithoids",
+      "time": "360",
+      "is_for_colonizable": "yes",
+      "category": "deposit_cat_blockers",
+      "potential": {
+        "can_be_cleared": {
+          "custom_tooltip": {
+            "exists": "owner",
+            "owner": {
+              "NOT": {
+                "has_tradition": "tr_nanotech_adopt"
+              }
+            },
+            "fail_text": "nanites_cant_do_this"
+          }
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {},
+            "planet_max_districts_add": "-1",
+            "habitability_ceil_add": "-0.05"
+          },
+          "drop_weight": {
+            "weight": "0"
+          },
+          "resources": {
+            "category": "deposit_blockers",
+            "produces": {
+              "nanites": "0.5"
+            },
+            "cost": {
+              "energy": "2500"
+            }
+          },
+          "ai_weight": {
+            "weight": "2"
+          }
+        }
+      }
+    },
+    "_source_file": "01_blocker_deposits.txt",
+    "_line_number": 1988
+  }
+}

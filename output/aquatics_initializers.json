@@ -1,0 +1,97 @@
+{
+  "ocean_paradise_start": {
+    "ocean_paradise_start": {
+      "class": "sc_a",
+      "flags": {
+        "usage": "origin",
+        "asteroid_belt": {
+          "type": "icy_asteroid_belt",
+          "radius": "115"
+        },
+        "init_effect": {
+          "every_neighbor_system": {
+            "set_star_flag": "empire_cluster",
+            "every_neighbor_system": {
+              "set_star_flag": "empire_cluster"
+            }
+          },
+          "generate_home_system_resources": "yes",
+          "if": {
+            "limit": {
+              "is_inside_nebula": "no"
+            },
+            "create_nebula": {
+              "radius": "25",
+              "effect": {},
+              "set_star_flag": "ocean_paradise_nebula"
+            }
+          },
+          "_comments": [
+            "# Star",
+            "# Homeworld"
+          ],
+          "planet": {
+            "class": "pc_ocean",
+            "orbit_angle": "-45",
+            "orbit_distance": "0",
+            "size": "30",
+            "entity": "ocean_paradise_planet_01_entity",
+            "modifiers": "none",
+            "starting_planet": "yes",
+            "flags": {
+              "init_effect": {
+                "prevent_anomaly": "yes"
+              }
+            },
+            "_comments": [
+              "# Nearby Frozen World to show off homeworld size",
+              "# Ice Asteroids"
+            ],
+            "planet": {
+              "count": "10",
+              "class": "pc_ice_asteroid",
+              "orbit_distance": {
+                "orbit_angle": {
+                  "size": {},
+                  "_comments": [
+                    "# Random Frozen Worlds"
+                  ],
+                  "planet": {
+                    "count": "3",
+                    "class": "pc_frozen",
+                    "orbit_distance": {
+                      "orbit_angle": {
+                        "size": {},
+                        "_comments": [
+                          "# Guaranteed habitables - turned into Frozen Worlds in aquatics.1001"
+                        ],
+                        "neighbor_system": {
+                          "trigger": {
+                            "hyperlane_jumps": {
+                              "initializer": "neighbor_t1"
+                            },
+                            "neighbor_system": {
+                              "trigger": {
+                                "hyperlane_jumps": {
+                                  "initializer": "neighbor_t1_first_colony"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "change_orbit": "26"
+          },
+          "change_orbit": "60"
+        }
+      }
+    },
+    "_source_file": "aquatics_initializers.txt",
+    "_line_number": 13
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "centralization_minimal": {
+    "centralization_minimal": {
+      "unlocks_centralization": "1",
+      "potential": {
+        "NOT": {},
+        "allow": {
+          "custom_tooltip": {
+            "NOT": {
+              "AND": {
+                "NOT": {
+                  "has_modifier": "federation_law_category_centralization_cooldown",
+                  "has_any_federation_law_in_category": "law_category_centralization"
+                }
+              }
+            }
+          },
+          "on_enact": {
+            "if": {
+              "limit": {
+                "has_federation_flag": "enable_federation_cooldowns"
+              },
+              "add_modifier": {
+                "modifier": "federation_law_category_centralization_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-10"
+          },
+          "ai_weight": {
+            "base": "0",
+            "modifier": {
+              "desc": "federation_acceptance_reduce_centralization",
+              "add": "100",
+              "is_federation_leader": "yes",
+              "federation": {
+                "has_federation_law": "centralization_low"
+              }
+            },
+            "_comments": [
+              "#Attempt to lower centralization by a step when there is bad cohesion",
+              "#Federation prsident will attempt to lower centralization by a step when there is bad cohesion"
+            ]
+          }
+        }
+      }
+    },
+    "_source_file": "01_centralization.txt",
+    "_line_number": 5
+  },
+  "centralization_low": {
+    "centralization_low": {
+      "display_level": "2",
+      "unlocks_centralization": "2",
+      "potential": {
+        "NOT": {},
+        "allow": {
+          "custom_tooltip": {
+            "NOT": {
+              "AND": {
+                "NOT": {
+                  "has_modifier": "federation_law_category_centralization_cooldown",
+                  "has_any_federation_law_in_category": "law_category_centralization"
+                }
+              }
+            }
+          },
+          "cohesion_growth": "-1",
+          "on_enact": {
+            "if": {
+              "limit": {
+                "has_federation_flag": "enable_federation_cooldowns"
+              },
+              "add_modifier": {
+                "modifier": "federation_law_category_centralization_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-10",
+            "fire_random_centralisation_flavour_event_effect": "yes #potentially fire a flavour event"
+          },
+          "ai_weight": {
+            "base": "0",
+            "_comments": [
+              "#Default support",
+              "#Behaviour-specific"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_weaker",
+              "add": "25",
+              "relative_power": {},
+              "modifier": {
+                "desc": "federation_acceptance_reduce_centralization",
+                "add": "50",
+                "is_federation_leader": "yes",
+                "federation": {
+                  "has_federation_law": "centralization_medium"
+                }
+              },
+              "_comments": [
+                "#Attempt to lower centralization by a step when there is bad cohesion",
+                "#Federation prsident will attempt to lower centralization by a step when there is bad cohesion"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_centralization.txt",
+    "_line_number": 110
+  },
+  "centralization_medium": {
+    "centralization_medium": {
+      "display_level": "3",
+      "unlocks_centralization": "3",
+      "potential": {
+        "NOT": {},
+        "allow": {
+          "custom_tooltip": {
+            "NOT": {
+              "AND": {
+                "NOT": {
+                  "has_modifier": "federation_law_category_centralization_cooldown",
+                  "has_any_federation_law_in_category": "law_category_centralization"
+                }
+              }
+            }
+          },
+          "cohesion_growth": "-2",
+          "on_enact": {
+            "if": {
+              "limit": {
+                "has_federation_flag": "enable_federation_cooldowns"
+              },
+              "add_modifier": {
+                "modifier": "federation_law_category_centralization_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-10",
+            "fire_random_centralisation_flavour_event_effect": "yes #potentially fire a flavour event"
+          },
+          "ai_weight": {
+            "base": "0",
+            "_comments": [
+              "#Default support",
+              "#Behaviour-specific"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_weaker",
+              "add": "25",
+              "relative_power": {},
+              "modifier": {
+                "desc": "federation_acceptance_reduce_centralization",
+                "add": "50",
+                "is_federation_leader": "yes",
+                "federation": {
+                  "has_federation_law": "centralization_high"
+                }
+              },
+              "_comments": [
+                "#Attempt to lower centralization by a step when there is bad cohesion",
+                "#Federation prsident will attempt to lower centralization by a step when there is bad cohesion"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_centralization.txt",
+    "_line_number": 314
+  },
+  "centralization_high": {
+    "centralization_high": {
+      "display_level": "4",
+      "unlocks_centralization": "4",
+      "potential": {
+        "NOT": {},
+        "allow": {
+          "custom_tooltip": {
+            "NOT": {
+              "AND": {
+                "NOT": {
+                  "has_modifier": "federation_law_category_centralization_cooldown",
+                  "has_any_federation_law_in_category": "law_category_centralization"
+                }
+              }
+            }
+          },
+          "cohesion_growth": "-3",
+          "on_enact": {
+            "if": {
+              "limit": {
+                "has_federation_flag": "enable_federation_cooldowns"
+              },
+              "add_modifier": {
+                "modifier": "federation_law_category_centralization_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-10",
+            "fire_random_centralisation_flavour_event_effect": "yes #potentially fire a flavour event"
+          },
+          "ai_weight": {
+            "base": "0",
+            "_comments": [
+              "#Default support",
+              "#Behaviour-specific"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_weaker",
+              "add": "25",
+              "relative_power": {},
+              "modifier": {
+                "desc": "federation_acceptance_reduce_centralization",
+                "add": "50",
+                "is_federation_leader": "yes",
+                "federation": {
+                  "has_federation_law": "centralization_very_high"
+                }
+              },
+              "_comments": [
+                "#Attempt to lower centralization by a step when there is bad cohesion",
+                "#Federation prsident will attempt to lower centralization by a step when there is bad cohesion"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_centralization.txt",
+    "_line_number": 526
+  },
+  "centralization_very_high": {
+    "centralization_very_high": {
+      "display_level": "5",
+      "unlocks_centralization": "5",
+      "potential": {
+        "NOT": {},
+        "allow": {
+          "custom_tooltip": {
+            "NOT": {
+              "AND": {
+                "NOT": {
+                  "has_modifier": "federation_law_category_centralization_cooldown",
+                  "has_any_federation_law_in_category": "law_category_centralization"
+                }
+              }
+            }
+          },
+          "cohesion_growth": "-4",
+          "on_enact": {
+            "if": {
+              "limit": {
+                "has_federation_flag": "enable_federation_cooldowns"
+              },
+              "add_modifier": {
+                "modifier": "federation_law_category_centralization_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-10",
+            "fire_random_centralisation_flavour_event_effect": "yes #potentially fire a flavour event"
+          },
+          "ai_weight": {
+            "base": "0",
+            "_comments": [
+              "#Default support",
+              "#Behaviour-specific"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_weaker",
+              "add": "25",
+              "relative_power": {},
+              "modifier": {
+                "desc": "federation_acceptance_peaceful_traders_in_trade_federation",
+                "add": "20",
+                "AND": {
+                  "has_ai_personality": "peaceful_traders",
+                  "federation": {
+                    "has_federation_type": "trade_federation",
+                    "has_federation_law": "centralization_medium"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_centralization.txt",
+    "_line_number": 733
+  }
+}

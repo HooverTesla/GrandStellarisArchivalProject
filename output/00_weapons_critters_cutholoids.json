@@ -1,0 +1,36 @@
+{
+  "weapon_component_template": {
+    "weapon_component_template": {
+      "type": "engulf",
+      "key": "HUGE_PREYING_MAW",
+      "size": "engulf",
+      "icon": "GFX_ship_part_preying_maw",
+      "icon_frame": "1",
+      "size_restriction": {
+        "min_range": "0",
+        "targetable_ship_sizes": {
+          "component_set": "CUTHOLOID_PREYING_MAW",
+          "target_weights": {
+            "corvette": "1",
+            "frigate": "1",
+            "destroyer": "2",
+            "cruiser": "3"
+          },
+          "resources": {
+            "category": "ship_components",
+            "cost": {
+              "minerals": "480",
+              "mult": "@fauna_cost_scaling"
+            },
+            "upkeep": {
+              "energy": "0.75",
+              "minerals": "0.72"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_weapons_critters_cutholoids.txt",
+    "_line_number": 153
+  }
+}

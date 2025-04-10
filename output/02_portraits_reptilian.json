@@ -1,0 +1,260 @@
+{
+  "portraits": {
+    "portraits": {
+      "_comments": [
+        "# Reptilian"
+      ],
+      "rep1": {
+        "greeting_sound": "reptilian_01_greetings",
+        "character_textures": {}
+      },
+      "rep2": {
+        "greeting_sound": "reptilian_01_greetings",
+        "character_textures": {},
+        "custom_attachment_label": "HAT"
+      },
+      "rep3_f": {
+        "greeting_sound": "reptilian_01_greetings",
+        "character_textures": {}
+      },
+      "rep3_m": {
+        "greeting_sound": "reptilian_01_greetings",
+        "character_textures": {}
+      },
+      "rep4": {
+        "greeting_sound": "reptilian_01_greetings",
+        "character_textures": {}
+      },
+      "rep5": {
+        "greeting_sound": "reptilian_01_greetings",
+        "character_textures": {}
+      },
+      "rep6": {
+        "greeting_sound": "reptilian_01_greetings",
+        "character_textures": {}
+      },
+      "rep7": {
+        "greeting_sound": "reptilian_01_greetings",
+        "character_textures": {}
+      },
+      "rep8": {
+        "greeting_sound": "reptilian_01_greetings",
+        "character_textures": {}
+      },
+      "rep9": {
+        "greeting_sound": "reptilian_01_greetings",
+        "character_textures": {}
+      },
+      "rep10": {
+        "greeting_sound": "reptilian_01_greetings",
+        "character_textures": {}
+      },
+      "rep11": {
+        "greeting_sound": "reptilian_01_greetings",
+        "character_textures": {}
+      },
+      "rep12": {
+        "greeting_sound": "reptilian_01_greetings",
+        "character_textures": {}
+      },
+      "rep13": {
+        "greeting_sound": "reptilian_01_greetings",
+        "character_textures": {}
+      },
+      "rep14": {
+        "greeting_sound": "reptilian_01_greetings",
+        "character_textures": {}
+      },
+      "rep15": {
+        "greeting_sound": "reptilian_01_greetings",
+        "character_textures": {}
+      },
+      "rep16_f": {
+        "greeting_sound": "cute_reptilian_greetings",
+        "character_textures": {}
+      },
+      "rep16_m": {
+        "greeting_sound": "cute_reptilian_greetings",
+        "character_textures": {}
+      },
+      "rep17": {
+        "greeting_sound": "greetings_reptilian_special",
+        "character_textures": {}
+      }
+    },
+    "_source_file": "02_portraits_reptilian.txt",
+    "_line_number": 19
+  },
+  "portrait_groups": {
+    "portrait_groups": {
+      "rep3": {
+        "default": "rep3_f",
+        "game_setup": {
+          "add": {
+            "trigger": {
+              "ruler": {
+                "OR": {
+                  "gender": "indeterminable"
+                }
+              }
+            },
+            "portraits": {}
+          }
+        },
+        "_comments": [
+          "#set = {",
+          "#\ttrigger = { ... }",
+          "#\tportraits = { ... }",
+          "#\t#using \"set =\" instead of \"add\" will first clear any portraits already added",
+          "#}",
+          "#species scope"
+        ],
+        "species": {
+          "add": {
+            "trigger": {
+              "exists": "species",
+              "NOT": {},
+              "portraits": {}
+            },
+            "add": {
+              "trigger": {
+                "exists": "species",
+                "NOT": {},
+                "portraits": {}
+              }
+            },
+            "_comments": [
+              "#pop scope"
+            ],
+            "pop": {
+              "add": {
+                "trigger": {
+                  "NOT": {},
+                  "portraits": {}
+                },
+                "add": {
+                  "trigger": {
+                    "NOT": {},
+                    "portraits": {}
+                  }
+                },
+                "leader": {
+                  "add": {
+                    "trigger": {
+                      "OR": {
+                        "gender": "indeterminable"
+                      }
+                    },
+                    "portraits": {}
+                  }
+                },
+                "ruler": {
+                  "add": {
+                    "trigger": {
+                      "OR": {
+                        "gender": "indeterminable"
+                      }
+                    },
+                    "portraits": {}
+                  }
+                }
+              },
+              "rep16": {
+                "default": "rep16_f",
+                "game_setup": {
+                  "add": {
+                    "trigger": {
+                      "ruler": {
+                        "OR": {
+                          "gender": "indeterminable"
+                        }
+                      }
+                    },
+                    "portraits": {}
+                  }
+                },
+                "_comments": [
+                  "#set = {",
+                  "#\ttrigger = { ... }",
+                  "#\tportraits = { ... }",
+                  "#\t#using \"set =\" instead of \"add\" will first clear any portraits already added",
+                  "#}",
+                  "#species scope"
+                ],
+                "species": {
+                  "add": {
+                    "trigger": {
+                      "exists": "species",
+                      "NOT": {},
+                      "portraits": {}
+                    },
+                    "add": {
+                      "trigger": {
+                        "exists": "species",
+                        "NOT": {},
+                        "portraits": {}
+                      }
+                    },
+                    "_comments": [
+                      "#pop scope"
+                    ],
+                    "pop": {
+                      "add": {
+                        "trigger": {
+                          "NOT": {},
+                          "portraits": {}
+                        },
+                        "add": {
+                          "trigger": {
+                            "NOT": {},
+                            "portraits": {}
+                          }
+                        },
+                        "leader": {
+                          "add": {
+                            "trigger": {
+                              "OR": {
+                                "gender": "indeterminable"
+                              }
+                            },
+                            "portraits": {}
+                          }
+                        },
+                        "ruler": {
+                          "add": {
+                            "trigger": {
+                              "OR": {
+                                "gender": "indeterminable"
+                              }
+                            },
+                            "portraits": {}
+                          }
+                        }
+                      },
+                      "default": "swarm1small",
+                      "game_setup": {
+                        "add": {
+                          "portraits": {}
+                        }
+                      },
+                      "_comments": [
+                        "#leader scope"
+                      ],
+                      "ruler": {
+                        "add": {
+                          "portraits": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_portraits_reptilian.txt",
+    "_line_number": 251
+  }
+}

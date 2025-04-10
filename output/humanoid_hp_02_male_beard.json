@@ -1,0 +1,78 @@
+{
+  "humanoid_hp_02_male_beard": {
+    "humanoid_hp_02_male_beard": {
+      "default": "gfx/models/portraits/humanoid/humanoid_hp_02_beard_brown.dds",
+      "game_setup": {
+        "default": "gfx/models/portraits/humanoid/humanoid_hp_02_beard_brown.dds"
+      },
+      "_comments": [
+        "#species scope",
+        "#pop scope",
+        "#leader scope"
+      ],
+      "species": {
+        "default": "gfx/models/portraits/humanoid/humanoid_hp_02_beard_brown.dds"
+      },
+      "pop": {
+        "default": "gfx/models/portraits/humanoid/humanoid_hp_02_beard_brown.dds",
+        "random": {
+          "list": {}
+        }
+      },
+      "leader": {
+        "random": {
+          "trigger": {
+            "list": {}
+          },
+          "random": {
+            "trigger": {
+              "list": {}
+            },
+            "random": {
+              "trigger": {
+                "list": {}
+              },
+              "random": {
+                "trigger": {
+                  "list": {}
+                }
+              },
+              "_comments": [
+                "#leader scope"
+              ],
+              "ruler": {
+                "random": {
+                  "trigger": {
+                    "owner": {},
+                    "list": {}
+                  },
+                  "random": {
+                    "trigger": {
+                      "owner": {},
+                      "list": {}
+                    },
+                    "random": {
+                      "trigger": {
+                        "owner": {
+                          "OR": {
+                            "has_government": "gov_stagnant_ascendancy",
+                            "has_primitive_government": "yes",
+                            "has_materialist_government": "yes",
+                            "has_pacifist_government": "yes"
+                          }
+                        }
+                      },
+                      "list": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "humanoid_hp_02_male_beard.txt",
+    "_line_number": 21
+  }
+}

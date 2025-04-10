@@ -1,0 +1,279 @@
+{
+  "portraits": {
+    "portraits": {
+      "_comments": [
+        "# Human",
+        "#female",
+        "#male",
+        "# Human Legacy"
+      ],
+      "human_female_01": {
+        "entity": "portrait_human_female_entity",
+        "clothes_selector": "new_human_female_clothes_01",
+        "attachment_selector": "new_human_female_hair_01",
+        "greeting_sound": "human_female_greetings_03",
+        "character_textures": {},
+        "custom_attachment_label": "HAIR_STYLE"
+      },
+      "human_female_02": {
+        "entity": "portrait_human_female_entity",
+        "clothes_selector": "new_human_female_clothes_01",
+        "attachment_selector": "new_human_female_hair_01",
+        "greeting_sound": "human_female_greetings_04",
+        "character_textures": {},
+        "custom_attachment_label": "HAIR_STYLE"
+      },
+      "human_female_03": {
+        "entity": "portrait_human_female_entity",
+        "clothes_selector": "new_human_female_clothes_01",
+        "attachment_selector": "new_human_female_hair_01",
+        "greeting_sound": "human_female_greetings_05",
+        "character_textures": {},
+        "custom_attachment_label": "HAIR_STYLE"
+      },
+      "human_female_04": {
+        "entity": "portrait_human_female_entity",
+        "clothes_selector": "new_human_female_clothes_01",
+        "attachment_selector": "new_human_female_hair_01",
+        "greeting_sound": "human_female_greetings_01",
+        "character_textures": {},
+        "custom_attachment_label": "HAIR_STYLE"
+      },
+      "human_female_05": {
+        "entity": "portrait_human_female_entity",
+        "clothes_selector": "new_human_female_clothes_01",
+        "attachment_selector": "new_human_female_hair_01",
+        "greeting_sound": "human_female_greetings_02",
+        "character_textures": {},
+        "custom_attachment_label": "HAIR_STYLE"
+      },
+      "human_male_01": {
+        "entity": "portrait_human_male_entity",
+        "clothes_selector": "new_human_male_clothes_01",
+        "attachment_selector": "new_human_male_hair_01",
+        "greeting_sound": "human_male_greetings_03",
+        "character_textures": {},
+        "custom_attachment_label": "HAIR_STYLE"
+      },
+      "human_male_02": {
+        "entity": "portrait_human_male_entity",
+        "clothes_selector": "new_human_male_clothes_01",
+        "attachment_selector": "new_human_male_hair_01",
+        "greeting_sound": "human_male_greetings_04",
+        "character_textures": {},
+        "custom_attachment_label": "HAIR_STYLE"
+      },
+      "human_male_03": {
+        "entity": "portrait_human_male_entity",
+        "clothes_selector": "new_human_male_clothes_01",
+        "attachment_selector": "new_human_male_hair_01",
+        "greeting_sound": "human_male_greetings_05",
+        "character_textures": {},
+        "custom_attachment_label": "HAIR_STYLE"
+      },
+      "human_male_04": {
+        "entity": "portrait_human_male_entity",
+        "clothes_selector": "new_human_male_clothes_01",
+        "attachment_selector": "new_human_male_hair_01",
+        "greeting_sound": "human_male_greetings_01",
+        "character_textures": {},
+        "custom_attachment_label": "HAIR_STYLE"
+      },
+      "human_male_05": {
+        "entity": "portrait_human_male_entity",
+        "clothes_selector": "new_human_male_clothes_01",
+        "attachment_selector": "new_human_male_hair_01",
+        "greeting_sound": "human_male_greetings_02",
+        "character_textures": {},
+        "custom_attachment_label": "HAIR_STYLE"
+      },
+      "human_legacy_female_01": {
+        "human_legacy_female_02": {
+          "human_legacy_female_03": {
+            "human_legacy_female_04": {
+              "human_legacy_female_05": {
+                "human_legacy_male_01": {
+                  "human_legacy_male_02": {
+                    "human_legacy_male_03": {
+                      "human_legacy_male_04": {
+                        "human_legacy_male_05": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_portraits_human.txt",
+    "_line_number": 42
+  },
+  "portrait_groups": {
+    "portrait_groups": {
+      "human": {
+        "default": "human_male_01",
+        "game_setup": {
+          "add": {
+            "trigger": {
+              "ruler": {
+                "OR": {
+                  "gender": "indeterminable"
+                }
+              }
+            },
+            "portraits": {}
+          }
+        },
+        "_comments": [
+          "#set = {",
+          "#\ttrigger = { ... }",
+          "#\tportraits = { ... }",
+          "#\t#using \"set =\" instead of \"add\" will first clear any portraits already added",
+          "#}",
+          "#species scope"
+        ],
+        "species": {
+          "add": {
+            "trigger": {
+              "exists": "species",
+              "NOT": {},
+              "portraits": {}
+            },
+            "add": {
+              "trigger": {
+                "exists": "species",
+                "NOT": {},
+                "portraits": {}
+              }
+            },
+            "_comments": [
+              "#pop scope"
+            ],
+            "pop": {
+              "add": {
+                "trigger": {
+                  "NOT": {},
+                  "portraits": {}
+                },
+                "add": {
+                  "trigger": {
+                    "NOT": {},
+                    "portraits": {}
+                  }
+                },
+                "_comments": [
+                  "#leader scope",
+                  "#leader scope"
+                ],
+                "leader": {
+                  "add": {
+                    "trigger": {
+                      "OR": {
+                        "gender": "indeterminable"
+                      }
+                    },
+                    "portraits": {}
+                  }
+                },
+                "ruler": {
+                  "add": {
+                    "trigger": {
+                      "OR": {
+                        "gender": "indeterminable"
+                      }
+                    },
+                    "portraits": {}
+                  }
+                }
+              },
+              "human_legacy": {
+                "default": "human_legacy_male_01",
+                "game_setup": {
+                  "add": {
+                    "trigger": {
+                      "ruler": {
+                        "OR": {
+                          "gender": "indeterminable"
+                        }
+                      }
+                    },
+                    "portraits": {}
+                  }
+                },
+                "_comments": [
+                  "#set = {",
+                  "#\ttrigger = { ... }",
+                  "#\tportraits = { ... }",
+                  "#\t#using \"set =\" instead of \"add\" will first clear any portraits already added",
+                  "#}",
+                  "#species scope"
+                ],
+                "species": {
+                  "add": {
+                    "trigger": {
+                      "exists": "species",
+                      "NOT": {},
+                      "portraits": {}
+                    },
+                    "add": {
+                      "trigger": {
+                        "exists": "species",
+                        "NOT": {},
+                        "portraits": {}
+                      }
+                    },
+                    "_comments": [
+                      "#pop scope"
+                    ],
+                    "pop": {
+                      "add": {
+                        "trigger": {
+                          "NOT": {},
+                          "portraits": {}
+                        },
+                        "add": {
+                          "trigger": {
+                            "NOT": {},
+                            "portraits": {}
+                          }
+                        },
+                        "_comments": [
+                          "#leader scope",
+                          "#leader scope"
+                        ],
+                        "leader": {
+                          "add": {
+                            "trigger": {
+                              "OR": {
+                                "gender": "indeterminable"
+                              }
+                            },
+                            "portraits": {}
+                          }
+                        },
+                        "ruler": {
+                          "add": {
+                            "trigger": {
+                              "OR": {
+                                "gender": "indeterminable"
+                              }
+                            },
+                            "portraits": {}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_portraits_human.txt",
+    "_line_number": 210
+  }
+}

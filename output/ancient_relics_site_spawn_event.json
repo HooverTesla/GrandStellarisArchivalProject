@@ -1,0 +1,145 @@
+{
+  "ship_event": {
+    "ship_event": {
+      "id": "ancrel.15055",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_ancrel": "yes"
+      },
+      "immediate": {
+        "if": {
+          "limit": {
+            "FROMFROMFROM": {
+              "colonizable_planet": "no",
+              "NOR": {
+                "has_modifier": "toxic_terraforming_candidate"
+              },
+              "OR": {
+                "has_deposit_for": "shipclass_research_station",
+                "has_deposit": "no"
+              }
+            }
+          },
+          "FROMFROMFROM": {
+            "random_list": {
+              "150": {
+                "40": {
+                  "8": {
+                    "2": {}
+                  }
+                },
+                "else_if": {
+                  "limit": {
+                    "FROMFROMFROM": {
+                      "colonizable_planet": "no",
+                      "NOR": {
+                        "has_modifier": "toxic_terraforming_candidate"
+                      },
+                      "has_deposit_for": "shipclass_mining_station"
+                    }
+                  },
+                  "FROMFROMFROM": {
+                    "random_list": {
+                      "150": {
+                        "40": {
+                          "8": {
+                            "2": {}
+                          }
+                        },
+                        "else": {
+                          "FROMFROMFROM": {
+                            "random_list": {
+                              "150": {
+                                "40": {
+                                  "8": {
+                                    "2": {}
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "ancient_relics_site_spawn_event.txt",
+    "_line_number": 145
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "ancrel.15050",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_ancrel": "yes",
+        "exists": "leader"
+      },
+      "immediate": {
+        "leader": {
+          "save_event_target_as": "archaeologist_leader"
+        },
+        "if": {
+          "limit": {
+            "from": {
+              "planet": {
+                "colonizable_planet": "no",
+                "is_terraforming_candidate": "no",
+                "OR": {
+                  "has_deposit_for": "shipclass_research_station",
+                  "has_deposit": "no"
+                }
+              }
+            }
+          },
+          "from": {
+            "planet": {
+              "inline_script": {
+                "script": "deposits/minor_artifacts_randomiser",
+                "TYPE": "research"
+              }
+            }
+          }
+        },
+        "else_if": {
+          "limit": {
+            "from": {
+              "planet": {
+                "colonizable_planet": "no",
+                "is_terraforming_candidate": "no",
+                "has_deposit_for": "shipclass_mining_station"
+              }
+            }
+          },
+          "from": {
+            "planet": {
+              "inline_script": {
+                "script": "deposits/minor_artifacts_randomiser",
+                "TYPE": "mining"
+              }
+            }
+          }
+        },
+        "else": {
+          "from": {
+            "planet": {
+              "inline_script": {
+                "script": "deposits/minor_artifacts_randomiser",
+                "TYPE": "planet"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "ancient_relics_site_spawn_event.txt",
+    "_line_number": 74
+  }
+}

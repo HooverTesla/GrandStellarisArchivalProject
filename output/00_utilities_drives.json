@@ -1,0 +1,32 @@
+{
+  "utility_component_template": {
+    "utility_component_template": {
+      "key": "BIO_DRIVE_5",
+      "size": "small",
+      "icon": "GFX_ship_part_bio_psi_jump_drive_1",
+      "icon_frame": "1",
+      "power": "0",
+      "ftl": "yes",
+      "jumpdrive": "yes",
+      "resources": {
+        "category": "ship_components",
+        "inline_script": {
+          "script": "grand_archive/mutations/component_dynamic_cost",
+          "COST": "@cost_fauna_4"
+        }
+      },
+      "ship_modifier": {
+        "ship_disengage_opportunities_add": "2",
+        "ship_windup_mult": "-0.7"
+      },
+      "ai_weight": {
+        "weight": "5"
+      },
+      "prerequisites": {
+        "component_set": "ftl_components_bio"
+      }
+    },
+    "_source_file": "00_utilities_drives.txt",
+    "_line_number": 419
+  }
+}

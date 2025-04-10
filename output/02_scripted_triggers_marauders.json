@@ -1,0 +1,304 @@
+{
+  "determine_energy_tribute": {
+    "determine_energy_tribute": {
+      "if": {
+        "limit": {
+          "resource_stockpile_compare": {},
+          "else_if": {
+            "limit": {
+              "resource_stockpile_compare": {},
+              "else_if": {
+                "limit": {
+                  "resource_stockpile_compare": {},
+                  "else_if": {
+                    "limit": {
+                      "resource_stockpile_compare": {},
+                      "else_if": {
+                        "limit": {
+                          "resource_stockpile_compare": {},
+                          "else_if": {
+                            "limit": {
+                              "resource_stockpile_compare": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_marauders.txt",
+    "_line_number": 17
+  },
+  "determine_mineral_tribute": {
+    "determine_mineral_tribute": {
+      "if": {
+        "limit": {
+          "resource_stockpile_compare": {},
+          "else_if": {
+            "limit": {
+              "resource_stockpile_compare": {},
+              "else_if": {
+                "limit": {
+                  "resource_stockpile_compare": {},
+                  "else_if": {
+                    "limit": {
+                      "resource_stockpile_compare": {},
+                      "else_if": {
+                        "limit": {
+                          "resource_stockpile_compare": {},
+                          "else_if": {
+                            "limit": {
+                              "resource_stockpile_compare": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_marauders.txt",
+    "_line_number": 44
+  },
+  "determine_food_tribute": {
+    "determine_food_tribute": {
+      "if": {
+        "limit": {
+          "resource_stockpile_compare": {},
+          "else_if": {
+            "limit": {
+              "resource_stockpile_compare": {},
+              "else_if": {
+                "limit": {
+                  "resource_stockpile_compare": {},
+                  "else_if": {
+                    "limit": {
+                      "resource_stockpile_compare": {},
+                      "else_if": {
+                        "limit": {
+                          "resource_stockpile_compare": {},
+                          "else_if": {
+                            "limit": {
+                              "resource_stockpile_compare": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_marauders.txt",
+    "_line_number": 71
+  },
+  "determine_energy_tribute_raided": {
+    "determine_energy_tribute_raided": {
+      "if": {
+        "limit": {
+          "resource_stockpile_compare": {
+            "resource": "energy",
+            "value >": "@tributeallowraided6"
+          }
+        },
+        "else_if": {
+          "limit": {
+            "resource_stockpile_compare": {
+              "resource": "energy",
+              "value >": "@tributeallowraided5"
+            }
+          },
+          "else_if": {
+            "limit": {
+              "resource_stockpile_compare": {
+                "resource": "energy",
+                "value >": "@tributeallowraided4"
+              }
+            },
+            "else_if": {
+              "limit": {
+                "resource_stockpile_compare": {
+                  "resource": "energy",
+                  "value >": "@tributeallowraided3"
+                }
+              },
+              "else_if": {
+                "limit": {
+                  "resource_stockpile_compare": {
+                    "resource": "energy",
+                    "value >": "@tributeallowraided2"
+                  }
+                },
+                "else_if": {
+                  "limit": {
+                    "resource_stockpile_compare": {
+                      "resource": "energy",
+                      "value >": "@tributeallowraided1"
+                    }
+                  },
+                  "else": {
+                    "resource_stockpile_compare": {
+                      "resource": "energy",
+                      "value >": "@tributeallowraided1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_marauders.txt",
+    "_line_number": 98
+  },
+  "determine_mineral_tribute_raided": {
+    "determine_mineral_tribute_raided": {
+      "if": {
+        "limit": {
+          "resource_stockpile_compare": {
+            "resource": "minerals",
+            "value >": "@tributeallowraided6"
+          }
+        },
+        "else_if": {
+          "limit": {
+            "resource_stockpile_compare": {
+              "resource": "minerals",
+              "value >": "@tributeallowraided5"
+            }
+          },
+          "else_if": {
+            "limit": {
+              "resource_stockpile_compare": {
+                "resource": "minerals",
+                "value >": "@tributeallowraided4"
+              }
+            },
+            "else_if": {
+              "limit": {
+                "resource_stockpile_compare": {
+                  "resource": "minerals",
+                  "value >": "@tributeallowraided3"
+                }
+              },
+              "else_if": {
+                "limit": {
+                  "resource_stockpile_compare": {
+                    "resource": "minerals",
+                    "value >": "@tributeallowraided2"
+                  }
+                },
+                "else_if": {
+                  "limit": {
+                    "resource_stockpile_compare": {
+                      "resource": "minerals",
+                      "value >": "@tributeallowraided1"
+                    }
+                  },
+                  "else": {
+                    "resource_stockpile_compare": {
+                      "resource": "minerals",
+                      "value >": "@tributeallowraided1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_marauders.txt",
+    "_line_number": 149
+  },
+  "determine_food_tribute_raided": {
+    "determine_food_tribute_raided": {
+      "if": {
+        "limit": {
+          "resource_stockpile_compare": {
+            "resource": "food",
+            "value >": "@tributeallowraided6"
+          }
+        },
+        "else_if": {
+          "limit": {
+            "resource_stockpile_compare": {
+              "resource": "food",
+              "value >": "@tributeallowraided5"
+            }
+          },
+          "else_if": {
+            "limit": {
+              "resource_stockpile_compare": {
+                "resource": "food",
+                "value >": "@tributeallowraided4"
+              }
+            },
+            "else_if": {
+              "limit": {
+                "resource_stockpile_compare": {
+                  "resource": "food",
+                  "value >": "@tributeallowraided3"
+                }
+              },
+              "else_if": {
+                "limit": {
+                  "resource_stockpile_compare": {
+                    "resource": "food",
+                    "value >": "@tributeallowraided2"
+                  }
+                },
+                "else_if": {
+                  "limit": {
+                    "resource_stockpile_compare": {
+                      "resource": "food",
+                      "value >": "@tributeallowraided1"
+                    }
+                  },
+                  "else": {
+                    "resource_stockpile_compare": {
+                      "resource": "food",
+                      "value >": "@tributeallowraided1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_marauders.txt",
+    "_line_number": 200
+  },
+  "has_marauder_event": {
+    "has_marauder_event": {
+      "has_active_event": {}
+    },
+    "_source_file": "02_scripted_triggers_marauders.txt",
+    "_line_number": 256
+  },
+  "has_khan_event": {
+    "has_khan_event": {
+      "has_active_event": {}
+    },
+    "_source_file": "02_scripted_triggers_marauders.txt",
+    "_line_number": 285
+  }
+}

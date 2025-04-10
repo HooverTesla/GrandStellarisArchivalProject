@@ -1,0 +1,186 @@
+{
+  "marauder_corvette": {
+    "marauder_corvette": {
+      "graphical_culture": {
+        "entity": "pirate_01_pirate_corvette_entity",
+        "max_speed": "@speed_very_fast",
+        "acceleration": "0.35",
+        "rotation_speed": "0.1",
+        "collision_radius": "@corvette_collision_radius",
+        "modifier": {
+          "ship_armor_add": "200",
+          "ship_evasion_add": "60",
+          "ships_upkeep_mult": "-1"
+        },
+        "max_hitpoints": "350",
+        "size_multiplier": "1",
+        "fleet_slot_size": "1",
+        "section_slots": {
+          "num_target_locators": "0",
+          "is_space_station": "no",
+          "is_civilian": "no",
+          "icon": "ship_size_military_1",
+          "class": "shipclass_military",
+          "is_designable": "no",
+          "use_shipnames_from": "corvette",
+          "required_component_set": "thruster_components"
+        }
+      }
+    },
+    "_source_file": "08_marauder_ships.txt",
+    "_line_number": 34
+  },
+  "marauder_destroyer": {
+    "marauder_destroyer": {
+      "graphical_culture": {
+        "entity": "pirate_01_pirate_destroyer_entity",
+        "max_speed": "@speed_fast",
+        "acceleration": "0.3",
+        "rotation_speed": "0.2",
+        "collision_radius": "@destroyer_collision_radius",
+        "modifier": {
+          "ship_evasion_add": "25",
+          "ship_armor_add": "500",
+          "ships_upkeep_mult": "-1"
+        },
+        "max_hitpoints": "700",
+        "size_multiplier": "2",
+        "fleet_slot_size": "2",
+        "section_slots": {
+          "num_target_locators": "0",
+          "icon": "ship_size_military_2",
+          "is_space_station": "no",
+          "is_civilian": "no",
+          "class": "shipclass_military",
+          "is_designable": "no",
+          "use_shipnames_from": "destroyer",
+          "required_component_set": "thruster_components"
+        }
+      }
+    },
+    "_source_file": "08_marauder_ships.txt",
+    "_line_number": 66
+  },
+  "marauder_cruiser": {
+    "marauder_cruiser": {
+      "graphical_culture": {
+        "entity": "pirate_01_pirate_cruiser_entity",
+        "max_speed": "@speed_fast",
+        "acceleration": "0.2",
+        "rotation_speed": "0.2",
+        "collision_radius": "@destroyer_collision_radius",
+        "modifier": {
+          "ship_evasion_add": "10",
+          "ship_armor_add": "1300",
+          "ships_upkeep_mult": "-1"
+        },
+        "max_hitpoints": "2000",
+        "size_multiplier": "4",
+        "fleet_slot_size": "4",
+        "section_slots": {
+          "num_target_locators": "0",
+          "icon": "ship_size_military_4",
+          "is_space_station": "no",
+          "is_civilian": "no",
+          "class": "shipclass_military",
+          "is_designable": "no",
+          "use_shipnames_from": "cruiser",
+          "required_component_set": "thruster_components"
+        }
+      }
+    },
+    "_source_file": "08_marauder_ships.txt",
+    "_line_number": 98
+  },
+  "marauder_galleon": {
+    "marauder_galleon": {
+      "is_space_object": "yes",
+      "graphical_culture": {
+        "entity": "pirate_01_galleon_entity",
+        "graphical_culture": "yes",
+        "max_speed": "@speed_very_slow",
+        "acceleration": "0.3",
+        "rotation_speed": "0.05",
+        "collision_radius": "7",
+        "modifier": {
+          "ship_evasion_add": "35",
+          "ships_upkeep_mult": "-1"
+        },
+        "max_hitpoints": "40000",
+        "size_multiplier": "8",
+        "fleet_slot_size": "4",
+        "section_slots": {
+          "num_target_locators": "0",
+          "is_space_station": "no",
+          "icon": "ship_size_military_8",
+          "is_civilian": "no",
+          "use_shipnames_from": "battleship",
+          "class": "shipclass_military",
+          "is_designable": "no",
+          "required_component_set": "thruster_components"
+        }
+      }
+    },
+    "_source_file": "08_marauder_ships.txt",
+    "_line_number": 129
+  },
+  "marauder_station": {
+    "marauder_station": {
+      "graphical_culture": {
+        "entity": "pirate_01_pirate_station_entity",
+        "max_speed": "0.0",
+        "acceleration": "0.0",
+        "rotation_speed": "0.0",
+        "modifier": {
+          "ship_evasion_mult": "-1",
+          "ship_armor_add": "1300",
+          "ship_weapon_range_mult": "0.20",
+          "ships_upkeep_mult": "-1"
+        },
+        "max_hitpoints": "2000",
+        "size_multiplier": "4",
+        "fleet_slot_size": "4",
+        "section_slots": {
+          "\"west\"": {},
+          "num_target_locators": "0",
+          "is_space_station": "yes",
+          "build_block_radius": "@build_block_radius_civilian",
+          "use_shipnames_from": "military_station_small",
+          "class": "shipclass_military_station",
+          "is_designable": "no",
+          "icon": "ship_size_military_station"
+        }
+      }
+    },
+    "_source_file": "08_marauder_ships.txt",
+    "_line_number": 161
+  },
+  "marauder_void_dwelling": {
+    "marauder_void_dwelling": {
+      "graphical_culture": "no",
+      "entity": "station_generic_01_entity",
+      "max_speed": "0.0",
+      "acceleration": "0.0",
+      "rotation_speed": "0.0",
+      "modifier": {
+        "ship_evasion_mult": "-1",
+        "ship_armor_add": "400",
+        "ships_upkeep_mult": "-1"
+      },
+      "max_hitpoints": "8000",
+      "size_multiplier": "8",
+      "fleet_slot_size": "4",
+      "section_slots": {
+        "num_target_locators": "0",
+        "is_space_station": "yes",
+        "build_block_radius": "@build_block_radius_civilian",
+        "use_shipnames_from": "military_station_small",
+        "class": "shipclass_military_station",
+        "is_designable": "no",
+        "icon": "ship_size_military_station"
+      }
+    },
+    "_source_file": "08_marauder_ships.txt",
+    "_line_number": 191
+  }
+}

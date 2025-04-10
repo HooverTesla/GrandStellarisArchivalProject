@@ -1,0 +1,30 @@
+{
+  "has_cybernetization_stage_1": {
+    "has_cybernetization_stage_1": {
+      "OR": {
+        "AND": {
+          "OR": {
+            "has_cybernetic_creed_trait": "yes",
+            "has_trait": "trait_limited_cybernetic"
+          }
+        }
+      }
+    },
+    "_source_file": "04_scripted_triggers_portrait_system.txt",
+    "_line_number": 0
+  },
+  "has_cybernetization_stage_2": {
+    "has_cybernetization_stage_2": {
+      "OR": {
+        "AND": {
+          "OR": {
+            "is_scope_type": "species"
+          },
+          "has_trait": "trait_cybernetic"
+        }
+      }
+    },
+    "_source_file": "04_scripted_triggers_portrait_system.txt",
+    "_line_number": 23
+  }
+}

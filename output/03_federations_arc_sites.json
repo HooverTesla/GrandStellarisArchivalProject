@@ -1,0 +1,368 @@
+{
+  "site_from_gateway_sent": {
+    "site_from_gateway_sent": {
+      "desc": "site_from_gateway_sent_intro",
+      "picture": "GFX_evt_atmospheric_entry",
+      "stages": "4",
+      "max_instances": "999",
+      "weight": "0",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "_comments": [
+            "# Beyond Impact",
+            "# Temporal Dissonance",
+            "# Room Without A View",
+            "# The Gatekeeper Memoirs"
+          ],
+          "stage": {
+            "difficulty": "1",
+            "icon": "GFX_archaeology_runes_B4",
+            "event": "origin.1115"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_federations_arc_sites.txt",
+    "_line_number": 12
+  },
+  "site_ex_gravitas": {
+    "site_ex_gravitas": {
+      "desc": "site_ex_gravitas_intro",
+      "picture": "GFX_evt_cold_barren",
+      "stages": "4",
+      "max_instances": "999",
+      "weight": {
+        "base": "0"
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {
+          "hidden_trigger": {
+            "owner": {
+              "has_country_flag": "shoulders_origin_@from.planet"
+            }
+          }
+        },
+        "visible": {
+          "has_country_flag": "shoulders_origin_@from.planet",
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "1",
+            "icon": "GFX_archaeology_runes_A3",
+            "event": "origin.1215"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "03_federations_arc_sites.txt",
+    "_line_number": 73
+  },
+  "site_something_waiting": {
+    "site_something_waiting": {
+      "desc": "site_something_waiting_intro",
+      "picture": "GFX_evt_ship_in_orbit",
+      "stages": "4",
+      "max_instances": "999",
+      "weight": {
+        "base": "0"
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {
+          "hidden_trigger": {
+            "owner": {
+              "has_country_flag": "shoulders_origin_@from.planet"
+            }
+          }
+        },
+        "visible": {
+          "has_country_flag": "shoulders_origin_@from.planet",
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "1",
+          "icon": "GFX_archaeology_runes_A4",
+          "event": "origin.1235"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "03_federations_arc_sites.txt",
+    "_line_number": 132
+  },
+  "site_buried_deep": {
+    "site_buried_deep": {
+      "desc": "site_buried_deep_intro",
+      "picture": "GFX_evt_ship_in_orbit",
+      "stages": "2",
+      "max_instances": "999",
+      "weight": {
+        "base": "0"
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {
+          "hidden_trigger": {
+            "owner": {
+              "has_country_flag": "shoulders_origin_@from.planet"
+            }
+          }
+        },
+        "visible": {
+          "has_country_flag": "shoulders_origin_@from.planet",
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "1",
+          "icon": "GFX_archaeology_runes_A2",
+          "event": "origin.1245"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "03_federations_arc_sites.txt",
+    "_line_number": 186
+  },
+  "site_in_memoriam": {
+    "site_in_memoriam": {
+      "desc": "site_in_memoriam_intro",
+      "picture": "GFX_evt_ship_in_orbit",
+      "stages": "4",
+      "max_instances": "999",
+      "weight": {
+        "base": "0"
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {
+          "hidden_trigger": {
+            "owner": {
+              "has_country_flag": "shoulders_origin_@from.planet"
+            }
+          }
+        },
+        "visible": {
+          "has_country_flag": "shoulders_origin_@from.planet",
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "1",
+          "icon": "GFX_archaeology_runes_A4",
+          "event": "origin.1265"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "03_federations_arc_sites.txt",
+    "_line_number": 232
+  },
+  "site_the_last_stand": {
+    "site_the_last_stand": {
+      "desc": "site_the_last_stand_intro",
+      "picture": "GFX_evt_ship_in_orbit",
+      "stages": "4",
+      "max_instances": "999",
+      "weight": {
+        "base": "0"
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {
+          "hidden_trigger": {
+            "owner": {
+              "has_country_flag": "shoulders_origin_@from.planet"
+            }
+          }
+        },
+        "visible": {
+          "has_country_flag": "shoulders_origin_@from.planet",
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "1",
+          "icon": "GFX_archaeology_runes_A3",
+          "event": "origin.1285"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "03_federations_arc_sites.txt",
+    "_line_number": 288
+  },
+  "site_dark_secret": {
+    "site_dark_secret": {
+      "desc": "site_dark_secret_intro",
+      "picture": "GFX_evt_cold_barren",
+      "stages": "4",
+      "max_instances": "999",
+      "weight": {
+        "base": "0"
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {
+          "hidden_trigger": {
+            "owner": {
+              "has_country_flag": "shoulders_origin_@from.planet"
+            }
+          }
+        },
+        "visible": {
+          "has_country_flag": "shoulders_origin_@from.planet",
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "-1",
+          "icon": "GFX_archaeology_runes_A2",
+          "event": "origin.1297"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "03_federations_arc_sites.txt",
+    "_line_number": 344
+  },
+  "site_benign_cover_up": {
+    "site_benign_cover_up": {
+      "desc": "site_benign_cover_up_intro",
+      "picture": "GFX_evt_cold_barren",
+      "stages": "2",
+      "max_instances": "999",
+      "weight": {
+        "base": "0"
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {
+          "hidden_trigger": {
+            "owner": {
+              "has_country_flag": "shoulders_origin_@from.planet"
+            }
+          }
+        },
+        "visible": {
+          "has_country_flag": "shoulders_origin_@from.planet",
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "2",
+          "icon": "GFX_archaeology_runes_A4",
+          "event": "origin.1370"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "03_federations_arc_sites.txt",
+    "_line_number": 398
+  },
+  "site_bury_the_hatchet": {
+    "site_bury_the_hatchet": {
+      "desc": "site_bury_the_hatchet_intro",
+      "picture": "GFX_evt_cold_barren",
+      "stages": "2",
+      "max_instances": "999",
+      "weight": {
+        "base": "0"
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {
+          "hidden_trigger": {
+            "owner": {
+              "has_country_flag": "shoulders_origin_@from.planet"
+            }
+          }
+        },
+        "visible": {
+          "has_country_flag": "shoulders_origin_@from.planet",
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "1",
+          "icon": "GFX_archaeology_runes_A4",
+          "event": "origin.1415"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "03_federations_arc_sites.txt",
+    "_line_number": 442
+  },
+  "leylines_digsite": {
+    "leylines_digsite": {
+      "desc": "leylines_digsite_desc",
+      "picture": "GFX_evt_clocks",
+      "stages": "4",
+      "max_instances": "200",
+      "weight": "0 # Generated from an event (\"Federations\" DLC)",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "visible": {
+        "default_site_visible_trigger": "yes"
+      },
+      "stage": {
+        "difficulty": "4",
+        "event": "federations3.2120",
+        "icon": "GFX_archaeology_runes_A4"
+      },
+      "on_roll_failed": {
+        "from": {
+          "standard_archaeological_site_on_roll_failed": {
+            "RANDOM_EVENTS": "site_genius_caeli_random_events"
+          }
+        }
+      }
+    },
+    "_source_file": "03_federations_arc_sites.txt",
+    "_line_number": 487
+  }
+}

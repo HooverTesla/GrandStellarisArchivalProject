@@ -1,0 +1,103 @@
+{
+  "occupation_army": {
+    "occupation_army": {
+      "defensive": "yes",
+      "occupation": "yes",
+      "health": "1.25",
+      "damage": "1.50",
+      "morale": "1.25",
+      "collateral_damage": "0.0",
+      "war_exhaustion": "0.0 # No WE from occupation armies",
+      "icon": "GFX_army_type_defensive",
+      "potential": {
+        "from": {
+          "NOR": {
+            "has_trait": "trait_machine_unit",
+            "is_sapient": "no"
+          }
+        },
+        "owner": {
+          "OR": {
+            "is_machine_empire": "no",
+            "has_valid_civic": "civic_machine_assimilator"
+          }
+        }
+      }
+    },
+    "_source_file": "03_occupation_armies.txt",
+    "_line_number": 6
+  },
+  "robotic_occupation_army": {
+    "robotic_occupation_army": {
+      "defensive": "yes",
+      "occupation": "yes",
+      "damage": "1.00",
+      "health": "1.25",
+      "morale_damage": "1.00",
+      "collateral_damage": "0.0",
+      "war_exhaustion": "0.0 # No WE from occupation armies",
+      "has_morale": "no",
+      "icon": "GFX_army_type_robot",
+      "has_species": "yes",
+      "potential": {
+        "from": {
+          "has_trait": "trait_mechanical"
+        },
+        "owner": {
+          "is_machine_empire": "no"
+        }
+      },
+      "allow": {
+        "owner": {}
+      }
+    },
+    "_source_file": "03_occupation_armies.txt",
+    "_line_number": 35
+  },
+  "machine_occupation_army": {
+    "machine_occupation_army": {
+      "defensive": "yes",
+      "occupation": "yes",
+      "health": "1.10",
+      "damage": "1.10",
+      "has_morale": "no",
+      "morale_damage": "1.00",
+      "collateral_damage": "0.0",
+      "war_exhaustion": "0.0 # No WE from occupation armies",
+      "icon": "GFX_army_type_machine_defensive",
+      "has_species": "yes",
+      "potential": {
+        "owner": {
+          "from": {
+            "has_trait": "trait_machine_unit"
+          }
+        }
+      }
+    },
+    "_source_file": "03_occupation_armies.txt",
+    "_line_number": 61
+  },
+  "individual_machine_occupation_army": {
+    "individual_machine_occupation_army": {
+      "defensive": "yes",
+      "occupation": "yes",
+      "health": "1.10",
+      "damage": "1.10",
+      "morale": "1.25",
+      "morale_damage": "1.00",
+      "collateral_damage": "0.0",
+      "war_exhaustion": "0.0 # No WE from occupation armies",
+      "icon": "GFX_army_type_machine_defensive",
+      "has_species": "yes",
+      "potential": {
+        "owner": {
+          "from": {
+            "has_trait": "trait_machine_unit"
+          }
+        }
+      }
+    },
+    "_source_file": "03_occupation_armies.txt",
+    "_line_number": 81
+  }
+}

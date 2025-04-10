@@ -1,0 +1,371 @@
+{
+  "decision_enact_population_control": {
+    "decision_enact_population_control": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_politics",
+      "resources": {
+        "category": "decisions",
+        "cost": {
+          "unity": "250"
+        }
+      },
+      "potential": {
+        "owner": {
+          "NOT": {},
+          "effect": {
+            "add_modifier": {
+              "IF": {
+                "limit": {
+                  "has_modifier": "planet_food_boost"
+                },
+                "remove_modifier": "planet_food_boost"
+              }
+            },
+            "ai_weight": {
+              "weight": "5",
+              "modifier": {
+                "factor": "0",
+                "OR": {
+                  "num_free_districts": {
+                    "type": "any"
+                  },
+                  "has_building_construction": "yes #Added since they're probably building housing"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_political_decisions.txt",
+    "_line_number": 7
+  },
+  "decision_end_population_control": {
+    "decision_end_population_control": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_politics",
+      "resources": {
+        "category": "decisions"
+      },
+      "potential": {
+        "has_modifier": "planet_population_control"
+      },
+      "effect": {
+        "remove_modifier": "planet_population_control"
+      },
+      "ai_weight": {
+        "weight": "20",
+        "modifier": {
+          "factor": "0"
+        }
+      }
+    },
+    "_source_file": "01_political_decisions.txt",
+    "_line_number": 55
+  },
+  "decision_enact_population_control_gestalt": {
+    "decision_enact_population_control_gestalt": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_politics",
+      "resources": {
+        "category": "decisions",
+        "cost": {
+          "unity": "250"
+        }
+      },
+      "potential": {
+        "owner": {
+          "is_gestalt": "yes"
+        },
+        "NOT": {},
+        "effect": {
+          "add_modifier": {},
+          "ai_weight": {
+            "weight": "5",
+            "modifier": {
+              "factor": "0",
+              "OR": {
+                "num_free_districts": {
+                  "type": "any"
+                },
+                "has_building_construction": "yes #Added since they're probably building housing"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_political_decisions.txt",
+    "_line_number": 82
+  },
+  "decision_end_population_control_gestalt": {
+    "decision_end_population_control_gestalt": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_politics",
+      "resources": {
+        "category": "decisions"
+      },
+      "potential": {
+        "has_modifier": "planet_population_control_gestalt"
+      },
+      "effect": {
+        "remove_modifier": "planet_population_control_gestalt"
+      },
+      "ai_weight": {
+        "weight": "20",
+        "modifier": {
+          "factor": "0"
+        }
+      }
+    },
+    "_source_file": "01_political_decisions.txt",
+    "_line_number": 121
+  },
+  "decision_enact_robot_assembly_control": {
+    "decision_enact_robot_assembly_control": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_politics",
+      "resources": {
+        "category": "decisions",
+        "cost": {
+          "unity": "250"
+        }
+      },
+      "potential": {
+        "owner": {
+          "OR": {
+            "AND": {
+              "is_regular_empire": "yes",
+              "NOT": {
+                "has_technology": "tech_robotic_workers",
+                "OR": {
+                  "AND": {
+                    "has_policy_flag": "population_controls_allowed"
+                  },
+                  "NOT": {
+                    "has_policy_flag": "ai_full_rights"
+                  }
+                }
+              },
+              "is_individual_machine": "yes"
+            }
+          },
+          "NOT": {},
+          "effect": {
+            "add_modifier": {},
+            "ai_weight": {
+              "weight": "5",
+              "modifier": {
+                "factor": "0",
+                "OR": {
+                  "num_free_districts": {
+                    "type": "any"
+                  },
+                  "has_building_construction": "yes #Added since they're probably building housing"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_political_decisions.txt",
+    "_line_number": 148
+  },
+  "decision_end_robot_assembly_control": {
+    "decision_end_robot_assembly_control": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_politics",
+      "resources": {
+        "category": "decisions"
+      },
+      "potential": {
+        "has_modifier": "planet_robot_assembly_control"
+      },
+      "effect": {
+        "remove_modifier": "planet_robot_assembly_control"
+      },
+      "ai_weight": {
+        "weight": "20",
+        "modifier": {
+          "factor": "0"
+        }
+      }
+    },
+    "_source_file": "01_political_decisions.txt",
+    "_line_number": 204
+  },
+  "decision_expel_population": {
+    "decision_expel_population": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_expel_population",
+      "resources": {
+        "category": "decisions",
+        "cost": {
+          "unity": "250"
+        }
+      },
+      "potential": {
+        "owner": {
+          "is_regular_empire": "yes",
+          "NOT": {}
+        },
+        "allow": {
+          "NOT": {
+            "custom_tooltip": {
+              "fail_text": "decision_expel_population_fail_tooltip",
+              "any_owned_pop": {
+                "can_think": "yes",
+                "NOR": {
+                  "has_trait": "trait_hive_mind",
+                  "is_non_sapient_robot": "yes",
+                  "is_pop_category": "ruler"
+                }
+              }
+            }
+          },
+          "effect": {
+            "custom_tooltip": "decision_expel_population_effects",
+            "add_modifier": {
+              "hidden_effect": {
+                "reroll_random": "yes",
+                "switch": {
+                  "trigger": "free_housing",
+                  "-9 < { set_variable": {
+                    "-8 < { set_variable": {
+                      "-7 < { set_variable": {
+                        "-6 < { set_variable": {
+                          "-5 < { set_variable": {
+                            "-4 < { set_variable": {
+                              "-3 < { set_variable": {
+                                "-2 < { set_variable": {
+                                  "-1 < { set_variable": {
+                                    "0 < { set_variable": {},
+                                    "while": {
+                                      "count": "expel_pop_var",
+                                      "random_owned_pop": {
+                                        "limit": {
+                                          "can_think": "yes",
+                                          "NOR": {
+                                            "has_trait": "trait_hive_mind",
+                                            "is_non_sapient_robot": "yes",
+                                            "is_pop_category": "ruler"
+                                          }
+                                        },
+                                        "weights": {
+                                          "base": "1",
+                                          "_comments": [
+                                            "# can use add or mult"
+                                          ],
+                                          "modifier": {
+                                            "add": "10",
+                                            "OR": {
+                                              "is_pop_category": "slave"
+                                            }
+                                          }
+                                        },
+                                        "if": {
+                                          "limit": {
+                                            "save_event_target_as": "refugee_pop #Must be saved for refugee_pop_effect to work",
+                                            "refugee_pop_effect": "yes"
+                                          },
+                                          "else": {
+                                            "kill_pop": "yes"
+                                          }
+                                        }
+                                      },
+                                      "clear_variable": "expel_pop_var"
+                                    }
+                                  },
+                                  "ai_weight": {
+                                    "weight": "0"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_political_decisions.txt",
+    "_line_number": 236
+  },
+  "decision_discourage_growth": {
+    "decision_discourage_growth": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_politics",
+      "resources": {
+        "category": "decisions",
+        "cost": {
+          "unity": "250"
+        }
+      },
+      "potential": {
+        "owner": {
+          "has_policy_flag": "population_controls_not_allowed",
+          "is_individual_machine": "no"
+        },
+        "NOT": {},
+        "effect": {
+          "add_modifier": {
+            "remove_modifier": "planet_food_boost"
+          },
+          "ai_weight": {
+            "weight": "5",
+            "modifier": {
+              "factor": "0",
+              "OR": {
+                "num_free_districts": {
+                  "type": "any"
+                },
+                "has_building_construction": "yes #Added since they're probably building housing"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_political_decisions.txt",
+    "_line_number": 342
+  },
+  "decision_end_discourage_growth": {
+    "decision_end_discourage_growth": {
+      "owned_planets_only": "yes",
+      "sound": "event_administrative_work",
+      "icon": "decision_politics",
+      "resources": {
+        "category": "decisions"
+      },
+      "potential": {
+        "has_modifier": "planet_growth_discouraged"
+      },
+      "effect": {
+        "remove_modifier": "planet_growth_discouraged"
+      },
+      "ai_weight": {
+        "weight": "20",
+        "modifier": {
+          "factor": "0"
+        }
+      }
+    },
+    "_source_file": "01_political_decisions.txt",
+    "_line_number": 384
+  }
+}

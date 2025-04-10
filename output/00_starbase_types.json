@@ -1,0 +1,1516 @@
+{
+  "sshipyard": {
+    "sshipyard": {
+      "potential": {
+        "NOR": {
+          "has_starbase_module": "beastport"
+        },
+        "NAND": {
+          "owner": {
+            "is_ai": "yes",
+            "should_ai_focus_on_trade": "yes"
+          },
+          "solar_system": {
+            "is_same_value": "sector.sector_capital.solar_system"
+          }
+        },
+        "owner": {
+          "OR": {
+            "is_ai": "no",
+            "uses_standard_ship_sizes": "yes"
+          }
+        }
+      },
+      "weight_modifier": {
+        "base": "0",
+        "complex_trigger_modifier": {
+          "trigger": "count_starbase_modules",
+          "parameters": {
+            "type": "shipyard"
+          },
+          "mode": "add",
+          "mult": "100"
+        },
+        "modifier": {
+          "factor": "0",
+          "exists": "owner",
+          "owner": {
+            "uses_standard_ship_sizes": "no"
+          }
+        }
+      },
+      "ai_design": {
+        "min": {
+          "base": "0",
+          "modifier": {
+            "add": "1",
+            "exists": "owner",
+            "owner": {
+              "uses_standard_ship_sizes": "yes"
+            }
+          }
+        },
+        "ratio": {
+          "base": "0.20",
+          "modifier": {
+            "factor": "0",
+            "exists": "owner",
+            "owner": {
+              "uses_standard_ship_sizes": "no"
+            }
+          }
+        },
+        "_comments": [
+          "# token followed by priority"
+        ],
+        "buildings": {
+          "crew_quarters": {
+            "base": "1.00"
+          },
+          "fleet_academy": {
+            "base": "1.00"
+          },
+          "titan_yards": {
+            "base": "1.00"
+          },
+          "colossus_yards": {
+            "base": "1.00"
+          },
+          "ice_mining_station": {
+            "base": "1.00"
+          },
+          "dragon_hatchery": {
+            "base": "1.00"
+          },
+          "hydroponics_bay": {
+            "base": "1.00"
+          },
+          "dimensional_shrine": {
+            "base": "1.00"
+          },
+          "irassian_naval_yards": {
+            "base": "3.00"
+          },
+          "cordyceptic_reanimation_facility": {
+            "base": "3.00"
+          }
+        },
+        "modules": {
+          "shipyard": {
+            "base": "1.00"
+          },
+          "anchorage": {
+            "base": "0.50"
+          },
+          "hangar_bay": {
+            "base": "0.45"
+          }
+        }
+      }
+    },
+    "_source_file": "00_starbase_types.txt",
+    "_line_number": 35
+  },
+  "inline_script": {
+    "inline_script": {
+      "script": "grand_archive/ship_building_starbase_type",
+      "TYPE": "orbital_ring_beastport"
+    },
+    "_source_file": "00_starbase_types.txt",
+    "_line_number": 1358
+  },
+  "sanchorage": {
+    "sanchorage": {
+      "potential": {
+        "NAND": {
+          "owner": {
+            "is_ai": "yes",
+            "should_ai_focus_on_trade": "yes"
+          },
+          "solar_system": {
+            "is_same_value": "sector.sector_capital.solar_system"
+          }
+        }
+      },
+      "weight_modifier": {
+        "base": "0",
+        "complex_trigger_modifier": {
+          "trigger": "count_starbase_modules",
+          "parameters": {
+            "type": "anchorage"
+          },
+          "mode": "add",
+          "mult": "100"
+        }
+      },
+      "ai_design": {
+        "min": {
+          "base": "0"
+        },
+        "ratio": {
+          "base": "0.65",
+          "modifier": {
+            "add": "0.02",
+            "exists": "owner",
+            "owner": {
+              "has_ethic": "ethic_fanatic_militarist"
+            }
+          }
+        },
+        "_comments": [
+          "# token followed by priority"
+        ],
+        "buildings": {
+          "naval_logistics_office": {
+            "base": "1.00"
+          },
+          "defense_grid": {
+            "base": "0.05"
+          },
+          "communications_jammer": {
+            "base": "0.05"
+          },
+          "curator_think_tank": {
+            "base": "2.00"
+          },
+          "art_college": {
+            "base": "2.00"
+          },
+          "nebula_refinery": {
+            "base": "2.00"
+          },
+          "ice_mining_station": {
+            "base": "2.00"
+          },
+          "dragon_hatchery": {
+            "base": "2.00"
+          },
+          "hydroponics_bay": {
+            "base": "2.00"
+          },
+          "dimensional_shrine": {
+            "base": "2.00"
+          },
+          "cordyceptic_reanimation_facility": {
+            "base": "3.00"
+          }
+        },
+        "modules": {
+          "anchorage": {
+            "base": "1.00"
+          }
+        }
+      }
+    },
+    "_source_file": "00_starbase_types.txt",
+    "_line_number": 199
+  },
+  "strading_hub": {
+    "strading_hub": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "_comments": [
+            "# If we are AI only build this in sector capitals"
+          ],
+          "if": {
+            "limit": {
+              "owner": {
+                "solar_system": {
+                  "is_same_value": "sector.sector_capital.solar_system"
+                }
+              }
+            },
+            "weight_modifier": {
+              "base": "0",
+              "complex_trigger_modifier": {
+                "trigger": "count_starbase_modules",
+                "parameters": {
+                  "type": "trading_hub"
+                },
+                "mode": "add",
+                "mult": "100"
+              },
+              "modifier": {
+                "add": "1000",
+                "exists": "owner",
+                "owner": {
+                  "is_ai": "yes",
+                  "should_ai_focus_on_trade": "yes"
+                },
+                "solar_system": {
+                  "is_same_value": "sector.sector_capital.solar_system"
+                }
+              }
+            },
+            "ai_design": {
+              "min": {
+                "base": "0"
+              },
+              "ratio": {
+                "base": "0.10",
+                "modifier": {
+                  "add": "0.10",
+                  "exists": "owner",
+                  "owner": {
+                    "OR": {
+                      "has_ethic": "ethic_fanatic_xenophile",
+                      "is_megacorp": "yes"
+                    }
+                  }
+                }
+              },
+              "_comments": [
+                "# token followed by priority"
+              ],
+              "buildings": {
+                "offworld_trading_company": {
+                  "base": "1.00"
+                },
+                "nebula_refinery": {
+                  "base": "1.00"
+                },
+                "resource_silo": {
+                  "base": "0.25"
+                },
+                "art_college": {
+                  "base": "1.00"
+                },
+                "curator_think_tank": {
+                  "base": "1.00"
+                },
+                "ice_mining_station": {
+                  "base": "1.00"
+                },
+                "dragon_hatchery": {
+                  "base": "1.00"
+                },
+                "hydroponics_bay": {
+                  "base": "1.00"
+                },
+                "dimensional_shrine": {
+                  "base": "1.00"
+                },
+                "defense_grid": {
+                  "base": "0.05"
+                },
+                "communications_jammer": {
+                  "base": "0.05"
+                },
+                "yuht_detection_array": {
+                  "base": "1.25",
+                  "modifier": {
+                    "factor": "0.10",
+                    "exists": "owner",
+                    "owner": {
+                      "any_owned_starbase": {
+                        "count_starbase_buildings": {
+                          "type": "yuht_detection_array"
+                        }
+                      }
+                    }
+                  }
+                },
+                "hyperlane_detailer": {
+                  "base": "1.00"
+                }
+              },
+              "modules": {
+                "trading_hub": {
+                  "base": "1.0"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_starbase_types.txt",
+    "_line_number": 306
+  },
+  "sfortress": {
+    "sfortress": {
+      "potential": {
+        "exists": "owner",
+        "OR": {
+          "owner": {
+            "AND": {
+              "solar_system": {
+                "closest_system": {
+                  "min_steps": "0",
+                  "max_steps": "2",
+                  "limit": {
+                    "exists": "owner",
+                    "owner": {
+                      "is_country_type": "default",
+                      "NOR": {
+                        "is_same_value": "root.owner",
+                        "is_in_federation_with": "root.owner",
+                        "has_association_status": "root.owner",
+                        "has_defensive_pact": "root.owner",
+                        "has_non_aggression_pact": "root.owner",
+                        "has_overlord": "root.owner",
+                        "AND": {
+                          "has_subject": "root.owner"
+                        }
+                      }
+                    }
+                  },
+                  "exists": "this"
+                }
+              }
+            },
+            "NAND": {
+              "owner": {
+                "is_ai": "yes",
+                "should_ai_focus_on_trade": "yes"
+              },
+              "solar_system": {
+                "is_same_value": "sector.sector_capital.solar_system"
+              }
+            }
+          },
+          "ai_use_defense_platforms": "yes #AI will not build defense platforms otherwise, except in the capital system",
+          "weight_modifier": {
+            "base": "0",
+            "complex_trigger_modifier": {
+              "trigger": "count_starbase_modules",
+              "parameters": {
+                "type": "hangar_bay"
+              },
+              "mode": "add",
+              "mult": "75"
+            },
+            "modifier": {
+              "add": "150",
+              "solar_system": {
+                "closest_system": {
+                  "max_steps": "2",
+                  "limit": {
+                    "exists": "owner",
+                    "owner": {
+                      "OR": {
+                        "is_rival": "root",
+                        "is_hostile_to": "root",
+                        "is_hostile": "root"
+                      }
+                    }
+                  },
+                  "exists": "this"
+                }
+              }
+            },
+            "ai_design": {
+              "min": {
+                "base": "0"
+              },
+              "ratio": {
+                "base": "0.10",
+                "modifier": {
+                  "add": "0.10",
+                  "exists": "owner",
+                  "owner": {
+                    "has_ethic": "ethic_fanatic_pacifist"
+                  }
+                }
+              },
+              "_comments": [
+                "# token followed by priority"
+              ],
+              "buildings": {
+                "target_uplink_computer": {
+                  "base": "1.00"
+                },
+                "command_center": {
+                  "base": "1.00"
+                },
+                "defense_grid": {
+                  "base": "1.00"
+                },
+                "communications_jammer": {
+                  "base": "0.90"
+                },
+                "disruption_field": {
+                  "base": "0.90"
+                },
+                "ice_mining_station": {
+                  "base": "3.00"
+                },
+                "dragon_hatchery": {
+                  "base": "3.00"
+                },
+                "hydroponics_bay": {
+                  "base": "0.25"
+                },
+                "reloading_bay": {
+                  "base": "2.00"
+                },
+                "zroni_storm_caster": {
+                  "base": "1.5",
+                  "modifier": {
+                    "factor": "0",
+                    "exists": "owner",
+                    "owner": {
+                      "has_monthly_income": {
+                        "resource": "sr_zro"
+                      }
+                    }
+                  }
+                },
+                "offspring_outlook": {
+                  "base": "10"
+                }
+              },
+              "modules": {
+                "hangar_bay": {
+                  "base": "0.80"
+                },
+                "missile_battery": {
+                  "base": "1.00"
+                },
+                "gun_battery": {
+                  "base": "1.00"
+                },
+                "archaeo_rampart": {
+                  "base": "1.25"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_starbase_types.txt",
+    "_line_number": 468
+  },
+  "strading_hub_gestalt": {
+    "strading_hub_gestalt": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "has_ethic": "ethic_gestalt_consciousness",
+          "NOT": {}
+        },
+        "weight_modifier": {
+          "base": "0",
+          "complex_trigger_modifier": {
+            "trigger": "count_starbase_modules",
+            "parameters": {
+              "type": "solar_panel_network"
+            },
+            "mode": "add",
+            "mult": "100"
+          }
+        },
+        "ai_design": {
+          "min": {
+            "base": "0"
+          },
+          "_comments": [
+            "# token followed by priority"
+          ],
+          "modules": {
+            "solar_panel_network": {
+              "base": "1.00"
+            }
+          },
+          "buildings": {
+            "nebula_refinery": {
+              "base": "1.00"
+            },
+            "resource_silo": {
+              "base": "0.25"
+            },
+            "art_college": {
+              "base": "1.00"
+            },
+            "curator_think_tank": {
+              "base": "1.00"
+            },
+            "ice_mining_station": {
+              "base": "1.00"
+            },
+            "dragon_hatchery": {
+              "base": "1.00"
+            },
+            "hydroponics_bay": {
+              "base": "1.00"
+            },
+            "dimensional_shrine": {
+              "base": "1.00"
+            },
+            "defense_grid": {
+              "base": "0.05"
+            },
+            "communications_jammer": {
+              "base": "0.05"
+            },
+            "cordyceptic_reanimation_facility": {
+              "base": "3.00"
+            },
+            "feeder": {
+              "base": "3.00"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_starbase_types.txt",
+    "_line_number": 658
+  },
+  "smining_hub": {
+    "smining_hub": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "has_ethic": "ethic_gestalt_consciousness",
+          "has_valid_civic": "civic_machine_astromining_drones"
+        },
+        "solar_system": {
+          "count_ship_in_system": {
+            "limit": {
+              "is_ship_size": "mining_station"
+            }
+          }
+        }
+      },
+      "weight_modifier": {
+        "base": "0",
+        "complex_trigger_modifier": {
+          "trigger": "count_starbase_modules",
+          "parameters": {
+            "type": "astromining_bay"
+          },
+          "mode": "add",
+          "mult": "100"
+        },
+        "modifier": {
+          "add": "1000",
+          "solar_system": {
+            "count_ship_in_system": {
+              "limit": {
+                "is_ship_size": "mining_station"
+              }
+            }
+          }
+        }
+      },
+      "ai_design": {
+        "min": {
+          "base": "0"
+        },
+        "_comments": [
+          "# token followed by priority"
+        ],
+        "modules": {
+          "astromining_bay": {
+            "base": "5.00"
+          }
+        },
+        "buildings": {
+          "astromining_hub": {
+            "base": "3.00"
+          },
+          "nebula_refinery": {
+            "base": "1.00"
+          },
+          "resource_silo": {
+            "base": "0.25"
+          },
+          "art_college": {
+            "base": "1.00"
+          },
+          "curator_think_tank": {
+            "base": "1.00"
+          },
+          "ice_mining_station": {
+            "base": "1.00"
+          },
+          "dragon_hatchery": {
+            "base": "1.00"
+          },
+          "hydroponics_bay": {
+            "base": "1.00"
+          },
+          "dimensional_shrine": {
+            "base": "1.00"
+          },
+          "defense_grid": {
+            "base": "0.05"
+          },
+          "communications_jammer": {
+            "base": "0.05"
+          },
+          "cordyceptic_reanimation_facility": {
+            "base": "3.00"
+          },
+          "feeder": {
+            "base": "3.00"
+          }
+        }
+      }
+    },
+    "_source_file": "00_starbase_types.txt",
+    "_line_number": 747
+  },
+  "sdetection_array": {
+    "sdetection_array": {
+      "potential": {
+        "has_first_contact_dlc": "yes",
+        "exists": "sector",
+        "owner": {
+          "has_technology": "tech_detection_array"
+        },
+        "sector": {
+          "any_system_within_border": {
+            "starbase": {
+              "NOT": {
+                "is_starbase_type": "sdetection_array"
+              }
+            }
+          }
+        },
+        "solar_system": {
+          "is_capital_system": "no"
+        },
+        "OR": {
+          "AND": {
+            "owner": {
+              "has_starbase_module": "detection_array"
+            },
+            "_comments": [
+              "# Either this is near the capital system"
+            ],
+            "AND": {
+              "owner": {
+                "sector": {
+                  "any_system_within_border": {
+                    "is_capital_system": "yes"
+                  }
+                }
+              },
+              "_comments": [
+                "# Or is a border system"
+              ],
+              "AND": {
+                "owner": {
+                  "closest_system": {
+                    "min_steps": "0",
+                    "max_steps": "4",
+                    "limit": {
+                      "exists": "owner",
+                      "owner": {
+                        "is_country_type": "default",
+                        "NOR": {
+                          "is_same_value": "root.owner",
+                          "is_in_federation_with": "root.owner",
+                          "has_association_status": "root.owner",
+                          "has_defensive_pact": "root.owner",
+                          "has_non_aggression_pact": "root.owner",
+                          "has_overlord": "root.owner",
+                          "AND": {
+                            "has_subject": "root.owner"
+                          }
+                        }
+                      }
+                    },
+                    "exists": "this"
+                  }
+                }
+              }
+            },
+            "ai_use_defense_platforms": "yes #AI will not build defense platforms otherwise, except in the capital system",
+            "weight_modifier": {
+              "base": "0",
+              "complex_trigger_modifier": {
+                "trigger": "count_starbase_modules",
+                "parameters": {
+                  "type": "detection_array"
+                },
+                "mode": "add",
+                "mult": "100"
+              },
+              "modifier": {
+                "add": "1000",
+                "owner": {
+                  "NOT": {
+                    "any_owned_starbase": {
+                      "has_starbase_module": "detection_array"
+                    }
+                  }
+                }
+              }
+            },
+            "ai_design": {
+              "min": {
+                "base": "1"
+              },
+              "ratio": {
+                "base": "0.10",
+                "modifier": {
+                  "add": "0.20",
+                  "exists": "owner",
+                  "owner": {
+                    "has_ethic": "ethic_fanatic_xenophobe"
+                  }
+                }
+              },
+              "_comments": [
+                "# token followed by priority"
+              ],
+              "buildings": {
+                "listening_post": {
+                  "base": "1.00",
+                  "modifier": {
+                    "factor": "2",
+                    "exists": "owner",
+                    "owner": {
+                      "has_civic": "civic_hive_subspace_ephapse"
+                    }
+                  }
+                },
+                "dark_matter_detector": {
+                  "base": "10.00"
+                },
+                "yuht_detection_array": {
+                  "base": "5.00"
+                },
+                "target_uplink_computer": {
+                  "base": "1.00"
+                },
+                "defense_grid": {
+                  "base": "1.00"
+                },
+                "cybrex_mining_hub": {
+                  "base": "1.00"
+                }
+              },
+              "modules": {
+                "detection_array": {
+                  "base": "1.00"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_starbase_types.txt",
+    "_line_number": 862
+  },
+  "sseeder": {
+    "sseeder": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "NOT": {},
+          "weight_modifier": {
+            "base": "0",
+            "modifier": {
+              "add": "500",
+              "has_starbase_building": "feeder"
+            }
+          },
+          "ai_design": {
+            "min": {
+              "base": "1"
+            },
+            "ratio": {
+              "base": "0"
+            },
+            "_comments": [
+              "# token followed by priority"
+            ],
+            "buildings": {
+              "feeder": {
+                "base": "5.00",
+                "modifier": {
+                  "add": "5.00",
+                  "solar_system": {
+                    "closest_system": {
+                      "limit": {
+                        "has_star_flag": "space_critter_system"
+                      },
+                      "min_steps": "0",
+                      "max_steps": "5"
+                    }
+                  }
+                }
+              },
+              "naval_logistics_office": {
+                "base": "1.00"
+              },
+              "defense_grid": {
+                "base": "0.05"
+              },
+              "communications_jammer": {
+                "base": "0.05"
+              },
+              "curator_think_tank": {
+                "base": "2.00"
+              },
+              "art_college": {
+                "base": "2.00"
+              },
+              "nebula_refinery": {
+                "base": "2.00"
+              },
+              "ice_mining_station": {
+                "base": "2.00"
+              },
+              "dragon_hatchery": {
+                "base": "2.00"
+              },
+              "hydroponics_bay": {
+                "base": "2.00"
+              }
+            },
+            "modules": {
+              "shipyard": {
+                "base": "1.00"
+              },
+              "anchorage": {
+                "base": "0.50"
+              },
+              "hangar_bay": {
+                "base": "0.45"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_starbase_types.txt",
+    "_line_number": 1041
+  },
+  "sorbital_ring": {
+    "sorbital_ring": {
+      "potential": {
+        "weight_modifier": {
+          "ai_design": {
+            "min": {
+              "base": "0"
+            },
+            "modules": {
+              "orbital_ring_habitation": {
+                "base": "20.00",
+                "modifier": {
+                  "factor": "2",
+                  "planet": {
+                    "num_free_districts": {}
+                  }
+                },
+                "orbital_ring_shipyard": {
+                  "base": "0.0 # Generally better to use normal starbases for this"
+                },
+                "orbital_ring_hatchery": {
+                  "base": "0.0 # Generally better to use normal starbases for this"
+                },
+                "orbital_ring_beastport": {
+                  "base": "0.0 # Generally better to use normal starbases for this"
+                },
+                "orbital_ring_anchorage": {
+                  "base": "0.0 # Generally better to use normal starbases for this"
+                },
+                "orbital_ring_gun_battery": {
+                  "base": "0.0"
+                },
+                "orbital_ring_missile_battery": {
+                  "base": "0.0"
+                },
+                "orbital_ring_hangar_bay": {
+                  "base": "0.0"
+                }
+              },
+              "_comments": [
+                "# token followed by priority"
+              ],
+              "buildings": {
+                "ring_synapse_hub": {
+                  "base": "1.00"
+                },
+                "ring_maintenance_hub": {
+                  "base": "1.00"
+                },
+                "ring_bureaucracy_hub": {
+                  "base": "1",
+                  "modifier": {
+                    "add": "2",
+                    "planet": {
+                      "OR": {
+                        "has_unity_designation": "yes",
+                        "has_building": "building_simulation_1"
+                      }
+                    }
+                  }
+                },
+                "ring_minerals_hub": {
+                  "base": "1",
+                  "modifier": {
+                    "add": "2",
+                    "planet": {
+                      "OR": {
+                        "has_mining_designation": "yes",
+                        "has_building": "building_mineral_purification_hub"
+                      }
+                    }
+                  }
+                },
+                "ring_energy_hub": {
+                  "base": "1",
+                  "modifier": {
+                    "add": "2",
+                    "planet": {
+                      "OR": {
+                        "has_generator_designation": "yes",
+                        "has_building": "building_energy_nexus"
+                      }
+                    }
+                  }
+                },
+                "ring_food_hub": {
+                  "base": "1",
+                  "modifier": {
+                    "add": "2",
+                    "planet": {
+                      "OR": {
+                        "has_farming_designation": "yes",
+                        "has_building": "building_food_processing_center"
+                      }
+                    }
+                  }
+                },
+                "ring_consumer_goods_hub": {
+                  "base": "1",
+                  "modifier": {
+                    "add": "2",
+                    "planet": {
+                      "OR": {
+                        "has_factory_designation": "yes",
+                        "has_industrial_designation": "yes",
+                        "has_building": "building_factory_3"
+                      }
+                    }
+                  }
+                },
+                "ring_alloys_hub": {
+                  "base": "1",
+                  "modifier": {
+                    "add": "2",
+                    "planet": {
+                      "OR": {
+                        "has_foundry_designation": "yes",
+                        "has_industrial_designation": "yes",
+                        "has_building": "building_foundry_3"
+                      }
+                    }
+                  }
+                },
+                "ring_trade_hub": {
+                  "base": "1",
+                  "modifier": {
+                    "add": "2",
+                    "planet": {
+                      "OR": {
+                        "has_trade_designation": "yes",
+                        "has_building": "building_galactic_stock_exchange"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_starbase_types.txt",
+    "_line_number": 1139
+  },
+  "sorbital_shipyard": {
+    "sorbital_shipyard": {
+      "potential": {
+        "is_orbital_ring": "yes",
+        "has_starbase_module": "orbital_ring_shipyard"
+      },
+      "weight_modifier": {
+        "base": "0",
+        "complex_trigger_modifier": {
+          "trigger": "count_starbase_modules",
+          "parameters": {
+            "type": "orbital_ring_shipyard"
+          },
+          "mode": "add",
+          "mult": "100"
+        },
+        "modifier": {
+          "add": "1000",
+          "owner": {
+            "NOR": {
+              "any_owned_megastructure": {
+                "OR": {
+                  "is_megastructure_type": "mega_shipyard_restored"
+                }
+              },
+              "any_owned_starbase": {
+                "has_starbase_module": "orbital_ring_shipyard"
+              }
+            }
+          }
+        }
+      },
+      "ai_design": {
+        "min": {
+          "base": "0"
+        },
+        "_comments": [
+          "# token followed by priority"
+        ],
+        "buildings": {
+          "crew_quarters": {
+            "base": "1.00"
+          },
+          "hydroponics_bay": {
+            "base": "0.25"
+          }
+        },
+        "modules": {
+          "orbital_ring_shipyard": {
+            "base": "1.00"
+          }
+        }
+      }
+    },
+    "_source_file": "00_starbase_types.txt",
+    "_line_number": 1295
+  },
+  "sorbital_anchorage": {
+    "sorbital_anchorage": {
+      "potential": {
+        "is_orbital_ring": "yes",
+        "has_starbase_module": "orbital_ring_anchorage"
+      },
+      "weight_modifier": {
+        "base": "0",
+        "complex_trigger_modifier": {
+          "trigger": "count_starbase_modules",
+          "parameters": {
+            "type": "orbital_ring_anchorage"
+          },
+          "mode": "add",
+          "mult": "100"
+        }
+      },
+      "ai_design": {
+        "min": {
+          "base": "0"
+        },
+        "ratio": {
+          "base": "0"
+        },
+        "_comments": [
+          "# token followed by priority"
+        ],
+        "buildings": {
+          "naval_logistics_office": {
+            "base": "10.00"
+          },
+          "defense_grid": {
+            "base": "0.25"
+          },
+          "communications_jammer": {
+            "base": "0.25"
+          },
+          "nebula_refinery": {
+            "base": "2.00"
+          },
+          "hydroponics_bay": {
+            "base": "1.00"
+          }
+        },
+        "modules": {
+          "orbital_ring_anchorage": {
+            "base": "1.00"
+          },
+          "orbital_ring_habitation": {
+            "base": "0",
+            "modifier": {
+              "add": "1",
+              "planet": {
+                "num_free_districts": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_starbase_types.txt",
+    "_line_number": 1374
+  },
+  "sorbital_fortress": {
+    "sorbital_fortress": {
+      "potential": {
+        "is_orbital_ring": "yes",
+        "OR": {
+          "has_starbase_module": "orbital_ring_hangar_bay"
+        }
+      },
+      "ai_use_defense_platforms": "yes #AI will not build defense platforms otherwise, except in the capital system",
+      "weight_modifier": {
+        "base": "0",
+        "complex_trigger_modifier": {
+          "trigger": "count_starbase_modules",
+          "parameters": {
+            "type": "orbital_ring_hangar_bay"
+          },
+          "mode": "add",
+          "mult": "75"
+        }
+      },
+      "ai_design": {
+        "min": {
+          "base": "0"
+        },
+        "ratio": {
+          "base": "0"
+        },
+        "_comments": [
+          "# token followed by priority"
+        ],
+        "buildings": {
+          "target_uplink_computer": {
+            "base": "2.00"
+          },
+          "command_center": {
+            "base": "2.00"
+          },
+          "reloading_bay": {
+            "base": "2.00"
+          },
+          "defense_grid": {
+            "base": "1.00"
+          },
+          "communications_jammer": {
+            "base": "0.90"
+          },
+          "disruption_field": {
+            "base": "0.90"
+          }
+        },
+        "modules": {
+          "orbital_ring_hangar_bay": {
+            "base": "1.00",
+            "modifier": {
+              "factor": "3",
+              "owner": {
+                "is_preferred_weapons": "weapon_type_strike_craft"
+              }
+            }
+          },
+          "orbital_ring_missile_battery": {
+            "base": "1.00",
+            "modifier": {
+              "factor": "3",
+              "owner": {
+                "is_preferred_weapons": "weapon_type_explosive"
+              }
+            }
+          },
+          "orbital_ring_gun_battery": {
+            "base": "1.00",
+            "modifier": {
+              "factor": "3",
+              "owner": {
+                "OR": {
+                  "is_preferred_weapons": "weapon_type_kinetic"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_starbase_types.txt",
+    "_line_number": 1446
+  },
+  "sorbital_habitation": {
+    "sorbital_habitation": {
+      "potential": {
+        "is_orbital_ring": "yes",
+        "has_starbase_module": "orbital_ring_habitation"
+      },
+      "weight_modifier": {
+        "base": "0",
+        "complex_trigger_modifier": {
+          "trigger": "count_starbase_modules",
+          "parameters": {
+            "type": "orbital_ring_habitation"
+          },
+          "mode": "add",
+          "mult": "75"
+        }
+      },
+      "ai_design": {
+        "min": {
+          "base": "1"
+        },
+        "ratio": {
+          "base": "0.50",
+          "modifier": {
+            "add": "0.25",
+            "exists": "owner",
+            "owner": {
+              "is_pacifist": "yes"
+            }
+          }
+        },
+        "_comments": [
+          "# token followed by priority"
+        ],
+        "buildings": {
+          "ring_synapse_hub": {
+            "base": "1.00"
+          },
+          "ring_maintenance_hub": {
+            "base": "1.00"
+          },
+          "ring_bureaucracy_hub": {
+            "base": "0",
+            "modifier": {
+              "add": "3",
+              "planet": {
+                "OR": {
+                  "has_designation": "col_bureau_spiritualist",
+                  "has_building": "building_simulation_1"
+                }
+              }
+            }
+          },
+          "ring_minerals_hub": {
+            "base": "0",
+            "modifier": {
+              "add": "3",
+              "planet": {
+                "OR": {
+                  "has_designation": "col_mining",
+                  "has_building": "building_mineral_purification_hub"
+                }
+              }
+            }
+          },
+          "ring_energy_hub": {
+            "base": "0",
+            "modifier": {
+              "add": "3",
+              "planet": {
+                "OR": {
+                  "has_designation": "col_generator",
+                  "has_building": "building_energy_nexus"
+                }
+              }
+            }
+          },
+          "ring_food_hub": {
+            "base": "0",
+            "modifier": {
+              "add": "3",
+              "planet": {
+                "OR": {
+                  "has_designation": "col_farming",
+                  "has_building": "building_food_processing_center"
+                }
+              }
+            }
+          },
+          "ring_consumer_goods_hub": {
+            "base": "0",
+            "modifier": {
+              "add": "3",
+              "planet": {
+                "OR": {
+                  "has_designation": "col_factory",
+                  "has_building": "building_factory_3"
+                }
+              }
+            }
+          },
+          "ring_alloys_hub": {
+            "base": "0",
+            "modifier": {
+              "add": "3",
+              "planet": {
+                "OR": {
+                  "has_designation": "col_foundry",
+                  "has_building": "building_foundry_3"
+                }
+              }
+            }
+          },
+          "ring_trade_hub": {
+            "base": "1",
+            "modifier": {
+              "add": "2",
+              "planet": {
+                "OR": {
+                  "has_designation": "col_city",
+                  "has_building": "building_galactic_stock_exchange"
+                }
+              }
+            }
+          }
+        },
+        "modules": {
+          "orbital_ring_habitation": {
+            "base": "20.00"
+          }
+        }
+      }
+    },
+    "_source_file": "00_starbase_types.txt",
+    "_line_number": 1559
+  },
+  "sorbital_seeder": {
+    "sorbital_seeder": {
+      "potential": {
+        "is_orbital_ring": "yes",
+        "exists": "owner",
+        "owner": {
+          "NOT": {},
+          "weight_modifier": {
+            "base": "0",
+            "modifier": {
+              "add": "500",
+              "has_starbase_building": "ring_feeder"
+            }
+          },
+          "ai_design": {
+            "min": {
+              "base": "0"
+            },
+            "modules": {
+              "orbital_ring_habitation": {
+                "base": "5.00",
+                "modifier": {
+                  "factor": "2",
+                  "planet": {
+                    "num_free_districts": {}
+                  }
+                },
+                "orbital_ring_shipyard": {
+                  "base": "0.0 # Generally better to use normal starbases for this"
+                },
+                "orbital_ring_hatchery": {
+                  "base": "0.0 # Generally better to use normal starbases for this"
+                },
+                "orbital_ring_beastport": {
+                  "base": "0.0 # Generally better to use normal starbases for this"
+                },
+                "orbital_ring_anchorage": {
+                  "base": "0.0 # Generally better to use normal starbases for this"
+                },
+                "orbital_ring_gun_battery": {
+                  "base": "0.0"
+                },
+                "orbital_ring_missile_battery": {
+                  "base": "0.0"
+                },
+                "orbital_ring_hangar_bay": {
+                  "base": "1.00"
+                }
+              },
+              "_comments": [
+                "# token followed by priority"
+              ],
+              "buildings": {
+                "ring_feeder": {
+                  "base": "5.00",
+                  "modifier": {
+                    "add": "5.00",
+                    "solar_system": {
+                      "closest_system": {
+                        "limit": {
+                          "has_star_flag": "space_critter_system"
+                        },
+                        "min_steps": "0",
+                        "max_steps": "5"
+                      }
+                    }
+                  }
+                },
+                "ring_synapse_hub": {
+                  "base": "1.00"
+                },
+                "ring_maintenance_hub": {
+                  "base": "1.00"
+                },
+                "ring_bureaucracy_hub": {
+                  "base": "1",
+                  "modifier": {
+                    "add": "2",
+                    "planet": {
+                      "OR": {
+                        "has_unity_designation": "yes",
+                        "has_building": "building_simulation_1"
+                      }
+                    }
+                  }
+                },
+                "ring_energy_hub": {
+                  "base": "1",
+                  "modifier": {
+                    "add": "2",
+                    "planet": {
+                      "OR": {
+                        "has_generator_designation": "yes",
+                        "has_building": "building_energy_nexus"
+                      }
+                    }
+                  }
+                },
+                "ring_food_hub": {
+                  "base": "5",
+                  "modifier": {
+                    "add": "2",
+                    "planet": {
+                      "OR": {
+                        "has_farming_designation": "yes",
+                        "has_building": "building_food_processing_center"
+                      }
+                    }
+                  }
+                },
+                "ring_consumer_goods_hub": {
+                  "base": "1",
+                  "modifier": {
+                    "add": "2",
+                    "planet": {
+                      "OR": {
+                        "has_factory_designation": "yes",
+                        "has_industrial_designation": "yes",
+                        "has_building": "building_factory_3"
+                      }
+                    }
+                  }
+                },
+                "ring_trade_hub": {
+                  "base": "1",
+                  "modifier": {
+                    "add": "2",
+                    "planet": {
+                      "OR": {
+                        "has_trade_designation": "yes",
+                        "has_building": "building_galactic_stock_exchange"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_starbase_types.txt",
+    "_line_number": 1722
+  }
+}

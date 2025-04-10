@@ -1,0 +1,156 @@
+{
+  "portraits": {
+    "portraits": {
+      "_comments": [
+        "# Plantoid"
+      ],
+      "pla1": {
+        "character_textures": {}
+      },
+      "pla2": {
+        "character_textures": {}
+      },
+      "pla3": {
+        "character_textures": {}
+      },
+      "pla4": {
+        "character_textures": {}
+      },
+      "pla5": {
+        "character_textures": {}
+      },
+      "pla6": {
+        "character_textures": {}
+      },
+      "pla7": {
+        "character_textures": {}
+      },
+      "pla8": {
+        "character_textures": {}
+      },
+      "pla9": {
+        "character_textures": {}
+      },
+      "pla10": {
+        "character_textures": {}
+      },
+      "pla11": {
+        "character_textures": {}
+      },
+      "pla12": {
+        "character_textures": {}
+      },
+      "pla13": {
+        "character_textures": {}
+      },
+      "pla14": {
+        "character_textures": {}
+      },
+      "pla15": {
+        "character_textures": {}
+      },
+      "pla16_baol": {
+        "character_textures": {}
+      },
+      "pla17_m": {
+        "character_textures": {},
+        "custom_attachment_label": "HAIR_STYLE",
+        "custom_close_up_position_offset": {
+          "custom_close_up_scale": "1.50",
+          "custom_mid_close_up_position_offset": {
+            "custom_mid_close_up_scale": "0.85"
+          },
+          "pla17_f": {
+            "character_textures": {},
+            "custom_attachment_label": "HAIR_STYLE",
+            "custom_close_up_position_offset": {
+              "custom_close_up_scale": "1.50",
+              "custom_mid_close_up_position_offset": {
+                "custom_mid_close_up_scale": "0.85"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "08_portraits_plantoid.txt",
+    "_line_number": 18
+  },
+  "portrait_groups": {
+    "portrait_groups": {
+      "pla17": {
+        "default": "pla17_m",
+        "game_setup": {
+          "add": {
+            "trigger": {
+              "ruler": {
+                "OR": {
+                  "gender": "indeterminable"
+                }
+              }
+            },
+            "portraits": {}
+          }
+        },
+        "_comments": [
+          "#species scope"
+        ],
+        "species": {
+          "add": {
+            "trigger": {
+              "exists": "species",
+              "NOT": {},
+              "portraits": {}
+            },
+            "add": {
+              "trigger": {
+                "exists": "species",
+                "NOT": {},
+                "portraits": {}
+              }
+            },
+            "_comments": [
+              "#pop scope"
+            ],
+            "pop": {
+              "add": {
+                "trigger": {
+                  "NOT": {},
+                  "portraits": {}
+                },
+                "add": {
+                  "trigger": {
+                    "NOT": {},
+                    "portraits": {}
+                  }
+                },
+                "leader": {
+                  "add": {
+                    "trigger": {
+                      "OR": {
+                        "gender": "indeterminable"
+                      }
+                    },
+                    "portraits": {}
+                  }
+                },
+                "ruler": {
+                  "add": {
+                    "trigger": {
+                      "OR": {
+                        "gender": "indeterminable"
+                      }
+                    },
+                    "portraits": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "08_portraits_plantoid.txt",
+    "_line_number": 196
+  }
+}

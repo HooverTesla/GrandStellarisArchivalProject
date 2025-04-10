@@ -1,0 +1,233 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "preftl.10250",
+      "title": "preftl.10250.name",
+      "desc": "preftl.10250.desc",
+      "picture": "GFX_evt_civil_action",
+      "show_sound": "event_assembly_fight",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "is_country_type": "default",
+        "OR": {
+          "any_observed_pre_ftl_within_border": {
+            "is_under_open_technological_enlightenment": "root"
+          },
+          "any_pre_ftl_within_border": {
+            "has_country_flag": "violation_of_exploitation@root"
+          }
+        },
+        "is_galactic_community_formed": "yes",
+        "is_galactic_community_member": "yes",
+        "is_active_resolution": "resolution_pre_ftl_stances_exploitation",
+        "NOT": {
+          "has_country_flag": "resolution_breached_pre_ftl_stances_exploitation"
+        }
+      },
+      "immediate": {
+        "random_pre_ftl_within_border": {
+          "limit": {
+            "OR": {
+              "has_country_flag": "violation_of_exploitation@root",
+              "AND": {
+                "capital_scope": {
+                  "has_observation_outpost": "yes"
+                },
+                "is_under_open_technological_enlightenment": "root"
+              }
+            }
+          },
+          "save_event_target_as": "pre_ftl_country",
+          "remove_country_flag": "violation_of_exploitation@root"
+        },
+        "set_timed_country_flag": {
+          "flag": "resolution_breached_pre_ftl_stances_exploitation",
+          "days": "3600"
+        }
+      },
+      "option": {
+        "name": "CURSES",
+        "add_resource": {}
+      }
+    },
+    "_source_file": "first_contact_dlc_situation_events.txt",
+    "_line_number": 8286
+  },
+  "situation_event": {
+    "situation_event": {
+      "id": "preftl.2205",
+      "title": "preftl.2205.name",
+      "desc": {
+        "trigger": {
+          "has_situation_flag": "total_revolution_nwo"
+        },
+        "text": "preftl.2205.b.desc"
+      },
+      "picture": "GFX_evt_surrender",
+      "show_sound": "event_screams",
+      "location": "target",
+      "situation": "this",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "NOT": {
+          "has_situation_flag": "year_zero_nwo"
+        }
+      },
+      "immediate": {
+        "set_situation_flag": "year_zero_nwo",
+        "if": {
+          "limit": {
+            "target.owner": {
+              "NOT": {
+                "current_awareness_level": "full"
+              }
+            }
+          },
+          "owner": {
+            "set_country_flag": "society_insights",
+            "set_predictive_observation_insight": {
+              "VALUE": "10"
+            }
+          }
+        }
+      },
+      "option": {
+        "trigger": {
+          "current_situation_approach": "approach_aid_leader"
+        },
+        "name": "preftl.2205.a",
+        "target.owner": {
+          "shift_ethic": "ethic_egalitarian",
+          "random_owned_pop": {
+            "limit": {
+              "NOT": {
+                "pop_has_ethic": "ethic_fanatic_egalitarian"
+              }
+            },
+            "if": {
+              "limit": {
+                "pop_remove_ethic": "ethic_authoritarian"
+              },
+              "pop_change_ethic": "ethic_fanatic_egalitarian"
+            }
+          },
+          "owner": {
+            "add_monthly_resource_mult": {
+              "resource": "society_research",
+              "value": "@tier3researchreward",
+              "min": "@tier3researchmin",
+              "max": "@tier3researchmax"
+            }
+          },
+          "if": {
+            "limit": {
+              "target.owner": {
+                "NOT": {
+                  "current_awareness_level": "full"
+                }
+              }
+            },
+            "owner": {
+              "add_observation_insight_effect": {
+                "VALUE": "10",
+                "OUTPOST": "root.target.observation_outpost"
+              }
+            }
+          }
+        },
+        "after": {
+          "destroy_situation": "this",
+          "remove_global_flag": "ongoing_nwo_situation",
+          "target": {
+            "remove_planet_flag": "has_on_going_observation_situation",
+            "hidden_effect": {
+              "owner": {
+                "ruler": {
+                  "exile_leader_as": "deposed_nwo_ruler"
+                },
+                "create_leader": {
+                  "class": "official",
+                  "species": "this",
+                  "name": "random",
+                  "skill": "1"
+                },
+                "set_leader": "last_created_leader",
+                "every_owned_army": {
+                  "remove_army": "yes"
+                },
+                "capital_scope": {
+                  "observation_outpost": {
+                    "set_event_locked": "no"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "first_contact_dlc_situation_events.txt",
+    "_line_number": 7427
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "preftl.41",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "from.owner",
+        "from.owner": {
+          "is_primitive": "yes"
+        }
+      },
+      "immediate": {
+        "from.owner": {
+          "save_event_target_as": "contact_empire"
+        },
+        "if": {
+          "limit": {
+            "from.owner": {
+              "OR": {
+                "has_country_flag": "reached_full_awareness_once",
+                "current_awareness_level": "full"
+              }
+            }
+          },
+          "owner": {
+            "country_event": {}
+          }
+        }
+      }
+    },
+    "_source_file": "first_contact_dlc_situation_events.txt",
+    "_line_number": 285
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "preftl.10300",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "owner",
+        "owner": {
+          "is_primitive": "yes",
+          "NOT": {}
+        },
+        "immediate": {
+          "owner": {
+            "set_timed_country_flag": {
+              "flag": "recent_bombarded",
+              "days": "30"
+            },
+            "add_opinion_modifier": {
+              "who": "from",
+              "modifier": "opinon_pre_ftl_bombard"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "first_contact_dlc_situation_events.txt",
+    "_line_number": 8379
+  }
+}

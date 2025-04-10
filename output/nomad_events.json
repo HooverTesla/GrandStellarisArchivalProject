@@ -1,0 +1,146 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "nomad.530",
+      "title": "nomad.500.title",
+      "desc": {
+        "text": "nomad.530.desc.15ships",
+        "trigger": {
+          "NOT": {},
+          "immediate": {
+            "event_target:nomad01_country": {
+              "set_country_flag": "nomad_ships_sold",
+              "random_controlled_ship": {
+                "limit": {
+                  "fleet": {
+                    "has_fleet_flag": "nomad_fleet"
+                  }
+                },
+                "fleet": {
+                  "save_event_target_as": "nomad_fleet"
+                }
+              }
+            },
+            "create_fleet": {
+              "name": "NAME_Nomad_Delivery",
+              "effect": {
+                "set_owner": "root",
+                "create_ship_design": {
+                  "design": "NAME_Nomad_Cruiser"
+                },
+                "while": {
+                  "count": "5",
+                  "create_ship": {
+                    "design": "last_created_design",
+                    "upgradable": "no"
+                  }
+                },
+                "set_location": {
+                  "target": "root.capital_scope",
+                  "distance": "5",
+                  "angle": "random"
+                }
+              }
+            },
+            "if": {
+              "limit": {
+                "has_country_flag": "double_fleet"
+              },
+              "create_fleet": {
+                "name": "NAME_Redirected_Nomad_Delivery",
+                "effect": {
+                  "set_owner": "root",
+                  "create_ship_design": {
+                    "design": "NAME_Nomad_Cruiser"
+                  },
+                  "while": {
+                    "count": "10",
+                    "create_ship": {
+                      "design": "last_created_design",
+                      "upgradable": "no"
+                    }
+                  },
+                  "set_location": {
+                    "target": "root.capital_scope",
+                    "distance": "15",
+                    "angle": "random"
+                  }
+                }
+              }
+            }
+          },
+          "option": {
+            "name": "OK",
+            "hidden_effect": {
+              "event_target:nomad_fleet": {
+                "remove_fleet_flag": "nomad_on_mission",
+                "fleet_event": {}
+              }
+            }
+          }
+        },
+        "desc": {
+          "text": "nomad.530.desc.30ships",
+          "trigger": {
+            "has_country_flag": "double_fleet"
+          }
+        },
+        "picture": "GFX_evt_unknown_ships",
+        "show_sound": "event_ship_thrusters",
+        "location": "root.capital_scope",
+        "is_triggered_only": "yes"
+      }
+    },
+    "_source_file": "nomad_events.txt",
+    "_line_number": 3696
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "nomad.499",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "event_target:nomad_contact_country": {
+          "NOT": {}
+        },
+        "immediate": {
+          "save_event_target_as": "nomad_fleet",
+          "set_fleet_flag": "nomad_on_mission",
+          "clear_fleet_actions": "this",
+          "queue_actions": {
+            "repeat": {
+              "max_iterations": "1",
+              "find_closest_planet": {
+                "found_planet": {
+                  "move_to": "this",
+                  "orbit_planet": "this",
+                  "wait": {
+                    "duration": "14"
+                  },
+                  "effect": {
+                    "id": "nomad.499.orbit_planet",
+                    "event_target:nomad_contact_country": {
+                      "country_event": {}
+                    }
+                  },
+                  "failed": {
+                    "effect": {
+                      "id": "nomad.499.failed",
+                      "event_target:nomad_fleet": {
+                        "remove_fleet_flag": "nomad_on_mission",
+                        "fleet_event": {},
+                        "owner": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "nomad_events.txt",
+    "_line_number": 2901
+  }
+}

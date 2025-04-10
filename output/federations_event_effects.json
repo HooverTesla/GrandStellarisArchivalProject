@@ -1,0 +1,2786 @@
+{
+  "create_lesser_messenger": {
+    "create_lesser_messenger": {
+      "custom_tooltip": "get_messenger",
+      "hidden_effect": {
+        "owner": {
+          "create_fleet": {
+            "name": "NAME_Lesser_Messenger",
+            "settings": {
+              "spawn_debris": "no"
+            },
+            "effect": {
+              "set_owner": "prev",
+              "create_ship_design": {
+                "design": "NAME_Lessenger"
+              },
+              "create_ship": {
+                "name": "NAME_Lesser_Messenger",
+                "design": "last_created_design",
+                "prefix": "no",
+                "upgradable": "no"
+              },
+              "set_location": "fromfrom.planet",
+              "set_lessenger_damage": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 3
+  },
+  "set_lessenger_damage": {
+    "set_lessenger_damage": {
+      "random_list": {
+        "33": {
+          "add_modifier": {
+            "modifier": "lessenger_25",
+            "days": "-1"
+          },
+          "enable_special_project": {
+            "name": "LESSENGER_REMODEL",
+            "owner": "this.owner",
+            "location": "this"
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 31
+  },
+  "remove_lessenger_damage": {
+    "remove_lessenger_damage": {
+      "every_controlled_ship": {
+        "remove_modifier": "lessenger_25"
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 69
+  },
+  "scion_engineering_tech": {
+    "scion_engineering_tech": {
+      "if": {
+        "limit": {
+          "NOT": {
+            "can_research_technology": "tech_alloys_1"
+          },
+          "give_technology": {},
+          "else_if": {
+            "limit": {
+              "NOT": {
+                "can_research_technology": "tech_mineral_purification_2"
+              },
+              "give_technology": {},
+              "else_if": {
+                "limit": {
+                  "NOT": {
+                    "can_research_technology": "tech_space_defense_station_improvement"
+                  },
+                  "give_technology": {},
+                  "else_if": {
+                    "limit": {
+                      "NOT": {
+                        "can_research_technology": "tech_battleships"
+                      },
+                      "give_technology": {},
+                      "else_if": {
+                        "limit": {
+                          "NOT": {
+                            "can_research_technology": "tech_battleship_hull_2"
+                          },
+                          "give_technology": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 77
+  },
+  "scion_physics_tech": {
+    "scion_physics_tech": {
+      "if": {
+        "limit": {
+          "NOT": {
+            "can_research_technology": "tech_space_science_2"
+          },
+          "give_technology": {},
+          "else_if": {
+            "limit": {
+              "NOT": {
+                "can_research_technology": "tech_self_aware_logic"
+              },
+              "give_technology": {},
+              "else_if": {
+                "limit": {
+                  "NOT": {
+                    "can_research_technology": "tech_antimatter_power"
+                  },
+                  "give_technology": {},
+                  "else_if": {
+                    "limit": {
+                      "NOT": {
+                        "can_research_technology": "tech_combat_computers_autonomous"
+                      },
+                      "give_technology": {},
+                      "else_if": {
+                        "limit": {
+                          "NOT": {
+                            "can_research_technology": "tech_jump_drive_1"
+                          },
+                          "give_technology": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 115
+  },
+  "scion_society_tech": {
+    "scion_society_tech": {
+      "if": {
+        "limit": {
+          "NOT": {
+            "can_research_technology": "tech_eco_simulation"
+          },
+          "give_technology": {},
+          "else_if": {
+            "limit": {
+              "NOT": {
+                "can_research_technology": "tech_colonization_4"
+              },
+              "give_technology": {},
+              "else_if": {
+                "limit": {
+                  "NOT": {
+                    "can_research_technology": "tech_climate_restoration"
+                  },
+                  "give_technology": {},
+                  "else_if": {
+                    "limit": {
+                      "NOT": {
+                        "can_research_technology": "tech_ascension_theory"
+                      },
+                      "give_technology": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 153
+  },
+  "federation_origin_planet_setup": {
+    "federation_origin_planet_setup": {
+      "if": {
+        "limit": {
+          "any_system_planet": {
+            "habitable_planet": "yes"
+          }
+        },
+        "random_system_planet": {
+          "limit": {
+            "set_planet_size": "18",
+            "random_list": {
+              "1": {
+                "1": {
+                  "1": {
+                    "1": {
+                      "1": {
+                        "1": {
+                          "1": {
+                            "1": {
+                              "1": {},
+                              "reroll_planet": "yes",
+                              "save_event_target_as": "fed_planet_$NUM$"
+                            }
+                          },
+                          "else": {
+                            "random_system_planet": {
+                              "limit": {
+                                "set_planet_size": "18",
+                                "random_list": {
+                                  "1": {
+                                    "1": {
+                                      "1": {
+                                        "1": {
+                                          "1": {
+                                            "1": {
+                                              "1": {
+                                                "1": {
+                                                  "1": {},
+                                                  "reroll_planet": "yes",
+                                                  "save_event_target_as": "fed_planet_$NUM$"
+                                                }
+                                              },
+                                              "add_extra_hyperlane_to_spawned_system_effect": "yes"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 184
+  },
+  "scion_fe_intervention": {
+    "scion_fe_intervention": {
+      "if": {
+        "limit": {
+          "root": {},
+          "else_if": {
+            "limit": {
+              "fleet_power >": "2000"
+            },
+            "root": {},
+            "else_if": {
+              "limit": {
+                "fleet_power >": "4000"
+              },
+              "root": {},
+              "else_if": {
+                "limit": {
+                  "fleet_power >": "6000"
+                },
+                "root": {},
+                "else_if": {
+                  "limit": {
+                    "fleet_power >": "10000"
+                  },
+                  "root": {},
+                  "else_if": {
+                    "limit": {
+                      "fleet_power >": "20000"
+                    },
+                    "root": {},
+                    "else_if": {
+                      "limit": {
+                        "fleet_power >": "40000"
+                      },
+                      "root": {},
+                      "else_if": {
+                        "limit": {
+                          "fleet_power >": "60000"
+                        },
+                        "root": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 231
+  },
+  "create_fe_intervention_leader": {
+    "create_fe_intervention_leader": {
+      "create_leader": {
+        "class": "commander",
+        "species": "event_target:fe_species",
+        "name": "random",
+        "skill": "7",
+        "event_leader": "yes\t# prevents this leader from leading factions and winning elections",
+        "effect": {
+          "save_event_target_as": "fe_intervention_admiral"
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 286
+  },
+  "create_fe_intervention_1": {
+    "create_fe_intervention_1": {
+      "set_country_flag": "borrowed_fleet_from@event_target:scion_master",
+      "create_fe_intervention_leader": "yes",
+      "capital_scope": {
+        "create_fleet": {
+          "effect": {
+            "set_owner": "root",
+            "set_fleet_flag": "scion_borrowed_fleet",
+            "while": {
+              "count": "1",
+              "create_fallen_empire_small_ship": "yes"
+            },
+            "set_location": {
+              "target": "prev",
+              "distance": "45",
+              "angle": "random"
+            },
+            "assign_leader": "event_target:fe_intervention_admiral"
+          },
+          "settings": {
+            "can_upgrade": "no",
+            "can_disband": "no",
+            "can_change_composition": "no",
+            "can_change_leader": "no",
+            "uses_naval_capacity": "no"
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 299
+  },
+  "create_fe_intervention_2": {
+    "create_fe_intervention_2": {
+      "set_country_flag": "borrowed_fleet_from@event_target:scion_master",
+      "create_fe_intervention_leader": "yes",
+      "capital_scope": {
+        "create_fleet": {
+          "effect": {
+            "set_owner": "root",
+            "set_fleet_flag": "scion_borrowed_fleet",
+            "while": {
+              "count": "3",
+              "create_fallen_empire_small_ship": "yes"
+            },
+            "set_location": {
+              "target": "prev",
+              "distance": "45",
+              "angle": "random"
+            },
+            "assign_leader": "event_target:fe_intervention_admiral"
+          },
+          "settings": {
+            "can_upgrade": "no",
+            "can_disband": "no",
+            "can_change_composition": "no",
+            "can_change_leader": "no",
+            "uses_naval_capacity": "no"
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 330
+  },
+  "create_fe_intervention_3": {
+    "create_fe_intervention_3": {
+      "set_country_flag": "borrowed_fleet_from@event_target:scion_master",
+      "create_fe_intervention_leader": "yes",
+      "capital_scope": {
+        "create_fleet": {
+          "effect": {
+            "set_owner": "root",
+            "set_fleet_flag": "scion_borrowed_fleet",
+            "while": {
+              "count": "1",
+              "create_fallen_empire_large_ship": "yes"
+            },
+            "set_location": {
+              "target": "prev",
+              "distance": "45",
+              "angle": "random"
+            },
+            "assign_leader": "event_target:fe_intervention_admiral"
+          },
+          "settings": {
+            "can_upgrade": "no",
+            "can_disband": "no",
+            "can_change_composition": "no",
+            "can_change_leader": "no",
+            "uses_naval_capacity": "no"
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 361
+  },
+  "create_fe_intervention_4": {
+    "create_fe_intervention_4": {
+      "set_country_flag": "borrowed_fleet_from@event_target:scion_master",
+      "create_fe_intervention_leader": "yes",
+      "capital_scope": {
+        "create_fleet": {
+          "effect": {
+            "set_owner": "root",
+            "set_fleet_flag": "scion_borrowed_fleet",
+            "while": {
+              "count": "2",
+              "create_fallen_empire_small_ship": "yes"
+            },
+            "set_location": {
+              "target": "prev",
+              "distance": "45",
+              "angle": "random"
+            },
+            "assign_leader": "event_target:fe_intervention_admiral"
+          },
+          "settings": {
+            "can_upgrade": "no",
+            "can_disband": "no",
+            "can_change_composition": "no",
+            "can_change_leader": "no",
+            "uses_naval_capacity": "no"
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 392
+  },
+  "create_fe_intervention_5": {
+    "create_fe_intervention_5": {
+      "set_country_flag": "borrowed_fleet_from@event_target:scion_master",
+      "create_fe_intervention_leader": "yes",
+      "capital_scope": {
+        "create_fleet": {
+          "effect": {
+            "set_owner": "root",
+            "set_fleet_flag": "scion_borrowed_fleet",
+            "while": {
+              "count": "4",
+              "create_fallen_empire_small_ship": "yes"
+            },
+            "set_location": {
+              "target": "prev",
+              "distance": "45",
+              "angle": "random"
+            },
+            "assign_leader": "event_target:fe_intervention_admiral"
+          },
+          "settings": {
+            "can_upgrade": "no",
+            "can_disband": "no",
+            "can_change_composition": "no",
+            "can_change_leader": "no",
+            "uses_naval_capacity": "no"
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 427
+  },
+  "create_fe_intervention_6": {
+    "create_fe_intervention_6": {
+      "set_country_flag": "borrowed_fleet_from@event_target:scion_master",
+      "create_fe_intervention_leader": "yes",
+      "capital_scope": {
+        "create_fleet": {
+          "effect": {
+            "set_owner": "root",
+            "set_fleet_flag": "scion_borrowed_fleet",
+            "while": {
+              "count": "4",
+              "create_fallen_empire_small_ship": "yes"
+            },
+            "set_location": {
+              "target": "prev",
+              "distance": "45",
+              "angle": "random"
+            },
+            "assign_leader": "event_target:fe_intervention_admiral"
+          },
+          "settings": {
+            "can_upgrade": "no",
+            "can_disband": "no",
+            "can_change_composition": "no",
+            "can_change_leader": "no",
+            "uses_naval_capacity": "no"
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 462
+  },
+  "create_fe_intervention_7": {
+    "create_fe_intervention_7": {
+      "set_country_flag": "borrowed_fleet_from@event_target:scion_master",
+      "create_fe_intervention_leader": "yes",
+      "capital_scope": {
+        "create_fleet": {
+          "effect": {
+            "set_owner": "root",
+            "set_fleet_flag": "scion_borrowed_fleet",
+            "while": {
+              "count": "6",
+              "create_fallen_empire_small_ship": "yes"
+            },
+            "set_location": {
+              "target": "prev",
+              "distance": "45",
+              "angle": "random"
+            },
+            "assign_leader": "event_target:fe_intervention_admiral"
+          },
+          "settings": {
+            "can_upgrade": "no",
+            "can_disband": "no",
+            "can_change_composition": "no",
+            "can_change_leader": "no",
+            "uses_naval_capacity": "no"
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 497
+  },
+  "create_fe_intervention_8": {
+    "create_fe_intervention_8": {
+      "set_country_flag": "borrowed_fleet_from@event_target:scion_master",
+      "create_fe_intervention_leader": "yes",
+      "capital_scope": {
+        "create_fleet": {
+          "effect": {
+            "set_owner": "root",
+            "set_fleet_flag": "scion_borrowed_fleet",
+            "while": {
+              "count": "12",
+              "create_fallen_empire_small_ship": "yes"
+            },
+            "set_location": {
+              "target": "prev",
+              "distance": "45",
+              "angle": "random"
+            },
+            "assign_leader": "event_target:fe_intervention_admiral"
+          },
+          "settings": {
+            "can_upgrade": "no",
+            "can_disband": "no",
+            "can_change_composition": "no",
+            "can_change_leader": "no",
+            "uses_naval_capacity": "no"
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 532
+  },
+  "spawn_random_home_system": {
+    "spawn_random_home_system": {
+      "random_list": {
+        "1": {
+          "1": {
+            "1": {
+              "1": {
+                "1": {
+                  "1": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 566
+  },
+  "create_fed_planet_1_species": {
+    "create_fed_planet_1_species": {
+      "if": {
+        "limit": {
+          "root": {
+            "is_machine_empire": "yes"
+          }
+        },
+        "random_list": {
+          "50": {
+            "create_species": {
+              "name": "random",
+              "class": "$CLASS$",
+              "portrait": "random",
+              "traits": "random",
+              "homeworld": "this"
+            }
+          }
+        }
+      },
+      "else": {
+        "create_species": {
+          "name": "random",
+          "class": "$CLASS$",
+          "portrait": "random",
+          "traits": "random",
+          "homeworld": "this"
+        }
+      },
+      "last_created_species": {
+        "save_event_target_as": "fed_planet_1_species"
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 577
+  },
+  "create_fed_planet_2_species": {
+    "create_fed_planet_2_species": {
+      "if": {
+        "limit": {
+          "root": {
+            "is_machine_empire": "yes"
+          }
+        },
+        "random_list": {
+          "50": {
+            "create_species": {
+              "name": "random",
+              "class": "$CLASS$",
+              "portrait": "random",
+              "traits": "random",
+              "homeworld": "this"
+            }
+          }
+        }
+      },
+      "else": {
+        "create_species": {
+          "name": "random",
+          "class": "$CLASS$",
+          "portrait": "random",
+          "traits": "random",
+          "homeworld": "this"
+        }
+      },
+      "last_created_species": {
+        "save_event_target_as": "fed_planet_2_species"
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 619
+  },
+  "machine_federation_member_civic_fix": {
+    "machine_federation_member_civic_fix": {
+      "if": {
+        "limit": {
+          "OR": {
+            "has_civic": "civic_machine_assimilator"
+          }
+        },
+        "force_remove_civic": "civic_machine_assimilator",
+        "if": {
+          "limit": {
+            "has_civic": "civic_machine_delegated_functions"
+          },
+          "force_add_civic": "civic_machine_maintenance_protocols"
+        },
+        "else": {
+          "force_add_civic": "civic_machine_delegated_functions"
+        }
+      },
+      "set_origin": "origin_common_ground_npc"
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 661
+  },
+  "hive_federation_member_civic_fix": {
+    "hive_federation_member_civic_fix": {
+      "if": {
+        "limit": {
+          "has_civic": "civic_hive_devouring_swarm"
+        },
+        "force_remove_civic": "civic_hive_devouring_swarm",
+        "if": {
+          "limit": {
+            "has_civic": "civic_hive_empath"
+          },
+          "force_add_civic": "civic_hive_divided_attention"
+        },
+        "else": {
+          "force_add_civic": "civic_hive_empath"
+        }
+      },
+      "set_origin": "origin_common_ground_npc"
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 686
+  },
+  "create_common_ground_member": {
+    "create_common_ground_member": {
+      "_comments": [
+        "# If the federation member species is a machine, make them a machine intelligence.",
+        "# Otherwise, weighted random for their ethics."
+      ],
+      "if": {
+        "limit": {
+          "event_target:fed_planet_$NUM$_species": {
+            "is_species_class": "MACHINE"
+          }
+        },
+        "event_target:fed_planet_$NUM$_species": {
+          "modify_species": {
+            "species": "this",
+            "add_trait": "trait_machine_unit",
+            "effect": {
+              "save_event_target_as": "fed_planet_$NUM$_species"
+            }
+          }
+        },
+        "create_country": {
+          "name_list": "random",
+          "species": "event_target:fed_planet_$NUM$_species",
+          "type": "default",
+          "origin": "origin_default",
+          "ignore_initial_colony_error": "yes",
+          "day_zero_contact": "no",
+          "ethos": {
+            "ethic": "ethic_gestalt_consciousness"
+          },
+          "authority": "auth_machine_intelligence",
+          "effect": {
+            "machine_federation_member_civic_fix": "yes",
+            "save_event_target_as": "fed_member_$NUM$",
+            "establish_communications_no_message": "root"
+          }
+        }
+      },
+      "else": {
+        "random_list": {
+          "1": {
+            "modifier": {
+              "factor": "10",
+              "root": {},
+              "modifier": {
+                "factor": "0",
+                "has_utopia": "no"
+              },
+              "event_target:fed_planet_$NUM$_species": {
+                "modify_species": {
+                  "species": "this",
+                  "add_trait": "trait_hive_mind",
+                  "effect": {
+                    "save_event_target_as": "fed_planet_$NUM$_species"
+                  }
+                }
+              },
+              "create_country": {
+                "name_list": "random",
+                "species": "event_target:fed_planet_$NUM$_species",
+                "type": "default",
+                "origin": "origin_default",
+                "ignore_initial_colony_error": "yes",
+                "day_zero_contact": "no",
+                "ethos": {
+                  "ethic": "ethic_gestalt_consciousness"
+                },
+                "authority": "auth_hive_mind",
+                "effect": {
+                  "hive_federation_member_civic_fix": "yes",
+                  "save_event_target_as": "fed_member_$NUM$",
+                  "establish_communications_no_message": "root"
+                }
+              }
+            },
+            "1": {
+              "modifier": {
+                "factor": "10",
+                "root": {},
+                "modifier": {
+                  "factor": "0",
+                  "root": {},
+                  "create_country": {
+                    "name_list": "random",
+                    "species": "event_target:fed_planet_$NUM$_species",
+                    "type": "default",
+                    "origin": "origin_common_ground_npc",
+                    "ignore_initial_colony_error": "yes",
+                    "day_zero_contact": "no",
+                    "randomize_ethos": "yes",
+                    "ethos": {
+                      "ethic": "ethic_fanatic_spiritualist"
+                    },
+                    "effect": {
+                      "save_event_target_as": "fed_member_$NUM$",
+                      "establish_communications_no_message": "root"
+                    }
+                  }
+                },
+                "1": {
+                  "modifier": {
+                    "factor": "10",
+                    "root": {},
+                    "create_country": {
+                      "name_list": "random",
+                      "species": "event_target:fed_planet_$NUM$_species",
+                      "type": "default",
+                      "origin": "origin_common_ground_npc",
+                      "ignore_initial_colony_error": "yes",
+                      "day_zero_contact": "no",
+                      "randomize_ethos": "yes",
+                      "ethos": {
+                        "ethic": "ethic_fanatic_militarist"
+                      },
+                      "effect": {
+                        "save_event_target_as": "fed_member_$NUM$",
+                        "establish_communications_no_message": "root"
+                      }
+                    }
+                  },
+                  "1": {
+                    "modifier": {
+                      "factor": "10",
+                      "root": {},
+                      "create_country": {
+                        "name_list": "random",
+                        "species": "event_target:fed_planet_$NUM$_species",
+                        "type": "default",
+                        "origin": "origin_common_ground_npc",
+                        "ignore_initial_colony_error": "yes",
+                        "day_zero_contact": "no",
+                        "randomize_ethos": "yes",
+                        "ethos": {
+                          "ethic": "ethic_fanatic_pacifist"
+                        },
+                        "effect": {
+                          "save_event_target_as": "fed_member_$NUM$",
+                          "establish_communications_no_message": "root"
+                        }
+                      }
+                    },
+                    "1": {
+                      "modifier": {
+                        "factor": "10",
+                        "root": {},
+                        "create_country": {
+                          "name_list": "random",
+                          "species": "event_target:fed_planet_$NUM$_species",
+                          "type": "default",
+                          "origin": "origin_common_ground_npc",
+                          "ignore_initial_colony_error": "yes",
+                          "day_zero_contact": "no",
+                          "randomize_ethos": "yes",
+                          "ethos": {
+                            "ethic": "ethic_fanatic_authoritarian"
+                          },
+                          "effect": {
+                            "save_event_target_as": "fed_member_$NUM$",
+                            "establish_communications_no_message": "root"
+                          }
+                        }
+                      },
+                      "1": {
+                        "modifier": {
+                          "factor": "10",
+                          "root": {},
+                          "create_country": {
+                            "name_list": "random",
+                            "species": "event_target:fed_planet_$NUM$_species",
+                            "type": "default",
+                            "origin": "origin_common_ground_npc",
+                            "ignore_initial_colony_error": "yes",
+                            "day_zero_contact": "no",
+                            "randomize_ethos": "yes",
+                            "ethos": {
+                              "ethic": "ethic_fanatic_egalitarian"
+                            },
+                            "effect": {
+                              "save_event_target_as": "fed_member_$NUM$",
+                              "establish_communications_no_message": "root"
+                            }
+                          }
+                        },
+                        "5": {
+                          "create_country": {
+                            "name_list": "random",
+                            "species": "event_target:fed_planet_$NUM$_species",
+                            "type": "default",
+                            "origin": "origin_common_ground_npc",
+                            "ignore_initial_colony_error": "yes",
+                            "day_zero_contact": "no",
+                            "randomize_ethos": "yes",
+                            "ethos": {
+                              "ethic": "ethic_fanatic_xenophile"
+                            },
+                            "effect": {
+                              "save_event_target_as": "fed_member_$NUM$",
+                              "establish_communications_no_message": "root"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 705
+  },
+  "create_hegemon_member": {
+    "create_hegemon_member": {
+      "_comments": [
+        "# If the federation member species is a machine, make them a machine intelligence."
+      ],
+      "if": {
+        "limit": {
+          "event_target:fed_planet_$NUM$_species": {
+            "is_species_class": "MACHINE"
+          }
+        },
+        "event_target:fed_planet_$NUM$_species": {
+          "modify_species": {
+            "species": "this",
+            "add_trait": "trait_machine_unit",
+            "effect": {
+              "save_event_target_as": "fed_planet_$NUM$_species"
+            }
+          }
+        },
+        "create_country": {
+          "name_list": "random",
+          "species": "event_target:fed_planet_$NUM$_species",
+          "type": "default",
+          "origin": "origin_default",
+          "ignore_initial_colony_error": "yes",
+          "day_zero_contact": "no",
+          "ethos": {
+            "ethic": "ethic_gestalt_consciousness"
+          },
+          "authority": "auth_machine_intelligence",
+          "effect": {
+            "machine_federation_member_civic_fix": "yes",
+            "save_event_target_as": "fed_member_$NUM$",
+            "establish_communications_no_message": "root"
+          }
+        }
+      },
+      "else": {
+        "random_list": {
+          "1": {
+            "modifier": {
+              "factor": "10",
+              "root": {},
+              "modifier": {
+                "factor": "0",
+                "has_utopia": "no"
+              },
+              "event_target:fed_planet_$NUM$_species": {
+                "modify_species": {
+                  "species": "this",
+                  "add_trait": "trait_hive_mind",
+                  "effect": {
+                    "save_event_target_as": "fed_planet_$NUM$_species"
+                  }
+                }
+              },
+              "create_country": {
+                "name_list": "random",
+                "species": "event_target:fed_planet_$NUM$_species",
+                "type": "default",
+                "origin": "origin_default",
+                "ignore_initial_colony_error": "yes",
+                "day_zero_contact": "no",
+                "ethos": {
+                  "ethic": "ethic_gestalt_consciousness"
+                },
+                "authority": "auth_hive_mind",
+                "effect": {
+                  "hive_federation_member_civic_fix": "yes",
+                  "save_event_target_as": "fed_member_$NUM$",
+                  "establish_communications_no_message": "root"
+                }
+              }
+            },
+            "1": {
+              "modifier": {
+                "factor": "10",
+                "root": {},
+                "modifier": {
+                  "factor": "0",
+                  "root": {},
+                  "create_country": {
+                    "name": "random",
+                    "name_list": "random",
+                    "species": "event_target:fed_planet_$NUM$_species",
+                    "type": "default",
+                    "origin": "origin_hegemon_npc",
+                    "ignore_initial_colony_error": "yes",
+                    "day_zero_contact": "no",
+                    "randomize_ethos": "yes",
+                    "ethos": {
+                      "ethic": "ethic_fanatic_spiritualist"
+                    },
+                    "effect": {
+                      "save_event_target_as": "fed_member_$NUM$",
+                      "establish_communications_no_message": "root"
+                    }
+                  }
+                },
+                "1": {
+                  "modifier": {
+                    "factor": "10",
+                    "root": {},
+                    "create_country": {
+                      "name": "random",
+                      "name_list": "random",
+                      "species": "event_target:fed_planet_$NUM$_species",
+                      "type": "default",
+                      "origin": "origin_hegemon_npc",
+                      "ignore_initial_colony_error": "yes",
+                      "day_zero_contact": "no",
+                      "randomize_ethos": "yes",
+                      "ethos": {
+                        "ethic": "ethic_fanatic_militarist"
+                      },
+                      "effect": {
+                        "save_event_target_as": "fed_member_$NUM$",
+                        "establish_communications_no_message": "root"
+                      }
+                    }
+                  },
+                  "1": {
+                    "modifier": {
+                      "factor": "10",
+                      "root": {},
+                      "create_country": {
+                        "name": "random",
+                        "name_list": "random",
+                        "species": "event_target:fed_planet_$NUM$_species",
+                        "type": "default",
+                        "origin": "origin_hegemon_npc",
+                        "ignore_initial_colony_error": "yes",
+                        "day_zero_contact": "no",
+                        "randomize_ethos": "yes",
+                        "ethos": {
+                          "ethic": "ethic_fanatic_pacifist"
+                        },
+                        "effect": {
+                          "save_event_target_as": "fed_member_$NUM$",
+                          "establish_communications_no_message": "root"
+                        }
+                      }
+                    },
+                    "1": {
+                      "modifier": {
+                        "factor": "10",
+                        "root": {},
+                        "create_country": {
+                          "name": "random",
+                          "name_list": "random",
+                          "species": "event_target:fed_planet_$NUM$_species",
+                          "type": "default",
+                          "origin": "origin_hegemon_npc",
+                          "ignore_initial_colony_error": "yes",
+                          "day_zero_contact": "no",
+                          "randomize_ethos": "yes",
+                          "ethos": {
+                            "ethic": "ethic_fanatic_authoritarian"
+                          },
+                          "effect": {
+                            "save_event_target_as": "fed_member_$NUM$",
+                            "establish_communications_no_message": "root"
+                          }
+                        }
+                      },
+                      "1": {
+                        "modifier": {
+                          "factor": "10",
+                          "root": {},
+                          "create_country": {
+                            "name": "random",
+                            "name_list": "random",
+                            "species": "event_target:fed_planet_$NUM$_species",
+                            "type": "default",
+                            "origin": "origin_hegemon_npc",
+                            "ignore_initial_colony_error": "yes",
+                            "day_zero_contact": "no",
+                            "randomize_ethos": "yes",
+                            "ethos": {
+                              "ethic": "ethic_fanatic_egalitarian"
+                            },
+                            "effect": {
+                              "save_event_target_as": "fed_member_$NUM$",
+                              "establish_communications_no_message": "root"
+                            }
+                          }
+                        },
+                        "5": {
+                          "create_country": {
+                            "name": "random",
+                            "name_list": "random",
+                            "species": "event_target:fed_planet_$NUM$_species",
+                            "type": "default",
+                            "origin": "origin_hegemon_npc",
+                            "ignore_initial_colony_error": "yes",
+                            "day_zero_contact": "no",
+                            "randomize_ethos": "yes",
+                            "ethos": {
+                              "ethic": "ethic_xenophile\" # intentional outlier"
+                            },
+                            "effect": {
+                              "save_event_target_as": "fed_member_$NUM$",
+                              "establish_communications_no_message": "root"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 955
+  },
+  "create_starting_leaders": {
+    "create_starting_leaders": {
+      "create_leader": {
+        "class": "official",
+        "species": "owner_main_species"
+      },
+      "capital_scope": {
+        "assign_leader": "last_created_leader"
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 1210
+  },
+  "generate_lost_colony_parent_bonus": {
+    "generate_lost_colony_parent_bonus": {
+      "while": {
+        "limit": {
+          "create_pop": {
+            "species": "owner_main_species",
+            "ethos": "random"
+          }
+        },
+        "owner": {
+          "create_fleet": {
+            "effect": {
+              "set_owner": "prev",
+              "create_ship": {
+                "name": "random",
+                "random_existing_design": "science"
+              },
+              "set_fleet_stance": "evasive",
+              "set_location": "prev.capital_scope.star",
+              "owner": {
+                "create_leader": {
+                  "class": "scientist",
+                  "sub_type": "survey",
+                  "name": "random",
+                  "species": "owner_main_species"
+                }
+              },
+              "set_leader": "last_created_leader"
+            }
+          }
+        }
+      },
+      "add_district_and_planet_size_if_needed_effect": {
+        "district": "district_industrial"
+      },
+      "add_building": "building_precinct_house"
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 1223
+  },
+  "generate_lost_colony_parent_colony_1": {
+    "generate_lost_colony_parent_colony_1": {
+      "while": {
+        "count": "2",
+        "add_district_and_planet_size_if_needed_effect": {
+          "district": "district_industrial"
+        }
+      },
+      "if": {
+        "limit": {
+          "add_district_and_planet_size_if_needed_effect": {
+            "district": "district_city"
+          }
+        },
+        "else_if": {
+          "limit": {
+            "owner": {},
+            "add_district_and_planet_size_if_needed_effect": {
+              "district": "district_hive"
+            }
+          },
+          "else_if": {
+            "limit": {
+              "owner": {},
+              "add_district_and_planet_size_if_needed_effect": {
+                "district": "district_nexus"
+              }
+            },
+            "while": {
+              "limit": {
+                "create_pop": {
+                  "species": "owner_main_species",
+                  "ethos": "random"
+                }
+              },
+              "if": {
+                "limit": {
+                  "owner": {},
+                  "if": {
+                    "limit": {
+                      "owner": {},
+                      "add_building": "building_machine_assembly_plant"
+                    },
+                    "if": {
+                      "limit": {
+                        "owner": {
+                          "has_valid_civic": "civic_environmentalist"
+                        }
+                      },
+                      "add_building": "building_ranger_lodge",
+                      "add_blocker": {},
+                      "if": {
+                        "limit": {
+                          "owner": {
+                            "has_valid_civic": "civic_permanent_employment"
+                          }
+                        },
+                        "add_building": "building_posthumous_employment_center"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 1279
+  },
+  "generate_lost_colony_parent_colony_2": {
+    "generate_lost_colony_parent_colony_2": {
+      "while": {
+        "count": "2",
+        "if": {
+          "limit": {
+            "add_district_and_planet_size_if_needed_effect": {
+              "district": "district_city"
+            }
+          },
+          "else_if": {
+            "limit": {
+              "owner": {},
+              "add_district_and_planet_size_if_needed_effect": {
+                "district": "district_hive"
+              }
+            },
+            "else_if": {
+              "limit": {
+                "owner": {},
+                "add_district_and_planet_size_if_needed_effect": {
+                  "district": "district_nexus"
+                }
+              },
+              "add_building": "building_research_lab_1"
+            },
+            "while": {
+              "limit": {
+                "create_pop": {
+                  "species": "owner_main_species",
+                  "ethos": "random"
+                }
+              },
+              "if": {
+                "limit": {
+                  "owner": {},
+                  "if": {
+                    "limit": {
+                      "owner": {},
+                      "add_building": "building_machine_assembly_plant"
+                    },
+                    "if": {
+                      "limit": {
+                        "owner": {
+                          "has_valid_civic": "civic_environmentalist"
+                        }
+                      },
+                      "add_building": "building_ranger_lodge",
+                      "add_blocker": {},
+                      "if": {
+                        "limit": {
+                          "owner": {
+                            "has_valid_civic": "civic_permanent_employment"
+                          }
+                        },
+                        "add_building": "building_posthumous_employment_center"
+                      },
+                      "set_colony_type": "col_research"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 1374
+  },
+  "thesis_disband": {
+    "thesis_disband": {
+      "while": {
+        "limit": {
+          "any_owned_leader": {
+            "has_leader_flag": "thesis_team"
+          }
+        },
+        "random_owned_leader": {
+          "limit": {
+            "has_leader_flag": "thesis_team"
+          },
+          "remove_leader_flag": "thesis_team"
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 1468
+  },
+  "wenkwort_continue_patrol": {
+    "wenkwort_continue_patrol": {
+      "random_list": {
+        "2": {
+          "2": {
+            "2": {
+              "1": {
+                "1": {
+                  "1": {},
+                  "auto_move_to_planet": {
+                    "target": "event_target:wenkwort_patrol_destination",
+                    "clear_auto_move_on_arrival": "no",
+                    "arrival_effect": "wenkwort_continue_patrol"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 1484
+  },
+  "hegemony_join_operation_reward": {
+    "hegemony_join_operation_reward": {
+      "federation": {
+        "switch": {
+          "trigger": "has_federation_flag",
+          "hegemony_joint_operation_complete_success": {
+            "if": {
+              "limit": {
+                "NOT": {},
+                "add_federation_experience": "1000"
+              },
+              "else": {
+                "add_cohesion": "100"
+              },
+              "event_target:federation_leader": {
+                "capital_scope": {
+                  "add_deposit": "d_federation_hegemony_monument_2",
+                  "create_ambient_object": {
+                    "type": "federation_hegemony_monument",
+                    "location": "this",
+                    "scale": "0.6"
+                  }
+                }
+              },
+              "hidden_effect": {},
+              "hegemony_joint_operation_partial_success": {
+                "if": {
+                  "limit": {
+                    "NOT": {},
+                    "add_federation_experience": "500"
+                  },
+                  "else": {
+                    "add_cohesion": "50"
+                  },
+                  "event_target:federation_leader": {
+                    "capital_scope": {
+                      "add_deposit": "d_federation_hegemony_monument_1",
+                      "create_ambient_object": {
+                        "type": "federation_hegemony_monument",
+                        "location": "this",
+                        "scale": "0.6"
+                      }
+                    }
+                  },
+                  "hidden_effect": {},
+                  "hegemony_joint_operation_partial_failure": {
+                    "if": {
+                      "limit": {
+                        "NOT": {},
+                        "add_federation_experience": "250"
+                      },
+                      "else": {
+                        "add_cohesion": "25"
+                      }
+                    },
+                    "hegemony_joint_operation_complete_failure": {
+                      "add_cohesion": "-50",
+                      "event_target:federation_leader": {
+                        "add_resource": {
+                          "influence": "-50"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 1500
+  },
+  "shattered_ring_world_conversion_effect": {
+    "shattered_ring_world_conversion_effect": {
+      "export_trigger_value_to_variable": {
+        "trigger": "num_districts",
+        "parameters": {
+          "type": "$DISTRICT$"
+        },
+        "variable": "$VARIABLE$"
+      },
+      "multiply_variable": {
+        "divide_variable": {
+          "floor_variable": "$VARIABLE$",
+          "while": {
+            "count": "$VARIABLE$",
+            "remove_district": "$DISTRICT$"
+          },
+          "clear_variable": "$VARIABLE$"
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 1571
+  },
+  "relic_world_conversion_effect": {
+    "relic_world_conversion_effect": {
+      "export_trigger_value_to_variable": {
+        "trigger": "num_districts",
+        "parameters": {
+          "type": "$DISTRICT$"
+        },
+        "variable": "$VARIABLE$"
+      },
+      "divide_variable": {
+        "floor_variable": "$VARIABLE$",
+        "while": {
+          "count": "$VARIABLE$",
+          "remove_district": "$DISTRICT$"
+        },
+        "clear_variable": "$VARIABLE$"
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 1589
+  },
+  "set_industrial_focus_flags": {
+    "set_industrial_focus_flags": {
+      "if": {
+        "limit": {
+          "has_designation": "col_factory"
+        },
+        "set_planet_flag": "factory_planet"
+      },
+      "else_if": {
+        "limit": {
+          "has_designation": "col_foundry"
+        },
+        "set_planet_flag": "foundry_planet"
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 1606
+  },
+  "set_ecu_industrial_districts_effect": {
+    "set_ecu_industrial_districts_effect": {
+      "if": {
+        "limit": {
+          "has_planet_flag": "factory_planet"
+        },
+        "remove_planet_flag": "factory_planet",
+        "swap_districts_effect": {
+          "DISTRICT1": "district_arcology_arms_industry",
+          "DISTRICT2": "district_arcology_civilian_industry"
+        }
+      },
+      "else_if": {
+        "limit": {
+          "has_planet_flag": "foundry_planet"
+        },
+        "remove_planet_flag": "foundry_planet"
+      },
+      "else": {
+        "split_districts_effect": {
+          "DISTRICT1": "district_arcology_arms_industry",
+          "DISTRICT2": "district_arcology_civilian_industry"
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 1621
+  },
+  "swap_districts_effect": {
+    "swap_districts_effect": {
+      "export_trigger_value_to_variable": {
+        "trigger": "num_districts",
+        "parameters": {
+          "type": "$DISTRICT1$"
+        },
+        "variable": "swap_districts_variable"
+      },
+      "while": {
+        "count": "swap_districts_variable",
+        "remove_district": "$DISTRICT1$",
+        "add_district_if_possible_effect": {
+          "district": "$DISTRICT2$"
+        }
+      },
+      "clear_variable": "swap_districts_variable"
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 1646
+  },
+  "split_districts_effect": {
+    "split_districts_effect": {
+      "export_trigger_value_to_variable": {
+        "trigger": "num_districts",
+        "parameters": {
+          "type": "$DISTRICT1$"
+        },
+        "variable": "split_districts_variable"
+      },
+      "divide_variable": {
+        "floor_variable": "split_districts_variable",
+        "while": {
+          "count": "split_districts_variable",
+          "remove_district": "$DISTRICT1$",
+          "add_district_if_possible_effect": {
+            "district": "$DISTRICT2$"
+          }
+        },
+        "clear_variable": "split_districts_variable"
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 1664
+  },
+  "spawn_shattered_ring_guaranteed_1_effect": {
+    "spawn_shattered_ring_guaranteed_1_effect": {
+      "spawn_planet": {
+        "class": "pc_shattered_ring_habitable",
+        "name": "NAME_Habitable_Section_B",
+        "orbit_angle": "30",
+        "orbit_distance": "45",
+        "deposit_blockers": "none",
+        "modifiers": "none",
+        "flags": {
+          "init_effect": {
+            "prevent_anomaly": "yes",
+            "shattered_ring_blocker_effect": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 1685
+  },
+  "spawn_shattered_ring_guaranteed_2_effect": {
+    "spawn_shattered_ring_guaranteed_2_effect": {
+      "spawn_planet": {
+        "class": "pc_shattered_ring_habitable",
+        "name": "NAME_Habitable_Section_D",
+        "orbit_angle": "210",
+        "orbit_distance": "45",
+        "deposit_blockers": "none",
+        "modifiers": "none",
+        "flags": {
+          "init_effect": {
+            "prevent_anomaly": "yes",
+            "shattered_ring_blocker_effect": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 1715
+  },
+  "shattered_ring_blocker_effect": {
+    "shattered_ring_blocker_effect": {
+      "_comments": [
+        "# Shattered rings start with 25 district slots.",
+        "# -2 Districts (23 total)"
+      ],
+      "while": {
+        "count": "2",
+        "random_list": {
+          "1": {
+            "1": {
+              "1": {
+                "1": {
+                  "1": {}
+                },
+                "add_deposit": "d_malfunctioning_reactor",
+                "_comments": [
+                  "# -8 Districts",
+                  "# -10 Disticts",
+                  "# -5 Districts"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 1748
+  },
+  "add_deposit_if_missing": {
+    "add_deposit_if_missing": {
+      "if": {
+        "limit": {
+          "NOT": {
+            "has_deposit": "$DEPOSIT$"
+          }
+        },
+        "add_deposit": "$DEPOSIT$"
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 1776
+  },
+  "spawn_habitat_effect": {
+    "spawn_habitat_effect": {
+      "spawn_planet": {
+        "class": "pc_habitat",
+        "location": "event_target:target_planet",
+        "orbit_location": "yes",
+        "orbit_angle_offset": "135",
+        "orbit_distance_offset": "$DISTANCE$",
+        "size": "6",
+        "has_ring": "no",
+        "init_effect": {
+          "set_name": {
+            "key": "HABITAT_PLANET_NAME",
+            "variable_string": "\\\\[FROM.from.solar_system.GetName]"
+          },
+          "set_planet_entity": {
+            "entity": "habitat_phase_03_entity",
+            "graphical_culture": "fromfrom"
+          },
+          "set_surveyed": {
+            "surveyed": "yes",
+            "surveyor": "FROM"
+          },
+          "set_all_comms_surveyed": "yes",
+          "clear_blockers": "yes",
+          "set_planet_flag": "habitat_level_1",
+          "save_event_target_as": "target_habitat",
+          "add_deposit_if_missing": {
+            "DEPOSIT": "d_orbital_mining"
+          },
+          "event_target:target_planet": {
+            "set_planet_flag": "habitat@PREV"
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 1789
+  },
+  "increase_habitat_level_effect": {
+    "increase_habitat_level_effect": {
+      "switch": {
+        "trigger": "has_planet_flag",
+        "habitat_level_1": {
+          "remove_planet_flag": "habitat_level_1",
+          "set_planet_flag": "habitat_level_2"
+        },
+        "habitat_level_2": {
+          "remove_planet_flag": "habitat_level_2",
+          "set_planet_flag": "habitat_level_3"
+        },
+        "habitat_level_3": {
+          "remove_planet_flag": "habitat_level_3",
+          "set_planet_flag": "habitat_level_4"
+        },
+        "habitat_level_4": {
+          "remove_planet_flag": "habitat_level_4",
+          "set_planet_flag": "habitat_level_5"
+        },
+        "habitat_level_5": {
+          "remove_planet_flag": "habitat_level_5",
+          "set_planet_flag": "habitat_level_6"
+        },
+        "habitat_level_6": {
+          "remove_planet_flag": "habitat_level_6",
+          "set_planet_flag": "habitat_level_7"
+        },
+        "habitat_level_7": {
+          "remove_planet_flag": "habitat_level_7",
+          "set_planet_flag": "habitat_level_8"
+        },
+        "habitat_level_8": {
+          "remove_planet_flag": "habitat_level_8",
+          "set_planet_flag": "habitat_level_9"
+        },
+        "habitat_level_9": {
+          "remove_planet_flag": "habitat_level_9",
+          "set_planet_flag": "habitat_level_10"
+        },
+        "habitat_level_10": {}
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 1836
+  },
+  "decrease_habitat_level_effect": {
+    "decrease_habitat_level_effect": {
+      "switch": {
+        "trigger": "has_planet_flag",
+        "habitat_level_10": {
+          "remove_planet_flag": "habitat_level_10",
+          "set_planet_flag": "habitat_level_9"
+        },
+        "habitat_level_9": {
+          "remove_planet_flag": "habitat_level_9",
+          "set_planet_flag": "habitat_level_8"
+        },
+        "habitat_level_8": {
+          "remove_planet_flag": "habitat_level_8",
+          "set_planet_flag": "habitat_level_7"
+        },
+        "habitat_level_7": {
+          "remove_planet_flag": "habitat_level_7",
+          "set_planet_flag": "habitat_level_6"
+        },
+        "habitat_level_6": {
+          "remove_planet_flag": "habitat_level_6",
+          "set_planet_flag": "habitat_level_5"
+        },
+        "habitat_level_5": {
+          "remove_planet_flag": "habitat_level_5",
+          "set_planet_flag": "habitat_level_4"
+        },
+        "habitat_level_4": {
+          "remove_planet_flag": "habitat_level_4",
+          "set_planet_flag": "habitat_level_3"
+        },
+        "habitat_level_3": {
+          "remove_planet_flag": "habitat_level_3",
+          "set_planet_flag": "habitat_level_2"
+        },
+        "habitat_level_2": {
+          "remove_planet_flag": "habitat_level_2",
+          "set_planet_flag": "habitat_level_1"
+        },
+        "habitat_level_1": {}
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 1881
+  },
+  "on_orbital_complete_effect": {
+    "on_orbital_complete_effect": {
+      "fromfrom.solar_system": {
+        "random_system_planet": {
+          "limit": {
+            "has_planet_flag": "habitat"
+          },
+          "save_event_target_as": "target_habitat"
+        }
+      },
+      "event_target:target_planet": {
+        "set_planet_flag": "has_megastructure",
+        "if": {
+          "limit": {
+            "fromfrom": {
+              "is_scope_type": "megastructure"
+            }
+          },
+          "remove_megastructure": "fromfrom"
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 1930
+  },
+  "set_habitat_planetary_features_effect": {
+    "set_habitat_planetary_features_effect": {
+      "if": {
+        "limit": {
+          "event_target:target_planet": {},
+          "event_target:target_habitat": {
+            "add_deposit": "d_hab_gas_1",
+            "last_added_deposit": {
+              "set_deposit_flag": "planet@event_target:target_planet"
+            }
+          }
+        },
+        "if": {
+          "limit": {
+            "event_target:target_planet": {},
+            "event_target:target_habitat": {
+              "add_deposit": "d_hab_gas_2",
+              "last_added_deposit": {
+                "set_deposit_flag": "planet@event_target:target_planet"
+              }
+            }
+          },
+          "if": {
+            "limit": {
+              "event_target:target_planet": {},
+              "event_target:target_habitat": {
+                "add_deposit": "d_hab_gas_3",
+                "last_added_deposit": {
+                  "set_deposit_flag": "planet@event_target:target_planet"
+                }
+              }
+            },
+            "if": {
+              "limit": {
+                "event_target:target_planet": {},
+                "event_target:target_habitat": {
+                  "add_deposit": "d_hab_gas_4",
+                  "last_added_deposit": {
+                    "set_deposit_flag": "planet@event_target:target_planet"
+                  }
+                }
+              },
+              "if": {
+                "limit": {
+                  "event_target:target_planet": {},
+                  "event_target:target_habitat": {
+                    "add_deposit": "d_hab_gas_5",
+                    "last_added_deposit": {
+                      "set_deposit_flag": "planet@event_target:target_planet"
+                    }
+                  }
+                },
+                "if": {
+                  "limit": {
+                    "event_target:target_planet": {},
+                    "event_target:target_habitat": {
+                      "add_deposit": "d_hab_crystal_1",
+                      "last_added_deposit": {
+                        "set_deposit_flag": "planet@event_target:target_planet"
+                      }
+                    }
+                  },
+                  "if": {
+                    "limit": {
+                      "event_target:target_planet": {},
+                      "event_target:target_habitat": {
+                        "add_deposit": "d_hab_crystal_2",
+                        "last_added_deposit": {
+                          "set_deposit_flag": "planet@event_target:target_planet"
+                        }
+                      }
+                    },
+                    "if": {
+                      "limit": {
+                        "event_target:target_planet": {},
+                        "event_target:target_habitat": {
+                          "add_deposit": "d_hab_crystal_3",
+                          "last_added_deposit": {
+                            "set_deposit_flag": "planet@event_target:target_planet"
+                          }
+                        }
+                      },
+                      "if": {
+                        "limit": {
+                          "event_target:target_planet": {},
+                          "event_target:target_habitat": {
+                            "add_deposit": "d_hab_crystal_4",
+                            "last_added_deposit": {
+                              "set_deposit_flag": "planet@event_target:target_planet"
+                            }
+                          }
+                        },
+                        "if": {
+                          "limit": {
+                            "event_target:target_planet": {},
+                            "event_target:target_habitat": {
+                              "add_deposit": "d_hab_crystal_5",
+                              "last_added_deposit": {
+                                "set_deposit_flag": "planet@event_target:target_planet"
+                              }
+                            }
+                          },
+                          "if": {
+                            "limit": {
+                              "event_target:target_planet": {},
+                              "event_target:target_habitat": {
+                                "add_deposit": "d_hab_mote_1",
+                                "last_added_deposit": {
+                                  "set_deposit_flag": "planet@event_target:target_planet"
+                                }
+                              }
+                            },
+                            "if": {
+                              "limit": {
+                                "event_target:target_planet": {},
+                                "event_target:target_habitat": {
+                                  "add_deposit": "d_hab_mote_2",
+                                  "last_added_deposit": {
+                                    "set_deposit_flag": "planet@event_target:target_planet"
+                                  }
+                                }
+                              },
+                              "if": {
+                                "limit": {
+                                  "event_target:target_planet": {},
+                                  "event_target:target_habitat": {
+                                    "add_deposit": "d_hab_mote_3",
+                                    "last_added_deposit": {
+                                      "set_deposit_flag": "planet@event_target:target_planet"
+                                    }
+                                  }
+                                },
+                                "if": {
+                                  "limit": {
+                                    "event_target:target_planet": {},
+                                    "event_target:target_habitat": {
+                                      "add_deposit": "d_hab_mote_4",
+                                      "last_added_deposit": {
+                                        "set_deposit_flag": "planet@event_target:target_planet"
+                                      }
+                                    }
+                                  },
+                                  "if": {
+                                    "limit": {
+                                      "event_target:target_planet": {},
+                                      "event_target:target_habitat": {
+                                        "add_deposit": "d_hab_mote_5",
+                                        "last_added_deposit": {
+                                          "set_deposit_flag": "planet@event_target:target_planet"
+                                        }
+                                      }
+                                    },
+                                    "if": {
+                                      "limit": {
+                                        "event_target:target_planet": {},
+                                        "event_target:target_habitat": {
+                                          "add_deposit": "d_hab_zro_1",
+                                          "last_added_deposit": {
+                                            "set_deposit_flag": "planet@event_target:target_planet"
+                                          }
+                                        }
+                                      },
+                                      "if": {
+                                        "limit": {
+                                          "event_target:target_planet": {},
+                                          "event_target:target_habitat": {
+                                            "add_deposit": "d_hab_zro_2",
+                                            "last_added_deposit": {
+                                              "set_deposit_flag": "planet@event_target:target_planet"
+                                            }
+                                          }
+                                        },
+                                        "if": {
+                                          "limit": {
+                                            "event_target:target_planet": {},
+                                            "event_target:target_habitat": {
+                                              "add_deposit": "d_hab_zro_3",
+                                              "last_added_deposit": {
+                                                "set_deposit_flag": "planet@event_target:target_planet"
+                                              }
+                                            }
+                                          },
+                                          "if": {
+                                            "limit": {
+                                              "event_target:target_planet": {},
+                                              "event_target:target_habitat": {
+                                                "add_deposit": "d_hab_zro_4",
+                                                "last_added_deposit": {
+                                                  "set_deposit_flag": "planet@event_target:target_planet"
+                                                }
+                                              }
+                                            },
+                                            "if": {
+                                              "limit": {
+                                                "event_target:target_planet": {},
+                                                "event_target:target_habitat": {
+                                                  "add_deposit": "d_hab_zro_5",
+                                                  "last_added_deposit": {
+                                                    "set_deposit_flag": "planet@event_target:target_planet"
+                                                  }
+                                                }
+                                              },
+                                              "if": {
+                                                "limit": {
+                                                  "event_target:target_planet": {},
+                                                  "event_target:target_habitat": {
+                                                    "add_deposit": "d_hab_dark_matter_1",
+                                                    "last_added_deposit": {
+                                                      "set_deposit_flag": "planet@event_target:target_planet"
+                                                    }
+                                                  }
+                                                },
+                                                "if": {
+                                                  "limit": {
+                                                    "event_target:target_planet": {},
+                                                    "event_target:target_habitat": {
+                                                      "add_deposit": "d_hab_dark_matter_2",
+                                                      "last_added_deposit": {
+                                                        "set_deposit_flag": "planet@event_target:target_planet"
+                                                      }
+                                                    }
+                                                  },
+                                                  "if": {
+                                                    "limit": {
+                                                      "event_target:target_planet": {},
+                                                      "event_target:target_habitat": {
+                                                        "add_deposit": "d_hab_dark_matter_3",
+                                                        "last_added_deposit": {
+                                                          "set_deposit_flag": "planet@event_target:target_planet"
+                                                        }
+                                                      }
+                                                    },
+                                                    "if": {
+                                                      "limit": {
+                                                        "event_target:target_planet": {},
+                                                        "event_target:target_habitat": {
+                                                          "add_deposit": "d_hab_dark_matter_10",
+                                                          "last_added_deposit": {
+                                                            "set_deposit_flag": "planet@event_target:target_planet"
+                                                          }
+                                                        }
+                                                      },
+                                                      "if": {
+                                                        "limit": {
+                                                          "event_target:target_planet": {},
+                                                          "event_target:target_habitat": {
+                                                            "add_deposit": "d_hab_living_metal_1",
+                                                            "last_added_deposit": {
+                                                              "set_deposit_flag": "planet@event_target:target_planet"
+                                                            }
+                                                          }
+                                                        },
+                                                        "if": {
+                                                          "limit": {
+                                                            "event_target:target_planet": {},
+                                                            "event_target:target_habitat": {
+                                                              "add_deposit": "d_hab_alloy_1",
+                                                              "last_added_deposit": {
+                                                                "set_deposit_flag": "planet@event_target:target_planet"
+                                                              }
+                                                            }
+                                                          },
+                                                          "if": {
+                                                            "limit": {
+                                                              "event_target:target_planet": {},
+                                                              "event_target:target_habitat": {
+                                                                "add_deposit": "d_hab_alloy_2",
+                                                                "last_added_deposit": {
+                                                                  "set_deposit_flag": "planet@event_target:target_planet"
+                                                                }
+                                                              }
+                                                            },
+                                                            "if": {
+                                                              "limit": {
+                                                                "event_target:target_planet": {},
+                                                                "event_target:target_habitat": {
+                                                                  "add_deposit": "d_hab_alloy_3",
+                                                                  "last_added_deposit": {
+                                                                    "set_deposit_flag": "planet@event_target:target_planet"
+                                                                  }
+                                                                }
+                                                              },
+                                                              "if": {
+                                                                "limit": {
+                                                                  "event_target:target_planet": {},
+                                                                  "event_target:target_habitat": {
+                                                                    "add_deposit": "d_hab_alloy_4",
+                                                                    "last_added_deposit": {
+                                                                      "set_deposit_flag": "planet@event_target:target_planet"
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "if": {
+                                                                  "limit": {
+                                                                    "event_target:target_planet": {},
+                                                                    "event_target:target_habitat": {
+                                                                      "add_deposit": "d_hab_alloy_5",
+                                                                      "last_added_deposit": {
+                                                                        "set_deposit_flag": "planet@event_target:target_planet"
+                                                                      }
+                                                                    }
+                                                                  },
+                                                                  "if": {
+                                                                    "limit": {
+                                                                      "event_target:target_planet": {},
+                                                                      "event_target:target_habitat": {
+                                                                        "add_deposit": "d_hab_alloy_10",
+                                                                        "last_added_deposit": {
+                                                                          "set_deposit_flag": "planet@event_target:target_planet"
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "if": {
+                                                                      "limit": {
+                                                                        "event_target:target_planet": {},
+                                                                        "event_target:target_habitat": {
+                                                                          "add_deposit": "d_hab_alloy_25",
+                                                                          "last_added_deposit": {
+                                                                            "set_deposit_flag": "planet@event_target:target_planet"
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      "if": {
+                                                                        "limit": {
+                                                                          "event_target:target_planet": {},
+                                                                          "event_target:target_habitat": {
+                                                                            "add_deposit": "d_hab_consumer_goods_2",
+                                                                            "last_added_deposit": {
+                                                                              "set_deposit_flag": "planet@event_target:target_planet"
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "if": {
+                                                                          "limit": {
+                                                                            "event_target:target_planet": {},
+                                                                            "event_target:target_habitat": {
+                                                                              "add_deposit": "d_hab_nanites_3",
+                                                                              "last_added_deposit": {
+                                                                                "set_deposit_flag": "planet@event_target:target_planet"
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "if": {
+                                                                            "limit": {
+                                                                              "event_target:target_planet": {},
+                                                                              "event_target:target_habitat": {
+                                                                                "add_deposit": "d_hab_harvester_nanites_1",
+                                                                                "last_added_deposit": {
+                                                                                  "set_deposit_flag": "planet@event_target:target_planet"
+                                                                                }
+                                                                              }
+                                                                            },
+                                                                            "if": {
+                                                                              "limit": {
+                                                                                "event_target:target_planet": {},
+                                                                                "event_target:target_habitat": {
+                                                                                  "add_deposit": "d_hab_harvester_nanites_2",
+                                                                                  "last_added_deposit": {
+                                                                                    "set_deposit_flag": "planet@event_target:target_planet"
+                                                                                  }
+                                                                                }
+                                                                              },
+                                                                              "if": {
+                                                                                "limit": {
+                                                                                  "event_target:target_planet": {},
+                                                                                  "event_target:target_habitat": {
+                                                                                    "add_deposit": "d_hab_harvester_nanites_3",
+                                                                                    "last_added_deposit": {
+                                                                                      "set_deposit_flag": "planet@event_target:target_planet"
+                                                                                    }
+                                                                                  }
+                                                                                },
+                                                                                "if": {
+                                                                                  "limit": {
+                                                                                    "event_target:target_planet": {},
+                                                                                    "event_target:target_habitat": {
+                                                                                      "add_deposit": "d_artifacts_planet_1",
+                                                                                      "last_added_deposit": {
+                                                                                        "set_deposit_flag": "planet@event_target:target_planet"
+                                                                                      }
+                                                                                    }
+                                                                                  },
+                                                                                  "if": {
+                                                                                    "limit": {
+                                                                                      "event_target:target_planet": {},
+                                                                                      "event_target:target_habitat": {
+                                                                                        "add_deposit": "d_artifacts_planet_2",
+                                                                                        "last_added_deposit": {
+                                                                                          "set_deposit_flag": "planet@event_target:target_planet"
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "if": {
+                                                                                      "limit": {
+                                                                                        "event_target:target_planet": {},
+                                                                                        "event_target:target_habitat": {
+                                                                                          "add_deposit": "d_artifacts_planet_3",
+                                                                                          "last_added_deposit": {
+                                                                                            "set_deposit_flag": "planet@event_target:target_planet"
+                                                                                          }
+                                                                                        }
+                                                                                      },
+                                                                                      "if": {
+                                                                                        "limit": {
+                                                                                          "event_target:target_planet": {},
+                                                                                          "event_target:target_habitat": {
+                                                                                            "add_deposit": "d_hab_astral_threads_1",
+                                                                                            "last_added_deposit": {
+                                                                                              "set_deposit_flag": "planet@event_target:target_planet"
+                                                                                            }
+                                                                                          }
+                                                                                        },
+                                                                                        "if": {
+                                                                                          "limit": {
+                                                                                            "event_target:target_planet": {},
+                                                                                            "event_target:target_habitat": {
+                                                                                              "add_deposit": "d_hab_astral_threads_2",
+                                                                                              "last_added_deposit": {
+                                                                                                "set_deposit_flag": "planet@event_target:target_planet"
+                                                                                              }
+                                                                                            }
+                                                                                          },
+                                                                                          "if": {
+                                                                                            "limit": {
+                                                                                              "event_target:target_planet": {},
+                                                                                              "event_target:target_habitat": {
+                                                                                                "add_deposit": "d_hab_astral_threads_3",
+                                                                                                "last_added_deposit": {
+                                                                                                  "set_deposit_flag": "planet@event_target:target_planet"
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 2046
+  },
+  "surveyor_update_orbital_effect": {
+    "surveyor_update_orbital_effect": {
+      "event_target:chosen_planet": {
+        "_comments": [
+          "# Find the orbital and habitat complex and save them as event targets"
+        ],
+        "if": {
+          "limit": {
+            "any_fleet_in_orbit": {
+              "OR": {
+                "is_ship_size": "minor_orbital_resource"
+              }
+            }
+          },
+          "random_fleet_in_orbit": {
+            "limit": {
+              "OR": {
+                "is_ship_size": "minor_orbital_resource"
+              }
+            },
+            "save_event_target_as": "target_orbital"
+          },
+          "solar_system": {
+            "random_system_planet": {
+              "limit": {
+                "has_planet_flag": "habitat"
+              },
+              "save_event_target_as": "target_habitat"
+            }
+          },
+          "last_added_deposit": {
+            "switch": {
+              "trigger": "is_deposit_type",
+              "_comments": [
+                "# Energy",
+                "# Minerals",
+                "# Physics Research",
+                "# Society Research",
+                "# Engineering Research",
+                "# Alloys",
+                "# Exotic Gases",
+                "# Rare Crystals",
+                "# Volatile Motes"
+              ],
+              "d_energy_5": {
+                "event_target:target_orbital": {
+                  "set_fleet_flag": "energy_orbital"
+                }
+              },
+              "d_energy_7": {
+                "event_target:target_orbital": {
+                  "set_fleet_flag": "energy_orbital"
+                }
+              },
+              "d_energy_9": {
+                "event_target:target_orbital": {
+                  "set_fleet_flag": "energy_orbital"
+                }
+              },
+              "d_minerals_5": {
+                "event_target:target_orbital": {
+                  "set_fleet_flag": "mining_orbital"
+                }
+              },
+              "d_minerals_7": {
+                "event_target:target_orbital": {
+                  "set_fleet_flag": "mining_orbital"
+                }
+              },
+              "d_minerals_9": {
+                "event_target:target_orbital": {
+                  "set_fleet_flag": "mining_orbital"
+                }
+              },
+              "d_physics_5": {
+                "event_target:target_orbital": {
+                  "set_fleet_flag": "science_orbital"
+                }
+              },
+              "d_physics_7": {
+                "event_target:target_orbital": {
+                  "set_fleet_flag": "science_orbital"
+                }
+              },
+              "d_physics_9": {
+                "event_target:target_orbital": {
+                  "set_fleet_flag": "science_orbital"
+                }
+              },
+              "d_society_5": {
+                "event_target:target_orbital": {
+                  "set_fleet_flag": "science_orbital"
+                }
+              },
+              "d_society_7": {
+                "event_target:target_orbital": {
+                  "set_fleet_flag": "science_orbital"
+                }
+              },
+              "d_society_9": {
+                "event_target:target_orbital": {
+                  "set_fleet_flag": "science_orbital"
+                }
+              },
+              "d_engineering_5": {
+                "event_target:target_orbital": {
+                  "set_fleet_flag": "science_orbital"
+                }
+              },
+              "d_engineering_7": {
+                "event_target:target_orbital": {
+                  "set_fleet_flag": "science_orbital"
+                }
+              },
+              "d_engineering_9": {
+                "event_target:target_orbital": {
+                  "set_fleet_flag": "science_orbital"
+                }
+              },
+              "d_alloys_3": {
+                "event_target:target_orbital": {
+                  "set_fleet_flag": "mining_orbital"
+                },
+                "event_target:target_habitat": {
+                  "add_deposit": "d_hab_alloy_3",
+                  "last_added_deposit": {
+                    "set_deposit_flag": "planet@event_target:chosen_planet"
+                  }
+                }
+              },
+              "d_alloys_4": {
+                "event_target:target_orbital": {
+                  "set_fleet_flag": "mining_orbital"
+                },
+                "event_target:target_habitat": {
+                  "add_deposit": "d_hab_alloy_4",
+                  "last_added_deposit": {
+                    "set_deposit_flag": "planet@event_target:chosen_planet"
+                  }
+                }
+              },
+              "d_alloys_5": {
+                "event_target:target_orbital": {
+                  "set_fleet_flag": "mining_orbital"
+                },
+                "event_target:target_habitat": {
+                  "add_deposit": "d_hab_alloy_5",
+                  "last_added_deposit": {
+                    "set_deposit_flag": "planet@event_target:chosen_planet"
+                  }
+                }
+              },
+              "d_exotic_gases_1": {
+                "event_target:target_habitat": {
+                  "add_deposit": "d_hab_gas_1",
+                  "last_added_deposit": {
+                    "set_deposit_flag": "planet@event_target:chosen_planet"
+                  }
+                }
+              },
+              "d_exotic_gases_2": {
+                "event_target:target_habitat": {
+                  "add_deposit": "d_hab_gas_2",
+                  "last_added_deposit": {
+                    "set_deposit_flag": "planet@event_target:chosen_planet"
+                  }
+                }
+              },
+              "d_exotic_gases_3": {
+                "event_target:target_habitat": {
+                  "add_deposit": "d_hab_gas_3",
+                  "last_added_deposit": {
+                    "set_deposit_flag": "planet@event_target:chosen_planet"
+                  }
+                }
+              },
+              "d_rare_crystals_1": {
+                "event_target:target_habitat": {
+                  "add_deposit": "d_hab_crystal_1",
+                  "last_added_deposit": {
+                    "set_deposit_flag": "planet@event_target:chosen_planet"
+                  }
+                }
+              },
+              "d_rare_crystals_2": {
+                "event_target:target_habitat": {
+                  "add_deposit": "d_hab_crystal_2",
+                  "last_added_deposit": {
+                    "set_deposit_flag": "planet@event_target:chosen_planet"
+                  }
+                }
+              },
+              "d_rare_crystals_3": {
+                "event_target:target_habitat": {
+                  "add_deposit": "d_hab_crystal_3",
+                  "last_added_deposit": {
+                    "set_deposit_flag": "planet@event_target:chosen_planet"
+                  }
+                }
+              },
+              "d_volatile_motes_1": {
+                "event_target:target_habitat": {
+                  "add_deposit": "d_hab_mote_1",
+                  "last_added_deposit": {
+                    "set_deposit_flag": "planet@event_target:chosen_planet"
+                  }
+                }
+              },
+              "d_volatile_motes_2": {
+                "event_target:target_habitat": {
+                  "add_deposit": "d_hab_mote_2",
+                  "last_added_deposit": {
+                    "set_deposit_flag": "planet@event_target:chosen_planet"
+                  }
+                }
+              },
+              "d_volatile_motes_3": {
+                "event_target:target_habitat": {
+                  "add_deposit": "d_hab_mote_3",
+                  "last_added_deposit": {
+                    "set_deposit_flag": "planet@event_target:chosen_planet"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 2525
+  },
+  "update_habitat_orbital_effect": {
+    "update_habitat_orbital_effect": {
+      "_comments": [
+        "# If a habitat orbital is in orbit of the star, update the habitat"
+      ],
+      "if": {
+        "limit": {
+          "any_fleet_in_orbit": {
+            "OR": {
+              "is_ship_size": "minor_orbital_resource"
+            }
+          }
+        },
+        "_comments": [
+          "# Find the orbital and habitat complex and save them as event targets",
+          "# Clear the existing flags",
+          "# Apply the planetary features for any newly added deposits",
+          "# Add the correct flag for the orbital"
+        ],
+        "random_fleet_in_orbit": {
+          "limit": {
+            "OR": {
+              "is_ship_size": "minor_orbital_resource"
+            }
+          },
+          "save_event_target_as": "target_orbital"
+        },
+        "event_target:target_orbital": {
+          "remove_fleet_flag": "energy_orbital"
+        },
+        "set_habitat_planetary_features_effect": "yes",
+        "if": {
+          "limit": {
+            "event_target:target_orbital": {
+              "set_fleet_flag": "science_orbital"
+            }
+          },
+          "if": {
+            "limit": {
+              "event_target:target_orbital": {
+                "set_fleet_flag": "mining_orbital"
+              }
+            },
+            "if": {
+              "limit": {
+                "event_target:target_orbital": {
+                  "set_fleet_flag": "energy_orbital"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 2754
+  },
+  "arc_furnace_update_orbital_effect": {
+    "arc_furnace_update_orbital_effect": {
+      "_comments": [
+        "# Find the orbital and habitat complex and save them as event targets"
+      ],
+      "if": {
+        "limit": {
+          "any_fleet_in_orbit": {
+            "OR": {
+              "is_ship_size": "minor_orbital_resource"
+            }
+          }
+        },
+        "random_fleet_in_orbit": {
+          "limit": {
+            "OR": {
+              "is_ship_size": "minor_orbital_resource"
+            }
+          },
+          "save_event_target_as": "target_orbital"
+        },
+        "solar_system": {
+          "random_system_planet": {
+            "limit": {
+              "has_planet_flag": "habitat"
+            },
+            "save_event_target_as": "target_habitat"
+          }
+        },
+        "last_added_deposit": {
+          "switch": {
+            "trigger": "is_deposit_type",
+            "_comments": [
+              "# Minerals",
+              "# Alloys"
+            ],
+            "d_minerals_1": {
+              "event_target:target_orbital": {
+                "set_fleet_flag": "mining_orbital"
+              }
+            },
+            "d_alloys_1": {
+              "event_target:target_orbital": {
+                "set_fleet_flag": "mining_orbital"
+              },
+              "event_target:target_habitat": {
+                "add_deposit": "d_hab_alloy_1",
+                "last_added_deposit": {
+                  "set_deposit_flag": "planet@event_target:target_planet"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 2808
+  },
+  "dismantle_arc_furnace_effect": {
+    "dismantle_arc_furnace_effect": {
+      "_comments": [
+        "# Find the orbital and habitat complex and save them as event targets"
+      ],
+      "if": {
+        "limit": {
+          "has_orbital_mining_deposit": "no",
+          "exists": "event_target:target_orbital"
+        },
+        "event_target:target_orbital": {
+          "remove_fleet_flag": "mining_orbital"
+        }
+      },
+      "switch": {
+        "trigger": "has_modifier",
+        "orbital_arc_furnace_1_mod": {
+          "remove_deposit": "d_minerals_1",
+          "remove_modifier": "orbital_arc_furnace_1_mod"
+        },
+        "orbital_arc_furnace_2_mod": {
+          "remove_deposit": "d_minerals_1",
+          "remove_modifier": "orbital_arc_furnace_2_mod"
+        },
+        "orbital_arc_furnace_3_mod": {
+          "remove_deposit": "d_alloys_1",
+          "remove_modifier": "orbital_arc_furnace_3_mod",
+          "if": {
+            "limit": {
+              "exists": "event_target:target_orbital"
+            },
+            "event_target:target_habitat": {
+              "random_deposit": {
+                "limit": {
+                  "is_deposit_type": "d_hab_alloy_1",
+                  "has_deposit_flag": "planet@event_target:target_planet"
+                },
+                "remove_deposit": "yes"
+              }
+            }
+          }
+        },
+        "orbital_arc_furnace_4_mod": {
+          "remove_deposit": "d_alloys_1",
+          "remove_modifier": "orbital_arc_furnace_4_mod",
+          "if": {
+            "limit": {
+              "exists": "event_target:target_orbital"
+            },
+            "event_target:target_habitat": {
+              "while": {
+                "count": "2",
+                "random_deposit": {
+                  "limit": {
+                    "is_deposit_type": "d_hab_alloy_1",
+                    "has_deposit_flag": "planet@event_target:target_planet"
+                  },
+                  "remove_deposit": "yes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 2866
+  },
+  "remove_trade_deposits": {
+    "remove_trade_deposits": {
+      "remove_deposit": "d_trade_value_10"
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 2963
+  },
+  "create_scion_leader": {
+    "create_scion_leader": {
+      "create_leader": {
+        "name": "random",
+        "species": "event_target:fe_species",
+        "class": "$CLASS$",
+        "skill": "7",
+        "traits": {
+          "0": "leader_trait_ancient_knowledge",
+          "1": "leader_trait_stubborn_2"
+        },
+        "randomize_traits": "yes",
+        "event_leader": "yes",
+        "immortal": "no",
+        "hide_age": "yes",
+        "can_assign_to_council": "yes",
+        "effect": {
+          "set_leader_flag": "renowned_leader",
+          "save_event_target_as": "fe_gifted_leader",
+          "fire_on_action": {
+            "on_action": "on_leader_hired"
+          }
+        },
+        "custom_description": "scion_leader_desc",
+        "custom_catch_phrase": "scion_leader_catch_phrase",
+        "skip_background_generation": "no",
+        "background_planet": "event_target:scion_master.capital_scope",
+        "background_job": "fe_overseer",
+        "background_ethic": "ethic_xenophile"
+      }
+    },
+    "_source_file": "federations_event_effects.txt",
+    "_line_number": 2977
+  }
+}

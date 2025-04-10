@@ -1,0 +1,1448 @@
+{
+  "fleet_contribution_none": {
+    "fleet_contribution_none": {
+      "allow": {
+        "custom_tooltip": {
+          "NOT": {
+            "AND": {
+              "NOT": {
+                "has_modifier": "federation_law_category_fleet_contribution_cooldown",
+                "has_any_federation_law_in_category": "law_category_fleet_contribution"
+              }
+            }
+          }
+        },
+        "modifier": {
+          "federation_fleet_contribution_factor": "0"
+        },
+        "on_enact": {
+          "if": {
+            "limit": {
+              "add_modifier": {
+                "modifier": "federation_law_category_fleet_contribution_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "hidden_effect": {
+              "set_federation_flag": "no_federation_fleet"
+            }
+          },
+          "ai_weight": {
+            "base": "0",
+            "_comments": [
+              "#Default support",
+              "#Attempt to lower contribution by a step when there is bad cohesion",
+              "#Behaviour-specific"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_militarist",
+              "add": "-5",
+              "is_militarist": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_fleet_contribution.txt",
+    "_line_number": 12
+  },
+  "fleet_contribution_low": {
+    "fleet_contribution_low": {
+      "allow": {
+        "custom_tooltip": {
+          "NOT": {
+            "AND": {
+              "NOT": {
+                "has_modifier": "federation_law_category_fleet_contribution_cooldown",
+                "has_any_federation_law_in_category": "law_category_fleet_contribution"
+              }
+            }
+          }
+        },
+        "potential": {
+          "has_federation_type": "default_federation"
+        },
+        "required_centralization": {
+          "base": "2"
+        },
+        "modifier": {
+          "description": "fleet_contribution_low_effect",
+          "federation_fleet_contribution_factor": "@contribution_low",
+          "federation_fleet_cap_add": "@fleet_cap_low"
+        },
+        "cohesion_growth": "-0.25",
+        "on_enact": {
+          "if": {
+            "limit": {
+              "add_modifier": {
+                "modifier": "federation_law_category_fleet_contribution_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-5",
+            "hidden_effect": {
+              "if": {
+                "limit": {
+                  "has_federation_flag": "no_federation_fleet"
+                },
+                "remove_federation_flag": "no_federation_fleet",
+                "set_timed_federation_flag": {
+                  "flag": "no_federation_fleet_build_right_cooldown",
+                  "days": "10"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "base": "0",
+            "_comments": [
+              "#Default support",
+              "#Attempt to raise contribution by a step in crisis"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_crisis",
+              "add": "15",
+              "federation": {
+                "has_crisis_stage_2": "yes"
+              },
+              "modifier": {
+                "desc": "federation_acceptance_crisis",
+                "add": "25",
+                "federation": {
+                  "has_crisis_stage_3": "yes"
+                },
+                "modifier": {
+                  "desc": "federation_acceptance_crisis",
+                  "add": "100",
+                  "federation": {
+                    "has_crisis_stage_4": "yes"
+                  },
+                  "_comments": [
+                    "#Behaviour-specific"
+                  ],
+                  "modifier": {
+                    "desc": "federation_acceptance_president",
+                    "add": "100",
+                    "federation": {
+                      "is_federation_leader": "yes"
+                    },
+                    "modifier": {
+                      "desc": "federation_acceptance_reduce_fleet",
+                      "add": "25",
+                      "is_federation_leader": "no",
+                      "federation": {
+                        "has_federation_law": "fleet_contribution_medium"
+                      }
+                    },
+                    "_comments": [
+                      "#Attempt to lower contribution by a step when there is bad cohesion"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_fleet_contribution.txt",
+    "_line_number": 110
+  },
+  "fleet_contribution_medium": {
+    "fleet_contribution_medium": {
+      "allow": {
+        "custom_tooltip": {
+          "NOT": {
+            "AND": {
+              "NOT": {
+                "has_modifier": "federation_law_category_fleet_contribution_cooldown",
+                "has_any_federation_law_in_category": "law_category_fleet_contribution"
+              }
+            }
+          }
+        },
+        "potential": {
+          "has_federation_type": "default_federation"
+        },
+        "required_centralization": {
+          "base": "3"
+        },
+        "modifier": {
+          "description": "fleet_contribution_medium_effect",
+          "federation_fleet_contribution_factor": "@contribution_medium",
+          "federation_fleet_cap_add": "@fleet_cap_medium"
+        },
+        "cohesion_growth": "-0.50",
+        "on_enact": {
+          "if": {
+            "limit": {
+              "add_modifier": {
+                "modifier": "federation_law_category_fleet_contribution_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-5",
+            "hidden_effect": {
+              "if": {
+                "limit": {
+                  "has_federation_flag": "no_federation_fleet"
+                },
+                "remove_federation_flag": "no_federation_fleet",
+                "set_timed_federation_flag": {
+                  "flag": "no_federation_fleet_build_right_cooldown",
+                  "days": "10"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "base": "0",
+            "_comments": [
+              "#Default support",
+              "#Attempt to raise contribution by a step in crisis"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_crisis",
+              "add": "15",
+              "federation": {
+                "has_crisis_stage_2": "yes"
+              },
+              "modifier": {
+                "desc": "federation_acceptance_crisis",
+                "add": "25",
+                "federation": {
+                  "has_crisis_stage_3": "yes"
+                },
+                "modifier": {
+                  "desc": "federation_acceptance_crisis",
+                  "add": "100",
+                  "federation": {
+                    "has_crisis_stage_4": "yes"
+                  },
+                  "_comments": [
+                    "#Behaviour-specific"
+                  ],
+                  "modifier": {
+                    "desc": "federation_acceptance_president",
+                    "add": "100",
+                    "federation": {
+                      "is_federation_leader": "yes"
+                    },
+                    "modifier": {
+                      "desc": "federation_acceptance_reduce_fleet",
+                      "add": "25",
+                      "is_federation_leader": "no",
+                      "federation": {
+                        "has_federation_law": "fleet_contribution_high"
+                      }
+                    },
+                    "_comments": [
+                      "#Attempt to lower contribution by a step when there is bad cohesion"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_fleet_contribution.txt",
+    "_line_number": 257
+  },
+  "fleet_contribution_high": {
+    "fleet_contribution_high": {
+      "allow": {
+        "custom_tooltip": {
+          "NOT": {
+            "AND": {
+              "NOT": {
+                "has_modifier": "federation_law_category_fleet_contribution_cooldown",
+                "has_any_federation_law_in_category": "law_category_fleet_contribution"
+              }
+            }
+          }
+        },
+        "potential": {
+          "has_federation_type": "default_federation"
+        },
+        "required_centralization": {
+          "base": "4"
+        },
+        "modifier": {
+          "description": "fleet_contribution_high_effect",
+          "federation_fleet_contribution_factor": "@contribution_high",
+          "federation_fleet_cap_add": "@fleet_cap_high"
+        },
+        "cohesion_growth": "-0.75",
+        "on_enact": {
+          "if": {
+            "limit": {
+              "add_modifier": {
+                "modifier": "federation_law_category_fleet_contribution_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-5",
+            "hidden_effect": {
+              "if": {
+                "limit": {
+                  "has_federation_flag": "no_federation_fleet"
+                },
+                "remove_federation_flag": "no_federation_fleet",
+                "set_timed_federation_flag": {
+                  "flag": "no_federation_fleet_build_right_cooldown",
+                  "days": "10"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "base": "0",
+            "_comments": [
+              "#Default support",
+              "#Attempt to raise contribution by a step in crisis"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_crisis",
+              "add": "15",
+              "federation": {
+                "has_crisis_stage_2": "yes"
+              },
+              "modifier": {
+                "desc": "federation_acceptance_crisis",
+                "add": "25",
+                "federation": {
+                  "has_crisis_stage_3": "yes"
+                },
+                "modifier": {
+                  "desc": "federation_acceptance_crisis",
+                  "add": "100",
+                  "federation": {
+                    "has_crisis_stage_4": "yes"
+                  },
+                  "_comments": [
+                    "#Behaviour-specific"
+                  ],
+                  "modifier": {
+                    "desc": "federation_acceptance_president",
+                    "add": "100",
+                    "federation": {
+                      "is_federation_leader": "yes"
+                    },
+                    "modifier": {
+                      "desc": "federation_acceptance_militarist",
+                      "add": "5",
+                      "is_militarist": "yes"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_fleet_contribution.txt",
+    "_line_number": 400
+  },
+  "fleet_contribution_low_trade": {
+    "fleet_contribution_low_trade": {
+      "allow": {
+        "custom_tooltip": {
+          "NOT": {
+            "AND": {
+              "NOT": {
+                "has_modifier": "federation_law_category_fleet_contribution_cooldown",
+                "has_any_federation_law_in_category": "law_category_fleet_contribution"
+              }
+            }
+          }
+        },
+        "potential": {
+          "has_federation_type": "trade_federation"
+        },
+        "required_centralization": {
+          "base": "2"
+        },
+        "modifier": {
+          "description": "fleet_contribution_low_effect",
+          "federation_fleet_contribution_factor": "@contribution_low",
+          "federation_fleet_cap_add": "@fleet_cap_low"
+        },
+        "cohesion_growth": "-0.25",
+        "on_enact": {
+          "if": {
+            "limit": {
+              "add_modifier": {
+                "modifier": "federation_law_category_fleet_contribution_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-5",
+            "hidden_effect": {
+              "if": {
+                "limit": {
+                  "has_federation_flag": "no_federation_fleet"
+                },
+                "remove_federation_flag": "no_federation_fleet",
+                "set_timed_federation_flag": {
+                  "flag": "no_federation_fleet_build_right_cooldown",
+                  "days": "10"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "base": "0",
+            "_comments": [
+              "#Default support",
+              "#Attempt to raise contribution by a step in crisis"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_crisis",
+              "add": "15",
+              "federation": {
+                "has_crisis_stage_2": "yes"
+              },
+              "modifier": {
+                "desc": "federation_acceptance_crisis",
+                "add": "25",
+                "federation": {
+                  "has_crisis_stage_3": "yes"
+                },
+                "modifier": {
+                  "desc": "federation_acceptance_crisis",
+                  "add": "100",
+                  "federation": {
+                    "has_crisis_stage_4": "yes"
+                  },
+                  "_comments": [
+                    "#Behaviour-specific"
+                  ],
+                  "modifier": {
+                    "desc": "federation_acceptance_president",
+                    "add": "100",
+                    "federation": {
+                      "is_federation_leader": "yes"
+                    },
+                    "modifier": {
+                      "desc": "federation_acceptance_reduce_fleet",
+                      "add": "25",
+                      "is_federation_leader": "no",
+                      "federation": {
+                        "has_federation_law": "fleet_contribution_medium_trade"
+                      }
+                    },
+                    "_comments": [
+                      "#Attempt to lower contribution by a step when there is bad cohesion"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_fleet_contribution.txt",
+    "_line_number": 510
+  },
+  "fleet_contribution_medium_trade": {
+    "fleet_contribution_medium_trade": {
+      "allow": {
+        "custom_tooltip": {
+          "NOT": {
+            "AND": {
+              "NOT": {
+                "has_modifier": "federation_law_category_fleet_contribution_cooldown",
+                "has_any_federation_law_in_category": "law_category_fleet_contribution"
+              }
+            }
+          }
+        },
+        "potential": {
+          "has_federation_type": "trade_federation"
+        },
+        "required_centralization": {
+          "base": "3"
+        },
+        "modifier": {
+          "description": "fleet_contribution_medium_effect",
+          "federation_fleet_contribution_factor": "@contribution_medium",
+          "federation_fleet_cap_add": "@fleet_cap_medium"
+        },
+        "cohesion_growth": "-0.50",
+        "on_enact": {
+          "if": {
+            "limit": {
+              "add_modifier": {
+                "modifier": "federation_law_category_fleet_contribution_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-5",
+            "hidden_effect": {
+              "if": {
+                "limit": {
+                  "has_federation_flag": "no_federation_fleet"
+                },
+                "remove_federation_flag": "no_federation_fleet",
+                "set_timed_federation_flag": {
+                  "flag": "no_federation_fleet_build_right_cooldown",
+                  "days": "10"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "base": "0",
+            "_comments": [
+              "#Default support",
+              "#Attempt to raise contribution by a step in crisis"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_crisis",
+              "add": "15",
+              "federation": {
+                "has_crisis_stage_2": "yes"
+              },
+              "modifier": {
+                "desc": "federation_acceptance_crisis",
+                "add": "25",
+                "federation": {
+                  "has_crisis_stage_3": "yes"
+                },
+                "modifier": {
+                  "desc": "federation_acceptance_crisis",
+                  "add": "100",
+                  "federation": {
+                    "has_crisis_stage_4": "yes"
+                  },
+                  "_comments": [
+                    "#Behaviour-specific"
+                  ],
+                  "modifier": {
+                    "desc": "federation_acceptance_president",
+                    "add": "100",
+                    "federation": {
+                      "is_federation_leader": "yes"
+                    },
+                    "modifier": {
+                      "desc": "federation_acceptance_reduce_fleet",
+                      "add": "25",
+                      "is_federation_leader": "no",
+                      "federation": {
+                        "has_federation_law": "fleet_contribution_high_trade"
+                      }
+                    },
+                    "_comments": [
+                      "#Attempt to lower contribution by a step when there is bad cohesion"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_fleet_contribution.txt",
+    "_line_number": 662
+  },
+  "fleet_contribution_high_trade": {
+    "fleet_contribution_high_trade": {
+      "allow": {
+        "custom_tooltip": {
+          "NOT": {
+            "AND": {
+              "NOT": {
+                "has_modifier": "federation_law_category_fleet_contribution_cooldown",
+                "has_any_federation_law_in_category": "law_category_fleet_contribution"
+              }
+            }
+          }
+        },
+        "potential": {
+          "has_federation_type": "trade_federation"
+        },
+        "required_centralization": {
+          "base": "5"
+        },
+        "modifier": {
+          "description": "fleet_contribution_high_effect",
+          "federation_fleet_contribution_factor": "@contribution_high",
+          "federation_fleet_cap_add": "@fleet_cap_high"
+        },
+        "cohesion_growth": "-0.75",
+        "on_enact": {
+          "if": {
+            "limit": {
+              "add_modifier": {
+                "modifier": "federation_law_category_fleet_contribution_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-5",
+            "hidden_effect": {
+              "if": {
+                "limit": {
+                  "has_federation_flag": "no_federation_fleet"
+                },
+                "remove_federation_flag": "no_federation_fleet",
+                "set_timed_federation_flag": {
+                  "flag": "no_federation_fleet_build_right_cooldown",
+                  "days": "10"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "base": "0",
+            "_comments": [
+              "#Default support",
+              "#Attempt to raise contribution by a step in crisis"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_crisis",
+              "add": "15",
+              "federation": {
+                "has_crisis_stage_2": "yes"
+              },
+              "modifier": {
+                "desc": "federation_acceptance_crisis",
+                "add": "25",
+                "federation": {
+                  "has_crisis_stage_3": "yes"
+                },
+                "modifier": {
+                  "desc": "federation_acceptance_crisis",
+                  "add": "100",
+                  "federation": {
+                    "has_crisis_stage_4": "yes"
+                  },
+                  "_comments": [
+                    "#Behaviour-specific"
+                  ],
+                  "modifier": {
+                    "desc": "federation_acceptance_president",
+                    "add": "100",
+                    "federation": {
+                      "is_federation_leader": "yes"
+                    },
+                    "modifier": {
+                      "desc": "federation_acceptance_xenophobic_isolationists",
+                      "add": "-5",
+                      "has_ai_personality": "xenophobic_isolationists"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_fleet_contribution.txt",
+    "_line_number": 810
+  },
+  "fleet_contribution_low_research": {
+    "fleet_contribution_low_research": {
+      "allow": {
+        "custom_tooltip": {
+          "NOT": {
+            "AND": {
+              "NOT": {
+                "has_modifier": "federation_law_category_fleet_contribution_cooldown",
+                "has_any_federation_law_in_category": "law_category_fleet_contribution"
+              }
+            }
+          }
+        },
+        "potential": {
+          "OR": {
+            "has_federation_type": "spiritualist_federation"
+          }
+        },
+        "required_centralization": {
+          "base": "3"
+        },
+        "modifier": {
+          "description": "fleet_contribution_low_effect",
+          "federation_fleet_contribution_factor": "@contribution_low",
+          "federation_fleet_cap_add": "@fleet_cap_low"
+        },
+        "cohesion_growth": "-0.25",
+        "on_enact": {
+          "if": {
+            "limit": {
+              "add_modifier": {
+                "modifier": "federation_law_category_fleet_contribution_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-5",
+            "hidden_effect": {
+              "if": {
+                "limit": {
+                  "has_federation_flag": "no_federation_fleet"
+                },
+                "remove_federation_flag": "no_federation_fleet",
+                "set_timed_federation_flag": {
+                  "flag": "no_federation_fleet_build_right_cooldown",
+                  "days": "10"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "base": "0",
+            "_comments": [
+              "#Default support",
+              "#Attempt to raise contribution by a step in crisis"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_crisis",
+              "add": "15",
+              "federation": {
+                "has_crisis_stage_2": "yes"
+              },
+              "modifier": {
+                "desc": "federation_acceptance_crisis",
+                "add": "25",
+                "federation": {
+                  "has_crisis_stage_3": "yes"
+                },
+                "modifier": {
+                  "desc": "federation_acceptance_crisis",
+                  "add": "100",
+                  "federation": {
+                    "has_crisis_stage_4": "yes"
+                  },
+                  "_comments": [
+                    "#Behaviour-specific"
+                  ],
+                  "modifier": {
+                    "desc": "federation_acceptance_president",
+                    "add": "100",
+                    "federation": {
+                      "is_federation_leader": "yes"
+                    },
+                    "modifier": {
+                      "desc": "federation_acceptance_reduce_fleet",
+                      "add": "25",
+                      "is_federation_leader": "no",
+                      "federation": {
+                        "has_federation_law": "fleet_contribution_medium_research"
+                      }
+                    },
+                    "_comments": [
+                      "#Attempt to lower contribution by a step when there is bad cohesion"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_fleet_contribution.txt",
+    "_line_number": 925
+  },
+  "fleet_contribution_medium_research": {
+    "fleet_contribution_medium_research": {
+      "allow": {
+        "custom_tooltip": {
+          "NOT": {
+            "AND": {
+              "NOT": {
+                "has_modifier": "federation_law_category_fleet_contribution_cooldown",
+                "has_any_federation_law_in_category": "law_category_fleet_contribution"
+              }
+            }
+          }
+        },
+        "potential": {
+          "OR": {
+            "has_federation_type": "spiritualist_federation"
+          }
+        },
+        "required_centralization": {
+          "base": "5"
+        },
+        "modifier": {
+          "description": "fleet_contribution_medium_effect",
+          "federation_fleet_contribution_factor": "@contribution_medium",
+          "federation_fleet_cap_add": "@fleet_cap_medium"
+        },
+        "cohesion_growth": "-0.50",
+        "on_enact": {
+          "if": {
+            "limit": {
+              "add_modifier": {
+                "modifier": "federation_law_category_fleet_contribution_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-5",
+            "hidden_effect": {
+              "if": {
+                "limit": {
+                  "has_federation_flag": "no_federation_fleet"
+                },
+                "remove_federation_flag": "no_federation_fleet",
+                "set_timed_federation_flag": {
+                  "flag": "no_federation_fleet_build_right_cooldown",
+                  "days": "10"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "base": "0",
+            "_comments": [
+              "#Default support",
+              "#Attempt to raise contribution by a step in crisis"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_crisis",
+              "add": "15",
+              "federation": {
+                "has_crisis_stage_2": "yes"
+              },
+              "modifier": {
+                "desc": "federation_acceptance_crisis",
+                "add": "25",
+                "federation": {
+                  "has_crisis_stage_3": "yes"
+                },
+                "modifier": {
+                  "desc": "federation_acceptance_crisis",
+                  "add": "100",
+                  "federation": {
+                    "has_crisis_stage_4": "yes"
+                  },
+                  "_comments": [
+                    "#Behaviour-specific"
+                  ],
+                  "modifier": {
+                    "desc": "federation_acceptance_president",
+                    "add": "100",
+                    "federation": {
+                      "is_federation_leader": "yes"
+                    },
+                    "modifier": {
+                      "desc": "federation_acceptance_xenophobic_isolationists",
+                      "add": "-5",
+                      "has_ai_personality": "xenophobic_isolationists"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_fleet_contribution.txt",
+    "_line_number": 1074
+  },
+  "fleet_contribution_low_martial": {
+    "fleet_contribution_low_martial": {
+      "allow": {
+        "custom_tooltip": {
+          "NOT": {
+            "AND": {
+              "NOT": {
+                "has_modifier": "federation_law_category_fleet_contribution_cooldown",
+                "has_any_federation_law_in_category": "law_category_fleet_contribution"
+              }
+            }
+          }
+        },
+        "potential": {
+          "has_federation_type": "military_federation"
+        },
+        "required_centralization": {
+          "base": "1"
+        },
+        "modifier": {
+          "description": "fleet_contribution_low_effect",
+          "federation_fleet_contribution_factor": "@contribution_low",
+          "federation_fleet_cap_add": "@fleet_cap_low"
+        },
+        "cohesion_growth": "-0.25",
+        "on_enact": {
+          "if": {
+            "limit": {
+              "add_modifier": {
+                "modifier": "federation_law_category_fleet_contribution_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-5",
+            "hidden_effect": {
+              "if": {
+                "limit": {
+                  "has_federation_flag": "no_federation_fleet"
+                },
+                "remove_federation_flag": "no_federation_fleet",
+                "set_timed_federation_flag": {
+                  "flag": "no_federation_fleet_build_right_cooldown",
+                  "days": "10"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "base": "0",
+            "_comments": [
+              "#Default support",
+              "#Attempt to raise contribution by a step in crisis"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_crisis",
+              "add": "15",
+              "federation": {
+                "has_crisis_stage_2": "yes"
+              },
+              "modifier": {
+                "desc": "federation_acceptance_crisis",
+                "add": "25",
+                "federation": {
+                  "has_crisis_stage_3": "yes"
+                },
+                "modifier": {
+                  "desc": "federation_acceptance_crisis",
+                  "add": "100",
+                  "federation": {
+                    "has_crisis_stage_4": "yes"
+                  },
+                  "_comments": [
+                    "#Behaviour-specific"
+                  ],
+                  "modifier": {
+                    "desc": "federation_acceptance_president",
+                    "add": "100",
+                    "federation": {
+                      "is_federation_leader": "yes"
+                    },
+                    "modifier": {
+                      "desc": "federation_acceptance_reduce_fleet",
+                      "add": "25",
+                      "is_federation_leader": "no",
+                      "federation": {
+                        "has_federation_law": "fleet_contribution_medium_martial"
+                      }
+                    },
+                    "_comments": [
+                      "#Attempt to lower contribution by a step when there is bad cohesion"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_fleet_contribution.txt",
+    "_line_number": 1183
+  },
+  "fleet_contribution_medium_martial": {
+    "fleet_contribution_medium_martial": {
+      "allow": {
+        "custom_tooltip": {
+          "NOT": {
+            "AND": {
+              "NOT": {
+                "has_modifier": "federation_law_category_fleet_contribution_cooldown",
+                "has_any_federation_law_in_category": "law_category_fleet_contribution"
+              }
+            }
+          }
+        },
+        "potential": {
+          "has_federation_type": "military_federation"
+        },
+        "required_centralization": {
+          "base": "2"
+        },
+        "modifier": {
+          "description": "fleet_contribution_medium_effect",
+          "federation_fleet_contribution_factor": "@contribution_medium",
+          "federation_fleet_cap_add": "@fleet_cap_medium"
+        },
+        "cohesion_growth": "-0.50",
+        "on_enact": {
+          "if": {
+            "limit": {
+              "add_modifier": {
+                "modifier": "federation_law_category_fleet_contribution_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-5",
+            "hidden_effect": {
+              "if": {
+                "limit": {
+                  "has_federation_flag": "no_federation_fleet"
+                },
+                "remove_federation_flag": "no_federation_fleet",
+                "set_timed_federation_flag": {
+                  "flag": "no_federation_fleet_build_right_cooldown",
+                  "days": "10"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "base": "0",
+            "_comments": [
+              "#Default support",
+              "#Attempt to raise contribution by a step in crisis"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_crisis",
+              "add": "15",
+              "federation": {
+                "has_crisis_stage_2": "yes"
+              },
+              "modifier": {
+                "desc": "federation_acceptance_crisis",
+                "add": "25",
+                "federation": {
+                  "has_crisis_stage_3": "yes"
+                },
+                "modifier": {
+                  "desc": "federation_acceptance_crisis",
+                  "add": "100",
+                  "federation": {
+                    "has_crisis_stage_4": "yes"
+                  },
+                  "_comments": [
+                    "#Behaviour-specific"
+                  ],
+                  "modifier": {
+                    "desc": "federation_acceptance_president",
+                    "add": "100",
+                    "federation": {
+                      "is_federation_leader": "yes"
+                    },
+                    "modifier": {
+                      "desc": "federation_acceptance_reduce_fleet",
+                      "add": "25",
+                      "is_federation_leader": "no",
+                      "federation": {
+                        "has_federation_law": "fleet_contribution_high_martial"
+                      }
+                    },
+                    "_comments": [
+                      "#Attempt to lower contribution by a step when there is bad cohesion"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_fleet_contribution.txt",
+    "_line_number": 1331
+  },
+  "fleet_contribution_high_martial": {
+    "fleet_contribution_high_martial": {
+      "allow": {
+        "custom_tooltip": {
+          "NOT": {
+            "AND": {
+              "NOT": {
+                "has_modifier": "federation_law_category_fleet_contribution_cooldown",
+                "has_any_federation_law_in_category": "law_category_fleet_contribution"
+              }
+            }
+          }
+        },
+        "potential": {
+          "has_federation_type": "military_federation"
+        },
+        "required_centralization": {
+          "base": "3"
+        },
+        "modifier": {
+          "description": "fleet_contribution_high_effect",
+          "federation_fleet_contribution_factor": "@contribution_high",
+          "federation_fleet_cap_add": "@fleet_cap_high"
+        },
+        "cohesion_growth": "-0.75",
+        "on_enact": {
+          "if": {
+            "limit": {
+              "add_modifier": {
+                "modifier": "federation_law_category_fleet_contribution_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-5",
+            "hidden_effect": {
+              "if": {
+                "limit": {
+                  "has_federation_flag": "no_federation_fleet"
+                },
+                "remove_federation_flag": "no_federation_fleet",
+                "set_timed_federation_flag": {
+                  "flag": "no_federation_fleet_build_right_cooldown",
+                  "days": "10"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "base": "0",
+            "_comments": [
+              "#Default support",
+              "#Attempt to raise contribution by a step in crisis"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_crisis",
+              "add": "15",
+              "federation": {
+                "has_crisis_stage_2": "yes"
+              },
+              "modifier": {
+                "desc": "federation_acceptance_crisis",
+                "add": "25",
+                "federation": {
+                  "has_crisis_stage_3": "yes"
+                },
+                "modifier": {
+                  "desc": "federation_acceptance_crisis",
+                  "add": "100",
+                  "federation": {
+                    "has_crisis_stage_4": "yes"
+                  },
+                  "_comments": [
+                    "#Behaviour-specific"
+                  ],
+                  "modifier": {
+                    "desc": "federation_acceptance_president",
+                    "add": "100",
+                    "federation": {
+                      "is_federation_leader": "yes"
+                    },
+                    "modifier": {
+                      "desc": "federation_acceptance_xenophobic_isolationists",
+                      "add": "-5",
+                      "has_ai_personality": "xenophobic_isolationists"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_fleet_contribution.txt",
+    "_line_number": 1483
+  },
+  "fleet_contribution_low_hegemony": {
+    "fleet_contribution_low_hegemony": {
+      "allow": {
+        "custom_tooltip": {
+          "NOT": {
+            "AND": {
+              "NOT": {
+                "has_modifier": "federation_law_category_fleet_contribution_cooldown",
+                "has_any_federation_law_in_category": "law_category_fleet_contribution"
+              }
+            }
+          }
+        },
+        "potential": {
+          "has_federation_type": "hegemony_federation"
+        },
+        "modifier": {
+          "description": "fleet_contribution_low_effect",
+          "federation_fleet_contribution_factor": "@contribution_low",
+          "federation_fleet_cap_add": "@fleet_cap_low"
+        },
+        "cohesion_growth": "-0.25",
+        "on_enact": {
+          "if": {
+            "limit": {
+              "add_modifier": {
+                "modifier": "federation_law_category_fleet_contribution_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-5",
+            "hidden_effect": {
+              "if": {
+                "limit": {
+                  "has_federation_flag": "no_federation_fleet"
+                },
+                "remove_federation_flag": "no_federation_fleet",
+                "set_timed_federation_flag": {
+                  "flag": "no_federation_fleet_build_right_cooldown",
+                  "days": "10"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "base": "0",
+            "_comments": [
+              "#Default support",
+              "#Attempt to raise contribution by a step in crisis"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_crisis",
+              "add": "15",
+              "federation": {
+                "has_crisis_stage_2": "yes"
+              },
+              "modifier": {
+                "desc": "federation_acceptance_crisis",
+                "add": "25",
+                "federation": {
+                  "has_crisis_stage_3": "yes"
+                },
+                "modifier": {
+                  "desc": "federation_acceptance_crisis",
+                  "add": "100",
+                  "federation": {
+                    "has_crisis_stage_4": "yes"
+                  },
+                  "_comments": [
+                    "#Behaviour-specific"
+                  ],
+                  "modifier": {
+                    "desc": "federation_acceptance_president",
+                    "add": "100",
+                    "federation": {
+                      "is_federation_leader": "yes"
+                    },
+                    "modifier": {
+                      "desc": "federation_acceptance_reduce_fleet",
+                      "add": "25",
+                      "is_federation_leader": "no",
+                      "federation": {
+                        "has_federation_law": "fleet_contribution_medium_hegemony"
+                      }
+                    },
+                    "_comments": [
+                      "#Attempt to lower contribution by a step when there is bad cohesion"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_fleet_contribution.txt",
+    "_line_number": 1601
+  },
+  "fleet_contribution_medium_hegemony": {
+    "fleet_contribution_medium_hegemony": {
+      "allow": {
+        "custom_tooltip": {
+          "NOT": {
+            "AND": {
+              "NOT": {
+                "has_modifier": "federation_law_category_fleet_contribution_cooldown",
+                "has_any_federation_law_in_category": "law_category_fleet_contribution"
+              }
+            }
+          }
+        },
+        "potential": {
+          "has_federation_type": "hegemony_federation"
+        },
+        "required_centralization": {
+          "base": "2"
+        },
+        "modifier": {
+          "description": "fleet_contribution_medium_effect",
+          "federation_fleet_contribution_factor": "@contribution_medium",
+          "federation_fleet_cap_add": "@fleet_cap_medium"
+        },
+        "cohesion_growth": "-0.50",
+        "on_enact": {
+          "if": {
+            "limit": {
+              "add_modifier": {
+                "modifier": "federation_law_category_fleet_contribution_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-5",
+            "hidden_effect": {
+              "if": {
+                "limit": {
+                  "has_federation_flag": "no_federation_fleet"
+                },
+                "remove_federation_flag": "no_federation_fleet",
+                "set_timed_federation_flag": {
+                  "flag": "no_federation_fleet_build_right_cooldown",
+                  "days": "10"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "base": "0",
+            "_comments": [
+              "#Default support",
+              "#Attempt to raise contribution by a step in crisis"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_crisis",
+              "add": "15",
+              "federation": {
+                "has_crisis_stage_2": "yes"
+              },
+              "modifier": {
+                "desc": "federation_acceptance_crisis",
+                "add": "25",
+                "federation": {
+                  "has_crisis_stage_3": "yes"
+                },
+                "modifier": {
+                  "desc": "federation_acceptance_crisis",
+                  "add": "100",
+                  "federation": {
+                    "has_crisis_stage_4": "yes"
+                  },
+                  "_comments": [
+                    "#Behaviour-specific"
+                  ],
+                  "modifier": {
+                    "desc": "federation_acceptance_president",
+                    "add": "100",
+                    "federation": {
+                      "is_federation_leader": "yes"
+                    },
+                    "modifier": {
+                      "desc": "federation_acceptance_reduce_fleet",
+                      "add": "25",
+                      "is_federation_leader": "no",
+                      "federation": {
+                        "has_federation_law": "fleet_contribution_high_hegemony"
+                      }
+                    },
+                    "_comments": [
+                      "#Attempt to lower contribution by a step when there is bad cohesion"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_fleet_contribution.txt",
+    "_line_number": 1745
+  },
+  "fleet_contribution_high_hegemony": {
+    "fleet_contribution_high_hegemony": {
+      "allow": {
+        "custom_tooltip": {
+          "NOT": {
+            "AND": {
+              "NOT": {
+                "has_modifier": "federation_law_category_fleet_contribution_cooldown",
+                "has_any_federation_law_in_category": "law_category_fleet_contribution"
+              }
+            }
+          }
+        },
+        "potential": {
+          "has_federation_type": "hegemony_federation"
+        },
+        "required_centralization": {
+          "base": "4"
+        },
+        "modifier": {
+          "description": "fleet_contribution_high_effect",
+          "federation_fleet_contribution_factor": "@contribution_high",
+          "federation_fleet_cap_add": "@fleet_cap_high"
+        },
+        "cohesion_growth": "-0.75",
+        "on_enact": {
+          "if": {
+            "limit": {
+              "add_modifier": {
+                "modifier": "federation_law_category_fleet_contribution_cooldown",
+                "days": "@cooldown"
+              }
+            },
+            "add_cohesion": "-5",
+            "hidden_effect": {
+              "if": {
+                "limit": {
+                  "has_federation_flag": "no_federation_fleet"
+                },
+                "remove_federation_flag": "no_federation_fleet",
+                "set_timed_federation_flag": {
+                  "flag": "no_federation_fleet_build_right_cooldown",
+                  "days": "10"
+                }
+              }
+            }
+          },
+          "ai_weight": {
+            "base": "0",
+            "_comments": [
+              "#Default support",
+              "#Attempt to raise contribution by a step in crisis"
+            ],
+            "modifier": {
+              "desc": "federation_acceptance_crisis",
+              "add": "15",
+              "federation": {
+                "has_crisis_stage_2": "yes"
+              },
+              "modifier": {
+                "desc": "federation_acceptance_crisis",
+                "add": "25",
+                "federation": {
+                  "has_crisis_stage_3": "yes"
+                },
+                "modifier": {
+                  "desc": "federation_acceptance_crisis",
+                  "add": "100",
+                  "federation": {
+                    "has_crisis_stage_4": "yes"
+                  },
+                  "_comments": [
+                    "#Behaviour-specific"
+                  ],
+                  "modifier": {
+                    "desc": "federation_acceptance_president",
+                    "add": "100",
+                    "federation": {
+                      "is_federation_leader": "yes"
+                    },
+                    "modifier": {
+                      "desc": "federation_acceptance_militarist",
+                      "add": "5",
+                      "is_militarist": "yes"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_fleet_contribution.txt",
+    "_line_number": 1883
+  }
+}

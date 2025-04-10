@@ -1,0 +1,151 @@
+{
+  "special_project": {
+    "special_project": {
+      "key": "MANUFACTORY_PROJECT",
+      "days_to_research": "80",
+      "tech_department": "engineering_technology",
+      "timelimit": "-1",
+      "picture": "GFX_evt_mining_station",
+      "icon": "gfx/interface/icons/situation_log/situation_log_engineering.dds",
+      "event_scope": "ship_event",
+      "requirements": {
+        "shipclass_military": "2"
+      },
+      "abort_trigger": {
+        "NOT": {
+          "fromfrom": {
+            "solar_system": {
+              "has_access_fleet": "root"
+            }
+          }
+        }
+      },
+      "on_success": {
+        "if": {
+          "limit": {
+            "from.solar_system": {
+              "OR": {
+                "NOT": {
+                  "AND": {
+                    "exists": "space_owner",
+                    "space_owner": {}
+                  }
+                }
+              },
+              "random_list": {
+                "33": {
+                  "33": {
+                    "33": {}
+                  },
+                  "else_if": {
+                    "limit": {
+                      "owner": {
+                        "has_country_flag": "manufactory2"
+                      }
+                    },
+                    "ship_event": {},
+                    "else_if": {
+                      "limit": {
+                        "owner": {
+                          "has_country_flag": "manufactory3",
+                          "NOT": {}
+                        },
+                        "random_list": {
+                          "50": {
+                            "50": {}
+                          },
+                          "else_if": {
+                            "limit": {
+                              "owner": {
+                                "has_country_flag": "manufactory2"
+                              }
+                            },
+                            "random_list": {
+                              "50": {
+                                "50": {}
+                              },
+                              "else_if": {
+                                "limit": {
+                                  "owner": {
+                                    "has_country_flag": "manufactory2"
+                                  }
+                                },
+                                "random_list": {
+                                  "50": {
+                                    "50": {}
+                                  },
+                                  "else_if": {
+                                    "limit": {
+                                      "owner": {
+                                        "has_country_flag": "manufactory4",
+                                        "NOT": {}
+                                      },
+                                      "random_list": {
+                                        "33": {
+                                          "33": {
+                                            "33": {}
+                                          },
+                                          "else_if": {
+                                            "limit": {
+                                              "owner": {
+                                                "has_country_flag": "manufactory3",
+                                                "NOT": {}
+                                              },
+                                              "random_list": {
+                                                "33": {
+                                                  "33": {
+                                                    "33": {}
+                                                  },
+                                                  "else_if": {
+                                                    "limit": {
+                                                      "owner": {
+                                                        "has_country_flag": "manufactory2"
+                                                      }
+                                                    },
+                                                    "random_list": {
+                                                      "33": {
+                                                        "33": {
+                                                          "33": {}
+                                                        },
+                                                        "else": {
+                                                          "random_list": {
+                                                            "33": {
+                                                              "_comments": [
+                                                                "#33 = { ship_event = { id = anomaly.3131 } }"
+                                                              ],
+                                                              "16": {
+                                                                "16": {}
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_projects_2.txt",
+    "_line_number": 743
+  }
+}

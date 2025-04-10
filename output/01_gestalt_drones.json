@@ -1,0 +1,157 @@
+{
+  "complex_drone": {
+    "complex_drone": {
+      "rank": "0",
+      "clothes_texture_index": "2",
+      "change_job_threshold": "1.25",
+      "weight": {
+        "weight": "2"
+      },
+      "pop_modifier": {
+        "pop_housing_usage_base": "1",
+        "pop_amenities_usage_no_happiness_base": "1"
+      },
+      "_comments": [
+        "# scope: pop to be resettled",
+        "# Triggered Modifiers"
+      ],
+      "allow_resettlement": {
+        "always": "yes"
+      },
+      "resettlement_cost": {
+        "trigger": {
+          "owner": {
+            "NOR": {
+              "has_valid_civic": "civic_hive_subsumed_will"
+            }
+          }
+        },
+        "unity": "10"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "can_assemble_tiyanki_pop": "yes"
+        },
+        "planet_pop_assembly_organic_add": "@tiyanki_budding_rate"
+      },
+      "inline_script": "pop_categories/social_classes_triggered_modifiers_no_happiness",
+      "unemployment_resources": {
+        "category": "unemployment_resources"
+      },
+      "resources": {
+        "category": "pop_category_drones",
+        "inline_script": "pop_categories/trait_production",
+        "_comments": [
+          "# Regular food, mineral and energy upkeep.",
+          "# Additional energy upkeep for cyborgs.",
+          "# Additional energy upkeep for robot traits.",
+          "# Exotic Metabolism Upkeep",
+          "# Resource Production",
+          "# Lithoid Trait Output"
+        ],
+        "upkeep": {
+          "trigger": {
+            "is_organic_species": "yes",
+            "has_trait": "trait_exotic_metabolism"
+          },
+          "exotic_gases": "@exotic_metabolism"
+        },
+        "produces": {
+          "trigger": {
+            "has_trait": "trait_drake_scaled"
+          },
+          "alloys": "@drake_scaled_trait_resource_production"
+        }
+      }
+    },
+    "_source_file": "01_gestalt_drones.txt",
+    "_line_number": 18
+  },
+  "simple_drone": {
+    "simple_drone": {
+      "rank": "0",
+      "clothes_texture_index": "2",
+      "change_job_threshold": "1.15",
+      "_comments": [
+        "# This is called whenever a Pop is created, moved to a different planet, or gets a new owner"
+      ],
+      "assign_to_pop": {
+        "exists": "owner",
+        "owner": {},
+        "weight": {
+          "weight": "1"
+        },
+        "pop_modifier": {
+          "pop_housing_usage_base": "1",
+          "pop_amenities_usage_no_happiness_base": "1"
+        },
+        "_comments": [
+          "# scope: pop to be resettled",
+          "# Triggered Modifiers"
+        ],
+        "allow_resettlement": {
+          "always": "yes"
+        },
+        "resettlement_cost": {
+          "trigger": {
+            "owner": {
+              "NOR": {
+                "has_valid_civic": "civic_hive_subsumed_will"
+              }
+            }
+          },
+          "unity": "10"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "can_assemble_tiyanki_pop": "yes"
+          },
+          "planet_pop_assembly_organic_add": "@tiyanki_budding_rate"
+        },
+        "inline_script": "pop_categories/social_classes_triggered_modifiers_no_happiness",
+        "unemployment_resources": {
+          "category": "unemployment_resources",
+          "produces": {
+            "trigger": {
+              "owner": {
+                "is_hive_empire": "yes",
+                "has_civic": "civic_hive_natural_neural_network"
+              }
+            },
+            "physics_research": "1",
+            "engineering_research": "1",
+            "society_research": "1.5"
+          },
+          "upkeep": {}
+        },
+        "resources": {
+          "category": "pop_category_drones",
+          "inline_script": "pop_categories/trait_production",
+          "_comments": [
+            "# Regular food, mineral and energy upkeep.",
+            "# Additional energy upkeep for cyborgs.",
+            "# Additional energy upkeep for robot traits.",
+            "# Exotic Metabolism Upkeep",
+            "# Resource Production",
+            "# Lithoid Trait Output"
+          ],
+          "upkeep": {
+            "trigger": {
+              "is_organic_species": "yes",
+              "has_trait": "trait_exotic_metabolism"
+            },
+            "exotic_gases": "@exotic_metabolism"
+          },
+          "produces": {
+            "trigger": {
+              "has_trait": "trait_drake_scaled"
+            },
+            "alloys": "@drake_scaled_trait_resource_production"
+          }
+        }
+      }
+    },
+    "_source_file": "01_gestalt_drones.txt",
+    "_line_number": 119
+  }
+}

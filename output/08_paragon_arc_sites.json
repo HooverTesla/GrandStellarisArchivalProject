@@ -1,0 +1,34 @@
+{
+  "paragon_legendary_leader_homeworld": {
+    "paragon_legendary_leader_homeworld": {
+      "desc": "paragon_legendary_leader_homeworld_desc",
+      "picture": "GFX_evt_city_ruins",
+      "stages": "7",
+      "weight": "0",
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "paragon_is_not_keides",
+          "is_ship_class": "shipclass_science_ship",
+          "exists": "leader",
+          "leader": {}
+        },
+        "potential": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "4",
+          "icon": "GFX_archaeology_runes_E2",
+          "event": "paragon.3156"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "08_paragon_arc_sites.txt",
+    "_line_number": 13
+  }
+}

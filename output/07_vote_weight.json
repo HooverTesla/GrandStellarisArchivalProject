@@ -1,0 +1,93 @@
+{
+  "vote_weight_equal": {
+    "vote_weight_equal": {
+      "potential": {
+        "NOT": {},
+        "allow": {
+          "custom_tooltip": {
+            "NOT": {
+              "AND": {
+                "NOT": {
+                  "has_modifier": "federation_law_category_voting_weight_cooldown",
+                  "has_any_federation_law_in_category": "law_category_voting_weight"
+                }
+              }
+            }
+          },
+          "on_enact": {
+            "set_equal_voting_power": "yes",
+            "if": {
+              "limit": {
+                "add_modifier": {
+                  "modifier": "federation_law_category_voting_weight_cooldown",
+                  "days": "@cooldown"
+                }
+              },
+              "add_cohesion": "-5"
+            },
+            "ai_weight": {
+              "base": "0",
+              "_comments": [
+                "#Default support"
+              ],
+              "modifier": {
+                "desc": "federation_acceptance_generally_positive",
+                "add": "51"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_vote_weight.txt",
+    "_line_number": 3
+  },
+  "vote_weight_diplomatic": {
+    "vote_weight_diplomatic": {
+      "potential": {
+        "NOT": {
+          "host_has_dlc": "Federations"
+        },
+        "allow": {
+          "custom_tooltip": {
+            "NOT": {
+              "AND": {
+                "NOT": {
+                  "has_modifier": "federation_law_category_voting_weight_cooldown",
+                  "has_any_federation_law_in_category": "law_category_voting_weight"
+                }
+              }
+            }
+          },
+          "required_centralization": {
+            "base": "3"
+          },
+          "on_enact": {
+            "set_equal_voting_power": "no",
+            "if": {
+              "limit": {
+                "add_modifier": {
+                  "modifier": "federation_law_category_voting_weight_cooldown",
+                  "days": "@cooldown"
+                }
+              },
+              "add_cohesion": "-5"
+            },
+            "ai_weight": {
+              "base": "0",
+              "_comments": [
+                "#Default support"
+              ],
+              "modifier": {
+                "desc": "federation_acceptance_generally_positive",
+                "add": "26"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "07_vote_weight.txt",
+    "_line_number": 41
+  }
+}

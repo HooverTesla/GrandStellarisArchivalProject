@@ -1,0 +1,1302 @@
+{
+  "situation_living_snow": {
+    "situation_living_snow": {
+      "picture": "GFX_evt_arctic",
+      "complete_icon_frame": "GFX_situation_outcome_frame_blue",
+      "complete_icon": "GFX_situation_outcome_unknown",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_unknown_outcome_approach",
+        "hidden_effect": {
+          "if": {
+            "limit": {
+              "situation_event": {},
+              "else": {
+                "situation_event": {}
+              }
+            },
+            "stages": {
+              "stage_1": {
+                "icon": "GFX_situation_stage_1",
+                "icon_background": "GFX_situation_stage_frame_blue",
+                "end": "25",
+                "custom_tooltip": "stage_unknown_effects"
+              },
+              "stage_2": {
+                "icon": "GFX_situation_stage_2",
+                "icon_background": "GFX_situation_stage_frame_blue",
+                "end": "80",
+                "on_first_enter": {
+                  "situation_event": {},
+                  "custom_tooltip": "stage_unknown_effects"
+                },
+                "stage_3": {
+                  "icon": "GFX_situation_stage_3",
+                  "icon_background": "GFX_situation_stage_frame_blue",
+                  "end": "100",
+                  "on_first_enter": {
+                    "situation_event": {},
+                    "custom_tooltip": "stage_unknown_effects"
+                  }
+                },
+                "approach": {
+                  "name": "situation_snow_hostile",
+                  "icon": "GFX_situation_approach_fist",
+                  "icon_background": "GFX_situation_approach_bg_red",
+                  "potential": {
+                    "NOT": {},
+                    "allow": {
+                      "custom_tooltip": {
+                        "fail_text": "too_late_to_change_approach",
+                        "OR": {
+                          "NOT": {
+                            "current_situation_approach": "situation_snow_hostile"
+                          }
+                        }
+                      },
+                      "on_select": {
+                        "custom_tooltip": "approach_outcome_tooltip"
+                      },
+                      "resources": {
+                        "category": "situations",
+                        "upkeep": {
+                          "trigger": {
+                            "has_situation_flag": "very_hostile"
+                          },
+                          "energy": "5"
+                        }
+                      },
+                      "target_modifier": {
+                        "planet_stability_add": "5"
+                      },
+                      "triggered_target_modifier": {
+                        "potential": {
+                          "NOT": {},
+                          "modifier": {}
+                        },
+                        "approach": {
+                          "name": "situation_snow_observation",
+                          "icon": "GFX_situation_approach_research",
+                          "icon_background": "GFX_situation_approach_bg_yellow",
+                          "default": "yes",
+                          "allow": {
+                            "custom_tooltip": {
+                              "fail_text": "too_late_to_change_approach",
+                              "OR": {
+                                "NOT": {
+                                  "current_situation_approach": "situation_snow_observation"
+                                }
+                              }
+                            },
+                            "on_select": {
+                              "custom_tooltip": "approach_outcome_tooltip"
+                            },
+                            "resources": {
+                              "category": "situations",
+                              "produces": {
+                                "trigger": {
+                                  "NOT": {},
+                                  "society_research": "5",
+                                  "physics_research": "5",
+                                  "engineering_research": "5"
+                                },
+                                "upkeep": {
+                                  "trigger": {
+                                    "NOT": {},
+                                    "unity": "10"
+                                  },
+                                  "upkeep": {
+                                    "trigger": {
+                                      "unity": "5"
+                                    }
+                                  }
+                                },
+                                "on_monthly": {
+                                  "random_events": {
+                                    "120": "0",
+                                    "20": "situation.160",
+                                    "15": "situation.170",
+                                    "10": "situation.175"
+                                  }
+                                },
+                                "monthly_progress": {
+                                  "base": "5",
+                                  "modifier": {
+                                    "add": "5",
+                                    "desc": "situation_snow_very_hostile_tt",
+                                    "current_situation_approach": "situation_snow_hostile",
+                                    "has_situation_flag": "very_hostile"
+                                  }
+                                },
+                                "abort_trigger": {
+                                  "OR": {
+                                    "NOT": {
+                                      "target.owner": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_narrative_situations.txt",
+    "_line_number": -1
+  },
+  "situation_mysterious_labyrinth": {
+    "situation_mysterious_labyrinth": {
+      "picture": "GFX_evt_astral_rift_library",
+      "start_value": "50",
+      "progress_direction": "bidirectional",
+      "complete_icon_frame": "GFX_situation_outcome_frame_blue",
+      "complete_icon": "GFX_situation_outcome_unknown",
+      "fail_icon_frame": "GFX_situation_outcome_frame_blue",
+      "fail_icon": "GFX_situation_outcome_unknown",
+      "on_start": {
+        "set_situation_locked": "yes"
+      },
+      "monthly_progress": {
+        "modifier": {
+          "desc": "string_current_approach",
+          "current_situation_approach": "approach_destroy",
+          "subtract": "5"
+        }
+      },
+      "approach": {
+        "name": "approach_investigate",
+        "icon": "GFX_situation_approach_research",
+        "icon_background": "GFX_situation_approach_bg_yellow",
+        "on_select": {
+          "custom_tooltip": "approach_outcome_tooltip"
+        },
+        "resources": {
+          "category": "situations",
+          "upkeep": {
+            "trigger": {
+              "unity": "10"
+            }
+          }
+        },
+        "approach": {
+          "name": "approach_observe",
+          "icon": "GFX_situation_approach_shrug",
+          "icon_background": "GFX_situation_approach_bg_yellow",
+          "on_select": {
+            "custom_tooltip": "approach_outcome_tooltip"
+          },
+          "potential": {
+            "NOT": {}
+          },
+          "approach": {
+            "name": "approach_cordon_off",
+            "icon": "GFX_situation_approach_suspicious",
+            "icon_background": "GFX_situation_approach_bg_yellow",
+            "on_select": {
+              "custom_tooltip": "approach_outcome_tooltip"
+            },
+            "resources": {
+              "category": "situations",
+              "upkeep": {
+                "trigger": {
+                  "unity": "10"
+                }
+              },
+              "potential": {
+                "has_situation_flag": "observe_not_an_option"
+              }
+            },
+            "approach": {
+              "name": "approach_destroy",
+              "icon": "GFX_situation_approach_fist",
+              "icon_background": "GFX_situation_approach_bg_red",
+              "on_select": {
+                "custom_tooltip": "approach_destroy_labyrinth_tooltip"
+              },
+              "resources": {
+                "category": "situations",
+                "upkeep": {
+                  "trigger": {
+                    "unity": "10"
+                  }
+                }
+              },
+              "on_fail": {
+                "custom_tooltip": "situation_unknown_outcome_approach",
+                "hidden_effect": {
+                  "if": {
+                    "limit": {
+                      "situation_event": {},
+                      "else_if": {
+                        "limit": {
+                          "situation_event": {},
+                          "else": {
+                            "random_list": {
+                              "1": {
+                                "situation_event": {},
+                                "1": {
+                                  "situation_event": {}
+                                }
+                              }
+                            }
+                          },
+                          "stages": {
+                            "stage_3": {
+                              "icon": "GFX_situation_stage_3",
+                              "icon_background": "GFX_situation_stage_frame_blue",
+                              "end": "20",
+                              "on_first_enter": {
+                                "if": {
+                                  "limit": {
+                                    "situation_event": {},
+                                    "else": {
+                                      "situation_event": {}
+                                    },
+                                    "custom_tooltip": "stage_unknown_effects"
+                                  },
+                                  "stage_2": {
+                                    "icon": "GFX_situation_stage_2",
+                                    "icon_background": "GFX_situation_stage_frame_blue",
+                                    "end": "40",
+                                    "on_first_enter": {
+                                      "situation_event": {},
+                                      "custom_tooltip": "stage_unknown_effects"
+                                    },
+                                    "stage_1": {
+                                      "icon": "GFX_situation_stage_1",
+                                      "icon_background": "GFX_situation_stage_frame_blue",
+                                      "end": "60"
+                                    },
+                                    "stage_2_alt": {
+                                      "icon": "GFX_situation_stage_2",
+                                      "icon_background": "GFX_situation_stage_frame_blue",
+                                      "end": "80",
+                                      "on_first_enter": {
+                                        "situation_event": {},
+                                        "custom_tooltip": "stage_unknown_effects"
+                                      },
+                                      "stage_3_alt": {
+                                        "icon": "GFX_situation_stage_3",
+                                        "icon_background": "GFX_situation_stage_frame_blue",
+                                        "end": "100",
+                                        "on_first_enter": {
+                                          "situation_event": {},
+                                          "custom_tooltip": "stage_unknown_effects"
+                                        }
+                                      },
+                                      "on_progress_complete": {
+                                        "custom_tooltip": "situation_unknown_outcome_approach",
+                                        "hidden_effect": {
+                                          "if": {
+                                            "limit": {
+                                              "random_list": {
+                                                "1": {
+                                                  "situation_event": {},
+                                                  "1": {
+                                                    "situation_event": {}
+                                                  }
+                                                },
+                                                "else": {
+                                                  "situation_event": {}
+                                                }
+                                              },
+                                              "abort_trigger": {
+                                                "OR": {
+                                                  "NOT": {
+                                                    "target.owner": {}
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_narrative_situations.txt",
+    "_line_number": 147
+  },
+  "leviathan_celebration_opportunity": {
+    "leviathan_celebration_opportunity": {
+      "complete_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_outcome_positive",
+      "fail_icon_frame": "GFX_situation_outcome_frame_red",
+      "fail_icon": "GFX_situation_outcome_meh",
+      "picture": {
+        "trigger": {
+          "target": {},
+          "picture": "GFX_evt_desert"
+        },
+        "picture": {
+          "trigger": {
+            "target": {},
+            "picture": "GFX_evt_tropical"
+          },
+          "picture": {
+            "trigger": {
+              "target": {},
+              "picture": "GFX_evt_arid"
+            },
+            "picture": {
+              "trigger": {
+                "target": {},
+                "picture": "GFX_evt_continental"
+              },
+              "picture": {
+                "trigger": {
+                  "target": {},
+                  "picture": "GFX_evt_alpine_city"
+                },
+                "picture": {
+                  "trigger": {
+                    "target": {},
+                    "picture": "GFX_evt_savannah"
+                  },
+                  "picture": {
+                    "trigger": {
+                      "target": {},
+                      "picture": "GFX_evt_ocean"
+                    },
+                    "picture": {
+                      "trigger": {
+                        "target": {},
+                        "picture": "GFX_evt_tundra"
+                      },
+                      "picture": {
+                        "trigger": {
+                          "target": {},
+                          "picture": "GFX_evt_arctic"
+                        },
+                        "picture": {
+                          "trigger": {
+                            "target": {},
+                            "picture": "GFX_evt_gaia"
+                          },
+                          "picture": {
+                            "trigger": {
+                              "target": {},
+                              "picture": "GFX_evt_tomb_world"
+                            },
+                            "picture": {
+                              "trigger": {
+                                "target": {},
+                                "picture": "GFX_evt_habitat"
+                              },
+                              "picture": {
+                                "trigger": {
+                                  "target": {},
+                                  "picture": "GFX_evt_infested"
+                                },
+                                "picture": {
+                                  "trigger": {
+                                    "target": {},
+                                    "picture": "GFX_evt_ai_planet"
+                                  },
+                                  "picture": {
+                                    "trigger": {
+                                      "target": {},
+                                      "picture": "GFX_evt_city_planet"
+                                    },
+                                    "stages": {
+                                      "stage_1": {
+                                        "icon": "GFX_situation_stage_1",
+                                        "icon_background": "GFX_situation_stage_frame_green",
+                                        "end": "50"
+                                      },
+                                      "stage_2": {
+                                        "icon": "GFX_situation_stage_2",
+                                        "icon_background": "GFX_situation_stage_frame_green",
+                                        "custom_tooltip": "stage_leviathan_2_tooltip",
+                                        "on_first_enter": {
+                                          "situation_event": {
+                                            "situation_event": {
+                                              "situation_event": {
+                                                "situation_event": {
+                                                  "situation_event": {
+                                                    "situation_event": {
+                                                      "situation_event": {
+                                                        "situation_event": {
+                                                          "situation_event": {
+                                                            "situation_event": {
+                                                              "situation_event": {},
+                                                              "end": "70"
+                                                            },
+                                                            "stage_3": {
+                                                              "icon": "GFX_situation_stage_3",
+                                                              "icon_background": "GFX_situation_stage_frame_green",
+                                                              "custom_tooltip": "stage_leviathan_3_tooltip",
+                                                              "end": "100"
+                                                            }
+                                                          },
+                                                          "category": "positive",
+                                                          "on_progress_complete": {
+                                                            "custom_tooltip": "leviathan_celebration_opportunity_finish_tooltip",
+                                                            "hidden_effect": {
+                                                              "situation_event": {
+                                                                "situation_event": {}
+                                                              },
+                                                              "on_start": {
+                                                                "on_fail": {
+                                                                  "custom_tooltip": "leviathan_celebration_opportunity_fail_tooltip",
+                                                                  "hidden_effect": {},
+                                                                  "modifier": {},
+                                                                  "on_monthly": {},
+                                                                  "approach": {
+                                                                    "name": "approach_encourage",
+                                                                    "allow": {
+                                                                      "NOT": {},
+                                                                      "on_select": {
+                                                                        "custom_tooltip": "leviathan_celebration_encourage_effect"
+                                                                      },
+                                                                      "icon": "GFX_situation_approach_amenities",
+                                                                      "icon_background": "GFX_situation_approach_bg_green",
+                                                                      "ai_weight": {
+                                                                        "base": "10"
+                                                                      },
+                                                                      "default": "yes"
+                                                                    },
+                                                                    "approach": {
+                                                                      "allow": {
+                                                                        "NOT": {},
+                                                                        "name": "approach_discourage",
+                                                                        "on_select": {
+                                                                          "custom_tooltip": "leviathan_celebration_discourage_effect"
+                                                                        },
+                                                                        "icon": "GFX_situation_approach_shrug",
+                                                                        "icon_background": "GFX_situation_approach_bg_yellow",
+                                                                        "ai_weight": {
+                                                                          "base": "0"
+                                                                        }
+                                                                      },
+                                                                      "approach": {
+                                                                        "name": "approach_reorganize",
+                                                                        "icon": "GFX_situation_approach_influence",
+                                                                        "icon_background": "GFX_situation_approach_bg_yellow",
+                                                                        "allow": {
+                                                                          "owner": {
+                                                                            "hidden_trigger": {
+                                                                              "resource_stockpile_compare": {
+                                                                                "resource": "unity"
+                                                                              }
+                                                                            },
+                                                                            "NOR": {
+                                                                              "situation_monthly_progress <": "0"
+                                                                            }
+                                                                          },
+                                                                          "on_select": {
+                                                                            "target": {
+                                                                              "set_planet_flag": "no_reorganize"
+                                                                            },
+                                                                            "custom_tooltip": "approach_reorganize_effect",
+                                                                            "owner": {
+                                                                              "add_resource": {},
+                                                                              "owner": {
+                                                                                "set_country_flag": "reorganizing_leviathan_parade"
+                                                                              },
+                                                                              "set_situation_locked": "yes"
+                                                                            },
+                                                                            "ai_weight": {
+                                                                              "base": "0"
+                                                                            }
+                                                                          },
+                                                                          "monthly_progress": {
+                                                                            "base": "4",
+                                                                            "modifier": {
+                                                                              "factor": "0",
+                                                                              "desc": "string_current_approach",
+                                                                              "current_situation_approach": "approach_reorganize"
+                                                                            }
+                                                                          },
+                                                                          "abort_trigger": {
+                                                                            "OR": {
+                                                                              "NOT": {
+                                                                                "target.owner": {}
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_narrative_situations.txt",
+    "_line_number": 352
+  },
+  "situation_gravity_well": {
+    "situation_gravity_well": {
+      "picture": "GFX_evt_black_hole",
+      "category": "neutral",
+      "complete_icon_frame": "GFX_situation_outcome_frame_red",
+      "complete_icon": "GFX_situation_outcome_negative",
+      "fail_icon_frame": "GFX_situation_outcome_frame_blue",
+      "fail_icon": "GFX_situation_outcome_meh",
+      "on_start": {
+        "set_situation_locked": "yes"
+      },
+      "on_progress_complete": {
+        "custom_tooltip": "situation_gravity_well_finish_tooltip",
+        "_comments": [
+          "# fall into the black hole"
+        ],
+        "hidden_effect": {
+          "situation_event": {}
+        },
+        "on_fail": {
+          "custom_tooltip": "situation_gravity_well_fail_tooltip",
+          "_comments": [
+            "# escape",
+            "# Stage",
+            "# Getting closer to the black hole should give you physics research and dark matter"
+          ],
+          "hidden_effect": {
+            "situation_event": {}
+          },
+          "start_value": "25",
+          "progress_direction": "monodirectional",
+          "on_monthly": {
+            "random_events": {
+              "120": "0",
+              "5": "situation.540 # The Penrose Process",
+              "10": "situation.530 # Scientific boon"
+            }
+          },
+          "stages": {
+            "gravity_well_low": {
+              "icon": "GFX_situation_stage_1",
+              "icon_background": "GFX_situation_stage_frame_blue",
+              "end": "50",
+              "triggered_modifier": {
+                "potential": {
+                  "NOT": {},
+                  "country_situations_sr_dark_matter_produces_add": "1",
+                  "country_situations_physics_research_produces_add": "5"
+                }
+              },
+              "gravity_well_mid": {
+                "icon": "GFX_situation_stage_2",
+                "icon_background": "GFX_situation_stage_frame_green",
+                "end": "70",
+                "modifier": {
+                  "country_situations_sr_dark_matter_produces_add": "2",
+                  "country_situations_physics_research_produces_add": "10"
+                }
+              },
+              "gravity_well_high": {
+                "icon": "GFX_situation_stage_3",
+                "icon_background": "GFX_situation_stage_frame_green",
+                "end": "80",
+                "modifier": {
+                  "country_situations_sr_dark_matter_produces_add": "5",
+                  "country_situations_physics_research_produces_add": "15"
+                }
+              },
+              "gravity_well_no_return": {
+                "icon": "GFX_situation_stage_4",
+                "icon_background": "GFX_situation_stage_frame_red",
+                "end": "100",
+                "on_first_enter": {
+                  "situation_event": {},
+                  "modifier": {
+                    "country_situations_sr_dark_matter_produces_add": "10",
+                    "_comments": [
+                      "# high dark matter production because the station",
+                      "# is only gonna last a month or so in this zone anywau"
+                    ],
+                    "country_situations_physics_research_produces_add": "20"
+                  }
+                }
+              },
+              "_comments": [
+                "# Approaches"
+              ],
+              "approach": {
+                "name": "approach_retreat",
+                "icon": "GFX_situation_approach_fleet",
+                "icon_background": "GFX_situation_approach_bg_green",
+                "potential": {
+                  "NOT": {},
+                  "allow": {
+                    "custom_tooltip": {
+                      "fail_text": "mutiny_tooltip",
+                      "NOT": {}
+                    },
+                    "on_select": {
+                      "custom_tooltip": "approach_outcome_tooltip"
+                    },
+                    "resources": {
+                      "category": "situations",
+                      "upkeep": {
+                        "energy": "10"
+                      }
+                    }
+                  },
+                  "approach": {
+                    "name": "approach_stand",
+                    "icon": "GFX_situation_approach_fleet",
+                    "icon_background": "GFX_situation_approach_bg_yellow",
+                    "potential": {
+                      "NOT": {},
+                      "allow": {
+                        "custom_tooltip": {
+                          "fail_text": "mutiny_tooltip",
+                          "NOT": {}
+                        },
+                        "resources": {
+                          "category": "situations",
+                          "upkeep": {
+                            "energy": "5"
+                          }
+                        }
+                      },
+                      "approach": {
+                        "name": "approach_advance",
+                        "icon": "GFX_situation_approach_fleet",
+                        "icon_background": "GFX_situation_approach_bg_red",
+                        "on_select": {
+                          "custom_tooltip": "approach_outcome_tooltip"
+                        },
+                        "potential": {
+                          "NOT": {},
+                          "allow": {
+                            "custom_tooltip": {
+                              "fail_text": "mutiny_tooltip",
+                              "NOT": {}
+                            }
+                          },
+                          "_comments": [
+                            "# Progress",
+                            "# 0\t   50   70 80   100",
+                            "# ___________|____|__|____",
+                            "#    low      mid high no_return",
+                            "#",
+                            "# The closer you are to the black hole, the stronger the pull",
+                            "# goal: make players think \"just a bit closer, just a little more Dark Matter...\"",
+                            "# and then oops they cross the point of no return"
+                          ],
+                          "monthly_progress": {
+                            "base": "5",
+                            "_comments": [
+                              "# Gravitational Pull of the black hole",
+                              "# Approaches"
+                            ],
+                            "modifier": {
+                              "add": "3",
+                              "desc": "string_current_approach",
+                              "current_situation_approach": "approach_advance"
+                            }
+                          },
+                          "abort_trigger": {
+                            "OR": {
+                              "NOT": {
+                                "target.owner": {}
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_narrative_situations.txt",
+    "_line_number": 627
+  },
+  "situation_geomagnetic_storm": {
+    "situation_geomagnetic_storm": {
+      "complete_icon_frame": "GFX_situation_outcome_frame_red",
+      "complete_icon": "GFX_situation_outcome_negative",
+      "picture": "GFX_evt_supernova",
+      "category": "negative",
+      "on_start": {
+        "set_situation_locked": "yes"
+      },
+      "on_progress_complete": {
+        "custom_tooltip": "situation_geomagnetic_storm_outcome",
+        "_comments": [
+          "# Worst end: lost all drones"
+        ],
+        "situation_event": {},
+        "on_abort": {
+          "_comments": [
+            "# Storm has ended",
+            "# the situation automatically ends after 5 years",
+            "# progress bar: amount of radiation damage",
+            "# goal: keep the droids shielded to avoid accumulating radiation damage",
+            "# different endings after 5 year depending on the amount of damage suffered",
+            "# Stages",
+            "# Approaches",
+            "#Progress",
+            "# 1 year in stellaris = 12 months = 360 days",
+            "# Situation automatically ends after 5 years",
+            "# Default: reach worst ending in about 2 years (20 months) if you do nothing",
+            "# 100 / 20 = 5"
+          ],
+          "situation_event": {},
+          "start_value": "0",
+          "on_monthly": {
+            "events": {},
+            "random_events": {
+              "250": "0",
+              "5": "situation.214 # Miscalculation",
+              "10": "situation.250 # Disappearing pop"
+            }
+          },
+          "stages": {
+            "radiation_damage_low": {
+              "icon": "GFX_situation_stage_1",
+              "icon_background": "GFX_situation_stage_frame_red",
+              "end": "40",
+              "target_modifier": {
+                "planet_jobs_simple_drone_produces_mult": "-0.20",
+                "planet_jobs_complex_drone_produces_mult": "-0.20"
+              }
+            },
+            "radiation_damage_mid": {
+              "icon": "GFX_situation_stage_2",
+              "icon_background": "GFX_situation_stage_frame_red",
+              "end": "70",
+              "target_modifier": {
+                "planet_jobs_simple_drone_produces_mult": "-0.25",
+                "planet_jobs_complex_drone_produces_mult": "-0.25",
+                "planet_stability_add": "-30"
+              }
+            },
+            "radiation_damage_high": {
+              "icon": "GFX_situation_stage_3",
+              "icon_background": "GFX_situation_stage_frame_red",
+              "end": "100",
+              "target_modifier": {
+                "planet_jobs_simple_drone_produces_mult": "-0.30",
+                "planet_jobs_complex_drone_produces_mult": "-0.30",
+                "planet_stability_add": "-60",
+                "country_unity_produces_mult": "-0.10"
+              }
+            }
+          },
+          "approach": {
+            "name": "protect_nobody",
+            "icon": "GFX_situation_approach_shrug",
+            "icon_background": "GFX_situation_approach_bg_red",
+            "default": "yes",
+            "on_select": {
+              "custom_tooltip": "approach_protect_nobody_effect"
+            }
+          },
+          "monthly_progress": {
+            "base": "5",
+            "modifier": {
+              "desc": "string_current_approach",
+              "current_situation_approach": "protect_complex_drones",
+              "subtract": "target.complex_drones_percentage"
+            }
+          },
+          "abort_trigger": {
+            "OR": {
+              "NOT": {
+                "target.owner": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_narrative_situations.txt",
+    "_line_number": 839
+  },
+  "situation_tainted_voidspawn": {
+    "situation_tainted_voidspawn": {
+      "complete_icon_frame": "GFX_situation_outcome_frame_green",
+      "complete_icon": "GFX_situation_outcome_positive",
+      "picture": "GFX_evt_voidspawn",
+      "category": "neutral",
+      "stages": {
+        "stage_1": {
+          "icon": "GFX_situation_stage_1",
+          "icon_background": "GFX_situation_stage_frame_blue",
+          "end": "100"
+        }
+      },
+      "start_value": "0",
+      "on_progress_complete": {
+        "custom_tooltip": "situation_tainted_voidspawn_finish_effect",
+        "hidden_effect": {
+          "situation_event": {}
+        },
+        "approach": {
+          "name": "approach_clean_the_contaminant",
+          "icon": "GFX_situation_approach_whip",
+          "icon_background": "GFX_situation_approach_bg_green",
+          "default": "yes",
+          "ai_weight": {
+            "base": "10"
+          },
+          "on_select": {
+            "custom_tooltip": "approach_clean_the_contaminant_effect"
+          },
+          "triggered_target_modifier": {
+            "potential": {
+              "planet_jobs_worker_produces_mult": "-0.05"
+            },
+            "triggered_target_modifier": {
+              "potential": {
+                "planet_jobs_simple_drone_produces_mult": "-0.05"
+              }
+            },
+            "approach": {
+              "name": "approach_study_the_contaminant",
+              "icon": "GFX_situation_approach_research",
+              "icon_background": "GFX_situation_approach_bg_green",
+              "resources": {
+                "category": "situations",
+                "produces": {
+                  "society_research": "15"
+                }
+              },
+              "on_select": {
+                "custom_tooltip": "approach_study_the_contaminant_effect"
+              },
+              "triggered_target_modifier": {
+                "potential": {
+                  "planet_jobs_specialist_produces_mult": "-0.05"
+                },
+                "triggered_target_modifier": {
+                  "potential": {
+                    "planet_jobs_complex_drone_produces_mult": "-0.05"
+                  }
+                },
+                "monthly_progress": {
+                  "base": "0",
+                  "modifier": {
+                    "desc": "string_current_approach",
+                    "add": "4",
+                    "current_situation_approach": "approach_study_the_contaminant"
+                  }
+                },
+                "abort_trigger": {
+                  "OR": {
+                    "NOT": {
+                      "target.owner": {}
+                    },
+                    "on_abort": {
+                      "target": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_narrative_situations.txt",
+    "_line_number": 1031
+  },
+  "situation_stellarite_infested_star": {
+    "situation_stellarite_infested_star": {
+      "complete_icon_frame": "GFX_situation_outcome_frame_red",
+      "complete_icon": "GFX_situation_outcome_negative",
+      "fail_icon_frame": "GFX_situation_outcome_frame_green",
+      "fail_icon": "GFX_situation_outcome_meh",
+      "picture": "GFX_evt_star_yellow",
+      "category": "negative",
+      "stages": {
+        "stage_1": {
+          "icon": "GFX_situation_stage_1",
+          "icon_background": "GFX_situation_stage_frame_red",
+          "custom_tooltip": "stage_unknown_effects",
+          "end": "20"
+        },
+        "stage_2": {
+          "icon": "GFX_situation_stage_2",
+          "icon_background": "GFX_situation_stage_frame_red",
+          "custom_tooltip": "stage_unknown_effects",
+          "on_first_enter": {
+            "situation_event": {},
+            "end": "50"
+          },
+          "stage_3": {
+            "icon": "GFX_situation_stage_3",
+            "icon_background": "GFX_situation_stage_frame_red",
+            "custom_tooltip": "stage_unknown_effects",
+            "on_first_enter": {
+              "owner": {
+                "country_event": {}
+              },
+              "end": "60"
+            },
+            "stage_4": {
+              "icon": "GFX_situation_stage_4",
+              "icon_background": "GFX_situation_stage_frame_red",
+              "custom_tooltip": "stage_unknown_effects",
+              "end": "100"
+            }
+          },
+          "start_value": "10",
+          "on_progress_complete": {
+            "custom_tooltip": "situation_stellarite_infested_star_fail_tooltip",
+            "hidden_effect": {
+              "situation_event": {}
+            },
+            "on_fail": {
+              "custom_tooltip": "situation_stellarite_infested_star_finish_tooltip",
+              "hidden_effect": {
+                "situation_event": {}
+              },
+              "approach": {
+                "name": "approach_cure_it",
+                "icon": "GFX_situation_approach_this_is_fine",
+                "icon_background": "GFX_situation_approach_bg_green",
+                "potential": {
+                  "owner": {
+                    "has_country_flag": "studied_stellarite_infestation"
+                  }
+                },
+                "on_select": {
+                  "custom_tooltip": "approach_cure_it_effect"
+                },
+                "ai_weight": {
+                  "base": "5",
+                  "modifier": {
+                    "factor": "0",
+                    "owner": {
+                      "has_country_flag": "will_not_stop_devourers"
+                    }
+                  }
+                }
+              },
+              "monthly_progress": {
+                "base": "3",
+                "modifier": {
+                  "desc": "string_current_approach",
+                  "add": "-10",
+                  "current_situation_approach": "approach_cure_it"
+                }
+              },
+              "abort_trigger": {
+                "OR": {
+                  "NOT": {
+                    "target.space_owner": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_narrative_situations.txt",
+    "_line_number": 1118
+  },
+  "situation_kaleidoscope": {
+    "situation_kaleidoscope": {
+      "picture": "GFX_evt_kaleidoscopic_lights",
+      "category": "neutral",
+      "complete_icon_frame": "GFX_situation_outcome_frame_blue",
+      "complete_icon": "GFX_situation_outcome_unknown",
+      "on_start": {
+        "owner": {
+          "set_variable": {
+            "which": "kaleidoscope_owner_expenses",
+            "value": "0"
+          },
+          "export_trigger_value_to_variable": {
+            "trigger": "expenses",
+            "variable": "kaleidoscope_owner_expenses",
+            "rounded": "yes"
+          }
+        }
+      },
+      "on_progress_complete": {
+        "custom_tooltip": "situation_unknown_outcome_kaleidoscope",
+        "_comments": [
+          "# Kaleidoscope bursts"
+        ],
+        "random_list": {
+          "10": {
+            "modifier": {
+              "add": "value:kaleidoscope_good_ending_chances"
+            },
+            "situation_event": {},
+            "90": {
+              "modifier": {
+                "subtract": "value:kaleidoscope_good_ending_chances"
+              },
+              "situation_event": {}
+            }
+          },
+          "on_abort": {},
+          "abort_trigger": {
+            "OR": {
+              "NOT": {
+                "target": {
+                  "NOT": {}
+                }
+              },
+              "triggered_modifier": {
+                "potential": {
+                  "has_situation_flag": "kaleidoscope_dazzling_patterns"
+                },
+                "modifier": {
+                  "planet_immigration_pull_add": "10"
+                }
+              },
+              "start_value": "0",
+              "_comments": [
+                "# Progress",
+                "# 10 years of overfeeding to make it burst",
+                "# 100 / 120 months = 0.8 (let's round it to 1)",
+                "# Approaches",
+                "# Events"
+              ],
+              "stages": {
+                "kaleidoscope_progress": {
+                  "icon": "GFX_situation_stage_1",
+                  "icon_background": "GFX_situation_stage_frame_blue",
+                  "end": "100",
+                  "custom_tooltip": "stage_unknown_effects"
+                }
+              },
+              "monthly_progress": {
+                "base": "0",
+                "modifier": {
+                  "add": "1.5",
+                  "desc": "situation_kaleidoscope_monthly_change_tooltip",
+                  "current_situation_approach": "approach_a_lot_of_food"
+                }
+              },
+              "approach": {
+                "name": "approach_a_lot_of_food",
+                "icon": "GFX_situation_approach_energy_credits",
+                "icon_background": "GFX_situation_approach_bg_green",
+                "on_select": {
+                  "custom_tooltip": "approach_a_lot_of_food_tooltip"
+                },
+                "modifier": {
+                  "country_energy_produces_mult": "-0.60"
+                },
+                "ai_weight": {
+                  "base": "0",
+                  "_comments": [
+                    "# Are we in a deficit?",
+                    "# Is the situation close to completion, so it's worth pushing through it?",
+                    "# Are we producing enough to mantain it?",
+                    "# Or do we have stockpiled energy to feed it?",
+                    "# Do we hate xenos?",
+                    "# Are we at war?",
+                    "# Are we ready to send it to someone, or are we doing it already? Then we should anger it first"
+                  ],
+                  "modifier": {
+                    "factor": "0",
+                    "owner": {
+                      "has_country_flag": "previous_kaleidoscope_owner",
+                      "any_spynetwork": {
+                        "has_available_spy_power >": "10"
+                      }
+                    }
+                  }
+                }
+              },
+              "on_monthly": {
+                "events": {},
+                "random_events": {
+                  "100": "0",
+                  "1": "situation.2038 # Positive 2 - dazzling patterns (science)",
+                  "2": "situation.2048 # Kaleidoscope could get a Dyson sphere?"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_narrative_situations.txt",
+    "_line_number": 1245
+  },
+  "situation_negative_mass": {
+    "situation_negative_mass": {
+      "picture": "GFX_evt_wormhole",
+      "start_value": "75",
+      "complete_icon_frame": "GFX_situation_outcome_frame_red",
+      "complete_icon": "GFX_situation_outcome_negative",
+      "fail_icon_frame": "GFX_situation_outcome_frame_green",
+      "fail_icon": "GFX_situation_outcome_positive",
+      "category": "negative",
+      "on_start": {
+        "situation_event": {},
+        "on_progress_complete": {
+          "custom_tooltip": "situation_negative_mass_complete_tooltip",
+          "owner": {},
+          "on_fail": {
+            "custom_tooltip": "situation_negative_mass_fail_tooltip",
+            "owner": {},
+            "monthly_progress": {
+              "base": "3",
+              "modifier": {
+                "desc": "string_took_pops",
+                "has_situation_flag": "took_pops",
+                "add": "1"
+              }
+            },
+            "approach": {
+              "name": "approach_save_b_world",
+              "icon": "GFX_situation_approach_pop",
+              "icon_background": "GFX_situation_approach_bg_green",
+              "potential": {
+                "has_situation_flag": "willing_to_help"
+              },
+              "resources": {
+                "category": "situations",
+                "upkeep": {
+                  "energy": "45"
+                }
+              },
+              "triggered_modifier": {
+                "potential": {
+                  "NOT": {},
+                  "country_physics_research_produces_mult": "-0.10",
+                  "country_engineering_research_produces_mult": "-0.10",
+                  "country_society_research_produces_mult": "-0.10"
+                },
+                "triggered_modifier": {
+                  "potential": {
+                    "country_physics_research_produces_mult": "-0.30",
+                    "country_engineering_research_produces_mult": "-0.30",
+                    "country_society_research_produces_mult": "-0.30"
+                  }
+                },
+                "approach": {
+                  "name": "approach_observe_nmass",
+                  "icon": "GFX_situation_approach_research",
+                  "icon_background": "GFX_situation_approach_bg_red",
+                  "potential": {
+                    "NOT": {},
+                    "modifier": {
+                      "country_physics_research_produces_mult": "0.40"
+                    }
+                  },
+                  "approach": {
+                    "name": "approach_plunder_nmass",
+                    "icon": "GFX_situation_approach_this_is_fine",
+                    "icon_background": "GFX_situation_approach_bg_red",
+                    "potential": {
+                      "NOT": {},
+                      "resources": {
+                        "category": "situations",
+                        "produces": {
+                          "trigger": {
+                            "food": "30"
+                          }
+                        }
+                      },
+                      "stages": {
+                        "stage_1": {
+                          "icon": "GFX_situation_stage_1",
+                          "icon_background": "GFX_situation_stage_frame_red",
+                          "end": "30",
+                          "on_first_enter": {
+                            "situation_event": {
+                              "situation_event": {}
+                            },
+                            "stage_2": {
+                              "end": "74",
+                              "icon": "GFX_situation_stage_2",
+                              "icon_background": "GFX_situation_stage_frame_red",
+                              "on_first_enter": {
+                                "situation_event": {
+                                  "situation_event": {}
+                                },
+                                "stage_3": {
+                                  "end": "95",
+                                  "icon": "GFX_situation_stage_3",
+                                  "icon_background": "GFX_situation_stage_frame_red"
+                                },
+                                "stage_4": {
+                                  "end": "100",
+                                  "icon": "GFX_situation_stage_4",
+                                  "icon_background": "GFX_situation_stage_frame_red",
+                                  "on_first_enter": {
+                                    "situation_event": {}
+                                  }
+                                },
+                                "abort_trigger": {
+                                  "OR": {
+                                    "NOT": {
+                                      "target.owner": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_narrative_situations.txt",
+    "_line_number": 1640
+  }
+}

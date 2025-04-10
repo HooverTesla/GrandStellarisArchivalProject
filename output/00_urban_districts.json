@@ -1,0 +1,928 @@
+{
+  "district_crashed_slaver_ship": {
+    "district_crashed_slaver_ship": {
+      "is_capped_by_modifier": "yes",
+      "can_demolish": "no",
+      "exempt_from_ai_planet_specialization": "yes",
+      "show_on_uncolonized": {
+        "always": "no"
+      },
+      "potential": {
+        "exists": "owner",
+        "uses_district_set": "standard",
+        "has_deposit": "d_crashed_slaver_ship"
+      },
+      "allow": {
+        "NOT": {
+          "NOT": {},
+          "conversion_ratio": "1",
+          "convert_to": {},
+          "resources": {
+            "category": "planet_districts_cities",
+            "upkeep": {
+              "energy": "2"
+            }
+          },
+          "planet_modifier": {
+            "planet_housing_add": "4",
+            "planet_max_buildings_add": "0.75"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {
+                "NOT": {}
+              },
+              "job_broken_shackles_scavenger_add": "1"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {},
+                "modifier": {
+                  "planet_housing_add": "1"
+                }
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "owner",
+                  "owner": {
+                    "has_technology": "tech_housing_2",
+                    "NOT": {}
+                  },
+                  "modifier": {
+                    "planet_housing_add": "1"
+                  }
+                },
+                "triggered_planet_modifier": {
+                  "potential": {
+                    "exists": "owner",
+                    "owner": {},
+                    "modifier": {
+                      "job_clerk_add": "1"
+                    }
+                  },
+                  "triggered_desc": {
+                    "trigger": {
+                      "exists": "owner",
+                      "owner": {
+                        "NOT": {}
+                      },
+                      "text": "job_broken_shackles_scavenger_effect_desc"
+                    },
+                    "triggered_desc": {
+                      "trigger": {
+                        "exists": "owner",
+                        "owner": {
+                          "has_country_flag": "origin_broken_shackles_crashed_slaver_ship_depleted"
+                        }
+                      },
+                      "text": "job_clerk_effect_desc"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_urban_districts.txt",
+    "_line_number": 16
+  },
+  "district_resort": {
+    "district_resort": {
+      "base_buildtime": "480",
+      "is_capped_by_modifier": "no",
+      "exempt_from_ai_planet_specialization": "yes",
+      "show_on_uncolonized": {
+        "exists": "from",
+        "from": {
+          "has_modifier": "resort_colony"
+        },
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "has_modifier": "resort_colony"
+          },
+          "allow": {
+            "NOT": {},
+            "conversion_ratio": "1",
+            "convert_to": {},
+            "resources": {
+              "category": "planet_districts_cities",
+              "cost": {
+                "minerals": "@city_cost"
+              },
+              "upkeep": {
+                "energy": "2"
+              }
+            },
+            "planet_modifier": {
+              "planet_housing_add": "2",
+              "planet_max_buildings_add": "0.5"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {},
+                "modifier": {
+                  "planet_housing_add": "1"
+                }
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "owner",
+                  "owner": {
+                    "has_technology": "tech_housing_2",
+                    "NOT": {}
+                  },
+                  "modifier": {
+                    "planet_housing_add": "1"
+                  }
+                },
+                "triggered_desc": {
+                  "trigger": {
+                    "exists": "owner",
+                    "owner": {},
+                    "text": "job_resort_worker_effect_desc"
+                  },
+                  "triggered_desc": {
+                    "trigger": {
+                      "exists": "owner",
+                      "owner": {
+                        "is_pleasure_seeker": "yes"
+                      }
+                    },
+                    "text": "job_entertainer_effect_desc"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_urban_districts.txt",
+    "_line_number": 145
+  },
+  "district_prison": {
+    "district_prison": {
+      "base_buildtime": "480",
+      "is_capped_by_modifier": "no",
+      "exempt_from_ai_planet_specialization": "yes",
+      "icon": "district_city",
+      "show_on_uncolonized": {
+        "exists": "from",
+        "from": {
+          "has_modifier": "penal_colony"
+        },
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "has_modifier": "penal_colony"
+          },
+          "allow": {
+            "has_modifier": "penal_colony"
+          },
+          "conversion_ratio": "1",
+          "convert_to": {},
+          "resources": {
+            "category": "planet_districts_cities",
+            "cost": {
+              "minerals": "@city_cost"
+            },
+            "upkeep": {
+              "energy": "2"
+            }
+          },
+          "planet_modifier": {
+            "planet_housing_add": "3",
+            "planet_max_buildings_add": "1"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {},
+              "modifier": {
+                "planet_housing_add": "1"
+              }
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {
+                  "has_technology": "tech_housing_2",
+                  "NOT": {}
+                },
+                "modifier": {
+                  "planet_housing_add": "1"
+                }
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "owner",
+                  "owner": {
+                    "is_gestalt": "no",
+                    "is_fallen_empire_spiritualist": "no"
+                  }
+                },
+                "modifier": {
+                  "job_enforcer_add": "2"
+                }
+              },
+              "triggered_desc": {
+                "trigger": {
+                  "exists": "owner",
+                  "owner": {},
+                  "text": "job_enforcer_effect_desc"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_urban_districts.txt",
+    "_line_number": 281
+  },
+  "district_slave": {
+    "district_slave": {
+      "base_buildtime": "480",
+      "is_capped_by_modifier": "no",
+      "exempt_from_ai_planet_specialization": "yes",
+      "icon": "district_city",
+      "show_on_uncolonized": {
+        "exists": "from",
+        "from": {
+          "has_modifier": "slave_colony"
+        },
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "has_modifier": "slave_colony"
+          },
+          "allow": {
+            "has_modifier": "slave_colony"
+          },
+          "conversion_ratio": "1",
+          "convert_to": {},
+          "resources": {
+            "category": "planet_districts_cities",
+            "cost": {
+              "minerals": "@city_cost"
+            },
+            "upkeep": {
+              "energy": "2"
+            }
+          },
+          "planet_modifier": {
+            "planet_housing_add": "10",
+            "planet_max_buildings_add": "1"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "owner",
+              "owner": {},
+              "modifier": {
+                "planet_housing_add": "1"
+              }
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {
+                  "has_technology": "tech_housing_2",
+                  "NOT": {}
+                },
+                "modifier": {
+                  "planet_housing_add": "1"
+                }
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "owner",
+                  "owner": {
+                    "is_gestalt": "no",
+                    "is_fallen_empire_spiritualist": "no"
+                  }
+                },
+                "modifier": {
+                  "job_slave_overseer_add": "2"
+                }
+              },
+              "triggered_desc": {
+                "trigger": {
+                  "exists": "owner",
+                  "owner": {},
+                  "text": "job_slave_overseer_effect_desc"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_urban_districts.txt",
+    "_line_number": 397
+  },
+  "district_city": {
+    "district_city": {
+      "base_buildtime": "480",
+      "is_capped_by_modifier": "no",
+      "exempt_from_ai_planet_specialization": "yes",
+      "show_on_uncolonized": {
+        "exists": "from",
+        "from": {
+          "OR": {
+            "uses_district_set": "shattered_ring_world"
+          },
+          "NOR": {
+            "has_modifier": "slave_colony"
+          }
+        },
+        "potential": {
+          "OR": {
+            "NOT": {
+              "OR": {
+                "uses_district_set": "shattered_ring_world"
+              },
+              "NOR": {
+                "has_modifier": "slave_colony"
+              }
+            },
+            "allow": {
+              "NOR": {
+                "has_modifier": "slave_colony"
+              }
+            },
+            "conversion_ratio": "1",
+            "convert_to": {},
+            "resources": {
+              "category": "planet_districts_cities",
+              "cost": {
+                "minerals": "@city_cost",
+                "trigger": {
+                  "NOT": {}
+                },
+                "cost": {
+                  "food": "@city_cost",
+                  "trigger": {
+                    "has_modifier": "wooden_planet"
+                  }
+                },
+                "upkeep": {
+                  "energy": "2",
+                  "trigger": {
+                    "NOT": {}
+                  },
+                  "upkeep": {
+                    "food": "2",
+                    "trigger": {
+                      "has_modifier": "wooden_planet"
+                    }
+                  }
+                },
+                "planet_modifier": {
+                  "planet_housing_add": "5",
+                  "planet_max_buildings_add": "1"
+                },
+                "triggered_planet_modifier": {
+                  "potential": {
+                    "exists": "owner",
+                    "owner": {},
+                    "modifier": {
+                      "planet_housing_add": "1"
+                    }
+                  },
+                  "triggered_planet_modifier": {
+                    "potential": {
+                      "exists": "owner",
+                      "owner": {
+                        "has_technology": "tech_housing_2",
+                        "NOT": {}
+                      },
+                      "modifier": {
+                        "planet_housing_add": "1"
+                      }
+                    },
+                    "triggered_desc": {
+                      "trigger": {
+                        "exists": "owner",
+                        "owner": {},
+                        "text": "job_clerk_effect_desc"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_urban_districts.txt",
+    "_line_number": 513
+  },
+  "district_hive": {
+    "district_hive": {
+      "base_buildtime": "480",
+      "is_capped_by_modifier": "no",
+      "exempt_from_ai_planet_specialization": "yes",
+      "show_on_uncolonized": {
+        "from": {
+          "OR": {
+            "uses_district_set": "shattered_ring_world"
+          }
+        },
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "OR": {
+              "uses_district_set": "shattered_ring_world"
+            }
+          },
+          "allow": {
+            "NOT": {},
+            "conversion_ratio": "1",
+            "convert_to": {},
+            "resources": {
+              "category": "planet_districts_cities",
+              "cost": {
+                "minerals": "@city_cost"
+              },
+              "upkeep": {
+                "energy": "2"
+              }
+            },
+            "planet_modifier": {
+              "planet_housing_add": "6",
+              "job_maintenance_drone_add": "3",
+              "planet_max_buildings_add": "1"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {},
+                "modifier": {
+                  "planet_housing_add": "1"
+                }
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "owner",
+                  "owner": {},
+                  "modifier": {
+                    "planet_housing_add": "1",
+                    "job_maintenance_drone_add": "1"
+                  }
+                },
+                "triggered_planet_modifier": {
+                  "potential": {
+                    "exists": "owner",
+                    "owner": {},
+                    "modifier": {
+                      "planet_housing_add": "1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_urban_districts.txt",
+    "_line_number": 695
+  },
+  "district_nexus": {
+    "district_nexus": {
+      "base_buildtime": "480",
+      "is_capped_by_modifier": "no",
+      "exempt_from_ai_planet_specialization": "yes",
+      "show_on_uncolonized": {
+        "from": {
+          "OR": {
+            "uses_district_set": "shattered_ring_world"
+          }
+        },
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "OR": {
+              "uses_district_set": "shattered_ring_world"
+            }
+          },
+          "allow": {
+            "NOT": {},
+            "conversion_ratio": "1",
+            "convert_to": {},
+            "resources": {
+              "category": "planet_districts_cities",
+              "cost": {
+                "minerals": "@city_cost"
+              },
+              "upkeep": {
+                "energy": "2"
+              }
+            },
+            "planet_modifier": {
+              "planet_housing_add": "5",
+              "job_maintenance_drone_add": "3",
+              "planet_max_buildings_add": "1"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {},
+                "modifier": {
+                  "planet_housing_add": "1"
+                }
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "owner",
+                  "owner": {},
+                  "modifier": {
+                    "planet_housing_add": "1",
+                    "job_maintenance_drone_add": "1"
+                  }
+                },
+                "triggered_planet_modifier": {
+                  "potential": {
+                    "exists": "owner",
+                    "owner": {},
+                    "modifier": {
+                      "job_maintenance_drone_add": "2"
+                    }
+                  },
+                  "triggered_planet_modifier": {
+                    "potential": {
+                      "exists": "owner",
+                      "owner": {},
+                      "modifier": {
+                        "planet_housing_add": "1"
+                      }
+                    },
+                    "triggered_desc": {
+                      "trigger": {
+                        "has_modifier": "gestation_colony"
+                      },
+                      "text": "job_gestation_drone_effect_desc"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_urban_districts.txt",
+    "_line_number": 794
+  },
+  "district_industrial": {
+    "district_industrial": {
+      "base_buildtime": "480",
+      "is_capped_by_modifier": "no",
+      "prerequisites": {},
+      "show_on_uncolonized": {
+        "exists": "from",
+        "uses_district_industrial": "yes",
+        "NOR": {
+          "has_modifier": "slave_colony"
+        }
+      },
+      "potential": {
+        "exists": "owner",
+        "uses_district_industrial": "yes",
+        "NOR": {
+          "has_modifier": "slave_colony"
+        }
+      },
+      "allow": {
+        "NOR": {
+          "has_modifier": "slave_colony"
+        }
+      },
+      "conversion_ratio": "1",
+      "convert_to": {},
+      "resources": {
+        "category": "planet_districts_industrial",
+        "cost": {
+          "minerals": "@city_cost"
+        },
+        "upkeep": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {
+              "has_edict": "industrial_maintenance"
+            }
+          },
+          "energy": "2"
+        }
+      },
+      "planet_modifier": {
+        "planet_housing_add": "2"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {},
+          "modifier": {
+            "planet_max_buildings_add": "0.34"
+          }
+        },
+        "inline_script": {
+          "script": "jobs/industrial_districts_foundry_add",
+          "AMOUNT": "1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner",
+            "owner": {
+              "is_machine_empire": "yes",
+              "has_edict": "industrial_maintenance"
+            }
+          },
+          "modifier": {
+            "job_maintenance_drone_add": "1"
+          }
+        },
+        "triggered_desc": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {
+              "is_machine_empire": "yes",
+              "has_edict": "industrial_maintenance"
+            }
+          },
+          "text": "job_maintenance_drone_effect_desc"
+        }
+      }
+    },
+    "_source_file": "00_urban_districts.txt",
+    "_line_number": 910
+  },
+  "district_prison_industrial": {
+    "district_prison_industrial": {
+      "base_buildtime": "480",
+      "is_capped_by_modifier": "no",
+      "icon": "district_industrial",
+      "prerequisites": {},
+      "show_on_uncolonized": {
+        "exists": "owner",
+        "owner": {
+          "uses_district_industrial": "yes",
+          "has_modifier": "penal_colony"
+        },
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "uses_district_industrial": "yes",
+            "has_modifier": "penal_colony"
+          },
+          "allow": {
+            "NOR": {
+              "has_modifier": "slave_colony"
+            }
+          },
+          "conversion_ratio": "1",
+          "convert_to": {},
+          "resources": {
+            "category": "planet_districts_industrial",
+            "cost": {
+              "minerals": "@city_cost"
+            },
+            "upkeep": {
+              "trigger": {
+                "exists": "owner",
+                "owner": {
+                  "has_edict": "industrial_maintenance"
+                }
+              },
+              "energy": "2"
+            }
+          },
+          "planet_modifier": {
+            "planet_housing_add": "2"
+          },
+          "inline_script": {
+            "script": "jobs/industrial_prison_districts_foundry_add",
+            "AMOUNT": "1"
+          }
+        }
+      }
+    },
+    "_source_file": "00_urban_districts.txt",
+    "_line_number": 1030
+  },
+  "district_battle_thrall": {
+    "district_battle_thrall": {
+      "base_buildtime": "480",
+      "is_capped_by_modifier": "no",
+      "prerequisites": {},
+      "show_on_uncolonized": {
+        "exists": "from",
+        "has_modifier": "slave_colony"
+      },
+      "potential": {
+        "exists": "owner",
+        "has_modifier": "slave_colony"
+      },
+      "allow": {
+        "has_modifier": "slave_colony"
+      },
+      "conversion_ratio": "1",
+      "convert_to": {},
+      "resources": {
+        "category": "planet_districts_industrial",
+        "cost": {
+          "minerals": "@city_cost"
+        },
+        "upkeep": {
+          "trigger": {
+            "exists": "owner",
+            "owner": {
+              "has_edict": "industrial_maintenance"
+            }
+          },
+          "energy": "2"
+        }
+      },
+      "planet_modifier": {
+        "planet_housing_add": "2"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_gestalt": "no",
+            "is_fallen_empire_spiritualist": "no"
+          }
+        },
+        "modifier": {
+          "job_battle_thrall_add": "2"
+        }
+      },
+      "triggered_desc": {
+        "trigger": {
+          "exists": "owner",
+          "owner": {},
+          "text": "job_battle_thrall_effect_desc"
+        }
+      }
+    },
+    "_source_file": "00_urban_districts.txt",
+    "_line_number": 1103
+  },
+  "district_srw_commercial": {
+    "district_srw_commercial": {
+      "base_buildtime": "240",
+      "is_capped_by_modifier": "no",
+      "min_for_deposits_on_planet": "3",
+      "max_for_deposits_on_planet": "15",
+      "show_on_uncolonized": {
+        "exists": "from",
+        "from": {
+          "uses_district_set": "shattered_ring_world"
+        },
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "uses_district_set": "shattered_ring_world"
+          },
+          "allow": {
+            "NOT": {},
+            "conversion_ratio": "1",
+            "convert_to": {},
+            "resources": {
+              "category": "planet_districts",
+              "cost": {
+                "minerals": "@base_cost"
+              },
+              "upkeep": {
+                "energy": "1"
+              }
+            },
+            "planet_modifier": {
+              "planet_housing_add": "2"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "owner",
+                "owner": {},
+                "modifier": {
+                  "job_trader_add": "1"
+                }
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "owner",
+                  "owner": {},
+                  "modifier": {
+                    "job_artificer_add": "1"
+                  }
+                },
+                "triggered_planet_modifier": {
+                  "potential": {
+                    "exists": "owner",
+                    "owner": {},
+                    "modifier": {
+                      "job_manager_add": "2"
+                    }
+                  },
+                  "triggered_planet_modifier": {
+                    "potential": {
+                      "exists": "owner",
+                      "owner": {
+                        "has_active_tradition": "tr_mercantile_commercial_enterprise"
+                      }
+                    },
+                    "modifier": {
+                      "job_trader_add": "1"
+                    }
+                  },
+                  "triggered_desc": {
+                    "trigger": {
+                      "exists": "owner",
+                      "owner": {
+                        "is_regular_empire": "yes",
+                        "is_crafter_empire": "yes"
+                      }
+                    },
+                    "text": "job_artificer_effect_desc"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_urban_districts.txt",
+    "_line_number": 1184
+  },
+  "district_machine_coordination": {
+    "district_machine_coordination": {
+      "base_buildtime": "480",
+      "is_capped_by_modifier": "no",
+      "icon": "district_arcology_administrative",
+      "prerequisites": {},
+      "show_on_uncolonized": {
+        "exists": "from",
+        "from": {
+          "is_machine_empire": "yes",
+          "NOT": {},
+          "is_planet_class": "pc_machine"
+        },
+        "potential": {
+          "exists": "owner",
+          "owner": {
+            "is_machine_empire": "yes",
+            "NOT": {},
+            "is_planet_class": "pc_machine"
+          },
+          "allow": {
+            "NOT": {
+              "NOT": {},
+              "conversion_ratio": "1",
+              "convert_to": {},
+              "resources": {
+                "category": "planet_districts",
+                "cost": {
+                  "minerals": "@city_cost"
+                },
+                "upkeep": {
+                  "energy": "2"
+                }
+              },
+              "planet_modifier": {
+                "planet_housing_add": "2",
+                "job_coordinator_add": "2"
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "owner",
+                  "owner": {
+                    "is_machine_empire": "yes",
+                    "has_ascension_perk": "ap_machine_worlds",
+                    "has_tradition": "tr_virtuality_4"
+                  }
+                },
+                "modifier": {
+                  "job_coordinator_add": "1"
+                }
+              },
+              "triggered_desc": {
+                "text": "job_coordinator_effect_desc"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_urban_districts.txt",
+    "_line_number": 1306
+  }
+}

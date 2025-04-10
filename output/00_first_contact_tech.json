@@ -1,0 +1,704 @@
+{
+  "tech_cloaking_1": {
+    "tech_cloaking_1": {
+      "cost": "@tier2cost3",
+      "area": "physics",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "potential": {
+            "has_first_contact_dlc": "yes"
+          },
+          "_comments": [
+            "# Unlocks Active Reconnaissance"
+          ],
+          "feature_flags": {},
+          "prereqfor_desc": {
+            "hide_prereq_for_desc": "component",
+            "custom": {
+              "title": "TECH_UNLOCK_CLOAKING_1_TITLE",
+              "desc": "TECH_UNLOCK_CLOAKING_1_DESC"
+            }
+          },
+          "gateway": "cloaking",
+          "weight_modifier": {
+            "modifier": {
+              "factor": "value:tech_weight_likelihood",
+              "has_trait_in_council": {},
+              "modifier": {
+                "factor": "value:tech_weight_likelihood",
+                "has_trait_in_council": {},
+                "inline_script": {
+                  "script": "technologies/rare_technologies_weight_modifiers",
+                  "TECHNOLOGY": "tech_cloaking_1"
+                },
+                "modifier": {
+                  "factor": "5",
+                  "has_tradition": "tr_subterfuge_adopt"
+                }
+              },
+              "ai_weight": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 15
+  },
+  "tech_cloaking_2": {
+    "tech_cloaking_2": {
+      "cost": "@tier3cost3",
+      "area": "physics",
+      "tier": "3",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "@tier3weight3",
+          "potential": {
+            "has_first_contact_dlc": "yes"
+          },
+          "prereqfor_desc": {
+            "hide_prereq_for_desc": "component",
+            "custom": {
+              "title": "TECH_UNLOCK_CLOAKING_2_TITLE",
+              "desc": "TECH_UNLOCK_CLOAKING_2_DESC"
+            }
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "value:tech_weight_likelihood",
+              "has_trait_in_council": {},
+              "modifier": {
+                "factor": "value:tech_weight_likelihood",
+                "has_trait_in_council": {},
+                "inline_script": {
+                  "script": "technologies/rare_technologies_weight_modifiers",
+                  "TECHNOLOGY": "tech_cloaking_2"
+                },
+                "modifier": {
+                  "factor": "5",
+                  "has_tradition": "tr_subterfuge_adopt"
+                }
+              },
+              "ai_weight": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 67
+  },
+  "tech_cloaking_3": {
+    "tech_cloaking_3": {
+      "cost": "@tier4cost3",
+      "area": "physics",
+      "tier": "4",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "@tier4weight3",
+          "potential": {
+            "has_first_contact_dlc": "yes"
+          },
+          "prereqfor_desc": {
+            "hide_prereq_for_desc": "component",
+            "custom": {
+              "title": "TECH_UNLOCK_CLOAKING_3_TITLE",
+              "desc": "TECH_UNLOCK_CLOAKING_3_DESC"
+            }
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "value:tech_weight_likelihood",
+              "has_trait_in_council": {},
+              "modifier": {
+                "factor": "value:tech_weight_likelihood",
+                "has_trait_in_council": {},
+                "inline_script": {
+                  "script": "technologies/rare_technologies_weight_modifiers",
+                  "TECHNOLOGY": "tech_cloaking_3"
+                },
+                "modifier": {
+                  "factor": "5",
+                  "has_tradition": "tr_subterfuge_adopt"
+                }
+              },
+              "ai_weight": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 114
+  },
+  "tech_cloaking_dark_matter": {
+    "tech_cloaking_dark_matter": {
+      "cost": "@fallentechcost",
+      "area": "physics",
+      "tier": "@fallentechtier",
+      "category": {
+        "ai_update_type": "all",
+        "weight": "@tier5weight2",
+        "is_rare": "yes",
+        "prerequisites": {
+          "prereqfor_desc": {
+            "hide_prereq_for_desc": "component",
+            "custom": {
+              "title": "TECH_UNLOCK_CLOAKING_DARK_MATTER_TITLE",
+              "desc": "TECH_UNLOCK_CLOAKING_DARK_MATTER_DESC"
+            }
+          },
+          "weight_modifier": {
+            "modifier": {
+              "factor": "value:tech_weight_likelihood",
+              "has_trait_in_council": {},
+              "inline_script": {
+                "script": "technologies/rare_technologies_weight_modifiers",
+                "TECHNOLOGY": "tech_cloaking_dark_matter"
+              },
+              "modifier": {
+                "factor": "5",
+                "has_tradition": "tr_subterfuge_adopt"
+              }
+            },
+            "ai_weight": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 161
+  },
+  "tech_cloaking_psi": {
+    "tech_cloaking_psi": {
+      "cost": "@tier5cost3",
+      "area": "society",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "@tier5weight2",
+          "is_reverse_engineerable": "no",
+          "potential": {
+            "NOT": {
+              "has_first_contact_dlc": "yes"
+            },
+            "prereqfor_desc": {
+              "hide_prereq_for_desc": "component",
+              "custom": {
+                "title": "TECH_UNLOCK_CLOAKING_PSI_TITLE",
+                "desc": "TECH_UNLOCK_CLOAKING_PSI_DESC"
+              }
+            },
+            "weight_modifier": {
+              "modifier": {
+                "factor": "0.1",
+                "NOR": {
+                  "has_trait_in_council": {
+                    "has_trait_in_council": {
+                      "has_trait_in_council": {
+                        "has_trait_in_council": {
+                          "has_trait_in_council": {
+                            "has_trait_in_council": {
+                              "has_trait_in_council": {}
+                            },
+                            "inline_script": {
+                              "script": "technologies/rare_technologies_weight_modifiers",
+                              "TECHNOLOGY": "tech_cloaking_psi"
+                            },
+                            "modifier": {
+                              "factor": "5",
+                              "has_tradition": "tr_subterfuge_adopt"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 204
+  },
+  "tech_detection_array": {
+    "tech_detection_array": {
+      "cost": "@tier2cost3",
+      "area": "physics",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "potential": {
+            "has_first_contact_dlc": "yes"
+          },
+          "gateway": "detection",
+          "_comments": [
+            "# unlocks starbase module - detection array"
+          ],
+          "weight_modifier": {
+            "modifier": {
+              "factor": "value:tech_weight_likelihood",
+              "has_trait_in_council": {},
+              "modifier": {
+                "factor": "value:tech_weight_likelihood",
+                "has_trait_in_council": {},
+                "inline_script": {
+                  "script": "technologies/rare_technologies_weight_modifiers",
+                  "TECHNOLOGY": "tech_detection_array"
+                },
+                "modifier": {
+                  "factor": "5",
+                  "has_tradition": "tr_subterfuge_adopt"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 258
+  },
+  "tech_dark_matter_detection": {
+    "tech_dark_matter_detection": {
+      "cost": "@tier5cost3",
+      "area": "physics",
+      "tier": "5",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "@tier5weight3",
+          "potential": {
+            "has_first_contact_dlc": "yes"
+          },
+          "_comments": [
+            "# unlocks starbase building - dark matter resonance chamber"
+          ],
+          "weight_modifier": {
+            "modifier": {
+              "factor": "value:tech_weight_likelihood",
+              "has_trait_in_council": {},
+              "modifier": {
+                "factor": "value:tech_weight_likelihood",
+                "has_trait_in_council": {},
+                "inline_script": {
+                  "script": "technologies/rare_technologies_weight_modifiers",
+                  "TECHNOLOGY": "tech_dark_matter_detection"
+                },
+                "modifier": {
+                  "factor": "5",
+                  "has_tradition": "tr_subterfuge_adopt"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 296
+  },
+  "tech_assisted_detection": {
+    "tech_assisted_detection": {
+      "cost": "@tier2cost3",
+      "area": "physics",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "is_rare": "yes",
+        "prerequisites": {
+          "weight": "@tier2weight3",
+          "potential": {
+            "has_first_contact_dlc": "yes"
+          },
+          "_comments": [
+            "# Unlocks Assist Cloaking Detection"
+          ],
+          "feature_flags": {},
+          "weight_modifier": {
+            "modifier": {
+              "factor": "value:tech_weight_likelihood",
+              "has_trait_in_council": {},
+              "modifier": {
+                "factor": "value:tech_weight_likelihood",
+                "has_trait_in_council": {},
+                "inline_script": {
+                  "script": "technologies/rare_technologies_weight_modifiers",
+                  "TECHNOLOGY": "tech_assisted_detection"
+                },
+                "modifier": {
+                  "factor": "5",
+                  "has_tradition": "tr_subterfuge_adopt"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 333
+  },
+  "tech_subspace_drive": {
+    "tech_subspace_drive": {
+      "cost": "@tier0cost1",
+      "area": "physics",
+      "tier": "0",
+      "category": {
+        "ai_update_type": "all",
+        "is_reverse_engineerable": "no",
+        "is_rare": "yes",
+        "weight": "0",
+        "potential": {
+          "has_first_contact_dlc": "yes"
+        },
+        "feature_flags": {},
+        "weight_modifier": {
+          "factor": "0"
+        },
+        "prereqfor_desc": {
+          "component": {
+            "title": "TECH_UNLOCK_SUBSPACE_DRIVE_TITLE",
+            "desc": "TECH_UNLOCK_SUBSPACE_DRIVE_DESC"
+          }
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 377
+  },
+  "tech_unusual_senses": {
+    "tech_unusual_senses": {
+      "cost": "@tier2cost3",
+      "area": "physics",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "is_insight": "yes",
+        "weight": "0",
+        "potential": {
+          "has_first_contact_dlc": "yes"
+        },
+        "prereqfor_desc": {
+          "custom": {
+            "title": "tech_unusual_senses_effect"
+          }
+        },
+        "modifier": {
+          "envoys_add": "@insight_envoy_gain"
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 414
+  },
+  "tech_new_numbers": {
+    "tech_new_numbers": {
+      "cost": "@tier2cost3",
+      "area": "physics",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "is_insight": "yes",
+        "weight": "0",
+        "potential": {
+          "has_first_contact_dlc": "yes"
+        },
+        "modifier": {
+          "envoys_add": "@insight_envoy_gain",
+          "all_technology_research_speed": "0.05"
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 437
+  },
+  "tech_trinary_computing": {
+    "tech_trinary_computing": {
+      "cost": "@tier2cost3",
+      "area": "physics",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "is_insight": "yes",
+        "weight": "0",
+        "potential": {
+          "has_first_contact_dlc": "yes"
+        },
+        "modifier": {
+          "envoys_add": "@insight_envoy_gain",
+          "espionage_operation_speed_mult": "0.1",
+          "espionage_operation_difficulty_add": "-1"
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 456
+  },
+  "tech_atmospheric_orbital_mechanics": {
+    "tech_atmospheric_orbital_mechanics": {
+      "cost": "@tier2cost3",
+      "area": "physics",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "is_insight": "yes",
+        "weight": "0",
+        "potential": {
+          "has_first_contact_dlc": "yes"
+        },
+        "modifier": {
+          "envoys_add": "@insight_envoy_gain",
+          "station_gatherers_produces_mult": "0.05",
+          "station_researchers_produces_mult": "0.05",
+          "stations_upkeep_mult": "-0.5"
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 476
+  },
+  "tech_predatory_tactics": {
+    "tech_predatory_tactics": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "is_insight": "yes",
+        "weight": "0",
+        "potential": {
+          "has_first_contact_dlc": "yes"
+        },
+        "prereqfor_desc": {
+          "custom": {
+            "title": "tech_predatory_tactics_effect"
+          }
+        },
+        "modifier": {
+          "envoys_add": "@major_insight_envoy_gain"
+        },
+        "ai_weight": {
+          "modifier": {
+            "factor": "4",
+            "has_technology": "tech_cloaking_3"
+          }
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 504
+  },
+  "tech_satisfying_insults": {
+    "tech_satisfying_insults": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "is_insight": "yes",
+        "weight": "0",
+        "potential": {
+          "has_first_contact_dlc": "yes"
+        },
+        "prereqfor_desc": {
+          "custom": {
+            "title": "tech_satisfying_insults_effect"
+          }
+        },
+        "modifier": {
+          "envoys_add": "@major_insight_envoy_gain",
+          "country_insult_efficiency": "0.5"
+        },
+        "ai_weight": {
+          "modifier": {
+            "factor": "2",
+            "values_others": "no"
+          }
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 544
+  },
+  "tech_compact_living": {
+    "tech_compact_living": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "is_insight": "yes",
+        "weight": "0",
+        "potential": {
+          "has_first_contact_dlc": "yes"
+        },
+        "modifier": {
+          "envoys_add": "@major_insight_envoy_gain",
+          "empire_size_penalty_mult": "-0.05"
+        },
+        "ai_weight": {
+          "modifier": {
+            "factor": "2"
+          }
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 576
+  },
+  "tech_alien_topography": {
+    "tech_alien_topography": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "is_insight": "yes",
+        "weight": "0",
+        "potential": {
+          "has_first_contact_dlc": "yes"
+        },
+        "modifier": {
+          "envoys_add": "@major_insight_envoy_gain",
+          "planet_non_artificial_max_districts_add": "1"
+        },
+        "ai_weight": {
+          "modifier": {
+            "factor": "2"
+          }
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 602
+  },
+  "tech_xeno_aesthetics": {
+    "tech_xeno_aesthetics": {
+      "cost": "@tier2cost3",
+      "area": "society",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "is_insight": "yes",
+        "weight": "0",
+        "potential": {
+          "has_first_contact_dlc": "yes"
+        },
+        "modifier": {
+          "envoys_add": "@major_insight_envoy_gain",
+          "damage_vs_rival_mult": "0.1"
+        },
+        "ai_weight": {
+          "modifier": {
+            "factor": "2"
+          }
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 628
+  },
+  "tech_lost_building_methods": {
+    "tech_lost_building_methods": {
+      "cost": "@tier2cost3",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "is_insight": "yes",
+        "weight": "0",
+        "potential": {
+          "has_first_contact_dlc": "yes"
+        },
+        "modifier": {
+          "envoys_add": "@insight_envoy_gain",
+          "empire_size_districts_mult": "-0.3",
+          "planet_districts_cost_mult": "-0.3"
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 658
+  },
+  "tech_supreme_alloy": {
+    "tech_supreme_alloy": {
+      "cost": "@tier2cost3",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "is_insight": "yes",
+        "weight": "0",
+        "potential": {
+          "has_first_contact_dlc": "yes"
+        },
+        "modifier": {
+          "envoys_add": "@insight_envoy_gain",
+          "planet_metallurgists_alloys_produces_add": "0.5"
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 679
+  },
+  "tech_ordered_retreat": {
+    "tech_ordered_retreat": {
+      "cost": "@tier2cost3",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "is_insight": "yes",
+        "weight": "0",
+        "potential": {
+          "has_first_contact_dlc": "yes"
+        },
+        "modifier": {
+          "envoys_add": "@insight_envoy_gain",
+          "fleet_mia_time_mult": "-0.15"
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 699
+  },
+  "tech_temple_of_transportation": {
+    "tech_temple_of_transportation": {
+      "cost": "@tier2cost3",
+      "area": "engineering",
+      "tier": "2",
+      "category": {
+        "ai_update_type": "all",
+        "is_insight": "yes",
+        "weight": "0",
+        "potential": {
+          "has_first_contact_dlc": "yes"
+        },
+        "modifier": {
+          "envoys_add": "@insight_envoy_gain",
+          "megastructures_hyper_relay_unity_produces_add": "3"
+        }
+      }
+    },
+    "_source_file": "00_first_contact_tech.txt",
+    "_line_number": 719
+  }
+}

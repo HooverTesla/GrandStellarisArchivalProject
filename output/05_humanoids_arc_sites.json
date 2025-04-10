@@ -1,0 +1,36 @@
+{
+  "clone_army_digsite": {
+    "clone_army_digsite": {
+      "desc": "clone_army_digsite_desc",
+      "picture": "GFX_evt_archaeological_dig",
+      "stages": "2",
+      "weight": "0",
+      "max_instances": "999",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "potential": {
+        "hidden_trigger": {
+          "owner": {
+            "has_country_flag": "clone_army_origin_arcsite_owner_@from.planet"
+          }
+        }
+      },
+      "visible": {
+        "has_country_flag": "clone_army_origin_arcsite_owner_@from.planet",
+        "default_site_visible_trigger": "yes"
+      },
+      "stage": {
+        "difficulty": "6",
+        "event": "clones.12",
+        "icon": "GFX_archaeology_runes_B2"
+      },
+      "on_roll_failed": {
+        "from": {}
+      }
+    },
+    "_source_file": "05_humanoids_arc_sites.txt",
+    "_line_number": 5
+  }
+}

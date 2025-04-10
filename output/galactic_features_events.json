@@ -1,0 +1,256 @@
+{
+  "ship_event": {
+    "ship_event": {
+      "id": "galactic_features.500",
+      "title": "galactic_features.500.name",
+      "desc": {
+        "trigger": {
+          "owner": {
+            "NOR": {
+              "has_communications": "event_target:amoeba_country"
+            }
+          }
+        },
+        "text": "galactic_features.500.alt.desc"
+      },
+      "picture": "GFX_evt_friendly_amoeba",
+      "show_sound": "event_scanner",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "is_ai": "no"
+        },
+        "from": {
+          "has_star_flag": "amoeba_home_system",
+          "any_fleet_in_system": {
+            "owner": {
+              "is_country_type": "amoeba_garrison"
+            }
+          }
+        }
+      },
+      "option": {
+        "name": {
+          "text": "BATTLESTATIONS",
+          "trigger": {
+            "owner": {
+              "NOT": {}
+            }
+          },
+          "name": {
+            "text": "INTERESTING",
+            "trigger": {
+              "owner": {
+                "has_modifier": "pacified_amoebas"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "galactic_features_events.txt",
+    "_line_number": 4135
+  },
+  "country_event": {
+    "country_event": {
+      "id": "galactic_features.505",
+      "title": "galactic_features.505.name",
+      "desc": "galactic_features.505.desc",
+      "location": "fromfrom",
+      "picture": "GFX_evt_friendly_amoeba",
+      "show_sound": "event_vote",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "galactic_features.505.B",
+        "custom_tooltip": "galactic_features.505.B.tt",
+        "ai_chance": {
+          "factor": "1",
+          "modifier": {
+            "factor": "5",
+            "OR": {
+              "is_militarist": "yes",
+              "is_xenophobe": "yes"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "galactic_features_events.txt",
+    "_line_number": 4288
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "galactic_features.411",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "has_cosmic_storms_dlc": "yes",
+        "exists": "owner"
+      },
+      "immediate": {
+        "if": {
+          "limit": {
+            "NOT": {
+              "has_building": "building_adakkaria_patriotic_institute"
+            }
+          },
+          "remove_planet_flag": "patriotic_institute_spawning_storms",
+          "_comments": [
+            "# We use this flag to not accidentally start the repeating event twice, so if the building is gone,",
+            "# we can clean up the flag."
+          ]
+        },
+        "else": {
+          "random": {
+            "chance": "20",
+            "random_owned_pop": {
+              "kill_pop": "yes",
+              "_comments": [
+                "# Next the storm spawning here so we only spawn a storm if a random pop exists."
+              ],
+              "prev": {
+                "solar_system": {
+                  "random_list": {
+                    "1": {
+                      "inline_script": {
+                        "script": "cosmic_storms/SpawnAtPosition",
+                        "TYPE": "shroud_storm"
+                      }
+                    }
+                  }
+                }
+              },
+              "create_message": {
+                "type": "MESSAGE_INSTITUTE_SPAWNED_STORM",
+                "localization": "MESSAGE_INSTITUTE_SPAWNED_STORM",
+                "days": "30",
+                "target": "prev",
+                "recipient": "prev.owner",
+                "variable": {
+                  "type": "name",
+                  "localization": "SYSTEM",
+                  "scope": "prev.solar_system"
+                }
+              }
+            }
+          },
+          "planet_event": {}
+        }
+      }
+    },
+    "_source_file": "galactic_features_events.txt",
+    "_line_number": 3772
+  },
+  "event": {
+    "event": {
+      "id": "galactic_features.420",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_system": {},
+        "immediate": {
+          "random_system": {
+            "limit": {
+              "set_star_flag": "vluur_system",
+              "star": {
+                "create_ambient_object": {
+                  "type": "space_storm_1",
+                  "location": "this"
+                },
+                "last_created_ambient_object": {
+                  "set_ambient_object_flag": "space_storm_object",
+                  "set_location": {
+                    "target": "prev",
+                    "distance": "0",
+                    "angle": "random"
+                  }
+                }
+              },
+              "add_modifier": {
+                "random_system_planet": {
+                  "create_country": {
+                    "name": "NAME_VLUUR",
+                    "type": "vluur",
+                    "flag": {
+                      "icon": {
+                        "category": "zoological",
+                        "file": "flag_zoological_1.dds"
+                      },
+                      "background": {
+                        "category": "backgrounds",
+                        "file": "00_solid.dds"
+                      },
+                      "colors": {}
+                    },
+                    "effect": {
+                      "save_event_target_as": "vluur_country",
+                      "add_modifier": {
+                        "modifier": "vluur_power",
+                        "days": "-1"
+                      }
+                    }
+                  },
+                  "create_fleet": {
+                    "name": "NAME_VLUUR",
+                    "effect": {
+                      "set_owner": "event_target:vluur_country",
+                      "create_ship": {
+                        "name": "NAME_VLUUR",
+                        "design": "NAME_Cloud_Entity"
+                      },
+                      "set_location": "prev",
+                      "set_fleet_stance": "passive",
+                      "set_aggro_range_measure_from": "return_point",
+                      "set_aggro_range": "0",
+                      "queue_actions": {
+                        "wait": {
+                          "duration": "2000",
+                          "random": "500"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "galactic_features_events.txt",
+    "_line_number": 3879
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "galactic_features.551",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "fromfrom.owner",
+        "is_in_combat": "yes",
+        "owner": {
+          "OR": {
+            "is_forced_friendly": "fromfrom.owner",
+            "is_forced_neutral": "fromfrom.owner"
+          }
+        }
+      },
+      "immediate": {
+        "owner": {
+          "if": {
+            "limit": {
+              "is_forced_neutral": "fromfrom.owner"
+            },
+            "set_faction_hostility": {
+              "target": "fromfrom.owner",
+              "set_neutral": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "galactic_features_events.txt",
+    "_line_number": 4371
+  }
+}

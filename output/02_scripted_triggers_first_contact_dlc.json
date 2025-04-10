@@ -1,0 +1,494 @@
+{
+  "pre_ftl_ancient_era": {
+    "pre_ftl_ancient_era": {
+      "OR": {
+        "has_pre_ftl_age": "iron_age"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 6
+  },
+  "pre_ftl_medieval_era": {
+    "pre_ftl_medieval_era": {
+      "OR": {
+        "has_pre_ftl_age": "renaissance_age"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 13
+  },
+  "pre_ftl_victorian_era": {
+    "pre_ftl_victorian_era": {
+      "OR": {
+        "has_pre_ftl_age": "industrial_age"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 19
+  },
+  "pre_ftl_modern_era": {
+    "pre_ftl_modern_era": {
+      "OR": {
+        "has_pre_ftl_age": "early_space_age"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 25
+  },
+  "pre_ftl_in_age_is_observed_with": {
+    "pre_ftl_in_age_is_observed_with": {
+      "is_country_type": "primitive",
+      "has_pre_ftl_age": "$AGE$",
+      "capital_scope": {
+        "has_observation_outpost": "yes",
+        "observation_outpost": {
+          "exists": "owner",
+          "has_mission": "$MISSION$"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 33
+  },
+  "pre_ftl_is_observed_with": {
+    "pre_ftl_is_observed_with": {
+      "is_country_type": "primitive",
+      "capital_scope": {
+        "has_observation_outpost": "yes",
+        "observation_outpost": {
+          "exists": "owner",
+          "has_mission": "$MISSION$"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 44
+  },
+  "pre_ftl_is_observed_by_system_owner": {
+    "pre_ftl_is_observed_by_system_owner": {
+      "is_country_type": "primitive",
+      "capital_scope": {
+        "has_observation_outpost": "yes",
+        "observation_outpost": {
+          "exists": "owner"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 54
+  },
+  "pre_ftl_not_observed_by_system_owner": {
+    "pre_ftl_not_observed_by_system_owner": {
+      "is_country_type": "primitive",
+      "capital_scope": {
+        "solar_system": {
+          "exists": "owner"
+        },
+        "has_observation_outpost": "no"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 63
+  },
+  "is_pre_renaissance": {
+    "is_pre_renaissance": {
+      "OR": {
+        "has_pre_ftl_age": "late_medieval_age"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 73
+  },
+  "is_pre_industrial": {
+    "is_pre_industrial": {
+      "OR": {
+        "has_pre_ftl_age": "steam_age"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 81
+  },
+  "is_regular_pre_ftl": {
+    "is_regular_pre_ftl": {
+      "is_primitive": "yes",
+      "is_gestalt": "no"
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 92
+  },
+  "is_gestalt_pre_ftl": {
+    "is_gestalt_pre_ftl": {
+      "is_primitive": "yes",
+      "is_gestalt": "yes"
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 96
+  },
+  "is_hive_mind_pre_ftl": {
+    "is_hive_mind_pre_ftl": {
+      "is_primitive": "yes",
+      "is_hive_empire": "yes"
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 100
+  },
+  "has_active_observation_post": {
+    "has_active_observation_post": {
+      "is_country_type": "default",
+      "has_country_flag": "built_observation_post",
+      "any_system_within_border": {
+        "any_system_colony": {
+          "has_observation_outpost": "yes"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 105
+  },
+  "has_cloaking_component_regular": {
+    "has_cloaking_component_regular": {
+      "OR": {
+        "has_component": "GRAVITY_SNARE_CLOAKING_3"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 115
+  },
+  "has_cloaking_component_dark_matter": {
+    "has_cloaking_component_dark_matter": {
+      "OR": {
+        "has_component": "GRAVITY_SNARE_CLOAKING_DARK_MATTER"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 131
+  },
+  "has_cloaking_component_psi": {
+    "has_cloaking_component_psi": {
+      "OR": {
+        "has_component": "GRAVITY_SNARE_CLOAKING_PSI"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 141
+  },
+  "has_cloaking_component": {
+    "has_cloaking_component": {
+      "OR": {
+        "has_cloaking_component_regular": "yes",
+        "has_cloaking_component_dark_matter": "yes",
+        "has_cloaking_component_psi": "yes"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 151
+  },
+  "has_stealth_ship_role": {
+    "has_stealth_ship_role": {
+      "OR": {
+        "has_role": "energy_torpedoes_stealth"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 159
+  },
+  "has_non_psionic_shields": {
+    "has_non_psionic_shields": {
+      "OR": {
+        "has_component": "LARGE_ARCHAEO_ARMOR"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 171
+  },
+  "has_any_active_pre_ftl_agreement": {
+    "has_any_active_pre_ftl_agreement": {
+      "any_observed_pre_ftl_within_border": {
+        "OR": {
+          "is_under_open_technological_enlightenment": "root",
+          "is_under_societal_enlightenment": "root",
+          "has_pre_ftl_trade": "root"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 200
+  },
+  "has_pre_ftl_tech_enlightenment_agreement": {
+    "has_pre_ftl_tech_enlightenment_agreement": {
+      "any_observed_pre_ftl_within_border": {
+        "is_under_open_technological_enlightenment": "root"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 209
+  },
+  "has_pre_ftl_tech_enlightenment_agreement_no_gestalt": {
+    "has_pre_ftl_tech_enlightenment_agreement_no_gestalt": {
+      "any_observed_pre_ftl_within_border": {
+        "NOT": {
+          "is_under_open_technological_enlightenment": "root"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 214
+  },
+  "has_pre_ftl_societal_enlightenment_agreement": {
+    "has_pre_ftl_societal_enlightenment_agreement": {
+      "any_observed_pre_ftl_within_border": {
+        "is_under_societal_enlightenment": "root"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 220
+  },
+  "has_pre_ftl_societal_enlightenment_agreement_no_gestalt": {
+    "has_pre_ftl_societal_enlightenment_agreement_no_gestalt": {
+      "any_observed_pre_ftl_within_border": {
+        "NOT": {
+          "is_under_societal_enlightenment": "root"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 225
+  },
+  "has_pre_ftl_trade_agreement": {
+    "has_pre_ftl_trade_agreement": {
+      "any_observed_pre_ftl_within_border": {
+        "has_pre_ftl_trade": "root"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 231
+  },
+  "has_pre_ftl_trade_agreement_gestalt": {
+    "has_pre_ftl_trade_agreement_gestalt": {
+      "any_observed_pre_ftl_within_border": {
+        "is_gestalt": "yes",
+        "has_pre_ftl_trade": "root"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 236
+  },
+  "has_pre_ftl_trade_agreement_no_gestalt": {
+    "has_pre_ftl_trade_agreement_no_gestalt": {
+      "any_observed_pre_ftl_within_border": {
+        "NOT": {
+          "has_pre_ftl_trade": "root"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 242
+  },
+  "has_pre_ftl_recent_tech_development": {
+    "has_pre_ftl_recent_tech_development": {
+      "any_observed_pre_ftl_within_border": {
+        "OR": {
+          "is_under_open_technological_enlightenment": "root",
+          "has_country_flag": "recently_planeted_knowlege"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 249
+  },
+  "has_blocked_random_devastating_pre_ftl_events": {
+    "has_blocked_random_devastating_pre_ftl_events": {
+      "OR": {
+        "has_origin": "origin_fear_of_the_dark",
+        "has_country_flag": "solarpunk_country"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 258
+  },
+  "support_seperatist_deficit_trigger": {
+    "support_seperatist_deficit_trigger": {
+      "switch": {
+        "trigger": "has_country_flag",
+        "mineral_seperatist_deficit": {
+          "resource_stockpile_compare": {
+            "resource": "minerals",
+            "value >": "3",
+            "mult": "value:fotd_support_cost|RESOURCE|minerals|"
+          }
+        },
+        "food_seperatist_deficit": {
+          "resource_stockpile_compare": {
+            "resource": "food",
+            "value >": "3",
+            "mult": "value:fotd_support_cost|RESOURCE|food|"
+          }
+        },
+        "energy_seperatist_deficit": {
+          "resource_stockpile_compare": {
+            "resource": "energy",
+            "value >": "3",
+            "mult": "value:fotd_support_cost|RESOURCE|energy|"
+          }
+        },
+        "alloy_seperatist_deficit": {
+          "resource_stockpile_compare": {
+            "resource": "alloys",
+            "value >": "3",
+            "mult": "value:fotd_support_cost|RESOURCE|alloys|"
+          }
+        },
+        "consumer_goods_seperatist_deficit": {
+          "resource_stockpile_compare": {
+            "resource": "consumer_goods",
+            "value >": "3",
+            "mult": "value:fotd_support_cost|RESOURCE|consumer_goods|"
+          }
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 266
+  },
+  "has_deficit_situation": {
+    "has_deficit_situation": {
+      "any_situation": {
+        "is_situation_type": "situation_volatile_motes_deficit"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 307
+  },
+  "has_deficit_situation_stage_2": {
+    "has_deficit_situation_stage_2": {
+      "any_situation": {
+        "OR": {
+          "is_situation_type": "situation_volatile_motes_deficit"
+        },
+        "current_stage": "deficit_second"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 319
+  },
+  "has_deficit_situation_stage_3": {
+    "has_deficit_situation_stage_3": {
+      "any_situation": {
+        "OR": {
+          "is_situation_type": "situation_volatile_motes_deficit"
+        },
+        "current_stage": "deficit_third"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 334
+  },
+  "has_deficit_situation_stage_4": {
+    "has_deficit_situation_stage_4": {
+      "any_situation": {
+        "OR": {
+          "is_situation_type": "situation_volatile_motes_deficit"
+        },
+        "current_stage": "deficit_fourth"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 349
+  },
+  "has_all_physics_insights": {
+    "has_all_physics_insights": {
+      "AND": {
+        "OR": {
+          "has_technology": "tech_atmospheric_orbital_mechanics",
+          "NOT": {}
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 365
+  },
+  "has_all_society_insights": {
+    "has_all_society_insights": {
+      "AND": {
+        "OR": {
+          "has_technology": "tech_xeno_aesthetics",
+          "NOT": {}
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 376
+  },
+  "has_all_engineering_insights": {
+    "has_all_engineering_insights": {
+      "AND": {
+        "has_technology": "tech_ordered_retreat",
+        "OR": {
+          "has_technology": "tech_temple_of_transportation",
+          "has_overlord_dlc": "no",
+          "NOT": {}
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 388
+  },
+  "has_all_insights": {
+    "has_all_insights": {
+      "has_all_physics_insights": "yes",
+      "has_all_society_insights": "yes",
+      "has_all_engineering_insights": "yes"
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 400
+  },
+  "has_special_pre_ftl_diplo": {
+    "has_special_pre_ftl_diplo": {
+      "OR": {
+        "has_country_flag": "solarpunk_country"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 406
+  },
+  "is_broken_shackles_pre_ftl": {
+    "is_broken_shackles_pre_ftl": {
+      "OR": {
+        "has_country_flag": "broken_shackles_abductees_country"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 414
+  },
+  "is_broken_shackles_pre_ftl_to_scope": {
+    "is_broken_shackles_pre_ftl_to_scope": {
+      "OR": {
+        "has_country_flag": "broken_shackles_abductees@$SCOPE$"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 421
+  },
+  "is_pre_ftl_colony_type": {
+    "is_pre_ftl_colony_type": {
+      "OR": {
+        "colony_type": "col_pre_ftl_steam"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 428
+  },
+  "observation_owner_is_actor": {
+    "observation_owner_is_actor": {
+      "capital_scope": {
+        "has_observation_outpost": "yes",
+        "exists": "observation_outpost_owner",
+        "observation_outpost_owner": {
+          "is_same_value": "root"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact_dlc.txt",
+    "_line_number": 442
+  }
+}

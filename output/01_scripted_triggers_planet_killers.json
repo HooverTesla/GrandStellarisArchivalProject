@@ -1,0 +1,486 @@
+{
+  "can_destroy_planet_with_PLANET_KILLER_CRACKER": {
+    "can_destroy_planet_with_PLANET_KILLER_CRACKER": {
+      "custom_tooltip": {
+        "fail_text": "fotd_cant_collossus",
+        "NOT": {
+          "exists": "from.owner",
+          "from.owner": {
+            "NOT": {}
+          },
+          "OR": {
+            "custom_tooltip": {
+              "text": "not_barren_molten_frozen_toxic_test_fire",
+              "NOT": {
+                "OR": {
+                  "NOT": {
+                    "AND": {
+                      "exists": "space_owner",
+                      "space_owner": {}
+                    },
+                    "OR": {
+                      "is_planet_class": "pc_habitat"
+                    }
+                  }
+                }
+              }
+            },
+            "AND": {
+              "_comments": [
+                "# primitive target"
+              ],
+              "custom_tooltip": {
+                "text": "cannot_crack_pre_ftl_planet_interference",
+                "exists": "owner",
+                "_comments": [
+                  "# primitive"
+                ],
+                "owner": {
+                  "is_primitive": "yes"
+                },
+                "from.owner": {
+                  "has_policy_flag": "interference_aggressive"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_planet_killers.txt",
+    "_line_number": 7
+  },
+  "can_destroy_planet_with_PLANET_KILLER_SHIELDER": {
+    "can_destroy_planet_with_PLANET_KILLER_SHIELDER": {
+      "custom_tooltip": {
+        "fail_text": "lathe_cant_colossus",
+        "NOT": {},
+        "custom_tooltip": {
+          "fail_text": "fotd_cant_collossus",
+          "NOT": {
+            "exists": "from.owner",
+            "from.owner": {
+              "NOT": {}
+            },
+            "if": {
+              "limit": {
+                "exists": "owner",
+                "owner": {},
+                "custom_tooltip": {
+                  "fail_text": "primitives_not_full_interference",
+                  "from.owner": {
+                    "has_policy_flag": "interference_aggressive"
+                  }
+                }
+              },
+              "custom_tooltip": {
+                "fail_text": "is_shielded",
+                "NOR": {
+                  "is_planet_class": "pc_habitat_shielded"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_planet_killers.txt",
+    "_line_number": 128
+  },
+  "can_destroy_planet_with_PLANET_KILLER_NEUTRON": {
+    "can_destroy_planet_with_PLANET_KILLER_NEUTRON": {
+      "custom_tooltip": {
+        "fail_text": "fotd_cant_collossus",
+        "NOT": {
+          "exists": "from.owner",
+          "from.owner": {
+            "NOT": {}
+          },
+          "custom_tooltip": {
+            "fail_text": "lathe_cant_colossus",
+            "NOT": {},
+            "custom_tooltip": {
+              "fail_text": "is_unpopulated",
+              "OR": {
+                "is_planet_class": "pc_infested"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_planet_killers.txt",
+    "_line_number": 182
+  },
+  "can_destroy_planet_with_PLANET_KILLER_GODRAY": {
+    "can_destroy_planet_with_PLANET_KILLER_GODRAY": {
+      "custom_tooltip": {
+        "fail_text": "lathe_cant_colossus",
+        "NOT": {},
+        "custom_tooltip": {
+          "fail_text": "fotd_cant_collossus",
+          "NOT": {
+            "exists": "from.owner",
+            "from.owner": {
+              "NOT": {}
+            },
+            "custom_tooltip": {
+              "fail_text": "is_not_hostile_or_primitive",
+              "_comments": [
+                "#success_text = \"is at war with player\""
+              ],
+              "OR": {
+                "planet_is_hostile": "yes",
+                "is_planet_class": "pc_ai",
+                "AND": {
+                  "exists": "owner",
+                  "owner": {},
+                  "AND": {
+                    "exists": "owner",
+                    "owner": {}
+                  }
+                },
+                "if": {
+                  "limit": {
+                    "exists": "owner",
+                    "owner": {},
+                    "custom_tooltip": {
+                      "fail_text": "primitives_not_full_interference",
+                      "from.owner": {
+                        "has_policy_flag": "interference_aggressive"
+                      }
+                    }
+                  },
+                  "_comments": [
+                    "# target own colony"
+                  ],
+                  "if": {
+                    "limit": {
+                      "NOR": {
+                        "planet_is_hostile": "yes",
+                        "AND": {
+                          "exists": "owner",
+                          "owner": {}
+                        },
+                        "exists": "owner",
+                        "owner": {
+                          "is_same_value": "from.owner"
+                        }
+                      },
+                      "custom_tooltip": {
+                        "text": "not_owned_test_fire",
+                        "exists": "owner",
+                        "owner": {
+                          "is_same_value": "from.owner"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_planet_killers.txt",
+    "_line_number": 251
+  },
+  "can_destroy_planet_with_PLANET_KILLER_NANOBOTS": {
+    "can_destroy_planet_with_PLANET_KILLER_NANOBOTS": {
+      "custom_tooltip": {
+        "fail_text": "lathe_cant_colossus",
+        "NOT": {},
+        "custom_tooltip": {
+          "fail_text": "fotd_cant_collossus",
+          "NOT": {
+            "exists": "from.owner",
+            "from.owner": {
+              "NOT": {}
+            },
+            "custom_tooltip": {
+              "fail_text": "is_not_hostile_or_primitive",
+              "OR": {
+                "planet_is_hostile": "yes",
+                "AND": {
+                  "exists": "owner",
+                  "owner": {
+                    "is_country_type": "primitive"
+                  }
+                }
+              }
+            },
+            "if": {
+              "limit": {
+                "exists": "owner",
+                "owner": {},
+                "custom_tooltip": {
+                  "fail_text": "no_assimilatable_pops",
+                  "any_owned_pop": {
+                    "is_valid_pop_for_PLANET_KILLER_NANOBOTS": "yes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_planet_killers.txt",
+    "_line_number": 332
+  },
+  "can_destroy_planet_with_PLANET_KILLER_DELUGE": {
+    "can_destroy_planet_with_PLANET_KILLER_DELUGE": {
+      "_comments": [
+        "# custom_tooltip = { #feedback suggests this isn't fun, but leaving it here in case we need it",
+        "# \tfail_text = requires_free_ice_mining_station",
+        "# \tfrom.owner = {",
+        "# \t\tany_owned_starbase = {",
+        "# \t\t\thas_starbase_building = ice_mining_station",
+        "# \t\t\tsolar_system = {",
+        "# \t\t\t\tOR = {",
+        "# \t\t\t\t\tNOT = { has_star_flag = ice_mining_in_progress }",
+        "# \t\t\t\t\thas_star_flag = ice_mining@root.from",
+        "# \t\t\t\t}",
+        "# \t\t\t}",
+        "# \t\t}",
+        "# \t}",
+        "# }"
+      ],
+      "custom_tooltip": {
+        "fail_text": "fotd_cant_collossus",
+        "NOT": {
+          "exists": "from.owner",
+          "from.owner": {
+            "NOT": {}
+          },
+          "custom_tooltip": {
+            "fail_text": "lathe_cant_colossus",
+            "NOT": {},
+            "custom_tooltip": {
+              "fail_text": "is_not_oceanic",
+              "NOT": {},
+              "if": {
+                "limit": {
+                  "if": {
+                    "limit": {
+                      "exists": "owner",
+                      "owner": {},
+                      "custom_tooltip": {
+                        "fail_text": "primitives_not_in_borders",
+                        "exists": "space_owner",
+                        "space_owner": {},
+                        "custom_tooltip": {
+                          "fail_text": "primitives_not_full_interference",
+                          "from.owner": {
+                            "has_policy_flag": "interference_aggressive"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "else": {
+                    "custom_tooltip": {
+                      "fail_text": "is_not_hostile_or_primitive_or_ours",
+                      "OR": {
+                        "planet_is_hostile_or_crisis": "yes",
+                        "AND": {
+                          "exists": "owner",
+                          "owner": {
+                            "is_country_type": "primitive"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_planet_killers.txt",
+    "_line_number": 394
+  },
+  "can_destroy_planet_with_PLANET_KILLER_TOXIFIER": {
+    "can_destroy_planet_with_PLANET_KILLER_TOXIFIER": {
+      "custom_tooltip": {
+        "fail_text": "lathe_cant_colossus",
+        "NOT": {},
+        "custom_tooltip": {
+          "fail_text": "fotd_cant_collossus",
+          "NOT": {
+            "exists": "from.owner",
+            "from.owner": {
+              "NOT": {}
+            },
+            "OR": {
+              "custom_tooltip": {
+                "text": "is_uninhabited_within_borders",
+                "exists": "space_owner",
+                "space_owner": {
+                  "is_colony": "no"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_planet_killers.txt",
+    "_line_number": 489
+  },
+  "can_destroy_planet_with_PLANET_KILLER_DEVOLUTION": {
+    "can_destroy_planet_with_PLANET_KILLER_DEVOLUTION": {
+      "custom_tooltip": {
+        "fail_text": "lathe_cant_colossus",
+        "NOT": {},
+        "custom_tooltip": {
+          "fail_text": "recently_devolved",
+          "NOT": {},
+          "custom_tooltip": {
+            "fail_text": "fotd_cant_collossus",
+            "NOT": {
+              "exists": "from.owner",
+              "from.owner": {
+                "NOT": {}
+              },
+              "custom_tooltip": {
+                "fail_text": "is_not_hostile_or_primitive",
+                "_comments": [
+                  "#success_text = \"is at war with player\""
+                ],
+                "OR": {
+                  "planet_is_hostile": "yes",
+                  "is_planet_class": "pc_ai",
+                  "AND": {
+                    "exists": "owner",
+                    "owner": {}
+                  }
+                },
+                "if": {
+                  "limit": {
+                    "exists": "owner",
+                    "owner": {},
+                    "custom_tooltip": {
+                      "fail_text": "primitives_not_full_interference",
+                      "from.owner": {
+                        "has_policy_flag": "interference_aggressive"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_planet_killers.txt",
+    "_line_number": 575
+  },
+  "is_valid_pop_for_PLANET_KILLER_NANOBOTS": {
+    "is_valid_pop_for_PLANET_KILLER_NANOBOTS": {
+      "NOR": {
+        "has_trait": "trait_machine_unit"
+      }
+    },
+    "_source_file": "01_scripted_triggers_planet_killers.txt",
+    "_line_number": 633
+  },
+  "can_destroy_planet_general": {
+    "can_destroy_planet_general": {
+      "is_star": "no",
+      "is_astral_scar": "no",
+      "OR": {
+        "NOT": {
+          "owner": {}
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_planet_killers.txt",
+    "_line_number": 646
+  },
+  "is_a_planet": {
+    "is_a_planet": {
+      "is_star": "no",
+      "NOR": {
+        "is_planet_class": "pc_ringworld_habitable_damaged"
+      }
+    },
+    "_source_file": "01_scripted_triggers_planet_killers.txt",
+    "_line_number": 655
+  },
+  "is_a_planet_megastructure": {
+    "is_a_planet_megastructure": {
+      "NOR": {
+        "is_star": "yes",
+        "is_planet_class": "pc_shattered",
+        "has_planet_flag": "has_arc_furnace"
+      }
+    },
+    "_source_file": "01_scripted_triggers_planet_killers.txt",
+    "_line_number": 667
+  },
+  "is_a_habitable_planet_megastructure": {
+    "is_a_habitable_planet_megastructure": {
+      "OR": {
+        "is_planet_class": "pc_infested",
+        "colonizable_planet": "yes"
+      }
+    },
+    "_source_file": "01_scripted_triggers_planet_killers.txt",
+    "_line_number": 679
+  },
+  "planet_is_hostile_or_crisis": {
+    "planet_is_hostile_or_crisis": {
+      "exists": "owner",
+      "owner": {
+        "OR": {
+          "is_at_war_with": "from.owner",
+          "is_country_type": "ai_empire"
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_planet_killers.txt",
+    "_line_number": 687
+  },
+  "planet_is_hostile": {
+    "planet_is_hostile": {
+      "exists": "owner",
+      "owner": {}
+    },
+    "_source_file": "01_scripted_triggers_planet_killers.txt",
+    "_line_number": 701
+  },
+  "can_destroy_planet_with_PLANET_KILLER_STAR_CRACKER": {
+    "can_destroy_planet_with_PLANET_KILLER_STAR_CRACKER": {
+      "custom_tooltip": {
+        "fail_text": "is_your_megastructure_system",
+        "NOT": {
+          "solar_system": {
+            "has_star_flag": "crisis_sphere_system@from.owner",
+            "any_system_megastructure": {}
+          }
+        },
+        "custom_tooltip": {
+          "fail_text": "is_black_hole",
+          "NOT": {},
+          "custom_tooltip": {
+            "fail_text": "star_owner_is_not_hostile",
+            "OR": {
+              "NOT": {
+                "space_owner": {
+                  "space_owner": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_scripted_triggers_planet_killers.txt",
+    "_line_number": 706
+  }
+}

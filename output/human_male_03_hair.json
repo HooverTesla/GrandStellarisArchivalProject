@@ -1,0 +1,82 @@
+{
+  "human_male_hair_03": {
+    "human_male_hair_03": {
+      "default": "gfx/models/portraits/human/human_male_hair_black_style_03_and_beard_dark_style_01.dds",
+      "game_setup": {
+        "default": "gfx/models/portraits/human/human_male_hair_black_style_03_and_beard_dark_style_01.dds"
+      },
+      "_comments": [
+        "#species scope",
+        "#pop scope",
+        "#\"gfx/models/portraits/human/human_male_hair_black_style_01_and_beard_dark_style_02.dds\"",
+        "#leader scope"
+      ],
+      "species": {
+        "default": "gfx/models/portraits/human/human_male_hair_black_style_03_and_beard_dark_style_01.dds"
+      },
+      "pop": {
+        "default": "gfx/models/portraits/human/human_male_hair_black_style_03_and_beard_dark_style_01.dds",
+        "random": {
+          "list": {}
+        }
+      },
+      "leader": {
+        "random": {
+          "trigger": {
+            "list": {}
+          },
+          "random": {
+            "trigger": {
+              "list": {}
+            },
+            "random": {
+              "trigger": {
+                "list": {}
+              },
+              "random": {
+                "trigger": {
+                  "list": {}
+                }
+              },
+              "_comments": [
+                "#leader scope"
+              ],
+              "ruler": {
+                "_comments": [
+                  "#default = \"gfx/models/portraits/human/human_male_clothes_ruler.dds\""
+                ],
+                "random": {
+                  "trigger": {
+                    "owner": {},
+                    "list": {}
+                  },
+                  "random": {
+                    "trigger": {
+                      "owner": {},
+                      "list": {}
+                    },
+                    "random": {
+                      "trigger": {
+                        "owner": {
+                          "OR": {
+                            "has_government": "gov_stagnant_ascendancy",
+                            "has_primitive_government": "yes",
+                            "has_materialist_government": "yes",
+                            "has_pacifist_government": "yes"
+                          }
+                        }
+                      },
+                      "list": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "human_male_03_hair.txt",
+    "_line_number": 35
+  }
+}

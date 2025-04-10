@@ -1,0 +1,208 @@
+{
+  "planet_event": {
+    "planet_event": {
+      "id": "mega.205",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "OR": {
+          "AND": {
+            "from": {
+              "OR": {
+                "has_modifier": "planet_population_expelled"
+              }
+            },
+            "AND": {
+              "from": {
+                "OR": {
+                  "has_modifier": "planet_population_control_gestalt"
+                }
+              },
+              "AND": {
+                "from": {
+                  "has_modifier": "hunter_killer_drones"
+                },
+                "AND": {
+                  "from": {
+                    "has_modifier": "compliance_protocols"
+                  }
+                }
+              },
+              "immediate": {
+                "if": {
+                  "limit": {
+                    "from": {
+                      "OR": {
+                        "has_modifier": "planet_population_expelled"
+                      }
+                    },
+                    "if": {
+                      "limit": {
+                        "remove_modifier": "martial_law"
+                      },
+                      "if": {
+                        "limit": {
+                          "remove_modifier": "planet_population_control"
+                        },
+                        "if": {
+                          "limit": {
+                            "remove_modifier": "planet_robot_assembly_control"
+                          },
+                          "if": {
+                            "limit": {
+                              "remove_modifier": "planet_population_expelled"
+                            }
+                          },
+                          "else_if": {
+                            "limit": {
+                              "from": {
+                                "OR": {
+                                  "has_modifier": "planet_population_control_gestalt"
+                                }
+                              },
+                              "if": {
+                                "limit": {
+                                  "remove_modifier": "compliance_protocols"
+                                },
+                                "if": {
+                                  "limit": {
+                                    "remove_modifier": "hunter_killer_drones"
+                                  },
+                                  "if": {
+                                    "limit": {
+                                      "remove_modifier": "planet_population_control_gestalt"
+                                    }
+                                  },
+                                  "else_if": {
+                                    "limit": {
+                                      "from": {
+                                        "has_modifier": "hunter_killer_drones"
+                                      },
+                                      "remove_modifier": "hunter_killer_drones"
+                                    },
+                                    "else_if": {
+                                      "limit": {
+                                        "from": {
+                                          "has_modifier": "compliance_protocols"
+                                        },
+                                        "remove_modifier": "compliance_protocols"
+                                      },
+                                      "else": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "megacorp_events.txt",
+    "_line_number": 256
+  },
+  "country_event": {
+    "country_event": {
+      "id": "mega.100",
+      "title": "mega.100.name",
+      "desc": "mega.100.desc",
+      "picture": "GFX_evt_ruined_system",
+      "show_sound": "event_planetary_riot",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "root",
+        "is_country_type": "default",
+        "has_ascension_perk": "ap_consecrated_worlds",
+        "from": {
+          "any_system_planet": {
+            "has_planet_flag": "consecrated@root"
+          }
+        }
+      },
+      "immediate": {
+        "while": {
+          "count": "3",
+          "from": {
+            "random_system_planet": {
+              "limit": {
+                "remove_planet_flag": "consecrated@root",
+                "switch": {
+                  "trigger": "has_modifier",
+                  "consecrated_quality_4": {
+                    "remove_modifier": "consecrated_quality_4",
+                    "root": {
+                      "change_variable": {
+                        "which": "num_consecrated_worlds",
+                        "value": "-1"
+                      }
+                    }
+                  },
+                  "consecrated_quality_3": {
+                    "remove_modifier": "consecrated_quality_3",
+                    "root": {
+                      "change_variable": {
+                        "which": "num_consecrated_worlds",
+                        "value": "-1"
+                      }
+                    }
+                  },
+                  "consecrated_quality_2": {
+                    "remove_modifier": "consecrated_quality_2",
+                    "root": {
+                      "change_variable": {
+                        "which": "num_consecrated_worlds",
+                        "value": "-1"
+                      }
+                    }
+                  },
+                  "consecrated_quality_1": {
+                    "remove_modifier": "consecrated_quality_1",
+                    "root": {
+                      "change_variable": {
+                        "which": "num_consecrated_worlds",
+                        "value": "-1"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "root": {
+            "recalculate_consecrated_world_modifier": "yes"
+          }
+        },
+        "option": {
+          "name": "UNFORTUNATE",
+          "hidden_effect": {
+            "if": {
+              "limit": {
+                "remove_modifier": "consecrated_worlds_mourning"
+              },
+              "add_modifier": {
+                "modifier": "consecrated_worlds_mourning",
+                "days": "1800"
+              },
+              "tooltip": {
+                "add_modifier": {
+                  "modifier": "consecrated_worlds_mourning",
+                  "days": "1800"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "megacorp_events.txt",
+    "_line_number": 104
+  }
+}

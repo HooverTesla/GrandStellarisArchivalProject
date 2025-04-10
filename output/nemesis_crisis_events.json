@@ -1,0 +1,161 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "crisis.4155",
+      "title": "crisis.4155.name",
+      "desc": {
+        "trigger": {
+          "text": "crisis.4155.desc"
+        },
+        "desc": {
+          "trigger": {
+            "text": "crisis.4155.mach.desc"
+          },
+          "desc": {
+            "trigger": {
+              "text": "crisis.4155.hive.desc"
+            },
+            "picture": "GFX_evt_undertaker",
+            "show_sound": "event_death_cult",
+            "event_chain": "become_the_crisis_chain",
+            "is_triggered_only": "yes",
+            "option": {
+              "name": "crisis.4155.a",
+              "root": {
+                "if": {
+                  "limit": {
+                    "NOT": {
+                      "has_ethic": "ethic_gestalt_consciousness"
+                    }
+                  },
+                  "enable_special_project": {
+                    "name": "CRISIS_SPECIAL_PROJECT_4",
+                    "owner": "ROOT"
+                  }
+                },
+                "else_if": {
+                  "limit": {
+                    "is_hive_empire": "yes"
+                  },
+                  "enable_special_project": {
+                    "name": "CRISIS_SPECIAL_PROJECT_HIVE_4",
+                    "owner": "ROOT"
+                  }
+                }
+              },
+              "custom_tooltip": "unlock_crisis_cruiser"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "nemesis_crisis_events.txt",
+    "_line_number": 995
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "crisis.4550",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "add_threat": {
+          "from": {
+            "owner": {
+              "save_event_target_as": "crisis_country",
+              "add_victory_score": {
+                "source": "destroyed_stars_score",
+                "score": "10"
+              },
+              "switch": {
+                "trigger": "galaxy_size",
+                "huge": {
+                  "large": {
+                    "medium": {
+                      "small": {
+                        "tiny": {},
+                        "if": {
+                          "limit": {
+                            "NOT": {},
+                            "set_country_flag": "cracked_first_star"
+                          }
+                        }
+                      },
+                      "solar_system": {
+                        "every_playable_country": {
+                          "limit": {
+                            "is_ai": "no",
+                            "has_communications": "event_target:crisis_country",
+                            "NOR": {
+                              "is_same_value": "event_target:crisis_country",
+                              "has_country_flag": "star_eater_alert@event_target:crisis_country"
+                            },
+                            "intel_level": {
+                              "system": "event_target:destroyed_system",
+                              "level": "none"
+                            }
+                          },
+                          "country_event": {},
+                          "every_playable_country": {
+                            "limit": {
+                              "is_ai": "no",
+                              "has_communications": "event_target:crisis_country",
+                              "NOR": {
+                                "is_same_value": "event_target:crisis_country",
+                                "has_country_flag": "star_eater_alert@event_target:crisis_country"
+                              },
+                              "intel_level": {
+                                "system": "event_target:destroyed_system"
+                              }
+                            },
+                            "country_event": {},
+                            "every_playable_country": {
+                              "limit": {
+                                "is_ai": "no",
+                                "has_communications": "event_target:crisis_country",
+                                "NOR": {
+                                  "is_same_value": "event_target:crisis_country",
+                                  "has_country_flag": "star_eater_alert@event_target:crisis_country"
+                                },
+                                "has_country_flag": "can_build_star_eaters"
+                              },
+                              "country_event": {},
+                              "every_playable_country": {
+                                "limit": {
+                                  "has_communications": "event_target:crisis_country",
+                                  "NOT": {
+                                    "has_opinion_modifier": {
+                                      "who": "event_target:crisis_country",
+                                      "modifier": "opinion_destroying_systems"
+                                    }
+                                  }
+                                },
+                                "add_opinion_modifier": {
+                                  "who": "event_target:crisis_country",
+                                  "modifier": "opinion_destroying_systems"
+                                }
+                              },
+                              "solar_system": {
+                                "random_system_planet": {
+                                  "limit": {
+                                    "planet_event": {},
+                                    "destroy_star_system": "yes"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "nemesis_crisis_events.txt",
+    "_line_number": 470
+  }
+}

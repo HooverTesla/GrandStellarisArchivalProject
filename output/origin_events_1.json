@@ -1,0 +1,159 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "origin.113",
+      "hide_window": "yes",
+      "fire_only_once": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "if": {
+          "limit": {
+            "any_playable_country": {
+              "has_origin": "origin_payback"
+            }
+          }
+        },
+        "else": {
+          "uplift_pre_ftl_with_origin_effect": {
+            "ORIGIN": "origin_payback"
+          },
+          "set_country_flag": "victims_of_@event_target:MSI_country"
+        }
+      }
+    },
+    "_source_file": "origin_events_1.txt",
+    "_line_number": 3099
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "origin.11",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "owner",
+        "owner": {
+          "NOR": {
+            "is_ai": "yes",
+            "has_country_flag": "encountered_holy_world"
+          },
+          "has_origin": "origin_scion",
+          "exists": "overlord",
+          "overlord": {
+            "is_country_type": "fallen_empire # excludes 'awakened_fallen_empire'"
+          }
+        },
+        "_comments": [
+          "# OR = {",
+          "# \thas_country_flag = fallen_empire_1 # Materialist",
+          "# \thas_country_flag = fallen_empire_2 # Spiritualist",
+          "# }"
+        ],
+        "from": {
+          "has_modifier": "holy_planet",
+          "is_colony": "no"
+        }
+      },
+      "immediate": {
+        "owner": {
+          "set_country_flag": "encountered_holy_world",
+          "if": {
+            "limit": {
+              "overlord": {
+                "has_country_flag": "fallen_empire_2"
+              }
+            },
+            "country_event": {},
+            "else": {
+              "country_event": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_1.txt",
+    "_line_number": 252
+  },
+  "event": {
+    "event": {
+      "id": "origin.30",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_playable_country": {
+          "is_at_war": "no",
+          "exists": "overlord",
+          "any_controlled_fleet": {}
+        },
+        "immediate": {
+          "random_playable_country": {
+            "limit": {
+              "is_at_war": "no",
+              "any_controlled_fleet": {},
+              "country_event": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_1.txt",
+    "_line_number": 1358
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "origin.85",
+      "title": "origin.85.name",
+      "desc": {
+        "trigger": {
+          "owner": {
+            "habitability": {
+              "who": "root.owner.owner_species",
+              "value >": "0.5"
+            }
+          },
+          "text": "origin.85.1.desc"
+        },
+        "desc": {
+          "trigger": {
+            "owner": {
+              "habitability": {
+                "who": "root.owner.owner_species"
+              }
+            },
+            "text": "origin.85.2.desc"
+          },
+          "desc": {
+            "trigger": {
+              "owner": {},
+              "text": "origin.85.3.desc"
+            },
+            "picture": "GFX_evt_landing_ship",
+            "show_sound": "event_ship_thrusters",
+            "location": "root",
+            "is_triggered_only": "yes",
+            "option": {
+              "name": "origin_85.a",
+              "owner": {
+                "if": {
+                  "limit": {
+                    "add_modifier": {
+                      "modifier": "doomsday_first_colony_gestalt",
+                      "days": "1800"
+                    }
+                  },
+                  "else": {
+                    "add_modifier": {
+                      "modifier": "doomsday_first_colony",
+                      "days": "1800"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_1.txt",
+    "_line_number": 2561
+  }
+}

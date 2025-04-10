@@ -1,0 +1,676 @@
+{
+  "citizenship_full": {
+    "citizenship_full": {
+      "is_full_citizenship": "yes",
+      "potential": {
+        "exists": "from",
+        "NOT": {},
+        "allow": {
+          "hidden_trigger": {
+            "custom_tooltip": {
+              "fail_text": "HIVE_MIND_SPECIES_CITIZENS_ONLY",
+              "OR": {
+                "NOT": {
+                  "has_trait": "trait_hive_mind"
+                }
+              },
+              "custom_tooltip": {
+                "fail_text": "FANATIC_PURIFIERS_MUST_PURIFY",
+                "OR": {
+                  "NOT": {
+                    "is_same_species": "from"
+                  }
+                },
+                "custom_tooltip": {
+                  "fail_text": "too_alien",
+                  "if": {
+                    "limit": {
+                      "from": {
+                        "NOT": {},
+                        "has_trait": "trait_mechanical"
+                      },
+                      "OR": {
+                        "is_same_species": "from",
+                        "from": {
+                          "NOR": {
+                            "has_ethic": "ethic_fanatic_xenophobe"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "custom_tooltip": {
+                    "fail_text": "wrong_species_class",
+                    "if": {
+                      "limit": {
+                        "from": {},
+                        "is_same_species_class": "from"
+                      }
+                    },
+                    "custom_tooltip": {
+                      "fail_text": "no_service_no_citizenship",
+                      "if": {
+                        "limit": {
+                          "from": {},
+                          "has_military_service_type": {}
+                        },
+                        "custom_tooltip": {
+                          "fail_text": "ROBOTS_NO_RIGHTS",
+                          "if": {
+                            "limit": {
+                              "OR": {
+                                "has_trait": "trait_machine_unit"
+                              }
+                            },
+                            "from": {
+                              "has_policy_flag": "ai_full_rights"
+                            }
+                          }
+                        }
+                      },
+                      "ai_will_do": {
+                        "factor": "1",
+                        "modifier": {
+                          "factor": "35",
+                          "root": {
+                            "is_robotic_species": "yes"
+                          },
+                          "from": {
+                            "is_individual_machine": "yes"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "_comments": [
+              "#\t\tcustom_tooltip = {",
+              "#\t\t\tfail_text = \"disconnected_machine_pops_kill_themselves_citizenship\"",
+              "#\t\t\tis_disconnected_machine_pop = no",
+              "#\t\t}"
+            ]
+          }
+        }
+      }
+    },
+    "_source_file": "00_citizenship_types.txt",
+    "_line_number": 5
+  },
+  "citizenship_full_machine": {
+    "citizenship_full_machine": {
+      "is_full_citizenship": "yes",
+      "potential": {
+        "OR": {
+          "has_synthetic_dawn": "yes",
+          "has_machine_age_dlc": "yes"
+        },
+        "exists": "from",
+        "from": {},
+        "allow": {
+          "hidden_trigger": {
+            "if": {
+              "limit": {
+                "from": {},
+                "custom_tooltip": {
+                  "fail_text": "MACHINE_SPECIES_NOT_MACHINE",
+                  "OR": {
+                    "has_trait": "trait_machine_unit",
+                    "AND": {
+                      "FROM": {
+                        "has_ascension_perk": "ap_mechromancy"
+                      },
+                      "has_trait": "trait_zombie"
+                    }
+                  }
+                }
+              },
+              "else": {
+                "custom_tooltip": {
+                  "fail_text": "ASSIMILATOR_SPECIES_NOT_CYBORG",
+                  "OR": {
+                    "has_trait": "trait_mechanical"
+                  }
+                }
+              }
+            },
+            "ai_will_do": {
+              "factor": "30"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_citizenship_types.txt",
+    "_line_number": 114
+  },
+  "citizenship_assimilation": {
+    "citizenship_assimilation": {
+      "is_assimilation": "yes",
+      "potential": {
+        "OR": {
+          "has_synthetic_dawn": "yes",
+          "has_utopia": "yes",
+          "has_machine_age_dlc": "yes"
+        },
+        "exists": "from",
+        "from": {
+          "OR": {
+            "AND": {
+              "OR": {
+                "AND": {
+                  "is_hive_empire": "yes",
+                  "_comments": [
+                    "# non-devouring hive mind",
+                    "# Regular empire"
+                  ],
+                  "NOT": {},
+                  "AND": {
+                    "is_individual_machine": "yes",
+                    "ROOT": {}
+                  },
+                  "OR": {
+                    "has_active_tradition": "tr_cybernetics_transubstantiation_synthesis # cybernetic assimilation"
+                  },
+                  "ROOT": {},
+                  "has_active_tradition": "tr_psionics_psionic_assimilation # psionic assimilation"
+                }
+              },
+              "allow": {
+                "hidden_trigger": {
+                  "custom_tooltip": {
+                    "fail_text": "MUST_NOT_BE_DOMINANT_SPECIES",
+                    "NOT": {},
+                    "custom_tooltip": {
+                      "fail_text": "lonely_hive_mind_pops_kill_themselves_citizenship_assimilation",
+                      "if": {
+                        "limit": {
+                          "from": {
+                            "is_machine_empire": "yes"
+                          }
+                        },
+                        "custom_tooltip": {
+                          "fail_text": "requires_tradition_tr_synthetics_adopt"
+                        }
+                      },
+                      "custom_tooltip": {
+                        "fail_text": "disconnected_machine_pops_collapse_citizenship",
+                        "OR": {
+                          "from": {
+                            "has_country_flag": "synth_assimilation"
+                          },
+                          "is_disconnected_machine_pop": "no"
+                        }
+                      },
+                      "else_if": {
+                        "limit": {
+                          "from": {},
+                          "custom_tooltip": {
+                            "fail_text": "TRANSCENDING_SPECIES_IS_ALREADY_PSIONIC",
+                            "NOT": {},
+                            "custom_tooltip": {
+                              "fail_text": "TRANSCENDING_SPECIES_CANT_BE_HIVE",
+                              "NOT": {}
+                            },
+                            "else_if": {
+                              "limit": {
+                                "from": {},
+                                "custom_tooltip": {
+                                  "fail_text": "CAN_ONLY_ASSIMILATE_HIVES",
+                                  "has_trait": "trait_hive_mind"
+                                }
+                              }
+                            },
+                            "ai_will_do": {
+                              "factor": "100",
+                              "modifier": {
+                                "factor": "0.3",
+                                "from": {
+                                  "is_individual_machine": "yes"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_citizenship_types.txt",
+    "_line_number": 164
+  },
+  "citizenship_organic_trophy": {
+    "citizenship_organic_trophy": {
+      "potential": {
+        "has_synthetic_dawn": "yes",
+        "exists": "from",
+        "from": {
+          "is_machine_empire": "yes",
+          "has_civic": "civic_machine_servitor"
+        }
+      },
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "not_organic",
+          "NOR": {
+            "has_trait": "trait_machine_unit"
+          }
+        }
+      },
+      "ai_will_do": {
+        "factor": "100"
+      }
+    },
+    "_source_file": "00_citizenship_types.txt",
+    "_line_number": 410
+  },
+  "citizenship_limited": {
+    "citizenship_limited": {
+      "new_pop_weight": "0.75",
+      "pop_modifier": {
+        "pop_happiness": "-0.1",
+        "pop_amenities_usage_mult": "-0.25",
+        "pop_political_power": "-0.5"
+      },
+      "potential": {
+        "OR": {
+          "is_sapient": "no",
+          "AND": {
+            "exists": "from",
+            "from": {
+              "NOR": {
+                "is_hive_empire": "yes",
+                "is_machine_empire": "yes"
+              }
+            }
+          }
+        },
+        "NOR": {
+          "AND": {
+            "from": {
+              "has_trait": "trait_machine_unit"
+            },
+            "is_shackled_robot_species_rights": "yes"
+          }
+        },
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "HIVE_MIND_SPECIES_CITIZENS_ONLY",
+            "OR": {
+              "OR": {
+                "NOT": {
+                  "from": {},
+                  "has_trait": "trait_hive_mind"
+                }
+              },
+              "custom_tooltip": {
+                "fail_text": "HIVE_MIND_MAIN_SPECIES_ALWAYS_CITIZEN",
+                "NAND": {
+                  "from": {
+                    "has_trait": "trait_hive_mind"
+                  }
+                },
+                "custom_tooltip": {
+                  "fail_text": "same_species_disallowed",
+                  "NOT": {},
+                  "custom_tooltip": {
+                    "fail_text": "FANATIC_PURIFIERS_MUST_PURIFY",
+                    "OR": {
+                      "NOT": {
+                        "is_same_species": "from"
+                      }
+                    },
+                    "custom_tooltip": {
+                      "fail_text": "yes_service_yes_citizenship",
+                      "if": {
+                        "limit": {
+                          "from": {},
+                          "NOT": {}
+                        },
+                        "custom_tooltip": {
+                          "fail_text": "selective_kinship_must_citizen",
+                          "if": {
+                            "limit": {
+                              "from": {},
+                              "NOT": {}
+                            }
+                          },
+                          "ai_will_do": {
+                            "factor": "3",
+                            "modifier": {
+                              "factor": "0",
+                              "from": {
+                                "has_valid_ai_personality": "no",
+                                "OR": {
+                                  "has_ethic": "ethic_fanatic_xenophile"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_citizenship_types.txt",
+    "_line_number": 444
+  },
+  "citizenship_slavery": {
+    "citizenship_slavery": {
+      "is_slavery": "yes",
+      "in_breach_of": {},
+      "potential": {
+        "NAND": {
+          "exists": "this",
+          "OR": {
+            "AND": {
+              "from": {
+                "OR": {
+                  "has_trait": "trait_mechanical"
+                }
+              },
+              "has_trait": "trait_mechanical"
+            }
+          }
+        },
+        "allow": {
+          "hidden_trigger": {
+            "custom_tooltip": {
+              "fail_text": "HIVE_MIND_MAIN_SPECIES_ALWAYS_CITIZEN",
+              "NAND": {
+                "from": {
+                  "has_trait": "trait_hive_mind"
+                }
+              },
+              "custom_tooltip": {
+                "fail_text": "same_species_disallowed",
+                "NOT": {},
+                "custom_tooltip": {
+                  "fail_text": "SERVITORS_CANNOT_ENSLAVE",
+                  "from": {
+                    "NOT": {}
+                  },
+                  "custom_tooltip": {
+                    "fail_text": "ASSIMILATORS_CANNOT_ENSLAVE",
+                    "from": {
+                      "NOT": {}
+                    },
+                    "custom_tooltip": {
+                      "fail_text": "TERMINATORS_CANNOT_ENSLAVE",
+                      "from": {
+                        "NOT": {}
+                      },
+                      "custom_tooltip": {
+                        "fail_text": "DEVOURERS_CANNOT_ENSLAVE",
+                        "from": {
+                          "NOT": {}
+                        },
+                        "custom_tooltip": {
+                          "fail_text": "FANATIC_PURIFIERS_MUST_PURIFY",
+                          "OR": {
+                            "NOT": {
+                              "is_same_species": "from"
+                            }
+                          },
+                          "custom_tooltip": {
+                            "fail_text": "yes_service_yes_citizenship",
+                            "if": {
+                              "limit": {
+                                "from": {},
+                                "NOT": {}
+                              },
+                              "custom_tooltip": {
+                                "fail_text": "selective_kinship_must_citizen",
+                                "if": {
+                                  "limit": {
+                                    "from": {},
+                                    "NOT": {}
+                                  }
+                                },
+                                "ai_will_do": {
+                                  "factor": "15",
+                                  "modifier": {
+                                    "factor": "2",
+                                    "has_species_flag": "syncretic_species@from"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_citizenship_types.txt",
+    "_line_number": 565
+  },
+  "citizenship_robot_servitude": {
+    "citizenship_robot_servitude": {
+      "is_robot_servant": "yes",
+      "potential": {
+        "exists": "from",
+        "from": {
+          "OR": {
+            "has_trait": "trait_machine_unit"
+          }
+        },
+        "allow": {
+          "hidden_trigger": {
+            "custom_tooltip": {
+              "fail_text": "ROBOTS_HAVE_RIGHTS",
+              "from": {
+                "NOT": {}
+              },
+              "custom_tooltip": {
+                "fail_text": "ROBOTS_ARE_OUTLAWED",
+                "from": {
+                  "NOT": {}
+                }
+              },
+              "ai_will_do": {
+                "factor": "1",
+                "modifier": {
+                  "factor": "35",
+                  "from": {
+                    "is_individual_machine": "yes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_citizenship_types.txt",
+    "_line_number": 745
+  },
+  "citizenship_purge": {
+    "citizenship_purge": {
+      "new_pop_weight": "0.0",
+      "is_purge": "yes",
+      "potential": {
+        "exists": "from",
+        "NOT": {
+          "OR": {
+            "NOT": {
+              "has_trait": "trait_machine_unit"
+            },
+            "from": {
+              "AND": {
+                "from": {
+                  "is_robotic": "yes"
+                }
+              }
+            },
+            "allow": {
+              "hidden_trigger": {
+                "if": {
+                  "limit": {
+                    "is_lonely_hive_mind_pop": "yes"
+                  },
+                  "hidden_trigger": {},
+                  "else": {
+                    "custom_tooltip": {
+                      "fail_text": "is_broken_shackles_origin",
+                      "if": {
+                        "limit": {
+                          "OR": {
+                            "is_robotic": "no",
+                            "AND": {
+                              "is_robotic": "yes",
+                              "NOT": {
+                                "from": {}
+                              }
+                            }
+                          },
+                          "from": {
+                            "NOT": {
+                              "has_origin": "origin_broken_shackles"
+                            }
+                          }
+                        }
+                      },
+                      "custom_tooltip": {
+                        "fail_text": "same_species_disallowed",
+                        "NOT": {},
+                        "custom_tooltip": {
+                          "fail_text": "yes_service_yes_citizenship",
+                          "if": {
+                            "limit": {
+                              "from": {},
+                              "NOT": {}
+                            },
+                            "custom_tooltip": {
+                              "fail_text": "selective_kinship_must_citizen",
+                              "if": {
+                                "limit": {
+                                  "from": {},
+                                  "NOT": {}
+                                }
+                              }
+                            },
+                            "ai_will_do": {
+                              "factor": "20",
+                              "modifier": {
+                                "factor": "0",
+                                "from": {
+                                  "is_hive_empire": "yes",
+                                  "NOT": {
+                                    "NOT": {
+                                      "OR": {
+                                        "has_valid_civic": "civic_hive_subsumed_will",
+                                        "root": {}
+                                      }
+                                    },
+                                    "modifier": {
+                                      "add": "1000",
+                                      "not": {
+                                        "is_robotic": "no",
+                                        "from": {
+                                          "has_origin": "origin_necrophage",
+                                          "is_xenophobe": "yes"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "if": {
+                          "limit": {
+                            "from": {
+                              "is_hive_empire": "yes"
+                            },
+                            "has_trait": "trait_hive_mind"
+                          },
+                          "custom_tooltip": {
+                            "fail_text": "hive_cant_purge_hive",
+                            "has_genesis_preserve_trait": "no"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_citizenship_types.txt",
+    "_line_number": 784
+  },
+  "citizenship_purge_machine": {
+    "citizenship_purge_machine": {
+      "new_pop_weight": "0.0",
+      "is_purge": "yes",
+      "potential": {
+        "exists": "from",
+        "from": {
+          "NOR": {
+            "has_trait": "trait_mechanical",
+            "AND": {
+              "has_trait": "trait_zombie",
+              "from": {
+                "has_ascension_perk": "ap_mechromancy"
+              }
+            }
+          },
+          "NAND": {
+            "is_lonely_hive_mind_pop": "no",
+            "from": {
+              "from": {}
+            },
+            "allow": {
+              "hidden_trigger": {
+                "custom_tooltip": {
+                  "fail_text": "same_species_disallowed",
+                  "NOT": {},
+                  "custom_tooltip": {
+                    "fail_text": "presapients_not_purged_citizenship",
+                    "OR": {
+                      "is_sapient": "yes",
+                      "from": {
+                        "NOR": {
+                          "has_policy_flag": "pre_sapients_allow"
+                        }
+                      }
+                    }
+                  }
+                },
+                "ai_will_do": {
+                  "factor": "0"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_citizenship_types.txt",
+    "_line_number": 979
+  }
+}

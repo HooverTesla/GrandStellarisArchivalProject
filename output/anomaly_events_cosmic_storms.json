@@ -1,0 +1,58 @@
+{
+  "ship_event": {
+    "ship_event": {
+      "id": "cstorms.5095",
+      "title": "cstorms.5095.name",
+      "desc": {
+        "trigger": {
+          "text": "cstorms.5095.desc.common",
+          "if": {
+            "limit": {
+              "text": "cstorms.5095.desc.swarm"
+            }
+          }
+        },
+        "picture": "GFX_evt_tiyanki_observation",
+        "show_sound": "evn_ove_tiyanki_family",
+        "location": "FROM",
+        "is_triggered_only": "yes",
+        "immediate": {
+          "event_target:displaced_tiyanki_fleet": {
+            "set_owner": "event_target:tiyanki_country",
+            "set_fleet_flag": "NAME_Tiyanki_Space_Whale",
+            "every_owned_ship": {
+              "remove_ship_flag": "displaced_tiyanki_hatchling"
+            },
+            "create_ship": {
+              "design": "NAME_Tiyanki_Bull"
+            }
+          }
+        },
+        "option": {
+          "name": {
+            "text": "FASCINATING",
+            "trigger": {
+              "controller": {}
+            },
+            "name": {
+              "text": "cstorms.5090.b.swarm",
+              "trigger": {
+                "controller": {}
+              },
+              "controller": {
+                "add_monthly_resource_mult": {
+                  "resource": "society_research",
+                  "value": "@tier1researchreward",
+                  "min": "@tier1researchmin",
+                  "max": "@tier1researchmax"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "anomaly_events_cosmic_storms.txt",
+    "_line_number": 1093
+  }
+}

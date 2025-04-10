@@ -1,0 +1,45 @@
+{
+  "d_vast_unity_deposit": {
+    "d_vast_unity_deposit": {
+      "resources": {
+        "category": "orbital_research_deposits",
+        "produces": {
+          "unity": "3"
+        }
+      },
+      "station": "shipclass_research_station",
+      "is_for_colonizable": "no",
+      "drop_weight": {}
+    },
+    "_source_file": "04_distant_stars_deposits.txt",
+    "_line_number": 11
+  },
+  "d_nanites_deposit": {
+    "d_nanites_deposit": {
+      "resources": {
+        "category": "orbital_research_deposits",
+        "produces": {
+          "nanites": "3"
+        }
+      },
+      "station": "shipclass_research_station",
+      "is_for_colonizable": "no",
+      "potential": {
+        "solar_system": {
+          "is_star": "no",
+          "is_colonizable": "no",
+          "NOT": {},
+          "drop_weight": {
+            "weight": "2",
+            "modifier": {
+              "factor": "5",
+              "is_planet_class": "pc_gray_goo"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "04_distant_stars_deposits.txt",
+    "_line_number": 26
+  }
+}

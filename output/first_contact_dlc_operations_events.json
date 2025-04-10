@@ -1,0 +1,97 @@
+{
+  "espionage_operation_event": {
+    "espionage_operation_event": {
+      "id": "preftl_operation.3105",
+      "title": "preftl_operation.3105.name",
+      "desc": "preftl_operation.3105.desc",
+      "picture": "GFX_evt_alien_abduction",
+      "show_sound": "event_yellow_alert",
+      "is_triggered_only": "yes",
+      "espionage_operation": "yes",
+      "trigger": {
+        "from": {
+          "NOT": {}
+        },
+        "immediate": {
+          "from": {
+            "set_espionage_operation_progress_locked": "yes",
+            "set_espionage_operation_flag": "fired_preftl_espionage_technological_contamination # prevent firing again for this instance of an Operation",
+            "owner": {
+              "set_timed_country_flag": {
+                "flag": "fired_preftl_espionage_technological_contamination",
+                "days": "@RandomPreFTLOperationEventTimerLong"
+              }
+            }
+          }
+        },
+        "_comments": [
+          "# Let the drones rummage",
+          "# Activate the technology",
+          "# Abort"
+        ],
+        "option": {
+          "name": "preftl_operation.3105.c",
+          "from": {
+            "if": {
+              "limit": {
+                "spynetwork": {
+                  "has_available_spy_power >": "5"
+                }
+              },
+              "spynetwork": {
+                "add_spy_network_level": "-5"
+              }
+            },
+            "destroy_espionage_operation": "this"
+          },
+          "ai_chance": {
+            "factor": "1"
+          }
+        }
+      }
+    },
+    "_source_file": "first_contact_dlc_operations_events.txt",
+    "_line_number": 3588
+  },
+  "country_event": {
+    "country_event": {
+      "id": "preftl_operation.1068",
+      "title": "preftl_operation.1068.name",
+      "desc": "preftl_operation.1068.desc",
+      "picture": "GFX_evt_infiltration_failure",
+      "show_sound": "event_criminal_activity",
+      "location": "event_target:infiltrated_country_planet",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "from.target"
+      },
+      "option": {
+        "name": "UNFORTUNATE",
+        "custom_tooltip": "preftl_operation.failed_annaxation.tt",
+        "set_timed_country_flag": {
+          "flag": "failed_infiltration@from.target",
+          "days": "1800"
+        },
+        "from": {
+          "target": {
+            "if": {
+              "limit": {
+                "has_awareness >": "60"
+              },
+              "add_opinion_modifier": {
+                "who": "root",
+                "modifier": "attempted_infiltration"
+              }
+            }
+          },
+          "hidden_effect": {
+            "evaluate_pre_ftl_espionage_violation_effect": "yes"
+          },
+          "destroy_espionage_operation": "this"
+        }
+      }
+    },
+    "_source_file": "first_contact_dlc_operations_events.txt",
+    "_line_number": 1503
+  }
+}

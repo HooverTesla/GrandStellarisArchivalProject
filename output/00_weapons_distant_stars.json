@@ -1,0 +1,62 @@
+{
+  "weapon_component_template": {
+    "weapon_component_template": {
+      "key": "SPORE_ARTILLERY",
+      "size": "medium",
+      "entity": "invisible_turret_entity",
+      "type": "instant",
+      "hidden": "yes",
+      "icon": "GFX_ship_part_space_whale_weapon_1",
+      "icon_frame": "1",
+      "tags": {
+        "projectile_gfx": "scourge_projectile_weapon"
+      }
+    },
+    "_source_file": "00_weapons_distant_stars.txt",
+    "_line_number": 201
+  },
+  "strike_craft_component_template": {
+    "strike_craft_component_template": {
+      "key": "GG_STRIKE_CRAFT",
+      "size": "LARGE",
+      "entity": "gatebuilder_01_strikecraft_entity",
+      "resources": {
+        "category": "ship_components",
+        "cost": {
+          "alloys": "60"
+        }
+      },
+      "power": "-60",
+      "hidden": "yes",
+      "count": "10",
+      "regeneration_per_day": "@regen",
+      "launch_time": "1.0",
+      "damage": {
+        "cooldown": "4",
+        "range": "20",
+        "engagement_range": "120",
+        "accuracy": "1.0",
+        "tracking": "1.0",
+        "health": "100",
+        "armor": "50",
+        "shield": "50",
+        "evasion": "0.80",
+        "speed": "600",
+        "rotation_speed": "0.2",
+        "acceleration": "0.5",
+        "shield_damage": "1.0",
+        "shield_penetration": "1",
+        "armor_penetration": "0.66",
+        "ship_behavior": "bombers_behavior",
+        "weapon_type": "instant # Not PD, unlike normal strike craft",
+        "projectile_gfx": "strike_craft_laser_3",
+        "component_set": "AI_STRIKE_CRAFT_1",
+        "icon": "GFX_ship_part_strike_craft_scout_1",
+        "icon_frame": "1",
+        "tags": {}
+      }
+    },
+    "_source_file": "00_weapons_distant_stars.txt",
+    "_line_number": 88
+  }
+}

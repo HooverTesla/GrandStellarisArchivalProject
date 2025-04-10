@@ -1,0 +1,343 @@
+{
+  "matter_decompressor_0": {
+    "matter_decompressor_0": {
+      "entity": "construction_platform_entity",
+      "construction_entity": "construction_platform_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "place_entity_on_planet_plane": "no",
+      "entity_offset": {
+        "rotate_to_center": "no",
+        "scale_offset": "yes",
+        "build_time": "1800",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "5000",
+            "unity": "5000"
+          },
+          "upkeep": {
+            "energy": "5"
+          }
+        },
+        "custom_tooltip_requirements": "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_MATTER_DECOMPRESSOR",
+        "prerequisites": {
+          "potential": {
+            "has_gw_matter_decompressor": "yes"
+          },
+          "possible": {
+            "hidden_trigger": {
+              "exists": "starbase"
+            },
+            "custom_tooltip": {
+              "fail_text": "requires_no_existing_matter_decompressor",
+              "from": {
+                "OR": {
+                  "has_relic": "r_contingency_core",
+                  "NOT": {}
+                }
+              },
+              "custom_tooltip": {
+                "fail_text": "requires_no_existing_matter_decompressor_two",
+                "from": {},
+                "custom_tooltip": {
+                  "fail_text": "requires_no_existing_megastructure",
+                  "has_no_non_gate_megastructure": "yes",
+                  "NOT": {
+                    "any_system_planet": {
+                      "is_planet_class": "pc_cosmogenesis_world"
+                    }
+                  }
+                }
+              },
+              "placement_rules": {
+                "planet_possible": {
+                  "custom_tooltip": {
+                    "fail_text": "requires_no_anomaly",
+                    "NOT": {},
+                    "is_star_class": "sc_black_hole"
+                  }
+                },
+                "_comments": [
+                  "# root = system",
+                  "# from = country"
+                ],
+                "ai_weight": {
+                  "factor": "15",
+                  "modifier": {
+                    "factor": "0.1",
+                    "starbase": {},
+                    "modifier": {
+                      "factor": "0.1",
+                      "any_neighbor_system": {
+                        "exists": "owner",
+                        "NOT": {
+                          "owner": {}
+                        }
+                      }
+                    },
+                    "on_build_start": {
+                      "on_build_cancel": {
+                        "on_build_complete": {
+                          "from": {
+                            "if": {
+                              "limit": {
+                                "has_relic": "r_contingency_core",
+                                "has_country_flag": "built_matter_decompressor_site"
+                              },
+                              "set_country_flag": "built_matter_decompressor_site_contingency"
+                            },
+                            "set_country_flag": "built_matter_decompressor_site"
+                          },
+                          "fromfrom.planet": {
+                            "if": {
+                              "limit": {
+                                "orbital_station": {
+                                  "dismantle": "yes"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "06_matter_decompressor.txt",
+    "_line_number": 10
+  },
+  "matter_decompressor_1": {
+    "matter_decompressor_1": {
+      "entity": "matter_decompressor_stage_1_entity",
+      "construction_entity": "matter_decompressor_stage_1_construction_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "entity_offset": {
+        "rotate_to_center": "yes",
+        "scale_offset": "yes",
+        "place_entity_on_planet_plane": "no",
+        "build_time": "3600",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "12500",
+            "unity": "5000"
+          },
+          "produces": {
+            "minerals": "500"
+          },
+          "upkeep": {
+            "energy": "25"
+          }
+        },
+        "upgrade_from": {},
+        "prerequisites": {
+          "on_build_complete": {
+            "from": {}
+          }
+        }
+      }
+    },
+    "_source_file": "06_matter_decompressor.txt",
+    "_line_number": 149
+  },
+  "matter_decompressor_2": {
+    "matter_decompressor_2": {
+      "entity": "matter_decompressor_stage_2_entity",
+      "construction_entity": "matter_decompressor_stage_2_construction_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "entity_offset": {
+        "rotate_to_center": "yes",
+        "scale_offset": "yes",
+        "place_entity_on_planet_plane": "no",
+        "build_time": "3600",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "12500",
+            "unity": "5000"
+          },
+          "produces": {
+            "minerals": "1000"
+          },
+          "upkeep": {
+            "energy": "50"
+          }
+        },
+        "upgrade_from": {},
+        "prerequisites": {
+          "on_build_complete": {
+            "from": {}
+          }
+        }
+      }
+    },
+    "_source_file": "06_matter_decompressor.txt",
+    "_line_number": 185
+  },
+  "matter_decompressor_3": {
+    "matter_decompressor_3": {
+      "entity": "matter_decompressor_stage_3_entity",
+      "construction_entity": "matter_decompressor_stage_3_construction_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "entity_offset": {
+        "rotate_to_center": "yes",
+        "scale_offset": "yes",
+        "place_entity_on_planet_plane": "no",
+        "build_time": "3600",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "12500",
+            "unity": "5000"
+          },
+          "produces": {
+            "minerals": "1500"
+          },
+          "upkeep": {
+            "energy": "75"
+          }
+        },
+        "upgrade_from": {},
+        "prerequisites": {
+          "on_build_complete": {
+            "from": {}
+          }
+        }
+      }
+    },
+    "_source_file": "06_matter_decompressor.txt",
+    "_line_number": 222
+  },
+  "matter_decompressor_4": {
+    "matter_decompressor_4": {
+      "entity": "matter_decompressor_stage_4_entity",
+      "construction_entity": "matter_decompressor_stage_4_construction_entity",
+      "portrait": "GFX_megastructure_matter_decompressor_background",
+      "entity_offset": {
+        "rotate_to_center": "yes",
+        "scale_offset": "yes",
+        "place_entity_on_planet_plane": "no",
+        "build_time": "3600",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "12500",
+            "unity": "5000"
+          },
+          "produces": {
+            "minerals": "2000"
+          },
+          "upkeep": {
+            "energy": "100"
+          }
+        },
+        "upgrade_from": {},
+        "prerequisites": {
+          "show_prereqs": "yes",
+          "on_build_complete": {
+            "set_star_flag": "matter_decompressor_built",
+            "from": {
+              "set_country_flag": "has_built_or_repaired_megastructure",
+              "country_event": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "06_matter_decompressor.txt",
+    "_line_number": 259
+  },
+  "matter_decompressor_permanently_ruined": {
+    "matter_decompressor_permanently_ruined": {
+      "entity": "matter_decompressor_destroyed_01_entity",
+      "construction_entity": "matter_decompressor_stage_4_construction_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "entity_offset": {
+        "rotate_to_center": "yes",
+        "scale_offset": "yes",
+        "place_entity_on_planet_plane": "no",
+        "show_galactic_map_icon": "no",
+        "show_in_outliner": "no",
+        "potential": {
+          "always": "no"
+        }
+      }
+    },
+    "_source_file": "06_matter_decompressor.txt",
+    "_line_number": 297
+  },
+  "matter_decompressor_ruined": {
+    "matter_decompressor_ruined": {
+      "entity": "matter_decompressor_destroyed_01_entity",
+      "construction_entity": "matter_decompressor_stage_4_construction_entity",
+      "portrait": "GFX_megastructure_construction_background",
+      "entity_offset": {
+        "rotate_to_center": "yes",
+        "scale_offset": "yes",
+        "place_entity_on_planet_plane": "no",
+        "potential": {
+          "always": "no"
+        }
+      }
+    },
+    "_source_file": "06_matter_decompressor.txt",
+    "_line_number": 314
+  },
+  "matter_decompressor_restored": {
+    "matter_decompressor_restored": {
+      "entity": "matter_decompressor_stage_4_entity",
+      "construction_entity": "matter_decompressor_stage_4_construction_entity",
+      "portrait": "GFX_megastructure_matter_decompressor_background",
+      "entity_offset": {
+        "rotate_to_center": "yes",
+        "scale_offset": "yes",
+        "place_entity_on_planet_plane": "no",
+        "build_time": "4800",
+        "resources": {
+          "category": "megastructures",
+          "cost": {
+            "alloys": "20000",
+            "unity": "7500"
+          },
+          "produces": {
+            "minerals": "2000"
+          },
+          "upkeep": {
+            "energy": "100"
+          }
+        },
+        "upgrade_from": {},
+        "possible": {
+          "from": {},
+          "on_build_start": {
+            "fromfrom": {
+              "set_graphical_culture": "root.from"
+            }
+          },
+          "on_build_complete": {
+            "every_system_ambient_object": {
+              "limit": {
+                "OR": {
+                  "is_ambient_object_type": "medium_debris_02_object"
+                }
+              },
+              "destroy_ambient_object": "this"
+            },
+            "set_star_flag": "matter_decompressor_built",
+            "from": {
+              "set_country_flag": "has_built_or_repaired_megastructure",
+              "country_event": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "06_matter_decompressor.txt",
+    "_line_number": 334
+  }
+}

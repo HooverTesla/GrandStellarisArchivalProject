@@ -1,0 +1,96 @@
+{
+  "utility_component_template": {
+    "utility_component_template": {
+      "inline_script": {
+        "script": "grand_archive/mutations/unique_mutation_catalytic_bladder",
+        "KEY": "CATALYTIC_BLADDER_EXTRA_LARGE",
+        "SIZE": "extra_large"
+      }
+    },
+    "_source_file": "01_mutation_unique_components.txt",
+    "_line_number": 945
+  },
+  "strike_craft_component_template": {
+    "strike_craft_component_template": {
+      "key": "LEECHCRAFT_LARGE",
+      "entity": "space_amoeba_small_entity",
+      "size": "large",
+      "weapon_type": "instant",
+      "icon": "GFX_mutation_leechcraft",
+      "icon_frame": "1",
+      "prerequisites": {
+        "size_restriction": {
+          "component_set": "LEECHCRAFT",
+          "projectile_gfx": "small_space_amoeba_weapon",
+          "tags": {
+            "ai_tags": {
+              "resources": {
+                "category": "ship_components",
+                "inline_script": {
+                  "script": "grand_archive/mutations/component_dynamic_cost",
+                  "COST": "320"
+                }
+              },
+              "ship_modifier": {
+                "component_lifesteal_add": "1"
+              },
+              "count": "8",
+              "regeneration_per_day": "@regen",
+              "launch_time": "@launch_time",
+              "damage": {
+                "cooldown": "5",
+                "range": "@attack_range",
+                "engagement_range": "@engagement_range",
+                "accuracy": "0.70",
+                "tracking": "0.50",
+                "health": "20",
+                "armor": "0",
+                "shield": "0",
+                "evasion": "0.50",
+                "speed": "500",
+                "rotation_speed": "0.8",
+                "acceleration": "1",
+                "shield_damage": "1.0",
+                "shield_penetration": "1",
+                "armor_damage": "1.5",
+                "ship_behavior": "bombers_behavior"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_mutation_unique_components.txt",
+    "_line_number": 508
+  },
+  "weapon_component_template": {
+    "weapon_component_template": {
+      "key": "GASTRIC_FOUNTAIN_EXTRA_LARGE",
+      "size": "extra_large",
+      "type": "instant",
+      "icon": "GFX_mutation_gastric_fountain",
+      "icon_frame": "1",
+      "prerequisites": {
+        "size_restriction": {
+          "component_set": "GASTRIC_FOUNTAIN",
+          "projectile_gfx": "gastric_fountain_l",
+          "tags": {
+            "ai_tags": {
+              "firing_arc": "15.0",
+              "min_range": "45",
+              "resources": {
+                "category": "ship_components",
+                "inline_script": {
+                  "script": "grand_archive/mutations/component_dynamic_cost",
+                  "COST": "640"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "01_mutation_unique_components.txt",
+    "_line_number": 640
+  }
+}

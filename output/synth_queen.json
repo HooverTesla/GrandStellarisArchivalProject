@@ -1,0 +1,35 @@
+{
+  "projectile_gfx_beam": {
+    "projectile_gfx_beam": {
+      "name": "synth_queen_01_perdition_beam",
+      "color": {
+        "hit_entity": "perdition_beam_hit_entity",
+        "shield_hit_entity": "perdition_beam_shield_hit_entity",
+        "muzzle_flash_entity": "synth_queen_01_perdition_beam_muzzle_entity",
+        "windup_entity": "synth_queen_01_perdition_beam_windup_entity",
+        "width": "5.0",
+        "_comments": [
+          "#beam specific data"
+        ],
+        "texture_scroll_speed": "1.0",
+        "texture_tiling": "5.5",
+        "hit": {
+          "alpha_curve": {},
+          "duration": "3.0"
+        },
+        "miss": {
+          "alpha_curve": {},
+          "duration": "1.5"
+        },
+        "texture": "gfx/models/combat_items/ion_cannon_diffuse.dds",
+        "shield_impact": {
+          "size": "large",
+          "loop_duration": "0.5",
+          "delay": "0.2"
+        }
+      }
+    },
+    "_source_file": "synth_queen.txt",
+    "_line_number": 45
+  }
+}

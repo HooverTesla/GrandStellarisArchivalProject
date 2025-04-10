@@ -1,0 +1,207 @@
+{
+  "first_contact_handled": {
+    "first_contact_handled": {
+      "OR": {
+        "can_have_first_contact_site_with": "from",
+        "_comments": [
+          "# First Contact System"
+        ],
+        "has_country_flag": "suppress_first_contact_comms",
+        "from": {
+          "OR": {
+            "can_have_first_contact_site_with": "root",
+            "has_country_flag": "suppress_first_contact_comms"
+          }
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact.txt",
+    "_line_number": 5
+  },
+  "is_planet_and_closer_to_than_prevprev": {
+    "is_planet_and_closer_to_than_prevprev": {
+      "is_moon": "no",
+      "is_star": "no",
+      "is_asteroid": "no",
+      "is_artificial": "no",
+      "prev": {
+        "compare_distance": {
+          "closer_object": "prev",
+          "further_object": "prevprevprev"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact.txt",
+    "_line_number": 20
+  },
+  "first_contact_can_capture_ship": {
+    "first_contact_can_capture_ship": {
+      "contact_country": {
+        "any_controlled_fleet": {
+          "first_contact_can_be_captured": "yes"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact.txt",
+    "_line_number": 33
+  },
+  "first_contact_can_be_captured": {
+    "first_contact_can_be_captured": {
+      "exists": "solar_system",
+      "is_civilian": "yes",
+      "NOR": {
+        "is_ship_class": "shipclass_military_station"
+      },
+      "is_in_sensor_range_of_country": "root.owner"
+    },
+    "_source_file": "02_scripted_triggers_first_contact.txt",
+    "_line_number": 42
+  },
+  "first_contact_can_see_their_system": {
+    "first_contact_can_see_their_system": {
+      "contact_country": {
+        "any_system_within_border": {
+          "OR": {
+            "is_in_sensor_range_of_country": "root.owner",
+            "root.owner": {
+              "intel_level": {
+                "system": "prev"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact.txt",
+    "_line_number": 55
+  },
+  "first_contact_default_desc": {
+    "first_contact_default_desc": {
+      "owner": {
+        "has_militarist_government": "no",
+        "has_pacifist_government": "no",
+        "has_spiritualist_government": "no",
+        "has_materialist_government": "no",
+        "NOR": {
+          "has_ethic": "ethic_fanatic_xenophobe"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact.txt",
+    "_line_number": 71
+  },
+  "first_contact_militarist_desc": {
+    "first_contact_militarist_desc": {
+      "owner": {
+        "has_militarist_government": "yes",
+        "NOR": {
+          "has_ethic": "ethic_fanatic_xenophobe"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact.txt",
+    "_line_number": 86
+  },
+  "first_contact_pacifist_desc": {
+    "first_contact_pacifist_desc": {
+      "owner": {
+        "has_pacifist_government": "yes",
+        "NOR": {
+          "has_ethic": "ethic_fanatic_xenophobe"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact.txt",
+    "_line_number": 98
+  },
+  "first_contact_spiritualist_desc": {
+    "first_contact_spiritualist_desc": {
+      "owner": {
+        "has_spiritualist_government": "yes",
+        "NOR": {
+          "has_ethic": "ethic_fanatic_xenophobe"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact.txt",
+    "_line_number": 110
+  },
+  "first_contact_materialist_desc": {
+    "first_contact_materialist_desc": {
+      "owner": {
+        "has_materialist_government": "yes",
+        "NOR": {
+          "has_ethic": "ethic_fanatic_xenophobe"
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact.txt",
+    "_line_number": 122
+  },
+  "first_contact_xenophobe_desc": {
+    "first_contact_xenophobe_desc": {
+      "owner": {
+        "has_ethic": "ethic_fanatic_xenophobe"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact.txt",
+    "_line_number": 134
+  },
+  "first_contact_xenophile_desc": {
+    "first_contact_xenophile_desc": {
+      "owner": {
+        "has_ethic": "ethic_fanatic_xenophile"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact.txt",
+    "_line_number": 140
+  },
+  "first_contact_authoritarian_desc": {
+    "first_contact_authoritarian_desc": {
+      "owner": {
+        "has_ethic": "ethic_fanatic_authoritarian"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact.txt",
+    "_line_number": 146
+  },
+  "first_contact_egalitarian_desc": {
+    "first_contact_egalitarian_desc": {
+      "owner": {
+        "has_ethic": "ethic_fanatic_egalitarian"
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact.txt",
+    "_line_number": 152
+  },
+  "first_contact_custom_greeting": {
+    "first_contact_custom_greeting": {
+      "OR": {
+        "has_opinion_modifier": {
+          "who": "event_target:contact_empire",
+          "modifier": "opinion_hostile_first_contact_hungry"
+        },
+        "event_target:contact_empire": {
+          "OR": {
+            "AND": {
+              "has_country_flag": "human_lithoid",
+              "root": {
+                "has_country_flag": "human_1"
+              }
+            },
+            "has_opinion_modifier": {
+              "who": "root",
+              "modifier": "opinion_hostile_first_contact_hungry"
+            },
+            "has_origin": "origin_slavers",
+            "_comments": [
+              "# Special case for MSI (pre-scripted slavers empire)"
+            ]
+          }
+        }
+      }
+    },
+    "_source_file": "02_scripted_triggers_first_contact.txt",
+    "_line_number": 158
+  }
+}

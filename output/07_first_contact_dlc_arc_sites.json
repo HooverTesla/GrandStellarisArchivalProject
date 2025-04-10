@@ -1,0 +1,105 @@
+{
+  "payback_digsite": {
+    "payback_digsite": {
+      "desc": "payback_digsite_desc",
+      "picture": "GFX_evt_payback",
+      "stages": "4",
+      "weight": "0",
+      "max_instances": "999",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "potential": {
+        "hidden_trigger": {
+          "owner": {
+            "has_country_flag": "payback_origin_arcsite_owner@from.planet"
+          }
+        }
+      },
+      "visible": {
+        "owner": {
+          "has_country_flag": "payback_origin_arcsite_owner@from.planet"
+        },
+        "default_site_visible_trigger": "yes"
+      },
+      "stage": {
+        "difficulty": "3",
+        "icon": "GFX_archaeology_runes_C4",
+        "event": "origin.4925"
+      },
+      "on_roll_failed": {
+        "from": {
+          "standard_archaeological_site_on_roll_failed": {}
+        }
+      }
+    },
+    "_source_file": "07_first_contact_dlc_arc_sites.txt",
+    "_line_number": 7
+  },
+  "broken_shackles_digsite": {
+    "broken_shackles_digsite": {
+      "desc": "broken_shackles_desc",
+      "picture": "GFX_evt_broken_shackles",
+      "stages": "5",
+      "weight": "0",
+      "max_instances": "999",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "potential": {
+        "hidden_trigger": {
+          "owner": {
+            "has_country_flag": "broken_shackles_origin_arcsite_owner@from.planet"
+          }
+        }
+      },
+      "visible": {
+        "owner": {
+          "has_country_flag": "built_first_science_ship"
+        },
+        "default_site_visible_trigger": "yes"
+      },
+      "stage": {
+        "difficulty": "2",
+        "icon": "GFX_archaeology_runes_C5",
+        "event": "origin.5035"
+      },
+      "on_roll_failed": {
+        "from": {
+          "standard_archaeological_site_on_roll_failed": {}
+        }
+      }
+    },
+    "_source_file": "07_first_contact_dlc_arc_sites.txt",
+    "_line_number": 69
+  },
+  "site_the_chosen_backstory": {
+    "site_the_chosen_backstory": {
+      "desc": "site_the_chosen_backstory_desc",
+      "picture": "GFX_evt_medieval_alien_civilization",
+      "stages": "4",
+      "weight": "0",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "visible": {
+        "default_site_visible_trigger": "yes"
+      },
+      "stage": {
+        "difficulty": "3",
+        "icon": "GFX_archaeology_runes_C4",
+        "event": "arcsite.3015"
+      },
+      "on_roll_failed": {
+        "from": {
+          "standard_archaeological_site_on_roll_failed": {}
+        }
+      }
+    },
+    "_source_file": "07_first_contact_dlc_arc_sites.txt",
+    "_line_number": 128
+  }
+}

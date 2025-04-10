@@ -1,0 +1,43 @@
+{
+  "tradition_enmity": {
+    "tradition_enmity": {
+      "desc": {
+        "trigger": {
+          "text": "tradition_enmity_desc"
+        },
+        "desc": {
+          "trigger": {
+            "text": "tradition_enmity_desc_machine"
+          },
+          "tree_template": "tree_11_111",
+          "adoption_bonus": "tr_enmity_adopt",
+          "finish_bonus": "tr_enmity_finish",
+          "traditions": {},
+          "potential": {
+            "has_humanoids": "yes",
+            "NOR": {
+              "is_homicidal": "yes",
+              "has_valid_civic": "civic_inwards_perfection"
+            }
+          },
+          "ai_weight": {
+            "weight": "10",
+            "modifier": {
+              "factor": "0",
+              "NOT": {},
+              "modifier": {
+                "factor": "20",
+                "has_ai_personality": "metalhead"
+              },
+              "_comments": [
+                "# Ambitious people who want to be rivals"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_enmity.txt",
+    "_line_number": 6
+  }
+}

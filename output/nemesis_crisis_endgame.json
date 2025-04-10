@@ -1,0 +1,324 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "crisis.6200",
+      "title": "crisis.6200.name",
+      "desc": "crisis.6200.desc",
+      "show_sound": "event_super_explosion",
+      "picture": "GFX_evt_supernova",
+      "location": "from",
+      "trigger": {
+        "from": {
+          "if": {
+            "limit": {
+              "NOT": {}
+            },
+            "abort_trigger": {
+              "OR": {
+                "NOT": {
+                  "NOT": {
+                    "from.owner": {}
+                  },
+                  "is_triggered_only": "yes",
+                  "immediate": {
+                    "from": {
+                      "solar_system": {
+                        "save_event_target_as": "crisis_sphere_system"
+                      },
+                      "switch": {
+                        "trigger": "is_megastructure_type",
+                        "crisis_sphere_0": {
+                          "root": {
+                            "set_variable": {
+                              "which": "crisis_sphere_destroy_reward",
+                              "value": "1"
+                            }
+                          }
+                        },
+                        "crisis_sphere_1": {
+                          "root": {
+                            "set_variable": {
+                              "which": "crisis_sphere_destroy_reward",
+                              "value": "1.5"
+                            }
+                          }
+                        },
+                        "crisis_sphere_2": {
+                          "root": {
+                            "set_variable": {
+                              "which": "crisis_sphere_destroy_reward",
+                              "value": "2"
+                            }
+                          }
+                        },
+                        "crisis_sphere_3": {
+                          "root": {
+                            "set_variable": {
+                              "which": "crisis_sphere_destroy_reward",
+                              "value": "3"
+                            }
+                          }
+                        }
+                      },
+                      "set_halted": "-1 #no completing while still deciding!"
+                    },
+                    "if": {
+                      "limit": {
+                        "exists": "fromfrom",
+                        "fromfrom": {
+                          "save_event_target_as": "sphere_builders"
+                        }
+                      },
+                      "else": {
+                        "random_country": {
+                          "limit": {
+                            "from": {},
+                            "save_event_target_as": "sphere_builders"
+                          }
+                        }
+                      },
+                      "_comments": [
+                        "#It must be destroyed"
+                      ],
+                      "option": {
+                        "name": "crisis.6200.A",
+                        "if": {
+                          "limit": {
+                            "has_crisis_level": "crisis_level_5"
+                          },
+                          "add_resource": {
+                            "sr_dark_matter": "10000",
+                            "mult": "crisis_sphere_destroy_reward"
+                          }
+                        },
+                        "else": {
+                          "add_resource": {
+                            "influence": "200",
+                            "alloys": "5000",
+                            "mult": "crisis_sphere_destroy_reward"
+                          }
+                        },
+                        "custom_tooltip": "aetherophasic_engine_ruined_tt",
+                        "hidden_effect": {
+                          "from": {
+                            "solar_system": {
+                              "spawn_megastructure": {
+                                "type": "crisis_sphere_ruined",
+                                "coords_from": "prev",
+                                "init_effect": {
+                                  "if": {
+                                    "limit": {
+                                      "set_megastructure_flag": "crisis_sphere_of@event_target:crisis_sphere_owner"
+                                    }
+                                  }
+                                },
+                                "random_system_ambient_object": {
+                                  "limit": {
+                                    "OR": {
+                                      "has_ambient_object_flag": "crisis_sphere_3_system_effect"
+                                    }
+                                  },
+                                  "destroy_ambient_object": "this"
+                                }
+                              },
+                              "remove_megastructure": "this"
+                            },
+                            "if": {
+                              "limit": {
+                                "event_target:sphere_builders": {},
+                                "every_playable_country": {
+                                  "limit": {
+                                    "is_ai": "no",
+                                    "NOR": {
+                                      "is_same_value": "root",
+                                      "AND": {
+                                        "exists": "event_target:sphere_builders",
+                                        "is_same_value": "event_target:sphere_builders"
+                                      }
+                                    }
+                                  },
+                                  "country_event": {}
+                                },
+                                "ai_chance": {
+                                  "factor": "1"
+                                }
+                              },
+                              "_comments": [
+                                "#Option to replace your own one with it if you have lost yours"
+                              ],
+                              "option": {
+                                "name": "crisis.6200.B",
+                                "custom_tooltip": "crisis.6200.B.tooltip",
+                                "trigger": {
+                                  "has_crisis_level": "crisis_level_5",
+                                  "NOT": {
+                                    "any_owned_megastructure": {
+                                      "OR": {
+                                        "has_megastructure_flag": "crisis_sphere",
+                                        "AND": {
+                                          "is_megastructure_type": "crisis_sphere_ruined",
+                                          "is_upgrading": "yes"
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "hidden_effect": {
+                                  "random_megastructure": {
+                                    "limit": {
+                                      "remove_megastructure_flag": "crisis_sphere_of@root"
+                                    },
+                                    "random_system": {
+                                      "limit": {
+                                        "remove_star_flag": "crisis_sphere_system@root"
+                                      },
+                                      "from": {
+                                        "set_megastructure_flag": "crisis_sphere_of@root",
+                                        "set_halted": "0",
+                                        "solar_system": {
+                                          "set_star_flag": "crisis_sphere_system@root"
+                                        }
+                                      }
+                                    },
+                                    "ai_chance": {
+                                      "factor": "1000"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "nemesis_crisis_endgame.txt",
+    "_line_number": 1166
+  },
+  "starbase_event": {
+    "starbase_event": {
+      "id": "crisis.6099",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "from",
+        "from.owner": {
+          "OR": {
+            "is_country_type": "gray_goo"
+          }
+        },
+        "solar_system": {
+          "has_star_flag": "crisis_sphere_system@root.owner",
+          "any_system_megastructure": {}
+        },
+        "immediate": {
+          "solar_system": {
+            "system_event": {}
+          }
+        }
+      }
+    },
+    "_source_file": "nemesis_crisis_endgame.txt",
+    "_line_number": 533
+  },
+  "system_event": {
+    "system_event": {
+      "id": "crisis.6100",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_system_megastructure": {},
+        "immediate": {
+          "save_event_target_as": "crisis_sphere_system",
+          "random_system_megastructure": {
+            "limit": {
+              "prev": {
+                "spawn_megastructure": {
+                  "type": "crisis_sphere_ruined",
+                  "coords_from": "prev",
+                  "init_effect": {
+                    "if": {
+                      "limit": {
+                        "set_megastructure_flag": "crisis_sphere_of@fromfrom"
+                      }
+                    }
+                  }
+                },
+                "switch": {
+                  "trigger": "is_megastructure_type",
+                  "crisis_sphere_0": {
+                    "from": {
+                      "set_variable": {
+                        "which": "crisis_sphere_destroy_reward",
+                        "value": "1"
+                      }
+                    }
+                  },
+                  "crisis_sphere_1": {
+                    "from": {
+                      "set_variable": {
+                        "which": "crisis_sphere_destroy_reward",
+                        "value": "1.5"
+                      }
+                    }
+                  },
+                  "crisis_sphere_2": {
+                    "from": {
+                      "set_variable": {
+                        "which": "crisis_sphere_destroy_reward",
+                        "value": "2"
+                      }
+                    }
+                  },
+                  "crisis_sphere_3": {
+                    "from": {
+                      "set_variable": {
+                        "which": "crisis_sphere_destroy_reward",
+                        "value": "3"
+                      }
+                    }
+                  }
+                },
+                "remove_megastructure": "this"
+              },
+              "random_system_ambient_object": {
+                "limit": {
+                  "OR": {
+                    "has_ambient_object_flag": "crisis_sphere_3_system_effect"
+                  }
+                },
+                "destroy_ambient_object": "this"
+              },
+              "from": {
+                "fromfrom": {
+                  "from": {
+                    "fromfrom": {
+                      "every_playable_country": {
+                        "limit": {
+                          "is_ai": "no",
+                          "NOR": {
+                            "is_same_value": "fromfrom"
+                          }
+                        },
+                        "country_event": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "nemesis_crisis_endgame.txt",
+    "_line_number": 566
+  }
+}

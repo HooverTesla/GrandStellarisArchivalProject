@@ -1,0 +1,341 @@
+{
+  "fleet_event": {
+    "fleet_event": {
+      "id": "leviathans.3220",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "owner": {
+          "random_controlled_ship": {
+            "set_disabled": "no"
+          }
+        }
+      }
+    },
+    "_source_file": "leviathans_events_2.txt",
+    "_line_number": 5090
+  },
+  "country_event": {
+    "country_event": {
+      "id": "leviathans.3204",
+      "title": "leviathans.3204",
+      "desc": "leviathans.3204.desc",
+      "picture": "GFX_evt_hive",
+      "show_sound": "event_scanner",
+      "location": "event_target:hive_system",
+      "trackable": "yes",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "leviathans.3204.a",
+        "event_target:boardable_hive_asteroid": {
+          "enable_special_project": {
+            "name": "HIVE_ASTEROID_PROJECT",
+            "location": "THIS",
+            "owner": "ROOT"
+          }
+        }
+      }
+    },
+    "_source_file": "leviathans_events_2.txt",
+    "_line_number": 4883
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "leviathans.3230",
+      "title": "leviathans.3230.name",
+      "desc": "leviathans.3230.desc",
+      "picture": "GFX_evt_hive",
+      "show_sound": "event_crystal_ship",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "set_global_flag": "hivers_appeared",
+        "event_target:hiver_system": {
+          "random_system_ambient_object": {
+            "limit": {
+              "save_event_target_as": "ambient_hive_1"
+            },
+            "random_system_ambient_object": {
+              "limit": {
+                "save_event_target_as": "ambient_hive_2"
+              },
+              "random_system_ambient_object": {
+                "limit": {
+                  "save_event_target_as": "ambient_hive_3"
+                },
+                "random_system_ambient_object": {
+                  "limit": {
+                    "save_event_target_as": "ambient_hive_4"
+                  },
+                  "random_system_ambient_object": {
+                    "limit": {
+                      "save_event_target_as": "ambient_hive_5"
+                    },
+                    "random_system_ambient_object": {
+                      "limit": {
+                        "save_event_target_as": "ambient_hive_6"
+                      }
+                    },
+                    "create_country": {
+                      "name": "NAME_Alien_Hive",
+                      "type": "guardian_hiver",
+                      "flag": {
+                        "icon": {
+                          "category": "spherical",
+                          "file": "flag_spherical_6.dds"
+                        },
+                        "background": {
+                          "category": "backgrounds",
+                          "file": "00_solid.dds"
+                        },
+                        "colors": {}
+                      }
+                    },
+                    "last_created_country": {
+                      "save_global_event_target_as": "hive_country",
+                      "set_country_flag": "hive_country",
+                      "set_faction_hostility": {
+                        "target": "root.owner",
+                        "set_hostile": "no",
+                        "set_friendly": "yes"
+                      }
+                    },
+                    "every_playable_country": {
+                      "establish_communications_no_message": "event_target:hive_country"
+                    },
+                    "create_fleet": {
+                      "name": "NAME_Hiver_Nest",
+                      "settings": {
+                        "effect": {
+                          "set_owner": "event_target:hive_country",
+                          "create_ship": {
+                            "name": "NAME_Hiver_Nest",
+                            "design": "NAME_Hive_Asteroid"
+                          },
+                          "set_location": "event_target:ambient_hive_1"
+                        }
+                      },
+                      "event_target:ambient_hive_1": {
+                        "create_fleet": {
+                          "name": "NAME_Hiver_Nest",
+                          "settings": {
+                            "effect": {
+                              "set_owner": "event_target:hive_country",
+                              "create_ship": {
+                                "name": "NAME_Hiver_Nest",
+                                "design": "NAME_Hive_Asteroid"
+                              },
+                              "set_location": "event_target:ambient_hive_2"
+                            }
+                          },
+                          "event_target:ambient_hive_2": {
+                            "create_fleet": {
+                              "name": "NAME_Hiver_Nest",
+                              "settings": {
+                                "effect": {
+                                  "set_owner": "event_target:hive_country",
+                                  "create_ship": {
+                                    "name": "NAME_Hiver_Nest",
+                                    "design": "NAME_Hive_Asteroid"
+                                  },
+                                  "set_location": "event_target:ambient_hive_3"
+                                }
+                              },
+                              "event_target:ambient_hive_3": {
+                                "create_fleet": {
+                                  "name": "NAME_Hiver_Nest",
+                                  "settings": {
+                                    "effect": {
+                                      "set_owner": "event_target:hive_country",
+                                      "create_ship": {
+                                        "name": "NAME_Hiver_Nest",
+                                        "design": "NAME_Hive_Asteroid"
+                                      },
+                                      "set_location": "event_target:ambient_hive_4"
+                                    }
+                                  },
+                                  "event_target:ambient_hive_4": {
+                                    "create_fleet": {
+                                      "name": "NAME_Hiver_Nest",
+                                      "settings": {
+                                        "effect": {
+                                          "set_owner": "event_target:hive_country",
+                                          "create_ship": {
+                                            "name": "NAME_Hiver_Nest",
+                                            "design": "NAME_Hive_Asteroid"
+                                          },
+                                          "set_location": "event_target:ambient_hive_5"
+                                        }
+                                      },
+                                      "event_target:ambient_hive_5": {
+                                        "create_fleet": {
+                                          "name": "NAME_Hiver_Nest",
+                                          "settings": {
+                                            "effect": {
+                                              "set_owner": "event_target:hive_country",
+                                              "create_ship": {
+                                                "name": "NAME_Hiver_Nest",
+                                                "design": "NAME_Hive_Asteroid"
+                                              },
+                                              "set_location": "event_target:ambient_hive_6"
+                                            }
+                                          },
+                                          "event_target:ambient_hive_6": {},
+                                          "option": {
+                                            "name": "EXCELLENT"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "leviathans_events_2.txt",
+    "_line_number": 4935
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "leviathans.1019",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "spawn_sun_temperature_effect": "yes"
+      }
+    },
+    "_source_file": "leviathans_events_2.txt",
+    "_line_number": 1164
+  },
+  "event": {
+    "event": {
+      "id": "leviathans.2011",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_system": {
+          "any_system_planet": {}
+        },
+        "immediate": {
+          "random_galaxy_planet": {
+            "limit": {
+              "save_event_target_as": "wraith_star",
+              "remove_modifier": "germinating_wraith",
+              "create_country": {
+                "name": "NAME_Wraith",
+                "type": "guardian_wraith",
+                "flag": {
+                  "icon": {
+                    "category": "zoological",
+                    "file": "flag_zoological_5.dds"
+                  },
+                  "background": {
+                    "category": "backgrounds",
+                    "file": "00_solid.dds"
+                  },
+                  "colors": {}
+                }
+              },
+              "last_created_country": {
+                "set_country_flag": "wraith_country",
+                "save_global_event_target_as": "wraith_country",
+                "create_fleet": {
+                  "name": "NAME_Specter",
+                  "settings": {
+                    "spawn_debris": "no",
+                    "is_boss": "yes"
+                  },
+                  "effect": {
+                    "set_owner": "event_target:wraith_country",
+                    "random_list": {
+                      "33": {
+                        "create_ship": {
+                          "name": "NAME_Wraith_520THz",
+                          "design": "NAME_Spectral_Wraith_520THz",
+                          "effect": {
+                            "set_ship_flag": "wraith_freq_yellow"
+                          }
+                        }
+                      }
+                    },
+                    "save_global_event_target_as": "wraith_fleet",
+                    "set_fleet_flag": "wraith_fleet",
+                    "set_location": "event_target:wraith_star",
+                    "set_fleet_stance": "aggressive",
+                    "set_aggro_range_measure_from": "self",
+                    "set_aggro_range": "20",
+                    "queue_actions": {
+                      "repeat": {
+                        "find_closest_system": {
+                          "trigger": {
+                            "id": "wraith.1.trigger.1",
+                            "NOR": {
+                              "exists": "space_owner",
+                              "any_fleet_in_system": {
+                                "is_same_value": "event_target:wraith_fleet"
+                              },
+                              "has_star_flag": "guardians_wraith_visited"
+                            }
+                          },
+                          "found_system": {
+                            "move_to": "this",
+                            "find_closest_planet": {
+                              "trigger": {
+                                "id": "wraith.1.trigger.2",
+                                "is_star": "yes"
+                              },
+                              "found_planet": {
+                                "move_to": "this",
+                                "_comments": [
+                                  "#orbit_planet = this"
+                                ],
+                                "wait": {
+                                  "duration": "10"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "every_country": {
+                  "limit": {
+                    "is_non_hostile_to_wraith": "yes"
+                  },
+                  "set_faction_hostility": {
+                    "target": "prev",
+                    "set_hostile": "no",
+                    "set_neutral": "yes",
+                    "set_friendly": "no"
+                  }
+                }
+              },
+              "if": {
+                "limit": {
+                  "space_owner": {
+                    "country_event": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "leviathans_events_2.txt",
+    "_line_number": 2469
+  }
+}

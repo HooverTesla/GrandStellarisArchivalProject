@@ -1,0 +1,225 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "crisis.266",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "event_target:starbase_system": {
+          "solar_system": {
+            "create_starbase": {
+              "size": "starbase_swarm",
+              "owner": "root"
+            },
+            "star": {
+              "create_ambient_object": {
+                "type": "swarm_1",
+                "location": "this"
+              },
+              "last_created_ambient_object": {
+                "set_ambient_object_flag": "swarm_system_effect",
+                "set_location": {
+                  "target": "prev",
+                  "distance": "0",
+                  "angle": "random"
+                }
+              }
+            },
+            "every_system_planet": {
+              "limit": {
+                "orbital_station": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "crisis_events_1.txt",
+    "_line_number": 4037
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "crisis.106",
+      "hide_window": "yes",
+      "trigger": {
+        "has_fleet_flag": "pet_queen",
+        "is_ship_size": "queen_swarm"
+      },
+      "mean_time_to_happen": {
+        "months": "2"
+      },
+      "immediate": {
+        "random_list": {
+          "33": {
+            "create_ship": {
+              "name": "NAME_Domesticated_Warrior",
+              "design": "NAME_Swarm_Large",
+              "graphical_culture": "swarm_01",
+              "upgradable": "no"
+            }
+          },
+          "66": {
+            "create_ship": {
+              "name": "NAME_Domesticated_Swarmling",
+              "design": "NAME_Swarm_Small",
+              "graphical_culture": "swarm_01",
+              "upgradable": "no"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "crisis_events_1.txt",
+    "_line_number": 2345
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "crisis.260",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "solar_system": {
+          "star": {
+            "create_ambient_object": {
+              "type": "swarm_1",
+              "location": "this"
+            },
+            "last_created_ambient_object": {
+              "set_ambient_object_flag": "swarm_system_effect",
+              "set_location": {
+                "target": "prev",
+                "distance": "0",
+                "angle": "random"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "crisis_events_1.txt",
+    "_line_number": 3962
+  },
+  "event": {
+    "event": {
+      "id": "crisis.240",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_country": {
+          "has_global_flag": "ongoing_prethoryn_invasion",
+          "is_country_type": "swarm"
+        }
+      },
+      "immediate": {
+        "random_country": {
+          "limit": {
+            "save_event_target_as": "prethoryn",
+            "owner_species": {
+              "random_owned_planet": {
+                "limit": {
+                  "create_fleet": {
+                    "name": "NAME_Prethoryn_Armies",
+                    "effect": {
+                      "set_owner": "event_target:prethoryn",
+                      "while": {
+                        "count": "20",
+                        "create_army_transport": {
+                          "ship_name": "NAME_Prethoryn_Transport",
+                          "graphical_culture": "swarm_01",
+                          "army_name": "NAME_Prethoryn_Invaders",
+                          "army_type": "swarm_army",
+                          "species": "event_target:prethoryn_species"
+                        }
+                      },
+                      "set_location": {
+                        "target": "PREV",
+                        "distance": "10",
+                        "angle": "random"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "crisis_events_1.txt",
+    "_line_number": 3778
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "crisis.216",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "every_country": {
+          "limit": {
+            "add_event_chain_counter": {
+              "event_chain": "prethoryn_scourge_chain",
+              "counter": "infested_worlds_cleansed",
+              "amount": "1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "crisis_events_1.txt",
+    "_line_number": 3521
+  },
+  "system_event": {
+    "system_event": {
+      "id": "crisis.220",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "any_system_planet": {
+          "is_planet_class": "pc_infested"
+        }
+      },
+      "immediate": {
+        "every_system_planet": {
+          "limit": {
+            "every_country": {
+              "limit": {
+                "add_event_chain_counter": {
+                  "event_chain": "prethoryn_scourge_chain",
+                  "counter": "infested_worlds_cleansed",
+                  "amount": "1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "crisis_events_1.txt",
+    "_line_number": 3631
+  },
+  "starbase_event": {
+    "starbase_event": {
+      "id": "crisis.265",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "from.owner": {
+          "NOT": {
+            "solar_system": {
+              "any_system_planet": {}
+            }
+          },
+          "immediate": {
+            "solar_system": {
+              "from.owner": {
+                "country_event": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "crisis_events_1.txt",
+    "_line_number": 4014
+  }
+}

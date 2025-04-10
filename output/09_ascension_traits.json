@@ -1,0 +1,633 @@
+{
+  "trait_adaptive_lithoid": {
+    "trait_adaptive_lithoid": {
+      "cost": "2",
+      "species_potential_add": {
+        "can_do_advanced_gene_modding": "yes"
+      },
+      "species_possible_remove": {
+        "can_remove_beneficial_genetic_traits": "yes"
+      },
+      "species_possible_merge_remove": {
+        "always": "yes"
+      },
+      "icon": "gfx/interface/icons/traits/trait_adaptive.dds",
+      "initial": "no",
+      "randomized": "no",
+      "advanced_trait": "yes",
+      "potential_crossbreeding_chance": "0.5",
+      "opposites": {
+        "allowed_archetypes": {
+          "modifier": {
+            "pop_environment_tolerance": "0.10"
+          },
+          "slave_cost": {
+            "energy": "1000"
+          }
+        }
+      }
+    },
+    "_source_file": "09_ascension_traits.txt",
+    "_line_number": 1
+  },
+  "trait_rapid_breeders_lithoid": {
+    "trait_rapid_breeders_lithoid": {
+      "cost": "2",
+      "species_potential_add": {
+        "can_do_advanced_gene_modding": "yes"
+      },
+      "species_possible_remove": {
+        "can_remove_beneficial_genetic_traits": "yes"
+      },
+      "species_possible_merge_remove": {
+        "always": "yes"
+      },
+      "icon": "gfx/interface/icons/traits/trait_rapid_breeders.dds",
+      "initial": "no",
+      "randomized": "no",
+      "advanced_trait": "yes",
+      "potential_crossbreeding_chance": "0.5",
+      "opposites": {
+        "allowed_archetypes": {
+          "modifier": {
+            "pop_growth_speed": "0.10"
+          },
+          "slave_cost": {
+            "energy": "2000"
+          }
+        }
+      }
+    },
+    "_source_file": "09_ascension_traits.txt",
+    "_line_number": 27
+  },
+  "trait_delicious": {
+    "trait_delicious": {
+      "cost": "2",
+      "species_potential_add": {
+        "can_do_advanced_gene_modding": "yes"
+      },
+      "species_possible_remove": {
+        "can_remove_beneficial_genetic_traits": "yes"
+      },
+      "species_possible_merge_remove": {
+        "always": "yes"
+      },
+      "potential_crossbreeding_chance": "0.5",
+      "initial": "no",
+      "randomized": "no",
+      "advanced_trait": "yes",
+      "allowed_archetypes": {
+        "modifier": {
+          "planet_livestock_food_produces_add": "2"
+        },
+        "slave_cost": {
+          "energy": "1000"
+        }
+      }
+    },
+    "_source_file": "09_ascension_traits.txt",
+    "_line_number": 55
+  },
+  "trait_nerve_stapled": {
+    "trait_nerve_stapled": {
+      "cost": "3",
+      "species_potential_add": {
+        "can_do_advanced_gene_modding": "yes"
+      },
+      "species_possible_remove": {
+        "can_remove_beneficial_genetic_traits": "yes"
+      },
+      "species_possible_merge_remove": {
+        "always": "yes"
+      },
+      "potential_crossbreeding_chance": "0.5",
+      "opposites": {
+        "initial": "no",
+        "randomized": "no",
+        "advanced_trait": "yes",
+        "allowed_archetypes": {
+          "modifier": {
+            "planet_jobs_produces_mult": "0.05",
+            "species_leader_exp_gain": "-1"
+          },
+          "custom_tooltip": "TRAIT_NERVE_STAPLED_EFFECT",
+          "slave_cost": {
+            "energy": "1500"
+          },
+          "triggered_pop_modifier": {
+            "potential": {
+              "OR": {
+                "is_pop_category": "specialist"
+              }
+            },
+            "pop_demotion_time_mult": "-10.0"
+          },
+          "assembly_score": {
+            "modifier": {
+              "add": "1",
+              "from": {
+                "OR": {
+                  "has_farming_designation": "yes",
+                  "has_generator_designation": "yes",
+                  "has_mining_designation": "yes",
+                  "has_rural_designation": "yes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "09_ascension_traits.txt",
+    "_line_number": 80
+  },
+  "trait_fertile": {
+    "trait_fertile": {
+      "cost": "4",
+      "species_potential_add": {
+        "can_do_advanced_gene_modding": "yes"
+      },
+      "species_possible_remove": {
+        "can_remove_beneficial_genetic_traits": "yes"
+      },
+      "species_possible_merge_remove": {
+        "always": "yes"
+      },
+      "potential_crossbreeding_chance": "0.5",
+      "initial": "no",
+      "randomized": "no",
+      "advanced_trait": "yes",
+      "opposites": {
+        "allowed_archetypes": {
+          "modifier": {
+            "pop_growth_speed": "0.3",
+            "pop_housing_usage_mult": "-0.1"
+          },
+          "slave_cost": {
+            "energy": "2000"
+          }
+        }
+      }
+    },
+    "_source_file": "09_ascension_traits.txt",
+    "_line_number": 129
+  },
+  "trait_robust": {
+    "trait_robust": {
+      "cost": "4",
+      "species_potential_add": {
+        "can_do_advanced_gene_modding": "yes"
+      },
+      "species_possible_remove": {
+        "can_remove_beneficial_genetic_traits": "yes"
+      },
+      "species_possible_merge_remove": {
+        "always": "yes"
+      },
+      "potential_crossbreeding_chance": "0.5",
+      "initial": "no",
+      "randomized": "no",
+      "advanced_trait": "yes",
+      "opposites": {
+        "allowed_archetypes": {
+          "modifier": {
+            "pop_environment_tolerance": "0.30",
+            "planet_jobs_produces_mult": "0.05",
+            "leader_lifespan_add": "50"
+          },
+          "slave_cost": {
+            "energy": "2000"
+          },
+          "assembly_score": {
+            "modifier": {
+              "add": "0.5 #always good"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "09_ascension_traits.txt",
+    "_line_number": 155
+  },
+  "trait_erudite": {
+    "trait_erudite": {
+      "cost": "4",
+      "species_potential_add": {
+        "can_do_advanced_gene_modding": "yes"
+      },
+      "species_possible_remove": {
+        "can_remove_beneficial_genetic_traits": "yes"
+      },
+      "species_possible_merge_remove": {
+        "always": "yes"
+      },
+      "potential_crossbreeding_chance": "0.5",
+      "initial": "no",
+      "randomized": "no",
+      "improves_leaders": "yes",
+      "advanced_trait": "yes",
+      "opposites": {
+        "allowed_archetypes": {
+          "modifier": {
+            "planet_jobs_physics_research_produces_mult": "0.2",
+            "planet_jobs_society_research_produces_mult": "0.2",
+            "planet_jobs_engineering_research_produces_mult": "0.2",
+            "negative_leader_traits_species": "-1",
+            "leaders_upkeep_mult": "-0.1"
+          },
+          "slave_cost": {
+            "energy": "2000"
+          },
+          "assembly_score": {
+            "modifier": {
+              "add": "2.5",
+              "from": {},
+              "modifier": {
+                "add": "2.5",
+                "from": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "09_ascension_traits.txt",
+    "_line_number": 187
+  },
+  "trait_advanced_scintillating": {
+    "trait_advanced_scintillating": {
+      "host_has_dlc": "Lithoids Species Pack",
+      "cost": "2",
+      "species_potential_add": {
+        "can_do_advanced_gene_modding": "yes",
+        "exists": "from",
+        "from": {
+          "has_technology": "tech_lithoid_transgenesis"
+        }
+      },
+      "species_possible_remove": {
+        "can_remove_beneficial_genetic_traits": "yes"
+      },
+      "potential_crossbreeding_chance": "1.0",
+      "initial": "no",
+      "randomized": "no",
+      "advanced_trait": "yes",
+      "opposites": {
+        "allowed_archetypes": {
+          "custom_tooltip": "TRAIT_LITHOID_SCINTILLATING_EFFECT",
+          "slave_cost": {
+            "energy": "1000"
+          }
+        }
+      }
+    },
+    "_source_file": "09_ascension_traits.txt",
+    "_line_number": 231
+  },
+  "trait_advanced_gaseous_byproducts": {
+    "trait_advanced_gaseous_byproducts": {
+      "host_has_dlc": "Lithoids Species Pack",
+      "cost": "2",
+      "species_potential_add": {
+        "can_do_advanced_gene_modding": "yes",
+        "exists": "from",
+        "from": {
+          "has_technology": "tech_lithoid_transgenesis"
+        }
+      },
+      "species_possible_remove": {
+        "can_remove_beneficial_genetic_traits": "yes"
+      },
+      "potential_crossbreeding_chance": "1.0",
+      "initial": "no",
+      "randomized": "no",
+      "advanced_trait": "yes",
+      "opposites": {
+        "allowed_archetypes": {
+          "custom_tooltip": "TRAIT_LITHOID_GASEOUS_BYPRODUCTS_EFFECT",
+          "slave_cost": {
+            "energy": "1000"
+          }
+        }
+      }
+    },
+    "_source_file": "09_ascension_traits.txt",
+    "_line_number": 257
+  },
+  "trait_advanced_volatile_excretions": {
+    "trait_advanced_volatile_excretions": {
+      "host_has_dlc": "Lithoids Species Pack",
+      "cost": "2",
+      "species_potential_add": {
+        "can_do_advanced_gene_modding": "yes",
+        "exists": "from",
+        "from": {
+          "has_technology": "tech_lithoid_transgenesis"
+        }
+      },
+      "species_possible_remove": {
+        "can_remove_beneficial_genetic_traits": "yes"
+      },
+      "potential_crossbreeding_chance": "1.0",
+      "initial": "no",
+      "randomized": "no",
+      "advanced_trait": "yes",
+      "opposites": {
+        "allowed_archetypes": {
+          "custom_tooltip": "TRAIT_LITHOID_VOLATILE_EXCRETIONS_EFFECT",
+          "slave_cost": {
+            "energy": "1000"
+          }
+        }
+      }
+    },
+    "_source_file": "09_ascension_traits.txt",
+    "_line_number": 283
+  },
+  "trait_advanced_phototrophic": {
+    "trait_advanced_phototrophic": {
+      "host_has_dlc": "Plantoids Species Pack",
+      "cost": "1",
+      "species_potential_add": {
+        "can_do_advanced_gene_modding": "yes",
+        "exists": "from",
+        "from": {
+          "has_technology": "tech_plantoid_transgenesis"
+        }
+      },
+      "species_possible_remove": {
+        "can_remove_beneficial_genetic_traits": "yes"
+      },
+      "potential_crossbreeding_chance": "1.0",
+      "initial": "no",
+      "randomized": "no",
+      "advanced_trait": "yes",
+      "opposites": {
+        "allowed_archetypes": {
+          "species_class": {
+            "sorting_priority": "30",
+            "custom_tooltip": "TRAIT_ADVANCED_PHOTOTROPHIC_EFFECT",
+            "slave_cost": {
+              "energy": "1000"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "09_ascension_traits.txt",
+    "_line_number": 310
+  },
+  "trait_advanced_radiotrophic": {
+    "trait_advanced_radiotrophic": {
+      "host_has_dlc": "Plantoids Species Pack",
+      "cost": "2",
+      "species_potential_add": {
+        "can_do_advanced_gene_modding": "yes",
+        "exists": "from",
+        "from": {
+          "OR": {
+            "has_technology": "tech_lithoid_transgenesis"
+          }
+        }
+      },
+      "species_possible_remove": {
+        "can_remove_beneficial_genetic_traits": "yes"
+      },
+      "potential_crossbreeding_chance": "1.0",
+      "initial": "no",
+      "randomized": "no",
+      "advanced_trait": "yes",
+      "opposites": {
+        "allowed_archetypes": {
+          "species_class": {
+            "custom_tooltip_with_modifiers": "TRAIT_ADVANCED_RADIOTROPHIC_EFFECT",
+            "inline_script": "traits/radiotrophic_effects"
+          }
+        }
+      }
+    },
+    "_source_file": "09_ascension_traits.txt",
+    "_line_number": 338
+  },
+  "trait_advanced_budding": {
+    "trait_advanced_budding": {
+      "host_has_dlc": "Plantoids Species Pack",
+      "cost": "2",
+      "species_potential_add": {
+        "can_do_advanced_gene_modding": "yes",
+        "exists": "from",
+        "from": {
+          "has_technology": "tech_plantoid_transgenesis"
+        }
+      },
+      "species_possible_remove": {
+        "can_remove_beneficial_genetic_traits": "yes"
+      },
+      "potential_crossbreeding_chance": "0.5",
+      "initial": "no",
+      "randomized": "no",
+      "advanced_trait": "yes",
+      "opposites": {
+        "allowed_archetypes": {
+          "species_class": {
+            "custom_tooltip": "TRAIT_PLANTOID_BUDDING_EFFECT",
+            "_comments": [
+              "# Organic Pop Assembly set by plantoid_budding_rate in \\pop_categories\\ and 00_scripted_variables"
+            ],
+            "slave_cost": {
+              "energy": "2500"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "09_ascension_traits.txt",
+    "_line_number": 367
+  },
+  "trait_vat_grown": {
+    "trait_vat_grown": {
+      "cost": "2",
+      "species_potential_add": {
+        "can_do_advanced_gene_modding": "yes"
+      },
+      "species_possible_remove": {
+        "can_remove_beneficial_genetic_traits": "yes"
+      },
+      "potential_crossbreeding_chance": "0",
+      "initial": "no",
+      "randomized": "no",
+      "advanced_trait": "yes",
+      "opposites": {
+        "allowed_archetypes": {
+          "modifier": {
+            "planet_pop_assembly_organic_mult": "0.25",
+            "pop_housing_usage_mult": "-0.1"
+          },
+          "infertile": "yes",
+          "slave_cost": {
+            "energy": "2000"
+          }
+        }
+      }
+    },
+    "_source_file": "09_ascension_traits.txt",
+    "_line_number": 396
+  },
+  "trait_felsic": {
+    "trait_felsic": {
+      "cost": "2",
+      "species_potential_add": {
+        "can_do_advanced_gene_modding": "yes"
+      },
+      "species_possible_remove": {
+        "can_remove_beneficial_genetic_traits": "yes"
+      },
+      "potential_crossbreeding_chance": "0.5",
+      "initial": "no",
+      "randomized": "no",
+      "advanced_trait": "yes",
+      "allowed_archetypes": {
+        "modifier": {
+          "planet_livestock_minerals_produces_add": "2"
+        },
+        "slave_cost": {
+          "energy": "1000"
+        }
+      }
+    },
+    "_source_file": "09_ascension_traits.txt",
+    "_line_number": 421
+  },
+  "trait_natural_machinist": {
+    "trait_natural_machinist": {
+      "cost": "2",
+      "species_potential_add": {
+        "can_do_advanced_gene_modding": "yes"
+      },
+      "species_possible_remove": {
+        "can_remove_beneficial_genetic_traits": "yes"
+      },
+      "potential_crossbreeding_chance": "0.5",
+      "initial": "no",
+      "randomized": "no",
+      "advanced_trait": "yes",
+      "allowed_archetypes": {
+        "modifier": {
+          "planet_jobs_alloys_produces_mult": "0.10",
+          "planet_jobs_consumer_goods_produces_mult": "0.10"
+        },
+        "slave_cost": {
+          "energy": "2000"
+        },
+        "assembly_score": {
+          "modifier": {
+            "add": "1.5",
+            "from": {}
+          }
+        }
+      }
+    },
+    "_source_file": "09_ascension_traits.txt",
+    "_line_number": 443
+  },
+  "trait_drake_scaled": {
+    "trait_drake_scaled": {
+      "cost": "3",
+      "species_potential_add": {
+        "can_do_advanced_gene_modding": "yes",
+        "exists": "from",
+        "from": {
+          "has_technology": "tech_leviathan_transgenesis",
+          "has_country_flag": "harvested_dragon_dna"
+        }
+      },
+      "species_possible_remove": {
+        "can_remove_beneficial_genetic_traits": "yes"
+      },
+      "potential_crossbreeding_chance": "1.0",
+      "initial": "no",
+      "randomized": "no",
+      "advanced_trait": "yes",
+      "opposites": {
+        "allowed_archetypes": {
+          "custom_tooltip_with_modifiers": "TRAIT_DRAKE_SCALED_EFFECT",
+          "modifier": {
+            "army_health": "0.5"
+          },
+          "slave_cost": {
+            "energy": "1000"
+          }
+        }
+      }
+    },
+    "_source_file": "09_ascension_traits.txt",
+    "_line_number": 474
+  },
+  "trait_voidling": {
+    "trait_voidling": {
+      "cost": "3",
+      "species_potential_add": {
+        "can_do_advanced_gene_modding": "yes",
+        "exists": "from",
+        "from": {
+          "has_technology": "tech_leviathan_transgenesis",
+          "has_country_flag": "harvested_voidspawn_dna"
+        }
+      },
+      "species_possible_remove": {
+        "can_remove_beneficial_genetic_traits": "yes"
+      },
+      "potential_crossbreeding_chance": "1.0",
+      "initial": "no",
+      "randomized": "no",
+      "advanced_trait": "yes",
+      "opposites": {
+        "allowed_archetypes": {
+          "custom_tooltip_with_modifiers": "TRAIT_VOIDLING_EFFECT",
+          "modifier": {
+            "habitability_floor_add": "0.20"
+          },
+          "slave_cost": {
+            "energy": "1500"
+          }
+        }
+      }
+    },
+    "_source_file": "09_ascension_traits.txt",
+    "_line_number": 503
+  },
+  "trait_tiyanki": {
+    "trait_tiyanki": {
+      "cost": "3",
+      "species_potential_add": {
+        "can_do_advanced_gene_modding": "yes",
+        "exists": "from",
+        "from": {
+          "has_technology": "tech_leviathan_transgenesis",
+          "has_country_flag": "harvested_tiyanki_dna"
+        }
+      },
+      "species_possible_remove": {
+        "can_remove_beneficial_genetic_traits": "yes"
+      },
+      "potential_crossbreeding_chance": "1.0",
+      "initial": "no",
+      "randomized": "no",
+      "advanced_trait": "yes",
+      "opposites": {
+        "allowed_archetypes": {
+          "custom_tooltip": "TRAIT_TIYANKI_BUDDING_EFFECT",
+          "_comments": [
+            "# Organic Pop Assembly set by tiyanki_budding_rate in \\pop_categories\\ and 00_scripted_variables"
+          ],
+          "slave_cost": {
+            "energy": "1500"
+          }
+        }
+      }
+    },
+    "_source_file": "09_ascension_traits.txt",
+    "_line_number": 533
+  }
+}

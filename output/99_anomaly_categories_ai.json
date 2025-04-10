@@ -1,0 +1,102 @@
+{
+  "AIANOM_LUMP_CAT": {
+    "AIANOM_LUMP_CAT": {
+      "picture": "GFX_evt_mining_station",
+      "level": "1",
+      "should_ai_use": "yes",
+      "spawn_chance": {
+        "modifier": {
+          "add": "2",
+          "always": "yes"
+        }
+      },
+      "on_success": {
+        "1": {
+          "anomaly_event": "aianom.5",
+          "max_once": "no"
+        }
+      }
+    },
+    "_source_file": "99_anomaly_categories_ai.txt",
+    "_line_number": 3
+  },
+  "AIANOM_MININGDEPO_CAT": {
+    "AIANOM_MININGDEPO_CAT": {
+      "picture": "GFX_evt_mining_station",
+      "level": "1",
+      "should_ai_use": "yes",
+      "spawn_chance": {
+        "modifier": {
+          "add": "2",
+          "NOR": {
+            "has_deposit_for": "shipclass_research_station"
+          },
+          "is_colonizable": "no"
+        }
+      },
+      "on_success": {
+        "1": {
+          "anomaly_event": "aianom.7",
+          "max_once": "no"
+        }
+      }
+    },
+    "_source_file": "99_anomaly_categories_ai.txt",
+    "_line_number": 41
+  },
+  "AIANOM_RESEARCHDEPO_CAT": {
+    "AIANOM_RESEARCHDEPO_CAT": {
+      "picture": "GFX_evt_mining_station",
+      "level": "2",
+      "should_ai_use": "yes",
+      "spawn_chance": {
+        "modifier": {
+          "add": "2",
+          "NOR": {
+            "has_deposit_for": "shipclass_research_station"
+          },
+          "is_colonizable": "no"
+        }
+      },
+      "on_success": {
+        "1": {
+          "anomaly_event": "aianom.10",
+          "max_once": "no"
+        }
+      }
+    },
+    "_source_file": "99_anomaly_categories_ai.txt",
+    "_line_number": 75
+  },
+  "AIANOM_CLUE_CAT": {
+    "AIANOM_CLUE_CAT": {
+      "picture": "GFX_evt_mining_station",
+      "level": "5",
+      "should_ai_use": "yes",
+      "null_spawn_chance": "0.5",
+      "spawn_chance": {
+        "modifier": {
+          "add": "1",
+          "end_game_years_passed >": "0",
+          "from.owner": {
+            "has_event_chain": "l_cluster_chain",
+            "NOT": {
+              "has_completed_event_chain_counter": {
+                "event_chain": "l_cluster_chain",
+                "counter": "clues"
+              }
+            }
+          }
+        }
+      },
+      "on_success": {
+        "1": {
+          "anomaly_event": "aianom.11",
+          "max_once": "no"
+        }
+      }
+    },
+    "_source_file": "99_anomaly_categories_ai.txt",
+    "_line_number": 114
+  }
+}

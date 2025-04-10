@@ -1,0 +1,108 @@
+{
+  "portraits": {
+    "portraits": {
+      "humanoid_02_female_01": {
+        "character_textures": {},
+        "custom_attachment_label": "HAIR_STYLE"
+      },
+      "humanoid_02_male_01": {
+        "character_textures": {},
+        "custom_attachment_label": "HAIR_STYLE"
+      },
+      "humanoid_03_female_01": {
+        "character_textures": {}
+      },
+      "humanoid_03_male_01": {
+        "character_textures": {}
+      },
+      "humanoid_04_female_01": {
+        "character_textures": {}
+      },
+      "humanoid_04_male_01": {
+        "character_textures": {}
+      },
+      "humanoid_05_female_01": {
+        "humanoid_05_male_01": {}
+      }
+    },
+    "_source_file": "09_portraits_humanoid.txt",
+    "_line_number": 12
+  },
+  "portrait_groups": {
+    "portrait_groups": {
+      "humanoid_05": {
+        "default": "humanoid_05_male_01",
+        "game_setup": {
+          "add": {
+            "trigger": {
+              "ruler": {
+                "OR": {
+                  "gender": "indeterminable"
+                }
+              }
+            },
+            "portraits": {}
+          }
+        },
+        "_comments": [
+          "#species scope"
+        ],
+        "species": {
+          "add": {
+            "trigger": {
+              "exists": "species",
+              "NOT": {},
+              "portraits": {}
+            },
+            "add": {
+              "trigger": {
+                "exists": "species",
+                "NOT": {},
+                "portraits": {}
+              }
+            },
+            "_comments": [
+              "#pop scope"
+            ],
+            "pop": {
+              "add": {
+                "trigger": {
+                  "NOT": {},
+                  "portraits": {}
+                },
+                "add": {
+                  "trigger": {
+                    "NOT": {},
+                    "portraits": {}
+                  }
+                },
+                "leader": {
+                  "add": {
+                    "trigger": {
+                      "OR": {
+                        "gender": "indeterminable"
+                      }
+                    },
+                    "portraits": {}
+                  }
+                },
+                "ruler": {
+                  "add": {
+                    "trigger": {
+                      "OR": {
+                        "gender": "indeterminable"
+                      }
+                    },
+                    "portraits": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "09_portraits_humanoid.txt",
+    "_line_number": 460
+  }
+}

@@ -1,0 +1,639 @@
+{
+  "sc_b": {
+    "sc_b": {
+      "class": "b_star",
+      "planet": {
+        "spawn_odds": "10",
+        "num_planets": {
+          "pc_continental": {
+            "pc_desert": {
+              "pc_tropical": {
+                "pc_arid": {
+                  "pc_ocean": {
+                    "pc_tundra": {
+                      "pc_arctic": {
+                        "pc_alpine": {
+                          "pc_savannah": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 19
+  },
+  "sc_a": {
+    "sc_a": {
+      "class": "a_star",
+      "planet": {
+        "spawn_odds": "10",
+        "num_planets": {
+          "pc_continental": {
+            "pc_desert": {
+              "pc_tropical": {
+                "pc_arid": {
+                  "pc_ocean": {
+                    "pc_tundra": {
+                      "pc_arctic": {
+                        "pc_alpine": {
+                          "pc_savannah": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 37
+  },
+  "sc_f": {
+    "sc_f": {
+      "class": "f_star",
+      "planet": {
+        "spawn_odds": "15",
+        "num_planets": {}
+      }
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 54
+  },
+  "sc_g": {
+    "sc_g": {
+      "class": "g_star",
+      "planet": {
+        "spawn_odds": "30",
+        "num_planets": {}
+      }
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 62
+  },
+  "sc_k": {
+    "sc_k": {
+      "class": "k_star",
+      "planet": {
+        "spawn_odds": "20",
+        "num_planets": {}
+      }
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 70
+  },
+  "sc_m": {
+    "sc_m": {
+      "class": "m_star",
+      "planet": {
+        "spawn_odds": "20",
+        "num_planets": {
+          "pc_continental": {
+            "pc_desert": {
+              "pc_tropical": {
+                "pc_arid": {
+                  "pc_ocean": {
+                    "pc_tundra": {
+                      "pc_arctic": {
+                        "pc_alpine": {
+                          "pc_savannah": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 79
+  },
+  "sc_m_giant": {
+    "sc_m_giant": {
+      "class": "m_star",
+      "planet": {
+        "spawn_odds": "20",
+        "num_planets": {
+          "pc_continental": {
+            "pc_desert": {
+              "pc_tropical": {
+                "pc_arid": {
+                  "pc_ocean": {
+                    "pc_tundra": {
+                      "pc_arctic": {
+                        "pc_alpine": {
+                          "pc_savannah": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 97
+  },
+  "sc_t": {
+    "sc_t": {
+      "class": "t_star",
+      "planet": {
+        "spawn_odds": "10",
+        "num_planets": {
+          "pc_continental": {
+            "pc_desert": {
+              "pc_tropical": {
+                "pc_arid": {
+                  "pc_ocean": {
+                    "pc_tundra": {
+                      "pc_arctic": {
+                        "pc_alpine": {
+                          "pc_savannah": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 115
+  },
+  "sc_black_hole": {
+    "sc_black_hole": {
+      "class": "black_hole",
+      "icon_scale": "2.0",
+      "planet": {
+        "spawn_odds": "0.8",
+        "num_planets": {
+          "pc_gas_giant": {
+            "pc_desert": {
+              "pc_tropical": {
+                "pc_arid": {
+                  "pc_continental": {
+                    "pc_ocean": {
+                      "pc_tundra": {
+                        "pc_arctic": {
+                          "pc_gaia": {
+                            "pc_alpine": {
+                              "pc_savannah": {
+                                "is_environmental_hazard": "yes",
+                                "modifier": {
+                                  "ship_disengage_chance_reduction": "0.5",
+                                  "ship_emergency_ftl_min_days_mult": "0.5"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 133
+  },
+  "sc_neutron_star": {
+    "sc_neutron_star": {
+      "class": "neutron_star",
+      "icon_scale": "1.5",
+      "planet": {
+        "spawn_odds": "0.4",
+        "num_planets": {
+          "pc_desert": {
+            "pc_tropical": {
+              "pc_arid": {
+                "pc_continental": {
+                  "pc_ocean": {
+                    "pc_tundra": {
+                      "pc_arctic": {
+                        "pc_gaia": {
+                          "pc_alpine": {
+                            "pc_savannah": {
+                              "is_environmental_hazard": "yes",
+                              "modifier": {
+                                "ship_speed_reduction": "0.5 # Be careful about using this modifier outside of star classes, it can throw off the ETA for ships"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 159
+  },
+  "sc_pulsar": {
+    "sc_pulsar": {
+      "class": "pulsar",
+      "icon_scale": "2.25",
+      "planet": {
+        "spawn_odds": "0.4",
+        "num_planets": {
+          "pc_desert": {
+            "pc_tropical": {
+              "pc_arid": {
+                "pc_continental": {
+                  "pc_ocean": {
+                    "pc_tundra": {
+                      "pc_arctic": {
+                        "pc_gaia": {
+                          "pc_alpine": {
+                            "pc_savannah": {
+                              "is_environmental_hazard": "yes",
+                              "modifier": {
+                                "ship_shield_reduction": "1.0"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 183
+  },
+  "sc_binary_1": {
+    "sc_binary_1": {
+      "class": "a_star",
+      "icon": "e_binary_star",
+      "planet": {
+        "key": "pc_pulsar",
+        "class": "pulsar"
+      },
+      "spawn_odds": "5",
+      "num_planets": {
+        "pc_desert": {
+          "pc_tropical": {
+            "pc_arid": {
+              "pc_continental": {
+                "pc_ocean": {
+                  "pc_tundra": {
+                    "pc_arctic": {
+                      "pc_gaia": {
+                        "pc_alpine": {
+                          "pc_savannah": {
+                            "is_environmental_hazard": "yes",
+                            "modifier": {
+                              "ship_shield_reduction": "1.0"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 207
+  },
+  "sc_binary_2": {
+    "sc_binary_2": {
+      "class": "b_star",
+      "icon": "e_binary_star",
+      "planet": {
+        "key": "pc_neutron_star",
+        "class": "neutron_star"
+      },
+      "spawn_odds": "5",
+      "num_planets": {
+        "pc_desert": {
+          "pc_tropical": {
+            "pc_arid": {
+              "pc_continental": {
+                "pc_ocean": {
+                  "pc_tundra": {
+                    "pc_arctic": {
+                      "pc_gaia": {
+                        "pc_alpine": {
+                          "pc_savannah": {
+                            "is_environmental_hazard": "yes",
+                            "modifier": {
+                              "ship_speed_reduction": "0.5 # Be careful about using this modifier outside of star classes, it can throw off the ETA for ships"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 238
+  },
+  "sc_binary_3": {
+    "sc_binary_3": {
+      "class": "m_star",
+      "icon": "c_binary_star",
+      "planet": {
+        "key": "pc_b_star",
+        "class": "b_star"
+      },
+      "spawn_odds": "5",
+      "num_planets": {
+        "pc_desert": {
+          "pc_tropical": {
+            "pc_arid": {
+              "pc_continental": {
+                "pc_ocean": {
+                  "pc_tundra": {
+                    "pc_arctic": {
+                      "pc_gaia": {
+                        "pc_alpine": {
+                          "pc_savannah": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 268
+  },
+  "sc_binary_4": {
+    "sc_binary_4": {
+      "class": "m_star",
+      "icon": "c_binary_star",
+      "planet": {
+        "key": "pc_f_star",
+        "class": "f_star"
+      },
+      "spawn_odds": "5",
+      "num_planets": {
+        "pc_desert": {
+          "pc_tropical": {
+            "pc_arid": {
+              "pc_continental": {
+                "pc_ocean": {
+                  "pc_tundra": {
+                    "pc_arctic": {
+                      "pc_gaia": {
+                        "pc_alpine": {
+                          "pc_savannah": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 294
+  },
+  "sc_binary_5": {
+    "sc_binary_5": {
+      "class": "b_star",
+      "icon": "a_binary_star",
+      "planet": {
+        "key": "pc_b_star",
+        "class": "b_star"
+      },
+      "spawn_odds": "5",
+      "num_planets": {}
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 319
+  },
+  "sc_binary_6": {
+    "sc_binary_6": {
+      "class": "m_star",
+      "icon": "d_binary_star",
+      "planet": {
+        "key": "pc_g_star",
+        "class": "g_star"
+      },
+      "spawn_odds": "5",
+      "num_planets": {}
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 334
+  },
+  "sc_binary_7": {
+    "sc_binary_7": {
+      "class": "k_star",
+      "icon": "d_binary_star",
+      "planet": {
+        "key": "pc_f_star",
+        "class": "f_star"
+      },
+      "spawn_odds": "5",
+      "num_planets": {}
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 349
+  },
+  "sc_binary_8": {
+    "sc_binary_8": {
+      "class": "g_star",
+      "icon": "d_binary_star",
+      "planet": {
+        "key": "pc_f_star",
+        "class": "f_star"
+      },
+      "spawn_odds": "5",
+      "num_planets": {}
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 364
+  },
+  "sc_binary_9": {
+    "sc_binary_9": {
+      "class": "a_star",
+      "icon": "a_binary_star",
+      "planet": {
+        "key": "pc_f_star",
+        "class": "f_star"
+      },
+      "spawn_odds": "5",
+      "num_planets": {}
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 379
+  },
+  "sc_binary_10": {
+    "sc_binary_10": {
+      "class": "a_star",
+      "icon": "a_binary_star",
+      "planet": {
+        "key": "pc_t_star",
+        "class": "t_star"
+      },
+      "spawn_odds": "5",
+      "num_planets": {}
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 394
+  },
+  "sc_trinary_1": {
+    "sc_trinary_1": {
+      "class": "g_star",
+      "icon": "a_trinary_star",
+      "planet": {
+        "key": "pc_k_star",
+        "class": "k_star"
+      },
+      "spawn_odds": "30",
+      "num_planets": {}
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 409
+  },
+  "sc_trinary_2": {
+    "sc_trinary_2": {
+      "class": "b_star",
+      "icon": "a_trinary_star",
+      "planet": {
+        "key": "pc_f_star",
+        "class": "f_star"
+      },
+      "spawn_odds": "30",
+      "num_planets": {}
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 428
+  },
+  "sc_trinary_3": {
+    "sc_trinary_3": {
+      "class": "k_star",
+      "icon": "a_trinary_star",
+      "planet": {
+        "key": "pc_g_star",
+        "class": "g_star"
+      },
+      "spawn_odds": "30",
+      "num_planets": {}
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 447
+  },
+  "sc_trinary_4": {
+    "sc_trinary_4": {
+      "class": "b_star",
+      "icon": "a_trinary_star",
+      "planet": {
+        "key": "pc_t_star",
+        "class": "t_star"
+      },
+      "spawn_odds": "30",
+      "num_planets": {}
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 466
+  },
+  "sc_toxoid_star": {
+    "sc_toxoid_star": {
+      "class": "toxoid_star",
+      "icon": "x_star",
+      "planet": {
+        "spawn_odds": "0",
+        "is_environmental_hazard": "yes",
+        "modifier": {
+          "ship_armor_reduction": "1.0"
+        }
+      }
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 486
+  },
+  "sc_rift_star": {
+    "sc_rift_star": {
+      "class": "rift_star",
+      "planet": {
+        "spawn_odds": "0",
+        "num_planets": {
+          "pc_gas_giant": {
+            "pc_desert": {
+              "pc_tropical": {
+                "pc_arid": {
+                  "pc_continental": {
+                    "pc_ocean": {
+                      "pc_tundra": {
+                        "pc_arctic": {
+                          "pc_gaia": {
+                            "pc_alpine": {
+                              "pc_savannah": {
+                                "is_environmental_hazard": "yes",
+                                "modifier": {}
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 499
+  },
+  "random_list": {
+    "random_list": {
+      "name": "rl_all_stars",
+      "stars": {}
+    },
+    "_source_file": "00_star_classes.txt",
+    "_line_number": 605
+  }
+}

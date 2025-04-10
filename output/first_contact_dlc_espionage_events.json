@@ -1,0 +1,82 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "preftl_espionage.1165",
+      "title": "observation.3135.name",
+      "desc": "observation.3137.desc",
+      "picture": "GFX_evt_discovered_hidden_door",
+      "show_sound": "event_administrative_work",
+      "location": "event_target:great_pyramid_planet",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "event_target:great_pyramid_spynetwork"
+      },
+      "option": {
+        "name": "observation.3137.a",
+        "add_monthly_resource_mult": {
+          "resource": "society_research",
+          "value": "@tier2researchreward",
+          "min": "@tier2researchmin",
+          "max": "@tier2researchmax"
+        },
+        "_comments": [
+          "# if = {",
+          "# \tlimit = {",
+          "# \t\tevent_target:great_pyramid_spynetwork = {",
+          "# \t\t\tis_running_espionage_operation = yes",
+          "# \t\t\tany_espionage_operation = {",
+          "# \t\t\t\thas_espionage_type = operation_plant_advanced_knowledge",
+          "# \t\t\t}",
+          "# \t\t}",
+          "# \t}",
+          "# \tevent_target:great_pyramid_spynetwork = {",
+          "# \t\trandom_espionage_operation = {",
+          "# \t\t\tlimit = {",
+          "# \t\t\t\thas_espionage_type = operation_plant_advanced_knowledge",
+          "# \t\t\t}",
+          "# \t\t}",
+          "# \t}",
+          "# }",
+          "# else = {"
+        ]
+      }
+    },
+    "_source_file": "first_contact_dlc_espionage_events.txt",
+    "_line_number": 989
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "preftl_espionage.1120",
+      "title": "observation.3133.name",
+      "desc": "observation.3133.desc",
+      "picture": "GFX_evt_galactic_senate",
+      "show_sound": "event_conversation",
+      "location": "FROMFROM",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "event_target:prelude_to_war_country",
+        "event_target:prelude_to_war_planet": {
+          "has_observation_outpost": "yes"
+        }
+      },
+      "option": {
+        "name": "EXCELLENT",
+        "owner": {
+          "add_monthly_resource_mult": {
+            "resource": "society_research",
+            "value": "@tier2researchreward",
+            "min": "@tier2researchmin",
+            "max": "@tier2researchmax"
+          }
+        },
+        "hidden_effect": {
+          "event_target:prelude_to_war_country": {
+            "remove_country_flag": "ongoing_preftl_espionage_chain"
+          }
+        }
+      }
+    },
+    "_source_file": "first_contact_dlc_espionage_events.txt",
+    "_line_number": 652
+  }
+}

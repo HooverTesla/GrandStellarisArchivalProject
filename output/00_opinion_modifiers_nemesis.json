@@ -1,0 +1,695 @@
+{
+  "opinion_disavowed_agent_caught": {
+    "opinion_disavowed_agent_caught": {
+      "opinion": {
+        "base": "-80"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 4
+  },
+  "opinion_smear_campaign_insulted": {
+    "opinion_smear_campaign_insulted": {
+      "opinion": {
+        "base": "-60"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 17
+  },
+  "opinion_smear_campaign_deceived": {
+    "opinion_smear_campaign_deceived": {
+      "opinion": {
+        "base": "-80"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 28
+  },
+  "opinion_smear_campaign_espionage": {
+    "opinion_smear_campaign_espionage": {
+      "opinion": {
+        "base": "-100"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 39
+  },
+  "opinion_exposed_espionage": {
+    "opinion_exposed_espionage": {
+      "opinion": {
+        "base": "-60"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 50
+  },
+  "opinion_blackmailed_espionage": {
+    "opinion_blackmailed_espionage": {
+      "opinion": {
+        "base": "-50"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 61
+  },
+  "opinion_smear_campaign_caught": {
+    "opinion_smear_campaign_caught": {
+      "opinion": {
+        "base": "-50"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 72
+  },
+  "opinion_caught_hacking": {
+    "opinion_caught_hacking": {
+      "opinion": {
+        "base": "-250"
+      },
+      "decay": {
+        "base": "1.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 85
+  },
+  "opinion_hostile_first_contact": {
+    "opinion_hostile_first_contact": {
+      "opinion": {
+        "base": "-250"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "1.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 97
+  },
+  "opinion_hostile_first_contact_vivisection": {
+    "opinion_hostile_first_contact_vivisection": {
+      "opinion": {
+        "base": "-500"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "1.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 110
+  },
+  "opinion_hostile_first_contact_hungry": {
+    "opinion_hostile_first_contact_hungry": {
+      "opinion": {
+        "base": "-500"
+      },
+      "accumulative": "yes",
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 123
+  },
+  "opinion_first_contact_delightful_aliens": {
+    "opinion_first_contact_delightful_aliens": {
+      "opinion": {
+        "base": "75"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:positive_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 136
+  },
+  "opinion_first_contact_repulsive_aliens": {
+    "opinion_first_contact_repulsive_aliens": {
+      "opinion": {
+        "base": "-75"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 148
+  },
+  "opinion_first_contact_not_very_intelligent": {
+    "opinion_first_contact_not_very_intelligent": {
+      "opinion": {
+        "base": "-50"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 160
+  },
+  "opinion_first_contact_speak_like_us": {
+    "opinion_first_contact_speak_like_us": {
+      "opinion": {
+        "base": "150"
+      },
+      "decay": {
+        "base": "1",
+        "modifier": {
+          "factor": "value:positive_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 172
+  },
+  "opinion_first_contact_admirer_of_poetry": {
+    "opinion_first_contact_admirer_of_poetry": {
+      "opinion": "100",
+      "decay": {
+        "base": "1",
+        "modifier": {
+          "factor": "value:positive_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 184
+  },
+  "opinion_first_contact_poetic_flatterer": {
+    "opinion_first_contact_poetic_flatterer": {
+      "opinion": "200",
+      "decay": {
+        "base": "1.5",
+        "modifier": {
+          "factor": "value:positive_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 194
+  },
+  "opinion_first_contact_quite_insulting": {
+    "opinion_first_contact_quite_insulting": {
+      "opinion": {
+        "base": "-50"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 204
+  },
+  "opinion_first_contact_very_insulting": {
+    "opinion_first_contact_very_insulting": {
+      "opinion": {
+        "base": "-150"
+      },
+      "decay": {
+        "base": "1",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 216
+  },
+  "opinion_first_contact_respect_earned": {
+    "opinion_first_contact_respect_earned": {
+      "opinion": {
+        "base": "150"
+      },
+      "decay": {
+        "base": "1",
+        "modifier": {
+          "factor": "value:positive_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 228
+  },
+  "opinion_first_contact_poetic_warrior": {
+    "opinion_first_contact_poetic_warrior": {
+      "opinion": "100",
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:positive_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 240
+  },
+  "opinion_first_contact_rivalry_earned": {
+    "opinion_first_contact_rivalry_earned": {
+      "opinion": {
+        "base": "-75"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 250
+  },
+  "opinion_first_contact_cowardly": {
+    "opinion_first_contact_cowardly": {
+      "opinion": {
+        "base": "-50"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 262
+  },
+  "opinion_first_contact_trial_fanatic_good": {
+    "opinion_first_contact_trial_fanatic_good": {
+      "opinion": {
+        "base": "250"
+      },
+      "decay": {
+        "base": "10",
+        "modifier": {
+          "factor": "value:positive_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 275
+  },
+  "opinion_first_contact_trial_very_good": {
+    "opinion_first_contact_trial_very_good": {
+      "opinion": {
+        "base": "100"
+      },
+      "decay": {
+        "base": "10",
+        "modifier": {
+          "factor": "value:positive_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 287
+  },
+  "opinion_first_contact_trial_good": {
+    "opinion_first_contact_trial_good": {
+      "opinion": {
+        "base": "50"
+      },
+      "decay": {
+        "base": "10",
+        "modifier": {
+          "factor": "value:positive_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 299
+  },
+  "opinion_first_contact_trial_fanatic_bad": {
+    "opinion_first_contact_trial_fanatic_bad": {
+      "opinion": {
+        "base": "-250"
+      },
+      "decay": {
+        "base": "10",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 311
+  },
+  "opinion_first_contact_trial_very_bad": {
+    "opinion_first_contact_trial_very_bad": {
+      "opinion": {
+        "base": "-100"
+      },
+      "decay": {
+        "base": "10",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 323
+  },
+  "opinion_first_contact_trial_bad": {
+    "opinion_first_contact_trial_bad": {
+      "opinion": {
+        "base": "-50"
+      },
+      "decay": {
+        "base": "10",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 335
+  },
+  "opinion_friendly_first_comms_greeting": {
+    "opinion_friendly_first_comms_greeting": {
+      "opinion": {
+        "base": "50"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:positive_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 347
+  },
+  "opinion_pre_hadean_relations": {
+    "opinion_pre_hadean_relations": {
+      "opinion": {
+        "base": "150"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:positive_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 359
+  },
+  "opinion_hostile_first_comms_greeting": {
+    "opinion_hostile_first_comms_greeting": {
+      "opinion": {
+        "base": "-50"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 371
+  },
+  "opinion_destroying_systems": {
+    "opinion_destroying_systems": {
+      "opinion": {
+        "base": "-100"
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 383
+  },
+  "opinion_destroying_galaxy": {
+    "opinion_destroying_galaxy": {
+      "opinion": {
+        "base": "-1000"
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 389
+  },
+  "triggered_opinion_crisis_empire": {
+    "triggered_opinion_crisis_empire": {
+      "trigger": {
+        "FROM": {
+          "NOT": {
+            "OR": {
+              "FROM": {
+                "has_intel_level": {
+                  "who": "from",
+                  "category": "government",
+                  "level >": "2"
+                }
+              }
+            },
+            "opinion": {
+              "base": "-60",
+              "modifier": {
+                "add": "-80",
+                "FROM": {},
+                "modifier": {
+                  "add": "-100",
+                  "FROM": {},
+                  "modifier": {
+                    "add": "-160 #-400 total",
+                    "FROM": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 397
+  },
+  "triggered_opinion_crisis_empire_neighbor": {
+    "triggered_opinion_crisis_empire_neighbor": {
+      "trigger": {
+        "any_neighbor_country": {
+          "has_crisis_level": "crisis_level_3",
+          "relative_power": {
+            "who": "prev",
+            "value >": "equivalent"
+          },
+          "from": {
+            "NOR": {
+              "has_crisis_level": "crisis_level_1",
+              "has_defensive_pact": "prev",
+              "is_in_federation_with": "prev",
+              "is_homicidal": "yes"
+            }
+          }
+        },
+        "NOT": {},
+        "opinion": {
+          "base": "50"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 427
+  },
+  "triggered_opinion_cosmogenesis_crisis_empire": {
+    "triggered_opinion_cosmogenesis_crisis_empire": {
+      "trigger": {
+        "FROM": {
+          "NOT": {
+            "OR": {
+              "FROM": {
+                "has_intel_level": {
+                  "who": "from",
+                  "category": "government",
+                  "level >": "2"
+                }
+              }
+            },
+            "opinion": {
+              "base": "-30",
+              "modifier": {
+                "add": "-40",
+                "FROM": {},
+                "modifier": {
+                  "add": "-50",
+                  "FROM": {},
+                  "modifier": {
+                    "add": "-80",
+                    "FROM": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 453
+  },
+  "opinion_emperor_support_us": {
+    "opinion_emperor_support_us": {
+      "opinion": {
+        "base": "250"
+      },
+      "decay": {
+        "base": "1",
+        "modifier": {
+          "factor": "value:positive_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 483
+  },
+  "opinion_emperor_abandoned_us": {
+    "opinion_emperor_abandoned_us": {
+      "opinion": {
+        "base": "-250"
+      },
+      "decay": {
+        "base": "1",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 495
+  },
+  "opinion_emperor_supported_member": {
+    "opinion_emperor_supported_member": {
+      "opinion": {
+        "base": "100"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 507
+  },
+  "opinion_emperor_abandoned_member": {
+    "opinion_emperor_abandoned_member": {
+      "opinion": {
+        "base": "-100"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 519
+  },
+  "opinion_emperor_gave_council_seat": {
+    "opinion_emperor_gave_council_seat": {
+      "opinion": {
+        "base": "250"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:positive_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 531
+  },
+  "opinion_emperor_removed_council_seat": {
+    "opinion_emperor_removed_council_seat": {
+      "opinion": {
+        "base": "-250"
+      },
+      "decay": {
+        "base": "0.5",
+        "modifier": {
+          "factor": "value:negative_opinion_decay_rate"
+        }
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 543
+  },
+  "opinion_small_boon_crystal_empire": {
+    "opinion_small_boon_crystal_empire": {
+      "opinion": {
+        "base": "10"
+      }
+    },
+    "_source_file": "00_opinion_modifiers_nemesis.txt",
+    "_line_number": 556
+  }
+}

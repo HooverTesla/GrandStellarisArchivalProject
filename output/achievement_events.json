@@ -1,0 +1,36 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "achievement.5",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "is_ai": "no",
+        "NOT": {},
+        "immediate": {
+          "set_country_flag": "unlimited_power_achievement"
+        }
+      }
+    },
+    "_source_file": "achievement_events.txt",
+    "_line_number": 100
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "achievement.6",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "is_ai": "no",
+          "NOT": {}
+        },
+        "immediate": {
+          "owner": {}
+        }
+      }
+    },
+    "_source_file": "achievement_events.txt",
+    "_line_number": 117
+  }
+}

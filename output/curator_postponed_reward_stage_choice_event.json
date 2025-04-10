@@ -1,0 +1,83 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "$EVENT_ID$",
+      "base": "leviathans.500",
+      "desc_clear": "yes",
+      "option_clear": "yes",
+      "desc": "$LOCALIZATION_ID$.desc",
+      "option": {
+        "name": "$LOCALIZATION_ID$.a",
+        "trigger": {
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "REWARD_NOT_AVAILABLE",
+              "is_eligible_for_collection_stage_1_reward_$CATEGORY$": "yes"
+            }
+          },
+          "hidden_effect": {
+            "country_event": {}
+          },
+          "option": {
+            "name": "$LOCALIZATION_ID$.b.$CATEGORY$",
+            "trigger": {
+              "allow": {
+                "custom_tooltip": {
+                  "fail_text": "REWARD_NOT_AVAILABLE",
+                  "is_eligible_for_collection_stage_2_reward_$CATEGORY$": "yes"
+                },
+                "has_resource": {},
+                "add_resource": {
+                  "give_collection_stage_2_reward_$CATEGORY$": "yes"
+                },
+                "option": {
+                  "name": "$LOCALIZATION_ID$.c",
+                  "trigger": {
+                    "allow": {
+                      "custom_tooltip": {
+                        "fail_text": "REWARD_NOT_AVAILABLE",
+                        "is_eligible_for_collection_stage_3_reward_$CATEGORY$": "yes"
+                      }
+                    },
+                    "hidden_effect": {
+                      "country_event": {},
+                      "ai_chance": {
+                        "modifier": {
+                          "factor": "0"
+                        }
+                      }
+                    },
+                    "option": {
+                      "name": "leviathans.506.g",
+                      "hidden_effect": {
+                        "country_event": {}
+                      },
+                      "_comments": [
+                        "# Back"
+                      ],
+                      "option": {
+                        "name": "leviathans.506.d",
+                        "hidden_effect": {
+                          "country_event": {}
+                        },
+                        "_comments": [
+                          "# Goodbye"
+                        ],
+                        "option": {
+                          "name": "GOODBYE",
+                          "default_hide_option": "yes"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "curator_postponed_reward_stage_choice_event.txt",
+    "_line_number": 6
+  }
+}

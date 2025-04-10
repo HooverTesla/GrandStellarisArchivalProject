@@ -1,0 +1,78 @@
+{
+  "humanoid_hp_11_hair": {
+    "humanoid_hp_11_hair": {
+      "default": "gfx/models/portraits/humanoid/humanoid_hp_11_beard_01.dds",
+      "game_setup": {
+        "default": "gfx/models/portraits/humanoid/humanoid_hp_11_beard_01.dds"
+      },
+      "_comments": [
+        "#species scope",
+        "#pop scope",
+        "#leader scope"
+      ],
+      "species": {
+        "default": "gfx/models/portraits/humanoid/humanoid_hp_11_beard_01.dds"
+      },
+      "pop": {
+        "default": "gfx/models/portraits/humanoid/humanoid_hp_11_beard_01.dds",
+        "random": {
+          "list": {}
+        }
+      },
+      "leader": {
+        "random": {
+          "trigger": {
+            "list": {}
+          },
+          "random": {
+            "trigger": {
+              "list": {}
+            },
+            "random": {
+              "trigger": {
+                "list": {}
+              },
+              "random": {
+                "trigger": {
+                  "list": {}
+                }
+              },
+              "_comments": [
+                "#leader scope"
+              ],
+              "ruler": {
+                "random": {
+                  "trigger": {
+                    "owner": {},
+                    "list": {}
+                  },
+                  "random": {
+                    "trigger": {
+                      "owner": {},
+                      "list": {}
+                    },
+                    "random": {
+                      "trigger": {
+                        "owner": {
+                          "OR": {
+                            "has_government": "gov_stagnant_ascendancy",
+                            "has_primitive_government": "yes",
+                            "has_materialist_government": "yes",
+                            "has_pacifist_government": "yes"
+                          }
+                        }
+                      },
+                      "list": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "humanoid_hp_11_hair.txt",
+    "_line_number": 21
+  }
+}

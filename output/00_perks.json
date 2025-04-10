@@ -1,0 +1,730 @@
+{
+  "temp_remove": {
+    "temp_remove": {
+      "members_modifier": {
+        "country_trust_growth": "0.05"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 15
+  },
+  "neutral": {
+    "neutral": {
+      "members_modifier": {
+        "country_naval_cap_add": "20"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 21
+  },
+  "hostile": {
+    "hostile": {
+      "members_modifier": {
+        "country_starbase_capacity_add": "1"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 27
+  },
+  "default_federation_passive": {
+    "default_federation_passive": {
+      "federation_modifier": {
+        "description": "default_federation_passive_effect",
+        "cohesion_ethics_penalty_mult": "-0.50"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 35
+  },
+  "trade_federation_passive": {
+    "trade_federation_passive": {
+      "members_modifier": {
+        "description": "trade_federation_passive_effect"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 42
+  },
+  "research_federation_passive": {
+    "research_federation_passive": {
+      "federation_modifier": {
+        "description": "research_federation_passive_effect",
+        "federation_research_sharing_mult": "0.25"
+      },
+      "on_activate": {
+        "set_federation_settings": {
+          "research_sharing": "yes"
+        }
+      },
+      "on_deactivate": {
+        "set_federation_settings": {
+          "research_sharing": "no"
+        }
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 48
+  },
+  "military_federation_passive": {
+    "military_federation_passive": {
+      "members_modifier": {
+        "ship_starting_experience_add": "100",
+        "army_starting_experience_add": "100",
+        "starbase_shipyard_build_speed_mult": "0.25"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 65
+  },
+  "hegemony_federation_passive": {
+    "hegemony_federation_passive": {
+      "members_modifier": {
+        "description": "hegemony_federation_passive_effect"
+      },
+      "on_activate": {
+        "set_diplomacy_action_setting": {
+          "action": "action_ask_to_leave_federation",
+          "settings": {
+            "acceptance_type": "leader"
+          }
+        }
+      },
+      "on_deactivate": {
+        "set_diplomacy_action_setting": {
+          "action": "action_ask_to_leave_federation",
+          "settings": {
+            "acceptance_type": "default"
+          }
+        }
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 73
+  },
+  "federation_fleet_size_1": {
+    "federation_fleet_size_1": {
+      "members_modifier": {
+        "description": "federation_fleet_size_effect",
+        "federation_naval_cap_contribution_mult": "0.25"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 97
+  },
+  "federation_fleet_size_2": {
+    "federation_fleet_size_2": {
+      "members_modifier": {
+        "description": "federation_fleet_size_effect",
+        "federation_naval_cap_contribution_mult": "0.25"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 104
+  },
+  "federation_fleet_size_3": {
+    "federation_fleet_size_3": {
+      "members_modifier": {
+        "description": "federation_fleet_size_effect",
+        "federation_naval_cap_contribution_mult": "0.25"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 111
+  },
+  "federation_fleet_speed_1": {
+    "federation_fleet_speed_1": {
+      "members_modifier": {
+        "description": "federation_fleet_speed_effect",
+        "ship_federation_territory_speed_mult": "0.10"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 118
+  },
+  "federation_fire_rate_1": {
+    "federation_fire_rate_1": {
+      "members_modifier": {
+        "ship_fire_rate_mult": "0.10"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 125
+  },
+  "admiral_level_cap_1": {
+    "admiral_level_cap_1": {
+      "members_modifier": {
+        "commander_initial_skill": "1"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 131
+  },
+  "claim_cost_1": {
+    "claim_cost_1": {
+      "leader_modifier": {
+        "country_claim_influence_cost_mult": "-0.10"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 137
+  },
+  "job_output_1": {
+    "job_output_1": {
+      "members_modifier": {
+        "planet_jobs_produces_mult": "0.05"
+      },
+      "leader_modifier": {
+        "description": "president_no_effect",
+        "planet_jobs_produces_mult": "-0.05"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 143
+  },
+  "job_output_2": {
+    "job_output_2": {
+      "members_modifier": {
+        "planet_jobs_produces_mult": "0.05"
+      },
+      "leader_modifier": {
+        "description": "president_no_effect",
+        "planet_jobs_produces_mult": "-0.05"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 153
+  },
+  "job_output_3": {
+    "job_output_3": {
+      "members_modifier": {
+        "planet_jobs_produces_mult": "0.05"
+      },
+      "leader_modifier": {
+        "description": "president_no_effect",
+        "planet_jobs_produces_mult": "-0.05"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 163
+  },
+  "research_share_1": {
+    "research_share_1": {
+      "federation_modifier": {
+        "description": "research_share_1_effect",
+        "federation_research_sharing_mult": "0.05"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 173
+  },
+  "research_share_2": {
+    "research_share_2": {
+      "federation_modifier": {
+        "description": "research_share_1_effect",
+        "federation_research_sharing_mult": "0.05"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 180
+  },
+  "research_share_3": {
+    "research_share_3": {
+      "federation_modifier": {
+        "description": "research_share_1_effect",
+        "federation_research_sharing_mult": "0.05"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 187
+  },
+  "research_share_4": {
+    "research_share_4": {
+      "federation_modifier": {
+        "description": "research_share_1_effect",
+        "federation_research_sharing_mult": "0.05"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 194
+  },
+  "research_boost_1": {
+    "research_boost_1": {
+      "members_modifier": {
+        "all_technology_research_speed": "0.05"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 201
+  },
+  "rare_tech_boost": {
+    "rare_tech_boost": {
+      "members_modifier": {
+        "description": "rare_tech_boost_effect"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 207
+  },
+  "crisis_research_1": {
+    "crisis_research_1": {
+      "custom_tooltip": "crisis_research_1_effect",
+      "member_triggered_modifier": {
+        "key": "crisis_research_1",
+        "potential": {
+          "has_crisis": "yes"
+        },
+        "all_technology_research_speed": "0.10"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 213
+  },
+  "crisis_research_2": {
+    "crisis_research_2": {
+      "custom_tooltip": "crisis_research_1_effect",
+      "member_triggered_modifier": {
+        "key": "crisis_research_2",
+        "potential": {
+          "has_crisis": "yes"
+        },
+        "all_technology_research_speed": "0.10"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 224
+  },
+  "tech_diplo_weight_1": {
+    "tech_diplo_weight_1": {
+      "leader_modifier": {
+        "diplo_weight_technology_mult": "0.20"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 235
+  },
+  "president_option_1": {
+    "president_option_1": {
+      "leader_modifier": {
+        "num_tech_alternatives_add": "1"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 241
+  },
+  "president_megastructure_1": {
+    "president_megastructure_1": {
+      "leader_modifier": {
+        "country_megastructure_build_cap_add": "1"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 247
+  },
+  "unity_boost_1": {
+    "unity_boost_1": {
+      "members_modifier": {
+        "country_unity_produces_mult": "0.10"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 253
+  },
+  "unity_boost_2": {
+    "unity_boost_2": {
+      "members_modifier": {
+        "country_unity_produces_mult": "0.10"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 259
+  },
+  "president_unity_1": {
+    "president_unity_1": {
+      "leader_modifier": {
+        "country_unity_produces_mult": "0.10"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 265
+  },
+  "trade_value_1": {
+    "trade_value_1": {
+      "members_modifier": {
+        "trade_value_mult": "0.05"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 271
+  },
+  "trade_value_2": {
+    "trade_value_2": {
+      "members_modifier": {
+        "trade_value_mult": "0.05"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 277
+  },
+  "trade_value_3": {
+    "trade_value_3": {
+      "members_modifier": {
+        "trade_value_mult": "0.05"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 283
+  },
+  "trade_value_4": {
+    "trade_value_4": {
+      "members_modifier": {
+        "trade_value_mult": "0.05"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 289
+  },
+  "trade_protection_1": {
+    "trade_protection_1": {
+      "members_modifier": {
+        "local_trade_protection_add": "5"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 295
+  },
+  "president_trade_value_1": {
+    "president_trade_value_1": {
+      "leader_modifier": {
+        "trade_value_mult": "0.10"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 301
+  },
+  "extra_envoy_1": {
+    "extra_envoy_1": {
+      "leader_modifier": {
+        "envoys_add": "1"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 307
+  },
+  "extra_influence_1": {
+    "extra_influence_1": {
+      "leader_modifier": {
+        "federation_influence_produces_add": "1"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 313
+  },
+  "diplo_weight_1": {
+    "diplo_weight_1": {
+      "leader_modifier": {
+        "diplo_weight_mult": "0.1"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 319
+  },
+  "damage_crisis_1": {
+    "damage_crisis_1": {
+      "members_modifier": {
+        "description": "damage_crisis_1_modifier_desc",
+        "damage_vs_country_type_synth_queen_mult": "0.25",
+        "damage_vs_country_type_swarm_mult": "0.25",
+        "damage_vs_country_type_extradimensional_mult": "0.25",
+        "damage_vs_country_type_extradimensional_2_mult": "0.25",
+        "damage_vs_country_type_extradimensional_3_mult": "0.25",
+        "damage_vs_country_type_ai_empire_mult": "0.25",
+        "damage_vs_country_type_gray_goo_mult": "0.25",
+        "damage_vs_player_crisis_mult": "0.25"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 325
+  },
+  "damage_crisis_2": {
+    "damage_crisis_2": {
+      "members_modifier": {
+        "description": "damage_crisis_1_modifier_desc",
+        "damage_vs_country_type_synth_queen_mult": "0.25",
+        "damage_vs_country_type_swarm_mult": "0.25",
+        "damage_vs_country_type_extradimensional_mult": "0.25",
+        "damage_vs_country_type_extradimensional_2_mult": "0.25",
+        "damage_vs_country_type_extradimensional_3_mult": "0.25",
+        "damage_vs_country_type_ai_empire_mult": "0.25",
+        "damage_vs_country_type_gray_goo_mult": "0.25",
+        "damage_vs_player_crisis_mult": "0.25"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 339
+  },
+  "envoy_unity_1": {
+    "envoy_unity_1": {
+      "members_modifier": {
+        "description": "envoy_unity_1_effect"
+      },
+      "envoy_modifier": {
+        "description": "envoy_unity_1_effect",
+        "country_federation_perks_unity_produces_add": "2",
+        "country_trust_growth": "0.05"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 353
+  },
+  "envoy_unity_2": {
+    "envoy_unity_2": {
+      "members_modifier": {
+        "description": "envoy_unity_2_effect"
+      },
+      "envoy_modifier": {
+        "description": "envoy_unity_2_effect",
+        "country_federation_perks_unity_produces_add": "2",
+        "country_trust_cap_add": "5"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 364
+  },
+  "cohesion_join_1": {
+    "cohesion_join_1": {
+      "federation_modifier": {
+        "description": "cohesion_join_1_effect",
+        "federation_join_malus_mult": "-0.5"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 375
+  },
+  "cohesion_failed_vote_1": {
+    "cohesion_failed_vote_1": {
+      "federation_modifier": {
+        "description": "cohesion_failed_vote_1_effect"
+      },
+      "on_activate": {
+        "set_federation_settings": {
+          "failed_vote_half_price": "yes"
+        }
+      },
+      "on_deactivate": {
+        "set_federation_settings": {
+          "failed_vote_half_price": "no"
+        }
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 381
+  },
+  "federation_fleet_unity_1": {
+    "federation_fleet_unity_1": {
+      "federation_modifier": {
+        "description": "federation_fleet_unity_1_effect",
+        "federation_leader_fleet_scale_mult": "0.1"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 397
+  },
+  "president_keep_navy_1": {
+    "president_keep_navy_1": {
+      "leader_modifier": {
+        "description": "president_keep_navy_1_effect",
+        "country_federation_fleet_contribution_naval_cap_reduction_discount": "1"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 404
+  },
+  "president_hegemony_cb_1": {
+    "president_hegemony_cb_1": {
+      "leader_modifier": {
+        "description": "president_hegemony_cb_1_effect"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 411
+  },
+  "president_diplo_weight_steal_1": {
+    "president_diplo_weight_steal_1": {
+      "federation_modifier": {
+        "description": "president_diplo_weight_steal_1_effect",
+        "federation_leader_diplo_weight_from_members_mult": "0.10"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 417
+  },
+  "diplomacy_upkeep_1": {
+    "diplomacy_upkeep_1": {
+      "members_modifier": {
+        "description": "diplomacy_upkeep_1_effect"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 424
+  },
+  "spiritualist_federation_passive": {
+    "spiritualist_federation_passive": {
+      "custom_tooltip": "spiritualist_federation_passive_tooltip",
+      "members_modifier": {
+        "country_unity_produces_mult": "0.1"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 432
+  },
+  "spiritualist_envoys_1": {
+    "spiritualist_envoys_1": {
+      "federation_modifier": {
+        "description": "spiritualist_envoys_1_effect",
+        "delegate_cohesion_effect_mult": "0.5"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 439
+  },
+  "culture_workers_1": {
+    "culture_workers_1": {
+      "members_modifier": {
+        "description": "culture_workers_1_effect"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 446
+  },
+  "president_spiritualist_1": {
+    "president_spiritualist_1": {
+      "leader_modifier": {
+        "resolution_category_divinity_vote_strength_mult": "0.25"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 452
+  },
+  "unity_trade_1": {
+    "unity_trade_1": {
+      "members_modifier": {
+        "description": "unity_trade_1_effect"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 458
+  },
+  "ascension_shared_1": {
+    "ascension_shared_1": {
+      "members_modifier": {
+        "planetary_ascension_effect_mult": "0.2"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 464
+  },
+  "president_spiritualist_2": {
+    "president_spiritualist_2": {
+      "leader_modifier": {
+        "planetary_ascension_cost_mult": "-0.2"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 470
+  },
+  "all_the_priests_1": {
+    "all_the_priests_1": {
+      "members_modifier": {
+        "description": "all_the_priests_1_effect"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 476
+  },
+  "all_the_priests_2": {
+    "all_the_priests_2": {
+      "members_modifier": {
+        "description": "all_the_priests_2_effect"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 482
+  },
+  "president_spiritualist_3": {
+    "president_spiritualist_3": {
+      "leader_triggered_modifier": {
+        "potential": {
+          "shroud_delve_cooldown": "-0.20"
+        },
+        "leader_triggered_modifier": {
+          "potential": {
+            "NOT": {},
+            "country_edict_fund_add": "40"
+          }
+        }
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 488
+  },
+  "make_spiritualist_1": {
+    "make_spiritualist_1": {
+      "custom_tooltip": "make_spiritualist_1_effect",
+      "member_triggered_modifier": {
+        "potential": {
+          "is_spiritualist": "yes"
+        },
+        "planet_priests_unity_produces_add": "1"
+      },
+      "members_modifier": {
+        "pop_growth_speed": "0.15",
+        "planet_pop_assembly_reduction": "0.3"
+      },
+      "on_activate": {
+        "hidden_effect": {
+          "every_member": {
+            "limit": {
+              "is_spiritualist": "no",
+              "is_gestalt": "no"
+            },
+            "if": {
+              "limit": {
+                "give_technology": {},
+                "if": {
+                  "limit": {
+                    "give_technology": {},
+                    "if": {
+                      "limit": {
+                        "give_technology": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 501
+  },
+  "zro_catalysis_1": {
+    "zro_catalysis_1": {
+      "members_modifier": {
+        "description": "zro_catalysis_1_effect"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 537
+  },
+  "president_spiritualist_4": {
+    "president_spiritualist_4": {
+      "leader_modifier": {
+        "country_edict_fund_mult": "0.2"
+      }
+    },
+    "_source_file": "00_perks.txt",
+    "_line_number": 543
+  }
+}

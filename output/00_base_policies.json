@@ -1,0 +1,87 @@
+{
+  "until_max_network_cap_policy": {
+    "until_max_network_cap_policy": {
+      "weight": {
+        "modifier": {
+          "weight": "60"
+        }
+      }
+    },
+    "_source_file": "00_base_policies.txt",
+    "_line_number": 1
+  },
+  "fix_chance_10": {
+    "fix_chance_10": {
+      "weight": {
+        "base": "10"
+      }
+    },
+    "_source_file": "00_base_policies.txt",
+    "_line_number": 10
+  },
+  "kaleidoscope_policy": {
+    "kaleidoscope_policy": {
+      "weight": {
+        "base": "20",
+        "modifier": {
+          "owner": {
+            "has_deficit": "energy"
+          },
+          "weight": "100"
+        }
+      }
+    },
+    "_source_file": "00_base_policies.txt",
+    "_line_number": 16
+  },
+  "pre_ftl_uplifting_policy": {
+    "pre_ftl_uplifting_policy": {
+      "weight": {
+        "modifier": {
+          "owner": {
+            "OR": {
+              "has_ai_personality_behaviour": "dominator"
+            }
+          },
+          "target": {
+            "NOT": {},
+            "weight": "10"
+          }
+        }
+      }
+    },
+    "_source_file": "00_base_policies.txt",
+    "_line_number": 30
+  },
+  "pre_ftl_infiltrating_policy": {
+    "pre_ftl_infiltrating_policy": {
+      "weight": {
+        "modifier": {
+          "owner": {
+            "OR": {
+              "has_ai_personality_behaviour": "dominator"
+            }
+          },
+          "weight": "30"
+        }
+      }
+    },
+    "_source_file": "00_base_policies.txt",
+    "_line_number": 53
+  },
+  "pre_ftl_subtlety_policy": {
+    "pre_ftl_subtlety_policy": {
+      "weight": {
+        "modifier": {
+          "owner": {
+            "has_ai_personality_behaviour": "infiltrator"
+          },
+          "target": {},
+          "weight": "30"
+        }
+      }
+    },
+    "_source_file": "00_base_policies.txt",
+    "_line_number": 67
+  }
+}

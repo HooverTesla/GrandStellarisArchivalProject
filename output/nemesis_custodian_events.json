@@ -1,0 +1,78 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "custodian.101",
+      "title": "custodian.101.name",
+      "desc": "custodian.101.desc",
+      "picture": "GFX_evt_burning_city",
+      "show_sound": "event_burning_city",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "UNFORTUNATE"
+      }
+    },
+    "_source_file": "nemesis_custodian_events.txt",
+    "_line_number": 699
+  },
+  "event": {
+    "event": {
+      "id": "custodian.34",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "count_playable_country": {
+          "limit": {
+            "count >": "1"
+          },
+          "has_global_flag": "independent_gdf",
+          "NOT": {},
+          "immediate": {
+            "random_playable_country": {
+              "limit": {
+                "random_owned_planet": {},
+                "create_country": {
+                  "name": "NAME_GDF",
+                  "type": "gdf",
+                  "flag": {
+                    "icon": {
+                      "category": "special",
+                      "file": "gdf.dds"
+                    },
+                    "background": {
+                      "category": "backgrounds",
+                      "file": "00_solid.dds"
+                    },
+                    "colors": {}
+                  },
+                  "effect": {
+                    "save_global_event_target_as": "gdf_country",
+                    "every_country": {
+                      "if": {
+                        "limit": {
+                          "NOT": {},
+                          "add_modifier": {},
+                          "else": {
+                            "add_modifier": {},
+                            "create_fleet_from_naval_cap": {
+                              "fraction": "0.22",
+                              "ship_owner_type": "galactic_community"
+                            },
+                            "last_created_fleet": {
+                              "set_location": "event_target:gdf_reborn_location"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "nemesis_custodian_events.txt",
+    "_line_number": 487
+  }
+}

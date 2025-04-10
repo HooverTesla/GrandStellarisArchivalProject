@@ -1,0 +1,118 @@
+{
+  "ice_tooltip": {
+    "ice_tooltip": {
+      "custom_tooltip": {
+        "success_text": "has_ice_source",
+        "exists": "from",
+        "from": {
+          "has_ascension_perk": "ap_hydrocentric"
+        },
+        "OR": {
+          "has_planet_class": "pc_frozen"
+        }
+      }
+    },
+    "_source_file": "00_system_tooltips.txt",
+    "_line_number": 3
+  },
+  "terraforming_tooltip": {
+    "terraforming_tooltip": {
+      "custom_tooltip": {
+        "success_text": "has_terraforming_candidate",
+        "exists": "from",
+        "from": {
+          "has_technology": "tech_climate_restoration"
+        },
+        "any_system_planet": {
+          "has_modifier": "terraforming_candidate"
+        }
+      }
+    },
+    "_source_file": "00_system_tooltips.txt",
+    "_line_number": 19
+  },
+  "frozen_terraforming_tooltip": {
+    "frozen_terraforming_tooltip": {
+      "custom_tooltip": {
+        "success_text": "has_frozen_terraforming_candidate",
+        "exists": "from",
+        "from": {
+          "has_ascension_perk": "ap_hydrocentric"
+        },
+        "any_system_planet": {
+          "has_modifier": "frozen_terraforming_candidate"
+        }
+      }
+    },
+    "_source_file": "00_system_tooltips.txt",
+    "_line_number": 34
+  },
+  "toxic_terraforming_tooltip": {
+    "toxic_terraforming_tooltip": {
+      "custom_tooltip": {
+        "success_text": "has_toxic_terraforming_candidate",
+        "exists": "from",
+        "from": {
+          "has_ascension_perk": "ap_detox"
+        },
+        "any_system_planet": {
+          "has_modifier": "toxic_terraforming_candidate"
+        }
+      }
+    },
+    "_source_file": "00_system_tooltips.txt",
+    "_line_number": 49
+  },
+  "arc_furnace_tooltip": {
+    "arc_furnace_tooltip": {
+      "custom_tooltip": {
+        "success_text": "arc_furnace_system_tt",
+        "exists": "from",
+        "from": {
+          "has_technology": "tech_orbital_arc_furnace",
+          "check_variable": {
+            "which": "arc_furnace_counter"
+          }
+        },
+        "NOT": {
+          "has_star_flag": "dyson_sphere_construction",
+          "any_system_megastructure": {
+            "OR": {
+              "is_megastructure_type": "orbital_arc_furnace_restored"
+            }
+          }
+        },
+        "any_system_planet": {
+          "NOR": {
+            "has_anomaly": "yes",
+            "has_planet_flag": "has_megastructure"
+          },
+          "is_planet_class": "pc_molten"
+        }
+      }
+    },
+    "_source_file": "00_system_tooltips.txt",
+    "_line_number": 64
+  },
+  "habitat_tooltip": {
+    "habitat_tooltip": {
+      "custom_tooltip": {
+        "success_text": "habitat_system_tt",
+        "exists": "from",
+        "from": {
+          "OR": {
+            "has_technology": "tech_habitat_1",
+            "has_civic": "civic_great_khans_legacy",
+            "has_country_flag": "democratic_khanate_flag"
+          }
+        },
+        "NOT": {
+          "has_megastructure": "habitat_central_complex_ruined",
+          "has_star_flag": "solarpunk_system_02"
+        }
+      }
+    },
+    "_source_file": "00_system_tooltips.txt",
+    "_line_number": 109
+  }
+}

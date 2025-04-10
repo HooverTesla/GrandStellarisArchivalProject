@@ -1,0 +1,231 @@
+{
+  "has_specialist_subject": {
+    "has_specialist_subject": {
+      "is_overlord": "yes",
+      "any_agreement": {}
+    },
+    "_source_file": "00_scripted_triggers_overlord.txt",
+    "_line_number": 3
+  },
+  "has_specialist_subject_type": {
+    "has_specialist_subject_type": {
+      "is_overlord": "yes",
+      "any_agreement": {}
+    },
+    "_source_file": "00_scripted_triggers_overlord.txt",
+    "_line_number": 8
+  },
+  "has_specialist_subject_tier": {
+    "has_specialist_subject_tier": {
+      "is_overlord": "yes",
+      "any_agreement": {
+        "has_active_specialization": "specialist_$TYPE$",
+        "specialist_tier >": "$TIER$"
+      }
+    },
+    "_source_file": "00_scripted_triggers_overlord.txt",
+    "_line_number": 13
+  },
+  "is_subject_with_preset": {
+    "is_subject_with_preset": {
+      "is_subject": "yes",
+      "any_agreement": {}
+    },
+    "_source_file": "00_scripted_triggers_overlord.txt",
+    "_line_number": 21
+  },
+  "is_specialist_subject": {
+    "is_specialist_subject": {
+      "is_subject": "yes",
+      "any_agreement": {}
+    },
+    "_source_file": "00_scripted_triggers_overlord.txt",
+    "_line_number": 26
+  },
+  "is_specialist_subject_type": {
+    "is_specialist_subject_type": {
+      "is_subject": "yes",
+      "any_agreement": {}
+    },
+    "_source_file": "00_scripted_triggers_overlord.txt",
+    "_line_number": 31
+  },
+  "is_specialist_subject_tier": {
+    "is_specialist_subject_tier": {
+      "is_subject": "yes",
+      "any_agreement": {
+        "has_active_specialization": "specialist_$TYPE$",
+        "specialist_tier >": "$TIER$"
+      }
+    },
+    "_source_file": "00_scripted_triggers_overlord.txt",
+    "_line_number": 36
+  },
+  "is_near_specialist_subject": {
+    "is_near_specialist_subject": {
+      "exists": "owner",
+      "solar_system": {
+        "closest_system": {
+          "max_steps": "2",
+          "limit": {
+            "exists": "owner",
+            "owner": {
+              "has_overlord": "ROOT.owner",
+              "is_specialist_subject_type": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_overlord.txt",
+    "_line_number": 44
+  },
+  "overlord_has_num_armies_on_planet": {
+    "overlord_has_num_armies_on_planet": {
+      "count_planet_army": {
+        "count": "$NUM$",
+        "limit": {
+          "exists": "ROOT.owner",
+          "ROOT.owner": {}
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_overlord.txt",
+    "_line_number": 60
+  },
+  "overlord_has_more_than_num_armies_on_planet": {
+    "overlord_has_more_than_num_armies_on_planet": {
+      "count_planet_army": {
+        "limit": {
+          "exists": "ROOT.owner",
+          "ROOT.owner": {}
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_overlord.txt",
+    "_line_number": 71
+  },
+  "valid_for_scholarium_sensors": {
+    "valid_for_scholarium_sensors": {
+      "is_colony": "no",
+      "is_preventing_anomaly": "no",
+      "can_have_sensory_readings": "yes"
+    },
+    "_source_file": "00_scripted_triggers_overlord.txt",
+    "_line_number": 82
+  },
+  "valid_for_prospectorium_discovery": {
+    "valid_for_prospectorium_discovery": {
+      "has_deposit": "no",
+      "has_anomaly": "no",
+      "is_preventing_anomaly": "no",
+      "NOT": {
+        "can_have_resource_discovery": "yes"
+      }
+    },
+    "_source_file": "00_scripted_triggers_overlord.txt",
+    "_line_number": 88
+  },
+  "federation_check_for_subject_trigger": {
+    "federation_check_for_subject_trigger": {
+      "custom_tooltip": {
+        "fail_text": "same_federation_as_overlord",
+        "OR": {
+          "has_federation": "no",
+          "is_subject": "no",
+          "AND": {
+            "is_subject": "yes",
+            "is_in_federation_with": "overlord"
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_overlord.txt",
+    "_line_number": 96
+  },
+  "is_merc_enclave_founding_allowed": {
+    "is_merc_enclave_founding_allowed": {
+      "owner": {
+        "NOT": {
+          "AND": {
+            "has_ethic": "ethic_gestalt_consciousness",
+            "NOT": {},
+            "has_civic": "civic_fanatic_purifiers"
+          }
+        },
+        "custom_tooltip": {
+          "fail_text": "enclave.2.tooltip.cloak",
+          "count_owned_ship": {
+            "limit": {
+              "count": "0"
+            }
+          },
+          "custom_tooltip": {
+            "fail_text": "enclave.2.tooltip.g",
+            "NOT": {
+              "any_owned_ship": {
+                "is_space_fauna": "yes"
+              }
+            }
+          }
+        },
+        "fleet_size >": "50"
+      }
+    },
+    "_source_file": "00_scripted_triggers_overlord.txt",
+    "_line_number": 111
+  },
+  "shroudwalker_insight_purchasing_trigger": {
+    "shroudwalker_insight_purchasing_trigger": {
+      "custom_tooltip": {
+        "fail_text": "shroudwalker_insight_cooldown_tt",
+        "NOT": {},
+        "resource_stockpile_compare": {
+          "resource": "energy",
+          "value >": "10",
+          "mult": "$TARGET$.trigger:empire_size"
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_overlord.txt",
+    "_line_number": 210
+  },
+  "shroudwalker_insight_save_spynetwork_trigger": {
+    "shroudwalker_insight_save_spynetwork_trigger": {
+      "OR": {
+        "NOT": {
+          "target": {
+            "root": {
+              "NOT": {
+                "any_spynetwork": {
+                  "owner": {
+                    "target": {
+                      "is_country_type": "default",
+                      "is_same_value": "event_target:$EVENT_TARGET$"
+                    },
+                    "exists": "leader"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_overlord.txt",
+    "_line_number": 226
+  },
+  "not_allowed_for_galcom_resolution_trigger": {
+    "not_allowed_for_galcom_resolution_trigger": {
+      "OR": {
+        "NOT": {
+          "NOT": {
+            "NOT": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_scripted_triggers_overlord.txt",
+    "_line_number": 248
+  }
+}

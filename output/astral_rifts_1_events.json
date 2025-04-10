@@ -1,0 +1,143 @@
+{
+  "astral_rift_event": {
+    "astral_rift_event": {
+      "id": "astral_rift.1935",
+      "title": "astral_rift.1935.name",
+      "desc": "astral_rift.1935.desc",
+      "picture": "GFX_evt_astral_rift_volcano",
+      "show_sound": "ap_rift_event_19_smoke_ash",
+      "difficulty": "@astral_rift_hard_difficulty",
+      "astral_rift": "yes",
+      "is_triggered_only": "yes",
+      "option": {
+        "name": "UNFORTUNATE",
+        "hidden_effect": {
+          "explorer": {
+            "country_event": {
+              "id": "astral_planes.205",
+              "scopes": {},
+              "clone_leader": {
+                "target": "prev.leader",
+                "set_age": "1",
+                "effect": {
+                  "save_event_target_as": "volcano_dead_scientist@owner",
+                  "exile_leader_as": "volcano_dead_scientist@owner"
+                }
+              },
+              "country_event": {
+                "id": "astral_rift.1950",
+                "days": "360",
+                "scopes": {
+                  "from": "event_target:volcano_dead_scientist@this",
+                  "fromfrom": "prev.fleet"
+                }
+              }
+            }
+          },
+          "leader": {
+            "kill_leader": {},
+            "explorer": {
+              "astral_thread_large_reward": "yes"
+            },
+            "finish_astral_rift": "yes"
+          }
+        }
+      }
+    },
+    "_source_file": "astral_rifts_1_events.txt",
+    "_line_number": 4901
+  },
+  "system_event": {
+    "system_event": {
+      "id": "astral_rift.1095",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "no_scope": {
+          "_comments": [
+            "# place system position at galactic core"
+          ],
+          "spawn_system": {
+            "min_distance >": "0",
+            "max_distance <": "0",
+            "min_orientation_angle": "0",
+            "max_orientation_angle": "360",
+            "initializer": "formless_system_initializer",
+            "hyperlane": "no",
+            "authorize_spawn_on_galactic_core": "yes"
+          }
+        },
+        "spawn_natural_wormhole": {
+          "bypass_type": "strange_wormhole",
+          "in_place_of": "from",
+          "graphics_entity_name": "strange_wormhole_entity",
+          "init_effect": {
+            "link_wormholes": "event_target:strange_wormhole_bypass",
+            "clear_global_event_target": "strange_wormhole_bypass"
+          }
+        },
+        "set_global_flag": "strange_wormholes_locked",
+        "destroy_astral_rift": "from",
+        "_comments": [
+          "# Strange Wormhole encounter"
+        ],
+        "fromfrom": {
+          "fleet_event": {
+            "id": "astral_planes.45",
+            "days": "1",
+            "scopes": {}
+          }
+        }
+      }
+    },
+    "_source_file": "astral_rifts_1_events.txt",
+    "_line_number": 386
+  },
+  "country_event": {
+    "country_event": {
+      "id": "astral_rift.1960",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "from"
+      },
+      "immediate": {
+        "if": {
+          "limit": {
+            "from": {
+              "is_councilor": "yes"
+            }
+          },
+          "random_owned_planet": {
+            "random_owned_pop": {
+              "planet": {
+                "save_event_target_as": "sacrificed_pop_planet"
+              },
+              "kill_pop": "yes"
+            }
+          },
+          "create_message": {
+            "type": "MESSAGE_RESTORING_THE_BALANCE_SACRIFICE",
+            "localization": "MESSAGE_RESTORING_THE_BALANCE_SACRIFICE_DESC_LEADER",
+            "days": "30",
+            "target": "event_target:sacrificed_pop_planet",
+            "variable": {
+              "type": "name",
+              "localization": "LEADER",
+              "scope": "from"
+            }
+          }
+        },
+        "country_event": {
+          "id": "astral_rift.1960",
+          "days": "360",
+          "scopes": {
+            "from": "from"
+          }
+        }
+      }
+    },
+    "_source_file": "astral_rifts_1_events.txt",
+    "_line_number": 5173
+  }
+}

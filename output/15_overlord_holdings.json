@@ -1,0 +1,1776 @@
+{
+  "holding_garrison": {
+    "holding_garrison": {
+      "base_buildtime": "@b1_time",
+      "owner_type": "subject_holding",
+      "icon": "holding_overlord_garrison",
+      "base_cap_amount": "1",
+      "category": "army",
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep"
+        }
+      },
+      "planet_modifier": {
+        "planet_crime_add": "-10",
+        "monthly_loyalty": "0.5"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "overlord_has_num_armies_on_planet": {},
+          "modifier": {
+            "planet_crime_add": "-10",
+            "pop_happiness": "-0.05",
+            "monthly_loyalty": "0.5"
+          }
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "overlord_has_num_armies_on_planet": {},
+            "modifier": {
+              "planet_crime_add": "-20",
+              "pop_happiness": "-0.1",
+              "monthly_loyalty": "1"
+            }
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "overlord_has_more_than_num_armies_on_planet": {},
+              "modifier": {
+                "planet_crime_add": "-30",
+                "pop_happiness": "-0.15",
+                "monthly_loyalty": "1.5"
+              }
+            },
+            "triggered_desc": {
+              "text": "holding_garrison_armies_desc"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 6
+  },
+  "holding_orbital_assembly_complex": {
+    "holding_orbital_assembly_complex": {
+      "base_buildtime": "@b1_time",
+      "owner_type": "subject_holding",
+      "icon": "holding_orbital_assembly_complex",
+      "base_cap_amount": "1",
+      "category": "manufacturing",
+      "potential": {
+        "has_overlord_dlc": "yes",
+        "is_artificial": "no"
+      },
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep",
+          "alloys": "5"
+        }
+      },
+      "planet_modifier": {
+        "planet_building_build_speed_mult": "0.10"
+      },
+      "triggered_desc": {
+        "text": "holding_orbital_assembly_complex_effect"
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 65
+  },
+  "holding_propaganda_office": {
+    "holding_propaganda_office": {
+      "base_buildtime": "@b2_time",
+      "owner_type": "subject_holding",
+      "icon": "holding_propaganda_office",
+      "base_cap_amount": "1",
+      "category": "government",
+      "potential": {
+        "has_overlord_dlc": "yes"
+      },
+      "allow": {
+        "exists": "planet",
+        "planet": {},
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "planet.owner",
+            "planet.owner": {},
+            "job_overlord_propagandist_add": "2"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "planet.owner",
+              "planet.owner": {},
+              "job_overlord_propagandist_drone_add": "2"
+            },
+            "resources": {
+              "category": "planet_holdings",
+              "cost": {
+                "minerals": "@b1_minerals"
+              },
+              "upkeep": {
+                "energy": "@b1_upkeep"
+              }
+            },
+            "triggered_desc": {
+              "text": "job_overlord_propagandist_effect_desc"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 100
+  },
+  "holding_satellite_campus": {
+    "holding_satellite_campus": {
+      "base_buildtime": "@b2_time",
+      "owner_type": "subject_holding",
+      "icon": "holding_satellite_campus",
+      "base_cap_amount": "1",
+      "category": "research",
+      "potential": {
+        "has_overlord_dlc": "yes"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "planet.owner",
+          "planet.owner": {},
+          "job_overlord_academic_add": "2"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "planet.owner",
+            "planet.owner": {},
+            "job_overlord_academic_drone_add": "2"
+          },
+          "resources": {
+            "category": "planet_holdings",
+            "cost": {
+              "minerals": "@b1_minerals"
+            },
+            "upkeep": {
+              "energy": "@b1_upkeep"
+            }
+          },
+          "triggered_desc": {
+            "text": "job_overlord_academic_effect_desc"
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 147
+  },
+  "holding_emporium": {
+    "holding_emporium": {
+      "base_buildtime": "@b2_time",
+      "owner_type": "subject_holding",
+      "icon": "holding_emporium",
+      "base_cap_amount": "1",
+      "category": "amenity",
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "planet.owner",
+          "planet.owner": {},
+          "job_overlord_trader_add": "2"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "owner.overlord",
+            "owner.overlord": {
+              "is_machine_empire": "no",
+              "is_hive_empire": "no"
+            }
+          },
+          "resources": {
+            "category": "planet_holdings",
+            "cost": {
+              "minerals": "@b1_minerals"
+            },
+            "upkeep": {
+              "energy": "@b1_upkeep",
+              "consumer_goods": "5"
+            }
+          },
+          "triggered_desc": {
+            "text": "job_overlord_trader_effect_desc"
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 190
+  },
+  "holding_aid_agency": {
+    "holding_aid_agency": {
+      "base_buildtime": "@b2_time",
+      "owner_type": "subject_holding",
+      "icon": "holding_aid_agency",
+      "base_cap_amount": "1",
+      "category": "amenity",
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "overlord_is_xenophobe",
+          "exists": "owner.overlord",
+          "owner.overlord": {
+            "NOR": {
+              "has_ethic": "ethic_fanatic_xenophobe"
+            }
+          }
+        }
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "planet.owner",
+          "planet.owner": {},
+          "job_aid_worker_add": "2"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "planet.owner",
+            "planet.owner": {},
+            "job_aid_worker_drone_add": "2"
+          },
+          "planet_modifier": {
+            "monthly_loyalty": "0.5"
+          },
+          "resources": {
+            "category": "planet_holdings",
+            "cost": {
+              "minerals": "@b1_minerals"
+            },
+            "upkeep": {
+              "trigger": {
+                "exists": "planet.owner",
+                "planet.owner": {},
+                "minerals": "10"
+              },
+              "upkeep": {
+                "trigger": {
+                  "exists": "planet.owner",
+                  "planet.owner": {
+                    "is_lithoid": "no",
+                    "is_machine_empire": "no",
+                    "is_mechanical_empire": "no"
+                  }
+                },
+                "food": "10"
+              }
+            },
+            "triggered_desc": {
+              "text": "job_aid_worker_effect_desc"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 239
+  },
+  "holding_energy_requisitorium": {
+    "holding_energy_requisitorium": {
+      "base_buildtime": "@b2_time",
+      "owner_type": "subject_holding",
+      "icon": "holding_energy_requisitorium",
+      "base_cap_amount": "1",
+      "category": "resource",
+      "potential": {
+        "has_overlord_dlc": "yes"
+      },
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "ove_requires_tech_power_hub_2",
+          "owner.overlord": {
+            "has_technology": "tech_power_hub_2"
+          }
+        }
+      },
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep",
+          "exotic_gases": "1"
+        }
+      },
+      "planet_modifier": {
+        "monthly_loyalty": "-0.25"
+      },
+      "on_built": {
+        "planet": {
+          "set_planet_flag": "has_energy_requisitorium"
+        }
+      },
+      "on_destroy": {
+        "planet": {
+          "remove_planet_flag": "has_energy_requisitorium"
+        }
+      },
+      "triggered_desc": {
+        "text": "job_energy_requisitioned_effect_desc"
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 333
+  },
+  "holding_material_requisitorium": {
+    "holding_material_requisitorium": {
+      "base_buildtime": "@b2_time",
+      "owner_type": "subject_holding",
+      "icon": "holding_material_requisitorium",
+      "base_cap_amount": "1",
+      "category": "resource",
+      "potential": {
+        "has_overlord_dlc": "yes"
+      },
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "ove_requires_tech_mineral_purification_2",
+          "owner.overlord": {
+            "has_technology": "tech_mineral_purification_2"
+          }
+        }
+      },
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep",
+          "volatile_motes": "1"
+        }
+      },
+      "planet_modifier": {
+        "monthly_loyalty": "-0.5"
+      },
+      "on_built": {
+        "planet": {
+          "set_planet_flag": "has_material_requisitorium"
+        }
+      },
+      "on_destroy": {
+        "planet": {
+          "remove_planet_flag": "has_material_requisitorium"
+        }
+      },
+      "triggered_desc": {
+        "text": "job_alloy_requisitioned_effect_desc"
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 387
+  },
+  "holding_produce_requisitorium": {
+    "holding_produce_requisitorium": {
+      "base_buildtime": "@b2_time",
+      "owner_type": "subject_holding",
+      "icon": "holding_produce_requisitorium",
+      "base_cap_amount": "1",
+      "category": "resource",
+      "potential": {
+        "has_overlord_dlc": "yes"
+      },
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "ove_requires_tech_food_processing_2",
+          "owner.overlord": {
+            "has_technology": "tech_food_processing_2"
+          }
+        }
+      },
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep",
+          "rare_crystals": "1"
+        }
+      },
+      "planet_modifier": {
+        "monthly_loyalty": "-0.25"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "owner.overlord",
+          "owner.overlord": {},
+          "monthly_loyalty": "-0.25"
+        },
+        "on_built": {
+          "planet": {
+            "set_planet_flag": "has_produce_requisitorium"
+          }
+        },
+        "on_destroy": {
+          "planet": {
+            "remove_planet_flag": "has_produce_requisitorium"
+          }
+        },
+        "triggered_desc": {
+          "trigger": {
+            "exists": "owner.overlord",
+            "owner.overlord": {},
+            "text": "job_consumer_goods_requisitioned_effect_desc"
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 445
+  },
+  "holding_splinter_hive": {
+    "holding_splinter_hive": {
+      "base_buildtime": "@b2_time",
+      "owner_type": "subject_holding",
+      "icon": "holding_splinter_hive",
+      "base_cap_amount": "1",
+      "category": "pop_assembly",
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep"
+        }
+      },
+      "potential": {
+        "has_overlord_dlc": "yes",
+        "owner.overlord": {},
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "no_free_district_for_splinter_hive",
+            "planet": {
+              "num_free_districts": {
+                "type": "any"
+              }
+            }
+          },
+          "planet": {
+            "num_pops >": "25"
+          }
+        },
+        "planet_modifier": {
+          "monthly_loyalty": "-2"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "planet.owner",
+            "planet.owner": {},
+            "job_overlord_breeder_add": "1"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "planet.owner",
+              "planet.owner": {},
+              "job_overlord_breeder_drone_add": "1"
+            },
+            "on_built": {
+              "planet": {
+                "add_blocker": {
+                  "owner.overlord.capital_scope": {
+                    "append_symbiotic_link": "yes",
+                    "refresh_splinter_hive_modifier": "yes"
+                  }
+                }
+              },
+              "on_destroy": {
+                "planet": {
+                  "if": {
+                    "limit": {
+                      "remove_deposit": "d_spawning_complex_blocker"
+                    },
+                    "owner.overlord.capital_scope": {
+                      "remove_symbiotic_link": "yes",
+                      "refresh_splinter_hive_modifier": "yes"
+                    }
+                  }
+                },
+                "triggered_desc": {
+                  "text": "job_overlord_breeder_effect_desc"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 514
+  },
+  "holding_distributed_processing": {
+    "holding_distributed_processing": {
+      "base_buildtime": "@b2_time",
+      "owner_type": "subject_holding",
+      "icon": "holding_distributed_processing",
+      "base_cap_amount": "1",
+      "category": "research",
+      "potential": {
+        "owner.overlord": {
+          "is_machine_empire": "yes",
+          "NOT": {},
+          "has_overlord_dlc": "yes"
+        },
+        "resources": {
+          "category": "planet_holdings",
+          "cost": {
+            "minerals": "@b1_minerals"
+          },
+          "upkeep": {
+            "energy": "@b1_upkeep"
+          }
+        },
+        "planet_modifier": {
+          "monthly_loyalty": "-2"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "planet.owner",
+            "planet.owner": {},
+            "job_mind_thrall_add": "4"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "planet.owner",
+              "planet.owner": {},
+              "job_mind_thrall_drone_add": "4"
+            },
+            "triggered_desc": {
+              "text": "job_mind_thrall_effect_desc"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 597
+  },
+  "holding_offspring_nest": {
+    "holding_offspring_nest": {
+      "base_buildtime": "@b2_time",
+      "owner_type": "subject_holding",
+      "icon": "building_offspring_nest",
+      "base_cap_amount": "1",
+      "category": "government",
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep"
+        }
+      },
+      "potential": {
+        "owner.overlord": {
+          "is_hive_empire": "yes",
+          "has_origin": "origin_progenitor_hive"
+        },
+        "has_overlord_dlc": "yes"
+      },
+      "allow": {
+        "owner": {
+          "NOT": {}
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "planet.owner",
+            "planet.owner": {},
+            "job_overlord_offspring_drone_feeder_add": "1"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "planet.owner",
+              "planet.owner": {},
+              "job_overlord_offspring_drone_feeder_drone_add": "1"
+            },
+            "triggered_desc": {
+              "text": "job_overlord_offspring_drone_feeder_effect_desc"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 645
+  },
+  "holding_offworld_foundry": {
+    "holding_offworld_foundry": {
+      "base_buildtime": "@b2_time",
+      "owner_type": "subject_holding",
+      "icon": "holding_offworld_foundry",
+      "base_cap_amount": "1",
+      "category": "manufacturing",
+      "potential": {
+        "has_overlord_dlc": "yes"
+      },
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "subject_is_prospectorium",
+          "exists": "planet.owner",
+          "planet.owner": {
+            "is_specialist_subject_type": {}
+          }
+        },
+        "resources": {
+          "category": "planet_holdings",
+          "cost": {
+            "minerals": "@b1_minerals"
+          },
+          "upkeep": {
+            "energy": "@b1_upkeep"
+          }
+        },
+        "planet_modifier": {
+          "monthly_loyalty": "-1.5"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "planet.owner",
+            "planet.owner": {
+              "is_catalytic_empire": "yes",
+              "is_gestalt": "yes"
+            }
+          },
+          "job_overlord_catalytic_drone_add": "2"
+        },
+        "triggered_desc": {
+          "trigger": {
+            "exists": "planet.owner",
+            "planet.owner": {
+              "is_catalytic_empire": "no"
+            }
+          },
+          "text": "job_overlord_alloy_producer_effect_desc"
+        },
+        "destroy_trigger": {
+          "exists": "planet.owner",
+          "planet.owner": {
+            "NOT": {
+              "is_specialist_subject_type": {}
+            }
+          },
+          "triggered_desc": {
+            "trigger": {
+              "exists": "planet.owner",
+              "planet.owner": {
+                "is_catalytic_empire": "yes"
+              }
+            },
+            "text": "job_overlord_alloy_producer_catalytic_effect_desc"
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 704
+  },
+  "holding_overlord_vigil_command": {
+    "holding_overlord_vigil_command": {
+      "base_buildtime": "@b2_time",
+      "owner_type": "subject_holding",
+      "icon": "holding_overlord_vigil_command",
+      "empire_limit": "1",
+      "category": "army",
+      "potential": {
+        "has_overlord_dlc": "yes"
+      },
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "subject_is_bulwark",
+          "exists": "planet.owner",
+          "planet.owner": {
+            "is_specialist_subject_type": {}
+          }
+        },
+        "resources": {
+          "category": "planet_holdings",
+          "cost": {
+            "minerals": "@b1_minerals"
+          },
+          "upkeep": {
+            "energy": "@b1_upkeep"
+          }
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "planet.owner",
+            "planet.owner": {
+              "is_gestalt": "yes"
+            }
+          },
+          "job_overlord_beholder_drone_add": "1"
+        },
+        "triggered_country_modifier": {
+          "potential": {
+            "planet.owner": {
+              "is_specialist_subject_tier": {
+                "TYPE": "bulwark",
+                "TIER": "3"
+              }
+            }
+          },
+          "starbase_defense_platform_capacity_add": "4"
+        },
+        "destroy_trigger": {
+          "exists": "planet.owner",
+          "planet.owner": {
+            "NOT": {
+              "is_specialist_subject_type": {}
+            }
+          },
+          "triggered_desc": {
+            "text": "job_overlord_beholder_effect_desc"
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 823
+  },
+  "holding_parasitic_algorithms": {
+    "holding_parasitic_algorithms": {
+      "base_buildtime": "@b2_time",
+      "owner_type": "subject_holding",
+      "icon": "holding_parasitic_algorithms",
+      "empire_limit": "1",
+      "category": "research",
+      "potential": {
+        "has_overlord_dlc": "yes"
+      },
+      "allow": {
+        "custom_tooltip": {
+          "fail_text": "subject_is_scholarium",
+          "exists": "planet.owner",
+          "planet.owner": {
+            "is_specialist_subject_type": {}
+          }
+        },
+        "resources": {
+          "category": "planet_holdings",
+          "cost": {
+            "minerals": "@b1_minerals"
+          },
+          "upkeep": {
+            "energy": "@b1_upkeep"
+          }
+        },
+        "country_modifier": {
+          "all_technology_research_speed": "0.03",
+          "planet_researchers_upkeep_mult": "0.03"
+        },
+        "planet_modifier": {
+          "monthly_loyalty": "-1"
+        },
+        "on_built": {
+          "planet": {
+            "set_planet_flag": "has_science_ministry"
+          }
+        },
+        "on_destroy": {
+          "planet": {
+            "remove_planet_flag": "has_science_ministry"
+          }
+        },
+        "destroy_trigger": {
+          "exists": "planet.owner",
+          "planet.owner": {
+            "NOT": {
+              "is_specialist_subject_type": {}
+            }
+          },
+          "triggered_desc": {
+            "text": "holding_parasitic_algorithms_effect_desc"
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 931
+  },
+  "holding_noble_vacation_homes": {
+    "holding_noble_vacation_homes": {
+      "base_buildtime": "@b2_time",
+      "owner_type": "subject_holding",
+      "icon": "building_palace",
+      "base_cap_amount": "1",
+      "category": "amenity",
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep"
+        }
+      },
+      "potential": {
+        "owner.overlord": {},
+        "planet_modifier": {
+          "monthly_loyalty": "-1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "planet.owner",
+            "planet.owner": {},
+            "planet_amenities_add": "-15"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "planet.owner",
+              "planet.owner": {},
+              "planet_amenities_no_happiness_add": "-15"
+            },
+            "on_built": {
+              "planet": {
+                "owner.overlord.capital_scope": {
+                  "append_noble_vacation_home": "yes",
+                  "refresh_noble_vacation_home_modifier": "yes"
+                }
+              }
+            },
+            "on_destroy": {
+              "owner.overlord.capital_scope": {
+                "remove_noble_vacation_home": "yes",
+                "refresh_noble_vacation_home_modifier": "yes"
+              }
+            },
+            "triggered_desc": {
+              "text": "holding_noble_vacation_homes_effect"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 1003
+  },
+  "holding_dread_outpost": {
+    "holding_dread_outpost": {
+      "base_buildtime": "@b2_time",
+      "owner_type": "subject_holding",
+      "icon": "building_dread_encampment",
+      "base_cap_amount": "1",
+      "category": "army",
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep"
+        }
+      },
+      "potential": {
+        "owner.overlord": {
+          "has_valid_civic": "civic_reanimated_armies"
+        }
+      },
+      "allow": {
+        "owner": {
+          "NOR": {
+            "has_valid_civic": "civic_reanimated_armies",
+            "is_machine_empire": "yes"
+          }
+        }
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "planet.owner",
+          "planet.owner": {},
+          "job_overlord_necromancer_add": "2"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "planet.owner",
+            "planet.owner": {},
+            "job_overlord_necromancer_drone_add": "2"
+          },
+          "on_built": {
+            "planet": {
+              "set_planet_flag": "active_dread_outpost"
+            }
+          },
+          "on_destroy": {
+            "planet": {
+              "remove_planet_flag": "active_dread_outpost"
+            }
+          },
+          "triggered_desc": {
+            "text": "job_overlord_necromancer_effect_desc"
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 1063
+  },
+  "holding_communal_housing_outreach": {
+    "holding_communal_housing_outreach": {
+      "base_buildtime": "@b1_time",
+      "owner_type": "subject_holding",
+      "icon": "building_residence",
+      "base_cap_amount": "1",
+      "category": "amenity",
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep"
+        }
+      },
+      "potential": {
+        "owner.overlord": {
+          "NOT": {
+            "owner": {}
+          },
+          "planet_modifier": {
+            "planet_housing_add": "10",
+            "planet_amenities_add": "6"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "planet.owner",
+              "planet.owner": {},
+              "monthly_loyalty": "-0.5"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "planet.owner",
+                "planet.owner": {
+                  "is_egalitarian": "no",
+                  "is_gestalt": "no"
+                }
+              },
+              "pop_ethic_egalitarian_attraction_mult": "1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 1127
+  },
+  "holding_idyllic_bloom": {
+    "holding_idyllic_bloom": {
+      "base_buildtime": "@b1_time",
+      "owner_type": "subject_holding",
+      "icon": "building_gaiaseeders_4",
+      "base_cap_amount": "1",
+      "category": "government",
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "energy": "1500",
+          "exotic_gases": "@b4_rare_cost"
+        },
+        "upkeep": {
+          "energy": "20",
+          "exotic_gases": "@b3_rare_upkeep",
+          "multiplier": "value:overlord_gaiaseeder_upkeep"
+        }
+      },
+      "potential": {
+        "exists": "owner",
+        "owner.overlord": {
+          "is_country_type": "default",
+          "is_idyllic_bloom_empire": "yes"
+        },
+        "NOR": {
+          "is_planet_class": "pc_relic"
+        },
+        "is_artificial": "no"
+      },
+      "planet_modifier": {
+        "pop_environment_tolerance": "0.2"
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "exists": "planet.owner",
+          "planet.owner": {
+            "NOT": {}
+          },
+          "monthly_loyalty": "1"
+        },
+        "on_built": {
+          "planet": {
+            "set_timed_planet_flag": {
+              "flag": "anti_cheese_idyllic_bloom_flag",
+              "days": "3599"
+            },
+            "set_saved_date": {
+              "key": "idyllic_bloom_holding_timer",
+              "days_from_present": "3600",
+              "expires": "3600"
+            }
+          },
+          "owner.overlord": {
+            "country_event": {
+              "id": "plant.105",
+              "days": "3600"
+            }
+          }
+        },
+        "on_destroy": {
+          "planet": {
+            "remove_planet_flag": "anti_cheese_idyllic_bloom_flag"
+          }
+        },
+        "triggered_desc": {
+          "trigger": {
+            "planet": {
+              "NOT": {
+                "has_planet_flag": "anti_cheese_idyllic_bloom_flag"
+              }
+            }
+          },
+          "text": "holding_idyllic_bloom_effect"
+        },
+        "allow": {
+          "can_build_overlord_gaiaseeder": "yes"
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 1187
+  },
+  "holding_reemployment_center": {
+    "holding_reemployment_center": {
+      "base_buildtime": "@b1_time",
+      "owner_type": "subject_holding",
+      "icon": "building_posthumous_employment_center",
+      "base_cap_amount": "1",
+      "category": "pop_assembly",
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep"
+        }
+      },
+      "potential": {
+        "owner.overlord": {
+          "NOT": {
+            "owner": {
+              "is_machine_empire": "no"
+            }
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "planet.owner",
+              "planet.owner": {},
+              "job_overlord_reassigner_add": "1"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "planet.owner",
+                "planet.owner": {},
+                "job_overlord_reassigner_drone_add": "1"
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "planet.owner",
+                  "planet.owner": {},
+                  "monthly_loyalty": "-0.5"
+                },
+                "triggered_desc": {
+                  "trigger": {
+                    "has_planet_flag": "reemployment_center_timer"
+                  },
+                  "text": "holding_reemployment_center_effect"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 1294
+  },
+  "holding_recruitment_office": {
+    "holding_recruitment_office": {
+      "base_buildtime": "@b1_time",
+      "owner_type": "subject_holding",
+      "icon": "holding_recruitment_office",
+      "base_cap_amount": "1",
+      "category": "army",
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep"
+        }
+      },
+      "potential": {
+        "owner.overlord": {},
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "planet.owner",
+            "planet.owner": {},
+            "job_overlord_recruiter_add": "2"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "planet.owner",
+              "planet.owner": {},
+              "job_overlord_recruiter_drone_add": "2"
+            },
+            "triggered_country_modifier": {
+              "country_naval_cap_add": "10"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "planet.owner",
+                "planet.owner": {},
+                "monthly_loyalty": "-0.5"
+              },
+              "triggered_desc": {
+                "text": "job_overlord_recruiter_effect_desc"
+              },
+              "on_built": {
+                "planet": {
+                  "planet_event": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 1356
+  },
+  "holding_park_ranger_lodge": {
+    "holding_park_ranger_lodge": {
+      "base_buildtime": "@b2_time",
+      "owner_type": "subject_holding",
+      "icon": "holding_park_ranger_lodge",
+      "base_cap_amount": "1",
+      "category": "amenity",
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep"
+        }
+      },
+      "potential": {
+        "owner.overlord": {
+          "NOT": {
+            "owner": {},
+            "NOR": {
+              "is_planet_class": "pc_relic"
+            },
+            "is_artificial": "no"
+          },
+          "destroy_trigger": {
+            "OR": {
+              "is_planet_class": "pc_relic"
+            }
+          },
+          "allow": {
+            "custom_tooltip": {
+              "fail_text": "no_free_district_for_ranger_lodge",
+              "planet": {
+                "num_free_districts": {
+                  "type": "any"
+                }
+              }
+            }
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "planet.owner",
+              "planet.owner": {},
+              "job_overlord_ranger_add": "1"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "planet.owner",
+                "planet.owner": {},
+                "job_overlord_ranger_drone_add": "1"
+              },
+              "on_built": {
+                "planet": {
+                  "add_blocker": {}
+                },
+                "on_destroy": {
+                  "planet": {
+                    "if": {
+                      "limit": {
+                        "remove_deposit": "d_nature_preserve_blocker"
+                      }
+                    }
+                  },
+                  "triggered_desc": {
+                    "text": "job_overlord_ranger_effect_desc"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 1417
+  },
+  "holding_tree_of_life_sapling": {
+    "holding_tree_of_life_sapling": {
+      "base_buildtime": "@b1_time",
+      "owner_type": "subject_holding",
+      "icon": "holding_tree_of_life_sapling",
+      "base_cap_amount": "1",
+      "category": "resource",
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "food": "1000"
+        }
+      },
+      "potential": {
+        "owner.overlord": {
+          "NOR": {
+            "is_planet_class": "pc_relic"
+          },
+          "is_artificial": "no"
+        },
+        "destroy_trigger": {
+          "OR": {
+            "is_planet_class": "pc_relic"
+          }
+        },
+        "planet_modifier": {
+          "monthly_loyalty": "1",
+          "pop_environment_tolerance": "0.1",
+          "planet_farmers_food_produces_add": "1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "planet.owner",
+            "planet.owner": {},
+            "job_overlord_arborist_add": "1"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "planet.owner",
+              "planet.owner": {},
+              "job_overlord_arborist_drone_add": "1"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 1501
+  },
+  "holding_experimental_crater": {
+    "holding_experimental_crater": {
+      "base_buildtime": "@b2_time",
+      "owner_type": "subject_holding",
+      "icon": "holding_experimental_crater",
+      "base_cap_amount": "1",
+      "category": "research",
+      "resources": {
+        "category": "planet_holdings",
+        "produces": {
+          "engineering_research": "8",
+          "physics_research": "4"
+        }
+      },
+      "potential": {
+        "owner.overlord": {},
+        "planet_modifier": {
+          "monthly_loyalty": "-1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "exists": "planet.owner",
+            "planet.owner": {},
+            "job_miner_add": "3"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "planet.owner",
+              "planet.owner": {},
+              "job_mining_drone_add": "3"
+            },
+            "on_built": {
+              "planet": {
+                "planet_event": {}
+              },
+              "triggered_desc": {
+                "text": "holding_experimental_crater_effect"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 1563
+  },
+  "holding_organic_sanctuary": {
+    "holding_organic_sanctuary": {
+      "base_buildtime": "@b2_time",
+      "owner_type": "subject_holding",
+      "icon": "building_organic_sanctuary",
+      "base_cap_amount": "1",
+      "category": "unity",
+      "resources": {
+        "category": "planet_holdings",
+        "upkeep": {
+          "consumer_goods": "10"
+        }
+      },
+      "potential": {
+        "owner.overlord": {
+          "owner": {},
+          "triggered_planet_modifier": {
+            "potential": {
+              "exists": "planet.owner",
+              "planet.owner": {},
+              "job_overlord_bio_trophy_add": "5",
+              "monthly_loyalty": "0.5"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "planet.owner",
+                "planet.owner": {},
+                "job_overlord_bio_trophy_drone_add": "5"
+              },
+              "triggered_desc": {
+                "text": "job_overlord_bio_trophy_effect_desc"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 1610
+  },
+  "holding_franchise_headquarters": {
+    "holding_franchise_headquarters": {
+      "base_buildtime": "@b2_time",
+      "owner_type": "subject_holding",
+      "icon": "holding_franchise_headquarters",
+      "base_cap_amount": "1",
+      "category": "government",
+      "destroy_trigger": {
+        "NOT": {
+          "planet": {
+            "has_branch_office": "owner.overlord"
+          }
+        }
+      },
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep"
+        }
+      },
+      "potential": {
+        "owner.overlord": {},
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "no_branch_office",
+            "planet": {
+              "has_branch_office": "owner.overlord"
+            }
+          }
+        },
+        "on_built": {
+          "planet": {
+            "set_planet_flag": "has_franchise_headquarters"
+          }
+        },
+        "on_destroy": {
+          "planet": {
+            "remove_planet_flag": "has_franchise_headquarters"
+          }
+        },
+        "planet_modifier": {
+          "monthly_loyalty": "-0.5",
+          "job_overlord_manager_add": "2"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "owner.overlord": {
+              "has_ethic": "ethic_fanatic_egalitarian"
+            }
+          },
+          "pop_ethic_egalitarian_attraction_mult": "1"
+        },
+        "_comments": [
+          "# Just in case there's a Fan. Auth. Corporate Galactic Imperium with the civic.",
+          "# Just in case there's a Fan. Egal. Corporate Galactic Imperium with the civic."
+        ],
+        "triggered_desc": {
+          "trigger": {
+            "exists": "owner.overlord",
+            "owner.overlord": {
+              "is_fanatic": "no"
+            }
+          },
+          "text": "holding_franchise_headquarters_ethics_effect"
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 1663
+  },
+  "holding_sacrificial_shrine": {
+    "holding_sacrificial_shrine": {
+      "base_buildtime": "@b1_time",
+      "owner_type": "subject_holding",
+      "icon": "building_sacrificial_temple_2",
+      "base_cap_amount": "1",
+      "category": "unity",
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep"
+        }
+      },
+      "potential": {
+        "owner.overlord": {
+          "owner": {},
+          "destroy_trigger": {
+            "owner": {},
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "planet.owner",
+                "planet.owner": {},
+                "monthly_loyalty": "-0.5"
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "planet.owner",
+                  "planet.owner": {},
+                  "job_overlord_mortal_initiate_add": "2"
+                },
+                "triggered_planet_modifier": {
+                  "potential": {
+                    "exists": "planet.owner",
+                    "planet.owner": {},
+                    "job_overlord_mortal_initiate_drone_add": "2"
+                  },
+                  "triggered_desc": {
+                    "text": "job_overlord_mortal_initiate_effect_desc"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 1783
+  },
+  "holding_toxic_bath": {
+    "holding_toxic_bath": {
+      "base_buildtime": "@b1_time",
+      "owner_type": "subject_holding",
+      "icon": "building_toxic_bath",
+      "base_cap_amount": "1",
+      "category": "amenity",
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "consumer_goods": "@b1_upkeep"
+        }
+      },
+      "potential": {
+        "owner.overlord": {
+          "owner": {},
+          "destroy_trigger": {
+            "owner.overlord": {},
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "planet.owner",
+                "planet.owner": {},
+                "monthly_loyalty": "-0.5"
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "owner",
+                  "owner": {},
+                  "job_overlord_bath_attendant_add": "2"
+                },
+                "triggered_desc": {
+                  "trigger": {
+                    "exists": "planet.owner",
+                    "planet.owner": {},
+                    "text": "job_overlord_toxic_baths_effect_desc"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 1838
+  },
+  "holding_toxic_bath_hive": {
+    "holding_toxic_bath_hive": {
+      "base_buildtime": "@b1_time",
+      "owner_type": "subject_holding",
+      "icon": "building_toxic_bath_hive",
+      "base_cap_amount": "1",
+      "category": "amenity",
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "food": "@b2_upkeep"
+        }
+      },
+      "potential": {
+        "owner.overlord": {
+          "owner": {},
+          "destroy_trigger": {
+            "owner.overlord": {},
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "planet.owner",
+                "planet.owner": {},
+                "monthly_loyalty": "-0.5"
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "owner",
+                  "owner": {},
+                  "job_overlord_bath_attendant_hive_add": "2"
+                },
+                "triggered_desc": {
+                  "trigger": {
+                    "exists": "planet.owner",
+                    "planet.owner": {},
+                    "text": "job_overlord_toxic_baths_effect_hive_desc"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 1890
+  },
+  "holding_toxic_bath_machine": {
+    "holding_toxic_bath_machine": {
+      "base_buildtime": "@b1_time",
+      "owner_type": "subject_holding",
+      "icon": "building_toxic_bath_machine",
+      "base_cap_amount": "1",
+      "category": "amenity",
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "minerals": "@b2_upkeep"
+        }
+      },
+      "potential": {
+        "owner.overlord": {
+          "owner": {},
+          "destroy_trigger": {
+            "owner.overlord": {},
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "planet.owner",
+                "planet.owner": {},
+                "monthly_loyalty": "-0.5"
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "owner",
+                  "owner": {},
+                  "job_overlord_bath_attendant_machine_add": "2"
+                },
+                "triggered_desc": {
+                  "trigger": {
+                    "exists": "planet.owner",
+                    "planet.owner": {},
+                    "text": "job_overlord_toxic_baths_effect_machine_desc"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 1942
+  },
+  "holding_knight_commandery": {
+    "holding_knight_commandery": {
+      "base_buildtime": "@b1_time",
+      "owner_type": "subject_holding",
+      "icon": "building_order_holding",
+      "base_cap_amount": "1",
+      "category": "government",
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "energy": "@b1_upkeep"
+        }
+      },
+      "potential": {
+        "owner.overlord": {
+          "has_origin": "origin_toxic_knights",
+          "NOT": {}
+        },
+        "allow": {
+          "exists": "planet",
+          "planet": {
+            "is_capital": "yes",
+            "num_pops >": "50"
+          }
+        },
+        "destroy_trigger": {
+          "OR": {
+            "NOT": {
+              "owner.overlord": {}
+            },
+            "planet_modifier": {
+              "monthly_loyalty": "-0.5"
+            },
+            "triggered_planet_modifier": {
+              "potential": {
+                "exists": "planet.owner",
+                "planet.owner": {},
+                "job_overlord_knight_add": "1"
+              },
+              "triggered_planet_modifier": {
+                "potential": {
+                  "exists": "planet.owner",
+                  "planet.owner": {},
+                  "job_overlord_knight_drone_add": "1"
+                },
+                "country_modifier": {
+                  "country_naval_cap_add": "4"
+                },
+                "triggered_desc": {
+                  "trigger": {
+                    "exists": "planet.owner"
+                  },
+                  "text": "job_overlord_knight_commandery_effect_desc"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 1997
+  },
+  "holding_transcendental_retreat": {
+    "holding_transcendental_retreat": {
+      "base_buildtime": "@b1_time",
+      "owner_type": "subject_holding",
+      "icon": "building_transcendental_retreat",
+      "base_cap_amount": "1",
+      "category": "amenity",
+      "resources": {
+        "category": "planet_holdings",
+        "cost": {
+          "minerals": "@b1_minerals"
+        },
+        "upkeep": {
+          "minerals": "@b2_upkeep"
+        }
+      },
+      "potential": {
+        "owner.overlord": {
+          "is_natural_design_empire": "yes"
+        }
+      },
+      "destroy_trigger": {
+        "owner.overlord": {
+          "is_natural_design_empire": "no"
+        }
+      },
+      "triggered_planet_modifier": {
+        "potential": {
+          "planet.owner": {},
+          "job_overlord_healthcare_add": "1"
+        },
+        "triggered_planet_modifier": {
+          "potential": {
+            "planet.owner": {},
+            "job_overlord_spawning_drone_add": "1"
+          },
+          "triggered_planet_modifier": {
+            "potential": {
+              "planet.owner": {},
+              "job_overlord_replicator_add": "1"
+            },
+            "triggered_desc": {
+              "trigger": {
+                "exists": "planet.owner",
+                "planet.owner": {},
+                "text": "job_spawning_drone_effect_desc"
+              },
+              "triggered_desc": {
+                "trigger": {
+                  "exists": "planet.owner",
+                  "planet.owner": {},
+                  "text": "job_replicator_effect_desc"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "15_overlord_holdings.txt",
+    "_line_number": 2072
+  }
+}

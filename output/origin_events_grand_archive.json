@@ -1,0 +1,243 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "grand_archive.8610",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "NOT": {
+          "from": {
+            "is_crystal_ship_size": "yes"
+          }
+        },
+        "immediate": {
+          "set_country_flag": "tech_mine_rare_crystals_culling_boost"
+        }
+      }
+    },
+    "_source_file": "origin_events_grand_archive.txt",
+    "_line_number": 7123
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "grand_archive.1205",
+      "title": "grand_archive.1205.name",
+      "desc": {
+        "trigger": {
+          "event_target:victim_country": {},
+          "text": "grand_archive.1205.desc.gestalt"
+        },
+        "desc": {
+          "trigger": {
+            "planet_devastation >": "100",
+            "controller": {
+              "from": {
+                "any_owned_ship": {
+                  "has_ship_flag": "frenzied_voidworms_starbase"
+                }
+              }
+            },
+            "immediate": {
+              "_comments": [
+                "# For desc + further manipulations"
+              ],
+              "controller": {
+                "save_event_target_as": "victim_country"
+              },
+              "change_pc": "pc_shattered",
+              "save_global_event_target_as": "homeworld_destroyed_by_frenzied_voidworms@event_target:victim_country",
+              "event_target:victim_country": {
+                "remove_country_flag": "tormented_by_frenzied_voidworms",
+                "set_country_flag": "destroyed_by_frenzied_voidworms"
+              },
+              "event_target:frenzied_voidworms_country": {
+                "remove_country_flag": "can_bombard",
+                "random_owned_ship": {
+                  "limit": {
+                    "solar_system": {
+                      "save_event_target_as": "frenzied_voidworms_home"
+                    }
+                  },
+                  "every_owned_fleet": {
+                    "limit": {
+                      "clear_fleet_actions": "this",
+                      "queue_actions": {
+                        "move_to": "event_target:frenzied_voidworms_home",
+                        "find_random_fleet": {
+                          "trigger": {
+                            "id": "frenzied_voidworms.1",
+                            "any_owned_ship": {},
+                            "found_fleet": {
+                              "move_to": "this"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "option": {
+                    "name": "grand_archive.1205.a"
+                  }
+                }
+              }
+            }
+          },
+          "picture": "GFX_evt_shattered_planet",
+          "show_sound": "event_bad_omen",
+          "is_triggered_only": "yes"
+        }
+      }
+    },
+    "_source_file": "origin_events_grand_archive.txt",
+    "_line_number": 1690
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "grand_archive.8405",
+      "title": "grand_archive.8405.name",
+      "desc": "grand_archive.8405.desc",
+      "picture": "GFX_evt_treasure_trove_pirate_fleet",
+      "show_sound": "ga_event_black_needle",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "event_target:ness_treasure_system_for@controller",
+        "event_target:ness_treasure_system_for@controller": {
+          "is_same_value": "from"
+        },
+        "controller": {
+          "has_origin": "origin_treasure_hunters",
+          "has_event_chain": "treasure_hunters_origin_story_chain",
+          "has_point_of_interest": {}
+        },
+        "immediate": {
+          "event_target:ness_treasure_system_for@controller": {
+            "save_event_target_as": "ness_treasure_system"
+          },
+          "controller": {
+            "create_cobalt_quill_leader": "yes",
+            "create_final_black_needle_fleet": {
+              "event_target:black_needle_fleet": {
+                "set_fleet_flag": "is_spawned_for@root.controller"
+              }
+            },
+            "option": {
+              "name": "ON_SCREEN",
+              "trigger": {
+                "controller": {
+                  "NOT": {}
+                }
+              },
+              "option": {
+                "name": "grand_archive.8405.a.lom",
+                "trigger": {
+                  "controller": {
+                    "has_valid_civic": "civic_crusader_spirit_corporate"
+                  }
+                }
+              },
+              "after": {
+                "controller": {
+                  "country_event": {
+                    "id": "grand_archive.8410",
+                    "days": "1",
+                    "scopes": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_grand_archive.txt",
+    "_line_number": 5132
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "grand_archive.8240",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "exists": "controller",
+        "controller": {
+          "has_origin": "origin_treasure_hunters",
+          "has_event_chain": "treasure_hunters_origin_story_chain",
+          "FROM": {
+            "is_point_of_interest": {
+              "id": "smeegibb_shelter_system_poi.2",
+              "event_chain": "treasure_hunters_origin_story_chain",
+              "owner": "root.controller"
+            }
+          }
+        }
+      },
+      "immediate": {
+        "controller": {
+          "country_event": {
+            "id": "grand_archive.8241",
+            "scopes": {}
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_grand_archive.txt",
+    "_line_number": 4041
+  },
+  "situation_event": {
+    "situation_event": {
+      "id": "grand_archive.8510",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "owner": {
+          "NOR": {
+            "has_country_flag": "destroyed_fleet_spawn_cooldown"
+          }
+        }
+      },
+      "immediate": {
+        "owner": {
+          "random_system_within_border": {
+            "limit": {
+              "NOT": {
+                "has_star_flag": "available_for_sabotage"
+              },
+              "set_star_flag": "sabotage_pirate_fleet_spawn_check",
+              "prev": {
+                "system_event": {
+                  "id": "grand_archive.8515",
+                  "scopes": {
+                    "days": "120",
+                    "random": "90"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_grand_archive.txt",
+    "_line_number": 5536
+  },
+  "system_event": {
+    "system_event": {
+      "id": "grand_archive.8515",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "if": {
+          "limit": {
+            "has_star_flag": "available_for_sabotage",
+            "exists": "from",
+            "is_owned_by": "from",
+            "from": {}
+          }
+        }
+      }
+    },
+    "_source_file": "origin_events_grand_archive.txt",
+    "_line_number": 5571
+  }
+}

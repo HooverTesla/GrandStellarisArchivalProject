@@ -1,0 +1,20 @@
+{
+  "allow": {
+    "allow": {
+      "resource_stockpile_compare": {
+        "resource": "$RESOURCE$",
+        "value >": "$AMOUNT$"
+      }
+    },
+    "_source_file": "resource_cost_with_allow.txt",
+    "_line_number": -1
+  },
+  "add_resource": {
+    "add_resource": {
+      "$RESOURCE$": "-1",
+      "mult": "$AMOUNT$"
+    },
+    "_source_file": "resource_cost_with_allow.txt",
+    "_line_number": 6
+  }
+}

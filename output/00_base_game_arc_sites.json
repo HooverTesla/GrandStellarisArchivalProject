@@ -1,0 +1,349 @@
+{
+  "site_ruins_of_shallash": {
+    "site_ruins_of_shallash": {
+      "desc": "site_ruined_starsystem_intro",
+      "picture": "GFX_evt_tomb_world",
+      "stages": "4",
+      "weight": "0 #set via initialiser",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "4",
+            "icon": "GFX_archaeology_runes_E4",
+            "event": "federations2.5"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_base_game_arc_sites.txt",
+    "_line_number": 12
+  },
+  "site_space_shanty_dig": {
+    "site_space_shanty_dig": {
+      "desc": "space_shanty_intro",
+      "picture": "GFX_evt_frozen",
+      "stages": "5",
+      "weight": "0 #via system initializer",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "1",
+            "icon": "GFX_archaeology_runes_A3",
+            "event": "ancrel.15025"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_base_game_arc_sites.txt",
+    "_line_number": 64
+  },
+  "site_fumongus_dig": {
+    "site_fumongus_dig": {
+      "desc": "site_fumongus_intro",
+      "picture": "GFX_evt_warm_barren",
+      "stages": "5",
+      "weight": "0 #via system initializer",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "5",
+            "icon": "GFX_archaeology_runes_C5",
+            "event": "ancrel.13120"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_base_game_arc_sites.txt",
+    "_line_number": 124
+  },
+  "site_ancient_robot_world": {
+    "site_ancient_robot_world": {
+      "desc": "site_ancient_robot_world_desc",
+      "picture": "GFX_evt_ai_planet",
+      "stages": "5",
+      "weight": "0",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "stage": {
+            "difficulty": "8",
+            "icon": "GFX_archaeology_runes_D5",
+            "event": "ancrel.12090"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_base_game_arc_sites.txt",
+    "_line_number": 180
+  },
+  "site_transformation_dig": {
+    "site_transformation_dig": {
+      "desc": "site_transformation_intro",
+      "picture": "GFX_evt_tropical",
+      "stages": "4",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "50",
+          "is_planet_class": "pc_tropical",
+          "has_moon": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "3",
+          "icon": "GFX_archaeology_runes_C4",
+          "event": "ancrel.15003"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_base_game_arc_sites.txt",
+    "_line_number": 234
+  },
+  "site_tiyanki_graveyard": {
+    "site_tiyanki_graveyard": {
+      "desc": "site_tiyanki_graveyard_intro",
+      "picture": "GFX_evt_gray_goo",
+      "stages": "5",
+      "max_instances": "1",
+      "weight": "0 # Generated from an event",
+      "allow": {
+        "is_ship_class": "shipclass_science_ship",
+        "exists": "leader"
+      },
+      "visible": {
+        "has_global_flag": "tiyanki_graveyard_access",
+        "has_country_flag": "tiyanki_encountered",
+        "default_site_visible_trigger": "yes"
+      },
+      "on_visible": {
+        "country_event": {},
+        "stage": {
+          "difficulty": "5",
+          "icon": "GFX_archaeology_runes_B5",
+          "event": "ancrel.14500"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_base_game_arc_sites.txt",
+    "_line_number": 289
+  },
+  "site_ice_trauma": {
+    "site_ice_trauma": {
+      "desc": "site_ice_trauma_desc",
+      "picture": "GFX_evt_frozen",
+      "stages": "5",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "5",
+          "is_cold": "yes #inhabitable planets"
+        }
+      },
+      "max_instances": "1",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes",
+          "is_regular_empire": "yes",
+          "is_homicidal": "no"
+        },
+        "on_visible": {
+          "set_global_flag": "site_ice_trauma_found"
+        },
+        "stage": {
+          "difficulty": {
+            "icon": "GFX_archaeology_runes_A1",
+            "event": "arcsite.1000"
+          },
+          "stage": {
+            "difficulty": {
+              "icon": "GFX_archaeology_runes_A3",
+              "event": "arcsite.1010"
+            },
+            "stage": {
+              "difficulty": "2",
+              "icon": "GFX_archaeology_runes_A5",
+              "event": "arcsite.1020"
+            },
+            "on_roll_failed": {
+              "from": {
+                "standard_archaeological_site_on_roll_failed": {
+                  "RANDOM_EVENTS": "site_ice_trauma_random_events"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_base_game_arc_sites.txt",
+    "_line_number": 343
+  },
+  "site_engineered_species": {
+    "site_engineered_species": {
+      "desc": "site_engineered_species_desc",
+      "picture": "GFX_evt_alien_wildlife",
+      "stages": "5",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "25",
+          "habitable_planet": "yes"
+        }
+      },
+      "max_instances": "1",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": {
+            "icon": "GFX_archaeology_runes_A1",
+            "event": "arcsite.2000"
+          },
+          "stage": {
+            "difficulty": {
+              "icon": "GFX_archaeology_runes_A5",
+              "event": "arcsite.2040"
+            },
+            "on_roll_failed": {
+              "from": {
+                "standard_archaeological_site_on_roll_failed": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_base_game_arc_sites.txt",
+    "_line_number": 409
+  },
+  "site_debris_belt": {
+    "site_debris_belt": {
+      "desc": "site_debris_belt_desc",
+      "picture": "GFX_evt_space_debris",
+      "stages": "4",
+      "weight": "0 #set via initialiser",
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "on_visible": {
+          "country_event": {},
+          "_comments": [
+            "#difficulty a bit high because gives relic at end"
+          ],
+          "stage": {
+            "difficulty": "6",
+            "icon": "GFX_archaeology_runes_C4",
+            "event": "arcsite.2520"
+          },
+          "on_roll_failed": {
+            "from": {
+              "standard_archaeological_site_on_roll_failed": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_base_game_arc_sites.txt",
+    "_line_number": 465
+  },
+  "site_krazura_dig": {
+    "site_krazura_dig": {
+      "desc": "site_krazura_desc",
+      "picture": "GFX_evt_overgrown_city",
+      "stages": "5",
+      "weight": {
+        "base": "0",
+        "modifier": {
+          "add": "15",
+          "habitable_planet": "yes"
+        }
+      },
+      "allow": {
+        "exists": "leader",
+        "leader": {},
+        "visible": {
+          "default_site_visible_trigger": "yes"
+        },
+        "stage": {
+          "difficulty": "6",
+          "icon": "GFX_archaeology_runes_A5",
+          "event": "arcsite.3045"
+        },
+        "on_roll_failed": {
+          "from": {
+            "standard_archaeological_site_on_roll_failed": {}
+          }
+        }
+      }
+    },
+    "_source_file": "00_base_game_arc_sites.txt",
+    "_line_number": 511
+  }
+}

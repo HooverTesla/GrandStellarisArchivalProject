@@ -1,0 +1,159 @@
+{
+  "ship_event": {
+    "ship_event": {
+      "id": "anomaly_failure.4012",
+      "title": "DISC_CRITICAL_FAILURE",
+      "desc": "anomaly_failure.4012.desc",
+      "picture": "GFX_evt_exploding_ship",
+      "show_sound": "event_ship_explosion",
+      "location": "fromfrom",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "fromfrom": {
+          "fleet": {},
+          "owner": {},
+          "option": {
+            "name": "TERRIBLE",
+            "custom_tooltip": "anomaly_failure.4012.a.tooltip"
+          }
+        }
+      }
+    },
+    "_source_file": "failures.txt",
+    "_line_number": 575
+  },
+  "country_event": {
+    "country_event": {
+      "id": "anomaly_failure.4158",
+      "title": "PROJECT_FAILURE",
+      "desc": "anomaly_failure.4158.desc",
+      "picture": "GFX_evt_society_research",
+      "show_sound": "event_activating_unknown_technology",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "add_modifier": {
+          "modifier": "fertility_virus",
+          "days": "3600"
+        },
+        "hidden_effect": {
+          "random_galaxy_planet": {
+            "limit": {
+              "has_planet_flag": "cryo_pod_planet"
+            },
+            "save_event_target_as": "WarriorHomePlanet"
+          }
+        }
+      },
+      "option": {
+        "name": "CURSES",
+        "custom_tooltip": "anomaly_failure.4158.a.tooltip",
+        "hidden_effect": {
+          "random_galaxy_planet": {
+            "limit": {
+              "has_planet_flag": "cryo_pod_planet"
+            },
+            "remove_planet_flag": "cryo_pod_planet"
+          }
+        }
+      }
+    },
+    "_source_file": "failures.txt",
+    "_line_number": 409
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "anomaly_failure.4170",
+      "title": "DISC_FAILURE",
+      "desc": {
+        "text": "anomaly_failure.4170.basic.desc",
+        "trigger": {
+          "owner": {
+            "NOR": {
+              "has_ethic": "ethic_egalitarian"
+            }
+          }
+        }
+      },
+      "picture": "GFX_evt_nuclear_explosion",
+      "show_sound": "event_ship_explosion",
+      "location": "from",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "hidden_effect": {
+          "from": {
+            "if": {
+              "limit": {
+                "random_owned_pop": {
+                  "kill_pop": "yes"
+                },
+                "owner": {
+                  "break": "yes"
+                },
+                "if": {
+                  "limit": {
+                    "random_owned_pop": {
+                      "kill_pop": "yes"
+                    },
+                    "owner": {
+                      "break": "yes"
+                    },
+                    "if": {
+                      "limit": {
+                        "random_owned_pop": {
+                          "kill_pop": "yes"
+                        },
+                        "owner": {
+                          "break": "yes"
+                        },
+                        "if": {
+                          "limit": {
+                            "OR": {
+                              "num_pops": "2"
+                            }
+                          },
+                          "owner": {
+                            "break": "yes"
+                          }
+                        }
+                      }
+                    },
+                    "option": {
+                      "name": "CURSES",
+                      "custom_tooltip": "anomaly_failure.4170.a.tooltip",
+                      "trigger": {
+                        "owner": {}
+                      },
+                      "option": {
+                        "name": "CURSES",
+                        "custom_tooltip": "anomaly_failure.4170.b.tooltip",
+                        "trigger": {
+                          "owner": {}
+                        },
+                        "option": {
+                          "name": "CURSES",
+                          "custom_tooltip": "anomaly_failure.4170.c.tooltip",
+                          "trigger": {
+                            "owner": {}
+                          },
+                          "option": {
+                            "name": "CURSES",
+                            "custom_tooltip": "anomaly_failure.4170.d.tooltip",
+                            "trigger": {
+                              "owner": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "failures.txt",
+    "_line_number": 463
+  }
+}

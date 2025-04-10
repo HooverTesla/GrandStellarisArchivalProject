@@ -1,0 +1,217 @@
+{
+  "fleet_event": {
+    "fleet_event": {
+      "id": "unique.65",
+      "title": "unique.65.title",
+      "desc": {
+        "trigger": {
+          "owner": {},
+          "text": "unique.65.desc"
+        },
+        "desc": {
+          "trigger": {
+            "owner": {},
+            "text": "unique.65.desc.machine"
+          },
+          "picture": "GFX_evt_wormhole",
+          "show_sound": "event_dig_site",
+          "location": "from",
+          "archaeology": "yes",
+          "is_triggered_only": "yes",
+          "immediate": {
+            "from": {},
+            "after": {
+              "from": {},
+              "option": {
+                "name": {
+                  "text": "unique.65.b",
+                  "trigger": {
+                    "owner": {
+                      "is_machine_empire": "yes",
+                      "NOT": {}
+                    }
+                  },
+                  "name": {
+                    "text": "unique.65.d",
+                    "trigger": {
+                      "owner": {
+                        "is_machine_empire": "yes",
+                        "has_valid_civic": "civic_machine_terminator"
+                      }
+                    }
+                  },
+                  "owner": {
+                    "add_monthly_resource_mult": {
+                      "resource": "society_research",
+                      "value": "@tier3researchreward",
+                      "min": "@tier3researchmin",
+                      "max": "@tier3researchmax"
+                    }
+                  }
+                },
+                "option": {
+                  "name": "unique.65.c",
+                  "trigger": {
+                    "owner": {
+                      "is_machine_empire": "yes",
+                      "NOT": {}
+                    },
+                    "hidden_effect": {
+                      "from.planet.orbit": {
+                        "owner": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "unique_system_events.txt",
+    "_line_number": 525
+  },
+  "country_event": {
+    "country_event": {
+      "id": "unique.135",
+      "title": "unique.135.name",
+      "desc": {
+        "trigger": {
+          "owner": {
+            "is_memorialist_empire": "yes"
+          }
+        },
+        "text": "unique.135.desc.memorialist"
+      },
+      "picture": "GFX_evt_exploding_ship",
+      "show_sound": "event_scanner",
+      "location": "fromfrom.solar_system",
+      "is_triggered_only": "yes",
+      "specimen": "missile_lone_defender",
+      "trigger": {
+        "fromfromfrom": {
+          "has_fleet_flag": "lone_defender_fleet"
+        }
+      },
+      "option": {
+        "name": "unique.135.b.memorialist",
+        "custom_tooltip": "unique.135.b.memorialist.tt",
+        "trigger": {
+          "owner": {
+            "OR": {
+              "has_civic": "civic_hive_memorialist"
+            }
+          }
+        },
+        "hidden_effect": {
+          "fromfrom.solar_system": {
+            "random_system_planet": {
+              "limit": {
+                "has_planet_flag": "lone_defender_star"
+              },
+              "set_name": "$Lone_Defender_message$"
+            },
+            "set_name": "$Lone_Defender_message$"
+          }
+        },
+        "add_monthly_resource_mult": {
+          "resource": "unity",
+          "value": "@tier3unityreward",
+          "min": "@tier3unitymin",
+          "max": "@tier3unitymax"
+        }
+      }
+    },
+    "_source_file": "unique_system_events.txt",
+    "_line_number": 1154
+  },
+  "ship_event": {
+    "ship_event": {
+      "id": "unique.140",
+      "title": "unique.140.name",
+      "desc": "unique.140.desc",
+      "picture": "GFX_evt_habitat",
+      "show_sound": "event_finding_loot",
+      "location": "from",
+      "fire_only_once": "yes",
+      "is_triggered_only": "yes",
+      "specimen": "star_mall_map",
+      "trigger": {
+        "from": {
+          "has_star_flag": "star_mall",
+          "any_fleet_in_system": {
+            "NOT": {}
+          }
+        },
+        "immediate": {
+          "solar_system": {
+            "random_system_planet": {
+              "limit": {
+                "is_planet_class": "pc_habitat",
+                "has_planet_flag": "star_mall_habitat"
+              },
+              "save_event_target_as": "star_mall_cleaners",
+              "set_name": "NAME_Star_Mall"
+            },
+            "create_country": {
+              "name": "NAME_Star_Mall_Parking_Services",
+              "type": "no_contact_neutral_faction",
+              "effect": {
+                "establish_communications_no_message": "root.owner",
+                "set_faction_hostility": {
+                  "target": "root.owner",
+                  "set_hostile": "no",
+                  "set_neutral": "no",
+                  "set_friendly": "yes"
+                },
+                "set_country_flag": "star_mall_cleaners"
+              }
+            },
+            "last_created_country": {
+              "create_fleet": {
+                "name": "NAME_Star_Mall_Parking_Drones",
+                "settings": {
+                  "effect": {
+                    "set_owner": "PREV",
+                    "set_fleet_flag": "star_mall_fleet",
+                    "while": {
+                      "count": "4",
+                      "create_ship": {
+                        "name": "",
+                        "design": "NAME_Star_Mall_Parking_Drone"
+                      }
+                    },
+                    "set_location": "event_target:star_mall_cleaners",
+                    "queue_actions": {
+                      "repeat": {
+                        "find_closest_planet": {
+                          "trigger": {
+                            "id": "star_mall.1.trigger.7",
+                            "has_planet_flag": "star_mall_patrol_7"
+                          },
+                          "found_planet": {
+                            "move_to": "this",
+                            "orbit_planet": "THIS",
+                            "wait": {
+                              "duration": "10"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "option": {
+            "name": "unique.140.a"
+          }
+        }
+      }
+    },
+    "_source_file": "unique_system_events.txt",
+    "_line_number": 1275
+  }
+}

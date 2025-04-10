@@ -1,0 +1,196 @@
+{
+  "planet_event": {
+    "planet_event": {
+      "id": "situation.1095",
+      "title": "situation.1095.name",
+      "desc": "situation.1095.desc",
+      "picture": "GFX_evt_shrouded_planet",
+      "is_triggered_only": "yes",
+      "location": "this",
+      "option": {
+        "name": {
+          "text": "situation.1095.a",
+          "trigger": {
+            "owner": {}
+          },
+          "name": {
+            "text": "situation.1095.b",
+            "trigger": {
+              "owner": {}
+            },
+            "remove_modifier": "horror_too_late",
+            "tooltip": {
+              "random_list": {
+                "2": {
+                  "1": {}
+                },
+                "hidden_effect": {
+                  "switch": {
+                    "trigger": "has_planet_flag",
+                    "black_hole_horror": {
+                      "clear_planet_modifiers": "yes",
+                      "every_owned_pop": {
+                        "kill_pop": "yes"
+                      },
+                      "destroy_colony": "yes",
+                      "set_planet_size": "2",
+                      "change_pc": "pc_black_hole",
+                      "reset_planet": "yes",
+                      "create_ambient_object": {
+                        "type": "dimensional_horrorling_object",
+                        "scale": "0.2",
+                        "location": "root",
+                        "use_3d_location": "yes",
+                        "entity_offset_height": "1"
+                      }
+                    },
+                    "stabilized_horror": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "situation_events.txt",
+    "_line_number": 4996
+  },
+  "situation_event": {
+    "situation_event": {
+      "id": "situation.1180",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "after": {
+        "destroy_situation": "this"
+      }
+    },
+    "_source_file": "situation_events.txt",
+    "_line_number": 5664
+  },
+  "country_event": {
+    "country_event": {
+      "id": "situation.1165",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "location": "capital_star",
+      "trigger": {
+        "any_situation": {
+          "is_situation_type": "situation_stellarite_infested_star"
+        }
+      },
+      "immediate": {
+        "set_country_flag": "studied_stellarite_infestation",
+        "random_situation": {
+          "limit": {
+            "is_situation_type": "situation_stellarite_infested_star"
+          },
+          "set_situation_approach": "approach_cure_it"
+        },
+        "if": {
+          "limit": {
+            "is_ai": "yes",
+            "check_variable_arithmetic": {
+              "which": "value:capital_empire_ratio"
+            }
+          },
+          "set_country_flag": "will_not_stop_devourers"
+        }
+      }
+    },
+    "_source_file": "situation_events.txt",
+    "_line_number": 5522
+  },
+  "event": {
+    "event": {
+      "id": "situation.2000",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "trigger": {
+        "has_nemesis": "yes",
+        "has_global_flag": "kaleidoscope_will_spawn",
+        "NOT": {},
+        "immediate": {
+          "initialize_kaleidoscope": "yes",
+          "_comments": [
+            "#initialize global state-tracking variables",
+            "# Picks a country"
+          ],
+          "random_list": {
+            "5": {
+              "random_playable_country": {
+                "limit": {
+                  "is_ai": "no",
+                  "capital_scope": {
+                    "NOT": {}
+                  },
+                  "country_event": {}
+                },
+                "3": {
+                  "random_playable_country": {
+                    "limit": {
+                      "is_ai": "no"
+                    },
+                    "random_neighbor_country": {
+                      "limit": {
+                        "is_country_type": "default",
+                        "capital_scope": {
+                          "NOT": {}
+                        },
+                        "country_event": {}
+                      }
+                    },
+                    "1": {
+                      "random_playable_country": {
+                        "limit": {
+                          "is_ai": "yes",
+                          "is_country_type": "default",
+                          "capital_scope": {
+                            "NOT": {}
+                          },
+                          "country_event": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "situation_events.txt",
+    "_line_number": 2833
+  },
+  "espionage_operation_event": {
+    "espionage_operation_event": {
+      "id": "situation.1135",
+      "title": "situation.1135.name",
+      "desc": "situation.1135.desc",
+      "picture": "GFX_evt_space_funeral",
+      "location": "target.capital_star",
+      "is_triggered_only": "yes",
+      "immediate": {
+        "set_espionage_operation_progress_locked": "yes"
+      },
+      "option": {
+        "name": "LAUNCH_OPERATION",
+        "hidden_effect": {
+          "target": {
+            "set_country_flag": "has_infested_star"
+          },
+          "owner": {
+            "set_country_flag": "infested_star@root.target",
+            "country_event": {}
+          }
+        },
+        "after": {
+          "set_espionage_operation_progress_locked": "no"
+        }
+      }
+    },
+    "_source_file": "situation_events.txt",
+    "_line_number": 5341
+  }
+}

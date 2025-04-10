@@ -1,0 +1,100 @@
+{
+  "treaties_separate_no": {
+    "treaties_separate_no": {
+      "potential": {
+        "host_has_dlc": "Federations",
+        "NOT": {},
+        "allow": {
+          "custom_tooltip": {
+            "NOT": {
+              "AND": {
+                "NOT": {
+                  "has_modifier": "federation_law_category_separate_treaties_cooldown",
+                  "has_any_federation_law_in_category": "law_category_separate_treaties"
+                }
+              }
+            }
+          },
+          "required_centralization": {
+            "base": "2"
+          },
+          "cohesion_growth": "-0.10",
+          "on_enact": {
+            "if": {
+              "limit": {
+                "add_modifier": {
+                  "modifier": "federation_law_category_separate_treaties_cooldown",
+                  "days": "@cooldown"
+                }
+              },
+              "add_cohesion": "-5",
+              "every_member": {
+                "country_event": {}
+              },
+              "ai_weight": {
+                "base": "0",
+                "_comments": [
+                  "#Default support",
+                  "#Behaviour-specific"
+                ],
+                "modifier": {
+                  "desc": "federation_acceptance_president",
+                  "add": "50",
+                  "is_xenophobe": "yes",
+                  "is_federation_leader": "yes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "12_separate_treaties.txt",
+    "_line_number": 4
+  },
+  "treaties_separate_yes": {
+    "treaties_separate_yes": {
+      "potential": {
+        "NOT": {},
+        "allow": {
+          "custom_tooltip": {
+            "NOT": {
+              "AND": {
+                "NOT": {
+                  "has_modifier": "federation_law_category_separate_treaties_cooldown",
+                  "has_any_federation_law_in_category": "law_category_separate_treaties"
+                }
+              }
+            }
+          },
+          "on_enact": {
+            "if": {
+              "limit": {
+                "add_modifier": {
+                  "modifier": "federation_law_category_separate_treaties_cooldown",
+                  "days": "@cooldown"
+                }
+              },
+              "add_cohesion": "-5"
+            },
+            "ai_weight": {
+              "base": "0",
+              "_comments": [
+                "#Default support",
+                "#Behaviour-specific"
+              ],
+              "modifier": {
+                "desc": "federation_acceptance_president",
+                "add": "50",
+                "is_xenophile": "yes",
+                "is_federation_leader": "yes"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "12_separate_treaties.txt",
+    "_line_number": 62
+  }
+}

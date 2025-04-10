@@ -1,0 +1,81 @@
+{
+  "planet_event": {
+    "planet_event": {
+      "id": "necroids.25",
+      "is_triggered_only": "yes",
+      "hide_window": "yes",
+      "trigger": {
+        "from": {
+          "has_ascension_perk": "ap_mechromancy"
+        },
+        "exists": "fromfrom #crisis.202 can remove the last pop",
+        "fromfrom": {
+          "NOR": {
+            "has_purge_type": {
+              "type": "purge_cosmogenesis_lathe_resettle"
+            }
+          },
+          "is_robotic_species": "no",
+          "species": {
+            "NOT": {},
+            "NOR": {
+              "has_trait": "trait_zombie"
+            }
+          }
+        },
+        "immediate": {
+          "random_list": {
+            "66": {
+              "_comments": [
+                "# 33% Chance to create a cyber-zombie per pop."
+              ],
+              "33": {
+                "create_pop": {
+                  "species": "fromfrom.species"
+                },
+                "last_created_pop": {
+                  "modify_species": {
+                    "species": "this",
+                    "add_trait": "trait_zombie",
+                    "add_traits_at_start_of_list": "yes",
+                    "remove_trait": "trait_psionic"
+                  },
+                  "set_citizenship_type": {
+                    "country": "root.owner",
+                    "type": "citizenship_full_machine"
+                  },
+                  "if": {
+                    "limit": {
+                      "root.owner": {
+                        "is_machine_empire": "yes",
+                        "has_civic": "civic_machine_assimilator"
+                      }
+                    },
+                    "root.owner": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "necroids_events_1.txt",
+    "_line_number": 768
+  },
+  "country_event": {
+    "country_event": {
+      "id": "necroids.20",
+      "title": "necroids.20.name",
+      "show_sound": "event_necrophage",
+      "picture": "GFX_evt_mechromancy",
+      "is_triggered_only": "yes",
+      "desc": "necroids.20.desc",
+      "option": {
+        "name": "necroids.20.a"
+      }
+    },
+    "_source_file": "necroids_events_1.txt",
+    "_line_number": 749
+  }
+}

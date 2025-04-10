@@ -1,0 +1,220 @@
+{
+  "slavery_normal": {
+    "slavery_normal": {
+      "pop_modifier": {
+        "planet_jobs_produces_mult": "0.10",
+        "pop_happiness": "-0.30"
+      },
+      "in_breach_of": {},
+      "potential": {
+        "from": {},
+        "allow": {
+          "hidden_trigger": {
+            "is_sapient": "yes"
+          },
+          "ai_will_do": {
+            "factor": "1",
+            "modifier": {
+              "factor": "1.5",
+              "has_trait": "trait_very_strong"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_slavery_types.txt",
+    "_line_number": 5
+  },
+  "slavery_domestic": {
+    "slavery_domestic": {
+      "pop_modifier": {
+        "pop_happiness": "-0.20"
+      },
+      "potential": {
+        "host_has_dlc": "Utopia",
+        "from": {},
+        "allow": {
+          "hidden_trigger": {
+            "is_sapient": "yes"
+          },
+          "ai_will_do": {
+            "factor": "3",
+            "modifier": {
+              "factor": "0",
+              "NOR": {
+                "has_trait": "trait_charismatic",
+                "AND": {
+                  "from": {
+                    "is_galactic_community_member": "yes"
+                  },
+                  "OR": {
+                    "is_active_resolution": "resolution_greatergood_universal_prosperity_mandate"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_slavery_types.txt",
+    "_line_number": 53
+  },
+  "slavery_military": {
+    "slavery_military": {
+      "modifier": {
+        "army_damage_mult": "0.2"
+      },
+      "pop_modifier": {
+        "pop_happiness": "-0.20"
+      },
+      "potential": {
+        "host_has_dlc": "Utopia",
+        "from": {},
+        "allow": {
+          "hidden_trigger": {
+            "is_sapient": "yes"
+          },
+          "ai_will_do": {
+            "factor": "5",
+            "modifier": {
+              "factor": "0",
+              "NOT": {}
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_slavery_types.txt",
+    "_line_number": 89
+  },
+  "slavery_indentured": {
+    "slavery_indentured": {
+      "pop_modifier": {
+        "pop_happiness": "-0.20",
+        "pop_political_power": "0.50"
+      },
+      "potential": {
+        "host_has_dlc": "Utopia",
+        "from": {},
+        "allow": {
+          "hidden_trigger": {
+            "is_sapient": "yes"
+          },
+          "ai_can_colonize": "yes #otherwise, AI will not colonise with enslaved species",
+          "ai_will_do": {
+            "factor": "30",
+            "modifier": {
+              "factor": "10",
+              "from": {},
+              "modifier": {
+                "factor": "0",
+                "has_trait": "trait_syncretic_proles"
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_slavery_types.txt",
+    "_line_number": 116
+  },
+  "slavery_matrix": {
+    "slavery_matrix": {
+      "pop_modifier": {
+        "pop_happiness": "-0.40"
+      },
+      "pop_tooltip": "MATRIX_LIVESTOCK",
+      "pop_status_frame": "6",
+      "potential": {
+        "from": {
+          "NOT": {},
+          "in_breach_of": {},
+          "allow": {
+            "hidden_trigger": {},
+            "ai_will_do": {
+              "factor": "50"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_slavery_types.txt",
+    "_line_number": 156
+  },
+  "slavery_livestock": {
+    "slavery_livestock": {
+      "pop_modifier": {
+        "pop_happiness": "-0.40"
+      },
+      "pop_tooltip": "LIVESTOCK",
+      "pop_status_frame": "6",
+      "potential": {
+        "host_has_dlc": "Utopia",
+        "OR": {
+          "from": {
+            "AND": {
+              "from": {
+                "from": {}
+              }
+            },
+            "in_breach_of": {},
+            "allow": {
+              "hidden_trigger": {
+                "custom_tooltip": {
+                  "fail_text": "noxious_stock",
+                  "NOT": {}
+                },
+                "ai_will_do": {
+                  "factor": "3",
+                  "modifier": {
+                    "factor": "0",
+                    "NOR": {
+                      "has_trait": "trait_delicious",
+                      "from": {}
+                    },
+                    "modifier": {
+                      "factor": "0.5",
+                      "from": {
+                        "is_galactic_community_member": "yes"
+                      },
+                      "OR": {
+                        "is_active_resolution": "resolution_greatergood_universal_prosperity_mandate"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_slavery_types.txt",
+    "_line_number": 183
+  },
+  "slavery_matrix_guided_sapience": {
+    "slavery_matrix_guided_sapience": {
+      "pop_modifier": {
+        "pop_happiness": "0.10"
+      },
+      "pop_tooltip": "MATRIX_LIVESTOCK_GUIDED",
+      "pop_status_frame": "6",
+      "potential": {
+        "has_machine_age_dlc": "yes",
+        "from": {
+          "from": {},
+          "in_breach_of": {},
+          "allow": {
+            "hidden_trigger": {},
+            "ai_will_do": {
+              "factor": "50"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_slavery_types.txt",
+    "_line_number": 255
+  }
+}

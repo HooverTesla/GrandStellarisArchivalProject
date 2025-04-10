@@ -1,0 +1,82 @@
+{
+  "automate_refinery_planet": {
+    "automate_refinery_planet": {
+      "category": "planet_automation_designation_construction",
+      "available": {
+        "has_refinery_designation": "yes"
+      },
+      "buildings": {
+        "1": {
+          "building": "building_capital",
+          "available": {
+            "always": "yes"
+          }
+        },
+        "2": {
+          "building": "building_archaeo_refinery",
+          "available": {
+            "num_buildings": {
+              "owner": {}
+            },
+            "3": {
+              "building": "building_chemical_plant",
+              "available": {
+                "num_buildings": {}
+              },
+              "4": {
+                "building": "building_refinery",
+                "available": {
+                  "num_buildings": {}
+                },
+                "5": {
+                  "building": "building_crystal_plant",
+                  "available": {
+                    "num_buildings": {}
+                  },
+                  "6": {
+                    "building": "building_chemical_plant",
+                    "available": {
+                      "num_buildings": {}
+                    },
+                    "7": {
+                      "building": "building_refinery",
+                      "available": {
+                        "num_buildings": {}
+                      },
+                      "8": {
+                        "building": "building_crystal_plant",
+                        "available": {
+                          "num_buildings": {}
+                        },
+                        "9": {
+                          "building": "building_chemical_plant",
+                          "available": {
+                            "num_buildings": {}
+                          },
+                          "10": {
+                            "building": "building_refinery",
+                            "available": {
+                              "num_buildings": {}
+                            },
+                            "11": {
+                              "building": "building_crystal_plant",
+                              "available": {
+                                "num_buildings": {}
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "00_refinery_automation.txt",
+    "_line_number": 11
+  }
+}

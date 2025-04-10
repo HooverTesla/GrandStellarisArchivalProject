@@ -1,0 +1,38 @@
+{
+  "projectile_gfx_beam": {
+    "projectile_gfx_beam": {
+      "name": "dark_matter_laser_s",
+      "_comments": [
+        "#common for all types of projectiles",
+        "#\tcolor = { 0.6 \t0.25 \t0.97 \t1 }"
+      ],
+      "color": {
+        "hit_entity": "dark_matter_laser_small_hit_entity",
+        "shield_hit_entity": "dark_matter_laser_small_shield_hit_entity",
+        "muzzle_flash_entity": "dark_matter_laser_small_muzzle_entity",
+        "width": "2.0",
+        "_comments": [
+          "#beam specific data"
+        ],
+        "texture_scroll_speed": "0.15",
+        "texture_tiling": "50.0",
+        "hit": {
+          "alpha_curve": {},
+          "duration": "1.0"
+        },
+        "miss": {
+          "alpha_curve": {},
+          "duration": "0.35"
+        },
+        "texture": "gfx/models/combat_items/black_matter_laser.dds",
+        "shield_impact": {
+          "size": "small",
+          "loop_duration": "0.5",
+          "delay": "0.1"
+        }
+      }
+    },
+    "_source_file": "lasers.txt",
+    "_line_number": 1237
+  }
+}

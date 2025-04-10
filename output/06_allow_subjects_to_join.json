@@ -1,0 +1,108 @@
+{
+  "allow_subjects_to_join_no": {
+    "allow_subjects_to_join_no": {
+      "potential": {
+        "NOT": {},
+        "allow": {
+          "custom_tooltip": {
+            "fail_text": "disabled_for_hegemony",
+            "NOT": {},
+            "custom_tooltip": {
+              "NOT": {
+                "AND": {
+                  "NOT": {
+                    "has_modifier": "federation_law_category_allow_subjects_to_join_cooldown",
+                    "has_any_federation_law_in_category": "law_category_allow_subjects_to_join"
+                  }
+                }
+              }
+            },
+            "on_enact": {
+              "set_allow_subjects_to_join": "no",
+              "if": {
+                "limit": {
+                  "add_modifier": {
+                    "modifier": "federation_law_category_allow_subjects_to_join_cooldown",
+                    "days": "@cooldown"
+                  }
+                },
+                "random_member": {
+                  "country_event": {}
+                },
+                "ai_weight": {
+                  "base": "0",
+                  "_comments": [
+                    "#Default support"
+                  ],
+                  "modifier": {
+                    "desc": "federation_acceptance_weaker",
+                    "add": "25",
+                    "relative_power": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "06_allow_subjects_to_join.txt",
+    "_line_number": 4
+  },
+  "allow_subjects_to_join_yes": {
+    "allow_subjects_to_join_yes": {
+      "potential": {
+        "host_has_dlc": "Federations",
+        "NOT": {},
+        "allow": {
+          "custom_tooltip": {
+            "NOT": {
+              "AND": {
+                "NOT": {
+                  "has_modifier": "federation_law_category_allow_subjects_to_join_cooldown",
+                  "has_any_federation_law_in_category": "law_category_allow_subjects_to_join"
+                }
+              }
+            }
+          },
+          "on_enact": {
+            "set_allow_subjects_to_join": "yes",
+            "if": {
+              "limit": {
+                "add_modifier": {
+                  "modifier": "federation_law_category_allow_subjects_to_join_cooldown",
+                  "days": "@cooldown"
+                }
+              },
+              "random_member": {
+                "country_event": {}
+              },
+              "ai_weight": {
+                "base": "0",
+                "_comments": [
+                  "#Default support"
+                ],
+                "modifier": {
+                  "desc": "federation_acceptance_weaker",
+                  "add": "25",
+                  "relative_power": {},
+                  "_comments": [
+                    "#Behaviour-specific"
+                  ],
+                  "modifier": {
+                    "desc": "federation_acceptance_has_no_subjects",
+                    "add": "-25",
+                    "is_subject": "no",
+                    "subjects": "0"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "06_allow_subjects_to_join.txt",
+    "_line_number": 56
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "preset_vassal_mean_01": {
+    "preset_vassal_mean_01": {
+      "parent": "preset_vassal",
+      "icon": "GFX_diplomacy_status_is_vassal",
+      "hidden": "yes",
+      "term_data": {
+        "discrete_terms": {}
+      },
+      "overlord_weight": {
+        "base": "125"
+      },
+      "subject_weight": {
+        "base": "-100"
+      },
+      "potential": {
+        "from": {
+          "NOR": {
+            "is_megacorp": "yes",
+            "is_country_type": "awakened_fallen_empire",
+            "has_civic": "civic_inwards_perfection"
+          }
+        },
+        "NOT": {
+          "tech_unlocked_ratio": {
+            "who": "from",
+            "ratio >": "@protectorate_tech_threshold"
+          }
+        }
+      }
+    },
+    "_source_file": "01_agreement_presets_ai_vassal.txt",
+    "_line_number": 4
+  },
+  "preset_vassal_mean_02": {
+    "preset_vassal_mean_02": {
+      "parent": "preset_vassal",
+      "icon": "GFX_diplomacy_status_is_vassal",
+      "hidden": "yes",
+      "term_data": {
+        "resource_terms": {},
+        "discrete_terms": {}
+      },
+      "overlord_weight": {
+        "base": "150"
+      },
+      "subject_weight": {
+        "base": "-250"
+      },
+      "potential": {
+        "from": {
+          "NOR": {
+            "is_megacorp": "yes",
+            "is_country_type": "awakened_fallen_empire",
+            "has_civic": "civic_inwards_perfection"
+          }
+        },
+        "NOT": {
+          "tech_unlocked_ratio": {
+            "who": "from",
+            "ratio >": "@protectorate_tech_threshold"
+          }
+        }
+      }
+    },
+    "_source_file": "01_agreement_presets_ai_vassal.txt",
+    "_line_number": 73
+  },
+  "preset_vassal_mean_03": {
+    "preset_vassal_mean_03": {
+      "parent": "preset_vassal",
+      "icon": "GFX_diplomacy_status_is_vassal",
+      "hidden": "yes",
+      "term_data": {
+        "resource_terms": {},
+        "discrete_terms": {}
+      },
+      "overlord_weight": {
+        "base": "175"
+      },
+      "subject_weight": {
+        "base": "-500"
+      },
+      "potential": {
+        "from": {
+          "NOR": {
+            "is_megacorp": "yes",
+            "is_country_type": "awakened_fallen_empire",
+            "has_civic": "civic_inwards_perfection"
+          }
+        },
+        "NOT": {
+          "tech_unlocked_ratio": {
+            "who": "from",
+            "ratio >": "@protectorate_tech_threshold"
+          }
+        }
+      }
+    },
+    "_source_file": "01_agreement_presets_ai_vassal.txt",
+    "_line_number": 152
+  },
+  "preset_vassal_nice_01": {
+    "preset_vassal_nice_01": {
+      "parent": "preset_vassal",
+      "icon": "GFX_diplomacy_status_is_vassal",
+      "hidden": "yes",
+      "term_data": {
+        "discrete_terms": {}
+      },
+      "overlord_weight": {
+        "base": "75"
+      },
+      "subject_weight": {
+        "base": "50"
+      },
+      "potential": {
+        "from": {
+          "NOR": {
+            "is_megacorp": "yes",
+            "is_country_type": "awakened_fallen_empire",
+            "has_civic": "civic_inwards_perfection"
+          }
+        },
+        "NOT": {
+          "tech_unlocked_ratio": {
+            "who": "from",
+            "ratio >": "@protectorate_tech_threshold"
+          }
+        }
+      }
+    },
+    "_source_file": "01_agreement_presets_ai_vassal.txt",
+    "_line_number": 235
+  },
+  "preset_vassal_nice_02": {
+    "preset_vassal_nice_02": {
+      "parent": "preset_vassal",
+      "icon": "GFX_diplomacy_status_is_vassal",
+      "hidden": "yes",
+      "term_data": {
+        "resource_terms": {},
+        "discrete_terms": {}
+      },
+      "overlord_weight": {
+        "base": "50"
+      },
+      "subject_weight": {
+        "base": "100"
+      },
+      "potential": {
+        "from": {
+          "NOR": {
+            "is_megacorp": "yes",
+            "is_country_type": "awakened_fallen_empire",
+            "has_civic": "civic_inwards_perfection"
+          }
+        },
+        "NOT": {
+          "tech_unlocked_ratio": {
+            "who": "from",
+            "ratio >": "@protectorate_tech_threshold"
+          }
+        }
+      }
+    },
+    "_source_file": "01_agreement_presets_ai_vassal.txt",
+    "_line_number": 304
+  }
+}

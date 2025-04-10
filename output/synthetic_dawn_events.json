@@ -1,0 +1,187 @@
+{
+  "country_event": {
+    "country_event": {
+      "id": "syndaw.1305",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "host_has_dlc": "Synthetic Dawn Story Pack",
+        "last_changed_policy": "robot_pop_policy",
+        "has_policy_flag": "robots_outlawed",
+        "country_has_situation": {},
+        "immediate": {
+          "if": {
+            "limit": {
+              "NOT": {},
+              "set_country_flag": "machine_uprising_outlawed\t\t# Makes Exterminator outcome more likely.",
+              "every_situation": {
+                "limit": {
+                  "add_situation_progress": "25\t\t\t\t# Fixed, but could potentially depend on number of Specialist robots."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "synthetic_dawn_events.txt",
+    "_line_number": 3030
+  },
+  "fleet_event": {
+    "fleet_event": {
+      "id": "syndaw.32",
+      "hide_window": "yes",
+      "is_test_event": "yes",
+      "trigger": {
+        "immediate": {
+          "owner": {
+            "create_fleet_from_naval_cap": "0.4",
+            "last_created_fleet": {
+              "set_location": "root"
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "synthetic_dawn_events.txt",
+    "_line_number": 294
+  },
+  "event": {
+    "event": {
+      "id": "syndaw.400",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "host_has_dlc": "Synthetic Dawn Story Pack",
+        "mid_game_years_passed >": "-10"
+      },
+      "immediate": {
+        "every_playable_country": {
+          "limit": {
+            "NOR": {
+              "has_ethic": "ethic_gestalt_consciousness",
+              "has_country_flag": "situation_machine_uprising_started",
+              "is_individual_machine": "yes",
+              "has_policy_flag": "robots_outlawed"
+            },
+            "OR": {
+              "has_technology": "tech_synthetic_workers"
+            }
+          },
+          "random_list": {
+            "70": {
+              "30": {
+                "country_event": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "synthetic_dawn_events.txt",
+    "_line_number": 315
+  },
+  "situation_event": {
+    "situation_event": {
+      "id": "syndaw.1000",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "host_has_dlc": "Synthetic Dawn Story Pack"
+      },
+      "immediate": {
+        "owner": {
+          "if": {
+            "limit": {
+              "log": "AI [This.GetName] suffered an AI Uprising in [GetYear]"
+            },
+            "else": {
+              "log": "Player [This.GetName] suffered an AI Uprising in [GetYear]"
+            },
+            "_comments": [
+              "# no robots, no uprising",
+              "# Shouldn't end up here. But no effect just in case.",
+              "# uprising on colony"
+            ],
+            "if": {
+              "limit": {
+                "NOT": {
+                  "any_owned_planet": {
+                    "any_owned_pop": {
+                      "has_trait": "trait_mechanical"
+                    }
+                  }
+                }
+              }
+            },
+            "else_if": {
+              "limit": {
+                "any_owned_planet": {
+                  "any_owned_pop": {
+                    "has_trait": "trait_mechanical"
+                  },
+                  "is_capital": "no"
+                }
+              },
+              "random_owned_planet": {
+                "limit": {
+                  "any_owned_pop": {
+                    "has_trait": "trait_mechanical"
+                  },
+                  "is_capital": "no"
+                },
+                "planet_event": {}
+              },
+              "_comments": [
+                "# uprising wherever"
+              ],
+              "else": {
+                "random_owned_planet": {
+                  "limit": {
+                    "any_owned_pop": {
+                      "has_trait": "trait_mechanical"
+                    }
+                  },
+                  "planet_event": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_source_file": "synthetic_dawn_events.txt",
+    "_line_number": 1497
+  },
+  "planet_event": {
+    "planet_event": {
+      "id": "syndaw.1330",
+      "hide_window": "yes",
+      "is_triggered_only": "yes",
+      "trigger": {
+        "FROM": {
+          "has_valid_civic": "civic_machine_terminator"
+        },
+        "exists": "fromfrom #crisis.202 can remove the last pop",
+        "FROMFROM": {
+          "NOR": {
+            "has_trait": "trait_machine_unit"
+          }
+        },
+        "is_controlled_by": "FROM"
+      },
+      "immediate": {
+        "FROM": {
+          "add_monthly_resource_mult": {
+            "resource": "unity",
+            "value": "2",
+            "min": "5",
+            "max": "100"
+          }
+        }
+      }
+    },
+    "_source_file": "synthetic_dawn_events.txt",
+    "_line_number": 3128
+  }
+}
