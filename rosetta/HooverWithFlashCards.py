@@ -1,6 +1,12 @@
 from pathlib import Path
-import re
 import json
+
+
+def _record_source(flash_card_entry: dict, file_source: str, line_offset: int = 0) -> None:
+    sources = flash_card_entry.setdefault("__sources__", [])
+    source_info = {"_source_file": file_source, "_line_number": line_offset}
+    if source_info not in sources:
+        sources.append(source_info)
 
 
 def create_flashCards(entries: dict, flashCards: dict, file_source: str, line_offset: int = 0):
@@ -8,14 +14,8 @@ def create_flashCards(entries: dict, flashCards: dict, file_source: str, line_of
         if key.startswith("_"):
             continue  # Skip metadata keys like _source_file or _comments
 
-        # Only track the main keys (e.g., anomaly.54 not anomaly.54.desc.a)
-        base_key = key.split(".")[0] if "." in key else key
-
-        if base_key not in flashCards:
-            flashCards[base_key] = {
-                "_source_file": file_source,
-                "_line_number": line_offset
-            }
+        flashCards.setdefault(key, {})
+        _record_source(flashCards[key], file_source, line_offset)
 
     return flashCards
 
@@ -23,16 +23,31 @@ def create_flashCards(entries: dict, flashCards: dict, file_source: str, line_of
 # Merge key sets from multiple modules (like localisation, anomalies)
 def merge_keys_to_flashCards(keys: set, file_source: str, existing_flashCards: dict) -> dict:
     for key in keys:
-        # Only keep top-level keys like colony.53, not colony.53.desc or .a
-        base_key = key.split(".")[0] if "." in key else key
-        if base_key not in existing_flashCards:
-            existing_flashCards[base_key] = {"_source_file": file_source}
+        existing_flashCards.setdefault(key, {})
+        _record_source(existing_flashCards[key], file_source)
     return existing_flashCards
 
 
 # Inject file-scope variables (e.g., @foobar = 6) at top of the flashCards dictionary
-def store_variables_in_flashCards(var_dict: dict, flashCards: dict) -> dict:
-    flashCards["__variables__"] = var_dict
+def store_variables_in_flashCards(var_dict: dict, file_source: str, flashCards: dict) -> dict:
+    if not var_dict:
+        return flashCards
+
+    variables = flashCards.setdefault("__variables__", {})
+    by_file = variables.setdefault("__by_file__", {})
+    definitions = variables.setdefault("__definitions__", {})
+    global_first = variables.setdefault("__global_first__", {})
+    global_latest = variables.setdefault("__global_latest__", {})
+
+    by_file[file_source] = var_dict
+
+    for var_name, var_value in var_dict.items():
+        definitions.setdefault(var_name, []).append(
+            {"_source_file": file_source, "value": var_value}
+        )
+        global_first.setdefault(var_name, var_value)
+        global_latest[var_name] = var_value
+
     return flashCards
 
 

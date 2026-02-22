@@ -17,12 +17,15 @@ Just wanted to make sure you read the README before breaking shit and whining ab
   -> Will probably[^1] have each major category as it's own file for y'all's sakes when I inevitably do my ASD thing and find a different special interest for an indeterminate amount of time.
 ## **Unknown -> Parser**
   -> the one click shop for running the damn thing, probably[^1] just calling the other files in the folder.
+  -> 2.21.26 update, this is a static site/web tool planned first so will be just run from html aka github on stellaris.hoovertesla.com. 
+  -> 
 
 
-## ** Glossary **
- - _foo = metadata of some sort, line numbers, comments from the OG stellaris file, others
- - "FROM" is used in things like 00_diplo_greetings to reference an empire in game, NOT do the thingy that python  wants to do with dicts so it gets handled a little funny, "_EXTERNAL_FROM_BLOCK"
- - ROOT
+## Glossary
+
+  - _foo = metadata of some sort, line numbers, comments from the OG stellaris file, others
+  - "FROM" is used in things like 00_diplo_greetings to reference an empire in game, NOT do the thingy that python  wants to do with dicts so it gets handled a little funny, "_EXTERNAL_FROM_BLOCK"
+  - ROOT
 
 [^1]: - What? It's 4/5/25 and I haven't built the damn thing yet. So "probably" is me trying to premetively convince me to do good coding habits and also like, do the documentation knowing that I suck at remembering to come back and update things like this. Also if I write down the names of the files that work in my head then I will rememeber the names that make sense in my head and not switch through variants of translators/extractor from books like it's a random number generator. rn everything is shoved into one file called parse_anom_LIVE because I gave up on renaming the stupid thing every iterative update. So... probably is a good thing! Unless I don't stick to it, in which case my name is Hoover and you can mutter my name under your breath in a British Accent and pretend to be a pretentious blond jackass.
 
@@ -31,38 +34,76 @@ Just wanted to make sure you read the README before breaking shit and whining ab
 
 ***********************************************************
 ***********************************************************
+
 ## Rosetta
 
-### Required info:
-Config input/output paths
-Go line by line checking characters
-    REGEX?
- If # -> Break
-Grab val of "@variable = int" values and store them
-Grab ID from:
-  0:ID = {
-Grab desc value
-  1:  desc = "string"
-Grab picture reference/var/thingyIDKTheNameOf
-  1:  picture = val
-Grab level val OR @var and replace with value
-  1:  level = 1
-        OR
-  1:  level = @var
-Grab anything with "= {" and grab ID, and dict object.
-  1:  spawn_chance = {
-        modifier = {
-          add = int
-          is_asteroid = bool
-          num_minerals (<, >, ==, !=) int
-        }
-  }
-Grab max_once bool
-  1:  max_once = yes/no
+### To Do
+
+    - Grab image files
+    - Grab gfx instructions for those file guides
+
+***Forge is the information handler***
+
+### Images
+
+    - Grab images
+    - Copy to .\assets\img
+    - Convert .dds to .webp
+
+### Technology
+
+    - Build new python version to take Rosetta out -> STT in
+      - aka replace the weird gross java version
+
+### Search
+
+### Chain builder
+
+***Each type of result have it's own builder***
+
+    - When searching needs to grab references and build chain before and after results.  
+    - Will need to use a style reference thingy for UI
+        - or something idk about this part
+
+### Anomalies
+
+    - name
+    - Description
+    - image
+    - tier
+    - Spawn requirements
+      - stellar body type
+      - modifiers
+    - results
+      - rewards
+      - hazards
+        - if any
+      
+
+
+### Arc Sites
+
+### Astral Rifts
+
+### Events
+
+***Coming soon***
+
+- relics
+- Collection
+- Megastructures
+- 
 
 
 
+***********************************************************
+***********************************************************
+Returning 1.23.26
 
+I have no idea what's going tbh. 
 
-Throw this away ask ChatGPT to give you code that translates PDX to JSON.
-Then ask it to add the @var shit
+Returning 2.22.26
+
+Ditto Me, ditto. 
+***********************************************************
+***********************************************************

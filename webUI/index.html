@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grand Stellaris Archive</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <h1>Grand Stellaris Archive</h1>
+      <p id="manifest-meta" class="meta">Loading manifest...</p>
+    </header>
+
+    <section class="toolbar">
+      <label for="locale-select">Language</label>
+      <select id="locale-select"></select>
+
+      <label for="anomaly-id-input">Anomaly / Category ID</label>
+      <input id="anomaly-id-input" list="anomaly-id-list" placeholder="e.g. crashed_ship_asteroid_category">
+      <datalist id="anomaly-id-list"></datalist>
+
+      <button id="load-anomaly-button" type="button">Load Chain</button>
+    </section>
+
+    <section id="status-panel" class="status-panel"></section>
+
+    <section id="anomaly-panel" class="panel"></section>
+    <section id="events-panel" class="panel"></section>
+    <section id="arc-sites-panel" class="panel"></section>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

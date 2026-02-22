@@ -1,0 +1,149 @@
+:root {
+  --bg: #0c1116;
+  --panel: #141b22;
+  --panel-2: #10161c;
+  --line: #304351;
+  --text: #e6edf3;
+  --muted: #9fb0bf;
+  --accent: #4dc6a6;
+  --warn: #ffb84d;
+  --error: #ff6b6b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 700px at 15% -10%, #1a2b33 0%, transparent 60%),
+    radial-gradient(900px 600px at 100% 0%, #20283e 0%, transparent 50%),
+    var(--bg);
+}
+
+.app-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.toolbar {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr 1fr 2fr auto;
+  align-items: end;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.9rem;
+}
+
+.toolbar label {
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+.toolbar select,
+.toolbar input,
+.toolbar button {
+  width: 100%;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel-2);
+  color: var(--text);
+}
+
+.toolbar button {
+  background: linear-gradient(180deg, #1f7462 0%, #165749 100%);
+  border-color: #27846f;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.toolbar button:hover {
+  filter: brightness(1.08);
+}
+
+.status-panel {
+  min-height: 2rem;
+  padding: 0.65rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.status-panel.ok {
+  border-color: #247a66;
+  color: #9ce8d8;
+}
+
+.status-panel.warn {
+  border-color: #9a6d1d;
+  color: var(--warn);
+}
+
+.status-panel.error {
+  border-color: #923333;
+  color: var(--error);
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.9rem;
+}
+
+.panel h2 {
+  margin-top: 0;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.75rem;
+  background: #121920;
+  margin-bottom: 0.65rem;
+}
+
+.card h3 {
+  margin: 0 0 0.45rem;
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+img {
+  display: block;
+  max-width: min(100%, 520px);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  margin-top: 0.6rem;
+}
+
+.stage-list {
+  margin: 0.35rem 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .toolbar {
+    grid-template-columns: 1fr;
+  }
+}
