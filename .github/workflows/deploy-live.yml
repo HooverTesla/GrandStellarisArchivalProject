@@ -93,8 +93,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          umask 177
           mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          umask 077
           printf '%s\n' "$SG_SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/sg_deploy_key
           chmod 600 ~/.ssh/sg_deploy_key
           echo "Loaded deploy key fingerprint:"
