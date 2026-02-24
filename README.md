@@ -50,6 +50,11 @@ Required GitHub repository secrets:
 - `SG_REMOTE_PATH`: remote path like `/home/customer/www/<domain>/public_html`
 - `SG_SSH_PORT`: SSH port (for SiteGround this is custom, example `18765`)
 
+Important:
+
+- Use **Repository Secrets** for the above keys unless you also configure a workflow `environment:` that matches your Environment Secrets.
+- If these are set only as Environment Secrets without `environment:` in the workflow, deploy will fail with missing secret errors.
+
 How it works:
 
 1. Checks out repo (with submodules).

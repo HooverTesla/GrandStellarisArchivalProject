@@ -21,33 +21,87 @@ jobs:
       SG_SSH_TARGET: ${{ secrets.SG_SSH_TARGET }}
       SG_REMOTE_PATH: ${{ secrets.SG_REMOTE_PATH }}
       SG_SSH_PORT: ${{ secrets.SG_SSH_PORT }}
+      SG_SSH_PRIVATE_KEY: ${{ secrets.SG_SSH_PRIVATE_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
 
+      - name: Install deploy dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y rsync openssh-client
+
       - name: Validate deploy secrets
         shell: bash
         run: |
           set -euo pipefail
-          test -n "${SG_SSH_TARGET}"
-          test -n "${SG_REMOTE_PATH}"
-          test -n "${{ secrets.SG_SSH_PRIVATE_KEY }}"
+          if [ -z "${SG_SSH_TARGET:-}" ]; then
+            echo "Missing secret: SG_SSH_TARGET" >&2
+            exit 1
+          fi
+          if [ -z "${SG_REMOTE_PATH:-}" ]; then
+            echo "Missing secret: SG_REMOTE_PATH" >&2
+            exit 1
+          fi
+          if [ -z "${SG_SSH_PRIVATE_KEY:-}" ]; then
+            echo "Missing secret: SG_SSH_PRIVATE_KEY" >&2
+            exit 1
+          fi
+          if [[ "${SG_REMOTE_PATH}" != /* ]]; then
+            echo "SG_REMOTE_PATH must be an absolute path, got: ${SG_REMOTE_PATH}" >&2
+            exit 1
+          fi
+
+      - name: Normalize SSH target and port
+        shell: bash
+        run: |
+          set -euo pipefail
+          RAW_TARGET="${SG_SSH_TARGET}"
+          DEPLOY_PORT="${SG_SSH_PORT:-18765}"
+
+          # Supports either user@host or user@host:port.
+          if [[ "$RAW_TARGET" =~ ^([^@[:space:]]+@[^:[:space:]]+):([0-9]+)$ ]]; then
+            DEPLOY_TARGET="${BASH_REMATCH[1]}"
+            if [ -z "${SG_SSH_PORT:-}" ]; then
+              DEPLOY_PORT="${BASH_REMATCH[2]}"
+            fi
+          else
+            DEPLOY_TARGET="${RAW_TARGET}"
+          fi
+
+          if [[ ! "$DEPLOY_TARGET" =~ ^[^@[:space:]]+@[^[:space:]]+$ ]]; then
+            echo "Invalid SG_SSH_TARGET format. Expected user@host (or user@host:port)." >&2
+            exit 1
+          fi
+
+          DEPLOY_HOST="${DEPLOY_TARGET#*@}"
+          {
+            echo "DEPLOY_TARGET=$DEPLOY_TARGET"
+            echo "DEPLOY_HOST=$DEPLOY_HOST"
+            echo "DEPLOY_PORT=$DEPLOY_PORT"
+          } >> "$GITHUB_ENV"
 
       - name: Start SSH agent
         uses: webfactory/ssh-agent@v0.9.0
         with:
-          ssh-private-key: ${{ secrets.SG_SSH_PRIVATE_KEY }}
+          ssh-private-key: ${{ env.SG_SSH_PRIVATE_KEY }}
 
       - name: Add host to known_hosts
         shell: bash
         run: |
           set -euo pipefail
-          PORT="${SG_SSH_PORT:-18765}"
-          HOST="${SG_SSH_TARGET#*@}"
           mkdir -p ~/.ssh
-          ssh-keyscan -p "$PORT" -H "$HOST" >> ~/.ssh/known_hosts
+          ssh-keyscan -p "$DEPLOY_PORT" -H "$DEPLOY_HOST" >> ~/.ssh/known_hosts
+
+      - name: Verify SSH connectivity
+        shell: bash
+        run: |
+          set -euo pipefail
+          ssh -p "$DEPLOY_PORT" -o BatchMode=yes -o IdentitiesOnly=yes "$DEPLOY_TARGET" "echo SSH_OK"
 
       - name: Build dist package
         shell: pwsh
@@ -58,8 +112,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          PORT="${SG_SSH_PORT:-18765}"
           rsync -az --delete --human-readable --itemize-changes \
-            -e "ssh -p $PORT -o IdentitiesOnly=yes" \
+            -e "ssh -p $DEPLOY_PORT -o IdentitiesOnly=yes" \
             ./dist/ \
-            "${SG_SSH_TARGET}:${SG_REMOTE_PATH}/"
+            "${DEPLOY_TARGET}:${SG_REMOTE_PATH}/"
