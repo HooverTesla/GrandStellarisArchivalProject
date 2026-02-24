@@ -46,6 +46,9 @@ function byId(id) {
 }
 
 function clearNode(node) {
+  if (!node) {
+    return;
+  }
   while (node.firstChild) {
     node.removeChild(node.firstChild);
   }
@@ -690,7 +693,8 @@ function refreshSearchSuggestions() {
   clearNode(datalist);
   state.searchLookup.clear();
 
-  const query = (byId("global-search").value || "").trim();
+  const globalSearch = byId("global-search");
+  const query = ((globalSearch && globalSearch.value) || "").trim();
   if (!query) {
     return;
   }
@@ -878,18 +882,22 @@ export async function initializeAnomalyView() {
   state.reverseEventToSources = reverseEventToSources;
 
   const meta = byId("manifest-meta");
-  meta.textContent = `build=${manifest.build_id} schema=${manifest.schema_version}`;
+  if (meta) {
+    meta.textContent = `build=${manifest.build_id} schema=${manifest.schema_version}`;
+  }
 
   const localeSelect = byId("locale-select");
-  clearNode(localeSelect);
-  for (const locale of manifest.locales || []) {
-    const option = document.createElement("option");
-    option.value = locale;
-    option.textContent = locale;
-    if (locale === manifest.default_locale) {
-      option.selected = true;
+  if (localeSelect) {
+    clearNode(localeSelect);
+    for (const locale of manifest.locales || []) {
+      const option = document.createElement("option");
+      option.value = locale;
+      option.textContent = locale;
+      if (locale === manifest.default_locale) {
+        option.selected = true;
+      }
+      localeSelect.appendChild(option);
     }
-    localeSelect.appendChild(option);
   }
 
   await setLocale(manifest.default_locale || "l_english");
@@ -910,20 +918,27 @@ export async function initializeAnomalyView() {
   setTechSubtab("all");
   setModule("home");
 
-  byId("locale-select").addEventListener("change", () => {
-    void onLocaleChange();
-  });
-  byId("global-search").addEventListener("input", (event) => {
-    refreshSearchSuggestions();
-    mirrorSearchToTech(event.target.value || "");
-  });
-  byId("global-search").addEventListener("change", refreshSearchSuggestions);
-  byId("global-search").addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      void onSearchCommit();
-    }
-  });
+  const localeSelectNode = byId("locale-select");
+  if (localeSelectNode) {
+    localeSelectNode.addEventListener("change", () => {
+      void onLocaleChange();
+    });
+  }
+
+  const globalSearch = byId("global-search");
+  if (globalSearch) {
+    globalSearch.addEventListener("input", (event) => {
+      refreshSearchSuggestions();
+      mirrorSearchToTech(event.target.value || "");
+    });
+    globalSearch.addEventListener("change", refreshSearchSuggestions);
+    globalSearch.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        void onSearchCommit();
+      }
+    });
+  }
 
   setStatus("Ready. Search anomalies, events, archaeological sites, or module tabs by ID/localized text.", "info");
 }

@@ -38,6 +38,7 @@ foreach ($item in $includeMap) {
 }
 
 $buildTime = (Get-Date).ToString("yyyy-MM-dd HH:mm:ss zzz")
+$buildVersion = (Get-Date).ToString("yyyyMMddHHmmss")
 $manifest = @(
   "Grand Stellaris Archive deploy package",
   "Build time: $buildTime",
@@ -66,6 +67,22 @@ $rootIndex = @"
 </html>
 "@
 Set-Content -Path (Join-Path $outPath "index.html") -Value $rootIndex -Encoding UTF8
+
+$webUiIndexPath = Join-Path $outPath "webUI/index.html"
+if (Test-Path $webUiIndexPath) {
+  $webUiIndex = Get-Content -Path $webUiIndexPath -Raw
+  $webUiIndex = $webUiIndex.Replace("__BUILD_VERSION__", $buildVersion)
+  Set-Content -Path $webUiIndexPath -Value $webUiIndex -Encoding UTF8
+}
+
+$apacheNoCache = @'
+<IfModule mod_headers.c>
+  Header always set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+  Header always set Pragma "no-cache"
+  Header always set Expires "0"
+</IfModule>
+'@
+Set-Content -Path (Join-Path $outPath ".htaccess") -Value $apacheNoCache -Encoding UTF8
 
 $totalBytes = (Get-ChildItem -Path $outPath -Recurse -File | Measure-Object -Property Length -Sum).Sum
 if (-not $totalBytes) {
