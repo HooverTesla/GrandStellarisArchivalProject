@@ -55,6 +55,10 @@ jobs:
             echo "SG_REMOTE_PATH must be an absolute path, got: ${SG_REMOTE_PATH}" >&2
             exit 1
           fi
+          if [[ "${SG_SSH_PRIVATE_KEY}" != *"BEGIN OPENSSH PRIVATE KEY"* ]]; then
+            echo "SG_SSH_PRIVATE_KEY does not look like an OpenSSH private key." >&2
+            exit 1
+          fi
 
       - name: Normalize SSH target and port
         shell: bash
@@ -85,10 +89,17 @@ jobs:
             echo "DEPLOY_PORT=$DEPLOY_PORT"
           } >> "$GITHUB_ENV"
 
-      - name: Start SSH agent
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ env.SG_SSH_PRIVATE_KEY }}
+      - name: Write SSH key file
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          umask 077
+          printf '%s\n' "$SG_SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/sg_deploy_key
+          chmod 600 ~/.ssh/sg_deploy_key
+          echo "Loaded deploy key fingerprint:"
+          ssh-keygen -lf ~/.ssh/sg_deploy_key
 
       - name: Add host to known_hosts
         shell: bash
@@ -101,7 +112,10 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          ssh -p "$DEPLOY_PORT" -o BatchMode=yes -o IdentitiesOnly=yes "$DEPLOY_TARGET" "echo SSH_OK"
+          if ! ssh -p "$DEPLOY_PORT" -i ~/.ssh/sg_deploy_key -o BatchMode=yes -o IdentitiesOnly=yes "$DEPLOY_TARGET" "echo SSH_OK"; then
+            echo "SSH connectivity failed. Retrying with verbose logging..." >&2
+            ssh -vvv -p "$DEPLOY_PORT" -i ~/.ssh/sg_deploy_key -o BatchMode=yes -o IdentitiesOnly=yes "$DEPLOY_TARGET" "echo SSH_OK"
+          fi
 
       - name: Build dist package
         shell: pwsh
@@ -113,6 +127,6 @@ jobs:
         run: |
           set -euo pipefail
           rsync -az --delete --human-readable --itemize-changes \
-            -e "ssh -p $DEPLOY_PORT -o IdentitiesOnly=yes" \
+            -e "ssh -p $DEPLOY_PORT -i ~/.ssh/sg_deploy_key -o IdentitiesOnly=yes" \
             ./dist/ \
             "${DEPLOY_TARGET}:${SG_REMOTE_PATH}/"
