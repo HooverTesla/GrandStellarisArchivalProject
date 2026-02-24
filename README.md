@@ -3,6 +3,63 @@ A Stellaris Companion Tool. Imagine if you could make a research agreement the t
 
 Will be viewable and accessable at stellaris.HooverTesla.com
 
+## Live Deploy (Current Standard)
+
+The live site deploys with `rsync` from the generated `dist/` package.
+
+### Runtime content included in deploy
+
+- `webUI/`
+- `assets/data/v1/`
+- `assets/stellaris/`
+- `stellaris-tech-tree/assets/`
+- `stellaris-tech-tree/phoenix-4.0.10/`
+- root `index.html` (auto-generated redirect to `webUI/index.html`)
+
+### Local deploy requirements (Windows + WSL)
+
+- WSL installed
+- WSL packages:
+  - `sudo apt update && sudo apt install -y rsync openssh-client`
+- SSH key at `C:\Users\Brand\.ssh\siteground_ssh`
+
+### Local deploy commands (from repo root in VS Code PowerShell)
+
+- Dry run:
+  - `.\scripts\deploy-wsl.ps1 -Build -DryRun`
+- Live deploy:
+  - `.\scripts\deploy-wsl.ps1 -Build`
+
+### Important behavior
+
+- Deploy uses `rsync --delete`.
+- Anything in remote `public_html` that is not in `dist/` will be removed.
+
+## Auto Deploy On Git Push
+
+GitHub Actions is configured to auto-deploy on push to branch `Live`.
+
+Workflow file:
+
+- `.github/workflows/deploy-live.yml`
+
+Required GitHub repository secrets:
+
+- `SG_SSH_PRIVATE_KEY`: private key content for deploy user
+- `SG_SSH_TARGET`: SSH target like `user@example.com`
+- `SG_REMOTE_PATH`: remote path like `/home/customer/www/<domain>/public_html`
+- `SG_SSH_PORT`: SSH port (for SiteGround this is custom, example `18765`)
+
+How it works:
+
+1. Checks out repo (with submodules).
+2. Builds `dist/` via `scripts/build-dist.ps1`.
+3. Deploys `dist/` to the server using `rsync --delete`.
+
+Safety note:
+
+- Keep deploy secrets only in GitHub Secrets, never in code.
+
 
 ***********************************************************
 ************************ DEV NOTES ************************

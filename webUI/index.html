@@ -16,8 +16,12 @@
       <ul class="module-tabs">
         <li class="module-tab is-active" data-module="home">
           <button type="button" class="module-tab-button">
-            <span>Home</span>
-            <img src="../stellaris-tech-tree/assets/icons/homesystem.png" class="tab-icon" alt="Home">
+            <img
+              src="../assets/stellaris/gfx/interface/game_setup/gamesetup_player_empire_unknown.webp"
+              class="tab-icon"
+              alt="Home"
+              onerror="this.onerror=null;this.src='../stellaris-tech-tree/assets/icons/homesystem.png';"
+            >
           </button>
         </li>
         <li class="module-tab" data-module="tech">
@@ -61,6 +65,21 @@
         <input id="global-search" list="global-search-list" placeholder="Search everything">
         <datalist id="global-search-list"></datalist>
       </div>
+
+      <button
+        id="settings-tab-button"
+        class="settings-nav-button"
+        type="button"
+        aria-label="Settings"
+        title="Settings"
+      >
+        <img
+          src="../assets/stellaris/gfx/interface/buttons/button_settings.webp"
+          class="tab-icon"
+          alt=""
+          onerror="this.onerror=null;this.src='../assets/stellaris/gfx/interface/icons/menu_icon_edicts.webp';"
+        >
+      </button>
     </div>
 
     <nav id="tech-subnav" class="tech-subnav is-hidden">
@@ -88,20 +107,43 @@
   </header>
 
   <main class="app-shell">
-    <p id="manifest-meta" class="meta">Loading manifest...</p>
-    <section id="status-panel" class="status-panel"></section>
-
     <section id="module-home" class="module-panel is-active">
       <section class="panel">
         <h2>Empire / Home</h2>
-        <p>Home hub for saved items and empire setup. Search results will auto-switch to the relevant module tab.</p>
+        <p>Home hub for project navigation. Use search to jump directly to modules, anomalies, events, and sites.</p>
+      </section>
+    </section>
 
-        <section class="home-controls">
+    <section id="module-settings" class="module-panel">
+      <section class="panel settings-panel">
+        <h2>Settings</h2>
+
+        <section class="settings-controls">
           <label for="locale-select">Language</label>
           <select id="locale-select"></select>
-          <label for="anomaly-select">Anomaly</label>
-          <select id="anomaly-select"></select>
-          <button id="load-anomaly-button" type="button">Load Chain</button>
+        </section>
+
+        <p id="manifest-meta" class="meta">Loading manifest...</p>
+
+        <section class="settings-credits">
+          <h3>Credits</h3>
+          <p>
+            Project by
+            <a href="https://hoovertesla.com" target="_blank" rel="noreferrer">Hoover Tesla</a>.
+          </p>
+          <p>
+            Original STT code by
+            <a href="https://gitlab.com/bipedalshark/stellaris-tech-tree" target="_blank" rel="noreferrer">bipedalshark</a>.
+          </p>
+          <p>
+            STT parser/work by
+            <a href="https://github.com/BloodStainedCrow/stellaris-technology" target="_blank" rel="noreferrer">BloodStainedCrow</a>.
+          </p>
+          <p>
+            STT website code by
+            <a href="https://github.com/BloodStainedCrow/stellaris-tech-tree" target="_blank" rel="noreferrer">BloodStainedCrow</a>.
+          </p>
+          <p>STT contributors: SlenderPlays, Tsudico, Turanar, BloodStainedCrow.</p>
         </section>
       </section>
     </section>
@@ -127,16 +169,26 @@
             <datalist id="research_list"></datalist>
           </label>
         </div>
-        <p class="meta stt-credit">
-          Original STT by
-          <a href="https://gitlab.com/bipedalshark/stellaris-tech-tree" target="_blank" rel="noreferrer">bipedalshark</a>,
-          parser/work by
-          <a href="https://github.com/BloodStainedCrow/stellaris-technology" target="_blank" rel="noreferrer">BloodStainedCrow</a>.
-        </p>
       </section>
     </section>
 
     <section id="module-anomalies" class="module-panel">
+      <section class="panel anomaly-browser-panel">
+        <div class="anomaly-browser-toolbar">
+          <button id="anomaly-filter-toggle" class="anomaly-filter-toggle" type="button">Filter DLC/Expansion</button>
+          <div id="anomaly-filter-menu" class="anomaly-filter-menu is-hidden">
+            <div id="anomaly-dlc-filters" class="anomaly-dlc-filters"></div>
+          </div>
+        </div>
+        <table class="anomaly-table">
+          <thead>
+            <tr>
+              <th>Anomaly</th>
+            </tr>
+          </thead>
+          <tbody id="anomaly-table-body"></tbody>
+        </table>
+      </section>
       <section id="anomaly-panel" class="panel"></section>
     </section>
 

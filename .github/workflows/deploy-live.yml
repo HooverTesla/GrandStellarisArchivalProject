@@ -1,0 +1,65 @@
+name: Deploy Live
+
+on:
+  push:
+    branches:
+      - Live
+      - live
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-live
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      SG_SSH_TARGET: ${{ secrets.SG_SSH_TARGET }}
+      SG_REMOTE_PATH: ${{ secrets.SG_REMOTE_PATH }}
+      SG_SSH_PORT: ${{ secrets.SG_SSH_PORT }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Validate deploy secrets
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "${SG_SSH_TARGET}"
+          test -n "${SG_REMOTE_PATH}"
+          test -n "${{ secrets.SG_SSH_PRIVATE_KEY }}"
+
+      - name: Start SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SG_SSH_PRIVATE_KEY }}
+
+      - name: Add host to known_hosts
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${SG_SSH_PORT:-18765}"
+          HOST="${SG_SSH_TARGET#*@}"
+          mkdir -p ~/.ssh
+          ssh-keyscan -p "$PORT" -H "$HOST" >> ~/.ssh/known_hosts
+
+      - name: Build dist package
+        shell: pwsh
+        run: |
+          ./scripts/build-dist.ps1
+
+      - name: Deploy with rsync
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${SG_SSH_PORT:-18765}"
+          rsync -az --delete --human-readable --itemize-changes \
+            -e "ssh -p $PORT -o IdentitiesOnly=yes" \
+            ./dist/ \
+            "${SG_SSH_TARGET}:${SG_REMOTE_PATH}/"

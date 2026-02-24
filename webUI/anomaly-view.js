@@ -10,15 +10,35 @@ const state = {
   searchLookup: new Map(),
   activeTechTab: "all",
   activeModule: "home",
+  activeAnomalyId: "",
+  anomalyDlcKeys: [],
+  anomalyDlcFilters: new Set(),
 };
 
 const modulePanelMap = {
   home: "module-home",
+  settings: "module-settings",
   tech: "module-tech",
   anomalies: "module-anomalies",
   events: "module-events",
   "arc-sites": "module-arc-sites",
   "astral-rifts": "module-astral-rifts",
+};
+
+const ANOMALY_SOURCE_LABELS = {
+  ai: "AI",
+  ancient_relics: "Ancient Relics",
+  astral_planes: "Astral Planes",
+  base_game: "Base Game",
+  cosmic_storms: "Cosmic Storms",
+  distant_stars: "Distant Stars",
+  extreme_frontiers: "Extreme Frontiers",
+  federations: "Federations",
+  infernals: "Infernals",
+  paragon: "Galactic Paragons",
+  precursors: "Precursors",
+  tutorial: "Tutorial",
+  unplugged: "Unplugged",
 };
 
 function byId(id) {
@@ -44,6 +64,9 @@ function createImage(url, alt) {
 
 function setStatus(message, level = "info") {
   const panel = byId("status-panel");
+  if (!panel) {
+    return;
+  }
   panel.textContent = message || "";
   panel.className = `status-panel ${level}`;
 }
@@ -101,18 +124,150 @@ function getAnomalyTitle(anomaly) {
   return anomaly.id;
 }
 
-function setAnomalySelection(anomalyId) {
-  const select = byId("anomaly-select");
-  if (!select) {
+function titleCase(value) {
+  return String(value || "")
+    .split(/[_\s-]+/)
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ");
+}
+
+function getAnomalySourceKey(anomaly) {
+  const source = String((anomaly && anomaly.source_file) || "").toLowerCase();
+  const sourceSuffix = source.match(/anomaly_categories_([a-z0-9_]+)\.txt$/);
+  if (sourceSuffix) {
+    return sourceSuffix[1];
+  }
+  if (/anomaly_categories\.txt$/.test(source)) {
+    return "base_game";
+  }
+  return "base_game";
+}
+
+function getAnomalySourceLabel(sourceKey) {
+  return ANOMALY_SOURCE_LABELS[sourceKey] || titleCase(sourceKey);
+}
+
+function getAnomalyBrowserItems() {
+  return Object.values(state.anomalies)
+    .map((anomaly) => ({
+      id: anomaly.id,
+      sourceKey: getAnomalySourceKey(anomaly),
+      title: getAnomalyTitle(anomaly),
+    }))
+    .sort((a, b) => a.title.localeCompare(b.title) || a.id.localeCompare(b.id));
+}
+
+function getFilteredAnomalyItems() {
+  const selected = state.anomalyDlcFilters;
+  return getAnomalyBrowserItems().filter((item) => selected.has(item.sourceKey));
+}
+
+function renderAnomalyFilters() {
+  const container = byId("anomaly-dlc-filters");
+  if (!container) {
     return;
   }
-  if (anomalyId && Object.prototype.hasOwnProperty.call(state.anomalies, anomalyId)) {
-    select.value = anomalyId;
+  clearNode(container);
+
+  for (const key of state.anomalyDlcKeys) {
+    const label = document.createElement("label");
+
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    input.value = key;
+    input.checked = state.anomalyDlcFilters.has(key);
+    input.addEventListener("change", () => {
+      if (input.checked) {
+        state.anomalyDlcFilters.add(key);
+      } else {
+        state.anomalyDlcFilters.delete(key);
+      }
+      renderAnomalyBrowser();
+    });
+
+    const text = document.createElement("span");
+    text.textContent = getAnomalySourceLabel(key);
+
+    label.appendChild(input);
+    label.appendChild(text);
+    container.appendChild(label);
+  }
+}
+
+function renderAnomalyBrowser() {
+  const tableBody = byId("anomaly-table-body");
+  if (!tableBody) {
     return;
   }
-  if (select.options.length > 0) {
-    select.selectedIndex = 0;
+  clearNode(tableBody);
+
+  const items = getFilteredAnomalyItems();
+  if (items.length === 0) {
+    const row = document.createElement("tr");
+    const cell = document.createElement("td");
+    cell.className = "anomaly-empty";
+    cell.textContent = "No anomalies match the current DLC/Expansion filter.";
+    row.appendChild(cell);
+    tableBody.appendChild(row);
+    return;
   }
+
+  for (const item of items) {
+    const row = document.createElement("tr");
+    const cell = document.createElement("td");
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "anomaly-row-button";
+    button.classList.toggle("is-active", item.id === state.activeAnomalyId);
+    button.textContent = item.title;
+    button.addEventListener("click", () => {
+      void loadAnomalyById(item.id, true);
+    });
+
+    cell.appendChild(button);
+    row.appendChild(cell);
+    tableBody.appendChild(row);
+  }
+}
+
+function renderAnomalyPlaceholder() {
+  const panel = byId("anomaly-panel");
+  if (!panel) {
+    return;
+  }
+  clearNode(panel);
+
+  const title = document.createElement("h2");
+  title.textContent = "Anomalies";
+  panel.appendChild(title);
+
+  const text = document.createElement("p");
+  text.className = "meta";
+  text.textContent = "Select an anomaly from the list above to load its details.";
+  panel.appendChild(text);
+}
+
+function setupAnomalyBrowser() {
+  const filterToggle = byId("anomaly-filter-toggle");
+  const filterMenu = byId("anomaly-filter-menu");
+  if (!filterToggle || !filterMenu) {
+    return;
+  }
+
+  filterToggle.addEventListener("click", () => {
+    filterMenu.classList.toggle("is-hidden");
+  });
+
+  document.addEventListener("click", (event) => {
+    if (filterMenu.classList.contains("is-hidden")) {
+      return;
+    }
+    const target = event.target;
+    if (!filterMenu.contains(target) && target !== filterToggle) {
+      filterMenu.classList.add("is-hidden");
+    }
+  });
 }
 
 function setModule(moduleId) {
@@ -137,6 +292,11 @@ function setModule(moduleId) {
     techSubnav.classList.toggle("is-hidden", resolved !== "tech");
   }
 
+  const settingsButton = byId("settings-tab-button");
+  if (settingsButton) {
+    settingsButton.classList.toggle("is-active", resolved === "settings");
+  }
+
   if (resolved === "tech" && window.WebUISttNative && typeof window.WebUISttNative.ensureInitialized === "function") {
     window.WebUISttNative.ensureInitialized();
   }
@@ -156,6 +316,13 @@ function setupModuleTabs() {
           mirrorSearchToTech(searchInput.value || "");
         }
       }
+    });
+  }
+
+  const settingsButton = byId("settings-tab-button");
+  if (settingsButton) {
+    settingsButton.addEventListener("click", () => {
+      setModule("settings");
     });
   }
 }
@@ -305,6 +472,30 @@ async function renderChain(anomalyId) {
   return true;
 }
 
+async function loadAnomalyById(anomalyId, switchModule = true) {
+  if (!anomalyId || !Object.prototype.hasOwnProperty.call(state.anomalies, anomalyId)) {
+    setStatus(`No anomaly found for id: ${anomalyId}`, "warn");
+    return false;
+  }
+
+  const anomaly = state.anomalies[anomalyId];
+  const sourceKey = getAnomalySourceKey(anomaly);
+  if (!state.anomalyDlcFilters.has(sourceKey)) {
+    state.anomalyDlcFilters.add(sourceKey);
+    renderAnomalyFilters();
+  }
+
+  state.activeAnomalyId = anomalyId;
+
+  if (switchModule) {
+    setModule("anomalies");
+  }
+
+  const loaded = await renderChain(anomalyId);
+  renderAnomalyBrowser();
+  return loaded;
+}
+
 function resolveEventSources(eventId, maxNodes = 800) {
   const queue = [eventId];
   const visited = new Set();
@@ -452,6 +643,7 @@ function buildSearchIndex() {
 
   const moduleEntries = [
     { id: "home", title: "Home" },
+    { id: "settings", title: "Settings" },
     { id: "tech", title: "Tech" },
     { id: "anomalies", title: "Anomalies" },
     { id: "events", title: "Events" },
@@ -545,9 +737,7 @@ async function searchAndLoad(query) {
   }
 
   if (match.type === "anomaly") {
-    setAnomalySelection(match.id);
-    setModule("anomalies");
-    await renderChain(match.id);
+    await loadAnomalyById(match.id, true);
     return;
   }
 
@@ -564,7 +754,8 @@ async function searchAndLoad(query) {
   const source = resolveEventSources(match.id);
   if (source.anomalyIds.length > 0) {
     const anomalyId = source.anomalyIds[0];
-    setAnomalySelection(anomalyId);
+    state.activeAnomalyId = anomalyId;
+    renderAnomalyBrowser();
     setModule("events");
     await renderChain(anomalyId);
     setStatus(`Matched event ${match.id}. Loaded related anomaly ${anomalyId}.`, "ok");
@@ -575,50 +766,16 @@ async function searchAndLoad(query) {
   await renderEventOnly(match.id, source.arcSiteIds);
 }
 
-function rebuildAnomalySelect(selectedId = "") {
-  const select = byId("anomaly-select");
-  clearNode(select);
-
-  const items = Object.values(state.anomalies)
-    .map((anomaly) => ({ id: anomaly.id, title: getAnomalyTitle(anomaly) }))
-    .sort((a, b) => a.title.localeCompare(b.title) || a.id.localeCompare(b.id));
-
-  for (const item of items) {
-    const option = document.createElement("option");
-    option.value = item.id;
-    option.textContent = item.title;
-    select.appendChild(option);
-  }
-
-  setAnomalySelection(selectedId || (items[0] && items[0].id) || "");
-}
-
-async function onLoadAnomalyClick() {
-  const anomalyId = (byId("anomaly-select").value || "").trim();
-  if (!anomalyId) {
-    setStatus("Select an anomaly first.", "warn");
-    return;
-  }
-  setStatus("Loading chain...", "info");
-  try {
-    setModule("anomalies");
-    await renderChain(anomalyId);
-  } catch (error) {
-    setStatus(`Chain load failed: ${error.message}`, "error");
-  }
-}
-
 async function onLocaleChange() {
   const select = byId("locale-select");
-  const activeAnomalyId = (byId("anomaly-select").value || "").trim();
   await setLocale(select.value);
 
-  rebuildAnomalySelect(activeAnomalyId);
+  renderAnomalyBrowser();
   buildSearchIndex();
   refreshSearchSuggestions();
 
-  if (activeAnomalyId) {
-    await renderChain(activeAnomalyId);
+  if (state.activeAnomalyId) {
+    await renderChain(state.activeAnomalyId);
   }
 
   setStatus(`Language set to ${getLocale()}.`, "info");
@@ -736,14 +893,23 @@ export async function initializeAnomalyView() {
   }
 
   await setLocale(manifest.default_locale || "l_english");
-  rebuildAnomalySelect();
+
+  state.anomalyDlcKeys = [...new Set(
+    Object.values(state.anomalies).map((anomaly) => getAnomalySourceKey(anomaly)),
+  )].sort((a, b) => getAnomalySourceLabel(a).localeCompare(getAnomalySourceLabel(b)));
+  state.anomalyDlcFilters = new Set(state.anomalyDlcKeys);
+
+  renderAnomalyFilters();
+  renderAnomalyBrowser();
+  renderAnomalyPlaceholder();
+
   buildSearchIndex();
   setupModuleTabs();
   setupTechSubnav();
+  setupAnomalyBrowser();
   setTechSubtab("all");
   setModule("home");
 
-  byId("load-anomaly-button").addEventListener("click", onLoadAnomalyClick);
   byId("locale-select").addEventListener("change", () => {
     void onLocaleChange();
   });
@@ -765,8 +931,6 @@ export async function initializeAnomalyView() {
 export async function preloadAnomaly(anomalyId) {
   const anomaly = await getAnomaly(anomalyId);
   if (anomaly) {
-    setAnomalySelection(anomalyId);
-    setModule("anomalies");
-    await renderChain(anomalyId);
+    await loadAnomalyById(anomalyId, true);
   }
 }
