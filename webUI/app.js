@@ -1,4 +1,4 @@
-import { initializeAnomalyView, preloadAnomaly } from "./anomaly-view.js";
+import { initializeAnomalyView, preloadAnomaly } from "./anomaly-view.js?v=__BUILD_VERSION__";
 
 function getInitialAnomalyFromUrl() {
   const params = new URLSearchParams(window.location.search);
