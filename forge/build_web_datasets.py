@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Set
 
 
-SCHEMA_VERSION = "1.0.0"
+SCHEMA_VERSION = "1.1.0"
 DATA_ROOT_SUBPATH = Path("data") / "v1"
 
 DEFAULT_LOCALES = [
@@ -38,8 +38,88 @@ LOCALE_DIR_MAP = {
 EVENT_ID_PATTERN = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*\.[0-9]+$")
 EVENT_ID_IN_TEXT_PATTERN = re.compile(r"\b([A-Za-z_][A-Za-z0-9_]*\.[0-9]+)\b")
 GFX_PATTERN = re.compile(r"\bGFX_[A-Za-z0-9_]+\b")
+TECH_ID_PATTERN = re.compile(r"^tech_[A-Za-z0-9_]+$")
 
 KNOWN_EVENT_LINK_KEYS = {"country_event", "ship_event", "planet_event", "fleet_event", "pop_event"}
+
+
+DATABANK_CATEGORY_SPECS = [
+    {
+        "slug": "precursors",
+        "label": "Precursors",
+        "sources": ["common/precursor_civilizations/*.json"],
+    },
+    {
+        "slug": "relics",
+        "label": "Relics",
+        "sources": ["common/relics/*.json"],
+    },
+    {
+        "slug": "leaders",
+        "label": "Leaders",
+        "sources": ["common/leader_classes/*.json", "common/leader_tiers/*.json"],
+    },
+    {
+        "slug": "species_traits",
+        "label": "Species Traits",
+        "sources": ["common/traits/*species_traits*.json"],
+    },
+    {
+        "slug": "origins",
+        "label": "Origins",
+        "sources": ["common/governments/civics/*origins*.json"],
+    },
+    {
+        "slug": "guardians",
+        "label": "Guardians",
+        "sources": ["common/guardian_*/**/*.json"],
+    },
+    {
+        "slug": "situations",
+        "label": "Situations",
+        "sources": ["common/situations/*.json"],
+    },
+    {
+        "slug": "civics",
+        "label": "Civics",
+        "sources": ["common/governments/civics/*civic*.json"],
+    },
+    {
+        "slug": "buildings",
+        "label": "Buildings",
+        "sources": ["common/buildings/*.json"],
+    },
+    {
+        "slug": "traits",
+        "label": "Traits",
+        "sources": ["common/traits/*.json"],
+    },
+    {
+        "slug": "ethics",
+        "label": "Ethics",
+        "sources": ["common/ethics/*.json"],
+    },
+    {
+        "slug": "fallen_empires",
+        "label": "Fallen Empires",
+        "sources": ["common/fallen_empires/*.json"],
+    },
+    {
+        "slug": "world_types",
+        "label": "World Types",
+        "sources": ["common/planet_classes/*.json"],
+    },
+    {
+        "slug": "terms",
+        "label": "Term Definitions",
+        "sources": ["common/game_concepts/*.json"],
+    },
+    {
+        "slug": "event_chains",
+        "label": "Event Chains",
+        "sources": ["common/event_chains/*.json"],
+    },
+]
 
 
 def to_posix(path_like: str | Path) -> str:
@@ -131,6 +211,175 @@ def extract_option_name_keys(value: object) -> List[str]:
             ordered.append(key)
     return ordered
 
+
+def dedupe_preserve_order(values: Iterable[str]) -> List[str]:
+    seen: Set[str] = set()
+    ordered: List[str] = []
+    for item in values:
+        if not isinstance(item, str):
+            continue
+        if item in seen:
+            continue
+        seen.add(item)
+        ordered.append(item)
+    return ordered
+
+
+def is_tech_id(text: object) -> bool:
+    return isinstance(text, str) and bool(TECH_ID_PATTERN.fullmatch(text.strip()))
+
+
+def is_loc_key_candidate(text: object) -> bool:
+    if not isinstance(text, str):
+        return False
+    stripped = text.strip()
+    if not stripped:
+        return False
+    if len(stripped) > 160:
+        return False
+    if " " in stripped or "/" in stripped:
+        return False
+    if stripped.startswith("@"):
+        return False
+    return True
+
+
+def extract_tech_ids_in_value(value: object) -> List[str]:
+    found: List[str] = []
+    stack: List[object] = [value]
+    while stack:
+        item = stack.pop()
+        if is_tech_id(item):
+            found.append(str(item))
+            continue
+        if isinstance(item, list):
+            stack.extend(item)
+            continue
+        if isinstance(item, dict):
+            for child in item.values():
+                stack.append(child)
+    return dedupe_preserve_order(found)
+
+
+def _merge_prerequisite_logic(base: dict, extra: dict) -> dict:
+    all_of = dedupe_preserve_order(normalize_list(base.get("all_of")) + normalize_list(extra.get("all_of")))
+    any_of_raw = normalize_list(base.get("any_of")) + normalize_list(extra.get("any_of"))
+    any_of: List[List[str]] = []
+    for group in any_of_raw:
+        group_ids = dedupe_preserve_order([item for item in normalize_list(group) if is_tech_id(item)])
+        if group_ids:
+            any_of.append(group_ids)
+    return {"all_of": all_of, "any_of": any_of}
+
+
+def normalize_prerequisite_logic(value: object) -> dict:
+    empty = {"all_of": [], "any_of": []}
+    if value is None:
+        return empty
+    if is_tech_id(value):
+        return {"all_of": [str(value)], "any_of": []}
+    if isinstance(value, list):
+        merged = empty
+        for item in value:
+            merged = _merge_prerequisite_logic(merged, normalize_prerequisite_logic(item))
+        return merged
+    if not isinstance(value, dict):
+        return empty
+
+    merged = empty
+
+    if "_values" in value:
+        merged = _merge_prerequisite_logic(
+            merged,
+            {"all_of": extract_tech_ids_in_value(value.get("_values")), "any_of": []},
+        )
+
+    if "AND" in value:
+        merged = _merge_prerequisite_logic(merged, normalize_prerequisite_logic(value.get("AND")))
+
+    if "OR" in value:
+        options: List[str] = []
+        for option in normalize_list(value.get("OR")):
+            options.extend(extract_tech_ids_in_value(option))
+        option_ids = dedupe_preserve_order(options)
+        if option_ids:
+            merged = _merge_prerequisite_logic(merged, {"all_of": [], "any_of": [option_ids]})
+
+    recognized = {"_values", "AND", "OR"}
+    if not recognized.intersection(value.keys()):
+        merged = _merge_prerequisite_logic(
+            merged,
+            {"all_of": extract_tech_ids_in_value(value), "any_of": []},
+        )
+
+    return merged
+
+
+def classify_event_category(source_file: object, event_type: object) -> str:
+    source = str(source_file or "").lower()
+    event_type_norm = str(event_type or "").lower()
+
+    if "pre_ftl" in source or "primitive" in source:
+        return "pre_ftl"
+    if "colony" in source:
+        return "colony"
+    if event_type_norm == "country_event":
+        return "empire"
+    if any(token in source for token in ("federation", "diplomatic", "agenda", "council", "empire")):
+        return "empire"
+    return "misc"
+
+
+def extract_event_options(option_value: object) -> tuple[List[dict], List[str], Set[str]]:
+    options: List[dict] = []
+    all_name_keys: List[str] = []
+    loc_keys: Set[str] = set()
+
+    for index, option in enumerate(normalize_list(option_value), start=1):
+        if not isinstance(option, dict):
+            continue
+        name_key = option.get("name") if isinstance(option.get("name"), str) else None
+        desc_keys = extract_desc_keys(option.get("desc"))
+        followups = sorted(collect_followup_event_ids(option))
+        tooltip_keys = extract_desc_keys(option.get("custom_tooltip"))
+
+        if name_key:
+            all_name_keys.append(name_key)
+            if is_loc_key_candidate(name_key):
+                loc_keys.add(name_key)
+        for key in desc_keys + tooltip_keys:
+            if is_loc_key_candidate(key):
+                loc_keys.add(key)
+
+        options.append(
+            {
+                "index": index,
+                "name_key": name_key,
+                "desc_keys": desc_keys,
+                "tooltip_keys": tooltip_keys,
+                "followup_event_ids": followups,
+            }
+        )
+
+    return options, dedupe_preserve_order(all_name_keys), loc_keys
+
+
+def _extract_first_gfx(value: object) -> Optional[str]:
+    stack: List[object] = [value]
+    while stack:
+        item = stack.pop()
+        if isinstance(item, str):
+            match = GFX_PATTERN.search(item)
+            if match:
+                return match.group(0)
+            continue
+        if isinstance(item, list):
+            stack.extend(item)
+            continue
+        if isinstance(item, dict):
+            for child in item.values():
+                stack.append(child)
+    return None
 
 def extract_inline_picture_gfx(inline_script: object) -> List[str]:
     result: List[str] = []
@@ -301,6 +550,9 @@ def parse_anomalies(
             record = {
                 "id": anomaly_id,
                 "desc_key": desc_key,
+                "level": payload.get("level"),
+                "max_once": payload.get("max_once"),
+                "max_once_global": payload.get("max_once_global"),
                 "picture_gfx": picture_gfx,
                 "image_asset": resolve_gfx_asset(picture_gfx, sprite_index, texture_to_asset),
                 "event_ids": ordered_event_ids,
@@ -488,7 +740,8 @@ def parse_events(
 
                 title_key = payload.get("title") if isinstance(payload.get("title"), str) else None
                 desc_keys = extract_desc_keys(payload.get("desc"))
-                option_name_keys = extract_option_name_keys(payload.get("option"))
+                options, option_name_keys, option_loc_keys = extract_event_options(payload.get("option"))
+                event_category = classify_event_category(entry.get("_source_file"), event_type)
 
                 picture_candidates: List[str] = []
                 direct_picture = payload.get("picture")
@@ -512,17 +765,20 @@ def parse_events(
                     loc_keys.add(key)
                 for key in option_name_keys:
                     loc_keys.add(key)
+                loc_keys.update(option_loc_keys)
                 gfx_refs.update(dedup_pictures)
 
                 record = {
                     "id": event_id,
                     "event_type": event_type,
+                    "event_category": event_category,
                     "title_key": title_key,
                     "desc_keys": desc_keys,
                     "picture_gfx_candidates": dedup_pictures,
                     "picture_asset_candidates": [
                         resolve_gfx_asset(gfx, sprite_index, texture_to_asset) for gfx in dedup_pictures
                     ],
+                    "options": options,
                     "option_name_keys": option_name_keys,
                     "followup_event_ids": sorted(followups),
                     "source_file": entry.get("_source_file"),
@@ -536,6 +792,19 @@ def parse_events(
                     existing["option_name_keys"] = sorted(
                         set(normalize_list(existing.get("option_name_keys"))) | set(option_name_keys)
                     )
+                    existing_options = normalize_list(existing.get("options"))
+                    merged_options: List[dict] = []
+                    option_by_index: Dict[int, dict] = {}
+                    for opt in existing_options + options:
+                        if not isinstance(opt, dict):
+                            continue
+                        idx = int(opt.get("index", 0))
+                        if idx <= 0:
+                            continue
+                        option_by_index[idx] = opt
+                    for idx in sorted(option_by_index):
+                        merged_options.append(option_by_index[idx])
+                    existing["options"] = merged_options
                     existing["followup_event_ids"] = sorted(
                         set(normalize_list(existing.get("followup_event_ids"))) | set(followups)
                     )
@@ -546,6 +815,8 @@ def parse_events(
                         resolve_gfx_asset(gfx, sprite_index, texture_to_asset)
                         for gfx in normalize_list(existing.get("picture_gfx_candidates"))
                     ]
+                    if not existing.get("event_category"):
+                        existing["event_category"] = event_category
                     if existing.get("title_key") is None:
                         existing["title_key"] = title_key
                 else:
@@ -562,6 +833,333 @@ def parse_events(
     event_to_events_out = dict(sorted(event_to_events_out.items()))
 
     return records, event_to_events_out, loc_keys, gfx_refs, sorted(set(duplicates))
+
+
+def parse_astral_rifts(
+    rifts_dir: Path,
+    reporter=None,
+) -> tuple[Dict[str, dict], Dict[str, List[str]], Set[str], Set[str], List[str]]:
+    records: Dict[str, dict] = {}
+    chain_map: Dict[str, List[str]] = {}
+    loc_keys: Set[str] = set()
+    gfx_refs: Set[str] = set()
+    duplicates: List[str] = []
+
+    files = sorted(rifts_dir.glob("*.json"))
+    if reporter is not None:
+        try:
+            reporter.set_phase("Forge | Build web entities", total=max(1, len(files)))
+        except Exception:
+            pass
+
+    for path in files:
+        if reporter is not None:
+            try:
+                reporter.set_current_file(to_posix(path))
+                reporter.advance()
+            except Exception:
+                pass
+        try:
+            root = read_json(path)
+        except Exception as exc:
+            _emit(f"[web-datasets] Failed astral rift file: {path} | {exc}", reporter=reporter, level="error")
+            continue
+
+        if not isinstance(root, dict):
+            continue
+
+        for rift_id, wrapper in root.items():
+            if not isinstance(wrapper, dict):
+                continue
+            payload = wrapper.get(rift_id)
+            if not isinstance(payload, dict):
+                continue
+
+            name_key = payload.get("name") if isinstance(payload.get("name"), str) else None
+            if is_loc_key_candidate(name_key):
+                loc_keys.add(str(name_key))
+
+            event_id = payload.get("event") if is_event_id(payload.get("event")) else None
+            event_ids = [event_id] if event_id else []
+            chain_map[rift_id] = list(event_ids)
+
+            flags = [str(item) for item in normalize_list(payload.get("flags")) if isinstance(item, str)]
+            relic_rewards = sorted(flag for flag in flags if flag.startswith("r_"))
+
+            record = {
+                "id": rift_id,
+                "name_key": name_key,
+                "event_id": event_id,
+                "event_ids": event_ids,
+                "flags": flags,
+                "relic_rewards": relic_rewards,
+                "is_randomized": str(payload.get("randomized", "yes")).lower() != "no",
+                "source_file": wrapper.get("_source_file"),
+                "source_line": wrapper.get("_line_number"),
+            }
+
+            if rift_id in records:
+                duplicates.append(rift_id)
+                existing = records[rift_id]
+                existing["event_ids"] = dedupe_preserve_order(
+                    normalize_list(existing.get("event_ids")) + event_ids,
+                )
+                existing["flags"] = dedupe_preserve_order(
+                    normalize_list(existing.get("flags")) + flags,
+                )
+                existing["relic_rewards"] = dedupe_preserve_order(
+                    normalize_list(existing.get("relic_rewards")) + relic_rewards,
+                )
+                if existing.get("name_key") is None:
+                    existing["name_key"] = name_key
+            else:
+                records[rift_id] = record
+
+    return records, chain_map, loc_keys, gfx_refs, sorted(set(duplicates))
+
+
+def _infer_bioship_mode(payload: dict) -> str:
+    potential = payload.get("potential")
+    if isinstance(potential, dict):
+        uses_bio = potential.get("country_uses_bio_ships")
+        if isinstance(uses_bio, str):
+            if uses_bio.lower() == "yes":
+                return "bio_only"
+            if uses_bio.lower() == "no":
+                return "non_bio_only"
+    return "any"
+
+
+def parse_technologies(
+    technology_dir: Path,
+    reporter=None,
+) -> tuple[Dict[str, dict], Set[str], List[str]]:
+    records: Dict[str, dict] = {}
+    loc_keys: Set[str] = set()
+    duplicates: List[str] = []
+    postreq_map: Dict[str, Set[str]] = defaultdict(set)
+
+    files = sorted(technology_dir.glob("*.json"))
+    if reporter is not None:
+        try:
+            reporter.set_phase("Forge | Build web entities", total=max(1, len(files)))
+        except Exception:
+            pass
+
+    for path in files:
+        if reporter is not None:
+            try:
+                reporter.set_current_file(to_posix(path))
+                reporter.advance()
+            except Exception:
+                pass
+        try:
+            root = read_json(path)
+        except Exception as exc:
+            _emit(f"[web-datasets] Failed technology file: {path} | {exc}", reporter=reporter, level="error")
+            continue
+
+        if not isinstance(root, dict):
+            continue
+
+        for tech_id, wrapper in root.items():
+            if not isinstance(wrapper, dict):
+                continue
+            payload = wrapper.get(tech_id)
+            if not isinstance(payload, dict):
+                continue
+            if not is_tech_id(tech_id):
+                continue
+
+            prerequisite_logic = normalize_prerequisite_logic(payload.get("prerequisites"))
+            flat_prereqs = dedupe_preserve_order(
+                normalize_list(prerequisite_logic.get("all_of"))
+                + [item for group in normalize_list(prerequisite_logic.get("any_of")) for item in normalize_list(group)],
+            )
+            for prereq in flat_prereqs:
+                postreq_map[prereq].add(tech_id)
+
+            area = payload.get("area") if isinstance(payload.get("area"), str) else None
+            tier_raw = payload.get("tier")
+            try:
+                tier = int(float(str(tier_raw)))
+            except Exception:
+                tier = 0
+            category = payload.get("category")
+            category_list = [str(item) for item in normalize_list(category) if isinstance(item, str)]
+
+            tech_record = {
+                "id": tech_id,
+                "name_key": tech_id,
+                "desc_key": f"{tech_id}_desc",
+                "area": area,
+                "tier": tier,
+                "category": category_list,
+                "bioship_mode": _infer_bioship_mode(payload),
+                "prerequisites_flat": flat_prereqs,
+                "prerequisite_logic": prerequisite_logic,
+                "source_file": wrapper.get("_source_file"),
+                "source_line": wrapper.get("_line_number"),
+            }
+
+            loc_keys.add(tech_id)
+            loc_keys.add(f"{tech_id}_desc")
+
+            if tech_id in records:
+                duplicates.append(tech_id)
+                existing = records[tech_id]
+                existing["prerequisites_flat"] = dedupe_preserve_order(
+                    normalize_list(existing.get("prerequisites_flat")) + flat_prereqs,
+                )
+                existing["category"] = dedupe_preserve_order(
+                    normalize_list(existing.get("category")) + category_list,
+                )
+                existing["prerequisite_logic"] = _merge_prerequisite_logic(
+                    existing.get("prerequisite_logic", {"all_of": [], "any_of": []}),
+                    prerequisite_logic,
+                )
+                if existing.get("area") is None:
+                    existing["area"] = area
+                if int(existing.get("tier", 0)) <= 0 and tier > 0:
+                    existing["tier"] = tier
+            else:
+                records[tech_id] = tech_record
+
+    for tech_id, record in records.items():
+        record["postrequisites"] = sorted(postreq_map.get(tech_id, set()))
+
+    return dict(sorted(records.items())), loc_keys, sorted(set(duplicates))
+
+
+def _iter_wrapped_records(root: object) -> Iterable[tuple[str, dict, dict]]:
+    if not isinstance(root, dict):
+        return
+    for entry_id, wrapper in root.items():
+        if not isinstance(wrapper, dict):
+            continue
+        payload = wrapper.get(entry_id)
+        if not isinstance(payload, dict):
+            continue
+        yield entry_id, payload, wrapper
+
+
+def _find_databank_name_key(entry_id: str, payload: dict) -> str:
+    candidates: List[str] = []
+    for key in ("name", "title"):
+        value = payload.get(key)
+        if isinstance(value, str):
+            candidates.append(value)
+    candidates.append(entry_id)
+    for candidate in candidates:
+        if is_loc_key_candidate(candidate):
+            return candidate
+    return entry_id
+
+
+def _find_databank_desc_key(payload: dict) -> Optional[str]:
+    for key in ("description", "desc", "effect_desc", "tooltip"):
+        value = payload.get(key)
+        if isinstance(value, str) and is_loc_key_candidate(value):
+            return value
+        values = extract_desc_keys(value)
+        for item in values:
+            if is_loc_key_candidate(item):
+                return item
+    return None
+
+
+def parse_databank_categories(
+    output_root: Path,
+    sprite_index: Dict[str, dict],
+    texture_to_asset: Dict[str, str],
+    reporter=None,
+) -> tuple[Dict[str, List[dict]], List[dict], Set[str], Set[str]]:
+    datasets: Dict[str, List[dict]] = {}
+    index_rows: List[dict] = []
+    loc_keys: Set[str] = set()
+    gfx_refs: Set[str] = set()
+
+    for spec in DATABANK_CATEGORY_SPECS:
+        slug = spec["slug"]
+        label = spec["label"]
+        file_paths: List[Path] = []
+        for pattern in spec["sources"]:
+            file_paths.extend(sorted(output_root.glob(pattern)))
+        file_paths = sorted(set(file_paths))
+
+        entries: List[dict] = []
+        if reporter is not None:
+            try:
+                reporter.set_phase("Forge | Build web entities", total=max(1, len(file_paths)))
+            except Exception:
+                pass
+
+        for path in file_paths:
+            if reporter is not None:
+                try:
+                    reporter.set_current_file(to_posix(path))
+                    reporter.advance()
+                except Exception:
+                    pass
+            try:
+                root = read_json(path)
+            except Exception as exc:
+                _emit(f"[web-datasets] Failed databank file: {path} | {exc}", reporter=reporter, level="warn")
+                continue
+
+            for entry_id, payload, wrapper in _iter_wrapped_records(root):
+                name_key = _find_databank_name_key(entry_id, payload)
+                desc_key = _find_databank_desc_key(payload)
+                if is_loc_key_candidate(name_key):
+                    loc_keys.add(name_key)
+                if is_loc_key_candidate(desc_key):
+                    loc_keys.add(str(desc_key))
+
+                gfx_id = _extract_first_gfx(
+                    payload.get("picture")
+                    or payload.get("portrait")
+                    or payload.get("icon")
+                    or payload.get("complete_icon")
+                )
+                if gfx_id:
+                    gfx_refs.add(gfx_id)
+
+                tags = dedupe_preserve_order(
+                    [str(item) for item in normalize_list(payload.get("tags")) if isinstance(item, str)]
+                    + [str(item) for item in normalize_list(payload.get("category")) if isinstance(item, str)],
+                )
+
+                entries.append(
+                    {
+                        "id": entry_id,
+                        "name_key": name_key,
+                        "desc_key": desc_key,
+                        "tags": tags,
+                        "gfx_id": gfx_id,
+                        "image_asset": resolve_gfx_asset(gfx_id, sprite_index, texture_to_asset),
+                        "icon_token": payload.get("icon") if isinstance(payload.get("icon"), str) else None,
+                        "source_file": wrapper.get("_source_file"),
+                        "source_line": wrapper.get("_line_number"),
+                        "source_dataset": to_posix(path.relative_to(output_root)),
+                    }
+                )
+
+        dedup_map: Dict[str, dict] = {}
+        for item in entries:
+            dedup_map[item["id"]] = item
+        ordered_entries = [dedup_map[key] for key in sorted(dedup_map.keys())]
+        datasets[slug] = ordered_entries
+        index_rows.append(
+            {
+                "slug": slug,
+                "label": label,
+                "available": len(file_paths) > 0,
+                "entry_count": len(ordered_entries),
+                "source_patterns": spec["sources"],
+            }
+        )
+
+    return datasets, index_rows, loc_keys, gfx_refs
 
 
 def load_locale_catalog(output_root: Path, locale_code: str, reporter=None) -> Dict[str, str]:
@@ -628,6 +1226,7 @@ def build_gfx_map(
 def build_reverse_event_sources(
     anomaly_to_events: Dict[str, List[str]],
     arc_site_to_events: Dict[str, List[str]],
+    astral_rift_to_events: Dict[str, List[str]],
     event_to_events: Dict[str, List[str]],
 ) -> Dict[str, dict]:
     reverse: Dict[str, dict] = {}
@@ -635,7 +1234,7 @@ def build_reverse_event_sources(
     def ensure(event_id: str) -> dict:
         return reverse.setdefault(
             event_id,
-            {"from_anomalies": [], "from_arc_sites": [], "from_events": []},
+            {"from_anomalies": [], "from_arc_sites": [], "from_astral_rifts": [], "from_events": []},
         )
 
     for anomaly_id, event_ids in anomaly_to_events.items():
@@ -646,6 +1245,10 @@ def build_reverse_event_sources(
         for event_id in event_ids:
             ensure(event_id)["from_arc_sites"].append(site_id)
 
+    for rift_id, event_ids in astral_rift_to_events.items():
+        for event_id in event_ids:
+            ensure(event_id)["from_astral_rifts"].append(rift_id)
+
     for source_event_id, event_ids in event_to_events.items():
         for event_id in event_ids:
             ensure(event_id)["from_events"].append(source_event_id)
@@ -653,6 +1256,7 @@ def build_reverse_event_sources(
     for payload in reverse.values():
         payload["from_anomalies"] = sorted(set(payload["from_anomalies"]))
         payload["from_arc_sites"] = sorted(set(payload["from_arc_sites"]))
+        payload["from_astral_rifts"] = sorted(set(payload["from_astral_rifts"]))
         payload["from_events"] = sorted(set(payload["from_events"]))
 
     return dict(sorted(reverse.items()))
@@ -671,9 +1275,12 @@ def run_web_dataset_builder(
     chains_dir = data_root / "chains"
     media_dir = data_root / "media"
     i18n_dir = data_root / "i18n"
+    databank_dir = entities_dir / "databank"
 
     anomalies_dir = output_root / "common" / "anomalies"
     arc_sites_dir = output_root / "common" / "archaeological_site_types"
+    astral_rifts_dir = output_root / "common" / "astral_rifts"
+    technology_dir = output_root / "common" / "technology"
     events_dir = output_root / "events"
 
     if reporter is not None:
@@ -703,16 +1310,35 @@ def run_web_dataset_builder(
         texture_to_asset,
         reporter=reporter,
     )
+    astral_rifts, astral_rift_to_events, astral_loc_keys, astral_gfx, astral_dupes = parse_astral_rifts(
+        astral_rifts_dir,
+        reporter=reporter,
+    )
+    tech_prerequisites, tech_loc_keys, tech_dupes = parse_technologies(
+        technology_dir,
+        reporter=reporter,
+    )
+    databank_datasets, databank_index, databank_loc_keys, databank_gfx = parse_databank_categories(
+        output_root,
+        sprite_index,
+        texture_to_asset,
+        reporter=reporter,
+    )
 
     all_loc_keys = set()
     all_loc_keys.update(anomaly_loc_keys)
     all_loc_keys.update(arc_loc_keys)
     all_loc_keys.update(event_loc_keys)
+    all_loc_keys.update(astral_loc_keys)
+    all_loc_keys.update(tech_loc_keys)
+    all_loc_keys.update(databank_loc_keys)
 
     referenced_gfx = set()
     referenced_gfx.update(anomaly_gfx)
     referenced_gfx.update(arc_gfx)
     referenced_gfx.update(event_gfx)
+    referenced_gfx.update(astral_gfx)
+    referenced_gfx.update(databank_gfx)
 
     if reporter is not None:
         try:
@@ -721,7 +1347,12 @@ def run_web_dataset_builder(
             reporter.advance()
         except Exception:
             pass
-    reverse_event_to_sources = build_reverse_event_sources(anomaly_to_events, arc_site_to_events, event_to_events)
+    reverse_event_to_sources = build_reverse_event_sources(
+        anomaly_to_events,
+        arc_site_to_events,
+        astral_rift_to_events,
+        event_to_events,
+    )
 
     if reporter is not None:
         try:
@@ -736,8 +1367,17 @@ def run_web_dataset_builder(
     write_json(entities_dir / "anomalies.json", dict(sorted(anomalies.items())))
     write_json(entities_dir / "events.json", dict(sorted(events.items())))
     write_json(entities_dir / "arc_sites.json", dict(sorted(arc_sites.items())))
+    write_json(entities_dir / "astral_rifts.json", dict(sorted(astral_rifts.items())))
+    write_json(entities_dir / "tech_prerequisites.json", dict(sorted(tech_prerequisites.items())))
+    write_json(entities_dir / "databank_index.json", databank_index)
+    for category in databank_index:
+        slug = category.get("slug")
+        if not isinstance(slug, str):
+            continue
+        write_json(databank_dir / f"{slug}.json", databank_datasets.get(slug, []))
     write_json(chains_dir / "anomaly_to_events.json", dict(sorted(anomaly_to_events.items())))
     write_json(chains_dir / "arc_site_to_events.json", dict(sorted(arc_site_to_events.items())))
+    write_json(chains_dir / "astral_rift_to_events.json", dict(sorted(astral_rift_to_events.items())))
     write_json(chains_dir / "event_to_events.json", dict(sorted(event_to_events.items())))
     write_json(chains_dir / "reverse_event_to_sources.json", reverse_event_to_sources)
     write_json(media_dir / "gfx_map.json", gfx_map)
@@ -804,6 +1444,9 @@ def run_web_dataset_builder(
                 "anomalies": len(anomalies),
                 "arc_sites": len(arc_sites),
                 "events": len(events),
+                "astral_rifts": len(astral_rifts),
+                "tech_prerequisites": len(tech_prerequisites),
+                "databank_categories": len(databank_index),
                 "referenced_gfx": len(referenced_gfx),
                 "unresolved_gfx": len(unresolved_gfx),
                 "loc_keys": len(all_loc_keys),
@@ -813,6 +1456,8 @@ def run_web_dataset_builder(
                 "anomalies": anomaly_dupes,
                 "arc_sites": arc_dupes,
                 "events": event_dupes,
+                "astral_rifts": astral_dupes,
+                "tech_prerequisites": tech_dupes,
             },
             "locale_missing_counts": locale_missing_counts,
             "english_missing_keys": english_missing_keys,

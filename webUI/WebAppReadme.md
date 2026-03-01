@@ -45,4 +45,15 @@
         - grand archive
         - relics
         - etc
+
+## UI Sprite Notes
+
+    - Button sprite metadata for `assets/stellaris/gfx/interface/buttons/*.webp` is generated to:
+        - `assets/data/v1/media/button_sprite_instructions.json`
+    - Generation script:
+        - `python scripts/generate-button-sprite-instructions.py`
+    - Current UI uses 3-frame horizontal strips as:
+        - frame 0 = normal
+        - frame 1 = hover/focus
+        - frame 2 = pressed/active
     

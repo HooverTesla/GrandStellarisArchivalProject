@@ -17,6 +17,7 @@ if ((Test-Path $outPath) -and -not $KeepExisting) {
 New-Item -Path $outPath -ItemType Directory -Force | Out-Null
 
 $includeMap = @(
+  @{ Source = "ProjectLogo_tech_galactic_archivism.ico"; Dest = "ProjectLogo_tech_galactic_archivism.ico" },
   @{ Source = "webUI"; Dest = "webUI" },
   @{ Source = "assets/data/v1"; Dest = "assets/data/v1" },
   @{ Source = "assets/stellaris"; Dest = "assets/stellaris" },
@@ -68,11 +69,18 @@ $rootIndex = @"
 "@
 Set-Content -Path (Join-Path $outPath "index.html") -Value $rootIndex -Encoding UTF8
 
-$webUiIndexPath = Join-Path $outPath "webUI/index.html"
-if (Test-Path $webUiIndexPath) {
-  $webUiIndex = Get-Content -Path $webUiIndexPath -Raw
-  $webUiIndex = $webUiIndex.Replace("__BUILD_VERSION__", $buildVersion)
-  Set-Content -Path $webUiIndexPath -Value $webUiIndex -Encoding UTF8
+$webUiPath = Join-Path $outPath "webUI"
+if (Test-Path $webUiPath) {
+  $webUiFiles = Get-ChildItem -Path $webUiPath -Recurse -File | Where-Object {
+    $_.Extension -in @(".html", ".js", ".css")
+  }
+  foreach ($file in $webUiFiles) {
+    $content = Get-Content -Path $file.FullName -Raw
+    if ($content.Contains("__BUILD_VERSION__")) {
+      $content = $content.Replace("__BUILD_VERSION__", $buildVersion)
+      Set-Content -Path $file.FullName -Value $content -Encoding UTF8
+    }
+  }
 }
 
 $apacheNoCache = @'

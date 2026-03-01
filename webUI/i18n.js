@@ -1,4 +1,4 @@
-import { loadLocale } from "./data-client.js";
+import { loadLocale } from "./data-client.js?v=__BUILD_VERSION__";
 
 let activeLocale = "l_english";
 let englishPack = {};
@@ -36,3 +36,4 @@ export function tList(keys) {
     .filter((key) => typeof key === "string" && key.length > 0)
     .map((key) => t(key));
 }
+

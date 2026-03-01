@@ -7,6 +7,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>Grand Stellaris Archive</title>
+  <link rel="icon" type="image/x-icon" href="../ProjectLogo_tech_galactic_archivism.ico">
   <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
   <link rel="stylesheet" href="../stellaris-tech-tree/assets/vendor/Treant.css?v=__BUILD_VERSION__">
   <link rel="stylesheet" href="../stellaris-tech-tree/assets/vendor/tooltipster.bundle.min.css?v=__BUILD_VERSION__">
@@ -17,13 +18,31 @@
   <header class="app-topbar">
     <div class="main-header-row">
       <ul class="module-tabs">
-        <li class="module-tab is-active" data-module="home">
+        <li class="module-tab is-active" data-module="empire">
           <button type="button" class="module-tab-button">
+            <span>Empire</span>
             <img
-              src="../assets/stellaris/gfx/interface/game_setup/gamesetup_player_empire_unknown.webp"
+              src="../assets/stellaris/gfx/interface/buttons/topbar_government_button_selected_f0.webp"
               class="tab-icon"
-              alt="Home"
-              onerror="this.onerror=null;this.src='../stellaris-tech-tree/assets/icons/homesystem.png';"
+              data-icon="../assets/stellaris/gfx/interface/buttons/topbar_government_button_f0.webp"
+              data-icon-hover="../assets/stellaris/gfx/interface/buttons/topbar_government_button_f1.webp"
+              data-icon-selected="../assets/stellaris/gfx/interface/buttons/topbar_government_button_selected_f0.webp"
+              data-icon-selected-hover="../assets/stellaris/gfx/interface/buttons/topbar_government_button_selected_f1.webp"
+              alt="Empire"
+            >
+          </button>
+        </li>
+        <li class="module-tab" data-module="events">
+          <button type="button" class="module-tab-button">
+            <span>Events</span>
+            <img
+              src="../assets/stellaris/gfx/interface/buttons/topbar_situation_log_button_f0.webp"
+              class="tab-icon"
+              data-icon="../assets/stellaris/gfx/interface/buttons/topbar_situation_log_button_f0.webp"
+              data-icon-hover="../assets/stellaris/gfx/interface/buttons/topbar_situation_log_button_f1.webp"
+              data-icon-selected="../assets/stellaris/gfx/interface/buttons/topbar_situation_log_button_selected_f0.webp"
+              data-icon-selected-hover="../assets/stellaris/gfx/interface/buttons/topbar_situation_log_button_selected_f1.webp"
+              alt="Events"
             >
           </button>
         </li>
@@ -31,89 +50,249 @@
           <button type="button" class="module-tab-button">
             <span>Tech</span>
             <img
-              src="../assets/stellaris/gfx/interface/icons/situation_log/situation_log_main_quest.webp"
+              src="../assets/stellaris/gfx/interface/buttons/topbar_tech_button_f0.webp"
               class="tab-icon"
+              data-icon="../assets/stellaris/gfx/interface/buttons/topbar_tech_button_f0.webp"
+              data-icon-hover="../assets/stellaris/gfx/interface/buttons/topbar_tech_button_f1.webp"
+              data-icon-selected="../assets/stellaris/gfx/interface/buttons/topbar_tech_button_selected_f0.webp"
+              data-icon-selected-hover="../assets/stellaris/gfx/interface/buttons/topbar_tech_button_selected_f1.webp"
               alt="Tech"
-              onerror="this.onerror=null;this.src='../stellaris-tech-tree/assets/icons/research_icon.png';"
             >
           </button>
         </li>
-        <li class="module-tab" data-module="anomalies">
-          <button type="button" class="module-tab-button">
-            <span>Anomalies</span>
-            <img src="../stellaris-tech-tree/assets/icons/event.png" class="tab-icon" alt="Anomalies">
+        <li class="module-tab databank-tab" data-module="databank">
+          <button type="button" class="module-tab-button icon-only" aria-label="Databank">
+            <img
+              src="../assets/stellaris/gfx/interface/icons/databank_icon.webp"
+              class="tab-icon"
+              data-icon="../assets/stellaris/gfx/interface/icons/databank_icon.webp"
+              data-icon-hover="../assets/stellaris/gfx/interface/icons/databank_icon.webp"
+              data-icon-selected="../assets/stellaris/gfx/interface/icons/databank_icon.webp"
+              alt="Databank"
+            >
           </button>
-        </li>
-        <li class="module-tab" data-module="events">
-          <button type="button" class="module-tab-button">
-            <span>Events</span>
-            <img src="../assets/stellaris/gfx/interface/icons/message/message_event_generic.webp" class="tab-icon" alt="Events">
-          </button>
-        </li>
-        <li class="module-tab" data-module="arc-sites">
-          <button type="button" class="module-tab-button">
-            <span>Archaeological Sites</span>
-            <img src="../assets/stellaris/gfx/interface/archaeology/icon_archaeology.webp" class="tab-icon" alt="Archaeological Sites">
-          </button>
-        </li>
-        <li class="module-tab" data-module="astral-rifts">
-          <button type="button" class="module-tab-button">
-            <span>Astral Rifts</span>
-            <img src="../assets/stellaris/gfx/interface/icons/situation_log/situation_log_astral_rift.webp" class="tab-icon" alt="Astral Rifts">
-          </button>
+          <div id="databank-hover-menu" class="databank-hover-menu" aria-hidden="true">
+            <p class="databank-hover-title">Databank</p>
+            <ul id="databank-hover-categories" class="databank-hover-categories"></ul>
+          </div>
         </li>
       </ul>
 
       <div class="main-search">
-        <input id="global-search" list="global-search-list" placeholder="Search everything">
+        <input id="global-search" list="global-search-list" placeholder="Search all modules">
         <datalist id="global-search-list"></datalist>
       </div>
 
       <button
         id="settings-tab-button"
-        class="settings-nav-button"
+        class="settings-nav-button sprite-button"
         type="button"
         aria-label="Settings"
         title="Settings"
       >
-        <img
-          src="../assets/stellaris/gfx/interface/buttons/button_settings.webp"
-          class="tab-icon"
-          alt=""
-          onerror="this.onerror=null;this.src='../assets/stellaris/gfx/interface/icons/menu_icon_edicts.webp';"
-        >
+        <span class="sprite-layer sprite-face" aria-hidden="true"></span>
       </button>
     </div>
 
-    <nav id="tech-subnav" class="tech-subnav is-hidden">
-      <button type="button" class="tech-subtab is-active" data-tech-tab="all">
+    <nav id="empire-subnav" class="module-subnav">
+      <button type="button" class="module-subtab icon-only is-active" data-empire-tab="government" title="Government">
+        <img src="../assets/stellaris/gfx/interface/buttons/topbar_government_button_selected_f0.webp" data-icon="../assets/stellaris/gfx/interface/buttons/topbar_government_button_f0.webp" data-icon-hover="../assets/stellaris/gfx/interface/buttons/topbar_government_button_f1.webp" data-icon-selected="../assets/stellaris/gfx/interface/buttons/topbar_government_button_selected_f0.webp" data-icon-selected-hover="../assets/stellaris/gfx/interface/buttons/topbar_government_button_selected_f1.webp" alt="Government">
+      </button>
+      <button type="button" class="module-subtab icon-only" data-empire-tab="discoveries" title="Discoveries">
+        <img src="../assets/stellaris/gfx/interface/buttons/topbar_situation_log_button_f0.webp" data-icon="../assets/stellaris/gfx/interface/buttons/topbar_situation_log_button_f0.webp" data-icon-hover="../assets/stellaris/gfx/interface/buttons/topbar_situation_log_button_f1.webp" data-icon-selected="../assets/stellaris/gfx/interface/buttons/topbar_situation_log_button_selected_f0.webp" data-icon-selected-hover="../assets/stellaris/gfx/interface/buttons/topbar_situation_log_button_selected_f1.webp" alt="Discoveries">
+      </button>
+      <button type="button" class="module-subtab icon-only" data-empire-tab="tech" title="Tech">
+        <img src="../assets/stellaris/gfx/interface/buttons/topbar_tech_button_f0.webp" data-icon="../assets/stellaris/gfx/interface/buttons/topbar_tech_button_f0.webp" data-icon-hover="../assets/stellaris/gfx/interface/buttons/topbar_tech_button_f1.webp" data-icon-selected="../assets/stellaris/gfx/interface/buttons/topbar_tech_button_selected_f0.webp" data-icon-selected-hover="../assets/stellaris/gfx/interface/buttons/topbar_tech_button_selected_f1.webp" alt="Tech">
+      </button>
+    </nav>
+
+    <nav id="events-subnav" class="module-subnav is-hidden">
+      <button type="button" class="module-subtab is-active" data-events-tab="anomalies">
+        <span>Anomalies</span>
+        <img src="../stellaris-tech-tree/assets/icons/event.png" alt="Anomalies">
+      </button>
+      <button type="button" class="module-subtab" data-events-tab="events">
+        <span>Event Chains</span>
+        <img src="../assets/stellaris/gfx/interface/icons/message/message_event_generic.webp" alt="Events">
+      </button>
+      <button type="button" class="module-subtab" data-events-tab="arc-sites">
+        <span>Arc Sites</span>
+        <img src="../assets/stellaris/gfx/interface/archaeology/icon_archaeology.webp" alt="Arc Sites">
+      </button>
+      <button type="button" class="module-subtab" data-events-tab="astral-rifts">
+        <span>Astral Rifts</span>
+        <img src="../assets/stellaris/gfx/interface/icons/situation_log/situation_log_astral_rift.webp" alt="Astral Rifts">
+      </button>
+    </nav>
+
+    <nav id="tech-subnav" class="module-subnav is-hidden">
+      <button type="button" class="module-subtab is-active" data-tech-tab="all">
         <span>All</span>
         <img src="../stellaris-tech-tree/assets/icons/research_icon.png" alt="All">
       </button>
-      <button type="button" class="tech-subtab" data-tech-tab="physics">
+      <button type="button" class="module-subtab" data-tech-tab="physics">
         <span>Physics</span>
         <img src="../stellaris-tech-tree/assets/icons/physics_research.png" alt="Physics">
       </button>
-      <button type="button" class="tech-subtab" data-tech-tab="society">
+      <button type="button" class="module-subtab" data-tech-tab="society">
         <span>Society</span>
         <img src="../stellaris-tech-tree/assets/icons/society_research.png" alt="Society">
       </button>
-      <button type="button" class="tech-subtab" data-tech-tab="engineering">
+      <button type="button" class="module-subtab" data-tech-tab="engineering">
         <span>Engineering</span>
         <img src="../stellaris-tech-tree/assets/icons/engineering_research.png" alt="Engineering">
       </button>
-      <button type="button" class="tech-subtab" data-tech-tab="events">
-        <span>Events</span>
-        <img src="../stellaris-tech-tree/assets/icons/event.png" alt="Events">
+      <button type="button" class="module-subtab" data-tech-tab="events">
+        <span>Anomaly Tech</span>
+        <img src="../stellaris-tech-tree/assets/icons/event.png" alt="Anomaly Tech">
       </button>
+      <label class="bioship-toggle">
+        <input id="tech-bioship-toggle" type="checkbox">
+        <span>Bioships</span>
+      </label>
+      <div id="tech-tier-tracker" class="tech-tier-tracker" aria-live="polite"></div>
     </nav>
   </header>
 
   <main class="app-shell">
-    <section id="module-home" class="module-panel is-active">
-      <section class="panel">
-        <h2>Empire / Home</h2>
-        <p>Home hub for project navigation. Use search to jump directly to modules, anomalies, events, and sites.</p>
+    <section id="status-panel" class="status-panel info">Loading data...</section>
+
+    <section id="module-empire" class="module-panel is-active">
+      <section id="empire-government-panel" class="panel empire-panel is-active">
+        <h2>Government</h2>
+        <div class="empire-gov-layout">
+          <section class="empire-card">
+            <h3>Ethics</h3>
+            <p class="meta">Layout scaffold in place for ethics wheel and empire-affinity rendering.</p>
+            <div class="ethics-stars" aria-hidden="true"></div>
+          </section>
+          <section class="empire-card">
+            <h3>Civics</h3>
+            <p class="meta">Civic selection panel scaffolded for two active civics with later unlock hook.</p>
+            <div class="placeholder-box">Civic list and selection interactions will be wired to Databank entries.</div>
+          </section>
+          <section class="empire-card">
+            <h3>Ascension Perks</h3>
+            <p class="meta">Hex-grid shell prepared for assign/unassign interactions.</p>
+            <div class="ap-grid" id="ascension-perk-grid"></div>
+          </section>
+          <section class="empire-card">
+            <h3>Traditions</h3>
+            <p class="meta">Popup shell placeholder for traditions tree.</p>
+            <button id="traditions-popup-open" type="button" class="inline-button">Open Traditions Shell</button>
+          </section>
+          <section class="empire-card">
+            <h3>Shipset</h3>
+            <p class="meta">Placeholder for shipset detail page links.</p>
+          </section>
+          <section class="empire-card">
+            <h3>Species</h3>
+            <p class="meta">Placeholder for species detail page links.</p>
+          </section>
+        </div>
+      </section>
+
+      <section id="empire-discoveries-panel" class="panel empire-panel">
+        <h2>Discoveries</h2>
+        <p class="meta">Bookmarks are currently in-session only. Backend persistence is intentionally deferred.</p>
+        <div id="discoveries-groups" class="discoveries-groups"></div>
+      </section>
+
+      <section id="empire-tech-panel" class="panel empire-panel">
+        <h2>Empire Tech Hooks</h2>
+        <p class="meta">This section will host empire-aware tech filters and profile summaries.</p>
+      </section>
+    </section>
+
+    <section id="module-events" class="module-panel">
+      <section id="events-pane-anomalies" class="panel events-pane is-active">
+        <div class="table-toolbar">
+          <button id="anomaly-filter-toggle" class="inline-button" type="button">Filter DLC/Expansion</button>
+          <div id="anomaly-filter-menu" class="filter-menu is-hidden">
+            <div id="anomaly-dlc-filters" class="filter-list"></div>
+          </div>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Save</th>
+              <th>Anomaly</th>
+              <th>Level</th>
+              <th>Unique</th>
+              <th>Linked Events</th>
+            </tr>
+          </thead>
+          <tbody id="anomaly-table-body"></tbody>
+        </table>
+      </section>
+
+      <section id="events-pane-events" class="panel events-pane">
+        <h2>Event Chains</h2>
+        <p class="meta">Categories: Empire, Colony, Pre-FTL, Misc</p>
+        <div id="events-categories" class="events-categories"></div>
+      </section>
+
+      <section id="events-pane-arc-sites" class="panel events-pane">
+        <h2>Archaeological Sites</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Save</th>
+              <th>Site</th>
+              <th>Rewards</th>
+              <th>Spawn Requirements</th>
+            </tr>
+          </thead>
+          <tbody id="arc-sites-table-body"></tbody>
+        </table>
+      </section>
+
+      <section id="events-pane-astral-rifts" class="panel events-pane">
+        <h2>Astral Rifts</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Save</th>
+              <th>Rift</th>
+              <th>Possible Outcomes</th>
+              <th>Flags</th>
+            </tr>
+          </thead>
+          <tbody id="astral-rifts-table-body"></tbody>
+        </table>
+      </section>
+    </section>
+
+    <section id="module-tech" class="module-panel">
+      <section class="panel tech-tree-panel">
+        <div class="tech-toolbar">
+          <button id="tech-clear-focus" type="button" class="inline-button">Clear Chain Focus</button>
+        </div>
+        <input id="deepsearch" class="stt-deepsearch" aria-hidden="true" tabindex="-1">
+        <div id="tech-tree">
+          <div id="tech-tree-search" class="float-NoDisplay"></div>
+          <div id="tech-tree-physics"></div>
+          <div id="tech-tree-society"></div>
+          <div id="tech-tree-engineering"></div>
+          <div id="tech-tree-anomalies" class="float-NoDisplay"></div>
+        </div>
+      </section>
+    </section>
+
+    <section id="module-databank" class="module-panel">
+      <section class="panel databank-panel">
+        <div id="databank-landing">
+          <h2>Databank</h2>
+          <p class="meta">Forge-powered encyclopedia hub for all non-primary modules.</p>
+          <div id="databank-tile-grid" class="databank-tile-grid"></div>
+        </div>
+        <div id="databank-detail" class="databank-detail is-hidden">
+          <div class="databank-detail-header">
+            <button id="databank-back" type="button" class="inline-button">Back To Databank</button>
+            <h2 id="databank-detail-title"></h2>
+          </div>
+          <div id="databank-detail-content"></div>
+        </div>
       </section>
     </section>
 
@@ -126,87 +305,49 @@
           <select id="locale-select"></select>
         </section>
 
+        <section class="settings-shortcuts">
+          <h3>Keyboard Shortcuts</h3>
+          <p class="meta">Global system hotkeys are out of scope in the browser build. In-tab shortcuts are configurable here.</p>
+          <div class="shortcut-row">
+            <label for="shortcut-focus-search">Focus Search</label>
+            <input id="shortcut-focus-search" type="text" autocomplete="off" spellcheck="false" placeholder="Ctrl+K">
+            <button id="shortcut-focus-search-clear" type="button" class="inline-button">Reset</button>
+          </div>
+          <p class="meta">Accepted examples: Ctrl+K, Alt+Shift+F20, F24</p>
+        </section>
+
         <p id="manifest-meta" class="meta">Loading manifest...</p>
 
         <section class="settings-credits">
           <h3>Credits</h3>
-          <p>
-            Project by
-            <a href="https://hoovertesla.com" target="_blank" rel="noreferrer">Hoover Tesla</a>.
-          </p>
-          <p>
-            Original STT code by
-            <a href="https://gitlab.com/bipedalshark/stellaris-tech-tree" target="_blank" rel="noreferrer">bipedalshark</a>.
-          </p>
-          <p>
-            STT parser/work by
-            <a href="https://github.com/BloodStainedCrow/stellaris-technology" target="_blank" rel="noreferrer">BloodStainedCrow</a>.
-          </p>
-          <p>
-            STT website code by
-            <a href="https://github.com/BloodStainedCrow/stellaris-tech-tree" target="_blank" rel="noreferrer">BloodStainedCrow</a>.
-          </p>
-          <p>STT contributors: SlenderPlays, Tsudico, Turanar, BloodStainedCrow.</p>
-        </section>
-      </section>
-    </section>
-
-    <section id="module-tech" class="module-panel">
-      <section class="panel tech-tree-panel">
-        <h2>Tech Tree Module</h2>
-        <input id="deepsearch" class="stt-deepsearch" aria-hidden="true" tabindex="-1">
-        <div id="tech-tree">
-          <div id="tech-tree-search" class="float-NoDisplay"></div>
-          <div id="tech-tree-physics"></div>
-          <div id="tech-tree-society"></div>
-          <div id="tech-tree-engineering"></div>
-          <div id="tech-tree-anomalies" class="float-NoDisplay"></div>
-        </div>
-        <div class="stt-research-tools">
-          <button id="research_save" class="research hide" type="button">Save</button>
-          <button id="research_load" class="research hide" type="button">Load</button>
-          <button id="research_remove" class="research hide" type="button">Remove</button>
-          <label class="research hide">
-            Research List:
-            <input id="research_selection" list="research_list">
-            <datalist id="research_list"></datalist>
-          </label>
-        </div>
-      </section>
-    </section>
-
-    <section id="module-anomalies" class="module-panel">
-      <section class="panel anomaly-browser-panel">
-        <div class="anomaly-browser-toolbar">
-          <button id="anomaly-filter-toggle" class="anomaly-filter-toggle" type="button">Filter DLC/Expansion</button>
-          <div id="anomaly-filter-menu" class="anomaly-filter-menu is-hidden">
-            <div id="anomaly-dlc-filters" class="anomaly-dlc-filters"></div>
+          <div class="credit-group">
+            <h4>Hoover Tesla</h4>
+            <p>
+              Project by
+              <a href="https://hoovertesla.com" target="_blank" rel="noreferrer">Hoover Tesla</a>.
+            </p>
           </div>
-        </div>
-        <table class="anomaly-table">
-          <thead>
-            <tr>
-              <th>Anomaly</th>
-            </tr>
-          </thead>
-          <tbody id="anomaly-table-body"></tbody>
-        </table>
-      </section>
-      <section id="anomaly-panel" class="panel"></section>
-    </section>
-
-    <section id="module-events" class="module-panel">
-      <section id="events-panel" class="panel"></section>
-    </section>
-
-    <section id="module-arc-sites" class="module-panel">
-      <section id="arc-sites-panel" class="panel"></section>
-    </section>
-
-    <section id="module-astral-rifts" class="module-panel">
-      <section class="panel">
-        <h2>Astral Rifts</h2>
-        <p>Astral Rift module placeholder.</p>
+          <div class="credit-group">
+            <h4>Stellaris Tech Tree</h4>
+            <p>
+              Original STT code by
+              <a href="https://gitlab.com/bipedalshark/stellaris-tech-tree" target="_blank" rel="noreferrer">bipedalshark</a>.
+            </p>
+            <p>
+              STT parser/work by
+              <a href="https://github.com/BloodStainedCrow/stellaris-technology" target="_blank" rel="noreferrer">BloodStainedCrow</a>.
+            </p>
+            <p>
+              STT website code by
+              <a href="https://github.com/BloodStainedCrow/stellaris-tech-tree" target="_blank" rel="noreferrer">BloodStainedCrow</a>.
+            </p>
+            <p>STT contributors: SlenderPlays, Tsudico, Turanar, BloodStainedCrow.</p>
+          </div>
+          <div class="credit-group">
+            <h4>Paradox / Stellaris</h4>
+            <p>Stellaris and related assets are trademarks and copyrights of Paradox Interactive.</p>
+          </div>
+        </section>
       </section>
     </section>
   </main>
@@ -270,7 +411,7 @@
         <div class="tooltip-header">Requirements</div>
         <div class="tooltip-content"><pre>{{:potential.join('<br/>')}}</pre></div>
     {{/if}}
-    {{if prerequisites.length > 1}}
+    {{if prerequisites.length > 0}}
         <div class="tooltip-header">Required Technologies</div>
         <div class="tooltip-content prerequisites">
         {{for prerequisites}}
